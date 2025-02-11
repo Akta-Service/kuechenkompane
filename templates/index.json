@@ -55,38 +55,6 @@
         "brang_img5": "shopify://shop_images/n_tv_logo_V4_1.png"
       }
     },
-    "video_hero_qyqLzX": {
-      "type": "video-hero",
-      "settings": {
-        "color_scheme": "default",
-        "container": "w-full",
-        "hero_size": "medium",
-        "video_ratio": "16/9",
-        "show_overlay": true,
-        "video_type": "shopify",
-        "shopify_video": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160_mov_V1.mp4",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "content_in_container": false,
-        "content_position": "center middle",
-        "text_alignment": "center",
-        "text_size": "medium",
-        "text_color": "white",
-        "title": "MEISTERHAFT KOCHEN BEGINNT HIER",
-        "subtitle": "",
-        "text": "<p>Perfektion, die du in jeder Bewegung spürst.</p>",
-        "button_label": "Erlebe Perfektion",
-        "button_link": "shopify://pages/alle-kategorien",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "button_label_2": "",
-        "button_link_2": "",
-        "button_style_2": "m-button--primary",
-        "button_size_2": "",
-        "use_content_above": true,
-        "custom_class": "",
-        "animations": "fade-in"
-      }
-    },
     "custom_content_btgYN3": {
       "type": "custom-content",
       "blocks": {
@@ -1441,7 +1409,6 @@
   },
   "order": [
     "banner_version_2_4q968G",
-    "video_hero_qyqLzX",
     "custom_content_btgYN3",
     "category_selection_dVGcxF",
     "banner_version_1_aGXez8",
