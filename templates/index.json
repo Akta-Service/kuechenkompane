@@ -9,6 +9,52 @@
  */
 {
   "sections": {
+    "banner_version_2_4q968G": {
+      "type": "banner-version-2",
+      "blocks": {
+        "text_GFQwB3": {
+          "type": "text",
+          "settings": {
+            "top_item": "100% Money Back"
+          }
+        },
+        "text_J8yeUK": {
+          "type": "text",
+          "settings": {
+            "top_item": "Cruelty-free"
+          }
+        },
+        "text_7wEFPw": {
+          "type": "text",
+          "settings": {
+            "top_item": "+400,000 happy customers"
+          }
+        }
+      },
+      "block_order": [
+        "text_GFQwB3",
+        "text_J8yeUK",
+        "text_7wEFPw"
+      ],
+      "settings": {
+        "bg_igm": "shopify://shop_images/Fire_in_the_hole__1__V5.gif",
+        "mt": 0,
+        "mb": 0,
+        "mt_mobile": 0,
+        "mb_mobile": 0,
+        "title": "Meisterhaft kochen beginnt hier",
+        "title_font_size": 40,
+        "title_color": "#1e1e1e",
+        "sub_title": "<p>Perfektion, die du in jeder Bewegung spürst.</p>",
+        "btn_text": "Erlebe Perfekteion",
+        "btn_link": "shopify://pages/alle-kategorien",
+        "brang_img1": "shopify://shop_images/n_tv_logo_V7_1.png",
+        "brang_img2": "shopify://shop_images/n_tv_logo_V6_1.png",
+        "brang_img3": "shopify://shop_images/n_tv_logo_V2_1.png",
+        "brang_img4": "shopify://shop_images/n_tv_logo_V3_1.png",
+        "brang_img5": "shopify://shop_images/n_tv_logo_V4_1.png"
+      }
+    },
     "video_hero_qyqLzX": {
       "type": "video-hero",
       "settings": {
@@ -1334,51 +1380,6 @@
         "padding_top": 48,
         "padding_bottom": 20,
         "custom_class": ""
-      }
-    },
-    "banner_version_2_4q968G": {
-      "type": "banner-version-2",
-      "blocks": {
-        "text_GFQwB3": {
-          "type": "text",
-          "settings": {
-            "top_item": "100% Money Back"
-          }
-        },
-        "text_J8yeUK": {
-          "type": "text",
-          "settings": {
-            "top_item": "Cruelty-free"
-          }
-        },
-        "text_7wEFPw": {
-          "type": "text",
-          "settings": {
-            "top_item": "+400,000 happy customers"
-          }
-        }
-      },
-      "block_order": [
-        "text_GFQwB3",
-        "text_J8yeUK",
-        "text_7wEFPw"
-      ],
-      "settings": {
-        "bg_igm": "shopify://shop_images/web-banner-vday2025-desktop_1.jpg",
-        "mt": 0,
-        "mb": 0,
-        "mt_mobile": 0,
-        "mb_mobile": 0,
-        "title": "Valentine’s Sale",
-        "title_font_size": 40,
-        "title_color": "#1e1e1e",
-        "sub_title": "<p>20% off with code <strong>VDAY20</strong></p>",
-        "btn_text": "shop now",
-        "btn_link": "",
-        "brang_img1": "shopify://shop_images/Union.svg",
-        "brang_img2": "shopify://shop_images/Vector_16.svg",
-        "brang_img3": "shopify://shop_images/logo-vogue.svg",
-        "brang_img4": "shopify://shop_images/download_1.png"
       }
     },
     "bestseller_selection_cdDXQt": {
