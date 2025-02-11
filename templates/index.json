@@ -9,36 +9,50 @@
  */
 {
   "sections": {
-    "video_hero_qyqLzX": {
-      "type": "video-hero",
+    "banner_version_2_4q968G": {
+      "type": "banner-version-2",
+      "blocks": {
+        "text_GFQwB3": {
+          "type": "text",
+          "settings": {
+            "top_item": "100% Money Back"
+          }
+        },
+        "text_J8yeUK": {
+          "type": "text",
+          "settings": {
+            "top_item": "Cruelty-free"
+          }
+        },
+        "text_7wEFPw": {
+          "type": "text",
+          "settings": {
+            "top_item": "+400,000 happy customers"
+          }
+        }
+      },
+      "block_order": [
+        "text_GFQwB3",
+        "text_J8yeUK",
+        "text_7wEFPw"
+      ],
       "settings": {
-        "color_scheme": "default",
-        "container": "w-full",
-        "hero_size": "medium",
-        "video_ratio": "16/9",
-        "show_overlay": true,
-        "video_type": "shopify",
-        "shopify_video": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160_mov_V1.mp4",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "content_in_container": false,
-        "content_position": "center middle",
-        "text_alignment": "center",
-        "text_size": "medium",
-        "text_color": "white",
-        "title": "MEISTERHAFT KOCHEN BEGINNT HIER",
-        "subtitle": "",
-        "text": "<p>Perfektion, die du in jeder Bewegung spürst.</p>",
-        "button_label": "Erlebe Perfektion",
-        "button_link": "shopify://pages/alle-kategorien",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "button_label_2": "",
-        "button_link_2": "",
-        "button_style_2": "m-button--primary",
-        "button_size_2": "",
-        "use_content_above": true,
-        "custom_class": "",
-        "animations": "fade-in"
+        "bg_igm": "shopify://shop_images/Fire_in_the_hole__1__V5.gif",
+        "mt": 0,
+        "mb": 0,
+        "mt_mobile": 0,
+        "mb_mobile": 0,
+        "title": "Meisterhaft kochen beginnt hier",
+        "title_font_size": 40,
+        "title_color": "#1e1e1e",
+        "sub_title": "<p>Perfektion, die du in jeder Bewegung spürst.</p>",
+        "btn_text": "Erlebe Perfekteion",
+        "btn_link": "shopify://pages/alle-kategorien",
+        "brang_img1": "shopify://shop_images/n_tv_logo_V7_1.png",
+        "brang_img2": "shopify://shop_images/n_tv_logo_V6_1.png",
+        "brang_img3": "shopify://shop_images/n_tv_logo_V2_1.png",
+        "brang_img4": "shopify://shop_images/n_tv_logo_V3_1.png",
+        "brang_img5": "shopify://shop_images/n_tv_logo_V4_1.png"
       }
     },
     "custom_content_btgYN3": {
@@ -421,7 +435,7 @@
         "item_yDtyRV"
       ],
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#EBF2E8",
         "verticle_padding": 50,
         "horizontal_padding": 50
       }
@@ -459,6 +473,7 @@
         "title_8Nhy7h",
         "description_pePmFE"
       ],
+      "disabled": true,
       "settings": {
         "background_color": "#ebf2e8",
         "media_type": "image",
@@ -504,6 +519,7 @@
         "title_YVnFVB",
         "description_feUG4J"
       ],
+      "disabled": true,
       "settings": {
         "background_color": "#ffffff",
         "media_type": "image",
@@ -1234,6 +1250,22 @@
         "animations": "inherit"
       }
     },
+    "bestseller_selection_cdDXQt": {
+      "type": "bestseller-selection",
+      "settings": {
+        "margin_top": 39,
+        "margin_bottom": 0,
+        "margin_top_mobile": 50,
+        "margin_bottom_mobile": 0,
+        "sec_title": "Einzelne Küchenmesser",
+        "all_btn_link": "",
+        "all_btn": "View All",
+        "collection": "kuechenmesser",
+        "product_limit": 10,
+        "variant_text_1": "",
+        "button_Text": "IN DEN WARENKORB"
+      }
+    },
     "custom_content_KiFzqG": {
       "type": "custom-content",
       "blocks": {
@@ -1307,96 +1339,6 @@
         "custom_class": ""
       }
     },
-    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d": {
-      "type": "instagram",
-      "custom_css": [
-        ".container-full {padding-left: 0; padding-right: 0;}",
-        "@media (max-width: 767px) {br {display: none; }}"
-      ],
-      "settings": {
-        "heading": "Folge uns auf Instagram",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "Markiere <span class=\"text-black\">@kuechenkompane</span> in Deinen Fotos, um hier präsentiert zu werden. <br>\nFinde mehr Inspiration und die neuesten Highlights auf unserem Instagram-Profil <a href=\"https://www.instagram.com/kuechenkompane/\"> Instagram-Profil.</a>",
-        "header_alignment": "center",
-        "container": "w-full",
-        "color_scheme": "badge-hot",
-        "color_scheme_content": "badge-hot",
-        "layout": "grid",
-        "images_count": 5,
-        "grid_columns": 5,
-        "gap": 0,
-        "mobile_gap": 0,
-        "profile": "https://www.instagram.com/minimog.trendy/",
-        "button_label": "",
-        "button_style": "m-button--secondary",
-        "use_scroll_mobile": true,
-        "padding_top": 48,
-        "padding_bottom": 20,
-        "custom_class": ""
-      }
-    },
-    "banner_version_2_4q968G": {
-      "type": "banner-version-2",
-      "blocks": {
-        "text_GFQwB3": {
-          "type": "text",
-          "settings": {
-            "top_item": "100% Money Back"
-          }
-        },
-        "text_J8yeUK": {
-          "type": "text",
-          "settings": {
-            "top_item": "Cruelty-free"
-          }
-        },
-        "text_7wEFPw": {
-          "type": "text",
-          "settings": {
-            "top_item": "+400,000 happy customers"
-          }
-        }
-      },
-      "block_order": [
-        "text_GFQwB3",
-        "text_J8yeUK",
-        "text_7wEFPw"
-      ],
-      "settings": {
-        "bg_igm": "shopify://shop_images/web-banner-vday2025-desktop_1.jpg",
-        "mt": 0,
-        "mb": 0,
-        "mt_mobile": 0,
-        "mb_mobile": 0,
-        "title": "Valentine’s Sale",
-        "title_font_size": 40,
-        "title_color": "#1e1e1e",
-        "sub_title": "<p>20% off with code <strong>VDAY20</strong></p>",
-        "btn_text": "shop now",
-        "btn_link": "",
-        "brang_img1": "shopify://shop_images/Union.svg",
-        "brang_img2": "shopify://shop_images/Vector_16.svg",
-        "brang_img3": "shopify://shop_images/logo-vogue.svg",
-        "brang_img4": "shopify://shop_images/download_1.png"
-      }
-    },
-    "bestseller_selection_cdDXQt": {
-      "type": "bestseller-selection",
-      "settings": {
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "margin_top_mobile": 50,
-        "margin_bottom_mobile": 0,
-        "sec_title": "Best Sellers",
-        "all_btn_link": "",
-        "all_btn": "View All",
-        "collection": "kuechenmesser-set",
-        "product_limit": 10,
-        "variant_text_1": "shades",
-        "button_Text": "add to bag"
-      }
-    },
     "branded_image_version_NcNpYJ": {
       "type": "branded-image-version-",
       "blocks": {
@@ -1430,17 +1372,45 @@
         "margin_bottom": 50,
         "mobile_margin_top": 30,
         "mobile_margin_bottom": 30,
-        "bg_img": "shopify://shop_images/Eye-Shimmer-Stick-Brightener.jpg",
+        "bg_img": "shopify://shop_images/IMG_0714_1.jpg",
         "title_font_size": 40,
         "heading_color": "#1e1e1e",
         "text_font_size": 16,
         "text_color": "#1e1e1e"
       }
+    },
+    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d": {
+      "type": "instagram",
+      "custom_css": [
+        ".container-full {padding-left: 0; padding-right: 0;}",
+        "@media (max-width: 767px) {br {display: none; }}"
+      ],
+      "settings": {
+        "heading": "Folge uns auf Instagram",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "Markiere <span class=\"text-black\">@kuechenkompane</span> in Deinen Fotos, um hier präsentiert zu werden. <br>\nFinde mehr Inspiration und die neuesten Highlights auf unserem Instagram-Profil <a href=\"https://www.instagram.com/kuechenkompane/\"> Instagram-Profil.</a>",
+        "header_alignment": "center",
+        "container": "w-full",
+        "color_scheme": "badge-hot",
+        "color_scheme_content": "badge-hot",
+        "layout": "grid",
+        "images_count": 5,
+        "grid_columns": 5,
+        "gap": 0,
+        "mobile_gap": 0,
+        "profile": "https://www.instagram.com/minimog.trendy/",
+        "button_label": "",
+        "button_style": "m-button--secondary",
+        "use_scroll_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 20,
+        "custom_class": ""
+      }
     }
   },
   "order": [
     "banner_version_2_4q968G",
-    "video_hero_qyqLzX",
     "custom_content_btgYN3",
     "category_selection_dVGcxF",
     "banner_version_1_aGXez8",
@@ -1459,9 +1429,9 @@
     "brands_list_XfN79B",
     "custom_content_xALaMf",
     "collection_tabs_QE4TLj",
-    "custom_content_KiFzqG",
-    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
     "bestseller_selection_cdDXQt",
-    "branded_image_version_NcNpYJ"
+    "custom_content_KiFzqG",
+    "branded_image_version_NcNpYJ",
+    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d"
   ]
 }
