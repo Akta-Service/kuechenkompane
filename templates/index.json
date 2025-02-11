@@ -435,7 +435,7 @@
         "item_yDtyRV"
       ],
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#EBF2E8",
         "verticle_padding": 50,
         "horizontal_padding": 50
       }
@@ -473,6 +473,7 @@
         "title_8Nhy7h",
         "description_pePmFE"
       ],
+      "disabled": true,
       "settings": {
         "background_color": "#ebf2e8",
         "media_type": "image",
@@ -518,6 +519,7 @@
         "title_YVnFVB",
         "description_feUG4J"
       ],
+      "disabled": true,
       "settings": {
         "background_color": "#ffffff",
         "media_type": "image",
@@ -1337,35 +1339,6 @@
         "custom_class": ""
       }
     },
-    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d": {
-      "type": "instagram",
-      "custom_css": [
-        ".container-full {padding-left: 0; padding-right: 0;}",
-        "@media (max-width: 767px) {br {display: none; }}"
-      ],
-      "settings": {
-        "heading": "Folge uns auf Instagram",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "Markiere <span class=\"text-black\">@kuechenkompane</span> in Deinen Fotos, um hier präsentiert zu werden. <br>\nFinde mehr Inspiration und die neuesten Highlights auf unserem Instagram-Profil <a href=\"https://www.instagram.com/kuechenkompane/\"> Instagram-Profil.</a>",
-        "header_alignment": "center",
-        "container": "w-full",
-        "color_scheme": "badge-hot",
-        "color_scheme_content": "badge-hot",
-        "layout": "grid",
-        "images_count": 5,
-        "grid_columns": 5,
-        "gap": 0,
-        "mobile_gap": 0,
-        "profile": "https://www.instagram.com/minimog.trendy/",
-        "button_label": "",
-        "button_style": "m-button--secondary",
-        "use_scroll_mobile": true,
-        "padding_top": 48,
-        "padding_bottom": 20,
-        "custom_class": ""
-      }
-    },
     "branded_image_version_NcNpYJ": {
       "type": "branded-image-version-",
       "blocks": {
@@ -1405,6 +1378,35 @@
         "text_font_size": 16,
         "text_color": "#1e1e1e"
       }
+    },
+    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d": {
+      "type": "instagram",
+      "custom_css": [
+        ".container-full {padding-left: 0; padding-right: 0;}",
+        "@media (max-width: 767px) {br {display: none; }}"
+      ],
+      "settings": {
+        "heading": "Folge uns auf Instagram",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "Markiere <span class=\"text-black\">@kuechenkompane</span> in Deinen Fotos, um hier präsentiert zu werden. <br>\nFinde mehr Inspiration und die neuesten Highlights auf unserem Instagram-Profil <a href=\"https://www.instagram.com/kuechenkompane/\"> Instagram-Profil.</a>",
+        "header_alignment": "center",
+        "container": "w-full",
+        "color_scheme": "badge-hot",
+        "color_scheme_content": "badge-hot",
+        "layout": "grid",
+        "images_count": 5,
+        "grid_columns": 5,
+        "gap": 0,
+        "mobile_gap": 0,
+        "profile": "https://www.instagram.com/minimog.trendy/",
+        "button_label": "",
+        "button_style": "m-button--secondary",
+        "use_scroll_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 20,
+        "custom_class": ""
+      }
     }
   },
   "order": [
@@ -1429,7 +1431,7 @@
     "collection_tabs_QE4TLj",
     "bestseller_selection_cdDXQt",
     "custom_content_KiFzqG",
-    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
-    "branded_image_version_NcNpYJ"
+    "branded_image_version_NcNpYJ",
+    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d"
   ]
 }
