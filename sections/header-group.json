@@ -41,6 +41,7 @@
         "item_6Ycmkw",
         "item_PjeGnW"
       ],
+      "disabled": true,
       "custom_css": [
         ".m-announcement-bar__container {--container-width: 600px;}"
       ],
@@ -62,16 +63,16 @@
         "5e153016-a9d7-46c9-a10e-30d16446793d": {
           "type": "topbar",
           "settings": {
-            "color_scheme": "badge-new",
+            "color_scheme": "dark",
             "show_divider": true,
             "transparent_on_top": false,
             "show_phone_numb": false,
             "show_email": false,
-            "show_social_links": true,
+            "show_social_links": false,
             "show_stores_page": false,
             "show_currency_switcher": false,
-            "show_country_selector": true,
-            "show_language_switcher": true,
+            "show_country_selector": false,
+            "show_language_switcher": false,
             "alert_message": "<span>Erlebe die Welt von Küchenkompane – Qualität, die begeistert   <a class=\"m-link-underline\" href=\"#\"></a><span></span></span>"
           }
         }
@@ -84,21 +85,21 @@
         ".social-media-links {column-gap: 30px;}"
       ],
       "settings": {
-        "color_scheme": "dark",
-        "color_scheme_menu": "",
+        "color_scheme": "default",
+        "color_scheme_menu": "default",
         "header_design": "logo-left-menu-center",
         "container": "container-fluid",
         "sticky_header": "on_scroll_up",
         "transparent_on_top": false,
         "transparent_text_color": "#ffffff",
         "logo_text": "MINIMOG",
-        "logo": "shopify://shop_images/Kuechenkompane_-_Logo2023_-_DarkGreen_background_V5_1_256x_9940c450-25dc-4123-8eaa-ed45cd7ba51b.png",
+        "logo": "shopify://shop_images/Kuchenkompane-svg-logo-color_752e6bb5-8fa2-406c-ab1c-530e5b49d7cc.svg",
         "logo_svg": "",
         "logo_mobile_svg": "",
         "logo_transparent_svg": "",
-        "logo_max_width": 145,
-        "sticky_logo_max_width": 145,
-        "mobile_logo_max_width": 110,
+        "logo_max_width": 110,
+        "sticky_logo_max_width": 110,
+        "mobile_logo_max_width": 90,
         "main_menu": "hauptmenu",
         "secondary_menu": "",
         "mobile_menu": "",

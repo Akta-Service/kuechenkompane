@@ -41,69 +41,6 @@
         "animations": "fade-in"
       }
     },
-    "scrolling_promotion_TU3Bez": {
-      "type": "scrolling-promotion",
-      "blocks": {
-        "image_7egpEw": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "image_height": 120,
-            "image_link": ""
-          }
-        },
-        "image_NWtxi8": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V2_1.png",
-            "image_height": 120,
-            "image_link": ""
-          }
-        },
-        "image_RjXAXe": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V4_1.png",
-            "image_height": 120,
-            "image_link": ""
-          }
-        },
-        "image_n96gEi": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V7_1.png",
-            "image_height": 120,
-            "image_link": ""
-          }
-        },
-        "image_gA4CqF": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V3_1.png",
-            "image_height": 120,
-            "image_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_7egpEw",
-        "image_NWtxi8",
-        "image_RjXAXe",
-        "image_n96gEi",
-        "image_gA4CqF"
-      ],
-      "settings": {
-        "container": "w-full",
-        "direction": "left",
-        "speed": 30,
-        "item_gap": 50,
-        "item_gap_mobile": 30,
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "custom_class": ""
-      }
-    },
     "custom_content_btgYN3": {
       "type": "custom-content",
       "blocks": {
@@ -1502,8 +1439,8 @@
     }
   },
   "order": [
+    "banner_version_2_4q968G",
     "video_hero_qyqLzX",
-    "scrolling_promotion_TU3Bez",
     "custom_content_btgYN3",
     "category_selection_dVGcxF",
     "banner_version_1_aGXez8",
@@ -1524,7 +1461,6 @@
     "collection_tabs_QE4TLj",
     "custom_content_KiFzqG",
     "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
-    "banner_version_2_4q968G",
     "bestseller_selection_cdDXQt",
     "branded_image_version_NcNpYJ"
   ]
