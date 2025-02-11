@@ -1,0 +1,275 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  /* common css end  */
+  .text-banner-area {
+    background: {{ section.settings.bg_color | default: '#1e1e1e' }};
+    padding: 65px 0;
+    padding-top: {{ section.settings.pt | default: '65px' }};
+    padding-bottom: {{ section.settings.pb | default: '65px' }};
+    margin-top: {{ section.settings.mt | default: '0' }};
+    margin-bottom: {{ section.settings.mb | default: '0' }};
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    .text-banner-area {
+    padding-top: {{ section.settings.pt_mobile | default: section.settings.pt | default: '65px' }};
+    padding-bottom: {{ section.settings.pb_mobile | default: section.settings.pb | default: '65px' }};
+    margin-top: {{ section.settings.mt_mobile | default: section.settings.mt | default: '0' }};
+    margin-bottom: {{ section.settings.mb_mobile | default: section.settings.mb | default: '0' }};
+    }
+  }
+
+
+
+  .text-banner-content {
+    text-align: center;
+    max-width: 520px;
+    padding: 0 50px;
+    margin: 0 auto;
+  }
+
+  .text-banner-title {
+    font-size: {{ section.settings.title_font_size | default: '40px' }};
+    color: {{ section.settings.title_color | default: '#fff' }};
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .text-banner-subtitle {
+    font-size: {{ section.settings.title_font_size | default: '40px' }};
+    color: {{ section.settings.title_color | default: '#fff' }};
+    letter-spacing: -0.8px;
+    line-height: 44px;
+    margin-bottom: 8px;
+  }
+
+  .text-banner-content p {
+    font-size: {{ section.settings.text_font_size | default: '15px' }};
+    color: {{ section.settings.text_color | default: '#fff' }};
+    line-height: 24px;
+  }
+  @media only screen and (max-width: 749px) {
+    .text-banner-title {
+      font-size: 24px;
+    }
+
+    .text-banner-subtitle {
+      font-size: 24px;
+    }
+  }
+</style>
+<div class="text-banner-area">
+  <div class="text-banner-content">
+    {% for block in section.blocks %}
+      {%- case block.type -%}
+        {%- when 'title' -%}
+          <h3 class="text-banner-title">{{ block.settings.title }}</h3>
+        {%- when 'title_style' -%}
+          <h3 class="text-banner-subtitle style">{{ block.settings.style_title }}</h3>
+        {%- when 'text' -%}
+          <p>
+            {{ block.settings.text }}
+          </p>
+      {%- endcase -%}
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Text Banner",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding Top",
+      "default": 65,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding Bottom",
+      "default": 65,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Margin Top",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Margin Bottom",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Spacing"
+    },
+    {
+      "type": "range",
+      "id": "pt_mobile",
+      "label": "Padding Top (Mobile)",
+      "default": 65,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pb_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "default": 65,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mt_mobile",
+      "label": "Margin Top (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mb_mobile",
+      "label": "Margin Bottom (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size",
+      "default": 40,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "label": "Text Font Size",
+      "default": 15,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "100% MONEY BACK"
+        }
+      ]
+    },
+    {
+      "type": "title_style",
+      "name": "Title Style",
+      "settings": [
+        {
+          "type": "text",
+          "id": "style_title",
+          "label": "Styled Title",
+          "default": "guarantee"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "We offer a 100% match guarantee on all our products. If you are not satisfied, you will receive a full refund without any hassle."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Banner",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

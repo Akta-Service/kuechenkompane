@@ -1,0 +1,220 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  /* common css end   */
+  .store-benefits-area {
+    padding: {{ section.settings.verticle_padding }}px 0px;
+  }
+
+  .store-benefits-content {
+    display: flex;
+    max-width: 1412px;
+    margin: 0 auto;
+    gap: 30px;
+    padding: 0 10px;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  .store-benifits-item {
+    text-align: center;
+  }
+
+  .store-benefits-icon {
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+  }
+
+  .store-benefits-text h4 {
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_size }}px;
+    margin: 24px 0 12px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .store-benefits-text p {
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.text_size }}px;
+    text-transform: uppercase;
+    margin: 15px 0;
+  }
+
+  .swiper-pagination,
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #1e1e1e;
+  }
+  @media only screen and (max-width: 749px) {
+    .swiper-pagination,
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: block;
+    }
+    .store-benefits-area {
+      padding: {{ section.settings.verticle_padding_mobile }}px 0px;
+    }
+  }
+</style>
+<div class="store-benefits-area swiper store-benefits">
+  <div class="store-benefits-content swiper-wrapper">
+    {% for block in section.blocks %}
+      <div class="store-benifits-item swiper-slide">
+        {% if block.settings.benefit_icon %}
+          <div class="store-benefits-icon">
+            <img src="{{ block.settings.benefit_icon |  img_url: 'master' }}" alt="icon">
+          </div>
+        {% endif %}
+        <div class="store-benefits-text">
+          <h4>{{ block.settings.title }}</h4>
+          <p>
+            {{ block.settings.text }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+{% schema %}
+{
+  "name": "Store Benefits",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title Size",
+      "default": 16,
+      "min": 10,
+      "max": 30,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text Size",
+      "default": 14,
+      "min": 10,
+      "max": 30,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "verticle_padding",
+      "label": "Vertical Padding",
+      "default": 70,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "verticle_padding_mobile",
+      "label": "Vertical Padding (Mobile)",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Store Benefits",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "benefit_icon",
+          "label": "Benefit Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "100% Money Back"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Benefits"
+    }
+  ]
+}
+{% endschema %}
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+<script>
+  var swiper = new Swiper('.store-benefits', {
+    slidesPerView: 5,
+    spaceBetween: 10,
+    clickable: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+        loop: true,
+      },
+      750: {
+        slidesPerView: 5,
+        loop: true,
+      },
+    },
+  });
+</script>

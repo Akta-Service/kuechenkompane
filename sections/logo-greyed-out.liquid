@@ -1,0 +1,135 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+<style>
+  /* logo-greyed-out-section */
+  .logo-greyed-out-section {
+    background: {{ section.settings.bg_color  }};
+    padding-top: {{ section.settings.p_top }}px ;
+    padding-bottom: {{ section.settings.p_bottom }}px ;
+  }
+
+  .greyed_logo_item {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 5px;
+  }
+
+  .greyed_logo_item img {
+    max-width: 100%;
+    max-height: 44px;
+    display: block;
+    margin: 0 auto;
+    opacity: 0.4;
+  }
+
+  @media screen and (max-width: 767px) {
+    .logo-greyed-out-section {
+      padding: 35px 0;
+    }
+
+    .greyed_logo_item {
+      height: 35px;
+    }
+
+    .greyed_logo_item img {
+      max-height: 32px;
+    }
+  }
+</style>
+
+<!-- logo-greyed-out-section start -->
+<div class="logo-greyed-out-section">
+  <div class="swiper logo-greyed-out-slider">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% if block.settings.logo_img != blank %}
+          <div class="swiper-slide">
+            <div class="greyed_logo_item">
+              <img src="{{ block.settings.logo_img |  img_url: 'large' }}" alt="">
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- logo-greyed-out-section end -->
+
+{% schema %}
+{
+  "name": "Logo Greyed Out",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#fafafb"
+    },
+    {
+      "type": "range",
+      "id": "p_top",
+      "label": "Padding Top",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "p_bottom",
+      "label": "Padding Bottom",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Logo Item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_img",
+          "label": "Add Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "logo Greyed Out"
+    }
+  ]
+}
+{% endschema %}
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('.logo-greyed-out-slider', {
+    slidesPerView: 6,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 5,
+    grabCursor: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 5,
+      },
+      768: {
+        slidesPerView: 6,
+        spaceBetween: 5,
+      },
+      1024: {
+        slidesPerView: 6,
+        spaceBetween: 5,
+      },
+    },
+  });
+</script>

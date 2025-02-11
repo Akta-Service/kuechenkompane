@@ -1,0 +1,235 @@
+{{ 'apex-theme.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .benefit-text-area{
+      padding-top: {{- section.settings.padding_top -}}px;
+      padding-bottom: {{- section.settings.padding_bottom -}}px;
+      background-color: {{ section.settings.background_color }};
+   }
+   @media only screen and (max-width: 768px) {
+    .benefit-text-area{
+      padding-top: {{- section.settings.padding_top_mobile -}}px ;
+      padding-bottom: {{- section.settings.padding_bottom_mobile -}}px ;
+   }
+   }
+{%- endstyle -%}
+<div class="benefit-text-area">
+  <div class="rs-container">
+    <div class="benefit-row {% if section.settings.reverse %}rs-reverse{% endif %}">
+      <div class="benefit-content">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'subtitle' %}
+              <span
+                class="benefit-subtitle"
+                style="color: {{ block.settings.subtitle_color }}; font-size: {{- block.settings.subtitle_size -}}px;"
+              >
+                {{- block.settings.subtitle -}}
+              </span>
+            {% when 'title' %}
+              <h2
+                class="benefit-title"
+                style="color: {{ block.settings.title_color }}; font-size: {{- block.settings.title_size -}}px;"
+              >
+                {{ block.settings.title }}
+              </h2>
+            {% when 'description' %}
+              <p
+                class="benefit-description"
+                style="color: {{ block.settings.description_color }}; font-size: {{- block.settings.description_size -}}px;"
+              >
+                {{ block.settings.description }}
+              </p>
+          {% endcase %}
+        {% endfor %}
+      </div>
+      {% if section.settings.media_type == 'video' and section.settings.video != blank %}
+        <div class="benefit-video benefit-image">
+          <video autoplay loop muted>
+            <source src="{{ section.settings.video.sources[1].url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      {% elsif section.settings.media_type == 'image' and section.settings.image != blank %}
+        <div class="benefit-image">
+          <img src="{{ section.settings.image | img_url: 'master' }}" loading="lazy" alt="benefit-image">
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Benefit Text",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "id": "media_type",
+      "type": "select",
+      "label": "Select Media Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Select Image"
+    },
+    {
+      "id": "video",
+      "type": "video",
+      "label": "Video"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 50
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "Text Right"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Sub Title",
+      "type": "subtitle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Sub Title",
+          "default": "The Beauty Trend 2024"
+        },
+        {
+          "type": "color",
+          "id": "subtitle_color",
+          "label": "Subtitle Color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "subtitle_size",
+          "min": 12,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Sub Title Font size",
+          "default": 18
+        }
+      ]
+    },
+    {
+      "name": "Title",
+      "type": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Salon-beautiful nails in minutes"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "title_size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Title Font size",
+          "default": 40
+        }
+      ]
+    },
+    {
+      "name": "Description",
+      "type": "description",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Experience the nail polish revolution for yourself with Gel Polish 2.0!......."
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "description_size",
+          "min": 12,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Description Font size",
+          "default": 18
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefit Text",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

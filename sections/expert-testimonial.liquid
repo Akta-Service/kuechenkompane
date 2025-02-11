@@ -1,0 +1,375 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    /*---------------------------------
+  	section css start
+  ---------------------------------*/
+    .about-area {
+      margin-top: 100px;
+      margin-bottom: {{ section.settings.mb }}px;
+      margin-top: {{ section.settings.mt }}px;
+      padding-bottom: {{ section.settings.pb }}px;
+      padding-top: {{ section.settings.pt }}px;
+
+    }
+    .about-area .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: {{ section.settings.bg_color }};
+      padding: 55px;
+      padding-left: 130px;
+    }
+    .about-area .left-content {
+      padding-right: 140px;
+    }
+    .about-area .left-content .title {
+      font-size: {{ section.settings.heading_font_size }}px;
+      font-weight: 500;
+      color:{{ section.settings.heading_color }};
+      line-height: 1.2;
+    }
+    .about-area .left-content p {
+      font-size: {{ section.settings.Text_font_size }}px;
+      color: {{ section.settings.text_color }};
+      padding-right: 30px;
+      margin-top: 10px;
+    }
+
+    .about-area .right-thumb {
+      max-width: 420px;
+      background-color: {{ section.settings.content_bg }};
+      border-radius: 5px;
+    }
+    .about-area .right-thumb .thumb {
+      max-height: 306px;
+    }
+    .about-area .right-thumb .content {
+      padding: 24px 22px 32px 22px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .about-area .right-thumb .thumb img {
+      width: 100%;
+      height: 100%;
+    }
+    .about-area .right-thumb .name {
+      font-size: 24px;
+      font-weight: 500;
+      color: {{ section.settings.heading_color }};
+      padding-bottom: 7px;
+    }
+    .about-area .content .sm-text {
+      font-size: 16px;
+      color: {{ section.settings.text_color }};
+      line-height: 22px;
+      margin-bottom: 17px;
+    }
+    /* xxl */
+    @media only screen and (min-width: 1400px) and (max-width: 4000px) {
+    }
+
+    /* xxlm */
+    @media only screen and (min-width: 1400px) and (max-width: 1600px) {
+    }
+
+    /* xl */
+    @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    }
+
+    /* lg */
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .about-area .container {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      .about-area .left-content {
+        padding-right: 50px;
+      }
+    }
+
+    /* md */
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .about-area .container {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      .about-area .right-thumb .content {
+        padding: 15px 10px 15px 10px;
+        margin-top: -9px;
+      }
+      .about-area .left-content {
+        padding-right: 50px;
+      }
+      .about-area .left-content .title {
+        font-size: 40px;
+      }
+    }
+
+    /* sm */
+    @media only screen and (min-width: 576px) and (max-width: 767px) {
+      .about-area .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      .about-area .left-content {
+        padding-right: 30px;
+      }
+      .about-area .right-thumb .content {
+        padding: 15px 10px 15px 10px;
+        margin-top: -8px;
+      }
+      .about-area .left-content .title {
+        font-size: 40px;
+      }
+    }
+
+    /* xs */
+    @media only screen and (max-width: 767px) {
+      .about-area .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .about-area .left-content {
+        padding-right: 50px;
+      }
+      .about-area .left-content .title {
+        font-size: 35px;
+      }
+    }
+    /* xxs */
+    @media only screen and (max-width: 450px) {
+      .about-area .right-thumb .content {
+        margin-top: -7px;
+      }
+    }
+
+    /* xxxs */
+
+    @media only screen and (max-width: 991px) {
+      .about-area .container {
+        flex-direction: column;
+        }
+        .left-content {
+            max-width: 360px;
+            margin: 0 auto;
+        }
+        .about-area .left-content .title {
+            font-size: 34px;
+        }
+        .about-area .left-content {
+            padding-right: 0;
+            text-align: center;
+        }
+        .about-area .left-content p {
+            padding-right: 0;
+        }
+        .about-area .right-thumb {
+            max-width: 100%;
+        }
+        .about-area .right-thumb .thumb {
+            max-height: inherit;
+        }
+        .about-area .right-thumb .thumb {
+            max-height: inherit;
+            margin-bottom: 15px;
+        }
+    }
+</style>
+<section>
+  <div class="about-area">
+    <div class="container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'left_content' %}
+            <div class="left-content">
+              <h1 class="title">{{ block.settings.heading }}</h1>
+              <p>{{ block.settings.text }}</p>
+            </div>
+          {% when 'right_content' %}
+            <div class="right-thumb">
+              {% if block.settings.img != blank %}
+                <div class="thumb">
+                  <img src="{{ block.settings.img |  img_url: 'master'}}" alt="">
+                </div>
+              {% endif %}
+              <div class="content">
+                <h2 class="name">{{ block.settings.content_title }}</h2>
+                <p class="sm-text">{{ block.settings.info }}</p>
+                <p>
+                  {{ block.settings.details }}
+                </p>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Expert Testimonial ",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f0f0f3"
+    },
+    {
+      "type": "header",
+      "content": "Margin"
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Margin Top",
+      "default": 100,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Margin Bottom",
+      "default": 100,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding Top",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding Bottom",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "heading"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size",
+      "default": 48,
+      "min": 10,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "range",
+      "id": "Text_font_size",
+      "label": "Text Font Size",
+      "default": 18,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "content_bg",
+      "label": "Content Background Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "heading Part",
+      "type": "left_content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Experts recommend the Nail Care Pen"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Heading Text",
+          "default": "Check out the opinions of leading experts here"
+        }
+      ]
+    },
+    {
+      "name": "Right Content",
+      "type": "right_content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "content_title",
+          "label": "Name",
+          "default": "Antonietta D'Oria"
+        },
+        {
+          "type": "textarea",
+          "id": "info",
+          "label": "Information",
+          "default": "owner of the podiatry practice Podoria in Paderborn"
+        },
+        {
+          "type": "textarea",
+          "id": "details",
+          "label": "Details",
+          "default": "“The Nail Care Pen has now become my first choice for my patients! Its practical handling makes it easy to use!”"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Expert Testimonial ",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,324 @@
+{%- style -%}
+  .health-container {
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: auto;
+  }
+  .health-routine {
+    {% if section.settings.border_t %}
+    border-top: 1px solid #161818;
+    {% endif %}
+    {% if section.settings.border_b %}
+    border-bottom: 1px solid #161818;
+    {% endif %}
+    padding: {{ section.settings.verticle_padding |  default: 70 }}px {{ section.settings.horizontal_padding |  default: 0 }}px;
+    background: {{ section.settings.bg_color |  default: '#c5d3be' }} ;
+  }
+  .health-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .health-img {
+    border-radius: 10px;
+    width: 47%;
+    flex: 0 0 auto;
+  }
+
+  .health-img img {
+    border-radius: inherit;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .health-content {
+    max-width: 535px;
+  }
+  .health-sub-title {
+    display: inline-block;
+    font-size: {{ section.settings.subtitle_size |  default: 18 }}px;
+    color:{{ section.settings.subtitle_color |  default: '#0f0f0fcc' }}  ;
+    margin-bottom: 20px;
+  }
+  .health-title {
+    color: {{ section.settings.title_color |  default: '#0f0f0f'}};
+    margin-bottom: 20px;
+    font-size:{{ section.settings.title_size |  default: 32 }}px;
+  }
+  .helath-des {
+    font-size: 20px;
+    line-height: 26px;
+    color: #161818;
+    margin-bottom: 50px;
+  }
+  .health-feature {
+    list-style: none;
+  }
+  .item-icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+  }
+  .item-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  .health-feature .feature-item {
+    max-width: unset;
+    text-align: unset;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    background: {{ section.settings.item_bg |  default: '#f0f0f3' }}  ;
+    margin-bottom: 13px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    letter-spacing: 0.8px;
+    font-size: {{ section.settings.item_size |  default: 16 }}px;
+    gap: 10px;
+    line-height: 22px;
+    width: fit-content;
+    color: {{ section.settings.item_color |  default: '#0f0f0f' }} ;
+  }
+  .health-feature .feature-item:last-child {
+    margin: 0;
+  }
+  .back-to-top-wrapper {
+    /* text-align: center; */
+    margin-top: 30px;
+  }
+  .back-to-top {
+    background: {{ section.settings.btn_bg |  default: '#f7b52e' }} ;
+    width: 100%;
+    padding: 13px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 15px;
+    color: #000;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  .wrapper--bottom {
+    margin-top: auto;
+    padding-top: 0;
+  }
+  @media only screen and (max-width: 768px) {
+    .health-row {
+      flex-direction: column;
+    }
+    .health-routine {
+      padding: 30px 0;
+    }
+    .health-img {
+      width: 100%;
+      padding: 0 30px;
+    }
+    .health-content {
+      max-width: 100%;
+    }
+    .helath-des {
+      margin-bottom: 30px;
+    }
+    .health-container {
+      padding: 0 22px;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    .health-title {
+      font-size: 24px;
+    }
+  }
+{%- endstyle -%}
+<div class="health-routine">
+  <div class="health-container">
+    <div class="health-row">
+      <div class="health-img">
+        <img src="{{ section.settings.img |  img_url: 'master'}}" alt="">
+      </div>
+      <div class="health-content">
+        <span class="health-sub-title">{{ section.settings.subtitle }}</span>
+        <h2 class="health-title">{{ section.settings.title }}</h2>
+        <p class="helath-des">{{ section.settings.des }}</p>
+        <ul class="health-feature">
+          {% for block in section.blocks %}
+            <li class="feature-item">
+              {% if block.settings.svg_icon != blank %}
+                <span class="item-icon">
+                  {{ block.settings.svg_icon }}
+                </span>
+              {% endif %}
+              {{ block.settings.feature_item }}
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="back-to-top-wrapper">
+          <button class="back-to-top">{{ section.settings.backBtn }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Cta Final",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#c5d3be"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Your Subtitle Here"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#161818"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle Size",
+      "default": 18,
+      "min": 12,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Your Title Here"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#161818"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title Size",
+      "default": 32,
+      "min": 16,
+      "max": 48,
+      "step": 1
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "Description",
+      "default": "Your description here."
+    },
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Health Image"
+    },
+
+    {
+      "type": "range",
+      "id": "verticle_padding",
+      "label": "Vertical Padding",
+      "default": 70,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "horizontal_padding",
+      "label": "Horizontal Padding",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "border_t",
+      "label": "Border Top",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "border_b",
+      "label": "Border Bottom",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "item_color",
+      "label": "Item Color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "item_bg",
+      "label": "Item Background Color",
+      "default": "#f0f0f3"
+    },
+    {
+      "type": "range",
+      "id": "item_size",
+      "label": "Item Font Size",
+      "default": 16,
+      "min": 12,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "text",
+      "id": "backBtn",
+      "label": "Back to Cart Button Text",
+      "default": "Go To Cart Button"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Health Feature Item",
+      "type": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_item",
+          "label": "Feature Item",
+          "default": "Your feature item here."
+        },
+        {
+          "type": "textarea",
+          "id": "svg_icon",
+          "label": "SVG Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cta Final",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const backToTopBtn = document.querySelector('.back-to-top');
+    // Scroll back to top when the button is clicked
+    backToTopBtn.addEventListener('click', function () {
+      window.scrollTo({
+        top: 100,
+        behavior: 'smooth',
+      });
+    });
+  });
+</script>

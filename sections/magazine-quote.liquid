@@ -1,0 +1,194 @@
+{{ 'apex-theme.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+     .magazine-quote-area{
+     padding-top: {{- section.settings.padding_top -}}px;
+     padding-bottom: {{- section.settings.padding_bottom -}}px;
+  }
+  @media only screen and (max-width: 768px) {
+   .magazine-quote-area{
+     padding-top: {{- section.settings.padding_top_mobile -}}px ;
+     padding-bottom: {{- section.settings.padding_bottom_mobile -}}px ;
+  }
+  }
+{%- endstyle -%}
+<div class="magazine-quote-area">
+  <div class="rs-container">
+    <div class="magazine-content">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'title' %}
+            {% if block.settings.title_img != blank %}
+              <img
+                class="magazine-title-img"
+                src="{{ block.settings.title_img |  img_url: 'master' }}"
+                alt="magazine-img"
+              >
+            {% else %}
+              <h2
+                class="magazine-title"
+                style="color: {{ block.settings.title_color }}; font-size: {{- block.settings.title_size -}}px;"
+              >
+                {{ block.settings.title }}
+              </h2>
+            {% endif %}
+          {% when 'ratings' %}
+            {% assign rating = block.settings.rating %}
+            <div class="ratings">
+              {% for i in (1..rating) %}
+                {%- render 'ratings' -%}
+              {% endfor %}
+            </div>
+          {% when 'quotation' %}
+            <div
+              class="magazine-quote"
+              style="color: {{ block.settings.quote_color }}; font-size: {{- block.settings.quote_size -}}px;"
+            >
+              {{ block.settings.quote }}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Magazine Quote",
+
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Title",
+      "type": "title",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "title_img",
+          "label": "Image Title"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "title_size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Title Font size",
+          "default": 40
+        }
+      ]
+    },
+    {
+      "name": "Ratings",
+      "type": "ratings",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Star Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        }
+      ]
+    },
+    {
+      "name": "Quotation",
+      "type": "quotation",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Quotation Text",
+          "default": "<p>“Real gel polish that sticks on and is also easy to remove. A dream comes true. With the strips, every manicure gets studio quality that lasts up to 3 weeks!</p>"
+        },
+        {
+          "type": "color",
+          "id": "quote_color",
+          "label": "Quotation Color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "quote_size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Quotation Font size",
+          "default": 26
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Magazine Quote",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "title"
+        },
+        {
+          "type": "ratings"
+        },
+        {
+          "type": "quotation"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

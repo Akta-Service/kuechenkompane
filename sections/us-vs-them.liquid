@@ -1,0 +1,168 @@
+{{ 'apex-theme.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+     .us-vs-them{
+     padding-top: {{- section.settings.padding_top -}}px;
+     padding-bottom: {{- section.settings.padding_bottom -}}px;
+  }
+  @media only screen and (max-width: 768px) {
+   .us-vs-them{
+     padding-top: {{- section.settings.padding_top_mobile -}}px ;
+     padding-bottom: {{- section.settings.padding_bottom_mobile -}}px ;
+  }
+  }
+{%- endstyle -%}
+
+<div class="us-vs-them">
+  <div class="us-them-row">
+    <div class="us-them-content">
+      <div class="content-box">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'title' %}
+              <h2
+                class="us-them-title"
+                style="color: {{ block.settings.title_color }}; font-size: {{- block.settings.title_size -}}px;"
+              >
+                {{ block.settings.title }}
+              </h2>
+            {% when 'description' %}
+              <div
+                class="us-them-description"
+                style="color: {{ block.settings.description_color }}; font-size: {{- block.settings.description_size -}}px;"
+              >
+                {{ block.settings.description }}
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    {% if section.settings.img != blank %}
+      <div class="us-them-img">
+        <img src="{{ section.settings.img | img_url: 'master' }}" alt="">
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Us vs Them",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Kraftstein® vs. Others"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#1c1c1c"
+        },
+        {
+          "type": "range",
+          "id": "title_size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Title Font size",
+          "default": 32
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Quotation Text",
+          "default": "<p>Our comparison graphic shows why Kraftstein knives are the best choice. With extremely sharp blades, high-quality steel and ergonomic handles, they offer the highest quality and comfort.</p>"
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Quotation Color",
+          "default": "#1c1c1c"
+        },
+        {
+          "type": "range",
+          "id": "description_size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Description Font size",
+          "default": 16
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Us vs Them",
+      "blocks": [
+        {
+          "type": "title"
+        },
+        {
+          "type": "description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,282 @@
+<style>
+    /* product-explanation-video-section */
+    .product-explanation-video-section {
+      background: {{ section.settings.bg_color }} ;
+      padding: {{ section.settings.vertical_padding }}px {{ section.settings.horizontal_padding }}px;
+    }
+
+    .product-explanation-video-main {
+    max-width: 712px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .product-explanation-video-uppercnt {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .product-explanation-video-uppercnt h6 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #121212;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .product-explanation-video-title {
+    font-size: 54px;
+    font-weight: 500;
+    color: #121212;
+    margin: 0;
+    text-align: center;
+    ont-family: sans-serif;
+  }
+
+  .product-explanation-video-uppercnt p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #454545;
+    text-align: center;
+    margin: 16px 0px 30px;
+  }
+
+  .product-explanation-video-item video {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 767px) {
+    .product-explanation-video-section {
+      padding: 20px 16px 15px;
+    }
+
+    .product-explanation-video-uppercnt h6 {
+      font-size: 14px;
+    }
+
+    .product-explanation-video-title {
+      font-size: 34px;
+    }
+
+    .product-explanation-video-uppercnt p {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<!-- product-explanation-video-section start -->
+<div class="product-explanation-video-section">
+  <div class="product-explanation-video-main">
+    <div class="product-explanation-video-uppercnt">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'sub_heading' %}
+            <h6 style="color: {{ block.settings.sub_heading_color }}; font-size:{{- block.settings.sub_heading_size -}}px ; ">
+              {{ block.settings.sub_heading }}
+            </h6>
+          {% when 'heading' %}
+            <h3
+              style="color: {{ block.settings.heading_color }}; font-size:{{- block.settings.heading_size -}}px ; "
+              class="product-explanation-video-title"
+            >
+              {{ block.settings.heading }}
+            </h3>
+          {% when 'details' %}
+            <p style="color: {{ block.settings.details_color }}; font-size:{{- block.settings.details_size -}}px ; ">
+              {{ block.settings.details }}
+            </p>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'video' %}
+          <div class="product-explanation-video-item">
+            <video
+              {% if block.settings.autoplay %}
+                autoplay
+              {% endif %}
+              {% if block.settings.loop %}
+                loop
+              {% endif %}
+              {% if block.settings.muted %}
+                muted
+              {% endif %}
+              {% if block.settings.playsinline %}
+                playsinline
+              {% endif %}
+              {% if block.settings.controls %}
+                controls
+              {% endif %}
+            >
+              <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
+            </video>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+<!-- product-explanation-video-section end -->
+
+{% schema %}
+{
+  "name": "Product Explanation Video",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "vertical_padding",
+      "label": "Vertical padding",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "horizontal_padding",
+      "label": "Horizontal padding",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sub_heading",
+      "name": "Sub Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sub_heading",
+          "label": "Sub Heading",
+          "default": "Maniko - Explained in 2 Minutes"
+        },
+        {
+          "type": "color",
+          "id": "sub_heading_color",
+          "label": "Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "sub_heading_size",
+          "label": "Font Size",
+          "default": 16,
+          "min": 10,
+          "max": 30,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "What are Maniko Nails?"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "heading_size",
+          "label": "Font Size",
+          "default": 54,
+          "min": 10,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "name": "Details",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "details",
+          "label": "Details",
+          "default": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:"
+        },
+        {
+          "type": "color",
+          "id": "details_color",
+          "label": "Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "details_size",
+          "label": "Font Size",
+          "default": 18,
+          "min": 10,
+          "max": 30,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Upload Video"
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Autoplay",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "loop",
+          "label": "Loop",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "muted",
+          "label": "Muted",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "playsinline",
+          "label": "Plays Inline",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "controls",
+          "label": "Show Controls",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Explanation Video"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,291 @@
+{%- style -%}
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+  .product-description {
+    margin: 30px 0 40px;
+    margin-top: {{ section.settings.mt }}px;
+    margin-bottom: {{ section.settings.mb }}px;
+  }
+  .description-container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .description-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .des-title {
+    font-size: {{ section.settings.font_size }}px;
+    line-height: 1.5em;
+    max-width: 1180px;
+    margin: 0px auto 9px auto;
+    font-weight: bold;
+    color: {{ section.settings.font_color  }};
+    font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif !important;
+    text-transform: capitalize;
+    letter-spacing: 0;
+  }
+  .description-content {
+    width: 50%;
+    flex: 0 0 auto;
+  }
+  .accordion-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 13px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #000;
+    font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif !important;
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #fff;
+    padding: 0 20px;
+    margin-top: 10px;
+  }
+  .accordion-button.active + .accordion-content {
+    margin-bottom: 23px;
+  }
+  .accordion-content p {
+    font-size: 14px;
+    line-height: 1.5em;
+    padding: 0px 18px;
+    color: #000000 !important;
+    font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif !important;
+  }
+  .product-des {
+    font-size: 16px;
+    color: #000000;
+    font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif !important;
+    position: relative;
+  }
+  .description-accordion {
+    padding-top: 45px;
+   }
+   .product-des.hideContent {
+    max-height: 60px;
+    overflow: hidden;
+    transition: 0.3s;
+   }
+
+
+   .hideContent::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none;
+    transition: 0.3s;
+
+  }
+   .show-more {
+    display: inline-block;
+    text-decoration: underline;
+    color: #000;
+    margin-top: 16px;
+    cursor: pointer;
+   }
+
+   @media only screen and (max-width: 768px) {
+    .description-row {
+      flex-direction: column;
+    }
+    .description-content,
+    .description-accordion {
+      width: 100%;
+    }
+    .description-accordion {
+    padding-top: 0;
+   }
+  }
+{%- endstyle -%}
+{% assign product = section.settings.product %}
+<div class="product-description">
+  <div class="description-container">
+    <div class="description-row">
+      <div class="description-content">
+        <h2 class="des-title">{{ section.settings.title }}</h2>
+        {% if section.settings.description %}
+          <p class="product-des {% if section.settings.add_showore_btn %}hideContent{% endif %}">
+            {{ section.settings.description }}
+          </p>
+        {% else %}
+          <p class="product-des hideContent">
+            {{ product.description }}
+          </p>
+        {% endif %}
+        {% if section.settings.add_showore_btn %}
+          <span class="show-more">show more</span>
+        {% endif %}
+      </div>
+      <div class="description-accordion">
+        {% for block in section.blocks %}
+          <div class="accordion-item">
+            <button class="accordion-button">
+              {{ block.settings.question }}
+              {% if block.settings.question != blank %}
+                <span class="accordion-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M12 17C11.814 17 11.6279 16.9267 11.4859 16.7803L4.21314 9.28029C3.92895 8.98723 3.92895 8.51267 4.21314 8.2198C4.49732 7.92692 4.9575 7.92673 5.2415 8.2198L12 15.1895L18.7586 8.21979C19.0427 7.92673 19.5029 7.92673 19.7869 8.21979C20.0709 8.51286 20.0711 8.98742 19.7869 9.28029L12.5142 16.7803C12.3722 16.9267 12.186 17 12 17Z" fill="#333333"></path>
+                  </svg>
+                </span>
+              {% endif %}
+            </button>
+            <div class="accordion-content">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Description",
+
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "product description"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font Size",
+      "default": 26,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Font Color",
+      "default": "#000"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Peoduct description",
+      "info": "If Want Default Description Keep Blank"
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Margin Top",
+      "default": 30,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Margin Bottom",
+      "default": 40,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_showore_btn",
+      "label": "Add Show More Button ",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "name": "FAQ",
+      "type": "faq",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How is Snow Extra-Strength Teeth Whitening Serum different?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>While most whitening serum only uses one whitening agent, this serum uses a potent combination of two powerful whitening agents – Carbamide and Hydrogen peroxide.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Description",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // FAQ Accordion
+    let expandButtons2 = document.querySelectorAll('.accordion-button');
+    expandButtons2.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const activeButton = document.querySelector('.accordion-button.active');
+        if (activeButton && activeButton !== button) {
+          activeButton.classList.toggle('active');
+          activeButton.nextElementSibling.style.maxHeight = 0;
+        }
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        if (button.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = 0;
+        }
+      });
+    });
+
+    // show more
+    document.querySelector('.show-more').addEventListener('click', function () {
+      const content = document.querySelector('.product-des');
+      const button = this;
+
+      if (content.classList.contains('hideContent')) {
+        content.classList.remove('hideContent');
+        button.textContent = 'Show Less';
+      } else {
+        content.classList.add('hideContent');
+        button.textContent = 'show more';
+      }
+    });
+  });
+</script>

@@ -1,0 +1,452 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    /* common css end   */
+  .banner-area-two {
+    margin-top: {{ section.settings.mt }}px;
+    margin-bottom: {{ section.settings.mb }}px;
+    position: relative;
+  }
+
+    .banner-top-content {
+      max-width: 1310px;
+      margin: 0 auto;
+      padding: 8px 0;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .banner-top-content-item {
+      padding: 0 18px;
+      text-align: center;
+    }
+
+    .banner-top-content-item span i {
+      font-size: 14px;
+      color: #1e1e1e;
+      margin-right: 10px;
+    }
+
+    .banner-top-content-item span {
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-family: Pragmatica, sans-serif;
+    }
+
+    /* banner main  */
+    .banner-img {
+      position: relative;
+    }
+
+    .banner-main-content {
+      position: absolute;
+      bottom: 30%;
+      right: 10%;
+      text-align: right;
+    }
+
+    .banner-main {
+      background: url('../img/banner.webp');
+      height: 43vw;
+      max-height: 700px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .banner-main-content h3 {
+      font-family: presti display;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-size: {{ section.settings.title_font_size }}px;
+      color: {{ section.settings.title_color }};
+      margin-bottom: 30px;
+    }
+
+    .banner-main-content p {
+      font-size: 16px;
+    }
+
+    .banner-btn a {
+      display: inline-flex;
+      justify-content: center;
+      margin-top: 30px;
+      align-items: center;
+      border: 1px solid rgb(30 30 30);
+      border-radius: 5px;
+      font-size: 18px;
+      line-height: 1;
+      text-transform: uppercase;
+      padding: 15px 30px;
+      cursor: pointer;
+      text-decoration: none;
+      background-color: rgb(30 30 30);
+      color: rgb(255, 255, 255);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      min-width: 7.6rem;
+    }
+
+    /* banner bottom  */
+    .banner-bottom {
+      padding: 20px 0;
+    }
+
+    .banner-bottm-content {
+      max-width: 890px;
+      padding: 0 50px;
+      justify-content: space-between;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .banner-brand-img {
+      /* flex-basis: 25%; */
+      max-width: 230px;
+    }
+    @media (min-width: 1024px) and (max-width: 1200px) {
+      .banner-main-content {
+        bottom: 43%;
+        right: 4%;
+      }
+    }
+
+    @media (min-width: 750px) and (max-width: 1023px) {
+      .banner-main-content {
+        right: 5%;
+      }
+
+      .banner-main-content h3 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+
+      .banner-btn a {
+        margin-top: 15px;
+      }
+    }
+
+    @media only screen and (max-width: 749px) {
+      .banner-main-content {
+        bottom: 56%;
+        right: 5%;
+      }
+
+      .banner-main-content h3 {
+        font-size: 3rem;
+      }
+
+      .banner-main {
+        height: 160vw;
+        max-height: 650px;
+        background-position: inherit;
+      }
+
+      .banner-main-content {
+        bottom: 18%;
+        right: 5%;
+      }
+
+      .banner-main-content h3 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: rgb(255, 255, 255);
+      }
+
+      .banner-main-content p {
+        color: rgb(255, 255, 255);
+      }
+
+      .banner-btn a {
+        margin-top: 15px;
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      .banner-bottm-content {
+        padding: 0 15px;
+        gap: 20px;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      .banner-area-two {
+        margin-top: {{ section.settings.mt_mobile }}px;
+        margin-bottom: {{ section.settings.mb_mobile }}px;
+      }
+    }
+    .banner-top-content-item span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   }
+    .banner-top-content-item span svg {
+    width: 9px;
+    height: 8px;
+    }
+    .banner-brand-img img {
+    max-height: 30px;
+    height: 100%;
+    }
+</style>
+<div class="banner-area-two">
+  <div class="banner-top">
+    <div class="swiper banner-top-slider">
+      <div class="banner-top-content swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="banner-top-content-item swiper-slide">
+            <span>
+              <svg
+                class="icon icon-checkmark"
+                width="9"
+                height="8"
+                viewBox="0 0 9 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M7.85766 0.48999L7.29266 1.05999C5.76017 2.59562 4.5901 3.87807 3.1677 5.33007L1.6527 4.05007L1.0427 3.53506L0.0126953 4.75506L0.622695 5.27506L2.7027 7.03506L3.2627 7.51007L3.7827 6.99007C5.5059 5.26319 6.73278 3.88383 8.4227 2.19007L8.98769 1.62007L7.85766 0.48999Z" fill="currentColor"></path>
+              </svg>
+              {{ block.settings.top_item -}}
+            </span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div
+    class="banner-main"
+    style="{% if section.settings.bg_igm != blank %} background-image: url('{{ section.settings.bg_igm |  img_url: 'master'  }}'); {% endif %}"
+  >
+    <div class="banner-main-content">
+      <h3>{{ section.settings.title }}</h3>
+      {{ section.settings.sub_title }}
+      <div class="banner-btn">
+        <a href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="banner-bottom">
+    <div class="banner-bottm-content">
+      {% for i in (1..6) %}
+        {% case i %}
+          {% when 1 %}
+            {% assign brand_img = section.settings.brang_img1 %}
+          {% when 2 %}
+            {% assign brand_img = section.settings.brang_img2 %}
+          {% when 3 %}
+            {% assign brand_img = section.settings.brang_img3 %}
+          {% when 4 %}
+            {% assign brand_img = section.settings.brang_img4 %}
+          {% when 5 %}
+            {% assign brand_img = section.settings.brang_img5 %}
+          {% when 6 %}
+            {% assign brand_img = section.settings.brang_img6 %}
+        {% endcase %}
+
+        {% if brand_img != blank %}
+          <div class="banner-brand-img">
+            <img src="{{ brand_img | img_url: 'master' }}" loading="lazy" alt="Brand Image {{ i }}">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Banner Version 2",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_igm",
+      "label": "Background Image"
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Margin Top",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Margin Bottom",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mt_mobile",
+      "label": "Margin Top (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mb_mobile",
+      "label": "Margin Bottom (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Valentine’s Sale"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size",
+      "default": 40,
+      "min": 10,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "header",
+      "content": "Sub heading"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_title",
+      "label": "Sub Title",
+      "default": "<p>20% off with code <strong>VDAY20</strong></p>"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "shop now"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Brand Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "brang_img1",
+      "label": "Brand Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "brang_img2",
+      "label": "Brand Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "brang_img3",
+      "label": "Brand Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "brang_img4",
+      "label": "Brand Image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "brang_img5",
+      "label": "Brand Image 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "brang_img6",
+      "label": "Brand Image 6"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Top Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "top_item",
+          "label": "Top Item Text",
+          "default": "100% Money Back"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Version 2"
+    }
+  ]
+}
+{% endschema %}
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    var swiper = new Swiper('.banner-top-slider', {
+      loop: true,
+      slidesPerView: 5,
+      spaceBetween: 0,
+      breakpoints: {
+        768: {
+          slidesPerView: 5,
+        },
+        0: {
+          slidesPerView: 1,
+          centeredSlides: true,
+          spaceBetween: 20,
+        },
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  });
+</script>

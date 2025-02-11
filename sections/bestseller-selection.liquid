@@ -1,0 +1,403 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  /* common css end   */
+  .best-seller-area{
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+  .container {
+    max-width: 1412px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+
+  .best-seller-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .best-sell-product-item {
+    cursor: pointer;
+    max-width: 300px;
+  }
+
+  .best-seller-title {
+    font-size: 24px;
+    color: #1e1e1e;
+    text-transform: uppercase;
+    font-family: 'Pragmatica', sans-serif;
+    font-weight: 400;
+  }
+
+  .best-sell-link {
+    color: #1e1e1e;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #1e1e1e;
+    transition: 0.3s;
+  }
+
+  .best-sell-link:hover {
+    color: #635247;
+  }
+
+  .best-sell-product-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .product-img {
+    position: relative;
+    margin-bottom: 15px;
+    max-width: 300px;
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .product-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #fff;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+
+  .product-badge > span {
+    font-size: 14px;
+    color: #1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .product-info {
+    margin-bottom: 18px;
+    min-height: 50px;
+  }
+
+  .product-info .product-title {
+    color: #1e1e1e;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .product-info .regular-price {
+    font-size: 14px;
+    color: #1e1e1e;
+  }
+
+  .product-purchase-btn a {
+    color: #fff;
+    background: #1e1e1e;
+    text-transform: uppercase;
+    font-size: 14px;
+    width: 100%;
+    display: inline-block;
+    padding: 14px 0;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .product-img .hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  .product-purchase-btn a:hover {
+    background: #635247;
+  }
+
+  .product-img .hover-img {
+    opacity: 0;
+  }
+
+  .product-img:hover .hover-img {
+    opacity: 1;
+  }
+
+  .product-img:hover .default-img {
+    opacity: 0;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none;
+  }
+
+  .icon.icon-arrow-next,
+  .icon.icon-arrow-prew {
+    color: #1e1e1e;
+    font-size: 34px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    background: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    line-height: 35px;
+    display: inline-block;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+  .best-sell-product {
+    overflow: visible;
+  }
+
+  @media (max-width: 768px) {
+    .best-seller-area{
+    margin-top: {{ section.settings.margin_top_mobile }}px;
+    margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+  }
+  }
+  .best-seller-area .swiper-button-next svg {
+    transform: rotate(0deg);
+  }
+</style>
+<div class="best-seller-area">
+  <div class="container">
+    <div class="best-seller-heading">
+      <h3 class="best-seller-title">{{ section.settings.sec_title }}</h3>
+      <a href="{{ section.settings.all_btn_link }}" class="best-sell-link">{{ section.settings.all_btn }}</a>
+    </div>
+    <div class="best-sell-product swiper best-seller-item">
+      <div class="best-sell-product-list swiper-wrapper">
+        {% if section.settings.collection != blank %}
+          {% for product in section.settings.collection.products limit: section.settings.product_limit %}
+            <div class="best-sell-product-item swiper-slide">
+              <div class="product-img">
+                <img
+                  class="default-img"
+                  src="{{ product.featured_image | img_url: 'master' }}"
+                  alt="{{ product.title }}"
+                >
+                <img class="hover-img" src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.title }}">
+                <div class="product-badge">
+                  <span>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+                      <path
+                          d="M0 0 C5.28 0 10.56 0 16 0 C16 5.28 16 10.56 16 16 C10.72 16 5.44 16 0 16 C0 10.72 0 5.44 0 0 Z "
+                          fill="#FDFBFB" transform="translate(0,0)"></path>
+                      <path
+                          d="M0 0 C0 2.64 0 5.28 0 8 C-5.28 8 -10.56 8 -16 8 C-16 6.02 -16 4.04 -16 2 C-13.52093719 1.66587842 -11.04175822 1.33266565 -8.5625 1 C-7.85544922 0.90460937 -7.14839844 0.80921875 -6.41992188 0.7109375 C-1.11328125 0 -1.11328125 0 0 0 Z "
+                          fill="#FDFBFB" transform="translate(16,8)"></path>
+                      <path
+                          d="M0 0 C4.62 0 9.24 0 14 0 C14 0.66 14 1.32 14 2 C9.38 2.33 4.76 2.66 0 3 C0 2.01 0 1.02 0 0 Z "
+                          fill="#CF867C" transform="translate(1,7)"></path>
+                    </svg>
+                    {{ product.variants.size }}
+                    {{ section.settings.variant_text_1 }}
+                  </span>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">{{ product.title }}</h3>
+                <span class="regular-price">{{ product.price | money }}</span>
+              </div>
+              <div class="product-purchase-btn">
+                <a href="{{ product.url }}">{{ section.settings.button_Text }}</a>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="swiper-button-next">
+        <svg
+          class="icon icon-arrow-next"
+          width="8"
+          height="8"
+          viewBox="0 0 8 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+              d="M3.93333 8L8 4C6.97986 2.99931 4.95342 1.00071 3.93333 -1.7776e-07L3.42014 0.496533C4.33751 1.39653 5.55134 2.5952 6.62228 3.64658L5.22927e-05 3.64658L5.22618e-05 4.35283L6.62228 4.35283L3.42014 7.4979L3.93333 8Z"
+              fill="currentColor"></path>
+        </svg>
+      </div>
+      <div class="swiper-button-prev">
+        <svg
+          class="icon icon-arrow-prew"
+          width="8"
+          height="8"
+          viewBox="0 0 8 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+              d="M4.06667 -9.0518e-07L4.76995e-08 4C1.02014 5.00069 3.04658 6.99929 4.06667 8L4.57986 7.50347C3.66249 6.60347 2.44866 5.4048 1.37772 4.35342L7.99995 4.35342L7.99995 3.64716L1.37772 3.64716L4.57986 0.502097L4.06667 -9.0518e-07Z"
+              fill="currentColor"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Bestseller Selection ",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Mobile Spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mobile",
+      "label": "Margin Top (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "label": "Margin Bottom (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "text",
+      "id": "sec_title",
+      "label": "Section Title",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "url",
+      "id": "all_btn_link",
+      "label": "All Products Button Link"
+    },
+    {
+      "type": "text",
+      "id": "all_btn",
+      "label": "All Products Button Text",
+      "default": "View All"
+    },
+    {
+      "type": "header",
+      "content": "Select Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "number",
+      "id": "product_limit",
+      "label": "Number of Products",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "variant_text_1",
+      "label": "Variant Text",
+      "default": "shades"
+    },
+    {
+      "type": "text",
+      "id": "button_Text",
+      "label": "Button Text",
+      "default": "add to bag"
+    }
+  ],
+  "presets": [{ "name": "Bestseller Selection " }]
+}
+{% endschema %}
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+<script>
+  var swiper = new Swiper('.best-seller-item', {
+    slidesPerView: 6,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      300: {
+        slidesPerView: 1,
+        loop: true,
+      },
+      576: {
+        slidesPerView: 3,
+        loop: true,
+      },
+      991: {
+        slidesPerView: 4,
+      },
+    },
+  });
+</script>

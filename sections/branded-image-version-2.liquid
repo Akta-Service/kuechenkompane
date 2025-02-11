@@ -1,0 +1,341 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  /* common css end  */
+  .branded-img-area.style-2{
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+  .branded-img-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .branded-right-item {
+    background: url(../img/branded-image-2.jpg);
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+  }
+
+  .branded-right-item svg {
+    position: absolute;
+    left: 0;
+  }
+
+  .branded-left-item {
+    position: relative;
+    background: #deceba;
+  }
+
+  .branded-title {
+    font-size: {{ section.settings.title_font_size }}px;
+    color: {{ section.settings.heading_color }};
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+
+  .branded-btn a {
+
+    color: #fff;
+    background: #1e1e1e;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .branded-text p {
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.text_font_size }}px;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 28px;
+  }
+
+  .branded-text {
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 10px;
+  }
+
+  .branded-right-item .banner-fluid__media-mask-mobile {
+    display: none;
+  }
+  @media only screen and (max-width: 749px) {
+    .branded-img-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .branded-text {
+      position: static;
+      transform: translate(0);
+      margin-bottom: 20px;
+    }
+
+    .branded-left-item {
+      background-position: top;
+      padding: 45px 0;
+    }
+
+    .banner-fluid__media-mask {
+      display: none;
+    }
+
+    .branded-right-item .banner-fluid__media-mask-mobile {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: -2px;
+      display: block;
+    }
+    .branded-img-area.style-2 {
+      margin-top: {{ section.settings.mobile_margin_top }}px;
+      margin-bottom: {{ section.settings.mobile_margin_bottom }}px;
+    }
+  }
+</style>
+<div class="branded-img-area style-2">
+  <div class="branded-img-content">
+    <div class="branded-left-item">
+      <div class="branded-text">
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when 'title' -%}
+              <h3 class="branded-title">{{ block.settings.title }}</h3>
+            {%- when 'sub_title' -%}
+              <h3 class="branded-title">{{ block.settings.sub_title }}</h3>
+            {%- when 'text' -%}
+              <p>{{ block.settings.text }}</p>
+            {%- when 'btn' -%}
+              <div class="branded-btn">
+                <a href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+    <div
+      class="branded-right-item"
+      {% if section.settings.bg_img != blank %}
+        style="background-image: url('{{ section.settings.bg_img |  img_url: 'master' }}');"
+      {% endif %}
+    >
+      <svg
+        class="banner-fluid__media-mask"
+        preserveAspectRatio="none"
+        width="315"
+        height="600"
+        viewBox="0 0 315 600"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M313.979 0H0V600H314.103C149.47 600 16 465.679 16 300C16 134.363 149.403 0.0678189 313.979 0Z"
+            fill="#deceba"></path>
+      </svg>
+      <svg
+        class="banner-fluid__media-mask-mobile"
+        preserveAspectRatio="none"
+        width="374"
+        height="199"
+        viewBox="0 0 374 199"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M374 0.5H0V198.66C0.0856128 96.1114 83.7794 13 187 13C290.273 13 374 96.1966 374 198.818V0.5Z"
+            fill="#deceba"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Branded Image Version 2",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Mobile Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Mobile Margin Top",
+      "default": 10,
+      "min": 0,
+      "max": 50,
+      "unit": "px",
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Mobile Margin Bottom",
+      "default": 10,
+      "min": 0,
+      "max": 50,
+      "unit": "px",
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Section Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size",
+      "default": 40,
+      "min": 12,
+      "max": 100,
+      "unit": "px",
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Title Color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "label": "Text Font Size",
+      "default": 16,
+      "min": 12,
+      "max": 50,
+      "unit": "px",
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1e1e1e"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Title",
+      "type": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Cosmetics that inspire"
+        }
+      ]
+    },
+    {
+      "name": "Sub Title",
+      "type": "sub_title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub Title",
+          "default": "CONFIDENCE"
+        }
+      ]
+    },
+    {
+      "name": "Description",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description",
+          "default": "Designed for women who balance ambition and authenticity, our products empower you to embrace your individuality while looking your best, whether you’re conquering the boardroom or dancing the night away."
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "btn",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Discover more"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Branded Image Version 2",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

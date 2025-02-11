@@ -1,0 +1,153 @@
+<style>
+    .store-benefits-bottom{
+      padding-top: {{- section.settings.pt -}}px;
+      padding-bottom: {{- section.settings.pb -}}px;
+    }
+    .store-benefit-text{
+      font-size: {{- section.settings.font_size -}}px ;
+      color: {{ section.settings.color }} ;
+    }
+    @media only screen and (max-width: 768px) {
+      .store-benefits-bottom{
+      padding-top: {{- section.settings.ptm -}}px;
+      padding-bottom: {{- section.settings.pbm -}}px;
+    }
+  }
+</style>
+<div class="store-benefits-bottom">
+  <div class="rs-container">
+    <div class="store-benefits-row">
+      {% for block in section.blocks %}
+        <div class="store-benefit">
+          <div class="store-benefit-icon">
+            {%- if block.settings['svg-code'] != blank -%}
+              {{ block.settings['svg-code'] | replace: ' width=', ' ' | replace: ' height=', ' ' }}
+            {% else %}
+              {% render 'store-benefit-icons', icon: block.settings.icon %}
+            {% endif %}
+          </div>
+          <h4 class="store-benefit-text">{{ block.settings.store_benefit_text }}</h4>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Store Benefits Bottom",
+  "settings": [
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding Top",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding Bottom",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font Size",
+      "default": 14,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text Color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "ptm",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "pbm",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Benefit Item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Select an Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "Select an Icon"
+            },
+            {
+              "value": "icon1",
+              "label": "Icon 1"
+            },
+            {
+              "value": "icon2",
+              "label": "Icon 2"
+            },
+            {
+              "value": "icon3",
+              "label": "Icon 3"
+            },
+            {
+              "value": "icon4",
+              "label": "Icon 4"
+            },
+            {
+              "value": "icon5",
+              "label": "Icon 5"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "html",
+          "id": "svg-code",
+          "label": "SVG icon code",
+          "info": "Learn more about adding your own SVG icons [here](https://support.safeasmilk.co/article/236-general-add-custom-svg-icons-to-your-theme)."
+        },
+
+        {
+          "type": "text",
+          "id": "store_benefit_text",
+          "label": "Benefit Text",
+          "default": "Free Shipping"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Benefits Bottom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

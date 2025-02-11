@@ -1,0 +1,1425 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badge_ChqgGj": {
+          "type": "badge",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_saving": false,
+            "sale_badge_type": "percentage"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_title": "Size"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_atc_button": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "addons": {
+          "type": "addons",
+          "settings": {
+            "show_atcp": true,
+            "show_ask_a_question": true,
+            "show_social": true
+          }
+        },
+        "shipping_VBJFtx": {
+          "type": "shipping",
+          "settings": {
+            "show_delivery_times": true,
+            "deliver_text": "Estimated Delivery:",
+            "deliver_days": "7",
+            "date_format": "%b %d",
+            "show_shipping_text": true,
+            "shipping_text": "<p><strong>Free Shipping & Returns: </strong>On all orders over $75</p>"
+          }
+        },
+        "trust_badge_NyBMd4": {
+          "type": "trust_badge",
+          "settings": {
+            "trust_badges_text": "<p>Guarantee safe & secure checkout</p>",
+            "trust_badges_image_width": "60%",
+            "position": "below"
+          }
+        }
+      },
+      "block_order": [
+        "badge_ChqgGj",
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "addons",
+        "shipping_VBJFtx",
+        "trust_badge_NyBMd4"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container-fluid",
+        "layout": "layout-4",
+        "show_atwl": true,
+        "enable_history_state": true,
+        "enable_variant_group_images": false,
+        "disable_selected_variant_default": false,
+        "show_featured_media": true,
+        "show_zoom_button": true,
+        "enable_video_autoplay": true,
+        "show_nav_media_mobile": true,
+        "show_pagination_mobile": false,
+        "use_sticky_atc": true,
+        "use_sticky_atc_on_mobile": true,
+        "enable_dynamic_checkout": false,
+        "sticky_atc_wishtlist": false,
+        "sticky_atc_compare": false
+      }
+    },
+    "apex_theme_product_page_AjEfK8": {
+      "type": "apex-theme-product-page",
+      "blocks": {
+        "title_myhGj9": {
+          "type": "title",
+          "settings": {
+            "title_color": "#1c1c1c",
+            "title_font_size": 22
+          }
+        },
+        "subtitle_yhKtd9": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Effortless cutting thanks to the highest quality!",
+            "subtitle_font_size": 16,
+            "subtitle_color": "#1c1c1c"
+          }
+        },
+        "ratings_nCgFkM": {
+          "type": "ratings",
+          "settings": {
+            "likecount": "1,532+ people",
+            "likeinfo": "are already convinced by oursharp blades!",
+            "demandBadge": "High demand",
+            "demandText": "Many people have viewed this product in the last 24 hours"
+          }
+        },
+        "price_g6LBN9": {
+          "type": "price",
+          "settings": {}
+        },
+        "viewer_stock_count_wdjDHT": {
+          "type": "viewerStockCount",
+          "settings": {
+            "viewer_count_font_size": 16,
+            "view_main_text_1": "people",
+            "view_main_text_2": "are currently looking at this product",
+            "viewer_text_color": "",
+            "viewer_margin_top": 10,
+            "viewer_margin_bottom": 10,
+            "viewer_count_text_color": "",
+            "margin_size_mobile_top": 1,
+            "margin_size_mobile_bottom": 1,
+            "product_count_font_size": 16,
+            "product_main_text_1": "Only",
+            "product_main_text_2": "left in stock",
+            "product_text_color": "",
+            "product_count_text_color": "",
+            "product_margin_top": 10,
+            "product_margin_bottom": 10,
+            "viewer_count_time": 2500,
+            "stock_count_time": 5000,
+            "p_margin_size_mobile_top": 1,
+            "p_margin_size_mobile_bottom": 1
+          }
+        },
+        "featurelist_header_7rqxUM": {
+          "type": "featurelist_header",
+          "settings": {
+            "featureHeader": "30-day satisfaction guarantee",
+            "featurelist_header_color": "#000000",
+            "featurelist_header_size": 14
+          }
+        },
+        "featurelist_item_dY7dMT": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14
+          }
+        },
+        "featurelist_item_J7k4tg": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14
+          }
+        },
+        "featurelist_item_HPafcD": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14
+          }
+        },
+        "add_btn_JbECQx": {
+          "type": "addBtn",
+          "settings": {
+            "btn_text": "Add to Cart"
+          }
+        },
+        "payment_icon_zmKmJx": {
+          "type": "paymentIcon",
+          "settings": {}
+        },
+        "product_info_xXFmJE": {
+          "type": "productInfo",
+          "settings": {
+            "info_text_1": "30-day satisfaction guarantee",
+            "info_text_2": "free shipping from 70€",
+            "info_text_3": "1 free grinding service in the first year"
+          }
+        }
+      },
+      "block_order": [
+        "title_myhGj9",
+        "subtitle_yhKtd9",
+        "ratings_nCgFkM",
+        "price_g6LBN9",
+        "viewer_stock_count_wdjDHT",
+        "featurelist_header_7rqxUM",
+        "featurelist_item_dY7dMT",
+        "featurelist_item_J7k4tg",
+        "featurelist_item_HPafcD",
+        "add_btn_JbECQx",
+        "payment_icon_zmKmJx",
+        "product_info_xXFmJE"
+      ],
+      "settings": {
+        "product": "akarui-messerset-premium",
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product_descrption_accordion_btdDtQ": {
+      "type": "product-descrption-accordion",
+      "blocks": {
+        "faq_fqQbjd": {
+          "type": "faq",
+          "settings": {
+            "question": "Das Kiritsuke Messer",
+            "answer": "<p>Das Kiritsukemesser stammt ursprünglich aus Japan und ist bekannt für seine spitz zulaufende Klinge, die präzise Schnitte ermöglicht. Es eignet sich hervorragend zum Schneiden von Fisch und Gemüse und wird in der japanischen Küche oft als vielseitiges Allzweckmesser verwendet. Seine scharfe Klinge und das elegante Design machen es sowohl bei Profiköchen als auch bei Hobbyköchen beliebt.</p>"
+          }
+        },
+        "faq_kQAWhE": {
+          "type": "faq",
+          "settings": {
+            "question": "Produktdaten",
+            "answer": "<p>Klingenlänge: 20,6 cm<br/>Klingenstärke: ± 2,6 mm<br/>Gewicht: 217 g<br/>Geeignet für Fleisch, Fisch und Gemüse<br/>Geschmiedet aus Kohlenstoffstahl<br/>Härtegrad HRC 60 +</p>"
+          }
+        },
+        "faq_pDwHXa": {
+          "type": "faq",
+          "settings": {
+            "question": "Was ist Kohlenstoffstahl?",
+            "answer": "<p>9Cr18MoV ist ein hochwertiger Kohlenstoffstahl, der oft für Messer verwendet wird. Er enthält viel Chrom, was ihn besonders widerstandsfähig gegen Rost macht, und einen hohen Kohlenstoffanteil, der für eine harte und scharfe Klinge sorgt. Dank zusätzlicher Elemente wie Molybdän und Vanadium bleibt die Schneide lange scharf und hält viel aus. Dieser Stahl ist ideal für alle, die ein langlebiges und zuverlässiges Messer suchen.</p>"
+          }
+        },
+        "faq_jkYPLV": {
+          "type": "faq",
+          "settings": {
+            "question": "Versand & Retoure",
+            "answer": "<p><strong>Deutschland:</strong>- Standardversand bis 70€: 2,50€ (1 - 3 Werktage)<br/>- Standardversand ab 70€: kostenlos (1 - 3 Werktage)<br/><br/><strong>Europäische Union:</strong>- Standardversand bis 70€: 4,50€ (2 - 8 Werktage)<br/>- Standardversand ab 70€: kostenlos (2 - 8 Werktage)<br/><br/><strong>Schweiz & Liechtenstein:</strong>- Standardversand bis 70€: 4,50€ (2 - 8 Werktage)<br/>- Standardversand ab 70€: kostenlos (2 - 8 Werktage)<br/><br/><strong>Versanddienstleister:</strong>ausschließlich DHL<br/><br/><strong>Retoure:</strong>- Versandkosten für Retoure müssen vom Käufer übernommen werden.<br/>- Bei teilweiser oder beschädigter Rücksendung trägt der Käufer ggf. die Kosten für das Produkt (vollständig oder teilweise).</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_fqQbjd",
+        "faq_kQAWhE",
+        "faq_pDwHXa",
+        "faq_jkYPLV"
+      ],
+      "settings": {
+        "product": "",
+        "title": "product description",
+        "font_size": 26,
+        "font_color": "#000000",
+        "description": "Erlebst du gerne die Freude am Kochen mit einem Messer, das immer scharf bleibt? Dann wirst du unsere Messer lieben! Unsere Messer bieten eine extrem scharfe Klinge, die dank erprobtem 3-lagigen Kohlenstoffstahl mit einem Härtegrad von HRC 60+ ihre Schärfe über lange Zeit beibehält. Möchtest du ein Messer, das dir langlebige Schärfe garantiert? Unsere Messer sind genau das Richtige für dich! Suchst du nach höchster Qualität zum besten Preis? Dann sind unsere Messer die perfekte Wahl. Sie bieten dank des 9cr18mov Stahls höchste Qualität und sind gleichzeitig erschwinglich. Hast du genug von schmerzenden Händen beim Schneiden? Mit unserem ergonomischen Griff wirst du stundenlang ohne Beschwerden schneiden können. Der Griff bietet wahren Komfort und macht das Schneiden zu einem angenehmen Erlebnis. Außerdem sorgt die rostbeständige Beschichtung für eine einfache Pflege der Klinge und verlängert ihre Lebensdauer. Probiere es aus und erlebe den Unterschied!",
+        "mt": 30,
+        "mb": 40,
+        "add_showore_btn": true
+      }
+    },
+    "product-details-tabs": {
+      "type": "product-details-tabs",
+      "blocks": {
+        "tab_gknmWn": {
+          "type": "tab",
+          "settings": {
+            "header": "Beschreibung",
+            "content": "{{ product.metafields.custom.accordion_content_1 | metafield_tag }}",
+            "content_page": ""
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "header": "Lieferumfang",
+            "content": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}",
+            "content_page": ""
+          }
+        },
+        "tab_yXpqFL": {
+          "type": "tab",
+          "settings": {
+            "header": "Versand",
+            "content": "{{ product.metafields.custom.accordion_content_3 | metafield_tag }}",
+            "content_page": ""
+          }
+        },
+        "tab_LBwXaE": {
+          "type": "tab",
+          "settings": {
+            "header": "Garantie",
+            "content": "{{ product.metafields.custom.accordion_content_4 | metafield_tag }}",
+            "content_page": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_gknmWn",
+        "tab",
+        "tab_yXpqFL",
+        "tab_LBwXaE"
+      ],
+      "custom_css": [
+        ".m-tabs__header {justify-content: flex-start;}"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "default_open": true,
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "ugc_video_testimonial_D4kJ9X": {
+      "type": "ugc-video-testimonial",
+      "blocks": {
+        "item_7xpaVV": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/0c84c4237efd4855b2551c9d1a3fc607.mp4",
+            "product": "grillbuerste"
+          }
+        },
+        "item_iJxMti": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/17ec21a0c2b64321af1de1a0525dc641.mp4",
+            "product": "acacia-wood-cutting-board"
+          }
+        },
+        "item_UYW7B3": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/439d50a9821d4d1796f5aab735f3df16.mp4",
+            "product": "asiatisches-bundle-kurai"
+          }
+        },
+        "item_ft7YRa": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/b4f39ca9c6ab4b8390d6286ed97f7786.mp4",
+            "product": "bundle-holzleiste-akarui"
+          }
+        },
+        "item_tYitmU": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/2ae00636c76a4699add989a1b978131a.mp4",
+            "product": "akarui-steak-messerset"
+          }
+        },
+        "item_cHcggm": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/17ec21a0c2b64321af1de1a0525dc641.mp4",
+            "product": "akarui-steak-messerset"
+          }
+        }
+      },
+      "block_order": [
+        "item_7xpaVV",
+        "item_iJxMti",
+        "item_UYW7B3",
+        "item_ft7YRa",
+        "item_tYitmU",
+        "item_cHcggm"
+      ],
+      "settings": {
+        "pt": 70,
+        "pb": 70,
+        "title": "See our products in action",
+        "title_size": 24,
+        "title_color": "#1e1e1e",
+        "btn_url": "",
+        "btn_text": "@merodacosmetics"
+      }
+    },
+    "logo_greyed_out_FMbnW7": {
+      "type": "logo-greyed-out",
+      "blocks": {
+        "item_mmE6dV": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/bunte_1920x_02d1fbc6-b3f6-4a23-9854-decf10031b16.png"
+          }
+        },
+        "item_wJFrdf": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/ok_9da8ce87-af59-4890-adce-28cfc0ef274a_1920x_1.png"
+          }
+        },
+        "item_9i6JaX": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/jolie_1920x_4c23738f-24b1-4a5d-b97c-f66b5762d1f3.png"
+          }
+        },
+        "item_FJTFNX": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/bunte_1920x_02d1fbc6-b3f6-4a23-9854-decf10031b16.png"
+          }
+        },
+        "item_mBdBJK": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/donna_1920x_5125eb52-7ac2-49f5-a59d-47b82832788e.png"
+          }
+        },
+        "item_YtJUgW": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/glamour_1920x_404fd470-c3ce-4a51-9db6-5428ee6cdc24.png"
+          }
+        },
+        "item_dRhRRe": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/tresclick_1920x_9656544b-94f7-4f90-8b69-9e0907461cf4.png"
+          }
+        },
+        "item_cNkAMR": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/prosieben_1920x_29241f53-44a3-4096-9a76-3cc7b5797b73.png"
+          }
+        },
+        "item_zdbtYQ": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/cosmo_1920x_b415da59-dcfe-42d6-a53f-b455aaf8faf2.png"
+          }
+        }
+      },
+      "block_order": [
+        "item_mmE6dV",
+        "item_wJFrdf",
+        "item_9i6JaX",
+        "item_FJTFNX",
+        "item_mBdBJK",
+        "item_YtJUgW",
+        "item_dRhRRe",
+        "item_cNkAMR",
+        "item_zdbtYQ"
+      ],
+      "settings": {
+        "bg_color": "#fafafb",
+        "p_top": 50,
+        "p_bottom": 50
+      }
+    },
+    "apex_faqs_jx7hp6": {
+      "type": "apex-faqs",
+      "blocks": {
+        "item_Y76Jjj": {
+          "type": "item",
+          "settings": {
+            "faq_title": "How long do the strips last unopened?",
+            "faq_body": "<p>The UV gel strips remain in their packaging and ready for use for over 2 years. Once opened, the strips have a shelf life of 3 months. Store the opened strips in an airtight container and in a dark place between uses to prevent premature hardening. Use our sticker from the UV gel strips packaging.</p>"
+          }
+        },
+        "item_J7jdRT": {
+          "type": "item",
+          "settings": {
+            "faq_title": "How long do the strips stay on the nails?",
+            "faq_body": "<p>UV gel strips usually last up to 3 weeks. However, it depends on various factors, such as how quickly your nails grow and how you use them in everyday life, so the wearing time can vary.</p>"
+          }
+        },
+        "item_V7NfBy": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Can Maniko Nails lengthen my nails?",
+            "faq_body": "<p>Since the protruding end of the Maniko Nails currently has to be filed down to the length of the natural nail, Maniko Nails cannot extend the natural nail. However, we will let you know as soon as we have a solution for nail extension with Maniko Nails.</p>"
+          }
+        },
+        "item_Q9DGdb": {
+          "type": "item",
+          "settings": {
+            "faq_title": "What is the advantage over conventional nail polish and other adhesive solutions? Why Maniko?",
+            "faq_body": "<p>Maniko Nails:</p><p>- offer ease of use with up to 3 weeks shelf life</p><p>- allow flexible scheduling for manicures, even on the go</p><p>- are gentler than conventional nail polishes or gel manicures in the studio</p><p>- work without brushes, so there is no running, chipped nail polish</p><p>- are vegan, HEMA-free and Dermatest-certified</p>"
+          }
+        },
+        "item_xpq4qN": {
+          "type": "item",
+          "settings": {
+            "faq_title": "What is the Maniko Club and what are the benefits?",
+            "faq_body": "<p>The Maniko Club is our exclusive loyalty program for our customers. As a member, you collect points with every purchase and can earn even more points through additional actions such as signing up for the newsletter or recommending us to friends. You can exchange these points for discounts and other exciting rewards. Would you like to find out more? Simply click on the Maniko Club button in your profile and discover all the benefits that await you!</p>"
+          }
+        },
+        "item_XFGU6y": {
+          "type": "item",
+          "settings": {
+            "faq_title": "For practical reasons, I cannot wear long fingernails in everyday life, but I would like to try Maniko: Does Maniko also work on very short nails?",
+            "faq_body": "<p>Of course! Maniko Nails are flexible. They adapt to different nail shapes and are therefore also suitable for short nails. Divide the strips in the middle so that one UV gel strip is enough for two nails. If your nails are very short, use nail scissors instead of a file to shorten them.</p>"
+          }
+        },
+        "item_cDC8UT": {
+          "type": "item",
+          "settings": {
+            "faq_title": "My nails are larger/differently shaped or similar: Is it guaranteed that the strips will fit me and what do I do if the right strip isn't there?",
+            "faq_body": "<p>Each pack contains 20 strips in 8 different widths for every nail shape. The strips are flexible. If you are unsure, go for the smaller size. Didn't find the right size? Cut the strips to size or stick them to one side of the nail and carefully stretch them over the rest of the nail width. Each pack is usually enough for 2 to 4 manicure applications.</p>"
+          }
+        },
+        "item_PNKhQY": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Do I need a base/top coat and which products are recommended for this?",
+            "faq_body": "<p>For soft or brittle nails, we recommend using a nourishing base coat. An additional top coat is optional, as the Maniko Nails already contain a half-hardened UV varnish. If you do use an additional product from a third-party manufacturer, we recommend testing the durability of our UV Gel Strips in conjunction with the third-party product on a nail beforehand. There is a risk that the strips will come off prematurely or not adhere properly to the nail if the composition of the strips is not compatible with the third-party products.</p>"
+          }
+        },
+        "item_889zGP": {
+          "type": "item",
+          "settings": {
+            "faq_title": "I have broken/brittle nails, can I still use the strips?",
+            "faq_body": "<p>Yes, Maniko Nails are gentler than a gel manicure in a nail salon, as there is no need to cut or file the top layer of the nail. The strips also do not contain any harmful substances. This means you can use them even on brittle nails. Our Maniko UV Gel Strips can also help to stabilize your nail and protect it from premature breakage. Tip: To make our strips stick even better to your nails, polish them with a soft polishing file before applying the strips, instead of roughening them.</p>"
+          }
+        },
+        "item_9JjGkE": {
+          "type": "item",
+          "settings": {
+            "faq_title": "I am allergic: Can I still use the strips?",
+            "faq_body": "<p>Maniko's UV Gel Strips are allergy-friendly, HEMA-free and certified as 14-free. This means that they do not contain any of the harmful substances found in conventional nail polishes. They also carry the Dermatest seal. However, the strips do contain acrylates. We recommend testing the UV Gel Strips on a nail before using them for the first time to rule out an allergic reaction.</p>"
+          }
+        },
+        "item_i686e6": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Is your UV top coat also suitable for allergy sufferers?",
+            "faq_body": "<p>All of our products are allergy-friendly, HEMA-free and 14-free certified. Our UV Top Coat specifically contains acrylates and methacrylates. In very rare cases, these ingredients can cause allergic reactions in sensitive skin. If you are not sure whether you are allergic, we ask you to test the reaction on a nail before using our UV Top Coat in conjunction with Maniko Nails for the first time. If a reaction occurs, please contact your dermatologist and stop using the Top Coat.</p>"
+          }
+        },
+        "item_k8Dg4d": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Can I use another UV lamp or just the Maniko UV lamp?",
+            "faq_body": "<p>Yes, you can use an existing UV lamp as long as it is suitable for conventional UV varnish. However, the Maniko UV lamp is lightweight and compact for convenient use at home and on the go.</p>"
+          }
+        },
+        "item_Y6ybrg": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Is the Maniko UV lamp harmful?",
+            "faq_body": "<p>No, because Maniko Nails only need a very low level of radiation to harden. At 6W, the Maniko UV LED lamp is significantly weaker than a conventional UV lamp in the studio or the natural UV light in the sun. In fact, you get more UV radiation in one minute in the sun than in one minute under the Maniko UV LED lamp. That's why you shouldn't do your manicure with Maniko Nails outdoors, as the natural UV light can harden your Maniko Nails in a matter of seconds. Basically, UV light can have a negative effect on the health of the skin. If you already have sun-sensitive skin or are unsure, you can also apply sun protection to your fingers.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_Y76Jjj",
+        "item_J7jdRT",
+        "item_V7NfBy",
+        "item_Q9DGdb",
+        "item_xpq4qN",
+        "item_XFGU6y",
+        "item_cDC8UT",
+        "item_PNKhQY",
+        "item_889zGP",
+        "item_9JjGkE",
+        "item_i686e6",
+        "item_k8Dg4d",
+        "item_Y6ybrg"
+      ],
+      "settings": {
+        "pt": 50,
+        "pb": 50,
+        "title": "FAQ",
+        "title_font_size": 34,
+        "sub_title": "Common problems and simple solutions",
+        "sub_title_font_size": 14,
+        "title_color": "#121212",
+        "text_color": "#454545",
+        "faq_title_font_size": 18,
+        "faq_text_font_size": 16
+      }
+    },
+    "benefit_text_MCeGiV": {
+      "type": "benefit-text",
+      "blocks": {
+        "subtitle_8kbCAt": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "The Beauty Trend 2024",
+            "subtitle_color": "#121212",
+            "subtitle_size": 18
+          }
+        },
+        "title_KU4fTr": {
+          "type": "title",
+          "settings": {
+            "title": "Salon-beautiful nails in minutes",
+            "title_color": "#121212",
+            "title_size": 40
+          }
+        },
+        "description_PBBAnQ": {
+          "type": "description",
+          "settings": {
+            "description": "Experience the nail polish revolution for yourself with Gel Polish 2.0!.......",
+            "description_color": "#121212",
+            "description_size": 18
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_8kbCAt",
+        "title_KU4fTr",
+        "description_PBBAnQ"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "media_type": "image",
+        "image": "shopify://shop_images/ManikoNails_HeroBanner_1920x_3.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
+      }
+    },
+    "benefit_text_right_AFHFhC": {
+      "type": "benefit-text-right",
+      "blocks": {
+        "subtitle_XPX87U": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "protection against everyday stress",
+            "subtitle_color": "#121212",
+            "subtitle_size": 18
+          }
+        },
+        "title_YwDaTz": {
+          "type": "title",
+          "settings": {
+            "title": "Resistant and durable",
+            "title_color": "#121212",
+            "title_size": 40
+          }
+        },
+        "description_j4ByyM": {
+          "type": "description",
+          "settings": {
+            "description": "The result promises up to 3 weeks of hold without chipping or cracking! The UV gel strips are suitable for every nail type, even short and brittle nails. Maniko Nails also provide your natural nails with stability.",
+            "description_color": "#121212",
+            "description_size": 18
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_XPX87U",
+        "title_YwDaTz",
+        "description_j4ByyM"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "media_type": "image",
+        "image": "shopify://shop_images/Haltbarkeit01_1920x_1.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": true,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
+      }
+    },
+    "magazine_quote_UQpqkk": {
+      "type": "magazine-quote",
+      "blocks": {
+        "title_7bjmib": {
+          "type": "title",
+          "settings": {
+            "title_img": "shopify://shop_images/glamour_256x256_62974d0f-87a5-40ae-97fd-1c9a6d7542e2_1920x_2.png",
+            "title": "",
+            "title_color": "#121212",
+            "title_size": 40
+          }
+        },
+        "ratings_qmMcyY": {
+          "type": "ratings",
+          "settings": {
+            "rating": 4
+          }
+        },
+        "quotation_g7QTma": {
+          "type": "quotation",
+          "settings": {
+            "quote": "<p>“Real gel polish that sticks on and is also easy to remove. A dream comes true. With the strips, every manicure gets studio quality that lasts up to 3 weeks!</p>",
+            "quote_color": "#121212",
+            "quote_size": 26
+          }
+        }
+      },
+      "block_order": [
+        "title_7bjmib",
+        "ratings_qmMcyY",
+        "quotation_g7QTma"
+      ],
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
+      }
+    },
+    "product_explanation_video_HTWVex": {
+      "type": "product-explanation-video",
+      "blocks": {
+        "sub_heading_CYQKEx": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "Maniko - Explained in 2 Minutes",
+            "sub_heading_color": "#000000",
+            "sub_heading_size": 16
+          }
+        },
+        "heading_r4LXUb": {
+          "type": "heading",
+          "settings": {
+            "heading": "What are Maniko Nails?",
+            "heading_color": "#000000",
+            "heading_size": 54
+          }
+        },
+        "details_M9Pe9a": {
+          "type": "details",
+          "settings": {
+            "details": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:",
+            "details_color": "#000000",
+            "details_size": 18
+          }
+        },
+        "video_qHKGKk": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/5d93a47748484627b29a8bf2ef1bf0dc.HD-1080p-3.3Mbps-15816149.mp4",
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "playsinline": true,
+            "controls": true
+          }
+        }
+      },
+      "block_order": [
+        "sub_heading_CYQKEx",
+        "heading_r4LXUb",
+        "details_M9Pe9a",
+        "video_qHKGKk"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "vertical_padding": 50,
+        "horizontal_padding": 50
+      }
+    },
+    "us_vs_them_8Tbqki": {
+      "type": "us-vs-them",
+      "blocks": {
+        "title_F4F6qE": {
+          "type": "title",
+          "settings": {
+            "title": "Kraftstein® vs. Others",
+            "title_color": "#1c1c1c",
+            "title_size": 32
+          }
+        },
+        "description_9Mxcd4": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Our comparison graphic shows why Kraftstein knives are the best choice. With extremely sharp blades, high-quality steel and ergonomic handles, they offer the highest quality and comfort.</p>",
+            "description_color": "#1c1c1c",
+            "description_size": 16
+          }
+        }
+      },
+      "block_order": [
+        "title_F4F6qE",
+        "description_9Mxcd4"
+      ],
+      "settings": {
+        "img": "shopify://shop_images/Productpage7_3.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
+      }
+    },
+    "store_benefits_bottom_NPnyUL": {
+      "type": "store-benefits-bottom",
+      "blocks": {
+        "item_96wqwW": {
+          "type": "item",
+          "settings": {
+            "icon": "icon1",
+            "svg-code": "",
+            "store_benefit_text": "Free Shipping"
+          }
+        },
+        "item_6LarDz": {
+          "type": "item",
+          "settings": {
+            "icon": "icon2",
+            "svg-code": "",
+            "store_benefit_text": "FREE SHIPPING FOR +55€ PURCHASES"
+          }
+        },
+        "item_AXkcTt": {
+          "type": "item",
+          "settings": {
+            "icon": "icon3",
+            "svg-code": "",
+            "store_benefit_text": "14 DAY RETURN POLICY (FAQ)"
+          }
+        },
+        "item_h3KX9m": {
+          "type": "item",
+          "settings": {
+            "icon": "icon4",
+            "svg-code": "",
+            "store_benefit_text": "100% SECURE PAYMENT"
+          }
+        },
+        "item_MzPUFH": {
+          "type": "item",
+          "settings": {
+            "icon": "icon5",
+            "svg-code": "",
+            "store_benefit_text": "LIFETIME WARRANTY"
+          }
+        }
+      },
+      "block_order": [
+        "item_96wqwW",
+        "item_6LarDz",
+        "item_AXkcTt",
+        "item_h3KX9m",
+        "item_MzPUFH"
+      ],
+      "settings": {
+        "pt": 50,
+        "pb": 50,
+        "font_size": 14,
+        "color": "#111111",
+        "ptm": 50,
+        "pbm": 50
+      }
+    },
+    "lookbook_kK6fgf": {
+      "type": "lookbook",
+      "blocks": {
+        "item_Lf3hgA": {
+          "type": "item",
+          "settings": {
+            "color_scheme": "",
+            "button_text": "Shop this collection",
+            "button_link": "",
+            "button_style": "dark",
+            "top_1": 9,
+            "left_1": 63,
+            "product_1": "",
+            "top_2": 26,
+            "left_2": 50,
+            "product_2": "",
+            "top_3": 61,
+            "left_3": 48,
+            "product_3": "",
+            "top_4": 0,
+            "left_4": 0,
+            "product_4": "",
+            "top_5": 20,
+            "left_5": 0,
+            "product_5": ""
+          }
+        },
+        "item_zUfBTw": {
+          "type": "item",
+          "settings": {
+            "color_scheme": "",
+            "button_text": "Shop this collection",
+            "button_link": "",
+            "button_style": "dark",
+            "top_1": 9,
+            "left_1": 63,
+            "product_1": "",
+            "top_2": 26,
+            "left_2": 50,
+            "product_2": "",
+            "top_3": 61,
+            "left_3": 48,
+            "product_3": "",
+            "top_4": 0,
+            "left_4": 0,
+            "product_4": "",
+            "top_5": 20,
+            "left_5": 0,
+            "product_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_Lf3hgA",
+        "item_zUfBTw"
+      ],
+      "settings": {
+        "heading": "Hand-picked",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "image_aspect_ratio": "3/4",
+        "use_scroll_mobile": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "scrolling_promotion_MVNN6Q": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "announcement_wewTPP": {
+          "type": "announcement",
+          "settings": {
+            "custom_svg": "",
+            "icon_size": "medium",
+            "text": "Free Delivery on orders over $200",
+            "text_size": 16,
+            "text_link": ""
+          }
+        },
+        "image_88JkQc": {
+          "type": "image",
+          "settings": {
+            "image_height": 8,
+            "image_link": ""
+          }
+        },
+        "announcement_iDtgyD": {
+          "type": "announcement",
+          "settings": {
+            "custom_svg": "",
+            "icon_size": "medium",
+            "text": "Free Delivery on orders over $200",
+            "text_size": 16,
+            "text_link": ""
+          }
+        },
+        "image_T6f3z4": {
+          "type": "image",
+          "settings": {
+            "image_height": 8,
+            "image_link": ""
+          }
+        },
+        "announcement_pPW8nc": {
+          "type": "announcement",
+          "settings": {
+            "custom_svg": "",
+            "icon_size": "medium",
+            "text": "Free Delivery on orders over $200",
+            "text_size": 16,
+            "text_link": ""
+          }
+        },
+        "image_83fwGn": {
+          "type": "image",
+          "settings": {
+            "image_height": 8,
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_wewTPP",
+        "image_88JkQc",
+        "announcement_iDtgyD",
+        "image_T6f3z4",
+        "announcement_pPW8nc",
+        "image_83fwGn"
+      ],
+      "custom_css": [
+        ".m-promotion__text {font-weight: 500;}"
+      ],
+      "settings": {
+        "container": "w-full",
+        "direction": "left",
+        "speed": 20,
+        "item_gap": 50,
+        "item_gap_mobile": 30,
+        "color_scheme": "dark",
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "custom_class": ""
+      }
+    },
+    "icon_box_9UtNky": {
+      "type": "icon-box",
+      "blocks": {
+        "iconbox_pJbJGA": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
+            "image_by_url": "",
+            "title": "30 Tage Rückgaberecht",
+            "description": "<p>Teste unsere hochwertigen Küchenmesser risikofrei – mit 30 Tagen Rückgaberecht.</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--plain",
+            "button_size": ""
+          }
+        },
+        "iconbox_RW46nE": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
+            "image_by_url": "",
+            "title": "Schärfe Garantiert",
+            "description": "<p>Unsere Messer stehen für Qualität und Langlebigkeit – garantiert ein Leben lang</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--plain",
+            "button_size": ""
+          }
+        },
+        "iconbox_EiwgTg": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
+            "image_by_url": "",
+            "title": "Kostenloser Versand",
+            "description": "<p>Genieße kostenlosen Versand innerhalb der gesamten EU ab 100€ Bestellwert.</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--plain",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "iconbox_pJbJGA",
+        "iconbox_RW46nE",
+        "iconbox_EiwgTg"
+      ],
+      "custom_css": [
+        ".m-icon-box__heading {font-weight: 400;}"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "heading": "Why Minimog?",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "item_per_row": 3,
+        "item_gap": 30,
+        "item_gap_mobile": 10,
+        "card_style": "vertical",
+        "image_max_width": "70px",
+        "content_alignment": "center",
+        "hover_effect": "scaling-up",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": true,
+        "use_grid_column_mb": false,
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "collapsible_tabs_JndiBV": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "item_bHzngY": {
+          "type": "item",
+          "settings": {
+            "header": "Wie garantiert ihr die Schärfe der Messer?",
+            "text_size": "h4",
+            "content": "<p>Unsere Messer werden alle <strong>von Hand geschärft, poliert und gereinigt</strong>.</p><p>Wir machen uns die Mühe, im Laufe des Prozesses, jedes Messer mehrmals von unseren Experten prüfen zu lassen.</p><p>Durch dieses Alleinstellungsmerkmal können wir eine außergewöhnliche Qualität garantieren.</p>",
+            "content_page": "",
+            "open": true
+          }
+        },
+        "item_RGMrHr": {
+          "type": "item",
+          "settings": {
+            "header": "Habe ich eine Geld-zurück-Garantie?",
+            "text_size": "h4",
+            "content": "<p>Natürlich. Du hast bei uns eine <strong>30-Tage Geld-zurück-Garantie</strong>,<strong> </strong>falls du mit einem unserer Produkte nicht zufrieden bist.</p><p>Zudem musst du <strong>keinen Grund angeben</strong>. Setzte uns per Mail von der Rücksendung in Kenntnis und schicke das Produkt anschließend zurück.</p>",
+            "content_page": "",
+            "open": false
+          }
+        },
+        "item_nceVP8": {
+          "type": "item",
+          "settings": {
+            "header": "Ich möchte etwas zurückschicken. Wie läuft der Rückversand ab?",
+            "text_size": "h4",
+            "content": "<p>Schreibe uns einfach eine <strong>kurze Nachricht per Mail</strong> und schicke das Produkt zurück.<br/><br/>Für die Rücksendung bitte folgende Adresse verwenden:<br/><br/><strong>VDS Fulfillment /Alaiko<br/>Siemensstraße 14<br/>37412 Herzberg am Harz<br/>Germany</strong></p><p>Es ist <strong>keine Angabe von Gründen nötig</strong>. Wir erstatten dir ohne Nachfrage den gesamten Kaufpreis.</p>",
+            "content_page": "",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "item_bHzngY",
+        "item_RGMrHr",
+        "item_nceVP8"
+      ],
+      "custom_css": [
+        ".m-collapsible--button {font-weight: 400;}",
+        ".m-collapsible + .m-collapsible {margin-top: 20px; display: block;}",
+        ".m-collapsible--content__inner {padding-bottom: 0; color: rgb(var(--color-foreground-secondary));}"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "image_position": "left",
+        "column_gap": 100,
+        "heading": "Häufige Fragen FAQ",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "animations": "inherit",
+        "custom_class": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "remove_params": false,
+        "heading": "Das könnte dir auch gefallen",
+        "heading_size": "h3",
+        "text_align": "center",
+        "limit": 8,
+        "columns": 5,
+        "column_gap": 30,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": true,
+        "use_scroll_mobile": true,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "recent-viewed-products": {
+      "type": "recent-viewed-products",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "Recently Viewed Products",
+        "heading_size": "h3",
+        "text_align": "center",
+        "limit": 8,
+        "columns": 5,
+        "column_gap": 30,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": false,
+        "mobile_disable_slider": false,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "usp_list_fgXGqB": {
+      "type": "usp-list",
+      "blocks": {
+        "item_cXj9tT": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/Vegan-40px_1920x_2.png",
+            "usp_title": "Vegan",
+            "title_color": "#121212",
+            "title_size": 18,
+            "usp_info": "and without animal testing",
+            "info_color": "#121212",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_XccFJc": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/Hema-free_1920x_2.png",
+            "usp_title": "HEMA-free",
+            "title_color": "#121212",
+            "title_size": 18,
+            "usp_info": "and without pollutants",
+            "info_color": "#121212",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_3thknm": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/allsizes_1920x_2.png",
+            "usp_title": "Fits every nail shape",
+            "title_color": "#121212",
+            "title_size": 18,
+            "usp_info": "thanks to 8 different sizes",
+            "info_color": "#121212",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_ffRDkG": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/gelpolish_1920x_2.png",
+            "usp_title": "Real UV gel polish",
+            "title_color": "#121212",
+            "title_size": 18,
+            "usp_info": "for gluing",
+            "info_color": "#121212",
+            "info_size": 14,
+            "divider": false
+          }
+        }
+      },
+      "block_order": [
+        "item_cXj9tT",
+        "item_XccFJc",
+        "item_3thknm",
+        "item_ffRDkG"
+      ],
+      "settings": {
+        "bg_color": "#fff",
+        "verticle_padding": 50,
+        "horizontal_padding": 50
+      }
+    },
+    "benefit_list_gif_iJWmYF": {
+      "type": "benefit-list-gif",
+      "blocks": {
+        "heading_tWq74p": {
+          "type": "heading",
+          "settings": {
+            "title_style": "Beautiful",
+            "title": "BENEFITS"
+          }
+        },
+        "content_nQLTqP": {
+          "type": "content",
+          "settings": {
+            "rich_text": "<p><strong>Suitable for your skin color</strong></p><p>The Changing Foundation seamlessly adapts to your unique skin tone upon application. Designed for fair to medium skin tones, it provides perfect, natural coverage that enhances your complexion.<br/></p><p><strong>Hides imperfections for a natural look</strong></p><p>This lightweight foundation effectively conceals redness and imperfections, allowing your natural beauty to shine through. Experience a radiant glow like never before.</p><p><strong>Create the best result with a brush</strong></p><p>For optimal results, apply the foundation with a brush. This technique ensures that the pigments penetrate deeply into the skin, preventing any white cast for a flawless finish.</p><p><strong>Radiant and even skin all day long</strong></p><p>The Changing Foundation offers long-lasting wear, staying in place for up to 16 hours. With its natural, radiant finish, you can start each day looking and feeling your best.</p><p><strong>No clogged pores</strong></p><p>The Changing Foundation feels light on the skin. Its moisturizing and nourishing ingredients help maintain a fresh appearance without clogging pores, making it ideal for everyday wear.</p>",
+            "video": "shopify://files/videos/216b022817724c84aa85fa2280a076e5.HD-1080p-2.5Mbps-39479780.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tWq74p",
+        "content_nQLTqP"
+      ],
+      "settings": {
+        "background_color": "#f6f0e6",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "title_color": "#1e1e1e",
+        "title_size": 40,
+        "content_color": "#1e1e1e",
+        "content_size": 15
+      }
+    },
+    "expert_testimonial_adCtdF": {
+      "type": "expert-testimonial",
+      "blocks": {
+        "left_content_kdVLJX": {
+          "type": "left_content",
+          "settings": {
+            "heading": "Experts recommend the Nail Care Pen",
+            "text": "Check out the opinions of leading experts here"
+          }
+        },
+        "right_content_6RynNR": {
+          "type": "right_content",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_6_1728x_a2cfe048-91b9-4f91-b9f6-c1822fe036ea.png",
+            "content_title": "Antonietta D'Oria",
+            "info": "owner of the podiatry practice Podoria in Paderborn",
+            "details": "“The Nail Care Pen has now become my first choice for my patients! Its practical handling makes it easy to use!”"
+          }
+        }
+      },
+      "block_order": [
+        "left_content_kdVLJX",
+        "right_content_6RynNR"
+      ],
+      "settings": {
+        "bg_color": "#f0f0f3",
+        "mt": 100,
+        "mb": 100,
+        "pt": 0,
+        "pb": 0,
+        "heading_font_size": 48,
+        "Text_font_size": 18,
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "content_bg": "#ffffff"
+      }
+    },
+    "cta_final_9B8iN9": {
+      "type": "cta-final",
+      "blocks": {
+        "item_9JUQhz": {
+          "type": "Item",
+          "settings": {
+            "feature_item": "Extensively tested on the basis of scientific studies",
+            "svg_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n          <path d=\"M16.1324 18.3754C17.1881 17.3312 17.8055 15.8962 17.8055 14.3923C17.8055 11.9542 16.2464 9.80953 13.928 9.05527C13.6789 8.97249 13.4287 8.90643 13.1808 8.85669L14.7451 6.29472L14.9073 6.03081L11.6019 4L6.28976 12.6451L9.59517 14.6763L10.9844 12.4155L10.4761 12.103L9.39931 13.8556L7.11047 12.4493L11.7977 4.82072L14.0866 6.22666L13.7812 6.7237L12.901 8.15605L12.5423 8.76382C11.7185 8.69076 10.9556 8.80851 10.398 9.11394C9.96939 9.34866 9.68921 9.68596 9.58701 10.0897C9.47082 10.5498 9.58273 10.9734 9.894 11.252C10.2196 11.5435 10.6999 11.6204 11.148 11.4521C11.7554 11.2252 12.0216 10.8211 12.8571 9.40539C13.1493 9.45241 13.4473 9.52469 13.7415 9.62223C15.8154 10.2968 17.2086 12.2138 17.2086 14.3923C17.2086 15.9533 16.4679 17.4332 15.2278 18.3754H10.0498V18.9723H19.0031V20.166H8.55761V20.7629H19.6V18.3754H16.1324ZM10.9389 10.8933C10.7027 10.9815 10.4489 10.9477 10.2923 10.8071C10.1478 10.678 10.1042 10.4803 10.166 10.2358C10.227 9.99373 10.4015 9.79244 10.6848 9.63738C11.045 9.43998 11.5308 9.34089 12.0717 9.34089C12.1141 9.34089 12.1572 9.34166 12.2003 9.34283C11.5281 10.4729 11.319 10.7511 10.9389 10.8933ZM9.32276 16.2599L5 13.6042L5.31243 13.0959L9.63519 15.7516L9.32276 16.2599Z\" fill=\"#0F0F0F\"></path>\n        </svg>"
+          }
+        },
+        "item_NYUrjj": {
+          "type": "Item",
+          "settings": {
+            "feature_item": "Tested without animal testing",
+            "svg_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n          <path d=\"M19.6 12.7721C19.6 12.2607 18.9426 10.0249 15.9062 9.23871C15.3723 9.10051 14.9122 8.97212 14.5123 8.85045C14.5108 8.7936 14.5079 8.73549 14.5035 8.67665C14.367 6.79163 12.9472 4.74408 11.7688 4.1724C11.1721 3.88329 10.7684 4.01114 10.5343 4.1695C10.2201 4.38233 10.0327 4.75462 10.0066 5.21788C9.95589 6.11009 10.4971 7.17826 11.3851 7.93935C11.9564 8.42913 12.5869 8.81122 13.9417 9.25487C13.84 10.2869 13.2243 10.8241 12.9614 11.0088C12.5673 10.8106 11.4521 10.2913 10.4066 10.187C8.8296 10.0303 7.4705 10.4218 6.47642 11.3215C5.53808 12.1707 5 13.4433 5 14.813C5 17.6743 7.28164 19.832 10.3075 19.832C12.1949 19.832 13.7448 18.7461 14.4538 16.9268C14.6964 16.3028 14.8598 15.3276 14.5203 14.6317C14.351 14.2845 14.0702 14.0437 13.7081 13.9351C12.7722 13.6514 12.0194 14.3364 11.6577 14.7639C11.2985 14.3513 10.5604 13.6979 9.62665 13.9315C9.22967 14.0299 8.91841 14.2761 8.72645 14.6437C8.45587 15.162 8.44969 15.8779 8.71011 16.5585C8.98524 17.2773 9.45576 17.9125 10.1905 18.5576L10.5584 18.1384C9.89451 17.5555 9.47265 16.99 9.23112 16.3591C9.03009 15.8336 9.02628 15.2749 9.22114 14.9019C9.33845 14.6768 9.52023 14.5326 9.76104 14.4726C10.6783 14.2445 11.4192 15.3636 11.4267 15.3752L11.6639 15.7388L11.8965 15.3726C11.9039 15.361 12.6548 14.1999 13.5476 14.4694C13.7626 14.5337 13.917 14.6669 14.019 14.8762C14.2627 15.3759 14.152 16.1644 13.9337 16.7241C13.3115 18.3208 11.956 19.2742 10.3075 19.2742C7.5998 19.2742 5.55788 17.3561 5.55788 14.813C5.55788 13.6006 6.02913 12.4788 6.8507 11.7352C7.72474 10.9438 8.93384 10.6011 10.3512 10.742C11.508 10.8575 12.8285 11.5677 12.8419 11.575L12.973 11.6462L13.1052 11.5765C13.1601 11.5474 14.2871 10.9332 14.4847 9.42449C14.8609 9.5369 15.2852 9.65421 15.7664 9.77879C18.7432 10.5495 19.0421 12.7507 19.0432 12.7572C18.9833 13.0209 17.812 14.1054 16.7957 14.461L16.6504 14.5119L15.8314 18.0741L16.0177 18.1751C16.9675 18.6894 17.0013 19.5324 17.002 19.568L17.5599 19.5589C17.5592 19.5128 17.5334 18.4762 16.4681 17.7938L17.1266 14.9321C18.1574 14.5115 19.6 13.3463 19.6 12.7721ZM11.7481 7.51586C10.8238 6.72372 10.5323 5.79991 10.5635 5.24948C10.5797 4.96382 10.6805 4.74426 10.847 4.63149C10.9193 4.58246 11.0043 4.55812 11.1014 4.55812C11.2238 4.55812 11.3655 4.5968 11.5253 4.67435C12.5357 5.16449 13.8008 7.00647 13.9431 8.66775C12.795 8.27768 12.2423 7.93935 11.7481 7.51586Z\" fill=\"black\"></path>\n        </svg>"
+          }
+        },
+        "item_Prmf4W": {
+          "type": "Item",
+          "settings": {
+            "feature_item": "Developed with experts",
+            "svg_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n          <path d=\"M7.38367 11.449H13.3429V12.0449H7.38367V11.449ZM13.3429 9.06531H7.38367V9.66122H13.3429V9.06531ZM7.38367 14.4286H10.3633V13.8327H7.38367V14.4286ZM19.6 18.0041C19.6 20.3043 17.7288 22.1755 15.4286 22.1755C13.1285 22.1755 11.2571 20.3043 11.2571 18.0041C11.2571 15.8043 12.9691 13.9964 15.1306 13.8431V4.59592H5.59592V17.7061H10.3633V18.302H5V4H15.7265V14.4286H15.4286C13.4571 14.4286 11.8531 16.0324 11.8531 18.0041C11.8531 19.9757 13.4571 21.5796 15.4286 21.5796C17.4002 21.5796 19.0041 19.9757 19.0041 18.0041C19.0041 17.3473 18.8326 16.7226 18.5055 16.1779C17.3901 17.8225 15.7461 19.5905 15.6464 19.6972L15.4191 19.9408L13.4146 17.6021L13.867 17.2142L15.4365 19.0454C16.1444 18.266 17.3374 16.8677 18.1304 15.6689C18.0714 15.6014 18.0058 15.5288 17.9356 15.4516C17.4402 14.9031 16.8233 14.2206 16.7496 13.4839C16.6891 12.8841 17.0251 12.306 17.5484 12.1097C17.9938 11.9425 18.478 12.0387 18.8776 12.372C19.3886 12.7983 19.6283 13.4924 19.5038 14.1834C19.432 14.5807 19.1899 15.0862 18.8594 15.6293C19.3443 16.3211 19.6 17.1393 19.6 18.0041ZM18.9172 14.0778C19.0025 13.6045 18.8373 13.1145 18.4958 12.8298C18.336 12.6963 18.1571 12.6268 17.9833 12.6268C17.9065 12.6268 17.8309 12.6404 17.7579 12.6676C17.4615 12.7789 17.3137 13.1397 17.3424 13.4241C17.3967 13.9661 17.9639 14.5938 18.3779 15.052C18.4058 15.0827 18.4326 15.1126 18.459 15.142C18.6988 14.73 18.866 14.3618 18.9172 14.0778Z\" fill=\"black\"></path>\n        </svg>"
+          }
+        }
+      },
+      "block_order": [
+        "item_9JUQhz",
+        "item_NYUrjj",
+        "item_Prmf4W"
+      ],
+      "settings": {
+        "bg_color": "#c5d3be",
+        "subtitle": "Many people have often asked us as founders:",
+        "subtitle_color": "#161818",
+        "subtitle_size": 18,
+        "title": "“Why does Health Routine have a 365 day money back guarantee?”",
+        "title_color": "#161818",
+        "title_size": 32,
+        "des": "Our answer is always very simple: We are 100% convinced of the products and recipes. And not without reason, because the products from Health Routine have been:",
+        "img": "shopify://shop_images/team_new_720x_d09771b7-d205-45ae-b2b9-e66d04d21ad9.jpg",
+        "verticle_padding": 70,
+        "horizontal_padding": 0,
+        "border_t": true,
+        "border_b": true,
+        "item_color": "#0f0f0f",
+        "item_bg": "#f0f0f3",
+        "item_size": 16,
+        "backBtn": "Go To Cart Button"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "apex_theme_product_page_AjEfK8",
+    "product_descrption_accordion_btdDtQ",
+    "product-details-tabs",
+    "ugc_video_testimonial_D4kJ9X",
+    "logo_greyed_out_FMbnW7",
+    "apex_faqs_jx7hp6",
+    "benefit_text_MCeGiV",
+    "benefit_text_right_AFHFhC",
+    "magazine_quote_UQpqkk",
+    "product_explanation_video_HTWVex",
+    "us_vs_them_8Tbqki",
+    "store_benefits_bottom_NPnyUL",
+    "lookbook_kK6fgf",
+    "scrolling_promotion_MVNN6Q",
+    "icon_box_9UtNky",
+    "collapsible_tabs_JndiBV",
+    "product-recommendations",
+    "recent-viewed-products",
+    "usp_list_fgXGqB",
+    "benefit_list_gif_iJWmYF",
+    "expert_testimonial_adCtdF",
+    "cta_final_9B8iN9"
+  ]
+}

@@ -1,0 +1,225 @@
+{{ 'apex-theme.css' | asset_url | stylesheet_tag }}
+<style>
+  .benefit-list-gif-area {
+    background: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  .benefit-list-title{
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_size }}px;
+  }
+  .benefit-list-content-rich-text p{
+    color: {{ section.settings.content_color }};
+    font-size: {{ section.settings.content_size }}px;
+  }
+  @media screen and (max-width: 1500px) {
+    .benefit-list-content-rich-text {
+      max-width: 410px;
+    }
+      .benefit-list-heading {
+        min-width: 260px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .benefit-list-content {
+    flex-direction: column-reverse;
+    gap: 24px;
+   }
+   .benefit-list-content-rich-text {
+    max-width: 100%;
+   }
+  }
+  @media screen and (max-width: 991px) {
+
+    .benefit-list-row {
+      flex-direction: column;
+      gap: 32px;
+    }
+    .benefit-list-heading {
+      text-align: center;
+    }
+     .benefit-list-content-video video {
+      margin: auto;
+    }
+    .benefit-list-gif-area {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+  @media  screen and (max-width: 767px) {
+    .benefit-list-gif-area {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+    .benefit-list-gif-area .rs-container {
+        padding: 0 15px;
+    }
+  }
+</style>
+<div class="benefit-list-gif-area">
+  <div class="rs-container">
+    <div class="benefit-list-row">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'heading' %}
+            <div class="benefit-list-heading">
+              <h2 class="benefit-list-title style-title">
+                <em>{{ block.settings.title_style }}</em>
+              </h2>
+              <h2 class="benefit-list-title">{{ block.settings.title }}</h2>
+            </div>
+          {% when 'content' %}
+            <div class="benefit-list-content">
+              <div class="benefit-list-content-rich-text">
+                {{ block.settings.rich_text }}
+              </div>
+              <div class="benefit-list-content-video">
+                {% if block.settings.video != blank %}
+                  <video autoplay loop muted>
+                    <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                    {{ block.settings.video.sources[0].url | json }}
+                  </video>
+                {% endif %}
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Benefit List Gif",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Mobile Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "default": 10,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "default": 10,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Font size",
+      "default": 40,
+      "min": 10,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Content color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "range",
+      "id": "content_size",
+      "label": "Content font size",
+      "default": 15,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title_style",
+          "label": "Title Style",
+          "default": "Beautiful"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "BENEFITS"
+        }
+      ]
+    },
+    {
+      "name": "Content",
+      "type": "content",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "rich_text",
+          "label": "Rich Text",
+          "default": "<p>Suitable for your skin colordes perfect.............</p>"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefit List Gif",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

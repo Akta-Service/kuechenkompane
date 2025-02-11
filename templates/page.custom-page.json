@@ -1,0 +1,240 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {}
+    },
+    "text_banner_zNYrd9": {
+      "type": "text-banner",
+      "blocks": {
+        "title_LczJ49": {
+          "type": "title",
+          "settings": {
+            "title": "100% MONEY BACK"
+          }
+        },
+        "title_style_hWGwhD": {
+          "type": "title_style",
+          "settings": {
+            "style_title": "guarantee"
+          }
+        },
+        "text_mFCHj9": {
+          "type": "text",
+          "settings": {
+            "text": "We offer a 100% match guarantee on all our products. If you are not satisfied, you will receive a full refund without any hassle."
+          }
+        }
+      },
+      "block_order": [
+        "title_LczJ49",
+        "title_style_hWGwhD",
+        "text_mFCHj9"
+      ],
+      "settings": {
+        "bg_color": "#1e1e1e",
+        "pt": 65,
+        "pb": 65,
+        "mt": 0,
+        "mb": 0,
+        "pt_mobile": 65,
+        "pb_mobile": 65,
+        "mt_mobile": 0,
+        "mb_mobile": 0,
+        "title_font_size": 40,
+        "title_color": "#ffffff",
+        "text_font_size": 15,
+        "text_color": "#ffffff"
+      }
+    },
+    "store_benefit_tq7A77": {
+      "type": "store-benefit",
+      "blocks": {
+        "benefit_MXE8dz": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "shopify://shop_images/Vector_14.svg",
+            "title": "100% Money Back",
+            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
+          }
+        },
+        "benefit_TW6w9d": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "shopify://shop_images/Vector_25.svg",
+            "title": "Cruelty free & vegan",
+            "text": "Almost all of our products are cruelty free & vegan and formulated with the finest ingredients"
+          }
+        },
+        "benefit_t3Dd37": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "shopify://shop_images/Group_3.svg",
+            "title": "+400,000 happy customers",
+            "text": "Customers around the world have enjoyed our products that are continuously improved based on community feedback"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_MXE8dz",
+        "benefit_TW6w9d",
+        "benefit_t3Dd37"
+      ],
+      "settings": {
+        "title_color": "#1e1e1e",
+        "text_color": "#1e1e1e",
+        "title_size": 16,
+        "text_size": 14,
+        "verticle_padding": 70,
+        "verticle_padding_mobile": 50
+      }
+    },
+    "branded_image_version_2_ekLcgr": {
+      "type": "branded-image-version-2",
+      "blocks": {
+        "title_7VefFy": {
+          "type": "title",
+          "settings": {
+            "title": "Cosmetics that inspire"
+          }
+        },
+        "sub_title_4n7pa8": {
+          "type": "sub_title",
+          "settings": {
+            "sub_title": "CONFIDENCE"
+          }
+        },
+        "text_UtLn87": {
+          "type": "text",
+          "settings": {
+            "text": "Designed for women who balance ambition and authenticity, our products empower you to embrace your individuality while looking your best, whether you’re conquering the boardroom or dancing the night away."
+          }
+        },
+        "btn_CLwNt7": {
+          "type": "btn",
+          "settings": {
+            "button_text": "Discover more",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_7VefFy",
+        "sub_title_4n7pa8",
+        "text_UtLn87",
+        "btn_CLwNt7"
+      ],
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 20,
+        "mobile_margin_top": 10,
+        "mobile_margin_bottom": 10,
+        "bg_img": "shopify://shop_images/branded-image-2.jpg",
+        "title_font_size": 40,
+        "heading_color": "#1e1e1e",
+        "text_font_size": 16,
+        "text_color": "#1e1e1e"
+      }
+    },
+    "logo_quote_selection_6AwG63": {
+      "type": "logo-quote-selection",
+      "blocks": {
+        "image_BreEfe": {
+          "type": "image",
+          "settings": {
+            "logo_item_img": "shopify://shop_images/esquire-logo-web-home_160x_434c4f93-33d6-4cc0-a433-36e92eab4262.png"
+          }
+        },
+        "image_NyQ4Gc": {
+          "type": "image",
+          "settings": {
+            "logo_item_img": "shopify://shop_images/vanityfair-logo-web-home_160x_2c3fe680-b96f-4c1e-b236-00db5515e12f.png"
+          }
+        },
+        "image_ymxamG": {
+          "type": "image",
+          "settings": {
+            "logo_item_img": "shopify://shop_images/gq-logo-web-home_160x_08ac9db5-4063-43a9-bd5f-89d3bf43aacc.png"
+          }
+        },
+        "image_WwpeH8": {
+          "type": "image",
+          "settings": {
+            "logo_item_img": "shopify://shop_images/vanityfair-logo-web-home_160x_2c3fe680-b96f-4c1e-b236-00db5515e12f.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_BreEfe",
+        "image_NyQ4Gc",
+        "image_ymxamG",
+        "image_WwpeH8"
+      ],
+      "settings": {
+        "bg-color": "#ff6723",
+        "ver_p": 60,
+        "ver_p_mobile": 30,
+        "heading_size": 48,
+        "heading_color": "#111111"
+      }
+    },
+    "guarantee_objection_handling_jGLzWT": {
+      "type": "guarantee-objection-handling",
+      "blocks": {
+        "title_z6nz7j": {
+          "type": "title",
+          "settings": {
+            "title": "100% money-back guarantee"
+          }
+        },
+        "text_KUYCif": {
+          "type": "text",
+          "settings": {
+            "text": "Try Maniko Nails risk-free for 45 days. If you are not 100% satisfied, we will refund your full purchase price, no questions asked."
+          }
+        },
+        "button_VMDQ9n": {
+          "type": "button",
+          "settings": {
+            "btn_text": "Learn more",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_z6nz7j",
+        "text_KUYCif",
+        "button_VMDQ9n"
+      ],
+      "settings": {
+        "bg_color": "#fafafb",
+        "icon_img": "shopify://shop_images/Garantie-Badge_1920x_40ad9c10-145c-4d0b-9757-a4e74d700ea1.png",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0,
+        "title_size": 40,
+        "title_color": "#121212",
+        "text_size": 18,
+        "text_color": "#454545"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "text_banner_zNYrd9",
+    "store_benefit_tq7A77",
+    "branded_image_version_2_ekLcgr",
+    "logo_quote_selection_6AwG63",
+    "guarantee_objection_handling_jGLzWT"
+  ]
+}

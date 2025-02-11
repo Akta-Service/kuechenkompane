@@ -1,0 +1,142 @@
+{{ 'apex-theme.css' | asset_url | stylesheet_tag }}
+<style>
+  /* usp-list-section */
+  .usp-list-section {
+    background: {{ section.settings.bg_color }};
+    padding: {{ section.settings.verticle_padding }}px {{ section.settings.horizontal_padding }}px;
+  }
+</style>
+
+<!-- usp-list-section start -->
+<div class="usp-list-section">
+  <div class="usp-list-main">
+    {% for block in section.blocks %}
+      <div class="usp-list-item">
+        <img src="{{ block.settings.usp_icon |  img_url: 'medium' }}" alt="icon">
+        <h4 style="color: {{ block.settings.title_color }}; font-size: {{- block.settings.title_size -}}px;">
+          {{ block.settings.usp_title }}
+        </h4>
+        <p style="color: {{ block.settings.info_color }}; font-size: {{- block.settings.info_size -}}px;">
+          {{ block.settings.usp_info }}
+        </p>
+      </div>
+      {% if block.settings.divider %}
+        <hr class="usp-list-border">
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+<!-- usp-list-section end -->
+
+{% schema %}
+{
+  "name": "Usp List",
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "verticle_padding",
+      "label": "Vertical Padding",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "horizontal_padding",
+      "label": "Horizontal Padding",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "USP Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "usp_icon",
+          "label": "USP Icon"
+        },
+        {
+          "type": "text",
+          "id": "usp_title",
+          "label": "USP Title",
+          "default": "Vegan"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "title_size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Title Font size",
+          "default": 18
+        },
+        {
+          "type": "textarea",
+          "id": "usp_info",
+          "label": "USP Info",
+          "default": "and without animal testing"
+        },
+        {
+          "type": "color",
+          "id": "info_color",
+          "label": "onfo Color",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "info_size",
+          "min": 12,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "info Font size",
+          "default": 14
+        },
+        {
+          "type": "checkbox",
+          "id": "divider",
+          "label": "Show Divider"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Usp List",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
