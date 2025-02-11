@@ -2752,346 +2752,457 @@
 
 
 
-  {
-    "name": "Advanced Typegraphy",
-    "settings": [
-  
-        {
-            "type": "range",
-            "id": "h1",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H1 font size",
-            "default": 20
-        },
-        {
-            "type": "select",
-            "id": "h1font-weight",
-            "label": "Select H1 font weight",
-            "options": [
-                { "value": "100", "label": "Thin 100" },
-                { "value": "200", "label": "Extra-light 200" },
-                { "value": "300", "label": "Light 300" },
-                { "value": "400", "label": "Regular 400" },
-                { "value": "500", "label": "Medium 500" },
-                { "value": "600", "label": "Semi-bold 600" },
-                { "value": "700", "label": "Bold 700" },
-                { "value": "800", "label": "Extra-bold 800" },
-                { "value": "900", "label": "Black 900" }
-            ],
-            "default": "700",
-            "info": "Choose the font weight for H1"
-        },
-        {
-            "type": "color",
-            "id": "h1-color",
-            "label": "Select H1 font color"
-        },
-        {
-            "type": "range",
-            "id": "h1-mobile",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H1 font size (Mobile)",
-            "default": 16
-        },
-   
-        {
-            "type": "range",
-            "id": "h2",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H2 font size",
-            "default": 18
-        },
-        {
-            "type": "select",
-            "id": "h2font-weight",
-            "label": "Select H2 font weight",
-            "options": [
-                { "value": "100", "label": "Thin 100" },
-                { "value": "200", "label": "Extra-light 200" },
-                { "value": "300", "label": "Light 300" },
-                { "value": "400", "label": "Regular 400" },
-                { "value": "500", "label": "Medium 500" },
-                { "value": "600", "label": "Semi-bold 600" },
-                { "value": "700", "label": "Bold 700" },
-                { "value": "800", "label": "Extra-bold 800" },
-                { "value": "900", "label": "Black 900" }
-            ],
-            "default": "700",
-            "info": "Choose the font weight for H2"
-        },
-        {
-            "type": "color",
-            "id": "h2-color",
-            "label": "Select H2 font color"
-        },
-        {
-            "type": "range",
-            "id": "h2-mobile",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H2 font size (Mobile)",
-            "default": 14
-        },
-   
-        {
-            "type": "range",
-            "id": "h3",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H3 font size",
-            "default": 16
-        },
-        {
-            "type": "select",
-            "id": "h3font-weight",
-            "label": "Select H3 font weight",
-            "options": [
-                { "value": "100", "label": "Thin 100" },
-                { "value": "200", "label": "Extra-light 200" },
-                { "value": "300", "label": "Light 300" },
-                { "value": "400", "label": "Regular 400" },
-                { "value": "500", "label": "Medium 500" },
-                { "value": "600", "label": "Semi-bold 600" },
-                { "value": "700", "label": "Bold 700" },
-                { "value": "800", "label": "Extra-bold 800" },
-                { "value": "900", "label": "Black 900" }
-            ],
-            "default": "700",
-            "info": "Choose the font weight for H3"
-        },
-        {
-            "type": "color",
-            "id": "h3-color",
-            "label": "Select H3 font color"
-        },
-        {
-            "type": "range",
-            "id": "h3-mobile",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H3 font size (Mobile)",
-            "default": 12
-        },
- 
-        {
-            "type": "range",
-            "id": "h4",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H4 font size",
-            "default": 14
-        },
-        {
-            "type": "select",
-            "id": "h4font-weight",
-            "label": "Select H4 font weight",
-            "options": [
-                { "value": "100", "label": "Thin 100" },
-                { "value": "200", "label": "Extra-light 200" },
-                { "value": "300", "label": "Light 300" },
-                { "value": "400", "label": "Regular 400" },
-                { "value": "500", "label": "Medium 500" },
-                { "value": "600", "label": "Semi-bold 600" },
-                { "value": "700", "label": "Bold 700" },
-                { "value": "800", "label": "Extra-bold 800" },
-                { "value": "900", "label": "Black 900" }
-            ],
-            "default": "700",
-            "info": "Choose the font weight for H4"
-        },
-        {
-            "type": "color",
-            "id": "h4-color",
-            "label": "Select H4 font color"
-        },
-        {
-            "type": "range",
-            "id": "h4-mobile",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H4 font size (Mobile)",
-            "default": 10
-        },
- 
-        {
-            "type": "range",
-            "id": "h5",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H5 font size",
-            "default": 12
-        },
-        {
-            "type": "select",
-            "id": "h5font-weight",
-            "label": "Select H5 font weight",
-            "options": [
-                { "value": "100", "label": "Thin 100" },
-                { "value": "200", "label": "Extra-light 200" },
-                { "value": "300", "label": "Light 300" },
-                { "value": "400", "label": "Regular 400" },
-                { "value": "500", "label": "Medium 500" },
-                { "value": "600", "label": "Semi-bold 600" },
-                { "value": "700", "label": "Bold 700" },
-                { "value": "800", "label": "Extra-bold 800" },
-                { "value": "900", "label": "Black 900" }
-            ],
-            "default": "700",
-            "info": "Choose the font weight for H5"
-        },
-        {
-            "type": "color",
-            "id": "h5-color",
-            "label": "Select H5 font color"
-        },
-        {
-            "type": "range",
-            "id": "h5-mobile",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H5 font size (Mobile)",
-            "default": 8
-        },
- 
-        {
-            "type": "range",
-            "id": "h6",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H6 font size",
-            "default": 10
-        },
-        {
-            "type": "select",
-            "id": "h6font-weight",
-            "label": "Select H6 font weight",
-            "options": [
-                { "value": "100", "label": "Thin 100" },
-                { "value": "200", "label": "Extra-light 200" },
-                { "value": "300", "label": "Light 300" },
-                { "value": "400", "label": "Regular 400" },
-                { "value": "500", "label": "Medium 500" },
-                { "value": "600", "label": "Semi-bold 600" },
-                { "value": "700", "label": "Bold 700" },
-                { "value": "800", "label": "Extra-bold 800" },
-                { "value": "900", "label": "Black 900" }
-            ],
-            "default": "700",
-            "info": "Choose the font weight for H6"
-        },
-        {
-            "type": "color",
-            "id": "h6-color",
-            "label": "Select H6 font color"
-        },
-        {
-            "type": "range",
-            "id": "h6-mobile",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
-            "label": "H6 font size (Mobile)",
-            "default": 6
-        },
 
-        {
-            "type": "select",
-            "id": "p1-style",
-            "label": "Select Paragraph 1 Style",
-            "options": [
-                { "value": "normal", "label": "Normal" },
-                { "value": "italic", "label": "Italic" },
-                { "value": "bold", "label": "Bold" }
-            ],
-            "default": "normal",
-            "info": "Select the style for paragraph 1 text"
-        },
-        {
-            "type": "color",
-            "id": "p1-color",
-            "label": "Select Paragraph 1 font color"
-        },
 
-        {
-            "type": "select",
-            "id": "p2-style",
-            "label": "Select Paragraph 2 Style",
-            "options": [
-                { "value": "normal", "label": "Normal" },
-                { "value": "italic", "label": "Italic" },
-                { "value": "bold", "label": "Bold" }
-            ],
-            "default": "italic",
-            "info": "Select the style for paragraph 2 text"
-        },
-        {
-            "type": "color",
-            "id": "p2-color",
-            "label": "Select Paragraph 2 font color"
-        },
-    
-        {
-            "type": "select",
-            "id": "p3-style",
-            "label": "Select Paragraph 3 Style",
-            "options": [
-                { "value": "normal", "label": "Normal" },
-                { "value": "italic", "label": "Italic" },
-                { "value": "bold", "label": "Bold" }
-            ],
-            "default": "bold",
-            "info": "Select the style for paragraph 3 text"
-        },
-        {
-            "type": "color",
-            "id": "p3-color",
-            "label": "Select Paragraph 3 font color"
-        },
-        {
-            "type": "select",
-            "id": "p4-style",
-            "label": "Select Paragraph 4 Style",
-            "options": [
-                { "value": "normal", "label": "Normal" },
-                { "value": "italic", "label": "Italic" },
-                { "value": "bold", "label": "Bold" }
-            ],
-            "default": "normal",
-            "info": "Select the style for paragraph 4 text"
-        },
-        {
-            "type": "color",
-            "id": "p4-color",
-            "label": "Select Paragraph 4 font color"
-        }
-    ]
-},
+{
+  "name": "Advanced Typegraphy",
+  "settings": [
+      {
+          "type": "header",
+          "content": "H1 Full Customization Settings"
+      },
+      {
+          "type": "range",
+          "id": "h1",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "H1 Font Size (Desktop)",
+          "default": 36
+      },
+      {
+          "type": "range",
+          "id": "h1-mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "H1 Font Size (Mobile)",
+          "default": 24
+      },
+      {
+          "type": "select",
+          "id": "h1-weight",
+          "label": "H1 Font Weight",
+          "options": [
+              { "value": "100", "label": "Thin 100" },
+              { "value": "200", "label": "Extra-Light 200" },
+              { "value": "300", "label": "Light 300" },
+              { "value": "400", "label": "Regular 400" },
+              { "value": "500", "label": "Medium 500" },
+              { "value": "600", "label": "Semi-Bold 600" },
+              { "value": "700", "label": "Bold 700" },
+              { "value": "800", "label": "Extra-Bold 800" },
+              { "value": "900", "label": "Black 900" }
+          ],
+          "default": "700"
+      },
+      {
+          "type": "color",
+          "id": "h1-color",
+          "label": "H1 Font Color"
+      },
+
+      {
+          "type": "header",
+          "content": "H2 Full Customization Settings"
+      },
+      {
+          "type": "range",
+          "id": "h2",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "H2 Font Size (Desktop)",
+          "default": 30
+      },
+      {
+          "type": "range",
+          "id": "h2-mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "H2 Font Size (Mobile)",
+          "default": 22
+      },
+      {
+          "type": "select",
+          "id": "h2-weight",
+          "label": "H2 Font Weight",
+          "options": [
+              { "value": "100", "label": "Thin 100" },
+              { "value": "200", "label": "Extra-Light 200" },
+              { "value": "300", "label": "Light 300" },
+              { "value": "400", "label": "Regular 400" },
+              { "value": "500", "label": "Medium 500" },
+              { "value": "600", "label": "Semi-Bold 600" },
+              { "value": "700", "label": "Bold 700" },
+              { "value": "800", "label": "Extra-Bold 800" },
+              { "value": "900", "label": "Black 900" }
+          ],
+          "default": "600"
+      },
+      {
+          "type": "color",
+          "id": "h2-color",
+          "label": "H2 Font Color"
+      },
+      {
+        "type": "header",
+        "content": "H3 Full Customization Settings"
+    },
+    {
+        "type": "range",
+        "id": "h3",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H3 Font Size (Desktop)",
+        "default": 24
+    },
+    {
+        "type": "range",
+        "id": "h3-mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H3 Font Size (Mobile)",
+        "default": 20
+    },
+    {
+        "type": "select",
+        "id": "h3-weight",
+        "label": "H3 Font Weight",
+        "options": [
+            { "value": "100", "label": "Thin 100" },
+            { "value": "200", "label": "Extra-Light 200" },
+            { "value": "300", "label": "Light 300" },
+            { "value": "400", "label": "Regular 400" },
+            { "value": "500", "label": "Medium 500" },
+            { "value": "600", "label": "Semi-Bold 600" },
+            { "value": "700", "label": "Bold 700" },
+            { "value": "800", "label": "Extra-Bold 800" },
+            { "value": "900", "label": "Black 900" }
+        ],
+        "default": "600"
+    },
+    {
+        "type": "color",
+        "id": "h3-color",
+        "label": "H3 Font Color"
+    },
+
+    {
+        "type": "header",
+        "content": "H4 Full Customization Settings"
+    },
+    {
+        "type": "range",
+        "id": "h4",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H4 Font Size (Desktop)",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "h4-mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H4 Font Size (Mobile)",
+        "default": 18
+    },
+    {
+        "type": "select",
+        "id": "h4-weight",
+        "label": "H4 Font Weight",
+        "options": [
+            { "value": "100", "label": "Thin 100" },
+            { "value": "200", "label": "Extra-Light 200" },
+            { "value": "300", "label": "Light 300" },
+            { "value": "400", "label": "Regular 400" },
+            { "value": "500", "label": "Medium 500" },
+            { "value": "600", "label": "Semi-Bold 600" },
+            { "value": "700", "label": "Bold 700" },
+            { "value": "800", "label": "Extra-Bold 800" },
+            { "value": "900", "label": "Black 900" }
+        ],
+        "default": "500"
+    },
+    {
+        "type": "color",
+        "id": "h4-color",
+        "label": "H4 Font Color"
+    },
+
+    {
+        "type": "header",
+        "content": "H5 Full Customization Settings"
+    },
+    {
+        "type": "range",
+        "id": "h5",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H5 Font Size (Desktop)",
+        "default": 18
+    },
+    {
+        "type": "range",
+        "id": "h5-mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H5 Font Size (Mobile)",
+        "default": 16
+    },
+    {
+        "type": "select",
+        "id": "h5-weight",
+        "label": "H5 Font Weight",
+        "options": [
+            { "value": "100", "label": "Thin 100" },
+            { "value": "200", "label": "Extra-Light 200" },
+            { "value": "300", "label": "Light 300" },
+            { "value": "400", "label": "Regular 400" },
+            { "value": "500", "label": "Medium 500" },
+            { "value": "600", "label": "Semi-Bold 600" },
+            { "value": "700", "label": "Bold 700" },
+            { "value": "800", "label": "Extra-Bold 800" },
+            { "value": "900", "label": "Black 900" }
+        ],
+        "default": "500"
+    },
+    {
+        "type": "color",
+        "id": "h5-color",
+        "label": "H5 Font Color"
+    },
+
+    {
+        "type": "header",
+        "content": "H6 Full Customization Settings"
+    },
+    {
+        "type": "range",
+        "id": "h6",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H6 Font Size (Desktop)",
+        "default": 16
+    },
+    {
+        "type": "range",
+        "id": "h6-mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H6 Font Size (Mobile)",
+        "default": 14
+    },
+    {
+        "type": "select",
+        "id": "h6-weight",
+        "label": "H6 Font Weight",
+        "options": [
+            { "value": "100", "label": "Thin 100" },
+            { "value": "200", "label": "Extra-Light 200" },
+            { "value": "300", "label": "Light 300" },
+            { "value": "400", "label": "Regular 400" },
+            { "value": "500", "label": "Medium 500" },
+            { "value": "600", "label": "Semi-Bold 600" },
+            { "value": "700", "label": "Bold 700" },
+            { "value": "800", "label": "Extra-Bold 800" },
+            { "value": "900", "label": "Black 900" }
+        ],
+        "default": "400"
+    },
+    {
+        "type": "color",
+        "id": "h6-color",
+        "label": "H6 Font Color"
+    },
+      {
+          "type": "header",
+          "content": "Paragraph P1 Full Customization"
+      },
+      {
+          "type": "range",
+          "id": "p1",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "P1 Font Size (Desktop)",
+          "default": 18
+      },
+      {
+          "type": "range",
+          "id": "p1-mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "P1 Font Size (Mobile)",
+          "default": 16
+      },
+      {
+          "type": "select",
+          "id": "p1-style",
+          "label": "P1 Font Style",
+          "options": [
+              { "value": "normal", "label": "Normal" },
+              { "value": "italic", "label": "Italic" },
+              { "value": "bold", "label": "Bold" }
+          ],
+          "default": "normal"
+      },
+      {
+          "type": "color",
+          "id": "p1-color",
+          "label": "P1 Font Color"
+      },
+
+      {
+          "type": "header",
+          "content": "Paragraph P2 Full Customization"
+      },
+      {
+          "type": "range",
+          "id": "p2",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "P2 Font Size (Desktop)",
+          "default": 16
+      },
+      {
+          "type": "range",
+          "id": "p2-mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "P2 Font Size (Mobile)",
+          "default": 14
+      },
+      {
+          "type": "select",
+          "id": "p2-style",
+          "label": "P2 Font Style",
+          "options": [
+              { "value": "normal", "label": "Normal" },
+              { "value": "italic", "label": "Italic" },
+              { "value": "bold", "label": "Bold" }
+          ],
+          "default": "italic"
+      },
+      {
+          "type": "color",
+          "id": "p2-color",
+          "label": "P2 Font Color"
+      },
+
+      {
+          "type": "header",
+          "content": "Paragraph P3 Full Customization"
+      },
+      {
+          "type": "range",
+          "id": "p3",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "P3 Font Size (Desktop)",
+          "default": 14
+      },
+      {
+          "type": "range",
+          "id": "p3-mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "P3 Font Size (Mobile)",
+          "default": 12
+      },
+      {
+          "type": "select",
+          "id": "p3-style",
+          "label": "P3 Font Style",
+          "options": [
+              { "value": "normal", "label": "Normal" },
+              { "value": "italic", "label": "Italic" },
+              { "value": "bold", "label": "Bold" }
+          ],
+          "default": "bold"
+      },
+      {
+          "type": "color",
+          "id": "p3-color",
+          "label": "P3 Font Color"
+      },
+
+      {
+          "type": "header",
+          "content": "Paragraph P4 Full Customization"
+      },
+      {
+          "type": "range",
+          "id": "p4",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "P4 Font Size (Desktop)",
+          "default": 12
+      },
+      {
+          "type": "range",
+          "id": "p4-mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "P4 Font Size (Mobile)",
+          "default": 10
+      },
+      {
+          "type": "select",
+          "id": "p4-style",
+          "label": "P4 Font Style",
+          "options": [
+              { "value": "normal", "label": "Normal" },
+              { "value": "italic", "label": "Italic" },
+              { "value": "bold", "label": "Bold" }
+          ],
+          "default": "normal"
+      },
+      {
+          "type": "color",
+          "id": "p4-color",
+          "label": "P4 Font Color"
+      }
+  ]
+}
+,
   {
     "name": "Currency format",
     "settings": [

@@ -10,3 +10,6 @@
 .m-product-card--soldout .m-product-card__media img {
     filter: grayscale(1);
 }
+.foxecom-sticky-message{
+    display: none;
+}
