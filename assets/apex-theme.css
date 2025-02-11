@@ -111,6 +111,9 @@ img.magazine-title-img {
 .us-them-img {
   width: 50%;
 }
+.us-them-img img {
+  width: 100%;
+}
 
 .us-them-row {
   display: flex;
