@@ -25,7 +25,33 @@
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
+
+
+  
 {%- endstyle -%}
+
+
+
+<style>
+    .proudct-content-tab .rte :where(h1,h2,h3,h4,h5,h6) {
+      margin-bottom: 5px;
+      margin-top: 5px;
+  }
+  .rte p {
+      margin-bottom: 0;
+      margin-top: 0;
+      line-height: 1.3;
+    }
+    .proudct-content-tab .rte h2{
+    font-size: 18px;
+
+    }
+  </style>
+
+
+
+
+
 <m-product-details-tabs
   id="m-section-{{ section.id }}"
   class="{{ classes }}"
@@ -48,10 +74,10 @@
           {% endfor %}
         </div>
       </div>
-      <div class="m-tabs__content m-product-collapsible">
+      <div class="m-tabs__content m-product-collapsible proudct-content-tab">
         {% for block in section.blocks %}
           <div
-            class="m-tab-content--{{ block.type }} m-tab-content"
+            class="m-tab-content--{{ block.type }} m-tab-content "
             data-block-type="{{ block.type }}"
           >
             <div class="m-tab-content__inner">
