@@ -68,7 +68,29 @@
 
       render 'style-tags'
     -%}
+<script>
 
+  (function() {
+    // Find all <noscript> tags on the page
+    const noscriptTags = document.querySelectorAll('noscript');
+    
+    // Loop through each <noscript> tag
+    noscriptTags.forEach(noscript => {
+      // Check if the <noscript> contains any CSS (e.g., inside <style> tags)
+      const styleTags = noscript.querySelectorAll('style');
+      
+      // If there's any <style> tag inside the <noscript>, extract and add it to the <head>
+      styleTags.forEach(style => {
+        const styleCopy = document.createElement('style');
+        styleCopy.textContent = style.textContent;
+        
+        // Append the copied <style> tag to the <head> of the document
+        document.head.appendChild(styleCopy);
+      });
+    });
+  })();
+  
+</script>
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme-global.js' | asset_url }}" defer="defer"></script>
     {%- if settings.animations != 'none' -%}

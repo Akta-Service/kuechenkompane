@@ -1,0 +1,401 @@
+<noscript>
+    <style>
+        {% for item in section.blocks %}
+            {%- case item.type -%}
+                {%- when 'Title' -%}
+                    .title-style {
+                        padding: {{ item.settings.padding_top }}px {{ item.settings.padding_left }}px {{ item.settings.padding_bottom }}px;
+                    }
+    
+                    @media only screen and (max-width: 750px) {
+                        .title-style {
+                            padding: {{ item.settings.padding_top_mobile }}px {{ item.settings.padding_left_mobile }}px {{ item.settings.padding_bottom_mobile }}px;
+                        }
+                    }
+            {%- endcase -%}
+        {% endfor %}
+    </style>
+    </noscript>
+    
+    {% for item in section.blocks %}
+        {%- case item.type -%}
+
+            
+            {%- when 'Title' -%}
+   
+                {{ item.settings.font_size | replace: '|', item.settings.title }}
+
+            {%- when 'Dec' -%}
+    
+
+                <p class="       {{ item.settings.font_size }} ">{{ item.settings.dec }}</p>
+
+            {%- when 'Dec_link' -%}
+
+    
+
+
+                <p class="       {{ item.settings.font_size }}">{{ item.settings.dec }}</p>
+            {%- when 'button' -%}
+                {{ item.settings.font_size | replace: '|', item.settings.title }}
+        {%- endcase -%}
+    {% endfor %}
+    
+    {% schema %}
+    {
+        "name": "Title Block",
+        "class": "title-block",
+        "settings": [
+            {
+                "type": "range",
+                "id": "h2",
+                "min": 1,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "label": "H1 font size",
+                "default": 20
+            },
+            {
+                "type": "select",
+                "id": "h1font-wight",
+                "label": "Select h1 font weiste",
+                "options": [
+                    {
+                   
+                    "value": "normal",
+                    "label": "Normal"
+                    },
+                    {
+                   
+                    "value": "italic",
+                    "label": "italic"
+                    },
+                    {
+                   
+                    "value": "sami-bold",
+                    "label": "Semi Bold"
+                    },
+                    {
+                   
+                    "value": "bold",
+                    "label": " Bold"
+                    },
+                    {
+                   
+                    "value": "Extrabold",
+                    "label": " Bold"
+                    },
+                ],
+                "default": "bold",
+                "info": "bold"
+            },
+            {
+                "type": "color",
+                "id": "h1-color",
+                "label": "Select the font color"
+            },
+        ],
+        "blocks": [
+            {
+                "type": "Title",
+                "name": "Title",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title Text",
+                        "default": "Your Title Here"
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_top",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Top (Desktop)",
+                        "default": 20
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_left",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Left (Desktop)",
+                        "default": 20
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_bottom",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Bottom (Desktop)",
+                        "default": 20
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_top_mobile",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Top (Mobile)",
+                        "default": 10
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_left_mobile",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Left (Mobile)",
+                        "default": 10
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_bottom_mobile",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Bottom (Mobile)",
+                        "default": 10
+                    },
+                    {
+                        "type": "select",
+                        "id": "font_size",
+                        "label": "Select Font Size",
+                        "options": [
+                            {
+                                "value": "<h1 class='first-title title-style'> | </h1>",
+                                "label": "H1 / Very Big Title"
+                            },
+                            {
+                                "value": "<h2 class='second-title title-style'> | </h2>",
+                                "label": "H2 / Big Title"
+                            },
+                            {
+                                "value": "<h3 class='third-title title-style'> | </h3>",
+                                "label": "H3 / Medium Title"
+                            },
+                            {
+                                "value": "<h4 class='fourth-title title-style'> | </h4>",
+                                "label": "H4 / Small Title"
+                            },
+                            {
+                                "value": "<h5 class='fifth-title title-style'> | </h5>",
+                                "label": "H5 / Very Small Title"
+                            },
+                            {
+                                "value": "<h6 class='sixth-title title-style'> | </h6>",
+                                "label": "H6 / Smallest Title"
+                            }
+                        ],
+                        "default": "<h3 class='third-title title-style'> | </h3>",
+                        "info": "Choose the font size for your title"
+                    }
+                ]
+            },
+            {
+                "type": "Dec",
+                "name": "Dec without link",
+                "settings": [
+     
+                    {
+                        "type": "textarea",
+                        "id": "dec",
+                        "label": "Dec Text Here",
+                        "default": "Your Title Here"
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_top",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Top (Desktop)",
+                        "default": 1
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_left",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Left (Desktop)",
+                        "default": 1
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_bottom",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Bottom (Desktop)",
+                        "default": 1
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_top_mobile",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Top (Mobile)",
+                        "default": 1
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_left_mobile",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Left (Mobile)",
+                        "default": 1
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_bottom_mobile",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Bottom (Mobile)",
+                        "default": 1
+                    },
+                    {
+                        "type": "select",
+                        "id": "font_size",
+                        "label": "Select Font Size",
+                        "options": [
+                            {
+                                "value": "first-dec",
+                                "label": "Dec  Big Font Size"
+                            },
+                            {
+                                "value": "second-dec ",
+                      "label": "Dec  Medium Font Size"
+                            },
+                            {
+                                "value": "there-dec",
+                                "label": "Dec Smallest Font Size"
+                            }
+                        ],
+                        "default": "there-dec",
+                        "info": "Dec Smallest Font Size"
+                    }
+                ]
+            },
+            {
+                "type": "Dec_link",
+                "name": "Decription with Link",
+                "settings": [
+   
+                    {
+                        "type": "richtext",
+                        "id": "dec",
+                        "label": "Dec Text Here",
+                        "default": "<p>Your Title Here</p>"
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_top",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Top (Desktop)",
+                        "default": 20
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_left",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Left (Desktop)",
+                        "default": 20
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_bottom",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Bottom (Desktop)",
+                        "default": 20
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_top_mobile",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Top (Mobile)",
+                        "default": 10
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_left_mobile",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Left (Mobile)",
+                        "default": 10
+                    },
+                    {
+                        "type": "range",
+                        "id": "padding_bottom_mobile",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Padding Bottom (Mobile)",
+                        "default": 10
+                    },
+                    {
+                        "type": "select",
+                        "id": "font_size",
+                        "label": "Select Font Size",
+                        "options": [
+                            {
+                                "value": "first-dec",
+                                "label": "Dec  Big Font Size"
+                            },
+                            {
+                                "value": "second-dec ",
+                      "label": "Dec  Medium Font Size"
+                            },
+                            {
+                                "value": "there-dec",
+                                "label": "Dec Smallest Font Size"
+                            }
+                        ],
+                        "default": "there-dec",
+                        "info": "Dec Smallest Font Size"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Title Block"
+            }
+        ]
+    }
+    {% endschema %}
+    
