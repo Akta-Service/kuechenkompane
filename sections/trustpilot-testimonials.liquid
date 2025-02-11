@@ -1,3 +1,5 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
 <style>
   * {
     margin: 0;
@@ -13,9 +15,7 @@
     text-decoration: none;
   }
 
-  img {
-    width: 100%;
-  }
+
 
   /* common css end   */
   .trustpilot-area{
@@ -424,3 +424,40 @@
   ]
 }
 {% endschema %}
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+<script>
+  var swiper = new Swiper('.trustpilot-testimonials', {
+    slidesPerView: 5,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        loop: true,
+      },
+      580: {
+        slidesPerView: 2,
+        loop: true,
+      },
+      888: {
+        slidesPerView: 3,
+        loop: true,
+      },
+      1108: {
+        slidesPerView: 4,
+        loop: true,
+      },
+      1344: {
+        slidesPerView: 5,
+      },
+    },
+  });
+</script>

@@ -1395,6 +1395,84 @@
         "item_size": 16,
         "backBtn": "Go To Cart Button"
       }
+    },
+    "trustpilot_testimonials_YbXp3E": {
+      "type": "trustpilot-testimonials",
+      "blocks": {
+        "block_tk6TF7": {
+          "type": "block",
+          "settings": {
+            "tes_title": "A felicidade que estes oculos triuxeram.A minha filha queria muoyo uns oculos…",
+            "tes_text": "A minha filha queria muoyo uns oculos de sol Meller. Fiou muito satisfeita. De facto...",
+            "user_name": "ArjunMp,",
+            "date": "22 hours ago"
+          }
+        },
+        "block_qCCEJY": {
+          "type": "block",
+          "settings": {
+            "tes_title": "A felicidade que estes oculos triuxeram.A minha filha queria muoyo uns oculos…",
+            "tes_text": "A minha filha queria muoyo uns oculos de sol Meller. Fiou muito satisfeita. De facto...",
+            "user_name": "ArjunMp,",
+            "date": "22 hours ago"
+          }
+        },
+        "block_Cjk3qr": {
+          "type": "block",
+          "settings": {
+            "tes_title": "A felicidade que estes oculos triuxeram.A minha filha queria muoyo uns oculos…",
+            "tes_text": "A minha filha queria muoyo uns oculos de sol Meller. Fiou muito satisfeita. De facto...",
+            "user_name": "ArjunMp,",
+            "date": "22 hours ago"
+          }
+        },
+        "block_n66cBX": {
+          "type": "block",
+          "settings": {
+            "tes_title": "A felicidade que estes oculos triuxeram.A minha filha queria muoyo uns oculos…",
+            "tes_text": "A minha filha queria muoyo uns oculos de sol Meller. Fiou muito satisfeita. De facto...",
+            "user_name": "ArjunMp,",
+            "date": "22 hours ago"
+          }
+        },
+        "block_ncTrUJ": {
+          "type": "block",
+          "settings": {
+            "tes_title": "A felicidade que estes oculos triuxeram.A minha filha queria muoyo uns oculos…",
+            "tes_text": "A minha filha queria muoyo uns oculos de sol Meller. Fiou muito satisfeita. De facto...",
+            "user_name": "ArjunMp,",
+            "date": "22 hours ago"
+          }
+        },
+        "block_AVgLTe": {
+          "type": "block",
+          "settings": {
+            "tes_title": "A felicidade que estes oculos triuxeram.A minha filha queria muoyo uns oculos…",
+            "tes_text": "A minha filha queria muoyo uns oculos de sol Meller. Fiou muito satisfeita. De facto...",
+            "user_name": "ArjunMp,",
+            "date": "22 hours ago"
+          }
+        }
+      },
+      "block_order": [
+        "block_tk6TF7",
+        "block_qCCEJY",
+        "block_Cjk3qr",
+        "block_n66cBX",
+        "block_ncTrUJ",
+        "block_AVgLTe"
+      ],
+      "settings": {
+        "mt": 0,
+        "mb": 0,
+        "mt_mobile": 0,
+        "mb_mobile": 0,
+        "title": "TRUSTED BY",
+        "title_highlight": "+2M CUSTOMERS",
+        "t_size": 32,
+        "t_color": "#202223",
+        "h_text_color": "#ff6723"
+      }
     }
   },
   "order": [
@@ -1420,6 +1498,7 @@
     "usp_list_fgXGqB",
     "benefit_list_gif_iJWmYF",
     "expert_testimonial_adCtdF",
-    "cta_final_9B8iN9"
+    "cta_final_9B8iN9",
+    "trustpilot_testimonials_YbXp3E"
   ]
 }
