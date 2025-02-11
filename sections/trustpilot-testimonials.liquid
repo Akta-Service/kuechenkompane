@@ -1,0 +1,426 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  /* common css end   */
+  .trustpilot-area{
+    margin-top: {{ section.settings.mt}}px;
+    margin-bottom: {{ section.settings.mb}}px;
+  }
+  .container {
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 0 70px;
+  }
+
+  .testimonial-slider-wrapper {
+    padding: 0 50px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .trustpilot-heading {
+    margin-bottom: 50px;
+  }
+
+  .trustpilot-testimonials-item {
+    background-color: #f8f9fa;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 0 rgba(182, 196, 210, 0.4);
+    line-height: 16px;
+    margin: 0 24px 0 0;
+    padding: 15px;
+    position: relative;
+    vertical-align: middle;
+    white-space: normal;
+  }
+
+  .trustpilot-title {
+    font-size: {{ section.settings.t_size }}px;
+    color: {{ section.settings.t_color }};
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+
+  .highligt-text {
+    font-style: italic;
+    color: {{ section.settings.h_text_color }};
+  }
+
+  .trustpilot-testimonials-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .testimonial-review {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .review-verified {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .review-star svg {
+    width: 100px;
+  }
+
+  .review-verified svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .review-verified span {
+    color: #6c6c85;
+    font-size: 13px;
+  }
+
+  .testimonial-title {
+    color: #1f2936;
+    font-size: 14px;
+    font-weight: 700;
+    height: 16px;
+    margin: 0 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .testimonial-content p {
+    color: #191919;
+    font-size: 13px;
+    line-height: 16px;
+    max-height: 50px;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+
+  .testimonial-user-info {
+    margin-top: 30px;
+  }
+
+  .testimonial-user {
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #00000099;
+  }
+
+  .testimonial-date {
+    font-size: 12px;
+    color: #00000099;
+  }
+
+  .swiper-button-next svg {
+    transform: rotate(180deg);
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none;
+  }
+
+  .icon.icon-arrow-next,
+  .icon.icon-arrow-prew {
+    color: #1e1e1e;
+    font-size: 34px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    line-height: 24px;
+  }
+
+  .best-sell-product {
+    overflow: visible;
+  }
+  @media only screen and (max-width: 767px) {
+    .container {
+      padding: 0 20px;
+    }
+    .trustpilot-area{
+      margin-top: {{ section.settings.mt_mobile}}px;
+      margin-bottom: {{ section.settings.mb_mobile}}px;
+    }
+  }
+  @media only screen and (max-width: 520px) {
+    .trustpilot-title {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<div class="trustpilot-area">
+  <div class="container">
+    <div class="trustpilot-heading">
+      <h3 class="trustpilot-title">
+        {{ section.settings.title }}
+        <span class="highligt-text">{{ section.settings.title_highlight }}</span>
+      </h3>
+    </div>
+    <div class="testimonial-slider-wrapper">
+      <div class="trustpilot-testimonials swiper trustpilot-testimonials">
+        <div class="trustpilot-testimonials-list swiper-wrapper">
+          {% comment %} loop slide  {% endcomment %}
+          {% for block in section.blocks %}
+            <div class="trustpilot-testimonials-item swiper-slide">
+              <div class="testimonial-review">
+                <div class="review-star">
+                  <svg role="img" viewBox="0 0 251 46" xmlns="http://www.w3.org/2000/svg">
+                    <title id="starRating-gj9f6tk9z39" lang="en-US">5 out of 5 star rating on
+                        Trustpilot
+                    </title>
+                    <g class="tp-star">
+                        <path class="tp-star__canvas" fill="#00b67a"
+                            d="M0 46.330002h46.375586V0H0z">
+                        </path>
+                        <path class="tp-star__shape"
+                            d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z"
+                            fill="#FFF"></path>
+                    </g>
+                    <g class="tp-star">
+                        <path class="tp-star__canvas" fill="#00b67a"
+                            d="M51.24816 46.330002h46.375587V0H51.248161z"></path>
+                        <path class="tp-star__canvas--half" fill="#00b67a"
+                            d="M51.24816 46.330002h23.187793V0H51.248161z"></path>
+                        <path class="tp-star__shape"
+                            d="M74.990978 31.32991L81.150908 30 84 39l-9.660206-7.202786L64.30279 39l3.895636-11.840666L58 19.841466h12.605577L74.499595 8l3.895637 11.841466H91L74.990978 31.329909z"
+                            fill="#FFF"></path>
+                    </g>
+                    <g class="tp-star">
+                        <path class="tp-star__canvas" fill="#00b67a"
+                            d="M102.532209 46.330002h46.375586V0h-46.375586z"></path>
+                        <path class="tp-star__canvas--half" fill="#00b67a"
+                            d="M102.532209 46.330002h23.187793V0h-23.187793z"></path>
+                        <path class="tp-star__shape"
+                            d="M142.066994 19.711433L115.763298 38.80065l3.838215-11.797827-10.047304-7.291391h12.418975l3.837418-11.798624 3.837417 11.798624h12.418975zM125.81156 31.510075l7.183595-1.509576 2.862113 8.800152-10.045708-7.290576z"
+                            fill="#FFF"></path>
+                    </g>
+                    <g class="tp-star">
+                        <path class="tp-star__canvas" fill="#00b67a"
+                            d="M153.815458 46.330002h46.375586V0h-46.375586z"></path>
+                        <path class="tp-star__canvas--half" fill="#00b67a"
+                            d="M153.815458 46.330002h23.187793V0h-23.187793z"></path>
+                        <path class="tp-star__shape"
+                            d="M193.348355 19.711433L167.045457 38.80065l3.837417-11.797827-10.047303-7.291391h12.418974l3.837418-11.798624 3.837418 11.798624h12.418974zM177.09292 31.510075l7.183595-1.509576 2.862114 8.800152-10.045709-7.290576z"
+                            fill="#FFF"></path>
+                    </g>
+                    <g class="tp-star">
+                        <path class="tp-star__canvas" fill="#00b67a"
+                            d="M205.064416 46.330002h46.375587V0h-46.375587z"></path>
+                        <path class="tp-star__canvas--half" fill="#00b67a"
+                            d="M205.064416 46.330002h23.187793V0h-23.187793z"></path>
+                        <path class="tp-star__shape"
+                            d="M244.597022 19.711433l-26.3029 19.089218 3.837419-11.797827-10.047304-7.291391h12.418974l3.837418-11.798624 3.837418 11.798624h12.418975zm-16.255436 11.798642l7.183595-1.509576 2.862114 8.800152-10.045709-7.290576z"
+                            fill="#FFF"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="review-verified">
+                  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14ZM6.09217 7.81401L9.20311 4.7031C9.44874 4.45757 9.84688 4.45757 10.0923 4.7031C10.338 4.94864 10.338 5.34673 10.0923 5.59226L6.62009 9.06448C6.59573 9.10283 6.56682 9.13912 6.53333 9.17256C6.28787 9.41821 5.88965 9.41821 5.64402 9.17256L3.7059 7.11031C3.46046 6.86464 3.46046 6.46669 3.7059 6.22102C3.95154 5.97548 4.34968 5.97548 4.59512 6.22102L6.09217 7.81401Z"
+                        fill="#6c6c85"></path>
+                  </svg>
+                  <span>Verified</span>
+                </div>
+              </div>
+              <div class="testimonial-content">
+                <h4 class="testimonial-title">
+                  {{ block.settings.tes_title }}
+                </h4>
+                <p class="testimonial-text">
+                  {{ block.settings.tes_text }}
+                </p>
+              </div>
+              <div class="testimonial-user-info">
+                <span class="testimonial-user">{{ block.settings.user_name }}</span>
+                <span class="testimonial-date">{{ block.settings.date }}</span>
+              </div>
+            </div>
+          {% endfor %}
+          {% comment %} loop slide end  {% endcomment %}
+        </div>
+      </div>
+      <!-- swiper slider next prev btn -->
+      <div class="swiper-button-next">
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          style="position: absolute; height: 100%; width: 100%; left: 0; top: 0;"
+        >
+          <circle class="arrow-slider-circle" cx="12" cy="12" r="11.5" fill="none" stroke="#8C8C8C">
+          </circle>
+          <path class="arrow-slider-shape" fill="#000000"
+              d="M10.5088835 12l3.3080582-3.02451041c.2440777-.22315674.2440777-.5849653 0-.80812204-.2440776-.22315673-.6398058-.22315673-.8838834 0L9.18305826 11.595939c-.24407768.2231567-.24407768.5849653 0 .808122l3.75000004 3.4285714c.2440776.2231568.6398058.2231568.8838834 0 .2440777-.2231567.2440777-.5849653 0-.808122L10.5088835 12z">
+          </path>
+        </svg>
+      </div>
+      <div class="swiper-button-prev">
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          style="position: absolute; height: 100%; width: 100%; left: 0; top: 0;"
+        >
+          <circle class="arrow-slider-circle" cx="12" cy="12" r="11.5" fill="none" stroke="#8C8C8C">
+          </circle>
+          <path class="arrow-slider-shape" fill="#000000"
+              d="M10.5088835 12l3.3080582-3.02451041c.2440777-.22315674.2440777-.5849653 0-.80812204-.2440776-.22315673-.6398058-.22315673-.8838834 0L9.18305826 11.595939c-.24407768.2231567-.24407768.5849653 0 .808122l3.75000004 3.4285714c.2440776.2231568.6398058.2231568.8838834 0 .2440777-.2231567.2440777-.5849653 0-.808122L10.5088835 12z">
+          </path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trustpilot Testimonial",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Margin Top",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Margin Bottom",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mt_mobile",
+      "label": "Margin Top (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mb_mobile",
+      "label": "Margin Bottom (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "TRUSTED BY"
+    },
+    {
+      "type": "text",
+      "id": "title_highlight",
+      "label": "Title Highlight",
+      "default": "+2M CUSTOMERS"
+    },
+    {
+      "type": "range",
+      "id": "t_size",
+      "label": "Title Font Size",
+      "default": 32,
+      "min": 10,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "t_color",
+      "label": "Title Color",
+      "default": "#202223"
+    },
+    {
+      "type": "color",
+      "id": "h_text_color",
+      "label": "Highlight Text Color",
+      "default": "#ff6723"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tes_title",
+          "label": "Testimonial Title",
+          "default": "A felicidade que estes oculos triuxeram.A minha filha queria muoyo uns oculos…"
+        },
+        {
+          "type": "textarea",
+          "id": "tes_text",
+          "label": "Testimonial Text",
+          "default": "A minha filha queria muoyo uns oculos de sol Meller. Fiou muito satisfeita. De facto..."
+        },
+        {
+          "type": "text",
+          "id": "user_name",
+          "label": "User Name",
+          "default": "ArjunMp,"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Time",
+          "default": "22 hours ago"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trustpilot Testimonial",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
