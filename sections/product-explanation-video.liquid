@@ -2,7 +2,7 @@
     /* product-explanation-video-section */
     .product-explanation-video-section {
       background: {{ section.settings.bg_color }} ;
-      padding: {{ section.settings.vertical_padding }}px {{ section.settings.horizontal_padding }}px;
+      padding: {{ section.settings.vertical_padding }}px 15px;
     }
 
     .product-explanation-video-main {
@@ -27,9 +27,9 @@
   }
 
   .product-explanation-video-title {
-    font-size: 54px;
+    font-size: {{ section.settings.heading_size}}px;
     font-weight: 500;
-    color: #121212;
+    color: {{ section.settings.heading_color }};
     margin: 0;
     text-align: center;
     font-family: sans-serif;
@@ -49,7 +49,8 @@
 
   @media screen and (max-width: 767px) {
     .product-explanation-video-section {
-      padding: 20px 16px 15px;
+      padding: {{ section.settings.vertical_padding-mobile }}px 15px;
+
     }
 
     .product-explanation-video-uppercnt h6 {
@@ -57,7 +58,7 @@
     }
 
     .product-explanation-video-title {
-      font-size: 34px;
+      font-size: {{ section.settings.heading_size_mobile}}px;
     }
 
     .product-explanation-video-uppercnt p {
@@ -78,13 +79,15 @@
             </h6>
           {% when 'heading' %}
             <h3
-              style="color: {{ block.settings.heading_color }}; font-size:{{- block.settings.heading_size -}}px ; "
               class="product-explanation-video-title"
             >
               {{ block.settings.heading }}
             </h3>
           {% when 'details' %}
-            <p style="color: {{ block.settings.details_color }}; font-size:{{- block.settings.details_size -}}px ; ">
+            <p
+              class="parapgh-one"
+              style="color: {{ block.settings.details_color }}; font-size:{{- block.settings.details_size -}}px ; "
+            >
               {{ block.settings.details }}
             </p>
         {% endcase %}
@@ -141,10 +144,38 @@
     },
     {
       "type": "range",
-      "id": "horizontal_padding",
-      "label": "Horizontal padding",
-      "default": 50,
+      "id": "vertical_padding",
+      "label": "Vertical Padding Mobile",
+      "default": 30,
       "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Font Size",
+      "default": 54,
+      "min": 10,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Font Size Mobile",
+      "default": 36,
+      "min": 10,
       "max": 100,
       "step": 1
     }
@@ -186,21 +217,6 @@
           "id": "heading",
           "label": "Heading",
           "default": "What are Maniko Nails?"
-        },
-        {
-          "type": "color",
-          "id": "heading_color",
-          "label": "Color",
-          "default": "#000000"
-        },
-        {
-          "type": "range",
-          "id": "heading_size",
-          "label": "Font Size",
-          "default": 54,
-          "min": 10,
-          "max": 100,
-          "step": 1
         }
       ]
     },
