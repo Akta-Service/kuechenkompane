@@ -159,6 +159,16 @@
     z-index: 5;
   }
 
+  @media only screen and (max-width: 600px) {
+    .liked-img {
+    
+      margin-right: 8%;
+ 
+    }
+  
+  
+  }
+
   .liked-img img {
     width: 34px;
     height: 34px;
@@ -200,17 +210,19 @@
     align-items: center;
   }
 
+
+
   .demand-badge {
     background: #fff1ee;
     color: #f0330e;
-    padding: 10px 9px 5px;
+    padding: 3px 7px 5px 7px;
     border-radius: 6px;
     font-weight: bold;
     display: inline-block;
     font-size: 12px;
     margin-right: 9px;
     flex-shrink: 0;
-  }
+}
 
   .demand-text {
     display: inline-block;
@@ -470,7 +482,7 @@
                 class="rs-product-subtitle"
                 style="
                   color: {{ block.settings.subtitle_color | default: '#1c1c1c' }};
-                  font-size: {{ block.settings.subtitle_font_size | default: 16 }}px;
+                  font-size: clamp(14px, {{ block.settings.subtitle_font_size | default: 16 }}px, 20px);
                 "
               >
                 {{ block.settings.subtitle }}
