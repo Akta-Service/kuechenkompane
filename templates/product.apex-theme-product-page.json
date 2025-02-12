@@ -487,7 +487,20 @@
         "heading_jQDwbJ": {
           "type": "heading",
           "settings": {
-            "heading": "What are Maniko Nails?"
+            "heading": "What are Maniko Nails?",
+            "h1_font_size": 32,
+            "h1_font_size_tablet": 28,
+            "h1_font_size_mobile": 24,
+            "h1_font_weight": "600",
+            "h1_font_color": "#000000",
+            "h1_text_align": "left",
+            "title": "Your Title Here",
+            "padding_top": 20,
+            "padding_bottom": 20,
+            "padding_top_tablet": 15,
+            "padding_bottom_tablet": 15,
+            "padding_top_mobile": 10,
+            "padding_bottom_mobile": 10
           }
         },
         "details_erg8QM": {
@@ -495,7 +508,20 @@
           "settings": {
             "details": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:",
             "details_color": "#000000",
-            "details_size": 18
+            "details_size": 18,
+            "p_font_size": 16,
+            "p_font_size_tablet": 14,
+            "p_font_size_mobile": 12,
+            "p_font_weight": "400",
+            "p_font_color": "#333333",
+            "p_text_align": "left",
+            "p_line_height": 1.5,
+            "p_padding_top": 10,
+            "p_padding_bottom": 10,
+            "p_padding_top_tablet": 8,
+            "p_padding_bottom_tablet": 8,
+            "p_padding_top_mobile": 5,
+            "p_padding_bottom_mobile": 5
           }
         },
         "video_XLLb9A": {
@@ -706,8 +732,11 @@
       "settings": {
         "pt": 50,
         "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
         "title": "FAQ",
         "title_font_size": 34,
+        "title_font_size_mobile": 24,
         "sub_title": "Common problems and simple solutions",
         "sub_title_font_size": 14,
         "title_color": "#121212",
@@ -1164,7 +1193,7 @@
         "use_scroll_mobile": true,
         "use_grid_column_mb": false,
         "padding_top": 100,
-        "padding_bottom": 0,
+        "padding_bottom": 38,
         "custom_class": "",
         "animations": "inherit"
       }
