@@ -93,11 +93,6 @@
     }
   }
 
-          {% endcase %}
-          {% endfor %}
-
-          {% for p in section.blocks %}
-        {% case p.type %}
           {% when 'details' %}
             .akta-{{ section.id}} .description-font{{forloop.index}} {
     font-size: {{ p.settings.p_font_size }}px;
