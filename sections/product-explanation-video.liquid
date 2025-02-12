@@ -66,7 +66,7 @@
     }
   }
   {% for c in section.blocks %}
-        {% case block.type %}
+        {% case c.type %}
           {% when 'heading' %}
             .akta-{{ section.id}} .heading-font{{forloop.index}} {
     font-size: {{ c.settings.h1_font_size }}px;
