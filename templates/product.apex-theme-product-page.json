@@ -110,6 +110,12 @@
             "title_font_size": 22
           }
         },
+        "review_W3rpyh": {
+          "type": "review",
+          "settings": {
+            "p": "4.9/5 Sternen"
+          }
+        },
         "subtitle_yhKtd9": {
           "type": "subtitle",
           "settings": {
@@ -209,6 +215,7 @@
       },
       "block_order": [
         "title_myhGj9",
+        "review_W3rpyh",
         "subtitle_yhKtd9",
         "ratings_nCgFkM",
         "price_g6LBN9",
