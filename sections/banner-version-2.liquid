@@ -237,6 +237,15 @@
     class="banner-main"
     style="{% if section.settings.bg_igm != blank %} background-image: url('{{ section.settings.bg_igm |  img_url: 'master'  }}'); {% endif %}"
   >
+
+
+    <div class="video-wrapper">
+      <video muted autoplay loop playsinline controls>
+      <source src="{{ section.settings.u.sources[1].url }}" type="video/mp4">
+      </video>
+  </div>
+
+
     <div class="banner-main-content">
       <h3>{{ section.settings.title }}</h3>
       {{ section.settings.sub_title }}
@@ -276,11 +285,15 @@
 {
   "name": "Banner Version 2",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "bg_igm",
-      "label": "Background Image"
-    },
+      
+                      {
+            
+                        "id": "u",
+                        "label": "Video Upload",
+                        "type": "video"
+                       },
+
+    
     {
       "type": "range",
       "id": "mt",
