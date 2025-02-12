@@ -223,6 +223,7 @@
         "item_wXRnnG"
       ],
       "settings": {
+        "bg_color": "#ebf2e8",
         "pt": 60,
         "pb": 60,
         "mobile_pt": 30,
@@ -1328,7 +1329,7 @@
             "padding_top_mobile": 10,
             "padding_left_mobile": 10,
             "padding_bottom_mobile": 10,
-            "font_size": "<h6 class='sixth-title title-style'> | </h6>"
+            "font_size": "<h1 class='first-title title-style'> | </h1>"
           }
         },
         "dec_qF6zhC": {
