@@ -17,7 +17,7 @@
 
   /* common css end  */
   .category-area {
-    background: #faf8f6;
+    background: {{ section.settings.bg_color }};
     padding: 60px 0;
     padding-top: {{ section.settings.pt }}px;
     padding-bottom: {{ section.settings.pb }}px;
@@ -161,6 +161,12 @@
 {
   "name": "Category Selection",
   "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#faf8f6"
+    },
     {
       "type": "range",
       "id": "pt",
