@@ -152,6 +152,17 @@ img.magazine-title-img {
   align-items: center;
   justify-content: space-between;
 }
+@media only screen and (max-width: 750px) {
+
+  .usp-list-main {
+
+    align-items: start;
+
+  }
+
+}
+
+
 
 .usp-list-item {
   text-align: center;
