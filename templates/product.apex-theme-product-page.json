@@ -389,6 +389,8 @@
       "settings": {
         "pt": 70,
         "pb": 70,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
         "title": "See our products in action",
         "title_size": 24,
         "title_color": "#1e1e1e",
@@ -469,6 +471,57 @@
         "bg_color": "#fafafb",
         "p_top": 50,
         "p_bottom": 50
+      }
+    },
+    "product_explanation_video_xNFp3M": {
+      "type": "product-explanation-video",
+      "blocks": {
+        "sub_heading_aBnF8i": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "Maniko - Explained in 2 Minutes",
+            "sub_heading_color": "#000000",
+            "sub_heading_size": 16
+          }
+        },
+        "heading_jQDwbJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "What are Maniko Nails?",
+            "heading_color": "#000000",
+            "heading_size": 54
+          }
+        },
+        "details_erg8QM": {
+          "type": "details",
+          "settings": {
+            "details": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:",
+            "details_color": "#000000",
+            "details_size": 18
+          }
+        },
+        "video_XLLb9A": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Fire_in_the_hole_(1)_V1.mp4",
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "playsinline": true,
+            "controls": true
+          }
+        }
+      },
+      "block_order": [
+        "sub_heading_aBnF8i",
+        "heading_jQDwbJ",
+        "details_erg8QM",
+        "video_XLLb9A"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "vertical_padding": 50,
+        "horizontal_padding": 50
       }
     },
     "apex_faqs_jx7hp6": {
@@ -1482,6 +1535,7 @@
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
+    "product_explanation_video_xNFp3M",
     "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
