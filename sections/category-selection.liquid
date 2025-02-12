@@ -131,6 +131,9 @@
         {% for block in section.blocks %}
           {%- assign collection = block.settings.collection -%}
           <div class="category-item swiper-slide">
+                   <div class="cart-inner-wrapper">
+
+           
             {% if block.settings.collection_img != blank %}
               <div class="category-img">
                 <img src="{{ block.settings.collection_img |  img_url: 'master' }}" alt="">
@@ -140,16 +143,17 @@
               <a href="{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
                 <span>
                   {{ block.settings.collection_name }}
-                  <i class="fa-solid fa-arrow-right"></i></span
-              ></a>
+                 </span>
+                
+                
+                </a>
 
             {%- else -%}
               <a href="{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}"
-                ><span>
-                  {{ block.settings.collection.title }}
-                  <i class="fa-solid fa-arrow-right"></i></span
-              ></a>
+                ><span>{{ block.settings.collection.title }}</span></a>
             {% endif %}
+         
+          </div>
           </div>
         {% endfor %}
       </div>
@@ -287,13 +291,13 @@
       },
       breakpoints: {
         50: {
-          slidesPerView: 2,
+          slidesPerView: 3.5,
         },
         500: {
-          slidesPerView: 2,
+          slidesPerView: 3.5,
         },
         768: {
-          slidesPerView: 3,
+          slidesPerView: 4.5,
         },
         1024: {
           slidesPerView: 5,
