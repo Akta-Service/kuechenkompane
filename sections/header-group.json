@@ -87,7 +87,7 @@
       "settings": {
         "color_scheme": "default",
         "color_scheme_menu": "default",
-        "header_design": "logo-left-menu-center",
+        "header_design": "logo-center-menu-left",
         "container": "container-fluid",
         "sticky_header": "on_scroll_up",
         "transparent_on_top": false,
@@ -100,7 +100,7 @@
         "logo_max_width": 110,
         "sticky_logo_max_width": 110,
         "mobile_logo_max_width": 90,
-        "main_menu": "hauptmenu",
+        "main_menu": "menu-k-chenkompane",
         "secondary_menu": "",
         "mobile_menu": "",
         "uppercase_parent_level": false,
