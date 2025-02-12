@@ -110,18 +110,18 @@
             "title_font_size": 22
           }
         },
-        "review_W3rpyh": {
-          "type": "review",
-          "settings": {
-            "p": "4.9/5 Sternen"
-          }
-        },
         "subtitle_yhKtd9": {
           "type": "subtitle",
           "settings": {
             "subtitle": "Effortless cutting thanks to the highest quality!",
             "subtitle_font_size": 16,
             "subtitle_color": "#1c1c1c"
+          }
+        },
+        "review_W3rpyh": {
+          "type": "review",
+          "settings": {
+            "p": "4.9/5 Sternen"
           }
         },
         "ratings_nCgFkM": {
@@ -215,8 +215,8 @@
       },
       "block_order": [
         "title_myhGj9",
-        "review_W3rpyh",
         "subtitle_yhKtd9",
+        "review_W3rpyh",
         "ratings_nCgFkM",
         "price_g6LBN9",
         "viewer_stock_count_wdjDHT",
