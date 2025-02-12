@@ -1,9 +1,6 @@
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 <style>
-  @font-face {
-    font-family: 'grotesk';
-    src: url('{{ "DIN Neuzeit Grotesk Light.ttf" | asset_url }}') format('truetype');
-  }
+
 
   .custom-product-page a,
   p,
@@ -25,7 +22,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'grotesk', sans-serif !important;
+
   }
 
   .custom-product-page {
@@ -152,7 +149,7 @@
     font-size: 16px;
     font-weight: 300;
     color: #1c1c1c;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
 
   .liked-img {
@@ -319,6 +316,16 @@
   .swiper-pagination-bullet {
     background: #1c1c1c !important;
   }
+  .prouduct-review {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 10px;
+}
+  .prouduct-review svg {
+    width: 110px;
+}
+
 
   @media only screen and (max-width: 1300px) {
     .rs-row {
