@@ -223,13 +223,14 @@
         "item_wXRnnG"
       ],
       "settings": {
+        "bg_color": "#ebf2e8",
         "pt": 60,
         "pb": 60,
         "mobile_pt": 30,
         "mobile_pb": 30,
         "title": "Nach Kategorie einkaufen",
         "heading_font_size": 24,
-        "heading_color": "#ffffff"
+        "heading_color": "#201b1b"
       }
     },
     "banner_version_1_aGXez8": {
@@ -301,9 +302,7 @@
         "heading_bih4qd": {
           "type": "heading",
           "settings": {
-            "heading": "Qualität, die begeistert.",
-            "heading_color": "#000000",
-            "heading_size": 58
+            "heading": "Qualität, die begeistert."
           }
         },
         "details_tLDmHe": {
@@ -335,7 +334,10 @@
       "settings": {
         "bg_color": "#ffffff",
         "vertical_padding": 50,
-        "horizontal_padding": 50
+        "vertical_padding_mobile": 30,
+        "heading_color": "#000000",
+        "heading_size": 54,
+        "heading_size_mobile": 34
       }
     },
     "usp_list_nrezVU": {
@@ -1327,7 +1329,7 @@
             "padding_top_mobile": 10,
             "padding_left_mobile": 10,
             "padding_bottom_mobile": 10,
-            "font_size": "<h6 class='sixth-title title-style'> | </h6>"
+            "font_size": "<h1 class='first-title title-style'> | </h1>"
           }
         },
         "dec_qF6zhC": {
