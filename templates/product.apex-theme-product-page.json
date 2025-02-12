@@ -493,14 +493,14 @@
             "h1_font_size_mobile": 24,
             "h1_font_weight": "600",
             "h1_font_color": "#000000",
-            "h1_text_align": "left",
+            "h1_text_align": "center",
             "title": "Your Title Here",
-            "padding_top": 20,
-            "padding_bottom": 20,
-            "padding_top_tablet": 15,
-            "padding_bottom_tablet": 15,
-            "padding_top_mobile": 10,
-            "padding_bottom_mobile": 10
+            "padding_top": 1,
+            "padding_bottom": 1,
+            "padding_top_tablet": 1,
+            "padding_bottom_tablet": 1,
+            "padding_top_mobile": 1,
+            "padding_bottom_mobile": 1
           }
         },
         "details_erg8QM": {
