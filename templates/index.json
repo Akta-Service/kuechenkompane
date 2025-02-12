@@ -387,7 +387,7 @@
         "item_yDtyRV"
       ],
       "settings": {
-        "bg_color": "#EBF2E8",
+        "bg_color": "#F8F8F8",
         "verticle_padding": 50,
         "horizontal_padding": 50
       }
@@ -1321,15 +1321,6 @@
           "type": "Title",
           "settings": {
             "title": "Your Title Here",
-<<<<<<< HEAD
-            "padding_top": 20,
-            "padding_left": 20,
-            "padding_bottom": 20,
-            "padding_top_mobile": 10,
-            "padding_left_mobile": 10,
-            "padding_bottom_mobile": 10,
-            "font_size": "<h3 class='third-title title-style'> | </h3>"
-=======
             "padding_top": 64,
             "padding_left": 38,
             "padding_bottom": 31,
@@ -1337,7 +1328,6 @@
             "padding_left_mobile": 10,
             "padding_bottom_mobile": 10,
             "font_size": "<h6 class='sixth-title title-style'> | </h6>"
->>>>>>> b5b2f466f485f33660d85c70901c2ae7570fa05e
           }
         },
         "dec_qF6zhC": {
@@ -1350,11 +1340,7 @@
             "padding_top_mobile": 1,
             "padding_left_mobile": 1,
             "padding_bottom_mobile": 1,
-<<<<<<< HEAD
-            "font_size": "there-dec"
-=======
             "font_size": "first-dec"
->>>>>>> b5b2f466f485f33660d85c70901c2ae7570fa05e
           }
         },
         "dec_link_akr8Wd": {
