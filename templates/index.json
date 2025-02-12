@@ -1252,6 +1252,7 @@
         ".m-image-comparison__heading {box-shadow: none; border-radius: 5px; padding: 5px 12px; letter-spacing: 0; min-height: 34px;}",
         ".m-richtext__description {font-size: 16px;}",
         ".m-image-comparison__after .m-image-comparison__heading {bottom: 20px; top: auto;}",
+        ".m-richtext__title{font-size: 54px;}",
         "@media (max-width: 767px) {.m-image-comparison__heading, .m-richtext__description br {display: none; } .m-custom-content__wrapper {flex-direction: column-reverse; } .m-custom-content__block {padding: 0 15px; }}"
       ],
       "settings": {
