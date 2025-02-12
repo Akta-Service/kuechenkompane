@@ -287,54 +287,6 @@
         "text_color": "#000000"
       }
     },
-    "logo_greyed_out_NgMgT8": {
-      "type": "logo-greyed-out",
-      "blocks": {
-        "item_Fyjtqn": {
-          "type": "item",
-          "settings": {
-            "logo_img": "shopify://shop_images/n_tv_logo_V2_1.png"
-          }
-        },
-        "item_FHL8Qc": {
-          "type": "item",
-          "settings": {
-            "logo_img": "shopify://shop_images/n_tv_logo_V6_1.png"
-          }
-        },
-        "item_BadLmh": {
-          "type": "item",
-          "settings": {
-            "logo_img": "shopify://shop_images/n_tv_logo_V3_1.png"
-          }
-        },
-        "item_3QJGWm": {
-          "type": "item",
-          "settings": {
-            "logo_img": "shopify://shop_images/n_tv_logo_V4_1.png"
-          }
-        },
-        "item_EbN8bJ": {
-          "type": "item",
-          "settings": {
-            "logo_img": "shopify://shop_images/n_tv_logo_V5_1.png"
-          }
-        }
-      },
-      "block_order": [
-        "item_Fyjtqn",
-        "item_FHL8Qc",
-        "item_BadLmh",
-        "item_3QJGWm",
-        "item_EbN8bJ"
-      ],
-      "disabled": true,
-      "settings": {
-        "bg_color": "#fafafb",
-        "p_top": 50,
-        "p_bottom": 50
-      }
-    },
     "product_explanation_video_6ERhrB": {
       "type": "product-explanation-video",
       "blocks": {
@@ -438,52 +390,6 @@
         "bg_color": "#EBF2E8",
         "verticle_padding": 50,
         "horizontal_padding": 50
-      }
-    },
-    "benefit_text_right_xxnyCR": {
-      "type": "benefit-text-right",
-      "blocks": {
-        "subtitle_dCW93y": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Perfektion in jedem Schnitt",
-            "subtitle_color": "#121212",
-            "subtitle_size": 18
-          }
-        },
-        "title_8Nhy7h": {
-          "type": "title",
-          "settings": {
-            "title": "Mühelos & präzise schneiden",
-            "title_color": "#121212",
-            "title_size": 40
-          }
-        },
-        "description_pePmFE": {
-          "type": "description",
-          "settings": {
-            "description": "Kein Kraftaufwand, kein Zerquetschen – unsere ultrascharfen Klingen gleiten durch jede Zutat, damit du mühelos perfekte Schnitte erzielst.",
-            "description_color": "#121212",
-            "description_size": 18
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_dCW93y",
-        "title_8Nhy7h",
-        "description_pePmFE"
-      ],
-      "disabled": true,
-      "settings": {
-        "background_color": "#ebf2e8",
-        "media_type": "image",
-        "image": "shopify://shop_images/Fire_in_the_hole__1__V5.gif",
-        "video": "shopify://files/videos/Fire_in_the_hole_(1)_V4 (1).mp4",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": true,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
       }
     },
     "benefit_text_right_XkprbX": {
@@ -1407,6 +1313,60 @@
         "padding_bottom": 20,
         "custom_class": ""
       }
+    },
+    "testing_NJWriR": {
+      "type": "testing",
+      "blocks": {
+        "title_dbhinh": {
+          "type": "Title",
+          "settings": {
+            "title": "Your Title Here",
+            "padding_top": 20,
+            "padding_left": 20,
+            "padding_bottom": 20,
+            "padding_top_mobile": 10,
+            "padding_left_mobile": 10,
+            "padding_bottom_mobile": 10,
+            "font_size": "<h3 class='third-title title-style'> | </h3>"
+          }
+        },
+        "dec_qF6zhC": {
+          "type": "Dec",
+          "settings": {
+            "dec": "Your Title Here",
+            "padding_top": 1,
+            "padding_left": 1,
+            "padding_bottom": 1,
+            "padding_top_mobile": 1,
+            "padding_left_mobile": 1,
+            "padding_bottom_mobile": 1,
+            "font_size": "there-dec"
+          }
+        },
+        "dec_link_akr8Wd": {
+          "type": "Dec_link",
+          "settings": {
+            "dec": "<p>Your Title <a href=\"/collections/all\" target=\"_blank\" title=\"All products\">Here</a></p>",
+            "padding_top": 20,
+            "padding_left": 20,
+            "padding_bottom": 20,
+            "padding_top_mobile": 10,
+            "padding_left_mobile": 10,
+            "padding_bottom_mobile": 10,
+            "font_size": "there-dec"
+          }
+        }
+      },
+      "block_order": [
+        "title_dbhinh",
+        "dec_qF6zhC",
+        "dec_link_akr8Wd"
+      ],
+      "settings": {
+        "h2": 20,
+        "h1font-wight": "bold",
+        "h1-color": ""
+      }
     }
   },
   "order": [
@@ -1414,10 +1374,8 @@
     "custom_content_btgYN3",
     "category_selection_dVGcxF",
     "banner_version_1_aGXez8",
-    "logo_greyed_out_NgMgT8",
     "product_explanation_video_6ERhrB",
     "usp_list_nrezVU",
-    "benefit_text_right_xxnyCR",
     "benefit_text_right_XkprbX",
     "1621243260e1af0c20",
     "16225316461d1cff80",
@@ -1432,6 +1390,7 @@
     "bestseller_selection_cdDXQt",
     "custom_content_KiFzqG",
     "branded_image_version_NcNpYJ",
-    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d"
+    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
+    "testing_NJWriR"
   ]
 }
