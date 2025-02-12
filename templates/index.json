@@ -302,7 +302,20 @@
         "heading_bih4qd": {
           "type": "heading",
           "settings": {
-            "heading": "Qualität, die begeistert."
+            "heading": "Qualität, die begeistert.",
+            "h1_font_size": 100,
+            "h1_font_size_tablet": 100,
+            "h1_font_size_mobile": 100,
+            "h1_font_weight": "600",
+            "h1_font_color": "#000000",
+            "h1_text_align": "left",
+            "title": "Your Title Here",
+            "padding_top": 100,
+            "padding_bottom": 100,
+            "padding_top_tablet": 100,
+            "padding_bottom_tablet": 100,
+            "padding_top_mobile": 100,
+            "padding_bottom_mobile": 10
           }
         },
         "details_tLDmHe": {
