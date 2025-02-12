@@ -136,7 +136,7 @@
       ],
       "custom_css": [
         ".m-custom-content__wrapper,.m-block-first {position: relative; z-index: 1;}",
-        "@media only screen and (max-width: 767px) {.m-richtext__title{font-size: 34px; }}"
+        "@media only screen and (max-width: 767px) {.m-richtext__title {font-size: 34px; }}"
       ],
       "settings": {
         "heading": "Entdecke unseren Bestseller",
@@ -307,7 +307,7 @@
             "h1_font_size": 54,
             "h1_font_size_tablet": 35,
             "h1_font_size_mobile": 34,
-            "h1_font_weight": "600",
+            "h1_font_weight": "700",
             "h1_font_color": "#000000",
             "h1_text_align": "center",
             "title": "Your Title Here",
