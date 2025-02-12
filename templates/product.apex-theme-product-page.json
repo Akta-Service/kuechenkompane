@@ -473,6 +473,74 @@
         "p_bottom": 50
       }
     },
+    "usp_list_fgXGqB": {
+      "type": "usp-list",
+      "blocks": {
+        "item_cXj9tT": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/Vegan-40px_1920x_2.png",
+            "usp_title": "Vegan",
+            "title_color": "#121212",
+            "title_size": 18,
+            "usp_info": "and without animal testing",
+            "info_color": "#121212",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_XccFJc": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/Hema-free_1920x_2.png",
+            "usp_title": "HEMA-free",
+            "title_color": "#121212",
+            "title_size": 18,
+            "usp_info": "and without pollutants",
+            "info_color": "#121212",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_3thknm": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/allsizes_1920x_2.png",
+            "usp_title": "Fits every nail shape",
+            "title_color": "#121212",
+            "title_size": 18,
+            "usp_info": "thanks to 8 different sizes",
+            "info_color": "#121212",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_ffRDkG": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/gelpolish_1920x_2.png",
+            "usp_title": "Real UV gel polish",
+            "title_color": "#121212",
+            "title_size": 18,
+            "usp_info": "for gluing",
+            "info_color": "#121212",
+            "info_size": 14,
+            "divider": false
+          }
+        }
+      },
+      "block_order": [
+        "item_cXj9tT",
+        "item_XccFJc",
+        "item_3thknm",
+        "item_ffRDkG"
+      ],
+      "settings": {
+        "bg_color": "#fff",
+        "verticle_padding": 50,
+        "horizontal_padding": 50
+      }
+    },
     "product_explanation_video_xNFp3M": {
       "type": "product-explanation-video",
       "blocks": {
@@ -822,74 +890,6 @@
       "settings": {
         "bg_color": "#ffffff",
         "vertical_padding": 50,
-        "horizontal_padding": 50
-      }
-    },
-    "usp_list_fgXGqB": {
-      "type": "usp-list",
-      "blocks": {
-        "item_cXj9tT": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Vegan-40px_1920x_2.png",
-            "usp_title": "Vegan",
-            "title_color": "#121212",
-            "title_size": 18,
-            "usp_info": "and without animal testing",
-            "info_color": "#121212",
-            "info_size": 14,
-            "divider": false
-          }
-        },
-        "item_XccFJc": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Hema-free_1920x_2.png",
-            "usp_title": "HEMA-free",
-            "title_color": "#121212",
-            "title_size": 18,
-            "usp_info": "and without pollutants",
-            "info_color": "#121212",
-            "info_size": 14,
-            "divider": false
-          }
-        },
-        "item_3thknm": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/allsizes_1920x_2.png",
-            "usp_title": "Fits every nail shape",
-            "title_color": "#121212",
-            "title_size": 18,
-            "usp_info": "thanks to 8 different sizes",
-            "info_color": "#121212",
-            "info_size": 14,
-            "divider": false
-          }
-        },
-        "item_ffRDkG": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/gelpolish_1920x_2.png",
-            "usp_title": "Real UV gel polish",
-            "title_color": "#121212",
-            "title_size": 18,
-            "usp_info": "for gluing",
-            "info_color": "#121212",
-            "info_size": 14,
-            "divider": false
-          }
-        }
-      },
-      "block_order": [
-        "item_cXj9tT",
-        "item_XccFJc",
-        "item_3thknm",
-        "item_ffRDkG"
-      ],
-      "settings": {
-        "bg_color": "#fff",
-        "verticle_padding": 50,
         "horizontal_padding": 50
       }
     },
@@ -1536,12 +1536,12 @@
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
     "product_explanation_video_xNFp3M",
+    "usp_list_fgXGqB",
     "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
     "magazine_quote_UQpqkk",
     "product_explanation_video_HTWVex",
-    "usp_list_fgXGqB",
     "us_vs_them_8Tbqki",
     "store_benefits_bottom_NPnyUL",
     "lookbook_kK6fgf",
