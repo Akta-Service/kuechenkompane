@@ -473,6 +473,58 @@
         "p_bottom": 50
       }
     },
+    "product_explanation_video_xNFp3M": {
+      "type": "product-explanation-video",
+      "blocks": {
+        "sub_heading_aBnF8i": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "Maniko - Explained in 2 Minutes",
+            "sub_heading_color": "#000000",
+            "sub_heading_size": 16
+          }
+        },
+        "heading_jQDwbJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "What are Maniko Nails?"
+          }
+        },
+        "details_erg8QM": {
+          "type": "details",
+          "settings": {
+            "details": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:",
+            "details_color": "#000000",
+            "details_size": 18
+          }
+        },
+        "video_XLLb9A": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Fire_in_the_hole_(1)_V1.mp4",
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "playsinline": true,
+            "controls": true
+          }
+        }
+      },
+      "block_order": [
+        "sub_heading_aBnF8i",
+        "heading_jQDwbJ",
+        "details_erg8QM",
+        "video_XLLb9A"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "vertical_padding": 50,
+        "vertical_padding_mobile": 30,
+        "heading_color": "#000000",
+        "heading_size": 54,
+        "heading_size_mobile": 34
+      }
+    },
     "usp_list_fgXGqB": {
       "type": "usp-list",
       "blocks": {
@@ -538,57 +590,6 @@
       "settings": {
         "bg_color": "#fff",
         "verticle_padding": 50,
-        "horizontal_padding": 50
-      }
-    },
-    "product_explanation_video_xNFp3M": {
-      "type": "product-explanation-video",
-      "blocks": {
-        "sub_heading_aBnF8i": {
-          "type": "sub_heading",
-          "settings": {
-            "sub_heading": "Maniko - Explained in 2 Minutes",
-            "sub_heading_color": "#000000",
-            "sub_heading_size": 16
-          }
-        },
-        "heading_jQDwbJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "What are Maniko Nails?",
-            "heading_color": "#000000",
-            "heading_size": 54
-          }
-        },
-        "details_erg8QM": {
-          "type": "details",
-          "settings": {
-            "details": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:",
-            "details_color": "#000000",
-            "details_size": 18
-          }
-        },
-        "video_XLLb9A": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Fire_in_the_hole_(1)_V1.mp4",
-            "autoplay": true,
-            "loop": true,
-            "muted": true,
-            "playsinline": true,
-            "controls": true
-          }
-        }
-      },
-      "block_order": [
-        "sub_heading_aBnF8i",
-        "heading_jQDwbJ",
-        "details_erg8QM",
-        "video_XLLb9A"
-      ],
-      "settings": {
-        "bg_color": "#ffffff",
-        "vertical_padding": 50,
         "horizontal_padding": 50
       }
     },
@@ -856,9 +857,7 @@
         "heading_r4LXUb": {
           "type": "heading",
           "settings": {
-            "heading": "What are Maniko Nails?",
-            "heading_color": "#000000",
-            "heading_size": 54
+            "heading": "What are Maniko Nails?"
           }
         },
         "details_M9Pe9a": {
@@ -890,7 +889,10 @@
       "settings": {
         "bg_color": "#ffffff",
         "vertical_padding": 50,
-        "horizontal_padding": 50
+        "vertical_padding_mobile": 30,
+        "heading_color": "#000000",
+        "heading_size": 54,
+        "heading_size_mobile": 36
       }
     },
     "us_vs_them_8Tbqki": {
