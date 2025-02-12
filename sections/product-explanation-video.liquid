@@ -58,7 +58,7 @@
     }
 
     .product-explanation-video-title {
-      font-size: {{ section.settings.heading_size_mobile}}px;
+      font-size: {{ section.settings.heading_size_mobile |  default: '34'}}px;
     }
 
     .product-explanation-video-uppercnt p {
