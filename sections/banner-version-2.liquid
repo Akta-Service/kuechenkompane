@@ -1,13 +1,8 @@
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+
 
     ul {
       list-style: none;
@@ -160,8 +155,14 @@
 
     @media only screen and (max-width: 749px) {
       .banner-main-content {
-        bottom: 56%;
-        right: 5%;
+        text-align: center;
+        right: 0;
+        bottom: 0;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    
       }
 
       .banner-main-content h3 {
@@ -174,10 +175,7 @@
         background-position: inherit;
       }
 
-      .banner-main-content {
-        bottom: 18%;
-        right: 5%;
-      }
+
 
       .banner-main-content h3 {
         font-size: 1.5rem;
@@ -197,9 +195,9 @@
       }
 
       .banner-bottm-content {
-        padding: 0 15px;
-        gap: 20px;
-      }
+        padding: 0 5px;
+        gap: 8px;
+    }
     }
     @media only screen and (max-width: 768px) {
       .banner-area-two {
@@ -218,7 +216,7 @@
     height: 8px;
     }
     .banner-brand-img img {
-    max-height: 30px;
+    max-height: 46px;
     height: 100%;
     }
 

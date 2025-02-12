@@ -2,20 +2,6 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
 
     /* common css end  */
     .banner-area {
@@ -101,6 +87,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding:8px;
   }
 
     .swiper-button-prev {
@@ -199,8 +186,12 @@
         display: block;
       }
     }
+
+   .{{ section.id }} .swiper-pagination  {
+      display: none !important;
+  }
 </style>
-<div class="banner-area">
+<div class="banner-area {{ section.id }}">
   <div class="swiper mySwiper_active">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
