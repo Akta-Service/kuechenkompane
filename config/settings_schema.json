@@ -2763,7 +2763,7 @@
   },
   {
       "type": "range",
-      "id": "h1_font_size",
+      "id": "h1_font_size-desktop",
       "min": 1,
       "max": 100,
       "step": 1,
@@ -2810,7 +2810,7 @@
   },
   {
       "type": "range",
-      "id": "h2_font_size",
+      "id": "h2_font_size-desktop",
       "min": 1,
       "max": 100,
       "step": 1,
@@ -2904,7 +2904,7 @@
   },
   {
       "type": "range",
-      "id": "h4_font_size",
+      "id": "h4_font_size-desktop",
       "min": 1,
       "max": 100,
       "step": 1,

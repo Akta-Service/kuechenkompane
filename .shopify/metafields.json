@@ -1794,6 +1794,16 @@
         "name": "single_line_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "df_type",
+      "namespace": "custom",
+      "name": "DF_Type",
+      "description": "Digitale Varianten für VDS",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
     }
   ],
   "shop": []
