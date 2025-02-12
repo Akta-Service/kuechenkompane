@@ -85,13 +85,13 @@
         ".social-media-links {column-gap: 30px;}"
       ],
       "settings": {
-        "color_scheme": "default",
-        "color_scheme_menu": "default",
+        "color_scheme": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
+        "color_scheme_menu": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
         "header_design": "logo-center-menu-left",
         "container": "container-fluid",
         "sticky_header": "on_scroll_up",
         "transparent_on_top": false,
-        "transparent_text_color": "#ffffff",
+        "transparent_text_color": "#000000",
         "logo_text": "MINIMOG",
         "logo": "shopify://shop_images/Kuchenkompane-svg-logo-color_752e6bb5-8fa2-406c-ab1c-530e5b49d7cc.svg",
         "logo_svg": "",
