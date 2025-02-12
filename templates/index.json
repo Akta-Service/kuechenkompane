@@ -229,7 +229,7 @@
         "mobile_pb": 30,
         "title": "Nach Kategorie einkaufen",
         "heading_font_size": 24,
-        "heading_color": "#ffffff"
+        "heading_color": "#201b1b"
       }
     },
     "banner_version_1_aGXez8": {
@@ -301,9 +301,7 @@
         "heading_bih4qd": {
           "type": "heading",
           "settings": {
-            "heading": "Qualität, die begeistert.",
-            "heading_color": "#000000",
-            "heading_size": 58
+            "heading": "Qualität, die begeistert."
           }
         },
         "details_tLDmHe": {
@@ -335,7 +333,10 @@
       "settings": {
         "bg_color": "#ffffff",
         "vertical_padding": 50,
-        "horizontal_padding": 50
+        "vertical_padding_mobile": 30,
+        "heading_color": "#000000",
+        "heading_size": 54,
+        "heading_size_mobile": 34
       }
     },
     "usp_list_nrezVU": {
