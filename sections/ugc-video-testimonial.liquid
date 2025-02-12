@@ -247,6 +247,12 @@
   }
 
   @media screen and (max-width: 699px) {
+    .video_area {
+      padding-top: {{- section.settings.pt_mobile -}}px;
+      padding-bottom: {{- section.settings.pb_mobile -}}px;
+    }
+  }
+  @media screen and (max-width: 699px) {
       .swiper-button-prev,
       .swiper-button-next {
           display: flex;
@@ -260,7 +266,7 @@
 
       .video_title h3 {
           font-size: 16px;
-          margin-bottom: 16px;
+          margin-bottom: 12px;
       }
 
       .popup_item {
@@ -388,7 +394,24 @@
       "max": 100,
       "step": 1
     },
-
+    {
+      "type": "range",
+      "id": "pt_mobile",
+      "label": "Padding Top (Mobile)",
+      "default": 30,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "pb_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "default": 30,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
     {
       "type": "text",
       "id": "title",
