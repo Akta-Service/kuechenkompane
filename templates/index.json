@@ -323,7 +323,20 @@
           "settings": {
             "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
             "details_color": "#000000",
-            "details_size": 18
+            "details_size": 18,
+            "p_font_size": 16,
+            "p_font_size_tablet": 14,
+            "p_font_size_mobile": 12,
+            "p_font_weight": "400",
+            "p_font_color": "#333333",
+            "p_text_align": "center",
+            "p_line_height": 1.5,
+            "p_padding_top": 10,
+            "p_padding_bottom": 10,
+            "p_padding_top_tablet": 8,
+            "p_padding_bottom_tablet": 8,
+            "p_padding_top_mobile": 5,
+            "p_padding_bottom_mobile": 5
           }
         },
         "video_cTydVn": {
