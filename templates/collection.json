@@ -42,7 +42,7 @@
         "show_columns_switcher": true,
         "pagination_limit": 12,
         "paginate_type": "paginate",
-        "show_sorting": true,
+        "show_sorting": false,
         "show_filter": true,
         "filters_type": "storefront_filters",
         "sidebar": "leftColumn",
