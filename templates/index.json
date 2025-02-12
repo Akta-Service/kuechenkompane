@@ -135,7 +135,8 @@
         "text_Xzzte7"
       ],
       "custom_css": [
-        ".m-custom-content__wrapper,.m-block-first {position: relative; z-index: 1;}"
+        ".m-custom-content__wrapper,.m-block-first {position: relative; z-index: 1;}",
+        "@media only screen and (max-width: 767px) {.m-richtext__title{font-size: 34px; }}"
       ],
       "settings": {
         "heading": "Entdecke unseren Bestseller",
@@ -1253,7 +1254,7 @@
         ".m-richtext__description {font-size: 16px;}",
         ".m-image-comparison__after .m-image-comparison__heading {bottom: 20px; top: auto;}",
         ".m-richtext__title {font-size: 54px;}",
-        "@media (max-width: 767px) {.m-image-comparison__heading, .m-richtext__description br {display: none; } .m-custom-content__wrapper {flex-direction: column-reverse; } .m-custom-content__block {padding: 0 15px; } .m-richtext__title {font-size: 34px;}}"
+        "@media (max-width: 767px) {.m-image-comparison__heading, .m-richtext__description br {display: none; } .m-custom-content__wrapper {flex-direction: column-reverse; } .m-custom-content__block {padding: 0 15px; } .m-richtext__title {font-size: 34px; }}"
       ],
       "settings": {
         "heading": "",
