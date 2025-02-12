@@ -843,58 +843,6 @@
         "padding_bottom_mobile": 50
       }
     },
-    "product_explanation_video_HTWVex": {
-      "type": "product-explanation-video",
-      "blocks": {
-        "sub_heading_CYQKEx": {
-          "type": "sub_heading",
-          "settings": {
-            "sub_heading": "Maniko - Explained in 2 Minutes",
-            "sub_heading_color": "#000000",
-            "sub_heading_size": 16
-          }
-        },
-        "heading_r4LXUb": {
-          "type": "heading",
-          "settings": {
-            "heading": "What are Maniko Nails?"
-          }
-        },
-        "details_M9Pe9a": {
-          "type": "details",
-          "settings": {
-            "details": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:",
-            "details_color": "#000000",
-            "details_size": 18
-          }
-        },
-        "video_qHKGKk": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/5d93a47748484627b29a8bf2ef1bf0dc.HD-1080p-3.3Mbps-15816149.mp4",
-            "autoplay": true,
-            "loop": true,
-            "muted": true,
-            "playsinline": true,
-            "controls": true
-          }
-        }
-      },
-      "block_order": [
-        "sub_heading_CYQKEx",
-        "heading_r4LXUb",
-        "details_M9Pe9a",
-        "video_qHKGKk"
-      ],
-      "settings": {
-        "bg_color": "#ffffff",
-        "vertical_padding": 50,
-        "vertical_padding_mobile": 30,
-        "heading_color": "#000000",
-        "heading_size": 54,
-        "heading_size_mobile": 36
-      }
-    },
     "us_vs_them_8Tbqki": {
       "type": "us-vs-them",
       "blocks": {
@@ -1390,7 +1338,7 @@
       ],
       "settings": {
         "bg_color": "#f0f0f3",
-        "mt": 100,
+        "mt": 0,
         "mb": 100,
         "pt": 0,
         "pb": 0,
@@ -1543,7 +1491,6 @@
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
     "magazine_quote_UQpqkk",
-    "product_explanation_video_HTWVex",
     "us_vs_them_8Tbqki",
     "store_benefits_bottom_NPnyUL",
     "lookbook_kK6fgf",
