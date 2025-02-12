@@ -100,28 +100,28 @@
         {% case p.type %}
           {% when 'details' %}
             .akta-{{ section.id}} .description-font{{forloop.index}} {
-    font-size: {{ settings.p_font_size }}px;
-    font-weight: {{ settings.p_font_weight }};
-    color: {{ settings.p_font_color }};
-    text-align: {{ settings.p_text_align }};
-    line-height: {{ settings.p_line_height }};
-    padding-top: {{ settings.p_padding_top }}px;
-    padding-bottom: {{ settings.p_padding_bottom }}px;
+    font-size: {{ p.settings.p_font_size }}px;
+    font-weight: {{ p.settings.p_font_weight }};
+    color: {{ p.settings.p_font_color }};
+    text-align: {{ p.settings.p_text_align }};
+    line-height: {{ p.settings.p_line_height }};
+    padding-top: {{ p.settings.p_padding_top }}px;
+    padding-bottom: {{ p.settings.p_padding_bottom }}px;
   }
 
   @media (max-width: 1024px) { /* Tablet */
   .akta-{{ section.id}} .description-font{{forloop.index}} {
-      font-size: {{ settings.p_font_size_tablet }}px;
-      padding-top: {{ settings.p_padding_top_tablet | default: settings.p_padding_top }}px;
-      padding-bottom: {{ settings.p_padding_bottom_tablet | default: settings.p_padding_bottom }}px;
+      font-size: {{ p.settings.p_font_size_tablet }}px;
+      padding-top: {{ p.settings.p_padding_top_tablet | default: p.settings.p_padding_top }}px;
+      padding-bottom: {{ p.settings.p_padding_bottom_tablet | default: p.settings.p_padding_bottom }}px;
     }
   }
 
   @media (max-width: 768px) { /* Mobile */
   .akta-{{ section.id}} .description-font{{forloop.index}} {
-      font-size: {{ settings.p_font_size_mobile }}px;
-      padding-top: {{ settings.p_padding_top_mobile | default: settings.p_padding_top }}px;
-      padding-bottom: {{ settings.p_padding_bottom_mobile | default: settings.p_padding_bottom }}px;
+      font-size: {{ p.settings.p_font_size_mobile }}px;
+      padding-top: {{ p.settings.p_padding_top_mobile | default: p.settings.p_padding_top }}px;
+      padding-bottom: {{ p.settings.p_padding_bottom_mobile | default: p.settings.p_padding_bottom }}px;
     }
   }
 
