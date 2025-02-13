@@ -347,7 +347,7 @@ span.faq-icon {
     display: flex;
     align-items: center;
     align-content: center;
-    gap: 10px;
+    gap: 16px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none; /* Hide scrollbar for Firefox */
