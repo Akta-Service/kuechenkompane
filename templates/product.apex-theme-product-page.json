@@ -113,7 +113,7 @@
         "subtitle_yhKtd9": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Effortless cutting thanks to the highest quality!",
+            "subtitle": "Müheloses Schneiden mit höchster Präzision!",
             "subtitle_font_size": 16,
             "subtitle_color": "#1c1c1c"
           }
@@ -130,10 +130,10 @@
             "likeImg1": "shopify://shop_images/Testi3.webp",
             "likeImg2": "shopify://shop_images/Testi2.jpg",
             "likeImg3": "shopify://shop_images/Testi1_06655792-039c-4c4c-a68d-210b3c8a4ab8.webp",
-            "likecount": "1,532+ people",
-            "likeinfo": "are already convinced by oursharp blades!",
-            "demandBadge": "High demand",
-            "demandText": "Many people have viewed this product in the last 24 hours"
+            "likecount": "90,532+ people",
+            "likeinfo": "begeisterte Kunden vertrauen auf unsere ultrascharfen Klingen!",
+            "demandBadge": "Hohe Nachfrage",
+            "demandText": "Überdurchschnittlich oft in den letzten 24h angesehen!"
           }
         },
         "price_g6LBN9": {
@@ -144,8 +144,8 @@
           "type": "viewerStockCount",
           "settings": {
             "viewer_count_font_size": 16,
-            "view_main_text_1": "people",
-            "view_main_text_2": "are currently looking at this product",
+            "view_main_text_1": "Personen",
+            "view_main_text_2": "sehen sich dieses Produkt gerade an",
             "viewer_text_color": "",
             "viewer_margin_top": 10,
             "viewer_margin_bottom": 10,
@@ -168,7 +168,7 @@
         "featurelist_header_7rqxUM": {
           "type": "featurelist_header",
           "settings": {
-            "featureHeader": "30-day satisfaction guarantee",
+            "featureHeader": "30 Tage Zufriedenheitsgarantie",
             "featurelist_header_color": "#000000",
             "featurelist_header_size": 14
           }
@@ -176,7 +176,7 @@
         "featurelist_item_dY7dMT": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item": "Handgeschliffene Edelstahlklinge",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14
           }
@@ -184,7 +184,7 @@
         "featurelist_item_J7k4tg": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item": "",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14
           }
@@ -200,22 +200,24 @@
         "add_btn_JbECQx": {
           "type": "addBtn",
           "settings": {
-            "btn_text": "Add to Cart"
+            "btn_text": "In den Warenkorb"
           }
         },
         "payment_icon_zmKmJx": {
           "type": "paymentIcon",
-          "settings": {}
+          "settings": {
+            "payment_img": "shopify://shop_images/Screenshot_39_V1_1.png"
+          }
         },
         "product_info_xXFmJE": {
           "type": "productInfo",
           "settings": {
             "info_img_1": "shopify://shop_images/Garntie_d60e2759-1e67-4bce-b8fb-cfaf27d7576c.png",
-            "info_text_1": "30-day satisfaction guarantee",
+            "info_text_1": "30 Tage Geld-zurück-Garantie",
             "info_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
-            "info_text_2": "free shipping from 70€",
+            "info_text_2": "Kostenloser Versand ab 100€",
             "info_img_3": "shopify://shop_images/Schleifservice_b55ed519-cd43-4797-9b59-09fe30bb141d.png",
-            "info_text_3": "1 free grinding service in the first year"
+            "info_text_3": "Nie wieder stumpfe Messer"
           }
         }
       },
@@ -281,7 +283,7 @@
       ],
       "settings": {
         "product": "",
-        "title": "product description",
+        "title": "Produktbeschreibung",
         "font_size": 26,
         "font_color": "#000000",
         "description": "Erlebst du gerne die Freude am Kochen mit einem Messer, das immer scharf bleibt? Dann wirst du unsere Messer lieben! Unsere Messer bieten eine extrem scharfe Klinge, die dank erprobtem 3-lagigen Kohlenstoffstahl mit einem Härtegrad von HRC 60+ ihre Schärfe über lange Zeit beibehält. Möchtest du ein Messer, das dir langlebige Schärfe garantiert? Unsere Messer sind genau das Richtige für dich! Suchst du nach höchster Qualität zum besten Preis? Dann sind unsere Messer die perfekte Wahl. Sie bieten dank des 9cr18mov Stahls höchste Qualität und sind gleichzeitig erschwinglich. Hast du genug von schmerzenden Händen beim Schneiden? Mit unserem ergonomischen Griff wirst du stundenlang ohne Beschwerden schneiden können. Der Griff bietet wahren Komfort und macht das Schneiden zu einem angenehmen Erlebnis. Außerdem sorgt die rostbeständige Beschichtung für eine einfache Pflege der Klinge und verlängert ihre Lebensdauer. Probiere es aus und erlebe den Unterschied!",
