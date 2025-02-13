@@ -171,7 +171,8 @@ img.magazine-title-img {
 }
 
 .usp-list-item img {
-  max-width: 32px;
+  /*max-width: 32px;*/
+  max-width: 100px;
   display: block;
   margin: 0 auto;
 }
