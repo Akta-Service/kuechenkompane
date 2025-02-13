@@ -12,6 +12,12 @@
     "banner_version_2_4q968G": {
       "type": "banner-version-2",
       "blocks": {
+        "text_7wEFPw": {
+          "type": "text",
+          "settings": {
+            "top_item": "140.000+ zufriedene Kunden"
+          }
+        },
         "text_GFQwB3": {
           "type": "text",
           "settings": {
@@ -23,18 +29,12 @@
           "settings": {
             "top_item": "Kostenloser Versand ab 100€"
           }
-        },
-        "text_7wEFPw": {
-          "type": "text",
-          "settings": {
-            "top_item": "140.000+ zufriedene Kunden"
-          }
         }
       },
       "block_order": [
+        "text_7wEFPw",
         "text_GFQwB3",
-        "text_J8yeUK",
-        "text_7wEFPw"
+        "text_J8yeUK"
       ],
       "settings": {
         "u": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160_mov_V1.mp4",
