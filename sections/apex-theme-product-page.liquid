@@ -379,11 +379,24 @@
     .swiper-pagination {
       display: block;
       position: absolute;
-      bottom: -35px !important;
+      bottom: -45px !important;
     }
 
     .product-info-content {
       width: 100%;
+    }
+    #product__slider {
+      height: auto;
+    }
+    .swiper-pagination-bullet::after,
+    .swiper-pagination-bullet::before {
+      content: inherit !important;
+    }
+    span.swiper-pagination-bullet {
+      opacity: 0.6 !important;
+    }
+    span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+      opacity: 1 !important;
     }
   }
 </style>
