@@ -249,29 +249,29 @@
         "faq_fqQbjd": {
           "type": "faq",
           "settings": {
-            "question": "Das Kiritsuke Messer",
-            "answer": "<p>Das Kiritsukemesser stammt ursprünglich aus Japan und ist bekannt für seine spitz zulaufende Klinge, die präzise Schnitte ermöglicht. Es eignet sich hervorragend zum Schneiden von Fisch und Gemüse und wird in der japanischen Küche oft als vielseitiges Allzweckmesser verwendet. Seine scharfe Klinge und das elegante Design machen es sowohl bei Profiköchen als auch bei Hobbyköchen beliebt.</p>"
+            "question": "{{ section.settings.product.metafields.custom.accordion_title_1.value }}",
+            "answer": "{{ section.settings.product.metafields.custom.accordion_content_1 | metafield_tag }}"
           }
         },
         "faq_kQAWhE": {
           "type": "faq",
           "settings": {
-            "question": "Produktdaten",
-            "answer": "<p>Klingenlänge: 20,6 cm<br/>Klingenstärke: ± 2,6 mm<br/>Gewicht: 217 g<br/>Geeignet für Fleisch, Fisch und Gemüse<br/>Geschmiedet aus Kohlenstoffstahl<br/>Härtegrad HRC 60 +</p>"
+            "question": "{{ section.settings.product.metafields.custom.accordion_title_2.value }}",
+            "answer": "{{ section.settings.product.metafields.custom.accordion_content_2 | metafield_tag }}"
           }
         },
         "faq_pDwHXa": {
           "type": "faq",
           "settings": {
-            "question": "Was ist Kohlenstoffstahl?",
-            "answer": "<p>9Cr18MoV ist ein hochwertiger Kohlenstoffstahl, der oft für Messer verwendet wird. Er enthält viel Chrom, was ihn besonders widerstandsfähig gegen Rost macht, und einen hohen Kohlenstoffanteil, der für eine harte und scharfe Klinge sorgt. Dank zusätzlicher Elemente wie Molybdän und Vanadium bleibt die Schneide lange scharf und hält viel aus. Dieser Stahl ist ideal für alle, die ein langlebiges und zuverlässiges Messer suchen.</p>"
+            "question": "{{ section.settings.product.metafields.custom.accordion_title_3.value }}",
+            "answer": "{{ section.settings.product.metafields.custom.accordion_content_3 | metafield_tag }}"
           }
         },
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
-            "question": "Versand & Retoure",
-            "answer": "<p><strong>Deutschland:</strong>- Standardversand bis 70€: 2,50€ (1 - 3 Werktage)<br/>- Standardversand ab 70€: kostenlos (1 - 3 Werktage)<br/><br/><strong>Europäische Union:</strong>- Standardversand bis 70€: 4,50€ (2 - 8 Werktage)<br/>- Standardversand ab 70€: kostenlos (2 - 8 Werktage)<br/><br/><strong>Schweiz & Liechtenstein:</strong>- Standardversand bis 70€: 4,50€ (2 - 8 Werktage)<br/>- Standardversand ab 70€: kostenlos (2 - 8 Werktage)<br/><br/><strong>Versanddienstleister:</strong>ausschließlich DHL<br/><br/><strong>Retoure:</strong>- Versandkosten für Retoure müssen vom Käufer übernommen werden.<br/>- Bei teilweiser oder beschädigter Rücksendung trägt der Käufer ggf. die Kosten für das Produkt (vollständig oder teilweise).</p>"
+            "question": "{{ section.settings.product.metafields.custom.accordion_title_4.value }}",
+            "answer": "{{ section.settings.product.metafields.custom.accordion_content_4 | metafield_tag }}"
           }
         }
       },
