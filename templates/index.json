@@ -55,6 +55,88 @@
         "brang_img5": "shopify://shop_images/n_tv_logo_V4_1.png"
       }
     },
+    "logo_greyed_out_6e3zpp": {
+      "type": "logo-greyed-out",
+      "blocks": {
+        "item_TKzptz": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/n_tv_logo_V7_1.png"
+          }
+        },
+        "item_XXcdDx": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/n_tv_logo_V6_1.png"
+          }
+        },
+        "item_pBTmyR": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/n_tv_logo_V2_1.png"
+          }
+        },
+        "item_mHLpKq": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/n_tv_logo_V4_1.png"
+          }
+        },
+        "item_mNXyHp": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/n_tv_logo_V3_1.png"
+          }
+        },
+        "item_egG49E": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/n_tv_logo_V7_1.png"
+          }
+        },
+        "item_QmCjc7": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/n_tv_logo_V6_1.png"
+          }
+        },
+        "item_CywNrt": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/n_tv_logo_V2_1.png"
+          }
+        },
+        "item_zXgpmB": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/n_tv_logo_V4_1.png"
+          }
+        },
+        "item_tHhYH3": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/n_tv_logo_V3_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "item_TKzptz",
+        "item_XXcdDx",
+        "item_pBTmyR",
+        "item_mHLpKq",
+        "item_mNXyHp",
+        "item_egG49E",
+        "item_QmCjc7",
+        "item_CywNrt",
+        "item_zXgpmB",
+        "item_tHhYH3"
+      ],
+      "settings": {
+        "bg_color": "#fafafb",
+        "p_top": 50,
+        "p_bottom": 50
+      }
+    },
     "custom_content_btgYN3": {
       "type": "custom-content",
       "blocks": {
@@ -1432,6 +1514,7 @@
   },
   "order": [
     "banner_version_2_4q968G",
+    "logo_greyed_out_6e3zpp",
     "custom_content_btgYN3",
     "category_selection_dVGcxF",
     "banner_version_1_aGXez8",
