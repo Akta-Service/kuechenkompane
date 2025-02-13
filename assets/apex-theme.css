@@ -338,6 +338,7 @@ span.faq-icon {
 @media screen and (max-width: 991px) {
   .usp-list-section {
     padding: 0px 16px 32px;
+    overflow: hidden;
   }
 
   .usp-list-main {
