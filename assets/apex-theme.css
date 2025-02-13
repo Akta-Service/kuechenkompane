@@ -363,7 +363,7 @@ span.faq-icon {
     
     margin-top: 32px;
      min-width: 100%;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     flex: 0 0 auto;
     text-align: center;
     background: #f8f8f8;
