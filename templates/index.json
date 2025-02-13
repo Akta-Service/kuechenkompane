@@ -460,6 +460,18 @@
             "divider": true
           }
         },
+        "item_Kr7hjq": {
+          "type": "item",
+          "settings": {
+            "usp_title": "Vegan",
+            "title_color": "#121212",
+            "title_size": 18,
+            "usp_info": "and without animal testing",
+            "info_color": "#121212",
+            "info_size": 14,
+            "divider": false
+          }
+        },
         "item_zcx6LE": {
           "type": "item",
           "settings": {
@@ -489,6 +501,7 @@
       },
       "block_order": [
         "item_VAHx34",
+        "item_Kr7hjq",
         "item_zcx6LE",
         "item_yDtyRV"
       ],
