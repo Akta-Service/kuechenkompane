@@ -341,7 +341,7 @@ span.faq-icon {
   }
 
   .usp-list-main {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .usp-list-item {
