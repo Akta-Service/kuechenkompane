@@ -345,7 +345,6 @@ span.faq-icon {
     flex-wrap: nowrap;
     display: flex;
     align-items: center;
-    justify-content: center;
     align-content: center;
     gap: 10px;
     overflow-x: auto;
@@ -360,7 +359,6 @@ span.faq-icon {
 
 
   .usp-list-item {
-    display: flex;
     margin-top: 32px;
     min-width: 100%;
     scroll-snap-align: center;
