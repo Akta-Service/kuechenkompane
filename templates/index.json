@@ -460,16 +460,17 @@
             "divider": true
           }
         },
-        "item_Kr7hjq": {
+        "item_LYpiVL": {
           "type": "item",
           "settings": {
-            "usp_title": "Vegan",
+            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
+            "usp_title": "Kostenloser Versand",
             "title_color": "#121212",
-            "title_size": 18,
-            "usp_info": "and without animal testing",
+            "title_size": 14,
+            "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
             "info_color": "#121212",
             "info_size": 14,
-            "divider": false
+            "divider": true
           }
         },
         "item_zcx6LE": {
@@ -501,7 +502,7 @@
       },
       "block_order": [
         "item_VAHx34",
-        "item_Kr7hjq",
+        "item_LYpiVL",
         "item_zcx6LE",
         "item_yDtyRV"
       ],
