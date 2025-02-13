@@ -86,13 +86,13 @@
       transform: scale(1.15);
   }
 
-  .swiper-button-prev,
-  .swiper-button-next {
+  .video_slider .swiper-button-prev,
+  .video_slider .swiper-button-next {
       display: none;
   }
 
-  .swiper-button-prev,
-  .swiper-button-next {
+  .video_slider .swiper-button-prev,
+  .video_slider .swiper-button-next {
       color: #898989;
       background-color: #FFFFFF;
       border-radius: 50%;
@@ -100,20 +100,14 @@
       width: 36px;
   }
 
-  .swiper-button-prev::after {
-      content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.06673 -9.0518e-07L6.10829e-05 4C1.0202 5.00069 3.04664 6.99929 4.06673 8L4.57992 7.50347C3.66255 6.60347 2.44872 5.4048 1.37779 4.35342L8.00001 4.35342L8.00001 3.64716L1.37779 3.64716L4.57992 0.502097L4.06673 -9.0518e-07Z' fill='%231E1E1E'/%3E%3C/svg%3E%0A");
-      transform: translate(0%, -50%);
-      top: 15%;
-      position: absolute;
+  .video_slider .swiper-button-prev svg,
+  .video_slider .swiper-button-next svg {
+    width:8px;
+    height: 8px;
   }
-
-  .swiper-button-next::after {
-      content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.93333 8L8 4C6.97986 2.99931 4.95342 1.00071 3.93333 -1.7776e-07L3.42014 0.496533C4.33751 1.39653 5.55134 2.5952 6.62228 3.64658L5.22927e-05 3.64658L5.22618e-05 4.35283L6.62228 4.35283L3.42014 7.4979L3.93333 8Z' fill='%231E1E1E'/%3E%3C/svg%3E%0A");
-      top: 15%;
-      position: absolute;
-      transform: translate(0%, -50%);
+  .video_slider .swiper-button-next svg {
+    transform: rotate(0);
   }
-
 
   /* popup  */
   .popup {
@@ -253,8 +247,8 @@
     }
   }
   @media screen and (max-width: 699px) {
-      .swiper-button-prev,
-      .swiper-button-next {
+    .video_slider .swiper-button-prev,
+    .video_slider .swiper-button-next {
           display: flex;
       }
 
@@ -324,8 +318,16 @@
             </div>
           {% endfor %}
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <path d="M3.93333 8L8 4C6.97986 2.99931 4.95342 1.00071 3.93333 -1.7776e-07L3.42014 0.496533C4.33751 1.39653 5.55134 2.5952 6.62228 3.64658L5.22927e-05 3.64658L5.22618e-05 4.35283L6.62228 4.35283L3.42014 7.4979L3.93333 8Z" fill="#1E1E1E"/>
+          </svg>
+        </div>
+        <div class="swiper-button-prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <path d="M4.06673 -9.0518e-07L6.10829e-05 4C1.0202 5.00069 3.04664 6.99929 4.06673 8L4.57992 7.50347C3.66255 6.60347 2.44872 5.4048 1.37779 4.35342L8.00001 4.35342L8.00001 3.64716L1.37779 3.64716L4.57992 0.502097L4.06673 -9.0518e-07Z" fill="#1E1E1E"/>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -551,6 +553,7 @@
   var video_slider = new Swiper('.video_slider_active', {
     slidesPerView: 6,
     spaceBetween: 8,
+    loop: false,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -558,17 +561,14 @@
     breakpoints: {
       0: {
         slidesPerView: 2,
-        spaceBetween: 8,
         centeredSlides: true,
         loop: true,
       },
       700: {
         slidesPerView: 3,
-        spaceBetween: 8,
       },
       1024: {
         slidesPerView: 6,
-        spaceBetween: 8,
       },
     },
     on: {
