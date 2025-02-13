@@ -2,58 +2,41 @@
   "article": [],
   "blog": [],
   "brand": [],
-  "collection": [],
-  "company": [],
-  "company_location": [],
-  "location": [],
-  "market": [],
-  "order": [],
-  "page": [],
-  "product": [
+  "collection": [
     {
-      "key": "cooking-method",
-      "namespace": "shopify",
-      "name": "Cooking method",
-      "description": "Specifies the recommended cooking technique, e.g. grilling, frying",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "meat-cut",
-      "namespace": "shopify",
-      "name": "Meat cut",
-      "description": "Helps identify the specific cut or style of meat, e.g. burger, wings",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "food-product-form",
-      "namespace": "shopify",
-      "name": "Food product form",
-      "description": "Specifies the form in which the food product is presented, such as dried or frozen",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "cuisine",
-      "namespace": "shopify",
-      "name": "Cuisine",
-      "description": "Classifies products by culinary style or region, e.g. Southwestern United States, Mediterranean",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "herkunft_produktbeschreibung",
+      "key": "title",
       "namespace": "custom",
-      "name": "Herkunft - Produktbeschreibung",
+      "name": "title",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktop_heading_image",
+      "namespace": "custom",
+      "name": "heading image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "mobile_menu_image",
+      "namespace": "custom",
+      "name": "mobile menu image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "seo_heading",
+      "namespace": "custom",
+      "name": "SEO heading",
       "description": "",
       "type": {
         "name": "multi_line_text_field",
@@ -61,9 +44,9 @@
       }
     },
     {
-      "key": "aufzucht_produktbeschreibung",
+      "key": "seo_content",
       "namespace": "custom",
-      "name": "Aufzucht - Produktbeschreibung",
+      "name": "SEO content",
       "description": "",
       "type": {
         "name": "multi_line_text_field",
@@ -71,6 +54,1757 @@
       }
     }
   ],
-  "variant": [],
+  "company": [],
+  "company_location": [],
+  "location": [],
+  "market": [],
+  "order": [
+    {
+      "key": "survey-key",
+      "namespace": "amp-surveys",
+      "name": "Random key to link a survey with an order",
+      "description": "Survey key",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "page": [
+    {
+      "key": "video_url",
+      "namespace": "custom",
+      "name": "video url",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "vidalytics_url_and_script",
+      "namespace": "custom",
+      "name": "vidalytics url and script",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "test",
+      "namespace": "custom",
+      "name": "test",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobile_menu_image",
+      "namespace": "custom",
+      "name": "mobile menu image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
+  "product": [
+    {
+      "key": "section_title",
+      "namespace": "zem",
+      "name": "ZEM Section Title",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "section_content",
+      "namespace": "zem",
+      "name": "ZEM Section Content",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "section_image",
+      "namespace": "zem",
+      "name": "ZEM Section Image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "product_1_overview",
+      "namespace": "custom",
+      "name": "product 1 overview",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "product_2_overview",
+      "namespace": "custom",
+      "name": "product 2 overview",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "product_3_overview",
+      "namespace": "custom",
+      "name": "product 3 overview",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "product_4_overview",
+      "namespace": "custom",
+      "name": "product 4 overview",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "product_5_overview",
+      "namespace": "custom",
+      "name": "product 5 overview",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "product_6_overview",
+      "namespace": "custom",
+      "name": "product 6 overview",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "product_7_overview",
+      "namespace": "custom",
+      "name": "product 7 overview",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "product_8_overview",
+      "namespace": "custom",
+      "name": "product 8 overview",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "desktopFirstCirclePosition1",
+      "namespace": "custom",
+      "name": "desktop - 1st circle position - 1",
+      "description": "section product overview - measurements - circle position on desktop - knife 1",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopSecondCirclePosition1",
+      "namespace": "custom",
+      "name": "desktop - 2nd circle position - 1",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopThirdCirclePosition1",
+      "namespace": "custom",
+      "name": "desktop - 3rd circle position - 1",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFourthCirclePosition1",
+      "namespace": "custom",
+      "name": "desktop - 4th circle position - 1",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFirstCirclePosition2",
+      "namespace": "custom",
+      "name": "desktop - 1st circle position - 2",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopSecondCirclePosition2",
+      "namespace": "custom",
+      "name": "desktop - 2nd circle position - 2",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopThirdCirclePosition2",
+      "namespace": "custom",
+      "name": "desktop - 3rd circle position - 2",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFourthCirclePosition2",
+      "namespace": "custom",
+      "name": "desktop - 4th circle position - 2",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFirstCirclePosition3",
+      "namespace": "custom",
+      "name": "desktop - 1st circle position - 3",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopSecondCirclePosition3",
+      "namespace": "custom",
+      "name": "desktop - 2nd circle position - 3",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopThirdCirclePosition3",
+      "namespace": "custom",
+      "name": "desktop - 3rd circle position - 3",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFourthCirclePosition3",
+      "namespace": "custom",
+      "name": "desktop - 4th circle position - 3",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFirstCirclePosition4",
+      "namespace": "custom",
+      "name": "desktop - 1st circle position - 4",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopSecondCirclePosition4",
+      "namespace": "custom",
+      "name": "desktop - 2nd circle position - 4",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopThirdCirclePosition4",
+      "namespace": "custom",
+      "name": "desktop - 3rd circle position - 4",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFourthCirclePosition4",
+      "namespace": "custom",
+      "name": "desktop - 4th circle position - 4",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFirstCirclePosition5",
+      "namespace": "custom",
+      "name": "desktop - 1st circle position - 5",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopSecondCirclePosition5",
+      "namespace": "custom",
+      "name": "desktop - 2nd circle position - 5",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopThirdCirclePosition5",
+      "namespace": "custom",
+      "name": "desktop - 3rd circle position - 5",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFourthCirclePosition5",
+      "namespace": "custom",
+      "name": "desktop - 4th circle position - 5",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFirstCirclePosition6",
+      "namespace": "custom",
+      "name": "desktop - 1st circle position - 6",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopSecondCirclePosition6",
+      "namespace": "custom",
+      "name": "desktop - 2nd circle position - 6",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopThirdCirclePosition6",
+      "namespace": "custom",
+      "name": "desktop - 3rd circle position - 6",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFourthCirclePosition6",
+      "namespace": "custom",
+      "name": "desktop - 4th circle position - 6",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFirstCirclePosition7",
+      "namespace": "custom",
+      "name": "desktop - 1st circle position - 7",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopSecondCirclePosition7",
+      "namespace": "custom",
+      "name": "desktop - 2nd circle position - 7",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopThirdCirclePosition7",
+      "namespace": "custom",
+      "name": "desktop - 3rd circle position - 7",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFourthCirclePosition7",
+      "namespace": "custom",
+      "name": "desktop - 4th circle position - 7",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFirstCirclePosition8",
+      "namespace": "custom",
+      "name": "desktop - 1st circle position - 8",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopSecondCirclePosition8",
+      "namespace": "custom",
+      "name": "desktop - 2nd circle position - 8",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopThirdCirclePosition8",
+      "namespace": "custom",
+      "name": "desktop - 3rd circle position - 8",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFourthCirclePosition8",
+      "namespace": "custom",
+      "name": "desktop - 4th circle position - 8",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFirstCirclePosition9",
+      "namespace": "custom",
+      "name": "desktop - 1st circle position - 9",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopSecondCirclePosition9",
+      "namespace": "custom",
+      "name": "desktop - 2nd circle position - 9",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopThirdCirclePosition9",
+      "namespace": "custom",
+      "name": "desktop - 3rd circle position - 9",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFourthCirclePosition9",
+      "namespace": "custom",
+      "name": "desktop - 4th circle position - 9",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFirstCirclePosition10",
+      "namespace": "custom",
+      "name": "desktop - 1st circle position - 10",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopSecondCirclePosition10",
+      "namespace": "custom",
+      "name": "desktop - 2nd circle position - 10",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopThirdCirclePosition10",
+      "namespace": "custom",
+      "name": "desktop - 3rd circle position - 10",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "desktopFourthCirclePosition10",
+      "namespace": "custom",
+      "name": "desktop - 4th circle position - 10",
+      "description": "section product overview - measurements - circle position on desktop",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFirstCirclePosition1",
+      "namespace": "custom",
+      "name": "tablet - 1st circle position - 1",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletSecondCirclePosition1",
+      "namespace": "custom",
+      "name": "tablet - 2nd circle position - 1",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletThirdCirclePosition1",
+      "namespace": "custom",
+      "name": "tablet - 3rd circle position - 1",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFourthCirclePosition1",
+      "namespace": "custom",
+      "name": "tablet - 4th circle position - 1",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFirstCirclePosition2",
+      "namespace": "custom",
+      "name": "tablet - 1st circle position - 2",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletSecondCirclePosition2",
+      "namespace": "custom",
+      "name": "tablet - 2nd circle position - 2",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletThirdCirclePosition2",
+      "namespace": "custom",
+      "name": "tablet - 3rd circle position - 2",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFourthCirclePosition2",
+      "namespace": "custom",
+      "name": "tablet - 4th circle position - 2",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFirstCirclePosition3",
+      "namespace": "custom",
+      "name": "tablet - 1st circle position - 3",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletSecondCirclePosition3",
+      "namespace": "custom",
+      "name": "tablet - 2nd circle position - 3",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletThirdCirclePosition3",
+      "namespace": "custom",
+      "name": "tablet - 3rd circle position - 3",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFourthCirclePosition3",
+      "namespace": "custom",
+      "name": "tablet - 4th circle position - 3",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFirstCirclePosition4",
+      "namespace": "custom",
+      "name": "tablet - 1st circle position - 4",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletSecondCirclePosition4",
+      "namespace": "custom",
+      "name": "tablet - 2nd circle position - 4",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletThirdCirclePosition4",
+      "namespace": "custom",
+      "name": "tablet - 3rd circle position - 4",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFourthCirclePosition4",
+      "namespace": "custom",
+      "name": "tablet - 4th circle position - 4",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFirstCirclePosition5",
+      "namespace": "custom",
+      "name": "tablet - 1st circle position - 5",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletSecondCirclePosition5",
+      "namespace": "custom",
+      "name": "tablet - 2nd circle position - 5",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletThirdCirclePosition5",
+      "namespace": "custom",
+      "name": "tablet - 3rd circle position - 5",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFourthCirclePosition5",
+      "namespace": "custom",
+      "name": "tablet - 4th circle position - 5",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFirstCirclePosition6",
+      "namespace": "custom",
+      "name": "tablet - 1st circle position - 6",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletSecondCirclePosition6",
+      "namespace": "custom",
+      "name": "tablet - 2nd circle position - 6",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletThirdCirclePosition6",
+      "namespace": "custom",
+      "name": "tablet - 3rd circle position - 6",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFourthCirclePosition6",
+      "namespace": "custom",
+      "name": "tablet - 4th circle position - 6",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFirstCirclePosition7",
+      "namespace": "custom",
+      "name": "tablet - 1st circle position - 7",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletSecondCirclePosition7",
+      "namespace": "custom",
+      "name": "tablet - 2nd circle position - 7",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletThirdCirclePosition7",
+      "namespace": "custom",
+      "name": "tablet - 3rd circle position - 7",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFourthCirclePosition7",
+      "namespace": "custom",
+      "name": "tablet - 4th circle position - 7",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFirstCirclePosition8",
+      "namespace": "custom",
+      "name": "tablet - 1st circle position - 8",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletSecondCirclePosition8",
+      "namespace": "custom",
+      "name": "tablet - 2nd circle position - 8",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletThirdCirclePosition8",
+      "namespace": "custom",
+      "name": "tablet - 3rd circle position - 8",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFourthCirclePosition8",
+      "namespace": "custom",
+      "name": "tablet - 4th circle position - 8",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFirstCirclePosition9",
+      "namespace": "custom",
+      "name": "tablet - 1st circle position - 9",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletSecondCirclePosition9",
+      "namespace": "custom",
+      "name": "tablet - 2nd circle position - 9",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletThirdCirclePosition9",
+      "namespace": "custom",
+      "name": "tablet - 3rd circle position - 9",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFourthCirclePosition9",
+      "namespace": "custom",
+      "name": "tablet - 4th circle position - 9",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFirstCirclePosition10",
+      "namespace": "custom",
+      "name": "tablet - 1st circle position - 10",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletSecondCirclePosition10",
+      "namespace": "custom",
+      "name": "tablet - 2nd circle position - 10",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletThirdCirclePosition10",
+      "namespace": "custom",
+      "name": "tablet - 3rd circle position - 10",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "tabletFourthCirclePosition10",
+      "namespace": "custom",
+      "name": "tablet - 4th circle position - 10",
+      "description": "section product overview - measurements - circle position on tablet",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFirstCirclePosition1",
+      "namespace": "custom",
+      "name": "mobile - 1st circle position - 1",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileSecondCirclePosition1",
+      "namespace": "custom",
+      "name": "mobile - 2nd circle position - 1",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileThirdCirclePosition1",
+      "namespace": "custom",
+      "name": "mobile - 3rd circle position - 1",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFourthCirclePosition1",
+      "namespace": "custom",
+      "name": "mobile - 4th circle position - 1",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFirstCirclePosition2",
+      "namespace": "custom",
+      "name": "mobile - 1st circle position - 2",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileSecondCirclePosition2",
+      "namespace": "custom",
+      "name": "mobile - 2nd circle position - 2",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileThirdCirclePosition2",
+      "namespace": "custom",
+      "name": "mobile - 3rd circle position - 2",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFourthCirclePosition2",
+      "namespace": "custom",
+      "name": "mobile - 4th circle position - 2",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFirstCirclePosition3",
+      "namespace": "custom",
+      "name": "mobile - 1st circle position - 3",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileSecondCirclePosition3",
+      "namespace": "custom",
+      "name": "mobile - 2nd circle position - 3",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileThirdCirclePosition3",
+      "namespace": "custom",
+      "name": "mobile - 3rd circle position - 3",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFourthCirclePosition3",
+      "namespace": "custom",
+      "name": "mobile - 4th circle position - 3",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFirstCirclePosition4",
+      "namespace": "custom",
+      "name": "mobile - 1st circle position - 4",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileSecondCirclePosition4",
+      "namespace": "custom",
+      "name": "mobile - 2nd circle position - 4",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileThirdCirclePosition4",
+      "namespace": "custom",
+      "name": "mobile - 3rd circle position - 4",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFourthCirclePosition4",
+      "namespace": "custom",
+      "name": "mobile - 4th circle position - 4",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFirstCirclePosition5",
+      "namespace": "custom",
+      "name": "mobile - 1st circle position - 5",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileSecondCirclePosition5",
+      "namespace": "custom",
+      "name": "mobile - 2nd circle position - 5",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileThirdCirclePosition5",
+      "namespace": "custom",
+      "name": "mobile - 3rd circle position - 5",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFourthCirclePosition5",
+      "namespace": "custom",
+      "name": "mobile - 4th circle position - 5",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFirstCirclePosition6",
+      "namespace": "custom",
+      "name": "mobile - 1st circle position - 6",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileSecondCirclePosition6",
+      "namespace": "custom",
+      "name": "mobile - 2nd circle position - 6",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileThirdCirclePosition6",
+      "namespace": "custom",
+      "name": "mobile - 3rd circle position - 6",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFourthCirclePosition6",
+      "namespace": "custom",
+      "name": "mobile - 4th circle position - 6",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFirstCirclePosition7",
+      "namespace": "custom",
+      "name": "mobile - 1st circle position - 7",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileSecondCirclePosition7",
+      "namespace": "custom",
+      "name": "mobile - 2nd circle position - 7",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileThirdCirclePosition7",
+      "namespace": "custom",
+      "name": "mobile - 3rd circle position - 7",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFourthCirclePosition7",
+      "namespace": "custom",
+      "name": "mobile - 4th circle position - 7",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFirstCirclePosition8",
+      "namespace": "custom",
+      "name": "mobile - 1st circle position - 8",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileSecondCirclePosition8",
+      "namespace": "custom",
+      "name": "mobile - 2nd circle position - 8",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileThirdCirclePosition8",
+      "namespace": "custom",
+      "name": "mobile - 3rd circle position - 8",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFourthCirclePosition8",
+      "namespace": "custom",
+      "name": "mobile - 4th circle position - 8",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFirstCirclePosition9",
+      "namespace": "custom",
+      "name": "mobile - 1st circle position - 9",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileSecondCirclePosition9",
+      "namespace": "custom",
+      "name": "mobile - 2nd circle position - 9",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileThirdCirclePosition9",
+      "namespace": "custom",
+      "name": "mobile - 3rd circle position - 9",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFourthCirclePosition9",
+      "namespace": "custom",
+      "name": "mobile - 4th circle position - 9",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFirstCirclePosition10",
+      "namespace": "custom",
+      "name": "mobile - 1st circle position - 10",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileSecondCirclePosition10",
+      "namespace": "custom",
+      "name": "mobile - 2nd circle position - 10",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileThirdCirclePosition10",
+      "namespace": "custom",
+      "name": "mobile - 3rd circle position - 10",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobileFourthCirclePosition10",
+      "namespace": "custom",
+      "name": "mobile - 4th circle position - 10",
+      "description": "section product overview - measurements - circle position on mobile",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_grid_image_1",
+      "namespace": "custom",
+      "name": "product grid image 1",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "product_grid_image_2",
+      "namespace": "custom",
+      "name": "product grid image 2",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "product_grid_image_3",
+      "namespace": "custom",
+      "name": "product grid image 3",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "product_form_short_description",
+      "namespace": "custom",
+      "name": "product form short description",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "accordion_content_1",
+      "namespace": "custom",
+      "name": "accordion content 1",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "accordion_content_2",
+      "namespace": "custom",
+      "name": "accordion content 2",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "accordion_content_3",
+      "namespace": "custom",
+      "name": "accordion content 3",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "accordion_content_4",
+      "namespace": "custom",
+      "name": "accordion content 4",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "accordion_title_1",
+      "namespace": "custom",
+      "name": "accordion title 1",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "accordion_title_2",
+      "namespace": "custom",
+      "name": "accordion title 2",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "accordion_title_3",
+      "namespace": "custom",
+      "name": "accordion title 3",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "accordion_title_4",
+      "namespace": "custom",
+      "name": "accordion title 4",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_overview_info",
+      "namespace": "custom",
+      "name": "product overview info",
+      "description": "",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "list_3rd_item_info",
+      "namespace": "custom",
+      "name": "list 3rd item info",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "list_1st_item_info",
+      "namespace": "custom",
+      "name": "list 1st item info",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "list_2nd_item_info",
+      "namespace": "custom",
+      "name": "list 2nd item info",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mobile_menu_image",
+      "namespace": "custom",
+      "name": "mobile menu image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "list_item_info_garantie",
+      "namespace": "custom",
+      "name": "list item info (Garantie)",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "upgrade",
+      "namespace": "custom",
+      "name": "upgrade",
+      "description": "",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "custom_product",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Product",
+      "description": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "blade-material",
+      "namespace": "shopify",
+      "name": "Blade material",
+      "description": "Specifies the material used in a blade's construction, such as steel or aluminum",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "handle-material",
+      "namespace": "shopify",
+      "name": "Handle material",
+      "description": "Specifies the material used in the product's handle, like bamboo or plastic",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "product_feature_list",
+      "namespace": "custom",
+      "name": "product Feature List",
+      "description": "Use this way: <i class=\"uil uil-award-alt\"></i>  Jede Bestellung pflanzt einen Baum",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "df_type",
+      "namespace": "custom",
+      "name": "DF_Type",
+      "description": "Digitale Produkte für VDS",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "logo_image_product_page",
+      "namespace": "custom",
+      "name": "Logo-Image-Product-Page",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
+  "variant": [
+    {
+      "key": "image",
+      "namespace": "custom",
+      "name": "image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "custom_label_4",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 4",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_3",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 3",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_2",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 2",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_1",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 1",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "custom_label_0",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Custom Label 0",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "size_system",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Size System",
+      "description": "The country of the size system used by your product.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "size_type",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Size Type",
+      "description": "Your apparel product’s cut.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "mpn",
+      "namespace": "mm-google-shopping",
+      "name": "Google: MPN",
+      "description": "Your product’s Manufacturer Part Number (MPN).",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "gender",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Gender",
+      "description": "The gender for which your product is intended.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "condition",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Condition",
+      "description": "The condition of your product at time of sale.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "age_group",
+      "namespace": "mm-google-shopping",
+      "name": "Google: Age Group",
+      "description": "The demographic for which your product is intended.",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "df_type",
+      "namespace": "custom",
+      "name": "DF_Type",
+      "description": "Digitale Varianten für VDS",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
   "shop": []
 }

@@ -1,7 +1,5 @@
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 <style>
-
-
   .custom-product-page a,
   p,
   h1,
@@ -22,7 +20,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
   }
 
   .custom-product-page {
@@ -57,11 +54,13 @@
   #product__slider {
     display: flex;
     gap: 50px;
-    max-height: 590px;
     position: relative;
-    overflow: hidden;
+    height: 600px;
   }
-
+  #product__slider img {
+    height: 100%;
+    width: 100%;
+  }
   .swiper.thumb-slider {
     width: 112px;
     flex: 0 0 auto;
@@ -125,13 +124,14 @@
   .button-prev {
     left: 10px;
     top: 50%;
+    transform: translateY(-50%);
   }
 
   .button-next {
     top: 50%;
     right: 10px;
+    transform: translateY(-50%);
   }
-
   /* product content css  */
   .product-info-content {
     width: 40%;
@@ -161,12 +161,8 @@
 
   @media only screen and (max-width: 600px) {
     .liked-img {
-    
       margin-right: 8%;
- 
     }
-  
-  
   }
 
   .liked-img img {
@@ -210,8 +206,6 @@
     align-items: center;
   }
 
-
-
   .demand-badge {
     background: #fff1ee;
     color: #f0330e;
@@ -222,7 +216,7 @@
     font-size: 12px;
     margin-right: 9px;
     flex-shrink: 0;
-}
+  }
 
   .demand-text {
     display: inline-block;
@@ -315,7 +309,7 @@
     width: 24px;
     height: 24px;
     margin-bottom: 5px;
-    display:inline-block;
+    display: inline-block;
   }
 
   .info-card p {
@@ -334,11 +328,10 @@
     align-items: center;
     margin-bottom: 8px;
     gap: 10px;
-}
+  }
   .prouduct-review svg {
     width: 110px;
-}
-
+  }
 
   @media only screen and (max-width: 1300px) {
     .rs-row {
@@ -447,7 +440,17 @@
           {% case block.type %}
             {% when 'review' %}
               <div class="prouduct-review">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 881 130" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xmlns:serif="http://www.serif.com/"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 881 130"
+                  version="1.1"
+                  xml:space="preserve"
+                  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+                >
                   <g transform="matrix(1,0,0,1,-634.728,-382.568)">
                       <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
                   </g>
@@ -463,9 +466,9 @@
                   <g transform="matrix(1,0,0,1,109.853,-382.568)">
                       <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
                   </g>
-              </svg>
+                </svg>
 
-              <span> {{ block.settings.p }}</span>
+                <span> {{ block.settings.p }}</span>
               </div>
             {% when 'title' %}
               <h2
