@@ -347,7 +347,16 @@ span.faq-icon {
     justify-content: center;
     align-content: center;
     gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
   }
+
+  .usp-list-main::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari */
+  }
+
 
   .usp-list-item {
     width: 50%;
