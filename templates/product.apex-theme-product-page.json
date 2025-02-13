@@ -502,7 +502,7 @@
         "sub_heading_aBnF8i": {
           "type": "sub_heading",
           "settings": {
-            "sub_heading": "Maniko - Explained in 2 Minutes",
+            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten",
             "sub_heading_color": "#000000",
             "sub_heading_size": 16
           }
@@ -510,7 +510,7 @@
         "heading_jQDwbJ": {
           "type": "heading",
           "settings": {
-            "heading": "What are Maniko Nails?",
+            "heading": "Qualität, die begeistert.",
             "h1_font_size": 32,
             "h1_font_size_tablet": 28,
             "h1_font_size_mobile": 24,
@@ -529,7 +529,7 @@
         "details_erg8QM": {
           "type": "details",
           "settings": {
-            "details": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:",
+            "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
             "details_color": "#000000",
             "details_size": 18,
             "p_font_size": 16,
@@ -550,7 +550,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Fire_in_the_hole_(1)_V1.mp4",
+            "video": "shopify://files/videos/Küchenkompane Video.mp4",
             "autoplay": true,
             "loop": true,
             "muted": true,
@@ -581,10 +581,10 @@
           "type": "item",
           "settings": {
             "usp_icon": "shopify://shop_images/Vegan-40px_1920x_2.png",
-            "usp_title": "Vegan",
+            "usp_title": "30 Tage Rückgaberecht",
             "title_color": "#121212",
             "title_size": 18,
-            "usp_info": "and without animal testing",
+            "usp_info": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
             "info_color": "#121212",
             "info_size": 14,
             "divider": false
@@ -594,7 +594,7 @@
           "type": "item",
           "settings": {
             "usp_icon": "shopify://shop_images/Hema-free_1920x_2.png",
-            "usp_title": "HEMA-free",
+            "usp_title": "Schärfe Garantiert",
             "title_color": "#121212",
             "title_size": 18,
             "usp_info": "and without pollutants",
@@ -636,10 +636,94 @@
         "item_3thknm",
         "item_ffRDkG"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "#fff",
         "verticle_padding": 50,
         "horizontal_padding": 50
+      }
+    },
+    "icon_box_9UtNky": {
+      "type": "icon-box",
+      "blocks": {
+        "iconbox_pJbJGA": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
+            "image_by_url": "",
+            "title": "30 Tage Rückgaberecht",
+            "description": "<p>Teste unsere hochwertigen Küchenmesser risikofrei – mit 30 Tagen Rückgaberecht.</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--plain",
+            "button_size": ""
+          }
+        },
+        "iconbox_RW46nE": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
+            "image_by_url": "",
+            "title": "Schärfe Garantiert",
+            "description": "<p>Unsere Messer stehen für Qualität und Langlebigkeit – garantiert ein Leben lang</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--plain",
+            "button_size": ""
+          }
+        },
+        "iconbox_EiwgTg": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
+            "image_by_url": "",
+            "title": "Kostenloser Versand",
+            "description": "<p>Genieße kostenlosen Versand innerhalb der gesamten EU ab 100€ Bestellwert.</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--plain",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "iconbox_pJbJGA",
+        "iconbox_RW46nE",
+        "iconbox_EiwgTg"
+      ],
+      "custom_css": [
+        ".m-icon-box__heading {font-weight: 400;}"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "item_per_row": 3,
+        "item_gap": 30,
+        "item_gap_mobile": 10,
+        "card_style": "vertical",
+        "image_max_width": "70px",
+        "content_alignment": "center",
+        "hover_effect": "scaling-up",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": true,
+        "use_grid_column_mb": false,
+        "padding_top": 100,
+        "padding_bottom": 38,
+        "custom_class": "",
+        "animations": "inherit"
       }
     },
     "apex_faqs_jx7hp6": {
@@ -862,7 +946,7 @@
         "title_7bjmib": {
           "type": "title",
           "settings": {
-            "title_img": "shopify://shop_images/glamour_256x256_62974d0f-87a5-40ae-97fd-1c9a6d7542e2_1920x_2.png",
+            "title_img": "shopify://shop_images/n_tv_logo_V6_1.png",
             "title": "",
             "title_color": "#121212",
             "title_size": 40
@@ -1058,167 +1142,6 @@
         "custom_class": "",
         "animations": "inherit",
         "enable_bg_zoom_effect": true
-      }
-    },
-    "scrolling_promotion_MVNN6Q": {
-      "type": "scrolling-promotion",
-      "blocks": {
-        "announcement_wewTPP": {
-          "type": "announcement",
-          "settings": {
-            "custom_svg": "",
-            "icon_size": "medium",
-            "text": "Free Delivery on orders over $200",
-            "text_size": 16,
-            "text_link": ""
-          }
-        },
-        "image_88JkQc": {
-          "type": "image",
-          "settings": {
-            "image_height": 8,
-            "image_link": ""
-          }
-        },
-        "announcement_iDtgyD": {
-          "type": "announcement",
-          "settings": {
-            "custom_svg": "",
-            "icon_size": "medium",
-            "text": "Free Delivery on orders over $200",
-            "text_size": 16,
-            "text_link": ""
-          }
-        },
-        "image_T6f3z4": {
-          "type": "image",
-          "settings": {
-            "image_height": 8,
-            "image_link": ""
-          }
-        },
-        "announcement_pPW8nc": {
-          "type": "announcement",
-          "settings": {
-            "custom_svg": "",
-            "icon_size": "medium",
-            "text": "Free Delivery on orders over $200",
-            "text_size": 16,
-            "text_link": ""
-          }
-        },
-        "image_83fwGn": {
-          "type": "image",
-          "settings": {
-            "image_height": 8,
-            "image_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement_wewTPP",
-        "image_88JkQc",
-        "announcement_iDtgyD",
-        "image_T6f3z4",
-        "announcement_pPW8nc",
-        "image_83fwGn"
-      ],
-      "custom_css": [
-        ".m-promotion__text {font-weight: 500;}"
-      ],
-      "settings": {
-        "container": "w-full",
-        "direction": "left",
-        "speed": 20,
-        "item_gap": 50,
-        "item_gap_mobile": 30,
-        "color_scheme": "dark",
-        "padding_top": 24,
-        "padding_bottom": 24,
-        "custom_class": ""
-      }
-    },
-    "icon_box_9UtNky": {
-      "type": "icon-box",
-      "blocks": {
-        "iconbox_pJbJGA": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
-            "image_by_url": "",
-            "title": "30 Tage Rückgaberecht",
-            "description": "<p>Teste unsere hochwertigen Küchenmesser risikofrei – mit 30 Tagen Rückgaberecht.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_RW46nE": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "image_by_url": "",
-            "title": "Schärfe Garantiert",
-            "description": "<p>Unsere Messer stehen für Qualität und Langlebigkeit – garantiert ein Leben lang</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_EiwgTg": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "image_by_url": "",
-            "title": "Kostenloser Versand",
-            "description": "<p>Genieße kostenlosen Versand innerhalb der gesamten EU ab 100€ Bestellwert.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "iconbox_pJbJGA",
-        "iconbox_RW46nE",
-        "iconbox_EiwgTg"
-      ],
-      "custom_css": [
-        ".m-icon-box__heading {font-weight: 400;}"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "heading": "Why Minimog?",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "item_per_row": 3,
-        "item_gap": 30,
-        "item_gap_mobile": 10,
-        "card_style": "vertical",
-        "image_max_width": "70px",
-        "content_alignment": "center",
-        "hover_effect": "scaling-up",
-        "enable_slider": false,
-        "show_pagination": false,
-        "show_navigation": false,
-        "use_scroll_mobile": true,
-        "use_grid_column_mb": false,
-        "padding_top": 100,
-        "padding_bottom": 38,
-        "custom_class": "",
-        "animations": "inherit"
       }
     },
     "collapsible_tabs_JndiBV": {
@@ -1539,6 +1462,7 @@
     "logo_greyed_out_FMbnW7",
     "product_explanation_video_xNFp3M",
     "usp_list_fgXGqB",
+    "icon_box_9UtNky",
     "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
@@ -1546,8 +1470,6 @@
     "us_vs_them_8Tbqki",
     "store_benefits_bottom_NPnyUL",
     "lookbook_kK6fgf",
-    "scrolling_promotion_MVNN6Q",
-    "icon_box_9UtNky",
     "collapsible_tabs_JndiBV",
     "product-recommendations",
     "recent-viewed-products",
