@@ -30,7 +30,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "size_title": "Size"
+            "size_title": "Grifffarbe"
           }
         },
         "buy_buttons": {
@@ -271,7 +271,7 @@
           "type": "faq",
           "settings": {
             "question": "{{ section.settings.product.metafields.custom.accordion_title_4.value }}",
-            "answer": "{{ section.settings.product.metafields.custom.accordion_content_4 | metafield_tag }}"
+            "answer": "<p>{{ section.settings.product.metafields.custom.accordion_content_4 | metafield_tag }}</p>"
           }
         }
       },
