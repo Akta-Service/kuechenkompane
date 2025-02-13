@@ -135,9 +135,9 @@
       <div class="description-accordion">
         {% for block in section.blocks %}
           <div class="accordion-item">
-            <button class="accordion-button">
-              {{ block.settings.question }}
-              {% if block.settings.question != blank %}
+            {% if block.settings.question != blank %}
+              <button class="accordion-button">
+                {{ block.settings.question }}
                 <span class="accordion-icon">
                   <svg
                     width="24"
@@ -149,8 +149,8 @@
                     <path d="M12 17C11.814 17 11.6279 16.9267 11.4859 16.7803L4.21314 9.28029C3.92895 8.98723 3.92895 8.51267 4.21314 8.2198C4.49732 7.92692 4.9575 7.92673 5.2415 8.2198L12 15.1895L18.7586 8.21979C19.0427 7.92673 19.5029 7.92673 19.7869 8.21979C20.0709 8.51286 20.0711 8.98742 19.7869 9.28029L12.5142 16.7803C12.3722 16.9267 12.186 17 12 17Z" fill="#333333"></path>
                   </svg>
                 </span>
-              {% endif %}
-            </button>
+              </button>
+            {% endif %}
             <div class="accordion-content">
               {{ block.settings.answer }}
             </div>
