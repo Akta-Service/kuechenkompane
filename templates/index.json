@@ -37,7 +37,7 @@
         "text_J8yeUK"
       ],
       "settings": {
-        "u": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160_mov_V1.mp4",
+        "u": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160.mov_V2.mp4",
         "mt": 0,
         "mb": 0,
         "mt_mobile": 0,
@@ -1340,7 +1340,37 @@
         "button_style": "m-button--secondary",
         "use_scroll_mobile": true,
         "padding_top": 48,
-        "padding_bottom": 20,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "1739453678f52f0d51": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_jYfhfc": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "alignment": "center",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_jYfhfc"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 66,
         "custom_class": ""
       }
     },
@@ -1422,6 +1452,7 @@
     "custom_content_KiFzqG",
     "branded_image_version_NcNpYJ",
     "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
+    "1739453678f52f0d51",
     "testing_NJWriR"
   ]
 }
