@@ -342,6 +342,11 @@ span.faq-icon {
 
   .usp-list-main {
     flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
   }
 
   .usp-list-item {
