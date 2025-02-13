@@ -44,7 +44,7 @@
 
 .benefit-image img {
   width: 100%;
-  object-fit: cover;
+      object-fit: cover;
   height: 100%;
 }
 
@@ -154,16 +154,20 @@ img.magazine-title-img {
   justify-content: space-between;
 }
 @media only screen and (max-width: 750px) {
+
   .usp-list-main {
+
     align-items: start;
+
   }
+
 }
+
+
 
 .usp-list-item {
   text-align: center;
   position: relative;
-  width: 100%;
-  padding: 0 50px;
 }
 
 .usp-list-item img {
@@ -175,8 +179,9 @@ img.magazine-title-img {
 
 @media only screen and (max-width: 768px) {
   .usp-list-section {
+
     padding: 50px 8px;
-  }
+}
   .usp-list-item img {
     max-width: 100px;
   }
@@ -341,7 +346,6 @@ span.faq-icon {
     flex-wrap: nowrap;
     display: flex;
     align-items: center;
-
     align-content: center;
     gap: 10px;
     overflow-x: auto;
@@ -354,9 +358,10 @@ span.faq-icon {
     display: none; /* Hide scrollbar for Chrome, Safari */
   }
 
+
   .usp-list-item {
     margin-top: 32px;
-    min-width: 100%;
+    min-width: 68%;
     scroll-snap-align: center;
     flex: 0 0 auto;
     text-align: center;
