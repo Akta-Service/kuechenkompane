@@ -360,7 +360,7 @@ span.faq-icon {
 
 
   .usp-list-item {
-    flex: 0 0 calc(33.33% - 20px); /* Show 3 items at a time */
+    display: flex;
     margin-top: 32px;
     min-width: 100%;
     scroll-snap-align: center;
