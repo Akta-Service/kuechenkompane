@@ -587,7 +587,7 @@
             "usp_info": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
             "info_color": "#121212",
             "info_size": 14,
-            "divider": false
+            "divider": true
           }
         },
         "item_XccFJc": {
@@ -600,7 +600,7 @@
             "usp_info": "and without pollutants",
             "info_color": "#121212",
             "info_size": 14,
-            "divider": false
+            "divider": true
           }
         },
         "item_3thknm": {
@@ -613,7 +613,7 @@
             "usp_info": "thanks to 8 different sizes",
             "info_color": "#121212",
             "info_size": 14,
-            "divider": false
+            "divider": true
           }
         },
         "item_ffRDkG": {
@@ -636,7 +636,6 @@
         "item_3thknm",
         "item_ffRDkG"
       ],
-      "disabled": true,
       "settings": {
         "bg_color": "#fff",
         "verticle_padding": 50,
