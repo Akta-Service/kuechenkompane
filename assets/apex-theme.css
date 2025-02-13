@@ -345,7 +345,6 @@ span.faq-icon {
     flex-wrap: nowrap;
     display: flex;
     align-items: center;
-    justify-content: center;
     align-content: center;
     gap: 10px;
     overflow-x: auto;
