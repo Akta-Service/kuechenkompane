@@ -449,6 +449,7 @@
       "blocks": {
         "item_VAHx34": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
@@ -462,6 +463,7 @@
         },
         "item_LYpiVL": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
