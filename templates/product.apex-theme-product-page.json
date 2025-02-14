@@ -958,6 +958,59 @@
         "padding_bottom_mobile": 50
       }
     },
+    "benefit_text_right_NB8JHM": {
+      "type": "benefit-text-right",
+      "blocks": {
+        "subtitle_AhmRjM": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "The Beauty Trend 2024",
+            "subtitle_color": "#121212",
+            "subtitle_size": 18
+          }
+        },
+        "title_Pe3bYK": {
+          "type": "title",
+          "settings": {
+            "title": "Salon-beautiful nails in minutes",
+            "title_color": "#121212",
+            "title_size": 40
+          }
+        },
+        "description_qBwq3Q": {
+          "type": "description",
+          "settings": {
+            "description": "Experience the nail polish revolution for yourself with Gel Polish 2.0!.......",
+            "description_color": "#121212",
+            "description_size": 18
+          }
+        },
+        "button_Dd6aEQ": {
+          "type": "button",
+          "settings": {
+            "button_style": "solid",
+            "button_text": "Click Here",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_AhmRjM",
+        "title_Pe3bYK",
+        "description_qBwq3Q",
+        "button_Dd6aEQ"
+      ],
+      "settings": {
+        "background_color": "#f8f2ec",
+        "media_type": "image",
+        "image": "shopify://shop_images/ManikoNails_HeroBanner_1920x_3.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": true,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
+      }
+    },
     "magazine_quote_UQpqkk": {
       "type": "magazine-quote",
       "blocks": {
@@ -1484,6 +1537,7 @@
     "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
+    "benefit_text_right_NB8JHM",
     "magazine_quote_UQpqkk",
     "us_vs_them_8Tbqki",
     "store_benefits_bottom_NPnyUL",
