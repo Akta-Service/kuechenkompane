@@ -882,7 +882,7 @@
         "button_T3DhEB": {
           "type": "button",
           "settings": {
-            "button_style": "underline",
+            "button_style": "solid",
             "button_text": "Click Here",
             "button_link": ""
           }
@@ -931,12 +931,21 @@
             "description_color": "#121212",
             "description_size": 18
           }
+        },
+        "button_QPkcL7": {
+          "type": "button",
+          "settings": {
+            "button_style": "underline",
+            "button_text": "Click Here",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
         "subtitle_XPX87U",
         "title_YwDaTz",
-        "description_j4ByyM"
+        "description_j4ByyM",
+        "button_QPkcL7"
       ],
       "settings": {
         "background_color": "#ffffff",
