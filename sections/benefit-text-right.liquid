@@ -5,7 +5,7 @@
       padding-bottom: {{- section.settings.padding_bottom -}}px;
 
    }
-   .benefit-text-area.text-right{{ section.id }} {
+   .benefit-text-area.bg{{ section.id }} {
     background-color: {{ section.settings.background_color }};
    }
    @media only screen and (max-width: 768px) {
@@ -15,7 +15,7 @@
    }
    }
 {%- endstyle -%}
-<div class="benefit-text-area text-right">
+<div class="benefit-text-area text-right bg-{{ section.id }}">
   <div class="rs-container">
     <div class="benefit-row {% if section.settings.reverse %}rs-reverse{% endif %}">
       <div class="benefit-content">
