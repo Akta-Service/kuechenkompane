@@ -11,12 +11,28 @@
       padding-bottom: {{- section.settings.padding_bottom_mobile -}}px ;
    }
    }
-   .benefit-button{
+   .benefit-button {
     position: relative;
-    display: inline-block;
+    display: flex;
     text-decoration: none;
-   }
-   .benefit-button.underline:after{
+    width: fit-content;
+    padding-bottom: 2px;
+    margin-top: 30px;
+    gap: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+
+   .benefit-button:after  {
+      content: "";
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27%3E%3Cpath d=%27M12.5625 5.25L19.3125 12L12.5625 18.75M18.375 12H4.6875%27 stroke=%27white%27 stroke-width=%271.5%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E");
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27%3E%3Cpath d=%27M12.5625 5.25L19.3125 12L12.5625 18.75M18.375 12H4.6875%27 stroke=%27white%27 stroke-width=%271.5%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E");
+      background-size: 1.5rem 1.5rem;
+      height: 20px;
+      width: 20px;
+      background-color: #000;
+    }
+   .benefit-button.underline:before{
       content: "";
       position: absolute;
       width: 100%;
@@ -24,9 +40,19 @@
       bottom: 0;
       left: 0;
       background-color: #000;
+      transition: 0.3s;
    }
-   .benefit-button.underline:hover:after{
+   .benefit-button.underline:hover:before{
       width: 0;
+   }
+   .benefit-button.solid {
+    padding: 8px 40px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 30px;
+   }
+   .benefit-button.solid:after{
+      background-color: #fff;
    }
 {%- endstyle -%}
 <div class="benefit-text-area">
@@ -57,11 +83,11 @@
                 {{ block.settings.description }}
               </p>
             {% when 'button' %}
-              <a href="{{ block.settings.button_link }}" class="benefit-button {{ block.settings.button_style }}">
+              <a
+                href="{{ block.settings.button_link }}"
+                class="benefit-button   {{ block.settings.button_style }}"
+              >
                 {{ block.settings.button_text }}
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12.5625 5.25L19.3125 12L12.5625 18.75M18.375 12H4.6875" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
               </a>
           {% endcase %}
         {% endfor %}
