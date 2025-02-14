@@ -11,6 +11,23 @@
       padding-bottom: {{- section.settings.padding_bottom_mobile -}}px ;
    }
    }
+   .benefit-button{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+   }
+   .benefit-button.underline:after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1.5px;
+      bottom: 0;
+      left: 0;
+      background-color: #000;
+   }
+   .benefit-button.underline:hover:after{
+      width: 0;
+   }
 {%- endstyle -%}
 <div class="benefit-text-area">
   <div class="rs-container">
@@ -39,6 +56,13 @@
               >
                 {{ block.settings.description }}
               </p>
+            {% when 'button' %}
+              <a href="{{ block.settings.button_link }}" class="benefit-button {{ block.settings.button_style }}">
+                {{ block.settings.button_text }}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12.5625 5.25L19.3125 12L12.5625 18.75M18.375 12H4.6875" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
           {% endcase %}
         {% endfor %}
       </div>
@@ -221,6 +245,39 @@
           "unit": "px",
           "label": "Description Font size",
           "default": 18
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button Style",
+          "options": [
+            {
+              "value": "solid",
+              "label": "Solid"
+            },
+            {
+              "value": "underline",
+              "label": "Underline"
+            }
+          ],
+          "default": "solid"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Click Here"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
         }
       ]
     }
