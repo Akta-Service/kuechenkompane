@@ -40,6 +40,13 @@
               >
                 {{ block.settings.description }}
               </p>
+            {% when 'button' %}
+              <a
+                href="{{ block.settings.button_link }}"
+                class="benefit-button {{ block.settings.button_style }}"
+              >
+                {{ block.settings.button_text }}
+              </a>
           {% endcase %}
         {% endfor %}
       </div>
@@ -222,6 +229,39 @@
           "unit": "px",
           "label": "Description Font size",
           "default": 18
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button Style",
+          "options": [
+            {
+              "value": "solid",
+              "label": "Solid"
+            },
+            {
+              "value": "underline",
+              "label": "Underline"
+            }
+          ],
+          "default": "solid"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Click Here"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
         }
       ]
     }
