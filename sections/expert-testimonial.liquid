@@ -15,6 +15,7 @@
       margin-top: {{ section.settings.mt }}px;
       padding-bottom: {{ section.settings.pb }}px;
       padding-top: {{ section.settings.pt }}px;
+      background-color: {{ section.settings.section_bg_color }};
 
     }
     .about-area .container {
@@ -219,8 +220,14 @@
   "settings": [
     {
       "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
       "id": "bg_color",
-      "label": "Background Color",
+      "label": "Content Background Color",
       "default": "#f0f0f3"
     },
     {
