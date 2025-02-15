@@ -70,7 +70,9 @@ img.magazine-title-img {
   margin: auto;
   margin-bottom: 10px;
 }
-
+img.magazine-title-img {
+  max-width: 220px;
+}
 .ratings {
   line-height: 1;
   margin-top: -10px;
