@@ -5,6 +5,12 @@
     background: {{ section.settings.bg_color }};
     padding: {{ section.settings.verticle_padding }}px {{ section.settings.horizontal_padding }}px;
   }
+  @media (max-width: 768px) {
+    .usp-list-section {
+      padding: {{ section.settings.verticle_padding_mobile }}px {{ section.settings.horizontal_padding_mobile }}px;
+    }
+
+  }
 </style>
 
 <!-- usp-list-section start -->
@@ -52,6 +58,24 @@
       "id": "horizontal_padding",
       "label": "Horizontal Padding",
       "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "verticle_padding_mobile",
+      "label": "Vertical Padding (Mobile)",
+      "default": 30,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "horizontal_padding_mobile",
+      "label": "Horizontal Padding (Mobile)",
+      "default": 15,
       "min": 0,
       "max": 100,
       "step": 1
