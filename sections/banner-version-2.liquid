@@ -1,9 +1,6 @@
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 
 <style>
-
-
-
     ul {
       list-style: none;
     }
@@ -163,7 +160,7 @@
         transform: translate(-50%, -50%);
         width: 100%;
         padding: 0 16px;
-    
+
       }
 
       .banner-main-content h3 {
@@ -223,8 +220,12 @@
     max-height: 46px;
     height: 100%;
     }
-
+    .mobile-video { display: none; }
     @media only screen and (min-width: 1300px) {   .banner-brand-img img { max-height: 73px; height: 100%; } }
+    @media (max-width: 768px) {
+    .desktop-video { display: none; }
+    .mobile-video { display: block; }
+  }
 </style>
 <div class="banner-area-two">
   <div class="banner-top">
@@ -254,14 +255,14 @@
     class="banner-main"
     style="{% if section.settings.bg_igm != blank %} background-image: url('{{ section.settings.bg_igm |  img_url: 'master'  }}'); {% endif %}"
   >
-
-
     <div class="video-wrapper">
-      <video muted autoplay loop playsinline >
-      <source src="{{ section.settings.u.sources[1].url }}" type="video/mp4">
+      <video class="desktop-video" muted autoplay loop playsinline>
+        <source src="{{ section.settings.u.sources[1].url }}" type="video/mp4">
       </video>
-  </div>
-
+      <video class="mobile-video" muted autoplay loop playsinline>
+        <source src="{{ section.settings.u_mobile.sources[1].url }}" type="video/mp4">
+      </video>
+    </div>
 
     <div class="banner-main-content">
       <h3>{{ section.settings.title }}</h3>
@@ -302,15 +303,17 @@
 {
   "name": "Banner Version 2",
   "settings": [
-      
-                      {
-            
-                        "id": "u",
-                        "label": "Video Upload",
-                        "type": "video"
-                       },
+    {
+      "id": "u",
+      "label": "Video Upload",
+      "type": "video"
+    },
+    {
+      "id": "u_mobile",
+      "label": "Video Upload {Mobile}",
+      "type": "video"
+    },
 
-    
     {
       "type": "range",
       "id": "mt",
