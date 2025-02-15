@@ -1383,6 +1383,7 @@
         "right_content_6RynNR"
       ],
       "settings": {
+        "section_bg_color": "#ffffff",
         "bg_color": "#f0f0f3",
         "mt": 0,
         "mb": 0,
@@ -1437,8 +1438,8 @@
         "img": "shopify://shop_images/team_new_720x_d09771b7-d205-45ae-b2b9-e66d04d21ad9.jpg",
         "verticle_padding": 70,
         "horizontal_padding": 0,
-        "border_t": true,
-        "border_b": true,
+        "border_t": false,
+        "border_b": false,
         "item_color": "#0f0f0f",
         "item_bg": "#f0f0f3",
         "item_size": 16,
