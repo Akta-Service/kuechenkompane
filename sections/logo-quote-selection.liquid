@@ -14,14 +14,24 @@
     /* common css end  */
     .logo-quote-area {
       background: {{ section.settings.bg-color |  default: '#ff6723' }} ;
-      padding: {{ section.settings.ver_p}}px 0;
+      padding: {{ section.settings.ver_p}}px {{ section.settings.hr_p}}px;
     }
 
     .logo-quote-content {
-      max-width: 860px;
-      margin: 0 auto;
+          max-width: 860px;
+          margin: 0 auto;
+          text-align: center;
+      }
+    .quote-content {
+      font-size: 24px;
+      color: #111111;
+      font-family: "Roboto", sans-serif;
+      margin-bottom: 20px;
+      display: none;
     }
-
+    .quote-content.active {
+          display: block;
+      }
     .logo-quote-title h2 {
       font-size: {{ section.settings.heading_size }}px;
       text-transform: uppercase;
@@ -68,7 +78,6 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      padding: 0 10px;
     }
 
     .logo-item.active img {
@@ -87,7 +96,7 @@
 
     @media only screen and (max-width: 767px) {
       .logo-quote-area {
-        /*padding: {{ section.settings.ver_p_mobile}}px 0;*/
+        padding: {{ section.settings.ver_p_mobile}}px {{ section.settings.hr_p_mobile}}px;
       }
 
       .logo-quote-title h2 {
@@ -101,18 +110,13 @@
 
       .logo-item-list {
         row-gap: 40px;
-        justify-content: space-around;
-        padding: 0 30px;
-      }
-      .logo-quote-area{
-        padding 0 20px;
       }
     }
 </style>
 <div class="logo-quote-area">
   <div class="logo-quote-content">
     {% for block in section.blocks %}
-      <div class="quote-content active" id="{{ forloop.index}}">
+      <div class="quote-content {% if forloop.first %}active{% endif %}" id="{{ forloop.index}}">
         <h3 class="quote-content-text">{{ block.settings.content }}</h3>
       </div>
     {% endfor %}
@@ -151,9 +155,27 @@
     },
     {
       "type": "range",
+      "id": "hr_p",
+      "label": "Horizontal Padding",
+      "default": 30,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
       "id": "ver_p_mobile",
       "label": "Vertical Padding (Mobile)",
       "default": 30,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "hr_p_mobile",
+      "label": "Horizontal Padding (Mobile)",
+      "default": 20,
       "min": 0,
       "max": 100,
       "step": 1
