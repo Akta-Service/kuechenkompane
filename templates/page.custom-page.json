@@ -187,7 +187,9 @@
       "settings": {
         "bg-color": "#ff6723",
         "ver_p": 60,
+        "hr_p": 0,
         "ver_p_mobile": 30,
+        "hr_p_mobile": 20,
         "heading_size": 48,
         "heading_color": "#111111"
       }
