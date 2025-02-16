@@ -497,6 +497,7 @@ span.faq-icon {
 a.m-button.m-button--primary {
   background: #fa8526 !important;
   color: #fff !important;
+  font-weight: bold;
 }
 a.m-button.m-button--primary:hover {
   background: #333333 !important;

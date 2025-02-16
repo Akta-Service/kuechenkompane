@@ -5429,6 +5429,14 @@ variant-picker
     transform: scale(1.1);
   }
 }
+.m-button {
+
+  font-weight: bold;
+}
+.branded-btn a{
+
+  font-weight: bold;
+}
 .m-product-option--unselect {
   position: relative;
   display: block;
