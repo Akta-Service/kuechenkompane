@@ -574,6 +574,45 @@
         "heading_size_mobile": 34
       }
     },
+    "magazine_quote_UQpqkk": {
+      "type": "magazine-quote",
+      "blocks": {
+        "title_7bjmib": {
+          "type": "title",
+          "settings": {
+            "title_img": "shopify://shop_images/n_tv_logo_V6_1.png",
+            "title": "",
+            "title_color": "#121212",
+            "title_size": 40
+          }
+        },
+        "ratings_qmMcyY": {
+          "type": "ratings",
+          "settings": {
+            "rating": 4
+          }
+        },
+        "quotation_g7QTma": {
+          "type": "quotation",
+          "settings": {
+            "quote": "<p>“Real gel polish that sticks on and is also easy to remove. A dream comes true. With the strips, every manicure gets studio quality that lasts up to 3 weeks!</p>",
+            "quote_color": "#121212",
+            "quote_size": 26
+          }
+        }
+      },
+      "block_order": [
+        "title_7bjmib",
+        "ratings_qmMcyY",
+        "quotation_g7QTma"
+      ],
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
+      }
+    },
     "usp_list_fgXGqB": {
       "type": "usp-list",
       "blocks": {
@@ -643,89 +682,6 @@
         "horizontal_padding": 50,
         "verticle_padding_mobile": 30,
         "horizontal_padding_mobile": 15
-      }
-    },
-    "icon_box_9UtNky": {
-      "type": "icon-box",
-      "blocks": {
-        "iconbox_pJbJGA": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
-            "image_by_url": "",
-            "title": "30 Tage Rückgaberecht",
-            "description": "<p>Teste unsere hochwertigen Küchenmesser risikofrei – mit 30 Tagen Rückgaberecht.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_RW46nE": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "image_by_url": "",
-            "title": "Schärfe Garantiert",
-            "description": "<p>Unsere Messer stehen für Qualität und Langlebigkeit – garantiert ein Leben lang</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_EiwgTg": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "image_by_url": "",
-            "title": "Kostenloser Versand",
-            "description": "<p>Genieße kostenlosen Versand innerhalb der gesamten EU ab 100€ Bestellwert.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "iconbox_pJbJGA",
-        "iconbox_RW46nE",
-        "iconbox_EiwgTg"
-      ],
-      "custom_css": [
-        ".m-icon-box__heading {font-weight: 400;}"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "item_per_row": 3,
-        "item_gap": 30,
-        "item_gap_mobile": 10,
-        "card_style": "vertical",
-        "image_max_width": "70px",
-        "content_alignment": "center",
-        "hover_effect": "scaling-up",
-        "enable_slider": false,
-        "show_pagination": false,
-        "show_navigation": false,
-        "use_scroll_mobile": true,
-        "use_grid_column_mb": false,
-        "padding_top": 100,
-        "padding_bottom": 38,
-        "custom_class": "",
-        "animations": "inherit"
       }
     },
     "apex_faqs_jx7hp6": {
@@ -897,9 +853,9 @@
         "button_T3DhEB"
       ],
       "settings": {
-        "background_color": "#ffffff",
+        "background_color": "#c5d3be",
         "media_type": "image",
-        "image": "shopify://shop_images/ManikoNails_HeroBanner_1920x_3.jpg",
+        "image": "shopify://shop_images/DSC04954_1_1_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -950,104 +906,12 @@
         "button_QPkcL7"
       ],
       "settings": {
-        "background_color": "#ffffff",
+        "background_color": "#c5d3be",
         "media_type": "image",
         "image": "shopify://shop_images/Haltbarkeit01_1920x_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": true,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
-      }
-    },
-    "benefit_text_right_NB8JHM": {
-      "type": "benefit-text-right",
-      "blocks": {
-        "subtitle_AhmRjM": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "The Beauty Trend 2024",
-            "subtitle_color": "#121212",
-            "subtitle_size": 18
-          }
-        },
-        "title_Pe3bYK": {
-          "type": "title",
-          "settings": {
-            "title": "Salon-beautiful nails in minutes",
-            "title_color": "#121212",
-            "title_size": 40
-          }
-        },
-        "description_qBwq3Q": {
-          "type": "description",
-          "settings": {
-            "description": "Experience the nail polish revolution for yourself with Gel Polish 2.0!.......",
-            "description_color": "#121212",
-            "description_size": 18
-          }
-        },
-        "button_Dd6aEQ": {
-          "type": "button",
-          "settings": {
-            "button_style": "solid",
-            "button_text": "Click Here",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_AhmRjM",
-        "title_Pe3bYK",
-        "description_qBwq3Q",
-        "button_Dd6aEQ"
-      ],
-      "settings": {
-        "background_color": "#f8f2ec",
-        "media_type": "image",
-        "image": "shopify://shop_images/ManikoNails_HeroBanner_1920x_3.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": true,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
-      }
-    },
-    "magazine_quote_UQpqkk": {
-      "type": "magazine-quote",
-      "blocks": {
-        "title_7bjmib": {
-          "type": "title",
-          "settings": {
-            "title_img": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "title": "",
-            "title_color": "#121212",
-            "title_size": 40
-          }
-        },
-        "ratings_qmMcyY": {
-          "type": "ratings",
-          "settings": {
-            "rating": 4
-          }
-        },
-        "quotation_g7QTma": {
-          "type": "quotation",
-          "settings": {
-            "quote": "<p>“Real gel polish that sticks on and is also easy to remove. A dream comes true. With the strips, every manicure gets studio quality that lasts up to 3 weeks!</p>",
-            "quote_color": "#121212",
-            "quote_size": 26
-          }
-        }
-      },
-      "block_order": [
-        "title_7bjmib",
-        "ratings_qmMcyY",
-        "quotation_g7QTma"
-      ],
-      "settings": {
-        "padding_top": 50,
-        "padding_bottom": 50,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50
       }
@@ -1084,6 +948,89 @@
         "padding_bottom_mobile": 50
       }
     },
+    "icon_box_9UtNky": {
+      "type": "icon-box",
+      "blocks": {
+        "iconbox_pJbJGA": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
+            "image_by_url": "",
+            "title": "30 Tage Rückgaberecht",
+            "description": "<p>Teste unsere hochwertigen Küchenmesser risikofrei – mit 30 Tagen Rückgaberecht.</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--plain",
+            "button_size": ""
+          }
+        },
+        "iconbox_RW46nE": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
+            "image_by_url": "",
+            "title": "Schärfe Garantiert",
+            "description": "<p>Unsere Messer stehen für Qualität und Langlebigkeit – garantiert ein Leben lang</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--plain",
+            "button_size": ""
+          }
+        },
+        "iconbox_EiwgTg": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
+            "image_by_url": "",
+            "title": "Kostenloser Versand",
+            "description": "<p>Genieße kostenlosen Versand innerhalb der gesamten EU ab 100€ Bestellwert.</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--plain",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "iconbox_pJbJGA",
+        "iconbox_RW46nE",
+        "iconbox_EiwgTg"
+      ],
+      "custom_css": [
+        ".m-icon-box__heading {font-weight: 400;}"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "item_per_row": 3,
+        "item_gap": 30,
+        "item_gap_mobile": 10,
+        "card_style": "vertical",
+        "image_max_width": "70px",
+        "content_alignment": "center",
+        "hover_effect": "scaling-up",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": true,
+        "use_grid_column_mb": false,
+        "padding_top": 100,
+        "padding_bottom": 38,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "expert_testimonial_adCtdF": {
       "type": "expert-testimonial",
       "blocks": {
@@ -1110,7 +1057,7 @@
       ],
       "settings": {
         "section_bg_color": "#ffffff",
-        "bg_color": "#f0f0f3",
+        "bg_color": "#c5d3be",
         "mt": 0,
         "mb": 0,
         "pt": 0,
@@ -1354,6 +1301,7 @@
         "heading_tWq74p",
         "content_nQLTqP"
       ],
+      "disabled": true,
       "settings": {
         "background_color": "#f6f0e6",
         "padding_top": 100,
@@ -1375,14 +1323,13 @@
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
     "product_explanation_video_xNFp3M",
+    "magazine_quote_UQpqkk",
     "usp_list_fgXGqB",
-    "icon_box_9UtNky",
     "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
-    "benefit_text_right_NB8JHM",
-    "magazine_quote_UQpqkk",
     "us_vs_them_8Tbqki",
+    "icon_box_9UtNky",
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
     "cta_final_9B8iN9",
