@@ -65,6 +65,7 @@
         "image_anVUBW": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/n_tv_logo_V7_1.png",
             "image_height": 120,
             "image_link": ""
           }
@@ -72,6 +73,7 @@
         "image_8cn9d3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
             "image_height": 120,
             "image_link": ""
           }
@@ -79,6 +81,7 @@
         "image_wPjWzN": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/n_tv_logo_V2_1.png",
             "image_height": 120,
             "image_link": ""
           }
@@ -86,6 +89,15 @@
         "image_fJt9dM": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/n_tv_logo_V4_1.png",
+            "image_height": 120,
+            "image_link": ""
+          }
+        },
+        "image_Fj47eJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/n_tv_logo_V3_1.png",
             "image_height": 120,
             "image_link": ""
           }
@@ -95,7 +107,8 @@
         "image_anVUBW",
         "image_8cn9d3",
         "image_wPjWzN",
-        "image_fJt9dM"
+        "image_fJt9dM",
+        "image_Fj47eJ"
       ],
       "custom_css": [
         ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
@@ -106,7 +119,7 @@
         "speed": 30,
         "item_gap": 50,
         "item_gap_mobile": 30,
-        "color_scheme": "",
+        "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
         "padding_top": 40,
         "padding_bottom": 40,
         "custom_class": ""
