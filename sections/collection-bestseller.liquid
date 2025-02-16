@@ -15,11 +15,11 @@
           <a href="{{ collection.url }}">
             <div class="collection-image">
               {% if block.settings.custom_image != blank %}
-                <img src="{{ block.settings.custom_image | img_url: 'medium' }}" alt="{{ block.settings.custom_title | default: collection.title }}">
+                <img src="{{ block.settings.custom_image | img_url: 'large' }}" alt="{{ block.settings.custom_title | default: collection.title }}">
               {% elsif collection.image %}
-                <img src="{{ collection.image | img_url: 'medium' }}" alt="{{ collection.title }}">
+                <img src="{{ collection.image | img_url: 'large' }}" alt="{{ collection.title }}">
               {% elsif collection.products.first.featured_image %}
-                <img src="{{ collection.products.first.featured_image | img_url: 'medium' }}" alt="{{ collection.title }}">
+                <img src="{{ collection.products.first.featured_image | img_url: 'large' }}" alt="{{ collection.title }}">
               {% else %}
                 <img src="https://via.placeholder.com/200" alt="No image available"> {# Placeholder Image #}
               {% endif %}
@@ -38,7 +38,7 @@
   /* Allgemeines Layout */
   .best-selling-collections {
     text-align: center;
-    padding: 60px 20px; /* Mehr Luft für ein ruhigeres Layout */
+    padding: 50px 20px;
     background-color: #F8F8F8;
   }
 
@@ -52,11 +52,11 @@
     letter-spacing: 1px;
   }
 
-  /* Flexibles Grid */
+  /* Grid Layout */
   .collections-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Standard: 2 pro Reihe (Mobile) */
-    gap: 30px; /* Mehr Abstand für Eleganz */
+    grid-template-columns: repeat(2, 1fr); /* Mobile: 2 pro Reihe */
+    gap: 20px;
     justify-content: center;
   }
 
@@ -64,9 +64,9 @@
   .collection-item {
     background: white;
     border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); /* Sanfter Schatten */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease-in-out;
-    padding: 15px;
+    padding: 10px; /* Weniger Padding für größere Bilder */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -81,6 +81,8 @@
   /* Produktbilder */
   .collection-item img {
     width: 100%;
+    max-width: 140px; /* Größere Bilder */
+    height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
   }
@@ -102,63 +104,10 @@
   @media (min-width: 1024px) {
     .collections-grid {
       grid-template-columns: repeat(6, 1fr); /* 6 pro Reihe */
-      gap: 40px; /* Mehr Abstand für Premium-Feeling */
+      gap: 30px;
+    }
+    .collection-item img {
+      max-width: 160px; /* Noch größere Bilder für Desktop */
     }
   }
 </style>
-
-{% schema %}
-{
-  "name": "Collection Bestseller",
-  "settings": [
-    {
-      "type": "text",
-      "id": "section_title",
-      "label": "Section Title",
-      "default": "Bestselling Categories"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "collection",
-      "name": "Select Collection",
-      "settings": [
-        {
-          "type": "collection",
-          "id": "collection",
-          "label": "Choose a Collection"
-        },
-        {
-          "type": "text",
-          "id": "custom_title",
-          "label": "Custom Title",
-          "info": "Leave blank to use the default collection title"
-        },
-        {
-          "type": "image_picker",
-          "id": "custom_image",
-          "label": "Custom Image"
-        }
-      ]
-    }
-  ],
-  "max_blocks": 12,
-  "presets": [
-    {
-      "name": "Collection Bestseller",
-      "category": "Custom",
-      "blocks": [
-        {
-          "type": "collection"
-        },
-        {
-          "type": "collection"
-        },
-        {
-          "type": "collection"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
