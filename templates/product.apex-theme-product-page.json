@@ -824,7 +824,7 @@
         "subtitle_8kbCAt": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "The Beauty Trend 2024",
+            "subtitle": "Der Küchen-Trend 2025",
             "subtitle_color": "#121212",
             "subtitle_size": 18
           }
@@ -832,7 +832,7 @@
         "title_KU4fTr": {
           "type": "title",
           "settings": {
-            "title": "Salon-beautiful nails in minutes",
+            "title": "Perfekte Schnitte in Sekunden",
             "title_color": "#121212",
             "title_size": 40
           }
@@ -840,25 +840,16 @@
         "description_PBBAnQ": {
           "type": "description",
           "settings": {
-            "description": "Experience the nail polish revolution for yourself with Gel Polish 2.0!.......",
+            "description": "Erlebe die nächste Stufe der Messerschärfe mit unserem Premium-Messerset. Jede Klinge ist auf Rasiermesserschärfe geprüft und sorgt für mühelose Präzision bei jedem Schnitt – egal ob Fleisch, Gemüse oder Brot.",
             "description_color": "#121212",
             "description_size": 18
-          }
-        },
-        "button_T3DhEB": {
-          "type": "button",
-          "settings": {
-            "button_style": "solid",
-            "button_text": "Click Here",
-            "button_link": ""
           }
         }
       },
       "block_order": [
         "subtitle_8kbCAt",
         "title_KU4fTr",
-        "description_PBBAnQ",
-        "button_T3DhEB"
+        "description_PBBAnQ"
       ],
       "settings": {
         "background_color": "#ffffff",
@@ -877,7 +868,7 @@
         "subtitle_XPX87U": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "protection against everyday stress",
+            "subtitle": "Robust & langlebig",
             "subtitle_color": "#121212",
             "subtitle_size": 18
           }
@@ -885,7 +876,7 @@
         "title_YwDaTz": {
           "type": "title",
           "settings": {
-            "title": "Resistant and durable",
+            "title": "Hält jeder Herausforderung stand",
             "title_color": "#121212",
             "title_size": 40
           }
@@ -893,30 +884,21 @@
         "description_j4ByyM": {
           "type": "description",
           "settings": {
-            "description": "The result promises up to 3 weeks of hold without chipping or cracking! The UV gel strips are suitable for every nail type, even short and brittle nails. Maniko Nails also provide your natural nails with stability.",
+            "description": "Unsere Messer sind aus hochwertigem Stahl gefertigt und bleiben extrem scharf – ohne Absplittern oder Abnutzen. Die widerstandsfähige Klinge sorgt für jahrelange Höchstleistung in der Küche.",
             "description_color": "#121212",
             "description_size": 18
-          }
-        },
-        "button_QPkcL7": {
-          "type": "button",
-          "settings": {
-            "button_style": "underline",
-            "button_text": "Click Here",
-            "button_link": ""
           }
         }
       },
       "block_order": [
         "subtitle_XPX87U",
         "title_YwDaTz",
-        "description_j4ByyM",
-        "button_QPkcL7"
+        "description_j4ByyM"
       ],
       "settings": {
         "background_color": "#ffffff",
         "media_type": "image",
-        "image": "shopify://shop_images/Haltbarkeit01_1920x_1.jpg",
+        "image": "shopify://shop_images/db3759d136d351495e659830d75d6596_1_1_1_V1_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": true,
