@@ -26,13 +26,6 @@
             "custom_title": "Einzelne Messer"
           }
         },
-        "collection_3z3N6Y": {
-          "type": "collection",
-          "settings": {
-            "collection": "messerblock-mit-messer",
-            "custom_title": ""
-          }
-        },
         "collection_tfxb7E": {
           "type": "collection",
           "settings": {
@@ -47,52 +40,17 @@
             "custom_title": ""
           }
         },
-        "collection_TJ4iUV": {
-          "type": "collection",
-          "settings": {
-            "collection": "kombipaket-hito",
-            "custom_title": ""
-          }
-        },
         "collection_kqBJ3d": {
           "type": "collection",
           "settings": {
-            "collection": "messerset-mit-magnetleiste",
-            "custom_title": ""
-          }
-        },
-        "collection_HWCCng": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_gPdAPx": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_jiG3F6": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
+            "collection": "limitierte-messersets",
             "custom_title": ""
           }
         },
         "collection_bwGCbw": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_Em3gad": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
+            "collection": "servieren-aufbewahren",
             "custom_title": ""
           }
         }
@@ -100,16 +58,10 @@
       "block_order": [
         "collection_VHcxMt",
         "collection_QUAdkx",
-        "collection_3z3N6Y",
         "collection_tfxb7E",
         "collection_mCpphC",
-        "collection_TJ4iUV",
         "collection_kqBJ3d",
-        "collection_HWCCng",
-        "collection_gPdAPx",
-        "collection_jiG3F6",
-        "collection_bwGCbw",
-        "collection_Em3gad"
+        "collection_bwGCbw"
       ],
       "settings": {
         "section_title": "Produkte entdecken"
@@ -180,10 +132,53 @@
       "settings": {
         "section_title": "Kombipakete entdecken"
       }
+    },
+    "collection_bestseller_PhdaAT": {
+      "type": "collection-bestseller",
+      "blocks": {
+        "collection_9Jm9gK": {
+          "type": "collection",
+          "settings": {
+            "collection": "messerblock",
+            "custom_title": "Messerblöcke"
+          }
+        },
+        "collection_f7Ndk4": {
+          "type": "collection",
+          "settings": {
+            "collection": "profi-messerschaerfer",
+            "custom_title": "Messerschärfer"
+          }
+        },
+        "collection_wYbD3C": {
+          "type": "collection",
+          "settings": {
+            "collection": "schneidebretter",
+            "custom_title": ""
+          }
+        },
+        "collection_9PRz4n": {
+          "type": "collection",
+          "settings": {
+            "collection": "pflegeprodukte",
+            "custom_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_9Jm9gK",
+        "collection_f7Ndk4",
+        "collection_wYbD3C",
+        "collection_9PRz4n"
+      ],
+      "settings": {
+        "section_title": "Messer Zubehör"
+      }
     }
   },
   "order": [
     "main",
-    "collection_bestseller_fD8Fht"
+    "collection_bestseller_fD8Fht",
+    "collection_bestseller_PhdaAT"
   ]
 }
