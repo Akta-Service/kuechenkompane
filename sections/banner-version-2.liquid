@@ -16,14 +16,12 @@
     margin-top: {{ section.settings.mt }}px;
     margin-bottom: {{ section.settings.mb }}px;
     position: relative;
-  }
-  .banner-top-slider{
-  
+    width: 100%;
+    max-width: 100%;
   }
 
     .banner-top-content {
-      max-width: 100%;
-      width: 100%;
+      max-width: 1310px;
       margin: 0 auto;
       padding: 8px 0;
       text-align: center;
@@ -522,14 +520,14 @@
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const swiper_top_area = new Swiper('.banner-top-slider', {
-        loop: true, // Ensures infinite loop
-        slidesPerView: 1,
-        spaceBetween: 0,
+    const swiperhea = new Swiper('.banner-top-slider', {
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 10,
         speed: 1000,
         autoplay: {
-            delay: 3000,
-            disableOnInteraction: false, // Keeps autoplay running after user interaction
+            delay: 5000,
+            disableOnInteraction: false,
         },
         breakpoints: {
             0: {
@@ -541,16 +539,8 @@
         },
     });
 
-    // Ensure autoplay starts (uncomment if needed)
-    swiper_top_area.autoplay.start();
-  });
+    // Ensure autoplay starts
+    swiperhea.autoplay.start();
+});
+
 </script>
-
-
-
-<style>
-
-  .banner-area-two {
-    width: 100%;
-}
-</style>
