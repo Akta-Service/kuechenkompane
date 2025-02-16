@@ -28,7 +28,10 @@
   data-section-type="scrolling-promotion"
   data-section-id="{{ section.id }}"
 >
-  <h2 class="gesehen-in">Gesehen in</h2>
+  <div class="gesehen-in">Gesehen in</div>
+<m-scrolling-promotion
+  class="m-scrolling-promotion m-scrolling-promotion--{{ section.settings.direction }}"
+>
   <div class="{{ container }} m-section-py">
     <m-scrolling-promotion
       class="m-scrolling-promotion m-scrolling-promotion--{{ section.settings.direction }}"
