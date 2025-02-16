@@ -490,6 +490,7 @@
         "item_zdbtYQ",
         "item_MwAh8h"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "#fafafb",
         "p_top": 50,
@@ -548,7 +549,7 @@
         "image_4NEDGT"
       ],
       "custom_css": [
-        ".gesehen-in {text-align: center; font-size: 24px; /* Adjust size if needed */ font-weight: normal; /* Removes bold */ text-transform: normal; margin-bottom: 10px; display: flex; justify-content: center; align-items: center;}"
+        ".gesehen-in {text-align: center; font-size: 24px; /* Adjust size if needed */ font-weight: normal; /* Removes bold */ text-transform: normal; margin-bottom: 0px; display: flex; justify-content: center; align-items: center;}"
       ],
       "settings": {
         "container": "w-full",
