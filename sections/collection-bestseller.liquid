@@ -2,8 +2,9 @@
   <div class="container">
     <h2 class="section-title">Bestselling Categories</h2>
     <div class="collections-grid">
-      {% for collection in collections %}
-        {% if collection.all_products_count > 0 %}
+      {% for block in section.blocks %}
+        {% assign collection = block.settings.collection %}
+        {% if collection != blank %}
           <div class="collection-item">
             <a href="{{ collection.url }}">
               <div class="collection-image">
@@ -54,7 +55,45 @@
     transform: scale(1.05);
   }
   .collection-title h3 {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 10px;
   }
 </style>
+
+{% schema %}
+{
+  "name": "Collection Bestseller",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Select Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Choose a Collection"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Collection Bestseller",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
