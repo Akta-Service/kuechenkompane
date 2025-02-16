@@ -495,8 +495,15 @@ span.faq-icon {
 }
 
 a.m-button.m-button--primary {
+  background: #fa8526 !important;
   color: #fff !important;
 }
 a.m-button.m-button--primary:hover {
-  background: #fa8526 !important;
+  background: #333333 !important;
+}
+a.m-button.m-button--secondary:hover {
+  border: 1px solid #000;
+}
+.swiper.banner-top-slider {
+  max-width: 1000px;
 }
