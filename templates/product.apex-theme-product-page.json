@@ -1098,8 +1098,8 @@
       "settings": {
         "mt": 50,
         "mb": 20,
-        "mt_mobile": 31,
-        "mb_mobile": 0,
+        "mt_mobile": 20,
+        "mb_mobile": 20,
         "title": "Vertraut von",
         "title_highlight": "+140K Kunden",
         "t_size": 32,
@@ -1232,7 +1232,7 @@
       ],
       "settings": {
         "pt": 20,
-        "pb": 21,
+        "pb": 20,
         "font_size": 14,
         "color": "#111111",
         "ptm": 50,
