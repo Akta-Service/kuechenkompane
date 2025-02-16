@@ -496,6 +496,86 @@
         "p_bottom": 50
       }
     },
+    "press_EYdjUa": {
+      "type": "press",
+      "blocks": {
+        "news_39JtrK": {
+          "type": "news",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
+            "image_width": "150px"
+          }
+        },
+        "news_Ri3KAc": {
+          "type": "news",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/n_tv_logo_V7_1.png",
+            "image_width": "150px"
+          }
+        },
+        "news_wjAdGJ": {
+          "type": "news",
+          "settings": {
+            "title": "<p>Super class, cute, comfortable. You can wear them with just about anything.</p>",
+            "image_width": "150px"
+          }
+        },
+        "news_CGeFVi": {
+          "type": "news",
+          "settings": {
+            "title": "<p>Super class, cute, comfortable. You can wear them with just about anything.</p>",
+            "image_width": "150px"
+          }
+        },
+        "news_KAx8r7": {
+          "type": "news",
+          "settings": {
+            "title": "<p>Super class, cute, comfortable. You can wear them with just about anything.</p>",
+            "image_width": "150px"
+          }
+        },
+        "news_JXmqit": {
+          "type": "news",
+          "settings": {
+            "title": "<p>Super class, cute, comfortable. You can wear them with just about anything.</p>",
+            "image_width": "150px"
+          }
+        },
+        "news_iBMUPG": {
+          "type": "news",
+          "settings": {
+            "title": "<p>Super class, cute, comfortable. You can wear them with just about anything.</p>",
+            "image_width": "150px"
+          }
+        }
+      },
+      "block_order": [
+        "news_39JtrK",
+        "news_Ri3KAc",
+        "news_wjAdGJ",
+        "news_CGeFVi",
+        "news_KAx8r7",
+        "news_JXmqit",
+        "news_iBMUPG"
+      ],
+      "settings": {
+        "heading": "Gesehen in",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "show_divider": false,
+        "autoplay": false,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "product_explanation_video_xNFp3M": {
       "type": "product-explanation-video",
       "blocks": {
@@ -611,77 +691,6 @@
         "padding_bottom": 50,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50
-      }
-    },
-    "usp_list_fgXGqB": {
-      "type": "usp-list",
-      "blocks": {
-        "item_cXj9tT": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Vegan-40px_1920x_2.png",
-            "usp_title": "30 Tage Rückgaberecht",
-            "title_color": "#121212",
-            "title_size": 18,
-            "usp_info": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
-            "info_color": "#121212",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_XccFJc": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Hema-free_1920x_2.png",
-            "usp_title": "Schärfe Garantiert",
-            "title_color": "#121212",
-            "title_size": 18,
-            "usp_info": "and without pollutants",
-            "info_color": "#121212",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_3thknm": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/allsizes_1920x_2.png",
-            "usp_title": "Fits every nail shape",
-            "title_color": "#121212",
-            "title_size": 18,
-            "usp_info": "thanks to 8 different sizes",
-            "info_color": "#121212",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_ffRDkG": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/gelpolish_1920x_2.png",
-            "usp_title": "Real UV gel polish",
-            "title_color": "#121212",
-            "title_size": 18,
-            "usp_info": "for gluing",
-            "info_color": "#121212",
-            "info_size": 14,
-            "divider": false
-          }
-        }
-      },
-      "block_order": [
-        "item_cXj9tT",
-        "item_XccFJc",
-        "item_3thknm",
-        "item_ffRDkG"
-      ],
-      "disabled": true,
-      "settings": {
-        "bg_color": "#fff",
-        "verticle_padding": 50,
-        "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
       }
     },
     "us_vs_them_8Tbqki": {
@@ -1282,9 +1291,9 @@
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
+    "press_EYdjUa",
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
-    "usp_list_fgXGqB",
     "us_vs_them_8Tbqki",
     "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
