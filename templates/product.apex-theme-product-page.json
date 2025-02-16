@@ -496,84 +496,67 @@
         "p_bottom": 50
       }
     },
-    "press_EYdjUa": {
-      "type": "press",
+    "scrolling_promotion_UKXeX3": {
+      "type": "scrolling-promotion",
       "blocks": {
-        "news_39JtrK": {
-          "type": "news",
+        "image_bpiG7J": {
+          "type": "image",
           "settings": {
-            "title": "",
-            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "image_width": "150px"
-          }
-        },
-        "news_Ri3KAc": {
-          "type": "news",
-          "settings": {
-            "title": "",
             "image": "shopify://shop_images/n_tv_logo_V7_1.png",
-            "image_width": "150px"
+            "image_height": 120,
+            "image_link": ""
           }
         },
-        "news_wjAdGJ": {
-          "type": "news",
+        "image_NptXmD": {
+          "type": "image",
           "settings": {
-            "title": "<p>Super class, cute, comfortable. You can wear them with just about anything.</p>",
-            "image_width": "150px"
+            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
+            "image_height": 120,
+            "image_link": ""
           }
         },
-        "news_CGeFVi": {
-          "type": "news",
+        "image_JPQVbf": {
+          "type": "image",
           "settings": {
-            "title": "<p>Super class, cute, comfortable. You can wear them with just about anything.</p>",
-            "image_width": "150px"
+            "image": "shopify://shop_images/n_tv_logo_V2_1.png",
+            "image_height": 120,
+            "image_link": ""
           }
         },
-        "news_KAx8r7": {
-          "type": "news",
+        "image_T7Lehj": {
+          "type": "image",
           "settings": {
-            "title": "<p>Super class, cute, comfortable. You can wear them with just about anything.</p>",
-            "image_width": "150px"
+            "image": "shopify://shop_images/n_tv_logo_V4_1.png",
+            "image_height": 120,
+            "image_link": ""
           }
         },
-        "news_JXmqit": {
-          "type": "news",
+        "image_4NEDGT": {
+          "type": "image",
           "settings": {
-            "title": "<p>Super class, cute, comfortable. You can wear them with just about anything.</p>",
-            "image_width": "150px"
-          }
-        },
-        "news_iBMUPG": {
-          "type": "news",
-          "settings": {
-            "title": "<p>Super class, cute, comfortable. You can wear them with just about anything.</p>",
-            "image_width": "150px"
+            "image": "shopify://shop_images/n_tv_logo_V3_1.png",
+            "image_height": 120,
+            "image_link": ""
           }
         }
       },
       "block_order": [
-        "news_39JtrK",
-        "news_Ri3KAc",
-        "news_wjAdGJ",
-        "news_CGeFVi",
-        "news_KAx8r7",
-        "news_JXmqit",
-        "news_iBMUPG"
+        "image_bpiG7J",
+        "image_NptXmD",
+        "image_JPQVbf",
+        "image_T7Lehj",
+        "image_4NEDGT"
       ],
       "settings": {
-        "heading": "Gesehen in",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "container": "container-fluid",
+        "container": "w-full",
+        "direction": "left",
+        "speed": 30,
+        "item_gap": 50,
+        "item_gap_mobile": 30,
         "color_scheme": "",
-        "show_divider": false,
-        "autoplay": false,
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "custom_class": "",
-        "animations": "inherit"
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_class": ""
       }
     },
     "product_explanation_video_xNFp3M": {
@@ -1291,7 +1274,7 @@
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
-    "press_EYdjUa",
+    "scrolling_promotion_UKXeX3",
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
     "us_vs_them_8Tbqki",
