@@ -4,22 +4,27 @@
     <div class="collections-grid">
       {% for block in section.blocks %}
         {% assign collection = block.settings.collection %}
-        {% if collection != blank %}
-          <div class="collection-item">
-            <a href="{{ collection.url }}">
-              <div class="collection-image">
-                {% if collection.image %}
-                  <img src="{{ collection.image | img_url: 'medium' }}" alt="{{ collection.title }}">
-                {% else %}
-                  <img src="{{ collection.products.first.featured_image | img_url: 'medium' }}" alt="{{ collection.title }}">
-                {% endif %}
-              </div>
-              <div class="collection-title">
-                <h3>{{ collection.title }}</h3>
-              </div>
-            </a>
-          </div>
+
+        {% if collection == blank %}
+          {% assign collection = collections['your-default-collection'] %}
         {% endif %}
+        
+        <div class="collection-item">
+          <a href="{{ collection.url }}">
+            <div class="collection-image">
+              {% if block.settings.custom_image != blank %}
+                <img src="{{ block.settings.custom_image | img_url: 'medium' }}" alt="{{ block.settings.custom_title | default: collection.title }}">
+              {% elsif collection.image %}
+                <img src="{{ collection.image | img_url: 'medium' }}" alt="{{ collection.title }}">
+              {% else %}
+                <img src="{{ collection.products.first.featured_image | img_url: 'medium' }}" alt="{{ collection.title }}">
+              {% endif %}
+            </div>
+            <div class="collection-title">
+              <h3>{{ block.settings.custom_title | default: collection.title }}</h3>
+            </div>
+          </a>
+        </div>
       {% endfor %}
     </div>
   </div>
@@ -29,34 +34,41 @@
   .best-selling-collections {
     text-align: center;
     padding: 40px 0;
-    background-color: #f8f8f8;
+    background-color: #F8F8F8;
   }
+
   .best-selling-collections .section-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
   }
+
   .collections-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
+
   .collection-item {
     width: 200px;
     text-align: center;
   }
+
   .collection-item img {
     width: 100%;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
   }
+
   .collection-item img:hover {
     transform: scale(1.05);
   }
+
   .collection-title h3 {
     font-size: 16px;
     margin-top: 10px;
+    font-weight: bold;
   }
 </style>
 
@@ -73,6 +85,17 @@
           "type": "collection",
           "id": "collection",
           "label": "Choose a Collection"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom Title",
+          "info": "Leave blank to use the default collection title"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom Image"
         }
       ]
     }
