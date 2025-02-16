@@ -35,49 +35,74 @@
 </section>
 
 <style>
+  /* Allgemeines Layout */
   .best-selling-collections {
     text-align: center;
-    padding: 40px 0;
+    padding: 60px 20px; /* Mehr Luft für ein ruhigeres Layout */
     background-color: #F8F8F8;
   }
 
+  /* Titel-Design */
   .best-selling-collections .section-title {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 20px;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
+  /* Flexibles Grid */
   .collections-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Default: 2 per row */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Standard: 2 pro Reihe (Mobile) */
+    gap: 30px; /* Mehr Abstand für Eleganz */
     justify-content: center;
   }
 
+  /* Produktkarten */
   .collection-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); /* Sanfter Schatten */
+    transition: all 0.3s ease-in-out;
+    padding: 15px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
 
+  /* Hover-Effekt */
+  .collection-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Produktbilder */
   .collection-item img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: transform 0.3s ease-in-out;
   }
 
+  /* Hover-Effekt für Bilder */
   .collection-item img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
   }
 
+  /* Titel der Kategorien */
   .collection-title h3 {
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 18px;
+    margin-top: 12px;
     font-weight: bold;
+    color: #444;
   }
 
-  /* Desktop: 6 in a row */
+  /* Desktop-Version: 6 Spalten */
   @media (min-width: 1024px) {
     .collections-grid {
-      grid-template-columns: repeat(6, 1fr); /* 6 per row */
+      grid-template-columns: repeat(6, 1fr); /* 6 pro Reihe */
+      gap: 40px; /* Mehr Abstand für Premium-Feeling */
     }
   }
 </style>
