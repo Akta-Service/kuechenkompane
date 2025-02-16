@@ -40,9 +40,9 @@
         "grid_layout": "grid",
         "grid_columns": "4",
         "show_columns_switcher": true,
-        "pagination_limit": 12,
+        "pagination_limit": 30,
         "paginate_type": "paginate",
-        "show_sorting": false,
+        "show_sorting": true,
         "show_filter": true,
         "filters_type": "storefront_filters",
         "sidebar": "leftColumn",
@@ -107,7 +107,9 @@
       "settings": {
         "bg_color": "#ffff",
         "verticle_padding": 50,
-        "horizontal_padding": 50
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30,
+        "horizontal_padding_mobile": 15
       }
     },
     "branded_image_version_ffF3PX": {
