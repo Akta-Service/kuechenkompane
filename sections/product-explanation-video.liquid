@@ -176,8 +176,8 @@
             {% if block.settings.controls %}
               controls
             {% endif %}
-            {% if section.settings.explanation_video_poster %}
-              poster="{{ section.settings.explanation_video_poster | img_url : 'master'  }}"
+            {% if block.settings.explanation_video_poster %}
+              poster="{{ block.settings.explanation_video_poster | img_url : 'master'  }}"
               style="width: 100%; height: auto;"
             {% endif %}
           >
@@ -246,15 +246,6 @@
     "min": 10,
     "max": 100,
     "step": 1
-  },
-  {
-    "type": "header",
-    "content": "Video Poster Image"
-  },
-  {
-    "type": "image_picker",
-    "id": "explanation_video_poster",
-    "label": "Video Poster Image"
   }
 ],
 "blocks": [
@@ -591,11 +582,7 @@
     "type": "video",
     "name": "Video",
     "settings": [
-      {
-        "type": "video",
-        "id": "video",
-        "label": "Upload Video"
-      },
+
       {
         "type": "text",
         "id": "video_url",
@@ -608,7 +595,17 @@
         "label": "Autoplay",
         "default": true
       },
-      {
+      
+  {
+    "type": "header",
+    "content": "Video Poster Image"
+  },
+  {
+    "type": "image_picker",
+    "id": "explanation_video_poster",
+    "label": "Video Poster Image"
+  }
+    ,  {
         "type": "checkbox",
         "id": "loop",
         "label": "Loop",

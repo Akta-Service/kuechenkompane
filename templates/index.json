@@ -41,8 +41,8 @@
         ".banner-btn a:hover {border-color: #fff;}"
       ],
       "settings": {
-        "u": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160.mov_V2.mp4",
-        "u_mobile": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160_mov_V4.mp4",
+        "u": "https://cdn.shopify.com/videos/c/o/v/bfddd4ffc23e4801bb72eb108dadbd31.mp4",
+        "u_mobile": "https://cdn.shopify.com/videos/c/o/v/aa429ef4f1a64d94bffd7e063a8de73e.mp4",
         "mt": 0,
         "mb": 0,
         "mt_mobile": 0,
@@ -433,7 +433,7 @@
         "video_cTydVn": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Küchenkompane Video.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/4e0b38fe26e7454c8d484e92f7d891b1.mp4",
             "autoplay": false,
             "loop": true,
             "muted": true,

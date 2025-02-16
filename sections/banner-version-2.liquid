@@ -271,10 +271,10 @@
   >
     <div class="video-wrapper">
       <video class="desktop-video" muted autoplay loop playsinline>
-        <source src="{{ section.settings.u.sources[1].url }}" type="video/mp4">
+        <source src="{{ section.settings.u}}" type="video/mp4">
       </video>
       <video class="mobile-video" muted autoplay loop playsinline>
-        <source src="{{ section.settings.u_mobile.sources[1].url }}" type="video/mp4">
+        <source src="{{ section.settings.u_mobile }}" type="video/mp4">
       </video>
     </div>
 
@@ -325,15 +325,19 @@
 {
   "name": "Banner Version 2",
   "settings": [
+
     {
+      "type": "text",
       "id": "u",
-      "label": "Video Upload",
-      "type": "video"
+      "label": "Video URL",
+      "default":"https://cdn.shopify.com/videos/c/o/v/bfddd4ffc23e4801bb72eb108dadbd31.mp4"
     },
+
     {
+      "type": "text",
       "id": "u_mobile",
-      "label": "Video Upload {Mobile}",
-      "type": "video"
+      "label": "Video URL",
+      "default":"https://cdn.shopify.com/videos/c/o/v/aa429ef4f1a64d94bffd7e063a8de73e.mp4"
     },
 
     {
@@ -514,7 +518,7 @@
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    var swiper = new Swiper('.banner-top-slider', {
+    cosnt swiper{{ section.id }} = new Swiper('.banner-top-slider', {
       loop: true,
       slidesPerView: 3,
       spaceBetween: 10,
