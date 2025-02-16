@@ -64,7 +64,7 @@
         "collection_bwGCbw"
       ],
       "settings": {
-        "section_title": "Produkte entdecken"
+        "section_title": "Messerwelt"
       }
     },
     "collection_bestseller_fD8Fht": {
@@ -174,11 +174,46 @@
       "settings": {
         "section_title": "Messer Zubehör"
       }
+    },
+    "collection_bestseller_tdLXwC": {
+      "type": "collection-bestseller",
+      "blocks": {
+        "collection_E7YFkX": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_title": ""
+          }
+        },
+        "collection_dNrPFp": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_title": ""
+          }
+        },
+        "collection_RTcQAV": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_E7YFkX",
+        "collection_dNrPFp",
+        "collection_RTcQAV"
+      ],
+      "settings": {
+        "section_title": "Kochwelt"
+      }
     }
   },
   "order": [
     "main",
     "collection_bestseller_fD8Fht",
-    "collection_bestseller_PhdaAT"
+    "collection_bestseller_PhdaAT",
+    "collection_bestseller_tdLXwC"
   ]
 }
