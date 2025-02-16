@@ -1,45 +1,16 @@
 <section class="best-selling-collections">
   <div class="container">
-    <h2 class="section-title">Bestselling Categories</h2>
-    <div class="collections-grid">
-      {% for block in section.blocks %}
-        {% assign collection = block.settings.collection %}
-
-        {% if collection == blank %}
-          {% assign collection = collections['your-default-collection'] %}
-        {% endif %}
-        
-        <div class="collection-item">
-          <a href="{{ collection.url }}">
-            <div class="collection-image">
-              {% if block.settings.custom_image != blank %}
-                <img src="{{ block.settings.custom_image | img_url: 'medium' }}" alt="{{ block.settings.custom_title | default: collection.title }}">
-              {% elsif collection.image %}
-                <img src="{{ collection.image | img_url: 'medium' }}" alt="{{ collection.title }}">
-              {% else %}
-                <img src="{{ collection.products.first.featured_image | img_url: 'medium' }}" alt="{{ collection.title }}">
-              {% endif %}
-            </div>
-            <div class="collection-title">
-              <h3>{{ block.settings.custom_title | default: collection.title }}</h3>
-            </div>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
- <section class="best-selling-collections">
-  <div class="container">
     <h2 class="section-title">
       {{ section.settings.section_title | default: 'Bestselling Categories' }}
     </h2>
     <div class="collections-grid">
       {% for block in section.blocks %}
-        {% assign collection = block.settings.collection %}
+        {% assign collection = collections[block.settings.collection] %}
 
         {% if collection == blank %}
-          {% assign collection = collections['your-default-collection'] %}
+          {% continue %} {# Skip empty collections #}
         {% endif %}
-        
+
         <div class="collection-item">
           <a href="{{ collection.url }}">
             <div class="collection-image">
@@ -47,8 +18,10 @@
                 <img src="{{ block.settings.custom_image | img_url: 'medium' }}" alt="{{ block.settings.custom_title | default: collection.title }}">
               {% elsif collection.image %}
                 <img src="{{ collection.image | img_url: 'medium' }}" alt="{{ collection.title }}">
-              {% else %}
+              {% elsif collection.products.first.featured_image %}
                 <img src="{{ collection.products.first.featured_image | img_url: 'medium' }}" alt="{{ collection.title }}">
+              {% else %}
+                <img src="https://via.placeholder.com/200" alt="No image available"> {# Placeholder Image #}
               {% endif %}
             </div>
             <div class="collection-title">
@@ -158,3 +131,4 @@
   ]
 }
 {% endschema %}
+
