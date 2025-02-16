@@ -22,7 +22,7 @@
       margin: 0px auto 9px auto;
       font-weight: bold;
       color: {{ section.settings.font_color  }};
-      font-family: 'Kulim Park', sans-serif !important;
+
       text-transform: capitalize;
       letter-spacing: 0;
     }
@@ -43,7 +43,7 @@
       font-size: 14px;
       line-height: 1.5em;
       color: #000;
-      font-family: 'Kulim Park', sans-serif !important;
+
     }
 
     .accordion-content {
@@ -62,12 +62,12 @@
       line-height: 1.5em;
       padding: 0px 18px;
       color: #000000 !important;
-       font-family: 'Kulim Park', sans-serif !important;
+ 
     }
     .product-des {
       font-size: 16px;
       color: #000000;
-       font-family: 'Kulim Park', sans-serif !important;
+ 
       position: relative;
     }
     .description-accordion {
@@ -141,6 +141,7 @@
           <p class="product-des {% if section.settings.add_showore_btn %}hideContent{% endif %}">
             {{ section.settings.description }}
           </p>
+          
         {% else %}
           <p class="product-des hideContent">
             {{ product.description }}
