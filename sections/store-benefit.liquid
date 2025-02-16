@@ -192,7 +192,7 @@
 {% endschema %}
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 <script>
-  var swiper = new Swiper('.store-benefits', {
+  const swiper_store = new Swiper('.store-benefits', {
     slidesPerView: 5,
     spaceBetween: 10,
     clickable: false,
