@@ -230,7 +230,7 @@
   .current-price,
   .compare-price {
     font-size: 18px;
-    color: #1c1c1ca6;
+    color: #1b9d26;
     display: inline-block;
     font-weight: 700;
     margin-bottom: 10px;
@@ -334,7 +334,18 @@
   .prouduct-review svg {
     width: 110px;
   }
-
+  .rs-payment-icons {
+    margin-bottom: 30px;
+    margin-top: 5px;
+  }
+  .rs-payment-icons ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .custom-product-page .rs-container {
+    max-width: 1450px;
+  }
   @media only screen and (max-width: 1300px) {
     .rs-row {
       gap: 30px;
@@ -573,11 +584,9 @@
                 <button class="rs-add-to-cart">{{ block.settings.btn_text }}</button>
               </div>
             {% when 'paymentIcon' %}
-              {% if block.settings.payment_img != blank %}
-                <div class="rs-payment">
-                  <img src="{{ block.settings.payment_img |  img_url: 'medium' }}" alt="">
-                </div>
-              {% endif %}
+              <div class="rs-payment-icons">
+                {%- render 'payment-icons.liquid' -%}
+              </div>
 
             {% when 'productInfo' %}
               <div class="rs-product-info">
