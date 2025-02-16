@@ -214,7 +214,7 @@
       ],
       "custom_css": [
         ".m-custom-content__wrapper,.m-block-first {position: relative; z-index: 1;}",
-        "@media only screen and (max-width: 767px) {.m-richtext__title {font-size: 34px; }}"
+        "@media only screen and (max-width: 767px) {.m-richtext__title {font-size: 28px; }}"
       ],
       "settings": {
         "heading": "Entdecke unseren Bestseller",
@@ -1482,6 +1482,8 @@
         "background_color": "",
         "padding_top": 0,
         "padding_bottom": 66,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "custom_class": ""
       }
     },
