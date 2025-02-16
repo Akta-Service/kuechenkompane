@@ -59,6 +59,15 @@
     transition: 0.3s;
   }
 
+  .branded-btn-{{ section.id }} a{
+    color: {{ section.settings.btn_text_color }};
+    background: {{ section.settings.btn_bg_color  }};
+  }
+  .branded-btn-{{ section.id }} a:hover{
+    color: {{ section.settings.btn_text_color_hover }};
+    background: {{ section.settings.btn_bg_color_hover  }} ;
+  }
+
   .branded-text p {
     font-size: {{ section.settings.text_font_size }}px;
     color: {{ section.settings.text_color }};
@@ -161,7 +170,7 @@
               <p>{{ block.settings.text }}</p>
 
             {%- when 'btn' -%}
-              <div class="branded-btn">
+              <div class="branded-btn branded-btn-{{ section.id }}">
                 <a href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
               </div>
             {%- else -%}
@@ -268,6 +277,39 @@
       "id": "text_color",
       "label": "Text Color",
       "default": "#1e1e1e"
+    },
+
+    {
+      "type": "header",
+      "content": "Button background color"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color_hover",
+      "label": "Button Background Color (Hover)",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Button text color"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color_hover",
+      "label": "Button Text Color (Hover)",
+      "default": "#ffffff"
     }
   ],
   "blocks": [
