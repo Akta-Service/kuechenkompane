@@ -64,10 +64,10 @@
         }
       }
 
-    }
+
     .banner-btn a {
-      color: #fff;
-      background: #121212;
+      color: {{ section.settings.btn_text_color }};
+      background: {{ section.settings.btn_bg_color  }};
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -78,7 +78,8 @@
     }
 
     .banner-btn a:hover {
-      background: #2b2b2b;
+      color: {{ section.settings.btn_text_color_hover }};
+      background: {{ section.settings.btn_bg_color_hover  }} ;
     }
 
     .swiper-button-next,
@@ -353,13 +354,13 @@
       "type": "color",
       "id": "bg_color",
       "label": "Background Color",
-      "default": "#f8f2ec"
+      "default": "#fa8526"
     },
     {
       "type": "color",
       "id": "heading_color",
       "label": "Heading Color",
-      "default": "#121212"
+      "default": "#fa8526"
     },
 
     {
@@ -367,6 +368,38 @@
       "id": "text_color",
       "label": "Text Color",
       "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Button background color"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color_hover",
+      "label": "Button Background Color (Hover)",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Button text color"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color_hover",
+      "label": "Button Text Color (Hover)",
+      "default": "#ffffff"
     }
   ],
   "blocks": [
