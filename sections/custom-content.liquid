@@ -33,6 +33,9 @@
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
+  .rs-btn-{{ section.id }} a{
+    color: #fff;
+  }
 </style>
 {% if enable_parallax %}
   <script src="{{ 'parallax.js' | asset_url }}" defer="defer"></script>
@@ -222,7 +225,7 @@
                         </div>
                       {% endif %}
                       {% if block.settings.button_label != blank %}
-                        <div class="m-richtext__button content__button">
+                        <div class="m-richtext__button content__button rs-btn-{{ section.id }}">
                           <a
                             href="{{ block.settings.button_link }}"
                             class="m-button {{ block.settings.button_style | replace: 'sf__btn-primary', 'm-button--primary' | replace: 'sf__btn-secondary', 'm-button--secondary' | replace: 'sf__btn-link', 'm-button--link' | replace: 'sf__btn-white', 'm-button--white' }} {{ block.settings.button_size }}"
@@ -919,7 +922,7 @@
                               </div>
                             {% endif %}
                             {% if block.settings.button_label != blank %}
-                              <div class="m-richtext__button content__button">
+                              <div class="m-richtext__button content__button rs-btn-{{ section.id }}">
                                 <a
                                   href="{{ block.settings.button_link | default: "#" }}"
                                   class="m-button {{ block.settings.button_style | replace: 'sf__btn-primary', 'm-button--primary' | replace: 'sf__btn-secondary', 'm-button--secondary' | replace: 'sf__btn-link', 'm-button--link' | replace: 'sf__btn-white', 'm-button--white' }} {{ block.settings.button_size }}"
