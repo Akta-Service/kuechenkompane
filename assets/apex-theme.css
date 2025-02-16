@@ -493,3 +493,10 @@ span.faq-icon {
 .benefit-button.solid:after {
   background: #fff;
 }
+
+a.m-button.m-button--primary {
+  color: #fff !important;
+}
+a.m-button.m-button--primary:hover {
+  background: #fa8526 !important;
+}
