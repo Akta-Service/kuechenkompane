@@ -113,7 +113,14 @@
       appearance: none;
       min-width: 7.6rem;
     }
-
+    .banner-btn-{{ section.id }} a{
+      color: {{ section.settings.btn_text_color }};
+      background: {{ section.settings.btn_bg_color  }};
+    }
+    .banner-btn-{{ section.id }} a:hover {
+      color: {{ section.settings.btn_text_color_hover }};
+      background: {{ section.settings.btn_bg_color_hover  }} ;
+    }
     /* banner bottom  */
     .banner-bottom {
       padding: 20px 0;
@@ -271,7 +278,7 @@
     <div class="banner-main-content">
       <h3>{{ section.settings.title }}</h3>
       {{ section.settings.sub_title }}
-      <div class="banner-btn">
+      <div class="banner-btn banner-btn-{{ section.id }}">
         <a href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
       </div>
     </div>
@@ -399,6 +406,38 @@
       "id": "btn_text",
       "label": "Button Text",
       "default": "shop now"
+    },
+    {
+      "type": "header",
+      "content": "Button background color"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color_hover",
+      "label": "Button Background Color (Hover)",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Button text color"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color_hover",
+      "label": "Button Text Color (Hover)",
+      "default": "#ffffff"
     },
     {
       "type": "url",
