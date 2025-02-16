@@ -38,7 +38,7 @@
       ],
       "settings": {
         "u": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160.mov_V2.mp4",
-        "u_mobile": "shopify://files/videos/Fire_in_the_hole_(1)_V1.mp4",
+        "u_mobile": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160_mov_V4.mp4",
         "mt": 0,
         "mb": 0,
         "mt_mobile": 0,
@@ -526,7 +526,9 @@
       "settings": {
         "bg_color": "#F8F8F8",
         "verticle_padding": 50,
-        "horizontal_padding": 50
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30,
+        "horizontal_padding_mobile": 15
       }
     },
     "benefit_text_right_XkprbX": {
