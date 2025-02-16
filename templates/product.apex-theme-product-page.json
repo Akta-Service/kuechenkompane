@@ -548,7 +548,7 @@
         "image_4NEDGT"
       ],
       "custom_css": [
-        ".gesehen-in {text-align: center; font-size: 24px; /* Adjust size if needed */ font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: center; align-items: center;}"
+        ".gesehen-in {text-align: center; font-size: 24px; /* Adjust size if needed */ font-weight: normal; /* Removes bold */ text-transform: normal; margin-bottom: 10px; display: flex; justify-content: center; align-items: center;}"
       ],
       "settings": {
         "container": "w-full",
