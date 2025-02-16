@@ -684,6 +684,38 @@
         "horizontal_padding_mobile": 15
       }
     },
+    "us_vs_them_8Tbqki": {
+      "type": "us-vs-them",
+      "blocks": {
+        "title_F4F6qE": {
+          "type": "title",
+          "settings": {
+            "title": "KÜCHENKOMPANE® vs. ANDERE",
+            "title_color": "#1c1c1c",
+            "title_size": 32
+          }
+        },
+        "description_9Mxcd4": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Unsere Vergleichsgrafik zeigt, warum Küchenkompane die beste Wahl ist. Mit messerscharfer Präzision, hochwertigem Stahl und ergonomischem Design bieten unsere Messer maximale Qualität und Komfort.</p>",
+            "description_color": "#1c1c1c",
+            "description_size": 16
+          }
+        }
+      },
+      "block_order": [
+        "title_F4F6qE",
+        "description_9Mxcd4"
+      ],
+      "settings": {
+        "img": "shopify://shop_images/steel_kitchen_knives_V9.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
+      }
+    },
     "apex_faqs_jx7hp6": {
       "type": "apex-faqs",
       "blocks": {
@@ -916,38 +948,6 @@
         "padding_bottom_mobile": 50
       }
     },
-    "us_vs_them_8Tbqki": {
-      "type": "us-vs-them",
-      "blocks": {
-        "title_F4F6qE": {
-          "type": "title",
-          "settings": {
-            "title": "KÜCHENKOMPANE® vs. ANDERE",
-            "title_color": "#1c1c1c",
-            "title_size": 32
-          }
-        },
-        "description_9Mxcd4": {
-          "type": "description",
-          "settings": {
-            "description": "<p>Unsere Vergleichsgrafik zeigt, warum Küchenkompane die beste Wahl ist. Mit messerscharfer Präzision, hochwertigem Stahl und ergonomischem Design bieten unsere Messer maximale Qualität und Komfort.</p>",
-            "description_color": "#1c1c1c",
-            "description_size": 16
-          }
-        }
-      },
-      "block_order": [
-        "title_F4F6qE",
-        "description_9Mxcd4"
-      ],
-      "settings": {
-        "img": "shopify://shop_images/steel_kitchen_knives_V9.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
-      }
-    },
     "icon_box_9UtNky": {
       "type": "icon-box",
       "blocks": {
@@ -1002,6 +1002,7 @@
         "iconbox_RW46nE",
         "iconbox_EiwgTg"
       ],
+      "disabled": true,
       "custom_css": [
         ".m-icon-box__heading {font-weight: 400;}"
       ],
@@ -1055,6 +1056,7 @@
         "left_content_kdVLJX",
         "right_content_6RynNR"
       ],
+      "disabled": true,
       "settings": {
         "section_bg_color": "#ffffff",
         "bg_color": "#eeeeee",
@@ -1325,10 +1327,10 @@
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
     "usp_list_fgXGqB",
+    "us_vs_them_8Tbqki",
     "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
-    "us_vs_them_8Tbqki",
     "icon_box_9UtNky",
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
