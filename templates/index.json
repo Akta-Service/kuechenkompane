@@ -927,6 +927,13 @@
             "collection": "kuechenmesser-set"
           }
         },
+        "tab_mndJMF": {
+          "type": "tab",
+          "settings": {
+            "title": "Kombipakete",
+            "collection": "alle-bundles"
+          }
+        },
         "162251092958fcda7c-1": {
           "type": "tab",
           "settings": {
@@ -961,23 +968,16 @@
             "title": "Pfannen & Töpfe",
             "collection": "edelstahlpfanne"
           }
-        },
-        "tab_mndJMF": {
-          "type": "tab",
-          "settings": {
-            "title": "Kombipakete",
-            "collection": "alle-bundles"
-          }
         }
       },
       "block_order": [
         "162251092958fcda7c-0",
+        "tab_mndJMF",
         "162251092958fcda7c-1",
         "tab_TXN46Y",
         "tab_cN6G6g",
         "tab_FJXgYX",
-        "tab_dAFPhf",
-        "tab_mndJMF"
+        "tab_dAFPhf"
       ],
       "custom_css": [
         ".m-section__header {--m-section-header-spacing-bottom: 60px;}"
