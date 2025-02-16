@@ -481,9 +481,9 @@ span.faq-icon {
 .benefit-button.solid {
   padding: 8px 40px;
   color: #fff;
-  background-color: #000;
+  background: #000;
   border-radius: 5px;
 }
 .benefit-button.solid:after {
-  background-color: #fff;
+  background: #fff;
 }

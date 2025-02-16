@@ -8,6 +8,10 @@
    .benefit-text-area.bg-{{ section.id }} {
     background-color: {{ section.settings.background_color }};
    }
+   .benefit-button-{{ section.id }}{
+    color: #ffffff !important;
+    background: #fa8526 !important;
+   }
    @media only screen and (max-width: 768px) {
     .benefit-text-area{
       padding-top: {{- section.settings.padding_top_mobile -}}px ;
@@ -45,7 +49,7 @@
             {% when 'button' %}
               <a
                 href="{{ block.settings.button_link }}"
-                class="benefit-button   {{ block.settings.button_style }}"
+                class="benefit-button  {{ block.settings.button_style }} benefit-button-{{ section.id }}"
               >
                 {{ block.settings.button_text }}
               </a>
