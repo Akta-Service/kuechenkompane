@@ -1,6 +1,60 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<section class="best-selling-collections">
+  <div class="container">
+    <h2 class="section-title">Bestselling Categories</h2>
+    <div class="collections-grid">
+      {% for collection in collections %}
+        {% if collection.all_products_count > 0 %}
+          <div class="collection-item">
+            <a href="{{ collection.url }}">
+              <div class="collection-image">
+                {% if collection.image %}
+                  <img src="{{ collection.image | img_url: 'medium' }}" alt="{{ collection.title }}">
+                {% else %}
+                  <img src="{{ collection.products.first.featured_image | img_url: 'medium' }}" alt="{{ collection.title }}">
+                {% endif %}
+              </div>
+              <div class="collection-title">
+                <h3>{{ collection.title }}</h3>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .best-selling-collections {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f8f8f8;
   }
-{% endschema %}
+  .best-selling-collections .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .collections-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .collection-item {
+    width: 200px;
+    text-align: center;
+  }
+  .collection-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .collection-item img:hover {
+    transform: scale(1.05);
+  }
+  .collection-title h3 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+</style>
