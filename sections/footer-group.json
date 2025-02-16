@@ -83,7 +83,7 @@
         ".m-footer--block-spacing {width: 10%;}",
         ".m-newsletter-form {margin-top: 24px;}",
         ".m-footer--block-newsletter .m-footer--block-title {font-weight: 400; font-size: 25px;}",
-        ".m-newsletter-form__button{background: #fa8526;}",
+        ".m-newsletter-form__button {background: #fa8526; border: 0;}",
         "@media (min-width: 1280px) {.m-footer--block-newsletter .m-footer--block-title {font-size: 36px; margin-bottom: 12px; } .m-footer__copyright, .m-footer--bottom-menu {font-size: 14px; }}"
       ],
       "settings": {
