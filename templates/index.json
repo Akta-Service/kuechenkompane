@@ -47,7 +47,7 @@
         "title_font_size": 40,
         "title_color": "#ffffff",
         "sub_title": "<p>Perfektion, die du in jeder Bewegung spürst.</p>",
-        "btn_text": "Erlebe Perfekteion",
+        "btn_text": "Erlebe Perfektion",
         "btn_link": "shopify://pages/alle-kategorien"
       }
     },
@@ -1297,6 +1297,7 @@
     },
     "bestseller_selection_cdDXQt": {
       "type": "bestseller-selection",
+      "disabled": true,
       "settings": {
         "margin_top": 39,
         "margin_bottom": 0,
