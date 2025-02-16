@@ -1,117 +1,117 @@
 {%- style -%}
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-  .product-description {
-    margin: 30px 0 40px;
-    margin-top: {{ section.settings.mt }}px;
-    margin-bottom: {{ section.settings.mb }}px;
-  }
-  .description-container {
-    max-width: 1230px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  .description-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-  }
-  .des-title {
-    font-size: {{ section.settings.font_size }}px;
-    line-height: 1.5em;
-    max-width: 1180px;
-    margin: 0px auto 9px auto;
-    font-weight: bold;
-    color: {{ section.settings.font_color  }};
-    font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif !important;
-    text-transform: capitalize;
-    letter-spacing: 0;
-  }
-  .description-content {
-    width: 50%;
-    flex: 0 0 auto;
-  }
-  .accordion-button {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #000;
-    padding: 13px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 1.5em;
-    color: #000;
-    font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif !important;
-  }
-
-  .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    background-color: #fff;
-    padding: 0 20px;
-    margin-top: 10px;
-  }
-  .accordion-button.active + .accordion-content {
-    margin-bottom: 23px;
-  }
-  .accordion-content p {
-    font-size: 14px;
-    line-height: 1.5em;
-    padding: 0px 18px;
-    color: #000000 !important;
-    font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif !important;
-  }
-  .product-des {
-    font-size: 16px;
-    color: #000000;
-    font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif !important;
-    position: relative;
-  }
-  .description-accordion {
-    padding-top: 45px;
-   }
-   .product-des.hideContent {
-    max-height: 60px;
-    overflow: hidden;
-    transition: 0.3s;
-   }
-
-
-   .hideContent::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 30px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    pointer-events: none;
-    transition: 0.3s;
-
-  }
-   .show-more {
-    display: inline-block;
-    text-decoration: underline;
-    color: #000;
-    margin-top: 16px;
-    cursor: pointer;
-   }
-
-   @media only screen and (max-width: 768px) {
+  @import url('https://fonts.googleapis.com/css2?family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+    .product-description {
+      margin: 30px 0 40px;
+      margin-top: {{ section.settings.mt }}px;
+      margin-bottom: {{ section.settings.mb }}px;
+    }
+    .description-container {
+      max-width: 1230px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
     .description-row {
-      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
     }
-    .description-content,
-    .description-accordion {
+    .des-title {
+      font-size: {{ section.settings.font_size }}px;
+      line-height: 1.5em;
+      max-width: 1180px;
+      margin: 0px auto 9px auto;
+      font-weight: bold;
+      color: {{ section.settings.font_color  }};
+      font-family: 'Kulim Park', sans-serif !important;
+      text-transform: capitalize;
+      letter-spacing: 0;
+    }
+    .description-content {
+      width: 50%;
+      flex: 0 0 auto;
+    }
+    .accordion-button {
       width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #000;
+      padding: 13px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1.5em;
+      color: #000;
+      font-family: 'Kulim Park', sans-serif !important;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background-color: #fff;
+      padding: 0 20px;
+      margin-top: 10px;
+    }
+    .accordion-button.active + .accordion-content {
+      margin-bottom: 23px;
+    }
+    .accordion-content p {
+      font-size: 14px;
+      line-height: 1.5em;
+      padding: 0px 18px;
+      color: #000000 !important;
+       font-family: 'Kulim Park', sans-serif !important;
+    }
+    .product-des {
+      font-size: 16px;
+      color: #000000;
+       font-family: 'Kulim Park', sans-serif !important;
+      position: relative;
     }
     .description-accordion {
-    padding-top: 0;
-   }
-  }
+      padding-top: 45px;
+     }
+     .product-des.hideContent {
+      max-height: 60px;
+      overflow: hidden;
+      transition: 0.3s;
+     }
+
+
+     .hideContent::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+      pointer-events: none;
+      transition: 0.3s;
+
+    }
+     .show-more {
+      display: inline-block;
+      text-decoration: underline;
+      color: #000;
+      margin-top: 16px;
+      cursor: pointer;
+     }
+
+     @media only screen and (max-width: 768px) {
+      .description-row {
+        flex-direction: column;
+      }
+      .description-content,
+      .description-accordion {
+        width: 100%;
+      }
+      .description-accordion {
+      padding-top: 0;
+     }
+    }
 {%- endstyle -%}
 {% assign product = section.settings.product %}
 <div class="product-description">
