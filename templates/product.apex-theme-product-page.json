@@ -547,6 +547,9 @@
         "image_T7Lehj",
         "image_4NEDGT"
       ],
+      "custom_css": [
+        ".gesehen-in {text-align: center; font-size: 30px; font-weight: bold; text-transform: uppercase; margin-bottom: 0px; display: flex; justify-content: center;}"
+      ],
       "settings": {
         "container": "w-full",
         "direction": "left",
