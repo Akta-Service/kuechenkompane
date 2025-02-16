@@ -23,45 +23,66 @@
           "type": "collection",
           "settings": {
             "collection": "kuechenmesser",
-            "custom_title": ""
+            "custom_title": "Einzelne Messer"
           }
         },
         "collection_3z3N6Y": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "messerblock-mit-messer",
             "custom_title": ""
           }
         },
         "collection_tfxb7E": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "damastmesser-set",
             "custom_title": ""
           }
         },
         "collection_mCpphC": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "grillmesser",
             "custom_title": ""
           }
         },
         "collection_TJ4iUV": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "kombipaket-hito",
             "custom_title": ""
           }
         },
         "collection_kqBJ3d": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "messerset-mit-magnetleiste",
             "custom_title": ""
           }
         },
         "collection_HWCCng": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_title": ""
+          }
+        },
+        "collection_gPdAPx": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_title": ""
+          }
+        },
+        "collection_jiG3F6": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_title": ""
+          }
+        },
+        "collection_bwGCbw": {
           "type": "collection",
           "settings": {
             "collection": "",
@@ -85,14 +106,84 @@
         "collection_TJ4iUV",
         "collection_kqBJ3d",
         "collection_HWCCng",
+        "collection_gPdAPx",
+        "collection_jiG3F6",
+        "collection_bwGCbw",
         "collection_Em3gad"
       ],
       "settings": {
         "section_title": "Produkte entdecken"
       }
+    },
+    "collection_bestseller_fD8Fht": {
+      "type": "collection-bestseller",
+      "blocks": {
+        "collection_iiVUrL": {
+          "type": "collection",
+          "settings": {
+            "collection": "messerblock-mit-messer",
+            "custom_title": ""
+          }
+        },
+        "collection_tY9XNi": {
+          "type": "collection",
+          "settings": {
+            "collection": "kombipaket-hito",
+            "custom_title": ""
+          }
+        },
+        "collection_XGNzNm": {
+          "type": "collection",
+          "settings": {
+            "collection": "messerset-mit-magnetleiste",
+            "custom_title": ""
+          }
+        },
+        "collection_bfBMKJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "metall-bundles",
+            "custom_title": ""
+          }
+        },
+        "collection_QTEC4M": {
+          "type": "collection",
+          "settings": {
+            "collection": "kombipaket-tsuisuto",
+            "custom_title": ""
+          }
+        },
+        "collection_kwCgi9": {
+          "type": "collection",
+          "settings": {
+            "collection": "konpeki-kombipaket",
+            "custom_title": ""
+          }
+        },
+        "collection_LEbrJ8": {
+          "type": "collection",
+          "settings": {
+            "collection": "asiatisches-messerset",
+            "custom_title": "KOMBIPAKET JISHAKU"
+          }
+        }
+      },
+      "block_order": [
+        "collection_iiVUrL",
+        "collection_tY9XNi",
+        "collection_XGNzNm",
+        "collection_bfBMKJ",
+        "collection_QTEC4M",
+        "collection_kwCgi9",
+        "collection_LEbrJ8"
+      ],
+      "settings": {
+        "section_title": "Kombipakete entdecken"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "collection_bestseller_fD8Fht"
   ]
 }
