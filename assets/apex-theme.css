@@ -443,6 +443,9 @@ span.faq-icon {
   .store-benefits-bottom .rs-container {
     padding: 0 15px;
   }
+  h3.m-richtext__title.h2 {
+    font-size: 25px !important;
+  }
 }
 .benefit-button {
   position: relative;
