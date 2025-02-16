@@ -574,6 +574,45 @@
         "heading_size_mobile": 34
       }
     },
+    "magazine_quote_UQpqkk": {
+      "type": "magazine-quote",
+      "blocks": {
+        "title_7bjmib": {
+          "type": "title",
+          "settings": {
+            "title_img": "shopify://shop_images/n_tv_logo_V6_1.png",
+            "title": "",
+            "title_color": "#121212",
+            "title_size": 40
+          }
+        },
+        "ratings_qmMcyY": {
+          "type": "ratings",
+          "settings": {
+            "rating": 4
+          }
+        },
+        "quotation_g7QTma": {
+          "type": "quotation",
+          "settings": {
+            "quote": "<p>“Real gel polish that sticks on and is also easy to remove. A dream comes true. With the strips, every manicure gets studio quality that lasts up to 3 weeks!</p>",
+            "quote_color": "#121212",
+            "quote_size": 26
+          }
+        }
+      },
+      "block_order": [
+        "title_7bjmib",
+        "ratings_qmMcyY",
+        "quotation_g7QTma"
+      ],
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
+      }
+    },
     "usp_list_fgXGqB": {
       "type": "usp-list",
       "blocks": {
@@ -960,45 +999,6 @@
         "padding_bottom_mobile": 50
       }
     },
-    "magazine_quote_UQpqkk": {
-      "type": "magazine-quote",
-      "blocks": {
-        "title_7bjmib": {
-          "type": "title",
-          "settings": {
-            "title_img": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "title": "",
-            "title_color": "#121212",
-            "title_size": 40
-          }
-        },
-        "ratings_qmMcyY": {
-          "type": "ratings",
-          "settings": {
-            "rating": 4
-          }
-        },
-        "quotation_g7QTma": {
-          "type": "quotation",
-          "settings": {
-            "quote": "<p>“Real gel polish that sticks on and is also easy to remove. A dream comes true. With the strips, every manicure gets studio quality that lasts up to 3 weeks!</p>",
-            "quote_color": "#121212",
-            "quote_size": 26
-          }
-        }
-      },
-      "block_order": [
-        "title_7bjmib",
-        "ratings_qmMcyY",
-        "quotation_g7QTma"
-      ],
-      "settings": {
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
-      }
-    },
     "us_vs_them_8Tbqki": {
       "type": "us-vs-them",
       "blocks": {
@@ -1322,12 +1322,12 @@
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
     "product_explanation_video_xNFp3M",
+    "magazine_quote_UQpqkk",
     "usp_list_fgXGqB",
-    "icon_box_9UtNky",
     "apex_faqs_jx7hp6",
+    "icon_box_9UtNky",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
-    "magazine_quote_UQpqkk",
     "us_vs_them_8Tbqki",
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
