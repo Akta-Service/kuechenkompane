@@ -48,14 +48,13 @@
   }
 
   .collections-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Default: 2 per row */
     gap: 20px;
+    justify-content: center;
   }
 
   .collection-item {
-    width: 200px;
     text-align: center;
   }
 
@@ -73,6 +72,13 @@
     font-size: 16px;
     margin-top: 10px;
     font-weight: bold;
+  }
+
+  /* Desktop: 6 in a row */
+  @media (min-width: 1024px) {
+    .collections-grid {
+      grid-template-columns: repeat(6, 1fr); /* 6 per row */
+    }
   }
 </style>
 
@@ -131,4 +137,3 @@
   ]
 }
 {% endschema %}
-
