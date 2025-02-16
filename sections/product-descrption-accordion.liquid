@@ -137,7 +137,10 @@
     <div class="description-row">
       <div class="description-content">
         <h2 class="des-title">{{ section.settings.title }}</h2>
-        {% if section.settings.description %}
+     
+        {% if    product.metafields.custom.product_form_short_description != blank %}
+
+        {%    elsif section.settings.description != blank %}
           <p class="product-des {% if section.settings.add_showore_btn %}hideContent{% endif %}">
             {{ section.settings.description }}
           </p>
