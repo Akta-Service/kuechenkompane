@@ -45,6 +45,9 @@
 
   .product-explanation-video-item video {
     width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
   }
 
   @media screen and (max-width: 767px) {
@@ -173,8 +176,9 @@
               {% if block.settings.controls %}
                 controls
               {% endif %}
-              {% if block.settings.explanation_video_poster %}
-                poster="{{ block.settings.explanation_video_poster | img_url: 'master' }}"
+              {% if section.settings.explanation_video_poster %}
+                poster="{{ section.settings.explanation_video_poster | img_url : 'master'  }}"
+                style="width: 100%; height: auto;"
               {% endif %}
             >
               <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
