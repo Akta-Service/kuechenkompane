@@ -15,55 +15,64 @@
         "collection_VHcxMt": {
           "type": "collection",
           "settings": {
-            "collection": "kuechenmesser-set"
+            "collection": "kuechenmesser-set",
+            "custom_title": ""
           }
         },
         "collection_QUAdkx": {
           "type": "collection",
           "settings": {
-            "collection": "kuechenmesser"
+            "collection": "kuechenmesser",
+            "custom_title": ""
           }
         },
         "collection_3z3N6Y": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "custom_title": ""
           }
         },
         "collection_tfxb7E": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "custom_title": ""
           }
         },
         "collection_mCpphC": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "custom_title": ""
           }
         },
         "collection_TJ4iUV": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "custom_title": ""
           }
         },
         "collection_kqBJ3d": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "custom_title": ""
           }
         },
         "collection_HWCCng": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "custom_title": ""
           }
         },
         "collection_Em3gad": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "custom_title": ""
           }
         }
       },
@@ -78,7 +87,9 @@
         "collection_HWCCng",
         "collection_Em3gad"
       ],
-      "settings": {}
+      "settings": {
+        "section_title": "Produkte entdecken"
+      }
     }
   },
   "order": [
