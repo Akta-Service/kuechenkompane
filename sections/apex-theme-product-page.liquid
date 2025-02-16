@@ -537,10 +537,12 @@
                 <span class="like-count">{{ block.settings.likecount }}</span>
                 <p class="like-info">{{ block.settings.likeinfo }}</p>
               </div>
-              <div class="rs-demand-badge">
-                <span class="demand-badge">{{ block.settings.demandBadge }}</span>
-                <span class="demand-text">{{ block.settings.demandText }}</span>
-              </div>
+              {% if product.tags contains 'HOHE NACHFRAGE' %}
+                <div class="rs-demand-badge">
+                  <span class="demand-badge">{{ block.settings.demandBadge }}</span>
+                  <span class="demand-text">{{ block.settings.demandText }}</span>
+                </div>
+              {% endif %}
             {% when 'price' %}
               <div class="rs-price">
                 <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
