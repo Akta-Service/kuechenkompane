@@ -11,6 +11,73 @@
   "sections": {
     "main": {
       "type": "collection-bestseller",
+      "blocks": {
+        "collection_VHcxMt": {
+          "type": "collection",
+          "settings": {
+            "collection": "kuechenmesser-set"
+          }
+        },
+        "collection_QUAdkx": {
+          "type": "collection",
+          "settings": {
+            "collection": "kuechenmesser"
+          }
+        },
+        "collection_3z3N6Y": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection_tfxb7E": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection_mCpphC": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection_TJ4iUV": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection_kqBJ3d": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection_HWCCng": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection_Em3gad": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_VHcxMt",
+        "collection_QUAdkx",
+        "collection_3z3N6Y",
+        "collection_tfxb7E",
+        "collection_mCpphC",
+        "collection_TJ4iUV",
+        "collection_kqBJ3d",
+        "collection_HWCCng",
+        "collection_Em3gad"
+      ],
       "settings": {}
     }
   },
