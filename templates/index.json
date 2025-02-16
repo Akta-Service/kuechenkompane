@@ -36,6 +36,9 @@
         "text_GFQwB3",
         "text_J8yeUK"
       ],
+      "custom_css": [
+        ".banner-btn a{border-color: transparent;}"
+      ],
       "settings": {
         "u": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160.mov_V2.mp4",
         "u_mobile": "shopify://files/videos/5088321_Shrimp_Cook_3840x2160_mov_V4.mp4",
@@ -48,6 +51,10 @@
         "title_color": "#ffffff",
         "sub_title": "<p>Perfektion, die du in jeder Bewegung spürst.</p>",
         "btn_text": "Erlebe Perfektion",
+        "btn_bg_color": "#fa8526",
+        "btn_bg_color_hover": "#333333",
+        "btn_text_color": "#ffffff",
+        "btn_text_color_hover": "#ffffff",
         "btn_link": "shopify://pages/alle-kategorien"
       }
     },
@@ -364,7 +371,11 @@
         "text_size": 18,
         "bg_color": "#ebf2e8",
         "heading_color": "#121212",
-        "text_color": "#000000"
+        "text_color": "#000000",
+        "btn_bg_color": "#000000",
+        "btn_bg_color_hover": "#333333",
+        "btn_text_color": "#ffffff",
+        "btn_text_color_hover": "#ffffff"
       }
     },
     "product_explanation_video_6ERhrB": {
