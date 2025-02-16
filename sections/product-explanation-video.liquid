@@ -123,7 +123,6 @@
 
           {% endcase %}
           {% endfor %}
-          
 </style>
 
 <!-- product-explanation-video-section start -->
@@ -174,6 +173,7 @@
               {% if block.settings.controls %}
                 controls
               {% endif %}
+              poster="{{ block.settings.explanation_video_poster | img_url: 'master' }}"
             >
               <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
             </video>
@@ -281,136 +281,135 @@
           "default": "What are Maniko Nails?"
         },
         {
-    "type": "range",
-    "id": "h1_font_size",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Heading Font Size (Desktop)",
-    "default": 32
-  },
-  {
-    "type": "range",
-    "id": "h1_font_size_tablet",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Heading Font Size (Tablet)",
-    "default": 28
-  },
-  {
-    "type": "range",
-    "id": "h1_font_size_mobile",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Heading Font Size (Mobile)",
-    "default": 24
-  },
-  {
-    "type": "select",
-    "id": "h1_font_weight",
-    "label": "Heading Font Weight",
-    "options": [
-      { "value": "100", "label": "Thin 100" },
-      { "value": "200", "label": "Extra-Light 200" },
-      { "value": "300", "label": "Light 300" },
-      { "value": "400", "label": "Regular 400" },
-      { "value": "500", "label": "Medium 500" },
-      { "value": "600", "label": "Semi-Bold 600" },
-      { "value": "700", "label": "Bold 700" },
-      { "value": "800", "label": "Extra-Bold 800" },
-      { "value": "900", "label": "Black 900" }
-    ],
-    "default": "600"
-  },
-  {
-    "type": "color",
-    "id": "h1_font_color",
-    "label": "Heading Font Color",
-    "default": "#000000"
-  },
-  {
-    "type": "select",
-    "id": "h1_text_align",
-    "label": "Heading Text Alignment",
-    "options": [
-      { "value": "left", "label": "Left" },
-      { "value": "center", "label": "Center" },
-      { "value": "right", "label": "Right" }
-    ],
-    "default": "left"
-  },
-  {
-    "type": "text",
-    "id": "title",
-    "label": "Title Text",
-    "default": "Your Title Here"
-  },
-  {
-    "type": "range",
-    "id": "padding_top",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Top (Desktop)",
-    "default": 20
-  },
-  {
-    "type": "range",
-    "id": "padding_bottom",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Bottom (Desktop)",
-    "default": 20
-  },
-  {
-    "type": "range",
-    "id": "padding_top_tablet",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Top (Tablet)",
-    "default": 15
-  },
-  {
-    "type": "range",
-    "id": "padding_bottom_tablet",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Bottom (Tablet)",
-    "default": 15
-  },
-  {
-    "type": "range",
-    "id": "padding_top_mobile",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Top (Mobile)",
-    "default": 10
-  },
-  {
-    "type": "range",
-    "id": "padding_bottom_mobile",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Bottom (Mobile)",
-    "default": 10
-  }
-
+          "type": "range",
+          "id": "h1_font_size",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Heading Font Size (Desktop)",
+          "default": 32
+        },
+        {
+          "type": "range",
+          "id": "h1_font_size_tablet",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Heading Font Size (Tablet)",
+          "default": 28
+        },
+        {
+          "type": "range",
+          "id": "h1_font_size_mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Heading Font Size (Mobile)",
+          "default": 24
+        },
+        {
+          "type": "select",
+          "id": "h1_font_weight",
+          "label": "Heading Font Weight",
+          "options": [
+            { "value": "100", "label": "Thin 100" },
+            { "value": "200", "label": "Extra-Light 200" },
+            { "value": "300", "label": "Light 300" },
+            { "value": "400", "label": "Regular 400" },
+            { "value": "500", "label": "Medium 500" },
+            { "value": "600", "label": "Semi-Bold 600" },
+            { "value": "700", "label": "Bold 700" },
+            { "value": "800", "label": "Extra-Bold 800" },
+            { "value": "900", "label": "Black 900" }
+          ],
+          "default": "600"
+        },
+        {
+          "type": "color",
+          "id": "h1_font_color",
+          "label": "Heading Font Color",
+          "default": "#000000"
+        },
+        {
+          "type": "select",
+          "id": "h1_text_align",
+          "label": "Heading Text Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title Text",
+          "default": "Your Title Here"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Desktop)",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Desktop)",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "padding_top_tablet",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Tablet)",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_tablet",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Tablet)",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Mobile)",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Mobile)",
+          "default": 10
+        }
       ]
     },
     {
@@ -439,139 +438,138 @@
           "step": 1
         },
         {
-    "type": "range",
-    "id": "p_font_size",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Paragraph Font Size (Desktop)",
-    "default": 16
-  },
-  {
-    "type": "range",
-    "id": "p_font_size_tablet",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Paragraph Font Size (Tablet)",
-    "default": 14
-  },
-  {
-    "type": "range",
-    "id": "p_font_size_mobile",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Paragraph Font Size (Mobile)",
-    "default": 12
-  },
-  {
-    "type": "select",
-    "id": "p_font_weight",
-    "label": "Paragraph Font Weight",
-    "options": [
-      { "value": "100", "label": "Thin 100" },
-      { "value": "200", "label": "Extra-Light 200" },
-      { "value": "300", "label": "Light 300" },
-      { "value": "400", "label": "Regular 400" },
-      { "value": "500", "label": "Medium 500" },
-      { "value": "600", "label": "Semi-Bold 600" },
-      { "value": "700", "label": "Bold 700" },
-      { "value": "800", "label": "Extra-Bold 800" },
-      { "value": "900", "label": "Black 900" }
-    ],
-    "default": "400"
-  },
-  {
-    "type": "color",
-    "id": "p_font_color",
-    "label": "Paragraph Font Color",
-    "default": "#333333"
-  },
-  {
-    "type": "select",
-    "id": "p_text_align",
-    "label": "Paragraph Text Alignment",
-    "options": [
-      { "value": "left", "label": "Left" },
-      { "value": "center", "label": "Center" },
-      { "value": "right", "label": "Right" }
-    ],
-    "default": "left"
-  },
-  {
-    "type": "range",
-    "id": "p_line_height",
-    "min": 1,
-    "max": 3,
-    "step": 0.1,
-    "label": "Paragraph Line Height",
-    "default": 1.5
-  },
-  {
-    "type": "range",
-    "id": "p_padding_top",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Top (Desktop)",
-    "default": 10
-  },
-  {
-    "type": "range",
-    "id": "p_padding_bottom",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Bottom (Desktop)",
-    "default": 10
-  },
-  {
-    "type": "range",
-    "id": "p_padding_top_tablet",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Top (Tablet)",
-    "default": 8
-  },
-  {
-    "type": "range",
-    "id": "p_padding_bottom_tablet",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Bottom (Tablet)",
-    "default": 8
-  },
-  {
-    "type": "range",
-    "id": "p_padding_top_mobile",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Top (Mobile)",
-    "default": 5
-  },
-  {
-    "type": "range",
-    "id": "p_padding_bottom_mobile",
-    "min": 1,
-    "max": 100,
-    "step": 1,
-    "unit": "px",
-    "label": "Padding Bottom (Mobile)",
-    "default": 5
-  }
-
+          "type": "range",
+          "id": "p_font_size",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Paragraph Font Size (Desktop)",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "p_font_size_tablet",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Paragraph Font Size (Tablet)",
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "p_font_size_mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Paragraph Font Size (Mobile)",
+          "default": 12
+        },
+        {
+          "type": "select",
+          "id": "p_font_weight",
+          "label": "Paragraph Font Weight",
+          "options": [
+            { "value": "100", "label": "Thin 100" },
+            { "value": "200", "label": "Extra-Light 200" },
+            { "value": "300", "label": "Light 300" },
+            { "value": "400", "label": "Regular 400" },
+            { "value": "500", "label": "Medium 500" },
+            { "value": "600", "label": "Semi-Bold 600" },
+            { "value": "700", "label": "Bold 700" },
+            { "value": "800", "label": "Extra-Bold 800" },
+            { "value": "900", "label": "Black 900" }
+          ],
+          "default": "400"
+        },
+        {
+          "type": "color",
+          "id": "p_font_color",
+          "label": "Paragraph Font Color",
+          "default": "#333333"
+        },
+        {
+          "type": "select",
+          "id": "p_text_align",
+          "label": "Paragraph Text Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "range",
+          "id": "p_line_height",
+          "min": 1,
+          "max": 3,
+          "step": 0.1,
+          "label": "Paragraph Line Height",
+          "default": 1.5
+        },
+        {
+          "type": "range",
+          "id": "p_padding_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Desktop)",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "p_padding_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Desktop)",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "p_padding_top_tablet",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Tablet)",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "p_padding_bottom_tablet",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Tablet)",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "p_padding_top_mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Mobile)",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "p_padding_bottom_mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Mobile)",
+          "default": 5
+        }
       ]
     },
     {
