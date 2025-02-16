@@ -46,6 +46,14 @@
             "collection": "servieren-aufbewahren",
             "custom_title": "2in1 Lösungen"
           }
+        },
+        "collection_mddChE": {
+          "type": "collection",
+          "settings": {
+            "collection": "messer-zubehoer",
+            "custom_title": "Zubehör",
+            "custom_image": "shopify://shop_images/messerschaerfer-damast-messer.webp"
+          }
         }
       },
       "block_order": [
@@ -53,118 +61,11 @@
         "collection_QUAdkx",
         "collection_tfxb7E",
         "collection_kqBJ3d",
-        "collection_bwGCbw"
+        "collection_bwGCbw",
+        "collection_mddChE"
       ],
       "settings": {
         "section_title": "Messerwelt"
-      }
-    },
-    "collection_bestseller_fD8Fht": {
-      "type": "collection-bestseller",
-      "blocks": {
-        "collection_iiVUrL": {
-          "type": "collection",
-          "settings": {
-            "collection": "messerblock-mit-messer",
-            "custom_title": ""
-          }
-        },
-        "collection_tY9XNi": {
-          "type": "collection",
-          "settings": {
-            "collection": "kombipaket-hito",
-            "custom_title": ""
-          }
-        },
-        "collection_XGNzNm": {
-          "type": "collection",
-          "settings": {
-            "collection": "messerset-mit-magnetleiste",
-            "custom_title": ""
-          }
-        },
-        "collection_bfBMKJ": {
-          "type": "collection",
-          "settings": {
-            "collection": "metall-bundles",
-            "custom_title": ""
-          }
-        },
-        "collection_QTEC4M": {
-          "type": "collection",
-          "settings": {
-            "collection": "kombipaket-tsuisuto",
-            "custom_title": ""
-          }
-        },
-        "collection_kwCgi9": {
-          "type": "collection",
-          "settings": {
-            "collection": "konpeki-kombipaket",
-            "custom_title": ""
-          }
-        },
-        "collection_LEbrJ8": {
-          "type": "collection",
-          "settings": {
-            "collection": "asiatisches-messerset",
-            "custom_title": "KOMBIPAKET JISHAKU"
-          }
-        }
-      },
-      "block_order": [
-        "collection_iiVUrL",
-        "collection_tY9XNi",
-        "collection_XGNzNm",
-        "collection_bfBMKJ",
-        "collection_QTEC4M",
-        "collection_kwCgi9",
-        "collection_LEbrJ8"
-      ],
-      "settings": {
-        "section_title": "Kombipakete entdecken"
-      }
-    },
-    "collection_bestseller_PhdaAT": {
-      "type": "collection-bestseller",
-      "blocks": {
-        "collection_9Jm9gK": {
-          "type": "collection",
-          "settings": {
-            "collection": "messerblock",
-            "custom_title": "Messerblöcke"
-          }
-        },
-        "collection_f7Ndk4": {
-          "type": "collection",
-          "settings": {
-            "collection": "profi-messerschaerfer",
-            "custom_title": "Messerschärfer"
-          }
-        },
-        "collection_wYbD3C": {
-          "type": "collection",
-          "settings": {
-            "collection": "schneidebretter",
-            "custom_title": ""
-          }
-        },
-        "collection_9PRz4n": {
-          "type": "collection",
-          "settings": {
-            "collection": "pflegeprodukte",
-            "custom_title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_9Jm9gK",
-        "collection_f7Ndk4",
-        "collection_wYbD3C",
-        "collection_9PRz4n"
-      ],
-      "settings": {
-        "section_title": "Messer Zubehör"
       }
     },
     "collection_bestseller_tdLXwC": {
@@ -173,22 +74,23 @@
         "collection_E7YFkX": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "custom_title": ""
+            "collection": "edelstahlpfanne",
+            "custom_title": "Pfannen & Töpfe"
           }
         },
         "collection_dNrPFp": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "schneidebretter",
             "custom_title": ""
           }
         },
         "collection_RTcQAV": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "custom_title": ""
+            "collection": "bbq-outdoor",
+            "custom_title": "Outdoor",
+            "custom_image": "shopify://shop_images/video_image--1AiGxOSE_1_1_95af33a2-b82b-45ae-9701-a0439030839b.jpg"
           }
         }
       },
@@ -204,8 +106,6 @@
   },
   "order": [
     "main",
-    "collection_bestseller_fD8Fht",
-    "collection_bestseller_PhdaAT",
     "collection_bestseller_tdLXwC"
   ]
 }
