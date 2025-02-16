@@ -129,7 +129,7 @@
           </p>
         {% endif %}
         {% if section.settings.add_showore_btn %}
-          <span class="show-more">show more</span>
+          <span class="show-more">Mehr lesen</span>
         {% endif %}
       </div>
       <div class="description-accordion">
@@ -281,10 +281,10 @@
 
       if (content.classList.contains('hideContent')) {
         content.classList.remove('hideContent');
-        button.textContent = 'Show Less';
+        button.textContent = 'Weniger Lesen';
       } else {
         content.classList.add('hideContent');
-        button.textContent = 'show more';
+        button.textContent = 'Mehr lesen';
       }
     });
   });
