@@ -422,3 +422,17 @@ select {
 .apex-theme-info {
   padding-left: 50px;
 }
+
+button.m-add-to-cart.rs-add-btn {
+  background: #fa8526;
+  color: #fff;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+button.m-add-to-cart.rs-add-btn:hover {
+  box-shadow: none;
+  border: none;
+  outline: none;
+  background: #333333 !important;
+}
