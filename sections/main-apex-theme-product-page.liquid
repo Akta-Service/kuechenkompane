@@ -364,12 +364,14 @@
   }
 
   @media only screen and (max-width: 1100px) {
-    .swiper.thumb-slider {
-      display: none;
+    #product__slider {
+      flex-direction: column-reverse;
     }
-
     .product__slider-wrapper {
       width: 50%;
+    }
+    .swiper.thumb-slider {
+      width: 100%;
     }
 
     .product-info-content {
@@ -460,7 +462,6 @@
                 </svg>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
@@ -1065,38 +1066,55 @@
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the thumbnail slider (vertical)
-    var thumbSwiper = new Swiper('.thumb-slider', {
-      direction: 'vertical',
-      centeredSlides: false,
-      slidesPerView: 'auto',
-      spaceBetween: 10,
-      watchOverflow: true,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-    });
+    let thumbSwiper;
+    let mainSwiper;
 
-    // Initialize the main slider
-    var mainSwiper = new Swiper('.main-slider', {
-      spaceBetween: 10,
-      navigation: {
-        nextEl: '.button-next',
-        prevEl: '.button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      on: {
-        slideChange: function () {
-          thumbSwiper.slideTo(mainSwiper.activeIndex);
+    function initThumbSwiper() {
+      let direction = window.innerWidth >= 1100 ? 'vertical' : 'horizontal';
+
+      thumbSwiper = new Swiper('.thumb-slider', {
+        direction: direction,
+        centeredSlides: false,
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        watchOverflow: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+      });
+    }
+
+    function initMainSwiper() {
+      mainSwiper = new Swiper('.main-slider', {
+        spaceBetween: 10,
+        navigation: {
+          nextEl: '.button-next',
+          prevEl: '.button-prev',
         },
-      },
-    });
+        on: {
+          slideChange: function () {
+            if (thumbSwiper) {
+              thumbSwiper.slideTo(mainSwiper.activeIndex);
+            }
+          },
+        },
+      });
 
-    // Sync the main slider when clicking on a thumbnail
-    thumbSwiper.on('click', function (swiper) {
-      mainSwiper.slideTo(swiper.clickedIndex);
+      // Sync the main slider when clicking on a thumbnail
+      thumbSwiper.on('click', function (swiper) {
+        mainSwiper.slideTo(swiper.clickedIndex);
+      });
+    }
+
+    // Initialize sliders
+    initThumbSwiper();
+    initMainSwiper();
+
+    // Reinitialize thumbSwiper on window resize
+    window.addEventListener('resize', () => {
+      if (thumbSwiper) {
+        thumbSwiper.destroy(true, true);
+      }
+      initThumbSwiper();
     });
   });
 </script>
