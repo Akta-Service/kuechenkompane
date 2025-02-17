@@ -11,75 +11,6 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "blocks": {
-        "badge_ChqgGj": {
-          "type": "badge",
-          "settings": {}
-        },
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "show_saving": false,
-            "sale_badge_type": "percentage"
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "size_title": "Grifffarbe"
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "show_atc_button": true,
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "addons": {
-          "type": "addons",
-          "settings": {
-            "show_atcp": true,
-            "show_ask_a_question": true,
-            "show_social": true
-          }
-        },
-        "shipping_VBJFtx": {
-          "type": "shipping",
-          "settings": {
-            "show_delivery_times": true,
-            "deliver_text": "Estimated Delivery:",
-            "deliver_days": "7",
-            "date_format": "%b %d",
-            "show_shipping_text": true,
-            "shipping_text": "<p><strong>Free Shipping & Returns: </strong>On all orders over $75</p>"
-          }
-        },
-        "trust_badge_NyBMd4": {
-          "type": "trust_badge",
-          "settings": {
-            "trust_badges_text": "<p>Guarantee safe & secure checkout</p>",
-            "trust_badges_image_width": "60%",
-            "position": "below"
-          }
-        }
-      },
-      "block_order": [
-        "badge_ChqgGj",
-        "title",
-        "price",
-        "variant_picker",
-        "buy_buttons",
-        "addons",
-        "shipping_VBJFtx",
-        "trust_badge_NyBMd4"
-      ],
       "disabled": true,
       "settings": {
         "container": "container-fluid",
@@ -243,6 +174,153 @@
         "padding_bottom": 0
       }
     },
+    "apex_theme_product_page_copy_bfPEWH": {
+      "type": "apex-theme-product-page-copy",
+      "blocks": {
+        "title_Bac9Mk": {
+          "type": "title",
+          "settings": {}
+        },
+        "subtitle_xQXVba": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Effortless cutting thanks to the highest quality!",
+            "subtitle_font_size": 16,
+            "subtitle_color": "#1c1c1c"
+          }
+        },
+        "review_Tgbbak": {
+          "type": "review",
+          "settings": {
+            "p": "4.9/5 Sternen"
+          }
+        },
+        "ratings_fD4VNJ": {
+          "type": "ratings",
+          "settings": {
+            "likecount": "1,532+ people",
+            "likeinfo": "are already convinced by oursharp blades!",
+            "demandBadge": "High demand",
+            "demandText": "Many people have viewed this product in the last 24 hours"
+          }
+        },
+        "price_J4wXWJ": {
+          "type": "price",
+          "settings": {}
+        },
+        "viewer_stock_count_MFNhKz": {
+          "type": "viewerStockCount",
+          "settings": {
+            "viewer_count_font_size": 16,
+            "view_main_text_1": "people",
+            "view_main_text_2": "are currently looking at this product",
+            "viewer_text_color": "",
+            "viewer_margin_top": 10,
+            "viewer_margin_bottom": 10,
+            "viewer_count_text_color": "",
+            "margin_size_mobile_top": 1,
+            "margin_size_mobile_bottom": 1,
+            "product_count_font_size": 16,
+            "product_main_text_1": "Only",
+            "product_main_text_2": "left in stock",
+            "product_text_color": "",
+            "product_count_text_color": "",
+            "product_margin_top": 10,
+            "product_margin_bottom": 10,
+            "viewer_count_time": 2500,
+            "stock_count_time": 5000,
+            "p_margin_size_mobile_top": 1,
+            "p_margin_size_mobile_bottom": 1
+          }
+        },
+        "featurelist_header_tfxtpf": {
+          "type": "featurelist_header",
+          "settings": {
+            "featureHeader": "30-day satisfaction guarantee",
+            "featurelist_header_color": "#000",
+            "featurelist_header_size": 14
+          }
+        },
+        "featurelist_item_iiW6aD": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14
+          }
+        },
+        "featurelist_item_tL79ih": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14
+          }
+        },
+        "featurelist_item_jQJcPz": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14
+          }
+        },
+        "buy_buttons_3hQqVi": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_atc_button": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "payment_icon_tePtpf": {
+          "type": "paymentIcon",
+          "settings": {}
+        },
+        "product_info_9Yqdn9": {
+          "type": "productInfo",
+          "settings": {
+            "info_text_1": "30-day satisfaction guarantee",
+            "info_text_2": "free shipping from 70€",
+            "info_text_3": "1 free grinding service in the first year"
+          }
+        }
+      },
+      "block_order": [
+        "title_Bac9Mk",
+        "subtitle_xQXVba",
+        "review_Tgbbak",
+        "ratings_fD4VNJ",
+        "price_J4wXWJ",
+        "viewer_stock_count_MFNhKz",
+        "featurelist_header_tfxtpf",
+        "featurelist_item_iiW6aD",
+        "featurelist_item_tL79ih",
+        "featurelist_item_jQJcPz",
+        "buy_buttons_3hQqVi",
+        "payment_icon_tePtpf",
+        "product_info_9Yqdn9"
+      ],
+      "settings": {
+        "container": "container",
+        "layout": "layout-6",
+        "show_atwl": true,
+        "enable_history_state": true,
+        "enable_variant_group_images": false,
+        "disable_selected_variant_default": false,
+        "show_featured_media": true,
+        "show_zoom_button": true,
+        "enable_video_autoplay": false,
+        "show_nav_media_mobile": false,
+        "show_pagination_mobile": true,
+        "use_sticky_atc": true,
+        "use_sticky_atc_on_mobile": true,
+        "enable_dynamic_checkout": false,
+        "sticky_atc_wishtlist": false,
+        "sticky_atc_compare": false
+      }
+    },
     "product_descrption_accordion_btdDtQ": {
       "type": "product-descrption-accordion",
       "blocks": {
@@ -275,7 +353,12 @@
           }
         }
       },
-      "block_order": ["faq_fqQbjd", "faq_kQAWhE", "faq_pDwHXa", "faq_jkYPLV"],
+      "block_order": [
+        "faq_fqQbjd",
+        "faq_kQAWhE",
+        "faq_pDwHXa",
+        "faq_jkYPLV"
+      ],
       "settings": {
         "product": "akarui-messerset-premium",
         "title": "Produktbeschreibung",
@@ -323,9 +406,16 @@
           }
         }
       },
-      "block_order": ["tab_gknmWn", "tab", "tab_yXpqFL", "tab_LBwXaE"],
+      "block_order": [
+        "tab_gknmWn",
+        "tab",
+        "tab_yXpqFL",
+        "tab_LBwXaE"
+      ],
       "disabled": true,
-      "custom_css": [".m-tabs__header {justify-content: flex-start;}"],
+      "custom_css": [
+        ".m-tabs__header {justify-content: flex-start;}"
+      ],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -656,7 +746,11 @@
           }
         }
       },
-      "block_order": ["title_7bjmib", "ratings_qmMcyY", "quotation_g7QTma"],
+      "block_order": [
+        "title_7bjmib",
+        "ratings_qmMcyY",
+        "quotation_g7QTma"
+      ],
       "settings": {
         "padding_top": 13,
         "padding_bottom": 50,
@@ -684,7 +778,10 @@
           }
         }
       },
-      "block_order": ["title_F4F6qE", "description_9Mxcd4"],
+      "block_order": [
+        "title_F4F6qE",
+        "description_9Mxcd4"
+      ],
       "settings": {
         "img": "shopify://shop_images/steel_kitchen_knives_V11_1.jpg",
         "padding_top": 50,
@@ -823,7 +920,11 @@
           }
         }
       },
-      "block_order": ["subtitle_8kbCAt", "title_KU4fTr", "description_PBBAnQ"],
+      "block_order": [
+        "subtitle_8kbCAt",
+        "title_KU4fTr",
+        "description_PBBAnQ"
+      ],
       "settings": {
         "background_color": "#ffffff",
         "media_type": "image",
@@ -863,7 +964,11 @@
           }
         }
       },
-      "block_order": ["subtitle_XPX87U", "title_YwDaTz", "description_j4ByyM"],
+      "block_order": [
+        "subtitle_XPX87U",
+        "title_YwDaTz",
+        "description_j4ByyM"
+      ],
       "settings": {
         "background_color": "#ffffff",
         "media_type": "image",
@@ -924,9 +1029,15 @@
           }
         }
       },
-      "block_order": ["iconbox_pJbJGA", "iconbox_RW46nE", "iconbox_EiwgTg"],
+      "block_order": [
+        "iconbox_pJbJGA",
+        "iconbox_RW46nE",
+        "iconbox_EiwgTg"
+      ],
       "disabled": true,
-      "custom_css": [".m-icon-box__heading {font-weight: 400;}"],
+      "custom_css": [
+        ".m-icon-box__heading {font-weight: 400;}"
+      ],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -973,7 +1084,10 @@
           }
         }
       },
-      "block_order": ["left_content_kdVLJX", "right_content_6RynNR"],
+      "block_order": [
+        "left_content_kdVLJX",
+        "right_content_6RynNR"
+      ],
       "disabled": true,
       "settings": {
         "section_bg_color": "#ffffff",
@@ -1092,7 +1206,11 @@
           }
         }
       },
-      "block_order": ["item_9JUQhz", "item_NYUrjj", "item_Prmf4W"],
+      "block_order": [
+        "item_9JUQhz",
+        "item_NYUrjj",
+        "item_Prmf4W"
+      ],
       "settings": {
         "bg_color": "#c5d3be",
         "subtitle": "Vielen Menschen haben uns als Gründer gefragt:",
@@ -1213,7 +1331,10 @@
           }
         }
       },
-      "block_order": ["heading_tWq74p", "content_nQLTqP"],
+      "block_order": [
+        "heading_tWq74p",
+        "content_nQLTqP"
+      ],
       "disabled": true,
       "settings": {
         "background_color": "#f6f0e6",
@@ -1231,6 +1352,7 @@
   "order": [
     "main",
     "apex_theme_product_page_AjEfK8",
+    "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
