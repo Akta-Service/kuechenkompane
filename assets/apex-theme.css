@@ -434,6 +434,22 @@ span.faq-icon {
   h3.m-richtext__title.h2 {
     font-size: 25px !important;
   }
+  .apex-product-page .rs-container {
+    padding: 0 15px;
+  }
+  .apex-theme-info {
+    padding-left: 0;
+  }
+  .info-card {
+    padding: 5px;
+  }
+  .rs-payment-icons {
+    margin-bottom: 20px;
+  }
+  button.m-add-to-cart.rs-add-btn {
+    margin-top: 10px;
+    margin-bottom: 18px;
+  }
 }
 .benefit-button {
   position: relative;
