@@ -127,12 +127,6 @@
             "featurelist_item_size": 14
           }
         },
-        "add_btn_y7pncR": {
-          "type": "addBtn",
-          "settings": {
-            "btn_text": "Add to Cart"
-          }
-        },
         "product_info_NLVweH": {
           "type": "productInfo",
           "settings": {
@@ -149,6 +143,10 @@
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
           }
+        },
+        "payment_icon_RNgqQN": {
+          "type": "paymentIcon",
+          "settings": {}
         }
       },
       "block_order": [
@@ -161,9 +159,9 @@
         "featurelist_header_iUmbPg",
         "featurelist_item_FgDKxM",
         "featurelist_item_Ji9CER",
-        "add_btn_y7pncR",
         "product_info_NLVweH",
-        "buy_buttons_8rWDxE"
+        "buy_buttons_8rWDxE",
+        "payment_icon_RNgqQN"
       ],
       "settings": {
         "container": "container",
