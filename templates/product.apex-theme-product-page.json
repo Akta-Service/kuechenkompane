@@ -795,8 +795,8 @@
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
       }
     },
     "benefit_text_right_AFHFhC": {
@@ -839,8 +839,8 @@
         "padding_top": 25,
         "padding_bottom": 50,
         "reverse": true,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
       }
     },
     "icon_box_9UtNky": {
