@@ -78,6 +78,44 @@
           "type": "price",
           "settings": {}
         },
+        "featurelist_header_iUmbPg": {
+          "type": "featurelist_header",
+          "settings": {
+            "featureHeader": "30-day satisfaction guarantee",
+            "featurelist_header_color": "#000",
+            "featurelist_header_size": 14
+          }
+        },
+        "featurelist_item_FgDKxM": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14
+          }
+        },
+        "featurelist_item_Ji9CER": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14
+          }
+        },
+        "add_btn_y7pncR": {
+          "type": "addBtn",
+          "settings": {
+            "btn_text": "Add to Cart"
+          }
+        },
+        "product_info_NLVweH": {
+          "type": "productInfo",
+          "settings": {
+            "info_text_1": "30-day satisfaction guarantee",
+            "info_text_2": "free shipping from 70€",
+            "info_text_3": "1 free grinding service in the first year"
+          }
+        },
         "viewer_stock_count_wcg8Ng": {
           "type": "viewerStockCount",
           "settings": {
@@ -102,16 +140,6 @@
             "p_margin_size_mobile_top": 1,
             "p_margin_size_mobile_bottom": 1
           }
-        },
-        "visitors_wLKVcE": {
-          "type": "visitors",
-          "settings": {
-            "color_scheme": "",
-            "live_views_text": "{count_number} people are viewing this right now",
-            "live_views_range": "20-30",
-            "live_view_duration": "10",
-            "live_view_icon_blinks": true
-          }
         }
       },
       "block_order": [
@@ -120,8 +148,12 @@
         "review_tM6YH7",
         "variant_picker_wUBpF8",
         "price_Gwit9y",
-        "viewer_stock_count_wcg8Ng",
-        "visitors_wLKVcE"
+        "featurelist_header_iUmbPg",
+        "featurelist_item_FgDKxM",
+        "featurelist_item_Ji9CER",
+        "add_btn_y7pncR",
+        "product_info_NLVweH",
+        "viewer_stock_count_wcg8Ng"
       ],
       "settings": {
         "container": "container",
