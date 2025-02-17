@@ -42,11 +42,31 @@
     width: calc(100% - 120px);
     margin-bottom: 0;
   }
-  .apex-product-page .m-product-media--slider__thumbnails .swiper-slide {
-    height: auto !important;
+  .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
+    height: inherit !important;
   }
+
   .apex-product-page .m-product-media {
-    padding: 3px;
+    padding: 3px !important;
+  }
+  @media (max-width: 1024px) {
+    .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
+      height: inherit !important;
+      width: 100% !important;
+    }
+    .apex-product-page .m-product-media--slider__images {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .m-product-media--mobile.m-product-media--layout-6.md\:m\:hidden {
+      display: none;
+    }
+    .m-product-media--desktop.m-product-media--wrapper.m-product-media--layout-6 {
+      display: block;
+    }
+    .apex-theme-info {
+      padding-left: 15px;
+    }
   }
 </style>
 <div
@@ -94,8 +114,8 @@
     >
       <product-recently-viewed data-product-id="{{ product.id }}" class="m:hidden"></product-recently-viewed>
       <div class="m-main-product--media m:column {{ media_class }}">
-        <div class="m-product-media--desktop m-product-media--wrapper m-product-media--{{ section.settings.layout }} m:justify-end m:hidden md:m:block">
-          {% render 'product-media', section: section, template_product: true, class: 'm:hidden md:m:block' %}
+        <div class="m-product-media--desktop m-product-media--wrapper m-product-media--{{ section.settings.layout }} m:justify-end ">
+          {% render 'product-media', section: section, template_product: true %}
         </div>
         <div class="m-product-media--mobile m-product-media--{{ section.settings.layout }} md:m:hidden">
           {%- render 'product-media-mobile',
@@ -675,7 +695,7 @@
           "default": 14
         }
       ]
-    },    
+    },
     {
       "type": "paymentIcon",
       "name": "Payment Icon Block",
