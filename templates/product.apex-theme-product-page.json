@@ -41,7 +41,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Effortless cutting thanks to the highest quality!",
+            "subtitle": "Müheloses Schneiden dank höchster Qualität!",
             "subtitle_font_size": 16,
             "subtitle_color": "#1c1c1c"
           }
@@ -58,10 +58,10 @@
             "likeImg1": "shopify://shop_images/Testi3.webp",
             "likeImg2": "shopify://shop_images/Testi1_06655792-039c-4c4c-a68d-210b3c8a4ab8.webp",
             "likeImg3": "shopify://shop_images/Testi2.jpg",
-            "likecount": "1,532+ people",
-            "likeinfo": "are already convinced by oursharp blades!",
-            "demandBadge": "High demand",
-            "demandText": "Many people have viewed this product in the last 24 hours"
+            "likecount": "90,532+ Personen",
+            "likeinfo": "sind bereits von unseren scharfen Klingen überzeugt!",
+            "demandBadge": "Hohe Nachfrage",
+            "demandText": "überdurchschnittlich oft besucht!"
           }
         },
         "price_J4wXWJ": {
@@ -72,8 +72,8 @@
           "type": "viewerStockCount",
           "settings": {
             "viewer_count_font_size": 16,
-            "view_main_text_1": "people",
-            "view_main_text_2": "are currently looking at this product",
+            "view_main_text_1": "Personen",
+            "view_main_text_2": "sehen sich dieses Produkt gerade an!",
             "viewer_text_color": "",
             "viewer_margin_top": 10,
             "viewer_margin_bottom": 10,
@@ -81,8 +81,8 @@
             "margin_size_mobile_top": 1,
             "margin_size_mobile_bottom": 1,
             "product_count_font_size": 16,
-            "product_main_text_1": "Only",
-            "product_main_text_2": "left in stock",
+            "product_main_text_1": "Nur noch",
+            "product_main_text_2": "auf Lager",
             "product_text_color": "",
             "product_count_text_color": "",
             "product_margin_top": 10,
@@ -227,7 +227,7 @@
         "title": "Produktbeschreibung",
         "font_size": 26,
         "font_color": "#000000",
-        "description": "{{ section.settings.product.metafields.custom.accordion_content_1 | metafield_tag }}",
+        "description": "<p>{{ section.settings.product.metafields.custom.accordion_content_1 | metafield_tag }}</p>",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true
