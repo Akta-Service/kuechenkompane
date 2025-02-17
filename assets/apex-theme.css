@@ -536,15 +536,15 @@ a.m-button.m-button--secondary:hover {
 }
 @media only screen and (max-width: 768px) {
   .apex-product-page .m-product-media {
-    padding: 0 !important;
+    padding: 2 !important;
   }
   .apex-product-page
     .m-product-media--layout-6
     .m-product-media--slider__thumbnails
     .swiper-slide {
     height: inherit !important;
-    width: 80px !important;
-    margin-right: 5px !important;
+    width: 60px !important;
+    margin-right: 10px !important;
   }
   .gesehen-in {
     font-size: 16px !important;
