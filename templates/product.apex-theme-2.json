@@ -31,6 +31,22 @@
         "sticky_atc_compare": false
       }
     },
+    "product-details-tabs": {
+      "type": "product-details-tabs",
+      "disabled": true,
+      "custom_css": [
+        ".m-tabs__header {justify-content: flex-start;}"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "badge-hot",
+        "default_open": true,
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "apex_theme_product_page_copy_QiBCwP": {
       "type": "apex-theme-product-page-copy",
       "blocks": {
@@ -38,11 +54,29 @@
           "type": "title",
           "settings": {}
         },
+        "subtitle_CKcXbM": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Effortless cutting thanks to the highest quality!",
+            "subtitle_font_size": 16,
+            "subtitle_color": "#1c1c1c"
+          }
+        },
+        "review_tM6YH7": {
+          "type": "review",
+          "settings": {
+            "p": "4.9/5 Sternen"
+          }
+        },
         "variant_picker_wUBpF8": {
           "type": "variant_picker",
           "settings": {
             "size_title": "Size"
           }
+        },
+        "price_Gwit9y": {
+          "type": "price",
+          "settings": {}
         },
         "visitors_wLKVcE": {
           "type": "visitors",
@@ -57,7 +91,10 @@
       },
       "block_order": [
         "title_kEm6BB",
+        "subtitle_CKcXbM",
+        "review_tM6YH7",
         "variant_picker_wUBpF8",
+        "price_Gwit9y",
         "visitors_wLKVcE"
       ],
       "settings": {
@@ -77,22 +114,6 @@
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
         "sticky_atc_compare": false
-      }
-    },
-    "product-details-tabs": {
-      "type": "product-details-tabs",
-      "disabled": true,
-      "custom_css": [
-        ".m-tabs__header {justify-content: flex-start;}"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "badge-hot",
-        "default_open": true,
-        "padding_top": 0,
-        "padding_bottom": 50,
-        "custom_class": "",
-        "animations": "inherit"
       }
     },
     "scrolling_promotion_tQjfnh": {
