@@ -98,27 +98,27 @@
         </h4>
       {% when 'ratings' %}
         <div class="rs-product-rating">
-        <div class="rs-liked">
-          <div class="liked-img">
-            {% if block.settings.likeImg1 != blank %}
-              <img src="{{ block.settings.likeImg1 |  img_url: 'small' }}" alt="">
-            {% endif %}
-            {% if block.settings.likeImg2 != blank %}
-              <img src="{{ block.settings.likeImg2 |  img_url: 'small' }}" alt="">
-            {% endif %}
-            {% if block.settings.likeImg3 != blank %}
-              <img src="{{ block.settings.likeImg3 |  img_url: 'small' }}" alt="">
-            {% endif %}
+          <div class="rs-liked">
+            <div class="liked-img">
+              {% if block.settings.likeImg1 != blank %}
+                <img src="{{ block.settings.likeImg1 |  img_url: 'small' }}" alt="">
+              {% endif %}
+              {% if block.settings.likeImg2 != blank %}
+                <img src="{{ block.settings.likeImg2 |  img_url: 'small' }}" alt="">
+              {% endif %}
+              {% if block.settings.likeImg3 != blank %}
+                <img src="{{ block.settings.likeImg3 |  img_url: 'small' }}" alt="">
+              {% endif %}
+            </div>
+            <span class="like-count">{{ block.settings.likecount }}</span>
+            <p class="like-info">{{ block.settings.likeinfo }}</p>
           </div>
-          <span class="like-count">{{ block.settings.likecount }}</span>
-          <p class="like-info">{{ block.settings.likeinfo }}</p>
-        </div>
-        {% if product.tags contains 'HOHE NACHFRAGE' %}
-          <div class="rs-demand-badge">
-            <span class="demand-badge">{{ block.settings.demandBadge }}</span>
-            <span class="demand-text">{{ block.settings.demandText }}</span>
-          </div>
-        {% endif %}
+          {% if product.tags contains 'HOHE NACHFRAGE' %}
+            <div class="rs-demand-badge">
+              <span class="demand-badge">{{ block.settings.demandBadge }}</span>
+              <span class="demand-text">{{ block.settings.demandText }}</span>
+            </div>
+          {% endif %}
         </div>
       {% when 'price' %}
         <div class="rs-price">
@@ -161,12 +161,7 @@
           {% endif %}
           {{ block.settings.featurelist_item }}
         </p>
-      {% when 'addBtn' %}
-        <div class="rs-addBtn">
-          <button class="rs-add-to-cart" data-id="{{ product.selected_or_first_available_variant.id }}">
-            {{ block.settings.btn_text }}
-          </button>
-        </div>
+
       {% when 'paymentIcon' %}
         <div class="rs-payment-icons">
           {%- render 'payment-icons' -%}
@@ -193,10 +188,6 @@
             <p class="product-info-text">{{ block.settings.info_text_3 }}</p>
           </div>
         </div>
-      
-     
-
-     
 
       {%- when 'short_description' -%}
         {% if product.metafields.descriptor.short_description != blank %}
@@ -456,7 +447,7 @@
                 <button
                   type="submit"
                   name="add"
-                  class="m-add-to-cart m-spinner-button m-button {{ btn_class }} {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}"
+                  class="m-add-to-cart rs-add-btn m-spinner-button m-button {{ btn_class }} {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}"
                   data-atc-text="{{ 'products.product.add_to_cart' | t }}"
                 >
                   <span class="m-spinner-icon">
