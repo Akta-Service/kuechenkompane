@@ -415,3 +415,10 @@ select {
     opacity: 1 !important;
   }
 }
+
+.apex-product-page .main-product__block + .main-product__block {
+  margin-top: 0;
+}
+.apex-theme-info {
+  padding-left: 50px;
+}

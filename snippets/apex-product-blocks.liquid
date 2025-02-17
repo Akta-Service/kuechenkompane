@@ -97,7 +97,7 @@
           {{ block.settings.subtitle }}
         </h4>
       {% when 'ratings' %}
-        <div class="rs-product-rating"></div>
+        <div class="rs-product-rating">
         <div class="rs-liked">
           <div class="liked-img">
             {% if block.settings.likeImg1 != blank %}
@@ -119,6 +119,7 @@
             <span class="demand-text">{{ block.settings.demandText }}</span>
           </div>
         {% endif %}
+        </div>
       {% when 'price' %}
         <div class="rs-price">
           <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
