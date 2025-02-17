@@ -55,8 +55,6 @@
             {% render 'product-tags', product: product %}
           </div>
         {% endif %}
-      {%- when 'breadcrumb' -%}
-        {% render 'breadcrumb', container: 'container', justify: align_breadcrumb, hide_current: true %}
       {%- when 'title' -%}
         <div class="product-block-group product-block-group--title">
           {% if is_featured == true %}
@@ -88,112 +86,217 @@
         {% if settings.review_app == 'ali_reviews' %}
           <div product-id="{{ product.id }}" class="alr-display-review-badge"></div>
         {% endif %}
-        {% when 'subtitle' %}
-          <h4
-            class="rs-product-subtitle"
-            style="
-              color: {{ block.settings.subtitle_color | default: '#1c1c1c' }};
-              font-size: clamp(14px, {{ block.settings.subtitle_font_size | default: 16 }}px, 20px);
-            "
-          >
-            {{ block.settings.subtitle }}
-          </h4>
-        {% when 'ratings' %}
-          <div class="rs-product-rating"></div>
-          <div class="rs-liked">
-            <div class="liked-img">
-              {% if block.settings.likeImg1 != blank %}
-                <img src="{{ block.settings.likeImg1 |  img_url: 'small' }}" alt="">
-              {% endif %}
-              {% if block.settings.likeImg2 != blank %}
-                <img src="{{ block.settings.likeImg2 |  img_url: 'small' }}" alt="">
-              {% endif %}
-              {% if block.settings.likeImg3 != blank %}
-                <img src="{{ block.settings.likeImg3 |  img_url: 'small' }}" alt="">
-              {% endif %}
-            </div>
-            <span class="like-count">{{ block.settings.likecount }}</span>
-            <p class="like-info">{{ block.settings.likeinfo }}</p>
+      {% when 'subtitle' %}
+        <h4
+          class="rs-product-subtitle"
+          style="
+            color: {{ block.settings.subtitle_color | default: '#1c1c1c' }};
+            font-size: clamp(14px, {{ block.settings.subtitle_font_size | default: 16 }}px, 20px);
+          "
+        >
+          {{ block.settings.subtitle }}
+        </h4>
+      {% when 'subtitle' %}
+        <h4
+          class="rs-product-subtitle"
+          style="
+            color: {{ block.settings.subtitle_color | default: '#1c1c1c' }};
+            font-size: clamp(14px, {{ block.settings.subtitle_font_size | default: 16 }}px, 20px);
+          "
+        >
+          {{ block.settings.subtitle }}
+        </h4>
+      {% when 'ratings' %}
+        <div class="rs-product-rating"></div>
+        <div class="rs-liked">
+          <div class="liked-img">
+            {% if block.settings.likeImg1 != blank %}
+              <img src="{{ block.settings.likeImg1 |  img_url: 'small' }}" alt="">
+            {% endif %}
+            {% if block.settings.likeImg2 != blank %}
+              <img src="{{ block.settings.likeImg2 |  img_url: 'small' }}" alt="">
+            {% endif %}
+            {% if block.settings.likeImg3 != blank %}
+              <img src="{{ block.settings.likeImg3 |  img_url: 'small' }}" alt="">
+            {% endif %}
           </div>
-          {% if product.tags contains 'HOHE NACHFRAGE' %}
-            <div class="rs-demand-badge">
-              <span class="demand-badge">{{ block.settings.demandBadge }}</span>
-              <span class="demand-text">{{ block.settings.demandText }}</span>
-            </div>
+          <span class="like-count">{{ block.settings.likecount }}</span>
+          <p class="like-info">{{ block.settings.likeinfo }}</p>
+        </div>
+        {% if product.tags contains 'HOHE NACHFRAGE' %}
+          <div class="rs-demand-badge">
+            <span class="demand-badge">{{ block.settings.demandBadge }}</span>
+            <span class="demand-text">{{ block.settings.demandText }}</span>
+          </div>
+        {% endif %}
+      {% when 'price' %}
+        <div class="rs-price">
+          <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+          {% if product.selected_or_first_available_variant.price < product.compare_at_price %}
+            <span class="compare-price">{{ product.compare_at_price | money }}</span>
           {% endif %}
-        {% when 'price' %}
-          <div class="rs-price">
-            <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
-            {% if product.selected_or_first_available_variant.price < product.compare_at_price %}
-              <span class="compare-price">{{ product.compare_at_price | money }}</span>
-            {% endif %}
-          </div>
-        {% when 'viewerStockCount' %}
-          {% render 'viewer-stock-count', block: block %}
-        {% when 'featurelist_header' %}
-          <p
-            class="feature-header"
-            style="
-              color:{{ block.settings.featurelist_header_color |  default: '#000' }};
-              font-size: {{ block.settings.featurelist_header_size |  default: 14}}px;
-            "
-          >
-            {% if block.settings.featureHeader != blank %}
-              <img
-                src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/feature-icon.jpg?v=1739338221"
-                alt="Feature Icon"
-              >
-            {% endif %}
-            {{ block.settings.featureHeader }}
-          </p>
-        {% when 'featurelist_item' %}
-          <p
-            class="product-feature-item"
-            style="
-              color:{{ block.settings.featurelist_item_color |  default: '#000' }};
-              font-size: {{ block.settings.featurelist_item_size |  default: 14}}px;
-            "
-          >
-            {% if block.settings.featurelist_item != blank %}
-              <img
-                src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/ok-icon.png?v=1739338478"
-                alt="Feature Icon"
-              >
-            {% endif %}
-            {{ block.settings.featurelist_item }}
-          </p>
-        {% when 'addBtn' %}
-          <div class="rs-addBtn">
-            <button class="rs-add-to-cart" data-id="{{ product.selected_or_first_available_variant.id }}">
-              {{ block.settings.btn_text }}
-            </button>
-          </div>
-        {% when 'paymentIcon' %}
-          <div class="rs-payment-icons">
-            {%- render 'payment-icons.liquid' -%}
-          </div>
+        </div>
+      {% when 'viewerStockCount' %}
+        {% render 'viewer-stock-count', block: block %}
+      {% when 'featurelist_header' %}
+        <p
+          class="feature-header"
+          style="
+            color:{{ block.settings.featurelist_header_color |  default: '#000' }};
+            font-size: {{ block.settings.featurelist_header_size |  default: 14}}px;
+          "
+        >
+          {% if block.settings.featureHeader != blank %}
+            <img
+              src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/feature-icon.jpg?v=1739338221"
+              alt="Feature Icon"
+            >
+          {% endif %}
+          {{ block.settings.featureHeader }}
+        </p>
+      {% when 'featurelist_item' %}
+        <p
+          class="product-feature-item"
+          style="
+            color:{{ block.settings.featurelist_item_color |  default: '#000' }};
+            font-size: {{ block.settings.featurelist_item_size |  default: 14}}px;
+          "
+        >
+          {% if block.settings.featurelist_item != blank %}
+            <img
+              src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/ok-icon.png?v=1739338478"
+              alt="Feature Icon"
+            >
+          {% endif %}
+          {{ block.settings.featurelist_item }}
+        </p>
+      {% when 'addBtn' %}
+        <div class="rs-addBtn">
+          <button class="rs-add-to-cart" data-id="{{ product.selected_or_first_available_variant.id }}">
+            {{ block.settings.btn_text }}
+          </button>
+        </div>
+      {% when 'paymentIcon' %}
+        <div class="rs-payment-icons">
+          {%- render 'payment-icons' -%}
+        </div>
 
-        {% when 'productInfo' %}
-          <div class="rs-product-info">
-            <div class="info-card">
-              {% if block.settings.info_text_1 != blank %}
-                <img src="{{ block.settings.info_img_1 |  img_url: 'medium' }}" alt="" class="info-icon">
-              {% endif %}
-              <p class="product-info-text">{{ block.settings.info_text_1 }}</p>
-            </div>
-            <div class="info-card">
-              {% if block.settings.info_text_2 != blank %}
-                <img src="{{ block.settings.info_img_2 |  img_url: 'medium' }}" alt="" class="info-icon">
-              {% endif %}
-              <p class="product-info-text">{{ block.settings.info_text_2 }}</p>
-            </div>
-            <div class="info-card">
-              {% if block.settings.info_text_3 != blank %}
-                <img src="{{ block.settings.info_img_3 |  img_url: 'medium' }}" alt="" class="info-icon">
-              {% endif %}
-              <p class="product-info-text">{{ block.settings.info_text_3 }}</p>
-            </div>
+      {% when 'productInfo' %}
+        <div class="rs-product-info">
+          <div class="info-card">
+            {% if block.settings.info_text_1 != blank %}
+              <img src="{{ block.settings.info_img_1 |  img_url: 'medium' }}" alt="" class="info-icon">
+            {% endif %}
+            <p class="product-info-text">{{ block.settings.info_text_1 }}</p>
           </div>
+          <div class="info-card">
+            {% if block.settings.info_text_2 != blank %}
+              <img src="{{ block.settings.info_img_2 |  img_url: 'medium' }}" alt="" class="info-icon">
+            {% endif %}
+            <p class="product-info-text">{{ block.settings.info_text_2 }}</p>
+          </div>
+          <div class="info-card">
+            {% if block.settings.info_text_3 != blank %}
+              <img src="{{ block.settings.info_img_3 |  img_url: 'medium' }}" alt="" class="info-icon">
+            {% endif %}
+            <p class="product-info-text">{{ block.settings.info_text_3 }}</p>
+          </div>
+        </div>
+      {% when 'ratings' %}
+        <div class="rs-product-rating"></div>
+        <div class="rs-liked">
+          <div class="liked-img">
+            {% if block.settings.likeImg1 != blank %}
+              <img src="{{ block.settings.likeImg1 |  img_url: 'small' }}" alt="">
+            {% endif %}
+            {% if block.settings.likeImg2 != blank %}
+              <img src="{{ block.settings.likeImg2 |  img_url: 'small' }}" alt="">
+            {% endif %}
+            {% if block.settings.likeImg3 != blank %}
+              <img src="{{ block.settings.likeImg3 |  img_url: 'small' }}" alt="">
+            {% endif %}
+          </div>
+          <span class="like-count">{{ block.settings.likecount }}</span>
+          <p class="like-info">{{ block.settings.likeinfo }}</p>
+        </div>
+        {% if product.tags contains 'HOHE NACHFRAGE' %}
+          <div class="rs-demand-badge">
+            <span class="demand-badge">{{ block.settings.demandBadge }}</span>
+            <span class="demand-text">{{ block.settings.demandText }}</span>
+          </div>
+        {% endif %}
+      {% when 'price' %}
+        <div class="rs-price">
+          <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+          {% if product.selected_or_first_available_variant.price < product.compare_at_price %}
+            <span class="compare-price">{{ product.compare_at_price | money }}</span>
+          {% endif %}
+        </div>
+      {% when 'viewerStockCount' %}
+        {% render 'viewer-stock-count', block: block %}
+      {% when 'featurelist_header' %}
+        <p
+          class="feature-header"
+          style="
+            color:{{ block.settings.featurelist_header_color |  default: '#000' }};
+            font-size: {{ block.settings.featurelist_header_size |  default: 14}}px;
+          "
+        >
+          {% if block.settings.featureHeader != blank %}
+            <img
+              src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/feature-icon.jpg?v=1739338221"
+              alt="Feature Icon"
+            >
+          {% endif %}
+          {{ block.settings.featureHeader }}
+        </p>
+      {% when 'featurelist_item' %}
+        <p
+          class="product-feature-item"
+          style="
+            color:{{ block.settings.featurelist_item_color |  default: '#000' }};
+            font-size: {{ block.settings.featurelist_item_size |  default: 14}}px;
+          "
+        >
+          {% if block.settings.featurelist_item != blank %}
+            <img
+              src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/ok-icon.png?v=1739338478"
+              alt="Feature Icon"
+            >
+          {% endif %}
+          {{ block.settings.featurelist_item }}
+        </p>
+      {% when 'addBtn' %}
+        <div class="rs-addBtn">
+          <button class="rs-add-to-cart" data-id="{{ product.selected_or_first_available_variant.id }}">
+            {{ block.settings.btn_text }}
+          </button>
+        </div>
+      {% when 'paymentIcon' %}
+        <div class="rs-payment-icons">
+          {%- render 'payment-icons.liquid' -%}
+        </div>
+      {% when 'productInfo' %}
+        <div class="rs-product-info">
+          <div class="info-card">
+            {% if block.settings.info_text_1 != blank %}
+              <img src="{{ block.settings.info_img_1 |  img_url: 'medium' }}" alt="" class="info-icon">
+            {% endif %}
+            <p class="product-info-text">{{ block.settings.info_text_1 }}</p>
+          </div>
+          <div class="info-card">
+            {% if block.settings.info_text_2 != blank %}
+              <img src="{{ block.settings.info_img_2 |  img_url: 'medium' }}" alt="" class="info-icon">
+            {% endif %}
+            <p class="product-info-text">{{ block.settings.info_text_2 }}</p>
+          </div>
+          <div class="info-card">
+            {% if block.settings.info_text_3 != blank %}
+              <img src="{{ block.settings.info_img_3 |  img_url: 'medium' }}" alt="" class="info-icon">
+            {% endif %}
+            <p class="product-info-text">{{ block.settings.info_text_3 }}</p>
+          </div>
+        </div>
       {%- when 'short_description' -%}
         {% if product.metafields.descriptor.short_description != blank %}
           <div class="m-product-description">{{ product.metafields.descriptor.short_description }}</div>
@@ -897,6 +1000,8 @@
             ]
           </script>
         </m-product-inventory>
+      {%- when 'breadcrumb' -%}
+        {% render 'breadcrumb', container: 'container', justify: align_breadcrumb, hide_current: true %}
     {%- endcase -%}
   </div>
 {%- endfor -%}
