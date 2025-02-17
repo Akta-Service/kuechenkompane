@@ -292,30 +292,32 @@
       <div class="swiper video_slider video_slider_active">
         <div class="swiper-wrapper">
           {% for block in section.blocks %}
-            <div class="swiper-slide">
-              <div class="video_item open-popup" data-target="{{- forloop.index -}}">
-                <video muted>
-                  <source
-                    src="{{ block.settings.video.sources[1].url }}"
-                    type="video/mp4"
-                  >
-                </video>
-                <div class="play_btn">
-                  <span>
-                    <svg
-                      class=""
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
+            {% if block.settings.video.sources[1].url != blank %}
+              <div class="swiper-slide">
+                <div class="video_item open-popup" data-target="{{- forloop.index -}}">
+                  <video muted>
+                    <source
+                      src="{{ block.settings.video.sources[1].url }}"
+                      type="video/mp4"
                     >
-                      <path d="M4 3.532c0-1.554 1.696-2.514 3.029-1.715l14.113 8.468c1.294.777 1.294 2.653 0 3.43L7.029 22.183c-1.333.8-3.029-.16-3.029-1.715V3.532Z" fill="#fff"></path>
-                    </svg>
-                  </span>
+                  </video>
+                  <div class="play_btn">
+                    <span>
+                      <svg
+                        class=""
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path d="M4 3.532c0-1.554 1.696-2.514 3.029-1.715l14.113 8.468c1.294.777 1.294 2.653 0 3.43L7.029 22.183c-1.333.8-3.029-.16-3.029-1.715V3.532Z" fill="#fff"></path>
+                      </svg>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
+            {% endif %}
           {% endfor %}
         </div>
         <div class="swiper-button-next">
