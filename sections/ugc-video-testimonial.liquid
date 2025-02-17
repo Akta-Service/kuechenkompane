@@ -295,7 +295,12 @@
             {% if block.settings.video.sources[1].url != blank %}
               <div class="swiper-slide">
                 <div class="video_item open-popup" data-target="{{- forloop.index -}}">
-                  <video muted>
+                  <video
+                    muted
+                    {% if block.settings.explanation_video_poster %}
+                      poster="{{ block.settings.video_poster | img_url : 'master'  }}"
+                    {% endif %}
+                  >
                     <source
                       src="{{ block.settings.video.sources[1].url }}"
                       type="video/mp4"
@@ -454,6 +459,11 @@
       "name": "Add Testimonial Produt",
       "type": "item",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "video_poster",
+          "label": "Video Poster Image"
+        },
         {
           "type": "video",
           "id": "video",
