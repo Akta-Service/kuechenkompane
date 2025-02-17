@@ -528,3 +528,6 @@ a.m-button.m-button--secondary:hover {
   button.swiper-button-control.swiper-button-next.m-button--icon {
   transform: rotate(180deg);
 }
+.m-product-media--slider .swiper-button-control {
+  background: #4b4b4b;
+}
