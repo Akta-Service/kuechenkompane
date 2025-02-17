@@ -78,6 +78,31 @@
           "type": "price",
           "settings": {}
         },
+        "viewer_stock_count_wcg8Ng": {
+          "type": "viewerStockCount",
+          "settings": {
+            "viewer_count_font_size": 16,
+            "view_main_text_1": "people",
+            "view_main_text_2": "are currently looking at this product",
+            "viewer_text_color": "",
+            "viewer_margin_top": 10,
+            "viewer_margin_bottom": 10,
+            "viewer_count_text_color": "",
+            "margin_size_mobile_top": 1,
+            "margin_size_mobile_bottom": 1,
+            "product_count_font_size": 16,
+            "product_main_text_1": "Only",
+            "product_main_text_2": "left in stock",
+            "product_text_color": "",
+            "product_count_text_color": "",
+            "product_margin_top": 10,
+            "product_margin_bottom": 10,
+            "viewer_count_time": 2500,
+            "stock_count_time": 5000,
+            "p_margin_size_mobile_top": 1,
+            "p_margin_size_mobile_bottom": 1
+          }
+        },
         "visitors_wLKVcE": {
           "type": "visitors",
           "settings": {
@@ -95,6 +120,7 @@
         "review_tM6YH7",
         "variant_picker_wUBpF8",
         "price_Gwit9y",
+        "viewer_stock_count_wcg8Ng",
         "visitors_wLKVcE"
       ],
       "settings": {
