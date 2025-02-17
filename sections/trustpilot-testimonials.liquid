@@ -43,11 +43,8 @@
     border-radius: 2px;
     box-shadow: 0 1px 0 0 rgba(182, 196, 210, 0.4);
     line-height: 16px;
-    margin: 0 24px 0 0;
     padding: 15px;
     position: relative;
-    vertical-align: middle;
-    white-space: normal;
   }
 
   .trustpilot-title {
@@ -63,11 +60,7 @@
     color: {{ section.settings.h_text_color }};
   }
 
-  .trustpilot-testimonials-list {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
+
 
   .testimonial-review {
     display: flex;
@@ -179,6 +172,9 @@
     right: 0;
     left: auto;
      }
+     .trustpilot-heading {
+      margin-bottom: 30px;
+    }
   }
   @media only screen and (max-width: 520px) {
     .trustpilot-title {
@@ -196,7 +192,7 @@
       </h3>
     </div>
     <div class="testimonial-slider-wrapper">
-      <div class="trustpilot-testimonials swiper trustpilot-testimonials">
+      <div class="trustpilot-testimonials swiper">
         <div class="trustpilot-testimonials-list swiper-wrapper">
           {% comment %} loop slide  {% endcomment %}
           {% for block in section.blocks %}
@@ -437,7 +433,8 @@
 <script>
   const swiper_trush = new Swiper('.trustpilot-testimonials', {
     slidesPerView: 5,
-    spaceBetween: 10,
+    spaceBetween: 20,
+    loop: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -445,19 +442,15 @@
     breakpoints: {
       0: {
         slidesPerView: 1,
-        loop: true,
       },
       580: {
         slidesPerView: 2,
-        loop: true,
       },
       888: {
         slidesPerView: 3,
-        loop: true,
       },
       1108: {
         slidesPerView: 4,
-        loop: true,
       },
       1344: {
         slidesPerView: 5,
