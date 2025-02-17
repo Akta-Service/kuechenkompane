@@ -139,7 +139,7 @@
         <h2 class="des-title">{{ section.settings.title }}</h2>
      
         {% if    product.metafields.custom.product_form_short_description != blank %}
-
+{{product.metafields.custom.product_form_short_description }}
         {%    elsif section.settings.description != blank %}
           <p class="product-des {% if section.settings.add_showore_btn %}hideContent{% endif %}">
             {{ section.settings.description }}
@@ -215,7 +215,7 @@
       "default": "#000"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "description",
       "label": "Product description",
       "info": "If Want Default Description Keep Blank"
