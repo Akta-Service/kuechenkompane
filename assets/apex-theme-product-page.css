@@ -431,6 +431,8 @@ button.m-add-to-cart.rs-add-btn {
   box-shadow: none;
   border: none;
   outline: none;
+  margin-top: 15px;
+  margin-bottom: 25px;
 }
 button.m-add-to-cart.rs-add-btn:hover {
   box-shadow: none;

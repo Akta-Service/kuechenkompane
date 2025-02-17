@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
     .store-benefits-bottom{
       padding-top: {{- section.settings.pt -}}px;
@@ -17,21 +18,28 @@
 <div class="store-benefits-bottom">
   <div class="rs-container">
     <div class="store-benefits-row">
-      {% for block in section.blocks %}
-        <div class="store-benefit">
-          <div class="store-benefit-icon">
-            {%- if block.settings['svg-code'] != blank -%}
-              {{ block.settings['svg-code'] | replace: ' width=', ' ' | replace: ' height=', ' ' }}
-            {% else %}
-              {% render 'store-benefit-icons', icon: block.settings.icon %}
-            {% endif %}
-          </div>
-          <h4 class="store-benefit-text">{{ block.settings.store_benefit_text }}</h4>
+      <div class="swiper store-benefits-active">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <div class="store-benefit">
+                <div class="store-benefit-icon">
+                  {%- if block.settings['svg-code'] != blank -%}
+                    {{ block.settings['svg-code'] | replace: ' width=', ' ' | replace: ' height=', ' ' }}
+                  {% else %}
+                    {% render 'store-benefit-icons', icon: block.settings.icon %}
+                  {% endif %}
+                </div>
+                <h4 class="store-benefit-text">{{ block.settings.store_benefit_text }}</h4>
+              </div>
+            </div>
+          {% endfor %}
         </div>
-      {% endfor %}
+      </div>
     </div>
   </div>
 </div>
+
 {% schema %}
 {
   "name": "Store Benefits Bottom",
@@ -151,3 +159,28 @@
   ]
 }
 {% endschema %}
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  const swiper = new Swiper('.store-benefits-active', {
+    slidesPerView: 5,
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+    },
+  });
+</script>

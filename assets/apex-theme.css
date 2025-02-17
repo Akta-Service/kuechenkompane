@@ -248,14 +248,7 @@ span.faq-icon {
 }
 
 /* store benefit  */
-.store-benefits-row {
-  display: flex;
-  margin: 0;
-  align-items: center;
-  gap: 15px 30px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
+
 .store-benefit-text {
   text-transform: uppercase;
   padding-top: 2px;
@@ -272,6 +265,7 @@ span.faq-icon {
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: center;
 }
 .store-benefits-bottom .rs-container {
   max-width: 1540px;
@@ -385,12 +379,7 @@ span.faq-icon {
 /* ----------------------------------- */
 /* small device */
 /* ----------------------------------- */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .store-benefits-row {
-    justify-content: center;
-    gap: 15px 10px;
-  }
-}
+
 @media only screen and (max-width: 768px) {
   .benefit-row {
     flex-direction: column;
@@ -438,11 +427,7 @@ span.faq-icon {
   .faqs-sub-title {
     margin-bottom: 0;
   }
-  .store-benefits-row {
-    flex-direction: column;
-    align-items: start;
-    gap: 34px 0;
-  }
+
   .store-benefits-bottom .rs-container {
     padding: 0 15px;
   }
