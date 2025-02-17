@@ -1,3 +1,4 @@
+{% if section.blocks.size > 0 %}
 <section class="best-selling-collections">
   <div class="container">
     <h2 class="section-title">
@@ -6,43 +7,39 @@
     <div class="collections-grid">
       {% for block in section.blocks %}
         {% assign collection = collections[block.settings.collection] %}
-
-        {% if collection == blank %}
-          {% continue %} {# Skip empty collections #}
+        {% if collection != blank %}
+          <div class="collection-item">
+            <a href="{{ collection.url }}">
+              <div class="collection-image">
+                {% if block.settings.custom_image != blank %}
+                  <img src="{{ block.settings.custom_image | img_url: 'large' }}" alt="{{ block.settings.custom_title | default: collection.title }}">
+                {% elsif collection.image %}
+                  <img src="{{ collection.image | img_url: 'large' }}" alt="{{ collection.title }}">
+                {% elsif collection.products.first.featured_image %}
+                  <img src="{{ collection.products.first.featured_image | img_url: 'large' }}" alt="{{ collection.title }}">
+                {% else %}
+                  <img src="https://via.placeholder.com/200" alt="No image available">
+                {% endif %}
+              </div>
+              <div class="collection-title">
+                <h3>{{ block.settings.custom_title | default: collection.title }}</h3>
+              </div>
+            </a>
+          </div>
         {% endif %}
-
-        <div class="collection-item">
-          <a href="{{ collection.url }}">
-            <div class="collection-image">
-              {% if block.settings.custom_image != blank %}
-                <img src="{{ block.settings.custom_image | img_url: 'large' }}" alt="{{ block.settings.custom_title | default: collection.title }}">
-              {% elsif collection.image %}
-                <img src="{{ collection.image | img_url: 'large' }}" alt="{{ collection.title }}">
-              {% elsif collection.products.first.featured_image %}
-                <img src="{{ collection.products.first.featured_image | img_url: 'large' }}" alt="{{ collection.title }}">
-              {% else %}
-                <img src="https://via.placeholder.com/200" alt="No image available"> {# Placeholder Image #}
-              {% endif %}
-            </div>
-            <div class="collection-title">
-              <h3>{{ block.settings.custom_title | default: collection.title }}</h3>
-            </div>
-          </a>
-        </div>
       {% endfor %}
     </div>
   </div>
 </section>
+{% endif %}
 
 <style>
-  /* Allgemeines Layout */
   .best-selling-collections {
     text-align: center;
     padding: 50px 20px;
     background-color: #F8F8F8;
   }
 
-  /* Titel-Design */
   .best-selling-collections .section-title {
     font-size: 28px;
     font-weight: bold;
@@ -52,47 +49,41 @@
     letter-spacing: 1px;
   }
 
-  /* Grid Layout */
   .collections-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Mobile: 2 pro Reihe */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     justify-content: center;
   }
 
-  /* Produktkarten */
   .collection-item {
     background: white;
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease-in-out;
-    padding: 10px; /* Weniger Padding für größere Bilder */
+    padding: 10px;
     text-align: center;
     position: relative;
     overflow: hidden;
   }
 
-  /* Hover-Effekt */
   .collection-item:hover {
     transform: translateY(-5px);
     box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
   }
 
-  /* Produktbilder */
   .collection-item img {
     width: 100%;
-    max-width: 140px; /* Größere Bilder */
+    max-width: 140px;
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
   }
 
-  /* Hover-Effekt für Bilder */
   .collection-item img:hover {
     transform: scale(1.08);
   }
 
-  /* Titel der Kategorien */
   .collection-title h3 {
     font-size: 18px;
     margin-top: 12px;
@@ -100,14 +91,14 @@
     color: #444;
   }
 
-  /* Desktop-Version: 6 Spalten */
   @media (min-width: 1024px) {
     .collections-grid {
-      grid-template-columns: repeat(6, 1fr); /* 6 pro Reihe */
+      grid-template-columns: repeat(6, 1fr);
       gap: 30px;
     }
     .collection-item img {
-      max-width: 160px; /* Noch größere Bilder für Desktop */
+      max-width: 160px;
     }
   }
 </style>
+
