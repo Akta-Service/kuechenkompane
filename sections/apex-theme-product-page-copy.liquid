@@ -1,4 +1,5 @@
 {{ 'product.css' | asset_url | stylesheet_tag }}
+{{ 'apex-theme-product-page.css' | asset_url | stylesheet_tag }}
 {% if section.settings.show_zoom_button %}
   {{ 'photoswipe.css' | asset_url | stylesheet_tag }}
   {{ 'component-photoswipe.css' | asset_url | stylesheet_tag }}
@@ -43,6 +44,9 @@
   }
   .apex-product-page .m-product-media--slider__thumbnails .swiper-slide {
     height: auto !important;
+  }
+  .apex-product-page .m-product-media {
+    padding: 3px;
   }
 </style>
 <div
@@ -153,7 +157,7 @@
       </div>
       <div class="m-main-product--info m:column {{ info_class }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
         <div class="m-product-info--wrapper m:text-color-body">
-          {% render 'main-product-blocks', section: section, product: product %}
+          {% render 'apex-product-blocks', section: section, product: product %}
         </div>
       </div>
       <script id="productData" type="application/json">
@@ -364,56 +368,377 @@
   "blocks": [
     {
       "type": "@app"
-    },
-    {
-      "type": "title",
-      "name": "Product title",
-      "limit": 1
-    },
-    {
-      "type": "rating",
-      "name": "Product rating",
-      "limit": 1,
+    },{
+      "type": "review",
+      "name": "Review Count",
       "settings": [
         {
-          "type": "paragraph",
-          "content": "To display a rating, add a product reviews app.\nGo to Theme settings -> Integrated apps -> Product reviews to choose the app which you are using."
+          "type": "text",
+          "id": "p",
+          "label": "Put the review count",
+          "default": "4.9/5 Sternen"
+        }
+      ]
+    },
+    {
+      "type": "subtitle",
+      "name": "Subtitle Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Add Sub Title",
+          "default": "Effortless cutting thanks to the highest quality!"
+        },
+        {
+          "type": "range",
+          "id": "subtitle_font_size",
+          "label": "Subtitle Font Size",
+          "default": 16,
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "subtitle_color",
+          "label": "Subtitle Color",
+          "default": "#1c1c1c"
+        }
+      ]
+    },
+    {
+      "type": "ratings",
+      "name": "Ratings Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "likeImg1",
+          "label": "Like Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "likeImg2",
+          "label": "Like Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "likeImg3",
+          "label": "Like Image 3"
+        },
+        {
+          "type": "text",
+          "id": "likecount",
+          "label": "Like Count",
+          "default": "1,532+ people"
+        },
+        {
+          "type": "text",
+          "id": "likeinfo",
+          "label": "Like Info",
+          "default": "are already convinced by oursharp blades!"
+        },
+        {
+          "type": "text",
+          "id": "demandBadge",
+          "label": "Demand Badge",
+          "default": "High demand"
+        },
+        {
+          "type": "text",
+          "id": "demandText",
+          "label": "Demand Text",
+          "default": "Many people have viewed this product in the last 24 hours"
         }
       ]
     },
     {
       "type": "price",
-      "name": "Price",
-      "limit": 1,
+      "name": "Price Block",
+      "settings": []
+    },
+    {
+      "type": "viewerStockCount",
+      "name": "View and Stock Count",
       "settings": [
         {
-          "type": "checkbox",
-          "id": "show_saving",
-          "default": false,
-          "label": "Show saving amount"
+          "type": "range",
+          "id": "viewer_count_font_size",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
         },
         {
-          "type": "select",
-          "label": "Type",
-          "id": "sale_badge_type",
-          "default": "percentage",
-          "options": [
-            {
-              "label": "Percentage",
-              "value": "percentage"
-            },
-            {
-              "label": "Text",
-              "value": "text"
-            },
-            {
-              "label": "Fixed amount",
-              "value": "fixed_amount"
-            }
-          ]
+          "type": "text",
+          "id": "view_main_text_1",
+          "label": "View Main Text",
+          "default": "people"
+        },
+        {
+          "type": "text",
+          "id": "view_main_text_2",
+          "label": "View Main Text",
+          "default": "are currently looking at this product"
+        },
+        {
+          "type": "color",
+          "id": "viewer_text_color",
+          "label": "Color"
+        },
+        {
+          "type": "range",
+          "id": "viewer_margin_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Add Margin Top",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "viewer_margin_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Add Margin Bottom",
+          "default": 10
+        },
+        {
+          "type": "color",
+          "id": "viewer_count_text_color",
+          "label": "Color"
+        },
+        {
+          "type": "range",
+          "id": "margin_size_mobile_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Mobile Margin Top",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "margin_size_mobile_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Mobile Margin Bottom",
+          "default": 1
+        },
+
+        {
+          "type": "range",
+          "id": "product_count_font_size",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
+        },
+        {
+          "type": "text",
+          "id": "product_main_text_1",
+          "label": "Product Main Text ",
+          "default": "Only"
+        },
+        {
+          "type": "text",
+          "id": "product_main_text_2",
+          "label": "Product Main Text",
+          "default": "left in stock"
+        },
+        {
+          "type": "color",
+          "id": "product_text_color",
+          "label": "Color"
+        },
+        {
+          "type": "color",
+          "id": "product_count_text_color",
+          "label": "Count Text Color"
+        },
+        {
+          "type": "range",
+          "id": "product_margin_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Add Margin Top",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "product_margin_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Add Margin Bottom",
+          "default": 10
+        },
+        {
+          "type": "number",
+          "id": "viewer_count_time",
+          "label": "Add Viewer Update Time Delay (milliseconds )",
+          "default": 2500
+        },
+        {
+          "type": "number",
+          "id": "stock_count_time",
+          "label": "Add Stock Update Time Delay (milliseconds )",
+          "default": 5000
+        },
+        {
+          "type": "range",
+          "id": "p_margin_size_mobile_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Mobile Margin Top",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "p_margin_size_mobile_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Mobile Margin Bottom",
+          "default": 1
         }
       ]
     },
+    {
+      "type": "featurelist_header",
+      "name": "Feature List Header",
+      "settings": [
+        {
+          "type": "text",
+          "id": "featureHeader",
+          "label": "Feature Header",
+          "default": "30-day satisfaction guarantee"
+        },
+        {
+          "type": "color",
+          "id": "featurelist_header_color",
+          "label": "Feature List Header Color",
+          "default": "#000"
+        },
+        {
+          "type": "range",
+          "id": "featurelist_header_size",
+          "label": "Feature List Header Size",
+          "default": 14,
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px"
+        }
+      ]
+    },
+    {
+      "type": "featurelist_item",
+      "name": "Feature List Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "featurelist_item",
+          "label": "Feature List Item",
+          "default": "3-layer carbon steel"
+        },
+        {
+          "type": "color",
+          "id": "featurelist_item_color",
+          "label": "Item Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "featurelist_item_size",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Featurelist Item Size",
+          "default": 14
+        }
+      ]
+    },
+    {
+      "type": "addBtn",
+      "name": "Add Button Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "default": "Add to Cart"
+        }
+      ]
+    },
+    {
+      "type": "paymentIcon",
+      "name": "Payment Icon Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "payment_img",
+          "label": "Payment Icon"
+        }
+      ]
+    },
+    {
+      "type": "productInfo",
+      "name": "Product Info Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "info_img_1",
+          "label": "Info Image 1"
+        },
+        {
+          "type": "text",
+          "id": "info_text_1",
+          "label": "Info Text 1",
+          "default": "30-day satisfaction guarantee"
+        },
+        {
+          "type": "image_picker",
+          "id": "info_img_2",
+          "label": "Info Image 2"
+        },
+        {
+          "type": "text",
+          "id": "info_text_2",
+          "label": "Info Text 2",
+          "default": "free shipping from 70€"
+        },
+        {
+          "type": "image_picker",
+          "id": "info_img_3",
+          "label": "Info Image 3"
+        },
+        {
+          "type": "text",
+          "id": "info_text_3",
+          "label": "Info Text 3",
+          "default": "1 free grinding service in the first year"
+        }
+      ]
+    }
     {
       "type": "variant_picker",
       "name": "Variants selector",
