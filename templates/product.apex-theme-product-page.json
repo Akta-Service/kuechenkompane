@@ -75,7 +75,7 @@
             "view_main_text_1": "people",
             "view_main_text_2": "are currently looking at this product",
             "viewer_text_color": "",
-            "viewer_margin_top": 1,
+            "viewer_margin_top": 10,
             "viewer_margin_bottom": 10,
             "viewer_count_text_color": "",
             "margin_size_mobile_top": 1,
@@ -85,7 +85,7 @@
             "product_main_text_2": "left in stock",
             "product_text_color": "",
             "product_count_text_color": "",
-            "product_margin_top": 1,
+            "product_margin_top": 10,
             "product_margin_bottom": 10,
             "viewer_count_time": 2500,
             "stock_count_time": 5000,
@@ -295,7 +295,6 @@
         "item_7xpaVV": {
           "type": "item",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_1.jpg",
             "video": "shopify://files/videos/Küchenkompane (3).mp4",
             "product": "premium"
           }
@@ -303,7 +302,6 @@
         "item_iJxMti": {
           "type": "item",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_2.jpg",
             "video": "shopify://files/videos/Review-2.mp4",
             "product": "premium"
           }
@@ -311,7 +309,6 @@
         "item_UYW7B3": {
           "type": "item",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_3.jpg",
             "video": "shopify://files/videos/Reeview-1.mp4",
             "product": "premium"
           }
@@ -319,7 +316,6 @@
         "item_ft7YRa": {
           "type": "item",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_4.jpg",
             "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V3.mp4",
             "product": "premium"
           }
@@ -327,7 +323,6 @@
         "item_tYitmU": {
           "type": "item",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_5.jpg",
             "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V2.mov",
             "product": "premium"
           }
@@ -335,7 +330,6 @@
         "item_cHcggm": {
           "type": "item",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_6.jpg",
             "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V1.mp4",
             "product": ""
           }
@@ -564,9 +558,8 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/4e0b38fe26e7454c8d484e92f7d891b1.mp4",
-            "autoplay": true,
-            "explanation_video_poster": "shopify://shop_images/IMG_7091_V9_1_ec86dd50-f0d5-4165-9625-fbfd78ab747b.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
+            "autoplay": false,
             "loop": true,
             "muted": true,
             "playsinline": true,
@@ -624,8 +617,8 @@
       "settings": {
         "padding_top": 13,
         "padding_bottom": 50,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
       }
     },
     "us_vs_them_8Tbqki": {
@@ -802,8 +795,8 @@
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
       }
     },
     "benefit_text_right_AFHFhC": {
@@ -846,8 +839,8 @@
         "padding_top": 25,
         "padding_bottom": 50,
         "reverse": true,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 30
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
       }
     },
     "icon_box_9UtNky": {
