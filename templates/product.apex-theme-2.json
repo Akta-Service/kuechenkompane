@@ -82,7 +82,7 @@
           "type": "featurelist_header",
           "settings": {
             "featureHeader": "30-day satisfaction guarantee",
-            "featurelist_header_color": "#000",
+            "featurelist_header_color": "#000000",
             "featurelist_header_size": 14
           }
         },
@@ -140,6 +140,15 @@
             "p_margin_size_mobile_top": 1,
             "p_margin_size_mobile_bottom": 1
           }
+        },
+        "buy_buttons_8rWDxE": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_atc_button": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
         }
       },
       "block_order": [
@@ -153,7 +162,8 @@
         "featurelist_item_Ji9CER",
         "add_btn_y7pncR",
         "product_info_NLVweH",
-        "viewer_stock_count_wcg8Ng"
+        "viewer_stock_count_wcg8Ng",
+        "buy_buttons_8rWDxE"
       ],
       "settings": {
         "container": "container",
