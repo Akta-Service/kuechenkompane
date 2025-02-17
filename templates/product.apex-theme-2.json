@@ -278,7 +278,20 @@
         "heading_7M7agE": {
           "type": "heading",
           "settings": {
-            "heading": "Warum Küchenkompane?"
+            "heading": "Warum Küchenkompane?",
+            "h1_font_size": 32,
+            "h1_font_size_tablet": 28,
+            "h1_font_size_mobile": 24,
+            "h1_font_weight": "600",
+            "h1_font_color": "#000000",
+            "h1_text_align": "left",
+            "title": "Your Title Here",
+            "padding_top": 20,
+            "padding_bottom": 20,
+            "padding_top_tablet": 15,
+            "padding_bottom_tablet": 15,
+            "padding_top_mobile": 10,
+            "padding_bottom_mobile": 10
           }
         },
         "details_pTbxwh": {
@@ -286,12 +299,26 @@
           "settings": {
             "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
             "details_color": "#000000",
-            "details_size": 18
+            "details_size": 18,
+            "p_font_size": 16,
+            "p_font_size_tablet": 14,
+            "p_font_size_mobile": 12,
+            "p_font_weight": "400",
+            "p_font_color": "#333333",
+            "p_text_align": "left",
+            "p_line_height": 1.5,
+            "p_padding_top": 10,
+            "p_padding_bottom": 10,
+            "p_padding_top_tablet": 8,
+            "p_padding_bottom_tablet": 8,
+            "p_padding_top_mobile": 5,
+            "p_padding_bottom_mobile": 5
           }
         },
         "video_CDdX4G": {
           "type": "video",
           "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/4e0b38fe26e7454c8d484e92f7d891b1.mp4",
             "autoplay": true,
             "loop": true,
             "muted": true,
@@ -308,7 +335,11 @@
       ],
       "settings": {
         "bg_color": "#ffffff",
-        "vertical_padding": 50
+        "vertical_padding": 50,
+        "vertical_padding_mobile": 30,
+        "heading_color": "#000000",
+        "heading_size": 54,
+        "heading_size_mobile": 34
       }
     },
     "usp_list_jDiFMg": {
@@ -362,7 +393,9 @@
       "settings": {
         "bg_color": "#fffff",
         "verticle_padding": 50,
-        "horizontal_padding": 50
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30,
+        "horizontal_padding_mobile": 15
       }
     },
     "image_with_text_PaVP9D": {
@@ -635,6 +668,8 @@
         "background_color": "",
         "padding_top": 100,
         "padding_bottom": 50,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "custom_class": ""
       }
     },
@@ -686,6 +721,54 @@
         "custom_class": "",
         "animations": "inherit"
       }
+    },
+    "apex_theme_product_page_copy_QiBCwP": {
+      "type": "apex-theme-product-page-copy",
+      "blocks": {
+        "title_kEm6BB": {
+          "type": "title",
+          "settings": {}
+        },
+        "variant_picker_wUBpF8": {
+          "type": "variant_picker",
+          "settings": {
+            "size_title": "Size"
+          }
+        },
+        "visitors_wLKVcE": {
+          "type": "visitors",
+          "settings": {
+            "color_scheme": "",
+            "live_views_text": "<strong>{count_number}</strong> <strong>people</strong> are viewing this right now",
+            "live_views_range": "20-30",
+            "live_view_duration": "10",
+            "live_view_icon_blinks": true
+          }
+        }
+      },
+      "block_order": [
+        "title_kEm6BB",
+        "variant_picker_wUBpF8",
+        "visitors_wLKVcE"
+      ],
+      "settings": {
+        "container": "container",
+        "layout": "layout-6",
+        "show_atwl": true,
+        "enable_history_state": true,
+        "enable_variant_group_images": false,
+        "disable_selected_variant_default": false,
+        "show_featured_media": true,
+        "show_zoom_button": true,
+        "enable_video_autoplay": false,
+        "show_nav_media_mobile": false,
+        "show_pagination_mobile": true,
+        "use_sticky_atc": true,
+        "use_sticky_atc_on_mobile": true,
+        "enable_dynamic_checkout": false,
+        "sticky_atc_wishtlist": false,
+        "sticky_atc_compare": false
+      }
     }
   },
   "order": [
@@ -701,6 +784,7 @@
     "collapsible_tabs_JndiBV",
     "1739234142ec0dbac4",
     "recent-viewed-products",
-    "product-recommendations"
+    "product-recommendations",
+    "apex_theme_product_page_copy_QiBCwP"
   ]
 }
