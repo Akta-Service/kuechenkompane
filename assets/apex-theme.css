@@ -450,6 +450,21 @@ span.faq-icon {
     margin-top: 10px;
     margin-bottom: 18px;
   }
+  .m-sticky-addtocart .m-add-to-cart {
+    min-width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  span.m-add-to-cart--text {
+    font-size: 14px;
+    line-height: 1;
+  }
+  .m-sticky-addtocart .m-product-option--dropdown-select {
+    padding-left: 5px;
+    margin-right: 10px;
+    padding-right: 5px;
+    font-size: 14px;
+  }
 }
 .benefit-button {
   position: relative;
