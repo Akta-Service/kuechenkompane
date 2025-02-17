@@ -506,7 +506,7 @@
         "item_gap_mobile": 30,
         "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
         "padding_top": 40,
-        "padding_bottom": 40,
+        "padding_bottom": 30,
         "custom_class": ""
       }
     },
@@ -623,7 +623,7 @@
       "settings": {
         "padding_top": 13,
         "padding_bottom": 50,
-        "padding_top_mobile": 50,
+        "padding_top_mobile": 30,
         "padding_bottom_mobile": 50
       }
     },
@@ -845,7 +845,7 @@
         "padding_top": 25,
         "padding_bottom": 50,
         "reverse": true,
-        "padding_top_mobile": 50,
+        "padding_top_mobile": 0,
         "padding_bottom_mobile": 50
       }
     },
