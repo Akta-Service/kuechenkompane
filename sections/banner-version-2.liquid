@@ -1,4 +1,4 @@
-{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 <style>
     ul {
@@ -141,9 +141,19 @@
       /* flex-basis: 25%; */
       max-width: 230px;
     }
-    .banner-top-content-item {
-    max-width: 100%;
+    .banner-top {
+    padding: 6px 0;
     }
+    .banner-top-item p {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-family: sans-serif;
+    }
+
+
+
     @media (min-width: 1024px) and (max-width: 1200px) {
       .banner-main-content {
         bottom: 43%;
@@ -245,25 +255,27 @@
 </style>
 <div class="banner-area-two">
   <div class="banner-top">
-    <div class="swiper banner-top-slider">
-      <div class="banner-top-content swiper-wrapper">
-        {% for block in section.blocks %}
-          <div class="banner-top-content-item swiper-slide">
-            <span>
-              <svg
-                class="icon icon-checkmark"
-                width="9"
-                height="8"
-                viewBox="0 0 9 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M7.85766 0.48999L7.29266 1.05999C5.76017 2.59562 4.5901 3.87807 3.1677 5.33007L1.6527 4.05007L1.0427 3.53506L0.0126953 4.75506L0.622695 5.27506L2.7027 7.03506L3.2627 7.51007L3.7827 6.99007C5.5059 5.26319 6.73278 3.88383 8.4227 2.19007L8.98769 1.62007L7.85766 0.48999Z" fill="currentColor"></path>
-              </svg>
-              {{ block.settings.top_item -}}
-            </span>
-          </div>
-        {% endfor %}
+    <div class="rs-container">
+      <div class="swiper banner-top-active">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="banner-top-item swiper-slide">
+              <p>
+                <svg
+                  class="icon icon-checkmark"
+                  width="9"
+                  height="8"
+                  viewBox="0 0 9 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M7.85766 0.48999L7.29266 1.05999C5.76017 2.59562 4.5901 3.87807 3.1677 5.33007L1.6527 4.05007L1.0427 3.53506L0.0126953 4.75506L0.622695 5.27506L2.7027 7.03506L3.2627 7.51007L3.7827 6.99007C5.5059 5.26319 6.73278 3.88383 8.4227 2.19007L8.98769 1.62007L7.85766 0.48999Z" fill="currentColor"></path>
+                </svg>
+                {{ block.settings.top_item }}
+              </p>
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
@@ -327,19 +339,18 @@
 {
   "name": "Banner Version 2",
   "settings": [
-
     {
       "type": "text",
       "id": "u",
       "label": "Video URL",
-      "default":"https://cdn.shopify.com/videos/c/o/v/bfddd4ffc23e4801bb72eb108dadbd31.mp4"
+      "default": "https://cdn.shopify.com/videos/c/o/v/bfddd4ffc23e4801bb72eb108dadbd31.mp4"
     },
 
     {
       "type": "text",
       "id": "u_mobile",
       "label": "Video URL",
-      "default":"https://cdn.shopify.com/videos/c/o/v/aa429ef4f1a64d94bffd7e063a8de73e.mp4"
+      "default": "https://cdn.shopify.com/videos/c/o/v/aa429ef4f1a64d94bffd7e063a8de73e.mp4"
     },
 
     {
@@ -517,30 +528,23 @@
   ]
 }
 {% endschema %}
-<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const swiperhea = new Swiper('.banner-top-slider', {
-        loop: true,
+  const swiper = new Swiper('.banner-top-active', {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
         slidesPerView: 3,
-        spaceBetween: 10,
-        speed: 1000,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-            },
-            768: {
-                slidesPerView: 3,
-            },
-        },
-    });
-
-    // Ensure autoplay starts
-    swiperhea.autoplay.start();
-});
-
+      },
+    },
+  });
 </script>
