@@ -29,7 +29,7 @@
   }
 
   .testimonial-slider-wrapper {
-    padding: 0 50px;
+    padding: 0 30px;
     overflow: hidden;
     position: relative;
   }
@@ -171,6 +171,14 @@
       margin-top: {{ section.settings.mt_mobile}}px;
       margin-bottom: {{ section.settings.mb_mobile}}px;
     }
+    .swiper-button-prev {
+        left: 0;
+        right: auto;
+    }
+    .swiper-button-next {
+    right: 0;
+    left: auto;
+     }
   }
   @media only screen and (max-width: 520px) {
     .trustpilot-title {
@@ -433,10 +441,6 @@
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
     },
     breakpoints: {
       0: {
