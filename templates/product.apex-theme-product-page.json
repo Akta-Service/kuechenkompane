@@ -227,7 +227,7 @@
         "title": "Produktbeschreibung",
         "font_size": 26,
         "font_color": "#000000",
-        "description": "Erlebst du gerne die Freude am Kochen mit einem Messer, das immer scharf bleibt? Dann wirst du unsere Messer lieben! Unsere Messer bieten eine extrem scharfe Klinge, die dank erprobtem 3-lagigen Kohlenstoffstahl mit einem Härtegrad von HRC 60+ ihre Schärfe über lange Zeit beibehält. Möchtest du ein Messer, das dir langlebige Schärfe garantiert? Unsere Messer sind genau das Richtige für dich! Suchst du nach höchster Qualität zum besten Preis? Dann sind unsere Messer die perfekte Wahl. Sie bieten dank des 9cr18mov Stahls höchste Qualität und sind gleichzeitig erschwinglich. Hast du genug von schmerzenden Händen beim Schneiden? Mit unserem ergonomischen Griff wirst du stundenlang ohne Beschwerden schneiden können. Der Griff bietet wahren Komfort und macht das Schneiden zu einem angenehmen Erlebnis. Außerdem sorgt die rostbeständige Beschichtung für eine einfache Pflege der Klinge und verlängert ihre Lebensdauer. Probiere es aus und erlebe den Unterschied!",
+        "description": "{{ section.settings.product.metafields.custom.accordion_content_1 | metafield_tag }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true
