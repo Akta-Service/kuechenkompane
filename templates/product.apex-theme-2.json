@@ -147,6 +147,15 @@
         "payment_icon_RNgqQN": {
           "type": "paymentIcon",
           "settings": {}
+        },
+        "ratings_RCXPQb": {
+          "type": "ratings",
+          "settings": {
+            "likecount": "1,532+ people",
+            "likeinfo": "are already convinced by oursharp blades!",
+            "demandBadge": "High demand",
+            "demandText": "Many people have viewed this product in the last 24 hours"
+          }
         }
       },
       "block_order": [
@@ -161,7 +170,8 @@
         "featurelist_item_Ji9CER",
         "product_info_NLVweH",
         "buy_buttons_8rWDxE",
-        "payment_icon_RNgqQN"
+        "payment_icon_RNgqQN",
+        "ratings_RCXPQb"
       ],
       "settings": {
         "container": "container",
