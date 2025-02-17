@@ -524,3 +524,7 @@ a.m-button.m-button--secondary:hover {
 /* .swiper.banner-top-slider {
   max-width: 1000px;
 } */
+.apex-product-page
+  button.swiper-button-control.swiper-button-next.m-button--icon {
+  transform: rotate(180deg);
+}
