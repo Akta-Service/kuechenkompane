@@ -1,265 +1,57 @@
-{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
-
-
-    /* common css end  */
-    .banner-area {
-      margin-top: {{ section.settings.mt }}px;
-      margin-bottom: {{ section.settings.mb }}px;
-    }
-
-    .banner-content {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: center;
-      overflow: hidden;
-      background: {{ section.settings.bg_color }};
-    }
-
-    .banner-img {
-      height: 700px;
-    }
-
-    .banner-img img {
-      object-fit: cover;
-    }
-
-    .banner-text {
-      padding: 0 calc(6vw + 20px);
-    }
-
-    .banner-text span {
-      color: {{ section.settings.heading_color }};
-      font-size: {{- section.settings.sub_heading_size -}}px;;
-      font-weight: 500;
-      text-transform: uppercase;
-      padding: 10px 20px;
-      border: 1px solid #121212;
-      border-radius: 30px;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-
-    .banner-text h2 {
-      font-size: {{- section.settings.heading_size -}}px;
-      color: {{ section.settings.heading_color }};
-      font-weight: 500;
-      line-height: 3.625rem;
-      margin-bottom: 25px;
-    }
-
-    .banner-text p {
-      font-size: {{- section.settings.text_size -}}px;;
-      color: {{ section.settings.text_color }};
-      margin-bottom: 30px;
-    }
-
-    @media only screen and (max-width: 768px) {
-      .banner-text p {
-
-        margin-bottom: 0px;
-        font-size: 16px;
-
-        }
-      }
-
-
-    .banner-btn a {
-
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 25px;
-      font-size: 18px;
-      border-radius: 5px;
-      transition: 0.3s;
-      font-weight:bold;
-    }
-    .banner-btn-{{ section.id }} a{
-      color: {{ section.settings.btn_text_color }};
-      background: {{ section.settings.btn_bg_color  }};
-    }
-    .banner-btn-{{ section.id }} a:hover {
-      color: {{ section.settings.btn_text_color_hover }};
-      background: {{ section.settings.btn_bg_color_hover  }} ;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-      position: absolute;
-      background: #fff;
-      color: #000;
-      width: 50px;
-      height: 50px;
-      display: inline-block;
-      text-align: center;
-      line-height: 50px;
-      border-radius: 100%;
-      right: 50px;
-      box-shadow: 1px 1px 3px -1px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding:8px;
+  .banner-area{
+    background: {{ section.settings.bg_color }};
+    margin-top: {{ section.settings.mt }}px;
+    margin-bottom: {{ section.settings.mb }}px;
   }
-
-    .swiper-button-prev {
-      left: 50px;
+  @media (max-width: 768px) {
+    .banner-area {
+      margin-top: {{ section.settings.mt_mobile }}px;
+      margin-bottom: {{ section.settings.mb_mobile }}px;
     }
-
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-      display: none;
-    }
-
-    .swiper-pagination {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      z-index: 10;
-    }
-
-    .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-      position: absolute;
-      top: 69%;
-      display: none;
-    }
-
-    .swiper-pagination-bullet-active {
-      outline-color: #121212;
-      outline-width: 1px;
-      outline-style: solid;
-      outline-offset: 5px;
-      margin: 0 10px;
-    }
-
-    .swiper-pagination-bullet {
-      background-color: rgb(18, 18, 18);
-    }
-
-    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-      margin: 0 8px;
-    }
-
-    .swiper-pagination-clickable .swiper-pagination-bullet {
-      cursor: pointer;
-      background-color: rgb(18, 18, 18);
-      opacity: 1;
-    }
-    .swiper-button-next svg, .swiper-button-prev svg {
-      width: 20px;
-      height: 20px;
-    }
-    .swiper-button-next svg {
-    transform: rotate(180deg);
-    }
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .swiper-button-prev {
-        left: 15px;
-      }
-
-      .swiper-button-next {
-        right: 15px;
-      }
-    }
-
-    @media only screen and (max-width: 767px) {
-      .banner-area {
-        margin-top: {{- section.settings.mobile_mt -}}px;
-        margin-bottom: {{- section.settings.mobile_mb -}}px;
-      }
-      .banner-content {
-        grid-template-columns: 1fr;
-      }
-
-      .banner-img {
-        height: auto;
-      }
-
-      .banner-text {
-        padding: 24px 15px;
-      }
-
-      .banner-text h2 {
-        font-size: .875rem;
-        line-height: 1.2;
-        margin-bottom: 5px;
-      }
-      .banner-text span {
-        color: #121212;
-        font-size: 12px;
-        font-weight: 500;
-        text-transform: uppercase;
-        padding: 4px 12px;
-        border: 1px solid #121212;
-        border-radius: 30px;
-        display: inline-block;
-        margin-bottom: 15px;
-    }
-
-      .swiper-button-next,
-      .swiper-button-prev {
-        display: none;
-      }
-
-      .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-        top: auto;
-        bottom: 400px;
-        display: block;
-      }
-    }
-
-   .{{ section.id }} .swiper-pagination  {
-      display: none !important;
   }
 </style>
-<div class="banner-area {{ section.id }}">
-  <div class="swiper mySwiper_active">
+<div class="banner-area">
+  <div class="swiper banner-area-slider">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
-        <div class="swiper-slide">
-          <div class="banner-content">
-            {% if block.settings.slide_img != blank %}
-              <div class="banner-img">
-                <img src="{{ block.settings.slide_img |  img_url: 'master' }}" alt="Image">
+        <div class="swiper-slide banner-area-item">
+          <div class="banner-area-content">
+            {% if block.settings.image != blank %}
+              <div class="banner-content-img">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="banner-image">
               </div>
             {% endif %}
-            <div class="banner-text">
-              {% if block.settings.sub_heading != blank %}
-                <span>{{ block.settings.sub_heading }}</span>
+            <div class="banner-content">
+              {% if block.settings.tag != blank %}
+                <span class="banner-tag">{{ block.settings.tag }}</span>
               {% endif %}
-              {% if block.settings.heading != blank %}
-                <h2>{{ block.settings.heading }}</h2>
+              {% if block.settings.sub_title != blank %}
+                <span class="banner-sub-title">{{ block.settings.sub_title }}</span>
               {% endif %}
-              {% if block.settings.description != blank %}
-                <p>{{ block.settings.description }}</p>
+              {% if block.settings.title != blank %}
+                <h2 class="banner-title">{{ block.settings.title }}</h2>
               {% endif %}
-              {% if block.settings.btn_text != blank %}
-                <div class="banner-btn banner-btn-{{ section.id }}">
-                  <a href="{{ block.settings.btn_link }}">
-                    {{ block.settings.btn_text }}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M12.5625 5.25L19.3125 12L12.5625 18.75M18.375 12H4.6875" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
+              {% if block.settings.text != blank %}
+                <p class="banner-text">{{ block.settings.text }}</p>
+              {% endif %}
+              {% if block.settings.banner_btn_text != blank %}
+                <a href="{{ block.settings.banner_link }}" class="banner-button">
+                  {{- block.settings.banner_btn_text -}}
+                </a>
               {% endif %}
             </div>
           </div>
         </div>
       {% endfor %}
     </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next">
-      <svg class="rotate-180" width="20" height="18" viewBox="0 0 18 16" fill="none">
+    <div class="banner-next">
+      <svg class="" width="20" height="18" viewBox="0 0 18 16" fill="none">
         <path d="M8.4375 14.75L1.6875 8L8.4375 1.25M2.625 8H16.3125" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </div>
-    <div class="swiper-button-prev">
+    <div class="banner-prev">
       <svg class="" width="20" height="18" viewBox="0 0 18 16" fill="none">
         <path d="M8.4375 14.75L1.6875 8L8.4375 1.25M2.625 8H16.3125" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
@@ -268,12 +60,19 @@
 </div>
 {% schema %}
 {
-  "name": "Banner Version 1",
+  "name": "Banner version 1",
+
   "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
     {
       "type": "range",
       "id": "mt",
-      "label": "Margin Top",
+      "label": "Margin top (desktop)",
       "default": 0,
       "min": 0,
       "max": 100,
@@ -282,20 +81,7 @@
     {
       "type": "range",
       "id": "mb",
-      "label": "Margin Bottom",
-      "default": 50,
-      "min": 0,
-      "max": 100,
-      "step": 1
-    },
-    {
-      "type": "header",
-      "content": "Mobile Spacing"
-    },
-    {
-      "type": "range",
-      "id": "mobile_mt",
-      "label": "Margin Top (Mobile)",
+      "label": "Margin bottom (desktop)",
       "default": 0,
       "min": 0,
       "max": 100,
@@ -303,145 +89,61 @@
     },
     {
       "type": "range",
-      "id": "mobile_mb",
-      "label": "Margin Bottom (Mobile)",
-      "default": 30,
+      "id": "mt_mobile",
+      "label": "Margin top (mobile)",
+      "default": 0,
       "min": 0,
       "max": 100,
       "step": 1
     },
     {
-      "type": "header",
-      "content": "Sub Heading"
-    },
-    {
       "type": "range",
-      "id": "sub_heading_size",
-      "label": "Font Size",
-      "default": 16,
-      "min": 12,
-      "max": 36,
-      "step": 1
-    },
-    {
-      "type": "header",
-      "content": "Heading"
-    },
-    {
-      "type": "range",
-      "id": "heading_size",
-      "label": "Font Size",
-      "default": 54,
-      "min": 12,
+      "id": "mb_mobile",
+      "label": "Margin bottom (mobile)",
+      "default": 0,
+      "min": 0,
       "max": 100,
       "step": 1
-    },
-    {
-      "type": "header",
-      "content": "Text"
-    },
-    {
-      "type": "range",
-      "id": "text_size",
-      "label": "Font Size",
-      "default": 18,
-      "min": 12,
-      "max": 50,
-      "step": 1
-    },
-    {
-      "type": "header",
-      "content": "Color"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#fa8526"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading Color",
-      "default": "#fa8526"
-    },
-
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#000000"
-    },
-    {
-      "type": "header",
-      "content": "Button background color"
-    },
-    {
-      "type": "color",
-      "id": "btn_bg_color",
-      "label": "Button Background Color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "btn_bg_color_hover",
-      "label": "Button Background Color (Hover)",
-      "default": "#333333"
-    },
-    {
-      "type": "header",
-      "content": "Button text color"
-    },
-    {
-      "type": "color",
-      "id": "btn_text_color",
-      "label": "Button Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "btn_text_color_hover",
-      "label": "Button Text Color (Hover)",
-      "default": "#ffffff"
     }
   ],
   "blocks": [
     {
-      "name": "Slide Item ",
-      "type": "slide",
+      "type": "image",
+      "name": "Image",
       "settings": [
         {
           "type": "image_picker",
-          "id": "slide_img",
-          "label": "Slide Image"
+          "id": "image",
+          "label": "Image"
         },
         {
           "type": "text",
-          "id": "sub_heading",
-          "label": "Sub Heading",
-          "default": "Only for a short time"
+          "id": "tag",
+          "label": "Tag"
         },
         {
           "type": "text",
-          "id": "heading",
-          "label": "Heading",
-          "default": "Maniko for Valentine’s Day – now back at dm!"
+          "id": "sub_title",
+          "label": "Sub Title"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
         },
         {
           "type": "textarea",
-          "id": "description",
-          "label": "Description",
-          "default": "YOU ARE LOVED! Shop now for FREE Top Coat in the starter set with the color Statement."
+          "id": "text",
+          "label": "Text"
         },
         {
           "type": "text",
-          "id": "btn_text",
-          "label": "Button Text",
-          "default": "Learn More"
+          "id": "banner_btn_text",
+          "label": "Button Text"
         },
         {
           "type": "url",
-          "id": "btn_link",
+          "id": "banner_link",
           "label": "Button Link"
         }
       ]
@@ -449,32 +151,20 @@
   ],
   "presets": [
     {
-      "name": "Banner Version 1",
+      "name": "Banner version 1",
       "settings": {}
     }
   ]
 }
 {% endschema %}
-<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const swiper_benner01 = new Swiper('.mySwiper_active', {
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.banner-area-slider', {
       loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        767: {
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-        },
+        nextEl: '.banner-next',
+        prevEl: '.banner-prev',
       },
     });
   });
