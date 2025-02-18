@@ -75,10 +75,15 @@
     text-align: center;
     max-width: 280px;
   }
-  .store-benefits .swiper-wrapper {
+  .store-benefits .swiper-slide {
+    display: flex;
     justify-content: center;
   }
-  @media only screen and (max-width: 749px) {
+  span.swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+  }
+  @media only screen and (max-width: 768px) {
     .swiper-pagination,
     .swiper-button-next,
     .swiper-button-prev {
@@ -88,6 +93,14 @@
       padding-top: {{ section.settings.ptm }}px;
       padding-bottom: {{ section.settings.pbm }}px;
     }
+    .store-benifits-item {
+     /* max-width: 100%; */
+     width: 100%;
+     max-width: 400px;
+   }
+   .store-benefits .swiper-wrapper {
+    justify-content: unset;
+   }
   }
 </style>
 <div class="store-benefits-area ">
@@ -95,17 +108,19 @@
     <div class="swiper store-benefits">
       <div class="swiper-wrapper">
         {% for block in section.blocks %}
-          <div class="store-benifits-item swiper-slide">
-            {% if block.settings.benefit_icon %}
-              <div class="store-benefits-icon">
-                <img src="{{ block.settings.benefit_icon |  img_url: 'master' }}" alt="icon">
+          <div class="swiper-slide">
+            <div class="store-benifits-item">
+              {% if block.settings.benefit_icon %}
+                <div class="store-benefits-icon">
+                  <img src="{{ block.settings.benefit_icon |  img_url: 'master' }}" alt="icon">
+                </div>
+              {% endif %}
+              <div class="store-benefits-text">
+                <h4>{{ block.settings.title }}</h4>
+                <p>
+                  {{ block.settings.text }}
+                </p>
               </div>
-            {% endif %}
-            <div class="store-benefits-text">
-              <h4>{{ block.settings.title }}</h4>
-              <p>
-                {{ block.settings.text }}
-              </p>
             </div>
           </div>
         {% endfor %}
@@ -207,6 +222,15 @@
       "id": "speed",
       "label": "Transition Speed (ms)",
       "default": 500
+    },
+    {
+      "type": "range",
+      "id": "items_mobile_sm",
+      "label": "Items (Small Mobile)",
+      "default": 1,
+      "min": 1,
+      "max": 2,
+      "step": 1
     },
     {
       "type": "range",
@@ -314,10 +338,13 @@
     },
     breakpoints: {
       0: {
+        slidesPerView: {{ section.settings.items_mobile_sm }},
+      },
+      550: {
         slidesPerView: {{ section.settings.items_mobile }},
         spaceBetween: {{ section.settings.sbt_m}},
       },
-      750: {
+      768: {
         slidesPerView: {{ section.settings.items_tablet }},
         spaceBetween: {{ section.settings.sbt_t }},
       },
