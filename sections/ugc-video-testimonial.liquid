@@ -307,11 +307,9 @@
                 <div class="video_item">
                   <video
                     playinline
-                    webkit-playsinline
-                    {% if forloop.first %}
-                      autoplay
-                    {% endif %}
+                    autoplay
                     muted
+                    controls
                     {% if block.settings.video_poster %}
                       poster="{{ block.settings.video_poster | img_url : 'master'  }}"
                     {% endif %}
@@ -321,7 +319,7 @@
                       type="video/mp4"
                     >
                   </video>
-                  <div class="play_btn {% if forloop.first %}hide{% endif %}">
+                  <div class="play_btn ">
                     <span>
                       <svg
                         class=""
@@ -354,47 +352,6 @@
     </div>
   </div>
 </div>
-
-{% comment %}
-  {% for block in section.blocks %}
-    <div id="{{- forloop.index -}}" class="popup hidden">
-      <div class="popup-content">
-        <span class="close-popup">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16.055 16.594a.662.662 0 0 1-.899 0L10 11.398l-5.195 5.196a.662.662 0 0 1-.899 0 .662.662 0 0 1 0-.899L9.102 10.5 3.906 5.344a.662.662 0 0 1 0-.899.662.662 0 0 1 .899 0L10 9.641l5.156-5.196a.662.662 0 0 1 .899 0 .662.662 0 0 1 0 .899L10.859 10.5l5.196 5.195a.662.662 0 0 1 0 .899Z" style="fill: #FFFFFF !important;"></path>
-          </svg>
-        </span>
-        <div class="popup_item">
-          <video>
-            <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
-          </video>
-          {%- assign product = block.settings.product -%}
-          <div class="popup_bottom">
-            <a href="{{ product.url }}">
-              <div class="popup_product">
-                <div class="popup_product_left">
-                  <img src="{{ product.featured_image |  img_url: large }}" alt="{{ product.title }}">
-                </div>
-                <div class="popup_product_right">
-                  <p>{{ product.title }}</p>
-                  <ul>
-                    {% if product.compare_at_price > product.price %}
-                      <li>
-                        <span>{{ product.compare_at_price | money }}</span>
-                      </li>
-                    {% endif %}
-                    <li>{{ product.price | money }}</li>
-                  </ul>
-                  <button type="button">{{ block.settings.btn_text | default: 'Shop' }}</button>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-{% endcomment %}
 
 {% comment %} video section end  {% endcomment %}
 
@@ -503,68 +460,6 @@
 {% endschema %}
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 <script>
-  const videoContainers = document.querySelectorAll('.video_item');
-  const firstVideo = document.querySelector('.swiper-slide video'); // Select first video
-
-  // Mark first video as active since it autoplays
-  if (firstVideo) {
-    firstVideo.classList.add('active-video');
-  }
-
-  videoContainers.forEach((container) => {
-    const video = container.querySelector('video');
-    const playBtn = container.querySelector('.play_btn');
-
-    container.addEventListener('click', () => {
-      const activeVideo = document.querySelector('video.active-video');
-
-      // If another video is playing, pause it
-      if (activeVideo && activeVideo !== video) {
-        activeVideo.pause();
-        activeVideo.removeAttribute('controls');
-        activeVideo.classList.remove('active-video');
-        activeVideo.closest('.video_item').querySelector('.play_btn').classList.remove('hide');
-      }
-
-      // Toggle play/pause for the clicked video
-      if (video.paused || video.ended) {
-        video
-          .play()
-          .then(() => {
-            video.setAttribute('controls', 'true');
-            playBtn.classList.add('hide');
-            video.classList.add('active-video');
-          })
-          .catch((error) => console.error('Video play error:', error));
-      } else {
-        video.pause();
-        video.removeAttribute('controls');
-        playBtn.classList.remove('hide');
-        video.classList.remove('active-video');
-      }
-    });
-
-    // Ensure the play button reappears when video ends
-    video.addEventListener('ended', () => {
-      video.removeAttribute('controls');
-      playBtn.classList.remove('hide');
-      video.classList.remove('active-video');
-    });
-  });
-  document.querySelectorAll('video').forEach((video) => {
-    video.setAttribute('playsinline', '');
-    video.setAttribute('webkit-playsinline', '');
-    video.setAttribute('x5-playsinline', '');
-
-    video.addEventListener('play', () => {
-      video.setAttribute('controls', 'true'); // Show controls when playing
-    });
-
-    video.addEventListener('pause', () => {
-      video.removeAttribute('controls'); // Hide controls when paused
-    });
-  });
-
   // Initialize Swiper
   const video_slider = new Swiper('.video_slider_active', {
     slidesPerView: 6,
@@ -587,5 +482,39 @@
         slidesPerView: 6,
       },
     },
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const videoItems = document.querySelectorAll('.video_item');
+
+    videoItems.forEach((videoItem) => {
+      const video = videoItem.querySelector('video');
+      const playButton = videoItem.querySelector('.play_btn');
+
+      // Play video on clicking anywhere inside the video_item
+      videoItem.addEventListener('click', function () {
+        if (video.paused) {
+          video.play();
+        }
+      });
+
+      // Hide play button when video starts playing
+      video.addEventListener('play', function () {
+        playButton.style.display = 'none';
+      });
+
+      // Show play button when video is paused
+      video.addEventListener('pause', function () {
+        playButton.style.display = 'flex';
+      });
+
+      // Prevent play button click from triggering the container click event
+      playButton.addEventListener('click', function (e) {
+        e.stopPropagation(); // Prevents event bubbling
+        video.play();
+      });
+    });
   });
 </script>
