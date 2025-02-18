@@ -689,14 +689,6 @@
     // Initialize sliders
     initThumbSwiper();
     initMainSwiper();
-
-    // Reinitialize thumbSwiper on window resize
-    window.addEventListener('resize', () => {
-      if (thumbSwiper) {
-        thumbSwiper.destroy(true, true);
-      }
-      initThumbSwiper();
-    });
   });
 </script>
 

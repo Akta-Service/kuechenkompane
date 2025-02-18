@@ -247,6 +247,7 @@
     max-height: 100%;
     object-fit: cover;
     -webkit-user-select: none;
+    -webkit-touch-callout: none;
   }
 
   @media screen and (max-width: 699px) {
@@ -548,6 +549,19 @@
       video.removeAttribute('controls');
       playBtn.classList.remove('hide');
       video.classList.remove('active-video');
+    });
+  });
+  document.querySelectorAll('video').forEach((video) => {
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    video.setAttribute('x5-playsinline', '');
+
+    video.addEventListener('play', () => {
+      video.setAttribute('controls', 'true'); // Show controls when playing
+    });
+
+    video.addEventListener('pause', () => {
+      video.removeAttribute('controls'); // Hide controls when paused
     });
   });
 

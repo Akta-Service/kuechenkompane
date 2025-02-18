@@ -160,9 +160,6 @@ select {
 }
 
 @media only screen and (max-width: 600px) {
-  .liked-img {
-    margin-right: 8%;
-  }
 }
 
 .liked-img img {
@@ -177,6 +174,8 @@ select {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+  flex-wrap: wrap;
+  row-gap: 5px;
 }
 
 .like-count {
