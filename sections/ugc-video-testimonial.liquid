@@ -243,6 +243,11 @@
       border-radius: 5px;
       cursor: pointer;
   }
+  .video_area video {
+    max-height: 100%;
+    object-fit: cover;
+    -webkit-user-select: none;
+  }
 
   @media screen and (max-width: 699px) {
     .video_area {
@@ -301,6 +306,7 @@
                 <div class="video_item">
                   <video
                     playinline
+                    webkit-playsinline
                     {% if forloop.first %}
                       autoplay
                     {% endif %}
