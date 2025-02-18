@@ -43,6 +43,9 @@
   .video_title a:hover {
       color: #635247;
   }
+  .play_btn.hide {
+    display: none;
+  }
 
   /* swiper slider */
   .swiper {
@@ -294,8 +297,12 @@
           {% for block in section.blocks %}
             {% if block.settings.video.sources[1].url != blank %}
               <div class="swiper-slide">
-                <div class="video_item open-popup" data-target="{{- forloop.index -}}">
+                <div class="video_item">
                   <video
+                    playinline
+                    {% if forloop.first %}
+                      autoplay
+                    {% endif %}
                     muted
                     {% if block.settings.video_poster %}
                       poster="{{ block.settings.video_poster | img_url : 'master'  }}"
@@ -306,7 +313,7 @@
                       type="video/mp4"
                     >
                   </video>
-                  <div class="play_btn">
+                  <div class="play_btn {% if forloop.first %}hide{% endif %}">
                     <span>
                       <svg
                         class=""
@@ -340,44 +347,46 @@
   </div>
 </div>
 
-{% for block in section.blocks %}
-  <div id="{{- forloop.index -}}" class="popup hidden">
-    <div class="popup-content">
-      <span class="close-popup">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16.055 16.594a.662.662 0 0 1-.899 0L10 11.398l-5.195 5.196a.662.662 0 0 1-.899 0 .662.662 0 0 1 0-.899L9.102 10.5 3.906 5.344a.662.662 0 0 1 0-.899.662.662 0 0 1 .899 0L10 9.641l5.156-5.196a.662.662 0 0 1 .899 0 .662.662 0 0 1 0 .899L10.859 10.5l5.196 5.195a.662.662 0 0 1 0 .899Z" style="fill: #FFFFFF !important;"></path>
-        </svg>
-      </span>
-      <div class="popup_item">
-        <video>
-          <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
-        </video>
-        {%- assign product = block.settings.product -%}
-        <div class="popup_bottom">
-          <a href="{{ product.url }}">
-            <div class="popup_product">
-              <div class="popup_product_left">
-                <img src="{{ product.featured_image |  img_url: large }}" alt="{{ product.title }}">
+{% comment %}
+  {% for block in section.blocks %}
+    <div id="{{- forloop.index -}}" class="popup hidden">
+      <div class="popup-content">
+        <span class="close-popup">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.055 16.594a.662.662 0 0 1-.899 0L10 11.398l-5.195 5.196a.662.662 0 0 1-.899 0 .662.662 0 0 1 0-.899L9.102 10.5 3.906 5.344a.662.662 0 0 1 0-.899.662.662 0 0 1 .899 0L10 9.641l5.156-5.196a.662.662 0 0 1 .899 0 .662.662 0 0 1 0 .899L10.859 10.5l5.196 5.195a.662.662 0 0 1 0 .899Z" style="fill: #FFFFFF !important;"></path>
+          </svg>
+        </span>
+        <div class="popup_item">
+          <video>
+            <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
+          </video>
+          {%- assign product = block.settings.product -%}
+          <div class="popup_bottom">
+            <a href="{{ product.url }}">
+              <div class="popup_product">
+                <div class="popup_product_left">
+                  <img src="{{ product.featured_image |  img_url: large }}" alt="{{ product.title }}">
+                </div>
+                <div class="popup_product_right">
+                  <p>{{ product.title }}</p>
+                  <ul>
+                    {% if product.compare_at_price > product.price %}
+                      <li>
+                        <span>{{ product.compare_at_price | money }}</span>
+                      </li>
+                    {% endif %}
+                    <li>{{ product.price | money }}</li>
+                  </ul>
+                  <button type="button">{{ block.settings.btn_text | default: 'Shop' }}</button>
+                </div>
               </div>
-              <div class="popup_product_right">
-                <p>{{ product.title }}</p>
-                <ul>
-                  {% if product.compare_at_price > product.price %}
-                    <li>
-                      <span>{{ product.compare_at_price | money }}</span>
-                    </li>
-                  {% endif %}
-                  <li>{{ product.price | money }}</li>
-                </ul>
-                <button type="button">{{ block.settings.btn_text | default: 'Shop' }}</button>
-              </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-{% endfor %}
+  {% endfor %}
+{% endcomment %}
 
 {% comment %} video section end  {% endcomment %}
 
@@ -486,83 +495,57 @@
 {% endschema %}
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 <script>
-  // Open popup
-  const openButtons = document.querySelectorAll('.open-popup');
-  const closeButtons = document.querySelectorAll('.close-popup');
-  const popups = document.querySelectorAll('.popup');
-  const swiperVideos = document.querySelectorAll('.swiper-slide video');
+  const videoContainers = document.querySelectorAll('.video_item');
+  const firstVideo = document.querySelector('.swiper-slide video'); // Select first video
 
-  // When an open button is clicked
-  openButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const targetId = button.getAttribute('data-target');
+  // Mark first video as active since it autoplays
+  if (firstVideo) {
+    firstVideo.classList.add('active-video');
+  }
 
-      // Close all popups first
-      popups.forEach((popup) => {
-        popup.classList.add('hidden');
-        const video = popup.querySelector('video');
-        if (video) {
-          video.pause(); // Pause the video when closing the popup
-        }
-      });
+  videoContainers.forEach((container) => {
+    const video = container.querySelector('video');
+    const playBtn = container.querySelector('.play_btn');
 
-      // Open the clicked popup
-      const targetPopup = document.getElementById(targetId);
-      targetPopup.classList.remove('hidden');
+    container.addEventListener('click', () => {
+      const activeVideo = document.querySelector('video.active-video');
 
-      // Play video in the opened popup
-      const video = targetPopup.querySelector('video');
-      if (video) {
-        video.play();
+      // If another video is playing, pause it
+      if (activeVideo && activeVideo !== video) {
+        activeVideo.pause();
+        activeVideo.removeAttribute('controls');
+        activeVideo.classList.remove('active-video');
+        activeVideo.closest('.video_item').querySelector('.play_btn').classList.remove('hide');
       }
-    });
-  });
 
-  // When a close button is clicked
-  closeButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const popup = button.closest('.popup');
-      popup.classList.add('hidden');
-      const video = popup.querySelector('video');
-      if (video) {
-        video.pause(); // Pause the video when closing the popup
-      }
-    });
-  });
-
-  // Click outside the popup to close it
-  window.addEventListener('click', (event) => {
-    if (event.target.classList.contains('popup')) {
-      event.target.classList.add('hidden');
-      const video = event.target.querySelector('video');
-      if (video) {
-        video.pause(); // Pause the video when clicking outside
-      }
-    }
-  });
-
-  // Toggle play/pause when clicking the video inside the popup
-  const videoItems = document.querySelectorAll('.popup_item video');
-  videoItems.forEach((video) => {
-    video.addEventListener('click', (event) => {
-      if (video.paused) {
-        video.play(); // Play the video if it's paused
+      // Toggle play/pause for the clicked video
+      if (video.paused || video.ended) {
+        video
+          .play()
+          .then(() => {
+            video.setAttribute('controls', 'true');
+            playBtn.classList.add('hide');
+            video.classList.add('active-video');
+          })
+          .catch((error) => console.error('Video play error:', error));
       } else {
-        video.pause(); // Pause the video if it's playing
+        video.pause();
+        video.removeAttribute('controls');
+        playBtn.classList.remove('hide');
+        video.classList.remove('active-video');
       }
-      event.stopPropagation(); // Prevent the click event from bubbling up to the popup
     });
-  });
 
-  // Autoplay all videos inside swiper-slide on page load
-  document.addEventListener('DOMContentLoaded', () => {
-    swiperVideos.forEach((video) => {
-      video.play(); // Automatically play each video in swiper-slide
+    // Ensure the play button reappears when video ends
+    video.addEventListener('ended', () => {
+      video.removeAttribute('controls');
+      playBtn.classList.remove('hide');
+      video.classList.remove('active-video');
     });
   });
 
   // Initialize Swiper
-  var video_slider = new Swiper('.video_slider_active', {
+  const video_slider = new Swiper('.video_slider_active', {
     slidesPerView: 6,
     spaceBetween: 8,
     loop: false,
@@ -589,33 +572,7 @@
         swiperVideos.forEach((video) => {
           video.pause();
         });
-
-        // Autoplay the video in the new slide
-        const activeSlide = document.querySelector('.swiper-slide-active video');
-        if (activeSlide) {
-          activeSlide.play(); // Autoplay the video in the active slide
-        }
       },
     },
-  });
-
-  // Autoplay video when hovering over the .video_item
-  const videoItemsForHover = document.querySelectorAll('.video_item');
-  videoItemsForHover.forEach((item) => {
-    const video = item.querySelector('video');
-
-    // Play video on hover
-    item.addEventListener('mouseenter', () => {
-      if (video) {
-        video.play();
-      }
-    });
-
-    // Pause video when hover ends
-    item.addEventListener('mouseleave', () => {
-      if (video) {
-        video.pause();
-      }
-    });
   });
 </script>
