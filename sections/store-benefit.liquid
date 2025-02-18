@@ -19,18 +19,10 @@
 
   /* common css end   */
   .store-benefits-area {
-    padding: {{ section.settings.verticle_padding }}px 0px;
+    padding-top: {{ section.settings.pt }}px;
+    padding-bottom: {{ section.settings.pb }}px;
   }
 
-  .store-benefits-content {
-    display: flex;
-    max-width: 1412px;
-    margin: 0 auto;
-    gap: 30px;
-    padding: 0 10px;
-    overflow: hidden;
-    justify-content: center;
-  }
 
   .store-benifits-item {
     text-align: center;
@@ -66,6 +58,26 @@
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: #1e1e1e;
   }
+  .store-benefits-content {
+    padding: 0 15px;
+    position: relative;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: var(--swiper-pagination-bottom,8px);
+    top: var(--swiper-pagination-top,auto);
+    left: 0;
+    width: 100%;
+    bottom: -30px;
+  }
+  .store-benifits-item {
+    text-align: center;
+    max-width: 280px;
+  }
+  .store-benefits .swiper-wrapper {
+    justify-content: center;
+  }
   @media only screen and (max-width: 749px) {
     .swiper-pagination,
     .swiper-button-next,
@@ -73,29 +85,34 @@
       display: block;
     }
     .store-benefits-area {
-      padding: {{ section.settings.verticle_padding_mobile }}px 0px;
+      padding-top: {{ section.settings.ptm }}px;
+      padding-bottom: {{ section.settings.pbm }}px;
     }
   }
 </style>
-<div class="store-benefits-area swiper store-benefits">
-  <div class="store-benefits-content swiper-wrapper">
-    {% for block in section.blocks %}
-      <div class="store-benifits-item swiper-slide">
-        {% if block.settings.benefit_icon %}
-          <div class="store-benefits-icon">
-            <img src="{{ block.settings.benefit_icon |  img_url: 'master' }}" alt="icon">
+<div class="store-benefits-area ">
+  <div class="store-benefits-content ">
+    <div class="swiper store-benefits">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="store-benifits-item swiper-slide">
+            {% if block.settings.benefit_icon %}
+              <div class="store-benefits-icon">
+                <img src="{{ block.settings.benefit_icon |  img_url: 'master' }}" alt="icon">
+              </div>
+            {% endif %}
+            <div class="store-benefits-text">
+              <h4>{{ block.settings.title }}</h4>
+              <p>
+                {{ block.settings.text }}
+              </p>
+            </div>
           </div>
-        {% endif %}
-        <div class="store-benefits-text">
-          <h4>{{ block.settings.title }}</h4>
-          <p>
-            {{ block.settings.text }}
-          </p>
-        </div>
+        {% endfor %}
       </div>
-    {% endfor %}
+    </div>
+    <div class="swiper-pagination store-benefits-pagi"></div>
   </div>
-  <div class="swiper-pagination"></div>
 </div>
 {% schema %}
 {
@@ -141,8 +158,8 @@
     },
     {
       "type": "range",
-      "id": "verticle_padding",
-      "label": "Vertical Padding",
+      "id": "pt",
+      "label": "Padding Top",
       "default": 70,
       "min": 0,
       "max": 100,
@@ -150,9 +167,97 @@
     },
     {
       "type": "range",
-      "id": "verticle_padding_mobile",
-      "label": "Vertical Padding (Mobile)",
+      "id": "pb",
+      "label": "Padding Bottom",
+      "default": 70,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "ptm",
+      "label": "Padding Top (Mobile)",
       "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "pbm",
+      "label": "Padding Bottom (Mobile)",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Slider Settings"
+    },
+    {
+      "type": "number",
+      "id": "autoplay_delay",
+      "label": "Autoplay Delay (ms)",
+      "default": 3000
+    },
+    {
+      "type": "number",
+      "id": "speed",
+      "label": "Transition Speed (ms)",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "items_mobile",
+      "label": "Items (Mobile)",
+      "default": 1,
+      "min": 1,
+      "max": 3,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "items_tablet",
+      "label": "Items (Tablet)",
+      "default": 2,
+      "min": 1,
+      "max": 4,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "items_desktop",
+      "label": "Items (Desktop)",
+      "default": 3,
+      "min": 1,
+      "max": 5,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "sbt_m",
+      "label": "Space Between (Mobile)",
+      "default": 10,
+      "min": 0,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "sbt_t",
+      "label": "Space Between (Tablet)",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "sbt_des",
+      "label": "Space Between (Desktop)",
+      "default": 30,
       "min": 0,
       "max": 100,
       "step": 1
@@ -193,9 +298,12 @@
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 <script>
   const swiper_store = new Swiper('.store-benefits', {
-    slidesPerView: 5,
-    spaceBetween: 10,
-    clickable: false,
+    loop: true,
+    autoplay: {
+      delay: {{ section.settings.autoplay_delay }},
+      disableOnInteraction: false,
+    },
+    speed:{{ section.settings.speed }},
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -206,12 +314,17 @@
     },
     breakpoints: {
       0: {
-        slidesPerView: 2,
-        loop: true,
+        slidesPerView: {{ section.settings.items_mobile }},
+        spaceBetween: {{ section.settings.sbt_m}},
       },
       750: {
-        slidesPerView: 5,
-        loop: true,
+        slidesPerView: {{ section.settings.items_tablet }},
+        spaceBetween: {{ section.settings.sbt_t }},
+      },
+      1000: {
+        slidesPerView: {{ section.settings.items_desktop }},
+        spaceBetween: {{ section.settings.sbt_des }},
+
       },
     },
   });
