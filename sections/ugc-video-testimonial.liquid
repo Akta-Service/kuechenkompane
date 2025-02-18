@@ -101,6 +101,7 @@
       border-radius: 50%;
       height: 36px;
       width: 36px;
+      z-index: 999999;
   }
 
   .video_slider .swiper-button-prev svg,
@@ -564,14 +565,6 @@
       },
       1024: {
         slidesPerView: 6,
-      },
-    },
-    on: {
-      slideChange: function () {
-        // Pause video on slide change
-        swiperVideos.forEach((video) => {
-          video.pause();
-        });
       },
     },
   });
