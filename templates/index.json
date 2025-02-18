@@ -307,60 +307,51 @@
     "banner_version_1_aGXez8": {
       "type": "banner-version-1",
       "blocks": {
-        "slide_zUxQgR": {
-          "type": "slide",
+        "image_txXDAj": {
+          "type": "image",
           "settings": {
-            "slide_img": "shopify://shop_images/IMG_9602_V5.jpg",
-            "sub_heading": "Kochen auf Sterneniveau",
-            "heading": "Präzision in Deiner Hand",
-            "description": "Jede Zutat verdient den perfekten Schnitt – mit unseren rasiermesserscharfen Klingen wird Kochen zum Genuss.",
-            "btn_text": "Messer entdecken",
-            "btn_link": "shopify://collections/kuechenmesser"
+            "tag": "Kochen auf Sterneniveau",
+            "sub_title": "",
+            "title": "Präzision in Deiner Hand",
+            "text": "Jede Zutat verdient den perfekten Schnitt – mit unseren rasiermesserscharfen Klingen wird Kochen zum Genuss.",
+            "banner_btn_text": "Messer entdecken",
+            "banner_link": ""
           }
         },
-        "slide_Vz7b3F": {
-          "type": "slide",
+        "image_eXLhMX": {
+          "type": "image",
           "settings": {
-            "slide_img": "shopify://shop_images/IMG_9622_031008c0-7841-4273-bdb2-f6a0bf2e67a1.jpg",
-            "sub_heading": "Profi-Pfannen für echte Genießer",
-            "heading": "Perfektes Kochen beginnt mit den richtigen Tools",
-            "description": "Unsere Pfannen & Töpfe sorgen für gleichmäßige Hitzeverteilung und exzellente Bratergebnisse – für höchste Ansprüche.",
-            "btn_text": "Töpfe & Pfannen testen",
-            "btn_link": "shopify://collections/edelstahlpfanne"
+            "tag": "Profi-Pfannen für echte Genießer",
+            "sub_title": "",
+            "title": "Perfektes Kochen beginnt mit den richtigen Tools",
+            "text": "Unsere Pfannen & Töpfe sorgen für gleichmäßige Hitzeverteilung und exzellente Bratergebnisse – für höchste Ansprüche.",
+            "banner_btn_text": "Töpfe & Pfannen testen",
+            "banner_link": ""
           }
         },
-        "slide_TtXBx4": {
-          "type": "slide",
+        "image_kLVez4": {
+          "type": "image",
           "settings": {
-            "slide_img": "shopify://shop_images/Jishaku_mit-Messer_ec38eea5-dcbe-4fd6-8ac8-e69a48146c53.jpg",
-            "sub_heading": "Ergänzung für deine Küche",
-            "heading": "Organisation trifft Design",
-            "description": "Hochwertige Messerhalter und Zubehör für eine stilvolle und funktionale Küche.",
-            "btn_text": "Organisation verbessern",
-            "btn_link": "shopify://collections/messerblock"
+            "tag": "Ergänzung für deine Küche",
+            "sub_title": "",
+            "title": "Organisation trifft Design",
+            "text": "Hochwertige Messerhalter und Zubehör für eine stilvolle und funktionale Küche.",
+            "banner_btn_text": "Organisation verbessern",
+            "banner_link": ""
           }
         }
       },
       "block_order": [
-        "slide_zUxQgR",
-        "slide_Vz7b3F",
-        "slide_TtXBx4"
+        "image_txXDAj",
+        "image_eXLhMX",
+        "image_kLVez4"
       ],
       "settings": {
+        "bg_color": "#ebf2e8",
         "mt": 0,
         "mb": 0,
-        "mobile_mt": 0,
-        "mobile_mb": 0,
-        "sub_heading_size": 16,
-        "heading_size": 54,
-        "text_size": 18,
-        "bg_color": "#ebf2e8",
-        "heading_color": "#121212",
-        "text_color": "#000000",
-        "btn_bg_color": "#fa8526",
-        "btn_bg_color_hover": "#333333",
-        "btn_text_color": "#ffffff",
-        "btn_text_color_hover": "#ffffff"
+        "mt_mobile": 0,
+        "mb_mobile": 0
       }
     },
     "product_explanation_video_6ERhrB": {
