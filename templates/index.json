@@ -187,7 +187,7 @@
             "text": "<p>Erlebe kompromisslose Schärfe, hochwertiges Design und maximale Präzision in jedem Schnitt. Unser Bestseller-Messerset wurden für höchste Ansprüche entwickelt.</p>",
             "width": "50%",
             "alignment": "center",
-            "align_text": "left",
+            "align_text": "center",
             "text_size": "medium",
             "text_color": "inherit",
             "button_label": "Jetzt entdecken",
@@ -354,7 +354,15 @@
         "mt": 0,
         "mb": 0,
         "mt_mobile": 0,
-        "mb_mobile": 0
+        "mb_mobile": 0,
+        "heading_size": 52,
+        "heading_color": "#121212",
+        "des_size": 18,
+        "des_color": "#454545",
+        "btn_bg_color": "#fa8526",
+        "btn_text_color": "#ffffff",
+        "btn_bg_hover_color": "#333333",
+        "btn_hover_color": "#ffffff"
       }
     },
     "product_explanation_video_6ERhrB": {
