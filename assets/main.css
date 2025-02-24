@@ -5430,12 +5430,10 @@ variant-picker
   }
 }
 .m-button {
-
   font-weight: bold;
 }
-.branded-btn a{
-
-    font-weight: bold;
+.branded-btn a {
+  font-weight: bold;
 }
 .m-product-option--unselect {
   position: relative;
@@ -7628,4 +7626,11 @@ variant-picker
 }
 .foxecom-sticky-message {
   display: none;
+}
+
+.m-product-tabs__load-more .m-button--secondary {
+  text-align: center;
+  border: var(--btn-border-width) solid rgb(var(--color-outline-button));
+  background: rgb(250, 133, 38);
+  color: #fff;
 }
