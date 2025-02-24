@@ -7638,3 +7638,12 @@ variant-picker
   box-shadow: none;
   outline: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .m-collection-products .m-wishlist-button {
+    display: none;
+  }
+  .m-collection-products .m-add-to-cart {
+    display: none;
+  }
+}
