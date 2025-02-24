@@ -68,6 +68,1239 @@
     ]
   },
   {
+    "name": "Heading Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "H1 Heading Settings"
+      },
+      {
+        "type": "select",
+        "id": "mrk_h1_font_weight",
+        "label": "H1 Font Weight",
+        "default": "400",
+        "options": [
+          { "label": "Light", "value": "300" },
+          { "label": "Normal", "value": "400" },
+          { "label": "Medium", "value": "500" },
+          { "label": "Semi-Bold", "value": "600" },
+          { "label": "Bold", "value": "700" },
+          { "label": "Bolder", "value": "900" }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "h1_color",
+        "label": "H1 Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "H1  (Desktop)"
+      },
+      {
+        "type": "range",
+        "id": "h1_size_desktop",
+        "label": "H1 Size (Desktop)",
+        "min": 20,
+        "max": 100,
+        "step": 1,
+        "default": 48,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_mt_desktop",
+        "label": "H1 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_mb_desktop",
+        "label": "H1 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_ml_desktop",
+        "label": "H1 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_mr_desktop",
+        "label": "H1 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+
+      {
+        "type": "header",
+        "content": "H1 (Laptop)"
+      },
+      {
+        "type": "range",
+        "id": "h1_size_laptop",
+        "label": "H1 Size (Laptop)",
+        "min": 20,
+        "max": 100,
+        "step": 1,
+        "default": 48,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_mt_laptop",
+        "label": "H1 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_mb_laptop",
+        "label": "H1 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 15,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_ml_laptop",
+        "label": "H1 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_mr_laptop",
+        "label": "H1 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+
+      {
+        "type": "header",
+        "content": "H1 (Mobile)"
+      },
+      {
+        "type": "range",
+        "id": "h1_size_mobile",
+        "label": "H1 Size (Mobile)",
+        "min": 20,
+        "max": 100,
+        "step": 1,
+        "default": 48,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_mt_mobile",
+        "label": "H1 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_mb_mobile",
+        "label": "H1 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 10,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_ml_mobile",
+        "label": "H1 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h1_mr_mobile",
+        "label": "H1 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H2 Heading Settings"
+      },
+      {
+        "type": "select",
+        "id": "mrk_h2_font_weight",
+        "label": "H2 Font Weight",
+        "default": "400",
+        "options": [
+          { "label": "Light", "value": "300" },
+          { "label": "Normal", "value": "400" },
+          { "label": "Medium", "value": "500" },
+          { "label": "Semi-Bold", "value": "600" },
+          { "label": "Bold", "value": "700" },
+          { "label": "Bolder", "value": "900" }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "h2_color",
+        "label": "H2 Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "H2 (Desktop)"
+      },
+      {
+        "type": "range",
+        "id": "h2_size_desktop",
+        "label": "H2 Size (Desktop)",
+        "min": 16,
+        "max": 80,
+        "step": 1,
+        "default": 36,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_mt_desktop",
+        "label": "H2 Margin Top (Desktop)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_mb_desktop",
+        "label": "H2 Margin Bottom (Desktop)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_mr_desktop",
+        "label": "H2 Margin Right (Desktop)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_ml_desktop",
+        "label": "H2 Margin Left (Desktop)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H2 (Laptop)"
+      },
+      {
+        "type": "range",
+        "id": "h2_size_laptop",
+        "label": "H2 Size (Laptop)",
+        "min": 16,
+        "max": 80,
+        "step": 1,
+        "default": 32,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_mt_laptop",
+        "label": "H2 Margin Top (Laptop)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_mb_laptop",
+        "label": "H2 Margin Bottom (Laptop)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 15,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_mr_laptop",
+        "label": "H2 Margin Right (Laptop)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_ml_laptop",
+        "label": "H2 Margin Left (Laptop)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H2 (Mobile)"
+      },
+      {
+        "type": "range",
+        "id": "h2_size_mobile",
+        "label": "H2 Size (Mobile)",
+        "min": 16,
+        "max": 80,
+        "step": 1,
+        "default": 28,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_mt_mobile",
+        "label": "H2 Margin Top (Mobile)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_mb_mobile",
+        "label": "H2 Margin Bottom (Mobile)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 10,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_mr_mobile",
+        "label": "H2 Margin Right (Mobile)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h2_ml_mobile",
+        "label": "H2 Margin Left (Mobile)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+
+      {
+        "type": "header",
+        "content": "H3 Heading Settings"
+      },
+      {
+        "type": "select",
+        "id": "mrk_h3_font_weight",
+        "label": "H3 Font Weight",
+        "default": "400",
+        "options": [
+          { "label": "Light", "value": "300" },
+          { "label": "Normal", "value": "400" },
+          { "label": "Medium", "value": "500" },
+          { "label": "Semi-Bold", "value": "600" },
+          { "label": "Bold", "value": "700" },
+          { "label": "Bolder", "value": "900" }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "h3_color",
+        "label": "H3 Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "H3 (Desktop)"
+      },
+      {
+        "type": "range",
+        "id": "h3_size_desktop",
+        "label": "H3 Size (Desktop)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 28,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_mt_desktop",
+        "label": "H3 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_mb_desktop",
+        "label": "H3 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 15,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_ml_desktop",
+        "label": "H3 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_mr_desktop",
+        "label": "H3 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H3 (Laptop)"
+      },
+      {
+        "type": "range",
+        "id": "h3_size_laptop",
+        "label": "H3 Size (Laptop)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 26,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_mt_laptop",
+        "label": "H3 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_mb_laptop",
+        "label": "H3 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 12,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_ml_laptop",
+        "label": "H3 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_mr_laptop",
+        "label": "H3 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H3 (Mobile)"
+      },
+      {
+        "type": "range",
+        "id": "h3_size_mobile",
+        "label": "H3 Size (Mobile)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 24,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_mt_mobile",
+        "label": "H3 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_mb_mobile",
+        "label": "H3 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 10,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_ml_mobile",
+        "label": "H3 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h3_mr_mobile",
+        "label": "H3 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H4 Heading Settings"
+      },
+      {
+        "type": "select",
+        "id": "mrk_h4_font_weight",
+        "label": "H4 Font Weight",
+        "default": "400",
+        "options": [
+          { "label": "Light", "value": "300" },
+          { "label": "Normal", "value": "400" },
+          { "label": "Medium", "value": "500" },
+          { "label": "Semi-Bold", "value": "600" },
+          { "label": "Bold", "value": "700" },
+          { "label": "Bolder", "value": "900" }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "h4_color",
+        "label": "H4 Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "H4 (Desktop)"
+      },
+      {
+        "type": "range",
+        "id": "h4_size_desktop",
+        "label": "H4 Size (Desktop)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 24,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_mt_desktop",
+        "label": "H4 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_mb_desktop",
+        "label": "H4 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 10,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_ml_desktop",
+        "label": "H4 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_mr_desktop",
+        "label": "H4 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H4 (Laptop)"
+      },
+      {
+        "type": "range",
+        "id": "h4_size_laptop",
+        "label": "H4 Size (Laptop)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 22,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_mt_laptop",
+        "label": "H4 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_mb_laptop",
+        "label": "H4 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 8,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_ml_laptop",
+        "label": "H4 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_mr_laptop",
+        "label": "H4 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H4 (Mobile)"
+      },
+      {
+        "type": "range",
+        "id": "h4_size_mobile",
+        "label": "H4 Size (Mobile)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_mt_mobile",
+        "label": "H4 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_mb_mobile",
+        "label": "H4 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 6,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_ml_mobile",
+        "label": "H4 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h4_mr_mobile",
+        "label": "H4 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+
+      {
+        "type": "header",
+        "content": "H5 Heading Settings"
+      },
+      {
+        "type": "select",
+        "id": "mrk_h5_font_weight",
+        "label": "H5 Font Weight",
+        "default": "400",
+        "options": [
+          { "label": "Light", "value": "300" },
+          { "label": "Normal", "value": "400" },
+          { "label": "Medium", "value": "500" },
+          { "label": "Semi-Bold", "value": "600" },
+          { "label": "Bold", "value": "700" },
+          { "label": "Bolder", "value": "900" }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "h5_color",
+        "label": "H5 Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "H5 (Desktop)"
+      },
+      {
+        "type": "range",
+        "id": "h5_size_desktop",
+        "label": "H5 Size (Desktop)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_mt_desktop",
+        "label": "H5 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_mb_desktop",
+        "label": "H5 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 8,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_ml_desktop",
+        "label": "H5 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_mr_desktop",
+        "label": "H5 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H5 (Laptop)"
+      },
+      {
+        "type": "range",
+        "id": "h5_size_laptop",
+        "label": "H5 Size (Laptop)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 18,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_mt_laptop",
+        "label": "H5 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_mb_laptop",
+        "label": "H5 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 6,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_ml_laptop",
+        "label": "H5 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_mr_laptop",
+        "label": "H5 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H5 (Mobile)"
+      },
+      {
+        "type": "range",
+        "id": "h5_size_mobile",
+        "label": "H5 Size (Mobile)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_mt_mobile",
+        "label": "H5 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_mb_mobile",
+        "label": "H5 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 4,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_ml_mobile",
+        "label": "H5 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h5_mr_mobile",
+        "label": "H5 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+
+      {
+        "type": "header",
+        "content": "H6 Heading Settings"
+      },
+      {
+        "type": "select",
+        "id": "mrk_h6_font_weight",
+        "label": "H6 Font Weight",
+        "default": "400",
+        "options": [
+          { "label": "Light", "value": "300" },
+          { "label": "Normal", "value": "400" },
+          { "label": "Medium", "value": "500" },
+          { "label": "Semi-Bold", "value": "600" },
+          { "label": "Bold", "value": "700" },
+          { "label": "Bolder", "value": "900" }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "h6_color",
+        "label": "H6 Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "H6 (Desktop)"
+      },
+      {
+        "type": "range",
+        "id": "h6_size_desktop",
+        "label": "H6 Size (Desktop)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 18,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_mt_desktop",
+        "label": "H6 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_mb_desktop",
+        "label": "H6 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 6,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_ml_desktop",
+        "label": "H6 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_mr_desktop",
+        "label": "H6 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H6 (Laptop)"
+      },
+      {
+        "type": "range",
+        "id": "h6_size_laptop",
+        "label": "H6 Size (Laptop)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_mt_laptop",
+        "label": "H6 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_mb_laptop",
+        "label": "H6 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 4,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_ml_laptop",
+        "label": "H6 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_mr_laptop",
+        "label": "H6 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "H6 (Mobile)"
+      },
+      {
+        "type": "range",
+        "id": "h6_size_mobile",
+        "label": "H6 Size (Mobile)",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "default": 14,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_mt_mobile",
+        "label": "H6 Margin Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_mb_mobile",
+        "label": "H6 Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_ml_mobile",
+        "label": "H6 Margin Left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "h6_mr_mobile",
+        "label": "H6 Margin Right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit": "px"
+      }
+    ]
+  },
+  {
+    "name": "Global Button Settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Button Colors"
+      },
+      {
+        "type": "color",
+        "id": "btn_bg",
+        "label": "Button Background Color",
+        "default": "#fa8526"
+      },
+      {
+        "type": "color",
+        "id": "btn_text",
+        "label": "Button Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "btn_hover_bg",
+        "label": "Button Hover Background Color",
+        "default": "#d46a1b"
+      },
+      {
+        "type": "color",
+        "id": "btn_hover_text",
+        "label": "Button Hover Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Button Borders"
+      },
+      {
+        "type": "color",
+        "id": "btn_border",
+        "label": "Button Border Color",
+        "default": "#fa8526"
+      },
+      {
+        "type": "range",
+        "id": "btn_border_width_mrk",
+        "label": "Button Border Width",
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "default": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "btn_border_radius_mrk",
+        "label": "Button Border Radius",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 5,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Button Sizing"
+      },
+      {
+        "type": "range",
+        "id": "btn_font_size",
+        "label": "Button Font Size",
+        "min": 10,
+        "max": 24,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "btn_padding_vr",
+        "label": "Button Vertical Padding",
+        "min": 5,
+        "max": 30,
+        "step": 1,
+        "default": 10,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "btn_padding_hr",
+        "label": "Button Horizontal Padding",
+        "min": 5,
+        "max": 50,
+        "step": 1,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Box Shadow"
+      },
+      {
+        "type": "text",
+        "id": "btn_box_shadow",
+        "label": "Button Box Shadow",
+        "default": "0px 4px 6px rgba(0, 0, 0, 0.1)"
+      }
+    ]
+  },
+  {
     "name": "Layout settings",
     "settings": [
       {
@@ -772,9 +2005,9 @@
     ]
   },
   {
-		"name": "Animations",
-		"settings": [
-			{
+    "name": "Animations",
+    "settings": [
+      {
         "type": "checkbox",
         "id": "page_transition",
         "default": true,
@@ -808,35 +2041,35 @@
         "label": "Custom logo",
         "info": " Should use square sized images. Example: 64x64, 128x128"
       },
-			{
-				"type": "header",
-				"content": "Visible in the view"
-			},
-			{
-				"type": "select",
-				"id": "animations",
-				"label": "Animation",
-				"default": "none",
-				"options": [
-					{"value": "none", "label": "None"},
-					{"value": "fade-in", "label": "Fade in"},
-					{"value": "fade-in-up", "label": "Fade in up"},
-					{"value": "fade-in-left", "label": "Fade in left"},
-					{"value": "fade-in-right", "label": "Fade in right"}
-				]
-			},
-			{
-				"type": "range",
-				"id": "animation_duration",
-				"label": "Duration",
-				"default": 0.6,
-				"min": 0.1,
-				"max": 1,
-				"unit": "(s)",
-				"step": 0.1
-			}
-		]
-	},
+      {
+        "type": "header",
+        "content": "Visible in the view"
+      },
+      {
+        "type": "select",
+        "id": "animations",
+        "label": "Animation",
+        "default": "none",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "fade-in", "label": "Fade in" },
+          { "value": "fade-in-up", "label": "Fade in up" },
+          { "value": "fade-in-left", "label": "Fade in left" },
+          { "value": "fade-in-right", "label": "Fade in right" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "animation_duration",
+        "label": "Duration",
+        "default": 0.6,
+        "min": 0.1,
+        "max": 1,
+        "unit": "(s)",
+        "step": 0.1
+      }
+    ]
+  },
   {
     "name": "Product card",
     "settings": [
@@ -2503,7 +3736,7 @@
         "type": "richtext",
         "id": "agree_text",
         "label": "Text",
-        "default": "<p>I agree with the <a href=\"#\" title=\"#\">Terms & conditions<\/a><\/p>"
+        "default": "<p>I agree with the <a href=\"#\" title=\"#\">Terms & conditions</a></p>"
       },
       {
         "type": "checkbox",
@@ -2746,46 +3979,38 @@
     ]
   },
 
-
-
-
-
-
-
-
-
-{
-  "name": "Advanced Typegraphy",
-  "settings": [
-    {
-      "type": "header",
-      "content": "H1 Full Customization Settings"
-  },
   {
-      "type": "range",
-      "id": "h1_font_size-desktop",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "H1 Font Size (Desktop)",
-      "default": 32
-  },
-  {
-      "type": "range",
-      "id": "h1_font_size_mobile",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "H1 Font Size (Mobile)",
-      "default": 24
-  },
-  {
-      "type": "select",
-      "id": "h1_font_weight",
-      "label": "H1 Font Weight",
-      "options": [
+    "name": "Advanced Typegraphy",
+    "settings": [
+      {
+        "type": "header",
+        "content": "H1 Full Customization Settings"
+      },
+      {
+        "type": "range",
+        "id": "h1_font_size-desktop",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H1 Font Size (Desktop)",
+        "default": 32
+      },
+      {
+        "type": "range",
+        "id": "h1_font_size_mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H1 Font Size (Mobile)",
+        "default": 24
+      },
+      {
+        "type": "select",
+        "id": "h1_font_weight",
+        "label": "H1 Font Weight",
+        "options": [
           { "value": "100", "label": "Thin 100" },
           { "value": "200", "label": "Extra-Light 200" },
           { "value": "300", "label": "Light 300" },
@@ -2795,44 +4020,44 @@
           { "value": "700", "label": "Bold 700" },
           { "value": "800", "label": "Extra-Bold 800" },
           { "value": "900", "label": "Black 900" }
-      ],
-      "default": "600"
-  },
-  {
-      "type": "color",
-      "id": "h1_font_color",
-      "label": "H1 Font Color"
-  },
+        ],
+        "default": "600"
+      },
+      {
+        "type": "color",
+        "id": "h1_font_color",
+        "label": "H1 Font Color"
+      },
 
-  {
-      "type": "header",
-      "content": "H2 Full Customization Settings"
-  },
-  {
-      "type": "range",
-      "id": "h2_font_size-desktop",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "H2 Font Size (Desktop)",
-      "default": 28
-  },
-  {
-      "type": "range",
-      "id": "h2_font_size_mobile",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "H2 Font Size (Mobile)",
-      "default": 22
-  },
-  {
-      "type": "select",
-      "id": "h2_font_weight",
-      "label": "H2 Font Weight",
-      "options": [
+      {
+        "type": "header",
+        "content": "H2 Full Customization Settings"
+      },
+      {
+        "type": "range",
+        "id": "h2_font_size-desktop",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H2 Font Size (Desktop)",
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "h2_font_size_mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H2 Font Size (Mobile)",
+        "default": 22
+      },
+      {
+        "type": "select",
+        "id": "h2_font_weight",
+        "label": "H2 Font Weight",
+        "options": [
           { "value": "100", "label": "Thin 100" },
           { "value": "200", "label": "Extra-Light 200" },
           { "value": "300", "label": "Light 300" },
@@ -2842,44 +4067,44 @@
           { "value": "700", "label": "Bold 700" },
           { "value": "800", "label": "Extra-Bold 800" },
           { "value": "900", "label": "Black 900" }
-      ],
-      "default": "600"
-  },
-  {
-      "type": "color",
-      "id": "h2_font_color",
-      "label": "H2 Font Color"
-  },
+        ],
+        "default": "600"
+      },
+      {
+        "type": "color",
+        "id": "h2_font_color",
+        "label": "H2 Font Color"
+      },
 
-  {
-      "type": "header",
-      "content": "H3 Full Customization Settings"
-  },
-  {
-      "type": "range",
-      "id": "h3_font_size",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "H3 Font Size (Desktop)",
-      "default": 24
-  },
-  {
-      "type": "range",
-      "id": "h3_font_size_mobile",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "H3 Font Size (Mobile)",
-      "default": 20
-  },
-  {
-      "type": "select",
-      "id": "h3_font_weight",
-      "label": "H3 Font Weight",
-      "options": [
+      {
+        "type": "header",
+        "content": "H3 Full Customization Settings"
+      },
+      {
+        "type": "range",
+        "id": "h3_font_size",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H3 Font Size (Desktop)",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "h3_font_size_mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H3 Font Size (Mobile)",
+        "default": 20
+      },
+      {
+        "type": "select",
+        "id": "h3_font_weight",
+        "label": "H3 Font Weight",
+        "options": [
           { "value": "100", "label": "Thin 100" },
           { "value": "200", "label": "Extra-Light 200" },
           { "value": "300", "label": "Light 300" },
@@ -2889,44 +4114,44 @@
           { "value": "700", "label": "Bold 700" },
           { "value": "800", "label": "Extra-Bold 800" },
           { "value": "900", "label": "Black 900" }
-      ],
-      "default": "600"
-  },
-  {
-      "type": "color",
-      "id": "h3_font_color",
-      "label": "H3 Font Color"
-  },
+        ],
+        "default": "600"
+      },
+      {
+        "type": "color",
+        "id": "h3_font_color",
+        "label": "H3 Font Color"
+      },
 
-  {
-      "type": "header",
-      "content": "H4 Full Customization Settings"
-  },
-  {
-      "type": "range",
-      "id": "h4_font_size-desktop",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "H4 Font Size (Desktop)",
-      "default": 20
-  },
-  {
-      "type": "range",
-      "id": "h4_font_size_mobile",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "H4 Font Size (Mobile)",
-      "default": 18
-  },
-  {
-      "type": "select",
-      "id": "h4_font_weight",
-      "label": "H4 Font Weight",
-      "options": [
+      {
+        "type": "header",
+        "content": "H4 Full Customization Settings"
+      },
+      {
+        "type": "range",
+        "id": "h4_font_size-desktop",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H4 Font Size (Desktop)",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "h4_font_size_mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H4 Font Size (Mobile)",
+        "default": 18
+      },
+      {
+        "type": "select",
+        "id": "h4_font_weight",
+        "label": "H4 Font Weight",
+        "options": [
           { "value": "100", "label": "Thin 100" },
           { "value": "200", "label": "Extra-Light 200" },
           { "value": "300", "label": "Light 300" },
@@ -2936,44 +4161,44 @@
           { "value": "700", "label": "Bold 700" },
           { "value": "800", "label": "Extra-Bold 800" },
           { "value": "900", "label": "Black 900" }
-      ],
-      "default": "500"
-  },
-  {
-      "type": "color",
-      "id": "h4_font_color",
-      "label": "H4 Font Color"
-  },
+        ],
+        "default": "500"
+      },
+      {
+        "type": "color",
+        "id": "h4_font_color",
+        "label": "H4 Font Color"
+      },
 
-  {
-      "type": "header",
-      "content": "H5 Full Customization Settings"
-  },
-  {
-      "type": "range",
-      "id": "h5_font_size",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "H5 Font Size (Desktop)",
-      "default": 18
-  },
-  {
-      "type": "range",
-      "id": "h5_font_size_mobile",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "H5 Font Size (Mobile)",
-      "default": 16
-  },
-  {
-      "type": "select",
-      "id": "h5_font_weight",
-      "label": "H5 Font Weight",
-      "options": [
+      {
+        "type": "header",
+        "content": "H5 Full Customization Settings"
+      },
+      {
+        "type": "range",
+        "id": "h5_font_size",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H5 Font Size (Desktop)",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "h5_font_size_mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "H5 Font Size (Mobile)",
+        "default": 16
+      },
+      {
+        "type": "select",
+        "id": "h5_font_weight",
+        "label": "H5 Font Weight",
+        "options": [
           { "value": "100", "label": "Thin 100" },
           { "value": "200", "label": "Extra-Light 200" },
           { "value": "300", "label": "Light 300" },
@@ -2983,44 +4208,44 @@
           { "value": "700", "label": "Bold 700" },
           { "value": "800", "label": "Extra-Bold 800" },
           { "value": "900", "label": "Black 900" }
-      ],
-      "default": "500"
-  },
-  {
-      "type": "color",
-      "id": "h5_font_color",
-      "label": "H5 Font Color"
-  },
+        ],
+        "default": "500"
+      },
+      {
+        "type": "color",
+        "id": "h5_font_color",
+        "label": "H5 Font Color"
+      },
 
-  {
-      "type": "header",
-      "content": "Paragraph P1 Full Customization"
-  },
-  {
-      "type": "range",
-      "id": "p1_font_size",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "P1 Font Size (Desktop)",
-      "default": 16
-  },
-  {
-      "type": "range",
-      "id": "p1_font_size_mobile",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "P1 Font Size (Mobile)",
-      "default": 14
-  },
-  {
-      "type": "select",
-      "id": "p1_font_weight",
-      "label": "P1 Font Weight",
-      "options": [
+      {
+        "type": "header",
+        "content": "Paragraph P1 Full Customization"
+      },
+      {
+        "type": "range",
+        "id": "p1_font_size",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "P1 Font Size (Desktop)",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "p1_font_size_mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "P1 Font Size (Mobile)",
+        "default": 14
+      },
+      {
+        "type": "select",
+        "id": "p1_font_weight",
+        "label": "P1 Font Weight",
+        "options": [
           { "value": "100", "label": "Thin 100" },
           { "value": "200", "label": "Extra-Light 200" },
           { "value": "300", "label": "Light 300" },
@@ -3030,44 +4255,44 @@
           { "value": "700", "label": "Bold 700" },
           { "value": "800", "label": "Extra-Bold 800" },
           { "value": "900", "label": "Black 900" }
-      ],
-      "default": "400"
-  },
-  {
-      "type": "color",
-      "id": "p1_font_color",
-      "label": "P1 Font Color"
-  },
+        ],
+        "default": "400"
+      },
+      {
+        "type": "color",
+        "id": "p1_font_color",
+        "label": "P1 Font Color"
+      },
 
-  {
-      "type": "header",
-      "content": "Paragraph P2 Full Customization"
-  },
-  {
-      "type": "range",
-      "id": "p2_font_size",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "P2 Font Size (Desktop)",
-      "default": 16
-  },
-  {
-      "type": "range",
-      "id": "p2_font_size_mobile",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "P2 Font Size (Mobile)",
-      "default": 14
-  },
-  {
-      "type": "select",
-      "id": "p2_font_weight",
-      "label": "P2 Font Weight",
-      "options": [
+      {
+        "type": "header",
+        "content": "Paragraph P2 Full Customization"
+      },
+      {
+        "type": "range",
+        "id": "p2_font_size",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "P2 Font Size (Desktop)",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "p2_font_size_mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "P2 Font Size (Mobile)",
+        "default": 14
+      },
+      {
+        "type": "select",
+        "id": "p2_font_weight",
+        "label": "P2 Font Weight",
+        "options": [
           { "value": "100", "label": "Thin 100" },
           { "value": "200", "label": "Extra-Light 200" },
           { "value": "300", "label": "Light 300" },
@@ -3077,44 +4302,44 @@
           { "value": "700", "label": "Bold 700" },
           { "value": "800", "label": "Extra-Bold 800" },
           { "value": "900", "label": "Black 900" }
-      ],
-      "default": "400"
-  },
-  {
-      "type": "color",
-      "id": "p2_font_color",
-      "label": "P2 Font Color"
-  },
+        ],
+        "default": "400"
+      },
+      {
+        "type": "color",
+        "id": "p2_font_color",
+        "label": "P2 Font Color"
+      },
 
-  {
-      "type": "header",
-      "content": "Paragraph P3 Full Customization"
-  },
-  {
-      "type": "range",
-      "id": "p3_font_size",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "P3 Font Size (Desktop)",
-      "default": 16
-  },
-  {
-      "type": "range",
-      "id": "p3_font_size_mobile",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "P3 Font Size (Mobile)",
-      "default": 14
-  },
-  {
-      "type": "select",
-      "id": "p3_font_weight",
-      "label": "P3 Font Weight",
-      "options": [
+      {
+        "type": "header",
+        "content": "Paragraph P3 Full Customization"
+      },
+      {
+        "type": "range",
+        "id": "p3_font_size",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "P3 Font Size (Desktop)",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "p3_font_size_mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "P3 Font Size (Mobile)",
+        "default": 14
+      },
+      {
+        "type": "select",
+        "id": "p3_font_weight",
+        "label": "P3 Font Weight",
+        "options": [
           { "value": "100", "label": "Thin 100" },
           { "value": "200", "label": "Extra-Light 200" },
           { "value": "300", "label": "Light 300" },
@@ -3124,44 +4349,44 @@
           { "value": "700", "label": "Bold 700" },
           { "value": "800", "label": "Extra-Bold 800" },
           { "value": "900", "label": "Black 900" }
-      ],
-      "default": "400"
-  },
-  {
-      "type": "color",
-      "id": "p3_font_color",
-      "label": "P3 Font Color"
-  },
+        ],
+        "default": "400"
+      },
+      {
+        "type": "color",
+        "id": "p3_font_color",
+        "label": "P3 Font Color"
+      },
 
-  {
-      "type": "header",
-      "content": "Paragraph P4 Full Customization"
-  },
-  {
-      "type": "range",
-      "id": "p4_font_size",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "P4 Font Size (Desktop)",
-      "default": 16
-  },
-  {
-      "type": "range",
-      "id": "p4_font_size_mobile",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "P4 Font Size (Mobile)",
-      "default": 14
-  },
-  {
-      "type": "select",
-      "id": "p4_font_weight",
-      "label": "P4 Font Weight",
-      "options": [
+      {
+        "type": "header",
+        "content": "Paragraph P4 Full Customization"
+      },
+      {
+        "type": "range",
+        "id": "p4_font_size",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "P4 Font Size (Desktop)",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "p4_font_size_mobile",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "P4 Font Size (Mobile)",
+        "default": 14
+      },
+      {
+        "type": "select",
+        "id": "p4_font_weight",
+        "label": "P4 Font Weight",
+        "options": [
           { "value": "100", "label": "Thin 100" },
           { "value": "200", "label": "Extra-Light 200" },
           { "value": "300", "label": "Light 300" },
@@ -3171,18 +4396,16 @@
           { "value": "700", "label": "Bold 700" },
           { "value": "800", "label": "Extra-Bold 800" },
           { "value": "900", "label": "Black 900" }
-      ],
-      "default": "400"
+        ],
+        "default": "400"
+      },
+      {
+        "type": "color",
+        "id": "p4_font_color",
+        "label": "P4 Font Color"
+      }
+    ]
   },
-  {
-      "type": "color",
-      "id": "p4_font_color",
-      "label": "P4 Font Color"
-  }
-  
-  ]
-}
-,
   {
     "name": "Currency format",
     "settings": [
