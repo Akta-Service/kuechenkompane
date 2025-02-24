@@ -146,7 +146,7 @@
             "info_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
             "info_text_2": "Kostenloser Versand ab 100€",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
-            "info_text_3": "Handgefertigte Qualität für die Ewigkeit"
+            "info_text_3": "Beste Preis-Leistung"
           }
         }
       },
@@ -189,9 +189,17 @@
       "blocks": {
         "faq_fqQbjd": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "question": "{{ section.settings.product.metafields.custom.accordion_title_1.value }}",
             "answer": "{{ section.settings.product.metafields.custom.accordion_content_1 | metafield_tag }}"
+          }
+        },
+        "faq_jkYPLV": {
+          "type": "faq",
+          "settings": {
+            "question": "{{ section.settings.product.metafields.custom.accordion_title_4.value }}",
+            "answer": "<p>{{ section.settings.product.metafields.custom.accordion_content_4 | metafield_tag }}</p>"
           }
         },
         "faq_kQAWhE": {
@@ -207,27 +215,20 @@
             "question": "{{ section.settings.product.metafields.custom.accordion_title_3.value }}",
             "answer": "{{ section.settings.product.metafields.custom.accordion_content_3 | metafield_tag }}"
           }
-        },
-        "faq_jkYPLV": {
-          "type": "faq",
-          "settings": {
-            "question": "{{ section.settings.product.metafields.custom.accordion_title_4.value }}",
-            "answer": "<p>{{ section.settings.product.metafields.custom.accordion_content_4 | metafield_tag }}</p>"
-          }
         }
       },
       "block_order": [
         "faq_fqQbjd",
+        "faq_jkYPLV",
         "faq_kQAWhE",
-        "faq_pDwHXa",
-        "faq_jkYPLV"
+        "faq_pDwHXa"
       ],
       "settings": {
         "product": "akarui-messerset-premium",
         "title": "Produktbeschreibung",
         "font_size": 26,
         "font_color": "#000000",
-        "description": "<p>{{ section.settings.product.metafields.custom.accordion_content_1 | metafield_tag }}</p>",
+        "description": "{{ section.settings.product.metafields.custom.accordion_content_1 | metafield_tag }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true
