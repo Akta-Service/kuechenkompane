@@ -58,7 +58,7 @@
         "title": "Wir würden uns freuen, von dir zu hören.",
         "description": "<p>Wenn du großartige Produkte hast oder mit uns zusammenarbeiten möchtest, schreib uns einfach eine Nachricht.</p>",
         "show_name": true,
-        "show_phone": false,
+        "show_phone": true,
         "show_signup_email": true,
         "animations": "inherit"
       }
