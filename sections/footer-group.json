@@ -18,7 +18,7 @@
           "type": "newsletter",
           "settings": {
             "title": "WIR SIND JEDERZEIT FÜR DICH DA!",
-            "description": "Hast du Fragen? Rufe uns gerne völlig kostenlos an! Unser Support-Team hilft dir sehr gerne weiter.\n\n<br>\n<br>Wir sind Mo-Fr von 9:00 - 18:00 Uhr erreichbar.\n<br>\nTel:  0800 - 8004680",
+            "description": "Hast du Fragen? Rufe uns gerne völlig kostenlos an! Unser Support-Team hilft dir sehr gerne weiter.\n\n<br>\n<br>Wir sind Mo-Fr von 9:00 - 18:00 Uhr erreichbar:\n<br>\n<br>\nE-Mail: info@kuechenkompane.de <br>\nTel:  0800 - 8004680",
             "email_placeholder": "E-Mail eingeben",
             "show_icon_input": false,
             "button_label": "Kontakt aufnehmen",
@@ -61,10 +61,10 @@
         "93571032-b171-4c66-8b3e-96cd91946363": {
           "type": "our_store",
           "settings": {
-            "title": "Our store",
+            "title": "Social Media",
             "description": "",
-            "show_email": false,
-            "show_phone": false,
+            "show_email": true,
+            "show_phone": true,
             "show_socials_link": true,
             "width": "33%",
             "order_first": false,
