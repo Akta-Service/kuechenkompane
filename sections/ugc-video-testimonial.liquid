@@ -307,9 +307,12 @@
                 <div class="video_item">
                   <video
                     playinline
+                    {% if section.settings.autoplay %}
                     autoplay
+                    {% endif %}
                     muted
                     controls
+                    loading="lazy"
                     {% if block.settings.video_poster %}
                       poster="{{ block.settings.video_poster | img_url : 'master'  }}"
                     {% endif %}
@@ -426,6 +429,12 @@
       "id": "btn_text",
       "label": "Button Text",
       "default": "@merodacosmetics"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay Videos",
+      "default": false
     }
   ],
   "blocks": [
