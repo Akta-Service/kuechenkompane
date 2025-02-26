@@ -1,65 +1,65 @@
 <style>
-    .count-icon {
-      display: inline-block;
-      position: relative;
-      height: 25px;
-      width: 15px;
-      top: 7px;
-    }
+  .count-icon {
+    display: inline-block;
+    position: relative;
+    height: 25px;
+    width: 15px;
+    top: 7px;
+  }
 
-    .count-icon::after {
-      width: 9px;
-      height: 9px;
-      background: #646464;
-      border-radius: 9px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      content: '';
-      margin-top: 8px;
-    }
-    .count-icon::before {
-      animation: bubble 2s linear infinite;
-      width: 9px;
-      height: 9px;
-      background: #474747;
-      border-radius: 9px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      content: '';
-      margin-top: 8px;
-    }
+  .count-icon::after {
+    width: 9px;
+    height: 9px;
+    background: #646464;
+    border-radius: 9px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    margin-top: 8px;
+  }
+  .count-icon::before {
+    animation: bubble 2s linear infinite;
+    width: 9px;
+    height: 9px;
+    background: #474747;
+    border-radius: 9px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    margin-top: 8px;
+  }
 
-    .count-people {
-      margin-right: 4px;
-      font-weight: 700;
-      color: #000;
-    }
+  .count-people {
+    margin-right: 4px;
+    font-weight: 700;
+    color: #000;
+  }
   #viewers-count {
-  color: #000;
+    color: #000;
   }
   #stock-count {
-  font-weight: 700;
-  margin: 0 3px;
-  color: #000;
+    font-weight: 700;
+    margin: 0 3px;
+    color: #000;
   }
   .viewer-count {
     padding-left: 7px;
-    line-height:1.2;
+    line-height: 1.2;
   }
   .product-count {
     padding-left: 7px;
     margin-bottom: 10px;
   }
   @keyframes bubble {
-  0% {
-  opacity: 0.5;
-  }
-  100% {
-  transform: scale(2.5);
-  opacity: 0;
-  }
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
   }
 
   .viewer-count-mobile {
@@ -71,70 +71,68 @@
     --margin-size-mobile-bottom: {{ block.settings.p_margin_size_mobile_bottom }}px;
   }
   .product-page .info-badge.sale-badge {
-    --border-color: {{section.settings.border_color}};
+    --border-color: {{ section.settings.border_color }};
   }
   @media (max-width: 480px) {
-  .viewer-count-mobile {
-    margin-top: var( --margin-size-mobile-top) !important;
-    margin-bottom: var( --margin-size-mobile-bottom) !important;
-  }
-  .product-count-mobile {
-    margin-top: var( --margin-size-mobile-top) !important;
-    margin-bottom: var( --margin-size-mobile-bottom) !important;
-  }
-  .product-price {
-     margin-bottom: 0 !important;
-  }
-  .product-page .info-badge.sale-badge {
-      border-color:var(--border-color)  !important;
-  }
+    .viewer-count-mobile {
+      margin-top: var(--margin-size-mobile-top) !important;
+      margin-bottom: var(--margin-size-mobile-bottom) !important;
+    }
+    .product-count-mobile {
+      margin-top: var(--margin-size-mobile-top) !important;
+      margin-bottom: var(--margin-size-mobile-bottom) !important;
+    }
+    .product-price {
+      margin-bottom: 0 !important;
+    }
+    .product-page .info-badge.sale-badge {
+      border-color: var(--border-color) !important;
+    }
 
   }
 </style>
 
 <div class="viewer-count">
-  <p
-    class="viewer-count-mobile"
-    style="font-size:{{block.settings.viewer_count_font_size}}px; color: {{block.settings.viewer_text_color}};"
-  >
-    <span class="count-icon"> </span>
+  <p class="viewer-count-mobile" style="font-size:{{block.settings.viewer_count_font_size}}px; color: {{block.settings.viewer_text_color}};">
+    <span class="count-icon"></span>
     <span class="count-people">
-      <span id="viewers-count" style="color: {{block.settings.viewer_count_text_color}};">9 </span>
+      <span id="viewers-count" style="color: {{block.settings.viewer_count_text_color}};">9
+      </span>
       {{ block.settings.view_main_text_1 }}
     </span>
 
     {{ block.settings.view_main_text_2 }}
   </p>
 </div>
+{% if product.tags contains "STOCK" %}
+  <div class="product-count">
+    <p class="product-count-mobile" style="font-size:{{block.settings.product_count_font_size}}px; color: {{block.settings.product_text_color}}; margin-top:{{block.settings.product_margin_top}}px; margin-bottom:{{block.settings.product_margin_bottom}}px;">
+      <span class="count-icon"></span>
+      {{ block.settings.product_main_text_1 }}
 
-<div class="product-count">
-  <p
-    class="product-count-mobile"
-    style="font-size:{{block.settings.product_count_font_size}}px; color: {{block.settings.product_text_color}}; margin-top:{{block.settings.product_margin_top}}px; margin-bottom:{{block.settings.product_margin_bottom}}px;"
-  >
-    <span class="count-icon"></span> {{ block.settings.product_main_text_1 }}
+      <span id="stock-count" style="color: {{block.settings.product_count_text_color}};">
+        13
+      </span>
 
-    <span id="stock-count" style="color: {{block.settings.product_count_text_color}};"> 13 </span>
-
-    {{ block.settings.product_main_text_2 }}
-  </p>
-</div>
-
+      {{ block.settings.product_main_text_2 }}
+    </p>
+  </div>
+{% endif %}
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('DOMContentLoaded', function () {
     function updateViewersCount() {
       // Randomly generate a number of viewers between 5 and 20
       var viewersCount = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
       document.getElementById('viewers-count').innerText = viewersCount + ' ';
     }
-
+      
     // Update the count every second (1000 milliseconds)
-    setInterval(updateViewersCount, {{block.settings.viewer_count_time}});
-
+    setInterval(updateViewersCount, {{ block.settings.viewer_count_time}});
+      
     // Initialize the stock count with a random number between 5 and 20
     var stockCount = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
     document.getElementById('stock-count').innerText = ' ' + stockCount + ' ';
-
+      
     function decreaseStock() {
       if (stockCount > 3) {
         stockCount--;
@@ -144,8 +142,8 @@
       }
       document.getElementById('stock-count').innerText = ' ' + stockCount + ' ';
     }
-
+      
     // Decrease stock count every second
-    setInterval(decreaseStock, {{block.settings.stock_count_time}});
-  });
+    setInterval(decreaseStock, {{ block.settings.stock_count_time | default: 20000 }});
+      });
 </script>
