@@ -2,7 +2,7 @@
 <style>
   .best-selling-collections {
     text-align: center;
-    padding: {{ section.settings.vrp |  default: '50'}}px {{ section.settings.hrp |  default: '20'}}px;
+    padding: {{ section.settings.vrp |  default: 50 }}px {{ section.settings.hrp |  default: 20}}px;
     background-color: {{ section.settings.bg_color |  default: '#F8F8F8' }};
   }
 
@@ -60,7 +60,7 @@
 
 @media only screen and (max-width: 768px) {
   .best-selling-collections {  
-    padding: {{ section.settings.vrpm |  default: '30'}}px {{ section.settings.hrpm |  default: '20'}}px;    
+    padding: {{ section.settings.vrpm |  default: 30 }}px {{ section.settings.hrpm |  default: 20 }}px;    
   }
   .collections-grid {   
     grid-template-columns: repeat({{ section.settings.select_column_m }}, 1fr);
