@@ -510,17 +510,17 @@ span.faq-icon {
   background: #fff;
 }
 
-a.m-button.m-button--primary {
+/* a.m-button.m-button--primary {
   background: #fa8526 !important;
   color: #fff !important;
   font-weight: bold;
 }
 a.m-button.m-button--primary:hover {
   background: #333333 !important;
-}
-a.m-button.m-button--secondary:hover {
+} */
+/* a.m-button.m-button--secondary:hover {
   border: 1px solid #000;
-}
+} */
 /* .swiper.banner-top-slider {
   max-width: 1000px;
 } */

@@ -288,10 +288,10 @@
   >
     <div class="video-wrapper">
       <video class="desktop-video" muted autoplay loop playsinline>
-        <source src="{{ section.settings.u}}" type="video/mp4">
+        <source src="{{ section.settings.u}}" loading="lazy" type="video/mp4">
       </video>
       <video class="mobile-video" muted autoplay loop playsinline>
-        <source src="{{ section.settings.u_mobile }}" type="video/mp4">
+        <source src="{{ section.settings.u_mobile }}" loading="lazy" type="video/mp4">
       </video>
     </div>
 
@@ -299,7 +299,7 @@
       <h3>{{ section.settings.title }}</h3>
       {{ section.settings.sub_title }}
       <div class="banner-btn banner-btn-{{ section.id }}">
-        <a href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
+        <a class="mrk-btn" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
       </div>
     </div>
   </div>

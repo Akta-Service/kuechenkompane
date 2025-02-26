@@ -145,7 +145,7 @@
         %}
         <div class="m-section__button{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
           <a
-            class="m-button{% if is_button_icon %} m-button--text-with-icon{% endif %} {{ section.settings.button_style }}"
+            class="m-button{% if is_button_icon %} m-button--text-with-icon{% endif %} {{ section.settings.button_style }} mrk-btn"
             {% if section.settings.button_link != blank %}
               href="{{ section.settings.button_link }}"
             {% else %}

@@ -1,71 +1,69 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
-    .banner-area{
-      background: {{ section.settings.bg_color }};
-      margin-top: {{ section.settings.mt }}px;
-      margin-bottom: {{ section.settings.mb }}px;
-    }
-    .banner-area-content {
-      display: flex;
-      align-items: center;
-     }
+  .banner-area {
+    background: {{ section.settings.bg_color }};
+    margin-top: {{ section.settings.mt }}px;
+    margin-bottom: {{ section.settings.mb }}px;
+  }
+  .banner-area-content {
+    display: flex;
+    align-items: center;
+  }
 
-      .banner-content-img {
-      height: auto;
-      max-height: 700px;
-      width: 55%;
-      }
-      .banner-content-img img{
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-      }
-      .banner-content {
-        width: 45%;
-        padding-left: 6%;
-        padding-right: 5%;
-      }
-     .banner-tag {
-      font-size: 16px;
-      border: 1px solid #000;
-      border-radius: 30px;
-      display: inline-block;
-      line-height: 1;
-      padding: 9px 15px;
-      margin: 0;
-      margin-bottom: 5px;
-    }
-    .banner-title {
+  .banner-content-img {
+    height: auto;
+    max-height: 700px;
+    width: 55%;
+  }
+  .banner-content-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  .banner-content {
+    width: 45%;
+    padding-left: 6%;
+    padding-right: 5%;
+  }
+  .banner-tag {
+    font-size: 16px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    display: inline-block;
+    line-height: 1;
+    padding: 9px 15px;
+    margin: 0 0 5px;
+  }
+  .banner-title {
     font-size: 52px;
     color: #121212;
+    margin: 0 0 10px;
+  }
+  .banner-button {
+    color: {{ section.settings.btn_text_color }};
+    background: {{ section.settings.btn_bg_color }};
+    font-size: 16px;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+    line-height: 1;
     margin: 0;
-    margin-bottom: 10px;
-    }
-    .banner-button {
-      color: {{  section.settings.btn_text_color }};
-      background: {{ section.settings.btn_bg_color }};
-      font-size: 16px;
-      display: inline-block;
-      padding: 15px 25px;
-      border-radius: 5px;
-      text-align: center;
-      transition: 0.3s;
-      line-height: 1;
-      margin: 0;
   }
   .banner-button:hover {
-    color: {{  section.settings.btn_hover_color }};
+    color: {{ section.settings.btn_hover_color }};
     background: {{ section.settings.btn_bg_hover_color }};
 
   }
   .banner-text {
-    margin: 0;
+    margin: 0 0 25px;
     font-size: {{ section.settings.des_size }}px;
     color: {{ section.settings.des_color }};
-    margin-bottom: 25px;
   }
-  .banner-next, .banner-prev {
+  .banner-next,
+  .banner-prev {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -77,67 +75,67 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-   }
-   .banner-prev {
+  }
+  .banner-prev {
     left: 50px;
-   }
-   .banner-next {
+  }
+  .banner-next {
     right: 50px;
 
-   }
-   .banner-next svg{
+  }
+  .banner-next svg {
     transform: rotate(180deg);
-   }
-   @media (max-width: 1400px) {
+  }
+  @media (max-width: 1400px) {
     .banner-content-img {
-    width: 50%;
+      width: 50%;
     }
     .banner-content {
-    width: 50%;
-   }
-   .banner-title {
-    font-size: 44px;
-   }
-   }
-   @media (max-width: 1000px){
+      width: 50%;
+    }
+    .banner-title {
+      font-size: 44px;
+    }
+  }
+  @media (max-width: 1000px) {
     .banner-area-content {
-    flex-direction: column;
-    gap: 40px;
+      flex-direction: column;
+      gap: 40px;
     }
     .banner-content-img {
-    width: 100%;
+      width: 100%;
     }
     .banner-content {
       width: 100%;
-      padding: 0 20px;
-      padding-bottom: 40px;
-      }
-      .banner-content-img img {
-
-        max-height: 700px;
-     }
-     .banner-next, .banner-prev {
-          top: 40%;
-      }
-   }
-    @media (max-width: 768px) {
-      .banner-area {
-        margin-top: {{ section.settings.mt_mobile }}px;
-        margin-bottom: {{ section.settings.mb_mobile }}px;
-      }
-      .banner-title {
-      font-size: 28px;
-      }
-      .banner-tag {
-        margin-bottom: 15px;
-      }
-      .banner-next {
-        right: 15px;
-      }
-      .banner-prev {
-        left: 15px;
-      }
+      padding: 0 20px 40px;
     }
+    .banner-content-img img {
+
+      max-height: 700px;
+    }
+    .banner-next,
+    .banner-prev {
+      top: 40%;
+    }
+  }
+  @media (max-width: 768px) {
+    .banner-area {
+      margin-top: {{ section.settings.mt_mobile }}px;
+      margin-bottom: {{ section.settings.mb_mobile }}px;
+    }
+    .banner-title {
+      font-size: 28px;
+    }
+    .banner-tag {
+      margin-bottom: 15px;
+    }
+    .banner-next {
+      right: 15px;
+    }
+    .banner-prev {
+      left: 15px;
+    }
+  }
 </style>
 <div class="banner-area">
   <div class="swiper banner-area-slider">
@@ -164,7 +162,7 @@
                 <p class="banner-text">{{ block.settings.text }}</p>
               {% endif %}
               {% if block.settings.banner_btn_text != blank %}
-                <a href="{{ block.settings.banner_link }}" class="banner-button">
+                <a href="{{ block.settings.banner_link }}" class="mrk-btn banner-button">
                   {{- block.settings.banner_btn_text -}}
                 </a>
               {% endif %}
@@ -174,182 +172,186 @@
       {% endfor %}
     </div>
     <div class="banner-next">
-      <svg class="" width="20" height="18" viewBox="0 0 18 16" fill="none">
-        <path d="M8.4375 14.75L1.6875 8L8.4375 1.25M2.625 8H16.3125" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      <svg
+        class=""
+        width="20"
+        height="18"
+        viewBox="0 0 18 16"
+        fill="none">
+        <path
+          d="M8.4375 14.75L1.6875 8L8.4375 1.25M2.625 8H16.3125"
+          stroke="#121212"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
       </svg>
     </div>
     <div class="banner-prev">
-      <svg class="" width="20" height="18" viewBox="0 0 18 16" fill="none">
-        <path d="M8.4375 14.75L1.6875 8L8.4375 1.25M2.625 8H16.3125" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      <svg
+        class=""
+        width="20"
+        height="18"
+        viewBox="0 0 18 16"
+        fill="none">
+        <path
+          d="M8.4375 14.75L1.6875 8L8.4375 1.25M2.625 8H16.3125"
+          stroke="#121212"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
       </svg>
     </div>
   </div>
 </div>
 {% schema %}
-{
-  "name": "Banner version 1",
+  {
+    "name": "Banner version 1",
 
-  "settings": [
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "mt",
-      "label": "Margin top (desktop)",
-      "default": 0,
-      "min": 0,
-      "max": 100,
-      "step": 1
-    },
-    {
-      "type": "range",
-      "id": "mb",
-      "label": "Margin bottom (desktop)",
-      "default": 0,
-      "min": 0,
-      "max": 100,
-      "step": 1
-    },
-    {
-      "type": "range",
-      "id": "mt_mobile",
-      "label": "Margin top (mobile)",
-      "default": 0,
-      "min": 0,
-      "max": 100,
-      "step": 1
-    },
-    {
-      "type": "range",
-      "id": "mb_mobile",
-      "label": "Margin bottom (mobile)",
-      "default": 0,
-      "min": 0,
-      "max": 100,
-      "step": 1
-    },
-
-    {
-      "type": "header",
-      "content": "Heading"
-    },
-    {
-      "type": "range",
-      "id": "heading_size",
-      "label": "Heading Size",
-      "default": 52,
-      "min": 10,
-      "max": 100,
-      "step": 1
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading Color",
-      "default": "#121212"
-    },
-    {
-      "type": "header",
-      "content": "Description"
-    },
-    {
-      "type": "range",
-      "id": "des_size",
-      "label": "Description Size",
-      "default": 18,
-      "min": 10,
-      "max": 30,
-      "step": 1
-    },
-    {
-      "type": "color",
-      "id": "des_color",
-      "label": "Description Color",
-      "default": "#454545"
-    },
-    {
-      "type": "header",
-      "content": "Button"
-    },
-    {
-      "type": "color",
-      "id": "btn_bg_color",
-      "label": "Button Background Color",
-      "default": "#fa8526"
-    },
-    {
-      "type": "color",
-      "id": "btn_text_color",
-      "label": "Button Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "btn_bg_hover_color",
-      "label": "Button Hover Background Color",
-      "default": "#333333"
-    },
-    {
-      "type": "color",
-      "id": "btn_hover_color",
-      "label": "Button Hover Text Color",
-      "default": "#ffffff"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "image",
-      "name": "Image",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "tag",
-          "label": "Tag"
-        },
-        {
-          "type": "text",
-          "id": "sub_title",
-          "label": "Sub Title"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "textarea",
-          "id": "text",
-          "label": "Text"
-        },
-        {
-          "type": "text",
-          "id": "banner_btn_text",
-          "label": "Button Text"
-        },
-        {
-          "type": "url",
-          "id": "banner_link",
-          "label": "Button Link"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Banner version 1",
-      "settings": {}
-    }
-  ]
-}
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "mt",
+        "label": "Margin top (desktop)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "mb",
+        "label": "Margin bottom (desktop)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "mt_mobile",
+        "label": "Margin top (mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }, {
+        "type": "range",
+        "id": "mb_mobile",
+        "label": "Margin bottom (mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }, {
+        "type": "header",
+        "content": "Heading"
+      }, {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Heading Size",
+        "default": 52,
+        "min": 10,
+        "max": 100,
+        "step": 1
+      }, {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color",
+        "default": "#121212"
+      }, {
+        "type": "header",
+        "content": "Description"
+      }, {
+        "type": "range",
+        "id": "des_size",
+        "label": "Description Size",
+        "default": 18,
+        "min": 10,
+        "max": 30,
+        "step": 1
+      }, {
+        "type": "color",
+        "id": "des_color",
+        "label": "Description Color",
+        "default": "#454545"
+      }, {
+        "type": "header",
+        "content": "Button"
+      }, {
+        "type": "color",
+        "id": "btn_bg_color",
+        "label": "Button Background Color",
+        "default": "#fa8526"
+      }, {
+        "type": "color",
+        "id": "btn_text_color",
+        "label": "Button Text Color",
+        "default": "#ffffff"
+      }, {
+        "type": "color",
+        "id": "btn_bg_hover_color",
+        "label": "Button Hover Background Color",
+        "default": "#333333"
+      }, {
+        "type": "color",
+        "id": "btn_hover_color",
+        "label": "Button Hover Text Color",
+        "default": "#ffffff"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "tag",
+            "label": "Tag"
+          },
+          {
+            "type": "text",
+            "id": "sub_title",
+            "label": "Sub Title"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
+          }, {
+            "type": "text",
+            "id": "banner_btn_text",
+            "label": "Button Text"
+          }, {
+            "type": "url",
+            "id": "banner_link",
+            "label": "Button Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner version 1",
+        "settings": {}
+      }
+    ]
+  }
 {% endschema %}
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>

@@ -104,7 +104,7 @@
                 {%- if section.settings.paginate_type == 'paginate' -%}
                   {%- render 'pagination', paginate: paginate, anchor: '' -%}
                 {%- else -%}
-                  <button class="m-button m-button--primary m-spinner-button" data-load-more>
+                  <button class="m-button mrk-btn m-button--primary m-spinner-button" data-load-more>
                     <span>
                       {%- render 'new-locale', key: 'collections.paginate.load_more' -%}
                     </span>
