@@ -19,7 +19,7 @@
 
   .{{section.id}} .collections-grid {
     display: grid;  
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat({{ section.settings.column_select }}, 1fr);
     gap: {{ section.settings.gap }}px;
     justify-content: center;
   }
@@ -65,7 +65,7 @@
     padding: {{ section.settings.vrpm |  default: 30 }}px {{ section.settings.hrpm |  default: 20 }}px;    
   }
   .{{section.id}} .collections-grid {   
-    grid-template-columns: repeat({{ section.settings.select_column_m }}, 1fr) !important;
+    grid-template-columns: repeat( {{ section.settings.select_column_m }} , 1fr) !important;
     gap: {{ section.settings.gapm }}px;    
   }
 }
@@ -154,7 +154,7 @@
     },
     {
       "type": "range",
-      "id": "select_column",
+      "id": "column_select",
       "label": "Number of Columns",
       "default":6,
       "min": 1,
