@@ -17,7 +17,7 @@
     letter-spacing: 1px;
   }
 
-  .collections-grid {
+  .{{section.id}} .collections-grid {
     display: grid;  
     grid-template-columns: repeat(4, 1fr);
     gap: {{ section.settings.gap }}px;
@@ -64,19 +64,19 @@
   .best-selling-collections {  
     padding: {{ section.settings.vrpm |  default: 30 }}px {{ section.settings.hrpm |  default: 20 }}px;    
   }
-  .collections-grid {   
+  .{{section.id}} .collections-grid {   
     grid-template-columns: repeat({{ section.settings.select_column_m }}, 1fr) !important;
     gap: {{ section.settings.gapm }}px;    
   }
 }
 {%- endstyle -%}
 {% if section.blocks.size > 0 %}
-<section class="best-selling-collections">
+<section class="best-selling-collections {{section.id}}">
   <div class="container">
     <h2 class="section-title">
       {{ section.settings.section_title | default: 'Bestselling Categories' }}
     </h2>
-    <div class="collections-grid">
+    <div class="collections-grid ">
       {% for block in section.blocks %}
         {% assign collection = collections[block.settings.collection] %}
         {% if collection != blank %}
