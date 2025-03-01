@@ -1,5 +1,7 @@
 
-<style>
+{%- style -%}
+  
+
   .best-selling-collections {
     text-align: center;
     padding: {{ section.settings.vrp |  default: 50 }}px {{ section.settings.hrp |  default: 20}}px;
@@ -16,8 +18,8 @@
   }
 
   .collections-grid {
-    display: grid;
-    grid-template-columns: repeat({{ section.settings.select_column }}, 1fr);
+    display: grid;  
+    grid-template-columns: repeat(4, 1fr);
     gap: {{ section.settings.gap }}px;
     justify-content: center;
   }
@@ -63,11 +65,11 @@
     padding: {{ section.settings.vrpm |  default: 30 }}px {{ section.settings.hrpm |  default: 20 }}px;    
   }
   .collections-grid {   
-    grid-template-columns: repeat({{ section.settings.select_column_m }}, 1fr);
+    grid-template-columns: repeat({{ section.settings.select_column_m }}, 1fr) !important;
     gap: {{ section.settings.gapm }}px;    
   }
 }
-</style>
+{%- endstyle -%}
 {% if section.blocks.size > 0 %}
 <section class="best-selling-collections">
   <div class="container">
@@ -154,7 +156,7 @@
       "type": "range",
       "id": "select_column",
       "label": "Number of Columns",
-      "default": 4,
+      "default":6,
       "min": 1,
       "max": 6,
       "step": 1
@@ -220,8 +222,7 @@
   "max_blocks": 12,
   "presets": [
     {
-      "name": "Collection Bestseller",
-      "category": "Custom",
+      "name": "Collection Bestseller",     
       "blocks": [
         {
           "type": "collection"
