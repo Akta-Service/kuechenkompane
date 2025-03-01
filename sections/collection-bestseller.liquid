@@ -9,9 +9,9 @@
   }
 
   .best-selling-collections .section-title {
-    font-size: 28px;
+    font-size: {{ section.settings.title_size}}px;
     font-weight: bold;
-    color: #333;
+    color: {{ section.settings.title_color}};
     margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -54,10 +54,10 @@
   }
 
   .collection-title h3 {
-    font-size: 18px;
+    font-size: {{ section.settings.collection_title }}px;
     margin-top: 12px;
     font-weight: bold;
-    color: #444;
+    color: {{ section.settings.title_color }};
   }
 
 @media only screen and (max-width: 768px) {
@@ -193,6 +193,30 @@
       "id": "section_title",
       "label": "Section Title",
       "default": "Bestselling Categories"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title Font Size",
+      "default": 24,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "collection_title",
+      "label": "Collection Title Font Size",
+      "default": 18,
+      "min": 10,
+      "max": 30,
+      "step": 1
     }
   ],
   "blocks": [
