@@ -844,10 +844,10 @@
         "background_color": "#ffffff",
         "media_type": "image",
         "image": "shopify://shop_images/db3759d136d351495e659830d75d6596_1_1_1_V1_1.jpg",
-        "padding_top": 25,
+        "padding_top": 50,
         "padding_bottom": 50,
         "reverse": true,
-        "padding_top_mobile": 0,
+        "padding_top_mobile": 30,
         "padding_bottom_mobile": 50
       }
     },
@@ -1042,7 +1042,7 @@
       ],
       "settings": {
         "mt": 50,
-        "mb": 20,
+        "mb": 30,
         "mt_mobile": 20,
         "mb_mobile": 20,
         "title": "Vertraut von",
