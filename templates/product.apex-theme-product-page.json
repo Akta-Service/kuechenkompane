@@ -301,6 +301,14 @@
             "product": "premium"
           }
         },
+        "item_tYitmU": {
+          "type": "item",
+          "settings": {
+            "video_poster": "shopify://shop_images/Screenshot_5_89195910-0d90-440f-990e-ccde72fb3897.jpg",
+            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V2.mov",
+            "product": "premium"
+          }
+        },
         "item_iJxMti": {
           "type": "item",
           "settings": {
@@ -325,14 +333,6 @@
             "product": "premium"
           }
         },
-        "item_tYitmU": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_5_89195910-0d90-440f-990e-ccde72fb3897.jpg",
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V2.mov",
-            "product": "premium"
-          }
-        },
         "item_cHcggm": {
           "type": "item",
           "settings": {
@@ -344,10 +344,10 @@
       },
       "block_order": [
         "item_7xpaVV",
+        "item_tYitmU",
         "item_iJxMti",
         "item_UYW7B3",
         "item_ft7YRa",
-        "item_tYitmU",
         "item_cHcggm"
       ],
       "settings": {
