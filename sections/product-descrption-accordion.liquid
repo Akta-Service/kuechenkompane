@@ -108,6 +108,10 @@
       transition: 0.3s;
 
     }
+    .description-content ul {
+      list-style: inherit;
+      padding-left: 15px;
+      }
      .show-more {
       display: inline-block;
       text-decoration: underline;
@@ -139,7 +143,7 @@
 
     
         {% if    product.metafields.custom.product_form_short_description != blank %}
-{{product.metafields.custom.product_form_short_description }}
+        {{product.metafields.custom.product_form_short_description }}
         {%    elsif section.settings.description != blank %}
           <p class="product-des {% if section.settings.add_showore_btn %}hideContent{% endif %}">
             {{ section.settings.description }}
