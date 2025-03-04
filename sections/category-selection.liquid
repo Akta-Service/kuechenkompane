@@ -49,9 +49,9 @@
     position: relative;
     margin: 0 auto;
   }
-
   .category-img img {
     border-radius: 100%;
+    margin-bottom: 20px;
   }
 
   .category-item {
@@ -94,7 +94,16 @@
   .category-area .swiper-slide {
     text-align: center;
   }
-
+  a.collection-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1;
+    justify-content: center;
+  }
+  span.collection-icon {
+    margin-top: 2px;
+  }
   @media only screen and (max-width: 1024px) {
     .category-item:hover > .category-img::after {
       opacity: 0;
@@ -164,10 +173,13 @@
                 </div>
               {% endif %}
               {% if block.settings.collection_name != blank %}
-                <a href="{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                <a class="collection-title" href="{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
                   <span>
                     {{ block.settings.collection_name }}
                   </span>
+                  <span class="collection-icon"><svg class="icon icon-small-arrow-right" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.9401 7.60002L7.6001 4.00002C6.68197 3.0994 4.85818 1.30066 3.9401 0.400024L3.47823 0.846904C4.30386 1.6569 5.39631 2.7357 6.36015 3.68194L0.400145 3.68194L0.400145 4.31758L6.36015 4.31758L3.47822 7.14814L3.9401 7.60002Z" fill="#1E1E1E"></path>
+                </svg></span>
                 </a>
 
               {%- else -%}
