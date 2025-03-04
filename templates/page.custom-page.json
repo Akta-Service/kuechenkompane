@@ -155,7 +155,7 @@
         "heading_color": "#1e1e1e",
         "text_font_size": 16,
         "text_color": "#1e1e1e",
-        "btn_bg_color": "#D2861A",
+        "btn_bg_color": "#d2861a",
         "btn_bg_color_hover": "#333333",
         "btn_text_color": "#ffffff",
         "btn_text_color_hover": "#ffffff"
@@ -249,6 +249,20 @@
         "text_size": 18,
         "text_color": "#454545"
       }
+    },
+    "announcement_bar_version_1_3Nznet": {
+      "type": "announcement-bar-version-1",
+      "settings": {
+        "bg_color": "#be3220",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "LEI OF LOVE",
+        "ann_title_size": 16,
+        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
+        "ann_title_color": "#000000",
+        "strong_color": "#000000",
+        "text_color": "#000000"
+      }
     }
   },
   "order": [
@@ -257,6 +271,7 @@
     "store_benefit_tq7A77",
     "branded_image_version_2_ekLcgr",
     "logo_quote_selection_6AwG63",
-    "guarantee_objection_handling_jGLzWT"
+    "guarantee_objection_handling_jGLzWT",
+    "announcement_bar_version_1_3Nznet"
   ]
 }
