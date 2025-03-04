@@ -24,7 +24,7 @@
         "price_gqpafy": {
           "type": "price",
           "settings": {
-            "show_saving": false,
+            "show_saving": true,
             "sale_badge_type": "percentage"
           }
         },
@@ -71,7 +71,7 @@
         "price_RinUpK": {
           "type": "price",
           "settings": {
-            "show_saving": false,
+            "show_saving": true,
             "sale_badge_type": "percentage"
           }
         },
@@ -118,7 +118,7 @@
         "price_YefPfY": {
           "type": "price",
           "settings": {
-            "show_saving": false,
+            "show_saving": true,
             "sale_badge_type": "percentage"
           }
         },
