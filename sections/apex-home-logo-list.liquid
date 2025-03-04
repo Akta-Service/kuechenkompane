@@ -1,0 +1,76 @@
+<style>
+  .apex-home-logo-list {
+    background: {{ section.settings.bg_color }};   
+    padding-top: {{ section.settings.pt}}px;
+    padding-bottom: {{ section.settings.pb}}px;
+  }
+  @media only screen and (max-width: 768px){
+    .apex-home-logo-list {   
+      padding-top: {{ section.settings.ptm }}px;
+      padding-bottom: {{ section.settings.pbm }}px;
+    }
+  }
+</style>
+
+<div class="apex-home-logo-list">
+tset
+</div>
+
+{% schema %}
+  {
+    "name": "Apex Home logo list",    
+    "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "ptm",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "pbm",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 40
+    },
+    ],
+    "presets": [
+      {
+        "name":"Apex Home logo list"
+      }
+    ]
+  }
+{% endschema %}
