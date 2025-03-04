@@ -1,4 +1,10 @@
 {{ 'product.css' | asset_url | stylesheet_tag }}
+<style>
+  .featured-product .m-product-tag{
+    color: {{ section.settings.badge_text }};
+    background: {{ section.settings.badge_bg }};
+  }
+</style>
 {%- liquid
   assign product = section.settings.featured_product
   assign first_3d_model = product.media | where: 'media_type', 'model' | first
@@ -136,6 +142,7 @@
 {% schema %}
 {
   "name": "Featured product",
+  "class": "featured-product",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -284,6 +291,22 @@
           "label": "Fade in right"
         }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Badge Settings"
+    },
+    {
+      "type": "color",
+      "id": "badge_text",
+      "label": "Badge Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Badge Background Color"
+     
     }
   ],
   "blocks": [
