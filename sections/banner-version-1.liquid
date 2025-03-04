@@ -183,7 +183,7 @@
         </div>
       {% endfor %}
     </div>
-    <div class="swiper-pagination"></div>
+    {% comment %} <div class="swiper-pagination"></div> {% endcomment %}
     <div class="banner-next {% if section.settings.hide_arrow_m %}dide_m{% endif %}">
       <svg
         class=""
@@ -381,10 +381,10 @@
         nextEl: '.banner-next',
         prevEl: '.banner-prev',
       },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
     });
   });
 </script>
