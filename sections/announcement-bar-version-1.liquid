@@ -15,7 +15,10 @@
   .announcement-bar-content {
     text-align: center;
   }
-
+.ann_title{
+  font-size: {{- section.settings.ann_title_size -}}px; 
+  color:{{ section.settings.ann_title_color }} ;
+}
   .announcement-bar-content strong {
     color: {{ section.settings.strong_color }};  
     font-weight: 700;
@@ -27,13 +30,20 @@
     color: {{ section.settings.text_color }};
     line-height: 1;
   }
-
+@media only screen and (max-width: 768px){
+  .announcement-bar-content p {
+    font-size: {{ section.settings.text_size_m }}px;   
+  }
+  .ann_title{
+  font-size: {{- section.settings.ann_title_size_m -}}px;  
+}
+}
 
 </style>
 <div class="announcement-bar">
   <div class="announcement-container">
     <div class="announcement-bar-content">
-      <strong style=" font-size: {{- section.settings.ann_title_size -}}px; color:{{ section.settings.ann_title_color }} ;">
+      <strong class="ann_title" style=" ">
         {{- section.settings.ann_title -}}
       </strong>
       {{ section.settings.text }}
@@ -88,6 +98,15 @@
       "step": 1
     },
     {
+      "type": "range",
+      "id": "ann_title_size_m",
+      "label": "Font Size (Mobile)",
+      "default": 16,
+      "min": 10,
+      "max": 40,
+      "step": 1
+    },
+    {
       "type": "header",
       "content": "Text"
     },
@@ -101,6 +120,15 @@
       "type": "range",
       "id": "text_size",
       "label": "Text Font Size",
+      "default": 16,
+      "min": 10,
+      "max": 30,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "text_size_m",
+      "label": "Text Font Size (Mobile)",
       "default": 16,
       "min": 10,
       "max": 30,
