@@ -253,12 +253,13 @@
     "announcement_bar_version_1_3Nznet": {
       "type": "announcement-bar-version-1",
       "settings": {
-        "bg_color": "#be3220",
+        "bg_color": "#ffbe98",
         "pt": 15,
         "pb": 15,
         "ann_title": "LEI OF LOVE",
         "ann_title_size": 16,
         "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
+        "text_size": 16,
         "ann_title_color": "#000000",
         "strong_color": "#000000",
         "text_color": "#000000"
