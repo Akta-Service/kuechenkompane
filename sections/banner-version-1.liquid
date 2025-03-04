@@ -86,6 +86,15 @@
   .banner-next svg {
     transform: rotate(180deg);
   }
+  .banner-area .swiper-pagination {
+    bottom: 360px !important;
+  }
+  .banner-area .swiper-pagination-bullet{
+   background: none;
+  }
+  .banner-area .swiper-pagination-bullet-active::before{
+    opacity: 1;
+  }
   @media (max-width: 1400px) {
     .banner-content-img {
       width: 50%;
@@ -148,7 +157,7 @@
           <div class="banner-area-content">
             {% if block.settings.image != blank %}
               <div class="banner-content-img">
-                <img src="{{ block.settings.image | img_url: 'master' }}" alt="banner-image">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="banner-image">                
               </div>
             {% endif %}
             <div class="banner-content">
@@ -174,6 +183,7 @@
         </div>
       {% endfor %}
     </div>
+    <div class="swiper-pagination"></div>
     <div class="banner-next {% if section.settings.hide_arrow_m %}dide_m{% endif %}">
       <svg
         class=""
@@ -370,6 +380,10 @@
       navigation: {
         nextEl: '.banner-next',
         prevEl: '.banner-prev',
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
       },
     });
   });
