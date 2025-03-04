@@ -150,7 +150,13 @@
     },
     "collection_description_tUMerW": {
       "type": "collection-description",
-      "settings": {}
+      "settings": {
+        "collection_bg": "#c6d1c4",
+        "collection_pt": 30,
+        "collection_pb": 30,
+        "collection_pt_m": 30,
+        "collection_pb_m": 30
+      }
     }
   },
   "order": [
