@@ -1,32 +1,15 @@
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-
-
   /* common css end  */
-  .container {
+  .announcement-container {
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 15px;
   }
 
   .announcement-bar {
-    background: {{ section.settings.bg_color }};
-    padding: 15px 0;
-    padding-top: {{ section.settings.pt}};
-    padding-bottom: {{ section.settings.pb}};
+    background: {{ section.settings.bg_color }};   
+    padding-top: {{ section.settings.pt}}px;
+    padding-bottom: {{ section.settings.pb}}px;
   }
 
   .announcement-bar-content {
@@ -34,20 +17,21 @@
   }
 
   .announcement-bar-content strong {
-    color: {{ section.settings.strong_color }};
-    font-size: 16px;
-    font-family: 'Karla', serif;
+    color: {{ section.settings.strong_color }};  
     font-weight: 700;
+    line-height: 1;
   }
 
   .announcement-bar-content p {
-    font-size: 16px;
+    font-size: {{ section.settings.text_size }}px;
     color: {{ section.settings.text_color }};
-    font-family: 'Karla', serif;
+    line-height: 1;
   }
+
+
 </style>
 <div class="announcement-bar">
-  <div class="container">
+  <div class="announcement-container">
     <div class="announcement-bar-content">
       <strong style=" font-size: {{- section.settings.ann_title_size -}}px; color:{{ section.settings.ann_title_color }} ;">
         {{- section.settings.ann_title -}}
@@ -100,7 +84,7 @@
       "label": "Font Size",
       "default": 16,
       "min": 10,
-      "max": 50,
+      "max": 40,
       "step": 1
     },
     {
@@ -112,6 +96,15 @@
       "id": "text",
       "label": "Text",
       "default": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text Font Size",
+      "default": 16,
+      "min": 10,
+      "max": 30,
+      "step": 1
     },
     {
       "type": "header",
