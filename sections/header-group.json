@@ -11,6 +11,23 @@
   "type": "header",
   "name": "Header",
   "sections": {
+    "announcement_bar_version_1_GmJgxh": {
+      "type": "announcement-bar-version-1",
+      "settings": {
+        "bg_color": "#be3220",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "Lei Of Love",
+        "ann_title_size": 16,
+        "ann_title_size_m": 16,
+        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
+        "text_size": 16,
+        "text_size_m": 16,
+        "ann_title_color": "#f4f0ec",
+        "strong_color": "#f4f0ec",
+        "text_color": "#f4f0ec"
+      }
+    },
     "annoucement": {
       "type": "annoucement",
       "blocks": {
@@ -116,23 +133,6 @@
         "mb_show_currency_switcher": false,
         "mb_show_country_selector": true,
         "mb_show_language_switcher": true
-      }
-    },
-    "announcement_bar_version_1_GmJgxh": {
-      "type": "announcement-bar-version-1",
-      "settings": {
-        "bg_color": "#be3220",
-        "pt": 15,
-        "pb": 15,
-        "ann_title": "LEI OF LOVE",
-        "ann_title_size": 16,
-        "ann_title_size_m": 16,
-        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
-        "text_size": 16,
-        "text_size_m": 16,
-        "ann_title_color": "#f4f0ec",
-        "strong_color": "#f4f0ec",
-        "text_color": "#f4f0ec"
       }
     }
   },
