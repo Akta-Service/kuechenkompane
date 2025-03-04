@@ -135,6 +135,9 @@
     .banner-prev {
       left: 15px;
     }
+    .dide_m{
+      display: none;
+    }
   }
 </style>
 <div class="banner-area">
@@ -171,7 +174,7 @@
         </div>
       {% endfor %}
     </div>
-    <div class="banner-next">
+    <div class="banner-next {% if section.settings.hide_arrow_m %}dide_m{% endif %}">
       <svg
         class=""
         width="20"
@@ -186,7 +189,7 @@
           stroke-linejoin="round"></path>
       </svg>
     </div>
-    <div class="banner-prev">
+    <div class="banner-prev {% if section.settings.hide_arrow_m %}dide_m{% endif %}">
       <svg
         class=""
         width="20"
@@ -303,6 +306,12 @@
         "id": "btn_hover_color",
         "label": "Button Hover Text Color",
         "default": "#ffffff"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_arrow_m",
+        "label": "Hide arrow on Mobile",
+        "default": true
       }
     ],
     "blocks": [
