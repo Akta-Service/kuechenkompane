@@ -147,12 +147,17 @@
         "btn_text_color": "#ffffff",
         "btn_text_color_hover": "#ffffff"
       }
+    },
+    "collection_description_tUMerW": {
+      "type": "collection-description",
+      "settings": {}
     }
   },
   "order": [
     "collection-header",
     "main",
     "usp_list_xQHfgQ",
-    "branded_image_version_ffF3PX"
+    "branded_image_version_ffF3PX",
+    "collection_description_tUMerW"
   ]
 }
