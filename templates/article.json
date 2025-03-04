@@ -63,7 +63,7 @@
         "blog_show_author": false,
         "blog_show_date": false,
         "blog_show_tags": true,
-        "blog_show_social": true,
+        "blog_show_social": false,
         "blog_show_comment": true,
         "show_related_articles": true,
         "article_align_content": "text-left",
