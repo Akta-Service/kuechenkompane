@@ -504,10 +504,14 @@
 
     <div class="m-product-card__content-footer">
       {%- if show_desc -%}
-        <div class="m-product-card__description">
-          {{ product.description | strip_html | truncatewords: 15, '...' }}
-          
-        </div>
+        {% if product.metafields.custom.product_form_short_description != blank %}
+          {{ product.metafields.custom.product_form_short_description | metafield_tag }}
+        {% else %}
+          <div class="m-product-card__description">
+            {{ product.description | strip_html | truncatewords: 15, '...' }}  
+          </div>
+        {% endif %}
+            
       {%- endif -%}
       {%- if show_quickview_button or show_wishlist_button or show_compare_button or show_cart_button -%}
         <div class="m-product-card__action">
