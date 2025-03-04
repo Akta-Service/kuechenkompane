@@ -1,0 +1,25 @@
+<div class="collection-description">
+    <div class="collection-container">
+        {% if collection.description != blank %}
+            <div class="collection-description">
+                {{ collection.description }}
+            </div>
+        {% endif %}        
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Apex Collection Des",
+   
+    "settings": [
+      
+    ],
+    "presets": [
+      {
+        "name": "Apex Collection Des",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}
