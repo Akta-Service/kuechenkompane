@@ -30,9 +30,16 @@
     assign container = 'container-full'
   endif
 -%}
-
+<style>
+.apex-theme-collection s.m-price-item.m-price-item--regular {
+    color: #bc1e1e;
+}
+.apex-theme-collection .m-price__sale .m-price-item--last {
+    color: inherit;
+}
+</style>
 <section
-  class="facest-filters-section"
+  class="facest-filters-section apex-theme-collection"
   data-section-type="collection-template"
   data-section-id="{{ section.id }}"
   data-filters-type="{{ section.settings.filters_type }}"
@@ -83,18 +90,7 @@
               {%- for product in collection.products -%}
                 <div class="m-product-item m:w-6/12 md:m:w-4/12">
                   {% liquid
-                    case settings.pcard_layout
-                      when '1'
-                        render 'product-card-1', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                      when '2'
-                        render 'product-card-2', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                      when '3'
-                        render 'product-card-3', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                      when '4'
-                        render 'product-card-4', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                      when '5'
-                        render 'product-card-5', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                    endcase
+                  render 'apex-product-card', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect    
                   %}
                 </div>
               {%- endfor -%}
