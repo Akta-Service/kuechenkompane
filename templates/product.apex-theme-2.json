@@ -120,6 +120,22 @@
             "featurelist_item_size": 14
           }
         },
+        "featurelist_item_tePkLP": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14
+          }
+        },
+        "featurelist_item_kBDT6A": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14
+          }
+        },
         "product_info_NLVweH": {
           "type": "productInfo",
           "settings": {
@@ -163,6 +179,8 @@
         "viewer_stock_count_wcg8Ng",
         "featurelist_header_iUmbPg",
         "featurelist_item_GFdDTr",
+        "featurelist_item_tePkLP",
+        "featurelist_item_kBDT6A",
         "product_info_NLVweH",
         "buy_buttons_8rWDxE",
         "payment_icon_RNgqQN",
