@@ -1,0 +1,28 @@
+
+<div class="card_area">
+  <div class="container">
+    <div class="lips-card-wrapper">
+        {% for product in collection.products %}
+          {%  render 'apex-collection-single-product',  product: product %}
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Apex Collection Product",
+    "tag": "section",
+    "class": "",
+    "settings": [
+      
+    ],
+    "presets": [
+      {
+        "name": "Apex Collection Product",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}

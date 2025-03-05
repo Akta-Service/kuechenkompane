@@ -1,0 +1,35 @@
+<div class="lips-single-cart">
+    <div class="lips-card-inner">
+      {% if product.images.size > 1 %}
+          <img class="hover_thumb1" src="{{ product.images[0] | img_url: 'master' }}" alt="{{ product.title }}">
+          <img class="hover_thumb2" src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.title }}">
+      {% else %}
+          <img class="hover_thumb1" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+      {% endif %}
+      
+    
+      {% if product.variants.size > 1 %}
+        <div class="lips-badge">
+            <span><i></i>{{ product.variants.size }} shade</span>
+        </div>
+      {% endif %}
+      
+  </div>
+  <div class="lips-card-content">
+    <a href="{{ product.url }}">{{ product.title }}</a>
+    <a href="{{ product.url }}">
+        {{ product.price | money_with_currency }} 
+        {% if product.compare_at_price > product.price %}
+            <del>{{ product.compare_at_price | money_with_currency }}</del>
+            <cite>save {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%</cite>
+        {% endif %}
+    </a>
+  </div>
+
+  <div class="card-add-button">
+    <form method="post" action="/cart/add">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <button type="submit">ADD TO BAG</button>
+    </form>
+  </div>
+</div> 
