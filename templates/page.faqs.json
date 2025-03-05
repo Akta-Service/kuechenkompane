@@ -46,7 +46,7 @@
         "content_Nw6ngj": {
           "type": "content",
           "settings": {
-            "content": "ALLGEMEINE FRAGEN"
+            "content": "<h2>ALLGEMEINE FRAGEN</h2><h2></h2>"
           }
         },
         "accordion-1": {
@@ -132,7 +132,7 @@
         "content_jhMLTc": {
           "type": "content",
           "settings": {
-            "content": "FRAGEN ZU DEN PRODUKTEN"
+            "content": "<h2>FRAGEN ZU DEN PRODUKTEN</h2><h2></h2>"
           }
         },
         "accordion_PyiLTJ": {
@@ -218,7 +218,7 @@
         "content_ypWFw4": {
           "type": "content",
           "settings": {
-            "content": "Bestellungen, Versand &amp; Zahlung"
+            "content": "<h2>Bestellungen, Versand &amp; Zahlung</h2><h2></h2>"
           }
         },
         "accordion_VkbYd7": {
@@ -304,7 +304,7 @@
         "content_GRFeyG": {
           "type": "content",
           "settings": {
-            "content": "RÜCKGABE &amp; GARANTIE"
+            "content": "<h2>RÜCKGABE &amp; GARANTIE</h2><h2></h2>"
           }
         },
         "accordion_9qknE4": {
@@ -366,7 +366,7 @@
         "content_zrBRei": {
           "type": "content",
           "settings": {
-            "content": "PFLEGE &amp; SCHÄRFEN"
+            "content": "<h2>PFLEGE &amp; SCHÄRFEN</h2><h2></h2>"
           }
         },
         "accordion_wTWjBW": {
@@ -463,7 +463,7 @@
         "content_43yYmL": {
           "type": "content",
           "settings": {
-            "content": "ANGEBOTE &amp; SONERAKTIONEN"
+            "content": "<h2>ANGEBOTE &amp; SONERAKTIONEN</h2><h2></h2>"
           }
         },
         "accordion_kKrGTe": {
@@ -493,7 +493,7 @@
         "content_CeHtRa": {
           "type": "content",
           "settings": {
-            "content": "KUNDENSERVICE &amp; KONTAKT"
+            "content": "<h2>KUNDENSERVICE &amp; KONTAKT</h2>"
           }
         },
         "accordion_ANqU7t": {
@@ -555,12 +555,34 @@
         "menu": "",
         "custom_class": ""
       }
+    },
+    "banner_version_2_gRbjx6": {
+      "type": "banner-version-2",
+      "settings": {
+        "u": "https://cdn.shopify.com/videos/c/o/v/bfddd4ffc23e4801bb72eb108dadbd31.mp4",
+        "u_mobile": "https://cdn.shopify.com/videos/c/o/v/aa429ef4f1a64d94bffd7e063a8de73e.mp4",
+        "mt": 0,
+        "mb": 0,
+        "mt_mobile": 0,
+        "mb_mobile": 0,
+        "title": "Meisterhaft kochen beginnt hier",
+        "title_font_size": 40,
+        "title_color": "#ffffff",
+        "sub_title": "",
+        "btn_text": "Produkte entdecken",
+        "btn_bg_color": "#000000",
+        "btn_bg_color_hover": "#333333",
+        "btn_text_color": "#ffffff",
+        "btn_text_color_hover": "#ffffff",
+        "btn_link": "shopify://pages/collection-bestseller"
+      }
     }
   },
   "order": [
     "breadcrumb_RHyjx4",
     "custom_content_tAfTRN",
     "main",
-    "page_faqs_nAxWfU"
+    "page_faqs_nAxWfU",
+    "banner_version_2_gRbjx6"
   ]
 }
