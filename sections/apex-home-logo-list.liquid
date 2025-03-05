@@ -11,6 +11,7 @@
   }
   .homeLogo .swiper-wrapper {
     align-items: center;
+    transition-timing-function: linear !important;
   }
   .home-logo-img {
     max-width: 170px;
@@ -145,10 +146,11 @@
       spaceBetween: 20, 
       {% if section.settings.loop %}
       loop: true,
+      speed: 3000,
       {% endif %}
       {% if section.settings.autoplay %}
         autoplay: {
-          delay: 3000,
+          delay: 0,
           disableOnInteraction: false,
         },
       {% endif %}
