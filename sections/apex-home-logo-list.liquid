@@ -5,6 +5,26 @@
     padding-top: {{ section.settings.pt}}px;
     padding-bottom: {{ section.settings.pb}}px;
   }
+  .homeLogo .swiper-slide {
+    width: fit-content;
+    margin: 0 15px;
+  }
+  .homeLogo .swiper-wrapper {
+    align-items: center;
+  }
+  .home-logo-img {
+    max-width: 170px;
+    display: flex;
+    align-items: center;
+  }
+  .home-logo-img img {
+    width: 100%;
+    height: 100%;
+   
+  }
+  .home-logo-img .invert_img  {
+    filter: invert(1);
+  }
   @media only screen and (max-width: 768px){
     .apex-home-logo-list {   
       padding-top: {{ section.settings.ptm }}px;
@@ -18,11 +38,11 @@
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
         {% if  block.settings.home_logo != blank %}
-      <div class="swiper-slide">
-        <div class="home-logo-img">
-          <img src="{{ block.settings.home_logo |  img_url: 'large' }}" loading="lazy" alt="logo image">
-        </div>
-      </div>  
+        <div class="swiper-slide">
+          <div class="home-logo-img">
+            <img class="{% if section.settings.invert_color %}invert_img{% endif %}" src="{{ block.settings.home_logo |  img_url: 'large' }}" loading="lazy" alt="logo image">
+          </div>
+        </div>  
         {% endif %}
       {% endfor %}    
     </div>
@@ -78,6 +98,12 @@
       "unit": "px",
       "label": "Padding Bottom (Mobile)",
       "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "invert_color",
+      "label": "Invert Image Color",
+      "info": "If Use Black Background Then Active Invert Color"      
     }
   ],
   "blocks": [
@@ -102,5 +128,8 @@
 {% endschema %}
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    const homeLogo = new Swiper(".homeLogo", {});
+    const homeLogo = new Swiper(".homeLogo", {     
+      slidesPerView: "auto",
+      spaceBetween: 20, 
+    });
 </script>
