@@ -564,6 +564,13 @@
           </div>
         </div>
       {%- endif -%}
+      <div class="card-add-button">
+        <form method="post" action="/cart/add">
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            <button type="submit">{{ section.settings.add_btn_text }} Add to bag</button>
+        </form>
+      </div>
+
     </div>
   </div>
   <input hidden name="id" required value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}">
