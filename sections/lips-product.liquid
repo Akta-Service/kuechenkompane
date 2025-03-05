@@ -1,0 +1,107 @@
+{{ 'apex-collection.css' | asset_url | stylesheet_tag }}
+
+
+
+
+<div class="product-area">
+  <div class="container">
+    <h1 class="collection-hero__title">Lips & Cheeks</h1>
+    <div class="product-wrapper">
+      <div class="single-product-item">
+        <div class="product-thumb">
+          <a href="#">
+            <picture>
+
+              <img src="{{ 'product1.avif' | asset_url }}" alt="">
+            </picture>
+            <span>
+              ALL PRODUCTS 
+                <svg class="icon icon-small-arrow-right" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.9401 7.60002L7.6001 4.00002C6.68197 3.0994 4.85818 1.30066 3.9401 0.400024L3.47823 0.846904C4.30386 1.6569 5.39631 2.7357 6.36015 3.68194L0.400145 3.68194L0.400145 4.31758L6.36015 4.31758L3.47822 7.14814L3.9401 7.60002Z" fill="#1E1E1E"></path>
+                </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="single-product-item">
+        <div class="product-thumb">
+          <a href="#">
+            <picture>
+              <img src="{{ 'product2.avif' | asset_url }}" alt="">
+            </picture>
+            <span>
+              FACE 
+                <svg class="icon icon-small-arrow-right" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.9401 7.60002L7.6001 4.00002C6.68197 3.0994 4.85818 1.30066 3.9401 0.400024L3.47823 0.846904C4.30386 1.6569 5.39631 2.7357 6.36015 3.68194L0.400145 3.68194L0.400145 4.31758L6.36015 4.31758L3.47822 7.14814L3.9401 7.60002Z" fill="#1E1E1E"></path>
+                </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+      <div class="single-product-item">
+        <div class="product-thumb">
+          <a href="#">
+            <picture>
+              <img src="{{ 'product3.avif' | asset_url }}" alt="">
+            </picture>
+            <span>
+              EYES 
+                <svg class="icon icon-small-arrow-right" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.9401 7.60002L7.6001 4.00002C6.68197 3.0994 4.85818 1.30066 3.9401 0.400024L3.47823 0.846904C4.30386 1.6569 5.39631 2.7357 6.36015 3.68194L0.400145 3.68194L0.400145 4.31758L6.36015 4.31758L3.47822 7.14814L3.9401 7.60002Z" fill="#1E1E1E"></path>
+                </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="single-product-item">
+        <div class="product-thumb">
+          <a href="#">
+            <picture>
+              <img src="{{ 'product4.avif' | asset_url }}" alt="">
+            </picture>
+            <span>
+              BUNDLES
+                <svg class="icon icon-small-arrow-right" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.9401 7.60002L7.6001 4.00002C6.68197 3.0994 4.85818 1.30066 3.9401 0.400024L3.47823 0.846904C4.30386 1.6569 5.39631 2.7357 6.36015 3.68194L0.400145 3.68194L0.400145 4.31758L6.36015 4.31758L3.47822 7.14814L3.9401 7.60002Z" fill="#1E1E1E"></path>
+                </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="single-product-item">
+        <div class="product-thumb">
+          <a href="#">
+            <picture>
+              <img src="{{ 'product5.avif' | asset_url }}" alt="">
+            </picture>
+            <span>
+              BESTSELLERS
+                <svg class="icon icon-small-arrow-right" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.9401 7.60002L7.6001 4.00002C6.68197 3.0994 4.85818 1.30066 3.9401 0.400024L3.47823 0.846904C4.30386 1.6569 5.39631 2.7357 6.36015 3.68194L0.400145 3.68194L0.400145 4.31758L6.36015 4.31758L3.47822 7.14814L3.9401 7.60002Z" fill="#1E1E1E"></path>
+                </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    {{ 'main.js' | asset_url | script_tag }}
+    {% schema %}
+      {
+        "name": "lips-products",
+        "class": "lips-products",
+        "settings": [
+          
+        ],
+        "presets": [
+          {
+            "name": "lips-products",
+          }
+        ]
+      }
+    {% endschema %}
