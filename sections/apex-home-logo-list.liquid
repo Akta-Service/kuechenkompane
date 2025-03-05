@@ -17,11 +17,13 @@
   <div class="swiper homeLogo">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
+        {% if  block.settings.home_logo != blank %}
       <div class="swiper-slide">
         <div class="home-logo-img">
           <img src="{{ block.settings.home_logo |  img_url: 'large' }}" loading="lazy" alt="logo image">
         </div>
       </div>  
+        {% endif %}
       {% endfor %}    
     </div>
   </div>
@@ -76,6 +78,19 @@
       "unit": "px",
       "label": "Padding Bottom (Mobile)",
       "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Add Home Logo",
+      "type": "slide",
+      "settings": [
+         {
+           "type": "image_picker",
+           "id": "home_logo",
+           "label": "Logo Image"
+         }
+      ]
     }
   ],
   "presets": [
