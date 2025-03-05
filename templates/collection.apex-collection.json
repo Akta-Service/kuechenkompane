@@ -99,7 +99,11 @@
           }
         }
       },
-      "block_order": ["item_JVyQJ8", "item_BRBV37", "item_RKRMEB"],
+      "block_order": [
+        "item_JVyQJ8",
+        "item_BRBV37",
+        "item_RKRMEB"
+      ],
       "settings": {
         "bg_color": "#ffff",
         "verticle_padding": 50,
@@ -124,7 +128,10 @@
           }
         }
       },
-      "block_order": ["title_AgFUHf", "sub_title_GcWkqp"],
+      "block_order": [
+        "title_AgFUHf",
+        "sub_title_GcWkqp"
+      ],
       "settings": {
         "margin_top": 20,
         "margin_bottom": 0,
@@ -168,7 +175,15 @@
     },
     "apex_collection_ct7PJY": {
       "type": "apex-collection",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "bg_color": "#fff",
+        "pt": 50,
+        "pb": 50,
+        "variant_tag": "Shades",
+        "save_tag": "save",
+        "add_btn_text": "ADD TO BAG"
+      }
     }
   },
   "order": [
