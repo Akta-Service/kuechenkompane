@@ -160,14 +160,21 @@
     },
     "lips_card_can4wk": {
       "type": "lips-card",
+      "disabled": true,
       "settings": {}
     },
     "lips_product_W8ewky": {
       "type": "lips-product",
+      "disabled": true,
       "settings": {}
     },
     "lips_card_k3Aigt": {
       "type": "lips-card",
+      "disabled": true,
+      "settings": {}
+    },
+    "apex_collection_ct7PJY": {
+      "type": "apex-collection",
       "settings": {}
     }
   },
@@ -179,6 +186,7 @@
     "collection_description_tUMerW",
     "lips_card_can4wk",
     "lips_product_W8ewky",
-    "lips_card_k3Aigt"
+    "lips_card_k3Aigt",
+    "apex_collection_ct7PJY"
   ]
 }
