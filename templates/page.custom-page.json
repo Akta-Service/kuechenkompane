@@ -349,7 +349,9 @@
         "pb": 40,
         "ptm": 40,
         "pbm": 40,
-        "invert_color": true
+        "invert_color": true,
+        "autoplay": true,
+        "loop": true
       }
     }
   },
