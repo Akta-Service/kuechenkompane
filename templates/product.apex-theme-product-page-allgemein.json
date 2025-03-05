@@ -105,7 +105,7 @@
         "featurelist_item_iiW6aD": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "{{ product.metafields.custom.list_1st_item_info | metafield_tag }}",
+            "featurelist_item": "<p>{{ product.metafields.custom.list_1st_item_info | metafield_tag }}</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14
           }
@@ -351,6 +351,7 @@
         "item_ft7YRa",
         "item_cHcggm"
       ],
+      "disabled": true,
       "settings": {
         "pt": 70,
         "pb": 50,
@@ -654,6 +655,7 @@
         "title_F4F6qE",
         "description_9Mxcd4"
       ],
+      "disabled": true,
       "settings": {
         "img": "shopify://shop_images/steel_kitchen_knives_V11_1.jpg",
         "padding_top": 50,
