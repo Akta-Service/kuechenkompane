@@ -76,7 +76,7 @@
             "view_main_text_2": "sehen sich dieses Produkt gerade an!",
             "viewer_text_color": "",
             "viewer_margin_top": 10,
-            "viewer_margin_bottom": 10,
+            "viewer_margin_bottom": 1,
             "viewer_count_text_color": "",
             "margin_size_mobile_top": 1,
             "margin_size_mobile_bottom": 1,
@@ -85,12 +85,13 @@
             "product_main_text_2": "auf Lager",
             "product_text_color": "",
             "product_count_text_color": "",
-            "product_margin_top": 10,
+            "product_margin_top": 1,
             "product_margin_bottom": 10,
             "viewer_count_time": 2500,
             "stock_count_time": 5000,
             "p_margin_size_mobile_top": 1,
-            "p_margin_size_mobile_bottom": 1
+            "p_margin_size_mobile_bottom": 1,
+            "stock_count_show": true
           }
         },
         "featurelist_header_tfxtpf": {
