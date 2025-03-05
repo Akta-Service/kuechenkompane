@@ -576,6 +576,42 @@
         "btn_text_color_hover": "#ffffff",
         "btn_link": "shopify://pages/collection-bestseller"
       }
+    },
+    "branded_image_version_2_RUeynx": {
+      "type": "branded-image-version-2",
+      "blocks": {
+        "title_ymcBc9": {
+          "type": "title",
+          "settings": {
+            "title": "Schneiden auf höchstem Niveau"
+          }
+        },
+        "text_8DpMLx": {
+          "type": "text",
+          "settings": {
+            "text": "Erlebe die perfekte Symbiose aus traditioneller Schmiedekunst und moderner Präzision. Unsere handgefertigten Messer mit gehämmerter Klinge bieten außergewöhnliche Schärfe und ein einzigartiges Design für jede Küche."
+          }
+        }
+      },
+      "block_order": [
+        "title_ymcBc9",
+        "text_8DpMLx"
+      ],
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 20,
+        "mobile_margin_top": 10,
+        "mobile_margin_bottom": 10,
+        "bg_img": "shopify://shop_images/IMG_0714_1.jpg",
+        "title_font_size": 40,
+        "heading_color": "#1e1e1e",
+        "text_font_size": 16,
+        "text_color": "#1e1e1e",
+        "btn_bg_color": "#000000",
+        "btn_bg_color_hover": "#333333",
+        "btn_text_color": "#ffffff",
+        "btn_text_color_hover": "#ffffff"
+      }
     }
   },
   "order": [
@@ -583,6 +619,7 @@
     "custom_content_tAfTRN",
     "main",
     "page_faqs_nAxWfU",
-    "banner_version_2_gRbjx6"
+    "banner_version_2_gRbjx6",
+    "branded_image_version_2_RUeynx"
   ]
 }
