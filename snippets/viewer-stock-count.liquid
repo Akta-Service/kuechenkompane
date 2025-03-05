@@ -106,7 +106,8 @@
     {{ block.settings.view_main_text_2 }}
   </p>
 </div>
-{% if product.tags contains "STOCK" %}
+{% comment %} {% if product.tags contains "STOCK" %} {% endcomment %}
+ {% if block.settings.stock_count_show %}
   <div class="product-count">
     <p class="product-count-mobile" style="font-size:{{block.settings.product_count_font_size}}px; color: {{block.settings.product_text_color}}; margin-top:{{block.settings.product_margin_top}}px; margin-bottom:{{block.settings.product_margin_bottom}}px;">
       <span class="count-icon"></span>
@@ -120,6 +121,7 @@
     </p>
   </div>
 {% endif %}
+{% comment %} {% endif %} {% endcomment %}
 <script>
       document.addEventListener('DOMContentLoaded', function () {
     function updateViewersCount() {

@@ -220,7 +220,7 @@
 
 {% schema %}
 {
-  "name": "Product Apex 2",
+  "name": "APEX Product Infos",
   "settings": [
     {
       "type": "header",
@@ -637,7 +637,13 @@
           "unit": "px",
           "label": "Mobile Margin Bottom",
           "default": 1
-        }
+        },
+        {
+          "type": "checkbox",
+          "id": "stock_count_show",
+          "label": "Show Stock Count",
+          "default": true
+        },
       ]
     },
     {
@@ -1431,7 +1437,7 @@
   ],
   "presets": [
     {
-      "name": "Product Apex 2",
+      "name": "APEX Product Infos",
       "settings": {}
     }
   ]
