@@ -456,11 +456,111 @@
         "menu": "",
         "custom_class": ""
       }
+    },
+    "page_faqs_nAxWfU": {
+      "type": "page-faqs",
+      "blocks": {
+        "content_43yYmL": {
+          "type": "content",
+          "settings": {
+            "content": "ANGEBOTE &amp; SONERAKTIONEN"
+          }
+        },
+        "accordion_kKrGTe": {
+          "type": "accordion",
+          "settings": {
+            "title": "Gibt es regelmäßig Rabatte?",
+            "content": "<p>Nein, wir verkaufen <strong>ausschließlich ohne Rabatte</strong>, da wir faire Preise bieten und keine künstlichen Preissenkungen brauchen.</p>",
+            "open": false
+          }
+        },
+        "accordion_ytfxpf": {
+          "type": "accordion",
+          "settings": {
+            "title": "Gibt es exklusive Sondereditionen?",
+            "content": "<p>Ja, wir bieten regelmäßig limitierte Sondereditionen an, die nur für kurze Zeit erhältlich sind.</p>",
+            "open": false
+          }
+        },
+        "accordion_LicJrn": {
+          "type": "accordion",
+          "settings": {
+            "title": "Kann ich ein Messer gravieren lassen?",
+            "content": "<p>Ja! Du benötigst eine individuelle Gravur, dann kontaktiere bitte unseren Kundensupport! </p>",
+            "open": false
+          }
+        },
+        "content_CeHtRa": {
+          "type": "content",
+          "settings": {
+            "content": "KUNDENSERVICE &amp; KONTAKT"
+          }
+        },
+        "accordion_ANqU7t": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wie kann ich euch erreichen?",
+            "content": "<p>Du erreichst uns per:<br/>📩 E-Mail: <a>info@kuechenkompane.de</a><br/>📞 Telefon: 0800 - 8004680</p>",
+            "open": false
+          }
+        },
+        "accordion_aCPXW8": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wann ist euer Kundenservice erreichbar?",
+            "content": "<p>Unser Support-Team ist von <strong>Montag bis Freitag, 9:00 – 18:00 Uhr</strong> erreichbar.</p>",
+            "open": false
+          }
+        },
+        "accordion_zV4TMj": {
+          "type": "accordion",
+          "settings": {
+            "title": "Bietet ihr Geschenkverpackungen an?",
+            "content": "<p>Nein, wir bieten leider keine Geschenkverpackung an. </p>",
+            "open": false
+          }
+        },
+        "accordion_3XM3fy": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wo kann ich mehr über Küchenkompane erfahren?",
+            "content": "<p>Schau in unserem <a href=\"/blogs/herzlich-wilkommen\" title=\"Küchenmesser und Zubehör\"><strong>Blog</strong></a> vorbei oder abonniere unseren Newsletter für exklusive Inhalte.</p>",
+            "open": false
+          }
+        },
+        "accordion_DjBKYW": {
+          "type": "accordion",
+          "settings": {
+            "title": "Warum sollte ich bei Küchenkompane kaufen?",
+            "content": "<p>Hochwertige Qualität ohne Kompromisse<br/>Direkt vom Hersteller – keine Zwischenhändler<br/>Extrem scharfe Klingen, die lange halten<br/>Erstklassiger Kundenservice</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "content_43yYmL",
+        "accordion_kKrGTe",
+        "accordion_ytfxpf",
+        "accordion_LicJrn",
+        "content_CeHtRa",
+        "accordion_ANqU7t",
+        "accordion_aCPXW8",
+        "accordion_zV4TMj",
+        "accordion_3XM3fy",
+        "accordion_DjBKYW"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "menu": "",
+        "custom_class": ""
+      }
     }
   },
   "order": [
     "breadcrumb_RHyjx4",
     "custom_content_tAfTRN",
-    "main"
+    "main",
+    "page_faqs_nAxWfU"
   ]
 }
