@@ -43,60 +43,202 @@
     "main": {
       "type": "page-faqs",
       "blocks": {
-        "custom-content": {
+        "content_Nw6ngj": {
           "type": "content",
           "settings": {
-            "content": "<div class=\"mb-10\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/faqs.jpg?v=1620784288\"><\/div>\n<h3 class=\"font-medium text-xl mb-4\">Awkwardness gives me great comfort. I’ve never been cool, but I’ve felt cool. I’ve been in the cool place, but I wasn’t really cool – I was trying to pass for hip or cool.<\/h3>\n<p>A girl should be two things: classy and fabulous. I am convinced that there can be luxury in simplicity. I wanted to dress the woman who lives and works, not the woman in a painting. It’s hard to balance everything. It’s always challenging. My relationships with producers or photographers – these are relationships that took years. I can’t get sucked into that celebrity thing, because I think it’s just crass. My aim is to make the poor look rich.<\/p>"
+            "content": "ALLGEMEINE FRAGEN"
           }
         },
         "accordion-1": {
           "type": "accordion",
           "settings": {
-            "title": "What shipping methods are availbale?",
-            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.<br\/><br\/>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.<\/p>",
+            "title": "Wer ist Küchenkompane?",
+            "content": "<p>Küchenkompane ist eine Marke, die sich auf hochwertige Küchenmesser und Küchenzubehör spezialisiert hat. Unsere Mission ist es, sowohl Hobbyköchen als auch Profis die bestmögliche Schneideerfahrung zu bieten. Wir kombinieren traditionelle Handwerkskunst mit modernster Technologie, um langlebige, scharfe und ergonomische Messer zu entwickeln, die das Kochen auf ein neues Niveau heben.</p>",
             "open": true
           }
         },
         "accordion-2": {
           "type": "accordion",
           "settings": {
-            "title": "How long will it take to get my package?",
-            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.<\/p>",
+            "title": "Wo werden eure Messer hergestellt?",
+            "content": "<p>Unsere Messer werden in verschiedenen spezialisierten Manufakturen hergestellt – je nach Modell entweder in Japan oder Deutschland. Wir arbeiten ausschließlich mit erfahrenen Schmieden zusammen, die traditionelle Herstellungsverfahren mit modernen Präzisionstechniken kombinieren. Dadurch garantieren wir höchste Qualität und Langlebigkeit unserer Messer.</p>",
             "open": false
           }
         },
         "accordion-3": {
           "type": "accordion",
           "settings": {
-            "title": "Do you ship internationally?",
-            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.<\/p>",
+            "title": "Was macht eure Messer besonders?",
+            "content": "<p>Unsere Messer sind nicht nur extrem scharf, sondern auch besonders langlebig und ergonomisch gestaltet. Wir setzen auf hochwertige Materialien wie VG-10-Damaststahl oder rostfreien Hochleistungs-Edelstahl. Zudem achten wir darauf, dass jedes Messer perfekt ausbalanciert ist, um eine angenehme Handhabung zu gewährleisten. Unsere Kunden schätzen besonders die außergewöhnliche Schärfe und das edle Design unserer Produkte.</p>",
             "open": false
           }
         },
         "accordion-4": {
           "type": "accordion",
           "settings": {
-            "title": "What payment methods are accepted?",
-            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.<\/p>",
+            "title": "Welche Materialien verwendet ihr für eure Messer?",
+            "content": "<p>Wir setzen auf eine Auswahl hochwertiger Materialien, darunter VG-10-Damaststahl, rostfreien Edelstahl und karbonhaltige Stähle. Diese Materialien sind nicht nur besonders scharf und schnitthaltig, sondern auch korrosionsbeständig. Die Griffe bestehen je nach Modell aus edlem Hartholz, robustem G10 oder rutschfestem Kunststoff, um maximalen Komfort und Sicherheit zu bieten.</p>",
             "open": false
           }
         },
         "accordion-5": {
           "type": "accordion",
           "settings": {
-            "title": "Is buying on-line safe?",
-            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.<\/p>",
+            "title": "Warum sind eure Messer besser als herkömmliche Messer?",
+            "content": "<p>Unsere Messer werden mit größter Sorgfalt gefertigt und bieten eine überlegene Schneidleistung im Vergleich zu herkömmlichen Küchenmessern. Durch den präzisen Schliff, den speziellen Stahl und das ergonomische Design sind sie nicht nur langlebiger, sondern ermöglichen auch müheloses und präzises Schneiden. Zudem bleibt unsere Klinge wesentlich länger scharf, sodass Nachschärfen seltener erforderlich ist.</p>",
+            "open": false
+          }
+        },
+        "accordion_kyY9mL": {
+          "type": "accordion",
+          "settings": {
+            "title": "Bietet ihr auch andere Küchenprodukte an?",
+            "content": "<p>Ja, neben unseren Messern bieten wir auch hochwertige Schneidebretter, Messerblöcke und Zubehör wie Schleifsteine oder magnetische Messerhalter an. Unser Ziel ist es, dir eine komplette Küchenausstattung in bester Qualität zu liefern, die sowohl funktional als auch ästhetisch ansprechend ist.</p>",
+            "open": false
+          }
+        },
+        "accordion_aBCFWh": {
+          "type": "accordion",
+          "settings": {
+            "title": "Habt ihr ein Geschäft oder verkauft ihr nur online?",
+            "content": "<p>Aktuell vertreiben wir unsere Produkte ausschließlich online über unsere Website. Dies ermöglicht es uns, hochwertige Messer zu fairen Preisen anzubieten, da wir direkt an unsere Kunden verkaufen und Zwischenhändler umgehen.</p>",
+            "open": false
+          }
+        },
+        "accordion_YHbrHK": {
+          "type": "accordion",
+          "settings": {
+            "title": "Gibt es einen Showroom, wo man die Messer ansehen kann?",
+            "content": "<p>Derzeit haben wir keinen physischen Showroom, in dem du unsere Produkte testen kannst. Allerdings arbeiten wir daran, Partnerschaften mit ausgewählten Küchenfachgeschäften einzugehen, um unsere Messer dort vor Ort erlebbar zu machen.</p>",
+            "open": false
+          }
+        },
+        "accordion_teVk3B": {
+          "type": "accordion",
+          "settings": {
+            "title": "Sind eure Messer für Profis oder auch für Hobbyköche geeignet?",
+            "content": "<p>Unsere Messer sind so konzipiert, dass sie sowohl von Hobbyköchen als auch von Profis verwendet werden können. Während Hobbyköche von der einfachen Handhabung und der extremen Schärfe profitieren, schätzen Profis die hochwertige Verarbeitung und die perfekte Balance der Messer.</p>",
+            "open": false
+          }
+        },
+        "accordion_MbTzpB": {
+          "type": "accordion",
+          "settings": {
+            "title": "Gibt es Küchenkompane auch international?",
+            "content": "<p>Ja, wir sind ein international agierendes Unternehmen und versenden unsere Produkte in viele Länder weltweit. Kunden aus der EU, den USA und weiteren Ländern können unsere Produkte bequem über unseren Online-Shop bestellen.</p>",
+            "open": false
+          }
+        },
+        "content_jhMLTc": {
+          "type": "content",
+          "settings": {
+            "content": "FRAGEN ZU DEN PRODUKTEN"
+          }
+        },
+        "accordion_PyiLTJ": {
+          "type": "accordion",
+          "settings": {
+            "title": "Welche Messertypen bietet ihr an?",
+            "content": "<p>Unser Sortiment umfasst eine große Auswahl an Messertypen für unterschiedliche Einsatzzwecke. Dazu gehören klassische Kochmesser, Santokumesser, Brotmesser, Fleischmesser, Filetiermesser, Schälmesser und viele weitere Spezialmesser. Egal, ob du Gemüse hacken, Fleisch tranchieren oder Brot schneiden möchtest – wir haben das perfekte Messer für dich.</p>",
+            "open": false
+          }
+        },
+        "accordion_fie6Vf": {
+          "type": "accordion",
+          "settings": {
+            "title": "Was ist der Unterschied zwischen Damastmessern und Edelstahlmessern?",
+            "content": "<p>Damastmesser bestehen aus mehreren Lagen hochwertigem Stahl, die durch spezielle Schmiedetechniken miteinander verbunden werden. Sie zeichnen sich durch ihre besondere Optik, extreme Schärfe und lange Haltbarkeit aus. Edelstahlmesser hingegen sind oft robuster und leichter zu pflegen, jedoch nicht ganz so scharf wie Damastmesser.</p>",
+            "open": false
+          }
+        },
+        "accordion_M7zH4Q": {
+          "type": "accordion",
+          "settings": {
+            "title": "Was bedeutet „japanischer Schliff“?",
+            "content": "<p>Ein japanischer Schliff bedeutet, dass die Klinge in einem sehr spitzen Winkel (meist zwischen 12° und 15°) geschliffen wird. Dadurch entsteht eine extrem scharfe Schneide, die müheloses und präzises Schneiden ermöglicht. Japanische Messer sind bekannt für ihre außergewöhnliche Schärfe, erfordern aber eine etwas sorgfältigere Handhabung.</p>",
+            "open": false
+          }
+        },
+        "accordion_zRtfrE": {
+          "type": "accordion",
+          "settings": {
+            "title": "Welches Messer ist das beste für Anfänger?",
+            "content": "<p>Für Einsteiger empfehlen wir ein <strong>Kochmesser oder ein Santokumesser</strong>, da diese Messer sehr vielseitig einsetzbar sind. Ein Kochmesser eignet sich für Fleisch, Fisch und Gemüse, während das Santokumesser besonders für feine Schnitte und asiatische Zubereitungen ideal ist.</p>",
+            "open": false
+          }
+        },
+        "accordion_zqdVz3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Welche Messer brauche ich als Grundausstattung?",
+            "content": "<p>Eine gute Grundausstattung für die Küche besteht aus:</p><ul><li><strong>Kochmesser (für alle Schneidarbeiten)</strong></li><li><strong>Brotmesser (zum Schneiden von Brot und Gebäck)</strong></li><li><strong>Gemüsemesser (für kleine, präzise Schnitte)</strong><br/>Ergänzend sind Spezialmesser wie ein Filetiermesser oder ein Santokumesser sinnvoll.</li></ul>",
+            "open": false
+          }
+        },
+        "accordion_4J4iRc": {
+          "type": "accordion",
+          "settings": {
+            "title": "Was ist der Härtegrad eurer Messer?",
+            "content": "<p>Unsere Messer haben eine Rockwell-Härte (HRC) zwischen <strong>58 und 62</strong>. Das bedeutet, dass sie außergewöhnlich schnitthaltig sind und lange scharf bleiben. Gleichzeitig sind sie flexibel genug, um nicht zu brechen.</p>",
+            "open": false
+          }
+        },
+        "accordion_FAhtgP": {
+          "type": "accordion",
+          "settings": {
+            "title": "Gibt es besondere Pflegehinweise für eure Messer?",
+            "content": "<p>Ja, unsere Messer sollten ausschließlich per Hand mit warmem Wasser gereinigt werden. Anschließend sollten sie sofort mit einem weichen Tuch abgetrocknet werden. Um die Schärfe der Klinge zu bewahren, sollten die Messer auf einer weichen Unterlage (z. B. Holz- oder Kunststoffbrett) verwendet werden.</p>",
+            "open": false
+          }
+        },
+        "accordion_bd7haK": {
+          "type": "accordion",
+          "settings": {
+            "title": "Sind eure Messer spülmaschinenfest?",
+            "content": "<p>Nein, wir raten dringend davon ab, unsere Messer in der Spülmaschine zu reinigen. Die aggressive Reinigung, hohe Temperaturen und starke Reinigungsmittel können die Klinge beschädigen und die Schärfe verringern.</p>",
+            "open": false
+          }
+        },
+        "accordion_jMA4mg": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wie lange bleibt ein Messer von Küchenkompane scharf?",
+            "content": "<p>Das hängt von der Nutzung und Pflege ab. Bei regelmäßigem Gebrauch bleibt eine Klinge mehrere Monate bis Jahre scharf. Durch gelegentliches Nachschärfen mit einem Schleifstein oder Wetzstab lässt sich die Schärfe optimal erhalten.</p>",
+            "open": false
+          }
+        },
+        "accordion_QrU7Ny": {
+          "type": "accordion",
+          "settings": {
+            "title": "Kann ich ein individuelles Messer bei euch anfertigen lassen?",
+            "content": "<p>Aktuell bieten wir keine individuellen Messeranfertigungen an. Allerdings haben wir exklusive Sondereditionen in limitierter Auflage, die speziell für Sammler und passionierte Köche interessant sind.</p>",
             "open": false
           }
         }
       },
       "block_order": [
-        "custom-content",
+        "content_Nw6ngj",
         "accordion-1",
         "accordion-2",
         "accordion-3",
         "accordion-4",
-        "accordion-5"
+        "accordion-5",
+        "accordion_kyY9mL",
+        "accordion_aBCFWh",
+        "accordion_YHbrHK",
+        "accordion_teVk3B",
+        "accordion_MbTzpB",
+        "content_jhMLTc",
+        "accordion_PyiLTJ",
+        "accordion_fie6Vf",
+        "accordion_M7zH4Q",
+        "accordion_zRtfrE",
+        "accordion_zqdVz3",
+        "accordion_4J4iRc",
+        "accordion_FAhtgP",
+        "accordion_bd7haK",
+        "accordion_jMA4mg",
+        "accordion_QrU7Ny"
       ],
       "settings": {
         "container": "container",
