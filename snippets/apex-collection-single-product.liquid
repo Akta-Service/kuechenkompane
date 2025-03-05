@@ -1,3 +1,4 @@
+
 <div class="lips-single-cart">
     <div class="lips-card-inner">
       {% if product.images.size > 1 %}
@@ -10,26 +11,26 @@
     
       {% if product.variants.size > 1 %}
         <div class="lips-badge">
-            <span><i></i>{{ product.variants.size }} shade</span>
+            <span><i></i>{{ product.variants.size }} {{ section.settings.variant_tag }}</span>
         </div>
       {% endif %}
       
   </div>
   <div class="lips-card-content">
     <a href="{{ product.url }}">{{ product.title }}</a>
-    <a href="{{ product.url }}">
-        {{ product.price | money_with_currency }} 
+    <span>
+        {{ product.price | money}} 
         {% if product.compare_at_price > product.price %}
-            <del>{{ product.compare_at_price | money_with_currency }}</del>
-            <cite>save {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%</cite>
+            <del>{{ product.compare_at_price | money }}</del>
+            <cite>{{ section.settings.save_tag }} {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%</cite>
         {% endif %}
-    </a>
+    </span>
   </div>
 
   <div class="card-add-button">
     <form method="post" action="/cart/add">
-        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-        <button type="submit">ADD TO BAG</button>
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit">{{ section.settings.add_btn_text }}</button>
     </form>
   </div>
 </div> 

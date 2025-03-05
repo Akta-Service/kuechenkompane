@@ -1,8 +1,16 @@
-<div class="card_area">
+{{ 'apex-collection.css' | asset_url | stylesheet_tag }}
+<style>
+.card_area.{{ section.id }}{
+  background: {{ section.settings.bg_color }};
+  padding-top: {{ section.settings.pt }}px;
+  padding-bottom: {{ section.settings.pb }}px;  
+}
+</style>
+<div class="card_area {{ section.id }}">
   <div class="container">
     <div class="lips-card-wrapper">
         {% for product in collection.products %}
-          {%  render 'apex-collection-single-product',  product: product %}
+          {%  render 'apex-collection-single-product',  product: product, section: section %}
         {% endfor %}
     </div>
   </div>
@@ -12,7 +20,51 @@
   {
     "name": "Apex Collection Product",    
     "settings": [
-      
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#fff"
+      },
+      {
+        "type": "range",
+        "id": "pt",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 50
+      },
+      {
+        "type": "range",
+        "id": "pb",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 50
+      },
+      {
+        "type": "text",
+        "id": "variant_tag",
+        "label": "Variant Tag Text",
+        "default": "Shades"
+      },
+      {
+        "type": "text",
+        "id": "save_tag",
+        "label": "Save Percent Tag Text",
+        "default": "save"
+      },
+      {
+        "type": "text",
+        "id": "add_btn_text",
+        "label": "Add To Button Text",
+        "default": "ADD TO BAG"
+      }
+
     ],
     "presets": [
       {

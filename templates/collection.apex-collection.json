@@ -30,7 +30,7 @@
       }
     },
     "main": {
-      "type": "main-collection-product-grid",
+      "type": "apex-theme-collectiont-product",
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
         ".m-collection-filters-form {margin-bottom: 0;}"
@@ -99,11 +99,7 @@
           }
         }
       },
-      "block_order": [
-        "item_JVyQJ8",
-        "item_BRBV37",
-        "item_RKRMEB"
-      ],
+      "block_order": ["item_JVyQJ8", "item_BRBV37", "item_RKRMEB"],
       "settings": {
         "bg_color": "#ffff",
         "verticle_padding": 50,
@@ -128,10 +124,7 @@
           }
         }
       },
-      "block_order": [
-        "title_AgFUHf",
-        "sub_title_GcWkqp"
-      ],
+      "block_order": ["title_AgFUHf", "sub_title_GcWkqp"],
       "settings": {
         "margin_top": 20,
         "margin_bottom": 0,
