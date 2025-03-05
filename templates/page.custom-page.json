@@ -266,6 +266,16 @@
         "strong_color": "#000000",
         "text_color": "#000000"
       }
+    },
+    "apex_home_logo_list_RM6R7y": {
+      "type": "apex-home-logo-list",
+      "settings": {
+        "bg_color": "#fff",
+        "pt": 40,
+        "pb": 40,
+        "ptm": 40,
+        "pbm": 40
+      }
     }
   },
   "order": [
@@ -275,6 +285,7 @@
     "branded_image_version_2_ekLcgr",
     "logo_quote_selection_6AwG63",
     "guarantee_objection_handling_jGLzWT",
-    "announcement_bar_version_1_3Nznet"
+    "announcement_bar_version_1_3Nznet",
+    "apex_home_logo_list_RM6R7y"
   ]
 }
