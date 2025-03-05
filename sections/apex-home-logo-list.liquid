@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <style>
   .apex-home-logo-list {
     background: {{ section.settings.bg_color }};   
@@ -13,13 +14,23 @@
 </style>
 
 <div class="apex-home-logo-list">
-tset
+  <div class="swiper homeLogo">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+      <div class="swiper-slide">
+        <div class="home-logo-img">
+          <img src="{{ block.settings.home_logo |  img_url: 'large' }}" loading="lazy" alt="logo image">
+        </div>
+      </div>  
+      {% endfor %}    
+    </div>
+  </div>
 </div>
 
 {% schema %}
-  {
-    "name": "Apex Home logo list",    
-    "settings": [
+{
+  "name": "Apex Home logo list",    
+  "settings": [
     {
       "type": "color",
       "id": "bg_color",
@@ -65,12 +76,16 @@ tset
       "unit": "px",
       "label": "Padding Bottom (Mobile)",
       "default": 40
-    },
-    ],
-    "presets": [
-      {
-        "name":"Apex Home logo list"
-      }
-    ]
-  }
+    }
+  ],
+  "presets": [
+    {
+      "name":"Apex Home logo list"
+    }
+  ]
+}
 {% endschema %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const homeLogo = new Swiper(".homeLogo", {});
+</script>
