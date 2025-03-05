@@ -105,7 +105,7 @@
         "featurelist_item_iiW6aD": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "Handgeschliffene Edelstahlklinge",
+            "featurelist_item": "{{ product.metafields.custom.list_1st_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14
           }
@@ -113,7 +113,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "Ergonomischer Echtholtgriff",
+            "featurelist_item": "{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14
           }
@@ -121,7 +121,7 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "Gehärteter Edelstahl",
+            "featurelist_item": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14
           }
