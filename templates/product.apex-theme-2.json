@@ -112,18 +112,10 @@
             "featurelist_header_size": 14
           }
         },
-        "featurelist_item_FgDKxM": {
+        "featurelist_item_GFdDTr": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "3-layer carbon steel",
-            "featurelist_item_color": "#000000",
-            "featurelist_item_size": 14
-          }
-        },
-        "featurelist_item_Ji9CER": {
-          "type": "featurelist_item",
-          "settings": {
-            "featurelist_item": "3-layer carbon steel",
+            "featurelist_item": "{{ product.metafields.custom.list_1st_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14
           }
@@ -170,8 +162,7 @@
         "variant_picker_wUBpF8",
         "viewer_stock_count_wcg8Ng",
         "featurelist_header_iUmbPg",
-        "featurelist_item_FgDKxM",
-        "featurelist_item_Ji9CER",
+        "featurelist_item_GFdDTr",
         "product_info_NLVweH",
         "buy_buttons_8rWDxE",
         "payment_icon_RNgqQN",
