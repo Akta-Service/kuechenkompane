@@ -556,27 +556,6 @@
         "custom_class": ""
       }
     },
-    "banner_version_2_gRbjx6": {
-      "type": "banner-version-2",
-      "settings": {
-        "u": "https://cdn.shopify.com/videos/c/o/v/bfddd4ffc23e4801bb72eb108dadbd31.mp4",
-        "u_mobile": "https://cdn.shopify.com/videos/c/o/v/aa429ef4f1a64d94bffd7e063a8de73e.mp4",
-        "mt": 0,
-        "mb": 0,
-        "mt_mobile": 0,
-        "mb_mobile": 0,
-        "title": "Meisterhaft kochen beginnt hier",
-        "title_font_size": 40,
-        "title_color": "#ffffff",
-        "sub_title": "",
-        "btn_text": "Produkte entdecken",
-        "btn_bg_color": "#000000",
-        "btn_bg_color_hover": "#333333",
-        "btn_text_color": "#ffffff",
-        "btn_text_color_hover": "#ffffff",
-        "btn_link": "shopify://pages/collection-bestseller"
-      }
-    },
     "branded_image_version_2_RUeynx": {
       "type": "branded-image-version-2",
       "blocks": {
@@ -598,10 +577,10 @@
         "text_8DpMLx"
       ],
       "settings": {
-        "margin_top": 20,
-        "margin_bottom": 20,
-        "mobile_margin_top": 10,
-        "mobile_margin_bottom": 10,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "mobile_margin_top": 0,
+        "mobile_margin_bottom": 0,
         "bg_img": "shopify://shop_images/IMG_0714_1.jpg",
         "title_font_size": 40,
         "heading_color": "#1e1e1e",
@@ -612,6 +591,27 @@
         "btn_text_color": "#ffffff",
         "btn_text_color_hover": "#ffffff"
       }
+    },
+    "banner_version_2_gRbjx6": {
+      "type": "banner-version-2",
+      "settings": {
+        "u": "https://cdn.shopify.com/videos/c/o/v/bfddd4ffc23e4801bb72eb108dadbd31.mp4",
+        "u_mobile": "https://cdn.shopify.com/videos/c/o/v/aa429ef4f1a64d94bffd7e063a8de73e.mp4",
+        "mt": 0,
+        "mb": 0,
+        "mt_mobile": 0,
+        "mb_mobile": 0,
+        "title": "Meisterhaft kochen beginnt hier",
+        "title_font_size": 40,
+        "title_color": "#ffffff",
+        "sub_title": "",
+        "btn_text": "Produkte entdecken",
+        "btn_bg_color": "#000000",
+        "btn_bg_color_hover": "#333333",
+        "btn_text_color": "#ffffff",
+        "btn_text_color_hover": "#ffffff",
+        "btn_link": "shopify://pages/collection-bestseller"
+      }
     }
   },
   "order": [
@@ -619,7 +619,7 @@
     "custom_content_tAfTRN",
     "main",
     "page_faqs_nAxWfU",
-    "banner_version_2_gRbjx6",
-    "branded_image_version_2_RUeynx"
+    "branded_image_version_2_RUeynx",
+    "banner_version_2_gRbjx6"
   ]
 }
