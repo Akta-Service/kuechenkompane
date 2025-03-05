@@ -157,6 +157,10 @@
         "collection_pt_m": 30,
         "collection_pb_m": 30
       }
+    },
+    "lips_card_can4wk": {
+      "type": "lips-card",
+      "settings": {}
     }
   },
   "order": [
@@ -164,6 +168,7 @@
     "main",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
-    "collection_description_tUMerW"
+    "collection_description_tUMerW",
+    "lips_card_can4wk"
   ]
 }
