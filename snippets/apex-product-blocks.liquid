@@ -178,7 +178,7 @@
           {{ block.settings.featureHeader }}
         </p>
       {% when 'featurelist_item' %}
-        <p
+        <div
           class="product-feature-item"
           style="
             color:{{ block.settings.featurelist_item_color |  default: '#000' }};
@@ -192,7 +192,7 @@
             >
           {% endif %}
           {{ block.settings.featurelist_item }}
-        </p>
+        </div>
 
       {% when 'paymentIcon' %}
         <div class="rs-payment-icons">
