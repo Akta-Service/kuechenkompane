@@ -104,6 +104,18 @@
       "id": "invert_color",
       "label": "Invert Image Color",
       "info": "If Use Black Background Then Active Invert Color"      
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Enable Loop",
+      "default": false
     }
   ],
   "blocks": [
@@ -131,5 +143,14 @@
     const homeLogo = new Swiper(".homeLogo", {     
       slidesPerView: "auto",
       spaceBetween: 20, 
+      {% if section.settings.loop %}
+      loop: true,
+      {% endif %}
+      {% if section.settings.autoplay %}
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+      {% endif %}
     });
 </script>
