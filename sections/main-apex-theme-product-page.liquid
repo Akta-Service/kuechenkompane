@@ -151,7 +151,7 @@
                 {{ block.settings.featureHeader }}
               </p>
             {% when 'featurelist_item' %}
-              <p class="product-feature-item" style="
+              <div class="product-feature-item" style="
                   color:{{ block.settings.featurelist_item_color |  default: '#000' }};
                   font-size: {{ block.settings.featurelist_item_size |  default: 14}}px;
                 ">
@@ -159,7 +159,7 @@
                   <img src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/ok-icon.png?v=1739338478" alt="Feature Icon">
                 {% endif %}
                 {{ block.settings.featurelist_item }}
-              </p>
+              </div>
             {% when 'addBtn' %}
               <div class="rs-addBtn">
                 <button class="rs-add-to-cart" data-id="{{ product.selected_or_first_available_variant.id }}">
