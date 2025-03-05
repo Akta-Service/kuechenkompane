@@ -214,6 +214,224 @@
             "content": "<p>Aktuell bieten wir keine individuellen Messeranfertigungen an. Allerdings haben wir exklusive Sondereditionen in limitierter Auflage, die speziell für Sammler und passionierte Köche interessant sind.</p>",
             "open": false
           }
+        },
+        "content_ypWFw4": {
+          "type": "content",
+          "settings": {
+            "content": "Bestellungen, Versand &amp; Zahlung"
+          }
+        },
+        "accordion_VkbYd7": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wie kann ich eine Bestellung aufgeben?",
+            "content": "<p>Du kannst deine Bestellung ganz einfach über unseren Online-Shop aufgeben. Wähle die gewünschten Produkte aus, lege sie in den Warenkorb und folge dem Bestellprozess. Wir bieten verschiedene sichere Zahlungsmethoden an, damit du sorgenfrei einkaufen kannst. Nach Abschluss der Bestellung erhältst du eine Bestätigungs-E-Mail mit allen Details.</p>",
+            "open": false
+          }
+        },
+        "accordion_wPLKHR": {
+          "type": "accordion",
+          "settings": {
+            "title": "Kann ich meine Bestellung nachträglich ändern oder stornieren?",
+            "content": "<p>Falls du deine Bestellung ändern oder stornieren möchtest, kontaktiere uns bitte umgehend. Solange die Bestellung noch nicht versandt wurde, können wir Änderungen vornehmen oder eine Stornierung durchführen. Sobald die Ware unser Lager verlassen hat, ist eine Stornierung nicht mehr möglich, aber du kannst von unserem Rückgaberecht Gebrauch machen.</p>",
+            "open": false
+          }
+        },
+        "accordion_wzrjGc": {
+          "type": "accordion",
+          "settings": {
+            "title": "Welche Zahlungsmethoden akzeptiert ihr?",
+            "content": "<p>Wir akzeptieren alle gängigen Zahlungsmethoden, darunter:<br/>- Kreditkarten (Visa, Mastercard, American Express)<br/>-  PayPal<br/>-  Klarna (Rechnungskauf & Ratenzahlung)<br/>-  Apple Pay & Google Pay<br/>-  Vorkasse (Banküberweisung)</p><p>Alle Zahlungen werden verschlüsselt verarbeitet, um maximale Sicherheit zu gewährleisten.</p>",
+            "open": false
+          }
+        },
+        "accordion_PkfjDP": {
+          "type": "accordion",
+          "settings": {
+            "title": "Ist meine Zahlung sicher?",
+            "content": "<p>Ja, die Sicherheit deiner Zahlung hat für uns höchste Priorität. Unser Online-Shop ist mit SSL-Verschlüsselung geschützt, und alle Transaktionen werden über zertifizierte Zahlungsanbieter abgewickelt. So kannst du sicher sein, dass deine Daten geschützt sind.</p>",
+            "open": false
+          }
+        },
+        "accordion_tbNMKL": {
+          "type": "accordion",
+          "settings": {
+            "title": "In welche Länder liefert ihr?",
+            "content": "<p>Wir versenden innerhalb der gesamten EU sowie in die Schweiz, die USA und Kanada. Falls dein Land nicht in der Liste ist, kontaktiere uns gerne – wir prüfen, ob ein Versand möglich ist.</p>",
+            "open": false
+          }
+        },
+        "accordion_XDAAcV": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wie hoch sind die Versandkosten?",
+            "content": "<p>Der Versand innerhalb Deutschlands ist ab 100 € kostenlos. Für Bestellungen unter 100 € berechnen wir eine Versandkostenpauschale. Internationale Versandkosten variieren je nach Zielort und werden an der Kasse berechnet.</p>",
+            "open": false
+          }
+        },
+        "accordion_6gYP3X": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wie lange dauert die Lieferung?",
+            "content": "<p>Die Lieferzeit beträgt:<br/>📦 Deutschland & EU: <strong>2-5 Werktage</strong><br/>📦 Schweiz & UK: <strong>4-7 Werktage</strong><br/>📦 USA & Kanada: <strong>5-10 Werktage</strong></p>",
+            "open": false
+          }
+        },
+        "accordion_7yXfwH": {
+          "type": "accordion",
+          "settings": {
+            "title": "Kann ich meine Bestellung nachverfolgen?",
+            "content": "<p>Ja, sobald deine Bestellung versandt wurde, erhältst du eine E-Mail mit einer Sendungsverfolgungsnummer. Mit dieser kannst du den Status deiner Lieferung jederzeit online überprüfen.</p>",
+            "open": false
+          }
+        },
+        "accordion_thFELd": {
+          "type": "accordion",
+          "settings": {
+            "title": "Was passiert, wenn meine Bestellung nicht ankommt?",
+            "content": "<p>Falls dein Paket nicht innerhalb der erwarteten Zeit ankommt, kontaktiere uns bitte. Wir prüfen den Status und setzen uns ggf. mit dem Versanddienstleister in Verbindung, um eine schnelle Lösung zu finden.</p>",
+            "open": false
+          }
+        },
+        "accordion_Fk6hYG": {
+          "type": "accordion",
+          "settings": {
+            "title": "Liefert ihr auch an Packstationen?",
+            "content": "<p>Ja, innerhalb Deutschlands kannst du deine Bestellung an eine DHL Packstation liefern lassen.</p>",
+            "open": false
+          }
+        },
+        "content_GRFeyG": {
+          "type": "content",
+          "settings": {
+            "content": "RÜCKGABE &amp; GARANTIE"
+          }
+        },
+        "accordion_9qknE4": {
+          "type": "accordion",
+          "settings": {
+            "title": "Kann ich meine Bestellung zurückgeben?",
+            "content": "<p>Ja, du kannst deine Bestellung innerhalb von <strong>30 Tagen</strong> zurückgeben, sofern die Ware unbenutzt ist und sich in der Originalverpackung befindet.</p>",
+            "open": false
+          }
+        },
+        "accordion_XDPVjh": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wie läuft eine Rücksendung ab?",
+            "content": "<p>1️⃣ Kontaktiere unseren Kundenservice und beantrage eine Rücksendung.<br/>2️⃣ Du erhältst ein Rücksendeetikett und alle notwendigen Infos.<br/>3️⃣ Sende das Paket an uns zurück – nach Erhalt erfolgt die Rückerstattung.</p>",
+            "open": false
+          }
+        },
+        "accordion_7iLAUt": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wer trägt die Kosten für die Rücksendung?",
+            "content": "<p>Wir übernhemen die Kosten für den Versand zum Kunden. Bei Rücksendungen müssen die Versandkosten vom Kunden getragen werden.</p>",
+            "open": false
+          }
+        },
+        "accordion_kiTNix": {
+          "type": "accordion",
+          "settings": {
+            "title": "Was mache ich, wenn ein Produkt beschädigt angekommen ist?",
+            "content": "<p>Falls deine Ware beschädigt ankommt, kontaktiere uns bitte mit Fotos des Defekts. Wir senden dir schnellstmöglich eine Ersatzlieferung oder bieten eine Rückerstattung an.</p>",
+            "open": false
+          }
+        },
+        "accordion_wMCdrb": {
+          "type": "accordion",
+          "settings": {
+            "title": "Gibt es eine Garantie auf eure Produkte?",
+            "content": "<p>Ja, wir bieten eine <strong>2-jährige Garantie</strong> auf alle unsere Messer. Sollte es während dieser Zeit zu einem Material- oder Verarbeitungsfehler kommen, ersetzen wir das Produkt kostenfrei.</p>",
+            "open": false
+          }
+        },
+        "accordion_DeTgy8": {
+          "type": "accordion",
+          "settings": {
+            "title": "Sind eure Messer wirklich so langlebig?",
+            "content": "<p>Ja! Unsere Messer werden aus hochwertigen Materialien gefertigt und halten – bei richtiger Pflege – viele Jahre oder sogar Jahrzehnte.</p>",
+            "open": false
+          }
+        },
+        "accordion_gAdkQ3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Kann ich ein defektes Messer reparieren lassen?",
+            "content": "<p>Falls dein Messer beschädigt wurde, prüfe, ob es noch unter die Garantie fällt. Ansonsten bieten wir Reparatur- und Schleifservices an.</p>",
+            "open": false
+          }
+        },
+        "content_zrBRei": {
+          "type": "content",
+          "settings": {
+            "content": "PFLEGE &amp; SCHÄRFEN"
+          }
+        },
+        "accordion_wTWjBW": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wie pflege ich meine Küchenkompane-Messer richtig?",
+            "content": "<p>Reinige dein Messer nur per Hand mit warmem Wasser und trockne es sofort ab. Verwende ein Schneidebrett aus Holz oder Kunststoff, um die Klinge zu schonen.</p>",
+            "open": false
+          }
+        },
+        "accordion_yVPWzg": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wie oft sollte ich mein Messer schärfen?",
+            "content": "<p>Das hängt von der Nutzung ab. Bei täglichem Gebrauch empfehlen wir, das Messer alle 4-6 Monate nachzuschärfen.</p>",
+            "open": false
+          }
+        },
+        "accordion_U37nDT": {
+          "type": "accordion",
+          "settings": {
+            "title": "Welches Zubehör brauche ich zum Schärfen?",
+            "content": "<p>Wir empfehlen:<br/>🔹 Schleifstein (z. B. Körnung 1000/3000)<br/>🔹 Wetzstahl für schnelle Schärfung<br/>🔹 Schleifservice für professionelle Ergebnisse</p>",
+            "open": false
+          }
+        },
+        "accordion_aCAHjk": {
+          "type": "accordion",
+          "settings": {
+            "title": "Question Name",
+            "content": "<p>Answer Content</p>",
+            "open": false
+          }
+        },
+        "accordion_wG8YnR": {
+          "type": "accordion",
+          "settings": {
+            "title": "Question Name",
+            "content": "<p>Answer Content</p>",
+            "open": false
+          }
+        },
+        "accordion_ETYVYw": {
+          "type": "accordion",
+          "settings": {
+            "title": "Question Name",
+            "content": "<p>Answer Content</p>",
+            "open": false
+          }
+        },
+        "accordion_GjQFg3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Question Name",
+            "content": "<p>Answer Content</p>",
+            "open": false
+          }
+        },
+        "accordion_MNycbb": {
+          "type": "accordion",
+          "settings": {
+            "title": "Question Name",
+            "content": "<p>Answer Content</p>",
+            "open": false
+          }
         }
       },
       "block_order": [
@@ -238,7 +456,35 @@
         "accordion_FAhtgP",
         "accordion_bd7haK",
         "accordion_jMA4mg",
-        "accordion_QrU7Ny"
+        "accordion_QrU7Ny",
+        "content_ypWFw4",
+        "accordion_VkbYd7",
+        "accordion_wPLKHR",
+        "accordion_wzrjGc",
+        "accordion_PkfjDP",
+        "accordion_tbNMKL",
+        "accordion_XDAAcV",
+        "accordion_6gYP3X",
+        "accordion_7yXfwH",
+        "accordion_thFELd",
+        "accordion_Fk6hYG",
+        "content_GRFeyG",
+        "accordion_9qknE4",
+        "accordion_XDPVjh",
+        "accordion_7iLAUt",
+        "accordion_kiTNix",
+        "accordion_wMCdrb",
+        "accordion_DeTgy8",
+        "accordion_gAdkQ3",
+        "content_zrBRei",
+        "accordion_wTWjBW",
+        "accordion_yVPWzg",
+        "accordion_U37nDT",
+        "accordion_aCAHjk",
+        "accordion_wG8YnR",
+        "accordion_ETYVYw",
+        "accordion_GjQFg3",
+        "accordion_MNycbb"
       ],
       "settings": {
         "container": "container",
