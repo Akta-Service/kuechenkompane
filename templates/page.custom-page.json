@@ -269,8 +269,82 @@
     },
     "apex_home_logo_list_RM6R7y": {
       "type": "apex-home-logo-list",
+      "blocks": {
+        "slide_wf4YQn": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "slide_TKX36n": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/tresclick_1024x_15dd6fc5-c80f-48e2-843d-702ab1aaa7c3.png"
+          }
+        },
+        "slide_fpw48D": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "slide_pNTRFa": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/tresclick_1024x_15dd6fc5-c80f-48e2-843d-702ab1aaa7c3.png"
+          }
+        },
+        "slide_TjAxQU": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "slide_V9hBtt": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/tresclick_1024x_15dd6fc5-c80f-48e2-843d-702ab1aaa7c3.png"
+          }
+        },
+        "slide_kwGmkk": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "slide_mBmefX": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/tresclick_1024x_15dd6fc5-c80f-48e2-843d-702ab1aaa7c3.png"
+          }
+        },
+        "slide_ewxKcx": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "slide_6matLg": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/tresclick_1024x_15dd6fc5-c80f-48e2-843d-702ab1aaa7c3.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_wf4YQn",
+        "slide_TKX36n",
+        "slide_fpw48D",
+        "slide_pNTRFa",
+        "slide_TjAxQU",
+        "slide_V9hBtt",
+        "slide_kwGmkk",
+        "slide_mBmefX",
+        "slide_ewxKcx",
+        "slide_6matLg"
+      ],
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#ffffff",
         "pt": 40,
         "pb": 40,
         "ptm": 40,
