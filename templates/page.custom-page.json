@@ -344,11 +344,12 @@
         "slide_6matLg"
       ],
       "settings": {
-        "bg_color": "#ffffff",
+        "bg_color": "#000000",
         "pt": 40,
         "pb": 40,
         "ptm": 40,
-        "pbm": 40
+        "pbm": 40,
+        "invert_color": true
       }
     }
   },
