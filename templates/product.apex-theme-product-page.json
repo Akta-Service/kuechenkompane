@@ -229,7 +229,7 @@
         "title": "Produktbeschreibung",
         "font_size": 26,
         "font_color": "#000000",
-        "description": "{{ section.settings.product.metafields.custom.accordion_content_1 | metafield_tag }}",
+        "description": "{{ section.settings.product.metafields.custom.product_form_short_description | metafield_tag }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true
