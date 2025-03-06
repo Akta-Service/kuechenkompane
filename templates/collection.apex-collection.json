@@ -57,7 +57,7 @@
         "text_KKpaJj"
       ],
       "settings": {
-        "bg_color": "#fff",
+        "bg_color": "#ffffff",
         "pt": 30,
         "pb": 30,
         "mt_mobile": 15,
@@ -140,7 +140,7 @@
       "settings": {
         "container": "container-fluid",
         "grid_layout": "grid",
-        "grid_columns": "3",
+        "grid_columns": "4",
         "show_columns_switcher": false,
         "pagination_limit": 30,
         "paginate_type": "paginate",
