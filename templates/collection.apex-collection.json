@@ -35,7 +35,7 @@
         "item_nwxAVH": {
           "type": "item",
           "settings": {
-            "collection_img": "shopify://shop_images/Unbenannt-1_0005_4_1_1.jpg",
+            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db.jpg",
             "collection": "kuechenmesser-set",
             "collection_name": "",
             "custom_url": ""
@@ -44,7 +44,7 @@
         "item_Bd4xRW": {
           "type": "item",
           "settings": {
-            "collection_img": "shopify://shop_images/Shiburu1_1_f65ef84a-7cdd-4f7d-8899-5d317c734962.jpg",
+            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d.webp",
             "collection": "rustikales-servierbrett",
             "collection_name": "",
             "custom_url": ""
@@ -53,8 +53,26 @@
         "item_LNGV6x": {
           "type": "item",
           "settings": {
-            "collection_img": "shopify://shop_images/db3759d136d351495e659830d75d6596_1_1_1_V1_1.jpg",
+            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
             "collection": "damastmesser-set",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_KtcacC": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_9602_V7_766bf07d-e962-44cd-88f4-f20ad783e139.jpg",
+            "collection": "bbq-zubehor",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_rktrNh": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
+            "collection": "asiatisches-messerset-1",
             "collection_name": "",
             "custom_url": ""
           }
@@ -63,7 +81,9 @@
       "block_order": [
         "item_nwxAVH",
         "item_Bd4xRW",
-        "item_LNGV6x"
+        "item_LNGV6x",
+        "item_KtcacC",
+        "item_rktrNh"
       ],
       "settings": {
         "bg_color": "",
