@@ -1,6 +1,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
-  
+  .banner-top.{{ section.id }} {
+    padding-top: {{ section.settings.pt }}px;
+    padding-bottom: {{ section.settings.pb }}px;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    background: {{ section.settings.bg_color }};
+  }
   .banner-top-content {
       max-width: 1310px;
       margin: 0 auto;
@@ -26,8 +33,18 @@
       font-weight: 400;
       font-family: Pragmatica, sans-serif;
     }
+    .banner-top-item p {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-family: sans-serif;
+   }
+   .banner-top-item {
+    text-align: center;
+  }
 </style>
-<div class="banner-top">
+<div class="banner-top {{ section.id }}">
   <div class="rs-container">
     <div class="swiper apex-top-active">
       <div class="swiper-wrapper">
@@ -55,11 +72,17 @@
 {% schema %}
   {
     "name": "APEX Top Slider",
-    "settings": [      
+    "settings": [   
+      {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#fff"
+      },   
       {
         "type": "range",
-        "id": "mt",
-        "label": "Margin Top",
+        "id": "pt",
+        "label": "Padding Top",
         "default": 0,
         "min": 0,
         "max": 100,
@@ -67,8 +90,8 @@
       },
       {
         "type": "range",
-        "id": "mb",
-        "label": "Margin Bottom",
+        "id": "pb",
+        "label": "Padding Bottom",
         "default": 0,
         "min": 0,
         "max": 100,
