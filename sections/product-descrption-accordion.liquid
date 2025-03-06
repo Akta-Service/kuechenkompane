@@ -139,19 +139,10 @@
     <div class="description-row">
       <div class="description-content">
         <h2 class="des-title">{{ section.settings.title }}</h2>
-        <div class="p-dection-w  {% if section.settings.add_showore_btn %}hideContent{% endif %}">    
-          {% if product.metafields.custom.product_form_short_description != blank %}
-            <div>{{product.metafields.custom.product_form_short_description }}</div>
-          {% elsif section.settings.description != blank %}
+        <div class="p-dection-w  {% if section.settings.add_showore_btn %}hideContent{% endif %}">           
             <p class="product-des">
               {{ section.settings.description }}
             </p>
-            
-          {% else %}
-            <p class="product-des">
-              {{ product.description }}
-            </p>
-          {% endif %}
         </div>
           {% if section.settings.add_showore_btn %}
             <span class="show-more">Mehr lesen</span>
