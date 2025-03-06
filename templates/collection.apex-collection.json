@@ -29,6 +29,53 @@
         "enable_bg_zoom_effect": true
       }
     },
+    "category_selection_iMrTd6": {
+      "type": "category-selection",
+      "blocks": {
+        "item_nwxAVH": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/Unbenannt-1_0005_4_1_1.jpg",
+            "collection": "kuechenmesser-set",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_Bd4xRW": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/Shiburu1_1_f65ef84a-7cdd-4f7d-8899-5d317c734962.jpg",
+            "collection": "rustikales-servierbrett",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_LNGV6x": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/db3759d136d351495e659830d75d6596_1_1_1_V1_1.jpg",
+            "collection": "damastmesser-set",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_nwxAVH",
+        "item_Bd4xRW",
+        "item_LNGV6x"
+      ],
+      "settings": {
+        "bg_color": "",
+        "pt": 60,
+        "pb": 60,
+        "mobile_pt": 30,
+        "mobile_pb": 30,
+        "title": "Shop by Category",
+        "heading_font_size": 24,
+        "heading_color": "#1e1e1e"
+      }
+    },
     "main": {
       "type": "apex-theme-collectiont-product",
       "custom_css": [
@@ -163,6 +210,7 @@
   },
   "order": [
     "collection-header",
+    "category_selection_iMrTd6",
     "main",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
