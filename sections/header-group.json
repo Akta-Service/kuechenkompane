@@ -11,24 +11,6 @@
   "type": "header",
   "name": "Header",
   "sections": {
-    "announcement_bar_version_1_GmJgxh": {
-      "type": "announcement-bar-version-1",
-      "disabled": true,
-      "settings": {
-        "bg_color": "#324a34",
-        "pt": 15,
-        "pb": 15,
-        "ann_title": "🎈 Limitiertes Jubiläums Angebot 🎈",
-        "ann_title_size": 16,
-        "ann_title_size_m": 16,
-        "text": "<p><strong>Spare 20% mit Code: KK20</strong></p><p>*Nur gültig für die ersten 100 Bestellungen*</p>",
-        "text_size": 16,
-        "text_size_m": 16,
-        "ann_title_color": "#f4f0ec",
-        "strong_color": "#f4f0ec",
-        "text_color": "#f4f0ec"
-      }
-    },
     "annoucement": {
       "type": "annoucement",
       "blocks": {
@@ -138,7 +120,6 @@
     }
   },
   "order": [
-    "announcement_bar_version_1_GmJgxh",
     "annoucement",
     "header"
   ]
