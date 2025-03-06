@@ -232,7 +232,7 @@
         "description": "{{ section.settings.product.metafields.custom.product_form_short_description | metafield_tag }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": true
+        "add_showore_btn": false
       }
     },
     "product-details-tabs": {
