@@ -28,7 +28,7 @@
 -%}
 {{ 'sticky-add-to-cart.css' | asset_url | stylesheet_tag }}
 <div
-  class="m-sticky-addtocart {{ class }}{% if enable_dynamic_checkout %} enable-dynamic-checkout{% endif %}"
+  class="m-sticky-addtocart apex-sticky {{ class }}{% if enable_dynamic_checkout %} enable-dynamic-checkout{% endif %}"
   data-show-on-desktop="{{ st.use_sticky_atc }}"
   data-show-on-mobile="{{ st.use_sticky_atc_on_mobile }}"
   data-view="sticky-atc"
@@ -56,14 +56,17 @@
           <h3 class="m:text-base">
             {{ product.title }}
           </h3>
-          {% if product.has_only_default_variant %}
-            {% render 'product-prices', use_variant: true, product: product %}
-          {% endif %}
+         
         </div>
       </div>
       <div class="m-sticky-addtocart--rightblock">
         {%- assign product_form_id = 'sticky-atc-form-' | append: section.id -%}
         {%- assign product_form_class = 'sticky-atc-form m:flex product-form-' | append: section.id -%}
+        {% if product.has_only_default_variant %}
+          <div class="sticky_price">
+          {% render 'product-prices', use_variant: true, product: product %}
+          </div>
+        {% endif %}
         <product-form class="m-product-form m:w-full">
           {%- form 'product',
             product,
@@ -131,7 +134,9 @@
                 {% else %}
                   {{ 'products.product.sold_out' | t }}
                 {% endif %}
+                <span class="stikcy-add-icon">➜</span>
               </span>
+             
             </button>
             {% if enable_dynamic_checkout and image_field.size <= 0 %}
               <div class="m-product-dynamic-checkout buy-one-click m:flex-1">

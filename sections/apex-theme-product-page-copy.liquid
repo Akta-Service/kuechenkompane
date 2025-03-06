@@ -187,7 +187,7 @@
   </div>
 
   {% if section.settings.use_sticky_atc or section.settings.use_sticky_atc_on_mobile %}
-    {% render 'sticky-atc', section: section, product: product, first_3d_model: first_3d_model %}
+    {% render 'apex-sticky-atc', section: section, product: product, first_3d_model: first_3d_model %}
   {% endif %}
 </div>
 {%- if section.settings.show_zoom_button -%}
