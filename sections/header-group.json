@@ -42,7 +42,8 @@
         "item_PjeGnW"
       ],
       "custom_css": [
-        ".m-announcement-bar__container {--container-width: 600px;}"
+        ".m-announcement-bar__container {--container-width: 600px;}",
+        ".m-slider-controls__wrapper {display: none;}"
       ],
       "settings": {
         "container": "container",
