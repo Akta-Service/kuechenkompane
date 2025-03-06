@@ -139,25 +139,23 @@
     <div class="description-row">
       <div class="description-content">
         <h2 class="des-title">{{ section.settings.title }}</h2>
-     <div class="p-dection-w  {% if section.settings.add_showore_btn %}hideContent{% endif %}">
-
-    
-        {% if    product.metafields.custom.product_form_short_description != blank %}
-        {{product.metafields.custom.product_form_short_description }}
-        {%    elsif section.settings.description != blank %}
-          <p class="product-des {% if section.settings.add_showore_btn %}hideContent{% endif %}">
-            {{ section.settings.description }}
-          </p>
-          
-        {% else %}
-          <p class="product-des hideContent">
-            {{ product.description }}
-          </p>
-        {% endif %}
-      </div>
-        {% if section.settings.add_showore_btn %}
-          <span class="show-more">Mehr lesen</span>
-        {% endif %}
+        <div class="p-dection-w  {% if section.settings.add_showore_btn %}hideContent{% endif %}">    
+          {% if product.metafields.custom.product_form_short_description != blank %}
+            <div>{{product.metafields.custom.product_form_short_description }}</div>
+          {% elsif section.settings.description != blank %}
+            <p class="product-des">
+              {{ section.settings.description }}
+            </p>
+            
+          {% else %}
+            <p class="product-des">
+              {{ product.description }}
+            </p>
+          {% endif %}
+        </div>
+          {% if section.settings.add_showore_btn %}
+            <span class="show-more">Mehr lesen</span>
+          {% endif %}
       </div>
       <div class="description-accordion">
         {% for block in section.blocks %}
