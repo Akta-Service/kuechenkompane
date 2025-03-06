@@ -41,13 +41,20 @@
         "text_i4KwPb": {
           "type": "text",
           "settings": {
+            "top_item": "30 Tage Testen"
+          }
+        },
+        "text_KKpaJj": {
+          "type": "text",
+          "settings": {
             "top_item": "Kostenloser Versand ab 100€"
           }
         }
       },
       "block_order": [
         "text_zLPY9B",
-        "text_i4KwPb"
+        "text_i4KwPb",
+        "text_KKpaJj"
       ],
       "settings": {
         "mt": 0,
