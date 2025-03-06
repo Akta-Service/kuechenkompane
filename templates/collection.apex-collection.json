@@ -29,6 +29,33 @@
         "enable_bg_zoom_effect": true
       }
     },
+    "apex_top_slider_GBwqAg": {
+      "type": "apex-top-slider",
+      "blocks": {
+        "text_zLPY9B": {
+          "type": "text",
+          "settings": {
+            "top_item": "140.000+ zufriedene Kunden"
+          }
+        },
+        "text_i4KwPb": {
+          "type": "text",
+          "settings": {
+            "top_item": "Kostenloser Versand ab 100€"
+          }
+        }
+      },
+      "block_order": [
+        "text_zLPY9B",
+        "text_i4KwPb"
+      ],
+      "settings": {
+        "mt": 0,
+        "mb": 0,
+        "mt_mobile": 0,
+        "mb_mobile": 0
+      }
+    },
     "category_selection_iMrTd6": {
       "type": "category-selection",
       "blocks": {
@@ -230,6 +257,7 @@
   },
   "order": [
     "collection-header",
+    "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
     "main",
     "usp_list_xQHfgQ",
