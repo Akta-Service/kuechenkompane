@@ -41,6 +41,7 @@
         ".banner-btn a:hover {border-color: #fff;}"
       ],
       "settings": {
+        "color_scheme": "dark",
         "u": "https://cdn.shopify.com/videos/c/o/v/d98e9d7a4ebb442eabcaf567118e86c5.mp4",
         "u_mobile": "https://cdn.shopify.com/videos/c/o/v/03964288aaac4308bbce450d25d69f0b.mp4",
         "mt": 0,
@@ -49,13 +50,8 @@
         "mb_mobile": 0,
         "title": "Meisterhaft kochen beginnt hier",
         "title_font_size": 40,
-        "title_color": "#ffffff",
         "sub_title": "<p>Perfektion, die du in jeder Bewegung spürst.</p>",
         "btn_text": "Erlebe Perfektion",
-        "btn_bg_color": "#fa8526",
-        "btn_bg_color_hover": "#4b4b4b",
-        "btn_text_color": "#ffffff",
-        "btn_text_color_hover": "#ffffff",
         "btn_link": "shopify://pages/produkte-entdecken"
       }
     },
