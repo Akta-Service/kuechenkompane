@@ -347,19 +347,16 @@
         "image_kLVez4"
       ],
       "settings": {
-        "bg_color": "#ebf2e8",
+        "color_scheme": "badge-sale",
         "mt": 0,
         "mb": 0,
         "mt_mobile": 0,
         "mb_mobile": 0,
         "heading_size": 52,
-        "heading_color": "#121212",
         "des_size": 18,
-        "des_color": "#454545",
-        "btn_bg_color": "#fa8526",
-        "btn_text_color": "#ffffff",
-        "btn_bg_hover_color": "#333333",
-        "btn_hover_color": "#ffffff",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "arrow_bg": "#fff",
         "hide_arrow_m": true
       }
     },
