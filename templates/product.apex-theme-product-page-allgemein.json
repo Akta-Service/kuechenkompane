@@ -192,29 +192,29 @@
           "type": "faq",
           "disabled": true,
           "settings": {
-            "question": "{{ section.settings.product.metafields.custom.accordion_title_1.value }}",
-            "answer": "{{ section.settings.product.metafields.custom.accordion_content_1 | metafield_tag }}"
+            "question": "{{ product.metafields.custom.accordion_title_1.value }}",
+            "answer": "<p></p>{{ product.metafields.custom.accordion_content_1 | metafield_tag }}"
           }
         },
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
-            "question": "{{ section.settings.product.metafields.custom.accordion_title_4.value }}",
-            "answer": "<p>{{ section.settings.product.metafields.custom.accordion_content_4 | metafield_tag }}</p>"
+            "question": "{{ product.metafields.custom.accordion_title_4.value }}",
+            "answer": "{{ product.metafields.custom.accordion_content_4 | metafield_tag }}"
           }
         },
         "faq_kQAWhE": {
           "type": "faq",
           "settings": {
-            "question": "{{ section.settings.product.metafields.custom.accordion_title_2.value }}",
-            "answer": "{{ section.settings.product.metafields.custom.accordion_content_2 | metafield_tag }}"
+            "question": "{{ product.metafields.custom.accordion_title_2.value }}",
+            "answer": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}"
           }
         },
         "faq_pDwHXa": {
           "type": "faq",
           "settings": {
-            "question": "{{ section.settings.product.metafields.custom.accordion_title_3.value }}",
-            "answer": "{{ section.settings.product.metafields.custom.accordion_content_3 | metafield_tag }}"
+            "question": "{{ product.metafields.custom.accordion_title_3.value }}",
+            "answer": "{{ product.metafields.custom.accordion_content_3 | metafield_tag }}"
           }
         }
       },
@@ -225,11 +225,10 @@
         "faq_pDwHXa"
       ],
       "settings": {
-        "product": "{{ product }}",
         "title": "Produktbeschreibung",
         "font_size": 26,
         "font_color": "#000000",
-        "description": "{{ section.settings.product.description }}",
+        "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true
