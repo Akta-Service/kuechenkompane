@@ -1963,7 +1963,7 @@ textarea:not(
   background-color: rgb(var(--color-button-hover));
   color: rgb(var(--color-button-text-hover));
 }
-.m-button:not(.m-button--link, .m-link-underline, .m-button--blank):hover,
+/* .m-button:not(.m-button--link, .m-link-underline, .m-button--blank):hover,
 .shopify-payment-button__button.shopify-payment-button__button--unbranded:not(
     .m-button--link,
     .m-link-underline,
@@ -1975,7 +1975,7 @@ textarea:not(
     .m-button--blank
   ):hover {
   box-shadow: 0 0 0 0.2rem rgb(var(--color-button-hover));
-}
+} */
 .m-button:disabled,
 .shopify-payment-button__button.shopify-payment-button__button--unbranded:disabled,
 .spr-button.spr-button-primary:disabled,
@@ -2099,12 +2099,8 @@ textarea:not(
   transition:
     transform var(--m-duration-long, 0.5s) cubic-bezier(0.165, 0.84, 0.44, 1)
       0.3s,
-    -webkit-transform var(--m-duration-long, 0.5s) cubic-bezier(
-        0.165,
-        0.84,
-        0.44,
-        1
-      ) 0.3s;
+    -webkit-transform var(--m-duration-long, 0.5s)
+      cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
 }
 .m-button--link::before,
 .m-section__description a::before,
@@ -2129,12 +2125,8 @@ textarea:not(
   transition:
     transform var(--m-duration-long, 0.5s) cubic-bezier(0.165, 0.84, 0.44, 1)
       0.3s,
-    -webkit-transform var(--m-duration-long, 0.5s) cubic-bezier(
-        0.165,
-        0.84,
-        0.44,
-        1
-      ) 0.3s;
+    -webkit-transform var(--m-duration-long, 0.5s)
+      cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
 }
 .m-button--link::after,
 .m-section__description a::after,
@@ -2151,7 +2143,8 @@ textarea:not(
     cubic-bezier(0.165, 0.84, 0.44, 1);
   transition:
     transform var(--m-duration-long, 0.5s) cubic-bezier(0.165, 0.84, 0.44, 1),
-    -webkit-transform var(--m-duration-long, 0.5s) cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transform var(--m-duration-long, 0.5s)
+      cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .m-button--link.m-button--text-with-icon::before,
 .m-section__description a.m-button--text-with-icon::before,
@@ -3645,8 +3638,8 @@ m-select-component select {
   bottom: 0;
   z-index: 100;
   touch-action: none;
-  transition-property: color, background-color, border-color,
-    text-decoration-color, fill, stroke;
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: var(--m-duration-default, 0.25s);
   background-color: rgba(0, 0, 0, var(--m-bg-opacity));
@@ -7628,16 +7621,16 @@ variant-picker
   display: none;
 }
 
-.m-product-tabs__load-more .m-button--secondary {
+/* .m-product-tabs__load-more .m-button--secondary {
   background: #fa8526;
   color: #fff;
-}
-.m-product-tabs__load-more .m-button--secondary:hover {
+} */
+/* .m-product-tabs__load-more .m-button--secondary:hover {
   background: #333;
   border: 0;
   box-shadow: none;
   outline: none;
-}
+} */
 
 .m-collection-products .m-wishlist-button {
   display: none;
