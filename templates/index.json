@@ -367,7 +367,6 @@
           "type": "sub_heading",
           "settings": {
             "sub_heading": "Küchenkompane - Erklärt in 2 Minuten",
-            "sub_heading_color": "#000000",
             "sub_heading_size": 16
           }
         },
@@ -379,7 +378,6 @@
             "h1_font_size_tablet": 35,
             "h1_font_size_mobile": 34,
             "h1_font_weight": "700",
-            "h1_font_color": "#000000",
             "h1_text_align": "center",
             "title": "Your Title Here",
             "padding_top": 1,
@@ -394,13 +392,11 @@
           "type": "details",
           "settings": {
             "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
-            "details_color": "#000000",
             "details_size": 18,
             "p_font_size": 16,
             "p_font_size_tablet": 16,
             "p_font_size_mobile": 16,
             "p_font_weight": "400",
-            "p_font_color": "#333333",
             "p_text_align": "center",
             "p_line_height": 1.5,
             "p_padding_top": 10,
@@ -431,10 +427,9 @@
         "video_cTydVn"
       ],
       "settings": {
-        "bg_color": "#ffffff",
+        "color_scheme": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
         "vertical_padding": 50,
         "vertical_padding_mobile": 30,
-        "heading_color": "#000000",
         "heading_size": 44,
         "heading_size_mobile": 34
       }
