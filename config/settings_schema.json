@@ -89,12 +89,6 @@
         ]
       },
       {
-        "type": "color",
-        "id": "h1_color",
-        "label": "H1 Color",
-        "default": "#000000"
-      },
-      {
         "type": "header",
         "content": "H1  (Desktop)"
       },
@@ -276,12 +270,7 @@
           { "label": "Bolder", "value": "900" }
         ]
       },
-      {
-        "type": "color",
-        "id": "h2_color",
-        "label": "H2 Color",
-        "default": "#000000"
-      },
+
       {
         "type": "header",
         "content": "H2 (Desktop)"
@@ -463,12 +452,7 @@
           { "label": "Bolder", "value": "900" }
         ]
       },
-      {
-        "type": "color",
-        "id": "h3_color",
-        "label": "H3 Color",
-        "default": "#000000"
-      },
+
       {
         "type": "header",
         "content": "H3 (Desktop)"
@@ -648,12 +632,6 @@
           { "label": "Bold", "value": "700" },
           { "label": "Bolder", "value": "900" }
         ]
-      },
-      {
-        "type": "color",
-        "id": "h4_color",
-        "label": "H4 Color",
-        "default": "#000000"
       },
       {
         "type": "header",
@@ -837,12 +815,6 @@
         ]
       },
       {
-        "type": "color",
-        "id": "h5_color",
-        "label": "H5 Color",
-        "default": "#000000"
-      },
-      {
         "type": "header",
         "content": "H5 (Desktop)"
       },
@@ -1024,12 +996,6 @@
         ]
       },
       {
-        "type": "color",
-        "id": "h6_color",
-        "label": "H6 Color",
-        "default": "#000000"
-      },
-      {
         "type": "header",
         "content": "H6 (Desktop)"
       },
@@ -1190,113 +1156,6 @@
         "step": 1,
         "default": 0,
         "unit": "px"
-      }
-    ]
-  },
-  {
-    "name": "Global Button Settings",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Button Colors"
-      },
-      {
-        "type": "color",
-        "id": "btn_bg",
-        "label": "Button Background Color",
-        "default": "#fa8526"
-      },
-      {
-        "type": "color",
-        "id": "btn_text",
-        "label": "Button Text Color",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "btn_hover_bg",
-        "label": "Button Hover Background Color",
-        "default": "#d46a1b"
-      },
-      {
-        "type": "color",
-        "id": "btn_hover_text",
-        "label": "Button Hover Text Color",
-        "default": "#ffffff"
-      },
-      {
-        "type": "header",
-        "content": "Button Borders"
-      },
-      {
-        "type": "color",
-        "id": "btn_border",
-        "label": "Button Border Color",
-        "default": "#fa8526"
-      },
-      {
-        "type": "range",
-        "id": "btn_border_width_mrk",
-        "label": "Button Border Width",
-        "min": 0,
-        "max": 5,
-        "step": 1,
-        "default": 1,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "btn_border_radius_mrk",
-        "label": "Button Border Radius",
-        "min": 0,
-        "max": 50,
-        "step": 1,
-        "default": 5,
-        "unit": "px"
-      },
-      {
-        "type": "header",
-        "content": "Button Sizing"
-      },
-      {
-        "type": "range",
-        "id": "btn_font_size",
-        "label": "Button Font Size",
-        "min": 10,
-        "max": 24,
-        "step": 1,
-        "default": 16,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "btn_padding_vr",
-        "label": "Button Vertical Padding",
-        "min": 5,
-        "max": 30,
-        "step": 1,
-        "default": 10,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "btn_padding_hr",
-        "label": "Button Horizontal Padding",
-        "min": 5,
-        "max": 50,
-        "step": 1,
-        "default": 20,
-        "unit": "px"
-      },
-      {
-        "type": "header",
-        "content": "Box Shadow"
-      },
-      {
-        "type": "text",
-        "id": "btn_box_shadow",
-        "label": "Button Box Shadow",
-        "default": "0px 4px 6px rgba(0, 0, 0, 0.1)"
       }
     ]
   },
