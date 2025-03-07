@@ -288,7 +288,7 @@
       <h3>{{ section.settings.title }}</h3>
       {{ section.settings.sub_title }}
       <div class="banner-btn banner-btn-{{ section.id }}">
-        <a class="m-button" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
+        <a class="m-button {{ section.settings.button_style }} {{ section.settings.button_size }}" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
       </div>
     </div>
   </div>
@@ -435,6 +435,50 @@
       "id": "btn_link",
       "label": "Button Link"
     },
+    {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            {
+              "value": "m-button--primary",
+              "label": "Primary button"
+            },
+            {
+              "value": "m-button--secondary",
+              "label": "Secondary button"
+            },
+            {
+              "value": "m-button--white",
+              "label": "White button"
+            },
+            {
+              "value": "m-button--link",
+              "label": "Underline button"
+            }
+          ],
+          "default": "m-button--primary"
+        },
+        {
+          "type": "select",
+          "id": "button_size",
+          "label": "Button size",
+          "options": [
+            {
+              "value": "m-button--small",
+              "label": "Button small"
+            },
+            {
+              "value": "",
+              "label": "Button medium"
+            },
+            {
+              "value": "m-button--large",
+              "label": "Button large"
+            }
+          ],
+          "default": ""
+        },
     {
       "type": "header",
       "content": "Brand Image"
