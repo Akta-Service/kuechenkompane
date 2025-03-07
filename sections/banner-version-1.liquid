@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
-  .banner-area {
-    background: {{ section.settings.bg_color }};
+  .banner-area {   
     margin-top: {{ section.settings.mt }}px;
     margin-bottom: {{ section.settings.mb }}px;
   }
@@ -36,13 +35,10 @@
     margin: 0 0 5px;
   }
   .banner-title {
-    font-size: 52px;
-    color: #121212;
+    font-size: 52px;    
     margin: 0 0 10px;
   }
-  .banner-button {
-    color: {{ section.settings.btn_text_color }};
-    background: {{ section.settings.btn_bg_color }};
+  /* .banner-button {   
     font-size: 16px;
     display: inline-block;
     padding: 15px 25px;
@@ -52,15 +48,11 @@
     line-height: 1;
     margin: 0;
   }
-  .banner-button:hover {
-    color: {{ section.settings.btn_hover_color }};
-    background: {{ section.settings.btn_bg_hover_color }};
-
-  }
+   */
   .banner-text {
     margin: 0 0 25px;
     font-size: {{ section.settings.des_size }}px;
-    color: {{ section.settings.des_color }};
+   
   }
   .banner-next,
   .banner-prev {
@@ -69,7 +61,7 @@
     transform: translateY(-50%);
     width: 48px;
     height: 48px;
-    background: #fff;
+    background: {{ section.settings.arrow_bg }};
     z-index: 999;
     border-radius: 50%;
     display: inline-flex;
@@ -149,7 +141,7 @@
     }
   }
 </style>
-<div class="banner-area">
+<div class="banner-area m-color-{{ section.settings.color_scheme }}">
   <div class="swiper banner-area-slider">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
@@ -222,11 +214,10 @@
 
     "settings": [
       {
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background color",
-        "default": "#ffffff"
-      },
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color scheme"
+      },     
       {
         "type": "range",
         "id": "mt",
@@ -272,15 +263,12 @@
         "min": 10,
         "max": 100,
         "step": 1
-      }, {
-        "type": "color",
-        "id": "heading_color",
-        "label": "Heading Color",
-        "default": "#121212"
-      }, {
+      }, 
+      {
         "type": "header",
         "content": "Description"
-      }, {
+      },
+      {
         "type": "range",
         "id": "des_size",
         "label": "Description Size",
@@ -288,35 +276,17 @@
         "min": 10,
         "max": 30,
         "step": 1
-      }, {
-        "type": "color",
-        "id": "des_color",
-        "label": "Description Color",
-        "default": "#454545"
-      }, {
+      },        
+      {
         "type": "header",
-        "content": "Button"
-      }, {
+        "content": "Arrow Button"
+      }, 
+      {
         "type": "color",
-        "id": "btn_bg_color",
-        "label": "Button Background Color",
-        "default": "#fa8526"
-      }, {
-        "type": "color",
-        "id": "btn_text_color",
-        "label": "Button Text Color",
-        "default": "#ffffff"
-      }, {
-        "type": "color",
-        "id": "btn_bg_hover_color",
-        "label": "Button Hover Background Color",
-        "default": "#333333"
-      }, {
-        "type": "color",
-        "id": "btn_hover_color",
-        "label": "Button Hover Text Color",
-        "default": "#ffffff"
-      },
+        "id": "arrow_bg",
+        "label": "Arrow Button Background",
+        "default": "#fff"
+      },      
       {
         "type": "checkbox",
         "id": "hide_arrow_m",
@@ -348,15 +318,18 @@
             "type": "text",
             "id": "title",
             "label": "Title"
-          }, {
+          }, 
+          {
             "type": "textarea",
             "id": "text",
             "label": "Text"
-          }, {
+          }, 
+          {
             "type": "text",
             "id": "banner_btn_text",
             "label": "Button Text"
-          }, {
+          }, 
+          {
             "type": "url",
             "id": "banner_link",
             "label": "Button Link"
