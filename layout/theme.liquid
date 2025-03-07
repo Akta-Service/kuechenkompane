@@ -71,7 +71,7 @@
       render 'style-tags'
     -%}
     {%   render 'typegraphy' %}
-    <style>
+    {% comment %} <style>
       .mrk-btn {
         background-color: {{ settings.btn_bg }} !important;
         color: {{ settings.btn_text }} !important;
@@ -89,7 +89,7 @@
         color: {{ settings.btn_hover_text }} !important;
         border-color: {{ settings.btn_hover_bg }} !important;
       }
-    </style>
+    </style> {% endcomment %}
     <style>
       :root {
     
