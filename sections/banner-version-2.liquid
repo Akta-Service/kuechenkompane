@@ -84,14 +84,12 @@
 
       line-height: 1;
       letter-spacing: -0.02em;
-      font-size: {{ section.settings.title_font_size }}px;
-      color: {{ section.settings.title_color }};
+      font-size: {{ section.settings.title_font_size }}px;    
       margin-bottom: 20px;
     }
 
     .banner-main-content p {
-      font-size: 16px;
-      color:#fff;
+      font-size: 16px;      
     }
 
     .banner-btn a {
@@ -106,23 +104,15 @@
       line-height: 1;
       padding: 15px 30px;
       cursor: pointer;
-      text-decoration: none;
-      background-color: rgb(30 30 30);
-      color: rgb(255, 255, 255);
+      text-decoration: none;      
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
       min-width: 7.6rem;
       font-weight: 700;
     }
-    .banner-btn-{{ section.id }} a{
-      color: {{ section.settings.btn_text_color }};
-      background: {{ section.settings.btn_bg_color  }};
-    }
-    .banner-btn-{{ section.id }} a:hover {
-      color: {{ section.settings.btn_text_color_hover }};
-      background: {{ section.settings.btn_bg_color_hover  }} ;
-    }
+  
+   
     /* banner bottom  */
     .banner-bottom {
       padding: 20px 0;
@@ -207,12 +197,10 @@
       .banner-main-content h3 {
         font-size: 1.5rem;
         margin-bottom: 10px;
-        color: rgb(255, 255, 255);
+       
       }
 
-      .banner-main-content p {
-        color: rgb(255, 255, 255);
-      }
+     
 
       .banner-btn a {
         margin-top: 15px;
@@ -420,12 +408,7 @@
       "max": 100,
       "step": 1
     },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Title Color",
-      "default": "#1e1e1e"
-    },
+    
     {
       "type": "header",
       "content": "Sub heading"
@@ -446,38 +429,7 @@
       "label": "Button Text",
       "default": "shop now"
     },
-    {
-      "type": "header",
-      "content": "Button background color"
-    },
-    {
-      "type": "color",
-      "id": "btn_bg_color",
-      "label": "Button Background Color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "btn_bg_color_hover",
-      "label": "Button Background Color (Hover)",
-      "default": "#333333"
-    },
-    {
-      "type": "header",
-      "content": "Button text color"
-    },
-    {
-      "type": "color",
-      "id": "btn_text_color",
-      "label": "Button Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "btn_text_color_hover",
-      "label": "Button Text Color (Hover)",
-      "default": "#ffffff"
-    },
+   
     {
       "type": "url",
       "id": "btn_link",
