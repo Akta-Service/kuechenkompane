@@ -4,8 +4,7 @@
  
 
   /* common css end  */
-  .category-area {
-    background: {{ section.settings.bg_color }};
+  .category-area {   
     padding: 60px 0;
     padding-top: {{ section.settings.pt }}px;
     padding-bottom: {{ section.settings.pb }}px;
@@ -20,8 +19,7 @@
   .category-title {
     text-align: center;
     text-transform: uppercase;
-    margin-top: 0;
-    color: {{ section.settings.heading_color }};
+    margin-top: 0;   
     font-size: {{ section.settings.heading_font_size }}px;
     margin-bottom: 40px;
   }
@@ -140,7 +138,7 @@
     
   }
 </style>
-<div class="category-area">
+<div class="category-area m-color-{{ section.settings.color_scheme }}">
   <div class="container">
     <div class="section-title">
       <h2 class="category-title">{{ section.settings.title }}</h2>
@@ -189,9 +187,9 @@
     "name": "APEX Category Selection",
     "settings": [
       {
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background Color"
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color scheme"
       },
       {
         "type": "range",
@@ -214,7 +212,8 @@
       {
         "type": "header",
         "content": "Mobile Spacing"
-      }, {
+      }, 
+      {
         "type": "range",
         "id": "mobile_pt",
         "label": "Padding Top (Mobile)",
@@ -222,7 +221,8 @@
         "min": 0,
         "max": 100,
         "step": 1
-      }, {
+      }, 
+      {
         "type": "range",
         "id": "mobile_pb",
         "label": "Padding Bottom (Mobile)",
@@ -230,15 +230,18 @@
         "min": 0,
         "max": 100,
         "step": 1
-      }, {
+      }, 
+      {
         "type": "header",
         "content": "Heading"
-      }, {
+      }, 
+      {
         "type": "text",
         "id": "title",
         "label": "Heading",
         "default": "Shop by Category"
-      }, {
+      }, 
+      {
         "type": "range",
         "id": "heading_font_size",
         "label": "Font Size",
@@ -246,14 +249,6 @@
         "min": 12,
         "max": 100,
         "step": 1
-      }, {
-        "type": "header",
-        "content": "Color"
-      }, {
-        "type": "color",
-        "id": "heading_color",
-        "label": "Heading Color",
-        "default": "#1e1e1e"
       }
     ],
     "blocks": [
