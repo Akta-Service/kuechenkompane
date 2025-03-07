@@ -229,7 +229,7 @@
         "title": "Produktbeschreibung",
         "font_size": 26,
         "font_color": "#000000",
-        "description": "{{ section.settings.product.description }}",
+        "description": "",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true
