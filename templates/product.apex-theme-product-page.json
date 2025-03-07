@@ -225,7 +225,7 @@
         "faq_pDwHXa"
       ],
       "settings": {
-        "product": "akarui-messerset-premium",
+        "product": "{{ product }}",
         "title": "Produktbeschreibung",
         "font_size": 26,
         "font_color": "#000000",
