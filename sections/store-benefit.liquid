@@ -1,22 +1,7 @@
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-
-
+  
   /* common css end   */
   .store-benefits-area {
     padding-top: {{ section.settings.pt }}px;
@@ -34,16 +19,14 @@
     margin: 0 auto;
   }
 
-  .store-benefits-text h4 {
-    color: {{ section.settings.title_color }};
+  .store-benefits-text h4 {  
     font-size: {{ section.settings.title_size }}px;
     margin: 24px 0 12px;
     text-transform: uppercase;
     font-weight: 400;
   }
 
-  .store-benefits-text p {
-    color: {{ section.settings.text_color }};
+  .store-benefits-text p {   
     font-size: {{ section.settings.text_size }}px;
     text-transform: uppercase;
     margin: 15px 0;
@@ -103,7 +86,7 @@
    }
   }
 </style>
-<div class="store-benefits-area ">
+<div class="store-benefits-area m-color-{{ section.settings.color_scheme }}">
   <div class="store-benefits-content ">
     <div class="swiper store-benefits">
       <div class="swiper-wrapper">
@@ -131,24 +114,13 @@
 </div>
 {% schema %}
 {
-  "name": "Store Benefits",
+  "name": "Apex Store Benefits",
   "settings": [
     {
-      "type": "header",
-      "content": "Color"
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Title Color",
-      "default": "#1e1e1e"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#1e1e1e"
-    },
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },   
     {
       "type": "header",
       "content": "Typography"
@@ -314,7 +286,7 @@
   ],
   "presets": [
     {
-      "name": "Store Benefits"
+      "name": "Apex Store Benefits"
     }
   ]
 }

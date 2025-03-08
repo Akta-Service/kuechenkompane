@@ -22,8 +22,8 @@
 
   .text-banner-content {
     text-align: center;
-    max-width: 520px;
-    padding: 0 50px;
+    max-width: 500px;
+    padding: 0 15px;
     margin: 0 auto;
   }
 
@@ -35,7 +35,7 @@
   }
 
   .text-banner-subtitle {
-    font-size: {{ section.settings.title_font_size | default: 40 }}px;   
+    font-size: {{ section.settings.title_font_size }}px;   
     letter-spacing: -0.8px;
     line-height: 44px;
     margin-bottom: 8px;
@@ -43,17 +43,21 @@
   }
 
   .text-banner-content p {
-    font-size: {{ section.settings.text_font_size | default: 15 }}px;   
+    font-size: {{ section.settings.text_font_size }}px;   
     line-height: 24px;
   }
   @media only screen and (max-width: 749px) {
     .text-banner-title {
-      font-size: {{ section.settings.title_font_size_m | default: 24 }}px; 
+      font-size: {{ section.settings.title_font_size_m }}px; 
     }
 
     .text-banner-subtitle {
-      font-size: {{ section.settings.title_font_size_m | default: 24 }}px; 
+      font-size: {{ section.settings.title_font_size_m }}px; 
     }
+    .text-banner-content p {
+    font-size: {{ section.settings.text_font_size_m }}px;  
+    
+  }
   }
 </style>
 <div class="text-banner-area m-color-{{ section.settings.color_scheme }}">
@@ -197,6 +201,16 @@
       "type": "range",
       "id": "text_font_size",
       "label": "Text Font Size",
+      "default": 15,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },    
+    {
+      "type": "range",
+      "id": "text_font_size_m",
+      "label": "Text Font Size (Mobile)",
       "default": 15,
       "min": 10,
       "max": 100,
