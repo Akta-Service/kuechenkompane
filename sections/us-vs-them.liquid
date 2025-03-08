@@ -12,7 +12,7 @@
   }
 {%- endstyle -%}
 
-<div class="us-vs-them">
+<div class="us-vs-them m-color-{{ section.settings.color_scheme }}">
   <div class="us-them-row">
     <div class="us-them-content">
       <div class="content-box">
@@ -21,14 +21,14 @@
             {% when 'title' %}
               <h2
                 class="us-them-title"
-                style="color: {{ block.settings.title_color }}; font-size: {{- block.settings.title_size -}}px;"
+                style="font-size: {{- block.settings.title_size -}}px;"
               >
                 {{ block.settings.title }}
               </h2>
             {% when 'description' %}
               <div
                 class="us-them-description"
-                style="color: {{ block.settings.description_color }}; font-size: {{- block.settings.description_size -}}px;"
+                style="font-size: {{- block.settings.description_size -}}px;"
               >
                 {{ block.settings.description }}
               </div>
@@ -47,6 +47,11 @@
 {
   "name": "APEX US vs Them",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
     {
       "type": "image_picker",
       "id": "img",
@@ -104,12 +109,7 @@
           "label": "Title",
           "default": "Kraftstein® vs. Others"
         },
-        {
-          "type": "color",
-          "id": "title_color",
-          "label": "Title Color",
-          "default": "#1c1c1c"
-        },
+        
         {
           "type": "range",
           "id": "title_size",
@@ -131,13 +131,7 @@
           "id": "description",
           "label": "Quotation Text",
           "default": "<p>Our comparison graphic shows why Kraftstein knives are the best choice. With extremely sharp blades, high-quality steel and ergonomic handles, they offer the highest quality and comfort.</p>"
-        },
-        {
-          "type": "color",
-          "id": "description_color",
-          "label": "Quotation Color",
-          "default": "#1c1c1c"
-        },
+        },        
         {
           "type": "range",
           "id": "description_size",
