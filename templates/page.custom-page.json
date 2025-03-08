@@ -243,15 +243,13 @@
         "margin_top_mobile": 0,
         "margin_bottom_mobile": 0,
         "title_size": 40,
-        "title_color": "#121212",
-        "text_size": 18,
-        "text_color": "#454545"
+        "text_size": 18
       }
     },
     "announcement_bar_version_1_3Nznet": {
       "type": "announcement-bar-version-1",
       "settings": {
-        "bg_color": "#ffbe98",
+        "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
         "ann_title": "Lei Of Love",
@@ -259,10 +257,7 @@
         "ann_title_size_m": 14,
         "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
         "text_size": 16,
-        "text_size_m": 14,
-        "ann_title_color": "#000000",
-        "strong_color": "#000000",
-        "text_color": "#000000"
+        "text_size_m": 14
       }
     },
     "apex_home_logo_list_RM6R7y": {
