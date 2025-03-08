@@ -34,22 +34,18 @@
   }
 
   .branded-right-item {
-    position: relative;
-    background: #deceba;
+    position: relative;   
     padding: 50px 0;
   }
 
   .branded-title {
-    font-size: {{ section.settings.title_font_size }}px;
-    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.title_font_size }}px;    
     font-weight: 400;
     text-transform: capitalize;
     /* line-height: 1; */
   }
 
-  .branded-btn a {
-    color: #fff;
-    background: #1e1e1e;
+  .branded-btn a {  
 
     font-size: 14px;
     display: inline-block;
@@ -59,18 +55,10 @@
     transition: 0.3s;
   }
 
-  .branded-btn-{{ section.id }} a{
-    color: {{ section.settings.btn_text_color }};
-    background: {{ section.settings.btn_bg_color  }};
-  }
-  .branded-btn-{{ section.id }} a:hover{
-    color: {{ section.settings.btn_text_color_hover }};
-    background: {{ section.settings.btn_bg_color_hover  }} ;
-  }
+
 
   .branded-text p {
-    font-size: {{ section.settings.text_font_size }}px;
-    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.text_font_size }}px;  
     margin-top: 20px;
     margin-bottom: 25px;
   }
@@ -123,7 +111,7 @@
   }
   }
 </style>
-<div class="branded-img-area">
+<div class="branded-img-area m-color-{{ section.settings.color_scheme }}">
   <div class="branded-img-content">
     <div
       class="branded-left-item"
@@ -142,7 +130,7 @@
       >
         <path fill-rule="evenodd" clip-rule="evenodd"
             d="M0 0.000479755C13.3628 0.000480339 26.1762 5.36657 35.6342 14.8997L180.31 160.846C189.748 170.379 195.066 183.313 195.066 196.797V403.204C195.066 416.689 189.768 429.622 180.31 439.155L35.6146 585.101C26.2035 594.607 13.4174 599.969 0.096379 600L230.566 600V0L0 0.000479755Z"
-            fill="#deceba"></path>
+            fill="{{ section.settings.shape_color |  default: '#deceba' }}"></path>
       </svg>
       <svg
         class="banner-fluid__media-mask-mobile"
@@ -155,7 +143,7 @@
       >
         <path fill-rule="evenodd" clip-rule="evenodd"
             d="M375 0H0V128.274C0 119.898 3.35381 111.866 9.31204 105.937L100.528 15.2496C106.486 9.33329 114.57 6 122.998 6H252.002C260.43 6 268.514 9.32099 274.472 15.2496L365.688 105.95C371.646 111.866 375 119.91 375 128.286V0Z"
-            fill="#deceba"></path>
+            fill="{{ section.settings.shape_color | default: '#deceba' }}"></path>
       </svg>
     </div>
     <div
@@ -185,6 +173,17 @@
 {
   "name": "APEX Branded Image Ver 1",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "color",
+      "id": "shape_color",
+      "label": "Shape Color",
+      "default": "#000000"
+    },
     {
       "type": "header",
       "content": "Section Spacing"
