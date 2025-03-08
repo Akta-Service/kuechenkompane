@@ -193,7 +193,7 @@
         <div class="trustpilot-testimonials-list swiper-wrapper">
           {% comment %} loop slide  {% endcomment %}
           {% for block in section.blocks %}
-            <div class="trustpilot-testimonials-item swiper-slide">
+            <div class="trustpilot-testimonials-item swiper-slide  m-color-{{ section.settings.content_color_scheme }} {% if section.settings.content_color_scheme != section.settings.color_scheme %}m-custom-content__boxed{% endif %}">
               <div class="testimonial-review">
                 <div class="review-star">
                   <svg role="img" viewBox="0 0 251 46" xmlns="http://www.w3.org/2000/svg">
@@ -311,6 +311,11 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "content_color_scheme",
+      "label": "Content color scheme"
     },
     {
       "type": "header",
