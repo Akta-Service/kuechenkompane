@@ -80,7 +80,11 @@
       background: none;
       border: none;
   }
-
+  {% if section.settings.invert_color %}
+  .logo-item img {
+    filter: invert(1);
+  }
+  {% endif %}
     @media only screen and (max-width: 767px) {
       .logo-quote-area {
         padding: {{ section.settings.ver_p_mobile}}px {{ section.settings.hr_p_mobile}}px;
@@ -129,7 +133,13 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
-    },  
+    },
+    {
+      "type": "checkbox",
+      "id": "invert_color",
+      "label": "Image Color Invert",      
+      "info": "(It Will be White Color)"
+    },   
     {
       "type": "range",
       "id": "ver_p",
