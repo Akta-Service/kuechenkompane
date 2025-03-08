@@ -1,21 +1,4 @@
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  img {
-    width: 100%;
-  }
+<style>  
 
   /* common css end  */
   .branded-img-area.style-2{
@@ -27,8 +10,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .branded-right-item {
-    background: url(../img/branded-image-2.jpg);
+  .branded-right-item {   
     height: 600px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -42,26 +24,17 @@
   }
 
   .branded-left-item {
-    position: relative;
-    background: #deceba;
+    position: relative;    
   }
 
   .branded-title {
-    font-size: {{ section.settings.title_font_size }}px;
-    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.title_font_size }}px;   
     font-weight: 400;
     text-transform: capitalize;
   } 
-  .branded-btn-{{ section.id }} a{
-    color: {{ section.settings.btn_text_color }};
-    background: {{ section.settings.btn_bg_color  }};
-  }
-  .branded-btn-{{ section.id }} a:hover{
-    color: {{ section.settings.btn_text_color_hover }};
-    background: {{ section.settings.btn_bg_color_hover  }} ;
-  }
-  .branded-text p {
-    color: {{ section.settings.text_color }};
+  
+  
+  .branded-text p {   
     font-size: {{ section.settings.text_font_size }}px;
     font-size: 16px;
     margin-top: 30px;
@@ -121,7 +94,7 @@
   }
   }
 </style>
-<div class="branded-img-area style-2">
+<div class="branded-img-area style-2 m-color-{{ section.settings.color_scheme }}">
   <div class="branded-img-content">
     <div class="branded-left-item">
       <div class="branded-text">
@@ -158,7 +131,7 @@
       >
         <path fill-rule="evenodd" clip-rule="evenodd"
             d="M313.979 0H0V600H314.103C149.47 600 16 465.679 16 300C16 134.363 149.403 0.0678189 313.979 0Z"
-            fill="#deceba"></path>
+            fill="{{ section.settings.shape_bg }}"></path>
       </svg>
       <svg
         class="banner-fluid__media-mask-mobile"
@@ -171,7 +144,7 @@
       >
         <path fill-rule="evenodd" clip-rule="evenodd"
             d="M374 0.5H0V198.66C0.0856128 96.1114 83.7794 13 187 13C290.273 13 374 96.1966 374 198.818V0.5Z"
-            fill="#deceba"></path>
+            fill="{{ section.settings.shape_bg }}"></path>
       </svg>
     </div>
   </div>
@@ -180,6 +153,16 @@
 {
   "name": "Branded Image Version 2",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    }, 
+    {
+      "type": "color",
+      "id": "shape_bg",
+      "label": "Shape Backgroung Color"      
+    },
     {
       "type": "header",
       "content": "Section Spacing"
@@ -250,13 +233,7 @@
       "max": 100,
       "unit": "px",
       "step": 1
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Title Color",
-      "default": "#1e1e1e"
-    },
+    },    
     {
       "type": "range",
       "id": "text_font_size",
@@ -266,46 +243,56 @@
       "max": 50,
       "unit": "px",
       "step": 1
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#1e1e1e"
-    },
-
+    },    
     {
       "type": "header",
-      "content": "Button background color"
+      "content": "Button"
     },
     {
-      "type": "color",
-      "id": "btn_bg_color",
-      "label": "Button Background Color",
-      "default": "#000000"
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "m-button--primary",
+          "label": "Primary button"
+        },
+        {
+          "value": "m-button--secondary",
+          "label": "Secondary button"
+        },
+        {
+          "value": "m-button--white",
+          "label": "White button"
+        },
+        {
+          "value": "m-button--link",
+          "label": "Underline button"
+        }
+      ],
+      "default": "m-button--primary"
     },
     {
-      "type": "color",
-      "id": "btn_bg_color_hover",
-      "label": "Button Background Color (Hover)",
-      "default": "#333333"
-    },
-    {
-      "type": "header",
-      "content": "Button text color"
-    },
-    {
-      "type": "color",
-      "id": "btn_text_color",
-      "label": "Button Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "btn_text_color_hover",
-      "label": "Button Text Color (Hover)",
-      "default": "#ffffff"
-    }
+      "type": "select",
+      "id": "button_size",
+      "label": "Button size",
+      "options": [
+        {
+          "value": "m-button--small",
+          "label": "Button small"
+        },
+        {
+          "value": "",
+          "label": "Button medium"
+        },
+        {
+          "value": "m-button--large",
+          "label": "Button large"
+        }
+      ],
+      "default": ""
+    }    
+   
   ],
   "blocks": [
     {
