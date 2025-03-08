@@ -1027,6 +1027,8 @@
         "block_AVgLTe"
       ],
       "settings": {
+        "color_scheme": "badge-hot",
+        "content_color_scheme": "dark",
         "mt": 50,
         "mb": 30,
         "mt_mobile": 20,
@@ -1034,7 +1036,6 @@
         "title": "Vertraut von",
         "title_highlight": "+140K Kunden",
         "t_size": 32,
-        "t_color": "#202223",
         "h_text_color": "#fa8526"
       }
     },
