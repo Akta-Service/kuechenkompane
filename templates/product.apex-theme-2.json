@@ -396,7 +396,7 @@
         "heading_size": "h3",
         "subheading": "",
         "container": "container-fluid",
-        "color_scheme": "",
+        "color_scheme": "badge-hot",
         "item_gap": 100,
         "item_gap_mobile": 30,
         "layout": "right",
@@ -618,7 +618,7 @@
       ],
       "settings": {
         "container": "container",
-        "color_scheme": "",
+        "color_scheme": "badge-hot",
         "image_position": "left",
         "column_gap": 100,
         "heading": "Häufige Fragen FAQ",
