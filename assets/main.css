@@ -6212,7 +6212,7 @@ variant-picker
   color: #000;
 }
 .m-product-card__name:hover {
-  color: rgb(var(--color-foreground-secondary));
+  color: #000;
 }
 .m-product-card__reviews {
   margin-bottom: 10px;
