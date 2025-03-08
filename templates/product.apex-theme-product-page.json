@@ -42,8 +42,7 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Müheloses Schneiden dank höchster Qualität!",
-            "subtitle_font_size": 16,
-            "subtitle_color": "#1c1c1c"
+            "subtitle_font_size": 16
           }
         },
         "review_Tgbbak": {
@@ -167,7 +166,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
-        "color_scheme": "dark",
+        "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
         "show_atwl": true,
