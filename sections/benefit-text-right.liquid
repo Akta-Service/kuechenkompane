@@ -6,7 +6,7 @@
 
    }
    .benefit-text-area.bg-{{ section.id }} {
-    background-color: {{ section.settings.background_color }};
+    
    }
    @media only screen and (max-width: 768px) {
     .benefit-text-area.text-right{
@@ -15,7 +15,7 @@
    }
    }
 {%- endstyle -%}
-<div class="benefit-text-area text-right bg-{{ section.id }}">
+<div class="benefit-text-area text-right bg-{{ section.id }} m-color-{{ section.settings.color_scheme }}">
   <div class="rs-container">
     <div class="benefit-row {% if section.settings.reverse %}rs-reverse{% endif %}">
       <div class="benefit-content">
@@ -31,14 +31,14 @@
             {% when 'title' %}
               <h2
                 class="benefit-title"
-                style="color: {{ block.settings.title_color }}; font-size: {{- block.settings.title_size -}}px;"
+                style=" font-size: {{- block.settings.title_size -}}px;"
               >
                 {{ block.settings.title }}
               </h2>
             {% when 'description' %}
               <p
                 class="benefit-description"
-                style="color: {{ block.settings.description_color }}; font-size: {{- block.settings.description_size -}}px;"
+                style=" font-size: {{- block.settings.description_size -}}px;"
               >
                 {{ block.settings.description }}
               </p>
@@ -72,11 +72,10 @@
   "name": "APEX Benefit Photo Left",
   "settings": [
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background Color",
-      "default": "#ffffff"
-    },
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },    
     {
       "id": "media_type",
       "type": "select",
@@ -159,13 +158,7 @@
           "id": "subtitle",
           "label": "Sub Title",
           "default": "The Beauty Trend 2024"
-        },
-        {
-          "type": "color",
-          "id": "subtitle_color",
-          "label": "Subtitle Color",
-          "default": "#121212"
-        },
+        },        
         {
           "type": "range",
           "id": "subtitle_size",
@@ -187,13 +180,7 @@
           "id": "title",
           "label": "Title",
           "default": "Salon-beautiful nails in minutes"
-        },
-        {
-          "type": "color",
-          "id": "title_color",
-          "label": "Title Color",
-          "default": "#121212"
-        },
+        },       
         {
           "type": "range",
           "id": "title_size",
@@ -215,13 +202,7 @@
           "id": "description",
           "label": "Description",
           "default": "Experience the nail polish revolution for yourself with Gel Polish 2.0!......."
-        },
-        {
-          "type": "color",
-          "id": "description_color",
-          "label": "Description Color",
-          "default": "#121212"
-        },
+        },        
         {
           "type": "range",
           "id": "description_size",
