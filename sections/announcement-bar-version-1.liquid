@@ -6,8 +6,7 @@
     padding: 0 15px;
   }
 
-  .announcement-bar {
-    background: {{ section.settings.bg_color }};   
+  .announcement-bar {   
     padding-top: {{ section.settings.pt}}px;
     padding-bottom: {{ section.settings.pb}}px;
   }
@@ -16,18 +15,15 @@
     text-align: center;
   }
 .ann_title{
-  font-size: {{- section.settings.ann_title_size -}}px; 
-  color:{{ section.settings.ann_title_color }} ;
+  font-size: {{- section.settings.ann_title_size -}}px;   
 }
-  .announcement-bar-content strong {
-    color: {{ section.settings.strong_color }};  
+  .announcement-bar-content strong {   
     font-weight: 700;
     line-height: 1;
   }
 
   .announcement-bar-content p {
-    font-size: {{ section.settings.text_size }}px;
-    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.text_size }}px;    
     line-height: 1;
   }
 @media only screen and (max-width: 768px){
@@ -40,7 +36,7 @@
 }
 
 </style>
-<div class="announcement-bar">
+<div class="announcement-bar m-color-{{ section.settings.color_scheme }}">
   <div class="announcement-container">
     <div class="announcement-bar-content">
       <strong class="ann_title" style=" ">
@@ -55,11 +51,10 @@
   "name": "APEX Announcement Bar 1",
   "settings": [
     {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#be3220"
-    },
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },  
     {
       "type": "range",
       "id": "pt",
@@ -133,29 +128,7 @@
       "min": 10,
       "max": 30,
       "step": 1
-    },
-    {
-      "type": "header",
-      "content": "Color"
-    },
-    {
-      "type": "color",
-      "id": "ann_title_color",
-      "label": "Title Color",
-      "default": "#f4f0ec"
-    },
-    {
-      "type": "color",
-      "id": "strong_color",
-      "label": "Strong Text Color",
-      "default": "#f4f0ec"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#f4f0ec"
-    }
+    } 
   ],
   "presets": [
     {
