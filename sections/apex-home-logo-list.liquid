@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <style>
-  .apex-home-logo-list {
-    background: {{ section.settings.bg_color }};   
+  .apex-home-logo-list {   
     padding-top: {{ section.settings.pt}}px;
     padding-bottom: {{ section.settings.pb}}px;
   }
@@ -34,7 +33,7 @@
   }
 </style>
 
-<div class="apex-home-logo-list">
+<div class="apex-home-logo-list m-color-{{ section.settings.color_scheme }}">
   <div class="swiper homeLogo">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
@@ -53,13 +52,12 @@
 {% schema %}
 {
   "name": "Apex Home logo list",    
-  "settings": [
+  "settings": [    
     {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#fff"
-    },
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },  
     {
       "type": "range",
       "id": "pt",
