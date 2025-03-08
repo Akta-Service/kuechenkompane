@@ -762,7 +762,6 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Der Küchen-Trend 2025",
-            "subtitle_color": "#121212",
             "subtitle_size": 18
           }
         },
@@ -770,7 +769,6 @@
           "type": "title",
           "settings": {
             "title": "Perfekte Schnitte in Sekunden",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -778,7 +776,6 @@
           "type": "description",
           "settings": {
             "description": "Erlebe die nächste Stufe der Messerschärfe mit unserem Premium-Messerset. Jede Klinge ist auf Rasiermesserschärfe geprüft und sorgt für mühelose Präzision bei jedem Schnitt – egal ob Fleisch, Gemüse oder Brot.",
-            "description_color": "#121212",
             "description_size": 18
           }
         }
@@ -789,7 +786,7 @@
         "description_PBBAnQ"
       ],
       "settings": {
-        "background_color": "#ffffff",
+        "color_scheme": "badge-hot",
         "media_type": "image",
         "image": "shopify://shop_images/DSC04954_1_1_1.jpg",
         "padding_top": 50,
@@ -806,7 +803,6 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Robust & langlebig",
-            "subtitle_color": "#121212",
             "subtitle_size": 18
           }
         },
@@ -814,7 +810,6 @@
           "type": "title",
           "settings": {
             "title": "Hält jeder Herausforderung stand",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -822,7 +817,6 @@
           "type": "description",
           "settings": {
             "description": "Unsere Messer sind aus hochwertigem Stahl gefertigt und bleiben extrem scharf – ohne Absplittern oder Abnutzen. Die widerstandsfähige Klinge sorgt für jahrelange Höchstleistung in der Küche.",
-            "description_color": "#121212",
             "description_size": 18
           }
         }
@@ -833,7 +827,7 @@
         "description_j4ByyM"
       ],
       "settings": {
-        "background_color": "#ffffff",
+        "color_scheme": "badge-hot",
         "media_type": "image",
         "image": "shopify://shop_images/db3759d136d351495e659830d75d6596_1_1_1_V1_1.jpg",
         "padding_top": 50,
