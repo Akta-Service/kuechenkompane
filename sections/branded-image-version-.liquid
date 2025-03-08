@@ -68,7 +68,7 @@
     display: none;
   }
   @media only screen and (max-width: 1000px) {
-    h3.branded-title {
+    .branded-title {
     font-size: 40px;
   }
  }
@@ -103,7 +103,7 @@
       margin-bottom: {{ section.settings.mobile_margin_bottom }}px;
     }
     .branded-title {
-      font-size: 34px;
+      font-size:{{ section.settings.title_font_size_m }}px;  
       font-weight: 700;
   }
   }
@@ -246,6 +246,16 @@
       "type": "range",
       "id": "title_font_size",
       "label": "Title Font Size",
+      "default": 40,
+      "min": 12,
+      "max": 100,
+      "unit": "px",
+      "step": 1
+    },    
+    {
+      "type": "range",
+      "id": "title_font_size_m",
+      "label": "Title Font Size (Mobile)",
       "default": 40,
       "min": 12,
       "max": 100,
