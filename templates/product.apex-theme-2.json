@@ -275,7 +275,6 @@
           "type": "sub_heading",
           "settings": {
             "sub_heading": "Küchenkompane - Erklärt in 2 Minuten",
-            "sub_heading_color": "#000000",
             "sub_heading_size": 16
           }
         },
@@ -287,10 +286,9 @@
             "h1_font_size_tablet": 28,
             "h1_font_size_mobile": 24,
             "h1_font_weight": "600",
-            "h1_font_color": "#000000",
-            "h1_text_align": "left",
+            "h1_text_align": "center",
             "title": "Your Title Here",
-            "padding_top": 20,
+            "padding_top": 10,
             "padding_bottom": 20,
             "padding_top_tablet": 15,
             "padding_bottom_tablet": 15,
@@ -302,13 +300,11 @@
           "type": "details",
           "settings": {
             "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
-            "details_color": "#000000",
             "details_size": 18,
             "p_font_size": 16,
             "p_font_size_tablet": 14,
             "p_font_size_mobile": 12,
             "p_font_weight": "400",
-            "p_font_color": "#333333",
             "p_text_align": "left",
             "p_line_height": 1.5,
             "p_padding_top": 10,
@@ -338,12 +334,9 @@
         "video_CDdX4G"
       ],
       "settings": {
-        "bg_color": "#ffffff",
+        "color_scheme": "badge-hot",
         "vertical_padding": 50,
-        "vertical_padding_mobile": 30,
-        "heading_color": "#000000",
-        "heading_size": 54,
-        "heading_size_mobile": 34
+        "vertical_padding_mobile": 30
       }
     },
     "usp_list_jDiFMg": {
@@ -354,10 +347,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
-            "title_color": "#121212",
             "title_size": 18,
             "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -367,10 +358,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
             "usp_title": "Geld-zurück-Garantie",
-            "title_color": "#121212",
             "title_size": 18,
             "usp_info": "30 Tage Rückgaberecht - ohne Risiko.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -380,10 +369,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
             "usp_title": "Schärfe Garantie",
-            "title_color": "#121212",
             "title_size": 18,
             "usp_info": "Maximale Schärfe für müheloses Schneiden.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": false
           }
@@ -395,7 +382,7 @@
         "item_tBw9hr"
       ],
       "settings": {
-        "bg_color": "#fffff",
+        "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
         "verticle_padding_mobile": 30,
