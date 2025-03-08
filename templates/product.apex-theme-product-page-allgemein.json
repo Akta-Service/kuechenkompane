@@ -231,7 +231,8 @@
         "description": "<p>{{ product.description }}</p>",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": true
+        "add_showore_btn": true,
+        "br_color": "#000000"
       }
     },
     "product-details-tabs": {
@@ -579,7 +580,7 @@
         "video_XLLb9A"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "badge-hot",
         "vertical_padding": 50,
         "vertical_padding_mobile": 30
       }
