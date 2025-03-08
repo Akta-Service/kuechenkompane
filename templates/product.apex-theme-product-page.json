@@ -592,7 +592,6 @@
           "settings": {
             "title_img": "shopify://shop_images/n_tv_logo_V6_1.png",
             "title": "",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -606,7 +605,6 @@
           "type": "quotation",
           "settings": {
             "quote": "<p>“Küchenkompane überzeugt mit hochwertigen Messern, die durch präzise Verarbeitung und erstklassige Materialien eine beeindruckende Schärfe bieten. Ein Must-have für jede Küche\"</p>",
-            "quote_color": "#121212",
             "quote_size": 26
           }
         }
@@ -617,6 +615,7 @@
         "quotation_g7QTma"
       ],
       "settings": {
+        "color_scheme": "badge-hot",
         "padding_top": 13,
         "padding_bottom": 50,
         "padding_top_mobile": 30,
