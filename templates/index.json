@@ -426,7 +426,7 @@
       "settings": {
         "color_scheme": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
         "vertical_padding": 50,
-        "vertical_padding_mobile": 30
+        "vertical_padding_mobile": 40
       }
     },
     "usp_list_nrezVU": {
@@ -512,7 +512,6 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Willkommen in der Küchenkompane-Welt",
-            "subtitle_color": "#121212",
             "subtitle_size": 18
           }
         },
@@ -520,7 +519,6 @@
           "type": "title",
           "settings": {
             "title": "Gemeinsam besser kochen!",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -528,7 +526,6 @@
           "type": "description",
           "settings": {
             "description": "Werde Teil der Küchenkompane-Community und profitiere von Profi-Tipps, exklusiven Angeboten und hochwertigen Produkten für deine Küche.bers.",
-            "description_color": "#121212",
             "description_size": 18
           }
         }
@@ -540,7 +537,7 @@
       ],
       "disabled": true,
       "settings": {
-        "background_color": "#ffffff",
+        "color_scheme": "",
         "media_type": "image",
         "image": "shopify://shop_images/IMG_9602_V13_1.jpg",
         "padding_top": 50,
