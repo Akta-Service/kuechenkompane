@@ -35,7 +35,7 @@
 
   }
 </style>
-<div class="appex-faqs-area">
+<div class="appex-faqs-area m-color-{{ section.settings.color_scheme }} ">
   <div class="rs-container">
     <h2 class="faqs-title">{{ section.settings.title }}</h2>
     <p class="faqs-sub-title">{{ section.settings.sub_title }}</p>
@@ -68,6 +68,11 @@
 {
   "name": "APEX FAQs ",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
     {
       "type": "range",
       "id": "pt",
