@@ -48,8 +48,7 @@
   }
 
   .trustpilot-title {
-    font-size: {{ section.settings.t_size }}px;
-    color: {{ section.settings.t_color }};
+    font-size: {{ section.settings.t_size }}px;   
     text-transform: uppercase;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -100,8 +99,7 @@
     white-space: nowrap;
   }
 
-  .testimonial-content p {
-    color: #191919;
+  .testimonial-content p {    
     font-size: 13px;
     line-height: 16px;
     max-height: 50px;
@@ -119,12 +117,11 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 12px;
-    color: #00000099;
+   
   }
 
   .testimonial-date {
-    font-size: 12px;
-    color: #00000099;
+    font-size: 12px;    
   }
 
   .swiper-button-next svg {
@@ -183,7 +180,7 @@
   }
 </style>
 
-<div class="trustpilot-area">
+<div class="trustpilot-area m-color-{{ section.settings.color_scheme }}">
   <div class="container">
     <div class="trustpilot-heading">
       <h3 class="trustpilot-title">
@@ -311,6 +308,11 @@
   "name": "APEX Trustp- Testimonial",
   "settings": [
     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
       "type": "header",
       "content": "Section Spacing"
     },
@@ -374,13 +376,7 @@
       "min": 10,
       "max": 100,
       "step": 1
-    },
-    {
-      "type": "color",
-      "id": "t_color",
-      "label": "Title Color",
-      "default": "#202223"
-    },
+    },    
     {
       "type": "color",
       "id": "h_text_color",
