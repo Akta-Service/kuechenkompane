@@ -42,8 +42,7 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Müheloses Schneiden dank höchster Qualität!",
-            "subtitle_font_size": 16,
-            "subtitle_color": "#1c1c1c"
+            "subtitle_font_size": 16
           }
         },
         "review_Tgbbak": {
@@ -167,6 +166,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
         "show_atwl": true,
@@ -752,7 +752,7 @@
         "title_font_size": 34,
         "title_font_size_mobile": 24,
         "sub_title": "Common problems and simple solutions",
-        "sub_title_font_size": 14,
+        "sub_title_font_size": 20,
         "faq_title_font_size": 18,
         "faq_text_font_size": 16
       }
@@ -1165,10 +1165,11 @@
         "item_MzPUFH"
       ],
       "settings": {
+        "color_scheme": "",
+        "icon_color": "#000000",
         "pt": 30,
         "pb": 30,
         "font_size": 14,
-        "color": "#111111",
         "ptm": 30,
         "pbm": 30
       }
