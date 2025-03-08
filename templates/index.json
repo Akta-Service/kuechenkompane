@@ -438,10 +438,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
-            "title_color": "#121212",
             "title_size": 14,
             "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -452,10 +450,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
-            "title_color": "#121212",
             "title_size": 14,
             "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -465,10 +461,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
-            "title_color": "#121212",
             "title_size": 14,
             "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -478,10 +472,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
             "usp_title": "Geld-zurück-Garantie",
-            "title_color": "#121212",
             "title_size": 14,
             "usp_info": "30 Tage Rückgaberecht - ohne Risiko.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -491,10 +483,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
             "usp_title": "Schärfe Garantie",
-            "title_color": "#121212",
             "title_size": 14,
             "usp_info": "Maximale Schärfe für müheloses Schneiden.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": false
           }
@@ -508,7 +498,7 @@
         "item_yDtyRV"
       ],
       "settings": {
-        "bg_color": "#F8F8F8",
+        "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
         "verticle_padding_mobile": 30,
@@ -1399,6 +1389,8 @@
         "btn_PFR3yi"
       ],
       "settings": {
+        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
+        "shape_color": "#deceba",
         "margin_top": 50,
         "margin_bottom": 50,
         "mobile_margin_top": 30,
