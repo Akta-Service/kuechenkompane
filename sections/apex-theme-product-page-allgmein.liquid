@@ -77,7 +77,7 @@
   data-product-url="{{ product.url }}"
   data-product-id="{{ product.id }}"
   data-container="{{ container }}"
-  class="m-main-product m-gradient apex-product-page m-color-{{ settings.default_color_scheme }}"
+  class="m-main-product m-gradient apex-product-page m-color-{{ section.settings.color_scheme }}"
 >
   <div class="{{ container }} rs-container">
     {% liquid
@@ -222,6 +222,11 @@
 {
   "name": "APEX Product Infos",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
     {
       "type": "header",
       "content": "General"
