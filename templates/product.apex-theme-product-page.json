@@ -1081,6 +1081,8 @@
         "horizontal_padding": 0,
         "border_t": false,
         "border_b": false,
+        "button_style": "m-button--primary",
+        "button_size": "",
         "item_color": "#0f0f0f",
         "item_bg": "#f0f0f3",
         "item_size": 16,
@@ -1161,10 +1163,11 @@
         "item_MzPUFH"
       ],
       "settings": {
+        "color_scheme": "badge-hot",
+        "icon_color": "#000000",
         "pt": 30,
         "pb": 30,
         "font_size": 14,
-        "color": "#111111",
         "ptm": 30,
         "pbm": 30
       }
