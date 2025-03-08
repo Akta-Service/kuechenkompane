@@ -89,8 +89,7 @@
       {% when 'subtitle' %}
         <h4
           class="rs-product-subtitle"
-          style="
-            color: {{ block.settings.subtitle_color | default: '#1c1c1c' }};
+          style="           
             font-size: clamp(14px, {{ block.settings.subtitle_font_size | default: 16 }}px, 20px);
           "
         >
@@ -166,8 +165,7 @@
       {% when 'featurelist_header' %}
         <p
           class="feature-header"
-          style="
-            color:{{ block.settings.featurelist_header_color |  default: '#000' }};
+          style="            
             font-size: {{ block.settings.featurelist_header_size |  default: 14}}px;
           "
         >
@@ -182,8 +180,7 @@
       {% when 'featurelist_item' %}
         <div
           class="product-feature-item"
-          style="
-            color:{{ block.settings.featurelist_item_color |  default: '#000' }};
+          style="            
             font-size: {{ block.settings.featurelist_item_size |  default: 14}}px;
           "
         >

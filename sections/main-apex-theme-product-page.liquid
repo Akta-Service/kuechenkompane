@@ -102,8 +102,7 @@
               </h2>
 
             {% when 'subtitle' %}
-              <h4 class="rs-product-subtitle" style="
-                  color: {{ block.settings.subtitle_color | default: '#1c1c1c' }};
+              <h4 class="rs-product-subtitle" style="                  
                   font-size: clamp(14px, {{ block.settings.subtitle_font_size | default: 16 }}px, 20px);
                 ">
                 {{ block.settings.subtitle }}
@@ -143,8 +142,7 @@
                 , block: block
                 , produc: product %}
             {% when 'featurelist_header' %}
-              <p class="feature-header" style="
-                  color:{{ block.settings.featurelist_header_color |  default: '#000' }};
+              <p class="feature-header" style="                  
                   font-size: {{ block.settings.featurelist_header_size |  default: 14}}px;
                 ">
                 {% if block.settings.featureHeader != blank %}
@@ -295,11 +293,6 @@
             "max": 100,
             "step": 1,
             "unit": "px"
-          }, {
-            "type": "color",
-            "id": "subtitle_color",
-            "label": "Subtitle Color",
-            "default": "#1c1c1c"
           }
         ]
       },
