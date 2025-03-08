@@ -145,7 +145,7 @@
           {% endfor %}
         </ul>
         <div class="back-to-top-wrapper">
-          <button class="back-to-top mrk-btn">{{ section.settings.backBtn }}</button>
+          <button class="back-to-top mrk-btn m-button {{ section.settings.button_style }} {{ section.settings.button_size }}">{{ section.settings.backBtn }}</button>
         </div>
       </div>
     </div>
@@ -214,17 +214,63 @@
         "min": 0,
         "max": 100,
         "step": 1
-      }, {
+      },
+      {
         "type": "checkbox",
         "id": "border_t",
         "label": "Border Top",
         "default": true
-      }, {
+      }, 
+      {
         "type": "checkbox",
         "id": "border_b",
         "label": "Border Bottom",
         "default": true
-      },      
+      },    
+      {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "m-button--primary",
+          "label": "Primary button"
+        },
+        {
+          "value": "m-button--secondary",
+          "label": "Secondary button"
+        },
+        {
+          "value": "m-button--white",
+          "label": "White button"
+        },
+        {
+          "value": "m-button--link",
+          "label": "Underline button"
+        }
+      ],
+      "default": "m-button--primary"
+    },
+    {
+      "type": "select",
+      "id": "button_size",
+      "label": "Button size",
+      "options": [
+        {
+          "value": "m-button--small",
+          "label": "Button small"
+        },
+        {
+          "value": "",
+          "label": "Button medium"
+        },
+        {
+          "value": "m-button--large",
+          "label": "Button large"
+        }
+      ],
+      "default": ""
+    },  
        {
         "type": "color",
         "id": "item_color",
