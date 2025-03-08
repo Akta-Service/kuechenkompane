@@ -4,16 +4,6 @@
         margin-bottom: {{ section.settings.margin_bottom }}px;
       }
 
-    ul {
-        list-style: none;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-
-
     /* common css end  */
     .gurantie-content {
         padding: 50px 10px;
@@ -22,8 +12,7 @@
     }
 
     .container {
-        max-width: 1440px;
-        background: {{ section.settings.bg_color |  default: '#fafafb'  }};
+        max-width: 1440px;       
         margin: 0 auto;
     }
 
@@ -39,21 +28,18 @@
     }
 
     .gurante-text h3 {
-        font-size: {{ section.settings.title_size}}px;
-        color: {{ section.settings.title_color }};
+        font-size: {{ section.settings.title_size}}px;       
         line-height: 1;
         margin-bottom: 20px;
         font-weight: 500;
     }
 
     .gurante-text p {
-        font-size: {{ section.settings.text_size}}px;
-        color: {{ section.settings.text_color }};
+        font-size: {{ section.settings.text_size}}px;       
         margin-bottom: 30px;
     }
 
-    .gurantie-btn a {
-        color: #121212;
+    .gurantie-btn a {       
         font-size: 18px;
         display: inline-flex;
         align-items: center;
@@ -64,16 +50,14 @@
     }
 
     .gurantie-btn a i {
-        font-size: 14px;
-        color: #121212;
+        font-size: 14px;       
     }
 
     .gurantie-btn a::after {
         position: absolute;
         content: '';
         width: 100%;
-        height: 2px;
-        background: #121212;
+        height: 2px;       
         bottom: -6px;
         left: 0;
         transition: .3s;
@@ -99,7 +83,7 @@
     }
     }
 </style>
-<div class="guarantie-area">
+<div class="guarantie-area m-color-{{ section.settings.color_scheme }}">
   <div class="container">
     <div class="gurantie-content">
       {% if section.settings.icon_img != blank %}
@@ -120,10 +104,7 @@
               <div class="gurantie-btn">
                 <a href="{{ block.settings.btn_link }}">
                   {{ block.settings.btn_text }}
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/888647-512.png?v=1739294506"
-                    alt="arrow"
-                  >
+                  <span>➔</span>
                 </a>
               </div>
           {% endcase %}
@@ -136,12 +117,12 @@
 {
   "name": "Guarantee Objection",
   "settings": [
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#fafafb"
-    },
+
+     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },  
     {
       "type": "image_picker",
       "id": "icon_img",
