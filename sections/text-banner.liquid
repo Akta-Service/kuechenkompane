@@ -28,14 +28,14 @@
   }
 
   .text-banner-title {
-    font-size: {{ section.settings.title_font_size | default: '40px' }};   
+    font-size: {{ section.settings.title_font_size | default: 40 }}px;   
     text-transform: uppercase;
     line-height: 1;
     font-weight: 600;
   }
 
   .text-banner-subtitle {
-    font-size: {{ section.settings.title_font_size | default: '40px' }};   
+    font-size: {{ section.settings.title_font_size | default: 40 }}px;   
     letter-spacing: -0.8px;
     line-height: 44px;
     margin-bottom: 8px;
@@ -43,17 +43,16 @@
   }
 
   .text-banner-content p {
-    font-size: {{ section.settings.text_font_size | default: '15px' }};
-    color: {{ section.settings.text_color | default: '#fff' }};
+    font-size: {{ section.settings.text_font_size | default: 15 }}px;   
     line-height: 24px;
   }
   @media only screen and (max-width: 749px) {
     .text-banner-title {
-      font-size: 24px;
+      font-size: {{ section.settings.title_font_size_m | default: 24 }}px; 
     }
 
     .text-banner-subtitle {
-      font-size: 24px;
+      font-size: {{ section.settings.title_font_size_m | default: 24 }}px; 
     }
   }
 </style>
@@ -183,13 +182,17 @@
       "max": 100,
       "step": 1,
       "unit": "px"
-    },
+    },    
     {
-      "type": "color",
-      "id": "title_color",
-      "label": "Title Color",
-      "default": "#fff"
-    },
+      "type": "range",
+      "id": "title_font_size_m",
+      "label": "Title Font Size (Mobile)",
+      "default": 24,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },    
     {
       "type": "range",
       "id": "text_font_size",
@@ -199,13 +202,7 @@
       "max": 100,
       "step": 1,
       "unit": "px"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#fff"
-    },
+    }    
     
   ],
   "blocks": [
