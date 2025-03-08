@@ -6,23 +6,20 @@
   }
   .faqs-title{
     font-size: {{- section.settings.title_font_size -}}px ;
-    color: {{- section.settings.title_color -}} ;
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 10px;
   }
   .faqs-sub-title{
-    font-size: {{- section.settings.sub_title_font_size -}}px ;
-    color: {{- section.settings.text_color -}} ;
+    font-size: {{- section.settings.sub_title_font_size -}}px ;   
     font-weight: 400;
   }
   .appex-faq-title{
-    font-size: {{- section.settings.faq_title_font_size -}}px ;
-    color: {{- section.settings.title_color -}} ;
+    font-size: {{- section.settings.faq_title_font_size -}}px ;   
   }
   .appex-faq-body p{
     font-size: {{- section.settings.faq_text_font_size -}}px ;
-    color: {{- section.settings.text_color -}} ;
+    
   }
   @media (max-width: 767px) {
     .appex-faqs-area {
@@ -156,23 +153,7 @@
       "min": 10,
       "max": 100,
       "step": 1
-    },
-    {
-      "type": "header",
-      "content": "Color"
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Heading Color",
-      "default": "#121212"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#454545"
-    },
+    },    
     {
       "type": "header",
       "content": "Faq Item"
