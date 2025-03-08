@@ -66,6 +66,11 @@
     width: 10px !important;
     height: 10px !important;
   }
+  {% if section.settings.invert_color %}
+  .store-benefits-icon img {
+    filter: invert(1);
+  }
+  {% endif %}
   @media only screen and (max-width: 768px) {
     .swiper-pagination,
     .swiper-button-next,
@@ -120,7 +125,14 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
-    },   
+    },  
+    {
+      "type": "checkbox",
+      "id": "invert_color",
+      "label": "Image Color Invert",
+      "default": true,
+      "info": "(It Will be White Color)"
+    }, 
     {
       "type": "header",
       "content": "Typography"
