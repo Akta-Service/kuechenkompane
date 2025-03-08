@@ -159,7 +159,7 @@
 
             {%- when 'btn' -%}
               <div class="branded-btn branded-btn-{{ section.id }}">
-                <a class="mrk-btn" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+                <a class="m-button {{ section.settings.button_style }} {{ section.settings.button_size }}" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
               </div>
             {%- else -%}
           {%- endcase -%}
@@ -182,7 +182,7 @@
       "type": "color",
       "id": "shape_color",
       "label": "Shape Color",
-      "default": "#000000"
+      "default": "#deceba"
     },
     {
       "type": "header",
