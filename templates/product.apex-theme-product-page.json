@@ -740,7 +740,8 @@
         "item_9JjGkE"
       ],
       "settings": {
-        "color_scheme": "dark",
+        "color_scheme": "badge-hot",
+        "icon_color": "#000000",
         "pt": 50,
         "pb": 50,
         "pt_mobile": 30,
@@ -750,8 +751,6 @@
         "title_font_size_mobile": 24,
         "sub_title": "Common problems and simple solutions",
         "sub_title_font_size": 14,
-        "title_color": "#121212",
-        "text_color": "#454545",
         "faq_title_font_size": 18,
         "faq_text_font_size": 16
       }
