@@ -1,26 +1,9 @@
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-
-
   /* common css end  */
-  .text-banner-area {
-    background: {{ section.settings.bg_color | default: '#1e1e1e' }};
+  .text-banner-area {   
     padding: 65px 0;
-    padding-top: {{ section.settings.pt | default: '65px' }};
-    padding-bottom: {{ section.settings.pb | default: '65px' }};
+    padding-top: {{ section.settings.pt | default: '65px' }}px;
+    padding-bottom: {{ section.settings.pb | default: '65px' }}px;
     margin-top: {{ section.settings.mt | default: '0' }};
     margin-bottom: {{ section.settings.mb | default: '0' }};
   }
@@ -45,16 +28,14 @@
   }
 
   .text-banner-title {
-    font-size: {{ section.settings.title_font_size | default: '40px' }};
-    color: {{ section.settings.title_color | default: '#fff' }};
+    font-size: {{ section.settings.title_font_size | default: '40px' }};   
     text-transform: uppercase;
     line-height: 1;
     font-weight: 600;
   }
 
   .text-banner-subtitle {
-    font-size: {{ section.settings.title_font_size | default: '40px' }};
-    color: {{ section.settings.title_color | default: '#fff' }};
+    font-size: {{ section.settings.title_font_size | default: '40px' }};   
     letter-spacing: -0.8px;
     line-height: 44px;
     margin-bottom: 8px;
@@ -76,7 +57,7 @@
     }
   }
 </style>
-<div class="text-banner-area">
+<div class="text-banner-area m-color-{{ section.settings.color_scheme }}">
   <div class="text-banner-content">
     {% for block in section.blocks %}
       {%- case block.type -%}
@@ -94,14 +75,13 @@
 </div>
 {% schema %}
 {
-  "name": "Text Banner",
+  "name": "Apex Text Banner",
   "settings": [
     {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#1e1e1e"
-    },
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },    
     {
       "type": "header",
       "content": "Section Spacing"
@@ -268,7 +248,7 @@
   ],
   "presets": [
     {
-      "name": "Text Banner",
+      "name": "Apex Text Banner",
       "settings": {}
     }
   ]
