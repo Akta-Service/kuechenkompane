@@ -228,7 +228,7 @@
         "color_scheme": "badge-hot",
         "title": "Produktbeschreibung",
         "font_size": 26,
-        "description": "<p>{{ product.description }}</p>",
+        "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true,
@@ -1070,7 +1070,7 @@
         "item_Prmf4W"
       ],
       "settings": {
-        "color_scheme": "footer",
+        "color_scheme": "scheme-f618ff52-b194-4c41-85c0-276af7413331",
         "subtitle": "Vielen Menschen haben uns als Gründer gefragt:",
         "subtitle_size": 18,
         "title": "“Warum gibt Küchenkompane eine Zufriedenheitsgarantie?”",
@@ -1084,7 +1084,7 @@
         "button_style": "m-button--primary",
         "button_size": "",
         "item_color": "#0f0f0f",
-        "item_bg": "#f0f0f3",
+        "item_bg": "#ffffff",
         "item_size": 16,
         "backBtn": "Zum Produkt"
       }
