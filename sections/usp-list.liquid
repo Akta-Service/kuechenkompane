@@ -1,8 +1,7 @@
 {{ 'apex-theme.css' | asset_url | stylesheet_tag }}
 <style>
   /* usp-list-section */
-  .usp-list-section {
-    background: {{ section.settings.bg_color }};
+  .usp-list-section {   
     padding: {{ section.settings.verticle_padding }}px {{ section.settings.horizontal_padding }}px;
   }
   @media (max-width: 768px) {
@@ -37,13 +36,7 @@
 {% schema %}
 {
   "name": "APEX USPs",
-  "settings": [
-    {
-      "type": "color_background",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#000000"
-    },
+  "settings": [   
     {
       "type": "range",
       "id": "verticle_padding",
@@ -96,13 +89,7 @@
           "id": "usp_title",
           "label": "USP Title",
           "default": "Vegan"
-        },
-        {
-          "type": "color",
-          "id": "title_color",
-          "label": "Title Color",
-          "default": "#121212"
-        },
+        },        
         {
           "type": "range",
           "id": "title_size",
@@ -118,13 +105,7 @@
           "id": "usp_info",
           "label": "USP Info",
           "default": "and without animal testing"
-        },
-        {
-          "type": "color",
-          "id": "info_color",
-          "label": "onfo Color",
-          "default": "#121212"
-        },
+        },        
         {
           "type": "range",
           "id": "info_size",
