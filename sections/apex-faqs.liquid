@@ -49,7 +49,7 @@
                 viewBox="0 0 13 8"
                 fill="none"
               >
-                <path d="M1.4375 1.46875L6.5 6.53125L11.5625 1.46875" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M1.4375 1.46875L6.5 6.53125L11.5625 1.46875" stroke="{{ section.settings.icon_color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
             </span>
           </div>
@@ -69,6 +69,12 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#000000"
     },
     {
       "type": "range",
