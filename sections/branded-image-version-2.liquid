@@ -108,7 +108,7 @@
               <p>{{ block.settings.text }}</p>
             {%- when 'btn' -%}
               <div class="branded-btn branded-btn-{{ section.id }}">
-                <a class="mrk-btn" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+                <a class="mrk-btn m-button {{ section.settings.button_style }} {{ section.settings.button_size }}" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
               </div>
           {%- endcase -%}
         {%- endfor -%}
@@ -151,7 +151,7 @@
 </div>
 {% schema %}
 {
-  "name": "Branded Image Version 2",
+  "name": "Apex Branded Image Ver 2",
   "settings": [
     {
       "type": "color_scheme",
@@ -352,7 +352,7 @@
   ],
   "presets": [
     {
-      "name": "Branded Image Version 2",
+      "name": "Apex Branded Image Ver 2",
       "settings": {}
     }
   ]

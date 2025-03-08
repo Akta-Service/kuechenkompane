@@ -136,7 +136,7 @@
     .banner-prev {
       left: 15px;
     }
-    .dide_m{
+    .hide_m{
       display: none;
     }
   }
@@ -176,7 +176,7 @@
       {% endfor %}
     </div>
     {% comment %} <div class="swiper-pagination"></div> {% endcomment %}
-    <div class="banner-next {% if section.settings.hide_arrow_m %}dide_m{% endif %}">
+    <div class="banner-next {% if section.settings.hide_arrow_m %}hide_m{% endif %}">
       <svg
         class=""
         width="20"
@@ -191,7 +191,7 @@
           stroke-linejoin="round"></path>
       </svg>
     </div>
-    <div class="banner-prev {% if section.settings.hide_arrow_m %}dide_m{% endif %}">
+    <div class="banner-prev {% if section.settings.hide_arrow_m %}hide_m{% endif %}">
       <svg
         class=""
         width="20"
