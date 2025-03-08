@@ -250,13 +250,13 @@ select {
 .product-feature-item {
   display: flex;
   align-items: center;
-  gap: 10px;
   margin-bottom: 10px;
 }
 
 .product-feature-item img {
   width: 24px;
   height: 24px;
+  margin-right: 10px;
 }
 
 .rs-add-to-cart {
