@@ -228,7 +228,7 @@
         "color_scheme": "badge-hot",
         "title": "Produktbeschreibung",
         "font_size": 26,
-        "description": "<p>{{ product.description }}</p>",
+        "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true,
@@ -353,13 +353,13 @@
       ],
       "disabled": true,
       "settings": {
+        "color_scheme": "",
         "pt": 70,
         "pb": 50,
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "Unsere Produkte in Aktion",
         "title_size": 24,
-        "title_color": "#1e1e1e",
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "@kuechenkompane",
         "autoplay": false
@@ -593,7 +593,6 @@
           "settings": {
             "title_img": "shopify://shop_images/n_tv_logo_V6_1.png",
             "title": "",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -607,7 +606,6 @@
           "type": "quotation",
           "settings": {
             "quote": "<p>“Küchenkompane überzeugt mit hochwertigen Messern, die durch präzise Verarbeitung und erstklassige Materialien eine beeindruckende Schärfe bieten. Ein Must-have für jede Küche\"</p>",
-            "quote_color": "#121212",
             "quote_size": 26
           }
         }
@@ -618,6 +616,7 @@
         "quotation_g7QTma"
       ],
       "settings": {
+        "color_scheme": "",
         "padding_top": 13,
         "padding_bottom": 50,
         "padding_top_mobile": 30,
@@ -631,7 +630,6 @@
           "type": "title",
           "settings": {
             "title": "KÜCHENKOMPANE® vs. ANDERE",
-            "title_color": "#1c1c1c",
             "title_size": 32
           }
         },
@@ -639,7 +637,6 @@
           "type": "description",
           "settings": {
             "description": "<p>Unsere Vergleichsgrafik zeigt, warum Küchenkompane die beste Wahl ist. Mit messerscharfer Präzision, hochwertigem Stahl und ergonomischem Design bieten unsere Messer maximale Qualität und Komfort.</p>",
-            "description_color": "#1c1c1c",
             "description_size": 16
           }
         }
@@ -650,6 +647,7 @@
       ],
       "disabled": true,
       "settings": {
+        "color_scheme": "",
         "img": "shopify://shop_images/steel_kitchen_knives_V11_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
@@ -744,6 +742,8 @@
         "item_9JjGkE"
       ],
       "settings": {
+        "color_scheme": "badge-hot",
+        "icon_color": "#000000",
         "pt": 50,
         "pb": 50,
         "pt_mobile": 30,
@@ -753,8 +753,6 @@
         "title_font_size_mobile": 24,
         "sub_title": "Common problems and simple solutions",
         "sub_title_font_size": 14,
-        "title_color": "#121212",
-        "text_color": "#454545",
         "faq_title_font_size": 18,
         "faq_text_font_size": 16
       }
@@ -766,7 +764,6 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Der Küchen-Trend 2025",
-            "subtitle_color": "#121212",
             "subtitle_size": 18
           }
         },
@@ -774,7 +771,6 @@
           "type": "title",
           "settings": {
             "title": "Perfekte Schnitte in Sekunden",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -782,7 +778,6 @@
           "type": "description",
           "settings": {
             "description": "Erlebe die nächste Stufe der Messerschärfe mit unserem Premium-Messerset. Jede Klinge ist auf Rasiermesserschärfe geprüft und sorgt für mühelose Präzision bei jedem Schnitt – egal ob Fleisch, Gemüse oder Brot.",
-            "description_color": "#121212",
             "description_size": 18
           }
         }
@@ -793,7 +788,7 @@
         "description_PBBAnQ"
       ],
       "settings": {
-        "background_color": "#ffffff",
+        "color_scheme": "badge-hot",
         "media_type": "image",
         "image": "shopify://shop_images/DSC04954_1_1_1.jpg",
         "padding_top": 50,
@@ -810,7 +805,6 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Robust & langlebig",
-            "subtitle_color": "#121212",
             "subtitle_size": 18
           }
         },
@@ -818,7 +812,6 @@
           "type": "title",
           "settings": {
             "title": "Hält jeder Herausforderung stand",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -826,7 +819,6 @@
           "type": "description",
           "settings": {
             "description": "Unsere Messer sind aus hochwertigem Stahl gefertigt und bleiben extrem scharf – ohne Absplittern oder Abnutzen. Die widerstandsfähige Klinge sorgt für jahrelange Höchstleistung in der Küche.",
-            "description_color": "#121212",
             "description_size": 18
           }
         }
@@ -837,7 +829,7 @@
         "description_j4ByyM"
       ],
       "settings": {
-        "background_color": "#ffffff",
+        "color_scheme": "",
         "media_type": "image",
         "image": "shopify://shop_images/db3759d136d351495e659830d75d6596_1_1_1_V1_1.jpg",
         "padding_top": 50,
@@ -1037,6 +1029,8 @@
         "block_AVgLTe"
       ],
       "settings": {
+        "color_scheme": "",
+        "content_color_scheme": "",
         "mt": 50,
         "mb": 30,
         "mt_mobile": 20,
@@ -1044,7 +1038,6 @@
         "title": "Vertraut von",
         "title_highlight": "+140K Kunden",
         "t_size": 32,
-        "t_color": "#202223",
         "h_text_color": "#fa8526"
       }
     },
@@ -1079,12 +1072,10 @@
         "item_Prmf4W"
       ],
       "settings": {
-        "bg_color": "#c5d3be",
+        "color_scheme": "",
         "subtitle": "Vielen Menschen haben uns als Gründer gefragt:",
-        "subtitle_color": "#161818",
         "subtitle_size": 18,
         "title": "“Warum gibt Küchenkompane eine Zufriedenheitsgarantie?”",
-        "title_color": "#161818",
         "title_size": 32,
         "des": "Diese Frage haben uns schon viele gestellt. Die Antwort ist einfach: Wir sind zu 100 % überzeugt von unseren Produkten! Und das aus gutem Grund, denn unsere Produkte wurden:",
         "img": "shopify://shop_images/chef-working-together-professional-kitchen.jpg",
@@ -1092,6 +1083,8 @@
         "horizontal_padding": 0,
         "border_t": false,
         "border_b": false,
+        "button_style": "m-button--primary",
+        "button_size": "",
         "item_color": "#0f0f0f",
         "item_bg": "#f0f0f3",
         "item_size": 16,
