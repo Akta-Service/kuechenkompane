@@ -5425,9 +5425,7 @@ variant-picker
 .m-button {
   font-weight: bold;
 }
-.branded-btn a {
-  font-weight: bold;
-}
+
 .m-product-option--unselect {
   position: relative;
   display: block;
