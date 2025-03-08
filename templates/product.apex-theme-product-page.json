@@ -225,13 +225,14 @@
         "faq_pDwHXa"
       ],
       "settings": {
+        "color_scheme": "badge-hot",
         "title": "Produktbeschreibung",
         "font_size": 26,
-        "font_color": "#000000",
-        "description": "{{ product.description }}",
+        "description": "<p>{{ product.description }}</p>",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": true
+        "add_showore_btn": true,
+        "br_color": "#000000"
       }
     },
     "product-details-tabs": {
@@ -519,7 +520,6 @@
           "type": "sub_heading",
           "settings": {
             "sub_heading": "Küchenkompane - Erklärt in 2 Minuten",
-            "sub_heading_color": "#000000",
             "sub_heading_size": 16
           }
         },
@@ -531,7 +531,6 @@
             "h1_font_size_tablet": 28,
             "h1_font_size_mobile": 24,
             "h1_font_weight": "600",
-            "h1_font_color": "#000000",
             "h1_text_align": "center",
             "title": "Your Title Here",
             "padding_top": 1,
@@ -546,13 +545,11 @@
           "type": "details",
           "settings": {
             "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
-            "details_color": "#000000",
             "details_size": 18,
             "p_font_size": 16,
             "p_font_size_tablet": 14,
             "p_font_size_mobile": 12,
             "p_font_weight": "400",
-            "p_font_color": "#333333",
             "p_text_align": "left",
             "p_line_height": 1.5,
             "p_padding_top": 10,
@@ -582,12 +579,9 @@
         "video_XLLb9A"
       ],
       "settings": {
-        "bg_color": "#ffffff",
+        "color_scheme": "",
         "vertical_padding": 50,
-        "vertical_padding_mobile": 30,
-        "heading_color": "#000000",
-        "heading_size": 54,
-        "heading_size_mobile": 34
+        "vertical_padding_mobile": 30
       }
     },
     "magazine_quote_UQpqkk": {
