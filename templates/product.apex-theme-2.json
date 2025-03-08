@@ -491,7 +491,6 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Perfektion in jedem Schnitt",
-            "subtitle_color": "#121212",
             "subtitle_size": 18
           }
         },
@@ -499,7 +498,6 @@
           "type": "title",
           "settings": {
             "title": "Mühelos & präzise schneiden",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -507,7 +505,6 @@
           "type": "description",
           "settings": {
             "description": "Kein Kraftaufwand, kein Zerquetschen – unsere ultrascharfen Klingen gleiten durch jede Zutat, damit du mühelos perfekte Schnitte erzielst.",
-            "description_color": "#121212",
             "description_size": 18
           }
         }
@@ -518,7 +515,7 @@
         "description_Jcn4hF"
       ],
       "settings": {
-        "background_color": "#ffffff",
+        "color_scheme": "badge-hot",
         "media_type": "image",
         "image": "shopify://shop_images/Fire_in_the_hole__1__V2_1.gif",
         "padding_top": 50,
@@ -535,7 +532,6 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Willkommen in der Küchenkompane-Welt",
-            "subtitle_color": "#121212",
             "subtitle_size": 18
           }
         },
@@ -543,7 +539,6 @@
           "type": "title",
           "settings": {
             "title": "Gemeinsam besser kochen!",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -551,7 +546,6 @@
           "type": "description",
           "settings": {
             "description": "Werde Teil der Küchenkompane-Community und profitiere von Profi-Tipps, exklusiven Angeboten und hochwertigen Produkten für deine Küche.",
-            "description_color": "#121212",
             "description_size": 18
           }
         }
@@ -562,7 +556,7 @@
         "description_mUiAUY"
       ],
       "settings": {
-        "background_color": "#ffffff",
+        "color_scheme": "badge-hot",
         "media_type": "image",
         "image": "shopify://shop_images/IMG_9602_V13_1.jpg",
         "padding_top": 50,
