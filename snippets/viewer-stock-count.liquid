@@ -2,9 +2,9 @@
   .count-icon {
     display: inline-block;
     position: relative;
-    height: 25px;
-    width: 15px;
-    top: 7px;
+    height: 9px;
+    width: 9px;
+    top: -1px;
   }
 
   .count-icon::after {
@@ -16,7 +16,7 @@
     left: 0;
     top: 0;
     content: '';
-    margin-top: 8px;
+    /* margin-top: 8px; */
   }
   .count-icon::before {
     animation: bubble 2s linear infinite;
@@ -28,7 +28,7 @@
     left: 0;
     top: 0;
     content: '';
-    margin-top: 8px;
+    /* margin-top: 8px; */
   }
 
   .count-people {
@@ -45,11 +45,7 @@
   .viewer-count {
     padding-left: 7px;
     line-height: 1.2;
-  }
-  .product-count {
-    padding-left: 7px;
-    margin-bottom: 10px;
-  }
+  } 
   @keyframes bubble {
     0% {
       opacity: 0.5;
@@ -66,6 +62,7 @@
 
   }
   .product-count {
+    padding-left: 7px;   
     margin-top: {{ block.settings.product_margin_top }}px;
     margin-bottom: {{ block.settings.product_margin_bottom }}px;
   }
@@ -107,7 +104,7 @@
 {% comment %} {% if product.tags contains "STOCK" %} {% endcomment %}
  {% if block.settings.stock_count_show %}
   <div class="product-count">
-    <p class="product-count-mobile" style="font-size:{{block.settings.product_count_font_size}}px; color: {{block.settings.product_text_color}}; margin-top:{{block.settings.product_margin_top}}px; margin-bottom:{{block.settings.product_margin_bottom}}px;">
+    <p class="product-count-mobile" style="font-size:{{block.settings.product_count_font_size}}px; color: {{block.settings.product_text_color}};">
       <span class="count-icon"></span>
       {{ block.settings.product_main_text_1 }}
 
