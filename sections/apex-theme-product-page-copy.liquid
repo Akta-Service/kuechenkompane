@@ -481,13 +481,17 @@
       "name": "View and Stock Count",
       "settings": [
         {
+          "type": "header",
+          "content": "Viewer Settings"
+        },
+        {
           "type": "range",
           "id": "viewer_count_font_size",
           "min": 1,
           "max": 100,
           "step": 1,
           "unit": "px",
-          "label": "Font size",
+          "label": "View Font size",
           "default": 16
         },
         {
@@ -501,37 +505,27 @@
           "id": "view_main_text_2",
           "label": "View Main Text",
           "default": "are currently looking at this product"
-        },
-        {
-          "type": "color",
-          "id": "viewer_text_color",
-          "label": "Color"
-        },
+        },        
         {
           "type": "range",
           "id": "viewer_margin_top",
           "min": 1,
-          "max": 100,
+          "max": 80,
           "step": 1,
           "unit": "px",
-          "label": "Add Margin Top",
+          "label": "View spacing Top",
           "default": 10
         },
         {
           "type": "range",
           "id": "viewer_margin_bottom",
           "min": 1,
-          "max": 100,
+          "max": 80,
           "step": 1,
           "unit": "px",
-          "label": "Add Margin Bottom",
+          "label": "View spacing Top",
           "default": 10
-        },
-        {
-          "type": "color",
-          "id": "viewer_count_text_color",
-          "label": "Color"
-        },
+        },        
         {
           "type": "range",
           "id": "margin_size_mobile_top",
@@ -539,7 +533,7 @@
           "max": 100,
           "step": 1,
           "unit": "px",
-          "label": "Mobile Margin Top",
+          "label": "View spacing Top (Mobile)",
           "default": 1
         },
         {
@@ -549,10 +543,13 @@
           "max": 100,
           "step": 1,
           "unit": "px",
-          "label": "Mobile Margin Bottom",
+          "label": "View spacing Bottom (Mobile)",
           "default": 1
         },
-
+        {
+          "type": "header",
+          "content": "Product Stock Settings"
+        },
         {
           "type": "range",
           "id": "product_count_font_size",
@@ -574,17 +571,8 @@
           "id": "product_main_text_2",
           "label": "Product Main Text",
           "default": "left in stock"
-        },
-        {
-          "type": "color",
-          "id": "product_text_color",
-          "label": "Color"
-        },
-        {
-          "type": "color",
-          "id": "product_count_text_color",
-          "label": "Count Text Color"
-        },
+        },       
+        
         {
           "type": "range",
           "id": "product_margin_top",
