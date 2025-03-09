@@ -9,7 +9,7 @@
     assign variant_id = product.selected_or_first_available_variant.id
     assign selected_variant_id = product.selected_variant.id
   endif
-
+  
   assign button_style = button_style | default: 'secondary'
   assign button_size = button_size 
 -%}
@@ -38,7 +38,7 @@
           <button
             class="m-add-to-cart m-spinner-button m:w-full m-button {{ button_style }} {{ button_size }} "
             name="add"
-            {% if variant.available == false %}
+            {% if product.available == false %}
               disabled
             {% endif %}
             aria-label="{{ aria_label }}"
