@@ -53,8 +53,8 @@
     height: 44px;
     min-height: 44px;
     border: none;
-    background:  {{ section.settings.add_btn_bg }};
-    color: {{ section.settings.add_btn_text_color }};
+    /* background:  {{ section.settings.add_btn_bg }};
+    color: {{ section.settings.add_btn_text_color }}; */
     border-radius: 5px;
 }
 .apex-theme-collection .m-collection-products {
@@ -62,7 +62,7 @@
 }
 </style>
 <section
-  class="facest-filters-section apex-theme-collection"
+  class="facest-filters-section apex-theme-collection m-color-{{ section.settings.color_scheme }}"
   data-section-type="collection-template"
   data-section-id="{{ section.id }}"
   data-filters-type="{{ section.settings.filters_type }}"
@@ -74,6 +74,7 @@
   data-product-count="{{ collection.products.size }}"
   data-initial-column="{{ initial_column }}"
   data-view="{{ template.name }}"
+
 >
   <div class="{{ container }}">
     <div class="m-collection--wrapper {% if section.settings.show_filter %}m-sidebar--{{ section.settings.sidebar }}{% endif %}">
@@ -168,6 +169,11 @@
 {
   "name": "Apex Theme Collection",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
     {
       "type": "paragraph",
       "content": "[Watch tutorial](https://foxecom.link/zHcHV5) or [read How-to](https://foxecom.link/CDVgnM)"
