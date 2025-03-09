@@ -73,19 +73,15 @@
             "viewer_count_font_size": 16,
             "view_main_text_1": "Personen",
             "view_main_text_2": "sehen sich dieses Produkt gerade an!",
-            "viewer_text_color": "",
             "viewer_margin_top": 10,
             "viewer_margin_bottom": 1,
-            "viewer_count_text_color": "",
             "margin_size_mobile_top": 1,
             "margin_size_mobile_bottom": 1,
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
-            "product_text_color": "",
-            "product_count_text_color": "",
             "product_margin_top": 1,
-            "product_margin_bottom": 10,
+            "product_margin_bottom": 1,
             "viewer_count_time": 2500,
             "stock_count_time": 50000,
             "p_margin_size_mobile_top": 1,
@@ -97,8 +93,11 @@
           "type": "featurelist_header",
           "settings": {
             "featureHeader": "30 Tage Zufriedenheitsgarantie",
-            "featurelist_header_color": "#000000",
-            "featurelist_header_size": 14
+            "featurelist_header_size": 14,
+            "f_h_pt": 17,
+            "f_h_pb": 5,
+            "f_h_pt_m": 5,
+            "f_h_pb_m": 5
           }
         },
         "featurelist_item_iiW6aD": {
