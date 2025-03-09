@@ -31,16 +31,26 @@
   endunless
 %}
 <style>
+  {% for block in section.blocks %}
   .feature-header{
     padding-top: {{ block.settings.f_h_pt }}px;
     padding-bottom: {{ block.settings.f_h_pb }}px;
+  }
+  .rs-price{
+    padding-top: {{ block.settings.p_pt }}px;
+    padding-bottom: {{ block.settings.p_pb }}px;
   }
   @media only screen and (max-width){
     .feature-header{
     padding-top: {{ block.settings.f_h_pt_m }}px;
     padding-bottom: {{ block.settings.f_h_pb_m }}px;
   }
+  .rs-price{
+    padding-top: {{ block.settings.p_pt_m }}px;
+    padding-bottom: {{ block.settings.p_pb_m }}px;
   }
+  }
+  {% endfor %}
 </style>
 {% comment %} Fallback for case not show block price, buy buttons {% endcomment %}
 <input type="hidden" name="id" value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}" disabled>

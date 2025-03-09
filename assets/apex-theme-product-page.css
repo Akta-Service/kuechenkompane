@@ -171,7 +171,7 @@ select {
 .rs-liked {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
   row-gap: 5px;
 }
@@ -227,7 +227,6 @@ select {
   color: #1b9d26;
   display: inline-block;
   font-weight: 700;
-  margin-bottom: 10px;
 }
 
 .compare-price {
