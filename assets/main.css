@@ -7637,6 +7637,30 @@ variant-picker
 .m-collection-products .m-add-to-cart {
   display: none;
 }
+
 .m-collection-products .m-product-quickview-button {
+  display: none;
+}
+
+.apex-theme-collection .m-product-card__action {
+  position: static;
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+.apex-theme-collection .m-tooltip.m-spinner-button,
+.apex-theme-collection .m-button--icon {
+  display: none;
+}
+
+.apex-theme-collection .m-product-card__media .m-product-card__action {
+  display: none;
+}
+.apex-theme-collection .m-collection-products .m-add-to-cart {
+  display: block;
+}
+.apex-theme-collection
+  .m-product-card__content-footer
+  .m-product-card__action-icons {
   display: none;
 }

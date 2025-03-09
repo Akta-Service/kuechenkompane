@@ -515,7 +515,7 @@
       {%- endif -%}
       {%- if show_quickview_button or show_wishlist_button or show_compare_button or show_cart_button -%}
         <div class="m-product-card__action">
-          {% render 'product-card-quick-add-btn', product: product, quick_add_text: quick_add_text, section: section %}
+          {% render 'product-card-quick-add-btn', product: product, quick_add_text: quick_add_text, section: section, button_style: section.settings.button_style, button_size: section.settings.button_size %}
           <div class="m-product-card__action-icons">
             {% liquid
               assign tooltips = 'compare,quickview,'
@@ -564,13 +564,6 @@
           </div>
         </div>
       {%- endif -%}
-      <div class="card-add-button">
-        <form method="post" action="/cart/add">
-            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-            <button type="submit">{{ section.settings.add_btn_text }} Add to bag</button>
-        </form>
-      </div>
-
     </div>
   </div>
   <input hidden name="id" required value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}">
