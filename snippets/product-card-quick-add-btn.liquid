@@ -36,7 +36,7 @@
             assign atc_text = 'products.product.add_to_cart' | t
           -%}
           <button
-            class="m-add-to-cart m-spinner-button m:w-full m-button m-button--{{ button_style | replace: 'sf__btn-primary', 'm-button--primary' | replace: 'sf__btn-secondary', 'm-button--secondary' | replace: 'sf__btn-link', 'm-button--link' | replace: 'sf__btn-white', 'm-button--white' }}"
+            class="m-add-to-cart m-spinner-button m:w-full m-button {{ button_style }} {{ button_size }} "
             name="add"
             {% if variant.available == false %}
               disabled
