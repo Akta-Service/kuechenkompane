@@ -30,6 +30,18 @@
     assign selected_variant_id = product.selected_variant.id
   endunless
 %}
+<style>
+  .feature-header{
+    padding-top: {{ block.settings.f_h_pt }}px;
+    padding-bottom: {{ block.settings.f_h_pb }}px;
+  }
+  @media only screen and (max-width){
+    .feature-header{
+    padding-top: {{ block.settings.f_h_pt_m }}px;
+    padding-bottom: {{ block.settings.f_h_pb_m }}px;
+  }
+  }
+</style>
 {% comment %} Fallback for case not show block price, buy buttons {% endcomment %}
 <input type="hidden" name="id" value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}" disabled>
 {% comment %} End comment {% endcomment %}
