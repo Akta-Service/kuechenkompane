@@ -3565,6 +3565,16 @@
         "default": "Choose Your Fabourite"
       },
       {
+        "type": "range",
+        "id": "ccs_heading_text_sise",
+        "min": 10,
+        "max": 22,
+        "step": 1,
+        "unit": "px",
+        "label": "Heading Font size",
+        "default": 20
+      },
+      {
         "type": "collection",
         "id": "cart_cross_sell_collection",
         "label": "Select Collection"
