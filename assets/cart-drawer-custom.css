@@ -46,6 +46,3 @@ m-cart-drawer {
 .m-cart-item--drawer__wrapper {
   align-items: center !important;
 }
-.m-cart-drawer .swiper-button-prev {
-  transform: rotate(-180deg);
-}
