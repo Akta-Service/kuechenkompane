@@ -3559,6 +3559,12 @@
         "content": "Cross sell Collection"
       },
       {
+        "type": "text",
+        "id": "cart_cross_sell_heading",
+        "label": "Cross sell Heading",
+        "default": "Choose Your Fabourite"
+      },
+      {
         "type": "collection",
         "id": "cart_cross_sell_collection",
         "label": "Select Collection"
