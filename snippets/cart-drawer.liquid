@@ -224,6 +224,9 @@
   </div>
 </m-cart-drawer>
 
+                      {{ 'cart-drawer-custom.css' | asset_url | stylesheet_tag }}
+{{ 'cart-drawer-custom.js' | asset_url | script_tag }}
+
 {% comment %}
   <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
