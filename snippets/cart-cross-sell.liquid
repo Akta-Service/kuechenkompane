@@ -3,6 +3,9 @@
     .swiper-wrapper{
       gap: 15px;
     }
+    .ccs-title{
+      font-size: 18px;
+    }
     .swiper-slide {
       max-width: 161px;
       overflow: hidden;
@@ -65,7 +68,7 @@
 </style>
 {% unless settings.cart_cross_sell_collection == blank %}
   <div class="ccs-container">
-    <h3>Cross sell collection</h3>
+    <h3 class="ccs-title">Cross sell collection</h3>
     <div class="swiper ccs-swiper">
       <div class="swiper-wrapper ccs-wrapper">
         {% for product in settings.cart_cross_sell_collection.products limit: 8 %}
