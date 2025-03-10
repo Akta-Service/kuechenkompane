@@ -3575,6 +3575,12 @@
         "default": 18
       },
       {
+        "type": "color",
+        "id": "ccs_heading_text_color",
+        "label": "Heading Font Color",
+        "default": "#000000"
+      },
+      {
         "type": "collection",
         "id": "cart_cross_sell_collection",
         "label": "Select Collection"
