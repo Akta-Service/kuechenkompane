@@ -64,35 +64,35 @@
       render 'font-face'
       render 'critical-css'
 
-      
-
       echo 'main.css' | asset_url | stylesheet_tag: preload: true
 
       render 'style-tags'
     -%}
-    {%   render 'typegraphy' %}
-    {% comment %} <style>
-      .mrk-btn {
-        background-color: {{ settings.btn_bg }} !important;
-        color: {{ settings.btn_text }} !important;
-        font-size: {{ settings.btn_font_size }}px !important;
-        padding: {{ settings.btn_padding_vr }}px {{ settings.btn_padding_hr }}px !important;
-        border-radius: {{ settings.btn_border_radius_mrk | default: "5" }}px !important;
-        border: {% if settings.btn_border_width_mrk > 0 %}{{ settings.btn_border_width_mrk }}px solid {{ settings.btn_border }}{% else %}none{% endif %} !important;
-        {% if settings.btn_box_shadow != blank %}box-shadow: {{ settings.btn_box_shadow }} !important;{% endif %}
-        text-decoration: none !important;
-        transition: 0.3s;
-      }
+    {% render 'typegraphy' %}
+    {% comment %}
+      <style>
+        .mrk-btn {
+          background-color: {{ settings.btn_bg }} !important;
+          color: {{ settings.btn_text }} !important;
+          font-size: {{ settings.btn_font_size }}px !important;
+          padding: {{ settings.btn_padding_vr }}px {{ settings.btn_padding_hr }}px !important;
+          border-radius: {{ settings.btn_border_radius_mrk | default: "5" }}px !important;
+          border: {% if settings.btn_border_width_mrk > 0 %}{{ settings.btn_border_width_mrk }}px solid {{ settings.btn_border }}{% else %}none{% endif %} !important;
+          {% if settings.btn_box_shadow != blank %}box-shadow: {{ settings.btn_box_shadow }} !important;{% endif %}
+          text-decoration: none !important;
+          transition: 0.3s;
+        }
 
-      .mrk-btn:hover {
-        background-color: {{ settings.btn_hover_bg }} !important;
-        color: {{ settings.btn_hover_text }} !important;
-        border-color: {{ settings.btn_hover_bg }} !important;
-      }
-    </style> {% endcomment %}
+        .mrk-btn:hover {
+          background-color: {{ settings.btn_hover_bg }} !important;
+          color: {{ settings.btn_hover_text }} !important;
+          border-color: {{ settings.btn_hover_bg }} !important;
+        }
+      </style>
+    {% endcomment %}
     <style>
       :root {
-    
+
         --mrk-h1-color: {{ settings.h1_color }} !important;
         --mrk-h1-size-desktop: {{ settings.h1_size_desktop }}px !important;
         --mrk-h1-size-laptop: {{ settings.h1_size_laptop }}px !important;
@@ -100,7 +100,7 @@
         --mrk-h1-margin-desktop: {{ settings.h1_mt_desktop }}px {{ settings.h1_mr_desktop }}px {{ settings.h1_mb_desktop }}px {{ settings.h1_ml_desktop }}px !important;
         --mrk-h1-margin-laptop: {{ settings.h1_mt_laptop }}px {{ settings.h1_mr_laptop }}px {{ settings.h1_mb_laptop }}px {{ settings.h1_ml_laptop }}px !important;
         --mrk-h1-margin-mobile: {{ settings.h1_mt_mobile }}px {{ settings.h1_mr_mobile }}px {{ settings.h1_mb_mobile }}px {{ settings.h1_ml_mobile }}px !important;
-    
+
         --mrk-h2-color: {{ settings.h2_color }} !important;
         --mrk-h2-size-desktop: {{ settings.h2_size_desktop }}px !important;
         --mrk-h2-size-laptop: {{ settings.h2_size_laptop }}px !important;
@@ -108,7 +108,7 @@
         --mrk-h2-margin-desktop: {{ settings.h2_mt_desktop }}px {{ settings.h2_mr_desktop }}px {{ settings.h2_mb_desktop }}px {{ settings.h2_ml_desktop }}px !important;
         --mrk-h2-margin-laptop: {{ settings.h2_mt_laptop }}px {{ settings.h2_mr_laptop }}px {{ settings.h2_mb_laptop }}px {{ settings.h2_ml_laptop }}px !important;
         --mrk-h2-margin-mobile: {{ settings.h2_mt_mobile }}px {{ settings.h2_mr_mobile }}px {{ settings.h2_mb_mobile }}px {{ settings.h2_ml_mobile }}px !important;
-    
+
         --mrk-h3-color: {{ settings.h3_color }} !important;
         --mrk-h3-size-desktop: {{ settings.h3_size_desktop }}px !important;
         --mrk-h3-size-laptop: {{ settings.h3_size_laptop }}px !important;
@@ -116,7 +116,7 @@
         --mrk-h3-margin-desktop: {{ settings.h3_mt_desktop }}px {{ settings.h3_mr_desktop }}px {{ settings.h3_mb_desktop }}px {{ settings.h3_ml_desktop }}px !important;
         --mrk-h3-margin-laptop: {{ settings.h3_mt_laptop }}px {{ settings.h3_mr_laptop }}px {{ settings.h3_mb_laptop }}px {{ settings.h3_ml_laptop }}px !important;
         --mrk-h3-margin-mobile: {{ settings.h3_mt_mobile }}px {{ settings.h3_mr_mobile }}px {{ settings.h3_mb_mobile }}px {{ settings.h3_ml_mobile }}px !important;
-    
+
         --mrk-h4-color: {{ settings.h4_color }} !important;
         --mrk-h4-size-desktop: {{ settings.h4_size_desktop }}px !important;
         --mrk-h4-size-laptop: {{ settings.h4_size_laptop }}px !important;
@@ -124,7 +124,7 @@
         --mrk-h4-margin-desktop: {{ settings.h4_mt_desktop }}px {{ settings.h4_mr_desktop }}px {{ settings.h4_mb_desktop }}px {{ settings.h4_ml_desktop }}px !important;
         --mrk-h4-margin-laptop: {{ settings.h4_mt_laptop }}px {{ settings.h4_mr_laptop }}px {{ settings.h4_mb_laptop }}px {{ settings.h4_ml_laptop }}px !important;
         --mrk-h4-margin-mobile: {{ settings.h4_mt_mobile }}px {{ settings.h4_mr_mobile }}px {{ settings.h4_mb_mobile }}px {{ settings.h4_ml_mobile }}px !important;
-    
+
         --mrk-h5-color: {{ settings.h5_color }} !important;
         --mrk-h5-size-desktop: {{ settings.h5_size_desktop }}px !important;
         --mrk-h5-size-laptop: {{ settings.h5_size_laptop }}px !important;
@@ -132,7 +132,7 @@
         --mrk-h5-margin-desktop: {{ settings.h5_mt_desktop }}px {{ settings.h5_mr_desktop }}px {{ settings.h5_mb_desktop }}px {{ settings.h5_ml_desktop }}px !important;
         --mrk-h5-margin-laptop: {{ settings.h5_mt_laptop }}px {{ settings.h5_mr_laptop }}px {{ settings.h5_mb_laptop }}px {{ settings.h5_ml_laptop }}px !important;
         --mrk-h5-margin-mobile: {{ settings.h5_mt_mobile }}px {{ settings.h5_mr_mobile }}px {{ settings.h5_mb_mobile }}px {{ settings.h5_ml_mobile }}px !important;
-    
+
         --mrk-h6-color: {{ settings.h6_color }} !important;
         --mrk-h6-size-desktop: {{ settings.h6_size_desktop }}px !important;
         --mrk-h6-size-laptop: {{ settings.h6_size_laptop }}px !important;
@@ -141,106 +141,106 @@
         --mrk-h6-margin-laptop: {{ settings.h6_mt_laptop }}px {{ settings.h6_mr_laptop }}px {{ settings.h6_mb_laptop }}px {{ settings.h6_ml_laptop }}px !important;
         --mrk-h6-margin-mobile: {{ settings.h6_mt_mobile }}px {{ settings.h6_mr_mobile }}px {{ settings.h6_mb_mobile }}px {{ settings.h6_ml_mobile }}px !important;
       }
-    
+
       .mrk-h1 {
         font-size: var(--mrk-h1-size-desktop) !important;
         color: var(--mrk-h1-color) !important;
         margin: var(--mrk-h1-margin-desktop) !important;
         font-weight: {{ settings.mrk_h1_font_weight }} !important;
       }
-    
+
       .mrk-h2 {
         font-size: var(--mrk-h2-size-desktop) !important;
         color: var(--mrk-h2-color) !important;
         margin: var(--mrk-h2-margin-desktop) !important;
         font-weight: {{ settings.mrk_h2_font_weight }} !important;
-    
+
       }
-    
+
       .mrk-h3 {
         font-size: var(--mrk-h3-size-desktop) !important;
         color: var(--mrk-h3-color) !important;
         margin: var(--mrk-h3-margin-desktop) !important;
         font-weight: {{ settings.mrk_h3_font_weight }} !important;
-    
+
       }
-    
+
       .mrk-h4 {
         font-size: var(--mrk-h4-size-desktop) !important;
         color: var(--mrk-h4-color) !important;
         margin: var(--mrk-h4-margin-desktop) !important;
         font-weight: {{ settings.mrk_h4_font_weight }} !important;
-    
+
       }
-    
+
       .mrk-h5 {
         font-size: var(--mrk-h5-size-desktop) !important;
         color: var(--mrk-h5-color) !important;
         margin: var(--mrk-h5-margin-desktop) !important;
         font-weight: {{ settings.mrk_h5_font_weight }} !important;
-    
+
       }
-    
+
       .mrk-h6 {
         font-size: var(--mrk-h6-size-desktop) !important;
         color: var(--mrk-h6-color) !important;
         margin: var(--mrk-h6-margin-desktop) !important;
         font-weight: {{ settings.mrk_h6_font_weight }} !important;
-    
+
       }
-    
+
       /* Responsive font size adjustments */
       @media (max-width: 1024px) {
-        .mrk-h1 { 
-          font-size: var(--mrk-h1-size-laptop) !important; 
-          margin: var(--mrk-h1-margin-laptop) !important; 
+        .mrk-h1 {
+          font-size: var(--mrk-h1-size-laptop) !important;
+          margin: var(--mrk-h1-margin-laptop) !important;
         }
-        .mrk-h2 { 
-          font-size: var(--mrk-h2-size-laptop) !important; 
-          margin: var(--mrk-h2-margin-laptop) !important; 
+        .mrk-h2 {
+          font-size: var(--mrk-h2-size-laptop) !important;
+          margin: var(--mrk-h2-margin-laptop) !important;
         }
-        .mrk-h3 { 
-          font-size: var(--mrk-h3-size-laptop) !important; 
-          margin: var(--mrk-h3-margin-laptop) !important; 
+        .mrk-h3 {
+          font-size: var(--mrk-h3-size-laptop) !important;
+          margin: var(--mrk-h3-margin-laptop) !important;
         }
-        .mrk-h4 { 
-          font-size: var(--mrk-h4-size-laptop) !important; 
-          margin: var(--mrk-h4-margin-laptop) !important; 
+        .mrk-h4 {
+          font-size: var(--mrk-h4-size-laptop) !important;
+          margin: var(--mrk-h4-margin-laptop) !important;
         }
-        .mrk-h5 { 
-          font-size: var(--mrk-h5-size-laptop) !important; 
-          margin: var(--mrk-h5-margin-laptop) !important; 
+        .mrk-h5 {
+          font-size: var(--mrk-h5-size-laptop) !important;
+          margin: var(--mrk-h5-margin-laptop) !important;
         }
-        .mrk-h6 { 
-          font-size: var(--mrk-h6-size-laptop) !important; 
-          margin: var(--mrk-h6-margin-laptop) !important; 
+        .mrk-h6 {
+          font-size: var(--mrk-h6-size-laptop) !important;
+          margin: var(--mrk-h6-margin-laptop) !important;
         }
       }
-    
+
       @media (max-width: 768px) {
-        .mrk-h1 { 
-          font-size: var(--mrk-h1-size-mobile) !important; 
-          margin: var(--mrk-h1-margin-mobile) !important; 
+        .mrk-h1 {
+          font-size: var(--mrk-h1-size-mobile) !important;
+          margin: var(--mrk-h1-margin-mobile) !important;
         }
-        .mrk-h2 { 
-          font-size: var(--mrk-h2-size-mobile) !important; 
-          margin: var(--mrk-h2-margin-mobile) !important; 
+        .mrk-h2 {
+          font-size: var(--mrk-h2-size-mobile) !important;
+          margin: var(--mrk-h2-margin-mobile) !important;
         }
-        .mrk-h3 { 
-          font-size: var(--mrk-h3-size-mobile) !important; 
-          margin: var(--mrk-h3-margin-mobile) !important; 
+        .mrk-h3 {
+          font-size: var(--mrk-h3-size-mobile) !important;
+          margin: var(--mrk-h3-margin-mobile) !important;
         }
-        .mrk-h4 { 
-          font-size: var(--mrk-h4-size-mobile) !important; 
-          margin: var(--mrk-h4-margin-mobile) !important; 
+        .mrk-h4 {
+          font-size: var(--mrk-h4-size-mobile) !important;
+          margin: var(--mrk-h4-margin-mobile) !important;
         }
-        .mrk-h5 { 
-          font-size: var(--mrk-h5-size-mobile) !important; 
-          margin: var(--mrk-h5-margin-mobile) !important; 
+        .mrk-h5 {
+          font-size: var(--mrk-h5-size-mobile) !important;
+          margin: var(--mrk-h5-margin-mobile) !important;
         }
-        .mrk-h6 { 
-          font-size: var(--mrk-h6-size-mobile) !important; 
-          margin: var(--mrk-h6-margin-mobile) !important; 
+        .mrk-h6 {
+          font-size: var(--mrk-h6-size-mobile) !important;
+          margin: var(--mrk-h6-margin-mobile) !important;
         }
       }
       .m-tooltip.m-spinner-button,  .m-button--icon {
@@ -250,29 +250,27 @@
           padding-bottom: 0px;
       }
     </style>
-<script>
+    <script>
+      (function() {
+        // Find all <noscript> tags on the page
+        const noscriptTags = document.querySelectorAll('noscript');
 
-  (function() {
-    // Find all <noscript> tags on the page
-    const noscriptTags = document.querySelectorAll('noscript');
-    
-    // Loop through each <noscript> tag
-    noscriptTags.forEach(noscript => {
-      // Check if the <noscript> contains any CSS (e.g., inside <style> tags)
-      const styleTags = noscript.querySelectorAll('style');
-      
-      // If there's any <style> tag inside the <noscript>, extract and add it to the <head>
-      styleTags.forEach(style => {
-        const styleCopy = document.createElement('style');
-        styleCopy.textContent = style.textContent;
-        
-        // Append the copied <style> tag to the <head> of the document
-        document.head.appendChild(styleCopy);
-      });
-    });
-  })();
-  
-</script>
+        // Loop through each <noscript> tag
+        noscriptTags.forEach(noscript => {
+          // Check if the <noscript> contains any CSS (e.g., inside <style> tags)
+          const styleTags = noscript.querySelectorAll('style');
+
+          // If there's any <style> tag inside the <noscript>, extract and add it to the <head>
+          styleTags.forEach(style => {
+            const styleCopy = document.createElement('style');
+            styleCopy.textContent = style.textContent;
+
+            // Append the copied <style> tag to the <head> of the document
+            document.head.appendChild(styleCopy);
+          });
+        });
+      })();
+    </script>
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme-global.js' | asset_url }}" defer="defer"></script>
     {%- if settings.animations != 'none' -%}
@@ -292,18 +290,9 @@
     </script>
     {% render 'theme-data' %}
     {% render 'custom-code-head' %}
-    
-  
 
-
-
-
-
-
-
-
-{% include 'stack-discounts-script' %}
-</head>
+    {% include 'stack-discounts-script' %}
+  </head>
 
   <body
     id="m-theme"
@@ -346,6 +335,28 @@
     {%- if settings.show_swatch_option -%}
       <script src="{{ 'product-card-swatch.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script>
+      Shopify.cart_drawer = Shopify.cart_drawer || {};
+      Shopify.cart_drawer.freeProduct1 = {
+        title: "{{ settings.cart_free_product_1.title }}",
+        available: "{{ settings.cart_free_product_1.selected_or_first_available_variant.available }}",
+        url: "{{ settings.cart_free_product_1.url }}",
+        handle: "{{ settings.cart_free_product_1.handle }}",
+        variantId: "{{ settings.cart_free_product_1.selected_or_first_available_variant.id }}",
+        rule: "{{ settings.cart_free_product_1_rule }}",
+        condition: "cart-total"
+      };
+      Shopify.cart_drawer.freeProduct2 = {
+        title: "{{ settings.cart_free_product_2.title }}",
+        available: "{{ settings.cart_free_product_2.selected_or_first_available_variant.available }}",
+        url: "{{ settings.cart_free_product_2.url }}",
+        handle: "{{ settings.cart_free_product_2.handle }}",
+        variantId: "{{ settings.cart_free_product_2.selected_or_first_available_variant.id }}",
+        rule: "{{ settings.cart_free_product_2_rule }}",
+        condition: "cart-total"
+      };
+    </script>
 
     {%- if settings.enable_cart_drawer and template != 'cart' -%}
       {% render 'cart-drawer' %}
