@@ -48,14 +48,15 @@
     <div class="x-card-empty-cs-btn">
       <a href="/collections/all">Continue Shopping</a>
     </div>
-    <div class="x-card-empty-collection">
-      <a href="{{ settings.empty_cart_collection.url }}">
-        {% unless settings.empty_cart_collection.featured_image == blank %}
-          {{ settings.empty_cart_collection.featured_image | image_url: width: 400 | image_tag }}
-        {% endunless %}
-      </a>
-      <a class="x-cec-all-prods" href="{{ settings.empty_cart_collection.url }}">All Products</a>
-    </div>
-    
+    {% unless settings.empty_cart_collection == blank %}
+      <div class="x-card-empty-collection">
+        <a href="{{ settings.empty_cart_collection.url }}">
+          {% unless settings.empty_cart_collection.featured_image == blank %}
+            {{ settings.empty_cart_collection.featured_image | image_url: width: 400 | image_tag }}
+          {% endunless %}
+        </a>
+        <a class="x-cec-all-prods" href="{{ settings.empty_cart_collection.url }}">All Products</a>
+      </div>
+    {% endunless %}
   </div>
 </div>
