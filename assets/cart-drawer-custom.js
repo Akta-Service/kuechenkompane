@@ -1,5 +1,4 @@
 window.cart_cross_sell_swiper = () => {
-  alert('swiper init')
   if (document.querySelector(".ccs-swiper")) {
     new Swiper(".ccs-swiper", {
       slidesPerView: 2.2,
