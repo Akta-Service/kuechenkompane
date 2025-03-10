@@ -63,61 +63,62 @@
     }
   }
 </style>
-
-<div class="ccs-container">
-  <h3>Cross sell collection</h3>
-  <div class="swiper ccs-swiper">
-    <div class="swiper-wrapper ccs-wrapper">
-      {% for product in settings.cart_cross_sell_collection.products limit: 8 %}
-        <div class="swiper-slide">
-          <div>
-            {% unless product.featured_image == blank %}
-              {{ product.featured_image | image_url: width: 200 | image_tag }}
-            {% endunless %}
-          </div>
-          <div class="ccs-prod-info">
-            <div class="ccs-info-top">
-              <p class="ccs-prod-title">{{ product.title }}</p>
-              <p class="ccs-prod-price">{{ product.selected_or_first_available_variant.price | money }}</p>
+{% unless settings.cart_cross_sell_collection == blank %}
+  <div class="ccs-container">
+    <h3>Cross sell collection</h3>
+    <div class="swiper ccs-swiper">
+      <div class="swiper-wrapper ccs-wrapper">
+        {% for product in settings.cart_cross_sell_collection.products limit: 8 %}
+          <div class="swiper-slide">
+            <div>
+              {% unless product.featured_image == blank %}
+                {{ product.featured_image | image_url: width: 200 | image_tag }}
+              {% endunless %}
             </div>
-            <product-form class="m-product-form m-product-form--main" data-product-id="4546806317155">
-              {% form 'product', product %}
-                <input type="hidden" name="form_type" value="product"><input type="hidden" name="utf8" value="✓"
-                ><input
-                  type="hidden"
-                  name="id"
-                  value="{{ product.selected_or_first_available_variant.id }}"
-                  data-selected-variant=""
-                >
-                <div class="m-product-form--wrapper m:display-flex m:flex-wrap m:items-end">
-                  <button
-                    type="submit"
-                    name="add"
-                    class="m-add-to-cart rs-add-btn mrk-btn m-spinner-button m-button m-button--primary "
-                    data-atc-text="In den Warenkorb legen"
+            <div class="ccs-prod-info">
+              <div class="ccs-info-top">
+                <p class="ccs-prod-title">{{ product.title }}</p>
+                <p class="ccs-prod-price">{{ product.selected_or_first_available_variant.price | money }}</p>
+              </div>
+              <product-form class="m-product-form m-product-form--main" data-product-id="4546806317155">
+                {% form 'product', product %}
+                  <input type="hidden" name="form_type" value="product"><input type="hidden" name="utf8" value="✓"
+                  ><input
+                    type="hidden"
+                    name="id"
+                    value="{{ product.selected_or_first_available_variant.id }}"
+                    data-selected-variant=""
                   >
-                    <span class="m-spinner-icon">
-                      <svg
-                        class="animate-spin m-svg-icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                    </span>
-                    <span class="m-add-to-cart--text"> In den Warenkorb legen </span>
-                  </button>
-                </div>
-                <div class="m-product-form-message"></div>
-              {% endform %}
-            </product-form>
+                  <div class="m-product-form--wrapper m:display-flex m:flex-wrap m:items-end">
+                    <button
+                      type="submit"
+                      name="add"
+                      class="m-add-to-cart rs-add-btn mrk-btn m-spinner-button m-button m-button--primary "
+                      data-atc-text="In den Warenkorb legen"
+                    >
+                      <span class="m-spinner-icon">
+                        <svg
+                          class="animate-spin m-svg-icon"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                          <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                      </span>
+                      <span class="m-add-to-cart--text"> In den Warenkorb legen </span>
+                    </button>
+                  </div>
+                  <div class="m-product-form-message"></div>
+                {% endform %}
+              </product-form>
+            </div>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
   </div>
-</div>
+{% endunless %}
