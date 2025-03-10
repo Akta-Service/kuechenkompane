@@ -68,7 +68,7 @@
 </style>
 {% unless settings.cart_cross_sell_collection == blank %}
   <div class="ccs-container">
-    <h3 class="ccs-title">Cross sell collection</h3>
+    <p class="ccs-title">Cross sell collection</p>
     <div class="swiper ccs-swiper">
       <div class="swiper-wrapper ccs-wrapper">
         {% for product in settings.cart_cross_sell_collection.products limit: 8 %}
