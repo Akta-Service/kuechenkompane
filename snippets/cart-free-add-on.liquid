@@ -1,0 +1,265 @@
+<style>
+  .x-cart-add-on-container {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+  }
+  .x-cart-add-on-item{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 12px 0 16px;
+    position: relative;
+    border: 1px solid rgba(0,0,0,.1);
+    gap: 4px;
+  }
+  .x-cart-add-on-item:not(:last-child):before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #d1bba075;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    z-index: -1;
+  }
+  .x-cart-add-on-item.active:not(:last-child):before{
+    background: {{settings.cfp_border_color}};
+    height: 2px;
+  }
+  .x-cart-add-on-item:after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border: 3px solid rgba(0,0,0,0);
+    border-radius: 8px;
+    content: "";
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+  }
+  .x-cart-add-on-item.comming:after{
+    border-radius: 8px 0 0 8px;
+    border-right: none;
+    border-color: {{settings.cfp_border_color}};
+    width: calc(50% + 1px);
+  }
+  .x-cart-add-on-item.active:after{
+    width: calc(100% + 2px);
+    border-color: {{settings.cfp_border_color}};
+  }
+  .x-cart-add-on-icon-wrapper{
+    display: flex;
+    img{
+      max-width: 48px;
+      max-height: 48px;
+      aspect-ratio:1;
+      object-fit: cover;
+    }
+    svg{
+      max-width: 48px;
+      max-height: 48px;
+      aspect-ratio:1;
+      object-fit: cover;
+    }
+  }
+  .x-cart-add-on-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    padding: 0 10px;
+  }
+  .x-cart-info-label{
+    text-align: center;
+    line-height: 1;
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-size: {{settings.cfp_text_sise | append: 'px'}};
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: {{settings.cfp_text_color}};
+    margin-bottom: 4px;
+    margin-top: 8px;
+  }
+  .x-cart-info-rule {
+    text-align: center;
+    line-height: 1;
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+    font-size: {{settings.cfp_text_sise | append: 'px'}};
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: {{settings.cfp_text_color}};
+  }
+
+  .x-cart-add-on-checked {
+    background-color: {{settings.cfp_border_color}};
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 6px 0 8px;
+    visibility: hidden;
+    box-sizing: border-box;
+    padding: 3px 3px;
+  }
+
+  .x-card-add-on-unchecked{
+    background-color: rgba(0, 0, 0, .1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 6px 0 8px;
+    box-sizing: border-box;
+    padding: 3px 3px;
+    svg{
+      width: 17px;
+      height: 17px;
+      color: #fff;
+    }
+  }
+
+  .x-cart-add-on-item.active{
+    .x-card-add-on-unchecked{
+      visibility: hidden;
+    }
+    .x-cart-add-on-checked{
+      visibility: visible;
+    }
+  }
+
+  .x-cart-comming-label {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 7px 0 10px 0;
+    color: {{settings.cfp_text_color}};
+    font-size: {{settings.cfp_spend_text_sise | append:'px'}};
+  }
+</style>
+
+{% liquid
+  assign free_shipping_rule = settings.cart_free_shipping_rule | default: 0
+  assign free_product_1_rule = settings.cart_free_shipping_rule | default: 0
+  unless settings.cart_free_product_1 == blank
+    assign free_product_1_rule = settings.cart_free_product_1_rule
+  endunless
+  assign free_product_2_rule = free_product_1_rule | default: 0
+  unless settings.cart_free_product_2 == blank
+    assign free_product_2_rule = settings.cart_free_product_2_rule
+  endunless
+  assign cart_total = cart.total_price | divided_by: 100
+%}
+
+<div class="x-cart-add-on-container">
+  {% if settings.cart_free_shipping_rule > 0 %}
+    <div class="x-cart-add-on-item {% if cart_total >= free_shipping_rule %}active{% else %}comming{% endif %}">
+      <div class="x-cart-add-on-icon-wrapper">
+        {% render 'free-shipping-icon' %}
+      </div>
+      <div class="x-cart-add-on-info-wrapper">
+        <span class="x-cart-info-label">{{ settings.cart_free_shipping_label }}</span>
+        <span class="x-cart-info-rule">
+          {{- cart.currency.symbol -}}
+          {{- settings.cart_free_shipping_rule -}}
+        </span>
+      </div>
+      <div class="x-cart-add-on-checked">
+        {% render 'check-icon' %}
+      </div>
+      <div class="x-card-add-on-unchecked">
+        {% render 'cross-icon' %}
+      </div>
+    </div>
+  {% endif %}
+  {% unless settings.cart_free_product_1 == blank %}
+    <div class="x-cart-add-on-item {% if cart_total >= free_product_1_rule %}active{% elsif cart_total >= free_shipping_rule %}comming{% endif %}">
+      <div class="x-cart-add-on-icon-wrapper">
+        {% unless settings.cart_free_product_1.featured_image == blank %}
+          {{ settings.cart_free_product_1.featured_image | image_url: width: 70 | image_tag: loading: 'lazy' }}
+        {% endunless %}
+      </div>
+      <div class="x-cart-add-on-info-wrapper">
+        <span class="x-cart-info-label">{{ settings.cart_free_product_1_label }}</span>
+        <span class="x-cart-info-rule">
+          {{- cart.currency.symbol -}}
+          {{- settings.cart_free_product_1_rule -}}
+        </span>
+      </div>
+      <div class="x-cart-add-on-checked">
+        {% render 'check-icon' %}
+      </div>
+      <div class="x-card-add-on-unchecked">
+        {% render 'cross-icon' %}
+      </div>
+    </div>
+  {% endunless %}
+  {% unless settings.cart_free_product_2 == blank %}
+    <div class="x-cart-add-on-item {% if cart_total >= free_product_2_rule %}active{% elsif cart_total >= free_product_1_rule %}comming{% endif %}">
+      <div class="x-cart-add-on-icon-wrapper">
+        {% unless settings.cart_free_product_2.featured_image == blank %}
+          {{ settings.cart_free_product_2.featured_image | image_url: width: 70 | image_tag: loading: 'lazy' }}
+        {% endunless %}
+      </div>
+      <div class="x-cart-add-on-info-wrapper">
+        <span class="x-cart-info-label">{{ settings.cart_free_product_2_label }}</span>
+        <span class="x-cart-info-rule">
+          {{- cart.currency.symbol -}}
+          {{- settings.cart_free_product_2_rule -}}
+        </span>
+      </div>
+      <div class="x-cart-add-on-checked">
+        {% render 'check-icon' %}
+      </div>
+      <div class="x-card-add-on-unchecked">
+        {% render 'cross-icon' %}
+      </div>
+    </div>
+  {% endunless %}
+</div>
+
+<!-- Spend More Message -->
+{% if cart_total < free_shipping_rule %}
+  <div class="x-cart-comming-label">
+    Spend &nbsp;
+    <b>
+      {{- cart.currency.symbol -}}
+      {{- free_shipping_rule | minus: cart_total -}}
+    </b>
+    &nbsp; more for &nbsp; <b>{{ settings.cart_free_shipping_label }}</b>
+  </div>
+{% elsif cart_total < free_product_1_rule %}
+  <div class="x-cart-comming-label">
+    Spend &nbsp;
+    <b>
+      {{- cart.currency.symbol -}}
+      {{- free_product_1_rule | minus: cart_total -}}
+    </b>
+    &nbsp; more for &nbsp; <b>{{ settings.cart_free_product_1_label }}</b>
+  </div>
+{% elsif cart_total < free_product_2_rule %}
+  <div class="x-cart-comming-label">
+    Spend &nbsp;
+    <b>
+      {{- cart.currency.symbol -}}
+      {{- free_product_2_rule | minus: cart_total -}}
+    </b>
+    &nbsp; more for &nbsp; <b>{{ settings.cart_free_product_2_label }}</b>
+  </div>
+{% endif %}
