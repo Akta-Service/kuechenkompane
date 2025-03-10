@@ -1,0 +1,61 @@
+<style>
+  .m-cart-drawer__empty {
+    display: none;
+  }
+  .x-card-empty-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .x-card-empty-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 25px;
+    align-items: center;
+
+    @media(max-width: 768px) {
+      box-sizing: border-box;
+      padding: 0 20px;
+    }
+  }
+  .x-card-empty-cs-btn{
+    a{
+      background: {{settings.ce_btn_bg_color}};
+      color: {{settings.ce_btn_text_color}};
+      box-sizing: border-box;
+      padding: 14px 20px;
+      display: flex;
+      line-height: 1;
+      border-radius: 5px;
+      font-size: {{settings.ce_btn_text_sise | append: 'px'}}
+    }
+  }
+  .x-cec-all-prods {
+    font-size: 25px;
+    margin-top: 15px;
+    display: block;
+  }
+  m-cart-drawer-items.m-cart-drawer__body.m-scrollbar--vertical.m\:flex.m\:flex-col.m\:flex-1 {
+    display: flex;
+    justify-content: space-around;
+  }
+</style>
+
+<div class="x-card-empty-container">
+  <div class="x-card-empty-wrapper">
+    <div class="x-card-empty-cs-btn">
+      <a href="/collections/all">Continue Shopping</a>
+    </div>
+    <div class="x-card-empty-collection">
+      <a href="{{ settings.empty_cart_collection.url }}">
+        {% unless settings.empty_cart_collection.featured_image == blank %}
+          {{ settings.empty_cart_collection.featured_image | image_url: width: 400 | image_tag }}
+        {% endunless %}
+      </a>
+      <a class="x-cec-all-prods" href="{{ settings.empty_cart_collection.url }}">All Products</a>
+    </div>
+    
+  </div>
+</div>
