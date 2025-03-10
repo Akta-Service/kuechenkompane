@@ -1,0 +1,18 @@
+m-cart-drawer {
+  .m-cart-drawer__footer {
+    padding: 0px 20px 0px;
+    box-shadow: 0 4px 24px #0000001f;
+  }
+  a.m-cart-drawer__link-to-cart.m-button.m-button--link {
+    display: none;
+  }
+  .m-cart__trust-badge {
+    margin-top: 2px;
+  }
+  .m-cart-addon__body {
+    z-index: 9999;
+  }
+  .m-cart__overlay.open {
+    z-index: 9998;
+  }
+}
