@@ -3434,7 +3434,7 @@
       }
     ]
   },
-  {
+   {
     "name": "Cart settings",
     "settings": [
       {
@@ -3456,6 +3456,155 @@
         "id": "cart_drawer_show_accelerated_button",
         "label": "Show accelerated checkout",
         "default": false
+      },
+      {
+        "type": "header",
+        "content": "Free Products/Shipping"
+      },
+      {
+        "type": "paragraph",
+        "content": "Free Shipping"
+      },
+      {
+        "type": "text",
+        "id": "cart_free_shipping_label",
+        "label": "Free Shipping Label",
+        "default": "Free Shipping"
+      },
+      {
+        "type": "number",
+        "id": "cart_free_shipping_rule",
+        "label": "Cart Total",
+        "default": 300,
+        "info": "Free shipping based on cart total"
+      },
+      {
+        "type": "paragraph",
+        "content": "Free Product 1"
+      },
+      {
+        "type": "text",
+        "id": "cart_free_product_1_label",
+        "label": "Free Product Label",
+        "default": "Free Product 1"
+      },
+      {
+        "type": "product",
+        "id": "cart_free_product_1",
+        "label": "Select Free Product",
+      },
+      {
+        "type": "number",
+        "id": "cart_free_product_1_rule",
+        "label": "Cart Total",
+        "default": 500,
+        "info": "Free product based on cart total"
+      },
+      {
+        "type": "paragraph",
+        "content": "Free Product 2"
+      },
+      {
+        "type": "text",
+        "id": "cart_free_product_2_label",
+        "label": "Free Product Label",
+        "default": "Free Product 2"
+      },
+      {
+        "type": "product",
+        "id": "cart_free_product_2",
+        "label": "Select Free Product",
+      },
+      {
+        "type": "number",
+        "id": "cart_free_product_2_rule",
+        "label": "Cart Total",
+        "default": 800,
+        "info": "Free product based on cart total"
+      },
+      {
+        "type": "color",
+        "id": "cfp_border_color",
+        "label": "Box Border Color",
+        "default": "#d1bba0"
+      },
+      {
+        "type": "color",
+        "id": "cfp_text_color",
+        "label": "Box Text Color",
+        "default": "#1e1e1e"
+      },
+      {
+        "type": "range",
+        "id": "cfp_text_sise",
+        "min": 10,
+        "max": 18,
+        "step": 1,
+        "unit": "px",
+        "label": "Box Font size",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "cfp_spend_text_sise",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Spend Font size",
+        "default": 16
+      },
+      {
+        "type": "header",
+        "content": "Cross sell Collection"
+      },
+      {
+        "type": "collection",
+        "id": "cart_cross_sell_collection",
+        "label": "Select Collection"
+      },
+      {
+        "type": "color",
+        "id": "ccs_arrow_bg",
+        "label": "Arrow Button Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "ccs_arrow_color",
+        "label": "Arrow Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "When Cart Is Empty"
+      },
+      {
+        "type": "collection",
+        "id": "empty_cart_collection",
+        "label": "Select Collection"
+      },
+      {
+        "type": "color",
+        "id": "ce_btn_text_color",
+        "label": "Button Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "ce_btn_bg_color",
+        "label": "Button Background Color",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "ce_btn_text_sise",
+        "min": 10,
+        "max": 22,
+        "step": 1,
+        "unit": "px",
+        "label": "Button Font size",
+        "default": 16
       },
       {
         "type": "header",
