@@ -253,6 +253,7 @@
         "image_nnJw8D"
       ],
       "settings": {
+        "heading_type": "mrk-h1",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
@@ -271,7 +272,6 @@
           "type": "sub_heading",
           "settings": {
             "sub_heading": "Küchenkompane - Erklärt in 2 Minuten",
-            "sub_heading_color": "#000000",
             "sub_heading_size": 16
           }
         },
@@ -279,22 +279,43 @@
           "type": "heading",
           "settings": {
             "heading": "Warum Küchenkompane?",
-            "heading_color": "#000000",
-            "heading_size": 54
+            "h1_font_size": 32,
+            "h1_font_size_tablet": 28,
+            "h1_font_size_mobile": 24,
+            "h1_font_weight": "600",
+            "h1_text_align": "left",
+            "title": "Your Title Here",
+            "padding_top": 20,
+            "padding_bottom": 20,
+            "padding_top_tablet": 15,
+            "padding_bottom_tablet": 15,
+            "padding_top_mobile": 10,
+            "padding_bottom_mobile": 10
           }
         },
         "details_pTbxwh": {
           "type": "details",
           "settings": {
             "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
-            "details_color": "#000000",
-            "details_size": 18
+            "details_size": 18,
+            "p_font_size": 16,
+            "p_font_size_tablet": 14,
+            "p_font_size_mobile": 12,
+            "p_font_weight": "400",
+            "p_text_align": "left",
+            "p_line_height": 1.5,
+            "p_padding_top": 10,
+            "p_padding_bottom": 10,
+            "p_padding_top_tablet": 8,
+            "p_padding_bottom_tablet": 8,
+            "p_padding_top_mobile": 5,
+            "p_padding_bottom_mobile": 5
           }
         },
         "video_CDdX4G": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Küchenkompane Video.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/4e0b38fe26e7454c8d484e92f7d891b1.mp4",
             "autoplay": true,
             "loop": true,
             "muted": true,
@@ -310,9 +331,10 @@
         "video_CDdX4G"
       ],
       "settings": {
-        "bg_color": "#ffffff",
+        "color_scheme": "",
         "vertical_padding": 50,
-        "horizontal_padding": 50
+        "vertical_padding_mobile": 30,
+        "heading_type": "mrk-h1"
       }
     },
     "usp_list_jDiFMg": {
@@ -323,10 +345,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
-            "title_color": "#121212",
             "title_size": 18,
             "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -336,10 +356,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
             "usp_title": "Geld-zurück-Garantie",
-            "title_color": "#121212",
             "title_size": 18,
             "usp_info": "30 Tage Rückgaberecht - ohne Risiko.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -349,10 +367,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
             "usp_title": "Schärfe Garantie",
-            "title_color": "#121212",
             "title_size": 18,
             "usp_info": "Maximale Schärfe für müheloses Schneiden.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": false
           }
@@ -364,9 +380,11 @@
         "item_tBw9hr"
       ],
       "settings": {
-        "bg_color": "#fffff",
+        "color_scheme": "",
         "verticle_padding": 50,
-        "horizontal_padding": 50
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30,
+        "horizontal_padding_mobile": 15
       }
     },
     "image_with_text_PaVP9D": {
@@ -421,13 +439,13 @@
         "text_6g4bkB": {
           "type": "text",
           "settings": {
-            "title": "\"Diese hochwertigen Messersets bieten alles, was Sie für müheloses Schneiden und Hacken in der Küche benötigen.\"",
-            "subheading": "",
+            "title": "",
+            "subheading": "\"Diese hochwertigen Messersets bieten alles, was Sie für müheloses Schneiden und Hacken in der Küche benötigen.\"",
             "text": "",
             "width": "100%",
             "alignment": "center",
             "align_text": "center",
-            "text_size": "small",
+            "text_size": "medium",
             "text_color": "inherit",
             "button_label": "",
             "button_link": "",
@@ -447,7 +465,7 @@
       ],
       "settings": {
         "heading": "",
-        "heading_size": "h3",
+        "heading_type": "mrk-h1",
         "subheading": "",
         "description": "",
         "header_alignment": "center",
@@ -471,7 +489,6 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Perfektion in jedem Schnitt",
-            "subtitle_color": "#121212",
             "subtitle_size": 18
           }
         },
@@ -479,7 +496,6 @@
           "type": "title",
           "settings": {
             "title": "Mühelos & präzise schneiden",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -487,7 +503,6 @@
           "type": "description",
           "settings": {
             "description": "Kein Kraftaufwand, kein Zerquetschen – unsere ultrascharfen Klingen gleiten durch jede Zutat, damit du mühelos perfekte Schnitte erzielst.",
-            "description_color": "#121212",
             "description_size": 18
           }
         }
@@ -498,14 +513,15 @@
         "description_Jcn4hF"
       ],
       "settings": {
-        "background_color": "#ffffff",
+        "color_scheme": "",
         "media_type": "image",
         "image": "shopify://shop_images/Fire_in_the_hole__1__V2_1.gif",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": true,
         "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h1"
       }
     },
     "benefit_text_right_pNKQLU": {
@@ -515,7 +531,6 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Willkommen in der Küchenkompane-Welt",
-            "subtitle_color": "#121212",
             "subtitle_size": 18
           }
         },
@@ -523,7 +538,6 @@
           "type": "title",
           "settings": {
             "title": "Gemeinsam besser kochen!",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -531,7 +545,6 @@
           "type": "description",
           "settings": {
             "description": "Werde Teil der Küchenkompane-Community und profitiere von Profi-Tipps, exklusiven Angeboten und hochwertigen Produkten für deine Küche.",
-            "description_color": "#121212",
             "description_size": 18
           }
         }
@@ -542,14 +555,15 @@
         "description_mUiAUY"
       ],
       "settings": {
-        "background_color": "#ffffff",
+        "color_scheme": "",
         "media_type": "image",
         "image": "shopify://shop_images/IMG_9602_V13_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
         "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h1"
       }
     },
     "collapsible_tabs_JndiBV": {
@@ -639,6 +653,8 @@
         "background_color": "",
         "padding_top": 100,
         "padding_bottom": 50,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "custom_class": ""
       }
     },
