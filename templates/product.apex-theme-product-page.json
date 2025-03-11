@@ -171,6 +171,7 @@
       ],
       "settings": {
         "color_scheme": "default",
+        "heading_type": "mrk-h2",
         "container": "container",
         "layout": "layout-6",
         "show_atwl": true,
@@ -231,7 +232,7 @@
       "settings": {
         "color_scheme": "badge-hot",
         "title": "Produktbeschreibung",
-        "font_size": 26,
+        "heading_type": "mrk-h2",
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
@@ -362,7 +363,7 @@
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "Unsere Produkte in Aktion",
-        "title_size": 24,
+        "heading_type": "mrk-h2",
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "@kuechenkompane",
         "autoplay": false
@@ -506,6 +507,7 @@
         ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
       ],
       "settings": {
+        "heading_type": "mrk-h2",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
@@ -585,7 +587,8 @@
       "settings": {
         "color_scheme": "badge-hot",
         "vertical_padding": 50,
-        "vertical_padding_mobile": 30
+        "vertical_padding_mobile": 30,
+        "heading_type": "mrk-h2"
       }
     },
     "magazine_quote_UQpqkk": {
@@ -632,8 +635,7 @@
         "title_F4F6qE": {
           "type": "title",
           "settings": {
-            "title": "KÜCHENKOMPANE® vs. ANDERE",
-            "title_size": 32
+            "title": "KÜCHENKOMPANE® vs. ANDERE"
           }
         },
         "description_9Mxcd4": {
@@ -654,7 +656,8 @@
         "padding_top": 50,
         "padding_bottom": 50,
         "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h2"
       }
     },
     "apex_faqs_jx7hp6": {
@@ -751,8 +754,7 @@
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "FAQ - Häufige Fragen",
-        "title_font_size": 34,
-        "title_font_size_mobile": 24,
+        "heading_type": "mrk-h2",
         "sub_title": "Common problems and simple solutions",
         "sub_title_font_size": 14,
         "faq_title_font_size": 18,
@@ -797,7 +799,8 @@
         "padding_bottom": 50,
         "reverse": false,
         "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h2"
       }
     },
     "benefit_text_right_AFHFhC": {
@@ -838,7 +841,8 @@
         "padding_bottom": 50,
         "reverse": true,
         "padding_top_mobile": 30,
-        "padding_bottom_mobile": 50
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h2"
       }
     },
     "icon_box_9UtNky": {
@@ -1039,7 +1043,7 @@
         "mb_mobile": 20,
         "title": "Vertraut von",
         "title_highlight": "+140K Kunden",
-        "t_size": 32,
+        "heading_type": "mrk-h2",
         "h_text_color": "#fa8526"
       }
     },
@@ -1078,7 +1082,7 @@
         "subtitle": "Vielen Menschen haben uns als Gründer gefragt:",
         "subtitle_size": 18,
         "title": "“Warum gibt Küchenkompane eine Zufriedenheitsgarantie?”",
-        "title_size": 32,
+        "heading_type": "mrk-h2",
         "des": "Diese Frage haben uns schon viele gestellt. Die Antwort ist einfach: Wir sind zu 100 % überzeugt von unseren Produkten! Und das aus gutem Grund, denn unsere Produkte wurden:",
         "img": "shopify://shop_images/chef-working-together-professional-kitchen.jpg",
         "verticle_padding": 70,
