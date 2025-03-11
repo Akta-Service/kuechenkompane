@@ -50,8 +50,7 @@
         "pb_mobile": 65,
         "mt_mobile": 0,
         "mb_mobile": 0,
-        "title_font_size": 40,
-        "title_font_size_m": 24,
+        "heading_type": "mrk-h2",
         "text_font_size": 15,
         "text_font_size_m": 15
       }
@@ -153,7 +152,7 @@
         "mobile_margin_top": 30,
         "mobile_margin_bottom": 0,
         "bg_img": "shopify://shop_images/branded-image-2.jpg",
-        "title_font_size": 40,
+        "heading_type": "mrk-h1",
         "text_font_size": 16,
         "button_style": "m-button--primary",
         "button_size": ""
