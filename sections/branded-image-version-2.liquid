@@ -101,7 +101,7 @@
         {% for block in section.blocks %}
           {%- case block.type -%}
             {%- when 'title' -%}
-              <h3 class="branded-title">{{ block.settings.title }}</h3>
+              <h3 class="branded-title {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
             {%- when 'sub_title' -%}
               <h3 class="branded-title">{{ block.settings.sub_title }}</h3>
             {%- when 'text' -%}
@@ -226,15 +226,37 @@
       "content": "Typography"
     },
     {
-      "type": "range",
-      "id": "title_font_size",
-      "label": "Title Font Size",
-      "default": 40,
-      "min": 12,
-      "max": 100,
-      "unit": "px",
-      "step": 1
-    },    
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
+    }, 
     {
       "type": "range",
       "id": "text_font_size",

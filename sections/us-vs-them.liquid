@@ -20,8 +20,7 @@
           {% case block.type %}
             {% when 'title' %}
               <h2
-                class="us-them-title"
-                style="font-size: {{- block.settings.title_size -}}px;"
+                class="us-them-title {{ section.settings.heading_type }}"               
               >
                 {{ block.settings.title }}
               </h2>
@@ -96,6 +95,38 @@
       "unit": "px",
       "label": "Padding Bottom (Mobile)",
       "default": 50
+    },
+    {
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
     }
   ],
   "blocks": [
@@ -108,18 +139,8 @@
           "id": "title",
           "label": "Title",
           "default": "Kraftstein® vs. Others"
-        },
+        }        
         
-        {
-          "type": "range",
-          "id": "title_size",
-          "min": 12,
-          "max": 100,
-          "step": 1,
-          "unit": "px",
-          "label": "Title Font size",
-          "default": 32
-        }
       ]
     },
     {

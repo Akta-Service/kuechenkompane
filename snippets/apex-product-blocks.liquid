@@ -80,9 +80,9 @@
       {%- when 'title' -%}
         <div class="product-block-group product-block-group--title">
           {% if is_featured == true %}
-            <h2 class="rs-product-title">{{ product.title }}</h2>
+            <h2 class="rs-product-title {{ section.settings.heading_type }}">{{ product.title }}</h2>
           {% else %}
-            <h1 class="rs-product-title">{{ product.title }}</h1>
+            <h1 class="rs-product-title {{ section.settings.heading_type }}">{{ product.title }}</h1>
           {% endif %}
           {% if section.settings.show_atwl and section.settings.layout != 'layout-7' %}
             <div class="m-product-wishlist m:hidden md:m:block">
