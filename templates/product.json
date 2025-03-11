@@ -439,8 +439,8 @@
         "text_6g4bkB": {
           "type": "text",
           "settings": {
-            "title": "",
-            "subheading": "\"Diese hochwertigen Messersets bieten alles, was Sie für müheloses Schneiden und Hacken in der Küche benötigen.\"",
+            "title": "\"Diese hochwertigen Messersets bieten alles, was Sie für müheloses Schneiden und Hacken in der Küche benötigen.\"",
+            "subheading": "",
             "text": "",
             "width": "100%",
             "alignment": "center",
@@ -521,7 +521,7 @@
         "reverse": true,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h1"
+        "heading_type": "mrk-h2"
       }
     },
     "benefit_text_right_pNKQLU": {
@@ -563,7 +563,7 @@
         "reverse": false,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h1"
+        "heading_type": "mrk-h2"
       }
     },
     "collapsible_tabs_JndiBV": {
