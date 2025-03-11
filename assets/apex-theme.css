@@ -530,6 +530,8 @@ a.m-button.m-button--primary:hover {
 }
 .gesehen-in {
   font-family: var(--font-stack-header);
+  text-align: center;
+  padding-bottom: 15px;
 }
 @media only screen and (max-width: 768px) {
   .apex-product-page .m-product-media {
@@ -542,8 +544,5 @@ a.m-button.m-button--primary:hover {
     height: inherit !important;
     width: 60px !important;
     margin-right: 10px !important;
-  }
-  .gesehen-in {
-    font-size: 16px !important;
   }
 }
