@@ -46,7 +46,7 @@
         "mt_mobile": 0,
         "mb_mobile": 0,
         "title": "Meisterhaft kochen beginnt hier",
-        "title_font_size": 40,
+        "heading_type": "mrk-h2",
         "sub_title": "<p>Perfektion, die du in jeder Bewegung spürst.</p>",
         "btn_text": "Erlebe Perfektion",
         "btn_link": "shopify://pages/produkte-entdecken",
@@ -109,6 +109,7 @@
         ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
       ],
       "settings": {
+        "heading_type": "mrk-h1",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
@@ -294,6 +295,7 @@
         "pb": 60,
         "mobile_pt": 40,
         "mobile_pb": 40,
+        "heading_type": "mrk-h1",
         "title": "Nach Kategorie einkaufen",
         "heading_font_size": 24
       }
@@ -349,7 +351,7 @@
         "mb": 0,
         "mt_mobile": 0,
         "mb_mobile": 0,
-        "heading_size": 52,
+        "heading_type": "mrk-h1",
         "des_size": 18,
         "button_style": "m-button--primary",
         "button_size": "",
@@ -426,7 +428,8 @@
       "settings": {
         "color_scheme": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
         "vertical_padding": 50,
-        "vertical_padding_mobile": 40
+        "vertical_padding_mobile": 40,
+        "heading_type": "mrk-h1"
       }
     },
     "usp_list_nrezVU": {
@@ -544,7 +547,8 @@
         "padding_bottom": 50,
         "reverse": false,
         "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h1"
       }
     },
     "1621243260e1af0c20": {
@@ -717,6 +721,7 @@
       "disabled": true,
       "custom_css": [],
       "settings": {
+        "heading_type": "mrk-h1",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
@@ -1393,8 +1398,7 @@
         "mobile_margin_top": 30,
         "mobile_margin_bottom": 30,
         "bg_img": "shopify://shop_images/IMG_0714_1.jpg",
-        "title_font_size": 48,
-        "title_font_size_m": 28,
+        "heading_type": "mrk-h1",
         "text_font_size": 16,
         "button_style": "m-button--primary",
         "button_size": ""
