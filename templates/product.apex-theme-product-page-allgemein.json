@@ -110,7 +110,8 @@
           "settings": {
             "featurelist_item": "<p>{{ product.metafields.custom.list_1st_item_info | metafield_tag }}</p>",
             "featurelist_item_color": "#000000",
-            "featurelist_item_size": 14
+            "featurelist_item_size": 14,
+            "invert_img": false
           }
         },
         "featurelist_item_tL79ih": {
@@ -118,7 +119,8 @@
           "settings": {
             "featurelist_item": "{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
-            "featurelist_item_size": 14
+            "featurelist_item_size": 14,
+            "invert_img": false
           }
         },
         "featurelist_item_jQJcPz": {
@@ -126,7 +128,8 @@
           "settings": {
             "featurelist_item": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
-            "featurelist_item_size": 14
+            "featurelist_item_size": 14,
+            "invert_img": false
           }
         },
         "buy_buttons_3hQqVi": {
@@ -187,7 +190,9 @@
         "use_sticky_atc_on_mobile": true,
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
-        "sticky_atc_compare": false
+        "sticky_atc_compare": false,
+        "bubble_before_color": "#4b4b4b",
+        "bubble_after_color": "#4b4b4b"
       }
     },
     "product_descrption_accordion_btdDtQ": {
@@ -237,7 +242,8 @@
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true,
-        "br_color": "#000000"
+        "br_color": "#000000",
+        "icon_color": "#000000"
       }
     },
     "product-details-tabs": {
