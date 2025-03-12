@@ -5,8 +5,7 @@
     padding-bottom: {{ section.settings.pb }}px;
     position: relative;
     width: 100%;
-    max-width: 100%;
-    background: {{ section.settings.bg_color }};
+    max-width: 100%;    
   }
   .banner-top-content {
       max-width: 1310px;
@@ -23,7 +22,7 @@
 
     .banner-top-content-item span i {
       font-size: 14px;
-      color: #1e1e1e;
+      
       margin-right: 10px;
     }
 
@@ -44,7 +43,7 @@
     text-align: center;
   }
 </style>
-<div class="banner-top {{ section.id }}">
+<div class="banner-top {{ section.id }} m-color-{{ section.settings.color_scheme }}">
   <div class="rs-container">
     <div class="swiper apex-top-active">
       <div class="swiper-wrapper">
@@ -74,11 +73,10 @@
     "name": "APEX Top Slider",
     "settings": [   
       {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#fff"
-      },   
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color scheme"
+      },        
       {
         "type": "range",
         "id": "pt",
