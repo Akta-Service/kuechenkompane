@@ -58,7 +58,7 @@
       ],
       "settings": {
         "bg_color": "#ffffff",
-        "pt": 30,
+        "pt": 15,
         "pb": 30,
         "mt_mobile": 15,
         "mb_mobile": 15
@@ -126,8 +126,8 @@
         "pb": 30,
         "mobile_pt": 30,
         "mobile_pb": 30,
-        "title": "Shop by Category",
-        "heading_font_size": 24
+        "heading_type": "mrk-h1",
+        "title": "Shop by Category"
       }
     },
     "main": {
@@ -157,7 +157,9 @@
         "color_swatches": "color,colour,couleur,farbe",
         "color_swatches_design": "list",
         "add_btn_bg": "#1e1e1e",
-        "add_btn_text_color": "#ffffff"
+        "add_btn_text_color": "#ffffff",
+        "button_style": "m-button--primary",
+        "button_size": ""
       }
     },
     "usp_list_xQHfgQ": {
@@ -238,8 +240,7 @@
         "mobile_margin_top": 10,
         "mobile_margin_bottom": 0,
         "bg_img": "shopify://shop_images/IMG_9602_V6.jpg",
-        "title_font_size": 40,
-        "title_font_size_m": 28,
+        "heading_type": "mrk-h1",
         "text_font_size": 16,
         "button_style": "m-button--primary",
         "button_size": ""
