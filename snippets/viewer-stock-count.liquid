@@ -10,7 +10,7 @@
   .count-icon::after {
     width: 9px;
     height: 9px;
-    background: #646464;
+    background: {{ section.settings.bubble_after_color  }};
     border-radius: 9px;
     position: absolute;
     left: 0;
@@ -22,7 +22,7 @@
     animation: bubble 2s linear infinite;
     width: 9px;
     height: 9px;
-    background: #474747;
+    background: {{ section.settings.bubble_before_color  }};
     border-radius: 9px;
     position: absolute;
     left: 0;
