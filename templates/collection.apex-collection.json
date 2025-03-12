@@ -59,7 +59,7 @@
       "settings": {
         "bg_color": "#ffffff",
         "pt": 15,
-        "pb": 30,
+        "pb": 15,
         "mt_mobile": 15,
         "mb_mobile": 15
       }
@@ -126,7 +126,7 @@
         "pb": 30,
         "mobile_pt": 30,
         "mobile_pb": 30,
-        "heading_type": "mrk-h1",
+        "heading_type": "mrk-h2",
         "title": "Shop by Category"
       }
     },
