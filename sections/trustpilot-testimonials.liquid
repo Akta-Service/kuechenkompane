@@ -150,6 +150,9 @@
   .best-sell-product {
     overflow: visible;
   }
+  .trustpilot-area svg path {
+    fill: {{ section.settings.arrow_icon_color }};
+  }
   @media only screen and (max-width: 767px) {
     .trustpilot-area .container {
       padding: 0 20px;
@@ -407,6 +410,12 @@
       "id": "h_text_color",
       "label": "Highlight Text Color",
       "default": "#ff6723"
+    },
+    {
+      "type": "color",
+      "id": "arrow_icon_color",
+      "label": "Arrow Icon Color",
+      "default": "#000000"
     }
   ],
   "blocks": [
