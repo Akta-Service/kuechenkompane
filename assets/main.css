@@ -6209,11 +6209,8 @@ variant-picker
   display: -webkit-box;
   -webkit-line-clamp: var(--product-title-line-clamp, unset);
   -webkit-box-orient: vertical;
-  color: #000;
 }
-.m-product-card__name:hover {
-  color: #000;
-}
+
 .m-product-card__reviews {
   margin-bottom: 10px;
 }
