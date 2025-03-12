@@ -50,6 +50,11 @@
     padding-bottom: {{ block.settings.p_pb_m }}px;
   }
   }
+  {% if block.settings.invert_img %}
+  .product-feature-item img {   
+    filter: invert(1);
+   }
+   {% endif %}
   {% endfor %}
 </style>
 {% comment %} Fallback for case not show block price, buy buttons {% endcomment %}
