@@ -235,6 +235,8 @@ class MCartTemplate extends HTMLElement {
       });
   }
 
+
+  // updated functionality
   reInitCCS() {
     try {
       cart_cross_sell_swiper();
@@ -308,6 +310,8 @@ class MCartTemplate extends HTMLElement {
       this.reInitCCS();
     }
   }
+
+  // end---
 
   updateLiveRegions(line, message) {
     let lineItemNode = document.getElementById(
