@@ -178,7 +178,7 @@
       <div class="m-main-product--info apex-theme-info m:column {{ info_class }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
         <div class="m-product-info--wrapper m:text-color-body">
           {% render 'apex-product-blocks', section: section, product: product %}
-        </div>
+        </div> 
       </div>
       <script id="productData" type="application/json">
         {{ product | json }}
@@ -562,6 +562,16 @@
           "unit": "px",
           "label": "Space Bottom (Mobile)",
           "default": 5
+        },
+        {
+          "type": "header",
+          "content": "color"
+        },
+        {
+          "type": "color",
+          "id": "price_color",
+          "label": "Price color",
+          "default": "#008000"
         }
       ]
     },
