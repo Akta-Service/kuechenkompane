@@ -48,7 +48,9 @@
         "review_Tgbbak": {
           "type": "review",
           "settings": {
-            "p": "4.9/5 Sternen"
+            "p": "4.9/5 Sternen",
+            "star_range": 5,
+            "star_color": "#D2861A"
           }
         },
         "ratings_fD4VNJ": {
