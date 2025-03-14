@@ -320,10 +320,14 @@ select {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  gap: 5px;
+  gap: 0;
 }
 .prouduct-review svg {
-  width: 110px;
+  width: 20px;
+  height: 20px;
+}
+.prouduct-review span {
+  margin-left: 5px;
 }
 .rs-payment-icons {
   margin-bottom: 30px;
