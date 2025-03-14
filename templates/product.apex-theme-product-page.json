@@ -191,8 +191,8 @@
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
         "sticky_atc_compare": false,
-        "bubble_before_color": "#ffffff",
-        "bubble_after_color": "#ffffff"
+        "bubble_before_color": "#000000",
+        "bubble_after_color": "#1e1e1e"
       }
     },
     "product_descrption_accordion_btdDtQ": {
@@ -1050,7 +1050,8 @@
         "title": "Vertraut von",
         "title_highlight": "+140K Kunden",
         "heading_type": "mrk-h2",
-        "h_text_color": "#fa8526"
+        "h_text_color": "#fa8526",
+        "arrow_icon_color": "#000000"
       }
     },
     "cta_final_9B8iN9": {
