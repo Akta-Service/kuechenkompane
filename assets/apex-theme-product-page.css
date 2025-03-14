@@ -320,7 +320,7 @@ select {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  gap: 10px;
+  gap: 5px;
 }
 .prouduct-review svg {
   width: 110px;

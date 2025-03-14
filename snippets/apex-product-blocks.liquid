@@ -128,32 +128,23 @@
       {% when 'review' %}
         <a href="#looxReviews">
           <div class="prouduct-review">
+            {% assign star_count = block.settings.star_range %}
+            {% assign star_color = block.settings.star_color %}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xmlns:serif="http://www.serif.com/"
               width="100%"
               height="100%"
-              viewBox="0 0 881 130"
+              viewBox="0 0 600 100"
               version="1.1"
               xml:space="preserve"
               style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
             >
-              <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                  <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
-              </g>
-              <g transform="matrix(1,0,0,1,-447.914,-382.568)">
-                  <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
-              </g>
-              <g transform="matrix(1,0,0,1,-261.961,-382.568)">
-                  <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
-              </g>
-              <g transform="matrix(1,0,0,1,-76.0238,-382.568)">
-                  <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
-              </g>
-              <g transform="matrix(1,0,0,1,109.853,-382.568)">
-                  <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
-              </g>
+              {% for i in (1..star_count) %}
+                <g transform="translate({{ forloop.index0 | times: 120 }}, 0)">
+                  <path d="M50,5 L61,35 H95 L67,55 L76,85 L50,65 L24,85 L33,55 L5,35 H39 Z" 
+                    fill="{{ star_color }}" stroke="{{ star_color }}" stroke-width="2"/>
+                </g>
+              {% endfor %}
             </svg>
 
             <span> {{ block.settings.p }}</span>
