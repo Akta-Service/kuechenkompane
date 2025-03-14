@@ -121,7 +121,7 @@ class MCartTemplate extends HTMLElement {
         console.error(e);
       })
       .finally(() => {
-        this.reInitCSS();
+        this.reInitCCS();
       });
   }
 
@@ -231,11 +231,11 @@ class MCartTemplate extends HTMLElement {
       .catch(() => {})
       .finally(() => {
         this.loading.finish();
-        this.reInitCSS();
+        this.reInitCCS();
       });
   }
 
-  reInitCSS() {
+  reInitCCS() {
     try {
       cart_cross_sell_swiper();
     } catch (err) {
@@ -244,7 +244,7 @@ class MCartTemplate extends HTMLElement {
   }
 
   async addOnHandling() {
-    this.reInitCSS();
+    this.reInitCCS();
     const response = await fetch("/cart.js");
     const cart = await response.json();
 
@@ -305,7 +305,7 @@ class MCartTemplate extends HTMLElement {
     if (cartDrawer) {
       console.log("update card drawer-----------");
       cartDrawer.onCartDrawerUpdate();
-      this.reInitCSS();
+      this.reInitCCS();
     }
   }
 
