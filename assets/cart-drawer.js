@@ -104,7 +104,12 @@ class MCartDrawer extends HTMLElement {
         console.error(e);
       })
       .finally(() => {
-        cart_cross_sell_swiper()
+        // call cart_cross_sell_swiper function
+        try{
+          cart_cross_sell_swiper()
+        } catch(err) {
+          console.log("function not exist or not found")
+        }
       })
     this.getCart().then((cart) => {
       this.classList.toggle("m-cart--empty", cart.item_count === 0);
