@@ -165,6 +165,8 @@
           <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
           {% if product.selected_or_first_available_variant.price < product.compare_at_price %}
             <span class="compare-price">{{ product.compare_at_price | money }}</span>
+            {% assign discount_percentage = 100 | minus: (product.selected_or_first_available_variant.price | times: 100) | divided_by: product.compare_at_price %}
+              <span class="discount-percentage">{{ discount_percentage | round }}%</span>           
           {% endif %}
         </div>
       {% when 'viewerStockCount' %}
