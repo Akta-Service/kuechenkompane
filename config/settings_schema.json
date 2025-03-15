@@ -3734,7 +3734,7 @@
       },
       {
         "type": "select",
-        "id": "font_weight",
+        "id": "t_font_weight",
         "label": "Font Weight",
         "default": "400",
         "options": [
