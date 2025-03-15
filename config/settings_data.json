@@ -10,6 +10,7 @@
 {
   "current": {
     "favicon": "shopify://shop_images/Kuechenkompane_Logo2023_Transparent_background_V3_1.png",
+    "mrk_h1_font_weight": "600",
     "h2_size_desktop": 38,
     "h2_size_mobile": 24,
     "h3_size_desktop": 26,
@@ -65,9 +66,8 @@
     "social_snapchat_link": "",
     "social_youtube_link": "",
     "social_tiktok_link": "https://www.tiktok.com/@kuechenkompane",
-    "cart_free_shipping_rule": 1000,
-    "cart_free_product_1": "bundle-premium-akarui",
-    "cart_free_product_2": "",
+    "cart_free_product_1": "free-product-1",
+    "cart_free_product_2": "free-product-2",
     "cart_cross_sell_heading": "Choose Your Fav Products",
     "cart_cross_sell_collection": "messerset",
     "empty_cart_collection": "messerset",
