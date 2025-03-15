@@ -36,7 +36,11 @@
       "blocks": {
         "title_Bac9Mk": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "p_t_s": 32,
+            "p_t_s_m": 20,
+            "font_weight_t": "400"
+          }
         },
         "subtitle_xQXVba": {
           "type": "subtitle",
@@ -48,7 +52,9 @@
         "review_Tgbbak": {
           "type": "review",
           "settings": {
-            "p": "4.9/5 Sternen"
+            "p": "4.9/5 Sternen",
+            "star_range": 5,
+            "star_color": "#000000"
           }
         },
         "ratings_fD4VNJ": {
@@ -69,7 +75,12 @@
             "p_pt": 5,
             "p_pb": 5,
             "p_pt_m": 5,
-            "p_pb_m": 5
+            "p_pb_m": 5,
+            "price_color": "#008000",
+            "c_price_color": "#008000",
+            "per_badge_bg": "#008000",
+            "per_badge_color": "#000000",
+            "font_weight": "900"
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -174,7 +185,6 @@
       ],
       "settings": {
         "color_scheme": "default",
-        "heading_type": "mrk-h3",
         "container": "container",
         "layout": "layout-6",
         "show_atwl": true,
@@ -1052,7 +1062,8 @@
         "title": "Vertraut von",
         "title_highlight": "+140K Kunden",
         "heading_type": "mrk-h2",
-        "h_text_color": "#fa8526"
+        "h_text_color": "#fa8526",
+        "arrow_icon_color": "#000000"
       }
     },
     "cta_final_9B8iN9": {
