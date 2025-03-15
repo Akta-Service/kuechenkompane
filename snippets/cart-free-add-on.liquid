@@ -170,6 +170,9 @@
     .x-cart-add-on-container{
       gap: 5px;
     }
+    .x-cart-comming-label {    
+    font-size: {{settings.cfp_spend_text_sise_m | append:'px'}};   
+  }
   }
 </style>
 
@@ -256,29 +259,29 @@
 <!-- Spend More Message -->
 {% if cart_total < free_shipping_rule %}
   <div class="x-cart-comming-label">
-    Spend &nbsp;
+    {{ settings.Spend_text }} &nbsp;
     <b>
       {{- cart.currency.symbol -}}
       {{- free_shipping_rule | minus: cart_total -}}
     </b>
-    &nbsp; more for &nbsp; <b>{{ settings.cart_free_shipping_label }}</b>
+    &nbsp;  {{ settings.more_for }} &nbsp; <b>{{ settings.cart_free_shipping_label }}</b>
   </div>
 {% elsif cart_total < free_product_1_rule %}
   <div class="x-cart-comming-label">
-    Spend &nbsp;
+   {{ settings.Spend_text }}
     <b>
       {{- cart.currency.symbol -}}
       {{- free_product_1_rule | minus: cart_total -}}
     </b>
-    &nbsp; more for &nbsp; <b>{{ settings.cart_free_product_1_label }}</b>
+    &nbsp; {{ settings.more_for }} <b>{{ settings.cart_free_product_1_label }}</b>
   </div>
 {% elsif cart_total < free_product_2_rule %}
   <div class="x-cart-comming-label">
-    Spend &nbsp;
+   {{ settings.Spend_text }}
     <b>
       {{- cart.currency.symbol -}}
       {{- free_product_2_rule | minus: cart_total -}}
     </b>
-    &nbsp; more for &nbsp; <b>{{ settings.cart_free_product_2_label }}</b>
+    &nbsp; {{ settings.more_for }} <b>{{ settings.cart_free_product_2_label }}</b>
   </div>
 {% endif %}
