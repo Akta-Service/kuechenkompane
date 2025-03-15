@@ -138,10 +138,7 @@ select {
 }
 
 .rs-product-title {
-  font-size: 22px;
-  font-weight: 700;
   margin-bottom: 15px;
-  font-family: "grotesk", sans-serif !important;
 }
 
 .rs-product-subtitle {
