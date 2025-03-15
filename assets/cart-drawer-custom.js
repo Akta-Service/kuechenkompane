@@ -9,9 +9,17 @@ window.cart_cross_sell_swiper = () => {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        600: {
+          slidesPerView: 2.2,
+        },
+      },
     });
   } else {
-    console.log("ccs swiper element not found")
+    console.log("ccs swiper element not found");
   }
 };
 
