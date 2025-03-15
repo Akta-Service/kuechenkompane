@@ -74,7 +74,8 @@
             "p_pb_m": 5,
             "price_color": "#3a8735",
             "c_price_color": "#da3f3f",
-            "per_badge_bg": "#bbbbbb"
+            "per_badge_bg": "#bbbbbb",
+            "per_badge_color": "#000000"
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -246,7 +247,7 @@
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": true,
+        "add_showore_btn": false,
         "br_color": "#000000",
         "icon_color": "#000000"
       }
