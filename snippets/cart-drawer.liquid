@@ -22,7 +22,10 @@
   font-weight: {{ settings.t_font_weight }};
  }
 @media only screen and (max-width:768px){
-  font-size: {{ settings.b_text_size_m |  append: 'px' }};
+  .c_bootom_list li span {
+    font-size: {{ settings.b_text_size_m |  append: 'px' }};
+ }
+  
 }
 </style>
 <m-cart-drawer id="MinimogCartDrawer" class="m-cart-drawer{% if cart == empty %} m-cart--empty{% endif %}">
