@@ -80,7 +80,9 @@
             "c_price_color": "#008000",
             "per_badge_bg": "#008000",
             "per_badge_color": "#000000",
-            "font_weight": "900"
+            "f_s": 16,
+            "f_s_m": 16,
+            "price_font_weight": "900"
           }
         },
         "viewer_stock_count_MFNhKz": {
