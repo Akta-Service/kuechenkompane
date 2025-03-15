@@ -59,3 +59,7 @@ m-cart-drawer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+.c_bootom_list {
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
