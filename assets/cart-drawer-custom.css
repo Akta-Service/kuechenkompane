@@ -31,8 +31,7 @@ m-cart-drawer {
   .m-cart-drawer__header,
   .m-cart-drawer__body,
   .m-cart-drawer__footer {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding: 5px 10px !important;
   }
 }
 .m-cart-item {

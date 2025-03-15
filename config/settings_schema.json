@@ -3555,6 +3555,16 @@
         "default": 16
       },
       {
+        "type": "range",
+        "id": "cfp_spend_text_sise_m",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Spend Font size (Mobile)",
+        "default": 16
+      },
+      {
         "type": "header",
         "content": "Cross sell Collection"
       },
