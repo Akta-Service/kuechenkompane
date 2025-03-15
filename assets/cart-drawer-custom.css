@@ -27,6 +27,14 @@ m-cart-drawer {
     width: 475px;
   }
 }
+@media screen and (max-width: 768px) {
+  .m-cart-drawer__header,
+  .m-cart-drawer__body,
+  .m-cart-drawer__footer {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
 .m-cart-item {
   padding: 20px 0 !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);

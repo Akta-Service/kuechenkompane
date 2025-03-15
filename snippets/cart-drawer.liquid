@@ -20,8 +20,10 @@
   color: {{ settings.b_text_color }};
   font-size: {{ settings.b_text_size |  append: 'px' }};
   font-weight: {{ settings.t_font_weight }};
+ }
+@media only screen and (max-width:768px){
+  font-size: {{ settings.b_text_size_m |  append: 'px' }};
 }
-
 </style>
 <m-cart-drawer id="MinimogCartDrawer" class="m-cart-drawer{% if cart == empty %} m-cart--empty{% endif %}">
   <div class="m-cart-drawer__inner m:h-full m-gradient m-color-{{ settings.drawer_popup_color_scheme }}">
