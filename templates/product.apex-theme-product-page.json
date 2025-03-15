@@ -36,7 +36,11 @@
       "blocks": {
         "title_Bac9Mk": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "p_t_s": 32,
+            "p_t_s_m": 20,
+            "font_weight_t": "400"
+          }
         },
         "subtitle_xQXVba": {
           "type": "subtitle",
@@ -75,8 +79,11 @@
             "p_pb_m": 5,
             "price_color": "#3a8735",
             "c_price_color": "#da3f3f",
-            "per_badge_bg": "#bbbbbb",
-            "per_badge_color": "#000000"
+            "per_badge_bg": "#000000",
+            "per_badge_color": "#ffffff",
+            "f_s": 16,
+            "f_s_m": 16,
+            "price_font_weight": "900"
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -185,7 +192,6 @@
       ],
       "settings": {
         "color_scheme": "default",
-        "heading_type": "mrk-h3",
         "container": "container",
         "layout": "layout-6",
         "show_atwl": true,
