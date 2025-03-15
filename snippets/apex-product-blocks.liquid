@@ -42,23 +42,25 @@
   }
   .rs-price .rs-current-price{
     color: {{ block.settings.price_color }};
+    font-weight: {{ block.settings.price_font_weight }};
+    font-size: {{ block.settings.f_s |  append: 'px' }};
   }
   .rs-price .rs-compare-price{
     color: {{ block.settings.c_price_color }};
+    font-weight: {{ block.settings.price_font_weight }};
     text-decoration: line-through;
     margin-right: 3px;
+    font-size: {{ block.settings.f_s |  append: 'px' }};
   }
   span.discount-percentage {
     display: inline-block;
     background: {{ block.settings.per_badge_bg }};
     color: {{ block.settings.per_badge_color }};
+    font-weight: {{ block.settings.price_font_weight }};
     border-radius: 14px;
     padding: 3px 7px;
     line-height: 1;
-  }
-  .rs-price span {
-    font-weight: {{ block.settings.price_font_weight }};
-  }
+  }  
 
   .rs-product-title{
     font-size: {{ block.settings.p_t_s |  append: 'px'}};
@@ -76,6 +78,12 @@
     .rs-product-title{
       font-size: {{ block.settings.p_t_s_m | append: 'px' }};
     }
+    .rs-price .rs-current-price{   
+    font-size: {{ block.settings.f_s_m |  append: 'px' }};
+  }
+  .rs-price .rs-compare-price{   
+    font-size: {{ block.settings.f_s_m |  append: 'px' }};
+  }
 
   }
   /* -------------- */
