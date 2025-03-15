@@ -102,6 +102,7 @@
         },
         "featurelist_header_tfxtpf": {
           "type": "featurelist_header",
+          "disabled": true,
           "settings": {
             "featureHeader": "30 Tage Zufriedenheitsgarantie",
             "featurelist_header_size": 14,
@@ -113,6 +114,7 @@
         },
         "featurelist_item_iiW6aD": {
           "type": "featurelist_item",
+          "disabled": true,
           "settings": {
             "featurelist_item": "{{ product.metafields.custom.list_1st_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
@@ -122,6 +124,7 @@
         },
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
+          "disabled": true,
           "settings": {
             "featurelist_item": "<p>{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}</p>",
             "featurelist_item_color": "#000000",
@@ -131,6 +134,7 @@
         },
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
+          "disabled": true,
           "settings": {
             "featurelist_item": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
