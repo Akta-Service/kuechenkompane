@@ -15,7 +15,13 @@
     assign items_in_cart = cart.item_count | minus: gift_wraps_in_cart
   endif
 %}
+<style>
+  .c_bootom_list li span {
+  color: {{ settings.b_text_color }};
+  font-size: {{ settings.b_text_size |  append: 'px' }};
+}
 
+</style>
 <m-cart-drawer id="MinimogCartDrawer" class="m-cart-drawer{% if cart == empty %} m-cart--empty{% endif %}">
   <div class="m-cart-drawer__inner m:h-full m-gradient m-color-{{ settings.drawer_popup_color_scheme }}">
     <button class="m-cart-drawer__close" aria-label="Close">
@@ -221,28 +227,24 @@
         <div class="c_bootom_list">
           <ul>
             <li>
-              <span>
-                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="2">
-                  <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="none"/>
-                  <circle cx="9" cy="10" r="1" fill="black"/>
-                  <circle cx="15" cy="10" r="1" fill="black"/>
-                  <path d="M8 15 C9.5 17, 14.5 17, 16 15" stroke="black" stroke-width="2" fill="none"/>
-                </svg>
-
-              </span>
+              <span>   
+                {% if  settings.list_img_2 != blank %}            
+                <img src="{{ settings.list_img_1 | img_url: 'master' }}" alt="icon">
+                {% elsif settings.list_svg_1 != blank %}
+                  {{ settings.list_svg_1 }}
+              {% endif %}
+              </span>             
               <span>
                 {{ settings.list_1 }}
               </span>
             </li>
             <li>
               <span>
-                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="2">
-                  <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="none"/>
-                  <circle cx="9" cy="10" r="1" fill="black"/>
-                  <circle cx="15" cy="10" r="1" fill="black"/>
-                  <path d="M8 15 C9.5 17, 14.5 17, 16 15" stroke="black" stroke-width="2" fill="none"/>
-                </svg>
-
+                {% if  settings.list_img_2 != blank %}
+                <img src="{{ settings.list_img_2 | img_url: 'master' }}" alt="icon">
+                {% elsif settings.list_svg_2 != blank %}
+                  {{ settings.list_svg_2 }}
+                {% endif %}
               </span>
               <span>
                 {{ settings.list_2 }}

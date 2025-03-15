@@ -45,3 +45,17 @@ m-cart-drawer {
 .m-cart-item--drawer__wrapper {
   align-items: center !important;
 }
+.c_bootom_list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.c_bootom_list li svg,
+.c_bootom_list li img {
+  width: 30px;
+  height: 30px;
+}
+.c_bootom_list ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

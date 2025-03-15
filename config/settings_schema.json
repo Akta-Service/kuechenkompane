@@ -3685,10 +3685,52 @@
         "default": "365 tage garantie"
       },
       {
+        "type": "image_picker",
+        "id": "list_img_1",
+        "label": "List Icon"
+      },
+      {
+        "type": "textarea",
+        "id": "list_svg_1",
+        "label": "List Item SVG",
+        "info": "Paste your SVG code here."
+      },
+      {
         "type": "text",
         "id": "list_2",
         "label": "List 2 Text",
         "default": "Kostenloser Versand"
+      },
+      {
+        "type": "image_picker",
+        "id": "list_img_2",
+        "label": "List Icon"
+      },
+      {
+        "type": "textarea",
+        "id": "list_svg_2",
+        "label": "List Item SVG",
+        "info": "Paste your SVG code here."
+      },
+      {
+        "type": "header",
+        "content": "Typography"
+      },
+      {
+        "type": "range",
+        "id": "b_text_size",
+        "label": "Text Size",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "b_text_color",
+        "label": "Text Color",
+        "default": "#000000"
       }
     ]
   },
