@@ -3446,6 +3446,16 @@
         "content": "Cart drawer"
       },
       {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color scheme"
+      },
+      {
+        "type": "color_scheme",
+        "id": "content_color_scheme",
+        "label": "Content color scheme"
+      },
+      {
         "type": "checkbox",
         "id": "enable_cart_drawer",
         "label": "Enable cart drawer",
@@ -3595,12 +3605,6 @@
         "unit": "px",
         "label": "Heading Font size",
         "default": 18
-      },
-      {
-        "type": "color",
-        "id": "ccs_heading_text_color",
-        "label": "Heading Font Color",
-        "default": "#000000"
       },
       {
         "type": "collection",

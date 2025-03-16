@@ -12,8 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 8px;
-    background-color: #fff;
+    border-radius: 8px;    
     padding: 12px 0 16px;
     position: relative;
     border: 1px solid rgba(0,0,0,.1);
@@ -91,8 +90,7 @@
     font-size: {{settings.cfp_text_sise | append: 'px'}};
     line-height: 14px;
     letter-spacing: -0.02em;
-    text-align: center;
-    color: {{settings.cfp_text_color}};
+    text-align: center;   
     margin-bottom: 4px;
     margin-top: 8px;
   }
@@ -106,8 +104,7 @@
     font-size: {{settings.cfp_text_sise | append: 'px'}};
     line-height: 14px;
     letter-spacing: -0.02em;
-    text-align: center;
-    color: {{settings.cfp_text_color}};
+    text-align: center;    
   }
 
   .x-cart-add-on-checked {
@@ -131,8 +128,7 @@
     padding: 3px 3px;
     svg{
       width: 17px;
-      height: 17px;
-      color: #fff;
+      height: 17px;      
     }
   }
 
@@ -151,8 +147,7 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 15px 0;
-    color: {{settings.cfp_text_color}};
+    padding: 15px 0;    
     font-size: {{settings.cfp_spend_text_sise | append:'px'}};
     position: relative;
   }
@@ -191,7 +186,7 @@
 
 <div class="x-cart-add-on-container">
   {% if settings.cart_free_shipping_label != blank %}
-    <div class="x-cart-add-on-item {% if cart_total >= free_shipping_rule %}active{% else %}comming{% endif %}">
+    <div class="x-cart-add-on-item {% if cart_total >= free_shipping_rule %}active{% else %}comming{% endif %}  m-color-{{ settings.content_color_scheme }} {% if settings.content_color_scheme != settings.color_scheme %}m-custom-content__boxed{% endif %}">
       <div class="x-cart-add-on-icon-wrapper">
         {% render 'free-shipping-icon' %}
       </div>
@@ -216,7 +211,7 @@
     </div>
   {% endif %}
   {% unless settings.cart_free_product_1 == blank %}
-    <div class="x-cart-add-on-item {% if cart_total >= free_product_1_rule %}active{% elsif cart_total >= free_shipping_rule %}comming{% endif %}">
+    <div class="x-cart-add-on-item {% if cart_total >= free_product_1_rule %}active{% elsif cart_total >= free_shipping_rule %}comming{% endif %}  m-color-{{ settings.content_color_scheme }} {% if settings.content_color_scheme != settings.color_scheme %}m-custom-content__boxed{% endif %}">
       <div class="x-cart-add-on-icon-wrapper">
         {% unless settings.cart_free_product_1.featured_image == blank %}
           {{ settings.cart_free_product_1.featured_image | image_url: width: 70 | image_tag: loading: 'lazy' }}
@@ -238,7 +233,7 @@
     </div>
   {% endunless %}
   {% unless settings.cart_free_product_2 == blank %}
-    <div class="x-cart-add-on-item {% if cart_total >= free_product_2_rule %}active{% elsif cart_total >= free_product_1_rule %}comming{% endif %}">
+    <div class="x-cart-add-on-item {% if cart_total >= free_product_2_rule %}active{% elsif cart_total >= free_product_1_rule %}comming{% endif %}  m-color-{{ settings.content_color_scheme }} {% if settings.content_color_scheme != settings.color_scheme %}m-custom-content__boxed{% endif %}">
       <div class="x-cart-add-on-icon-wrapper">
         {% unless settings.cart_free_product_2.featured_image == blank %}
           {{ settings.cart_free_product_2.featured_image | image_url: width: 70 | image_tag: loading: 'lazy' }}
