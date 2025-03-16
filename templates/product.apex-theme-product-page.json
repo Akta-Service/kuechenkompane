@@ -258,7 +258,7 @@
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": false,
+        "add_showore_btn": true,
         "br_color": "#000000",
         "icon_color": "#000000"
       }
