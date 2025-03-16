@@ -16,8 +16,7 @@
   endif
 %}
 <style>
-  .c_bootom_list li span {
-  color: {{ settings.b_text_color }};
+  .c_bootom_list li span { 
   font-size: {{ settings.b_text_size |  append: 'px' }};
   font-weight: {{ settings.t_font_weight }};
  }
@@ -35,8 +34,8 @@
   
 }
 </style>
-<m-cart-drawer id="MinimogCartDrawer" class="m-cart-drawer{% if cart == empty %} m-cart--empty{% endif %}">
-  <div class="m-cart-drawer__inner m:h-full m-gradient m-color-{{ settings.drawer_popup_color_scheme }}">
+<m-cart-drawer id="MinimogCartDrawer" class="m-cart-drawer{% if cart == empty %} m-cart--empty{% endif %} ">
+  <div class="m-cart-drawer__inner m:h-full m-gradient m-color-{{ settings.color_scheme }}">
     <button class="m-cart-drawer__close" aria-label="Close">
       <svg
         class="m-svg-icon--large"
