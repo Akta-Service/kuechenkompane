@@ -199,7 +199,11 @@
         <span class="x-cart-info-label">{{ settings.cart_free_shipping_label }}</span>
         <span class="x-cart-info-rule">
           {{- cart.currency.symbol -}}
-          {{- settings.cart_free_shipping_rule -}}
+
+          {% if settings.cart_free_shipping_rule > 0 %}
+            {{- settings.cart_free_shipping_rule -}}
+          {% endif %}
+
         </span>
       </div>
       <div class="x-cart-add-on-checked">
