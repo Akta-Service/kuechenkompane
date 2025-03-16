@@ -38,8 +38,7 @@
     margin-bottom: 50px;
   }
 
-  .trustpilot-testimonials-item {
-    background-color: #f8f9fa;
+  .trustpilot-testimonials-item {    
     border-radius: 2px;
     box-shadow: 0 1px 0 0 rgba(182, 196, 210, 0.4);
     line-height: 16px;
@@ -48,8 +47,7 @@
   }
 
   .trustpilot-title {
-    font-size: {{ section.settings.t_size }}px;
-    color: {{ section.settings.t_color }};
+    font-size: {{ section.settings.t_size }}px;   
     text-transform: uppercase;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -84,13 +82,11 @@
     height: 14px;
   }
 
-  .review-verified span {
-    color: #6c6c85;
+  .review-verified span {   
     font-size: 13px;
   }
 
-  .testimonial-title {
-    color: #1f2936;
+  .testimonial-title {   
     font-size: 14px;
     font-weight: 700;
     height: 16px;
@@ -100,8 +96,7 @@
     white-space: nowrap;
   }
 
-  .testimonial-content p {
-    color: #191919;
+  .testimonial-content p {    
     font-size: 13px;
     line-height: 16px;
     max-height: 50px;
@@ -119,12 +114,11 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 12px;
-    color: #00000099;
+   
   }
 
   .testimonial-date {
-    font-size: 12px;
-    color: #00000099;
+    font-size: 12px;    
   }
 
   .swiper-button-next svg {
@@ -156,6 +150,10 @@
   .best-sell-product {
     overflow: visible;
   }
+  .trustpilot-area .swiper-button-next svg path,
+  .trustpilot-area .swiper-button-prev svg path{
+    fill: {{ section.settings.arrow_icon_color }};
+  }
   @media only screen and (max-width: 767px) {
     .trustpilot-area .container {
       padding: 0 20px;
@@ -183,10 +181,10 @@
   }
 </style>
 
-<div class="trustpilot-area">
+<div class="trustpilot-area m-color-{{ section.settings.color_scheme }}">
   <div class="container">
     <div class="trustpilot-heading">
-      <h3 class="trustpilot-title">
+      <h3 class="trustpilot-title {{ section.settings.heading_type }}">
         {{ section.settings.title }}
         <span class="highligt-text">{{ section.settings.title_highlight }}</span>
       </h3>
@@ -196,7 +194,7 @@
         <div class="trustpilot-testimonials-list swiper-wrapper">
           {% comment %} loop slide  {% endcomment %}
           {% for block in section.blocks %}
-            <div class="trustpilot-testimonials-item swiper-slide">
+            <div class="trustpilot-testimonials-item swiper-slide  m-color-{{ section.settings.content_color_scheme }} {% if section.settings.content_color_scheme != section.settings.color_scheme %}m-custom-content__boxed{% endif %}">
               <div class="testimonial-review">
                 <div class="review-star">
                   <svg role="img" viewBox="0 0 251 46" xmlns="http://www.w3.org/2000/svg">
@@ -311,6 +309,16 @@
   "name": "APEX Trustp- Testimonial",
   "settings": [
     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "content_color_scheme",
+      "label": "Content color scheme"
+    },
+    {
       "type": "header",
       "content": "Section Spacing"
     },
@@ -367,25 +375,48 @@
       "default": "+2M CUSTOMERS"
     },
     {
-      "type": "range",
-      "id": "t_size",
-      "label": "Title Font Size",
-      "default": 32,
-      "min": 10,
-      "max": 100,
-      "step": 1
-    },
-    {
-      "type": "color",
-      "id": "t_color",
-      "label": "Title Color",
-      "default": "#202223"
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
     },
     {
       "type": "color",
       "id": "h_text_color",
       "label": "Highlight Text Color",
       "default": "#ff6723"
+    },
+    {
+      "type": "color",
+      "id": "arrow_icon_color",
+      "label": "Arrow Icon Color",
+      "default": "#000000"
     }
   ],
   "blocks": [

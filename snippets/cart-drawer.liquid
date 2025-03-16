@@ -15,6 +15,26 @@
     assign items_in_cart = cart.item_count | minus: gift_wraps_in_cart
   endif
 %}
+<style>
+  .c_bootom_list li span {
+  color: {{ settings.b_text_color }};
+  font-size: {{ settings.b_text_size |  append: 'px' }};
+  font-weight: {{ settings.t_font_weight }};
+ }
+@media only screen and (max-width:768px){
+  .c_bootom_list li span {
+    font-size: {{ settings.b_text_size_m |  append: 'px' }};
+ }
+ .c_bootom_list li svg, .c_bootom_list li img {
+    width: 16px !important;
+    height: 16px !important;
+ }
+ .c_bootom_list li {    
+    gap: 3px;
+ }
+  
+}
+</style>
 <m-cart-drawer id="MinimogCartDrawer" class="m-cart-drawer{% if cart == empty %} m-cart--empty{% endif %}">
   <div class="m-cart-drawer__inner m:h-full m-gradient m-color-{{ settings.drawer_popup_color_scheme }}">
     <button class="m-cart-drawer__close" aria-label="Close">
@@ -36,10 +56,18 @@
         {% endif %}
         <foxkit-cart-goal></foxkit-cart-goal>
       </div>
+
       <m-cart-drawer-items
         data-minimog-cart-items
         class="m-cart-drawer__body m-scrollbar--vertical m:flex m:flex-col m:flex-1"
       >
+        {% if cart.item_count == 0 %}
+          {% render 'cart-drawer-empty' %}
+        {% endif %}
+
+        {% if cart.total_price > 0 %}
+          {% render 'cart-free-add-on' %}
+        {% endif %}
         <form action="{{ routes.cart_url }}" method="post" id="cart-drawer-form" class="m:w-full" novalidate>
           {%- if cart.items.size > 0 -%}
             <div class="m-cart-drawer__items">
@@ -58,9 +86,13 @@
             </div>
           {%- endif -%}
         </form>
+        {% if cart.total_price > 0 %}
+          {% render 'cart-addons', form_id: 'cart-drawer-form' %}
+          {% render 'cart-cross-sell' %}
+        {% endif %}
       </m-cart-drawer-items>
       <div class="m-cart-drawer__footer" id="MinimogCartDrawerFooter">
-        {% render 'cart-addons', form_id: 'cart-drawer-form' %}
+        {% # render 'cart-addons', form_id: 'cart-drawer-form' %}
         <div class="m-cart-drawer__gift-wrapping" data-minimog-gift-wrapping>
           {%- if gift_wrapping != null -%}
             <m-gift-wrapping-component
@@ -205,8 +237,41 @@
             >
           </div>
         {% endif %}
+        <div class="c_bootom_list">
+          <ul>
+            <li>
+              <span>   
+                {% if  settings.list_img_2 != blank %}            
+                <img src="{{ settings.list_img_1 | img_url: 'master' }}" alt="icon">
+                {% elsif settings.list_svg_1 != blank %}
+                  {{ settings.list_svg_1 }}
+              {% endif %}
+              </span>             
+              <span>
+                {{ settings.list_1 }}
+              </span>
+            </li>
+            <li>
+              <span>
+                {% if  settings.list_img_2 != blank %}
+                <img src="{{ settings.list_img_2 | img_url: 'master' }}" alt="icon">
+                {% elsif settings.list_svg_2 != blank %}
+                  {{ settings.list_svg_2 }}
+                {% endif %}
+              </span>
+              <span>
+                {{ settings.list_2 }}
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="m-cart__overlay"></div>
     </div>
   </div>
 </m-cart-drawer>
+
+{{ 'cart-drawer-custom.css' | asset_url | stylesheet_tag }}
+{{ 'cart-drawer-custom.js' | asset_url | script_tag }}
+
+

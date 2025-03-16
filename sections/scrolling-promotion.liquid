@@ -24,12 +24,12 @@
 </style>
 <section
   id="m-section--{{ section.id }}"
-  class="{{ classes }}"
+  class="{{ classes }} m-section-py"
   data-section-type="scrolling-promotion"
   data-section-id="{{ section.id }}"
 >
-  <div class="gesehen-in">Gesehen in</div>
-  <div class="{{ container }} m-section-py">
+  <div class="gesehen-in {{ section.settings.heading_type }}">Gesehen in</div>
+  <div class="{{ container }} ">
     <m-scrolling-promotion
       class="m-scrolling-promotion m-scrolling-promotion--{{ section.settings.direction }}"
     >
@@ -130,6 +130,38 @@
 {
   "name": "Scrolling promotion",
   "settings": [
+    {
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
+    },
     {
       "type": "paragraph",
       "content": "[Read How-to](https://foxecom.link/o58aIR)"

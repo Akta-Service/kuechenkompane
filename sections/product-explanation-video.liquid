@@ -1,11 +1,11 @@
 <style>
     /* product-explanation-video-section */
-    .product-explanation-video-section {
-      background: {{ section.settings.bg_color }} ;
-      padding: {{ section.settings.vertical_padding }}px 15px;
-    }
+  .product-explanation-video-section {
+    background: {{ section.settings.bg_color }} ;
+    padding: {{ section.settings.vertical_padding }}px 15px;
+  }
 
-    .product-explanation-video-main {
+  .product-explanation-video-main {
     max-width: 712px;
     width: 100%;
     margin: 0 auto;
@@ -20,16 +20,14 @@
 
   .product-explanation-video-uppercnt h6 {
     font-size: 16px;
-    font-weight: 500;
-    color: #121212;
+    font-weight: 500;   
     margin-bottom: 6px;
     text-align: center;
   }
 
   .product-explanation-video-title {
     font-size: {{ section.settings.heading_size}}px;
-    font-weight: 500;
-    color: {{ section.settings.heading_color }};
+    font-weight: 500;  
     margin: 0;
     text-align: center;
     font-family: sans-serif;
@@ -37,8 +35,7 @@
 
   .product-explanation-video-uppercnt p {
     font-size: 18px;
-    font-weight: 400;
-    color: #454545;
+    font-weight: 400;   
     text-align: center;
     margin: 16px 0px 30px;
   }
@@ -60,10 +57,6 @@
       font-size: 14px;
     }
 
-    .product-explanation-video-title {
-      font-size: {{ section.settings.heading_size_mobile |  default: '34'}}px;
-    }
-
     .product-explanation-video-uppercnt p {
       font-size: 16px;
     }
@@ -73,8 +66,7 @@
           {% when 'heading' %}
             .akta-{{ section.id}} .heading-font{{forloop.index}} {
     font-size: {{ c.settings.h1_font_size }}px;
-    font-weight: {{ c.settings.h1_font_weight }};
-    color: {{ c.settings.h1_font_color }};
+    font-weight: {{ c.settings.h1_font_weight }};    
     text-align: {{ c.settings.h1_text_align }};
     padding-top: {{ c.settings.padding_top }}px;
     padding-bottom: {{ c.settings.padding_bottom }}px;
@@ -96,11 +88,10 @@
     }
   }
 
-          {% when 'details' %}
-            .akta-{{ section.id}} .description-font{{forloop.index}} {
+    {% when 'details' %}
+  .akta-{{ section.id}} .description-font{{forloop.index}} {
     font-size: {{ section.settings.p_font_size }}px;
-    font-weight: {{ section.settings.p_font_weight }};
-    color: {{ section.settings.p_font_color }};
+    font-weight: {{ section.settings.p_font_weight }};   
     text-align: {{ section.settings.p_text_align }};
     line-height: {{ section.settings.p_line_height }};
     padding-top: {{ section.settings.p_padding_top }}px;
@@ -129,62 +120,64 @@
 </style>
 
 <!-- product-explanation-video-section start -->
-<div class="product-explanation-video-section akta-{{ section.id}}">
-  <div class="product-explanation-video-main">
-    <div class="product-explanation-video-uppercnt">
+ <div class="m-color-{{ section.settings.color_scheme }}">
+  <div class="product-explanation-video-section akta-{{ section.id}}">
+    <div class="product-explanation-video-main">
+      <div class="product-explanation-video-uppercnt">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'sub_heading' %}
+              <h6 style="font-size:{{- block.settings.sub_heading_size -}}px ; ">
+                {{ block.settings.sub_heading }}
+              </h6>
+              {% comment %} product-explanation-video-title {% endcomment %}
+            {% when 'heading' %}
+              <h3
+                class=" {{ section.settings.heading_type }}"
+              >
+                {{ block.settings.heading }}
+              </h3>
+              {% comment %} parapgh-one {% endcomment %}
+            {% when 'details' %}
+              <p
+                class="description-font{{forloop.index}}"
+                style="font-size:{{- block.settings.details_size -}}px ; "
+              >
+                {{ block.settings.details }}
+              </p>
+          {% endcase %}
+        {% endfor %}
+      </div>
       {% for block in section.blocks %}
         {% case block.type %}
-          {% when 'sub_heading' %}
-            <h6 style="color: {{ block.settings.sub_heading_color }}; font-size:{{- block.settings.sub_heading_size -}}px ; ">
-              {{ block.settings.sub_heading }}
-            </h6>
-            {% comment %} product-explanation-video-title {% endcomment %}
-          {% when 'heading' %}
-            <h3
-              class=" heading-font{{forloop.index}}"
-            >
-              {{ block.settings.heading }}
-            </h3>
-            {% comment %} parapgh-one {% endcomment %}
-          {% when 'details' %}
-            <p
-              class="description-font{{forloop.index}}"
-              style="color: {{ block.settings.details_color }}; font-size:{{- block.settings.details_size -}}px ; "
-            >
-              {{ block.settings.details }}
-            </p>
+          {% when 'video' %}
+            <div class="product-explanation-video-item">
+              <video
+                {% if block.settings.autoplay %}
+                  autoplay
+                {% endif %}
+                {% if block.settings.loop %}
+                  loop
+                {% endif %}
+                {% if block.settings.muted %}
+                  muted
+                {% endif %}
+                {% if block.settings.playsinline %}
+                  playsinline
+                {% endif %}
+                {% if block.settings.controls %}
+                  controls
+                {% endif %}
+                {% if block.settings.explanation_video_poster %}
+                  poster="{{ block.settings.explanation_video_poster | img_url : 'master'  }}"
+                {% endif %}
+              >
+                <source src="{{ block.settings.video_url }}" type="video/mp4">
+              </video>
+            </div>
         {% endcase %}
       {% endfor %}
     </div>
-    {% for block in section.blocks %}
-      {% case block.type %}
-        {% when 'video' %}
-          <div class="product-explanation-video-item">
-            <video
-              {% if block.settings.autoplay %}
-                autoplay
-              {% endif %}
-              {% if block.settings.loop %}
-                loop
-              {% endif %}
-              {% if block.settings.muted %}
-                muted
-              {% endif %}
-              {% if block.settings.playsinline %}
-                playsinline
-              {% endif %}
-              {% if block.settings.controls %}
-                controls
-              {% endif %}
-              {% if block.settings.explanation_video_poster %}
-                poster="{{ block.settings.explanation_video_poster | img_url : 'master'  }}"
-              {% endif %}
-            >
-              <source src="{{ block.settings.video_url }}" type="video/mp4">
-            </video>
-          </div>
-      {% endcase %}
-    {% endfor %}
   </div>
 </div>
 <!-- product-explanation-video-section end -->
@@ -194,10 +187,9 @@
   "name": "APEX Pr Explanation Video",
   "settings": [
     {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background color",
-      "default": "#ffffff"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
     },
     {
       "type": "range",
@@ -221,31 +213,40 @@
     {
       "type": "header",
       "content": "Heading"
-    },
+    },  
     {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Color",
-      "default": "#000000"
-    },
-    {
-      "type": "range",
-      "id": "heading_size",
-      "label": "Font Size",
-      "default": 54,
-      "min": 10,
-      "max": 100,
-      "step": 1
-    },
-    {
-      "type": "range",
-      "id": "heading_size_mobile",
-      "label": "Font Size Mobile",
-      "default": 34,
-      "min": 10,
-      "max": 100,
-      "step": 1
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
     }
+    
   ],
   "blocks": [
     {
@@ -258,12 +259,7 @@
           "label": "Sub Heading",
           "default": "Maniko - Explained in 2 Minutes"
         },
-        {
-          "type": "color",
-          "id": "sub_heading_color",
-          "label": "Color",
-          "default": "#000000"
-        },
+       
         {
           "type": "range",
           "id": "sub_heading_size",
@@ -332,12 +328,7 @@
           ],
           "default": "600"
         },
-        {
-          "type": "color",
-          "id": "h1_font_color",
-          "label": "Heading Font Color",
-          "default": "#000000"
-        },
+       
         {
           "type": "select",
           "id": "h1_text_align",
@@ -426,13 +417,7 @@
           "id": "details",
           "label": "Details",
           "default": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:"
-        },
-        {
-          "type": "color",
-          "id": "details_color",
-          "label": "Color",
-          "default": "#000000"
-        },
+        },        
         {
           "type": "range",
           "id": "details_size",
@@ -488,13 +473,7 @@
             { "value": "900", "label": "Black 900" }
           ],
           "default": "400"
-        },
-        {
-          "type": "color",
-          "id": "p_font_color",
-          "label": "Paragraph Font Color",
-          "default": "#333333"
-        },
+        },        
         {
           "type": "select",
           "id": "p_text_align",

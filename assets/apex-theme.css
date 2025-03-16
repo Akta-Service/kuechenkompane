@@ -84,7 +84,6 @@ img.magazine-title-img {
   font-size: 26px;
   font-weight: 700;
   font-style: italic;
-  color: #121212;
   line-height: 1.5;
 }
 
@@ -152,18 +151,14 @@ img.magazine-title-img {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-}
-@media only screen and (max-width: 750px) {
-  .usp-list-main {
-    align-items: start;
-  }
 }
 
 .usp-list-item {
   text-align: center;
   position: relative;
+  height: auto;
 }
 
 .usp-list-item img {
@@ -203,6 +198,7 @@ img.magazine-title-img {
   height: 92px;
   display: block;
   border: 1px solid #eaeaea;
+  margin: auto;
 }
 
 /* faq css  */
@@ -337,7 +333,7 @@ span.faq-icon {
   .usp-list-main {
     flex-wrap: nowrap;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     align-content: center;
     gap: 16px;
     overflow-x: auto;
@@ -361,6 +357,7 @@ span.faq-icon {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
+    height: auto;
   }
 
   .usp-list-border {
@@ -533,6 +530,8 @@ a.m-button.m-button--primary:hover {
 }
 .gesehen-in {
   font-family: var(--font-stack-header);
+  text-align: center;
+  padding-bottom: 15px;
 }
 @media only screen and (max-width: 768px) {
   .apex-product-page .m-product-media {
@@ -545,8 +544,5 @@ a.m-button.m-button--primary:hover {
     height: inherit !important;
     width: 60px !important;
     margin-right: 10px !important;
-  }
-  .gesehen-in {
-    font-size: 16px !important;
   }
 }

@@ -27,6 +27,31 @@
   endif
 -%}
 {{ 'sticky-add-to-cart.css' | asset_url | stylesheet_tag }}
+<style>
+  span.stk-current-price {
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+    margin-right: 8px;
+  }
+  .stk-compare-price {
+    color: #dc2626;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .sticky_price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+   }
+   .apex-product-page select.m-product-option--dropdown-select {
+    display: none;
+  }
+  .apex-product-page .m-product-form .m-add-to-cart {    
+    min-width: 350px;
+    text-align: center;
+  }
+</style>
 <div
   class="m-sticky-addtocart apex-sticky {{ class }}{% if enable_dynamic_checkout %} enable-dynamic-checkout{% endif %}"
   data-show-on-desktop="{{ st.use_sticky_atc }}"
@@ -62,11 +87,27 @@
       <div class="m-sticky-addtocart--rightblock">
         {%- assign product_form_id = 'sticky-atc-form-' | append: section.id -%}
         {%- assign product_form_class = 'sticky-atc-form m:flex product-form-' | append: section.id -%}
-        {% if product.has_only_default_variant %}
+
+        {% assign selected_variant = product.selected_or_first_available_variant %}
+        
           <div class="sticky_price">
-          {% render 'product-prices', use_variant: true, product: product %}
-          </div>
-        {% endif %}
+            <div class="sticky_price-wrapper">
+              <span class="stk-current-price">{{ selected_variant.price | money }}</span>
+              
+              {% if selected_variant.compare_at_price and selected_variant.compare_at_price > selected_variant.price %}
+                <span class="stk-compare-price">{{ selected_variant.compare_at_price | money }}</span>
+              {% endif %}
+            </div>
+        
+            <div class="sticky_saving">
+              {% if selected_variant.compare_at_price and selected_variant.compare_at_price > selected_variant.price %}
+                <span class="savings">
+                  You're saving {{ selected_variant.compare_at_price | minus: selected_variant.price | money }}
+                </span>
+              {% endif %}
+            </div>         
+          </div>       
+        
         <product-form class="m-product-form m:w-full">
           {%- form 'product',
             product,

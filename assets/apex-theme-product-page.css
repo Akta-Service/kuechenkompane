@@ -138,17 +138,12 @@ select {
 }
 
 .rs-product-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: #1c1c1c;
   margin-bottom: 15px;
-  font-family: "grotesk", sans-serif !important;
 }
 
 .rs-product-subtitle {
   font-size: 16px;
   font-weight: 300;
-  color: #1c1c1c;
   margin-bottom: 10px;
 }
 
@@ -173,7 +168,7 @@ select {
 .rs-liked {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
   row-gap: 5px;
 }
@@ -195,7 +190,6 @@ select {
 
 .like-info {
   font-size: 12px;
-  color: #1c1c1c;
   padding-left: 6px;
 }
 
@@ -230,7 +224,6 @@ select {
   color: #1b9d26;
   display: inline-block;
   font-weight: 700;
-  margin-bottom: 10px;
 }
 
 .compare-price {
@@ -239,10 +232,8 @@ select {
 
 .feature-header {
   font-size: 14px;
-  color: #000;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .feature-header img {
@@ -254,13 +245,13 @@ select {
 .product-feature-item {
   display: flex;
   align-items: center;
-  gap: 10px;
   margin-bottom: 10px;
 }
 
 .product-feature-item img {
   width: 24px;
   height: 24px;
+  margin-right: 10px;
 }
 
 .rs-add-to-cart {
@@ -326,10 +317,14 @@ select {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  gap: 10px;
+  gap: 0;
 }
 .prouduct-review svg {
-  width: 110px;
+  width: 20px;
+  height: 20px;
+}
+.prouduct-review span {
+  margin-left: 5px;
 }
 .rs-payment-icons {
   margin-bottom: 30px;

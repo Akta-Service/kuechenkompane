@@ -215,7 +215,7 @@
                         </p>
                       {% endif %}
                       {% if block.settings.title != blank %}
-                        <h3 class="m-richtext__title {{ heading_color }} {{ heading_size }}">
+                        <h3 class="m-richtext__title {{ section.settings.heading_type }}">
                           {{ block.settings.title }}
                         </h3>
                       {% endif %}
@@ -558,7 +558,7 @@
                           </span>
                         {% endif %}
                         {% if block.settings.title != blank %}
-                          <h3 class="m-richtext__title {{ block.settings.text_size }}">{{ block.settings.title }}</h3>
+                          <h3 class="m-richtext__title {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
                         {% endif %}
                       </div>
                       <div class="product-bundles__list">
@@ -776,7 +776,7 @@
                           </p>
                         {% endif %}
                         {% if block.settings.heading != blank %}
-                          <h3 class="m-richtext__title m-countdown__heading {{ block.settings.heading_size }}">
+                          <h3 class="m-richtext__title m-countdown__heading {{ section.settings.heading_type }}">
                             {{ block.settings.heading }}
                           </h3>
                         {% endif %}
@@ -914,7 +914,7 @@
                               <p class="m-richtext__subtitle {{ subtext_size }}">{{ block.settings.sub_title }}</p>
                             {% endif %}
                             {% if block.settings.title != blank %}
-                              <h3 class="m-richtext__title rte {{ heading_size }}">{{ block.settings.title }}</h3>
+                              <h3 class="m-richtext__title rte {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
                             {% endif %}
                             {% if block.settings.text != blank %}
                               <div class="m-richtext__description m:text-color-subtext rte {{ subtext_size }}">
@@ -1170,7 +1170,7 @@
                             </p>
                           {% endif %}
                           {% if block.settings.title != blank %}
-                            <h3 class="m-richtext__title rte {{ heading_size }} {{ heading_color }}">
+                            <h3 class="m-richtext__title rte {{ section.settings.heading_type }}">
                               {{ block.settings.title }}
                             </h3>
                           {% endif %}
@@ -1373,19 +1373,35 @@
     },
     {
       "type": "select",
-      "id": "heading_size",
-      "label": "Heading size",
-      "default": "h3",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
       "options": [
         {
-          "label": "Medium",
-          "value": "h3"
+          "value": "mrk-h1",
+          "label": "H1"
         },
         {
-          "label": "Large",
-          "value": "h2"
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
         }
-      ]
+      ],
+      "default": "mrk-h1"
     },
     {
       "type": "text",

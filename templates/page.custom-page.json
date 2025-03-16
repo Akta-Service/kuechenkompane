@@ -41,7 +41,7 @@
         "text_mFCHj9"
       ],
       "settings": {
-        "bg_color": "#1e1e1e",
+        "color_scheme": "scheme-9c5e8ed6-b8f4-45f1-aa5a-c22d8f7122a7",
         "pt": 65,
         "pb": 65,
         "mt": 0,
@@ -50,10 +50,9 @@
         "pb_mobile": 65,
         "mt_mobile": 0,
         "mb_mobile": 0,
-        "title_font_size": 40,
-        "title_color": "#ffffff",
+        "heading_type": "mrk-h2",
         "text_font_size": 15,
-        "text_color": "#ffffff"
+        "text_font_size_m": 15
       }
     },
     "store_benefit_tq7A77": {
@@ -90,8 +89,8 @@
         "benefit_t3Dd37"
       ],
       "settings": {
-        "title_color": "#1e1e1e",
-        "text_color": "#1e1e1e",
+        "color_scheme": "badge-hot",
+        "invert_color": false,
         "title_size": 15,
         "text_size": 15,
         "pt": 70,
@@ -146,19 +145,17 @@
       ],
       "custom_css": [],
       "settings": {
+        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
+        "shape_bg": "#deceba",
         "margin_top": 0,
         "margin_bottom": 0,
         "mobile_margin_top": 30,
         "mobile_margin_bottom": 0,
         "bg_img": "shopify://shop_images/branded-image-2.jpg",
-        "title_font_size": 40,
-        "heading_color": "#1e1e1e",
+        "heading_type": "mrk-h1",
         "text_font_size": 16,
-        "text_color": "#1e1e1e",
-        "btn_bg_color": "#d2861a",
-        "btn_bg_color_hover": "#333333",
-        "btn_text_color": "#ffffff",
-        "btn_text_color_hover": "#ffffff"
+        "button_style": "m-button--primary",
+        "button_size": ""
       }
     },
     "logo_quote_selection_6AwG63": {
@@ -200,13 +197,14 @@
         "image_WwpeH8"
       ],
       "settings": {
-        "bg-color": "#ff6723",
+        "color_scheme": "scheme-74cef576-6976-437f-b943-846d48553c4f",
+        "heading_type": "mrk-h2",
+        "invert_color": false,
         "ver_p": 60,
         "hr_p": 0,
         "ver_p_mobile": 30,
         "hr_p_mobile": 20,
-        "heading_size": 48,
-        "heading_color": "#111111"
+        "heading_size": 48
       }
     },
     "guarantee_objection_handling_jGLzWT": {
@@ -238,22 +236,20 @@
         "button_VMDQ9n"
       ],
       "settings": {
-        "bg_color": "#fafafb",
+        "color_scheme": "badge-hot",
         "icon_img": "shopify://shop_images/Garantie-Badge_1920x_40ad9c10-145c-4d0b-9757-a4e74d700ea1.png",
         "margin_top": 0,
         "margin_bottom": 0,
         "margin_top_mobile": 0,
         "margin_bottom_mobile": 0,
-        "title_size": 40,
-        "title_color": "#121212",
-        "text_size": 18,
-        "text_color": "#454545"
+        "heading_type": "mrk-h2",
+        "text_size": 18
       }
     },
     "announcement_bar_version_1_3Nznet": {
       "type": "announcement-bar-version-1",
       "settings": {
-        "bg_color": "#ffbe98",
+        "color_scheme": "scheme-568201fe-bcfa-44be-8567-5fd229c4d924",
         "pt": 15,
         "pb": 15,
         "ann_title": "Lei Of Love",
@@ -261,10 +257,7 @@
         "ann_title_size_m": 14,
         "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
         "text_size": 16,
-        "text_size_m": 14,
-        "ann_title_color": "#000000",
-        "strong_color": "#000000",
-        "text_color": "#000000"
+        "text_size_m": 14
       }
     },
     "apex_home_logo_list_RM6R7y": {
@@ -344,7 +337,7 @@
         "slide_6matLg"
       ],
       "settings": {
-        "bg_color": "#000000",
+        "color_scheme": "scheme-9c5e8ed6-b8f4-45f1-aa5a-c22d8f7122a7",
         "pt": 40,
         "pb": 40,
         "ptm": 40,

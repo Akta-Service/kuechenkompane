@@ -23,16 +23,14 @@
   .video_title h3 {
       font-size: {{- section.settings.title_size -}}px;
       font-weight: 400;
-      text-transform: uppercase;
-      color: {{- section.settings.title_color -}};
+      text-transform: uppercase;    
       margin: 0;
   }
 
   .video_title a {
       font-size: 14px;
       font-weight: 400;
-      text-transform: uppercase;
-      color: #1E1E1E;
+      text-transform: uppercase;      
       display: inline-block;
       text-decoration: none;
       padding-bottom: 5px;
@@ -112,137 +110,7 @@
   .video_slider .swiper-button-next svg {
     transform: rotate(0);
   }
-
-  /* popup  */
-  .popup {
-      width: auto;
-      height: auto;
-      position: fixed;
-      left: 20px;
-      bottom: 20px;
-      z-index: 99;
-      overflow: hidden;
-      border-radius: 24px;
-  }
-
-  .popup.hidden {
-      display: none;
-  }
-
-  .popup-content {
-      position: relative;
-  }
-
-  .close-popup {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-      font-size: 20px;
-  }
-
-  .close-popup {
-      width: 40px;
-      height: 40px;
-      background-color: rgba(0,0,0,.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border-radius: 50%;
-      z-index: 4;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-  }
-
-  .popup_item {
-      max-width: 370px;
-      width: 100%;
-      position: relative;
-  }
-
-  .popup_item video {
-      max-width: 370px;
-      max-height: 600px;
-      z-index: 3;
-      position: relative
-      border-radius: 24px;
-  }
-
-  .popup_bottom a {
-      width: 100%;
-      display: block;
-      padding: 20px 20px;
-      text-decoration: none;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-  }
-
-  .popup_product {
-      display: flex;
-      align-items: center;
-      background: hsla(0,0%,100%,.3);
-      -webkit-backdrop-filter: blur(6px);
-      backdrop-filter: blur(6px);
-      border-radius: 5px;
-  }
-
-  .popup_product_left {
-      width: 34%;
-  }
-
-  .popup_product_left img {
-      width: 100%;
-      border-radius: 5px 0px 0px 5px;
-  }
-
-  .popup_product_right {
-      width: 66%;
-      padding: 8px 8px;
-  }
-
-  .popup_product_right p {
-      font-size: 14px;
-      font-weight: 400;
-      color: #FFFFFF;
-      margin: 0;
-      border: none;
-  }
-
-  .popup_product_right ul {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0;
-  }
-
-  .popup_product_right ul li {
-      font-size: 14px;
-      font-weight: 400;
-      color: #FFFFFF;
-      border: none;
-  }
-
-  .popup_product_right ul li span {
-      color: #BC1E1E;
-      text-decoration: line-through;
-  }
-
-  .popup_product_right button {
-      font-size: 14px;
-      font-weight: 700;
-      color: #FFFFFF;
-      background: #000;
-      border: none;
-      outline: none;
-      display: inline-block;
-      padding: 5px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-  }
+  
   .video_area video {
     max-height: 100%;
     object-fit: cover;
@@ -292,10 +160,10 @@
 
 {% comment %} video section start  {% endcomment %}
 
-<div class="video_area">
+<div class="video_area m-color-{{ section.settings.color_scheme }}">
   <div class="custom_container">
     <div class="video_title">
-      <h3>{{ section.settings.title }}</h3>
+      <h3 class="{{ section.settings.heading_type }}">{{ section.settings.title }}</h3>
       <a href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
     </div>
     <div class="video_slider">
@@ -363,6 +231,11 @@
   "name": "APEX Ugc Testimonial",
   "settings": [
     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
       "type": "range",
       "id": "pt",
       "label": "Padding Top",
@@ -405,19 +278,36 @@
       "default": "See our products in action"
     },
     {
-      "type": "range",
-      "id": "title_size",
-      "label": "Title Size",
-      "default": 24,
-      "min": 10,
-      "max": 50,
-      "step": 1
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Title Color",
-      "default": "#1E1E1E"
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
     },
     {
       "type": "url",

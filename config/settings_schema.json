@@ -89,12 +89,6 @@
         ]
       },
       {
-        "type": "color",
-        "id": "h1_color",
-        "label": "H1 Color",
-        "default": "#000000"
-      },
-      {
         "type": "header",
         "content": "H1  (Desktop)"
       },
@@ -276,12 +270,7 @@
           { "label": "Bolder", "value": "900" }
         ]
       },
-      {
-        "type": "color",
-        "id": "h2_color",
-        "label": "H2 Color",
-        "default": "#000000"
-      },
+
       {
         "type": "header",
         "content": "H2 (Desktop)"
@@ -463,12 +452,7 @@
           { "label": "Bolder", "value": "900" }
         ]
       },
-      {
-        "type": "color",
-        "id": "h3_color",
-        "label": "H3 Color",
-        "default": "#000000"
-      },
+
       {
         "type": "header",
         "content": "H3 (Desktop)"
@@ -648,12 +632,6 @@
           { "label": "Bold", "value": "700" },
           { "label": "Bolder", "value": "900" }
         ]
-      },
-      {
-        "type": "color",
-        "id": "h4_color",
-        "label": "H4 Color",
-        "default": "#000000"
       },
       {
         "type": "header",
@@ -837,12 +815,6 @@
         ]
       },
       {
-        "type": "color",
-        "id": "h5_color",
-        "label": "H5 Color",
-        "default": "#000000"
-      },
-      {
         "type": "header",
         "content": "H5 (Desktop)"
       },
@@ -1024,12 +996,6 @@
         ]
       },
       {
-        "type": "color",
-        "id": "h6_color",
-        "label": "H6 Color",
-        "default": "#000000"
-      },
-      {
         "type": "header",
         "content": "H6 (Desktop)"
       },
@@ -1190,113 +1156,6 @@
         "step": 1,
         "default": 0,
         "unit": "px"
-      }
-    ]
-  },
-  {
-    "name": "Global Button Settings",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Button Colors"
-      },
-      {
-        "type": "color",
-        "id": "btn_bg",
-        "label": "Button Background Color",
-        "default": "#fa8526"
-      },
-      {
-        "type": "color",
-        "id": "btn_text",
-        "label": "Button Text Color",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "btn_hover_bg",
-        "label": "Button Hover Background Color",
-        "default": "#d46a1b"
-      },
-      {
-        "type": "color",
-        "id": "btn_hover_text",
-        "label": "Button Hover Text Color",
-        "default": "#ffffff"
-      },
-      {
-        "type": "header",
-        "content": "Button Borders"
-      },
-      {
-        "type": "color",
-        "id": "btn_border",
-        "label": "Button Border Color",
-        "default": "#fa8526"
-      },
-      {
-        "type": "range",
-        "id": "btn_border_width_mrk",
-        "label": "Button Border Width",
-        "min": 0,
-        "max": 5,
-        "step": 1,
-        "default": 1,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "btn_border_radius_mrk",
-        "label": "Button Border Radius",
-        "min": 0,
-        "max": 50,
-        "step": 1,
-        "default": 5,
-        "unit": "px"
-      },
-      {
-        "type": "header",
-        "content": "Button Sizing"
-      },
-      {
-        "type": "range",
-        "id": "btn_font_size",
-        "label": "Button Font Size",
-        "min": 10,
-        "max": 24,
-        "step": 1,
-        "default": 16,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "btn_padding_vr",
-        "label": "Button Vertical Padding",
-        "min": 5,
-        "max": 30,
-        "step": 1,
-        "default": 10,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "btn_padding_hr",
-        "label": "Button Horizontal Padding",
-        "min": 5,
-        "max": 50,
-        "step": 1,
-        "default": 20,
-        "unit": "px"
-      },
-      {
-        "type": "header",
-        "content": "Box Shadow"
-      },
-      {
-        "type": "text",
-        "id": "btn_box_shadow",
-        "label": "Button Box Shadow",
-        "default": "0px 4px 6px rgba(0, 0, 0, 0.1)"
       }
     ]
   },
@@ -3600,6 +3459,199 @@
       },
       {
         "type": "header",
+        "content": "Free Products/Shipping"
+      },
+      {
+        "type": "paragraph",
+        "content": "Free Shipping"
+      },
+      {
+        "type": "text",
+        "id": "cart_free_shipping_label",
+        "label": "Free Shipping Label",
+        "default": "Free Shipping"
+      },
+      {
+        "type": "number",
+        "id": "cart_free_shipping_rule",
+        "label": "Cart Total",
+        "default": 300,
+        "info": "Free shipping based on cart total"
+      },
+      {
+        "type": "paragraph",
+        "content": "Free Product 1"
+      },
+      {
+        "type": "text",
+        "id": "cart_free_product_1_label",
+        "label": "Free Product Label",
+        "default": "Free Product 1"
+      },
+      {
+        "type": "product",
+        "id": "cart_free_product_1",
+        "label": "Select Free Product"
+      },
+      {
+        "type": "number",
+        "id": "cart_free_product_1_rule",
+        "label": "Cart Total",
+        "default": 500,
+        "info": "Free product based on cart total"
+      },
+      {
+        "type": "paragraph",
+        "content": "Free Product 2"
+      },
+      {
+        "type": "text",
+        "id": "cart_free_product_2_label",
+        "label": "Free Product Label",
+        "default": "Free Product 2"
+      },
+      {
+        "type": "product",
+        "id": "cart_free_product_2",
+        "label": "Select Free Product"
+      },
+      {
+        "type": "number",
+        "id": "cart_free_product_2_rule",
+        "label": "Cart Total",
+        "default": 800,
+        "info": "Free product based on cart total"
+      },
+      {
+        "type": "color",
+        "id": "cfp_border_color",
+        "label": "Box Border Color",
+        "default": "#d1bba0"
+      },
+      {
+        "type": "color",
+        "id": "cfp_text_color",
+        "label": "Box Text Color",
+        "default": "#1e1e1e"
+      },
+      {
+        "type": "text",
+        "id": "Spend_text",
+        "label": "Spend Text",
+        "default": "Spend"
+      },
+      {
+        "type": "text",
+        "id": "more_for",
+        "label": "More For Text",
+        "default": "more for"
+      },
+      {
+        "type": "range",
+        "id": "cfp_text_sise",
+        "min": 10,
+        "max": 18,
+        "step": 1,
+        "unit": "px",
+        "label": "Box Font size",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "cfp_spend_text_sise",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Spend Font size",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "cfp_spend_text_sise_m",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Spend Font size (Mobile)",
+        "default": 16
+      },
+      {
+        "type": "header",
+        "content": "Cross sell Collection"
+      },
+      {
+        "type": "text",
+        "id": "cart_cross_sell_heading",
+        "label": "Cross sell Heading",
+        "default": "Choose Your Fabourite"
+      },
+      {
+        "type": "range",
+        "id": "ccs_heading_text_sise",
+        "min": 10,
+        "max": 22,
+        "step": 1,
+        "unit": "px",
+        "label": "Heading Font size",
+        "default": 18
+      },
+      {
+        "type": "color",
+        "id": "ccs_heading_text_color",
+        "label": "Heading Font Color",
+        "default": "#000000"
+      },
+      {
+        "type": "collection",
+        "id": "cart_cross_sell_collection",
+        "label": "Select Collection"
+      },
+      {
+        "type": "color",
+        "id": "ccs_arrow_bg",
+        "label": "Arrow Button Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "ccs_arrow_color",
+        "label": "Arrow Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "When Cart Is Empty"
+      },
+      {
+        "type": "collection",
+        "id": "empty_cart_collection",
+        "label": "Select Collection"
+      },
+      {
+        "type": "color",
+        "id": "ce_btn_text_color",
+        "label": "Button Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "ce_btn_bg_color",
+        "label": "Button Background Color",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "ce_btn_text_sise",
+        "min": 10,
+        "max": 22,
+        "step": 1,
+        "unit": "px",
+        "label": "Button Font size",
+        "default": 16
+      },
+      {
+        "type": "header",
         "content": "Cart addons"
       },
       {
@@ -3643,6 +3695,118 @@
         "type": "image_picker",
         "id": "cart_drawer_trust_badge",
         "label": "Trust badge"
+      },
+      {
+        "type": "header",
+        "content": "Footer Bottom"
+      },
+      {
+        "type": "text",
+        "id": "list_1",
+        "label": "List 1 Text",
+        "default": "365 tage garantie"
+      },
+      {
+        "type": "image_picker",
+        "id": "list_img_1",
+        "label": "List Icon"
+      },
+      {
+        "type": "textarea",
+        "id": "list_svg_1",
+        "label": "List Item SVG",
+        "info": "Paste your SVG code here."
+      },
+      {
+        "type": "text",
+        "id": "list_2",
+        "label": "List 2 Text",
+        "default": "Kostenloser Versand"
+      },
+      {
+        "type": "image_picker",
+        "id": "list_img_2",
+        "label": "List Icon"
+      },
+      {
+        "type": "textarea",
+        "id": "list_svg_2",
+        "label": "List Item SVG",
+        "info": "Paste your SVG code here."
+      },
+      {
+        "type": "header",
+        "content": "Typography"
+      },
+      {
+        "type": "range",
+        "id": "b_text_size",
+        "label": "Text Size",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "b_text_size_m",
+        "label": "Text Size (Mobile)",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "b_text_color",
+        "label": "Text Color",
+        "default": "#000000"
+      },
+      {
+        "type": "select",
+        "id": "t_font_weight",
+        "label": "Font Weight",
+        "default": "400",
+        "options": [
+          {
+            "value": "100",
+            "label": "Thin (100)"
+          },
+          {
+            "value": "200",
+            "label": "Extra Light (200)"
+          },
+          {
+            "value": "300",
+            "label": "Light (300)"
+          },
+          {
+            "value": "400",
+            "label": "Regular (400)"
+          },
+          {
+            "value": "500",
+            "label": "Medium (500)"
+          },
+          {
+            "value": "600",
+            "label": "Semi Bold (600)"
+          },
+          {
+            "value": "700",
+            "label": "Bold (700)"
+          },
+          {
+            "value": "800",
+            "label": "Extra Bold (800)"
+          },
+          {
+            "value": "900",
+            "label": "Black (900)"
+          }
+        ]
       }
     ]
   },

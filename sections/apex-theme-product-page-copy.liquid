@@ -77,7 +77,7 @@
   data-product-url="{{ product.url }}"
   data-product-id="{{ product.id }}"
   data-container="{{ container }}"
-  class="m-main-product m-gradient apex-product-page m-color-{{ settings.default_color_scheme }}"
+  class="m-main-product m-gradient apex-product-page m-color-{{ section.settings.color_scheme }}"
 >
   <div class="{{ container }} rs-container">
     {% liquid
@@ -178,7 +178,7 @@
       <div class="m-main-product--info apex-theme-info m:column {{ info_class }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
         <div class="m-product-info--wrapper m:text-color-body">
           {% render 'apex-product-blocks', section: section, product: product %}
-        </div>
+        </div> 
       </div>
       <script id="productData" type="application/json">
         {{ product | json }}
@@ -223,9 +223,14 @@
   "name": "APEX Product Infos",
   "settings": [
     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
       "type": "header",
       "content": "General"
-    },
+    },   
     {
       "type": "select",
       "id": "container",
@@ -375,6 +380,22 @@
       "id": "sticky_atc_compare",
       "label": "Show compare button",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Bubble Color"
+    },
+    {
+      "type": "color",
+      "id": "bubble_before_color",
+      "label": "Bubble Color ( Before)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "bubble_after_color",
+      "label": "Bubble Color ( After)",
+      "default": "#ffffff"
     }
   ],
   "blocks": [
@@ -384,7 +405,46 @@
     {
       "type": "title",
       "name": "Product title",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "p_t_s",
+          "min": 10,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "label": "Title Font Size",
+          "default": 32
+        },
+        {
+          "type": "range",
+          "id": "p_t_s_m",
+          "min": 10,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "label": "Title Font Size (Mobile)",
+          "default": 20
+        },
+        {
+          "type": "select",
+          "id": "font_weight_t",
+          "label": "Font Weight",
+          "options": [
+            { "value": "100", "label": "Thin (100)" },
+            { "value": "200", "label": "Extra Light (200)" },
+            { "value": "300", "label": "Light (300)" },
+            { "value": "400", "label": "Regular (400)" },
+            { "value": "500", "label": "Medium (500)" },
+            { "value": "600", "label": "Semi Bold (600)" },
+            { "value": "700", "label": "Bold (700)" },
+            { "value": "800", "label": "Extra Bold (800)" },
+            { "value": "900", "label": "Black (900)" }
+          ],
+          "default": "400"
+        }
+      ]
     },
     {
       "type": "subtitle",
@@ -405,13 +465,7 @@
           "max": 100,
           "step": 1,
           "unit": "px"
-        },
-        {
-          "type": "color",
-          "id": "subtitle_color",
-          "label": "Subtitle Color",
-          "default": "#1c1c1c"
-        }
+        }        
       ]
     },
     {
@@ -423,6 +477,25 @@
           "id": "p",
           "label": "Put the review count",
           "default": "4.9/5 Sternen"
+        },
+        {
+          "type": "range",
+          "id": "star_range",
+          "label": "Number of Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "color"
+        },
+        {
+          "type": "color",
+          "id": "star_color",
+          "label": "Star Color",
+          "default": "#000000"
         }
       ]
     },
@@ -475,12 +548,149 @@
     {
       "type": "price",
       "name": "Price Block",
-      "settings": []
+      "settings": [
+        {
+          "type": "range",
+          "id": "p_pt",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Top",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "p_pb",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Bottom",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "p_pt_m",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Top (Mobile)",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "p_pb_m",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Bottom (Mobile)",
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "color"
+        },
+        {
+          "type": "color",
+          "id": "price_color",
+          "label": "Price color",
+          "default": "#008000"
+        },
+        {
+          "type": "color",
+          "id": "c_price_color",
+          "label": "Compare Price color",
+          "default": "#008000"
+        },
+        {
+          "type": "color",
+          "id": "per_badge_bg",
+          "label": "Percent Badge Background Color",
+          "default": "#008000"
+        },
+        {
+          "type": "color",
+          "id": "per_badge_color",
+          "label": "Percent Badge text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "f_s",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Price Text Font Size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "f_s_m",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Price Text Font Size (Mobile)",
+          "default": 16
+        },
+        {
+          "type": "select",
+          "id": "price_font_weight",
+          "label": "Font Weight",
+          "default": "400",
+          "options": [
+            {
+              "value": "100",
+              "label": "Thin (100)"
+            },
+            {
+              "value": "200",
+              "label": "Extra Light (200)"
+            },
+            {
+              "value": "300",
+              "label": "Light (300)"
+            },
+            {
+              "value": "400",
+              "label": "Regular (400)"
+            },
+            {
+              "value": "500",
+              "label": "Medium (500)"
+            },
+            {
+              "value": "600",
+              "label": "Semi Bold (600)"
+            },
+            {
+              "value": "700",
+              "label": "Bold (700)"
+            },
+            {
+              "value": "800",
+              "label": "Extra Bold (800)"
+            },
+            {
+              "value": "900",
+              "label": "Extra Extra Bold (900)"
+            }
+          ]
+        }
+      ]
     },
     {
       "type": "viewerStockCount",
       "name": "View and Stock Count",
       "settings": [
+        {
+          "type": "header",
+          "content": "Viewer Settings"
+        },
         {
           "type": "range",
           "id": "viewer_count_font_size",
@@ -488,7 +698,7 @@
           "max": 100,
           "step": 1,
           "unit": "px",
-          "label": "Font size",
+          "label": "View Font size",
           "default": 16
         },
         {
@@ -502,37 +712,27 @@
           "id": "view_main_text_2",
           "label": "View Main Text",
           "default": "are currently looking at this product"
-        },
-        {
-          "type": "color",
-          "id": "viewer_text_color",
-          "label": "Color"
-        },
+        },        
         {
           "type": "range",
           "id": "viewer_margin_top",
           "min": 1,
-          "max": 100,
+          "max": 80,
           "step": 1,
           "unit": "px",
-          "label": "Add Margin Top",
+          "label": "View spacing Top",
           "default": 10
         },
         {
           "type": "range",
           "id": "viewer_margin_bottom",
           "min": 1,
-          "max": 100,
+          "max": 80,
           "step": 1,
           "unit": "px",
-          "label": "Add Margin Bottom",
+          "label": "View spacing Bottom",
           "default": 10
-        },
-        {
-          "type": "color",
-          "id": "viewer_count_text_color",
-          "label": "Color"
-        },
+        },        
         {
           "type": "range",
           "id": "margin_size_mobile_top",
@@ -540,7 +740,7 @@
           "max": 100,
           "step": 1,
           "unit": "px",
-          "label": "Mobile Margin Top",
+          "label": "View spacing Top (Mobile)",
           "default": 1
         },
         {
@@ -550,10 +750,53 @@
           "max": 100,
           "step": 1,
           "unit": "px",
-          "label": "Mobile Margin Bottom",
+          "label": "View spacing Bottom (Mobile)",
           "default": 1
         },
-
+        {
+          "type": "header",
+          "content": "Product Stock Settings"
+        },
+        {
+          "type": "range",
+          "id": "product_margin_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Stock Count Sapce Top",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "product_margin_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Stock Count Sapce Bottom",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "p_margin_size_mobile_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Stock Count Sapce Top (Mobile)",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "p_margin_size_mobile_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Stock Count Sapce Bottom (Mobile)",
+          "default": 1
+        },
         {
           "type": "range",
           "id": "product_count_font_size",
@@ -575,37 +818,9 @@
           "id": "product_main_text_2",
           "label": "Product Main Text",
           "default": "left in stock"
-        },
-        {
-          "type": "color",
-          "id": "product_text_color",
-          "label": "Color"
-        },
-        {
-          "type": "color",
-          "id": "product_count_text_color",
-          "label": "Count Text Color"
-        },
-        {
-          "type": "range",
-          "id": "product_margin_top",
-          "min": 1,
-          "max": 100,
-          "step": 1,
-          "unit": "px",
-          "label": "Add Margin Top",
-          "default": 10
-        },
-        {
-          "type": "range",
-          "id": "product_margin_bottom",
-          "min": 1,
-          "max": 100,
-          "step": 1,
-          "unit": "px",
-          "label": "Add Margin Bottom",
-          "default": 10
-        },
+        },       
+        
+        
         {
           "type": "number",
           "id": "viewer_count_time",
@@ -617,27 +832,7 @@
           "id": "stock_count_time",
           "label": "Add Stock Update Time Delay (milliseconds )",
           "default": 5000
-        },
-        {
-          "type": "range",
-          "id": "p_margin_size_mobile_top",
-          "min": 1,
-          "max": 100,
-          "step": 1,
-          "unit": "px",
-          "label": "Mobile Margin Top",
-          "default": 1
-        },
-        {
-          "type": "range",
-          "id": "p_margin_size_mobile_bottom",
-          "min": 1,
-          "max": 100,
-          "step": 1,
-          "unit": "px",
-          "label": "Mobile Margin Bottom",
-          "default": 1
-        },
+        },        
         {
           "type": "checkbox",
           "id": "stock_count_show",
@@ -655,13 +850,7 @@
           "id": "featureHeader",
           "label": "Feature Header",
           "default": "30-day satisfaction guarantee"
-        },
-        {
-          "type": "color",
-          "id": "featurelist_header_color",
-          "label": "Feature List Header Color",
-          "default": "#000"
-        },
+        },        
         {
           "type": "range",
           "id": "featurelist_header_size",
@@ -671,6 +860,46 @@
           "max": 100,
           "step": 1,
           "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "f_h_pt",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Top",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "f_h_pb",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Bottom",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "f_h_pt_m",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Top (Mobile)",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "f_h_pb_m",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Bottom (Mobile)",
+          "default": 5
         }
       ]
     },
@@ -699,6 +928,11 @@
           "unit": "px",
           "label": "Featurelist Item Size",
           "default": 14
+        },
+        {
+          "type": "checkbox",
+          "id": "invert_img",
+          "label": "Invert Icon Color"         
         }
       ]
     },

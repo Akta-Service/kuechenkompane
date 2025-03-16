@@ -2,16 +2,9 @@
 {%- style -%}
   .benefit-text-area{
       padding-top: {{- section.settings.padding_top -}}px;
-      padding-bottom: {{- section.settings.padding_bottom -}}px;
-      background-color: {{ section.settings.background_color }};
+      padding-bottom: {{- section.settings.padding_bottom -}}px;      
    }
-   .benefit-text-area.bg-{{ section.id }} {
-    background-color: {{ section.settings.background_color }};
-   }
-   .benefit-button-{{ section.id }}{
-    color: #ffffff !important;
-    background: #fa8526 !important;
-   }
+     
    @media only screen and (max-width: 768px) {
     .benefit-text-area{
       padding-top: {{- section.settings.padding_top_mobile -}}px ;
@@ -19,7 +12,7 @@
    }
    }
 {%- endstyle -%}
-<div class="benefit-text-area bg-{{ section.id }}">
+<div class="benefit-text-area bg-{{ section.id }} m-color-{{ section.settings.color_scheme }}">
   <div class="rs-container">
     <div class="benefit-row {% if section.settings.reverse %}rs-reverse{% endif %}">
       <div class="benefit-content">
@@ -28,21 +21,20 @@
             {% when 'subtitle' %}
               <span
                 class="benefit-subtitle"
-                style="color: {{ block.settings.subtitle_color }}; font-size: {{- block.settings.subtitle_size -}}px;"
+                style=" font-size: {{- block.settings.subtitle_size -}}px;"
               >
                 {{- block.settings.subtitle -}}
               </span>
             {% when 'title' %}
               <h2
-                class="benefit-title"
-                style="color: {{ block.settings.title_color }}; font-size: {{- block.settings.title_size -}}px;"
+                class="benefit-title {{ section.settings.heading_type }}"               
               >
                 {{ block.settings.title }}
               </h2>
             {% when 'description' %}
               <p
                 class="benefit-description"
-                style="color: {{ block.settings.description_color }}; font-size: {{- block.settings.description_size -}}px;"
+                style="font-size: {{- block.settings.description_size -}}px;"
               >
                 {{ block.settings.description }}
               </p>
@@ -74,12 +66,11 @@
 {% schema %}
 {
   "name": "APEX Benefit Photo Right",
-  "settings": [
+  "settings": [   
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background Color",
-      "default": "#ffffff"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
     },
     {
       "id": "media_type",
@@ -151,6 +142,38 @@
       "unit": "px",
       "label": "Padding Bottom (Mobile)",
       "default": 50
+    },
+    {
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
     }
   ],
   "blocks": [
@@ -164,12 +187,7 @@
           "label": "Sub Title",
           "default": "The Beauty Trend 2024"
         },
-        {
-          "type": "color",
-          "id": "subtitle_color",
-          "label": "Subtitle Color",
-          "default": "#121212"
-        },
+        
         {
           "type": "range",
           "id": "subtitle_size",
@@ -192,12 +210,7 @@
           "label": "Title",
           "default": "Salon-beautiful nails in minutes"
         },
-        {
-          "type": "color",
-          "id": "title_color",
-          "label": "Title Color",
-          "default": "#121212"
-        },
+        
         {
           "type": "range",
           "id": "title_size",
@@ -220,12 +233,7 @@
           "label": "Description",
           "default": "Experience the nail polish revolution for yourself with Gel Polish 2.0!......."
         },
-        {
-          "type": "color",
-          "id": "description_color",
-          "label": "Description Color",
-          "default": "#121212"
-        },
+       
         {
           "type": "range",
           "id": "description_size",

@@ -57,9 +57,9 @@
         "text_KKpaJj"
       ],
       "settings": {
-        "bg_color": "#ffffff",
-        "pt": 30,
-        "pb": 30,
+        "color_scheme": "default",
+        "pt": 15,
+        "pb": 15,
         "mt_mobile": 15,
         "mb_mobile": 15
       }
@@ -121,14 +121,13 @@
         "item_rktrNh"
       ],
       "settings": {
-        "bg_color": "",
+        "color_scheme": "scheme-f618ff52-b194-4c41-85c0-276af7413331",
         "pt": 30,
         "pb": 30,
         "mobile_pt": 30,
         "mobile_pb": 30,
-        "title": "Shop by Category",
-        "heading_font_size": 24,
-        "heading_color": "#1e1e1e"
+        "heading_type": "mrk-h2",
+        "title": "Shop by Category"
       }
     },
     "main": {
@@ -138,6 +137,7 @@
         ".m-collection-filters-form {margin-bottom: 0;}"
       ],
       "settings": {
+        "color_scheme": "default",
         "container": "container-fluid",
         "grid_layout": "grid",
         "grid_columns": "4",
@@ -157,7 +157,9 @@
         "color_swatches": "color,colour,couleur,farbe",
         "color_swatches_design": "list",
         "add_btn_bg": "#1e1e1e",
-        "add_btn_text_color": "#ffffff"
+        "add_btn_text_color": "#ffffff",
+        "button_style": "m-button--primary",
+        "button_size": ""
       }
     },
     "usp_list_xQHfgQ": {
@@ -168,10 +170,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
             "usp_title": "Geld-zurück-Garantie",
-            "title_color": "#121212",
             "title_size": 18,
             "usp_info": "30 Tage Rückgaberecht - ohne Risiko.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -181,10 +181,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
-            "title_color": "#121212",
             "title_size": 18,
             "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -194,10 +192,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
             "usp_title": "Schärfe Garantie",
-            "title_color": "#121212",
             "title_size": 18,
             "usp_info": "Maximale Schärfe für müheloses Schneiden.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": false
           }
@@ -209,7 +205,7 @@
         "item_RKRMEB"
       ],
       "settings": {
-        "bg_color": "#ffff",
+        "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
         "verticle_padding_mobile": 30,
@@ -237,19 +233,17 @@
         "sub_title_GcWkqp"
       ],
       "settings": {
+        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
+        "shape_color": "#deceba",
         "margin_top": 20,
         "margin_bottom": 0,
         "mobile_margin_top": 10,
         "mobile_margin_bottom": 0,
         "bg_img": "shopify://shop_images/IMG_9602_V6.jpg",
-        "title_font_size": 40,
-        "heading_color": "#1e1e1e",
+        "heading_type": "mrk-h1",
         "text_font_size": 16,
-        "text_color": "#1e1e1e",
-        "btn_bg_color": "#000000",
-        "btn_bg_color_hover": "#333333",
-        "btn_text_color": "#ffffff",
-        "btn_text_color_hover": "#ffffff"
+        "button_style": "m-button--primary",
+        "button_size": ""
       }
     },
     "collection_description_tUMerW": {

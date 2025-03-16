@@ -36,11 +36,9 @@
         "text_GFQwB3",
         "text_J8yeUK"
       ],
-      "custom_css": [
-        ".banner-btn a {border-color: transparent;}",
-        ".banner-btn a:hover {border-color: #fff;}"
-      ],
+      "custom_css": [],
       "settings": {
+        "color_scheme": "scheme-6381519f-31bf-4012-bd7e-d91d1a7c0ca3",
         "u": "https://cdn.shopify.com/videos/c/o/v/d98e9d7a4ebb442eabcaf567118e86c5.mp4",
         "u_mobile": "https://cdn.shopify.com/videos/c/o/v/03964288aaac4308bbce450d25d69f0b.mp4",
         "mt": 0,
@@ -48,15 +46,12 @@
         "mt_mobile": 0,
         "mb_mobile": 0,
         "title": "Meisterhaft kochen beginnt hier",
-        "title_font_size": 40,
-        "title_color": "#ffffff",
+        "heading_type": "mrk-h2",
         "sub_title": "<p>Perfektion, die du in jeder Bewegung spürst.</p>",
         "btn_text": "Erlebe Perfektion",
-        "btn_bg_color": "#fa8526",
-        "btn_bg_color_hover": "#4b4b4b",
-        "btn_text_color": "#ffffff",
-        "btn_text_color_hover": "#ffffff",
-        "btn_link": "shopify://pages/produkte-entdecken"
+        "btn_link": "shopify://pages/produkte-entdecken",
+        "button_style": "m-button--primary",
+        "button_size": ""
       }
     },
     "scrolling_promotion_p4H4Y4": {
@@ -110,17 +105,16 @@
         "image_fJt9dM",
         "image_Fj47eJ"
       ],
-      "custom_css": [
-        ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
-      ],
+      "custom_css": [],
       "settings": {
+        "heading_type": "mrk-h2",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
         "item_gap": 50,
         "item_gap_mobile": 30,
         "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
-        "padding_top": 40,
+        "padding_top": 30,
         "padding_bottom": 40,
         "custom_class": ""
       }
@@ -191,7 +185,7 @@
             "text_size": "medium",
             "text_color": "inherit",
             "button_label": "Jetzt entdecken",
-            "button_link": "shopify://products/premium",
+            "button_link": "https://kuechenkompane.de/products/messerset-premium-1",
             "button_style": "m-button--primary",
             "button_size": "",
             "block_custom_class": "",
@@ -210,7 +204,7 @@
       ],
       "settings": {
         "heading": "Entdecke unseren Bestseller",
-        "heading_size": "h2",
+        "heading_type": "mrk-h2",
         "subheading": "",
         "description": "",
         "header_alignment": "center",
@@ -294,14 +288,13 @@
         "item_wXRnnG"
       ],
       "settings": {
-        "bg_color": "#ebf2e8",
+        "color_scheme": "scheme-f618ff52-b194-4c41-85c0-276af7413331",
         "pt": 60,
         "pb": 60,
         "mobile_pt": 40,
         "mobile_pb": 40,
-        "title": "Nach Kategorie einkaufen",
-        "heading_font_size": 24,
-        "heading_color": "#201b1b"
+        "heading_type": "mrk-h2",
+        "title": "Nach Kategorie einkaufen"
       }
     },
     "banner_version_1_aGXez8": {
@@ -350,19 +343,16 @@
         "image_kLVez4"
       ],
       "settings": {
-        "bg_color": "#ebf2e8",
+        "color_scheme": "scheme-f618ff52-b194-4c41-85c0-276af7413331",
         "mt": 0,
         "mb": 0,
         "mt_mobile": 0,
         "mb_mobile": 0,
-        "heading_size": 52,
-        "heading_color": "#121212",
+        "heading_type": "mrk-h2",
         "des_size": 18,
-        "des_color": "#454545",
-        "btn_bg_color": "#fa8526",
-        "btn_text_color": "#ffffff",
-        "btn_bg_hover_color": "#333333",
-        "btn_hover_color": "#ffffff",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "arrow_bg": "#ffffff",
         "hide_arrow_m": true
       }
     },
@@ -373,7 +363,6 @@
           "type": "sub_heading",
           "settings": {
             "sub_heading": "Küchenkompane - Erklärt in 2 Minuten",
-            "sub_heading_color": "#000000",
             "sub_heading_size": 16
           }
         },
@@ -383,9 +372,8 @@
             "heading": "Qualität, die begeistert.",
             "h1_font_size": 54,
             "h1_font_size_tablet": 35,
-            "h1_font_size_mobile": 34,
+            "h1_font_size_mobile": 27,
             "h1_font_weight": "700",
-            "h1_font_color": "#000000",
             "h1_text_align": "center",
             "title": "Your Title Here",
             "padding_top": 1,
@@ -400,13 +388,11 @@
           "type": "details",
           "settings": {
             "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
-            "details_color": "#000000",
             "details_size": 18,
             "p_font_size": 16,
             "p_font_size_tablet": 16,
             "p_font_size_mobile": 16,
             "p_font_weight": "400",
-            "p_font_color": "#333333",
             "p_text_align": "center",
             "p_line_height": 1.5,
             "p_padding_top": 10,
@@ -437,12 +423,10 @@
         "video_cTydVn"
       ],
       "settings": {
-        "bg_color": "#ffffff",
+        "color_scheme": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
         "vertical_padding": 50,
-        "vertical_padding_mobile": 30,
-        "heading_color": "#000000",
-        "heading_size": 44,
-        "heading_size_mobile": 34
+        "vertical_padding_mobile": 40,
+        "heading_type": "mrk-h2"
       }
     },
     "usp_list_nrezVU": {
@@ -454,10 +438,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
-            "title_color": "#121212",
             "title_size": 14,
             "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -468,10 +450,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
-            "title_color": "#121212",
             "title_size": 14,
             "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -481,10 +461,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
             "usp_title": "Kostenloser Versand",
-            "title_color": "#121212",
             "title_size": 14,
             "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -494,10 +472,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
             "usp_title": "Geld-zurück-Garantie",
-            "title_color": "#121212",
             "title_size": 14,
             "usp_info": "30 Tage Rückgaberecht - ohne Risiko.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": true
           }
@@ -507,10 +483,8 @@
           "settings": {
             "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
             "usp_title": "Schärfe Garantie",
-            "title_color": "#121212",
             "title_size": 14,
             "usp_info": "Maximale Schärfe für müheloses Schneiden.",
-            "info_color": "#121212",
             "info_size": 14,
             "divider": false
           }
@@ -524,7 +498,7 @@
         "item_yDtyRV"
       ],
       "settings": {
-        "bg_color": "#F8F8F8",
+        "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
         "verticle_padding_mobile": 30,
@@ -538,7 +512,6 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Willkommen in der Küchenkompane-Welt",
-            "subtitle_color": "#121212",
             "subtitle_size": 18
           }
         },
@@ -546,7 +519,6 @@
           "type": "title",
           "settings": {
             "title": "Gemeinsam besser kochen!",
-            "title_color": "#121212",
             "title_size": 40
           }
         },
@@ -554,7 +526,6 @@
           "type": "description",
           "settings": {
             "description": "Werde Teil der Küchenkompane-Community und profitiere von Profi-Tipps, exklusiven Angeboten und hochwertigen Produkten für deine Küche.bers.",
-            "description_color": "#121212",
             "description_size": 18
           }
         }
@@ -566,14 +537,15 @@
       ],
       "disabled": true,
       "settings": {
-        "background_color": "#ffffff",
+        "color_scheme": "",
         "media_type": "image",
         "image": "shopify://shop_images/IMG_9602_V13_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
         "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h1"
       }
     },
     "1621243260e1af0c20": {
@@ -746,6 +718,7 @@
       "disabled": true,
       "custom_css": [],
       "settings": {
+        "heading_type": "mrk-h1",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
@@ -998,7 +971,7 @@
         "show_button": true,
         "button_type": "link",
         "button_label": "Alle Produkte ansehen",
-        "button_style": "m-button--secondary",
+        "button_style": "m-button--primary",
         "button_size": "",
         "pcard_layout": "3",
         "pcard_image_ratio": "1/1",
@@ -1092,7 +1065,7 @@
       ],
       "settings": {
         "heading": "",
-        "heading_size": "h3",
+        "heading_type": "mrk-h1",
         "subheading": "",
         "description": "",
         "header_alignment": "center",
@@ -1218,7 +1191,7 @@
       ],
       "settings": {
         "heading": "",
-        "heading_size": "h3",
+        "heading_type": "mrk-h1",
         "subheading": "",
         "description": "",
         "header_alignment": "center",
@@ -1349,7 +1322,7 @@
             "text_color": "inherit",
             "button_label": "Jetzt entdecken",
             "button_link": "shopify://products/premium",
-            "button_style": "m-button--secondary",
+            "button_style": "m-button--primary",
             "button_size": "",
             "block_custom_class": "",
             "animations": "inherit"
@@ -1369,7 +1342,7 @@
       ],
       "settings": {
         "heading": "",
-        "heading_size": "h3",
+        "heading_type": "mrk-h2",
         "subheading": "",
         "description": "",
         "header_alignment": "center",
@@ -1415,19 +1388,17 @@
         "btn_PFR3yi"
       ],
       "settings": {
+        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
+        "shape_color": "#deceba",
         "margin_top": 50,
         "margin_bottom": 50,
         "mobile_margin_top": 30,
         "mobile_margin_bottom": 30,
         "bg_img": "shopify://shop_images/IMG_0714_1.jpg",
-        "title_font_size": 54,
-        "heading_color": "#1e1e1e",
+        "heading_type": "mrk-h2",
         "text_font_size": 16,
-        "text_color": "#1e1e1e",
-        "btn_bg_color": "#fa8526",
-        "btn_bg_color_hover": "#333333",
-        "btn_text_color": "#ffffff",
-        "btn_text_color_hover": "#ffffff"
+        "button_style": "m-button--primary",
+        "button_size": ""
       }
     },
     "11cfb44f-b725-4daf-8ee7-4bbf2c63914d": {

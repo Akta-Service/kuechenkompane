@@ -30,6 +30,80 @@
     assign selected_variant_id = product.selected_variant.id
   endunless
 %}
+<style>
+  {% for block in section.blocks %}
+    {%  case block.type %}  
+    {%- when 'title' -%}
+      .rs-product-title{
+        font-size: {{ block.settings.p_t_s |  append: 'px'}};
+        font-weight: {{ block.settings.font_weight_t }}
+      }
+      @media only screen and (max-width:768px){        
+        .rs-product-title{
+          font-size: {{ block.settings.p_t_s_m | append: 'px' }};
+        }  
+      }
+    {% when 'price' %}
+      .rs-price{
+        padding-top: {{ block.settings.p_pt }}px;
+        padding-bottom: {{ block.settings.p_pb }}px;
+      }
+      .rs-price .rs-current-price{
+        color: {{ block.settings.price_color }};
+        font-weight: {{ block.settings.price_font_weight }};
+        font-size: {{ block.settings.f_s |  append: 'px' }};
+      }
+      .rs-price .rs-compare-price{
+        color: {{ block.settings.c_price_color }};
+        font-weight: {{ block.settings.price_font_weight }};
+        text-decoration: line-through;
+        margin-right: 3px;
+        font-size: {{ block.settings.f_s |  append: 'px' }};
+      }
+      span.discount-percentage {
+        display: inline-block;
+        background: {{ block.settings.per_badge_bg }};
+        color: {{ block.settings.per_badge_color }};
+        font-weight: {{ block.settings.price_font_weight }};
+        border-radius: 14px;
+        padding: 3px 7px;
+        line-height: 1;
+      }  
+      @media only screen and (max-width:768px){       
+        .rs-price{
+          padding-top: {{ block.settings.p_pt_m }}px;
+          padding-bottom: {{ block.settings.p_pb_m }}px;
+        }       
+        .rs-price .rs-current-price{   
+          font-size: {{ block.settings.f_s_m |  append: 'px' }};
+        }
+        .rs-price .rs-compare-price{   
+          font-size: {{ block.settings.f_s_m |  append: 'px' }};
+        }
+
+      }
+      {% when 'featurelist_header' %}
+        .feature-header{
+          padding-top: {{ block.settings.f_h_pt }}px;
+          padding-bottom: {{ block.settings.f_h_pb }}px;
+        }
+      @media only screen and (max-width:768px){
+        .feature-header{
+          padding-top: {{ block.settings.f_h_pt_m }}px;
+          padding-bottom: {{ block.settings.f_h_pb_m }}px;
+        }
+
+      }
+  /* -------------- */
+ 
+    {% endcase %} 
+    {% if block.settings.invert_img %}
+      .product-feature-item img {   
+        filter: invert(1);
+      }
+    {% endif %}
+  {% endfor %}
+</style>
 {% comment %} Fallback for case not show block price, buy buttons {% endcomment %}
 <input type="hidden" name="id" value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}" disabled>
 {% comment %} End comment {% endcomment %}
@@ -58,9 +132,9 @@
       {%- when 'title' -%}
         <div class="product-block-group product-block-group--title">
           {% if is_featured == true %}
-            <h2 class="rs-product-title">{{ product.title }}</h2>
+            <h2 class="rs-product-title ">{{ product.title }}</h2>
           {% else %}
-            <h1 class="rs-product-title">{{ product.title }}</h1>
+            <h1 class="rs-product-title ">{{ product.title }}</h1>
           {% endif %}
           {% if section.settings.show_atwl and section.settings.layout != 'layout-7' %}
             <div class="m-product-wishlist m:hidden md:m:block">
@@ -89,8 +163,7 @@
       {% when 'subtitle' %}
         <h4
           class="rs-product-subtitle"
-          style="
-            color: {{ block.settings.subtitle_color | default: '#1c1c1c' }};
+          style="           
             font-size: clamp(14px, {{ block.settings.subtitle_font_size | default: 16 }}px, 20px);
           "
         >
@@ -98,35 +171,12 @@
         </h4>
       {% when 'review' %}
         <a href="#looxReviews">
-          <div class="prouduct-review">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xmlns:serif="http://www.serif.com/"
-              width="100%"
-              height="100%"
-              viewBox="0 0 881 130"
-              version="1.1"
-              xml:space="preserve"
-              style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
-            >
-              <g transform="matrix(1,0,0,1,-634.728,-382.568)">
-                  <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
-              </g>
-              <g transform="matrix(1,0,0,1,-447.914,-382.568)">
-                  <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
-              </g>
-              <g transform="matrix(1,0,0,1,-261.961,-382.568)">
-                  <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
-              </g>
-              <g transform="matrix(1,0,0,1,-76.0238,-382.568)">
-                  <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
-              </g>
-              <g transform="matrix(1,0,0,1,109.853,-382.568)">
-                  <path d="M702.68,382.568L718.721,431.938L770.632,431.938L728.635,462.45L744.677,511.82L702.68,481.308L660.683,511.82L676.724,462.45L634.728,431.938L686.639,431.938L702.68,382.568Z" style="fill:rgb(255,216,0);"/>
-              </g>
-            </svg>
-
+          <div class="prouduct-review">            
+            {% assign star_count = block.settings.star_range %}
+            {% assign star_color = block.settings.star_color %}
+            {% for i in (1..star_count) %}
+              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="655.359" height="655.359" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd" viewBox="0 0 6.827 6.827"><path style="fill:{{ star_color }};fill-rule:nonzero" d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"/><path style="fill:{{ star_color }};fill-rule:nonzero" d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"/><path style="fill:none" d="M0 0h6.827v6.827H0z"/></svg>
+           {% endfor %}
             <span> {{ block.settings.p }}</span>
           </div>
         </a>
@@ -156,18 +206,23 @@
         </div>
       {% when 'price' %}
         <div class="rs-price">
-          <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+          <span class="rs-current-price">{{ product.selected_or_first_available_variant.price | money }}</span>          
           {% if product.selected_or_first_available_variant.price < product.compare_at_price %}
-            <span class="compare-price">{{ product.compare_at_price | money }}</span>
+            <span class="rs-compare-price">{{ product.compare_at_price | money }}</span>
+            {% assign price = product.selected_or_first_available_variant.price %}
+            {% assign compare_price = product.compare_at_price %}            
+            {% assign discount_amount = compare_price | minus: price %}
+            {% assign discount_percentage = discount_amount | times: 100 | divided_by: compare_price | round: 0 %}            
+            <span class="discount-percentage">{{ discount_percentage }}%</span>
           {% endif %}
         </div>
+
       {% when 'viewerStockCount' %}
         {% render 'viewer-stock-count', block: block %}
       {% when 'featurelist_header' %}
         <p
           class="feature-header"
-          style="
-            color:{{ block.settings.featurelist_header_color |  default: '#000' }};
+          style="            
             font-size: {{ block.settings.featurelist_header_size |  default: 14}}px;
           "
         >
@@ -182,8 +237,7 @@
       {% when 'featurelist_item' %}
         <div
           class="product-feature-item"
-          style="
-            color:{{ block.settings.featurelist_item_color |  default: '#000' }};
+          style="            
             font-size: {{ block.settings.featurelist_item_size |  default: 14}}px;
           "
         >

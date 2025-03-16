@@ -37,6 +37,8 @@
 }
 .m-sticky-addtocart--title {
   padding: 14px 0;
+  display: flex;
+  align-items: center;
 }
 .m-sticky-addtocart--title h3 {
   font-weight: 500;
@@ -152,6 +154,7 @@ span.stikcy-add-icon {
 .apex-sticky span.m-add-to-cart--text {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .apex-sticky .m-sticky-addtocart--image {
   border: 1px solid #000;

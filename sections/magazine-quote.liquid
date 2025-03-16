@@ -11,7 +11,7 @@
   }
   }
 {%- endstyle -%}
-<div class="magazine-quote-area">
+<div class="magazine-quote-area m-color-{{ section.settings.color_scheme }}">
   <div class="rs-container">
     <div class="magazine-content">
       {% for block in section.blocks %}
@@ -26,7 +26,7 @@
             {% else %}
               <h2
                 class="magazine-title"
-                style="color: {{ block.settings.title_color }}; font-size: {{- block.settings.title_size -}}px;"
+                style="font-size: {{- block.settings.title_size -}}px;"
               >
                 {{ block.settings.title }}
               </h2>
@@ -41,7 +41,7 @@
           {% when 'quotation' %}
             <div
               class="magazine-quote"
-              style="color: {{ block.settings.quote_color }}; font-size: {{- block.settings.quote_size -}}px;"
+              style="font-size: {{- block.settings.quote_size -}}px;"
             >
               {{ block.settings.quote }}
             </div>
@@ -54,6 +54,11 @@
 {
   "name": "APEX Magazine Quote",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
     {
       "type": "range",
       "id": "padding_top",
@@ -109,13 +114,7 @@
           "type": "text",
           "id": "title",
           "label": "Title"
-        },
-        {
-          "type": "color",
-          "id": "title_color",
-          "label": "Title Color",
-          "default": "#121212"
-        },
+        },        
         {
           "type": "range",
           "id": "title_size",
@@ -153,12 +152,7 @@
           "label": "Quotation Text",
           "default": "<p>“Real gel polish that sticks on and is also easy to remove. A dream comes true. With the strips, every manicure gets studio quality that lasts up to 3 weeks!</p>"
         },
-        {
-          "type": "color",
-          "id": "quote_color",
-          "label": "Quotation Color",
-          "default": "#121212"
-        },
+        
         {
           "type": "range",
           "id": "quote_size",

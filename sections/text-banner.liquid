@@ -1,26 +1,9 @@
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-
-
   /* common css end  */
-  .text-banner-area {
-    background: {{ section.settings.bg_color | default: '#1e1e1e' }};
+  .text-banner-area {   
     padding: 65px 0;
-    padding-top: {{ section.settings.pt | default: '65px' }};
-    padding-bottom: {{ section.settings.pb | default: '65px' }};
+    padding-top: {{ section.settings.pt | default: '65px' }}px;
+    padding-bottom: {{ section.settings.pb | default: '65px' }}px;
     margin-top: {{ section.settings.mt | default: '0' }};
     margin-bottom: {{ section.settings.mb | default: '0' }};
   }
@@ -39,22 +22,20 @@
 
   .text-banner-content {
     text-align: center;
-    max-width: 520px;
-    padding: 0 50px;
+    max-width: 500px;
+    padding: 0 15px;
     margin: 0 auto;
   }
 
   .text-banner-title {
-    font-size: {{ section.settings.title_font_size | default: '40px' }};
-    color: {{ section.settings.title_color | default: '#fff' }};
+    font-size: {{ section.settings.title_font_size | default: 40 }}px;   
     text-transform: uppercase;
     line-height: 1;
     font-weight: 600;
   }
 
   .text-banner-subtitle {
-    font-size: {{ section.settings.title_font_size | default: '40px' }};
-    color: {{ section.settings.title_color | default: '#fff' }};
+    font-size: {{ section.settings.title_font_size }}px;   
     letter-spacing: -0.8px;
     line-height: 44px;
     margin-bottom: 8px;
@@ -62,26 +43,29 @@
   }
 
   .text-banner-content p {
-    font-size: {{ section.settings.text_font_size | default: '15px' }};
-    color: {{ section.settings.text_color | default: '#fff' }};
+    font-size: {{ section.settings.text_font_size }}px;   
     line-height: 24px;
   }
   @media only screen and (max-width: 749px) {
     .text-banner-title {
-      font-size: 24px;
+      font-size: {{ section.settings.title_font_size_m }}px; 
     }
 
     .text-banner-subtitle {
-      font-size: 24px;
+      font-size: {{ section.settings.title_font_size_m }}px; 
     }
+    .text-banner-content p {
+    font-size: {{ section.settings.text_font_size_m }}px;  
+    
+  }
   }
 </style>
-<div class="text-banner-area">
+<div class="text-banner-area m-color-{{ section.settings.color_scheme }}">
   <div class="text-banner-content">
     {% for block in section.blocks %}
       {%- case block.type -%}
         {%- when 'title' -%}
-          <h3 class="text-banner-title">{{ block.settings.title }}</h3>
+          <h3 class="text-banner-title {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
         {%- when 'title_style' -%}
           <h3 class="text-banner-subtitle style"><i>{{ block.settings.style_title }}</i></h3>
         {%- when 'text' -%}
@@ -94,14 +78,13 @@
 </div>
 {% schema %}
 {
-  "name": "Text Banner",
+  "name": "Apex Text Banner",
   "settings": [
     {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#1e1e1e"
-    },
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },    
     {
       "type": "header",
       "content": "Section Spacing"
@@ -195,21 +178,37 @@
       "content": "Typography"
     },
     {
-      "type": "range",
-      "id": "title_font_size",
-      "label": "Title Font Size",
-      "default": 40,
-      "min": 10,
-      "max": 100,
-      "step": 1,
-      "unit": "px"
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Title Color",
-      "default": "#fff"
-    },
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
+    }, 
     {
       "type": "range",
       "id": "text_font_size",
@@ -219,13 +218,17 @@
       "max": 100,
       "step": 1,
       "unit": "px"
-    },
+    },    
     {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#fff"
-    },
+      "type": "range",
+      "id": "text_font_size_m",
+      "label": "Text Font Size (Mobile)",
+      "default": 15,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    }    
     
   ],
   "blocks": [
@@ -268,7 +271,7 @@
   ],
   "presets": [
     {
-      "name": "Text Banner",
+      "name": "Apex Text Banner",
       "settings": {}
     }
   ]

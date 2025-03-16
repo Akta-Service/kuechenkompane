@@ -12,7 +12,7 @@
       border-bottom: 1px solid #161818;
     {% endif %}
     padding: {{ section.settings.verticle_padding |  default: 70 }}px {{ section.settings.horizontal_padding |  default: 0 }}px;
-    background: {{ section.settings.bg_color |  default: '#c5d3be' }};
+   
   }
   .health-row {
     display: flex;
@@ -36,19 +36,16 @@
   }
   .health-sub-title {
     display: inline-block;
-    font-size: {{ section.settings.subtitle_size |  default: 18 }}px;
-    color: {{ section.settings.subtitle_color |  default: '#0f0f0fcc' }};
+    font-size: {{ section.settings.subtitle_size |  default: 18 }}px;   
     margin-bottom: 20px;
   }
-  .health-title {
-    color: {{ section.settings.title_color |  default: '#0f0f0f'}};
+  .health-title {   
     margin-bottom: 20px;
     font-size:{{ section.settings.title_size |  default: 32 }}px;
   }
   .helath-des {
     font-size: 20px;
-    line-height: 26px;
-    color: #161818;
+    line-height: 26px;    
     margin-bottom: 50px;
   }
   .health-feature {
@@ -125,7 +122,7 @@
     }
   }
 {%- endstyle -%}
-<div class="health-routine">
+<div class="health-routine m-color-{{ section.settings.color_scheme }}">
   <div class="health-container">
     <div class="health-row">
       <div class="health-img">
@@ -133,7 +130,7 @@
       </div>
       <div class="health-content">
         <span class="health-sub-title">{{ section.settings.subtitle }}</span>
-        <h2 class="health-title">{{ section.settings.title }}</h2>
+        <h2 class="health-title {{ section.settings.heading_type }}">{{ section.settings.title }}</h2>
         <p class="helath-des">{{ section.settings.des }}</p>
         <ul class="health-feature">
           {% for block in section.blocks %}
@@ -148,7 +145,7 @@
           {% endfor %}
         </ul>
         <div class="back-to-top-wrapper">
-          <button class="back-to-top mrk-btn">{{ section.settings.backBtn }}</button>
+          <button class="back-to-top mrk-btn m-button {{ section.settings.button_style }} {{ section.settings.button_size }}">{{ section.settings.backBtn }}</button>
         </div>
       </div>
     </div>
@@ -159,23 +156,16 @@
     "name": "APEX CTA Obj Handling",
     "settings": [
       {
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background Color",
-        "default": "#c5d3be"
-      },
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color scheme"
+      },      
       {
         "type": "text",
         "id": "subtitle",
         "label": "Subtitle",
         "default": "Your Subtitle Here"
-      },
-      {
-        "type": "color",
-        "id": "subtitle_color",
-        "label": "Subtitle Color",
-        "default": "#161818"
-      },
+      },      
       {
         "type": "range",
         "id": "subtitle_size",
@@ -184,25 +174,46 @@
         "min": 12,
         "max": 50,
         "step": 1
-      }, {
+      }, 
+      {
         "type": "text",
         "id": "title",
         "label": "Title",
         "default": "Your Title Here"
-      }, {
-        "type": "color",
-        "id": "title_color",
-        "label": "Title Color",
-        "default": "#161818"
-      }, {
-        "type": "range",
-        "id": "title_size",
-        "label": "Title Size",
-        "default": 32,
-        "min": 16,
-        "max": 48,
-        "step": 1
-      }, {
+      },        
+      {
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
+    },
+      {
         "type": "textarea",
         "id": "des",
         "label": "Description",
@@ -227,22 +238,70 @@
         "min": 0,
         "max": 100,
         "step": 1
-      }, {
+      },
+      {
         "type": "checkbox",
         "id": "border_t",
         "label": "Border Top",
         "default": true
-      }, {
+      }, 
+      {
         "type": "checkbox",
         "id": "border_b",
         "label": "Border Bottom",
         "default": true
-      }, {
+      },    
+      {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "m-button--primary",
+          "label": "Primary button"
+        },
+        {
+          "value": "m-button--secondary",
+          "label": "Secondary button"
+        },
+        {
+          "value": "m-button--white",
+          "label": "White button"
+        },
+        {
+          "value": "m-button--link",
+          "label": "Underline button"
+        }
+      ],
+      "default": "m-button--primary"
+    },
+    {
+      "type": "select",
+      "id": "button_size",
+      "label": "Button size",
+      "options": [
+        {
+          "value": "m-button--small",
+          "label": "Button small"
+        },
+        {
+          "value": "",
+          "label": "Button medium"
+        },
+        {
+          "value": "m-button--large",
+          "label": "Button large"
+        }
+      ],
+      "default": ""
+    },  
+       {
         "type": "color",
         "id": "item_color",
         "label": "Item Color",
         "default": "#0f0f0f"
-      }, {
+      },
+      {
         "type": "color",
         "id": "item_bg",
         "label": "Item Background Color",

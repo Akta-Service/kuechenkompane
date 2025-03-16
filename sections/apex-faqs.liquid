@@ -6,23 +6,20 @@
   }
   .faqs-title{
     font-size: {{- section.settings.title_font_size -}}px ;
-    color: {{- section.settings.title_color -}} ;
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 10px;
   }
   .faqs-sub-title{
-    font-size: {{- section.settings.sub_title_font_size -}}px ;
-    color: {{- section.settings.text_color -}} ;
+    font-size: {{- section.settings.sub_title_font_size -}}px ;   
     font-weight: 400;
   }
   .appex-faq-title{
-    font-size: {{- section.settings.faq_title_font_size -}}px ;
-    color: {{- section.settings.title_color -}} ;
+    font-size: {{- section.settings.faq_title_font_size -}}px ;   
   }
   .appex-faq-body p{
     font-size: {{- section.settings.faq_text_font_size -}}px ;
-    color: {{- section.settings.text_color -}} ;
+    
   }
   @media (max-width: 767px) {
     .appex-faqs-area {
@@ -35,9 +32,9 @@
 
   }
 </style>
-<div class="appex-faqs-area">
+<div class="appex-faqs-area m-color-{{ section.settings.color_scheme }} ">
   <div class="rs-container">
-    <h2 class="faqs-title">{{ section.settings.title }}</h2>
+    <h2 class="faqs-title {{ section.settings.heading_type }}">{{ section.settings.title }}</h2>
     <p class="faqs-sub-title">{{ section.settings.sub_title }}</p>
     <div class="appex-faq-wrapper">
       {% for block in section.blocks %}
@@ -52,7 +49,7 @@
                 viewBox="0 0 13 8"
                 fill="none"
               >
-                <path d="M1.4375 1.46875L6.5 6.53125L11.5625 1.46875" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M1.4375 1.46875L6.5 6.53125L11.5625 1.46875" stroke="{{ section.settings.icon_color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
             </span>
           </div>
@@ -68,6 +65,17 @@
 {
   "name": "APEX FAQs ",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#000000"
+    },
     {
       "type": "range",
       "id": "pt",
@@ -115,24 +123,37 @@
       "default": "FAQ"
     },
     {
-      "type": "range",
-      "id": "title_font_size",
-      "label": "Font Size",
-      "default": 34,
-      "min": 10,
-      "max": 100,
-      "step": 1
-    },
-
-    {
-      "type": "range",
-      "id": "title_font_size_mobile",
-      "label": "Title Font Size (Mobile)",
-      "default": 24,
-      "min": 10,
-      "max": 100,
-      "step": 1
-    },
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
+    },   
     {
       "type": "header",
       "content": "Sub Heading"
@@ -151,23 +172,7 @@
       "min": 10,
       "max": 100,
       "step": 1
-    },
-    {
-      "type": "header",
-      "content": "Color"
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Heading Color",
-      "default": "#121212"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#454545"
-    },
+    },    
     {
       "type": "header",
       "content": "Faq Item"
