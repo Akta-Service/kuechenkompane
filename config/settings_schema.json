@@ -3539,12 +3539,6 @@
         "default": "#d1bba0"
       },
       {
-        "type": "color",
-        "id": "cfp_text_color",
-        "label": "Box Text Color",
-        "default": "#1e1e1e"
-      },
-      {
         "type": "text",
         "id": "Spend_text",
         "label": "Spend Text",
