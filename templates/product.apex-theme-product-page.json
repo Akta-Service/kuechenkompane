@@ -374,7 +374,7 @@
         ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
       ],
       "settings": {
-        "heading_type": "mrk-h2",
+        "heading_type": "mrk-h3",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
@@ -538,7 +538,7 @@
         "color_scheme": "badge-hot",
         "vertical_padding": 50,
         "vertical_padding_mobile": 30,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h3"
       }
     },
     "magazine_quote_UQpqkk": {
@@ -563,7 +563,7 @@
           "type": "quotation",
           "settings": {
             "quote": "<p>„Küchenkompane bietet hochwertige Messer mit präziser Verarbeitung und extremer Schärfe – ein Must-have für jede Küche!“</p>",
-            "quote_size": 26
+            "quote_size": 24
           }
         }
       },
@@ -587,7 +587,7 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Kaufe einmal richtig, schneide ein Leben lang",
-            "subtitle_size": 18
+            "subtitle_size": 17
           }
         },
         "title_KU4fTr": {
@@ -619,7 +619,7 @@
         "reverse": false,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h3"
       }
     },
     "benefit_text_right_AFHFhC": {
@@ -629,7 +629,7 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Nie wieder stumpfe Messer",
-            "subtitle_size": 18
+            "subtitle_size": 17
           }
         },
         "title_YwDaTz": {
@@ -661,7 +661,7 @@
         "reverse": true,
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h3"
       }
     },
     "us_vs_them_8Tbqki": {
@@ -692,7 +692,7 @@
         "padding_bottom": 50,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h3"
       }
     },
     "ugc_video_testimonial_D4kJ9X": {
@@ -967,8 +967,8 @@
         "mb_mobile": 20,
         "title": "Vertraut von",
         "title_highlight": "+140K Kunden",
-        "heading_type": "mrk-h2",
-        "h_text_color": "#fa8526",
+        "heading_type": "mrk-h3",
+        "h_text_color": "#000000",
         "arrow_icon_color": "#000000"
       }
     },
