@@ -54,6 +54,12 @@
         "default": "#FA8526"
       },
       {
+        "type": "color",
+        "id": "sc_top_arow_color",
+        "label": "scroll top Icon Color",
+        "default": "#ffffff"
+      },
+      {
         "type": "header",
         "content": "Right-to-Left support"
       },
