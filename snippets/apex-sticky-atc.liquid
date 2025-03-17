@@ -51,6 +51,12 @@
     min-width: 350px;
     text-align: center;
   }
+  @media only screen and (max-width:768px){
+    .apex-product-page .m-product-form .m-add-to-cart {    
+    min-width: 0px;
+    width: 100%;
+  }
+  }
 </style>
 <div
   class="m-sticky-addtocart apex-sticky {{ class }}{% if enable_dynamic_checkout %} enable-dynamic-checkout{% endif %}"
