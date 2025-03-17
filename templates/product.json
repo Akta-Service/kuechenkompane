@@ -253,7 +253,9 @@
         "image_nnJw8D"
       ],
       "settings": {
-        "heading_type": "mrk-h1",
+        "Gesehen_title": "Gesehen In",
+        "heading_type": "mrk-h2",
+        "text_alignment": "center",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
