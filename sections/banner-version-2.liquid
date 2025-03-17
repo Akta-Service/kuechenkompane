@@ -243,6 +243,11 @@
     pointer-events: none;
     z-index: 1;
   }
+  @media only screen and (max-width: 768px) {
+    .b_overlay::after {
+      opacity: {{ section.settings.image_overlay_opacity_mobile | divided_by: 100.0 }};
+    }
+  }
 </style>
 
 <div class="banner-area-two m-color-{{ section.settings.color_scheme }}">
@@ -491,6 +496,15 @@
       "max": 100,
       "step": 5,
       "default": 50
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity_mobile",
+      "label": "Overlay Opacity (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 30
     }
     
   ],
