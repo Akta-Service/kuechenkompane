@@ -194,7 +194,7 @@
                 <img src="{{ block.settings.likeImg3 |  img_url: 'small' }}" alt="">
               {% endif %}
             </div>
-            <span class="like-count">{{ block.settings.likecount }}</span>
+            <span class="like-count" style="background: {{ block.settings.like_bg}};">{{ block.settings.likecount }}</span>
             <p class="like-info">{{ block.settings.likeinfo }}</p>
           </div>
           {% if product.tags contains 'HOHE NACHFRAGE' %}
