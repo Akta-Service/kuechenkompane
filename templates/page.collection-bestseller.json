@@ -15,7 +15,7 @@
         "collection_VHcxMt": {
           "type": "collection",
           "settings": {
-            "collection": "kuechenmesser-set",
+            "collection": "messerset",
             "custom_title": "Messersets"
           }
         },
@@ -74,7 +74,10 @@
         "gap": 21,
         "select_column_m": 2,
         "gapm": 10,
-        "section_title": "Messerwelt"
+        "section_title": "Messerwelt",
+        "title_size": 24,
+        "title_color": "#000000",
+        "collection_title": 18
       }
     },
     "collection_bestseller_tdLXwC": {
@@ -118,7 +121,10 @@
         "gap": 20,
         "select_column_m": 2,
         "gapm": 10,
-        "section_title": "Kochwelt"
+        "section_title": "Kochwelt",
+        "title_size": 24,
+        "title_color": "#000000",
+        "collection_title": 18
       }
     }
   },
