@@ -427,47 +427,6 @@
         "text_font_size_m": 15
       }
     },
-    "branded_image_version_2_HKy7AU": {
-      "type": "branded-image-version-2",
-      "blocks": {
-        "title_FEaxAj": {
-          "type": "title",
-          "settings": {
-            "title": "Cosmetics that inspire"
-          }
-        },
-        "text_KazUGA": {
-          "type": "text",
-          "settings": {
-            "text": "Entdecke das Geheimnis perfekter Nägel und vertraue auf die Qualität von Maniko Nails – hier findest du eine Liste unserer Siegel. Wir setzen uns täglich dafür ein, unseren Kundinnen und Kunden höchste Standards zu bieten."
-          }
-        },
-        "btn_H4peLg": {
-          "type": "btn",
-          "settings": {
-            "button_text": "JETZT ENTDECKEN",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "title_FEaxAj",
-        "text_KazUGA",
-        "btn_H4peLg"
-      ],
-      "settings": {
-        "color_scheme": "scheme-f618ff52-b194-4c41-85c0-276af7413331",
-        "shape_bg": "#ebf2e8",
-        "margin_top": 20,
-        "margin_bottom": 20,
-        "mobile_margin_top": 10,
-        "mobile_margin_bottom": 10,
-        "heading_type": "mrk-h2",
-        "text_font_size": 16,
-        "button_style": "m-button--primary",
-        "button_size": ""
-      }
-    },
     "11cfb44f-b725-4daf-8ee7-4bbf2c63914d": {
       "type": "instagram",
       "custom_css": [
@@ -528,6 +487,57 @@
         "padding_bottom_mobile": 30,
         "custom_class": ""
       }
+    },
+    "store_benefit_WFUg3M": {
+      "type": "store-benefit",
+      "blocks": {
+        "benefit_Tyefcq": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
+            "title": "100% Money Back",
+            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
+          }
+        },
+        "benefit_ATJt7t": {
+          "type": "benefit",
+          "settings": {
+            "title": "100% Money Back",
+            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
+          }
+        },
+        "benefit_ckbkae": {
+          "type": "benefit",
+          "settings": {
+            "title": "100% Money Back",
+            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_Tyefcq",
+        "benefit_ATJt7t",
+        "benefit_ckbkae"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "invert_color": true,
+        "title_size": 16,
+        "text_size": 14,
+        "pt": 70,
+        "pb": 70,
+        "ptm": 50,
+        "pbm": 50,
+        "autoplay_delay": 3000,
+        "speed": 500,
+        "items_mobile_sm": 1,
+        "items_mobile": 1,
+        "items_tablet": 2,
+        "items_desktop": 3,
+        "sbt_m": 10,
+        "sbt_t": 20,
+        "sbt_des": 30
+      }
     }
   },
   "order": [
@@ -538,8 +548,8 @@
     "product_explanation_video_6ERhrB",
     "branded_image_version_NcNpYJ",
     "text_banner_FNfUmz",
-    "branded_image_version_2_HKy7AU",
     "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
-    "1739453678f52f0d51"
+    "1739453678f52f0d51",
+    "store_benefit_WFUg3M"
   ]
 }
