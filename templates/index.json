@@ -343,56 +343,6 @@
         "heading_type": "mrk-h2"
       }
     },
-    "usp_list_nrezVU": {
-      "type": "usp-list",
-      "blocks": {
-        "item_Cpq3Qb": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "usp_title": "Kostenloser Versand",
-            "title_size": 14,
-            "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_zcx6LE": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
-            "usp_title": "Geld-zurück-Garantie",
-            "title_size": 14,
-            "usp_info": "30 Tage Rückgaberecht - ohne Risiko.",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_yDtyRV": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "usp_title": "Schärfe Garantie",
-            "title_size": 14,
-            "usp_info": "Maximale Schärfe für müheloses Schneiden.",
-            "info_size": 14,
-            "divider": false
-          }
-        }
-      },
-      "block_order": [
-        "item_Cpq3Qb",
-        "item_zcx6LE",
-        "item_yDtyRV"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "verticle_padding": 50,
-        "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
-      }
-    },
     "branded_image_version_NcNpYJ": {
       "type": "branded-image-version-",
       "blocks": {
@@ -430,6 +380,63 @@
         "mobile_margin_bottom": 30,
         "bg_img": "shopify://shop_images/IMG_0714_1.jpg",
         "heading_type": "mrk-h2",
+        "text_font_size": 16,
+        "button_style": "m-button--primary",
+        "button_size": ""
+      }
+    },
+    "text_banner_FNfUmz": {
+      "type": "text-banner",
+      "blocks": {
+        "title_hMDrkV": {
+          "type": "title",
+          "settings": {
+            "title": "100 Tage"
+          }
+        },
+        "title_style_GPx4fR": {
+          "type": "title_style",
+          "settings": {
+            "style_title": "Geld-zurück-Garantie"
+          }
+        },
+        "text_xwyAEf": {
+          "type": "text",
+          "settings": {
+            "text": "Wir bieten eine 100 Tage Garantie auf alle Produkte. Wenn du nicht zufrieden bist, erhältst du eine volle Rückerstattung ohne Probleme."
+          }
+        }
+      },
+      "block_order": [
+        "title_hMDrkV",
+        "title_style_GPx4fR",
+        "text_xwyAEf"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "pt": 0,
+        "pb": 65,
+        "mt": 0,
+        "mb": 0,
+        "pt_mobile": 65,
+        "pb_mobile": 65,
+        "mt_mobile": 0,
+        "mb_mobile": 0,
+        "heading_type": "mrk-h1",
+        "text_font_size": 15,
+        "text_font_size_m": 15
+      }
+    },
+    "branded_image_version_2_HKy7AU": {
+      "type": "branded-image-version-2",
+      "settings": {
+        "color_scheme": "",
+        "shape_bg": "#deceba",
+        "margin_top": 20,
+        "margin_bottom": 20,
+        "mobile_margin_top": 10,
+        "mobile_margin_bottom": 10,
+        "heading_type": "mrk-h1",
         "text_font_size": 16,
         "button_style": "m-button--primary",
         "button_size": ""
@@ -503,8 +510,9 @@
     "custom_content_btgYN3",
     "category_selection_dVGcxF",
     "product_explanation_video_6ERhrB",
-    "usp_list_nrezVU",
     "branded_image_version_NcNpYJ",
+    "text_banner_FNfUmz",
+    "branded_image_version_2_HKy7AU",
     "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
     "1739453678f52f0d51"
   ]
