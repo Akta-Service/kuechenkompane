@@ -372,13 +372,13 @@
         "btn_PFR3yi"
       ],
       "settings": {
-        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
-        "shape_color": "#deceba",
+        "color_scheme": "scheme-f618ff52-b194-4c41-85c0-276af7413331",
+        "shape_color": "#ebf2e8",
         "margin_top": 50,
         "margin_bottom": 50,
         "mobile_margin_top": 30,
         "mobile_margin_bottom": 30,
-        "bg_img": "shopify://shop_images/IMG_0714_1.jpg",
+        "bg_img": "shopify://shop_images/Kopie_von_product-image-02_1.jpg",
         "heading_type": "mrk-h2",
         "text_font_size": 16,
         "button_style": "m-button--primary",
@@ -429,14 +429,40 @@
     },
     "branded_image_version_2_HKy7AU": {
       "type": "branded-image-version-2",
+      "blocks": {
+        "title_FEaxAj": {
+          "type": "title",
+          "settings": {
+            "title": "Cosmetics that inspire"
+          }
+        },
+        "text_KazUGA": {
+          "type": "text",
+          "settings": {
+            "text": "Entdecke das Geheimnis perfekter Nägel und vertraue auf die Qualität von Maniko Nails – hier findest du eine Liste unserer Siegel. Wir setzen uns täglich dafür ein, unseren Kundinnen und Kunden höchste Standards zu bieten."
+          }
+        },
+        "btn_H4peLg": {
+          "type": "btn",
+          "settings": {
+            "button_text": "JETZT ENTDECKEN",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_FEaxAj",
+        "text_KazUGA",
+        "btn_H4peLg"
+      ],
       "settings": {
-        "color_scheme": "",
-        "shape_bg": "#deceba",
+        "color_scheme": "scheme-f618ff52-b194-4c41-85c0-276af7413331",
+        "shape_bg": "#ebf2e8",
         "margin_top": 20,
         "margin_bottom": 20,
         "mobile_margin_top": 10,
         "mobile_margin_bottom": 10,
-        "heading_type": "mrk-h1",
+        "heading_type": "mrk-h2",
         "text_font_size": 16,
         "button_style": "m-button--primary",
         "button_size": ""
