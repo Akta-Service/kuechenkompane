@@ -52,9 +52,9 @@
         "btn_link": "shopify://pages/produkte-entdecken",
         "button_style": "m-button--primary",
         "button_size": "",
-        "b_overlay": false,
+        "b_overlay": true,
         "image_overlay_color": "#000000",
-        "image_overlay_opacity": 100
+        "image_overlay_opacity": 10
       }
     },
     "scrolling_promotion_p4H4Y4": {
