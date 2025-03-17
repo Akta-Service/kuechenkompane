@@ -65,6 +65,7 @@
             "likeImg2": "shopify://shop_images/Kopie_von_Bild6_2_1.jpg",
             "likeImg3": "shopify://shop_images/Screenshot_2025-03-17_at_08.21.14_1.jpg",
             "likecount": "140.000+ Personen",
+            "like_bg": "#ddede0",
             "likeinfo": "lieben unser Set!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
@@ -210,6 +211,11 @@
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
         "sticky_atc_compare": false,
+        "saving_text": "Du sparst",
+        "price_color": "#000000",
+        "stk_com_p": "#a7a7a7",
+        "show_stk_icon": false,
+        "glitter_effec": false,
         "bubble_before_color": "#000000",
         "bubble_after_color": "#1e1e1e"
       }
