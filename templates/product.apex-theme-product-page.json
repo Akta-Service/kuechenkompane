@@ -161,7 +161,9 @@
         },
         "payment_icon_tePtpf": {
           "type": "paymentIcon",
-          "settings": {}
+          "settings": {
+            "payment_img": "shopify://shop_images/Screenshot_2025-03-17_at_13.37.51.png"
+          }
         },
         "product_info_9Yqdn9": {
           "type": "productInfo",
