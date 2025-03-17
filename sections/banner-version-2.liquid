@@ -231,6 +231,15 @@
     .desktop-video { display: none; }
     .mobile-video { display: block; }
   }
+
+
+  .b_overlay::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+    
+}
 </style>
 
 <div class="banner-area-two m-color-{{ section.settings.color_scheme }}">
@@ -260,7 +269,7 @@
     </div>
   </div>
   <div
-    class="banner-main"
+    class="banner-main {% if section.settings.b_overlay != false %}b_overlay{% endif %}"
     style="{% if section.settings.bg_igm != blank %} background-image: url('{{ section.settings.bg_igm |  img_url: 'master'  }}'); {% endif %}"
   >
     <div class="video-wrapper">
@@ -279,41 +288,7 @@
         <a class="m-button {{ section.settings.button_style }} {{ section.settings.button_size }}" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
       </div>
     </div>
-  </div>
-  {% if section.settings.brang_img1 != blank
-    or section.settings.brang_img2 != blank
-    or section.settings.brang_img3 != blank
-    or section.settings.brang_img4 != blank
-    or section.settings.brang_img5 != blank
-    or section.settings.brang_img6 != blank
-  %}
-    <div class="banner-bottom">
-      <div class="banner-bottm-content">
-        {% for i in (1..6) %}
-          {% case i %}
-            {% when 1 %}
-              {% assign brand_img = section.settings.brang_img1 %}
-            {% when 2 %}
-              {% assign brand_img = section.settings.brang_img2 %}
-            {% when 3 %}
-              {% assign brand_img = section.settings.brang_img3 %}
-            {% when 4 %}
-              {% assign brand_img = section.settings.brang_img4 %}
-            {% when 5 %}
-              {% assign brand_img = section.settings.brang_img5 %}
-            {% when 6 %}
-              {% assign brand_img = section.settings.brang_img6 %}
-          {% endcase %}
-
-          {% if brand_img != blank %}
-            <div class="banner-brand-img">
-              <img src="{{ brand_img | img_url: 'master' }}" loading="lazy" alt="Brand Image {{ i }}">
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
+  </div>  
 </div>
 
 {% schema %}
@@ -491,38 +466,25 @@
     },
     {
       "type": "header",
-      "content": "Brand Image"
+      "content": "overlay Settings"
     },
     {
-      "type": "image_picker",
-      "id": "brang_img1",
-      "label": "Brand Image 1"
+      "type": "checkbox",
+      "id": "b_overlay",
+      "label": "Add OverLay",
+      "default": false
     },
     {
-      "type": "image_picker",
-      "id": "brang_img2",
-      "label": "Brand Image 2"
-    },
-    {
-      "type": "image_picker",
-      "id": "brang_img3",
-      "label": "Brand Image 3"
-    },
-    {
-      "type": "image_picker",
-      "id": "brang_img4",
-      "label": "Brand Image 4"
-    },
-    {
-      "type": "image_picker",
-      "id": "brang_img5",
-      "label": "Brand Image 5"
-    },
-    {
-      "type": "image_picker",
-      "id": "brang_img6",
-      "label": "Brand Image 6"
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
+      "default": 0
     }
+    
   ],
   "blocks": [
     {
