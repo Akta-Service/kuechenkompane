@@ -501,10 +501,10 @@
     "ugc_video_testimonial_fWJLpe": {
       "type": "ugc-video-testimonial",
       "blocks": {
-        "item_MeKj4G": {
+        "item_fE7aKd": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/C0033_MP4_1_V3_cc6ea22e-b63f-4f54-a36e-f79ff9f3899d.mp4",
+            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V1.mp4",
             "product": ""
           }
         },
@@ -529,10 +529,10 @@
             "product": ""
           }
         },
-        "item_fE7aKd": {
+        "item_MeKj4G": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V1.mp4",
+            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V2.mov",
             "product": ""
           }
         },
@@ -545,11 +545,11 @@
         }
       },
       "block_order": [
-        "item_MeKj4G",
+        "item_fE7aKd",
         "item_BnUmzi",
         "item_tmE7zy",
         "item_BaadNU",
-        "item_fE7aKd",
+        "item_MeKj4G",
         "item_hQNcWm"
       ],
       "settings": {
