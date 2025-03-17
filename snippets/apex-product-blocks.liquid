@@ -252,7 +252,12 @@
 
       {% when 'paymentIcon' %}
         <div class="rs-payment-icons">
-          {%- render 'payment-icons' -%}
+          {% if block.settings.payment_img != blank %}
+            <img src="{{ block.settings.payment_img |  img_url: 'master' }}" alt="payment Icon">
+          {% else %}
+            {%- render 'payment-icons' -%}
+          {% endif %}
+
         </div>
 
       {% when 'productInfo' %}
