@@ -125,7 +125,7 @@
   gap: 10px;
 }
 
-.apex-sticky .m-add-to-cart:after {
+.apex-sticky .m-add-to-cart.effet:after {
   background: #fff;
   content: "";
   height: 155px;
