@@ -385,67 +385,6 @@
         "button_size": ""
       }
     },
-    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d": {
-      "type": "instagram",
-      "custom_css": [
-        ".container-full {padding-left: 0; padding-right: 0;}",
-        "@media (max-width: 767px) {br {display: none; }}"
-      ],
-      "settings": {
-        "heading": "Folge uns auf Instagram",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "Markiere <span class=\"text-black\">@kuechenkompane</span> in Deinen Fotos, um hier präsentiert zu werden. <br>\nFinde mehr Inspiration und die neuesten Highlights auf unserem <a href=\"https://www.instagram.com/kuechenkompane/\"> Instagram-Profil.</a>",
-        "header_alignment": "center",
-        "container": "w-full",
-        "color_scheme": "badge-hot",
-        "color_scheme_content": "badge-hot",
-        "layout": "grid",
-        "images_count": 5,
-        "grid_columns": 5,
-        "gap": 0,
-        "mobile_gap": 0,
-        "profile": "https://www.instagram.com/minimog.trendy/",
-        "button_label": "",
-        "button_style": "m-button--secondary",
-        "use_scroll_mobile": true,
-        "padding_top": 48,
-        "padding_bottom": 0,
-        "custom_class": ""
-      }
-    },
-    "1739453678f52f0d51": {
-      "type": "apps",
-      "blocks": {
-        "instafeed_app_block_jYfhfc": {
-          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
-          "settings": {
-            "title": "",
-            "title_color": "",
-            "alignment": "center",
-            "background_color": "",
-            "feed_id": "",
-            "html_area": ""
-          }
-        }
-      },
-      "block_order": [
-        "instafeed_app_block_jYfhfc"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "header_alignment": "center",
-        "container": "container",
-        "background_color": "",
-        "padding_top": 0,
-        "padding_bottom": 66,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 30,
-        "custom_class": ""
-      }
-    },
     "store_benefit_WFUg3M": {
       "type": "store-benefit",
       "blocks": {
@@ -558,10 +497,10 @@
         "pb": 70,
         "pt_mobile": 30,
         "pb_mobile": 30,
-        "title": "See our products in action",
-        "heading_type": "mrk-h1",
+        "title": "unsere produkte in aktion",
+        "heading_type": "mrk-h3",
         "btn_url": "",
-        "btn_text": "@merodacosmetics",
+        "btn_text": "@kuechenkompane",
         "autoplay": false
       }
     }
@@ -573,9 +512,7 @@
     "category_selection_dVGcxF",
     "product_explanation_video_6ERhrB",
     "branded_image_version_NcNpYJ",
-    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
-    "1739453678f52f0d51",
-    "store_benefit_WFUg3M",
-    "ugc_video_testimonial_fWJLpe"
+    "ugc_video_testimonial_fWJLpe",
+    "store_benefit_WFUg3M"
   ]
 }
