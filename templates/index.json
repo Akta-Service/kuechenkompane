@@ -385,58 +385,6 @@
         "button_size": ""
       }
     },
-    "store_benefit_WFUg3M": {
-      "type": "store-benefit",
-      "blocks": {
-        "benefit_Tyefcq": {
-          "type": "benefit",
-          "settings": {
-            "benefit_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
-            "title": "100% Money Back",
-            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
-          }
-        },
-        "benefit_ATJt7t": {
-          "type": "benefit",
-          "settings": {
-            "benefit_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
-            "title": "140,000+ zufriedene Kunden",
-            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
-          }
-        },
-        "benefit_ckbkae": {
-          "type": "benefit",
-          "settings": {
-            "title": "100% Money Back",
-            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
-          }
-        }
-      },
-      "block_order": [
-        "benefit_Tyefcq",
-        "benefit_ATJt7t",
-        "benefit_ckbkae"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "invert_color": false,
-        "title_size": 16,
-        "text_size": 14,
-        "pt": 70,
-        "pb": 70,
-        "ptm": 50,
-        "pbm": 50,
-        "autoplay_delay": 3000,
-        "speed": 500,
-        "items_mobile_sm": 1,
-        "items_mobile": 1,
-        "items_tablet": 2,
-        "items_desktop": 3,
-        "sbt_m": 10,
-        "sbt_t": 20,
-        "sbt_des": 30
-      }
-    },
     "ugc_video_testimonial_fWJLpe": {
       "type": "ugc-video-testimonial",
       "blocks": {
@@ -502,6 +450,59 @@
         "btn_url": "",
         "btn_text": "@kuechenkompane",
         "autoplay": false
+      }
+    },
+    "store_benefit_WFUg3M": {
+      "type": "store-benefit",
+      "blocks": {
+        "benefit_Tyefcq": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
+            "title": "100% Money Back",
+            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
+          }
+        },
+        "benefit_ATJt7t": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
+            "title": "140,000+ zufriedene Kunden",
+            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
+          }
+        },
+        "benefit_ckbkae": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "shopify://shop_images/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png",
+            "title": "Geprüfte Qualität",
+            "text": "Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Schluss mit Kompromissen beim Kochen! Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_Tyefcq",
+        "benefit_ATJt7t",
+        "benefit_ckbkae"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "invert_color": false,
+        "title_size": 16,
+        "text_size": 14,
+        "pt": 70,
+        "pb": 70,
+        "ptm": 50,
+        "pbm": 50,
+        "autoplay_delay": 3000,
+        "speed": 500,
+        "items_mobile_sm": 1,
+        "items_mobile": 1,
+        "items_tablet": 2,
+        "items_desktop": 3,
+        "sbt_m": 10,
+        "sbt_t": 20,
+        "sbt_des": 30
       }
     }
   },
