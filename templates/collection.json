@@ -59,6 +59,22 @@
     "store_benefit_UmKWn7": {
       "type": "store-benefit",
       "blocks": {
+        "benefit_rp8hKf": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
+            "title": "100% Money Back",
+            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
+          }
+        },
+        "benefit_9zWaXE": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "shopify://shop_images/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png",
+            "title": "100% Money Back",
+            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
+          }
+        },
         "benefit_33RGaG": {
           "type": "benefit",
           "settings": {
@@ -69,6 +85,8 @@
         }
       },
       "block_order": [
+        "benefit_rp8hKf",
+        "benefit_9zWaXE",
         "benefit_33RGaG"
       ],
       "settings": {
