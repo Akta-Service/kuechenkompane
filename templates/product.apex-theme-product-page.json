@@ -253,12 +253,12 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "Produktbeschreibung",
+        "title": "Gleite wie Butter durch jedes Lebensmittel",
         "heading_type": "mrk-h3",
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": true,
+        "add_showore_btn": false,
         "br_color": "#000000",
         "icon_color": "#000000"
       }
