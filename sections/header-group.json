@@ -13,6 +13,7 @@
   "sections": {
     "announcement_bar_version_1_GTNqb8": {
       "type": "announcement-bar-version-1",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-5dc77651-4cfe-4da9-a33e-3719e5cd8e15",
         "pt": 15,
@@ -55,7 +56,6 @@
         "item_6Ycmkw",
         "item_PjeGnW"
       ],
-      "disabled": true,
       "custom_css": [
         ".m-announcement-bar__container {--container-width: 600px;}",
         ".m-slider-controls__wrapper {display: none;}"
