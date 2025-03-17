@@ -257,7 +257,7 @@
         "color_scheme": "badge-hot",
         "title": "Gleite wie Butter durch jedes Lebensmittel",
         "heading_type": "mrk-h3",
-        "description": "{{ product.description }}",
+        "description": "<p>{{ product.description }}</p>",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": false,
@@ -378,7 +378,7 @@
       "settings": {
         "Gesehen_title": "Gesehen In",
         "heading_type": "mrk-h3",
-        "text_alignment": "left",
+        "text_alignment": "center",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
