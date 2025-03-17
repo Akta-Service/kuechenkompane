@@ -56,71 +56,6 @@
         "color_swatches_design": "list"
       }
     },
-    "store_benefit_UmKWn7": {
-      "type": "store-benefit",
-      "blocks": {
-        "benefit_33RGaG": {
-          "type": "benefit",
-          "settings": {
-            "benefit_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
-            "title": "100 Tage-geld-zurück Garantie",
-            "text": "Wir sind von der Qualität unserer Produkte überzeugt und möchten sicherstellen, dass Du zu 100% zufrieden bist."
-          }
-        },
-        "benefit_rp8hKf": {
-          "type": "benefit",
-          "settings": {
-            "benefit_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
-            "title": "140,000+ zufriedene Kunden",
-            "text": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?"
-          }
-        },
-        "benefit_9zWaXE": {
-          "type": "benefit",
-          "settings": {
-            "benefit_icon": "shopify://shop_images/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png",
-            "title": "Geprüfte qualität",
-            "text": "Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit."
-          }
-        }
-      },
-      "block_order": [
-        "benefit_33RGaG",
-        "benefit_rp8hKf",
-        "benefit_9zWaXE"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "invert_color": true,
-        "title_size": 16,
-        "text_size": 14,
-        "pt": 70,
-        "pb": 70,
-        "ptm": 50,
-        "pbm": 50,
-        "autoplay_delay": 3000,
-        "speed": 500,
-        "items_mobile_sm": 1,
-        "items_mobile": 1,
-        "items_tablet": 2,
-        "items_desktop": 3,
-        "sbt_m": 10,
-        "sbt_t": 20,
-        "sbt_des": 30
-      }
-    },
-    "store_benefits_bottom_qpctyd": {
-      "type": "store-benefits-bottom",
-      "settings": {
-        "color_scheme": "",
-        "icon_color": "#000000",
-        "pt": 50,
-        "pb": 50,
-        "font_size": 14,
-        "ptm": 50,
-        "pbm": 50
-      }
-    },
     "usp_list_nd6t8y": {
       "type": "usp-list",
       "blocks": {
@@ -175,8 +110,6 @@
   "order": [
     "collection-header",
     "main",
-    "store_benefit_UmKWn7",
-    "store_benefits_bottom_qpctyd",
     "usp_list_nd6t8y"
   ]
 }
