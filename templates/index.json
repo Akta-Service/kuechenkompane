@@ -107,7 +107,7 @@
       ],
       "custom_css": [],
       "settings": {
-        "heading_type": "mrk-h2",
+        "heading_type": "mrk-h5",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
@@ -184,7 +184,7 @@
             "align_text": "center",
             "text_size": "medium",
             "text_color": "inherit",
-            "button_label": "Jetzt entdecken",
+            "button_label": "JETZT ENTDECKEN",
             "button_link": "https://kuechenkompane.de/products/messerset-premium-1",
             "button_style": "m-button--primary",
             "button_size": "",
@@ -203,8 +203,8 @@
         "@media only screen and (max-width: 767px) {.m-richtext__title {font-size: 28px; }}"
       ],
       "settings": {
-        "heading": "Entdecke unseren Bestseller",
-        "heading_type": "mrk-h2",
+        "heading": "#1 Bestseller",
+        "heading_type": "mrk-h3",
         "subheading": "",
         "description": "",
         "header_alignment": "center",
