@@ -504,6 +504,64 @@
         "sbt_t": 20,
         "sbt_des": 30
       }
+    },
+    "apex_home_logo_list_7wDRp3": {
+      "type": "apex-home-logo-list",
+      "blocks": {
+        "slide_wBaHFk": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/n_tv_logo_V6_1.png"
+          }
+        },
+        "slide_9WHHaB": {
+          "type": "slide",
+          "settings": {}
+        },
+        "slide_dVxw6b": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/n_tv_logo_V3_1.png"
+          }
+        },
+        "slide_f8yGEC": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/n_tv_logo_V4_1.png"
+          }
+        },
+        "slide_qFXV8Y": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/n_tv_logo_V2_1.png"
+          }
+        },
+        "slide_DAciDh": {
+          "type": "slide",
+          "settings": {
+            "home_logo": "shopify://shop_images/n_tv_logo_V7_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_wBaHFk",
+        "slide_9WHHaB",
+        "slide_dVxw6b",
+        "slide_f8yGEC",
+        "slide_qFXV8Y",
+        "slide_DAciDh"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "pt": 40,
+        "pb": 40,
+        "ptm": 40,
+        "pbm": 40,
+        "invert_color": false,
+        "autoplay": false,
+        "loop": false
+      }
     }
   },
   "order": [
@@ -514,6 +572,7 @@
     "product_explanation_video_6ERhrB",
     "branded_image_version_NcNpYJ",
     "ugc_video_testimonial_fWJLpe",
-    "store_benefit_WFUg3M"
+    "store_benefit_WFUg3M",
+    "apex_home_logo_list_7wDRp3"
   ]
 }
