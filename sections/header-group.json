@@ -13,6 +13,7 @@
   "sections": {
     "announcement_bar_version_1_GTNqb8": {
       "type": "announcement-bar-version-1",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-5dc77651-4cfe-4da9-a33e-3719e5cd8e15",
         "pt": 15,
@@ -31,12 +32,13 @@
         "item_dGj4GU": {
           "type": "item",
           "settings": {
-            "message": "140.000+ zufriedene Kunden",
+            "message": "Premium Küchenprodukte",
             "message_link": ""
           }
         },
         "item_6Ycmkw": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "message": "Kostenloser Versand ab 100€ Einkaufswert",
             "message_link": ""
@@ -44,6 +46,7 @@
         },
         "item_PjeGnW": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "message": "18.000+ 5-Sterne Bewertungen",
             "message_link": ""
@@ -55,7 +58,6 @@
         "item_6Ycmkw",
         "item_PjeGnW"
       ],
-      "disabled": true,
       "custom_css": [
         ".m-announcement-bar__container {--container-width: 600px;}",
         ".m-slider-controls__wrapper {display: none;}"
