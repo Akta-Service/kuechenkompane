@@ -43,7 +43,6 @@
     "password_page": {
       "opening_soon": "Öffnet bald"
     },
-    "social": {},
     "search": {
       "title": "Durchsuchen Sie unseren Shop",
       "placeholder": "Produktsuche",
@@ -392,7 +391,7 @@
       "unavailable": "Nicht verfügbar",
       "on_sale": "Im Angebot",
       "from_text_html": "Von {{ price }}",
-      "quantity": "Menge",
+      "quantity": "",
       "add_to_cart": "In den Warenkorb legen",
       "add_to_wishlist": "Zur Wunschliste hinzufügen",
       "remove_from_wishlist": "Von der Wunschliste entfernen",
@@ -451,7 +450,8 @@
       "select_variant": "Bitte wählen Sie eine Variante aus, bevor Sie das Produkt in Ihren Warenkorb legen.",
       "preorder_note": "Artikel vorbestellen",
       "sale_text": "Verkauf",
-      "inventory_quantity_html": "{{ quantity }} Artikel"
+      "inventory_quantity_html": "{{ quantity }} Artikel",
+      "inventory_low_quantity_html": ""
     }
   },
   "gift_cards": {
