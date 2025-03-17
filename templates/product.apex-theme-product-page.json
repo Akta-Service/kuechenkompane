@@ -1193,20 +1193,20 @@
             "store_benefit_text": "100 Tage Geld-zurück-Garantie"
           }
         },
-        "item_AXkcTt": {
-          "type": "item",
-          "settings": {
-            "icon": "icon3",
-            "svg-code": "",
-            "store_benefit_text": "30 Tage Geld-Zurück-Garantie"
-          }
-        },
         "item_h3KX9m": {
           "type": "item",
           "settings": {
             "icon": "icon4",
             "svg-code": "",
             "store_benefit_text": "100% SICHERE ZAHLUNG"
+          }
+        },
+        "item_AXkcTt": {
+          "type": "item",
+          "settings": {
+            "icon": "icon3",
+            "svg-code": "",
+            "store_benefit_text": "140.000+ zufriedene Kunden"
           }
         },
         "item_MzPUFH": {
@@ -1221,8 +1221,8 @@
       "block_order": [
         "item_96wqwW",
         "item_6LarDz",
-        "item_AXkcTt",
         "item_h3KX9m",
+        "item_AXkcTt",
         "item_MzPUFH"
       ],
       "settings": {
