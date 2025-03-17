@@ -126,7 +126,7 @@
           "type": "lookbook",
           "settings": {
             "color_scheme": "",
-            "width": "50%",
+            "width": "33%",
             "image": "shopify://shop_images/money_management_V3_1_1_2_2.jpg",
             "top_1": 51,
             "left_1": 51,
@@ -385,48 +385,6 @@
         "button_size": ""
       }
     },
-    "text_banner_FNfUmz": {
-      "type": "text-banner",
-      "blocks": {
-        "title_hMDrkV": {
-          "type": "title",
-          "settings": {
-            "title": "100 Tage"
-          }
-        },
-        "title_style_GPx4fR": {
-          "type": "title_style",
-          "settings": {
-            "style_title": "Geld-zurück-Garantie"
-          }
-        },
-        "text_xwyAEf": {
-          "type": "text",
-          "settings": {
-            "text": "Wir bieten eine 100 Tage Garantie auf alle Produkte. Wenn du nicht zufrieden bist, erhältst du eine volle Rückerstattung ohne Probleme."
-          }
-        }
-      },
-      "block_order": [
-        "title_hMDrkV",
-        "title_style_GPx4fR",
-        "text_xwyAEf"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "pt": 0,
-        "pb": 65,
-        "mt": 0,
-        "mb": 0,
-        "pt_mobile": 65,
-        "pb_mobile": 65,
-        "mt_mobile": 0,
-        "mb_mobile": 0,
-        "heading_type": "mrk-h1",
-        "text_font_size": 15,
-        "text_font_size_m": 15
-      }
-    },
     "11cfb44f-b725-4daf-8ee7-4bbf2c63914d": {
       "type": "instagram",
       "custom_css": [
@@ -548,7 +506,6 @@
     "category_selection_dVGcxF",
     "product_explanation_video_6ERhrB",
     "branded_image_version_NcNpYJ",
-    "text_banner_FNfUmz",
     "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
     "1739453678f52f0d51",
     "store_benefit_WFUg3M"
