@@ -446,6 +446,8 @@ span.faq-icon {
   button.m-add-to-cart.rs-add-btn {
     margin-top: 10px;
     margin-bottom: 18px;
+    min-width: fit-content !important;
+    max-width: 100%;
   }
   .m-sticky-addtocart .m-add-to-cart {
     min-width: auto;
