@@ -319,77 +319,71 @@
         "animations": "inherit"
       }
     },
-    "ugc_video_testimonial_D4kJ9X": {
-      "type": "ugc-video-testimonial",
+    "scrolling_promotion_UKXeX3": {
+      "type": "scrolling-promotion",
       "blocks": {
-        "item_7xpaVV": {
-          "type": "item",
+        "image_bpiG7J": {
+          "type": "image",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_1_fd6e8e0e-b98b-4b2d-be30-f3a0d7888a8e.jpg",
-            "video": "shopify://files/videos/Küchenkompane (3).mp4",
-            "product": "premium"
+            "image": "shopify://shop_images/n_tv_logo_V7_1.png",
+            "image_height": 120,
+            "image_link": ""
           }
         },
-        "item_tYitmU": {
-          "type": "item",
+        "image_NptXmD": {
+          "type": "image",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_5_89195910-0d90-440f-990e-ccde72fb3897.jpg",
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V2.mov",
-            "product": "premium"
+            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
+            "image_height": 100,
+            "image_link": ""
           }
         },
-        "item_iJxMti": {
-          "type": "item",
+        "image_JPQVbf": {
+          "type": "image",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_2_c43ac8ad-5ad8-4e2a-812e-7a9d24440cdf.jpg",
-            "video": "shopify://files/videos/Review-2.mp4",
-            "product": "premium"
+            "image": "shopify://shop_images/n_tv_logo_V2_1.png",
+            "image_height": 100,
+            "image_link": ""
           }
         },
-        "item_UYW7B3": {
-          "type": "item",
+        "image_T7Lehj": {
+          "type": "image",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_3_3afbc759-565a-46fd-b360-7da9ae57dfbd.jpg",
-            "video": "shopify://files/videos/Reeview-1.mp4",
-            "product": "premium"
+            "image": "shopify://shop_images/n_tv_logo_V4_1.png",
+            "image_height": 100,
+            "image_link": ""
           }
         },
-        "item_ft7YRa": {
-          "type": "item",
+        "image_4NEDGT": {
+          "type": "image",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_4_2bfcf4a3-7294-43e4-b92e-db75219f6273.jpg",
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V3.mp4",
-            "product": "premium"
-          }
-        },
-        "item_cHcggm": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_6_303b9316-5d7c-4433-ad93-6a9da4680614.jpg",
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V1.mp4",
-            "product": ""
+            "image": "shopify://shop_images/n_tv_logo_V3_1.png",
+            "image_height": 100,
+            "image_link": ""
           }
         }
       },
       "block_order": [
-        "item_7xpaVV",
-        "item_tYitmU",
-        "item_iJxMti",
-        "item_UYW7B3",
-        "item_ft7YRa",
-        "item_cHcggm"
+        "image_bpiG7J",
+        "image_NptXmD",
+        "image_JPQVbf",
+        "image_T7Lehj",
+        "image_4NEDGT"
+      ],
+      "custom_css": [
+        ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
       ],
       "settings": {
-        "color_scheme": "badge-hot",
-        "pt": 70,
-        "pb": 50,
-        "pt_mobile": 30,
-        "pb_mobile": 30,
-        "title": "Unsere Produkte in Aktion",
-        "heading_type": "mrk-h3",
-        "btn_url": "https://www.instagram.com/kuechenkompane/",
-        "btn_text": "@kuechenkompane",
-        "autoplay": false
+        "heading_type": "mrk-h2",
+        "container": "w-full",
+        "direction": "left",
+        "speed": 30,
+        "item_gap": 50,
+        "item_gap_mobile": 30,
+        "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
+        "padding_top": 40,
+        "padding_bottom": 30,
+        "custom_class": ""
       }
     },
     "logo_greyed_out_FMbnW7": {
@@ -475,87 +469,20 @@
         "p_bottom": 50
       }
     },
-    "scrolling_promotion_UKXeX3": {
-      "type": "scrolling-promotion",
-      "blocks": {
-        "image_bpiG7J": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V7_1.png",
-            "image_height": 120,
-            "image_link": ""
-          }
-        },
-        "image_NptXmD": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "image_height": 100,
-            "image_link": ""
-          }
-        },
-        "image_JPQVbf": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V2_1.png",
-            "image_height": 100,
-            "image_link": ""
-          }
-        },
-        "image_T7Lehj": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V4_1.png",
-            "image_height": 100,
-            "image_link": ""
-          }
-        },
-        "image_4NEDGT": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V3_1.png",
-            "image_height": 100,
-            "image_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_bpiG7J",
-        "image_NptXmD",
-        "image_JPQVbf",
-        "image_T7Lehj",
-        "image_4NEDGT"
-      ],
-      "custom_css": [
-        ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
-      ],
-      "settings": {
-        "heading_type": "mrk-h2",
-        "container": "w-full",
-        "direction": "left",
-        "speed": 30,
-        "item_gap": 50,
-        "item_gap_mobile": 30,
-        "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
-        "padding_top": 40,
-        "padding_bottom": 30,
-        "custom_class": ""
-      }
-    },
     "product_explanation_video_xNFp3M": {
       "type": "product-explanation-video",
       "blocks": {
         "sub_heading_aBnF8i": {
           "type": "sub_heading",
           "settings": {
-            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten",
+            "sub_heading": "Das #1 Messerset 2025",
             "sub_heading_size": 16
           }
         },
         "heading_jQDwbJ": {
           "type": "heading",
           "settings": {
-            "heading": "Qualität, die begeistert.",
+            "heading": "Qualität zum besten Preis",
             "h1_font_size": 32,
             "h1_font_size_tablet": 28,
             "h1_font_size_mobile": 24,
@@ -573,7 +500,7 @@
         "details_erg8QM": {
           "type": "details",
           "settings": {
-            "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
+            "details": "Kein Handweh mehr – der ergonomische Griff sorgt für Komfort, selbst bei langem Schneiden.\nDas Beste? Für jede Aufgabe gibt’s das passende Messer im Set.",
             "details_size": 18,
             "p_font_size": 16,
             "p_font_size_tablet": 14,
@@ -627,6 +554,7 @@
         },
         "ratings_qmMcyY": {
           "type": "ratings",
+          "disabled": true,
           "settings": {
             "rating": 5
           }
@@ -634,7 +562,7 @@
         "quotation_g7QTma": {
           "type": "quotation",
           "settings": {
-            "quote": "<p>“Küchenkompane überzeugt mit hochwertigen Messern, die durch präzise Verarbeitung und erstklassige Materialien eine beeindruckende Schärfe bieten. Ein Must-have für jede Küche\"</p>",
+            "quote": "<p>„Küchenkompane bietet hochwertige Messer mit präziser Verarbeitung und extremer Schärfe – ein Must-have für jede Küche!“</p>",
             "quote_size": 26
           }
         }
@@ -652,159 +580,27 @@
         "padding_bottom_mobile": 50
       }
     },
-    "us_vs_them_8Tbqki": {
-      "type": "us-vs-them",
-      "blocks": {
-        "title_F4F6qE": {
-          "type": "title",
-          "settings": {
-            "title": "KÜCHENKOMPANE® vs. ANDERE"
-          }
-        },
-        "description_9Mxcd4": {
-          "type": "description",
-          "settings": {
-            "description": "<p>Unsere Vergleichsgrafik zeigt, warum Küchenkompane die beste Wahl ist. Mit messerscharfer Präzision, hochwertigem Stahl und ergonomischem Design bieten unsere Messer maximale Qualität und Komfort.</p>",
-            "description_size": 16
-          }
-        }
-      },
-      "block_order": [
-        "title_F4F6qE",
-        "description_9Mxcd4"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "img": "shopify://shop_images/steel_kitchen_knives_V11_1.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2"
-      }
-    },
-    "apex_faqs_jx7hp6": {
-      "type": "apex-faqs",
-      "blocks": {
-        "item_Y76Jjj": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Wie scharf sind die Messer von Küchenkompane?",
-            "faq_body": "<p>Unsere Messer sind auf <strong>Rasiermesserschärfe</strong> geschliffen. Dank des hochwertigen Stahls und der präzisen Verarbeitung gleiten sie mühelos durch jedes Schnittgut – für maximale Präzision und Freude beim Kochen.</p>"
-          }
-        },
-        "item_J7jdRT": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Welches Material wird für die Klingen verwendet?",
-            "faq_body": "<p>Wir setzen auf <strong>hochwertigen gehärteten Edelstahl (7CR17)</strong>, bekannt für seine außergewöhnliche Schärfe, Langlebigkeit und Widerstandsfähigkeit gegen Rost und Abnutzung. Die Klingen werden von uns durch eine speziell entwickelte Methode gehärtet, um eine Härte von <strong>60+ HRC</strong> zu erreichen.</p>"
-          }
-        },
-        "item_V7NfBy": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Bleiben die Messer lange scharf oder müssen sie oft nachgeschärft werden?",
-            "faq_body": "<p>Dank der <strong>professionellen und besonderen Härtung</strong> behalten unsere Messer ihre Schärfe <strong>wesentlich länger</strong> als herkömmliche Küchenmesser. Regelmäßiges Nachschärfen ist erst nach langer Nutzung nötig.</p>"
-          }
-        },
-        "item_Q9DGdb": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Sind die Messer rostfrei und spülmaschinengeeignet?",
-            "faq_body": "<p>Unsere Messer sind <strong>hochgradig rostbeständig</strong>, da wir ausschließlich korrosionsbeständige Premium-Stähle verwenden. Für maximale Langlebigkeit empfehlen wir jedoch die <strong>Handwäsche</strong>, da Spülmaschinen aggressive Reinigungsmittel nutzen, die die Schärfe der Klinge beeinträchtigen können.</p>"
-          }
-        },
-        "item_xpq4qN": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Warum sind Küchenkompane Messer besser als herkömmliche Messer?",
-            "faq_body": "<p><strong>Präzise Handwerkskunst</strong>: Jedes Messer wird mit höchster Sorgfalt gefertigt<br/><strong>Extrem scharf</strong>: Rasiermesserschärfe für müheloses Schneiden<br/><strong>Langlebig & robust</strong>: Gehärteter Premium-Stahl für jahrelange Nutzung<strong>Ergonomischer Griff</strong>: Perfekte Balance für eine komfortable Handhabung<br/><strong>Exklusives Design</strong>: Ein Blickfang in jeder Küche</p>"
-          }
-        },
-        "item_XFGU6y": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Welche Messer sind im Set enthalten?",
-            "faq_body": "<p>Das 8-teilige Messerset wurde speziell zusammengestellt, um jede Schneideaufgabe in der Küche perfekt zu meistern. Jedes Messer hat seinen eigenen Einsatzzweck:</p><ul><li><strong>Chefmesser</strong> – Der Allrounder für alle Lebensmittel</li><li><strong>Santoku 7 Inch Messer</strong> – Ideal für Fisch, Fleisch & Gemüse</li><li><strong>Nakiri Messer</strong> – Perfekt für große Mengen an Gemüse</li><li><strong>Filetiermesser</strong> – Präzise Schnitte für Fisch & Geflügel</li><li><strong>Brotmesser</strong> – Schneidet mühelos durch jede Kruste</li><li><strong>Yanagiba Messer</strong> – Speziell für Sushi, Schinken & Carpaccio</li><li><strong>Santoku 5 Inch Messer</strong> – Die kompakte Variante für feine Schnitte</li><li><strong>Petty Messer</strong> – Perfekt für Obst, Gemüse und filigrane Arbeiten</li></ul><p>Jedes Messer wurde mit höchster Präzision gefertigt und sorgt für mühelose, saubere Schnitte in jeder Situation.</p>"
-          }
-        },
-        "item_cDC8UT": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Gibt es eine Geld-zurück-Garantie oder ein Rückgaberecht?",
-            "faq_body": "<p>Ja! Wir bieten eine <strong>30-Tage-Geld-zurück-Garantie</strong>. Teste die Messer völlig risikofrei. Solltest du nicht zufrieden sein, kannst du sie unkompliziert zurücksenden – ohne Wenn und Aber!</p>"
-          }
-        },
-        "item_PNKhQY": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Wie lange dauert der Versand und gibt es eine Expressoption?",
-            "faq_body": "<p><strong>Standardversand</strong>: 1-3 Werktage<br/><strong>Expressversand</strong>: 20-36 Stunden für eine schnelle Lieferung</p><p>Alle Bestellungen werden mit Sendungsverfolgung versendet, damit du dein Paket jederzeit nachverfolgen kannst.</p>"
-          }
-        },
-        "item_889zGP": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Welche Zahlungsmethoden werden akzeptiert?",
-            "faq_body": "<p>Wir bieten <strong>sichere und flexible Zahlungsmöglichkeiten</strong>, darunter:<br/>Kreditkarte (Visa, Mastercard, AMEX)<br/>PayPal, Klarna (Rechnung & Sofort)<br/>Apple Pay & Google Pay</p>"
-          }
-        },
-        "item_9JjGkE": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Gibt es eine Garantie auf die Messer?",
-            "faq_body": "<p>Ja! Unsere Messer kommen mit einer <strong>Langzeit-Garantie auf Material- und Herstellungsfehler</strong>. Sollte es ein Problem geben, sorgen wir für einen schnellen Ersatz oder eine Lösung.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "item_Y76Jjj",
-        "item_J7jdRT",
-        "item_V7NfBy",
-        "item_Q9DGdb",
-        "item_xpq4qN",
-        "item_XFGU6y",
-        "item_cDC8UT",
-        "item_PNKhQY",
-        "item_889zGP",
-        "item_9JjGkE"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "icon_color": "#000000",
-        "pt": 50,
-        "pb": 50,
-        "pt_mobile": 30,
-        "pb_mobile": 30,
-        "title": "FAQ - Häufige Fragen",
-        "heading_type": "mrk-h2",
-        "sub_title": "Common problems and simple solutions",
-        "sub_title_font_size": 14,
-        "faq_title_font_size": 18,
-        "faq_text_font_size": 16
-      }
-    },
     "benefit_text_MCeGiV": {
       "type": "benefit-text",
       "blocks": {
         "subtitle_8kbCAt": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Der Küchen-Trend 2025",
+            "subtitle": "Kaufe einmal richtig, schneide ein Leben lang",
             "subtitle_size": 18
           }
         },
         "title_KU4fTr": {
           "type": "title",
           "settings": {
-            "title": "Perfekte Schnitte in Sekunden",
+            "title": "Einmalige & lebenlange Investition",
             "title_size": 40
           }
         },
         "description_PBBAnQ": {
           "type": "description",
           "settings": {
-            "description": "Erlebe die nächste Stufe der Messerschärfe mit unserem Premium-Messerset. Jede Klinge ist auf Rasiermesserschärfe geprüft und sorgt für mühelose Präzision bei jedem Schnitt – egal ob Fleisch, Gemüse oder Brot.",
+            "description": "Unser exklusives Messerset bietet außergewöhnliche Schärfe und handgefertigte Qualität. Die clevere Wahl für deine Küche, ohne ständiges Nachkaufen!",
             "description_size": 18
           }
         }
@@ -832,21 +628,21 @@
         "subtitle_XPX87U": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Robust & langlebig",
+            "subtitle": "Nie wieder stumpfe Messer",
             "subtitle_size": 18
           }
         },
         "title_YwDaTz": {
           "type": "title",
           "settings": {
-            "title": "Hält jeder Herausforderung stand",
+            "title": "365 Tage Schleifservice (gratis)",
             "title_size": 40
           }
         },
         "description_j4ByyM": {
           "type": "description",
           "settings": {
-            "description": "Unsere Messer sind aus hochwertigem Stahl gefertigt und bleiben extrem scharf – ohne Absplittern oder Abnutzen. Die widerstandsfähige Klinge sorgt für jahrelange Höchstleistung in der Küche.",
+            "description": "Lass dein Messer einfach kostenlos nachschleifen! Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand.",
             "description_size": 18
           }
         }
@@ -866,6 +662,110 @@
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 50,
         "heading_type": "mrk-h2"
+      }
+    },
+    "us_vs_them_8Tbqki": {
+      "type": "us-vs-them",
+      "blocks": {
+        "title_F4F6qE": {
+          "type": "title",
+          "settings": {
+            "title": "KÜCHENKOMPANE vs. ANDERE"
+          }
+        },
+        "description_9Mxcd4": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Unsere Vergleichsgrafik zeigt, warum Küchenkompane die beste Wahl ist. Mit messerscharfer Präzision, hochwertigem Stahl und ergonomischem Design bieten unsere Messer maximale Qualität und Komfort.</p>",
+            "description_size": 16
+          }
+        }
+      },
+      "block_order": [
+        "title_F4F6qE",
+        "description_9Mxcd4"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "img": "shopify://shop_images/steel_kitchen_knives_V11_1.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h2"
+      }
+    },
+    "ugc_video_testimonial_D4kJ9X": {
+      "type": "ugc-video-testimonial",
+      "blocks": {
+        "item_7xpaVV": {
+          "type": "item",
+          "settings": {
+            "video_poster": "shopify://shop_images/Screenshot_1_fd6e8e0e-b98b-4b2d-be30-f3a0d7888a8e.jpg",
+            "video": "shopify://files/videos/Küchenkompane (3).mp4",
+            "product": "premium"
+          }
+        },
+        "item_tYitmU": {
+          "type": "item",
+          "settings": {
+            "video_poster": "shopify://shop_images/Screenshot_5_89195910-0d90-440f-990e-ccde72fb3897.jpg",
+            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V2.mov",
+            "product": "premium"
+          }
+        },
+        "item_iJxMti": {
+          "type": "item",
+          "settings": {
+            "video_poster": "shopify://shop_images/Screenshot_2_c43ac8ad-5ad8-4e2a-812e-7a9d24440cdf.jpg",
+            "video": "shopify://files/videos/Review-2.mp4",
+            "product": "premium"
+          }
+        },
+        "item_UYW7B3": {
+          "type": "item",
+          "settings": {
+            "video_poster": "shopify://shop_images/Screenshot_3_3afbc759-565a-46fd-b360-7da9ae57dfbd.jpg",
+            "video": "shopify://files/videos/Reeview-1.mp4",
+            "product": "premium"
+          }
+        },
+        "item_ft7YRa": {
+          "type": "item",
+          "settings": {
+            "video_poster": "shopify://shop_images/Screenshot_4_2bfcf4a3-7294-43e4-b92e-db75219f6273.jpg",
+            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V3.mp4",
+            "product": "premium"
+          }
+        },
+        "item_cHcggm": {
+          "type": "item",
+          "settings": {
+            "video_poster": "shopify://shop_images/Screenshot_6_303b9316-5d7c-4433-ad93-6a9da4680614.jpg",
+            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V1.mp4",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_7xpaVV",
+        "item_tYitmU",
+        "item_iJxMti",
+        "item_UYW7B3",
+        "item_ft7YRa",
+        "item_cHcggm"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "pt": 70,
+        "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
+        "title": "Unsere Produkte in Aktion",
+        "heading_type": "mrk-h3",
+        "btn_url": "https://www.instagram.com/kuechenkompane/",
+        "btn_text": "@kuechenkompane",
+        "autoplay": false
       }
     },
     "icon_box_9UtNky": {
@@ -1071,6 +971,107 @@
         "arrow_icon_color": "#000000"
       }
     },
+    "apex_faqs_jx7hp6": {
+      "type": "apex-faqs",
+      "blocks": {
+        "item_Y76Jjj": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Wie scharf sind die Messer von Küchenkompane?",
+            "faq_body": "<p>Unsere Messer sind auf <strong>Rasiermesserschärfe</strong> geschliffen. Dank des hochwertigen Stahls und der präzisen Verarbeitung gleiten sie mühelos durch jedes Schnittgut – für maximale Präzision und Freude beim Kochen.</p>"
+          }
+        },
+        "item_J7jdRT": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Welches Material wird für die Klingen verwendet?",
+            "faq_body": "<p>Wir setzen auf <strong>hochwertigen gehärteten Edelstahl (7CR17)</strong>, bekannt für seine außergewöhnliche Schärfe, Langlebigkeit und Widerstandsfähigkeit gegen Rost und Abnutzung. Die Klingen werden von uns durch eine speziell entwickelte Methode gehärtet, um eine Härte von <strong>60+ HRC</strong> zu erreichen.</p>"
+          }
+        },
+        "item_V7NfBy": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Bleiben die Messer lange scharf oder müssen sie oft nachgeschärft werden?",
+            "faq_body": "<p>Dank der <strong>professionellen und besonderen Härtung</strong> behalten unsere Messer ihre Schärfe <strong>wesentlich länger</strong> als herkömmliche Küchenmesser. Regelmäßiges Nachschärfen ist erst nach langer Nutzung nötig.</p>"
+          }
+        },
+        "item_Q9DGdb": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Sind die Messer rostfrei und spülmaschinengeeignet?",
+            "faq_body": "<p>Unsere Messer sind <strong>hochgradig rostbeständig</strong>, da wir ausschließlich korrosionsbeständige Premium-Stähle verwenden. Für maximale Langlebigkeit empfehlen wir jedoch die <strong>Handwäsche</strong>, da Spülmaschinen aggressive Reinigungsmittel nutzen, die die Schärfe der Klinge beeinträchtigen können.</p>"
+          }
+        },
+        "item_xpq4qN": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Warum sind Küchenkompane Messer besser als herkömmliche Messer?",
+            "faq_body": "<p><strong>Präzise Handwerkskunst</strong>: Jedes Messer wird mit höchster Sorgfalt gefertigt<br/><strong>Extrem scharf</strong>: Rasiermesserschärfe für müheloses Schneiden<br/><strong>Langlebig & robust</strong>: Gehärteter Premium-Stahl für jahrelange Nutzung<strong>Ergonomischer Griff</strong>: Perfekte Balance für eine komfortable Handhabung<br/><strong>Exklusives Design</strong>: Ein Blickfang in jeder Küche</p>"
+          }
+        },
+        "item_XFGU6y": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Welche Messer sind im Set enthalten?",
+            "faq_body": "<p>Das 8-teilige Messerset wurde speziell zusammengestellt, um jede Schneideaufgabe in der Küche perfekt zu meistern. Jedes Messer hat seinen eigenen Einsatzzweck:</p><ul><li><strong>Chefmesser</strong> – Der Allrounder für alle Lebensmittel</li><li><strong>Santoku 7 Inch Messer</strong> – Ideal für Fisch, Fleisch & Gemüse</li><li><strong>Nakiri Messer</strong> – Perfekt für große Mengen an Gemüse</li><li><strong>Filetiermesser</strong> – Präzise Schnitte für Fisch & Geflügel</li><li><strong>Brotmesser</strong> – Schneidet mühelos durch jede Kruste</li><li><strong>Yanagiba Messer</strong> – Speziell für Sushi, Schinken & Carpaccio</li><li><strong>Santoku 5 Inch Messer</strong> – Die kompakte Variante für feine Schnitte</li><li><strong>Petty Messer</strong> – Perfekt für Obst, Gemüse und filigrane Arbeiten</li></ul><p>Jedes Messer wurde mit höchster Präzision gefertigt und sorgt für mühelose, saubere Schnitte in jeder Situation.</p>"
+          }
+        },
+        "item_cDC8UT": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Gibt es eine Geld-zurück-Garantie oder ein Rückgaberecht?",
+            "faq_body": "<p>Ja! Wir bieten eine <strong>30-Tage-Geld-zurück-Garantie</strong>. Teste die Messer völlig risikofrei. Solltest du nicht zufrieden sein, kannst du sie unkompliziert zurücksenden – ohne Wenn und Aber!</p>"
+          }
+        },
+        "item_PNKhQY": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Wie lange dauert der Versand und gibt es eine Expressoption?",
+            "faq_body": "<p><strong>Standardversand</strong>: 1-3 Werktage<br/><strong>Expressversand</strong>: 20-36 Stunden für eine schnelle Lieferung</p><p>Alle Bestellungen werden mit Sendungsverfolgung versendet, damit du dein Paket jederzeit nachverfolgen kannst.</p>"
+          }
+        },
+        "item_889zGP": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Welche Zahlungsmethoden werden akzeptiert?",
+            "faq_body": "<p>Wir bieten <strong>sichere und flexible Zahlungsmöglichkeiten</strong>, darunter:<br/>Kreditkarte (Visa, Mastercard, AMEX)<br/>PayPal, Klarna (Rechnung & Sofort)<br/>Apple Pay & Google Pay</p>"
+          }
+        },
+        "item_9JjGkE": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Gibt es eine Garantie auf die Messer?",
+            "faq_body": "<p>Ja! Unsere Messer kommen mit einer <strong>Langzeit-Garantie auf Material- und Herstellungsfehler</strong>. Sollte es ein Problem geben, sorgen wir für einen schnellen Ersatz oder eine Lösung.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_Y76Jjj",
+        "item_J7jdRT",
+        "item_V7NfBy",
+        "item_Q9DGdb",
+        "item_xpq4qN",
+        "item_XFGU6y",
+        "item_cDC8UT",
+        "item_PNKhQY",
+        "item_889zGP",
+        "item_9JjGkE"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "icon_color": "#000000",
+        "pt": 50,
+        "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
+        "title": "FAQ - Häufige Fragen",
+        "heading_type": "mrk-h2",
+        "sub_title": "Common problems and simple solutions",
+        "sub_title_font_size": 14,
+        "faq_title_font_size": 18,
+        "faq_text_font_size": 16
+      }
+    },
     "cta_final_9B8iN9": {
       "type": "cta-final",
       "blocks": {
@@ -1119,89 +1120,6 @@
         "item_bg": "#ffffff",
         "item_size": 16,
         "backBtn": "Zum Produkt"
-      }
-    },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "remove_params": false,
-        "heading": "Das könnte dir auch gefallen",
-        "heading_size": "h3",
-        "text_align": "center",
-        "limit": 8,
-        "columns": 5,
-        "column_gap": 30,
-        "enable_slider": true,
-        "show_pagination": false,
-        "show_navigation": true,
-        "use_scroll_mobile": true,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
-    "store_benefits_bottom_NPnyUL": {
-      "type": "store-benefits-bottom",
-      "blocks": {
-        "item_96wqwW": {
-          "type": "item",
-          "settings": {
-            "icon": "icon1",
-            "svg-code": "",
-            "store_benefit_text": "Schneller Versand"
-          }
-        },
-        "item_6LarDz": {
-          "type": "item",
-          "settings": {
-            "icon": "icon2",
-            "svg-code": "",
-            "store_benefit_text": "Kostenloser Versand ab 100€"
-          }
-        },
-        "item_AXkcTt": {
-          "type": "item",
-          "settings": {
-            "icon": "icon3",
-            "svg-code": "",
-            "store_benefit_text": "30 Tage Geld-Zurück-Garantie"
-          }
-        },
-        "item_h3KX9m": {
-          "type": "item",
-          "settings": {
-            "icon": "icon4",
-            "svg-code": "",
-            "store_benefit_text": "100% SICHERE ZAHLUNG"
-          }
-        },
-        "item_MzPUFH": {
-          "type": "item",
-          "settings": {
-            "icon": "icon5",
-            "svg-code": "",
-            "store_benefit_text": "LEBENSLANGE GARANTIE"
-          }
-        }
-      },
-      "block_order": [
-        "item_96wqwW",
-        "item_6LarDz",
-        "item_AXkcTt",
-        "item_h3KX9m",
-        "item_MzPUFH"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "icon_color": "#222222",
-        "pt": 30,
-        "pb": 30,
-        "font_size": 14,
-        "ptm": 30,
-        "pbm": 30
       }
     },
     "benefit_list_gif_iJWmYF": {
@@ -1270,6 +1188,67 @@
         "padding_bottom_mobile": 30,
         "custom_class": ""
       }
+    },
+    "store_benefits_bottom_NPnyUL": {
+      "type": "store-benefits-bottom",
+      "blocks": {
+        "item_96wqwW": {
+          "type": "item",
+          "settings": {
+            "icon": "icon1",
+            "svg-code": "",
+            "store_benefit_text": "Schneller Versand"
+          }
+        },
+        "item_6LarDz": {
+          "type": "item",
+          "settings": {
+            "icon": "icon2",
+            "svg-code": "",
+            "store_benefit_text": "Kostenloser Versand ab 100€"
+          }
+        },
+        "item_AXkcTt": {
+          "type": "item",
+          "settings": {
+            "icon": "icon3",
+            "svg-code": "",
+            "store_benefit_text": "30 Tage Geld-Zurück-Garantie"
+          }
+        },
+        "item_h3KX9m": {
+          "type": "item",
+          "settings": {
+            "icon": "icon4",
+            "svg-code": "",
+            "store_benefit_text": "100% SICHERE ZAHLUNG"
+          }
+        },
+        "item_MzPUFH": {
+          "type": "item",
+          "settings": {
+            "icon": "icon5",
+            "svg-code": "",
+            "store_benefit_text": "LEBENSLANGE GARANTIE"
+          }
+        }
+      },
+      "block_order": [
+        "item_96wqwW",
+        "item_6LarDz",
+        "item_AXkcTt",
+        "item_h3KX9m",
+        "item_MzPUFH"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "icon_color": "#222222",
+        "pt": 30,
+        "pb": 30,
+        "font_size": 14,
+        "ptm": 30,
+        "pbm": 30
+      }
     }
   },
   "order": [
@@ -1277,22 +1256,21 @@
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
     "product-details-tabs",
-    "ugc_video_testimonial_D4kJ9X",
-    "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
+    "logo_greyed_out_FMbnW7",
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
-    "us_vs_them_8Tbqki",
-    "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
+    "us_vs_them_8Tbqki",
+    "ugc_video_testimonial_D4kJ9X",
     "icon_box_9UtNky",
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
+    "apex_faqs_jx7hp6",
     "cta_final_9B8iN9",
-    "product-recommendations",
-    "store_benefits_bottom_NPnyUL",
     "benefit_list_gif_iJWmYF",
-    "1741277518a98c9482"
+    "1741277518a98c9482",
+    "store_benefits_bottom_NPnyUL"
   ]
 }
