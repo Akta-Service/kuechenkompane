@@ -55,10 +55,46 @@
         "color_swatches": "color,colour,couleur,farbe",
         "color_swatches_design": "list"
       }
+    },
+    "store_benefit_UmKWn7": {
+      "type": "store-benefit",
+      "blocks": {
+        "benefit_33RGaG": {
+          "type": "benefit",
+          "settings": {
+            "benefit_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
+            "title": "100% Money Back",
+            "text": "We offer a 100% match guarantee on all cosmetics products so you can test it without any risk. If you are not satisfied, you will receive a 100% refund without any hassle!"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_33RGaG"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "invert_color": true,
+        "title_size": 16,
+        "text_size": 14,
+        "pt": 70,
+        "pb": 70,
+        "ptm": 50,
+        "pbm": 50,
+        "autoplay_delay": 3000,
+        "speed": 500,
+        "items_mobile_sm": 1,
+        "items_mobile": 1,
+        "items_tablet": 2,
+        "items_desktop": 3,
+        "sbt_m": 10,
+        "sbt_t": 20,
+        "sbt_des": 30
+      }
     }
   },
   "order": [
     "collection-header",
-    "main"
+    "main",
+    "store_benefit_UmKWn7"
   ]
 }
