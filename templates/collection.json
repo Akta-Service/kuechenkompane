@@ -55,108 +55,10 @@
         "color_swatches": "color,colour,couleur,farbe",
         "color_swatches_design": "list"
       }
-    },
-    "usp_list_xQHfgQ": {
-      "type": "usp-list",
-      "blocks": {
-        "item_JVyQJ8": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
-            "usp_title": "Geld-zurück-Garantie",
-            "title_size": 18,
-            "usp_info": "30 Tage Rückgaberecht - ohne Risiko.",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_BRBV37": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "usp_title": "Kostenloser Versand",
-            "title_size": 18,
-            "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_RKRMEB": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "usp_title": "Schärfe Garantie",
-            "title_size": 18,
-            "usp_info": "Maximale Schärfe für müheloses Schneiden.",
-            "info_size": 14,
-            "divider": false
-          }
-        }
-      },
-      "block_order": [
-        "item_JVyQJ8",
-        "item_BRBV37",
-        "item_RKRMEB"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "verticle_padding": 50,
-        "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
-      }
-    },
-    "branded_image_version_ffF3PX": {
-      "type": "branded-image-version-",
-      "blocks": {
-        "title_AgFUHf": {
-          "type": "title",
-          "settings": {
-            "title": "Kochen wie ein Profi"
-          }
-        },
-        "sub_title_GcWkqp": {
-          "type": "sub_title",
-          "settings": {
-            "text": "Von messerscharfer Präzision bis hin zu perfektem Kochgeschirr.\n<br>Unsere Produkte sind für höchste Ansprüche gemacht."
-          }
-        }
-      },
-      "block_order": [
-        "title_AgFUHf",
-        "sub_title_GcWkqp"
-      ],
-      "settings": {
-        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
-        "shape_color": "#deceba",
-        "margin_top": 20,
-        "margin_bottom": 0,
-        "mobile_margin_top": 10,
-        "mobile_margin_bottom": 0,
-        "bg_img": "shopify://shop_images/IMG_9602_V6.jpg",
-        "title_font_size": 40,
-        "title_font_size_m": 40,
-        "text_font_size": 16,
-        "button_style": "m-button--primary",
-        "button_size": ""
-      }
-    },
-    "collection_description_tUMerW": {
-      "type": "collection-description",
-      "settings": {
-        "collection_bg": "#c6d1c4",
-        "collection_pt": 30,
-        "collection_pb": 30,
-        "collection_pt_m": 30,
-        "collection_pb_m": 30
-      }
     }
   },
   "order": [
     "collection-header",
-    "main",
-    "usp_list_xQHfgQ",
-    "branded_image_version_ffF3PX",
-    "collection_description_tUMerW"
+    "main"
   ]
 }
