@@ -526,7 +526,9 @@
         ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
       ],
       "settings": {
+        "Gesehen_title": "Gesehen In",
         "heading_type": "mrk-h3",
+        "text_alignment": "center",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
