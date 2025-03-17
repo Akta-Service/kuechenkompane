@@ -48,6 +48,12 @@
         "info": "[Read How-to](https://foxecom.link/9pNg7s)"
       },
       {
+        "type": "color",
+        "id": "sc_top_bg_color",
+        "label": "scroll top Background Color",
+        "default": "#FA8526"
+      },
+      {
         "type": "header",
         "content": "Right-to-Left support"
       },
