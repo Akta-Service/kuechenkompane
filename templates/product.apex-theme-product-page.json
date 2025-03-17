@@ -978,7 +978,7 @@
         "item_Y76Jjj": {
           "type": "item",
           "settings": {
-            "faq_title": "Wie scharf sind die Messer von Küchenkompane?",
+            "faq_title": "Wie scharf sind eure Messer?",
             "faq_body": "<p>Unsere Messer sind auf <strong>Rasiermesserschärfe</strong> geschliffen. Dank des hochwertigen Stahls und der präzisen Verarbeitung gleiten sie mühelos durch jedes Schnittgut – für maximale Präzision und Freude beim Kochen.</p>"
           }
         },
@@ -992,8 +992,8 @@
         "item_V7NfBy": {
           "type": "item",
           "settings": {
-            "faq_title": "Bleiben die Messer lange scharf oder müssen sie oft nachgeschärft werden?",
-            "faq_body": "<p>Dank der <strong>professionellen und besonderen Härtung</strong> behalten unsere Messer ihre Schärfe <strong>wesentlich länger</strong> als herkömmliche Küchenmesser. Regelmäßiges Nachschärfen ist erst nach langer Nutzung nötig.</p>"
+            "faq_title": "Pflegehinweise",
+            "faq_body": "<p>Halte deine Messer mit etwas regelmäßiger Pflege in Topform!</p><p><strong>Waschen und Trocknen von Hand</strong> sorgt für eine saubere Klinge nach jedem Gebrauch.</p><p>Achte darauf, dass du eine <strong>geeignete Schneideunterlage</strong> wie Holz oder Kunststoff verwendest und dich an die richtige Technik hältst, um die Sicherheit zu erhöhen.</p><p><strong>Bewahre deine Klingen sicher auf</strong>, wenn du sie nicht benutzt, indem du sie in einem Messerblock oder einem Halter deiner Wahl aufbewahrst.</p><p>Vergiss außerdem nicht, sie <strong>gelegentlich zu schärfen und zu ölen</strong> - das macht den Unterschied.</p>"
           }
         },
         "item_Q9DGdb": {
@@ -1067,7 +1067,7 @@
         "pb_mobile": 30,
         "title": "FAQ - Häufige Fragen",
         "heading_type": "mrk-h2",
-        "sub_title": "Common problems and simple solutions",
+        "sub_title": "",
         "sub_title_font_size": 14,
         "faq_title_font_size": 18,
         "faq_text_font_size": 16
