@@ -68,6 +68,7 @@
     max-width: 750px;
     width: 100%;
     transform: translate(-50%);
+    z-index: 99;
   }
 
     .banner-main {
@@ -240,6 +241,7 @@
     background-color: {{ section.settings.image_overlay_color }};
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
     pointer-events: none;
+    z-index: 1;
   }
 </style>
 
