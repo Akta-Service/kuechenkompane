@@ -237,9 +237,10 @@
     position: absolute;
     content: "";
     inset: 0;
+    background-color: {{ section.settings.image_overlay_color }};
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
-    
-}
+    pointer-events: none;
+  }
 </style>
 
 <div class="banner-area-two m-color-{{ section.settings.color_scheme }}">
@@ -475,14 +476,19 @@
       "default": false
     },
     {
+      "type": "color",
+      "id": "image_overlay_color",
+      "label": "Overlay Background Color",
+      "default": "#000000"
+    },
+    {
       "type": "range",
       "id": "image_overlay_opacity",
+      "label": "Overlay Opacity",
       "min": 0,
       "max": 100,
-      "step": 10,
-      "unit": "%",
-      "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
-      "default": 0
+      "step": 5,
+      "default": 50
     }
     
   ],
