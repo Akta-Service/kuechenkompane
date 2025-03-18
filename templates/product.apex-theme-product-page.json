@@ -42,14 +42,6 @@
             "font_weight_t": "400"
           }
         },
-        "subtitle_xQXVba": {
-          "type": "subtitle",
-          "disabled": true,
-          "settings": {
-            "subtitle": "Müheloses Schneiden dank höchster Qualität!",
-            "subtitle_font_size": 16
-          }
-        },
         "review_Tgbbak": {
           "type": "review",
           "settings": {
@@ -85,6 +77,13 @@
             "f_s": 18,
             "f_s_m": 18,
             "price_font_weight": "600"
+          }
+        },
+        "subtitle_xQXVba": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "👉 Update: Angebot endet Mitternacht",
+            "subtitle_font_size": 15
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -180,10 +179,10 @@
       },
       "block_order": [
         "title_Bac9Mk",
-        "subtitle_xQXVba",
         "review_Tgbbak",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
+        "subtitle_xQXVba",
         "viewer_stock_count_MFNhKz",
         "featurelist_header_tfxtpf",
         "featurelist_item_iiW6aD",
