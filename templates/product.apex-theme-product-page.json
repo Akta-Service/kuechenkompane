@@ -163,7 +163,7 @@
         "payment_icon_tePtpf": {
           "type": "paymentIcon",
           "settings": {
-            "payment_img": "shopify://shop_images/Screenshot_2025-03-17_at_13.37.51.png"
+            "payment_img": "shopify://shop_images/Trust_Badges_-_DACH.png"
           }
         },
         "product_info_9Yqdn9": {
@@ -214,8 +214,8 @@
         "saving_text": "Du sparst",
         "price_color": "#000000",
         "stk_com_p": "#a7a7a7",
-        "show_stk_icon": false,
-        "glitter_effec": false,
+        "show_stk_icon": true,
+        "glitter_effec": true,
         "bubble_before_color": "#000000",
         "bubble_after_color": "#1e1e1e"
       }
