@@ -332,7 +332,7 @@ select {
 .rs-payment-icons ul {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   margin: auto;
 }
@@ -343,6 +343,9 @@ select {
   padding-bottom: 0;
 }
 @media only screen and (max-width: 1300px) {
+
+
+
   .rs-row {
     gap: 30px;
   }
@@ -373,6 +376,12 @@ select {
 }
 
 @media only screen and (max-width: 900px) {
+  .rs-payment-icons ul {
+
+    justify-content: space-between;
+
+  }
+  
   .rs-row {
     flex-direction: column;
     gap: 60px;
