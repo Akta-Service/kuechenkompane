@@ -31,11 +31,11 @@
   span.stk-current-price {
     font-weight: 700;
     font-size: 16px;
-    color: #000;
+    color: {{ section.settings.price_color }};
     margin-right: 8px;
   }
   .stk-compare-price {
-    color: #dc2626;
+    color: {{ section.settings.stk_com_p }};
     font-weight: 700;
     font-size: 16px;
   }
@@ -50,6 +50,12 @@
   .apex-product-page .m-product-form .m-add-to-cart {    
     min-width: 350px;
     text-align: center;
+  }
+  @media only screen and (max-width:768px){
+    .apex-product-page .m-product-form .m-add-to-cart {    
+    min-width: 0px;
+    width: 100%;
+  }
   }
 </style>
 <div
@@ -102,7 +108,7 @@
             <div class="sticky_saving">
               {% if selected_variant.compare_at_price and selected_variant.compare_at_price > selected_variant.price %}
                 <span class="savings">
-                  You're saving {{ selected_variant.compare_at_price | minus: selected_variant.price | money }}
+                  {{ section.settings.saving_text }} {{ selected_variant.compare_at_price | minus: selected_variant.price | money }}
                 </span>
               {% endif %}
             </div>         
@@ -155,7 +161,7 @@
             <button
               type="submit"
               name="add"
-              class="m-add-to-cart m-spinner-button m-button {{ btn_class }} {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}"
+              class="m-add-to-cart {% if section.settings.glitter_effec != true %}effet{% endif %} m-spinner-button m-button {{ btn_class }} {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}"
               data-atc-text="{{ 'products.product.add_to_cart' | t }}"
             >
               <span class="m-spinner-icon">
@@ -175,7 +181,9 @@
                 {% else %}
                   {{ 'products.product.sold_out' | t }}
                 {% endif %}
+                {% if section.settings.show_stk_icon != true %}
                 <span class="stikcy-add-icon">➜</span>
+                {% endif %}
               </span>
              
             </button>

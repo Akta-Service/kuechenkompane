@@ -28,7 +28,7 @@
   data-section-type="scrolling-promotion"
   data-section-id="{{ section.id }}"
 >
-  <div class="gesehen-in {{ section.settings.heading_type }}">Gesehen in</div>
+  <div class="gesehen-in {{ section.settings.heading_type }}" style="text-align: {{ section.settings.text_alignment }};">{{ section.settings.Gesehen_title }}</div>
   <div class="{{ container }} ">
     <m-scrolling-promotion
       class="m-scrolling-promotion m-scrolling-promotion--{{ section.settings.direction }}"
@@ -131,6 +131,12 @@
   "name": "Scrolling promotion",
   "settings": [
     {
+      "type": "text",
+      "id": "Gesehen_title",
+      "label": "Heading Text",
+      "default":"Gesehen In"
+    },
+    {
       "type": "select",
       "id": "heading_type",
       "label": "Choose Heading Size",
@@ -161,6 +167,17 @@
         }
       ],
       "default": "mrk-h1"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Heading Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
     },
     {
       "type": "paragraph",

@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_iWA6Yd": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Exklusives NTV-ANGEBOT",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "color_scheme": "",
+        "container": "container-fluid",
+        "collection": "exklusives-spiegel-angebot",
+        "enable_flashsale": false,
+        "show_countdown": false,
+        "product_to_show": 8,
+        "items_per_row": 4,
+        "item_gap": 30,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "show_button_on_header": false,
+        "button_type": "link",
+        "button_text": "",
+        "button_style": "m-button--primary",
+        "button_size": "m-button--small",
+        "infinite_load": false,
+        "max_page_load": 3,
+        "mobile_disable_slider": false,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "new_featured_product_MPEkyp": {
+      "type": "new-featured-product",
+      "blocks": {
+        "title_kBhK8H": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_gqpafy": {
+          "type": "price",
+          "settings": {
+            "show_saving": true,
+            "sale_badge_type": "percentage"
+          }
+        },
+        "variant_picker_bMC6Px": {
+          "type": "variant_picker",
+          "settings": {}
+        },
+        "buy_buttons_RDbcaW": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_atc_button": true,
+            "show_dynamic_checkout": true
+          }
+        }
+      },
+      "block_order": [
+        "title_kBhK8H",
+        "price_gqpafy",
+        "variant_picker_bMC6Px",
+        "buy_buttons_RDbcaW"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "featured_product": "kiiro-messerset-spiegel-deal",
+        "enable_variant_group_images": false,
+        "column_gap": 100,
+        "column_gap_mobile": 30,
+        "image_placement": "left",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit",
+        "badge_text": "#000000",
+        "badge_bg": "#ffffff"
+      }
+    },
+    "new_featured_product_YiVLmz": {
+      "type": "new-featured-product",
+      "blocks": {
+        "title_mHjr4q": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_RinUpK": {
+          "type": "price",
+          "settings": {
+            "show_saving": true,
+            "sale_badge_type": "percentage"
+          }
+        },
+        "variant_picker_xntpHM": {
+          "type": "variant_picker",
+          "settings": {}
+        },
+        "buy_buttons_GqErCp": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_atc_button": true,
+            "show_dynamic_checkout": true
+          }
+        }
+      },
+      "block_order": [
+        "title_mHjr4q",
+        "price_RinUpK",
+        "variant_picker_xntpHM",
+        "buy_buttons_GqErCp"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "featured_product": "sheru-messerset-spiegel-deal",
+        "enable_variant_group_images": false,
+        "column_gap": 100,
+        "column_gap_mobile": 30,
+        "image_placement": "left",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit",
+        "badge_text": "#000000",
+        "badge_bg": ""
+      }
+    },
+    "branded_image_version_baznUw": {
+      "type": "branded-image-version-",
+      "blocks": {
+        "title_hQrRAa": {
+          "type": "title",
+          "settings": {
+            "title": "Meisterhafte Präzision – Eleganz in deiner Hand"
+          }
+        },
+        "sub_title_RgRhTy": {
+          "type": "sub_title",
+          "settings": {
+            "text": "Unsere exklusiven Küchenmesser vereinen herausragende Schärfe mit einem einzigartigen Design. Mit kunstvoll gefertigten Griffen und einer Klinge aus hochwertigem Stahl bieten sie höchste Präzision und Kontrolle bei jedem Schnitt."
+          }
+        }
+      },
+      "block_order": [
+        "title_hQrRAa",
+        "sub_title_RgRhTy"
+      ],
+      "settings": {
+        "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
+        "shape_color": "#deceba",
+        "margin_top": 20,
+        "margin_bottom": 20,
+        "mobile_margin_top": 10,
+        "mobile_margin_bottom": 10,
+        "bg_img": "shopify://shop_images/finaleeee_9c1e0239-0af2-481c-8c9e-a9c5a13bc55a.jpg",
+        "heading_type": "mrk-h2",
+        "text_font_size": 16,
+        "button_style": "m-button--primary",
+        "button_size": ""
+      }
+    },
+    "featured_collection_NVqdY8": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Weiter Produkte von Küchenkompane",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "color_scheme": "",
+        "container": "container-fluid",
+        "collection": "ntv-upsell",
+        "enable_flashsale": false,
+        "show_countdown": false,
+        "product_to_show": 8,
+        "items_per_row": 4,
+        "item_gap": 30,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "show_button_on_header": false,
+        "button_type": "load",
+        "button_text": "Mehr ansehen",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "infinite_load": false,
+        "max_page_load": 3,
+        "mobile_disable_slider": false,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_collection_iWA6Yd",
+    "new_featured_product_MPEkyp",
+    "new_featured_product_YiVLmz",
+    "branded_image_version_baznUw",
+    "featured_collection_NVqdY8"
+  ]
+}

@@ -12,17 +12,23 @@ if (!customElements.get("sticky-atc")) {
           variantIdSelect: '[name="id"]',
           foxkitBtn: ".foxkit-button",
         };
-        this.hasCustomFields = !!document.querySelector(".m-main-product--info .m-product-custom-field");
+        this.hasCustomFields = !!document.querySelector(
+          ".m-main-product--info .m-product-custom-field"
+        );
       }
 
       connectedCallback() {
         this.container = this.closest(".m-sticky-addtocart");
         this.mainProductForm = document.querySelector(".m-product-form--main");
         this.mainProductInfo = document.querySelector(".m-main-product--info");
-        this.mainAddToCart = this.mainProductForm.querySelector(".m-add-to-cart");
-        this.mainDynamicCheckout = this.mainProductForm.querySelector(this.selectors.buyNowBtn);
+        this.mainAddToCart =
+          this.mainProductForm.querySelector(".m-add-to-cart");
+        this.mainDynamicCheckout = this.mainProductForm.querySelector(
+          this.selectors.buyNowBtn
+        );
         this.productId = this.dataset.productId;
-        this.selectedVariantDefault = this.dataset.disableSelectedVariantDefault === "true";
+        this.selectedVariantDefault =
+          this.dataset.disableSelectedVariantDefault === "true";
 
         this.domNodes = queryDomNodes(this.selectors, this.container);
 
@@ -30,21 +36,33 @@ if (!customElements.get("sticky-atc")) {
 
         const queryString = window.location.search;
         const hasQueryString = queryString.includes("?variant=");
-        if (!hasQueryString && this.selectedVariantDefault && this.variantData && this.variantData.length > 1)
+        if (
+          !hasQueryString &&
+          this.selectedVariantDefault &&
+          this.variantData &&
+          this.variantData.length > 1
+        )
           this.disableSelectedVariantDefault();
 
         this.init();
         this.setStickyAddToCartHeight();
 
         this.addEventListener("change", () => {
-          const selectedVariantId = this.querySelector(this.selectors.variantIdSelect).value;
-          this.currentVariant = this.variantData.find((variant) => variant.id === Number(selectedVariantId));
+          const selectedVariantId = this.querySelector(
+            this.selectors.variantIdSelect
+          ).value;
+          this.currentVariant = this.variantData.find(
+            (variant) => variant.id === Number(selectedVariantId)
+          );
 
           this.updateButton(true, "", false);
           if (!this.currentVariant) {
             this.updateButton(true, "", true);
           } else {
-            this.updateButton(!this.currentVariant.available, window.MinimogStrings.soldOut);
+            this.updateButton(
+              !this.currentVariant.available,
+              window.MinimogStrings.soldOut
+            );
           }
         });
 
@@ -58,7 +76,11 @@ if (!customElements.get("sticky-atc")) {
 
       getVariantData() {
         this.variantData =
-          this.variantData || JSON.parse(this.container.querySelector('[type="application/json"]').textContent);
+          this.variantData ||
+          JSON.parse(
+            this.container.querySelector('[type="application/json"]')
+              .textContent
+          );
         return this.variantData;
       }
 
@@ -67,33 +89,85 @@ if (!customElements.get("sticky-atc")) {
           this.container.style.setProperty("--m-translate-y", 0);
           return;
         }
-        const { prodTitle, mainImage, addToCart, buyNowBtn, foxkitBtn } = this.domNodes;
+        const { prodTitle, mainImage, addToCart, buyNowBtn, foxkitBtn } =
+          this.domNodes;
         if (buyNowBtn) this.enable_dynamic_checkout = true;
         const headerHeight = MinimogSettings.headerHeight || 66;
         const rootMargin = `${headerHeight}px 0px 0px 0px`;
+
+        // if ("IntersectionObserver" in window) {
+        //   this.observer = new IntersectionObserver(
+        //     (entries) => {
+        //       entries.forEach((entry) => {
+        //         if (entry.intersectionRatio !== 1) {
+        //           this.container.style.setProperty("--m-translate-y", 0);
+        //         } else {
+        //           this.container.style.setProperty("--m-translate-y", "100%");
+        //         }
+        //         document.documentElement.classList[entry.intersectionRatio !== 1 ? "add" : "remove"]("stick-atc-show");
+        //       });
+        //     },
+        //     { threshold: 1, rootMargin }
+        //   );
+        // }
+
+        let hasScrolled = false; // To track if the user has scrolled
+        let lastScrollY = 0; // To track the last scroll position
 
         if ("IntersectionObserver" in window) {
           this.observer = new IntersectionObserver(
             (entries) => {
               entries.forEach((entry) => {
-                if (entry.intersectionRatio !== 1) {
-                  this.container.style.setProperty("--m-translate-y", 0);
+                const isMainButtonVisible = entry.intersectionRatio === 1; // Main button visibility
+
+                // If on mobile, track visibility based on scrolling
+                if (window.innerWidth <= 768) {
+                  const currentScrollY = window.scrollY;
+
+                  // Detect scroll direction
+                  if (currentScrollY > lastScrollY) {
+                    // Scrolling down
+                    if (!isMainButtonVisible) {
+                      // Main button is out of viewport, show sticky ATC
+                      this.container.style.setProperty("--m-translate-y", "0");
+                    }
+                  } else {
+                    // Scrolling up
+                    if (isMainButtonVisible) {
+                      // Main button is in viewport, hide sticky ATC
+                      this.container.style.setProperty(
+                        "--m-translate-y",
+                        "100%"
+                      );
+                    }
+                  }
+
+                  // Update the scroll position
+                  lastScrollY = currentScrollY;
                 } else {
-                  this.container.style.setProperty("--m-translate-y", "100%");
+                  // Desktop behavior (unchanged)
+                  this.container.style.setProperty(
+                    "--m-translate-y",
+                    isMainButtonVisible ? "100%" : "0"
+                  );
                 }
-                document.documentElement.classList[entry.intersectionRatio !== 1 ? "add" : "remove"]("stick-atc-show");
               });
             },
-            { threshold: 1, rootMargin }
+            { threshold: 1, rootMargin: "0px 0px 0px 0px" }
           );
+
+          this.observer.observe(this.mainProductForm);
         }
 
+        ///////////////////////////////
         prodTitle.addEventListener("click", () => __scrollToTop());
         mainImage.addEventListener("click", () => __scrollToTop());
 
         if (this.hasCustomFields) {
           let hasCustomFieldRequired = false;
-          const customFields = document.querySelectorAll(".m-main-product--info .m-product-custom-field");
+          const customFields = document.querySelectorAll(
+            ".m-main-product--info .m-product-custom-field"
+          );
           customFields &&
             customFields.forEach((item) => {
               const field = item.querySelector(".form-field");
@@ -105,7 +179,9 @@ if (!customElements.get("sticky-atc")) {
             addToCart.addEventListener("click", (e) => {
               e.preventDefault();
               e.stopPropagation();
-              __scrollToTop(this.mainProductForm, () => this.mainAddToCart.click());
+              __scrollToTop(this.mainProductForm, () =>
+                this.mainAddToCart.click()
+              );
             });
           if (buyNowBtn) {
             buyNowBtn.addEventListener(
@@ -115,7 +191,9 @@ if (!customElements.get("sticky-atc")) {
                 if (missing.length > 0) {
                   e.preventDefault();
                   e.stopPropagation();
-                  __scrollToTop(this.mainProductForm, () => this.mainDynamicCheckout.click());
+                  __scrollToTop(this.mainProductForm, () =>
+                    this.mainDynamicCheckout.click()
+                  );
                 }
               },
               true
@@ -124,7 +202,9 @@ if (!customElements.get("sticky-atc")) {
           if (foxkitBtn) {
             foxkitBtn.addEventListener("click", (e) => {
               e.preventDefault();
-              __scrollToTop(this.mainProductForm, () => this.mainAddToCart.click());
+              __scrollToTop(this.mainProductForm, () =>
+                this.mainAddToCart.click()
+              );
             });
           }
         }
@@ -142,11 +222,16 @@ if (!customElements.get("sticky-atc")) {
 
       checkDevice(e) {
         const sectionHeight = this.clientHeight + "px";
-        document.documentElement.style.setProperty("--f-sticky-atc-bar-height", sectionHeight);
+        document.documentElement.style.setProperty(
+          "--f-sticky-atc-bar-height",
+          sectionHeight
+        );
       }
 
       disableSelectedVariantDefault() {
-        const pickerSelects = this.querySelector(".m-product-option--dropdown-select");
+        const pickerSelects = this.querySelector(
+          ".m-product-option--dropdown-select"
+        );
         if (!pickerSelects) return;
         pickerSelects.value = "";
       }
@@ -155,7 +240,9 @@ if (!customElements.get("sticky-atc")) {
         const productForm = this.querySelector(".sticky-atc-form");
         if (!productForm) return;
         const addButton = productForm.querySelector('[name="add"]');
-        const addButtonText = productForm.querySelector('[name="add"] > .m-add-to-cart--text');
+        const addButtonText = productForm.querySelector(
+          '[name="add"] > .m-add-to-cart--text'
+        );
 
         if (!addButton) return;
 
@@ -171,13 +258,19 @@ if (!customElements.get("sticky-atc")) {
 
       syncWithMainProductForm() {
         const variantInput = this.querySelector('[name="id"]');
-        window.MinimogEvents.subscribe(`${this.productId}__VARIANT_CHANGE`, async (variant) => {
-          if (variant) variantInput.value = variant.id;
-        });
+        window.MinimogEvents.subscribe(
+          `${this.productId}__VARIANT_CHANGE`,
+          async (variant) => {
+            if (variant) variantInput.value = variant.id;
+          }
+        );
       }
 
       setStickyAddToCartHeight() {
-        document.documentElement.style.setProperty("--f-sticky-atc-bar-height", this.offsetHeight + "px");
+        document.documentElement.style.setProperty(
+          "--f-sticky-atc-bar-height",
+          this.offsetHeight + "px"
+        );
         window.MinimogSettings.stickyAddToCartHeight = this.offsetHeight;
       }
     }

@@ -42,14 +42,6 @@
             "font_weight_t": "400"
           }
         },
-        "subtitle_xQXVba": {
-          "type": "subtitle",
-          "disabled": true,
-          "settings": {
-            "subtitle": "Müheloses Schneiden dank höchster Qualität!",
-            "subtitle_font_size": 16
-          }
-        },
         "review_Tgbbak": {
           "type": "review",
           "settings": {
@@ -64,7 +56,8 @@
             "likeImg1": "shopify://shop_images/Screenshot_2025-03-17_at_08.24.39_1.jpg",
             "likeImg2": "shopify://shop_images/Kopie_von_Bild6_2_1.jpg",
             "likeImg3": "shopify://shop_images/Screenshot_2025-03-17_at_08.21.14_1.jpg",
-            "likecount": "139.000+ Personen",
+            "likecount": "140.000+ Personen",
+            "like_bg": "#f8f8f8",
             "likeinfo": "lieben unser Set!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
@@ -74,9 +67,9 @@
           "type": "price",
           "settings": {
             "p_pt": 5,
-            "p_pb": 5,
-            "p_pt_m": 0,
-            "p_pb_m": 5,
+            "p_pb": 18,
+            "p_pt_m": 5,
+            "p_pb_m": 18,
             "price_color": "#000000",
             "c_price_color": "#a7a7a7",
             "per_badge_bg": "#000000",
@@ -84,6 +77,13 @@
             "f_s": 18,
             "f_s_m": 18,
             "price_font_weight": "600"
+          }
+        },
+        "subtitle_xQXVba": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "👉 Update: Angebot endet Mitternacht",
+            "subtitle_font_size": 15
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -99,7 +99,7 @@
             "product_margin_top": 5,
             "product_margin_bottom": 5,
             "p_margin_size_mobile_top": 1,
-            "p_margin_size_mobile_bottom": 1,
+            "p_margin_size_mobile_bottom": 25,
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
@@ -161,7 +161,9 @@
         },
         "payment_icon_tePtpf": {
           "type": "paymentIcon",
-          "settings": {}
+          "settings": {
+            "payment_img": "shopify://shop_images/Trust_Badges_-_DACH.png"
+          }
         },
         "product_info_9Yqdn9": {
           "type": "productInfo",
@@ -177,10 +179,10 @@
       },
       "block_order": [
         "title_Bac9Mk",
-        "subtitle_xQXVba",
         "review_Tgbbak",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
+        "subtitle_xQXVba",
         "viewer_stock_count_MFNhKz",
         "featurelist_header_tfxtpf",
         "featurelist_item_iiW6aD",
@@ -208,6 +210,11 @@
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
         "sticky_atc_compare": false,
+        "saving_text": "Du sparst",
+        "price_color": "#000000",
+        "stk_com_p": "#a7a7a7",
+        "show_stk_icon": true,
+        "glitter_effec": true,
         "bubble_before_color": "#000000",
         "bubble_after_color": "#1e1e1e"
       }
@@ -253,7 +260,7 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "Gleite wie Butter durch jedes Lebensmittel",
+        "title": "Gleite mühelos durch alles wie Butter",
         "heading_type": "mrk-h3",
         "description": "{{ product.description }}",
         "mt": 30,
@@ -374,7 +381,9 @@
         ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
       ],
       "settings": {
+        "Gesehen_title": "Gesehen In",
         "heading_type": "mrk-h3",
+        "text_alignment": "center",
         "container": "w-full",
         "direction": "left",
         "speed": 30,
@@ -519,8 +528,9 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/c3f04b6c0c574ca587cc7ad8532567e9.mp4",
             "autoplay": false,
+            "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04.jpg",
             "loop": true,
             "muted": true,
             "playsinline": true,
@@ -1150,7 +1160,7 @@
           "settings": {
             "only_photos": false,
             "aggregated": false,
-            "limit": 20,
+            "limit": 15,
             "hide_thumbnails": false,
             "maxwidth": 1080,
             "is_sample": true

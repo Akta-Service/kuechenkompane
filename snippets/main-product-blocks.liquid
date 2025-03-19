@@ -41,6 +41,8 @@
     {%- case block.type -%}
       {%- when '@app' -%}
         {% render block %}
+      {%- when 'freebase' -%}
+        <style>
       {%- when 'badge' -%}
         {%- liquid
           assign has_tags = false

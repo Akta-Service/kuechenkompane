@@ -194,7 +194,7 @@
                 <img src="{{ block.settings.likeImg3 |  img_url: 'small' }}" alt="">
               {% endif %}
             </div>
-            <span class="like-count">{{ block.settings.likecount }}</span>
+            <span class="like-count" style="background: {{ block.settings.like_bg}};">{{ block.settings.likecount }}</span>
             <p class="like-info">{{ block.settings.likeinfo }}</p>
           </div>
           {% if product.tags contains 'HOHE NACHFRAGE' %}
@@ -213,7 +213,7 @@
             {% assign compare_price = product.compare_at_price %}            
             {% assign discount_amount = compare_price | minus: price %}
             {% assign discount_percentage = discount_amount | times: 100 | divided_by: compare_price | round: 0 %}            
-            <span class="discount-percentage">{{ discount_percentage }}%</span>
+            <span class="discount-percentage">-{{ discount_percentage }}%</span>
           {% endif %}
         </div>
 
@@ -252,7 +252,12 @@
 
       {% when 'paymentIcon' %}
         <div class="rs-payment-icons">
-          {%- render 'payment-icons' -%}
+          {% if block.settings.payment_img != blank %}
+            <img src="{{ block.settings.payment_img |  img_url: 'master' }}" alt="payment Icon">
+          {% else %}
+            {%- render 'payment-icons' -%}
+          {% endif %}
+
         </div>
 
       {% when 'productInfo' %}
@@ -516,7 +521,7 @@
               {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
             {%- endif -%}
 
-            <div class="m-product-form--wrapper m:display-flex m:flex-wrap m:items-end">
+            <div class="m-product-form--wrapper m:display-flex m:flex-wrap m:items-center">
               {% if block.settings.show_quantity_selector %}
                 <div class="m-product-form--input">
                   <label class="m-product-option--label">

@@ -70,15 +70,15 @@
   .product-page .info-badge.sale-badge {
     --border-color: {{ section.settings.border_color }};
   }
-  @media (max-width: 480px) {
+  @media only screen and (max-width: 480px) {
     .viewer-count {
       margin-top: {{ block.settings.viewer_margin_top_mobile }}px;
       margin-bottom: {{ block.settings.viewer_margin_bottom_mobile }}px;
 
     }
     .product-count {
-      margin-top: {{ block.settings.p_margin_mobile_top }}px;
-      margin-bottom: {{ block.settings.p_margin_mobile_bottom }}px;
+      margin-top: {{ block.settings.p_margin_size_mobile_top }}px;
+      margin-bottom: {{ block.settings.p_margin_size_mobile_bottom }}px;
     }
     .product-price {
       margin-bottom: 0 !important;

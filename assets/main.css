@@ -2993,11 +2993,14 @@ sup {
     display: none;
   }
 }
+.apex-product-page .m-product-option--label {
+  display: none;
+}
 @media screen and (max-width: 767px) {
   .m-product-form--input {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -7660,4 +7663,7 @@ variant-picker
   .m-product-card__content-footer
   .m-product-card__action-icons {
   display: none;
+}
+.apex-theme-product-page m-quantity-input.m-quantity {
+  margin-top: -9px;
 }
