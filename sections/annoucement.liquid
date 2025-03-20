@@ -17,8 +17,11 @@
   endif
 %}
 
+
+
+
 {% if section.settings.show_announcement %}
-  {% if section.settings.homepage_only == false or request.page_type == 'index' %}
+  {% if section.settings.homepage_only == false or request.page_type == 'index' or page.template_suffix  == 'ntv' %}
     <section
       id="m-announcement--{{ section.id }}"
       data-section-id="{{ section.id }}"
