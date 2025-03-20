@@ -11,9 +11,8 @@
   "sections": {
     "collection-header": {
       "type": "collection-page-header",
-      "disabled": true,
       "settings": {
-        "color_scheme": "dark",
+        "color_scheme": "default",
         "container": "container-fluid",
         "layout": "inside",
         "image_position": "background",
@@ -22,7 +21,7 @@
         "text_alignment": "center",
         "text_color": "inherit",
         "upper_title": false,
-        "show_desc": true,
+        "show_desc": false,
         "collection_all_desc": "",
         "padding_top": 36,
         "padding_bottom": 50,
