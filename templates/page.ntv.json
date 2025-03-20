@@ -27,8 +27,8 @@
         "collection": "exklusives-spiegel-angebot",
         "enable_flashsale": false,
         "show_countdown": false,
-        "product_to_show": 8,
-        "items_per_row": 4,
+        "product_to_show": 2,
+        "items_per_row": 2,
         "item_gap": 30,
         "pcard_layout": "",
         "pcard_image_ratio": "",
@@ -89,7 +89,7 @@
       "settings": {
         "container": "container",
         "color_scheme": "",
-        "featured_product": "kiiro-messerset-spiegel-deal",
+        "featured_product": "kiiro-bundle-chefmesser-schalmesser",
         "enable_variant_group_images": false,
         "column_gap": 100,
         "column_gap_mobile": 30,
@@ -100,55 +100,6 @@
         "animations": "inherit",
         "badge_text": "#000000",
         "badge_bg": "#ffffff"
-      }
-    },
-    "new_featured_product_YiVLmz": {
-      "type": "new-featured-product",
-      "blocks": {
-        "title_mHjr4q": {
-          "type": "title",
-          "settings": {}
-        },
-        "price_RinUpK": {
-          "type": "price",
-          "settings": {
-            "show_saving": true,
-            "sale_badge_type": "percentage"
-          }
-        },
-        "variant_picker_xntpHM": {
-          "type": "variant_picker",
-          "settings": {}
-        },
-        "buy_buttons_GqErCp": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "show_atc_button": true,
-            "show_dynamic_checkout": true
-          }
-        }
-      },
-      "block_order": [
-        "title_mHjr4q",
-        "price_RinUpK",
-        "variant_picker_xntpHM",
-        "buy_buttons_GqErCp"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "featured_product": "sheru-messerset-spiegel-deal",
-        "enable_variant_group_images": false,
-        "column_gap": 100,
-        "column_gap_mobile": 30,
-        "image_placement": "left",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "custom_class": "",
-        "animations": "inherit",
-        "badge_text": "#000000",
-        "badge_bg": ""
       }
     },
     "branded_image_version_baznUw": {
@@ -229,7 +180,6 @@
     "main",
     "featured_collection_iWA6Yd",
     "new_featured_product_MPEkyp",
-    "new_featured_product_YiVLmz",
     "branded_image_version_baznUw",
     "featured_collection_NVqdY8"
   ]
