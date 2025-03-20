@@ -536,5 +536,12 @@
       "signup_form_success": "We will send you an email right before we open!",
       "password_link": "Enter using password"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "shipping_method_notice": "Aufgrund der hohen Nachfrage können wir deine Bestellung nur für 10 Minuten reservieren."
+      }
+    }
   }
 }
