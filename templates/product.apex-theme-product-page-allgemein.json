@@ -64,7 +64,8 @@
             "likeImg2": "shopify://shop_images/Testi1_06655792-039c-4c4c-a68d-210b3c8a4ab8.webp",
             "likeImg3": "shopify://shop_images/Testi2.jpg",
             "likecount": "90,532+ Personen",
-            "likeinfo": "lieben unseren scharfen Klingen!",
+            "like_bg": "#ddede0",
+            "likeinfo": "lieben unsere Schneidebretter!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
           }
@@ -203,6 +204,11 @@
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
         "sticky_atc_compare": false,
+        "saving_text": "You're saving",
+        "price_color": "#000000",
+        "stk_com_p": "#dc2626",
+        "show_stk_icon": false,
+        "glitter_effec": false,
         "bubble_before_color": "#4b4b4b",
         "bubble_after_color": "#4b4b4b"
       }
