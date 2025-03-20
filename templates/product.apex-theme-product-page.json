@@ -234,7 +234,7 @@
           "type": "faq",
           "settings": {
             "question": "{{ product.metafields.custom.accordion_title_4.value }}",
-            "answer": "{{ product.metafields.custom.accordion_content_4 | metafield_tag }}"
+            "answer": "<p><strong>Überzeuge dich selbst!</strong></p><p>Online einkaufen ist nicht immer einfach. Wir wollen es unseren Kunden besonders unkompliziert machen. Bestelle daher unsere Produkte und teste diese bei dir zu Hause. Sollten dir unsere Produkte nicht gefallen, kannst du sie innerhalb von 30 Tagen ohne Risiko zurückschicken. Unser Tipp für dich: Bestellen und selber überzeugen!</p>"
           }
         },
         "faq_kQAWhE": {
