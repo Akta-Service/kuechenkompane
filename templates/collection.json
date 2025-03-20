@@ -106,27 +106,14 @@
         "horizontal_padding_mobile": 15
       }
     },
-    "rich_text_P9g7nH": {
-      "type": "rich-text",
-      "blocks": {
-        "text_y69Fb8": {
-          "type": "text",
-          "settings": {
-            "text": "{{ collection.description }}"
-          }
-        }
-      },
-      "block_order": [
-        "text_y69Fb8"
-      ],
+    "collection_description_KrcbiD": {
+      "type": "collection-description",
       "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "custom_class": "",
-        "animations": "inherit"
+        "collection_bg": "#f8f8f8",
+        "collection_pt": 30,
+        "collection_pb": 30,
+        "collection_pt_m": 30,
+        "collection_pb_m": 30
       }
     }
   },
@@ -134,6 +121,6 @@
     "collection-header",
     "main",
     "usp_list_nd6t8y",
-    "rich_text_P9g7nH"
+    "collection_description_KrcbiD"
   ]
 }
