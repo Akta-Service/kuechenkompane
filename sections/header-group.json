@@ -11,21 +11,6 @@
   "type": "header",
   "name": "Header",
   "sections": {
-    "announcement_bar_version_1_GTNqb8": {
-      "type": "announcement-bar-version-1",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-5dc77651-4cfe-4da9-a33e-3719e5cd8e15",
-        "pt": 15,
-        "pb": 15,
-        "ann_title": "Exklusives Jubiläums-Angebot",
-        "ann_title_size": 16,
-        "ann_title_size_m": 16,
-        "text": "<p>Endet Mitternacht</p>",
-        "text_size": 16,
-        "text_size_m": 16
-      }
-    },
     "annoucement": {
       "type": "annoucement",
       "blocks": {
@@ -138,7 +123,6 @@
     }
   },
   "order": [
-    "announcement_bar_version_1_GTNqb8",
     "annoucement",
     "header"
   ]
