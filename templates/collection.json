@@ -14,7 +14,7 @@
       "settings": {
         "color_scheme": "default",
         "container": "container-fluid",
-        "layout": "without_breadcrumb",
+        "layout": "outside_no_border",
         "image_position": "background",
         "enable_parallax": false,
         "parallax_direction": "vertical",
