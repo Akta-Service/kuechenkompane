@@ -262,7 +262,7 @@
         "text_Pp4WF3": {
           "type": "text",
           "settings": {
-            "text": ""
+            "text": "{{ collection.description }}"
           }
         }
       },
