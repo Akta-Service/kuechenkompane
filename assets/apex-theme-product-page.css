@@ -282,9 +282,6 @@ select {
 }
 
 .info-card {
-  border: 1px solid #bebebe;
-  background: #ffffff;
-  color: #000000;
   border-radius: 9px;
   padding: 9px 12px;
   width: 32.333%;
@@ -343,9 +340,6 @@ select {
   padding-bottom: 0;
 }
 @media only screen and (max-width: 1300px) {
-
-
-
   .rs-row {
     gap: 30px;
   }
@@ -377,11 +371,9 @@ select {
 
 @media only screen and (max-width: 900px) {
   .rs-payment-icons ul {
-
     justify-content: space-between;
-
   }
-  
+
   .rs-row {
     flex-direction: column;
     gap: 60px;

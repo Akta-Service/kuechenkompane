@@ -30,7 +30,8 @@
     assign selected_variant_id = product.selected_variant.id
   endunless
 %}
-<style>
+
+  {% style %}
   {% for block in section.blocks %}
     {%  case block.type %}  
     {%- when 'title' -%}
@@ -80,7 +81,6 @@
         .rs-price .rs-compare-price{   
           font-size: {{ block.settings.f_s_m |  append: 'px' }};
         }
-
       }
       {% when 'featurelist_header' %}
         .feature-header{
@@ -94,6 +94,16 @@
         }
 
       }
+
+
+
+      {% when 'productInfo' %}
+      .info-card {
+        border: 1px solid {{ block.settings.info_border_color }};
+        background: {{ block.settings.info_bg_color }};
+        color: {{ block.settings.info_text_color }};        
+      }
+
   /* -------------- */
  
     {% endcase %} 
@@ -103,7 +113,7 @@
       }
     {% endif %}
   {% endfor %}
-</style>
+{% endstyle %}
 {% comment %} Fallback for case not show block price, buy buttons {% endcomment %}
 <input type="hidden" name="id" value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}" disabled>
 {% comment %} End comment {% endcomment %}
