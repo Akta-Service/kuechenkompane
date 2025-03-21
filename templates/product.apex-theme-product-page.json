@@ -173,7 +173,11 @@
             "info_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
             "info_text_2": "Kostenloser Versand",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
-            "info_text_3": "365 Tage Schleifservice"
+            "info_text_3": "365 Tage Schleifservice",
+            "info_bg_color": "#fff",
+            "info_border_color": "#000",
+            "info_text_color": "#000",
+            "invert_color": true
           }
         }
       },
@@ -266,6 +270,8 @@
         "mt": 30,
         "mb": 40,
         "add_showore_btn": false,
+        "readmore": "Mehr lesen",
+        "readless": "Weniger Lesen",
         "br_color": "#000000",
         "icon_color": "#000000"
       }
