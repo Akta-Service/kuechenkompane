@@ -134,7 +134,7 @@
             </p>
         </div>
           {% if section.settings.add_showore_btn %}
-            <span class="show-more">Mehr lesen</span>
+            <span class="show-more">{{ section.settings.readmore }}</span>
           {% endif %}
       </div>
       <div class="description-accordion">
@@ -245,6 +245,18 @@
       "default": true
     },
     {
+      "type": "text",
+      "id": "readmore",
+      "label": "Read More Button Text",
+      "default": "Mehr lesen"
+    },
+    {
+      "type": "text",
+      "id": "readless",
+      "label": "Read Less Button Text",
+      "default": "Mehr lesen"
+    },
+    {
       "type": "color",
       "id": "br_color",
       "label": "Accordion Border Color",
@@ -313,10 +325,10 @@
 
       if (content.classList.contains('hideContent')) {
         content.classList.remove('hideContent');
-        button.textContent = 'Weniger Lesen';
+        button.textContent = '{{ section.settings.readless }}';
       } else {
         content.classList.add('hideContent');
-        button.textContent = 'Mehr lesen';
+        button.textContent = '{{ section.settings.readmore }}';
       }
     });
   });
