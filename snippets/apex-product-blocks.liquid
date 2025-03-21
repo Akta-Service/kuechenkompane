@@ -111,6 +111,11 @@
   /* -------------- */
  
     {% endcase %}   
+    {% if block.settings.invert_img %}
+      .product-feature-item img {   
+        filter: invert(1);
+      }
+    {% endif %}
   {% endfor %}  
 {% endstyle %}
 {% comment %} Fallback for case not show block price, buy buttons {% endcomment %}
