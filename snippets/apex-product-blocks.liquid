@@ -108,10 +108,7 @@
   /* -------------- */
  
     {% endcase %}   
-  {% endfor %}
-  .rs-product-info.invert_img img {
-        filter: invert(1);
-   }
+  {% endfor %}  
 {% endstyle %}
 {% comment %} Fallback for case not show block price, buy buttons {% endcomment %}
 <input type="hidden" name="id" value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}" disabled>
