@@ -103,7 +103,7 @@
         background: {{ block.settings.info_bg_color }};
         color: {{ block.settings.info_text_color }};        
       }
-      .info-card.invert_img  {
+      .rs-product-info.invert_img img {
         filter: invert(1);
       }
 
@@ -274,10 +274,10 @@
         </div>
 
       {% when 'productInfo' %}
-        <div class="rs-product-info">
+        <div class="rs-product-info {% if block.settings.invert_color %}invert_img{% endif %}">
           <div class="info-card">
             {% if block.settings.info_text_1 != blank %}
-              <img src="{{ block.settings.info_img_1 |  img_url: 'medium' }}" alt="" class="info-icon">
+              <img class="" src="{{ block.settings.info_img_1 |  img_url: 'medium' }}" alt="" class="info-icon">
             {% endif %}
             <p class="product-info-text">{{ block.settings.info_text_1 }}</p>
           </div>
