@@ -103,19 +103,15 @@
         background: {{ block.settings.info_bg_color }};
         color: {{ block.settings.info_text_color }};        
       }
-      .rs-product-info.invert_img img {
-        filter: invert(1);
-      }
+      
 
   /* -------------- */
  
-    {% endcase %} 
-    {% if block.settings.invert_img %}
-      .product-feature-item img {   
-        filter: invert(1);
-      }
-    {% endif %}
+    {% endcase %}   
   {% endfor %}
+  .rs-product-info.invert_img img {
+        filter: invert(1);
+   }
 {% endstyle %}
 {% comment %} Fallback for case not show block price, buy buttons {% endcomment %}
 <input type="hidden" name="id" value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}" disabled>
@@ -274,10 +270,10 @@
         </div>
 
       {% when 'productInfo' %}
-        <div class="rs-product-info {% if block.settings.invert_color %}invert_img{% endif %}">
-          <div class="info-card">
+        <div class="rs-product-info">
+          <div class="info-card {% if block.settings.invert_color == true %}invert_img{% endif %}">
             {% if block.settings.info_text_1 != blank %}
-              <img class="" src="{{ block.settings.info_img_1 |  img_url: 'medium' }}" alt="" class="info-icon">
+              <img  src="{{ block.settings.info_img_1 |  img_url: 'medium' }}" alt="" class="info-icon">
             {% endif %}
             <p class="product-info-text">{{ block.settings.info_text_1 }}</p>
           </div>
