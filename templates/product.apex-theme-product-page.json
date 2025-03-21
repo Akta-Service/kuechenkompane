@@ -241,7 +241,7 @@
           "type": "faq",
           "settings": {
             "question": "{{ product.metafields.custom.accordion_title_2.value }}",
-            "answer": "<h4>Kostenloser Versand  EU-weit (1-3 Tage)</h4><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine geringe Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p></p><h4>Versand in andere Länder z.B. Schweiz</h4><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p></p><h4>Zahlungsoptionen</h4><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
+            "answer": "<p><strong>Kostenloser Versand  EU-weit (1-3 Tage)</strong></p><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine geringe Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p></p><p><strong>Versand in andere Länder z.B. Schweiz</strong></p><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p></p><p><strong>Zahlungsoptionen</strong></p><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
           }
         },
         "faq_pDwHXa": {
@@ -262,7 +262,7 @@
         "color_scheme": "badge-hot",
         "title": "Gleite mühelos durch alles wie Butter",
         "heading_type": "mrk-h3",
-        "description": "<p>{{ product.description }}</p>",
+        "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": false,
