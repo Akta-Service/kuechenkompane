@@ -220,7 +220,7 @@
                         </h3>
                       {% endif %}
                       {% if block.settings.text != blank %}
-                        <div class="m-richtext__description rte {{ desc_color }} {{ subtext_size }}">
+                        <div class="m-richtext__description rte {{ desc_color }} {{ section.settings.p_size }}">
                           {{ block.settings.text }}
                         </div>
                       {% endif %}
@@ -1416,7 +1416,24 @@
       "type": "textarea",
       "id": "description",
       "label": "Description"
-    },   
+    }, 
+    {
+      "type": "header",
+      "content": "Select Paragraph size"
+    },
+    {
+      "type": "select",
+      "id": "p_size",
+      "label": "Paragraph Size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
+    },  
     {
       "type": "header",
       "content": "General"
