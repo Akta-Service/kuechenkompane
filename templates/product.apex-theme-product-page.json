@@ -174,10 +174,9 @@
             "info_text_2": "Kostenloser Versand",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
             "info_text_3": "365 Tage Schleifservice",
-            "info_bg_color": "#fff",
-            "info_border_color": "#000",
-            "info_text_color": "#000",
-            "invert_color": true
+            "info_bg_color": "#ffffff",
+            "info_border_color": "#000000",
+            "info_text_color": "#000000"
           }
         }
       },
@@ -264,7 +263,7 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "Gleite mühelos durch alles wie Butter",
+        "title": "Glide effortlessly through everything like butter",
         "heading_type": "mrk-h3",
         "description": "{{ product.description }}",
         "mt": 30,
