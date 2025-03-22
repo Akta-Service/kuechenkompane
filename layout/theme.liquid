@@ -249,7 +249,65 @@
       .m-slider-controls__button {
           width: 44px !important;
       }
-    </style>
+      /* paragraph css  */
+
+  /* Paragraph Extra Large */
+  .p-xl {
+    font: var(--p-xl-font-weight, 400) var(--p-xl-size, 32px) / var(--p-xl-line-height, 2em) var(--p-xl-font-family, inherit);
+    margin-bottom: var(--p-xl-margin-bottom, 25px);
+  }
+
+  /* Paragraph Large */
+  .p-large {
+      font: var(--p-large-font-weight, 400) var(--p-large-size, 24px) / var(--p-large-line-height, 1.8em) var(--p-large-font-family, inherit);
+      margin-bottom: var(--p-large-margin-bottom, 20px);
+  }
+
+  /* Paragraph Medium */
+  .p-medium {
+      font: var(--p-medium-font-weight, 400) var(--p-medium-size, 16px) / var(--p-medium-line-height, 1.6em) var(--p-medium-font-family, inherit);
+      margin-bottom: var(--p-medium-margin-bottom, 15px);
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 1024px) { /* Laptop */
+      .p-xl {
+          font-size: var(--p-xl-size-laptop, 26px);
+          line-height: var(--p-xl-line-height-laptop, 1.9em);
+          margin-bottom: var(--p-xl-margin-bottom-laptop, 20px);
+      }
+      .p-large {
+          font-size: var(--p-large-size-laptop, 20px);
+          line-height: var(--p-large-line-height-laptop, 1.7em);
+          margin-bottom: var(--p-large-margin-bottom-laptop, 18px);
+      }
+      .p-medium {
+          font-size: var(--p-medium-size-laptop, 14px);
+          line-height: var(--p-medium-line-height-laptop, 1.5em);
+          margin-bottom: var(--p-medium-margin-bottom-laptop, 12px);
+      }
+  }
+
+  @media (max-width: 768px) { /* Mobile */
+      .p-xl {
+          font-size: var(--p-xl-size-mobile, 22px);
+          line-height: var(--p-xl-line-height-mobile, 1.8em);
+          margin-bottom: var(--p-xl-margin-bottom-mobile, 15px);
+      }
+      .p-large {
+          font-size: var(--p-large-size-mobile, 18px);
+          line-height: var(--p-large-line-height-mobile, 1.6em);
+          margin-bottom: var(--p-large-margin-bottom-mobile, 12px);
+      }
+      .p-medium {
+          font-size: var(--p-medium-size-mobile, 14px);
+          line-height: var(--p-medium-line-height-mobile, 1.4em);
+          margin-bottom: var(--p-medium-margin-bottom-mobile, 10px);
+      }
+  }
+
+
+  </style>
     <script>
       (function() {
         // Find all <noscript> tags on the page

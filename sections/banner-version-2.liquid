@@ -131,7 +131,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-size: 13px;
+    /* font-size: 13px; */
     font-family: sans-serif;
     }
 
@@ -257,7 +257,7 @@
         <div class="swiper-wrapper">
           {% for block in section.blocks %}
             <div class="banner-top-item swiper-slide">
-              <p>
+              <p class="{{ section.settings.top_text }}">
                 <svg
                   class="icon icon-checkmark"
                   width="9"
@@ -358,7 +358,28 @@
       "max": 100,
       "step": 1
     },
-
+    {
+      "type": "header",
+      "content": "Top Item Text Settings"
+    },
+    {
+      "type": "header",
+      "content": "Select Paragraph size"
+    },
+    {
+      "type": "select",
+      "id": "top_text",
+      "label": "Paragraph Size",
+      "default": "medium",
+      "options": [
+        { "value": "extra_large", "label": "Extra Large" },
+        { "value": "large", "label": "Large" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "small", "label": "Small" },
+        { "value": "extra_small", "label": "Extra Small" }
+        
+      ]
+    },
     {
       "type": "header",
       "content": "Heading"
