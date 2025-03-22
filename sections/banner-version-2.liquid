@@ -82,7 +82,7 @@
     }  
 
     .banner-main-content p {
-      font-size: 16px;      
+      /* font-size: 16px;       */
     }
 
     .banner-btn a {
@@ -291,7 +291,7 @@
 
     <div class="banner-main-content">
       <h1 class="{{ section.settings.heading_type }}">{{ section.settings.title }}</h1>
-      <div class="m:text-color-subtext">{{ section.settings.sub_title }}</div>       
+      <div class="m:text-color-subtext {{ section.settings.sub_title_text }}">{{ section.settings.sub_title }}</div>       
       <div class="banner-btn banner-btn-{{ section.id }}">
         <a class="m-button {{ section.settings.button_style }} {{ section.settings.button_size }}" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
       </div>
@@ -431,6 +431,23 @@
       "id": "sub_title",
       "label": "Sub Title",
       "default": "<p>20% off with code <strong>VDAY20</strong></p>"
+    },
+    {
+      "type": "header",
+      "content": "Select Sub heading size"
+    },
+    {
+      "type": "select",
+      "id": "sub_title_text",
+      "label": "Paragraph Size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
     },
     {
       "type": "header",

@@ -1192,6 +1192,16 @@
           { "label": "Bold", "value": "700" }
         ]
       },
+      {
+        "type": "range",
+        "id": "p_xl_line_height",
+        "label": "Line Height",
+        "min": 1,
+        "max": 3,
+        "step": 0.1,
+        "default": 2,
+        "unit": "em"
+      },
 
       {
         "type": "header",
@@ -1207,16 +1217,6 @@
         "step": 1,
         "default": 32,
         "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "p_xl_line_height_desktop",
-        "label": "Line Height",
-        "min": 1,
-        "max": 3,
-        "step": 0.1,
-        "default": 2,
-        "unit": "em"
       },
       {
         "type": "range",
@@ -1246,16 +1246,6 @@
       },
       {
         "type": "range",
-        "id": "p_xl_line_height_laptop",
-        "label": "Line Height",
-        "min": 1,
-        "max": 3,
-        "step": 0.1,
-        "default": 1.9,
-        "unit": "em"
-      },
-      {
-        "type": "range",
         "id": "p_xl_margin_bottom_laptop",
         "label": "Margin Bottom",
         "min": 0,
@@ -1279,16 +1269,6 @@
         "step": 1,
         "default": 22,
         "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "p_xl_line_height_mobile",
-        "label": "Line Height",
-        "min": 1,
-        "max": 3,
-        "step": 0.1,
-        "default": 1.8,
-        "unit": "em"
       },
       {
         "type": "range",
@@ -1318,6 +1298,16 @@
           { "label": "Bold", "value": "700" }
         ]
       },
+      {
+        "type": "range",
+        "id": "p_large_line_height",
+        "label": "Line Height",
+        "min": 1,
+        "max": 3,
+        "step": 0.1,
+        "default": 2,
+        "unit": "em"
+      },
 
       {
         "type": "header",
@@ -1333,16 +1323,6 @@
         "step": 1,
         "default": 24,
         "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "p_large_line_height_desktop",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2.5,
-        "step": 0.1,
-        "default": 1.8,
-        "unit": "em"
       },
       {
         "type": "range",
@@ -1372,16 +1352,6 @@
       },
       {
         "type": "range",
-        "id": "p_large_line_height_laptop",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2.5,
-        "step": 0.1,
-        "default": 1.7,
-        "unit": "em"
-      },
-      {
-        "type": "range",
         "id": "p_large_margin_bottom_laptop",
         "label": "Margin Bottom",
         "min": 0,
@@ -1405,16 +1375,6 @@
         "step": 1,
         "default": 18,
         "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "p_large_line_height_mobile",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2.5,
-        "step": 0.1,
-        "default": 1.6,
-        "unit": "em"
       },
       {
         "type": "range",
@@ -1444,6 +1404,16 @@
         ]
       },
       {
+        "type": "range",
+        "id": "p_medium_line_height",
+        "label": "Line Height",
+        "min": 1,
+        "max": 3,
+        "step": 0.1,
+        "default": 2,
+        "unit": "em"
+      },
+      {
         "type": "header",
         "content": "Paragraph Medium (Desktop)"
       },
@@ -1457,16 +1427,6 @@
         "step": 1,
         "default": 16,
         "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "p_medium_line_height_desktop",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2,
-        "step": 0.1,
-        "default": 1.6,
-        "unit": "em"
       },
       {
         "type": "range",
@@ -1495,16 +1455,6 @@
       },
       {
         "type": "range",
-        "id": "p_medium_line_height_laptop",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2,
-        "step": 0.1,
-        "default": 1.5,
-        "unit": "em"
-      },
-      {
-        "type": "range",
         "id": "p_medium_margin_bottom_laptop",
         "label": "Margin Bottom",
         "min": 0,
@@ -1527,16 +1477,6 @@
         "step": 1,
         "default": 14,
         "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "p_medium_line_height_mobile",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2,
-        "step": 0.1,
-        "default": 1.4,
-        "unit": "em"
       },
       {
         "type": "range",
@@ -1566,7 +1506,16 @@
           { "label": "Bold", "value": "700" }
         ]
       },
-
+      {
+        "type": "range",
+        "id": "p_small_line_height",
+        "label": "Line Height",
+        "min": 1,
+        "max": 3,
+        "step": 0.1,
+        "default": 2,
+        "unit": "em"
+      },
       {
         "type": "header",
         "content": "Paragraph Small (Desktop)"
@@ -1581,16 +1530,6 @@
         "step": 1,
         "default": 12,
         "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "p_small_line_height_desktop",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2,
-        "step": 0.1,
-        "default": 1.4,
-        "unit": "em"
       },
       {
         "type": "range",
@@ -1620,16 +1559,6 @@
       },
       {
         "type": "range",
-        "id": "p_small_line_height_laptop",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2,
-        "step": 0.1,
-        "default": 1.3,
-        "unit": "em"
-      },
-      {
-        "type": "range",
         "id": "p_small_margin_bottom_laptop",
         "label": "Margin Bottom",
         "min": 0,
@@ -1653,16 +1582,6 @@
         "step": 1,
         "default": 10,
         "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "p_small_line_height_mobile",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2,
-        "step": 0.1,
-        "default": 1.3,
-        "unit": "em"
       },
       {
         "type": "range",
@@ -1691,7 +1610,16 @@
           { "label": "Bold", "value": "700" }
         ]
       },
-
+      {
+        "type": "range",
+        "id": "p_xs_line_height",
+        "label": "Line Height",
+        "min": 1,
+        "max": 3,
+        "step": 0.1,
+        "default": 2,
+        "unit": "em"
+      },
       {
         "type": "header",
         "content": "Paragraph Extra Small (Desktop)"
@@ -1706,16 +1634,6 @@
         "step": 1,
         "default": 12,
         "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "p_xs_line_height_desktop",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2,
-        "step": 0.1,
-        "default": 1.4,
-        "unit": "em"
       },
       {
         "type": "range",
@@ -1745,16 +1663,6 @@
       },
       {
         "type": "range",
-        "id": "p_xs_line_height_laptop",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2,
-        "step": 0.1,
-        "default": 1.3,
-        "unit": "em"
-      },
-      {
-        "type": "range",
         "id": "p_xs_margin_bottom_laptop",
         "label": "Margin Bottom",
         "min": 0,
@@ -1778,16 +1686,6 @@
         "step": 1,
         "default": 8,
         "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "p_xs_line_height_mobile",
-        "label": "Line Height",
-        "min": 1,
-        "max": 2,
-        "step": 0.1,
-        "default": 1.3,
-        "unit": "em"
       },
       {
         "type": "range",
