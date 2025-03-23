@@ -306,11 +306,11 @@ class MCartTemplate extends HTMLElement {
             items: [
               {
                 id: Shopify.cart_drawer.extraAddon.freeProduct1,
-                quantity: 1,
+                quantity: 0,
               },
               {
                 id: Shopify.cart_drawer.extraAddon.freeProduct2,
-                quantity: 1,
+                quantity: 0,
               },
             ],
           }
