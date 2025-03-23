@@ -4010,6 +4010,25 @@
       },
       {
         "type": "header",
+        "content": "Extra Addons"
+      },
+      {
+        "type": "product",
+        "id": "eao_parent_product",
+        "label": "Select Parent Product"
+      },
+      {
+        "type": "product",
+        "id": "eao_free_product_1",
+        "label": "Select Free Product 1"
+      },
+      {
+        "type": "product",
+        "id": "eao_free_product_2",
+        "label": "Select Free Product 2"
+      },
+      {
+        "type": "header",
         "content": "Free Products/Shipping"
       },
       {
