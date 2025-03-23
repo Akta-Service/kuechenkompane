@@ -250,6 +250,8 @@ class MCartTemplate extends HTMLElement {
     const response = await fetch("/cart.js");
     const cart = await response.json();
 
+    await this.handleExtraAddOn(cart)
+
     let config = {};
 
     if (Shopify?.cart_drawer?.freeProduct1?.available === "true") {
@@ -265,8 +267,12 @@ class MCartTemplate extends HTMLElement {
     }
   }
 
-  async handleExtraAddOn() {
-    
+  async handleExtraAddOn(cart) {
+    cart?.items?.map(item => {
+      if(item.product_id.toString() === Shopify.cart_drawer.extraAddon.parentProduct) {
+        console.log("item----", item)
+      }
+    })
   }
 
   async addOrRemoveAddOnProduct(config, cart) {
