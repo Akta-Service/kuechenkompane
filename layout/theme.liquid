@@ -469,15 +469,9 @@
         condition: "cart-total"
       };
       Shopify.cart_drawer.extraAddon = {
-        parentProduct: {
-          variantId: "{{ settings.eadn_parent_product.id }}"
-        },
-        freeProduct1: {
-          variantId: "{{ settings.eadn_free_product_1.selected_or_first_available_variant.id }}"
-        },
-        freeProduct2: {
-          variantId: "{{ settings.eadn_free_product_2.selected_or_first_available_variant.id }}"
-        }
+        parentProduct: "{{ settings.eadn_parent_product.id }}",
+        freeProduct1: "{{ settings.eadn_free_product_1.selected_or_first_available_variant.id }}",
+        freeProduct2: "{{ settings.eadn_free_product_2.selected_or_first_available_variant.id }}"
       };
     </script>
 
