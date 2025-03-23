@@ -279,7 +279,9 @@ class MCartTemplate extends HTMLElement {
       else await this.handleUpdateExtranAddOn("add");
     }
     else {
-      await this.handleUpdateExtranAddOn("remove");
+      await this.updateCart("remove", Shopify.cart_drawer.extraAddon.freeProduct1)
+      await this.updateCart("remove", Shopify.cart_drawer.extraAddon.freeProduct2)
+      // await this.handleUpdateExtranAddOn("remove");
     }
   }
 
