@@ -235,7 +235,6 @@ class MCartTemplate extends HTMLElement {
       });
   }
 
-
   // updated functionality
   reInitCCS() {
     try {
@@ -250,7 +249,7 @@ class MCartTemplate extends HTMLElement {
     const response = await fetch("/cart.js");
     const cart = await response.json();
 
-    await this.handleExtraAddOn(cart)
+    await this.handleExtraAddOn(cart);
 
     let config = {};
 
@@ -268,17 +267,44 @@ class MCartTemplate extends HTMLElement {
   }
 
   async handleExtraAddOn(cart) {
-    const isExists = cart?.items?.some(item => item.product_id.toString() === Shopify.cart_drawer.extraAddon.parentProduct)
-    console.log("isExists---------",isExists)
+    const isExists = cart?.items?.some(
+      (item) =>
+        item.product_id.toString() ===
+        Shopify.cart_drawer.extraAddon.parentProduct
+    );
+    if (isExists) handleUpdateExtranAddOn("add");
+    else handleUpdateExtranAddOn("remove");
   }
-
 
   async handleUpdateExtranAddOn(action, variantId) {
     const endpoint = action === "add" ? "/cart/add.js" : "/cart/change.js";
-    const body =
-      action === "add"
-        ? { id: variantId, quantity: 1 }
-        : { id: variantId, quantity: 0 };
+    if(action === "add" || action === "update") {
+      var body = {
+            items: [
+              {
+                id: Shopify.cart_drawer.extraAddon.freeProduct1,
+                quantity: 1,
+              },
+              {
+                id: Shopify.cart_drawer.extraAddon.freeProduct2,
+                quantity: 1,
+              },
+            ],
+          }
+    }  else {
+      var body = {
+            items: [
+              {
+                id: Shopify.cart_drawer.extraAddon.freeProduct1,
+                quantity: 0,
+              },
+              {
+                id: Shopify.cart_drawer.extraAddon.freeProduct2,
+                quantity: 0,
+              },
+            ],
+          }
+    }
 
     await fetch(endpoint, {
       method: "POST",
