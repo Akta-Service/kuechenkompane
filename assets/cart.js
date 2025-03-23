@@ -265,6 +265,10 @@ class MCartTemplate extends HTMLElement {
     }
   }
 
+  async handleExtraAddOn() {
+    
+  }
+
   async addOrRemoveAddOnProduct(config, cart) {
     const cartTotal = cart.total_price / 100;
     const currentVariantIds = cart.items.map((item) =>
