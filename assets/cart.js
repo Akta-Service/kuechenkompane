@@ -268,11 +268,31 @@ class MCartTemplate extends HTMLElement {
   }
 
   async handleExtraAddOn(cart) {
-    cart?.items?.map(item => {
-      if(item.product_id.toString() === Shopify.cart_drawer.extraAddon.parentProduct) {
-        console.log("item----", item)
-      }
-    })
+    const isExists = cart?.items?.some(item => item.product_id.toString() === Shopify.cart_drawer.extraAddon.parentProduct)
+    console.log("isExists---------",isExists)
+  }
+
+
+  async handleUpdateExtranAddOn(action, variantId) {
+    const endpoint = action === "add" ? "/cart/add.js" : "/cart/change.js";
+    const body =
+      action === "add"
+        ? { id: variantId, quantity: 1 }
+        : { id: variantId, quantity: 0 };
+
+    await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+
+    this.loading.finish();
+    const cartDrawer = document.querySelector("m-cart-drawer");
+    if (cartDrawer) {
+      console.log("update card drawer-----------");
+      cartDrawer.onCartDrawerUpdate();
+      this.reInitCCS();
+    }
   }
 
   async addOrRemoveAddOnProduct(config, cart) {
