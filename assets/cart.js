@@ -282,7 +282,8 @@ class MCartTemplate extends HTMLElement {
     }
   }
 
-  async handleUpdateExtranAddOn(action, variantId) {
+  async handleUpdateExtranAddOn(action) {
+    console.log("action", action)
     const endpoint = action === "add" ? "/cart/add.js" : "/cart/change.js";
     if(action === "add") {
       var body = {
