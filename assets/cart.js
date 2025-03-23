@@ -275,8 +275,12 @@ class MCartTemplate extends HTMLElement {
     if (isExists) {
       let isFreeProd = cart?.items?.some(itm => itm.variant_id.toString() === Shopify.cart_drawer.extraAddon.freeProduct1 || itm.variant_id.toString() === Shopify.cart_drawer.extraAddon.freeProduct2)
       console.log("isFreeProd", isFreeProd)
-      if(isFreeProd) await this.handleUpdateExtranAddOn("update")
-      else await this.handleUpdateExtranAddOn("add");
+      if(isFreeProd) {
+        // await this.handleUpdateExtranAddOn("update")
+      }
+      else {
+        await this.handleUpdateExtranAddOn("add");
+      }
     }
     else {
       await this.updateCart("remove", Shopify.cart_drawer.extraAddon.freeProduct1)
@@ -306,11 +310,11 @@ class MCartTemplate extends HTMLElement {
             items: [
               {
                 id: Shopify.cart_drawer.extraAddon.freeProduct1,
-                quantity: 0,
+                quantity: 1,
               },
               {
                 id: Shopify.cart_drawer.extraAddon.freeProduct2,
-                quantity: 0,
+                quantity: 1,
               },
             ],
           }
