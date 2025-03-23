@@ -274,6 +274,7 @@ class MCartTemplate extends HTMLElement {
     );
     if (isExists) {
       let isFreeProd = cart?.items?.some(itm => itm.variant_id.toString() === Shopify.cart_drawer.extraAddon.freeProduct1 || itm.variant_id.toString() === Shopify.cart_drawer.extraAddon.freeProduct2)
+      console.log("isFreeProd", isFreeProd)
       if(isFreeProd) await this.handleUpdateExtranAddOn("add")
       else await this.handleUpdateExtranAddOn("update");
     }
