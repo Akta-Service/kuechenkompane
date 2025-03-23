@@ -468,6 +468,17 @@
         rule: "{{ settings.cart_free_product_2_rule }}",
         condition: "cart-total"
       };
+      Shopify.cart_drawer.extraAddon = {
+        parentProduct: {
+          variantId: "{{ settings.eadn_parent_product.selected_or_first_available_variant.id }}"
+        },
+        freeProduct1: {
+          variantId: "{{ settings.eadn_free_product_1.selected_or_first_available_variant.id }}"
+        },
+        freeProduct1: {
+          variantId: "{{ settings.eadn_free_product_2.selected_or_first_available_variant.id }}"
+        }
+      }
     </script>
 
     {%- if settings.enable_cart_drawer and template != 'cart' -%}
