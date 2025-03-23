@@ -272,13 +272,19 @@ class MCartTemplate extends HTMLElement {
         item.product_id.toString() ===
         Shopify.cart_drawer.extraAddon.parentProduct
     );
-    if (isExists) handleUpdateExtranAddOn("add");
-    else handleUpdateExtranAddOn("remove");
+    if (isExists) {
+      let isFreeProd = cart?.items?.some(itm => itm.variant_id.toString() === Shopify.cart_drawer.extraAddon.freeProduct1 || itm.variant_id.toString() === Shopify.cart_drawer.extraAddon.freeProduct2)
+      if(isFreeProd) handleUpdateExtranAddOn("add")
+      else handleUpdateExtranAddOn("update");
+    }
+    else {
+      handleUpdateExtranAddOn("remove");
+    }
   }
 
   async handleUpdateExtranAddOn(action, variantId) {
     const endpoint = action === "add" ? "/cart/add.js" : "/cart/change.js";
-    if(action === "add" || action === "update") {
+    if(action === "add") {
       var body = {
             items: [
               {
@@ -291,7 +297,20 @@ class MCartTemplate extends HTMLElement {
               },
             ],
           }
-    }  else {
+    } else if(action === "update") {
+      var body = {
+            items: [
+              {
+                id: Shopify.cart_drawer.extraAddon.freeProduct1,
+                quantity: 1,
+              },
+              {
+                id: Shopify.cart_drawer.extraAddon.freeProduct2,
+                quantity: 1,
+              },
+            ],
+          }
+    } else {
       var body = {
             items: [
               {
