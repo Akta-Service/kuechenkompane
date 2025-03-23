@@ -7,7 +7,11 @@
 >
   <div class="m-cart-item--drawer__wrapper m:flex m:items-start">
     <div class="m-cart-drawer-item__image m-cart-item__image m:blocks-radius-md">
-      {% if item.product.id == settings.cart_free_product_1.id or item.product.id == settings.cart_free_product_2.id %}
+      {% if item.product.id == settings.cart_free_product_1.id 
+        or item.product.id == settings.cart_free_product_2.id 
+        or item.product.id == settings.eadn_free_product_1.selected_or_first_available_variant.id
+        or item.product.id == settings.eadn_free_product_2.selected_or_first_available_variant.id
+      %}
         <a style="pointer-events: none;">
           {% if item.image != blank %}
             {% render 'responsive-image', image: item.image, wrapper_class: 'm-cart-item__image' %}
@@ -26,7 +30,11 @@
       {% endif %}
     </div>
     <div class="m-cart-item__info m-cart-drawer-item__info">
-      {% if item.product.id == settings.cart_free_product_1.id or item.product.id == settings.cart_free_product_2.id %}
+      {% if item.product.id == settings.cart_free_product_1.id 
+        or item.product.id == settings.cart_free_product_2.id 
+        or item.product.id == settings.eadn_free_product_1.selected_or_first_available_variant.id
+        or item.product.id == settings.eadn_free_product_2.selected_or_first_available_variant.id
+      %}
         <a class="m-cart-item__title" style="pointer-events: none;">
           {{- item.product.title -}}
         </a>
@@ -38,6 +46,8 @@
 
       {% unless item.product.id == settings.cart_free_product_1.id
         or item.product.id == settings.cart_free_product_2.id
+        or item.product.id == settings.eadn_free_product_1.selected_or_first_available_variant.id
+        or item.product.id == settings.eadn_free_product_2.selected_or_first_available_variant.id
       %}
         <div class="m-cart-drawer-item__variant m:text-color-subtext">
           {%- unless item.product.has_only_default_variant -%}
