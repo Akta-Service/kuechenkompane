@@ -90,13 +90,7 @@
 
         <div class="m-cart-item__price  free-product">
           <span class="m-cart-item__price--regular"> €39,00 </span>
-          <del class="m-cart-item__price--regular">
-            {% if settings.currency_code_enabled %}
-              {{- item.original_price | money_with_currency -}}
-            {% else %}
-              {{- item.original_price | money -}}
-            {% endif %}
-          </del>
+          <span class="m-cart-item__price--regular"> {{ 0 | money_with_currency }} </span>
         </div>
 
         <div
