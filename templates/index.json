@@ -273,7 +273,8 @@
         "mobile_pt": 40,
         "mobile_pb": 40,
         "heading_type": "mrk-h3",
-        "title": "Nach Kategorie einkaufen"
+        "title": "Nach Kategorie einkaufen",
+        "c_n_text": "p-medium"
       }
     },
     "product_explanation_video_6ERhrB": {
@@ -282,8 +283,7 @@
         "sub_heading_BEaeT9": {
           "type": "sub_heading",
           "settings": {
-            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten",
-            "sub_heading_size": 16
+            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten"
           }
         },
         "heading_bih4qd": {
@@ -346,7 +346,9 @@
         "color_scheme": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
         "vertical_padding": 50,
         "vertical_padding_mobile": 40,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-small",
+        "des_size": "p-small"
       }
     },
     "branded_image_version_NcNpYJ": {
