@@ -127,7 +127,7 @@
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'sub_heading' %}
-              <h6 style="font-size:{{- block.settings.sub_heading_size -}}px ; ">
+              <h6 class="{{ section.settings.sub_heading }}">
                 {{ block.settings.sub_heading }}
               </h6>
               {% comment %} product-explanation-video-title {% endcomment %}
@@ -140,7 +140,7 @@
               {% comment %} parapgh-one {% endcomment %}
             {% when 'details' %}
               <p
-                class="description-font{{forloop.index}}"
+                class="description-font{{forloop.index}} {{ section.settings.des_size}}"
                 style="font-size:{{- block.settings.details_size -}}px ; "
               >
                 {{ block.settings.details }}
@@ -245,6 +245,40 @@
         }
       ],
       "default": "mrk-h1"
+    },
+    {
+      "type": "header",
+      "content": "Select Sub Heading size"
+    },
+    {
+      "type": "select",
+      "id": "sub_heading",
+      "label": "Sub Heading Size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Select Decription size"
+    },
+    {
+      "type": "select",
+      "id": "des_size",
+      "label": "Decription size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
     }
     
   ],
@@ -258,17 +292,7 @@
           "id": "sub_heading",
           "label": "Sub Heading",
           "default": "Maniko - Explained in 2 Minutes"
-        },
-       
-        {
-          "type": "range",
-          "id": "sub_heading_size",
-          "label": "Font Size",
-          "default": 16,
-          "min": 10,
-          "max": 30,
-          "step": 1
-        }
+        },        
       ]
     },
     {
