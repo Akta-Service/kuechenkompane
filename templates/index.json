@@ -290,10 +290,6 @@
           "type": "heading",
           "settings": {
             "heading": "Qualität, die begeistert.",
-            "h1_font_size": 54,
-            "h1_font_size_tablet": 35,
-            "h1_font_size_mobile": 27,
-            "h1_font_weight": "700",
             "h1_text_align": "center",
             "title": "Your Title Here",
             "padding_top": 1,
@@ -308,13 +304,7 @@
           "type": "details",
           "settings": {
             "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi.",
-            "details_size": 18,
-            "p_font_size": 16,
-            "p_font_size_tablet": 16,
-            "p_font_size_mobile": 16,
-            "p_font_weight": "400",
             "p_text_align": "center",
-            "p_line_height": 1.5,
             "p_padding_top": 10,
             "p_padding_bottom": 10,
             "p_padding_top_tablet": 8,
@@ -348,7 +338,7 @@
         "vertical_padding_mobile": 40,
         "heading_type": "mrk-h2",
         "sub_heading": "p-small",
-        "des_size": "p-small"
+        "des_size": "p-medium"
       }
     },
     "branded_image_version_NcNpYJ": {
