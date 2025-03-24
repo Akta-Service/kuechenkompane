@@ -44,8 +44,7 @@
         </a>
       {% endif %}
 
-      {%
-        unless item.product.id == settings.cart_free_product_1.id
+      {% unless item.product.id == settings.cart_free_product_1.id
         or item.product.id == settings.cart_free_product_2.id
       %}
         <div class="m-cart-drawer-item__variant m:text-color-subtext">
@@ -89,8 +88,23 @@
           {%- endfor -%}
         </div>
 
-        <div class="m-cart-item__price {% if item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
-        or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id %} free-product{% endif %}">
+        <div class="m-cart-item__price  free-product">
+          <span class="m-cart-item__price--regular"> €39,00 </span>
+          <del class="m-cart-item__price--regular">
+            {% if settings.currency_code_enabled %}
+              {{- item.original_price | money_with_currency -}}
+            {% else %}
+              {{- item.original_price | money -}}
+            {% endif %}
+          </del>
+        </div>
+
+        <div
+          class="
+            m-cart-item__price {% if item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
+            or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id %} free-product{% endif %}
+          "
+        >
           {%- if item.original_price != item.final_price -%}
             <div class="m-cart-item__price-discounted">
               <del class="m-cart-item__price--regular">
