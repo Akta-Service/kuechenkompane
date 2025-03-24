@@ -70,11 +70,11 @@ m-cart-drawer {
   padding-bottom: 15px;
   padding-top: 10px;
 }
-.m-cart-item__price.free-product.first {
+.m-cart-item__price.free-product .first {
   text-decoration: line-through;
   color: gray;
   font-weight: bold;
 }
-.m-cart-item__price.free-product.second {
+.m-cart-item__price.free-product .second {
   color: black;
 }
