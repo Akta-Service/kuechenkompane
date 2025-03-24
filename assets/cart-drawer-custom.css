@@ -72,11 +72,9 @@ m-cart-drawer {
 }
 .m-cart-item__price.free-product.first {
   text-decoration: line-through;
-  color: red;
+  color: gray;
   font-weight: bold;
 }
 .m-cart-item__price.free-product.second {
-  text-decoration: line-through;
-  color: red;
-  font-weight: bold;
+  color: black;
 }
