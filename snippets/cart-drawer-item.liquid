@@ -7,8 +7,8 @@
 >
   <div class="m-cart-item--drawer__wrapper m:flex m:items-start">
     <div class="m-cart-drawer-item__image m-cart-item__image m:blocks-radius-md">
-      {% if item.product.id == settings.cart_free_product_1.id 
-        or item.product.id == settings.cart_free_product_2.id 
+      {% if item.product.id == settings.cart_free_product_1.id
+        or item.product.id == settings.cart_free_product_2.id
         or item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
         or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
       %}
@@ -30,8 +30,8 @@
       {% endif %}
     </div>
     <div class="m-cart-item__info m-cart-drawer-item__info">
-      {% if item.product.id == settings.cart_free_product_1.id 
-        or item.product.id == settings.cart_free_product_2.id 
+      {% if item.product.id == settings.cart_free_product_1.id
+        or item.product.id == settings.cart_free_product_2.id
         or item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
         or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
       %}
@@ -44,7 +44,8 @@
         </a>
       {% endif %}
 
-      {% unless item.product.id == settings.cart_free_product_1.id
+      {%
+        unless item.product.id == settings.cart_free_product_1.id
         or item.product.id == settings.cart_free_product_2.id
         #or item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
         #or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
@@ -162,14 +163,75 @@
           </ul>
         {%- endif -%}
 
-        <div class="m-cart-drawer-item__quantity m:flex m:items-center">
-          {%- if gift_wrap_id == null or item.id != gift_wrap_id -%}
-            {%- if item.properties._parentKey == blank -%}
-              <m-quantity-input class="m-quantity">
+        {% unless item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
+          or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
+        %}
+          <div class="m-cart-drawer-item__quantity m:flex m:items-center">
+            {%- if gift_wrap_id == null or item.id != gift_wrap_id -%}
+              {%- if item.properties._parentKey == blank -%}
+                <m-quantity-input class="m-quantity">
+                  <button
+                    class="m-quantity__button"
+                    name="minus"
+                    type="button"
+                    aria-label="{{ 'products.product.decrease_quantity' | t: title: item.product.title }}"
+                  >
+                    <svg
+                      fill="currentColor"
+                      stroke="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 384 512"
+                    >
+                      <path d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                  </button>
+                  <input
+                    class="m-quantity__input"
+                    type="number"
+                    data-quantity-variant-id="{{ item.variant.id }}"
+                    name="updates[]"
+                    value="{{ item.quantity }}"
+                    {% # theme-check-disable %}
+                    data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
+                    min="{{ item.variant.quantity_rule.min }}"
+                    {% if item.variant.quantity_rule.max != null %}
+                      max="{{ item.variant.quantity_rule.max }}"
+                    {% endif %}
+                    step="{{ item.variant.quantity_rule.increment }}"
+                    {% # theme-check-enable %}
+                    id="MinimogDrawer-quantity-{{ item.index | plus: 1 }}"
+                    data-index="{{ item.index | plus: 1 }}"
+                  >
+                  <button
+                    class="m-quantity__button"
+                    name="plus"
+                    type="button"
+                    aria-label="{{ 'products.product.increase_quantity' | t: title: item.product.title }}"
+                  >
+                    <svg
+                      fill="currentColor"
+                      stroke="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 384 512"
+                    >
+                      <path d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                  </button>
+                </m-quantity-input>
+              {%- endif -%}
+            {%- else -%}
+              <m-gift-wrapping-input
+                class="m-quantity"
+                data-product-id="{{ product_id | default: item.product.id }}"
+                cart-items-size="{{ cart.items.size }}"
+                gift-wraps-in-cart="{{ gift_wraps_in_cart }}"
+                items-in-cart="{{ items_in_cart }}"
+              >
                 <button
                   class="m-quantity__button"
-                  name="minus"
                   type="button"
+                  name="minus"
+                  disabled
                   aria-label="{{ 'products.product.decrease_quantity' | t: title: item.product.title }}"
                 >
                   <svg
@@ -195,13 +257,15 @@
                   {% endif %}
                   step="{{ item.variant.quantity_rule.increment }}"
                   {% # theme-check-enable %}
-                  id="MinimogDrawer-quantity-{{ item.index | plus: 1 }}"
+                  id="MinimogQuantity-{{ item.index | plus: 1 }}"
                   data-index="{{ item.index | plus: 1 }}"
+                  disabled="disabled"
                 >
                 <button
                   class="m-quantity__button"
-                  name="plus"
                   type="button"
+                  name="plus"
+                  disabled
                   aria-label="{{ 'products.product.increase_quantity' | t: title: item.product.title }}"
                 >
                   <svg
@@ -213,79 +277,20 @@
                     <path d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
                   </svg>
                 </button>
-              </m-quantity-input>
+              </m-gift-wrapping-input>
             {%- endif -%}
-          {%- else -%}
-            <m-gift-wrapping-input
-              class="m-quantity"
-              data-product-id="{{ product_id | default: item.product.id }}"
-              cart-items-size="{{ cart.items.size }}"
-              gift-wraps-in-cart="{{ gift_wraps_in_cart }}"
-              items-in-cart="{{ items_in_cart }}"
-            >
-              <button
-                class="m-quantity__button"
-                type="button"
-                name="minus"
-                disabled
-                aria-label="{{ 'products.product.decrease_quantity' | t: title: item.product.title }}"
-              >
-                <svg
-                  fill="currentColor"
-                  stroke="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 384 512"
-                >
-                  <path d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
-                </svg>
-              </button>
-              <input
-                class="m-quantity__input"
-                type="number"
-                data-quantity-variant-id="{{ item.variant.id }}"
-                name="updates[]"
-                value="{{ item.quantity }}"
-                {% # theme-check-disable %}
-                data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
-                min="{{ item.variant.quantity_rule.min }}"
-                {% if item.variant.quantity_rule.max != null %}
-                  max="{{ item.variant.quantity_rule.max }}"
-                {% endif %}
-                step="{{ item.variant.quantity_rule.increment }}"
-                {% # theme-check-enable %}
-                id="MinimogQuantity-{{ item.index | plus: 1 }}"
+            {%- if item.properties._parentKey == blank -%}
+              <m-cart-remove-button
+                id="MinimogCartDrawer-Remove-{{ item.index | plus: 1 }}"
                 data-index="{{ item.index | plus: 1 }}"
-                disabled="disabled"
               >
-              <button
-                class="m-quantity__button"
-                type="button"
-                name="plus"
-                disabled
-                aria-label="{{ 'products.product.increase_quantity' | t: title: item.product.title }}"
-              >
-                <svg
-                  fill="currentColor"
-                  stroke="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 384 512"
-                >
-                  <path d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
-                </svg>
-              </button>
-            </m-gift-wrapping-input>
-          {%- endif -%}
-          {%- if item.properties._parentKey == blank -%}
-            <m-cart-remove-button
-              id="MinimogCartDrawer-Remove-{{ item.index | plus: 1 }}"
-              data-index="{{ item.index | plus: 1 }}"
-            >
-              <span class="m-cart-item__remove m-button--link{% unless gift_wrap_id == nil or item.id != gift_wrap_id %} m:hidden{% endunless %}">
-                {{- 'cart.general.remove' | t -}}
-              </span>
-            </m-cart-remove-button>
-          {%- endif -%}
-        </div>
+                <span class="m-cart-item__remove m-button--link{% unless gift_wrap_id == nil or item.id != gift_wrap_id %} m:hidden{% endunless %}">
+                  {{- 'cart.general.remove' | t -}}
+                </span>
+              </m-cart-remove-button>
+            {%- endif -%}
+          </div>
+        {% endunless %}
       {% endunless %}
     </div>
   </div>
