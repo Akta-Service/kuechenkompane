@@ -89,7 +89,8 @@
           {%- endfor -%}
         </div>
 
-        <div class="m-cart-item__price">
+        <div class="m-cart-item__price {% if item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
+        or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id %} free-product{% endif %}">
           {%- if item.original_price != item.final_price -%}
             <div class="m-cart-item__price-discounted">
               <del class="m-cart-item__price--regular">
