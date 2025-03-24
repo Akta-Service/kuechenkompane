@@ -70,7 +70,12 @@ m-cart-drawer {
   padding-bottom: 15px;
   padding-top: 10px;
 }
-.m-cart-item__price.free-product {
+.m-cart-item__price.free-product.first {
+  text-decoration: line-through;
+  color: red;
+  font-weight: bold;
+}
+.m-cart-item__price.free-product.second {
   text-decoration: line-through;
   color: red;
   font-weight: bold;
