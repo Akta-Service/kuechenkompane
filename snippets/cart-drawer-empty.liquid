@@ -46,7 +46,7 @@
 <div class="x-card-empty-container">
   <div class="x-card-empty-wrapper">
     <div class="x-card-empty-cs-btn">
-      <a href="/collections/all">Continue Shopping</a>
+      <a href="/collections/all">{{ settings.empty_shoping_link_text }}</a>
     </div>
     {% unless settings.empty_cart_collection == blank %}
       <div class="x-card-empty-collection">
@@ -55,7 +55,7 @@
             {{ settings.empty_cart_collection.featured_image | image_url: width: 400 | image_tag }}
           {% endunless %}
         </a>
-        <a class="x-cec-all-prods" href="{{ settings.empty_cart_collection.url }}">All Products</a>
+        <a class="x-cec-all-prods" href="{{ settings.empty_cart_collection.url }}">{{ settings.empty_cart_collection_text }}</a>
       </div>
     {% endunless %}
   </div>

@@ -4035,6 +4035,23 @@
         "content": "When Cart Is Empty"
       },
       {
+        "type": "text",
+        "id": "empty_shoping_link_text",
+        "label": "Empty Shoping Cart Button",
+        "default": "Continue Shopping"
+      },
+      {
+        "type": "url",
+        "id": "empty_shoping_link",
+        "label": "Empty Shoping Cart Link"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_collection_text",
+        "label": "Empty Shoping Cart Button",
+        "default": "All Products"
+      },
+      {
         "type": "collection",
         "id": "empty_cart_collection",
         "label": "Select Collection"
