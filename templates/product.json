@@ -273,18 +273,13 @@
         "sub_heading_yR33U9": {
           "type": "sub_heading",
           "settings": {
-            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten",
-            "sub_heading_size": 16
+            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten"
           }
         },
         "heading_7M7agE": {
           "type": "heading",
           "settings": {
             "heading": "Warum Küchenkompane?",
-            "h1_font_size": 32,
-            "h1_font_size_tablet": 28,
-            "h1_font_size_mobile": 24,
-            "h1_font_weight": "600",
             "h1_text_align": "left",
             "title": "Your Title Here",
             "padding_top": 20,
@@ -299,13 +294,7 @@
           "type": "details",
           "settings": {
             "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
-            "details_size": 18,
-            "p_font_size": 16,
-            "p_font_size_tablet": 14,
-            "p_font_size_mobile": 12,
-            "p_font_weight": "400",
             "p_text_align": "left",
-            "p_line_height": 1.5,
             "p_padding_top": 10,
             "p_padding_bottom": 10,
             "p_padding_top_tablet": 8,
@@ -336,7 +325,9 @@
         "color_scheme": "",
         "vertical_padding": 50,
         "vertical_padding_mobile": 30,
-        "heading_type": "mrk-h1"
+        "heading_type": "mrk-h1",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "usp_list_jDiFMg": {
@@ -447,8 +438,6 @@
             "width": "100%",
             "alignment": "center",
             "align_text": "center",
-            "text_size": "medium",
-            "text_color": "inherit",
             "button_label": "",
             "button_link": "",
             "button_style": "m-button--primary",
@@ -467,10 +456,10 @@
       ],
       "settings": {
         "heading": "",
-        "heading_type": "mrk-h1",
+        "heading_type": "mrk-h2",
         "subheading": "",
         "description": "",
-        "header_alignment": "center",
+        "p_size": "p-medium",
         "container": "container-fluid",
         "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
         "content_color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
