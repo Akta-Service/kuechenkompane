@@ -17,17 +17,15 @@
     width: 35px;
     height: 35px;
     margin: 0 auto;
-  }
+    margin-bottom: 25px;
+}
 
-  .store-benefits-text h4 {  
-    font-size: {{ section.settings.title_size }}px;
-    margin: 24px 0 12px;
+  .store-benefits-text h4 { 
     text-transform: uppercase;
     font-weight: 400;
   }
 
-  .store-benefits-text p {   
-    font-size: {{ section.settings.text_size }}px;
+  .store-benefits-text p { 
     text-transform: uppercase;
     margin: 15px 0;
   }
@@ -109,7 +107,7 @@
               {% endif %}
               <div class="store-benefits-text">
                 <h4 class="{{ section.settings.heading_type }}">{{ block.settings.title }}</h4>
-                <p>
+                <p class="{{ section.settings.des_size }}">
                   {{ block.settings.text }}
                 </p>
               </div>
@@ -178,13 +176,21 @@
       "default": "mrk-h1"
     },
     {
-      "type": "range",
-      "id": "text_size",
-      "label": "Text Size",
-      "default": 14,
-      "min": 10,
-      "max": 30,
-      "step": 1
+      "type": "header",
+      "content": "Select Decription size"
+    },
+    {
+      "type": "select",
+      "id": "des_size",
+      "label": "Decription size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
     },
     {
       "type": "range",
