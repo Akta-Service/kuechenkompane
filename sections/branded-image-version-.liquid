@@ -38,8 +38,7 @@
     padding: 50px 0;
   }
 
-  .branded-title {
-    font-size: {{ section.settings.title_font_size }}px;    
+  .branded-title {        
     font-weight: 400;
     text-transform: capitalize;
     /* line-height: 1; */
@@ -67,11 +66,7 @@
   .branded-left-item .banner-fluid__media-mask-mobile {
     display: none;
   }
-  @media only screen and (max-width: 1000px) {
-    .branded-title {
-    font-size: 40px;
-  }
- }
+  
   @media only screen and (max-width: 749px) {
     .branded-img-content {
       display: flex;
@@ -102,10 +97,7 @@
       margin-top: {{ section.settings.mobile_margin_top }}px;
       margin-bottom: {{ section.settings.mobile_margin_bottom }}px;
     }
-    .branded-title {
-      font-size:{{ section.settings.title_font_size_m }}px;  
-      font-weight: 700;
-  }
+    
   }
 </style>
 <div class="branded-img-area m-color-{{ section.settings.color_scheme }}">
@@ -152,7 +144,7 @@
             {%- when 'title' -%}
               <h3 class="branded-title {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
             {%- when 'sub_title' -%}
-              <p>{{ block.settings.text }}</p>
+              <p class="{{ section.settings.des_size }}">{{ block.settings.text }}</p>
 
             {%- when 'btn' -%}
               <div class="branded-btn branded-btn-{{ section.id }}">
@@ -275,15 +267,22 @@
       "default": "mrk-h1"
     },    
     {
-      "type": "range",
-      "id": "text_font_size",
-      "label": "Text Font Size",
-      "default": 16,
-      "min": 12,
-      "max": 50,
-      "unit": "px",
-      "step": 1
-    },  
+      "type": "header",
+      "content": "Select Decription size"
+    },
+    {
+      "type": "select",
+      "id": "des_size",
+      "label": "Decription size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
+    },
     {
       "type": "select",
       "id": "button_style",
