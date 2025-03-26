@@ -307,42 +307,7 @@ padding-top: 0;
   ]
 }
 {% endschema %}
-{% comment %} <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // FAQ Accordion
-    let expandButtons2 = document.querySelectorAll('.accordion-button');
-    expandButtons2.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        const activeButton = document.querySelector('.accordion-button.active');
-        if (activeButton && activeButton !== button) {
-          activeButton.classList.toggle('active');
-          activeButton.nextElementSibling.style.maxHeight = 0;
-        }
-        button.classList.toggle('active');
-        const content = button.nextElementSibling;
-        if (button.classList.contains('active')) {
-          content.style.maxHeight = content.scrollHeight + 'px';
-        } else {
-          content.style.maxHeight = 0;
-        }
-      });
-    });
 
-    // show more
-    document.querySelector('.show-more').addEventListener('click', function () {
-      const content = document.querySelector('.p-dection-w');
-      const button = this;
-
-      if (content.classList.contains('hideContent')) {
-        content.classList.remove('hideContent');
-        button.textContent = '{{ section.settings.readless }}';
-      } else {
-        content.classList.add('hideContent');
-        button.textContent = '{{ section.settings.readmore }}';
-      }
-    });
-  });
-</script> {% endcomment %}
 <script>
   document.addEventListener("DOMContentLoaded", function () {
   class Accordion {
