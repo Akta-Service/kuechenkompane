@@ -126,8 +126,9 @@
         "pb": 30,
         "mobile_pt": 30,
         "mobile_pb": 30,
-        "heading_type": "mrk-h1",
-        "title": "Shop by Category"
+        "heading_type": "mrk-h2",
+        "title": "Shop by Category",
+        "c_n_text": "p-medium"
       }
     },
     "main": {
@@ -241,7 +242,7 @@
         "mobile_margin_bottom": 0,
         "bg_img": "shopify://shop_images/IMG_9602_V6.jpg",
         "heading_type": "mrk-h1",
-        "text_font_size": 16,
+        "des_size": "p-medium",
         "button_style": "m-button--primary",
         "button_size": ""
       }
