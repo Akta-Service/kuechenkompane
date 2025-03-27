@@ -28,14 +28,13 @@
     }
 
     .gurante-text h3 {
-        font-size: {{ section.settings.title_size}}px;       
+             
         line-height: 1;
         margin-bottom: 20px;
         font-weight: 500;
     }
 
-    .gurante-text p {
-        font-size: {{ section.settings.text_size}}px;       
+    .gurante-text p {       
         margin-bottom: 30px;
     }
 
@@ -74,13 +73,7 @@
       .guarantie-area{
         margin-top: {{ section.settings.margin_top_mobile }}px;
         margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
-      }
-      .gurante-text h3 {
-        font-size: 34px;
-      }
-      .gurante-text p {
-        font-size: 16px;
-    }
+      }     
     }
 </style>
 <div class="guarantie-area m-color-{{ section.settings.color_scheme }}">
@@ -97,7 +90,7 @@
             {% when 'title' %}
               <h3 class="{{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
             {% when 'text' %}
-              <p>
+              <p class="{{ section.settings.des_size}}">
                 {{ block.settings.text }}
               </p>
             {% when 'button' %}
@@ -199,16 +192,24 @@
         }
       ],
       "default": "mrk-h1"
-    },  
+    },
     {
-      "type": "range",
-      "id": "text_size",
-      "label": "Text Size",
-      "default": 18,
-      "min": 10,
-      "max": 30,
-      "step": 1
-    }   
+      "type": "header",
+      "content": "Select Decription size"
+    },
+    {
+      "type": "select",
+      "id": "des_size",
+      "label": "Decription size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
+    }  
   ],
   "blocks": [
     {
