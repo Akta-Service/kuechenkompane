@@ -443,6 +443,9 @@ span.faq-icon {
   .rs-payment-icons {
     margin-bottom: 20px;
   }
+  .rs-payment-icons ul {
+    list-style: none;
+  }
   button.m-add-to-cart.rs-add-btn {
     margin-top: 10px;
     margin-bottom: 18px;
