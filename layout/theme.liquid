@@ -445,7 +445,12 @@
     {%- if settings.show_swatch_option -%}
       <script src="{{ 'product-card-swatch.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+<style>
 
+  .swiper-button-next:after, .swiper-button-prev:after{
+   display:none;
+  }
+</style>
     <script>
       Shopify.cart_drawer = Shopify.cart_drawer || {};
       Shopify.cart_drawer.freeProduct1 = {
