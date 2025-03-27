@@ -20,8 +20,7 @@
           {% case block.type %}
             {% when 'subtitle' %}
               <span
-                class="benefit-subtitle"
-                style=" font-size: {{- block.settings.subtitle_size -}}px;"
+                class="benefit-subtitle {{ section.settings.sub_heading }}"                
               >
                 {{- block.settings.subtitle -}}
               </span>
@@ -33,8 +32,8 @@
               </h2>
             {% when 'description' %}
               <p
-                class="benefit-description"
-                style="font-size: {{- block.settings.description_size -}}px;"
+                class="benefit-description {{ section.settings.des_size}}"
+               
               >
                 {{ block.settings.description }}
               </p>
@@ -220,18 +219,8 @@
           "id": "subtitle",
           "label": "Sub Title",
           "default": "The Beauty Trend 2024"
-        },
+        }       
         
-        {
-          "type": "range",
-          "id": "subtitle_size",
-          "min": 12,
-          "max": 50,
-          "step": 1,
-          "unit": "px",
-          "label": "Sub Title Font size",
-          "default": 18
-        }
       ]
     },
     {
@@ -243,18 +232,7 @@
           "id": "title",
           "label": "Title",
           "default": "Salon-beautiful nails in minutes"
-        },
-        
-        {
-          "type": "range",
-          "id": "title_size",
-          "min": 12,
-          "max": 100,
-          "step": 1,
-          "unit": "px",
-          "label": "Title Font size",
-          "default": 40
-        }
+        }       
       ]
     },
     {
@@ -266,18 +244,7 @@
           "id": "description",
           "label": "Description",
           "default": "Experience the nail polish revolution for yourself with Gel Polish 2.0!......."
-        },
-       
-        {
-          "type": "range",
-          "id": "description_size",
-          "min": 12,
-          "max": 50,
-          "step": 1,
-          "unit": "px",
-          "label": "Description Font size",
-          "default": 18
-        }
+        }       
       ]
     },
     {
