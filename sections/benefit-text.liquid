@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {{ 'apex-theme.css' | asset_url | stylesheet_tag }}
 {%- style -%}
   .benefit-text-area{
@@ -289,3 +290,296 @@
   ]
 }
 {% endschema %}
+=======
+{{ 'apex-theme.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .benefit-text-area{
+      padding-top: {{- section.settings.padding_top -}}px;
+      padding-bottom: {{- section.settings.padding_bottom -}}px;      
+   }
+     
+   @media only screen and (max-width: 768px) {
+    .benefit-text-area{
+      padding-top: {{- section.settings.padding_top_mobile -}}px ;
+      padding-bottom: {{- section.settings.padding_bottom_mobile -}}px ;
+   }
+   }
+{%- endstyle -%}
+<div class="benefit-text-area bg-{{ section.id }} m-color-{{ section.settings.color_scheme }}">
+  <div class="rs-container">
+    <div class="benefit-row {% if section.settings.reverse %}rs-reverse{% endif %}">
+      <div class="benefit-content">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'subtitle' %}
+              <span
+                class="benefit-subtitle {{ section.settings.sub_heading }}"                
+              >
+                {{- block.settings.subtitle -}}
+              </span>
+            {% when 'title' %}
+              <h2
+                class="benefit-title {{ section.settings.heading_type }}"               
+              >
+                {{ block.settings.title }}
+              </h2>
+            {% when 'description' %}
+              <p
+                class="benefit-description {{ section.settings.des_size}}"
+               
+              >
+                {{ block.settings.description }}
+              </p>
+            {% when 'button' %}
+              <a
+                href="{{ block.settings.button_link }}"
+                class="benefit-button  {{ block.settings.button_style }} benefit-button-{{ section.id }}"
+              >
+                {{ block.settings.button_text }}
+              </a>
+          {% endcase %}
+        {% endfor %}
+      </div>
+      {% if section.settings.media_type == 'video' and section.settings.video != blank %}
+        <div class="benefit-video benefit-image">
+          <video autoplay loop muted>
+            <source src="{{ section.settings.video.sources[1].url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      {% elsif section.settings.media_type == 'image' and section.settings.image != blank %}
+        <div class="benefit-image">
+          <img src="{{ section.settings.image | img_url: 'master' }}" loading="lazy" alt="benefit-image">
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "APEX Benefit Photo Right",
+  "settings": [   
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "id": "media_type",
+      "type": "select",
+      "label": "Select Media Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Select Image"
+    },
+    {
+      "id": "video",
+      "type": "video",
+      "label": "Video"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 50
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "Text Right"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 50
+    },
+    {
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
+    },
+    {
+      "type": "header",
+      "content": "Select Sub Heading size"
+    },
+    {
+      "type": "select",
+      "id": "sub_heading",
+      "label": "Sub Heading Size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Select Decription size"
+    },
+    {
+      "type": "select",
+      "id": "des_size",
+      "label": "Decription size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Sub Title",
+      "type": "subtitle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Sub Title",
+          "default": "The Beauty Trend 2024"
+        }       
+        
+      ]
+    },
+    {
+      "name": "Title",
+      "type": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Salon-beautiful nails in minutes"
+        }       
+      ]
+    },
+    {
+      "name": "Description",
+      "type": "description",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Experience the nail polish revolution for yourself with Gel Polish 2.0!......."
+        }       
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button Style",
+          "options": [
+            {
+              "value": "solid",
+              "label": "Solid"
+            },
+            {
+              "value": "underline",
+              "label": "Underline"
+            }
+          ],
+          "default": "solid"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Click Here"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "APEX Benefit Photo Right",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
+>>>>>>> 378c621c743228702c02716d62759b39d86d3ee5
