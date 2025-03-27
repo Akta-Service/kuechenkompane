@@ -103,9 +103,9 @@
             {%- when 'title' -%}
               <h3 class="branded-title {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
             {%- when 'sub_title' -%}
-              <h3 class="branded-title">{{ block.settings.sub_title }}</h3>
+              <h3 class="branded-title {{ section.settings.sub_heading }}">{{ block.settings.sub_title }}</h3>
             {%- when 'text' -%}
-              <p>{{ block.settings.text }}</p>
+              <p class="{{ section.settings.des_size}}">{{ block.settings.text }}</p>
             {%- when 'btn' -%}
               <div class="branded-btn branded-btn-{{ section.id }}">
                 <a class="mrk-btn m-button {{ section.settings.button_style }} {{ section.settings.button_size }}" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
@@ -258,15 +258,39 @@
       "default": "mrk-h1"
     }, 
     {
-      "type": "range",
-      "id": "text_font_size",
-      "label": "Text Font Size",
-      "default": 16,
-      "min": 12,
-      "max": 50,
-      "unit": "px",
-      "step": 1
-    },    
+      "type": "header",
+      "content": "Select Sub Heading size"
+    },
+    {
+      "type": "select",
+      "id": "sub_heading",
+      "label": "Sub Heading Size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Select Decription size"
+    },
+    {
+      "type": "select",
+      "id": "des_size",
+      "label": "Decription size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
+    },  
     {
       "type": "header",
       "content": "Button"
