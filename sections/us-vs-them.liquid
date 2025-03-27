@@ -26,8 +26,8 @@
               </h2>
             {% when 'description' %}
               <div
-                class="us-them-description"
-                style="font-size: {{- block.settings.description_size -}}px;"
+                class="us-them-description {{ section.settings.des_size}}"
+              
               >
                 {{ block.settings.description }}
               </div>
@@ -127,6 +127,23 @@
         }
       ],
       "default": "mrk-h1"
+    },
+    {
+      "type": "header",
+      "content": "Select Decription size"
+    },
+    {
+      "type": "select",
+      "id": "des_size",
+      "label": "Decription size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
     }
   ],
   "blocks": [
@@ -152,17 +169,8 @@
           "id": "description",
           "label": "Quotation Text",
           "default": "<p>Our comparison graphic shows why Kraftstein knives are the best choice. With extremely sharp blades, high-quality steel and ergonomic handles, they offer the highest quality and comfort.</p>"
-        },        
-        {
-          "type": "range",
-          "id": "description_size",
-          "min": 12,
-          "max": 100,
-          "step": 1,
-          "unit": "px",
-          "label": "Description Font size",
-          "default": 16
-        }
+        }    
+        
       ]
     }
   ],
