@@ -27,37 +27,29 @@
     margin: 0 auto;
   }
 
-  .text-banner-title {
-    font-size: {{ section.settings.title_font_size | default: 40 }}px;   
+  .text-banner-title {  
     text-transform: uppercase;
     line-height: 1;
     font-weight: 600;
   }
 
-  .text-banner-subtitle {
-    font-size: {{ section.settings.title_font_size }}px;   
-    letter-spacing: -0.8px;
-    line-height: 44px;
+  .text-banner-subtitle { 
+    letter-spacing: -0.8px;   
     margin-bottom: 8px;
     font-weight: 600;
   }
 
-  .text-banner-content p {
-    font-size: {{ section.settings.text_font_size }}px;   
-    line-height: 24px;
-  }
-  @media only screen and (max-width: 749px) {
-    .text-banner-title {
-      font-size: {{ section.settings.title_font_size_m }}px; 
-    }
-
-    .text-banner-subtitle {
-      font-size: {{ section.settings.title_font_size_m }}px; 
-    }
-    .text-banner-content p {
-    font-size: {{ section.settings.text_font_size_m }}px;  
+  .text-banner-content p {    
     
   }
+  h3.text-banner-title.mb-0 {
+    margin-bottom: 0 !important;
+  }
+  @media only screen and (max-width: 749px) {
+   
+
+    
+    
   }
 </style>
 <div class="text-banner-area m-color-{{ section.settings.color_scheme }}">
@@ -65,11 +57,11 @@
     {% for block in section.blocks %}
       {%- case block.type -%}
         {%- when 'title' -%}
-          <h3 class="text-banner-title {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
+          <h3 class="text-banner-title mb-0 {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
         {%- when 'title_style' -%}
-          <h3 class="text-banner-subtitle style"><i>{{ block.settings.style_title }}</i></h3>
+          <h3 class="text-banner-subtitle style {{ section.settings.heading_type }}"><i>{{ block.settings.style_title }}</i></h3>
         {%- when 'text' -%}
-          <p>
+          <p class="{{ section.settings.des_size}}">
             {{ block.settings.text }}
           </p>
       {%- endcase -%}
@@ -210,25 +202,22 @@
       "default": "mrk-h1"
     }, 
     {
-      "type": "range",
-      "id": "text_font_size",
-      "label": "Text Font Size",
-      "default": 15,
-      "min": 10,
-      "max": 100,
-      "step": 1,
-      "unit": "px"
-    },    
+      "type": "header",
+      "content": "Select Decription size"
+    },
     {
-      "type": "range",
-      "id": "text_font_size_m",
-      "label": "Text Font Size (Mobile)",
-      "default": 15,
-      "min": 10,
-      "max": 100,
-      "step": 1,
-      "unit": "px"
-    }    
+      "type": "select",
+      "id": "des_size",
+      "label": "Decription size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }        
+      ]
+    }
     
   ],
   "blocks": [
