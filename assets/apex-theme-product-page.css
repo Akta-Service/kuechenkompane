@@ -329,9 +329,11 @@ select {
 .rs-payment-icons ul {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   margin: auto;
+  gap: 20px;
+  list-style: none;
 }
 .custom-product-page .rs-container {
   max-width: 1450px;
@@ -370,15 +372,13 @@ select {
 }
 
 @media only screen and (max-width: 900px) {
-  .rs-payment-icons ul {
-    justify-content: space-between;
-  }
-
   .rs-row {
     flex-direction: column;
     gap: 60px;
   }
-
+  .rs-payment-icons ul {
+    gap: 10px;
+  }
   .product__slider-wrapper {
     width: 100%;
   }
@@ -433,4 +433,10 @@ button.m-add-to-cart.rs-add-btn:hover {
   border: none;
   outline: none;
   background: #333333 !important;
+}
+
+@media only screen and (max-width: 400px) {
+  .rs-payment-icons ul {
+    gap: 5px;
+  }
 }
