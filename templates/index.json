@@ -45,9 +45,11 @@
         "mb": 0,
         "mt_mobile": 0,
         "mb_mobile": 0,
+        "top_text": "p-medium",
         "title": "Meisterhaft kochen beginnt hier",
         "heading_type": "mrk-h2",
         "sub_title": "<p>Perfektion, die du in jeder Bewegung spürst.</p>",
+        "sub_title_text": "p-medium",
         "btn_text": "JETZT ENTDECKEN",
         "btn_link": "shopify://pages/produkte-entdecken",
         "button_style": "m-button--primary",
@@ -184,6 +186,7 @@
         "heading_type": "mrk-h3",
         "subheading": "",
         "description": "",
+        "p_size": "p-medium",
         "container": "container-fluid",
         "color_scheme": "badge-hot",
         "content_color_scheme": "badge-hot",
@@ -270,7 +273,8 @@
         "mobile_pt": 40,
         "mobile_pb": 40,
         "heading_type": "mrk-h3",
-        "title": "Nach Kategorie einkaufen"
+        "title": "Nach Kategorie einkaufen",
+        "c_n_text": "p-medium"
       }
     },
     "product_explanation_video_6ERhrB": {
@@ -332,7 +336,9 @@
         "color_scheme": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
         "vertical_padding": 50,
         "vertical_padding_mobile": 40,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "branded_image_version_NcNpYJ": {
@@ -372,6 +378,7 @@
         "mobile_margin_bottom": 30,
         "bg_img": "shopify://shop_images/Kopie_von_product-image-02_1_284ff9b4-f4de-406d-b66f-e347d92b6d42.jpg",
         "heading_type": "mrk-h2",
+        "des_size": "p-medium",
         "button_style": "m-button--primary",
         "button_size": ""
       }
@@ -479,6 +486,8 @@
       "settings": {
         "color_scheme": "",
         "invert_color": false,
+        "heading_type": "mrk-h5",
+        "des_size": "p-medium",
         "pt": 70,
         "pb": 70,
         "ptm": 50,
