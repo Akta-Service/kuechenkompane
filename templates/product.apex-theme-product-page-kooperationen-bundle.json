@@ -120,7 +120,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Frei</p>",
+            "featurelist_item": "<p><strong>Preis nur für kurze Zeit – danach wieder 599,90 </strong></p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -129,10 +129,21 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Frei</p>",
+            "featurelist_item": "<p>Nur für SPIEGEL Online leser erhältlich – nicht im Einzelhandel verfügbar<br/></p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
+          }
+        },
+        "shipping_EE9NEV": {
+          "type": "shipping",
+          "settings": {
+            "show_delivery_times": true,
+            "deliver_text": "Kostenloser Versand:",
+            "deliver_days": "",
+            "date_format": "In 1-3 Tagen bei dir",
+            "show_shipping_text": false,
+            "shipping_text": "<p><strong>Free Shipping & Returns: </strong>On all orders over $75</p>"
           }
         },
         "buy_buttons_3hQqVi": {
@@ -176,6 +187,7 @@
         "featurelist_item_iiW6aD",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
+        "shipping_EE9NEV",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
