@@ -82,7 +82,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "👉 Update: Angebot endet Mitternacht",
+            "subtitle": "",
             "subtitle_font_size": 15
           }
         },
@@ -551,7 +551,9 @@
         "color_scheme": "badge-hot",
         "vertical_padding": 50,
         "vertical_padding_mobile": 30,
-        "heading_type": "mrk-h3"
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "magazine_quote_UQpqkk": {
@@ -629,7 +631,9 @@
         "reverse": false,
         "padding_top_mobile": 20,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h3"
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "benefit_text_right_AFHFhC": {
@@ -668,7 +672,9 @@
         "reverse": true,
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h3"
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "us_vs_them_8Tbqki": {
@@ -698,7 +704,8 @@
         "padding_bottom": 50,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h3"
+        "heading_type": "mrk-h3",
+        "des_size": "p-medium"
       }
     },
     "ugc_video_testimonial_D4kJ9X": {
@@ -1096,9 +1103,11 @@
       "settings": {
         "color_scheme": "footer",
         "subtitle": "Viele fragen uns als Gründer:",
+        "sub_heading": "p-medium",
         "title": "“Warum bieten wir eine 100 Tage Geld-zurück-Garantie?”",
         "heading_type": "mrk-h3",
         "des": "Die Antwort ist einfach: Wir sind zu 100% überzeugt von unseren Produkten! Und das aus gutem Grund, denn unsere Produkte wurden:",
+        "des_size": "p-medium",
         "img": "shopify://shop_images/chef-working-together-professional-kitchen_1.jpg",
         "verticle_padding": 70,
         "horizontal_padding": 0,
