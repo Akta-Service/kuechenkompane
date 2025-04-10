@@ -615,13 +615,14 @@
         "title_7bjmib": {
           "type": "title",
           "settings": {
-            "title_img": "shopify://shop_images/n_tv_logo_V6_1.png",
+            "title_img": "shopify://shop_images/n_tv_logo_V3_1.png",
             "title": "",
             "title_size": 40
           }
         },
         "ratings_qmMcyY": {
           "type": "ratings",
+          "disabled": true,
           "settings": {
             "rating": 4
           }
