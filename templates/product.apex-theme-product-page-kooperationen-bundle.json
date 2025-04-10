@@ -518,6 +518,7 @@
         "image_T7Lehj",
         "image_4NEDGT"
       ],
+      "disabled": true,
       "custom_css": [
         ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
       ],
@@ -566,7 +567,7 @@
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "shopify://shop_images/Ku_echenkompane_2411290287_1_2.jpg",
+        "image": "shopify://shop_images/Ku_echenkompane_2411290287_1_2_jpg_V2_1_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
