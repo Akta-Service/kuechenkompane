@@ -248,9 +248,9 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "DAS IST ENTHALTEN",
+        "title": "IM SET ENTHALTEN",
         "heading_type": "mrk-h3",
-        "description": "{{ product.description }}",
+        "description": "<p>{{ product.description }}</p>",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": false,
