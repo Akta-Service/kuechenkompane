@@ -585,7 +585,7 @@
         "heading_size": "h3",
         "subheading": "",
         "container": "container-fluid",
-        "color_scheme": "",
+        "color_scheme": "default",
         "item_gap": 100,
         "item_gap_mobile": 30,
         "layout": "left",
@@ -759,6 +759,7 @@
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
             "autoplay": false,
+            "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
             "loop": true,
             "muted": true,
             "playsinline": true,
