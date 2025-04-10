@@ -105,13 +105,13 @@
             "product_main_text_2": "auf Lager",
             "viewer_count_time": 2500,
             "stock_count_time": 50000,
-            "stock_count_show": true
+            "stock_count_show": false
           }
         },
         "featurelist_item_iiW6aD": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>{{ product.metafields.custom.list_1st_item_info | metafield_tag }}</p>",
+            "featurelist_item": "{{ product.metafields.custom.list_1st_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -159,9 +159,9 @@
             "info_text_2": "Kostenloser Versand ab 100€",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
             "info_text_3": "Beste Preis-Leistung",
-            "info_bg_color": "#fff",
-            "info_border_color": "#000",
-            "info_text_color": "#000",
+            "info_bg_color": "#ffffff",
+            "info_border_color": "#000000",
+            "info_text_color": "#000000",
             "invert_img_color": false
           }
         }
@@ -253,7 +253,7 @@
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": true,
+        "add_showore_btn": false,
         "readmore": "Mehr lesen",
         "readless": "Weniger Lesen",
         "br_color": "#000000",
