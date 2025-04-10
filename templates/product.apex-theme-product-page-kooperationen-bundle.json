@@ -80,7 +80,7 @@
             "price_color": "#000000",
             "c_price_color": "#bbbbbb",
             "per_badge_bg": "#000000",
-            "per_badge_color": "#000000",
+            "per_badge_color": "#ffffff",
             "f_s": 16,
             "f_s_m": 16,
             "price_font_weight": "600"
@@ -221,15 +221,15 @@
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
-            "question": "{{ product.metafields.custom.accordion_title_4.value }}",
-            "answer": "{{ product.metafields.custom.accordion_content_4 | metafield_tag }}"
+            "question": "365 Tage Schleifservice (Gratis)",
+            "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand. </p>"
           }
         },
         "faq_kQAWhE": {
           "type": "faq",
           "settings": {
-            "question": "{{ product.metafields.custom.accordion_title_2.value }}",
-            "answer": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}"
+            "question": "Versand & Zahlungsoptionen",
+            "answer": "<p><strong>Kostenloser Versand  EU-weit (1-3 Tage)</strong></p><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine geringe Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p><strong>Versand in andere Länder z.B. Schweiz</strong></p><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p><strong>Zahlungsoptionen</strong></p><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
           }
         },
         "faq_pDwHXa": {
