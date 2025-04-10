@@ -1098,7 +1098,7 @@
         "item_Prmf4W"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "footer",
         "subtitle": "Vielen Menschen haben uns als Gründer gefragt:",
         "sub_heading": "p-medium",
         "title": "“Warum gibt Küchenkompane eine Zufriedenheitsgarantie?”",
@@ -1138,6 +1138,38 @@
         "padding_bottom": 100,
         "custom_class": "",
         "animations": "inherit"
+      }
+    },
+    "1741277473f9b1112d": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_section_9tFX78": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_9tFX78"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "custom_class": ""
       }
     },
     "store_benefits_bottom_NPnyUL": {
@@ -1200,73 +1232,6 @@
         "ptm": 30,
         "pbm": 30
       }
-    },
-    "benefit_list_gif_iJWmYF": {
-      "type": "benefit-list-gif",
-      "blocks": {
-        "heading_tWq74p": {
-          "type": "heading",
-          "settings": {
-            "title_style": "Beautiful",
-            "title": "BENEFITS"
-          }
-        },
-        "content_nQLTqP": {
-          "type": "content",
-          "settings": {
-            "rich_text": "<p><strong>Suitable for your skin color</strong></p><p>The Changing Foundation seamlessly adapts to your unique skin tone upon application. Designed for fair to medium skin tones, it provides perfect, natural coverage that enhances your complexion.<br/></p><p><strong>Hides imperfections for a natural look</strong></p><p>This lightweight foundation effectively conceals redness and imperfections, allowing your natural beauty to shine through. Experience a radiant glow like never before.</p><p><strong>Create the best result with a brush</strong></p><p>For optimal results, apply the foundation with a brush. This technique ensures that the pigments penetrate deeply into the skin, preventing any white cast for a flawless finish.</p><p><strong>Radiant and even skin all day long</strong></p><p>The Changing Foundation offers long-lasting wear, staying in place for up to 16 hours. With its natural, radiant finish, you can start each day looking and feeling your best.</p><p><strong>No clogged pores</strong></p><p>The Changing Foundation feels light on the skin. Its moisturizing and nourishing ingredients help maintain a fresh appearance without clogging pores, making it ideal for everyday wear.</p>",
-            "video": "shopify://files/videos/216b022817724c84aa85fa2280a076e5.HD-1080p-2.5Mbps-39479780.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "heading_tWq74p",
-        "content_nQLTqP"
-      ],
-      "disabled": true,
-      "settings": {
-        "background_color": "#f6f0e6",
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40,
-        "title_color": "#1e1e1e",
-        "title_size": 40,
-        "content_color": "#1e1e1e",
-        "content_size": 15
-      }
-    },
-    "1741277473f9b1112d": {
-      "type": "apps",
-      "blocks": {
-        "loox_reviews_loox_dynamic_section_9tFX78": {
-          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "settings": {
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": false,
-            "maxwidth": 1080,
-            "is_sample": true
-          }
-        }
-      },
-      "block_order": [
-        "loox_reviews_loox_dynamic_section_9tFX78"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "header_alignment": "center",
-        "container": "container",
-        "background_color": "",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 30,
-        "custom_class": ""
-      }
     }
   },
   "order": [
@@ -1287,9 +1252,8 @@
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
     "cta_final_9B8iN9",
+    "1741277473f9b1112d",
     "product-recommendations",
-    "store_benefits_bottom_NPnyUL",
-    "benefit_list_gif_iJWmYF",
-    "1741277473f9b1112d"
+    "store_benefits_bottom_NPnyUL"
   ]
 }
