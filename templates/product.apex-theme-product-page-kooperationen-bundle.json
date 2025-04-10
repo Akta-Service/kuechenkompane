@@ -65,7 +65,7 @@
             "likeImg3": "shopify://shop_images/Testi2.jpg",
             "likecount": "90,532+ Personen",
             "like_bg": "#ddede0",
-            "likeinfo": "lieben unsere scharfen Klingen!",
+            "likeinfo": "lieben unsere diese Klingen!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
           }
@@ -77,13 +77,13 @@
             "p_pb": 5,
             "p_pt_m": 5,
             "p_pb_m": 5,
-            "price_color": "#008000",
-            "c_price_color": "#008000",
-            "per_badge_bg": "#008000",
+            "price_color": "#000000",
+            "c_price_color": "#bbbbbb",
+            "per_badge_bg": "#000000",
             "per_badge_color": "#000000",
             "f_s": 16,
             "f_s_m": 16,
-            "price_font_weight": "900"
+            "price_font_weight": "600"
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -106,17 +106,6 @@
             "viewer_count_time": 2500,
             "stock_count_time": 50000,
             "stock_count_show": true
-          }
-        },
-        "featurelist_header_tfxtpf": {
-          "type": "featurelist_header",
-          "settings": {
-            "featureHeader": "30 Tage Zufriedenheitsgarantie",
-            "featurelist_header_size": 14,
-            "f_h_pt": 5,
-            "f_h_pb": 5,
-            "f_h_pt_m": 5,
-            "f_h_pb_m": 5
           }
         },
         "featurelist_item_iiW6aD": {
@@ -149,7 +138,7 @@
         "buy_buttons_3hQqVi": {
           "type": "buy_buttons",
           "settings": {
-            "show_quantity_selector": false,
+            "show_quantity_selector": true,
             "show_atc_button": true,
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
@@ -157,7 +146,9 @@
         },
         "payment_icon_tePtpf": {
           "type": "paymentIcon",
-          "settings": {}
+          "settings": {
+            "payment_img": "shopify://shop_images/Trust_Badges_-_DACH_1.png"
+          }
         },
         "product_info_9Yqdn9": {
           "type": "productInfo",
@@ -167,7 +158,11 @@
             "info_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
             "info_text_2": "Kostenloser Versand ab 100€",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
-            "info_text_3": "Beste Preis-Leistung"
+            "info_text_3": "Beste Preis-Leistung",
+            "info_bg_color": "#fff",
+            "info_border_color": "#000",
+            "info_text_color": "#000",
+            "invert_img_color": false
           }
         }
       },
@@ -178,7 +173,6 @@
         "ratings_fD4VNJ",
         "price_J4wXWJ",
         "viewer_stock_count_MFNhKz",
-        "featurelist_header_tfxtpf",
         "featurelist_item_iiW6aD",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
@@ -254,12 +248,14 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "Produktbeschreibung",
+        "title": "DAS IST ENTHALTEN",
         "heading_type": "mrk-h3",
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true,
+        "readmore": "Mehr lesen",
+        "readless": "Weniger Lesen",
         "br_color": "#000000",
         "icon_color": "#000000"
       }
@@ -482,6 +478,7 @@
       "blocks": {
         "image_bpiG7J": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V7_1.png",
             "image_height": 120,
@@ -490,6 +487,7 @@
         },
         "image_NptXmD": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V6_1.png",
             "image_height": 100,
@@ -498,6 +496,7 @@
         },
         "image_JPQVbf": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V2_1.png",
             "image_height": 100,
@@ -506,6 +505,7 @@
         },
         "image_T7Lehj": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V4_1.png",
             "image_height": 100,
@@ -532,7 +532,7 @@
         ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
       ],
       "settings": {
-        "Gesehen_title": "Gesehen In",
+        "Gesehen_title": "Präsentiert von",
         "heading_type": "mrk-h3",
         "text_alignment": "center",
         "container": "w-full",
@@ -604,7 +604,9 @@
         "color_scheme": "badge-hot",
         "vertical_padding": 50,
         "vertical_padding_mobile": 30,
-        "heading_type": "mrk-h3"
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "magazine_quote_UQpqkk": {
@@ -673,7 +675,8 @@
         "padding_bottom": 50,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h1"
+        "heading_type": "mrk-h1",
+        "des_size": "p-medium"
       }
     },
     "apex_faqs_jx7hp6": {
@@ -813,7 +816,9 @@
         "reverse": false,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "benefit_text_right_AFHFhC": {
@@ -852,7 +857,9 @@
         "reverse": true,
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "icon_box_9UtNky": {
@@ -1091,9 +1098,11 @@
       "settings": {
         "color_scheme": "",
         "subtitle": "Vielen Menschen haben uns als Gründer gefragt:",
+        "sub_heading": "p-medium",
         "title": "“Warum gibt Küchenkompane eine Zufriedenheitsgarantie?”",
         "heading_type": "mrk-h2",
         "des": "Diese Frage haben uns schon viele gestellt. Die Antwort ist einfach: Wir sind zu 100 % überzeugt von unseren Produkten! Und das aus gutem Grund, denn unsere Produkte wurden:",
+        "des_size": "p-medium",
         "img": "shopify://shop_images/chef-working-together-professional-kitchen.jpg",
         "verticle_padding": 70,
         "horizontal_padding": 0,
@@ -1105,28 +1114,6 @@
         "item_bg": "#f0f0f3",
         "item_size": 16,
         "backBtn": "Zum Produkt"
-      }
-    },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "remove_params": false,
-        "heading": "Das könnte dir auch gefallen",
-        "heading_size": "h3",
-        "text_align": "center",
-        "limit": 8,
-        "columns": 5,
-        "column_gap": 30,
-        "enable_slider": true,
-        "show_pagination": false,
-        "show_navigation": true,
-        "use_scroll_mobile": true,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "custom_class": "",
-        "animations": "inherit"
       }
     },
     "store_benefits_bottom_NPnyUL": {
@@ -1276,7 +1263,6 @@
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
     "cta_final_9B8iN9",
-    "product-recommendations",
     "store_benefits_bottom_NPnyUL",
     "benefit_list_gif_iJWmYF",
     "1741277473f9b1112d"
