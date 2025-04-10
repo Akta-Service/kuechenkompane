@@ -578,34 +578,10 @@
         "des_size": "p-medium"
       }
     },
-    "rich_text_rmwNDF": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_pCw8aX": {
-          "type": "heading",
-          "settings": {
-            "heading": "Diese Produkte sind im Küchenmaster Mega Set enhalten",
-            "heading_size": "h2"
-          }
-        }
-      },
-      "block_order": [
-        "heading_pCw8aX"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "image_with_text_qfMUfW": {
       "type": "image-with-text",
       "settings": {
-        "heading": "",
+        "heading": "Diese Produkte sind im Küchenmaster Mega Set enhalten",
         "heading_size": "h3",
         "subheading": "",
         "container": "container-fluid",
@@ -1328,7 +1304,6 @@
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
     "benefit_text_P4XApk",
-    "rich_text_rmwNDF",
     "image_with_text_qfMUfW",
     "image_with_text_iVKXXg",
     "image_with_text_UQfz4G",
