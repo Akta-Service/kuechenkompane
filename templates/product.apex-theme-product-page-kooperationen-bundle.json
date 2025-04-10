@@ -782,45 +782,6 @@
         "des_size": "p-medium"
       }
     },
-    "magazine_quote_UQpqkk": {
-      "type": "magazine-quote",
-      "blocks": {
-        "title_7bjmib": {
-          "type": "title",
-          "settings": {
-            "title_img": "shopify://shop_images/n_tv_logo_V3_1.png",
-            "title": "",
-            "title_size": 30
-          }
-        },
-        "ratings_qmMcyY": {
-          "type": "ratings",
-          "disabled": true,
-          "settings": {
-            "rating": 4
-          }
-        },
-        "quotation_g7QTma": {
-          "type": "quotation",
-          "settings": {
-            "quote": "<p>“Küchenkompane überzeugt mit hochwertigen Messern, die durch präzise Verarbeitung und erstklassige Materialien eine beeindruckende Schärfe bieten. Ein Must-have für jede Küche\"</p>",
-            "quote_size": 26
-          }
-        }
-      },
-      "block_order": [
-        "title_7bjmib",
-        "ratings_qmMcyY",
-        "quotation_g7QTma"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 13,
-        "padding_bottom": 50,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 50
-      }
-    },
     "us_vs_them_8Tbqki": {
       "type": "us-vs-them",
       "blocks": {
@@ -1310,7 +1271,6 @@
     "image_with_text_UQfz4G",
     "image_with_text_b6AMhP",
     "product_explanation_video_xNFp3M",
-    "magazine_quote_UQpqkk",
     "us_vs_them_8Tbqki",
     "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
