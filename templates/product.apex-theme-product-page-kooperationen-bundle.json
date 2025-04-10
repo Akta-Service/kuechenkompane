@@ -1117,67 +1117,6 @@
         "backBtn": "Zum Produkt"
       }
     },
-    "store_benefits_bottom_NPnyUL": {
-      "type": "store-benefits-bottom",
-      "blocks": {
-        "item_96wqwW": {
-          "type": "item",
-          "settings": {
-            "icon": "icon1",
-            "svg-code": "",
-            "store_benefit_text": "Schneller Versand"
-          }
-        },
-        "item_6LarDz": {
-          "type": "item",
-          "settings": {
-            "icon": "icon2",
-            "svg-code": "",
-            "store_benefit_text": "Kostenloser Versand ab 100€"
-          }
-        },
-        "item_AXkcTt": {
-          "type": "item",
-          "settings": {
-            "icon": "icon3",
-            "svg-code": "",
-            "store_benefit_text": "30 Tage Geld-Zurück-Garantie"
-          }
-        },
-        "item_h3KX9m": {
-          "type": "item",
-          "settings": {
-            "icon": "icon4",
-            "svg-code": "",
-            "store_benefit_text": "100% SICHERE ZAHLUNG"
-          }
-        },
-        "item_MzPUFH": {
-          "type": "item",
-          "settings": {
-            "icon": "icon5",
-            "svg-code": "",
-            "store_benefit_text": "LEBENSLANGE GARANTIE"
-          }
-        }
-      },
-      "block_order": [
-        "item_96wqwW",
-        "item_6LarDz",
-        "item_AXkcTt",
-        "item_h3KX9m",
-        "item_MzPUFH"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "icon_color": "#000000",
-        "pt": 30,
-        "pb": 30,
-        "font_size": 14,
-        "ptm": 30,
-        "pbm": 30
-      }
-    },
     "benefit_list_gif_iJWmYF": {
       "type": "benefit-list-gif",
       "blocks": {
@@ -1244,6 +1183,67 @@
         "padding_bottom_mobile": 30,
         "custom_class": ""
       }
+    },
+    "store_benefits_bottom_NPnyUL": {
+      "type": "store-benefits-bottom",
+      "blocks": {
+        "item_96wqwW": {
+          "type": "item",
+          "settings": {
+            "icon": "icon1",
+            "svg-code": "",
+            "store_benefit_text": "Schneller Versand"
+          }
+        },
+        "item_6LarDz": {
+          "type": "item",
+          "settings": {
+            "icon": "icon2",
+            "svg-code": "",
+            "store_benefit_text": "Kostenloser Versand ab 100€"
+          }
+        },
+        "item_AXkcTt": {
+          "type": "item",
+          "settings": {
+            "icon": "icon3",
+            "svg-code": "",
+            "store_benefit_text": "30 Tage Geld-Zurück-Garantie"
+          }
+        },
+        "item_h3KX9m": {
+          "type": "item",
+          "settings": {
+            "icon": "icon4",
+            "svg-code": "",
+            "store_benefit_text": "100% SICHERE ZAHLUNG"
+          }
+        },
+        "item_MzPUFH": {
+          "type": "item",
+          "settings": {
+            "icon": "icon5",
+            "svg-code": "",
+            "store_benefit_text": "LEBENSLANGE GARANTIE"
+          }
+        }
+      },
+      "block_order": [
+        "item_96wqwW",
+        "item_6LarDz",
+        "item_AXkcTt",
+        "item_h3KX9m",
+        "item_MzPUFH"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "icon_color": "#000000",
+        "pt": 30,
+        "pb": 30,
+        "font_size": 14,
+        "ptm": 30,
+        "pbm": 30
+      }
     }
   },
   "order": [
@@ -1264,8 +1264,8 @@
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
     "cta_final_9B8iN9",
-    "store_benefits_bottom_NPnyUL",
     "benefit_list_gif_iJWmYF",
-    "1741277473f9b1112d"
+    "1741277473f9b1112d",
+    "store_benefits_bottom_NPnyUL"
   ]
 }
