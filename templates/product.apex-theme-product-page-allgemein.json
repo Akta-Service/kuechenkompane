@@ -618,45 +618,6 @@
         "des_size": "p-medium"
       }
     },
-    "magazine_quote_UQpqkk": {
-      "type": "magazine-quote",
-      "blocks": {
-        "title_7bjmib": {
-          "type": "title",
-          "settings": {
-            "title_img": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "title": "",
-            "title_size": 40
-          }
-        },
-        "ratings_qmMcyY": {
-          "type": "ratings",
-          "disabled": true,
-          "settings": {
-            "rating": 4
-          }
-        },
-        "quotation_g7QTma": {
-          "type": "quotation",
-          "settings": {
-            "quote": "<p>“Küchenkompane überzeugt mit hochwertigen Messern, die durch präzise Verarbeitung und erstklassige Materialien eine beeindruckende Schärfe bieten. Ein Must-have für jede Küche\"</p>",
-            "quote_size": 26
-          }
-        }
-      },
-      "block_order": [
-        "title_7bjmib",
-        "ratings_qmMcyY",
-        "quotation_g7QTma"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 13,
-        "padding_bottom": 50,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 50
-      }
-    },
     "us_vs_them_8Tbqki": {
       "type": "us-vs-them",
       "blocks": {
@@ -1118,28 +1079,6 @@
         "backBtn": "Zum Produkt"
       }
     },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "remove_params": false,
-        "heading": "Das könnte dir auch gefallen",
-        "heading_size": "h3",
-        "text_align": "center",
-        "limit": 8,
-        "columns": 5,
-        "column_gap": 30,
-        "enable_slider": true,
-        "show_pagination": false,
-        "show_navigation": true,
-        "use_scroll_mobile": true,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "1741277473f9b1112d": {
       "type": "apps",
       "blocks": {
@@ -1170,6 +1109,28 @@
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 30,
         "custom_class": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "remove_params": false,
+        "heading": "Das könnte dir auch gefallen",
+        "heading_size": "h3",
+        "text_align": "center",
+        "limit": 8,
+        "columns": 5,
+        "column_gap": 30,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": true,
+        "use_scroll_mobile": true,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_class": "",
+        "animations": "inherit"
       }
     },
     "store_benefits_bottom_NPnyUL": {
@@ -1243,14 +1204,13 @@
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
     "product_explanation_video_xNFp3M",
-    "magazine_quote_UQpqkk",
     "us_vs_them_8Tbqki",
-    "apex_faqs_jx7hp6",
+    "trustpilot_testimonials_YbXp3E",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
+    "apex_faqs_jx7hp6",
     "icon_box_9UtNky",
     "expert_testimonial_adCtdF",
-    "trustpilot_testimonials_YbXp3E",
     "cta_final_9B8iN9",
     "1741277473f9b1112d",
     "product-recommendations",
