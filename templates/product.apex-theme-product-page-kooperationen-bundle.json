@@ -111,7 +111,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Preis nur für kurze Zeit – danach wieder 599,90 </p>",
+            "featurelist_item": "<p>Preis nur für kurze Zeit – danach wieder 599,90 €</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -124,17 +124,6 @@
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
-          }
-        },
-        "shipping_EE9NEV": {
-          "type": "shipping",
-          "settings": {
-            "show_delivery_times": true,
-            "deliver_text": "Kostenloser Versand:",
-            "deliver_days": "",
-            "date_format": "In 1-3 Tagen bei dir",
-            "show_shipping_text": false,
-            "shipping_text": "<p><strong>Free Shipping & Returns: </strong>On all orders over $75</p>"
           }
         },
         "buy_buttons_3hQqVi": {
@@ -177,7 +166,6 @@
         "viewer_stock_count_MFNhKz",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
-        "shipping_EE9NEV",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
@@ -252,7 +240,7 @@
         "color_scheme": "badge-hot",
         "title": "IM SET ENTHALTEN",
         "heading_type": "mrk-h3",
-        "description": "<p>{{ product.description }}</p>",
+        "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": false,
