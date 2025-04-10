@@ -45,7 +45,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Müheloses Schneiden dank höchster Qualität!",
+            "subtitle": "Nur für kurze Zeit im Sonderangebot!",
             "subtitle_font_size": 16
           }
         },
@@ -544,6 +544,47 @@
         "padding_top": 40,
         "padding_bottom": 30,
         "custom_class": ""
+      }
+    },
+    "benefit_text_P4XApk": {
+      "type": "benefit-text",
+      "blocks": {
+        "subtitle_jER8HM": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Nur für kurze Zeit erhältlich"
+          }
+        },
+        "title_hXWbxr": {
+          "type": "title",
+          "settings": {
+            "title": "Sichere dir jetzt über 400 € Preisvorteil!"
+          }
+        },
+        "description_abE8wX": {
+          "type": "description",
+          "settings": {
+            "description": "Dieses exklusive Bundle enthält alles, was du für deine Küche brauchst – vom hochwertigen Messerset bis zum edlen Schneidbrett. Nur solange der Vorrat reicht."
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_jER8HM",
+        "title_hXWbxr",
+        "description_abE8wX"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "media_type": "image",
+        "image": "shopify://shop_images/Ku_echenkompane_2411290287_1_2.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "product_explanation_video_xNFp3M": {
@@ -1254,6 +1295,7 @@
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
+    "benefit_text_P4XApk",
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
     "us_vs_them_8Tbqki",
