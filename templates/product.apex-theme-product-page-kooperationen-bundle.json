@@ -1042,6 +1042,9 @@
         "item_NYUrjj",
         "item_Prmf4W"
       ],
+      "custom_css": [
+        ".item-icon {display: inline-block; width: 30px; height: 28px;}"
+      ],
       "settings": {
         "color_scheme": "footer",
         "subtitle": "Vielen Menschen haben uns als Gründer gefragt:",
