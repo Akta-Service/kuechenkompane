@@ -1,0 +1,128 @@
+<style>
+  .feature-highlight {
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #fdfdfd, #e6f7ff);
+  text-align: center;
+}
+
+.feature-highlight .feature-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.product-center {
+  flex: 0 0 auto;
+}
+
+.product-center img {
+  max-width: 300px;
+  height: auto;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: left;
+}
+
+.feature-item img {
+  width: 40px;
+  height: 40px;
+}
+
+</style>
+<section class="feature-highlight">
+  <div class="feature-container">
+    <h2 class="feature-title">Finally a Coffee You Won't Have to Quit</h2>
+    
+    <div class="feature-content">
+      <!-- Left Features -->
+      <div class="feature-column left">
+        <div class="feature-item">
+          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Convenient">
+          <div>
+            <h3>Incredibly Convenient</h3>
+            <p>Add 1–2 teaspoons of Javvy to water or milk for drinks in seconds.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Affordable">
+          <div>
+            <h3>Ultra-affordable</h3>
+            <p>Javvy costs less than K-cups, drip, and store-bought coffee!</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Variety">
+          <div>
+            <h3>Flavorful Variety</h3>
+            <p>Rich, bold flavors that cater to every coffee lover’s preference.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Image -->
+      <div class="product-center">
+        <img src="https://res.cloudinary.com/dqxw76yvk/image/upload/q_auto,f_auto/v1739899857/2_1_xh0aas.png" alt="Javvy Products">
+      </div>
+
+      <!-- Right Features -->
+      <div class="feature-column right">
+        <div class="feature-item">
+          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Versatile">
+          <div>
+            <h3>Ultra-versatile</h3>
+            <p>Any style of coffee you crave in seconds (hot or cold).</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Ethically Sourced">
+          <div>
+            <h3>Ethically Sourced</h3>
+            <p>Committed to regenerative farming practices and ethical labor.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Freshness">
+          <div>
+            <h3>Extended Freshness</h3>
+            <p>Stays fresh for months, always ready to enjoy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Apex Fature Highlight",   
+    "settings": [
+      
+    ],
+    "presets": [
+      {
+        "name": "Apex Fature Highlight",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}
