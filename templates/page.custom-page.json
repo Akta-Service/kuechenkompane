@@ -349,7 +349,78 @@
     },
     "feature_highlight_rqJzVk": {
       "type": "feature-highlight",
-      "settings": {}
+      "blocks": {
+        "feature_item_left_NYnMaU": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "Incredibly Convenient",
+            "item_info": "Add 1-2 teaspoons of Javvy to water or milk for drinks in seconds.",
+            "item_icon": "shopify://shop_images/convenient.svg"
+          }
+        },
+        "feature_item_left_wUArWp": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "Incredibly Convenient",
+            "item_info": "Add 1-2 teaspoons of Javvy to water or milk for drinks in seconds.",
+            "item_icon": "shopify://shop_images/affordable.svg"
+          }
+        },
+        "feature_item_left_DFJpJ8": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "Incredibly Convenient",
+            "item_info": "Add 1-2 teaspoons of Javvy to water or milk for drinks in seconds.",
+            "item_icon": "shopify://shop_images/flavorful.svg"
+          }
+        },
+        "feature_center_image_gA7XVV": {
+          "type": "feature_center_image",
+          "settings": {
+            "center_image": "shopify://shop_images/1_e8ab1214-4a5e-4df2-96e1-0175c5b177a6.jpg"
+          }
+        },
+        "feature_item_right_AGGQzE": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Ultra-versatile",
+            "item_info": "Any style of coffee you crave in seconds (hot or cold).",
+            "item_icon": "shopify://shop_images/versatile.svg"
+          }
+        },
+        "feature_item_right_AntDXP": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Ultra-versatile",
+            "item_info": "Any style of coffee you crave in seconds (hot or cold).",
+            "item_icon": "shopify://shop_images/sourced.svg"
+          }
+        },
+        "feature_item_right_XKpjMf": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Ultra-versatile",
+            "item_info": "Any style of coffee you crave in seconds (hot or cold).",
+            "item_icon": "shopify://shop_images/calendar_16c9b869-3f0a-41a0-a523-536cb0833b67.svg"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_left_NYnMaU",
+        "feature_item_left_wUArWp",
+        "feature_item_left_DFJpJ8",
+        "feature_center_image_gA7XVV",
+        "feature_item_right_AGGQzE",
+        "feature_item_right_AntDXP",
+        "feature_item_right_XKpjMf"
+      ],
+      "settings": {
+        "pt": 50,
+        "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
+        "title": "Finally a Coffee You Won't Have to Quit"
+      }
     }
   },
   "order": [
