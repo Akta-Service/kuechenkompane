@@ -1,14 +1,27 @@
 <style>
   .feature-highlight {
-  padding: 4rem 1rem;
-  background: linear-gradient(to right, #fdfdfd, #e6f7ff);
-  text-align: center;
-}
-
-.feature-highlight .feature-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
+    padding-top: {{- section.settings.pt -}}px;
+    padding-bottom: {{- section.settings.pb -}}px;
+    text-align: center;
+    background-image: radial-gradient(circle, #c4fbfe, #fff 48%);
+  }
+  .feature-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  .feature-highlight .feature-title {
+    color: #1e1a47;
+    text-align: center;
+    letter-spacing: -1px;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* font-family: Kefir, sans-serif; */
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 60px;
+  }
 
 .feature-content {
   display: flex;
@@ -42,69 +55,74 @@
 }
 
 .feature-item img {
-  width: 40px;
-  height: 40px;
+  max-width: 102px;
+  height: 102px;
 }
+@media (max-width: 767px) {
+    .appex-faqs-area {
+      padding-top: {{- section.settings.pt_mobile -}}px;
+      padding-bottom: {{- section.settings.pb_mobile -}}px;
+    }
+    .faqs-title {
+      font-size: {{- section.settings.title_font_size_mobile -}}px;
+    }
 
+}
 </style>
 <section class="feature-highlight">
   <div class="feature-container">
-    <h2 class="feature-title">Finally a Coffee You Won't Have to Quit</h2>
+    <h2 class="feature-title">{{ section.settings.title }}</h2>
     
     <div class="feature-content">
       <!-- Left Features -->
+       
       <div class="feature-column left">
-        <div class="feature-item">
-          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Convenient">
-          <div>
-            <h3>Incredibly Convenient</h3>
-            <p>Add 1–2 teaspoons of Javvy to water or milk for drinks in seconds.</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Affordable">
-          <div>
-            <h3>Ultra-affordable</h3>
-            <p>Javvy costs less than K-cups, drip, and store-bought coffee!</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Variety">
-          <div>
-            <h3>Flavorful Variety</h3>
-            <p>Rich, bold flavors that cater to every coffee lover’s preference.</p>
-          </div>
-        </div>
+        {% for block in section.blocks %}
+          {% case block.type %}
+          {% when 'feature_item_left' %}
+            <div class="feature-item">              
+              <div>
+                <h3>{{ block.settings.item_title }}</h3>
+                <p>{{ block.settings.item_info }}</p>
+              </div>
+              {% if block.settings.item_icon != blank %}
+                <img src="{{ block.settings.item_icon |  img_url: 'master' }}" loading="lazy" alt="icon">
+              {% endif %}
+            </div>
+          {% endcase %}
+        {% endfor %}
       </div>
 
       <!-- Center Image -->
-      <div class="product-center">
-        <img src="https://res.cloudinary.com/dqxw76yvk/image/upload/q_auto,f_auto/v1739899857/2_1_xh0aas.png" alt="Javvy Products">
-      </div>
+      {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'feature_center_image' %}
+          {% if block.settings.center_image != blank %}
+          <div class="product-center">
+            <img src="{{ block.settings.center_image |  img_url: 'master' }}" loading="lazy" alt="image">
+          </div>
+        {% endif %}
+        {% endcase %}
+      {% endfor %}
 
       <!-- Right Features -->
       <div class="feature-column right">
-        <div class="feature-item">
-          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Versatile">
-          <div>
-            <h3>Ultra-versatile</h3>
-            <p>Any style of coffee you crave in seconds (hot or cold).</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Ethically Sourced">
-          <div>
-            <h3>Ethically Sourced</h3>
-            <p>Committed to regenerative farming practices and ethical labor.</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <img src="https://cdn.shopify.com/oxygen-v2/25194/9447/19462/1617717/images/assets/convenient.svg" alt="Freshness">
-          <div>
-            <h3>Extended Freshness</h3>
-            <p>Stays fresh for months, always ready to enjoy.</p>
-          </div>
-        </div>
+        {% for block in section.blocks %}
+          {% case block.type %}
+          {% when 'feature_item_right' %}
+       
+            <div class="feature-item">
+              {% if block.settings.item_icon != blank %}
+                <img src="{{ block.settings.item_icon |  img_url: 'master' }}" loading="lazy" alt="icon">
+              {% endif %}
+              <div>
+                <h3>{{ block.settings.item_title }}</h3>
+                <p>{{ block.settings.item_info }}</p>
+              </div>
+            </div>
+
+          {% endcase %}
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -115,8 +133,109 @@
   {
     "name": "Apex Fature Highlight",   
     "settings": [
-      
+      {
+        "type": "range",
+        "id": "pt",
+        "label": "Padding Top",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "pb",
+        "label": "Padding Bottom",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "pt_mobile",
+        "label": "Padding Top (Mobile)",
+        "default": 30,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "pb_mobile",
+        "label": "Padding Bottom (Mobile)",
+        "default": 30,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "header",
+        "content": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Finally a Coffee You Won't Have to Quit"
+      },
     ],
+    "blocks": [
+      {
+        "type": "feature_item_left",
+        "name": "Feature Item Left",
+        "settings": [
+          {
+            "type": "text",
+            "id": "item_title",
+            "label": "Item Title"
+          },
+          {
+            "type": "textarea",
+            "id": "item_info",
+            "label": "Item Info"
+          },
+          {
+            "type": "image_picker",
+            "id": "item_icon",
+            "label": "Item Icon"
+          }
+        ]
+      },
+      {
+        "type": "feature_center_image",
+        "name": "Center Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "center_image",
+            "label": "Center Image"
+          }
+        ]
+      },
+      {
+        "type": "feature_item_right",
+        "name": "Feature Item Right",
+        "settings": [
+          {
+            "type": "text",
+            "id": "item_title",
+            "label": "Item Title"
+          },
+          {
+            "type": "textarea",
+            "id": "item_info",
+            "label": "Item Info"
+          },
+          {
+            "type": "image_picker",
+            "id": "item_icon",
+            "label": "Item Icon"
+          }
+        ]
+      }
+    ],
+
     "presets": [
       {
         "name": "Apex Fature Highlight",
