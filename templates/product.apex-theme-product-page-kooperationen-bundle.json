@@ -52,7 +52,7 @@
         "review_Tgbbak": {
           "type": "review",
           "settings": {
-            "p": "4405 Bewertungen",
+            "p": "4.9/5 bei Trustpilot",
             "star_range": 5,
             "star_color": "#000000"
           }
@@ -1120,6 +1120,7 @@
       "block_order": [
         "loox_reviews_loox_dynamic_section_9tFX78"
       ],
+      "disabled": true,
       "settings": {
         "heading": "",
         "heading_size": "h3",
