@@ -50,7 +50,8 @@
         "pb_mobile": 65,
         "mt_mobile": 0,
         "mb_mobile": 0,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h2",
+        "des_size": "p-medium"
       }
     },
     "store_benefit_tq7A77": {
@@ -89,6 +90,8 @@
       "settings": {
         "color_scheme": "badge-hot",
         "invert_color": false,
+        "heading_type": "mrk-h1",
+        "des_size": "p-medium",
         "pt": 70,
         "pb": 70,
         "ptm": 50,
@@ -149,6 +152,8 @@
         "mobile_margin_bottom": 0,
         "bg_img": "shopify://shop_images/branded-image-2.jpg",
         "heading_type": "mrk-h1",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium",
         "button_style": "m-button--primary",
         "button_size": ""
       }
@@ -237,7 +242,8 @@
         "margin_bottom": 0,
         "margin_top_mobile": 0,
         "margin_bottom_mobile": 0,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h2",
+        "des_size": "p-medium"
       }
     },
     "announcement_bar_version_1_3Nznet": {
@@ -340,6 +346,10 @@
         "autoplay": false,
         "loop": true
       }
+    },
+    "feature_highlight_rqJzVk": {
+      "type": "feature-highlight",
+      "settings": {}
     }
   },
   "order": [
@@ -350,6 +360,7 @@
     "logo_quote_selection_6AwG63",
     "guarantee_objection_handling_jGLzWT",
     "announcement_bar_version_1_3Nznet",
-    "apex_home_logo_list_RM6R7y"
+    "apex_home_logo_list_RM6R7y",
+    "feature_highlight_rqJzVk"
   ]
 }
