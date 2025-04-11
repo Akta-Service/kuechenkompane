@@ -567,7 +567,7 @@
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "shopify://shop_images/Ku_echenkompane_2411290287_1_2_jpg_V2_1_1.jpg",
+        "image": "shopify://shop_images/Bundle_Image_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -576,6 +576,79 @@
         "heading_type": "mrk-h3",
         "sub_heading": "p-medium",
         "des_size": "p-medium"
+      }
+    },
+    "feature_highlight_ktLbnH": {
+      "type": "feature-highlight",
+      "blocks": {
+        "feature_item_left_KLYLgM": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "8-teiliges Messerset",
+            "item_info": "Mit extra scharfen Klingen aus deutschem 7CR17-Edelstahl und edlem Holzgriff.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V7_1.png"
+          }
+        },
+        "feature_item_left_etKjAM": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "Magnetischer Messerblock",
+            "item_info": "Der hochwertige Block hält alle Messer sicher per Magnet und spart wertvollen Platz.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
+          }
+        },
+        "feature_item_left_zGYhna": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "Messerschärfer",
+            "item_info": "Mit diesem praktischen 3-Stufen-Schärfer bringst du jedes Messer in Sekunden wieder auf Hochleistung",
+            "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
+          }
+        },
+        "feature_center_image_mBHAJH": {
+          "type": "feature_center_image",
+          "settings": {
+            "center_image": "shopify://shop_images/Bundle_Image_1.jpg"
+          }
+        },
+        "feature_item_right_YpUkf4": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Ultra-versatile",
+            "item_info": "Any style of coffee you crave in seconds (hot or cold).",
+            "item_icon": "shopify://shop_images/Untitled_Export_V4_1.png"
+          }
+        },
+        "feature_item_right_dN8J9K": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Ultra-versatile",
+            "item_info": "Any style of coffee you crave in seconds (hot or cold)."
+          }
+        },
+        "feature_item_right_jLCbWD": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Ultra-versatile",
+            "item_info": "Any style of coffee you crave in seconds (hot or cold)."
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_left_KLYLgM",
+        "feature_item_left_etKjAM",
+        "feature_item_left_zGYhna",
+        "feature_center_image_mBHAJH",
+        "feature_item_right_YpUkf4",
+        "feature_item_right_dN8J9K",
+        "feature_item_right_jLCbWD"
+      ],
+      "settings": {
+        "pt": 50,
+        "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
+        "title": "Im Set enthalten:"
       }
     },
     "image_with_text_qfMUfW": {
@@ -1266,6 +1339,7 @@
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
     "benefit_text_P4XApk",
+    "feature_highlight_ktLbnH",
     "image_with_text_qfMUfW",
     "image_with_text_iVKXXg",
     "image_with_text_UQfz4G",
