@@ -585,15 +585,15 @@
           "type": "feature_item_left",
           "settings": {
             "item_title": "8-teiliges Messerset",
-            "item_info": "Mit extra scharfen Klingen aus deutschem 7CR17-Edelstahl und edlem Holzgriff.",
+            "item_info": "Mit extra scharfen Klingen aus deutschem 7CR17-Edelstahl.",
             "item_icon": "shopify://shop_images/Untitled_Export_V7_1.png"
           }
         },
         "feature_item_left_etKjAM": {
           "type": "feature_item_left",
           "settings": {
-            "item_title": "Magnetischer Messerblock",
-            "item_info": "Der hochwertige Block hält alle Messer sicher per Magnet und spart wertvollen Platz.",
+            "item_title": "Magnetischer Block",
+            "item_info": "Platz für alle Messer, sicher per Magnet und spart  Platz.",
             "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
           }
         },
@@ -601,7 +601,7 @@
           "type": "feature_item_left",
           "settings": {
             "item_title": "Messerschärfer",
-            "item_info": "Mit diesem praktischen 3-Stufen-Schärfer bringst du jedes Messer in Sekunden wieder auf Hochleistung",
+            "item_info": "Jedes Messer in Sekunden wieder auf Hochleistung",
             "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
           }
         },
@@ -614,23 +614,25 @@
         "feature_item_right_YpUkf4": {
           "type": "feature_item_right",
           "settings": {
-            "item_title": "Ultra-versatile",
-            "item_info": "Any style of coffee you crave in seconds (hot or cold).",
+            "item_title": "Schneidebrett",
+            "item_info": "Aus Akazienholz, perfekt für Fleisch, Fisch, Gemüse.",
             "item_icon": "shopify://shop_images/Untitled_Export_V4_1.png"
           }
         },
         "feature_item_right_dN8J9K": {
           "type": "feature_item_right",
           "settings": {
-            "item_title": "Ultra-versatile",
-            "item_info": "Any style of coffee you crave in seconds (hot or cold)."
+            "item_title": "Schneidebrett",
+            "item_info": "Aus Akazienholz, perfekt für Fleisch, Fisch, Gemüse.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V5_1.png"
           }
         },
         "feature_item_right_jLCbWD": {
           "type": "feature_item_right",
           "settings": {
             "item_title": "Ultra-versatile",
-            "item_info": "Any style of coffee you crave in seconds (hot or cold)."
+            "item_info": "Aus Akazienholz, perfekt für Fleisch, Fisch, Gemüse.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V6_1.png"
           }
         }
       },
@@ -649,146 +651,6 @@
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "Im Set enthalten:"
-      }
-    },
-    "image_with_text_qfMUfW": {
-      "type": "image-with-text",
-      "settings": {
-        "heading": "Diese Produkte sind im Küchenmaster Mega Set enhalten",
-        "heading_size": "h3",
-        "subheading": "",
-        "container": "container-fluid",
-        "color_scheme": "default",
-        "item_gap": 100,
-        "item_gap_mobile": 30,
-        "layout": "left",
-        "image_column_size": "4",
-        "image_overlap": false,
-        "show_image_reverse": false,
-        "hover_effect": false,
-        "image_animation": "none",
-        "image": "shopify://shop_images/Unbenannt-1_0002_7_1_1.jpg",
-        "link": "",
-        "link_2": "",
-        "second_image_offset_top": 10,
-        "title": "1. 8-teiliges Premium-Messerset",
-        "sub_title": "",
-        "text": "<p>Mit extra scharfen Klingen aus deutschem 7CR17-Edelstahl und edlem Holzgriff – perfekt ausbalanciert für müheloses Schneiden. Ob Fleisch, Gemüse oder Brot: Diese Messer gleiten durch alles.</p>",
-        "text_size": "medium",
-        "content_alignment": "left",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "m-button--link",
-        "button_size": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
-    "image_with_text_iVKXXg": {
-      "type": "image-with-text",
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "item_gap": 100,
-        "item_gap_mobile": 30,
-        "layout": "left",
-        "image_column_size": "4",
-        "image_overlap": false,
-        "show_image_reverse": false,
-        "hover_effect": false,
-        "image_animation": "none",
-        "image": "shopify://shop_images/Untitled_Export-EQ8vxtq05_4474e7e9-7494-423b-ba2b-8fa55b3e0ab3.jpg",
-        "link": "",
-        "link_2": "",
-        "second_image_offset_top": 10,
-        "title": "2. Magnetischer Messerblock aus Akazienholz",
-        "sub_title": "",
-        "text": "<p>Deine Messer – immer griffbereit und stilvoll präsentiert. Der hochwertige Block hält alle Messer sicher per Magnet und spart wertvollen Platz auf der Arbeitsfläche.<br/><br/></p>",
-        "text_size": "medium",
-        "content_alignment": "left",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "m-button--link",
-        "button_size": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
-    "image_with_text_UQfz4G": {
-      "type": "image-with-text",
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "item_gap": 100,
-        "item_gap_mobile": 30,
-        "layout": "left",
-        "image_column_size": "4",
-        "image_overlap": false,
-        "show_image_reverse": false,
-        "hover_effect": false,
-        "image_animation": "none",
-        "image": "shopify://shop_images/Ku_echenkompane_2411290287_1_2.jpg",
-        "link": "",
-        "link_2": "",
-        "second_image_offset_top": 10,
-        "title": "3.  Schneidebretter aus Akazienholz (verschiedene Größen)",
-        "sub_title": "",
-        "text": "<p>Robust, langlebig und hygienisch: Diese Schneidbretter machen jede Zubereitung einfacher – und deine Küche schöner. Perfekt für Fleisch, Fisch, Gemüse oder Brot.<br/><br/></p>",
-        "text_size": "medium",
-        "content_alignment": "left",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "m-button--link",
-        "button_size": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
-    "image_with_text_b6AMhP": {
-      "type": "image-with-text",
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "item_gap": 100,
-        "item_gap_mobile": 30,
-        "layout": "left",
-        "image_column_size": "4",
-        "image_overlap": false,
-        "show_image_reverse": false,
-        "hover_effect": false,
-        "image_animation": "none",
-        "image": "shopify://shop_images/BLACK_MONTH_V412_1.jpg",
-        "link": "",
-        "link_2": "",
-        "second_image_offset_top": 10,
-        "title": "4. 3-Stufen-Messerschärfer",
-        "sub_title": "",
-        "text": "<p>Schärfe, wann immer du willst. Mit diesem praktischen 3-Stufen-Schärfer bringst du jedes Messer in Sekunden wieder auf Hochleistung – einfach, sicher und effektiv.<br/><br/></p>",
-        "text_size": "medium",
-        "content_alignment": "left",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "m-button--link",
-        "button_size": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "custom_class": "",
-        "animations": "inherit"
       }
     },
     "product_explanation_video_xNFp3M": {
@@ -1340,10 +1202,6 @@
     "scrolling_promotion_UKXeX3",
     "benefit_text_P4XApk",
     "feature_highlight_ktLbnH",
-    "image_with_text_qfMUfW",
-    "image_with_text_iVKXXg",
-    "image_with_text_UQfz4G",
-    "image_with_text_b6AMhP",
     "product_explanation_video_xNFp3M",
     "us_vs_them_8Tbqki",
     "apex_faqs_jx7hp6",
