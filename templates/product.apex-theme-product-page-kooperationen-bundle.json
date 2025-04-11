@@ -1043,7 +1043,8 @@
         "item_Prmf4W"
       ],
       "custom_css": [
-        ".item-icon {display: inline-block; width: 30px; height: 28px;}"
+        ".item-icon {display: inline-block; width: 30px; height: 28px;}",
+        "ul.health-feature img {width: 28px; height: 28px; object-fit: contain; border-radius: 0; line-height: 7;}"
       ],
       "settings": {
         "color_scheme": "footer",
