@@ -87,30 +87,41 @@
       transform: scale(1.15);
   }
 
-  .video_slider .swiper-button-prev,
-  .video_slider .swiper-button-next {
+  .video_slider .video-prev,
+  .video_slider .video-next {
       display: none;
   }
 
-  .video_slider .swiper-button-prev,
-  .video_slider .swiper-button-next {
-      color: #898989;
-      background-color: #FFFFFF;
-      border-radius: 50%;
-      height: 36px;
-      width: 36px;
-      z-index: 999999;
+  .video_slider .video-prev, 
+  .video_slider .video-next {
+    color: #898989;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    z-index: 999999;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
   }
 
-  .video_slider .swiper-button-prev svg,
-  .video_slider .swiper-button-next svg {
+  .video_slider .video-prev svg,
+  .video_slider .video-next svg {
     width:8px;
     height: 8px;
   }
-  .video_slider .swiper-button-next svg {
+  .video_slider .video-next svg {
     transform: rotate(0);
   }
-  
+  .video-prev {
+    left: 15px;
+  }
+  .video-next {
+    right: 15px;
+  }
   .video_area video {
     max-height: 100%;
     object-fit: cover;
@@ -125,8 +136,8 @@
     }
   }
   @media screen and (max-width: 699px) {
-    .video_slider .swiper-button-prev,
-    .video_slider .swiper-button-next {
+    .video_slider .video-prev,
+    .video_slider .video-next {
           display: flex;
       }
 
@@ -174,7 +185,7 @@
               <div class="swiper-slide">
                 <div class="video_item">
                   <video
-                    playinline
+                    playsinline
                     {% if section.settings.autoplay %}
                     autoplay
                     {% endif %}
@@ -209,12 +220,12 @@
             {% endif %}
           {% endfor %}
         </div>
-        <div class="swiper-button-next">
+        <div class="video-next">
           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
             <path d="M3.93333 8L8 4C6.97986 2.99931 4.95342 1.00071 3.93333 -1.7776e-07L3.42014 0.496533C4.33751 1.39653 5.55134 2.5952 6.62228 3.64658L5.22927e-05 3.64658L5.22618e-05 4.35283L6.62228 4.35283L3.42014 7.4979L3.93333 8Z" fill="#1E1E1E"/>
           </svg>
         </div>
-        <div class="swiper-button-prev">
+        <div class="video-prev">
           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
             <path d="M4.06673 -9.0518e-07L6.10829e-05 4C1.0202 5.00069 3.04664 6.99929 4.06673 8L4.57992 7.50347C3.66255 6.60347 2.44872 5.4048 1.37779 4.35342L8.00001 4.35342L8.00001 3.64716L1.37779 3.64716L4.57992 0.502097L4.06673 -9.0518e-07Z" fill="#1E1E1E"/>
           </svg>
@@ -365,8 +376,8 @@
     spaceBetween: 8,
     loop: false,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.video-next',
+      prevEl: '.video-prev',
     },
     breakpoints: {
       0: {

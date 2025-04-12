@@ -7673,3 +7673,14 @@ variant-picker
 .apex-theme-product-page m-quantity-input.m-quantity {
   margin-top: -9px;
 }
+
+.rs-current-price b {
+  font-weight: 600;
+  color: black;
+  font-size: 12px;
+}
+
+
+.rs-price p {
+  margin-top: 0.5%;
+}

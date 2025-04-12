@@ -1,0 +1,309 @@
+<style>
+  .feature-highlight {
+    padding-top: {{- section.settings.pt -}}px;
+    padding-bottom: {{- section.settings.pb -}}px;
+    text-align: center;
+    background-image: radial-gradient(circle, #c4fbfe, #fff 48%);
+  }
+  .feature-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  .feature-highlight .feature-title {
+    color: #1e1a47;
+    text-align: center;
+    letter-spacing: -1px;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* font-family: Kefir, sans-serif; */
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 60px;
+  }
+  .feature-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #14141e;
+    margin-bottom: 10px;
+  }
+.feature-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 2rem; */
+  flex-wrap: wrap;
+}
+.image-center {
+    z-index: 9;
+    margin-left: -42px;
+    margin-right: -42px;
+    position: relative;
+    border-radius: 24px;
+    flex: 1;
+}
+.image-center img {
+   border-radius: inherit;
+}
+
+.feature-column {
+    flex: 1;
+    flex-direction: column;
+    z-index: 10;
+    gap: 40px;
+    display: flex;
+    position: relative;
+}
+
+
+.image-center-center {
+  flex: 0 0 auto;
+}
+
+.feature-item p {
+    font-size: 16px;
+    color: #4f4f61;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-align: left;
+}
+
+.feature-item img {
+  max-width: 102px;
+  height: 102px;
+  box-shadow: 0 0 34px #e2e2e2;
+  border-radius: 50%;
+}
+.feature-column.left .feature-item {
+    text-align: end;
+}
+@media (max-width:991px) {
+  .feature-item img {
+    max-width: 80px;
+    height: 80px;
+  }
+  .feature-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  .feature-item p {
+    font-size: 14px;  
+  }
+  .feature-column {
+    gap: 30px;
+  }
+  
+
+}
+@media (max-width: 767px) {
+    .appex-faqs-area {
+      padding-top: {{- section.settings.pt_mobile -}}px;
+      padding-bottom: {{- section.settings.pb_mobile -}}px;
+    }
+    .faqs-title {
+      font-size: {{- section.settings.title_font_size_mobile -}}px;
+    }
+    .feature-content {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .image-center{
+      margin: 0;
+      max-width: 500px;
+    }
+    .feature-column.left .feature-item {
+      text-align: start;
+      flex-direction: row-reverse;
+    }
+    .feature-highlight .feature-title {
+      font-size: 38px;
+      margin-bottom: 40px;
+    }
+
+}
+</style>
+<section class="feature-highlight">
+  <div class="feature-container">
+    <h2 class="feature-title">{{ section.settings.title }}</h2>
+    
+    <div class="feature-content">
+      <!-- Left Features -->
+       
+      <div class="feature-column left">
+        {% for block in section.blocks %}
+          {% case block.type %}
+          {% when 'feature_item_left' %}
+            <div class="feature-item">              
+              <div>
+                <h3>{{ block.settings.item_title }}</h3>
+                <p>{{ block.settings.item_info }}</p>
+              </div>
+              {% if block.settings.item_icon != blank %}
+                <img src="{{ block.settings.item_icon |  img_url: 'master' }}" loading="lazy" alt="icon">
+              {% endif %}
+            </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+
+      <!-- Center Image -->
+      {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'feature_center_image' %}
+          {% if block.settings.center_image != blank %}
+          <div class="image-center">
+            <img src="{{ block.settings.center_image |  img_url: 'master' }}" loading="lazy" alt="image">
+          </div>
+        {% endif %}
+        {% endcase %}
+      {% endfor %}
+
+      <!-- Right Features -->
+      <div class="feature-column right">
+        {% for block in section.blocks %}
+          {% case block.type %}
+          {% when 'feature_item_right' %}
+       
+            <div class="feature-item">
+              {% if block.settings.item_icon != blank %}
+                <img src="{{ block.settings.item_icon |  img_url: 'master' }}" loading="lazy" alt="icon">
+              {% endif %}
+              <div>
+                <h3>{{ block.settings.item_title }}</h3>
+                <p>{{ block.settings.item_info }}</p>
+              </div>
+            </div>
+
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Apex Fature Highlight",   
+    "settings": [
+      {
+        "type": "range",
+        "id": "pt",
+        "label": "Padding Top",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "pb",
+        "label": "Padding Bottom",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "pt_mobile",
+        "label": "Padding Top (Mobile)",
+        "default": 30,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "pb_mobile",
+        "label": "Padding Bottom (Mobile)",
+        "default": 30,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "header",
+        "content": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Finally a Coffee You Won't Have to Quit"
+      },
+    ],
+    "blocks": [
+      {
+        "type": "feature_item_left",
+        "name": "Feature Item Left",
+        "settings": [
+          {
+            "type": "text",
+            "id": "item_title",
+            "label": "Item Title",
+            "default": "Incredibly Convenient"
+          },
+          {
+            "type": "textarea",
+            "id": "item_info",
+            "label": "Item Info",
+            "default":"Add 1-2 teaspoons of Javvy to water or milk for drinks in seconds."
+          },
+          {
+            "type": "image_picker",
+            "id": "item_icon",
+            "label": "Item Icon"
+          }
+        ]
+      },
+      {
+        "type": "feature_center_image",
+        "name": "Center Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "center_image",
+            "label": "Center Image"
+          }
+        ]
+      },
+      {
+        "type": "feature_item_right",
+        "name": "Feature Item Right",
+        "settings": [
+          {
+            "type": "text",
+            "id": "item_title",
+            "label": "Item Title",
+            "default": "Ultra-versatile"
+          },
+          {
+            "type": "textarea",
+            "id": "item_info",
+            "label": "Item Info",
+            "default":"Any style of coffee you crave in seconds (hot or cold)."
+          },
+          {
+            "type": "image_picker",
+            "id": "item_icon",
+            "label": "Item Icon"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Apex Fature Highlight",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}

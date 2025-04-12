@@ -220,7 +220,17 @@
         </div>
       {% when 'price' %}
         <div class="rs-price">
-          <span class="rs-current-price">{{ product.selected_or_first_available_variant.price | money }}</span>          
+          <span class="rs-current-price">{{ product.selected_or_first_available_variant.price | money }}     
+
+
+              {% if product.compare_at_price == blank %}
+                <b>&nbsp;inkl. MwSt.</b>
+              {% endif %}
+
+            
+    </span>
+            
+        </span>          
           {% if product.selected_or_first_available_variant.price < product.compare_at_price %}
             <span class="rs-compare-price">{{ product.compare_at_price | money }}</span>
             {% assign price = product.selected_or_first_available_variant.price %}
@@ -228,6 +238,9 @@
             {% assign discount_amount = compare_price | minus: price %}
             {% assign discount_percentage = discount_amount | times: 100 | divided_by: compare_price | round: 0 %}            
             <span class="discount-percentage">-{{ discount_percentage }}%</span>
+        
+            <p><b>inkl. MwSt.</b> KOSTENLOSER Versand          </p>
+
           {% endif %}
         </div>
 
