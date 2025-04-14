@@ -91,7 +91,7 @@
                     </ul>
                   {% endif %}
                 {% when 'our_store' %}
-                  <div class="{% if block.settings.title != blank %}m-accordion--item-content{% endif %} m-footer--block-content">
+                  <div class="{% if block.settings.title != blank %}m-accordion--item-content{% endif %} m-footer--block-content" style="opacity: 1;">
                     {% unless block.settings.description == blank %}
                       <div class="block-text rte">
                         {{ block.settings.description }}
