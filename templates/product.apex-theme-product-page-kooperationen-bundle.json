@@ -52,7 +52,7 @@
         "review_Tgbbak": {
           "type": "review",
           "settings": {
-            "p": "4.9/5 bei Trustpilot",
+            "p": "4.7/5 bei Trustpilot",
             "star_range": 5,
             "star_color": "#000000"
           }
@@ -81,8 +81,8 @@
             "c_price_color": "#bbbbbb",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
-            "f_s": 16,
-            "f_s_m": 16,
+            "f_s": 21,
+            "f_s_m": 19,
             "price_font_weight": "600"
           }
         },
