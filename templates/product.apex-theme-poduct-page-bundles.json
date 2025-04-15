@@ -31,21 +31,21 @@
         "sticky_atc_compare": false
       }
     },
-    "apex_timer_6zexMG": {
+    "apex_timer_GVjmDK": {
       "type": "Apex-timer",
       "name": "Apex Product Timer",
       "settings": {
-        "bg_color": "#1c1d1d",
+        "bg_color": "#ffffff",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#fff",
+        "timer_clock": "#000000",
         "timer_clock_text_font_size": 12,
         "clock_font_weight": "400",
         "timer_text": "Time’s running out on our biggest sale!",
         "timer_font_size": 12,
-        "timer_color": "#dcad27",
+        "timer_color": "#000000",
         "timer_font_weight": "400",
-        "target_date": "2025-04-18",
+        "target_date": "2026-04-16",
         "target_time": "00:00:00"
       }
     },
@@ -1249,7 +1249,7 @@
   },
   "order": [
     "main",
-    "apex_timer_6zexMG",
+    "apex_timer_GVjmDK",
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
     "product-details-tabs",
