@@ -34,15 +34,16 @@
     display: inline-block;
     line-height: 1;
     margin-right: 5px;
-    font-size: 12px;
+    font-size: {{ section.settings.timer_clock_text_font_size }}px;
     width: fit-content;
     letter-spacing: 0.5px;
-    font-weight: 700;
+    font-weight: {{ section.settings.clock_font_weight }};
     color: {{ section.settings.timer_clock }};
     font-family: "Roboto", sans-serif;
   }
 
-  .timer_text {    font-family: "Roboto", sans-serif;
+  .timer_text {    
+    font-family: "Roboto", sans-serif;
     font-size: 12px;
     line-height: 1;
     margin: 0;
@@ -103,7 +104,61 @@
     {
       "type": "color",
       "id": "timer_clock",
-      "label": "Timer Clock Font Color"
+      "label": "Timer Clock Font Color",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "timer_clock_text_font_size",
+      "label": "Font Size",
+      "default": 12,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "select",
+      "id": "clock_font_weight",
+      "label": "Font Weight",
+      "default": "400",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin (100)"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light (200)"
+        },
+        {
+          "value": "300",
+          "label": "Light (300)"
+        },
+        {
+          "value": "400",
+          "label": "Normal (400)"
+        },
+        {
+          "value": "500",
+          "label": "Medium (500)"
+        },
+        {
+          "value": "600",
+          "label": "Semi-Bold (600)"
+        },
+        {
+          "value": "700",
+          "label": "Bold (700)"
+        },
+        {
+          "value": "800",
+          "label": "Extra-Bold (800)"
+        },
+        {
+          "value": "900",
+          "label": "Black (900)"
+        }
+      ]
     },
     {
       "type": "header",
