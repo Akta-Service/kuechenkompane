@@ -31,9 +31,9 @@
         "sticky_atc_compare": false
       }
     },
-    "apex_time_xdmiwp": {
+    "apex_timer_N3M7he": {
       "type": "Apex-timer",
-      "name": "Apex Timer",
+      "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#ffffff",
         "section_pt": 15,
@@ -1249,7 +1249,7 @@
   },
   "order": [
     "main",
-    "apex_time_xdmiwp",
+    "apex_timer_N3M7he",
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
     "product-details-tabs",
