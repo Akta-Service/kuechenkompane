@@ -120,29 +120,10 @@
         "mb_show_country_selector": true,
         "mb_show_language_switcher": true
       }
-    },
-    "apex_time_h4hMHj": {
-      "type": "Apex-time",
-      "name": "Apex Timer",
-      "settings": {
-        "bg_color": "#dce5dc",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#d17955",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "700",
-        "timer_text": "Osteraktion endet bald – jetzt 70 % sparen!",
-        "timer_font_size": 12,
-        "timer_color": "#264e36",
-        "timer_font_weight": "600",
-        "target_date": "2025-04-15",
-        "target_time": "22:16:00"
-      }
     }
   },
   "order": [
     "annoucement",
-    "header",
-    "apex_time_h4hMHj"
+    "header"
   ]
 }
