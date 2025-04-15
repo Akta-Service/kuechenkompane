@@ -120,28 +120,10 @@
         "mb_show_country_selector": true,
         "mb_show_language_switcher": true
       }
-    },
-    "apex_time_XMhxVP": {
-      "type": "Apex-time",
-      "disabled": true,
-      "name": "Apex Timer",
-      "settings": {
-        "bg_color": "#1c1d1d",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#ffffff",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "400",
-        "timer_text": "Time’s running out on our biggest sale!",
-        "timer_font_size": 12,
-        "timer_color": "#fa8526",
-        "timer_font_weight": "400"
-      }
     }
   },
   "order": [
     "annoucement",
-    "header",
-    "apex_time_XMhxVP"
+    "header"
   ]
 }
