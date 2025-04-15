@@ -123,6 +123,7 @@
     },
     "apex_time_XMhxVP": {
       "type": "Apex-time",
+      "disabled": true,
       "name": "Apex Timer",
       "settings": {
         "bg_color": "#1c1d1d",
@@ -133,7 +134,7 @@
         "clock_font_weight": "400",
         "timer_text": "Time’s running out on our biggest sale!",
         "timer_font_size": 12,
-        "timer_color": "#FA8526",
+        "timer_color": "#fa8526",
         "timer_font_weight": "400"
       }
     }
