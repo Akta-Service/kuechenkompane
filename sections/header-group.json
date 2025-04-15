@@ -125,15 +125,15 @@
       "type": "Apex-time",
       "name": "Apex Timer",
       "settings": {
-        "bg_color": "#c6d1c4",
+        "bg_color": "#a6192e",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#ffffff",
+        "timer_clock": "#155724",
         "timer_clock_text_font_size": 12,
         "clock_font_weight": "700",
         "timer_text": "Time’s running out on our biggest sale!",
         "timer_font_size": 12,
-        "timer_color": "#000000",
+        "timer_color": "#ffb800",
         "timer_font_weight": "600"
       }
     }
