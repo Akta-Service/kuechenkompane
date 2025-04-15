@@ -38,7 +38,7 @@
     width: fit-content;
     letter-spacing: 0.5px;
     font-weight: {{ section.settings.clock_font_weight }};
-    color: {{ section.settings.timer_clock }};
+    
     font-family: "Roboto", sans-serif;
   }
 
@@ -59,7 +59,7 @@
 >
   <!-- <a class="rslink" href="#"></a> -->
   <div class="timer_text_wrapper">
-    <span class="timer_clock" id="countdown"></span>
+    <span class="timer_clock" style="color: {{ section.settings.timer_clock }};" id="countdown"></span>
     <p
       class="timer_text"
       style="font-size: {{ section.settings.timer_font_size }}px; color: {{ section.settings.timer_color }};  font-weight: {{ section.settings.timer_font_weight }};"
