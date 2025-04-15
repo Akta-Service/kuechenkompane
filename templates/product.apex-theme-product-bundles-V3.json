@@ -35,15 +35,15 @@
       "type": "Apex-timer",
       "name": "Apex Product Timer",
       "settings": {
-        "bg_color": "#c6d1c4",
+        "bg_color": "#ffffff",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#ffffff",
+        "timer_clock": "#000000",
         "timer_clock_text_font_size": 12,
         "clock_font_weight": "400",
         "timer_text": "Time’s running out on our biggest sale!",
         "timer_font_size": 12,
-        "timer_color": "#ffffff",
+        "timer_color": "#000000",
         "timer_font_weight": "400",
         "target_date": "2025-04-16",
         "target_time": "00:00:00"
