@@ -1,15 +1,15 @@
 <style>
-  .global-timer{{ section.id }}{   
+    .rs_timerwrapper {
       text-align: center;
-      padding: 15px;
-      background: {{ section.settings.bg_color }} !important;
+      padding: 15px;     
       color: white;
       text-transform: uppercase;
       font-weight: 700;
       line-height: 1;
-      position: relative;   
+      position: relative;
+    }
 
-     .rslink {
+    .rs_timerwrapper .rslink {
       position: absolute;
       z-index: 999;
       width: 100%;
@@ -33,10 +33,10 @@
       display: inline-block;
       line-height: 1;
       margin-right: 5px;
-      font-size: {{ section.settings.timer_clock_text_font_size }}px;
+     
       width: fit-content;
       letter-spacing: 0.5px;
-      font-weight: {{ section.settings.clock_font_weight }};
+      
       
       font-family: "Roboto", sans-serif;
     }
@@ -51,15 +51,15 @@
       color: #dcad27;
       font-weight: 700;
     }
-  }
+
 </style>
 <div
   class="rs_timerwrapper global-timer{{ section.id }}"
-  style="padding-top: {{ section.settings.section_pt }}px; padding-bottom: {{ section.settings.section_pb }}px;"
+  style="padding-top: {{ section.settings.section_pt }}px; padding-bottom: {{ section.settings.section_pb }}px;  background: {{ section.settings.bg_color }};  "
 >
   <!-- <a class="rslink" href="#"></a> -->
   <div class="timer_text_wrapper">
-    <span class="timer_clock" style="color: {{ section.settings.timer_clock }};" id="countdown"></span>
+    <span class="timer_clock" style="color: {{ section.settings.timer_clock }}; font-size: {{ section.settings.timer_clock_text_font_size }}px; font-weight: {{ section.settings.clock_font_weight }};" id="countdown-global"></span>
     <p
       class="timer_text"
       style="font-size: {{ section.settings.timer_font_size }}px; color: {{ section.settings.timer_color }};  font-weight: {{ section.settings.timer_font_weight }};"
@@ -264,7 +264,7 @@
 {% endschema %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const countdownElement = document.getElementById('countdown');
+    const countdownElement = document.getElementById('countdown-global');
     const settings = window.apexTimerSettings;
 
     const targetDateParts = settings.targetDate.split('-').map(Number);
