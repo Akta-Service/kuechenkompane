@@ -123,7 +123,6 @@
     },
     "apex_time_h4hMHj": {
       "type": "Apex-time",
-      "disabled": true,
       "name": "Apex Timer",
       "settings": {
         "bg_color": "#dce5dc",
@@ -135,7 +134,9 @@
         "timer_text": "Osteraktion endet bald – jetzt 70 % sparen!",
         "timer_font_size": 12,
         "timer_color": "#264e36",
-        "timer_font_weight": "600"
+        "timer_font_weight": "600",
+        "target_date": "2025-04-16",
+        "target_time": "00:00:00"
       }
     }
   },
