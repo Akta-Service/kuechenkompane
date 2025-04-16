@@ -35,17 +35,17 @@
       "type": "Apex-timer",
       "name": "Apex Product Timer",
       "settings": {
-        "bg_color": "#ffffff",
+        "bg_color": "#dce5dc",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#000000",
+        "timer_clock": "#D2861A",
         "timer_clock_text_font_size": 12,
         "clock_font_weight": "400",
-        "timer_text": "Time’s running out on our biggest sale!",
+        "timer_text": "Unser exklusives Osterangebot läuft bald ab!",
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "400",
-        "target_date": "2026-04-16",
+        "target_date": "2025-04-18",
         "target_time": "00:00:00"
       }
     },
@@ -129,7 +129,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Preis nur bis Montag – danach wieder 2.025,00 €</p>",
+            "featurelist_item": "<p>Preis nur im Osterangebot – danach wieder 2.025,00 €</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
