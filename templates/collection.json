@@ -9,8 +9,34 @@
  */
 {
   "sections": {
+    "countdown_timer_meYRMg": {
+      "type": "countdown-timer",
+      "name": "Countdown timer",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "align": "center",
+        "background_in_container": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "use_image_as_background": false,
+        "heading": "Unser exklusives Osterangebot läuft bald ab!",
+        "description": "",
+        "time": "2023-02-26 23:00:00",
+        "heading_size": "h3",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "m-button--white",
+        "button_size": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "container": "container-fluid",
@@ -117,6 +143,7 @@
     }
   },
   "order": [
+    "countdown_timer_meYRMg",
     "collection-header",
     "main",
     "usp_list_nd6t8y",
