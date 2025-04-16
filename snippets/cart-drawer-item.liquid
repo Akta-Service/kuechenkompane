@@ -120,13 +120,27 @@
               </span>
             </div>
           {%- else -%}
-            <span class="m-cart-item__price--regular">
-              {% if settings.currency_code_enabled %}
-                {{- item.original_price | money_with_currency -}}
-              {% else %}
-                {{- item.original_price | money -}}
-              {% endif %}
-            </span>
+            <div class="dawer-pirce">
+              <span class="m-cart-item__price--regular">
+                {% if settings.currency_code_enabled %}
+                  {{- item.original_price | money_with_currency -}}
+                {% else %}
+                  {{- item.original_price | money -}}
+                {% endif %}
+              </span>
+              {% assign handle = item.product.handle %}
+                                  {% assign product_upsell = all_products[handle] %}
+                                  
+                                  {% assign compare_price = product_upsell.compare_at_price %}
+              <s class="m-price-item m-price-item--regular">
+            
+                {% if settings.currency_code_enabled %}
+                  {{- compare_price | money_with_currency -}}
+                {% else %}
+                  {{- compare_price | money -}}
+                {% endif %}
+              </s>
+            </div>
           {%- endif -%}
 
           <div class="m-cart-item__unit-price{% unless item.unit_price_measurement %} m:hidden{% endunless %}">
