@@ -343,7 +343,7 @@
         "ptm": 40,
         "pbm": 40,
         "invert_color": true,
-        "autoplay": false,
+        "autoplay": true,
         "loop": true
       }
     },
@@ -421,6 +421,81 @@
         "pb_mobile": 30,
         "title": "Finally a Coffee You Won't Have to Quit"
       }
+    },
+    "logo_greyed_out_JnVkyQ": {
+      "type": "logo-greyed-out",
+      "blocks": {
+        "item_QXg6Fr": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "item_gkpktG": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "item_biDiqX": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "item_wKnjBD": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "item_FM94gk": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "item_iLBEEf": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "item_69bnpY": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "item_XVXT8y": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        },
+        "item_jiQyFT": {
+          "type": "item",
+          "settings": {
+            "logo_img": "shopify://shop_images/donna_1024x_c6cb4232-79ee-438a-a9fa-2adad6e75584.png"
+          }
+        }
+      },
+      "block_order": [
+        "item_QXg6Fr",
+        "item_gkpktG",
+        "item_biDiqX",
+        "item_wKnjBD",
+        "item_FM94gk",
+        "item_iLBEEf",
+        "item_69bnpY",
+        "item_XVXT8y",
+        "item_jiQyFT"
+      ],
+      "settings": {
+        "bg_color": "#fafafb",
+        "p_top": 50,
+        "p_bottom": 50
+      }
     }
   },
   "order": [
@@ -432,6 +507,7 @@
     "guarantee_objection_handling_jGLzWT",
     "announcement_bar_version_1_3Nznet",
     "apex_home_logo_list_RM6R7y",
-    "feature_highlight_rqJzVk"
+    "feature_highlight_rqJzVk",
+    "logo_greyed_out_JnVkyQ"
   ]
 }
