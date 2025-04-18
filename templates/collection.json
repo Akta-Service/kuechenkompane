@@ -11,19 +11,18 @@
   "sections": {
     "apex_timer_PAQRmU": {
       "type": "Apex-timer",
-      "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#D2861A",
+        "timer_clock": "#d2861a",
         "timer_clock_text_font_size": 12,
         "clock_font_weight": "400",
         "timer_text": "Unser exklusives Osterangebot läuft bald ab!",
         "timer_font_size": 12,
         "timer_color": "#5d5d5d",
         "timer_font_weight": "400",
-        "target_date": "2025-04-18",
+        "target_date": "2025-04-21",
         "target_time": "00:00:00"
       }
     },
