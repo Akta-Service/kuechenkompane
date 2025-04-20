@@ -248,17 +248,18 @@
       "default": false
     },
     {
-      "type": "text",
-      "id": "target_date",
-      "label": "Target Date (YYYY-MM-DD)",
-      "default": "2026-04-16"
+      "type": "number",
+      "id": "restart_interval",
+      "label": "Restart After (Hours)",      
+      "default": 8
     },
     {
       "type": "text",
-      "id": "target_time",
-      "label": "Target Time (HH:MM:SS, 24h format)",
-      "default": "00:00:00"
+      "id": "not_started_text",
+      "label": "Countdown Inactive Message",
+      "default": "Countdown not started"
     }
+
 
   ],
   "presets": [
@@ -271,49 +272,33 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const countdownElement = document.getElementById('countdown-global');
+
     const settings = {
-      enabled: {{ section.settings.start_countdown | json }}
+      enabled: {{ section.settings.start_countdown | json }},
+      intervalHours: {{ section.settings.restart_interval | json }},
+      notStartedText: {{ section.settings.not_started_text | json }}
     };
 
     if (!settings.enabled) {
-      countdownElement.textContent = "Countdown not started";
+      countdownElement.textContent = settings.notStartedText;
       return;
     }
 
-    // Save the first start time to localStorage (if not already saved)
-    const localStorageKey = 'apex_countdown_start_time';
-
-    if (!localStorage.getItem(localStorageKey)) {
-      localStorage.setItem(localStorageKey, new Date().toISOString());
-    }
-
-    const startDateTime = new Date(localStorage.getItem(localStorageKey));
-    const eightHoursInMs = 8 * 60 * 60 * 1000;
-
-    function getNextTargetTime() {
-      const now = new Date();
-      const elapsed = now - startDateTime;
-      const periodsPassed = Math.floor(elapsed / eightHoursInMs);
-      return new Date(startDateTime.getTime() + (periodsPassed + 1) * eightHoursInMs);
-    }
+    // Get the time when countdown started (when page loaded with checkbox = true)
+    const startTimestamp = new Date().getTime();
 
     function updateTimer() {
-      const targetTime = getNextTargetTime();
-      const now = new Date();
-      const timeRemaining = targetTime - now;
+      const now = new Date().getTime();
+      const intervalMillis = settings.intervalHours * 60 * 60 * 1000;
 
-      if (timeRemaining <= 0) {
-        countdownElement.textContent = "00:00:00:00";
-        return;
-      }
+      const timeSinceStart = (now - startTimestamp) % intervalMillis;
+      const timeRemaining = intervalMillis - timeSinceStart;
 
-      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
       const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
       const seconds = Math.floor((timeRemaining / 1000) % 60);
 
       countdownElement.textContent =
-        `${String(days).padStart(2, '0')}:` +
         `${String(hours).padStart(2, '0')}:` +
         `${String(minutes).padStart(2, '0')}:` +
         `${String(seconds).padStart(2, '0')}`;
@@ -323,6 +308,7 @@
     setInterval(updateTimer, 1000);
   });
 </script>
+
 
 
 
