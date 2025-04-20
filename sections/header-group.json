@@ -134,7 +134,7 @@
         "timer_font_size": 12,
         "timer_color": "#dcad27",
         "timer_font_weight": "400",
-        "start_countdown": true,
+        "start_countdown": false,
         "target_date": "2026-04-16",
         "target_time": "00:00:00"
       }
