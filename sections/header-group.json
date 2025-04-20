@@ -135,7 +135,7 @@
         "timer_color": "#dcad27",
         "timer_font_weight": "400",
         "start_countdown": true,
-        "restart_interval": 24,
+        "restart_interval": 99,
         "not_started_text": "Countdown not started"
       }
     }
