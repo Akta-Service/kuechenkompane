@@ -246,11 +246,14 @@
       "id": "start_countdown",
       "label": "Start Countdown",
       "default": false
-    },
+    },    
     {
-      "type": "number",
+      "type": "range",
       "id": "restart_interval",
-      "label": "Restart After (Hours)",      
+      "label": "Restart After (Hours)",
+      "min": 1,
+      "max": 24,
+      "step": 1,      
       "default": 8
     },
     {
