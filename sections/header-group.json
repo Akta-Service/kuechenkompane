@@ -120,10 +120,28 @@
         "mb_show_country_selector": true,
         "mb_show_language_switcher": true
       }
+    },
+    "apex_timer_restart_9GqcWT": {
+      "type": "APEX-timer-restart",
+      "settings": {
+        "bg_color": "#1c1d1d",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#fff",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "400",
+        "timer_text": "Time’s running out on our biggest sale!",
+        "timer_font_size": 12,
+        "timer_color": "#dcad27",
+        "timer_font_weight": "400",
+        "target_date": "2026-04-16",
+        "target_time": "00:00:00"
+      }
     }
   },
   "order": [
     "annoucement",
-    "header"
+    "header",
+    "apex_timer_restart_9GqcWT"
   ]
 }
