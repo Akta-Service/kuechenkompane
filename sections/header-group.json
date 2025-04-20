@@ -135,8 +135,8 @@
         "timer_color": "#dcad27",
         "timer_font_weight": "400",
         "start_countdown": false,
-        "target_date": "2026-04-16",
-        "target_time": "00:00:00"
+        "restart_interval": 8,
+        "not_started_text": "Countdown not"
       }
     }
   },
