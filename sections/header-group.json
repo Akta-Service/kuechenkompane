@@ -127,13 +127,14 @@
         "bg_color": "#1c1d1d",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#fff",
+        "timer_clock": "#ffffff",
         "timer_clock_text_font_size": 12,
         "clock_font_weight": "400",
         "timer_text": "Time’s running out on our biggest sale!",
         "timer_font_size": 12,
         "timer_color": "#dcad27",
         "timer_font_weight": "400",
+        "start_countdown": true,
         "target_date": "2026-04-16",
         "target_time": "00:00:00"
       }
