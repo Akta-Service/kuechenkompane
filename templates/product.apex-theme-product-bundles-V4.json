@@ -44,7 +44,7 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "400",
-        "target_date": "2025-04-21",
+        "target_date": "2025-04-22",
         "target_time": "00:00:00"
       }
     },
@@ -63,7 +63,8 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "Nur für kurze Zeit im Sonderangebot!",
-            "subtitle_font_size": 16
+            "subtitle_font_size": 16,
+            "subtitle_weight": "400"
           }
         },
         "review_Tgbbak": {
