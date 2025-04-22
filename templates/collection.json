@@ -11,6 +11,7 @@
   "sections": {
     "apex_timer_PAQRmU": {
       "type": "Apex-timer",
+      "disabled": true,
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
