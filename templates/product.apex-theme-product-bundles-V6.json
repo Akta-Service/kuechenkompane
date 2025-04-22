@@ -33,6 +33,7 @@
     },
     "apex_timer_HYgPRV": {
       "type": "Apex-timer",
+      "disabled": true,
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
@@ -129,7 +130,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Preis nur im Osterangebot – danach wieder 595,00 €</p>",
+            "featurelist_item": "<p>Nur jetzt im Angebot – danach wieder 595,00 €</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -138,7 +139,7 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Hol dir das Beste für deine Küche – exklusiv im Oster-Special</p>",
+            "featurelist_item": "<p>Nie wieder stumpfe Küchenmesser</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
