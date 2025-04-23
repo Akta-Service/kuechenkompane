@@ -83,7 +83,8 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "",
-            "subtitle_font_size": 15
+            "subtitle_font_size": 15,
+            "subtitle_weight": "400"
           }
         },
         "subtitle_mGfN7N": {
@@ -91,7 +92,8 @@
           "disabled": true,
           "settings": {
             "subtitle": "Limitiert auf 100 Sets",
-            "subtitle_font_size": 16
+            "subtitle_font_size": 16,
+            "subtitle_weight": "500"
           }
         },
         "viewer_stock_count_MFNhKz": {
