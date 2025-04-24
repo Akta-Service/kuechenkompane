@@ -9,23 +9,6 @@
  */
 {
   "sections": {
-    "apex_timer_PAQRmU": {
-      "type": "Apex-timer",
-      "settings": {
-        "bg_color": "#dce5dc",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#d2861a",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "400",
-        "timer_text": "Unser exklusives Osterangebot läuft bald ab!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-04-28",
-        "target_time": "00:00:00"
-      }
-    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -61,6 +44,23 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "500",
+        "target_date": "2025-04-28",
+        "target_time": "00:00:00"
+      }
+    },
+    "apex_timer_PAQRmU": {
+      "type": "Apex-timer",
+      "settings": {
+        "bg_color": "#dce5dc",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#d2861a",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "400",
+        "timer_text": "Unser Exklusives Angebot läuft bald ab!",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "400",
         "target_date": "2025-04-28",
         "target_time": "00:00:00"
       }
