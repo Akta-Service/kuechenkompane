@@ -11,20 +11,6 @@
   "type": "header",
   "name": "Header",
   "sections": {
-    "announcement_bar_version_1_U3BLGn": {
-      "type": "announcement-bar-version-1",
-      "settings": {
-        "color_scheme": "scheme-9c5e8ed6-b8f4-45f1-aa5a-c22d8f7122a7",
-        "pt": 15,
-        "pb": 15,
-        "ann_title": "Frühlings-Angebot | Alles Muss Raus!",
-        "ann_title_size": 16,
-        "ann_title_size_m": 16,
-        "text": "",
-        "text_size": 16,
-        "text_size_m": 16
-      }
-    },
     "annoucement": {
       "type": "annoucement",
       "blocks": {
@@ -57,7 +43,6 @@
         "item_6Ycmkw",
         "item_PjeGnW"
       ],
-      "disabled": true,
       "custom_css": [
         ".m-announcement-bar__container {--container-width: 600px;}",
         ".m-slider-controls__wrapper {display: none;}"
@@ -138,7 +123,6 @@
     }
   },
   "order": [
-    "announcement_bar_version_1_U3BLGn",
     "annoucement",
     "header"
   ]
