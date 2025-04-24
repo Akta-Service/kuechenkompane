@@ -47,6 +47,24 @@
         "enable_bg_zoom_effect": true
       }
     },
+    "apex_timer_9PnBtn": {
+      "type": "Apex-timer",
+      "name": "Apex Product Timer",
+      "settings": {
+        "bg_color": "#c6d1c4",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#000000",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "600",
+        "timer_text": "Unser Angebot endet in kürze!",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "500",
+        "target_date": "2026-04-16",
+        "target_time": "00:00:00"
+      }
+    },
     "main": {
       "type": "main-collection-product-grid",
       "custom_css": [
@@ -138,6 +156,7 @@
   "order": [
     "apex_timer_PAQRmU",
     "collection-header",
+    "apex_timer_9PnBtn",
     "main",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"
