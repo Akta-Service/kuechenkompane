@@ -695,21 +695,9 @@
         "custom_class": "",
         "animations": "inherit"
       }
-    },
-    "breadcrumb_GVQxKG": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
     }
   },
   "order": [
-    "breadcrumb_GVQxKG",
     "main",
     "product-details-tabs",
     "scrolling_promotion_tQjfnh",
