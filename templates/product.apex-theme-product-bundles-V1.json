@@ -52,21 +52,6 @@
     "apex_theme_product_page_copy_bfPEWH": {
       "type": "apex-theme-product-page-copy",
       "blocks": {
-        "loox_reviews_loox_rating_UKWUA4": {
-          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "settings": {
-            "contentSize": 16,
-            "pattern": "([count]) Bewertungen",
-            "hideText": false,
-            "alignment": "",
-            "layout": "",
-            "textColor": "",
-            "starColor": "",
-            "showAllReviews": false,
-            "looxOpenFloatingWidget": false,
-            "emptyRatingWidget": false
-          }
-        },
         "title_Bac9Mk": {
           "type": "title",
           "settings": {
@@ -81,6 +66,21 @@
             "subtitle": "Nur für kurze Zeit im Sonderangebot!",
             "subtitle_font_size": 16,
             "subtitle_weight": "400"
+          }
+        },
+        "loox_reviews_loox_rating_UKWUA4": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "([count]) Bewertungen",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
           }
         },
         "ratings_fD4VNJ": {
@@ -184,9 +184,9 @@
         }
       },
       "block_order": [
-        "loox_reviews_loox_rating_UKWUA4",
         "title_Bac9Mk",
         "subtitle_xQXVba",
+        "loox_reviews_loox_rating_UKWUA4",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
         "viewer_stock_count_MFNhKz",
