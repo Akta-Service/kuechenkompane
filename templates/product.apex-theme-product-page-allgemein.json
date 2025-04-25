@@ -47,7 +47,8 @@
           "disabled": true,
           "settings": {
             "subtitle": "Müheloses Schneiden dank höchster Qualität!",
-            "subtitle_font_size": 16
+            "subtitle_font_size": 16,
+            "subtitle_weight": "400"
           }
         },
         "review_Tgbbak": {
@@ -81,7 +82,7 @@
             "price_color": "#000000",
             "c_price_color": "#bbbbbb",
             "per_badge_bg": "#000000",
-            "per_badge_color": "#000000",
+            "per_badge_color": "#ffffff",
             "f_s": 22,
             "f_s_m": 18,
             "price_font_weight": "600"
@@ -160,9 +161,9 @@
             "info_text_2": "Kostenloser Versand ab 100€",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
             "info_text_3": "Beste Preis-Leistung",
-            "info_bg_color": "#fff",
-            "info_border_color": "#000",
-            "info_text_color": "#000",
+            "info_bg_color": "#ffffff",
+            "info_border_color": "#000000",
+            "info_text_color": "#000000",
             "invert_img_color": false
           }
         }
