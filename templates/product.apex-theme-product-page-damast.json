@@ -42,12 +42,19 @@
             "font_weight_t": "400"
           }
         },
-        "review_Tgbbak": {
-          "type": "review",
+        "loox_reviews_loox_rating_a8TFE7": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
-            "p": "4391 Bewertungen",
-            "star_range": 5,
-            "star_color": "#000000"
+            "contentSize": 16,
+            "pattern": "([count]) Bewertungen",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
           }
         },
         "ratings_fD4VNJ": {
@@ -83,7 +90,8 @@
           "type": "subtitle",
           "settings": {
             "subtitle": "",
-            "subtitle_font_size": 15
+            "subtitle_font_size": 15,
+            "subtitle_weight": "400"
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -183,7 +191,7 @@
       },
       "block_order": [
         "title_Bac9Mk",
-        "review_Tgbbak",
+        "loox_reviews_loox_rating_a8TFE7",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
         "subtitle_xQXVba",
