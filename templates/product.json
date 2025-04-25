@@ -325,7 +325,9 @@
         "color_scheme": "",
         "vertical_padding": 50,
         "vertical_padding_mobile": 30,
-        "heading_type": "mrk-h1"
+        "heading_type": "mrk-h1",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "usp_list_jDiFMg": {
@@ -457,6 +459,7 @@
         "heading_type": "mrk-h1",
         "subheading": "",
         "description": "",
+        "p_size": "p-medium",
         "container": "container-fluid",
         "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
         "content_color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
@@ -506,7 +509,9 @@
         "reverse": true,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "benefit_text_right_pNKQLU": {
@@ -545,7 +550,9 @@
         "reverse": false,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2"
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "collapsible_tabs_JndiBV": {
@@ -688,9 +695,21 @@
         "custom_class": "",
         "animations": "inherit"
       }
+    },
+    "breadcrumb_GVQxKG": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
     }
   },
   "order": [
+    "breadcrumb_GVQxKG",
     "main",
     "product-details-tabs",
     "scrolling_promotion_tQjfnh",
