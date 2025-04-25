@@ -31,24 +31,6 @@
         "sticky_atc_compare": false
       }
     },
-    "apex_timer_HYgPRV": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "settings": {
-        "bg_color": "#dce5dc",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#d2861a",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "400",
-        "timer_text": "Unser exklusives Osterangebot läuft bald ab!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-04-22",
-        "target_time": "00:00:00"
-      }
-    },
     "apex_theme_product_page_copy_bfPEWH": {
       "type": "apex-theme-product-page-copy",
       "blocks": {
@@ -1250,7 +1232,6 @@
   },
   "order": [
     "main",
-    "apex_timer_HYgPRV",
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
     "product-details-tabs",
