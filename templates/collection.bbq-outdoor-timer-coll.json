@@ -29,43 +29,6 @@
         "enable_bg_zoom_effect": true
       }
     },
-    "apex_timer_9PnBtn": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "name": "Apex Product Timer",
-      "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#000000",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "600",
-        "timer_text": "Unser Angebot endet in kürze!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "500",
-        "target_date": "2025-04-28",
-        "target_time": "00:00:00"
-      }
-    },
-    "apex_timer_PAQRmU": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "settings": {
-        "bg_color": "#dce5dc",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#d2861a",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "400",
-        "timer_text": "Unser Exklusives Angebot läuft bald ab!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-04-28",
-        "target_time": "00:00:00"
-      }
-    },
     "main": {
       "type": "main-collection-product-grid",
       "custom_css": [
@@ -156,8 +119,6 @@
   },
   "order": [
     "collection-header",
-    "apex_timer_9PnBtn",
-    "apex_timer_PAQRmU",
     "main",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"
