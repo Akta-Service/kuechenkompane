@@ -11,7 +11,6 @@
   "sections": {
     "apex_timer_9Rjc9m": {
       "type": "Apex-timer",
-      "disabled": true,
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
@@ -23,7 +22,7 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "400",
-        "target_date": "2025-04-21",
+        "target_date": "2025-05-05",
         "target_time": "00:00:00"
       }
     },
