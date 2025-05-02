@@ -259,8 +259,8 @@
         "faq_pDwHXa": {
           "type": "faq",
           "settings": {
-            "question": "{{ product.metafields.custom.accordion_title_3.value }}",
-            "answer": "<p><strong>Produktdetails</strong></p><ul><li>Klingenmaterial: 7CR17 Edelstahl</li><li>Griffmaterial: Pakka-Holzgriff</li><li>Härtegrad: 60±2 HRC</li><li>Schliff: beidseitig (Brotmesser ausgeschlossen)</li><li>Schleifwinkel: 15°</li><li>Rostfrei: Ja</li><li>Für Links-und Rechtshänder: Ja</li></ul><p></p><p><strong>Lieferumfang</strong></p><p><strong>+ GRATIS Messerblock & Schärfer</strong></p><ul><li>Chefmesser </li><li>Santokumesser 7“ </li><li>Nakiri Messer </li><li>Filetiermesser </li><li>Brotmesser </li><li>Yanagiba Messer </li><li>Santoku Messer 5“ </li><li>Sichere Aufbewahrungsbox</li></ul>"
+            "question": "Lieferumfang und Produktdetails",
+            "answer": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}"
           }
         }
       },
@@ -274,10 +274,10 @@
         "color_scheme": "badge-hot",
         "title": "Gleite mühelos durch alles wie Butter",
         "heading_type": "mrk-h3",
-        "description": "{{ product.description }}",
+        "description": "<p>{{ product.description }}</p>",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": false,
+        "add_showore_btn": true,
         "readmore": "Mehr lesen",
         "readless": "Weniger Lesen",
         "br_color": "#000000",
