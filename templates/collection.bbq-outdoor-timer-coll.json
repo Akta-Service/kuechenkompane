@@ -13,15 +13,15 @@
       "type": "Apex-timer",
       "name": "Apex Product Timer",
       "settings": {
-        "bg_color": "#1c1d1d",
+        "bg_color": "#dce5dc",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#fff",
+        "timer_clock": "#d2861a",
         "timer_clock_text_font_size": 12,
         "clock_font_weight": "400",
         "timer_text": "Damast Sale! 80% Rabatt mit dem Code: DAMAST80",
         "timer_font_size": 12,
-        "timer_color": "#dcad27",
+        "timer_color": "#000000",
         "timer_font_weight": "400",
         "target_date": "2026-05-05",
         "target_time": "00:00:00"
