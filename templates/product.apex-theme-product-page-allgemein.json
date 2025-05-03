@@ -212,26 +212,18 @@
     "product_descrption_accordion_btdDtQ": {
       "type": "product-descrption-accordion",
       "blocks": {
-        "faq_fqQbjd": {
-          "type": "faq",
-          "disabled": true,
-          "settings": {
-            "question": "{{ product.metafields.custom.accordion_title_1.value }}",
-            "answer": "<p></p>{{ product.metafields.custom.accordion_content_1 | metafield_tag }}"
-          }
-        },
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
             "question": "100 Tage kostenlos testen",
-            "answer": "{{ product.metafields.custom.accordion_content_4 | metafield_tag }}"
+            "answer": "<p>{{ product.metafields.custom.accordion_content_4 | metafield_tag }}</p>"
           }
         },
         "faq_kQAWhE": {
           "type": "faq",
           "settings": {
             "question": "{{ product.metafields.custom.accordion_title_2.value }}",
-            "answer": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}"
+            "answer": "<p>{{ product.metafields.custom.accordion_content_2 | metafield_tag }}</p>"
           }
         },
         "faq_pDwHXa": {
@@ -243,7 +235,6 @@
         }
       },
       "block_order": [
-        "faq_fqQbjd",
         "faq_jkYPLV",
         "faq_kQAWhE",
         "faq_pDwHXa"
@@ -1055,7 +1046,7 @@
         "heading_type": "mrk-h2",
         "des": "Diese Frage haben uns schon viele gestellt. Die Antwort ist einfach: Wir sind zu 100 % überzeugt von unseren Produkten! Und das aus gutem Grund, denn unsere Produkte wurden:",
         "des_size": "p-medium",
-        "img": "shopify://shop_images/chef-working-together-professional-kitchen.jpg",
+        "img": "shopify://shop_images/Grunder_DE_1.png",
         "verticle_padding": 70,
         "horizontal_padding": 0,
         "border_t": false,
