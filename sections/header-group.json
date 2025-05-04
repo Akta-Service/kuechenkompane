@@ -120,10 +120,26 @@
         "mb_show_country_selector": true,
         "mb_show_language_switcher": true
       }
+    },
+    "announcement_bar_version_1_copy_GBrcEC": {
+      "type": "announcement-bar-version-1-copy",
+      "name": "APEX Sale Announcement",
+      "settings": {
+        "color_scheme": "",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "LEI OF LOVE",
+        "ann_title_size": 16,
+        "ann_title_size_m": 16,
+        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
+        "text_size": 16,
+        "text_size_m": 16
+      }
     }
   },
   "order": [
     "annoucement",
-    "header"
+    "header",
+    "announcement_bar_version_1_copy_GBrcEC"
   ]
 }
