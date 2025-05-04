@@ -1,4 +1,16 @@
-{% if template == 'product' and product.tags contains 'sale announcement' %}
+{% assign tag_list = section.settings.target_tags | split: ',' %}
+{% assign matched = false %}
+
+{% if template contains 'product' and product %}
+  {% for tag in tag_list %}
+    {% assign tag_trimmed = tag | strip %}
+    {% if product.tags contains tag_trimmed %}
+      {% assign matched = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if matched %}
   <style>
     /* common css end  */
     .announcement-container {
@@ -53,6 +65,17 @@
   {
     "name": "APEX Sale Announcement",
     "settings": [
+      {
+        "type": "header",
+        "content": "Tags "
+      },
+      {
+        "type": "textarea",
+        "id": "target_tags",
+        "label": "Trigger Tags",
+        "default": "sale announcement",
+        "info": "Enter a single tag (e.g., 'sale') or multiple tags separated by commas (e.g., 'sale, promo, flash-deal')."
+      },
       {
         "type": "color_scheme",
         "id": "color_scheme",
