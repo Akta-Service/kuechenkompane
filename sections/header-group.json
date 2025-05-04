@@ -123,9 +123,10 @@
     },
     "announcement_bar_version_1_copy_GBrcEC": {
       "type": "announcement-bar-version-1-copy",
+      "disabled": true,
       "name": "APEX Sale Announcement",
       "settings": {
-        "target_tags": "test2",
+        "target_tags": "",
         "color_scheme": "dark",
         "pt": 13,
         "pb": 19,
