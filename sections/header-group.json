@@ -125,15 +125,18 @@
       "type": "announcement-bar-version-1-copy",
       "name": "APEX Sale Announcement",
       "settings": {
+        "target_tags": "no-knives-set",
         "color_scheme": "dark",
         "pt": 13,
         "pb": 19,
         "ann_title": "Frühlings-Angebot | Alles muss raus!",
         "ann_title_size": 18,
         "ann_title_size_m": 16,
+        "top_fw": "700",
         "text": "<p>Bis zu -70% Rabatt + GRATIS Produkte</p>",
         "text_size": 18,
-        "text_size_m": 16
+        "text_size_m": 16,
+        "text_fw": "400"
       }
     }
   },
