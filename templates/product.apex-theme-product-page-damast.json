@@ -11,12 +11,13 @@
   "sections": {
     "apex_timer_kk8rAh": {
       "type": "Apex-timer",
+      "disabled": true,
       "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#FA8526",
+        "timer_clock": "#fa8526",
         "timer_clock_text_font_size": 12,
         "clock_font_weight": "400",
         "timer_text": "DAMAST SALE! 80% Rabatt mit dem Code \"DAMAST80\"",
