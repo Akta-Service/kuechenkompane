@@ -96,6 +96,7 @@
         },
         "subtitle_xQXVba": {
           "type": "subtitle",
+          "disabled": true,
           "settings": {
             "subtitle": "👉 Update: Angebot endet Mitternacht wegen niedrigem Lagerbestand",
             "subtitle_font_size": 15,
@@ -113,6 +114,7 @@
         },
         "viewer_stock_count_MFNhKz": {
           "type": "viewerStockCount",
+          "disabled": true,
           "settings": {
             "viewer_count_font_size": 16,
             "view_main_text_1": "Personen",
