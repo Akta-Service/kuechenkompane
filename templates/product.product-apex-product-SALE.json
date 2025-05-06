@@ -23,7 +23,7 @@
         "timer_font_size": 14,
         "timer_color": "#000000",
         "timer_font_weight": "400",
-        "target_date": "2025-04-16",
+        "target_date": "2025-05-09",
         "target_time": "00:00:00"
       }
     },
@@ -114,9 +114,8 @@
         },
         "subtitle_xQXVba": {
           "type": "subtitle",
-          "disabled": true,
           "settings": {
-            "subtitle": "👉 Update: Angebot endet Mitternacht wegen niedrigem Lagerbestand",
+            "subtitle": "👉 Update: Unsere Geburtstags-Aktion endet morgen",
             "subtitle_font_size": 15,
             "subtitle_weight": "500"
           }
@@ -132,7 +131,6 @@
         },
         "viewer_stock_count_MFNhKz": {
           "type": "viewerStockCount",
-          "disabled": true,
           "settings": {
             "viewer_count_font_size": 16,
             "view_main_text_1": "Personen",
@@ -167,7 +165,6 @@
         },
         "featurelist_item_iiW6aD": {
           "type": "featurelist_item",
-          "disabled": true,
           "settings": {
             "featurelist_item": "{{ product.metafields.custom.list_1st_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
@@ -177,7 +174,6 @@
         },
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
-          "disabled": true,
           "settings": {
             "featurelist_item": "<p>{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}</p>",
             "featurelist_item_color": "#000000",
@@ -187,7 +183,6 @@
         },
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
-          "disabled": true,
           "settings": {
             "featurelist_item": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
@@ -323,7 +318,7 @@
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": false,
+        "add_showore_btn": true,
         "readmore": "Mehr lesen",
         "readless": "Weniger Lesen",
         "br_color": "#000000",
