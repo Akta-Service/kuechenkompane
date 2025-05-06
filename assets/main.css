@@ -2999,9 +2999,7 @@ sup {
     display: none;
   }
 }
-.apex-product-page .m-product-option--label {
-  display: none;
-}
+
 @media screen and (max-width: 767px) {
   .m-product-form--input {
     width: 100%;
