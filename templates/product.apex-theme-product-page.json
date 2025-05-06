@@ -1282,7 +1282,7 @@
       "type": "custom-liquid",
       "name": "Custom liquid",
       "settings": {
-        "custom_liquid": "",
+        "custom_liquid": "?utm_email=testing.email@gmail.com",
         "custom_class": ""
       }
     }
