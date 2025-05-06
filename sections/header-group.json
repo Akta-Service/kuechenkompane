@@ -126,14 +126,14 @@
       "name": "APEX Sale Announcement",
       "settings": {
         "target_tags": "sale announcement",
-        "color_scheme": "dark",
+        "color_scheme": "scheme-9c5e8ed6-b8f4-45f1-aa5a-c22d8f7122a7",
         "pt": 13,
         "pb": 19,
-        "ann_title": "Frühlings-Angebot | Alles muss raus!",
+        "ann_title": "Unsere größte Geburtstags-Aktion",
         "ann_title_size": 18,
         "ann_title_size_m": 16,
         "top_fw": "700",
-        "text": "<p>Bis zu -70% Rabatt + GRATIS Produkte</p>",
+        "text": "<p><strong>Nur für 48 Stunden: Spare 70%!</strong></p>",
         "text_size": 18,
         "text_size_m": 16,
         "text_fw": "400"
