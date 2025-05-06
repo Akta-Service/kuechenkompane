@@ -31,18 +31,21 @@
   endunless
 %}
 
-  {% style %}
+{% style %}
+.m-0{
+  margin: 0;
+}
   {% for block in section.blocks %}
-    {%  case block.type %}  
+    {%  case block.type %}
     {%- when 'title' -%}
       .rs-product-title{
         font-size: {{ block.settings.p_t_s |  append: 'px'}};
         font-weight: {{ block.settings.font_weight_t }}
       }
-      @media only screen and (max-width:768px){        
+      @media only screen and (max-width:768px){
         .rs-product-title{
           font-size: {{ block.settings.p_t_s_m | append: 'px' }};
-        }  
+        }
       }
     {% when 'price' %}
       .rs-price{
@@ -69,16 +72,16 @@
         border-radius: 14px;
         padding: 3px 7px;
         line-height: 1;
-      }  
-      @media only screen and (max-width:768px){       
+      }
+      @media only screen and (max-width:768px){
         .rs-price{
           padding-top: {{ block.settings.p_pt_m }}px;
           padding-bottom: {{ block.settings.p_pb_m }}px;
-        }       
-        .rs-price .rs-current-price{   
+        }
+        .rs-price .rs-current-price{
           font-size: {{ block.settings.f_s_m |  append: 'px' }};
         }
-        .rs-price .rs-compare-price{   
+        .rs-price .rs-compare-price{
           font-size: {{ block.settings.f_s_m |  append: 'px' }};
         }
       }
@@ -101,22 +104,22 @@
       .info-card {
         border: 1px solid {{ block.settings.info_border_color }};
         background: {{ block.settings.info_bg_color }};
-        color: {{ block.settings.info_text_color }};        
+        color: {{ block.settings.info_text_color }};
       }
       .rs-product-info.invert-image img {
         filter: invert(1);
       }
-      
+
 
   /* -------------- */
- 
-    {% endcase %}   
+
+    {% endcase %}
     {% if block.settings.invert_img %}
-      .product-feature-item img {   
+      .product-feature-item img {
         filter: invert(1);
       }
     {% endif %}
-  {% endfor %}  
+  {% endfor %}
 {% endstyle %}
 {% comment %} Fallback for case not show block price, buy buttons {% endcomment %}
 <input type="hidden" name="id" value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}" disabled>
@@ -177,20 +180,29 @@
       {% when 'subtitle' %}
         <h4
           class="rs-product-subtitle"
-          style="           
-            font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+          style="
+                        font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
           "
         >
           {{ block.settings.subtitle }}
         </h4>
       {% when 'review' %}
         <a href="#looxReviews">
-          <div class="prouduct-review">            
+          <div class="prouduct-review">
             {% assign star_count = block.settings.star_range %}
             {% assign star_color = block.settings.star_color %}
             {% for i in (1..star_count) %}
-              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="655.359" height="655.359" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd" viewBox="0 0 6.827 6.827"><path style="fill:{{ star_color }};fill-rule:nonzero" d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"/><path style="fill:{{ star_color }};fill-rule:nonzero" d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"/><path style="fill:none" d="M0 0h6.827v6.827H0z"/></svg>
-           {% endfor %}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                width="655.359"
+                height="655.359"
+                style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd"
+                viewBox="0 0 6.827 6.827"
+              >
+                <path style="fill:{{ star_color }};fill-rule:nonzero" d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923-1.343.923-.239.164.082-.278.462-1.564-1.292-.992-.23-.176.29-.008 1.63-.044.544-1.535.097-.274z"/><path style="fill:{{ star_color }};fill-rule:nonzero" d="m3.51 1.252.546 1.536 1.628.043.29.008-.23.176-1.293.993.463 1.563.082.277-.239-.163-1.344-.923V.98z"/><path style="fill:none" d="M0 0h6.827v6.827H0z"/>
+              </svg>
+            {% endfor %}
             <span> {{ block.settings.p }}</span>
           </div>
         </a>
@@ -208,7 +220,9 @@
                 <img src="{{ block.settings.likeImg3 |  img_url: 'small' }}" alt="">
               {% endif %}
             </div>
-            <span class="like-count" style="background: {{ block.settings.like_bg}};">{{ block.settings.likecount }}</span>
+            <span class="like-count" style="background: {{ block.settings.like_bg}};">
+              {{- block.settings.likecount -}}
+            </span>
             <p class="like-info">{{ block.settings.likeinfo }}</p>
           </div>
           {% if product.tags contains 'HOHE NACHFRAGE' %}
@@ -220,27 +234,14 @@
         </div>
       {% when 'price' %}
         <div class="rs-price">
-          <span class="rs-current-price">{{ product.selected_or_first_available_variant.price | money }}     
-
-
-              {% if product.compare_at_price == blank %}
-                <small>&nbsp;inkl. MwSt.</small>
-              {% endif %}
-
-            
-    </span>
-            
-        </span>          
+          <span class="rs-current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
           {% if product.selected_or_first_available_variant.price < product.compare_at_price %}
             <span class="rs-compare-price">{{ product.compare_at_price | money }}</span>
             {% assign price = product.selected_or_first_available_variant.price %}
-            {% assign compare_price = product.compare_at_price %}            
+            {% assign compare_price = product.compare_at_price %}
             {% assign discount_amount = compare_price | minus: price %}
-            {% assign discount_percentage = discount_amount | times: 100 | divided_by: compare_price | round: 0 %}            
+            {% assign discount_percentage = discount_amount | times: 100 | divided_by: compare_price | round: 0 %}
             <span class="discount-percentage">-{{ discount_percentage }}%</span>
-        
-            <p><small>inkl. MwSt.</small>       </p>
-
           {% endif %}
         </div>
 
@@ -249,9 +250,7 @@
       {% when 'featurelist_header' %}
         <p
           class="feature-header"
-          style="            
-            font-size: {{ block.settings.featurelist_header_size |  default: 14}}px;
-          "
+          style="            font-size: {{ block.settings.featurelist_header_size |  default: 14}}px;"
         >
           {% if block.settings.featureHeader != blank %}
             <img
@@ -264,9 +263,7 @@
       {% when 'featurelist_item' %}
         <div
           class="product-feature-item"
-          style="            
-            font-size: {{ block.settings.featurelist_item_size |  default: 14}}px;
-          "
+          style="            font-size: {{ block.settings.featurelist_item_size |  default: 14}}px;"
         >
           {% if block.settings.featurelist_item != blank %}
             <img
@@ -284,14 +281,13 @@
           {% else %}
             {%- render 'payment-icons' -%}
           {% endif %}
-
         </div>
 
       {% when 'productInfo' %}
         <div class="rs-product-info {% if block.settings.invert_img_color != false %}invert-image{% endif %}">
           <div class="info-card">
             {% if block.settings.info_text_1 != blank %}
-              <img  src="{{ block.settings.info_img_1 |  img_url: 'medium' }}" alt="" class="info-icon">
+              <img src="{{ block.settings.info_img_1 |  img_url: 'medium' }}" alt="" class="info-icon">
             {% endif %}
             <p class="product-info-text">{{ block.settings.info_text_1 }}</p>
           </div>
@@ -551,9 +547,9 @@
             <div class="m-product-form--wrapper m:display-flex m:flex-wrap m:items-center">
               {% if block.settings.show_quantity_selector %}
                 <div class="m-product-form--input">
-                  <label class="m-product-option--label">
+                  {% comment %} <label class="m-product-option--label">
                     {{ 'products.product.quantity' | t }}
-                  </label>
+                  </label> {% endcomment %}
                   {% render 'product-qty-input', product_form_id: product_form_id, product: product %}
                 </div>
               {% endif %}
