@@ -178,7 +178,7 @@
       <div class="m-main-product--info apex-theme-info m:column {{ info_class }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
         <div class="m-product-info--wrapper m:text-color-body">
           {% render 'apex-product-blocks', section: section, product: product %}
-        </div> 
+        </div>
       </div>
       <script id="productData" type="application/json">
         {{ product | json }}
@@ -207,7 +207,7 @@
 {%- if product.options_with_values.size > 0 -%}
   <script src="{{ 'variant-picker.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-
+ <script src="{{ 'mrk-mobile-variant-picker.js' | asset_url }}" defer="defer"></script>
 {%- render 'product-data' -%}
 
 <script>
@@ -230,7 +230,7 @@
     {
       "type": "header",
       "content": "General"
-    },   
+    },
     {
       "type": "select",
       "id": "container",
@@ -524,7 +524,7 @@
             { "value": "900", "label": "Black (900)" }
           ],
           "default": "400"
-        }      
+        }
       ]
     },
     {
@@ -777,7 +777,7 @@
           "id": "view_main_text_2",
           "label": "View Main Text",
           "default": "are currently looking at this product"
-        },        
+        },
         {
           "type": "range",
           "id": "viewer_margin_top",
@@ -797,7 +797,7 @@
           "unit": "px",
           "label": "View spacing Bottom",
           "default": 10
-        },        
+        },
         {
           "type": "range",
           "id": "margin_size_mobile_top",
@@ -883,9 +883,9 @@
           "id": "product_main_text_2",
           "label": "Product Main Text",
           "default": "left in stock"
-        },       
-        
-        
+        },
+
+
         {
           "type": "number",
           "id": "viewer_count_time",
@@ -897,7 +897,7 @@
           "id": "stock_count_time",
           "label": "Add Stock Update Time Delay (milliseconds )",
           "default": 5000
-        },        
+        },
         {
           "type": "checkbox",
           "id": "stock_count_show",
@@ -915,7 +915,7 @@
           "id": "featureHeader",
           "label": "Feature Header",
           "default": "30-day satisfaction guarantee"
-        },        
+        },
         {
           "type": "range",
           "id": "featurelist_header_size",
@@ -997,7 +997,7 @@
         {
           "type": "checkbox",
           "id": "invert_img",
-          "label": "Invert Icon Color"         
+          "label": "Invert Icon Color"
         }
       ]
     },
