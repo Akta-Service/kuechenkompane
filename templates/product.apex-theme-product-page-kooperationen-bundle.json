@@ -9,23 +9,6 @@
  */
 {
   "sections": {
-    "apex_timer_9Rjc9m": {
-      "type": "Apex-timer",
-      "settings": {
-        "bg_color": "#dce5dc",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#d2861a",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "400",
-        "timer_text": "Das Angebot endet am Sonntag!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-05-05",
-        "target_time": "00:00:00"
-      }
-    },
     "main": {
       "type": "main-product",
       "disabled": true,
@@ -144,6 +127,12 @@
             "invert_img": false
           }
         },
+        "variant_picker_gHAcRh": {
+          "type": "variant_picker",
+          "settings": {
+            "size_title": "Size"
+          }
+        },
         "buy_buttons_3hQqVi": {
           "type": "buy_buttons",
           "settings": {
@@ -184,6 +173,7 @@
         "viewer_stock_count_MFNhKz",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
+        "variant_picker_gHAcRh",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
@@ -1216,7 +1206,6 @@
     }
   },
   "order": [
-    "apex_timer_9Rjc9m",
     "main",
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
