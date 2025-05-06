@@ -292,7 +292,7 @@
       "settings": {
         "color_scheme": "badge-hot",
         "title": "Gleite mühelos durch alles wie Butter",
-        "heading_type": "mrk-h3",
+        "heading_type": "mrk-h2",
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
@@ -414,8 +414,8 @@
         ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
       ],
       "settings": {
-        "Gesehen_title": "Gesehen In",
-        "heading_type": "mrk-h3",
+        "Gesehen_title": "Bekannt aus",
+        "heading_type": "mrk-h2",
         "text_alignment": "center",
         "container": "w-full",
         "direction": "left",
@@ -570,7 +570,7 @@
         "color_scheme": "badge-hot",
         "vertical_padding": 50,
         "vertical_padding_mobile": 30,
-        "heading_type": "mrk-h3",
+        "heading_type": "mrk-h2",
         "sub_heading": "p-medium",
         "des_size": "p-medium"
       }
@@ -794,7 +794,7 @@
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "Das Messerset erobert Deutschland",
-        "heading_type": "mrk-h3",
+        "heading_type": "mrk-h2",
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "",
         "autoplay": false
