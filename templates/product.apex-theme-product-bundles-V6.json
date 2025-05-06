@@ -127,6 +127,12 @@
             "invert_img": false
           }
         },
+        "variant_picker_EjmBnE": {
+          "type": "variant_picker",
+          "settings": {
+            "size_title": "Size"
+          }
+        },
         "buy_buttons_3hQqVi": {
           "type": "buy_buttons",
           "settings": {
@@ -167,6 +173,7 @@
         "viewer_stock_count_MFNhKz",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
+        "variant_picker_EjmBnE",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
