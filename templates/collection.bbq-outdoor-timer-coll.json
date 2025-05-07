@@ -9,6 +9,22 @@
  */
 {
   "sections": {
+    "announcement_bar_version_1_PYEQnF": {
+      "type": "announcement-bar-version-1",
+      "disabled": true,
+      "name": "APEX Announcement Bar 1",
+      "settings": {
+        "color_scheme": "",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "LEI OF LOVE",
+        "ann_title_size": 16,
+        "ann_title_size_m": 16,
+        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
+        "text_size": 16,
+        "text_size_m": 16
+      }
+    },
     "apex_timer_DQMpD9": {
       "type": "Apex-timer",
       "name": "Apex Product Timer",
@@ -136,6 +152,7 @@
     }
   },
   "order": [
+    "announcement_bar_version_1_PYEQnF",
     "apex_timer_DQMpD9",
     "collection-header",
     "main",
