@@ -170,6 +170,16 @@
               </ul>
             {%- endif -%}
           </div>
+          {% assign total_compare_at_price = 0 %}
+          {% for item in cart.items %}
+            {% if item.variant.compare_at_price > item.variant.price %}
+              {% assign line_total = item.variant.compare_at_price | times: item.quantity %}
+              {% assign total_compare_at_price = total_compare_at_price | plus: line_total %}
+            {% endif %}
+          {% endfor %}
+
+
+
           <div class="m-cart__subtotal m:flex m:justify-between" data-cart-subtotal>
             <span class="m-cart__subtotal--label m:font-medium">{{ 'cart.general.subtotal' | t }}</span>
             <span class="m-cart__subtotal--price m:font-medium" data-cart-subtotal-price>
@@ -179,6 +189,7 @@
                 {{ cart.total_price | money }}
               {% endif %}
             </span>
+            <span>{{ total_compare_at_price | money }}</span>
           </div>
         </div>
         <div class="m:flex m:flex-col m:items-center">
