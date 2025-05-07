@@ -1,6 +1,99 @@
+<style>
+  .apex-img-banner.{{section.id}}{
+    margin-top: {{ section.settings.mt }}px;
+    margin-bottom: {{ section.settings.mb }}px;
+  }
+  img.banner-image {
+    width: 100%;
+    display: block;
+  }
+  img.banner-image.mobile {
+    display: none;
+  }
+  @media (max-width:768px){
+     .apex-img-banner.{{section.id}}{
+      margin-top: {{ section.settings.mtm }}px;
+      margin-bottom: {{ section.settings.mbm }}px;
+    }
+    img.banner-image.desktop {
+      display: none;
+    }
+    img.banner-image.mobile {
+      display: block;
+    }
+  }
+
+</style>
+<div class="apex-img-banner {{section.id}}">
+  {% if section.settings.image != blank %}
+    <img class="banner-image desktop" src="{{ section.settings.image |  img_url: 'master' }}" width=""  height="" alt="image Banner">
+  {% endif %}
+  {% if section.settings.image_mobile != blank %}
+    <img class="banner-image mobile" src="{{ section.settings.image_mobile |  img_url: 'master' }}" width=""  height="" alt="image Banner">
+  {% endif %}
+</div>
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Apex Banner Image Only",   
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image Mobile"
+      },
+      {
+        "type": "header",
+        "content": "Section Spacing"
+      },
+      {
+        "type": "range",
+        "id": "mt",
+        "label": "Margin Top (Desktop)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "mb",
+        "label": "Margin Bottom (Desktop)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "mtm",
+        "label": "Margin Top (Mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "mbm",
+        "label": "Margin Bottom (Mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Apex Banner Image Only",
+        "settings": {
+        }
+      }
+    ]
   }
 {% endschema %}
