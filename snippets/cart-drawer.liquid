@@ -183,6 +183,9 @@
           <div class="m-cart__subtotal m:flex m:justify-between" data-cart-subtotal>
             <span class="m-cart__subtotal--label m:font-medium">{{ 'cart.general.subtotal' | t }}</span>
             <div>
+              {% if cart.total_price < total_compare_at_price %}
+                <span class="total-compare m-cart__subtotal--price m:font-medium">{{ total_compare_at_price | money }}</span>
+              {% endif %}
               <span class="m-cart__subtotal--price m:font-medium" data-cart-subtotal-price>
                 {% if settings.currency_code_enabled %}
                   {{ cart.total_price | money_with_currency }}
@@ -190,9 +193,7 @@
                   {{ cart.total_price | money }}
                 {% endif %}
               </span>
-              {% if cart.total_price < total_compare_at_price %}
-                <span class="total-compare m-cart__subtotal--price m:font-medium">{{ total_compare_at_price | money }}</span>
-              {% endif %}
+              
             </div>
           </div>
         </div>
