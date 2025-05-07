@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "apex_benner_image_only_JDTQcr": {
+      "type": "apex-benner-image-only",
+      "name": "Apex Banner Image Only",
+      "settings": {
+        "image": "shopify://shop_images/22596225-721e-4c7f-b6d0-25b64109c402.jpg",
+        "image_mobile": "shopify://shop_images/9647d58f-ee8b-4fce-9216-66aebb5a0609.jpg",
+        "mt": 0,
+        "mb": 0,
+        "mtm": 0,
+        "mbm": 0
+      }
+    },
     "banner_version_2_4q968G": {
       "type": "banner-version-2",
       "blocks": {
@@ -568,6 +580,7 @@
     }
   },
   "order": [
+    "apex_benner_image_only_JDTQcr",
     "banner_version_2_4q968G",
     "scrolling_promotion_p4H4Y4",
     "custom_content_btgYN3",
