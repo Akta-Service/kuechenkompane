@@ -214,8 +214,10 @@
 }
 .m-cart__subtotal--label,
 .m-cart__subtotal--price {
-  font-size: 18px;
-}
+  f
+  .total-compare{
+    text-decoration: line-through;
+  }
 .m-cart__overlay {
   background: rgba(var(--color-background), 0.9);
   position: absolute;
