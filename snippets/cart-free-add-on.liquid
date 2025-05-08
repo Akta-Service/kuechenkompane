@@ -220,8 +220,10 @@
       <div class="x-cart-add-on-info-wrapper">
         <span class="x-cart-info-label">{{ settings.cart_free_product_1_label }}</span>
         <span class="x-cart-info-rule">
+          {% if settings.cart_free_product_1_rule > 0 %}
           {{- cart.currency.symbol -}}
           {{- settings.cart_free_product_1_rule -}}
+          {% endif %}
         </span>
       </div>
       <div class="x-cart-add-on-checked">
@@ -242,8 +244,11 @@
       <div class="x-cart-add-on-info-wrapper">
         <span class="x-cart-info-label">{{ settings.cart_free_product_2_label }}</span>
         <span class="x-cart-info-rule">
+          {% if settings.cart_free_product_2_rule > 0 %}
           {{- cart.currency.symbol -}}
           {{- settings.cart_free_product_2_rule -}}
+          {% endif %}
+
         </span>
       </div>
       <div class="x-cart-add-on-checked">
