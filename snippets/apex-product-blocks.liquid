@@ -233,6 +233,16 @@
           {% endif %}
         </div>
       {% when 'price' %}
+
+        <div class="product-block-group--price">
+          {% render 'product-prices',
+            use_variant: true,
+            product: product,
+            show_sale_badge: block.settings.show_saving,
+            price_text_size: 'm:text-xl md:m:text-2xl',
+            sale_badge_type: block.settings.sale_badge_type
+          %}
+        </div>
         <div class="rs-price">
           <span class="rs-current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
           {% if product.selected_or_first_available_variant.price < product.compare_at_price %}

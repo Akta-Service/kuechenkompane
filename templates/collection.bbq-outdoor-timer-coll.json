@@ -1,1 +1,163 @@
-{"sections":{"announcement_bar_version_1_PYEQnF":{"type":"announcement-bar-version-1","disabled":true,"name":"APEX Announcement Bar 1","settings":{"color_scheme":"","pt":15,"pb":15,"ann_title":"LEI OF LOVE","ann_title_size":16,"ann_title_size_m":16,"text":"<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück<\/strong> auswählen!<\/p>","text_size":16,"text_size_m":16}},"apex_timer_DQMpD9":{"type":"Apex-timer","disabled":true,"name":"Apex Product Timer","settings":{"bg_color":"#dce5dc","section_pt":15,"section_pb":15,"timer_clock":"#d2861a","timer_clock_text_font_size":14,"clock_font_weight":"400","timer_text":"GEBURTSTAGS-Aktion: BIS ZU 75% RABATT","timer_font_size":14,"timer_color":"#000000","timer_font_weight":"400","target_date":"2025-05-09","target_time":"00:00:00"}},"collection-header":{"type":"collection-page-header","disabled":true,"settings":{"color_scheme":"default","container":"container-fluid","layout":"outside_no_border","image_position":"background","enable_parallax":false,"parallax_direction":"vertical","text_alignment":"center","text_color":"inherit","upper_title":false,"show_desc":false,"collection_all_desc":"","padding_top":22,"padding_bottom":18,"enable_bg_zoom_effect":true}},"main":{"type":"main-collection-product-grid","custom_css":[".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",".m-collection-filters-form {margin-bottom: 0;}"],"settings":{"container":"container-fluid","grid_layout":"grid","grid_columns":"4","show_columns_switcher":true,"pagination_limit":48,"paginate_type":"paginate","show_sorting":true,"show_filter":false,"filters_type":"storefront_filters","sidebar":"leftColumn","sidebar_title":"Filters","limit_height_widget":true,"limit_height":300,"change_product_variant_on_fitlering":true,"show_product_count":true,"collapsed_groups":"Product type, Brand, Vendor, Size","color_swatches":"color,colour,couleur,farbe","color_swatches_design":"list"}},"usp_list_nd6t8y":{"type":"usp-list","blocks":{"item_aVKf6y":{"type":"item","settings":{"usp_icon":"shopify:\/\/shop_images\/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png","usp_title":"100 Tage-geld-zurück Garantie","title_size":18,"usp_info":"Wir sind von der Qualität unserer Produkte überzeugt und möchten sicherstellen, dass Du zu 100% zufrieden bist.","info_size":14,"divider":false}},"item_9zb4Pn":{"type":"item","settings":{"usp_icon":"shopify:\/\/shop_images\/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png","usp_title":"140,000+ zufriedene Kunden","title_size":18,"usp_info":"Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?","info_size":14,"divider":false}},"item_4VaJ6g":{"type":"item","settings":{"usp_icon":"shopify:\/\/shop_images\/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png","usp_title":"Geprüfte Qualität","title_size":18,"usp_info":"Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit.","info_size":14,"divider":false}}},"block_order":["item_aVKf6y","item_9zb4Pn","item_4VaJ6g"],"settings":{"color_scheme":"","verticle_padding":50,"horizontal_padding":50,"verticle_padding_mobile":30,"horizontal_padding_mobile":15}},"collection_description_KrcbiD":{"type":"collection-description","settings":{"collection_bg":"#f8f8f8","collection_pt":30,"collection_pb":30,"collection_pt_m":30,"collection_pb_m":30}}},"order":["announcement_bar_version_1_PYEQnF","apex_timer_DQMpD9","collection-header","main","usp_list_nd6t8y","collection_description_KrcbiD"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "announcement_bar_version_1_PYEQnF": {
+      "type": "announcement-bar-version-1",
+      "disabled": true,
+      "name": "APEX Announcement Bar 1",
+      "settings": {
+        "color_scheme": "",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "LEI OF LOVE",
+        "ann_title_size": 16,
+        "ann_title_size_m": 16,
+        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
+        "text_size": 16,
+        "text_size_m": 16
+      }
+    },
+    "apex_timer_DQMpD9": {
+      "type": "Apex-timer",
+      "disabled": true,
+      "name": "Apex Product Timer",
+      "settings": {
+        "bg_color": "#dce5dc",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#d2861a",
+        "timer_clock_text_font_size": 14,
+        "clock_font_weight": "400",
+        "timer_text": "GEBURTSTAGS-Aktion: BIS ZU 75% RABATT",
+        "timer_font_size": 14,
+        "timer_color": "#000000",
+        "timer_font_weight": "400",
+        "target_date": "2025-05-09",
+        "target_time": "00:00:00"
+      }
+    },
+    "collection-header": {
+      "type": "collection-page-header",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container": "container-fluid",
+        "layout": "outside_no_border",
+        "image_position": "background",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "text_alignment": "center",
+        "text_color": "inherit",
+        "upper_title": false,
+        "show_desc": false,
+        "collection_all_desc": "",
+        "padding_top": 22,
+        "padding_bottom": 18,
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "main": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
+        ".m-collection-filters-form {margin-bottom: 0;}"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "grid_layout": "grid",
+        "grid_columns": "4",
+        "show_columns_switcher": true,
+        "pagination_limit": 48,
+        "paginate_type": "paginate",
+        "show_sorting": true,
+        "show_filter": false,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": true,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Product type, Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "list"
+      }
+    },
+    "usp_list_nd6t8y": {
+      "type": "usp-list",
+      "blocks": {
+        "item_aVKf6y": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
+            "usp_title": "100 Tage-geld-zurück Garantie",
+            "title_size": 18,
+            "usp_info": "Wir sind von der Qualität unserer Produkte überzeugt und möchten sicherstellen, dass Du zu 100% zufrieden bist.",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_9zb4Pn": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
+            "usp_title": "140,000+ zufriedene Kunden",
+            "title_size": 18,
+            "usp_info": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_4VaJ6g": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png",
+            "usp_title": "Geprüfte Qualität",
+            "title_size": 18,
+            "usp_info": "Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit.",
+            "info_size": 14,
+            "divider": false
+          }
+        }
+      },
+      "block_order": [
+        "item_aVKf6y",
+        "item_9zb4Pn",
+        "item_4VaJ6g"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "verticle_padding": 50,
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30,
+        "horizontal_padding_mobile": 15
+      }
+    },
+    "collection_description_KrcbiD": {
+      "type": "collection-description",
+      "settings": {
+        "collection_bg": "#f8f8f8",
+        "collection_pt": 30,
+        "collection_pb": 30,
+        "collection_pt_m": 30,
+        "collection_pb_m": 30
+      }
+    }
+  },
+  "order": [
+    "announcement_bar_version_1_PYEQnF",
+    "apex_timer_DQMpD9",
+    "collection-header",
+    "main",
+    "usp_list_nd6t8y",
+    "collection_description_KrcbiD"
+  ]
+}
