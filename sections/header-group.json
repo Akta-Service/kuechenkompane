@@ -28,6 +28,7 @@
     },
     "apex_global_offer_timer_gMjjdD": {
       "type": "Apex-global-offer-timer",
+      "disabled": true,
       "name": "Apex Global Timer",
       "settings": {
         "bg_color": "#dce5dc",
@@ -40,7 +41,7 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "400",
-        "target_date": "2025-05-10",
+        "target_date": "2025-05-11",
         "target_time": "00:00:00"
       }
     },
