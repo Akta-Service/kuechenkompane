@@ -11,18 +11,70 @@
   "sections": {
     "collection-header": {
       "type": "collection-page-header",
+      "disabled": true,
       "settings": {
+        "color_scheme": "",
+        "container": "container",
         "layout": "inside",
+        "image_position": "top",
         "enable_parallax": false,
+        "parallax_direction": "vertical",
         "text_alignment": "center",
+        "text_color": "inherit",
         "upper_title": false,
         "show_desc": false,
-        "collection_all_desc": ""
+        "collection_all_desc": "<p>fgfgfgfg</p>",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "enable_bg_zoom_effect": true
       }
     },
     "flash-sale": {
       "type": "flash-sale",
       "settings": {}
+    },
+    "rich_text_BB7ndR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yBkBre": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nur für kurze Zeit: Spare bis zu 75 % auf unsere beliebtesten Küchenprodukte!",
+            "heading_size": "h2"
+          }
+        },
+        "text_TVhTn6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Erlebe Qualität, Stil und Schärfe zum besten Preis des Jahres – nur 48 Stunden gültig!</p>"
+          }
+        },
+        "button_biaDh3": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Shop Collection",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_yBkBre",
+        "text_TVhTn6",
+        "button_biaDh3"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "custom_class": "",
+        "animations": "inherit"
+      }
     },
     "main": {
       "type": "main-collection-product-grid",
@@ -30,6 +82,7 @@
         "container": "container",
         "grid_layout": "grid",
         "grid_columns": "4",
+        "show_columns_switcher": true,
         "pagination_limit": 12,
         "paginate_type": "paginate",
         "show_sorting": true,
@@ -37,23 +90,47 @@
         "filters_type": "tags_filter",
         "sidebar": "leftColumn",
         "sidebar_title": "Filters",
-        "limit_height_widget": false
+        "limit_height_widget": false,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "inline"
       }
     },
     "recent-viewed": {
       "type": "recent-viewed-products",
       "settings": {
         "container": "container",
+        "color_scheme": "",
         "heading": "Recently Viewed Products",
+        "heading_size": "h3",
+        "text_align": "left",
+        "limit": 8,
         "columns": 4,
         "column_gap": 30,
-        "enable_slider": true
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": false,
+        "mobile_disable_slider": false,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
       }
     }
   },
   "order": [
     "collection-header",
     "flash-sale",
+    "rich_text_BB7ndR",
     "main",
     "recent-viewed"
   ]
