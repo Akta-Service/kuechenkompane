@@ -527,6 +527,48 @@
         "p_bottom": 50
       }
     },
+    "benefit_text_c8cGJK": {
+      "type": "benefit-text",
+      "blocks": {
+        "subtitle_wazFAC": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Nur für kurze Zeit: Deine Saftkur geschenkt!"
+          }
+        },
+        "title_mVxTXy": {
+          "type": "title",
+          "settings": {
+            "title": "3-Tage-Klassik-Saftkur im Wert von 84 € kostenlos dazu."
+          }
+        },
+        "description_mye33Y": {
+          "type": "description",
+          "settings": {
+            "description": "Starte frisch, gesund und voller Energie in deinen Tag – exklusiv nur für kurze Zeit!"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_wazFAC",
+        "title_mVxTXy",
+        "description_mye33Y"
+      ],
+      "name": "APEX Benefit Photo Right",
+      "settings": {
+        "color_scheme": "",
+        "media_type": "image",
+        "image": "shopify://shop_images/Saftkur_KM_copia_1.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
     "product_explanation_video_xNFp3M": {
       "type": "product-explanation-video",
       "blocks": {
@@ -1293,6 +1335,7 @@
     "product-details-tabs",
     "scrolling_promotion_UKXeX3",
     "logo_greyed_out_FMbnW7",
+    "benefit_text_c8cGJK",
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
