@@ -61,6 +61,14 @@
             "font_weight_t": "400"
           }
         },
+        "review_WnXzkn": {
+          "type": "review",
+          "settings": {
+            "p": "4441 Bewertungen",
+            "star_range": 5,
+            "star_color": "#000000"
+          }
+        },
         "loox_reviews_loox_rating_a8TFE7": {
           "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
@@ -83,8 +91,8 @@
             "likeImg2": "shopify://shop_images/Kopie_von_Bild6_2_1.jpg",
             "likeImg3": "shopify://shop_images/Screenshot_2025-03-17_at_08.21.14_1.jpg",
             "likecount": "140.000+ Personen",
-            "like_bg": "#e7e7e7",
-            "likeinfo": "lieben unser Set!",
+            "like_bg": "#f8f8f8",
+            "likeinfo": "lieben unsere Sets!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
           }
@@ -105,6 +113,14 @@
             "f_s": 22,
             "f_s_m": 18,
             "price_font_weight": "600"
+          }
+        },
+        "subtitle_ag37pg": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "👉 Update: Gratis Säfte nur für die nächsten 48h",
+            "subtitle_font_size": 16,
+            "subtitle_weight": "400"
           }
         },
         "subtitle_xQXVba": {
@@ -152,7 +168,7 @@
         "featurelist_item_iiW6aD": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Inkl. Gratis 3-Tage Klassik Saftkur </p>",
+            "featurelist_item": "<p><strong>Inkl. Gratis 3-Tage Klassik Saftkur </strong></p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -161,7 +177,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}</p>",
+            "featurelist_item": "<p><strong>Von Hand geschliffene Edelstahlklingen</strong></p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -170,7 +186,7 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}",
+            "featurelist_item": "<p><strong>Gehärteter Edelstahl für langanhaltende Schärfe</strong></p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -178,6 +194,7 @@
         },
         "variant_picker_yCMzL4": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "size_title": "Size"
           }
@@ -215,9 +232,11 @@
       },
       "block_order": [
         "title_Bac9Mk",
+        "review_WnXzkn",
         "loox_reviews_loox_rating_a8TFE7",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
+        "subtitle_ag37pg",
         "subtitle_xQXVba",
         "viewer_stock_count_MFNhKz",
         "featurelist_header_tfxtpf",
@@ -293,7 +312,7 @@
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": true,
+        "add_showore_btn": false,
         "readmore": "Mehr lesen",
         "readless": "Weniger Lesen",
         "br_color": "#000000",
