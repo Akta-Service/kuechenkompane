@@ -569,6 +569,64 @@
         "des_size": "p-medium"
       }
     },
+    "feature_highlight_RqwjHp": {
+      "type": "feature-highlight",
+      "blocks": {
+        "feature_item_left_WChkwD": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "Incredibly Convenient",
+            "item_info": "Add 1-2 teaspoons of Javvy to water or milk for drinks in seconds.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V7_1.png"
+          }
+        },
+        "feature_item_left_ceVXpW": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "Incredibly Convenient",
+            "item_info": "Add 1-2 teaspoons of Javvy to water or milk for drinks in seconds.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
+          }
+        },
+        "feature_center_image_9gparm": {
+          "type": "feature_center_image",
+          "settings": {
+            "center_image": "shopify://shop_images/Artboard_3.jpg"
+          }
+        },
+        "feature_item_right_PW6PWn": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Ultra-versatile",
+            "item_info": "Any style of coffee you crave in seconds (hot or cold).",
+            "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
+          }
+        },
+        "feature_item_right_UkqrKW": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Ultra-versatile",
+            "item_info": "Any style of coffee you crave in seconds (hot or cold).",
+            "item_icon": "shopify://shop_images/Untitled_Export_V4_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_left_WChkwD",
+        "feature_item_left_ceVXpW",
+        "feature_center_image_9gparm",
+        "feature_item_right_PW6PWn",
+        "feature_item_right_UkqrKW"
+      ],
+      "name": "Apex Fature Highlight",
+      "settings": {
+        "pt": 50,
+        "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
+        "title": "Finally a Coffee You Won't Have to Quit"
+      }
+    },
     "product_explanation_video_xNFp3M": {
       "type": "product-explanation-video",
       "blocks": {
@@ -1336,6 +1394,7 @@
     "scrolling_promotion_UKXeX3",
     "logo_greyed_out_FMbnW7",
     "benefit_text_c8cGJK",
+    "feature_highlight_RqwjHp",
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
