@@ -11,6 +11,14 @@
   "type": "footer",
   "name": "Footer",
   "sections": {
+    "custom_liquid_atjFe6": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"klaviyo-form-WR3f9r\"></div>",
+        "custom_class": ""
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -157,6 +165,7 @@
     }
   },
   "order": [
+    "custom_liquid_atjFe6",
     "footer",
     "mobile-sticky-bar",
     "age-verifier-popup"
