@@ -11,6 +11,7 @@
   "sections": {
     "apex_timer_kk8rAh": {
       "type": "Apex-timer",
+      "disabled": true,
       "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#dce5dc",
@@ -60,6 +61,14 @@
             "font_weight_t": "400"
           }
         },
+        "review_WnXzkn": {
+          "type": "review",
+          "settings": {
+            "p": "4441 Bewertungen",
+            "star_range": 5,
+            "star_color": "#000000"
+          }
+        },
         "loox_reviews_loox_rating_a8TFE7": {
           "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
@@ -83,7 +92,7 @@
             "likeImg3": "shopify://shop_images/Screenshot_2025-03-17_at_08.21.14_1.jpg",
             "likecount": "140.000+ Personen",
             "like_bg": "#f8f8f8",
-            "likeinfo": "lieben unser Set!",
+            "likeinfo": "lieben unsere Sets!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
           }
@@ -91,6 +100,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "show_saving": true,
+            "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 18,
             "p_pt_m": 5,
@@ -102,6 +113,14 @@
             "f_s": 22,
             "f_s_m": 18,
             "price_font_weight": "600"
+          }
+        },
+        "subtitle_ag37pg": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "👉 Update: Gratis Säfte nur für die nächsten 48h",
+            "subtitle_font_size": 16,
+            "subtitle_weight": "400"
           }
         },
         "subtitle_xQXVba": {
@@ -149,7 +168,7 @@
         "featurelist_item_iiW6aD": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "{{ product.metafields.custom.list_1st_item_info | metafield_tag }}",
+            "featurelist_item": "<p><strong>Inkl. Gratis 3-Tage Klassik Saftkur von Kale and Me</strong></p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -158,7 +177,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}</p>",
+            "featurelist_item": "<p><strong>Von Hand geschliffene Edelstahlklingen</strong></p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -167,7 +186,7 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}",
+            "featurelist_item": "<p><strong>Gehärteter Edelstahl für langanhaltende Schärfe</strong></p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -175,6 +194,7 @@
         },
         "variant_picker_yCMzL4": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "size_title": "Size"
           }
@@ -212,9 +232,11 @@
       },
       "block_order": [
         "title_Bac9Mk",
+        "review_WnXzkn",
         "loox_reviews_loox_rating_a8TFE7",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
+        "subtitle_ag37pg",
         "subtitle_xQXVba",
         "viewer_stock_count_MFNhKz",
         "featurelist_header_tfxtpf",
@@ -290,7 +312,7 @@
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": true,
+        "add_showore_btn": false,
         "readmore": "Mehr lesen",
         "readless": "Weniger Lesen",
         "br_color": "#000000",
@@ -360,7 +382,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V7_1.png",
-            "image_height": 120,
+            "image_height": 60,
             "image_link": ""
           }
         },
@@ -368,7 +390,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "image_height": 100,
+            "image_height": 60,
             "image_link": ""
           }
         },
@@ -376,7 +398,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V2_1.png",
-            "image_height": 100,
+            "image_height": 60,
             "image_link": ""
           }
         },
@@ -384,7 +406,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V4_1.png",
-            "image_height": 100,
+            "image_height": 60,
             "image_link": ""
           }
         },
@@ -392,7 +414,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V3_1.png",
-            "image_height": 100,
+            "image_height": 60,
             "image_link": ""
           }
         }
@@ -417,8 +439,8 @@
         "item_gap": 50,
         "item_gap_mobile": 30,
         "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
-        "padding_top": 40,
-        "padding_bottom": 30,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "custom_class": ""
       }
     },
@@ -503,6 +525,106 @@
         "bg_color": "#fafafb",
         "p_top": 50,
         "p_bottom": 50
+      }
+    },
+    "benefit_text_c8cGJK": {
+      "type": "benefit-text",
+      "blocks": {
+        "subtitle_wazFAC": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Nur für kurze Zeit: Deine Saftkur geschenkt!"
+          }
+        },
+        "title_mVxTXy": {
+          "type": "title",
+          "settings": {
+            "title": "3-Tage-Klassik-Saftkur im Wert von 84 € kostenlos dazu."
+          }
+        },
+        "description_mye33Y": {
+          "type": "description",
+          "settings": {
+            "description": "Starte frisch, gesund und voller Energie in deinen Tag – exklusiv nur für kurze Zeit!"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_wazFAC",
+        "title_mVxTXy",
+        "description_mye33Y"
+      ],
+      "name": "APEX Benefit Photo Right",
+      "settings": {
+        "color_scheme": "",
+        "media_type": "image",
+        "image": "shopify://shop_images/Saftkur_KM_copia_1.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
+    "feature_highlight_RqwjHp": {
+      "type": "feature-highlight",
+      "blocks": {
+        "feature_item_left_WChkwD": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "8-teiliges Messerset",
+            "item_info": "Acht extrem scharfe Klingen aus deutschem 7CR17 Edelstahl.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V7_1.png"
+          }
+        },
+        "feature_item_left_ceVXpW": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "Messerschärfer",
+            "item_info": "Jedes Messer ist in Sekunden \nwieder scharf.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
+          }
+        },
+        "feature_center_image_9gparm": {
+          "type": "feature_center_image",
+          "settings": {
+            "center_image": "shopify://shop_images/Artboard_3.jpg"
+          }
+        },
+        "feature_item_right_PW6PWn": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "365 Tage Schleifservice",
+            "item_info": "Kostenloser Nachschliff für ein Jahr - immer scharf.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
+          }
+        },
+        "feature_item_right_UkqrKW": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "3-Tage Klassik Saftkur",
+            "item_info": "18 kaltgepresste Säfte von Kale and Me im Wert von 84€ kostenlos.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V4_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_left_WChkwD",
+        "feature_item_left_ceVXpW",
+        "feature_center_image_9gparm",
+        "feature_item_right_PW6PWn",
+        "feature_item_right_UkqrKW"
+      ],
+      "name": "Apex Fature Highlight",
+      "settings": {
+        "pt": 50,
+        "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
+        "title": "Im Set enhalten:"
       }
     },
     "product_explanation_video_xNFp3M": {
@@ -1271,6 +1393,8 @@
     "product-details-tabs",
     "scrolling_promotion_UKXeX3",
     "logo_greyed_out_FMbnW7",
+    "benefit_text_c8cGJK",
+    "feature_highlight_RqwjHp",
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
