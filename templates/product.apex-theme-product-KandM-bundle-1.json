@@ -11,6 +11,7 @@
   "sections": {
     "apex_timer_kk8rAh": {
       "type": "Apex-timer",
+      "disabled": true,
       "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#dce5dc",
@@ -91,6 +92,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "show_saving": true,
+            "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 18,
             "p_pt_m": 5,
@@ -149,7 +152,7 @@
         "featurelist_item_iiW6aD": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "{{ product.metafields.custom.list_1st_item_info | metafield_tag }}",
+            "featurelist_item": "<p>Inkl. Gratis 3-Tage Klassik Saftkur </p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
