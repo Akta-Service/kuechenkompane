@@ -121,7 +121,7 @@
 @media screen and (min-width: 768px) {
   .m-footer--middle .m-accordion--item .m-accordion--item-content {
     max-height: unset;
-    opacity: 1;
+    opacity: 1 !important;
     transition: none;
   }
 }
