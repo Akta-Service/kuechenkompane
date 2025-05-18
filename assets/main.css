@@ -4618,6 +4618,7 @@ deferred-media {
 }
 .m-accordion--item.open .m-accordion--item-content {
   max-height: var(--content-max-height, auto);
+  opacity: 1;
 }
 .m-accordion--item.open .m-accordion--item-content.max-height-set {
   max-height: var(--content-max-height, 0);
