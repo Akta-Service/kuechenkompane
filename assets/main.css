@@ -4611,14 +4611,14 @@ deferred-media {
     max-height var(--duration, 300ms);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   max-height: var(--content-max-height, 0);
-  opacity: 0;
+  opacity: 0 !important;
 }
 .m-accordion--item.open .m-accordion--item-icon {
   transform: rotateX(180deg);
 }
 .m-accordion--item.open .m-accordion--item-content {
   max-height: var(--content-max-height, auto);
-  opacity: 1;
+  opacity: 1 !important;
 }
 .m-accordion--item.open .m-accordion--item-content.max-height-set {
   max-height: var(--content-max-height, 0);
