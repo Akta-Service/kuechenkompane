@@ -122,6 +122,7 @@
                         assign button_type = 'text'
                       endif
                     %}
+                    {% if block.settings.newsletter == true %}
                     {% render 'newsletter-form',
                       custom_id: block.id,
                       style: block.settings.form_style,
@@ -134,6 +135,7 @@
                       button_position: block.settings.button_position,
                       button_style: block.settings.button_style
                     %}
+                    {% endif %}
                     {% if block.settings.show_social %}
                       {% render 'social-media-links' %}
                     {% endif %}
