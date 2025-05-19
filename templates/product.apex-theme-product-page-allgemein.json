@@ -75,6 +75,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "show_saving": false,
+            "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 5,
             "p_pt_m": 5,
@@ -250,7 +252,7 @@
         "color_scheme": "badge-hot",
         "title": "Produktbeschreibung",
         "heading_type": "mrk-h3",
-        "description": "<p><strong>ÜBERZEUGE DICH SELBST!</strong></p><p>Online einkaufen ist nicht immer einfach. Wir wollen es unsere Kunden besonders unkompliziert machen. Bestelle daher unsere Produkte und teste diese bei dir zuhause. Sollten dir unsere Produkte nicht gefallen, kannst du sie innerhalb von 100 Tagen ohne Risiko zurückschicken. Unser Tipp für dich: Bestellen und selber überzeugen!</p>",
+        "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true,
