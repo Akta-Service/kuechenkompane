@@ -1,136 +1,141 @@
 {%- style -%}
 @import url('https://fonts.googleapis.com/css2?family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
 .product-description {
-margin: 30px 0 40px;
-margin-top: {{ section.settings.mt }}px;
-margin-bottom: {{ section.settings.mb }}px;
+  margin: 30px 0 40px;
+  margin-top: {{ section.settings.mt }}px;
+  margin-bottom: {{ section.settings.mb }}px;
 }
 .description-container {
-max-width: 1230px;
-margin: 0 auto;
-padding: 0 15px;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 .description-row {
-display: flex;
-justify-content: space-between;
-gap: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
 }
 .des-title {
-font-size: {{ section.settings.font_size }}px;
-line-height: 1.5em;
-max-width: 1180px;
-margin: 0px auto 9px auto;
-font-weight: bold; 
-text-transform: capitalize;
-letter-spacing: 0;
+  font-size: {{ section.settings.font_size }}px;
+  line-height: 1.5em;
+  max-width: 1180px;
+  margin: 0px auto 9px auto;
+  font-weight: bold; 
+  text-transform: capitalize;
+  letter-spacing: 0;
 }
 .description-content {
-width: 50%;
-flex: 0 0 auto;
+  width: 50%;
+  flex: 0 0 auto;
 }
 .accordion-button {
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-border: 1px solid {{ section.settings.br_color }};
-padding: 13px 20px;
-border-radius: 10px;
-cursor: pointer;
-font-weight: bold;
-font-size: 14px;
-line-height: 1.5em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid {{ section.settings.br_color }};
+  padding: 13px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5em;
 }
 
 .accordion-content {
-max-height: 0;
-overflow: hidden;
-transition:  0.3s ease;     
-padding: 0 20px;
-margin-top: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition:  0.3s ease;     
+  padding: 0 20px;
+  margin-top: 10px;
 }
 .accordion-content ul{
-padding-left: 20px;
+  padding-left: 20px;
 }
 .accordion-button.active + .accordion-content {
-margin-bottom: 23px;
+  margin-bottom: 23px;
 }
 .accordion-content p {
-font-size: 14px;
-line-height: 1.5em;
-padding: 0px 18px; 
+  font-size: 14px;
+  line-height: 1.5em;
+  padding: 0px 18px; 
 }
 .product-des {
-font-size: 16px;       
-position: relative;
+  font-size: 16px;       
+  position: relative;
 }
 .description-accordion {
-padding-top: 45px;
+  padding-top: 45px;
 }
 .hideContent {
-max-height: 192px;
-overflow: hidden;
-transition: 0.3s;
+  max-height: 192px;
+  overflow: hidden;
+  transition: 0.3s;
 }
 
 .accordion-content:where(h1,h2,h3,h4,h5,h6) {
-margin-bottom: 5px;
-margin-top: 5px;
-
-
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .p-dection-w h2,.accordion-content h2 {
-font-size: 18px;
-padding: 2% 0;
+  font-size: 18px;
+  padding: 2% 0;
 }
 .p-dection-w p,.accordion-content p {
-margin-bottom: 0;
-margin-top: 0;
-line-height: 1.3;
-padding:0;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1.3;
+  padding:0;
 }
 
 .hideContent::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-right: 0;
-height: 30px;
-background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-pointer-events: none;
-transition: 0.3s;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  pointer-events: none;
+  transition: 0.3s;
 
 }
 .description-content ul {   
-padding-left: 30px;
+  padding-left: 30px;
 }
 .show-more {
-display: inline-block;
-text-decoration: underline;     
-margin-top: 16px;
-cursor: pointer;
+  display: inline-block;
+  text-decoration: underline;     
+  margin-top: 16px;
+  cursor: pointer;
 }
 span.accordion-icon {
-transition: 0.3s; 
+  transition: 0.3s; 
 }
 .accordion-item.open span.accordion-icon {
-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .accordion-item.open {
-padding-bottom: 15px;
+  padding-bottom: 15px;
+}
+.p-dection-w p, .accordion-content p {
+    min-height: 15px;
+}
+.accordion-content p {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 @media only screen and (max-width: 768px) {
-.description-row {
-flex-direction: column;
-}
-.description-content,
-.description-accordion {
-width: 100%;
-}
-.description-accordion {
-padding-top: 0;
-}
+  .description-row {
+    flex-direction: column;
+  }
+  .description-content,
+  .description-accordion {
+    width: 100%;
+  }
+  .description-accordion {
+    padding-top: 0;
+  }
 }
 {%- endstyle -%}
 <div class="product-description m-color-{{ section.settings.color_scheme }}">
@@ -139,9 +144,9 @@ padding-top: 0;
       <div class="description-content">
         <h2 class="des-title {{ section.settings.heading_type }}">{{ section.settings.title }}</h2>
         <div class="p-dection-w  {% if section.settings.add_showore_btn %}hideContent{% endif %}">           
-            <p class="product-des">
+            <div class="product-des">
               {{ section.settings.description }}
-            </p>
+            </div>
         </div>
           {% if section.settings.add_showore_btn %}
             <span class="show-more">{{ section.settings.readmore }}</span>
