@@ -348,3 +348,17 @@ padding-top: 0;
 });
 
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const showMoreBtn = document.querySelector('.show-more');
+    const contentWrapper = document.querySelector('.p-dection-w');
+
+    if (showMoreBtn && contentWrapper) {
+      showMoreBtn.addEventListener('click', function () {
+        contentWrapper.classList.toggle('hideContent');
+        this.textContent = contentWrapper.classList.contains('hideContent') ? '{{ section.settings.readmore }}' : '{{ section.settings.readless }}';
+      });
+    }
+  });
+</script>
