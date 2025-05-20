@@ -475,10 +475,10 @@
   <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=track&pid=10239&type=startpage" async></script>
 {% endif %}
 
-{%- if template contains 'product' and product and collection -%}
+{% if template contains 'product' and product %}
   <!-- Produktseite -->
-  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=product&pid=10239&productId={{ product.id }}&productName={{ product.title | url_encode }}&categoryId={{ collection.id }}" async></script>
-{%- endif -%}
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=product&pid=XXXX&productId={{ product.id }}&productName={{ product.title | url_encode }}&categoryId={{ product.collections.first.id }}" async></script>
+{% endif %}
 
 {%- if template contains 'collection' and collection -%}
   <!-- Kategorieseite -->
