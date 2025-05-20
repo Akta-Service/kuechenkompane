@@ -490,10 +490,10 @@
   <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=search&pid=10239&search={{ search.terms | url_encode }}"></script>
 {%- endif -%}
 
-{%- if template contains 'cart' and cart.item_count > 0 -%}
+{% if template contains 'cart' %}
   <!-- Warenkorb -->
-  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=basket&pid=10239&basketProductCount={{ cart.item_count }}&basketTotal={{ cart.total_price | divided_by: 1.19 | money }}" async></script>
-{%- endif -%}
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=basket&pid=10239&basketProductCount={{ cart.item_count }}&basketTotal={{ cart.total_price | money_without_currency }}" async></script>
+{% endif %}
 
     
   </body>
