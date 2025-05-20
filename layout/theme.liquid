@@ -468,5 +468,10 @@
     {%- if settings.enable_cart_drawer and template != 'cart' -%}
       {% render 'cart-drawer' %}
     {%- endif -%}
+    
+{% if template == 'index' %}
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=track&pid=10239&type=startpage" async></script>
+{% endif %}
+
   </body>
 </html>
