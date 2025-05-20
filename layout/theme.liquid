@@ -468,10 +468,33 @@
     {%- if settings.enable_cart_drawer and template != 'cart' -%}
       {% render 'cart-drawer' %}
     {%- endif -%}
+
+{%- comment -%} ADCELL TRACKING SCRIPTS {%- endcomment -%}
     
 {% if template == 'index' %}
   <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=track&pid=10239&type=startpage" async></script>
 {% endif %}
 
+{%- if template contains 'product' and product and collection -%}
+  <!-- Produktseite -->
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=product&pid=10239&productId={{ product.id }}&productName={{ product.title | url_encode }}&categoryId={{ collection.id }}" async></script>
+{%- endif -%}
+
+{%- if template contains 'collection' and collection -%}
+  <!-- Kategorieseite -->
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=category&pid=10239&categoryName={{ collection.title | url_encode }}&categoryId={{ collection.id }}" async></script>
+{%- endif -%}
+
+{%- if template contains 'search' and search.terms -%}
+  <!-- Suchergebnisse -->
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=search&pid=10239&search={{ search.terms | url_encode }}"></script>
+{%- endif -%}
+
+{%- if template contains 'cart' and cart.item_count > 0 -%}
+  <!-- Warenkorb -->
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=basket&pid=10239&basketProductCount={{ cart.item_count }}&basketTotal={{ cart.total_price | divided_by: 1.19 | money }}" async></script>
+{%- endif -%}
+
+    
   </body>
 </html>
