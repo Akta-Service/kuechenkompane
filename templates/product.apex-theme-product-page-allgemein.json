@@ -243,11 +243,7 @@
           }
         }
       },
-      "block_order": [
-        "faq_jkYPLV",
-        "faq_kQAWhE",
-        "faq_pDwHXa"
-      ],
+      "block_order": ["faq_jkYPLV", "faq_kQAWhE", "faq_pDwHXa"],
       "settings": {
         "color_scheme": "badge-hot",
         "title": "Produktbeschreibung",
@@ -269,7 +265,7 @@
           "type": "tab",
           "settings": {
             "header": "Beschreibung",
-            "content": "{{ product.metafields.custom.accordion_content_1 | metafield_tag }}",
+            "content": "",
             "content_page": ""
           }
         },
@@ -285,7 +281,7 @@
           "type": "tab",
           "settings": {
             "header": "Versand",
-            "content": "{{ product.metafields.custom.accordion_content_3 | metafield_tag }}",
+            "content": "",
             "content_page": ""
           }
         },
@@ -293,21 +289,14 @@
           "type": "tab",
           "settings": {
             "header": "Garantie",
-            "content": "{{ product.metafields.custom.accordion_content_4 | metafield_tag }}",
+            "content": "",
             "content_page": ""
           }
         }
       },
-      "block_order": [
-        "tab_gknmWn",
-        "tab",
-        "tab_yXpqFL",
-        "tab_LBwXaE"
-      ],
+      "block_order": ["tab_gknmWn", "tab", "tab_yXpqFL", "tab_LBwXaE"],
       "disabled": true,
-      "custom_css": [
-        ".m-tabs__header {justify-content: flex-start;}"
-      ],
+      "custom_css": [".m-tabs__header {justify-content: flex-start;}"],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -623,10 +612,7 @@
           }
         }
       },
-      "block_order": [
-        "title_F4F6qE",
-        "description_9Mxcd4"
-      ],
+      "block_order": ["title_F4F6qE", "description_9Mxcd4"],
       "disabled": true,
       "settings": {
         "color_scheme": "",
@@ -741,11 +727,7 @@
           }
         }
       },
-      "block_order": [
-        "subtitle_8kbCAt",
-        "title_KU4fTr",
-        "description_PBBAnQ"
-      ],
+      "block_order": ["subtitle_8kbCAt", "title_KU4fTr", "description_PBBAnQ"],
       "settings": {
         "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
         "media_type": "image",
@@ -782,11 +764,7 @@
           }
         }
       },
-      "block_order": [
-        "subtitle_XPX87U",
-        "title_YwDaTz",
-        "description_j4ByyM"
-      ],
+      "block_order": ["subtitle_XPX87U", "title_YwDaTz", "description_j4ByyM"],
       "settings": {
         "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
         "media_type": "image",
@@ -943,15 +921,9 @@
           }
         }
       },
-      "block_order": [
-        "iconbox_pJbJGA",
-        "iconbox_RW46nE",
-        "iconbox_EiwgTg"
-      ],
+      "block_order": ["iconbox_pJbJGA", "iconbox_RW46nE", "iconbox_EiwgTg"],
       "disabled": true,
-      "custom_css": [
-        ".m-icon-box__heading {font-weight: 400;}"
-      ],
+      "custom_css": [".m-icon-box__heading {font-weight: 400;}"],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -998,10 +970,7 @@
           }
         }
       },
-      "block_order": [
-        "left_content_kdVLJX",
-        "right_content_6RynNR"
-      ],
+      "block_order": ["left_content_kdVLJX", "right_content_6RynNR"],
       "disabled": true,
       "settings": {
         "section_bg_color": "#ffffff",
@@ -1042,11 +1011,7 @@
           }
         }
       },
-      "block_order": [
-        "item_9JUQhz",
-        "item_NYUrjj",
-        "item_Prmf4W"
-      ],
+      "block_order": ["item_9JUQhz", "item_NYUrjj", "item_Prmf4W"],
       "settings": {
         "color_scheme": "footer",
         "subtitle": "Vielen Menschen haben uns als Gründer gefragt:",
@@ -1083,9 +1048,7 @@
           }
         }
       },
-      "block_order": [
-        "loox_reviews_loox_dynamic_section_9tFX78"
-      ],
+      "block_order": ["loox_reviews_loox_dynamic_section_9tFX78"],
       "settings": {
         "heading": "",
         "heading_size": "h3",
