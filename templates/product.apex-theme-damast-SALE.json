@@ -243,7 +243,7 @@
           "type": "faq",
           "settings": {
             "question": "100 Tage kostenlos testen",
-            "answer": "<p>{{ product.metafields.custom.accordion_content_4 | metafield_tag }}</p>"
+            "answer": "<p><strong>ÜBERZEUGE DICH SELBST!</strong></p><p>Online einkaufen ist nicht immer einfach. Wir wollen es unsere Kunden besonders unkompliziert machen. Bestelle daher unsere Produkte und teste diese bei dir zuhause. Sollten dir unsere Produkte nicht gefallen, kannst du sie innerhalb von 100 Tagen ohne Risiko zurückschicken. Unser Tipp für dich: Bestellen und selber überzeugen!</p>"
           }
         },
         "faq_kQAWhE": {
