@@ -299,8 +299,8 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "Gleite mühelos durch alles wie Butter",
-        "heading_type": "mrk-h3",
+        "title": "Produktbeschreibung",
+        "heading_type": "mrk-h2",
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
