@@ -257,7 +257,7 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "IM SET ENTHALTEN",
+        "title": "IM SET ENTHALTEN:",
         "heading_type": "mrk-h3",
         "description": "{{ product.description }}",
         "mt": 30,
@@ -568,13 +568,13 @@
         "title_hXWbxr": {
           "type": "title",
           "settings": {
-            "title": "Sichere dir jetzt über 515 € Preisvorteil!"
+            "title": "Spare jetzt über 98 € auf unser exklusives Messer-Set!"
           }
         },
         "description_abE8wX": {
           "type": "description",
           "settings": {
-            "description": "Dieses exklusive Bundle enthält alles, was du für deine Küche brauchst – vom hochwertigen Messerset bis zum edlen Schneidbrett. Nur solange der Vorrat reicht."
+            "description": "Dieses Set vereint alles, was du für deine Küche brauchst. Nur solange der Vorrat reicht – viele Produkte gehen nicht mehr in Nachproduktion!"
           }
         }
       },
@@ -586,7 +586,7 @@
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "shopify://shop_images/Artboard_1_Kopie_6_1.jpg",
+        "image": "shopify://shop_images/Artboard8_977307bb-023d-4b16-9c2a-3cfedc349133.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -664,6 +664,7 @@
         "feature_item_right_dN8J9K",
         "feature_item_right_jLCbWD"
       ],
+      "disabled": true,
       "settings": {
         "pt": 50,
         "pb": 50,
