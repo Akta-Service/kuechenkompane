@@ -217,19 +217,18 @@
     "product_descrption_accordion_btdDtQ": {
       "type": "product-descrption-accordion",
       "blocks": {
-        "faq_fqQbjd": {
-          "type": "faq",
-          "disabled": true,
-          "settings": {
-            "question": "",
-            "answer": ""
-          }
-        },
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
             "question": "365 Tage Schleifservice (Gratis)",
             "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand. </p>"
+          }
+        },
+        "faq_pDwHXa": {
+          "type": "faq",
+          "settings": {
+            "question": "Produktinfos & Lieferumfang",
+            "answer": "<p><strong>Exklusives Küchenkompane Bundle – nur für kurze Zeit!</strong><br/><br/>Unser hochwertiges Set vereint Funktionalität, Design und Schärfe auf Profi-Niveau.</p><p><strong>Lieferumfang:</strong><br/><br/>✔ 8-teiliges Messerset mit edlen Holzgriffen (deutscher 7CR17 Edelstahl)<br/><br/>✔ 3 Schneidebretter aus robustem Akazienholz (3 Größen)<br/><br/>✔ 1 magnetischer Messerblock aus Akazienholz<br/><br/>✔ 3-Stufen-Messerschärfer für dauerhafte Präzision</p><p><strong>Gesamtwert: 599,90 € – jetzt für nur 189,90 €!</strong><br/><br/>Nur solange der Vorrat reicht.</p>"
           }
         },
         "faq_kQAWhE": {
@@ -239,19 +238,19 @@
             "answer": "<p><strong>Versand & Zahlung</strong></p><ul><li><strong>EU-weiter Standardversand</strong> (1–3 Werktage): kostenlos</li><li><strong>Expressversand EU</strong> (nächster Werktag): + 9,90 €</li><li><strong>Internationaler Standardversand</strong> (2–5 Werktage): 16,90 €</li><li><strong>Express International</strong> (meist in 2–3 Werktagen): + 39,90 €</li></ul><p></p><p><strong>Zahlungsoptionen</strong></p><ul><li>PayPal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
           }
         },
-        "faq_pDwHXa": {
+        "faq_fqQbjd": {
           "type": "faq",
           "settings": {
-            "question": "Produktinfos & Lieferumfang",
-            "answer": "<p><strong>Exklusives Küchenkompane Bundle – nur für kurze Zeit!</strong><br/><br/>Unser hochwertiges Set vereint Funktionalität, Design und Schärfe auf Profi-Niveau.</p><p><strong>Lieferumfang:</strong><br/><br/>✔ 8-teiliges Messerset mit edlen Holzgriffen (deutscher 7CR17 Edelstahl)<br/><br/>✔ 3 Schneidebretter aus robustem Akazienholz (3 Größen)<br/><br/>✔ 1 magnetischer Messerblock aus Akazienholz<br/><br/>✔ 3-Stufen-Messerschärfer für dauerhafte Präzision</p><p><strong>Gesamtwert: 599,90 € – jetzt für nur 189,90 €!</strong><br/><br/>Nur solange der Vorrat reicht.</p>"
+            "question": "100 Tage risikofrei testen",
+            "answer": "<p>Online einkaufen soll für dich so unkompliziert wie möglich sein. Bestelle unsere Produkte und teste sie in Ruhe bei dir zuhause. Solltest du nicht rundum zufrieden sein, kannst du sie innerhalb von <strong>100 Tagen</strong> ohne Risiko zurückschicken. Unser Tipp: Bestellen und selbst überzeugen!</p>"
           }
         }
       },
       "block_order": [
-        "faq_fqQbjd",
         "faq_jkYPLV",
+        "faq_pDwHXa",
         "faq_kQAWhE",
-        "faq_pDwHXa"
+        "faq_fqQbjd"
       ],
       "settings": {
         "color_scheme": "badge-hot",
