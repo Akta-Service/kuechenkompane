@@ -228,14 +228,6 @@
     "product_descrption_accordion_btdDtQ": {
       "type": "product-descrption-accordion",
       "blocks": {
-        "faq_fqQbjd": {
-          "type": "faq",
-          "disabled": true,
-          "settings": {
-            "question": "",
-            "answer": "<p></p>"
-          }
-        },
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
@@ -254,12 +246,11 @@
           "type": "faq",
           "settings": {
             "question": "Produktinfos & Lieferumfang",
-            "answer": "<p><strong>Exklusives Küchenkompane Bundle – nur für kurze Zeit!</strong><br/><br/>Unser hochwertiges Set vereint Funktionalität, Design und Schärfe auf Profi-Niveau.</p><p><strong>Lieferumfang:</strong><br/><br/>✔ 8-teiliges Messerset mit edlen Holzgriffen (deutscher 7CR17 Edelstahl)<br/>✔ Akazien-Schneidebrett Mizo<br/>✔ Drehbarer magnetischer Messerblock<br/>✔ 3-Stufen-Messerschärfer für dauerhafte Präzision</p><p>✔ Pflegeöl</p><p></p><p><strong>Gesamtwert: 715 € – jetzt für nur 199,90 €!</strong><br/><br/>Nur solange der Vorrat reicht.</p>"
+            "answer": "<p><strong>Jedes unserer Küchenmesser wird von Hand geschliffen – für maximale Schärfe und Präzision in deiner Küche.</strong><br/><br/>Der ergonomische Griff aus edlem Pakkaholz liegt perfekt in der Hand und sorgt für höchsten Komfort – auch bei stundenlangem Arbeiten. So wird jede Zutat zum Genuss – vom ersten Schnitt bis zum letzten Handgriff.</p><p><strong>Lieferumfang:</strong><br/><br/><strong>1. Asiatisches Chefmesser – Wert: 69 €<br/>2. Asiatisches Santoku 7\" Messer – Wert: 69 €<br/><br/> Inklusive edler Aufbewahrungsbox – gratis für dich dabei!</strong><br/></p>"
           }
         }
       },
       "block_order": [
-        "faq_fqQbjd",
         "faq_jkYPLV",
         "faq_kQAWhE",
         "faq_pDwHXa"
