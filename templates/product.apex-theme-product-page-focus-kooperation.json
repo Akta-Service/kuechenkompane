@@ -63,7 +63,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Nur für kurze Zeit im Sonderangebot!",
+            "subtitle": "Jetzt exklusiv nur bei FOCUS-ONLINE",
             "subtitle_font_size": 16,
             "subtitle_weight": "400"
           }
@@ -92,6 +92,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "show_saving": false,
+            "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 5,
             "p_pt_m": 5,
@@ -130,7 +132,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Preis nur für kurze Zeit – danach wieder 715,00€</p>",
+            "featurelist_item": "<p>Preis nur für kurze Zeit – danach wieder 138€</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -256,7 +258,12 @@
           }
         }
       },
-      "block_order": ["faq_fqQbjd", "faq_jkYPLV", "faq_kQAWhE", "faq_pDwHXa"],
+      "block_order": [
+        "faq_fqQbjd",
+        "faq_jkYPLV",
+        "faq_kQAWhE",
+        "faq_pDwHXa"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "title": "IM SET ENTHALTEN",
@@ -307,9 +314,16 @@
           }
         }
       },
-      "block_order": ["tab_gknmWn", "tab", "tab_yXpqFL", "tab_LBwXaE"],
+      "block_order": [
+        "tab_gknmWn",
+        "tab",
+        "tab_yXpqFL",
+        "tab_LBwXaE"
+      ],
       "disabled": true,
-      "custom_css": [".m-tabs__header {justify-content: flex-start;}"],
+      "custom_css": [
+        ".m-tabs__header {justify-content: flex-start;}"
+      ],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -573,7 +587,11 @@
           }
         }
       },
-      "block_order": ["subtitle_jER8HM", "title_hXWbxr", "description_abE8wX"],
+      "block_order": [
+        "subtitle_jER8HM",
+        "title_hXWbxr",
+        "description_abE8wX"
+      ],
       "settings": {
         "color_scheme": "",
         "media_type": "image",
@@ -743,7 +761,10 @@
           }
         }
       },
-      "block_order": ["title_F4F6qE", "description_9Mxcd4"],
+      "block_order": [
+        "title_F4F6qE",
+        "description_9Mxcd4"
+      ],
       "disabled": true,
       "settings": {
         "color_scheme": "",
@@ -879,7 +900,11 @@
           }
         }
       },
-      "block_order": ["subtitle_8kbCAt", "title_KU4fTr", "description_PBBAnQ"],
+      "block_order": [
+        "subtitle_8kbCAt",
+        "title_KU4fTr",
+        "description_PBBAnQ"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -916,7 +941,11 @@
           }
         }
       },
-      "block_order": ["subtitle_XPX87U", "title_YwDaTz", "description_j4ByyM"],
+      "block_order": [
+        "subtitle_XPX87U",
+        "title_YwDaTz",
+        "description_j4ByyM"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -1036,7 +1065,11 @@
           }
         }
       },
-      "block_order": ["item_9JUQhz", "item_NYUrjj", "item_Prmf4W"],
+      "block_order": [
+        "item_9JUQhz",
+        "item_NYUrjj",
+        "item_Prmf4W"
+      ],
       "custom_css": [
         ".item-icon {display: inline-block; width: 30px; height: 28px;}",
         "ul.health-feature img {width: 28px; height: 28px; object-fit: contain; border-radius: 0; line-height: 7;}"
@@ -1080,7 +1113,10 @@
           }
         }
       },
-      "block_order": ["heading_tWq74p", "content_nQLTqP"],
+      "block_order": [
+        "heading_tWq74p",
+        "content_nQLTqP"
+      ],
       "disabled": true,
       "settings": {
         "background_color": "#f6f0e6",
@@ -1109,7 +1145,9 @@
           }
         }
       },
-      "block_order": ["loox_reviews_loox_dynamic_section_9tFX78"],
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_9tFX78"
+      ],
       "disabled": true,
       "settings": {
         "heading": "",
