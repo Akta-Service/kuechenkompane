@@ -164,7 +164,7 @@
           "type": "productInfo",
           "settings": {
             "info_img_1": "shopify://shop_images/Garntie_d60e2759-1e67-4bce-b8fb-cfaf27d7576c.png",
-            "info_text_1": "30 Tage risikofrei testen",
+            "info_text_1": "100 Tage risikofrei testen",
             "info_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
             "info_text_2": "Kostenloser Versand ab 100€",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
@@ -221,13 +221,6 @@
     "product_descrption_accordion_btdDtQ": {
       "type": "product-descrption-accordion",
       "blocks": {
-        "faq_jkYPLV": {
-          "type": "faq",
-          "settings": {
-            "question": "100 Tage kostenlos testen",
-            "answer": "<p>Online einkaufen soll für dich so unkompliziert wie möglich sein. Bestelle unsere Produkte und teste sie in Ruhe bei dir zuhause. Solltest du nicht rundum zufrieden sein, kannst du sie innerhalb von <strong>100 Tagen</strong> ohne Angabe von Gründen zurückschicken. Unser Tipp: Bestellen und selbst überzeugen!</p>"
-          }
-        },
         "faq_kQAWhE": {
           "type": "faq",
           "settings": {
@@ -251,7 +244,6 @@
         }
       },
       "block_order": [
-        "faq_jkYPLV",
         "faq_kQAWhE",
         "faq_pDwHXa",
         "faq_nHWmYD"
