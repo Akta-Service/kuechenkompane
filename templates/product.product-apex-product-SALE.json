@@ -277,14 +277,6 @@
     "product_descrption_accordion_btdDtQ": {
       "type": "product-descrption-accordion",
       "blocks": {
-        "faq_fqQbjd": {
-          "type": "faq",
-          "disabled": true,
-          "settings": {
-            "question": "",
-            "answer": ""
-          }
-        },
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
@@ -305,19 +297,26 @@
             "question": "Versand und Zahlung",
             "answer": "<p><strong>Kostenloser Versand  EU-weit (1-3 Tage)</strong></p><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine geringe Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p></p><p><strong>Versand in andere Länder z.B. Schweiz</strong></p><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p></p><p><strong>Zahlungsoptionen</strong></p><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
           }
+        },
+        "faq_fqQbjd": {
+          "type": "faq",
+          "settings": {
+            "question": "100 Tage risikofrei testen",
+            "answer": "<p>Online einkaufen soll für dich so unkompliziert wie möglich sein. Bestelle unsere Produkte und teste sie in Ruhe bei dir zuhause. Solltest du nicht rundum zufrieden sein, kannst du sie innerhalb von <strong>100 Tagen</strong> ohne Risiko zurückschicken. Unser Tipp: Bestellen und selbst überzeugen!</p>"
+          }
         }
       },
       "block_order": [
-        "faq_fqQbjd",
         "faq_jkYPLV",
         "faq_pDwHXa",
-        "faq_kQAWhE"
+        "faq_kQAWhE",
+        "faq_fqQbjd"
       ],
       "settings": {
         "color_scheme": "badge-hot",
         "title": "",
         "heading_type": "mrk-h2",
-        "description": "{{ product.description }}",
+        "description": "<p>{{ product.description }}</p>",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true,
