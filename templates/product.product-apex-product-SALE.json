@@ -288,7 +288,7 @@
           "type": "faq",
           "settings": {
             "question": "Produktdetails & Lieferumfang",
-            "answer": "<p>{{ product.metafields.custom.accordion_content_2 | metafield_tag }}</p>"
+            "answer": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}"
           }
         },
         "faq_kQAWhE": {
@@ -301,8 +301,8 @@
         "faq_fqQbjd": {
           "type": "faq",
           "settings": {
-            "question": "100 Tage risikofrei testen",
-            "answer": "<p>Online einkaufen soll für dich so unkompliziert wie möglich sein. Bestelle unsere Produkte und teste sie in Ruhe bei dir zuhause. Solltest du nicht rundum zufrieden sein, kannst du sie innerhalb von <strong>100 Tagen</strong> ohne Risiko zurückschicken. Unser Tipp: Bestellen und selbst überzeugen!</p>"
+            "question": "100 Tage Geld-zurück-Garantie",
+            "answer": "<p>Online einkaufen soll für dich so unkompliziert wie möglich sein. Bestelle unsere Produkte und teste sie in Ruhe bei dir zuhause. Solltest du nicht rundum zufrieden sein, kannst du sie innerhalb von 100 Tagen ohne Risiko zurückschicken. <strong>Unser Tipp:</strong> Bestellen und selbst überzeugen!</p>"
           }
         }
       },
@@ -316,7 +316,7 @@
         "color_scheme": "badge-hot",
         "title": "",
         "heading_type": "mrk-h2",
-        "description": "<p>{{ product.description }}</p>",
+        "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true,
