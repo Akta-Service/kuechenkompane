@@ -122,7 +122,7 @@ p.upsell--product__price.compare--price {
                 <input type="hidden" name="id" value="{{ up_product.selected_or_first_available_variant.id }}">
                 <button
                   type="submit"
-                  class="m-add-to-cart rs-add-btn m-button m-button--primary {% unless up_product.selected_or_first_available_variant.available %}disabled{% endunless %} upsell--product__button"
+                  class="m-add-to-cart m-button m-button--primary {% unless up_product.selected_or_first_available_variant.available %}disabled{% endunless %} upsell--product__button"
                 >
                 <span class="m-spinner-icon">
                   <svg
