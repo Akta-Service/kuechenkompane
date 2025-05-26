@@ -20,6 +20,19 @@
   font-size: {{ settings.b_text_size |  append: 'px' }};
   font-weight: {{ settings.t_font_weight }};
  }
+ .upsell--product {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+ }
+ .upsell--product__image {
+    width: 102px;
+    overflow: hidden;
+    min-width: 102px;
+}
+.upsell--product__button {
+    width: 100%;
+}
 @media only screen and (max-width:768px){
   .c_bootom_list li span {
     font-size: {{ settings.b_text_size_m |  append: 'px' }};
@@ -66,31 +79,46 @@
 
         {% if cart.item_count > 0 %}
           {%- assign up_product = settings.upsell__product -%}
-          {%- if up_product != blank -%}
-            
-          
-          <div class="upsell--product">
-            <div class="upsell--product__image">
-              <a href="{{ up_product.url }}" class="upsell--product__link">
-                <img
-                  src="{{ up_product.featured_image | img_url: '400x' }}"
-                  alt="{{ up_product.title }}"
-                  loading="lazy"
+          {%- if up_product != blank -%} 
+            <div class="upsell--product">
+              <div class="upsell--product__image">
+                <a href="{{ up_product.url }}" class="upsell--product__link">
+                  <img
+                    src="{{ up_product.featured_image | img_url: '400x' }}"
+                    alt="{{ up_product.title }}"
+                    loading="lazy"
+                    width=""
+                    height=""
+                  >
+                </a>
+              </div>
+              <div class="upsell--product__content">
+                <h4 class="upsell--product__title">{{ up_product.title }}</h4>
+                <p class="upsell--product__price">{{ up_product.price | money }}</p>
+                <a href="{{ up_product.url }}" class="m-button m-button--primary upsell--product__button">
+                  add to cart
+                </a>
+                <product-form data-product-id="{{ upsell_product.id }}">
+              {%- form 'product', upsell_product, novalidate: 'novalidate' -%}
+                <input type="hidden" name="id" value="{{ upsell_product.selected_or_first_available_variant.id }}">
+                <button
+                  type="submit"
+                  class="m-add-to-cart rs-add-btn m-button m-button--primary {% unless upsell_product.selected_or_first_available_variant.available %}disabled{% endunless %}"
                 >
-              </a>
-            </div>
-            <div class="upsell--product__content">
-              <h4 class="upsell--product__title">{{ up_product.title }}</h4>
-              <p class="upsell--product__price">{{ up_product.price | money }}</p>
-              <a href="{{ up_product.url }}" class="m-button m-button--primary upsell--product__button">
-                add to cart
-              </a>
-            </div>
-          </div>
+                  <span class="m-add-to-cart--text">
+                    {% if upsell_product.selected_or_first_available_variant.available %}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {% else %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% endif %}
+                  </span>
+                </button>
+              {%- endform -%}
+            </product-form>
 
-        {%- endif -%}
-         
-        
+              </div>
+            </div>
+          {%- endif -%}
         {% endif %}
 
         {% if cart.total_price > 0 %}
