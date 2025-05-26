@@ -277,12 +277,10 @@
     style="{% if section.settings.bg_igm != blank %} background-image: url('{{ section.settings.bg_igm |  img_url: 'master'  }}'); {% endif %}"
   >
     <div class="video-wrapper">
-      <video class="desktop-video" muted autoplay loop playsinline>
-        <source src="{{ section.settings.u}}" loading="lazy" type="video/mp4">
-      </video>
-      <video class="mobile-video" muted autoplay loop playsinline>
-        <source src="{{ section.settings.u_mobile }}" loading="lazy" type="video/mp4">
-      </video>
+     
+      {{ section.settings.video | video_tag: autoplay: false, loop: true, muted: false, controls: true, image_size: "600x", class: "desktop-video" }}
+      {{ section.settings.u_mobile | video_tag: autoplay: false, loop: true, muted: false, controls: true, image_size: "600x", class: "mobile-video" }} 
+
     </div>
 
     <div class="banner-main-content">
@@ -304,19 +302,16 @@
       "id": "color_scheme",
       "label": "Color scheme"
     },
-    {
-      "type": "text",
-      "id": "u",
-      "label": "Video URL",
-      "default": "https://cdn.shopify.com/videos/c/o/v/bfddd4ffc23e4801bb72eb108dadbd31.mp4"
-    },
-
-    {
-      "type": "text",
-      "id": "u_mobile",
-      "label": "Video URL",
-      "default": "https://cdn.shopify.com/videos/c/o/v/aa429ef4f1a64d94bffd7e063a8de73e.mp4"
-    },
+   {
+     "type": "video",
+     "id": "u",
+     "label": "video"
+   },
+   {
+     "type": "video",
+     "id": "u_mobile",
+     "label": "video"
+   },
 
     {
       "type": "range",
