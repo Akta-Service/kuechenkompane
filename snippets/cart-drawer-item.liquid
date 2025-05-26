@@ -58,6 +58,7 @@
         or item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
         or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
       %}
+          {% endunless %}
         <div class="m-cart-drawer-item__variant m:text-color-subtext">
           {%- unless item.product.has_only_default_variant -%}
             {%- for option in item.options_with_values -%}
@@ -97,225 +98,98 @@
               </span>
             </p>
           {%- endfor -%}
-        </div>
+              </div>
 
-        <div
-          class="            m-cart-item__price"
-        >
-          {%- if item.original_price != item.final_price -%}
-            <div class="m-cart-item__price-discounted">
-              <del class="m-cart-item__price--regular">
-                {% if settings.currency_code_enabled %}
-                  {{- item.original_price | money_with_currency -}}
-                {% else %}
-                  {{- item.original_price | money -}}
-                {% endif %}
-              </del>
-              <span class="m-cart-item__price--final">
-                {% if settings.currency_code_enabled %}
-                  {{- item.final_price | money_with_currency -}}
-                {% else %}
-                  {{- item.final_price | money -}}
-                {% endif %}
-              </span>
-            </div>
-          {%- else -%}
-            <div class="dawer-pirce">
-              <span class="m-cart-item__price--regular">
-                {% if settings.currency_code_enabled %}
-                  {{- item.original_price | money_with_currency -}}
-                {% else %}
-                  {{- item.original_price | money -}}
-                {% endif %}
-              </span>
-              {% assign handle = item.product.handle %}
-                                  {% assign product_upsell = all_products[handle] %}
-                                  
-                                  {% assign compare_price = product_upsell.compare_at_price %}
-              <s class="m-price-item m-price-item--regular">
-            
-                {% if settings.currency_code_enabled %}
-                  {{- compare_price | money_with_currency -}}
-                {% else %}
-                  {{- compare_price | money -}}
-                {% endif %}
-              </s>
-            </div>
-          {%- endif -%}
-
-          <div class="m-cart-item__unit-price{% unless item.unit_price_measurement %} m:hidden{% endunless %}">
-            <span class="m:visually-hidden m:visually-hidden--inline">
-              {{- 'products.product.unit_price_label' | t -}}
-            </span>
-            <span class="m:text-sm m:text-color-subtext">
-              {%- capture unit_price_separator -%}
-            <span aria-hidden="true">/</span>
-            <span class="m:visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
-          {%- endcapture -%}
-
-              {%- capture unit_price_base_unit -%}
-              {%- if item.unit_price_measurement.reference_value != 1 -%}
-                {{- item.unit_price_measurement.reference_value -}}
-              {%- endif -%}
-              {{ item.unit_price_measurement.reference_unit }}
-            {%- endcapture -%}
-
-              <span data-unit-price>{{ item.unit_price | money }}</span>
-              {{- unit_price_separator -}}
-              <span data-unit-price-base-unit>{{- unit_price_base_unit -}}</span>
-            </span>
-          </div>
-        </div>
-
-        {%- if item.discounts.size > 0 -%}
-          <ul class="m-cart__discount" role="list">
-            {%- for discount in item.discounts -%}
-              <li class="m-cart__discount--item">
-                <svg
-                  aria-hidden="true"
-                  width="20"
-                  height="20"
-                  focusable="false"
-                  role="presentation"
-                  viewBox="0 0 12 13"
-                >
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7 .5h3a2 2 0 0 1 2 2v3a.995.995 0 0 1-.293.707l-6 6a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l6-6A.995.995 0 0 1 7 .5zm2 2a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" fill="currentColor"></path>
-                </svg>
-                {{- discount.title -}}
-              </li>
-            {%- endfor -%}
-          </ul>
-        {%- endif -%}
-
-        {% unless item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
-          or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
-        %}
-          <div class="m-cart-drawer-item__quantity m:flex m:items-center">
-            {%- if gift_wrap_id == null or item.id != gift_wrap_id -%}
-              {%- if item.properties._parentKey == blank -%}
-                <m-quantity-input class="m-quantity">
-                  <button
-                    class="m-quantity__button"
-                    name="minus"
-                    type="button"
-                    aria-label="{{ 'products.product.decrease_quantity' | t: title: item.product.title }}"
-                  >
-                    <svg
-                      fill="currentColor"
-                      stroke="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 384 512"
-                    >
-                      <path d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
-                    </svg>
-                  </button>
-                  <input
-                    class="m-quantity__input"
-                    type="number"
-                    data-quantity-variant-id="{{ item.variant.id }}"
-                    name="updates[]"
-                    value="{{ item.quantity }}"
-                    {% # theme-check-disable %}
-                    data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
-                    min="{{ item.variant.quantity_rule.min }}"
-                    {% if item.variant.quantity_rule.max != null %}
-                      max="{{ item.variant.quantity_rule.max }}"
-                    {% endif %}
-                    step="{{ item.variant.quantity_rule.increment }}"
-                    {% # theme-check-enable %}
-                    id="MinimogDrawer-quantity-{{ item.index | plus: 1 }}"
-                    data-index="{{ item.index | plus: 1 }}"
-                  >
-                  <button
-                    class="m-quantity__button"
-                    name="plus"
-                    type="button"
-                    aria-label="{{ 'products.product.increase_quantity' | t: title: item.product.title }}"
-                  >
-                    <svg
-                      fill="currentColor"
-                      stroke="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 384 512"
-                    >
-                      <path d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
-                    </svg>
-                  </button>
-                </m-quantity-input>
-              {%- endif -%}
-            {%- else -%}
-              <m-gift-wrapping-input
-                class="m-quantity"
-                data-product-id="{{ product_id | default: item.product.id }}"
-                cart-items-size="{{ cart.items.size }}"
-                gift-wraps-in-cart="{{ gift_wraps_in_cart }}"
-                items-in-cart="{{ items_in_cart }}"
+              <div
+                class="            m-cart-item__price"
               >
-                <button
-                  class="m-quantity__button"
-                  type="button"
-                  name="minus"
-                  disabled
-                  aria-label="{{ 'products.product.decrease_quantity' | t: title: item.product.title }}"
-                >
-                  <svg
-                    fill="currentColor"
-                    stroke="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 384 512"
-                  >
-                    <path d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
-                  </svg>
-                </button>
-                <input
-                  class="m-quantity__input"
-                  type="number"
-                  data-quantity-variant-id="{{ item.variant.id }}"
-                  name="updates[]"
-                  value="{{ item.quantity }}"
-                  {% # theme-check-disable %}
-                  data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
-                  min="{{ item.variant.quantity_rule.min }}"
-                  {% if item.variant.quantity_rule.max != null %}
-                    max="{{ item.variant.quantity_rule.max }}"
-                  {% endif %}
-                  step="{{ item.variant.quantity_rule.increment }}"
-                  {% # theme-check-enable %}
-                  id="MinimogQuantity-{{ item.index | plus: 1 }}"
-                  data-index="{{ item.index | plus: 1 }}"
-                  disabled="disabled"
-                >
-                <button
-                  class="m-quantity__button"
-                  type="button"
-                  name="plus"
-                  disabled
-                  aria-label="{{ 'products.product.increase_quantity' | t: title: item.product.title }}"
-                >
-                  <svg
-                    fill="currentColor"
-                    stroke="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 384 512"
-                  >
-                    <path d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
-                  </svg>
-                </button>
-              </m-gift-wrapping-input>
-            {%- endif -%}
-            {%- if item.properties._parentKey == blank -%}
-              <m-cart-remove-button
-                id="MinimogCartDrawer-Remove-{{ item.index | plus: 1 }}"
-                data-index="{{ item.index | plus: 1 }}"
-              >
-                <span class="m-cart-item__remove m-button--link{% unless gift_wrap_id == nil or item.id != gift_wrap_id %} m:hidden{% endunless %}">
-                  {{- 'cart.general.remove' | t -}}
-                </span>
-              </m-cart-remove-button>
-            {%- endif -%}
-          </div>
-        {% endunless %}
-      {% endunless %}
+                {%- if item.original_price != item.final_price -%}
+                  <div class="m-cart-item__price-discounted">
+                    <del class="m-cart-item__price--regular">
+                      {% if settings.currency_code_enabled %}
+                        {{- item.original_price | money_with_currency -}}
+                      {% else %}
+                        {{- item.original_price | money -}}
+                      {% endif %}
+                    </del>
+                    <span class="m-cart-item__price--final">
+                      {% if settings.currency_code_enabled %}
+                        {{- item.final_price | money_with_currency -}}
+                      {% else %}
+                        {{- item.final_price | money -}}
+                      {% endif %}
+                    </span>
+                  </div>
+                {%- else -%}
+                  <div class="dawer-pirce">
+                    <span class="m-cart-item__price--regular">
+                      {% if settings.currency_code_enabled %}
+                        {{- item.original_price | money_with_currency -}}
+                      {% else %}
+                        {{- item.original_price | money -}}
+                      {% endif %}
+                    </span>
+                    {% assign handle = item.product.handle %}
+                                        {% assign product_upsell = all_products[handle] %}
+                                        
+                                        {% assign compare_price = product_upsell.compare_at_price %}
+                    <s class="m-price-item m-price-item--regular">
+                  
+                      {% if settings.currency_code_enabled %}
+                        {{- compare_price | money_with_currency -}}
+                      {% else %}
+                        {{- compare_price | money -}}
+                      {% endif %}
+                    </s>
+                  </div>
+                {%- endif -%}
+
+                <div class="m-cart-item__unit-price{% unless item.unit_price_measurement %} m:hidden{% endunless %}">
+                  <span class="m:visually-hidden m:visually-hidden--inline">
+                    {{- 'products.product.unit_price_label' | t -}}
+                  </span>
+                  <span class="m:text-sm m:text-color-subtext">
+                    {%- capture unit_price_separator -%}
+                  <span aria-hidden="true">/</span>
+                  <span class="m:visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
+                {%- endcapture -%}
+
+                    {%- capture unit_price_base_unit -%}
+                    {%- if item.unit_price_measurement.reference_value != 1 -%}
+                      {{- item.unit_price_measurement.reference_value -}}
+                    {%- endif -%}
+                    {{ item.unit_price_measurement.reference_unit }}
+                  {%- endcapture -%}
+
+                    <span data-unit-price>{{ item.unit_price | money }}</span>
+                    {{- unit_price_separator -}}
+                    <span data-unit-price-base-unit>{{- unit_price_base_unit -}}</span>
+                  </span>
+                </div>
+              </div>
+
+              {%- if item.discounts.size > 0 -%}
+                <ul class="m-cart__discount" role="list">
+                  {%- for discount in item.discounts -%}
+                    <li class="m-cart__discount--item">
+                      <svg
+                        aria-hidden="true"
+                        width="20"
+                        height="20"
+                        focusable="false"
+                        role="presentation"
+                        viewBox="0 0 12 13"
+                      >
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7 .5h3a2 2 0 0 1 2 2v3a.995.995 0 0 1-.293.707l-6 6a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l6-6A.995.995 0 0 1 7 .5zm2 2a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" fill="currentColor"></path>
+                      </svg>
+                      {{- discount.title -}}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+
+       
+  
     </div>
   </div>
   {% comment %}Custom element for FoxKit In-cart upsells{% endcomment %}
