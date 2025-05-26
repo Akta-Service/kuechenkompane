@@ -77,6 +77,12 @@
           {% render 'cart-drawer-empty' %}
         {% endif %}
 
+       
+
+        {% if cart.total_price > 0 %}
+          {% render 'cart-free-add-on' %}
+        {% endif %}
+
         {% if cart.item_count > 0 %}
           {%- assign up_product = settings.upsell__product -%}
           {%- if up_product != blank -%} 
@@ -101,7 +107,7 @@
                   {% endif %}
                 </div>
                 <product-form data-product-id="{{ up_product.id }}">
-              {%- form 'product', up_product, novalidate: 'novalidate' -%}
+                {%- form 'product', up_product, novalidate: 'novalidate' -%}
                 <input type="hidden" name="id" value="{{ up_product.selected_or_first_available_variant.id }}">
                 <button
                   type="submit"
@@ -115,19 +121,14 @@
                     {% endif %}
                   </span>
                 </button>
-              {%- endform -%}
-            </product-form>
+                {%- endform -%}
+                </product-form>
 
               </div>
             </div>
           {%- endif -%}
         {% endif %}
-
-        {% if cart.total_price > 0 %}
-          {% render 'cart-free-add-on' %}
-        {% endif %}
-
-
+        
         <form action="{{ routes.cart_url }}" method="post" id="cart-drawer-form" class="m:w-full" novalidate>
           {%- if cart.items.size > 0 -%}
             <div class="m-cart-drawer__items">
