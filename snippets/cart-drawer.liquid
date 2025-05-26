@@ -66,6 +66,9 @@
 
         {% if cart.item_count > 0 %}
           {%- assign up_product = settings.upsell__product -%}
+          {%- if up_product != blank -%}
+            
+          
           <div class="upsell--product">
             <div class="upsell--product__image">
               <a href="{{ up_product.url }}" class="upsell--product__link">
@@ -84,7 +87,8 @@
               </a>
             </div>
           </div>
-         
+
+        {%- endif -%}
          
         
         {% endif %}
