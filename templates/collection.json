@@ -62,15 +62,15 @@
         "pagination_limit": 30,
         "paginate_type": "paginate",
         "show_sorting": true,
-        "show_filter": false,
-        "filters_type": "storefront_filters",
+        "show_filter": true,
+        "filters_type": "tags_filter",
         "sidebar": "leftColumn",
         "sidebar_title": "Filters",
         "limit_height_widget": true,
         "limit_height": 300,
         "change_product_variant_on_fitlering": true,
         "show_product_count": true,
-        "collapsed_groups": "Product type, Brand, Vendor, Size",
+        "collapsed_groups": "Product type, Brand, Vendor, Size{{ collection.title }}",
         "color_swatches": "color,colour,couleur,farbe",
         "color_swatches_design": "list"
       }
