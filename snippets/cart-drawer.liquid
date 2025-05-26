@@ -47,6 +47,10 @@ h4.upsell--product__title {
 p.upsell--product__price.compare--price {
     text-decoration: line-through;
 }
+.upsell--product__content button {
+    padding: 6px 0px;
+    font-size: 14px;
+}
 @media only screen and (max-width:768px){
   .c_bootom_list li span {
     font-size: {{ settings.b_text_size_m |  append: 'px' }};
@@ -136,7 +140,7 @@ p.upsell--product__price.compare--price {
                     </a>
                   </div>
                   <div class="upsell--product__content">
-                    <h4 class="upsell--product__title">{{ up_product.title }}</h4>
+                    <h6 class="upsell--product__title">{{ up_product.title }}</h6>
                     <div class="price--wrapper">
                       <p class="upsell--product__price">{{ up_product.price | money }}</p>
                       {% if up_product.price < up_product.compare_at_price %}
