@@ -95,15 +95,13 @@
               <div class="upsell--product__content">
                 <h4 class="upsell--product__title">{{ up_product.title }}</h4>
                 <p class="upsell--product__price">{{ up_product.price | money }}</p>
-                <a href="{{ up_product.url }}" class="m-button m-button--primary upsell--product__button">
-                  add to cart
-                </a>
+               
                 <product-form data-product-id="{{ up_product.id }}">
               {%- form 'product', up_product, novalidate: 'novalidate' -%}
                 <input type="hidden" name="id" value="{{ up_product.selected_or_first_available_variant.id }}">
                 <button
                   type="submit"
-                  class="m-add-to-cart rs-add-btn m-button m-button--primary {% unless up_product.selected_or_first_available_variant.available %}disabled{% endunless %}"
+                  class="m-add-to-cart rs-add-btn m-button m-button--primary {% unless up_product.selected_or_first_available_variant.available %}disabled{% endunless %} upsell--product__button"
                 >
                   <span class="m-add-to-cart--text">
                     {% if up_product.selected_or_first_available_variant.available %}
