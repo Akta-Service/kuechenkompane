@@ -24,14 +24,25 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    padding: 20px 0;
  }
  .upsell--product__image {
     width: 102px;
     overflow: hidden;
     min-width: 102px;
 }
+h4.upsell--product__title {
+    font-size: 16px;
+}
 .upsell--product__button {
     width: 100%;
+}
+.price--wrapper {
+    display: flex;
+    gap: 10px;
+}
+p.upsell--product__price.compare--price {
+    text-decoration: line-through;
 }
 @media only screen and (max-width:768px){
   .c_bootom_list li span {
@@ -113,6 +124,17 @@
                   type="submit"
                   class="m-add-to-cart rs-add-btn m-button m-button--primary {% unless up_product.selected_or_first_available_variant.available %}disabled{% endunless %} upsell--product__button"
                 >
+                <span class="m-spinner-icon">
+                  <svg
+                    class="animate-spin m-svg-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                </span>
                   <span class="m-add-to-cart--text">
                     {% if up_product.selected_or_first_available_variant.available %}
                       {{ 'products.product.add_to_cart' | t }}
@@ -128,7 +150,7 @@
             </div>
           {%- endif -%}
         {% endif %}
-        
+
         <form action="{{ routes.cart_url }}" method="post" id="cart-drawer-form" class="m:w-full" novalidate>
           {%- if cart.items.size > 0 -%}
             <div class="m-cart-drawer__items">
