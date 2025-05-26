@@ -301,6 +301,7 @@
           </div>
         </m-visitiors-counter>
         <script src="{{ 'visitors-counter.js' | asset_url }}" defer="defer"></script>
+      {%- when 'variant_picker' -%}
         {% render 'product-option',
           product: product,
           section: section,

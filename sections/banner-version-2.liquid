@@ -277,10 +277,10 @@
     style="{% if section.settings.bg_igm != blank %} background-image: url('{{ section.settings.bg_igm |  img_url: 'master'  }}'); {% endif %}"
   >
     <div class="video-wrapper">
-      <video class="desktop-video" muted autoplay loop playsinline poster="{{ section.settings.poster_desktop | image_url: width: 1200 }}">
+      <video class="desktop-video" muted autoplay loop playsinline>
         <source src="{{ section.settings.u}}" loading="lazy" type="video/mp4">
       </video>
-      <video class="mobile-video" muted autoplay loop playsinline poster="{{ section.settings.poster_mobile | image_url: width: 800 }}">
+      <video class="mobile-video" muted autoplay loop playsinline>
         <source src="{{ section.settings.u_mobile }}" loading="lazy" type="video/mp4">
       </video>
     </div>
@@ -304,17 +304,6 @@
       "id": "color_scheme",
       "label": "Color scheme"
     },
-    {
-      "type": "image_picker",
-      "id": "poster_desktop",
-      "label": "Desktop Video Poster"
-    },
-    {
-      "type": "image_picker",
-      "id": "poster_mobile",
-      "label": "Mobile Video Poster"
-    },
-    
     {
       "type": "text",
       "id": "u",
