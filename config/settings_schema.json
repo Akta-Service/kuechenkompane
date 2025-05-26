@@ -3990,6 +3990,16 @@
       },
       {
         "type": "header",
+        "content": "Upsell Product"
+      },
+      {
+        "type": "product",
+        "id": "upsell__product",
+        "label": "Select Upsell Product"
+      },
+
+      {
+        "type": "header",
         "content": "Cross sell Collection"
       },
       {

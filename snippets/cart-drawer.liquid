@@ -64,9 +64,36 @@
           {% render 'cart-drawer-empty' %}
         {% endif %}
 
+        {% if cart.item_count > 0 %}
+          {%- assign up_product = settings.upsell__product -%}
+          <div class="upsell--product">
+            <div class="upsell--product__image">
+              <a href="{{ up_product.url }}" class="upsell--product__link">
+                <img
+                  src="{{ up_product.featured_image | img_url: '400x' }}"
+                  alt="{{ up_product.title }}"
+                  loading="lazy"
+                >
+              </a>
+            </div>
+            <div class="upsell--product__content">
+              <h4 class="upsell--product__title">{{ up_product.title }}</h4>
+              <p class="upsell--product__price">{{ up_product.price | money }}</p>
+              <a href="{{ up_product.url }}" class="m-button m-button--primary upsell--product__button">
+                add to cart
+              </a>
+            </div>
+          </div>
+         
+         
+        
+        {% endif %}
+
         {% if cart.total_price > 0 %}
           {% render 'cart-free-add-on' %}
         {% endif %}
+
+
         <form action="{{ routes.cart_url }}" method="post" id="cart-drawer-form" class="m:w-full" novalidate>
           {%- if cart.items.size > 0 -%}
             <div class="m-cart-drawer__items">
