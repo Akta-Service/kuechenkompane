@@ -94,8 +94,12 @@
               </div>
               <div class="upsell--product__content">
                 <h4 class="upsell--product__title">{{ up_product.title }}</h4>
-                <p class="upsell--product__price">{{ up_product.price | money }}</p>
-               
+                <div class="price--wrapper">
+                  <p class="upsell--product__price">{{ up_product.price | money }}</p>
+                  {% if up_product.price < up_product.compare_at_price %}
+                  <p class="upsell--product__price compare--price">{{ up_product.compare_at_price | money }}</p>
+                  {% endif %}
+                </div>
                 <product-form data-product-id="{{ up_product.id }}">
               {%- form 'product', up_product, novalidate: 'novalidate' -%}
                 <input type="hidden" name="id" value="{{ up_product.selected_or_first_available_variant.id }}">
