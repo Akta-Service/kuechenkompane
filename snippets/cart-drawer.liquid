@@ -126,12 +126,23 @@ p.upsell--product__price.compare--price {
         {% if cart.total_price > 0 %}
           {% render 'cart-addons', form_id: 'cart-drawer-form' %}
           {% render 'cart-cross-sell' %}
-                {% if cart.item_count > 0 %}
-              {%- assign up_product = settings.upsell__product -%}
-              {%- if up_product != blank -%} 
-    <h6>Die perfekte Ergänzung:</h6>
-                <div class="upsell--product">
-                              
+
+
+              {% if cart.item_count > 0 %}
+                {%- assign up_product = settings.upsell__product -%}
+
+                {% assign show_upsell = true %}
+                {%- for item in cart.items -%}
+                  {% if item.product.id == up_product.id %}
+                    {% assign show_upsell = false %}
+                  {% endif %}
+                {%- endfor -%}
+
+
+                {%- if up_product != blank and show_upsell-%} 
+                  
+                <h6>Die perfekte Ergänzung:</h6>
+                <div class="upsell--product">                              
                   <div class="upsell--product__image">
                     <a href="{{ up_product.url }}" class="upsell--product__link">
                       <img
