@@ -12,7 +12,6 @@
     "apex_timer_kk8rAh": {
       "type": "Apex-timer",
       "disabled": true,
-      "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
@@ -101,6 +100,7 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "taxes_included": false,
             "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -306,7 +306,7 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "Produktbeschreibung",
+        "title": "",
         "heading_type": "mrk-h2",
         "description": "{{ product.description }}",
         "mt": 30,
