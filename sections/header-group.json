@@ -13,7 +13,6 @@
   "sections": {
     "announcement_bar_version_1_eGCFfx": {
       "type": "announcement-bar-version-1",
-      "name": "APEX Announcement Bar 1",
       "settings": {
         "color_scheme": "dark",
         "pt": 15,
@@ -21,7 +20,7 @@
         "ann_title": "🔥 ENDGÜLTIGER AUSVERKAUF – KEINE NACHPRODUKTION! 🔥",
         "ann_title_size": 16,
         "ann_title_size_m": 15,
-        "text": "<p>Jetzt oder nie: 48h bis -75 % auf Auslaufmodelle</p>",
+        "text": "<p><a href=\"/collections/ausverkauf\" title=\"Ausverkauf\">Jetzt oder nie: 48h bis -75 % auf Auslaufmodelle</a></p>",
         "text_size": 16,
         "text_size_m": 16
       }
@@ -29,7 +28,6 @@
     "apex_global_offer_timer_gMjjdD": {
       "type": "Apex-global-offer-timer",
       "disabled": true,
-      "name": "Apex Global Timer",
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
@@ -158,7 +156,6 @@
     },
     "announcement_bar_version_1_copy_GBrcEC": {
       "type": "announcement-bar-version-1-copy",
-      "name": "APEX Sale Announcement",
       "settings": {
         "target_tags": "sale announcement",
         "color_scheme": "dark",
