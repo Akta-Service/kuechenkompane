@@ -32,7 +32,6 @@
     "apex_timer_9PnBtn": {
       "type": "Apex-timer",
       "disabled": true,
-      "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#c6d1c4",
         "section_pt": 15,
@@ -62,7 +61,7 @@
         "pagination_limit": 30,
         "paginate_type": "paginate",
         "show_sorting": true,
-        "show_filter": false,
+        "show_filter": true,
         "filters_type": "storefront_filters",
         "sidebar": "leftColumn",
         "sidebar_title": "Filters",
@@ -90,7 +89,6 @@
       "block_order": [
         "promotion_NBbJbf"
       ],
-      "name": "Promotion banner",
       "settings": {
         "container": "container-fluid",
         "color_scheme": "",
