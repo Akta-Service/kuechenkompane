@@ -116,22 +116,6 @@
     },
     "main": {
       "type": "main-collection-product-grid",
-      "blocks": {
-        "filter_8xheAi": {
-          "type": "filter",
-          "settings": {
-            "design_filtergroup": "button",
-            "title": "Tags",
-            "filtergroup": "new",
-            "show_label": true,
-            "use_accordion": true,
-            "open_filtergroup": true
-          }
-        }
-      },
-      "block_order": [
-        "filter_8xheAi"
-      ],
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
         ".m-collection-filters-form {margin-bottom: 0;}"
