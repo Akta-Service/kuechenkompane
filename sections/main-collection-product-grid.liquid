@@ -30,37 +30,6 @@
     assign container = 'container-full'
   endif
 -%}
-{% if collection.all_tags.size > 0 %}
-  <ul class="tag-filters">
-    {% for tag in collection.all_tags %}
-      {% if current_tags contains tag %}
-        <li class="tag-filters__item active">{{ tag | link_to_remove_tag: tag }}</li>
-      {% else %}
-        <li class="tag-filters__item">{{ tag | link_to_add_tag: tag }}</li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-{% endif %}
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  // Select all tag filter lists on the page
-  const tagFiltersLists = document.querySelectorAll('.tag-filters li a');
-  tagFiltersLists.forEach(function(tagFilters) {
-    tagFilters.addEventListener('click', function (e) {
-        e.preventDefault();
-      let fullUrl = window.shopify.Shop;
-      console.log('Full website URL:', fullUrl);
-
-    // Prevent default link behavior on <a> tags
-      // Custom logic for tag filter click can go here
-      console.log('Tag filter clicked:', e.target.textContent);
-      
-    });
-  });
-});
-
-</script>
 
 
 
