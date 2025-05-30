@@ -29,7 +29,6 @@
         "enable_bg_zoom_effect": true
       }
     },
-    
     "apex_timer_9PnBtn": {
       "type": "Apex-timer",
       "disabled": true,
@@ -48,7 +47,7 @@
         "target_time": "00:00:00"
       }
     },
-        "category_selection_iMrTd6": {
+    "category_selection_iMrTd6": {
       "type": "category-selection",
       "blocks": {
         "item_nwxAVH": {
@@ -104,7 +103,6 @@
         "item_KtcacC",
         "item_rktrNh"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "pt": 30,
