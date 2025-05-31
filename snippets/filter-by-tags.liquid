@@ -151,7 +151,13 @@
 
                         <li class="m-facet--item m-facet--color{% unless show_label %} m-tooltip m-tooltip--style-2 m-tooltip--top{% else %} m-facet--show-label{% endunless %}{% if new_current_tags contains tag_handle %} active remove-tag{% else %} add-tag{% endif %}" data-group="{{ title_handle }}" data-handle="{{ tag_downcase }}" data-tag-filter>
                           {% unless show_label %}
-                    
+                            <span class="m-facet--color-label m-facet--color-{{ tag_downcase }} m-bg-lazy" style="background-color: {{ curcol | default: default_color }}; background-image: url({{- texture_style -}}); background-size: cover;">
+                              {% if new_current_tags contains tag_handle %}
+                                {{ tag | link_to_remove_tag: tag_down }}
+                              {% else %}
+                                {{ tag | link_to_add_tag: tag_down }}
+                              {% endif %}
+                            </span>
                             <span class="m-tooltip__content">{{ tag | capitalize }}</span>
                           {% else %}
                             <span class="m-facet--color-label m-facet--color-{{ tag_downcase }} m-bg-lazy" style="background-color: {{ curcol | default: default_color }}; background-image: url({{- texture_style -}}); background-size: cover;"></span>
