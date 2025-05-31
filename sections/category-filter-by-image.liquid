@@ -149,9 +149,9 @@
           <div class="category-item swiper-slide">
             <div class="cart-inner-wrapper">
               {% if block.settings.collection_img != blank %}
-                <div class="category-img">
-                  <a href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
-                    <img
+                <div class="category-img ">
+                  <a class="filter-tag-btn" href="#" data-tag="{{ block.settings.custom_url | handleize }}">
+                    <img class="filter-tag-btn"
                       src="{{ block.settings.collection_img |  img_url: 'master' }}"
                       loading="lazy"
                       alt="">
@@ -159,7 +159,7 @@
                 </div>
               {% endif %}
               {% if block.settings.collection_name != blank %}
-                <a class="collection-title" href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                <a class="collection-title filter-tag-btn" href="#" data-tag="{{ block.settings.custom_url | handleize }}">
                   <span class="{{ section.settings.c_n_text }}">
                     {{ block.settings.collection_name }}
                   </span>
@@ -169,7 +169,7 @@
                 </a>
 
               {%- else -%}
-                <a href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                <a class="filter-tag-btn" href="#" data-tag="{{ block.settings.custom_url | handleize }}">
                   <span>{{ block.settings.collection.title }}</span>
                 </a>
               {% endif %}
@@ -180,6 +180,36 @@
     </div>
   </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Filter logic
+    const filterButtons = document.querySelectorAll('.filter-tag-btn');
+    const productCards = document.querySelectorAll('.m-product-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const selectedTag = this.dataset.tag;
+
+        productCards.forEach(card => {
+          const tags = card.dataset.tags;
+
+          if (tags.includes(selectedTag)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Optional: update the URL with selected tag
+        const url = new URL(window.location);
+        url.searchParams.set('tag', selectedTag);
+        window.history.pushState({}, '', url);
+      });
+    });
+  });
+</script>
 
 {% schema %}
   {
