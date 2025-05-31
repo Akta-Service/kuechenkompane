@@ -47,25 +47,86 @@
         "target_time": "00:00:00"
       }
     },
+    "category_selection_iMrTd6": {
+      "type": "category-filter-by-image",
+      "blocks": {
+        "item_LNGV6x": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_nwxAVH": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db.jpg",
+            "collection_name": "New",
+            "custom_url": "new"
+          }
+        },
+        "item_Bd4xRW": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d.webp",
+            "collection_name": "All",
+            "custom_url": ""
+          }
+        },
+        "item_KtcacC": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_9602_V7_766bf07d-e962-44cd-88f4-f20ad783e139.jpg",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_rktrNh": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_LNGV6x",
+        "item_nwxAVH",
+        "item_Bd4xRW",
+        "item_KtcacC",
+        "item_rktrNh"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "pt": 30,
+        "pb": 30,
+        "mobile_pt": 30,
+        "mobile_pb": 30,
+        "heading_type": "mrk-h1",
+        "title": "Nach Kategorien suchen",
+        "c_n_text": "p-medium"
+      }
+    },
     "main": {
       "type": "main-collection-product-grid",
       "blocks": {
-        "filter_8xheAi": {
+        "filter_TQEkVc": {
           "type": "filter",
-          "disabled": true,
           "settings": {
-            "design_filtergroup": "button",
+            "design_filtergroup": "default",
             "title": "Tags",
-            "filtergroup": "new",
+            "filtergroup": "Vintage,tops,shirts",
             "show_label": true,
             "use_accordion": true,
             "open_filtergroup": true
           }
         }
       },
-      "block_order": [
-        "filter_8xheAi"
-      ],
+      "block_order": ["filter_TQEkVc"],
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
         ".m-collection-filters-form {margin-bottom: 0;}"
@@ -78,7 +139,7 @@
         "pagination_limit": 30,
         "paginate_type": "paginate",
         "show_sorting": false,
-        "show_filter": false,
+        "show_filter": true,
         "filters_type": "tags_filter",
         "sidebar": "leftColumn",
         "sidebar_title": "Filters",
@@ -103,9 +164,7 @@
           }
         }
       },
-      "block_order": [
-        "promotion_NBbJbf"
-      ],
+      "block_order": ["promotion_NBbJbf"],
       "settings": {
         "container": "container-fluid",
         "color_scheme": "",
@@ -160,11 +219,7 @@
           }
         }
       },
-      "block_order": [
-        "item_aVKf6y",
-        "item_9zb4Pn",
-        "item_4VaJ6g"
-      ],
+      "block_order": ["item_aVKf6y", "item_9zb4Pn", "item_4VaJ6g"],
       "settings": {
         "color_scheme": "",
         "verticle_padding": 50,
@@ -187,6 +242,7 @@
   "order": [
     "collection-header",
     "apex_timer_9PnBtn",
+    "category_selection_iMrTd6",
     "main",
     "promotion_banner_dgKacc",
     "usp_list_nd6t8y",
