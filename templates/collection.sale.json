@@ -116,6 +116,7 @@
       "blocks": {
         "filter_TQEkVc": {
           "type": "filter",
+          "disabled": true,
           "settings": {
             "design_filtergroup": "default",
             "title": "Tags",
@@ -141,7 +142,7 @@
         "pagination_limit": 30,
         "paginate_type": "paginate",
         "show_sorting": false,
-        "show_filter": true,
+        "show_filter": false,
         "filters_type": "tags_filter",
         "sidebar": "leftColumn",
         "sidebar_title": "Filters",
