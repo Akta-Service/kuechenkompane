@@ -62,8 +62,8 @@
           "type": "item",
           "settings": {
             "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d.webp",
-            "collection_name": "djjfdff",
-            "custom_url": "dsdfg"
+            "collection_name": "presale test",
+            "custom_url": "presale"
           }
         },
         "item_LNGV6x": {
@@ -118,7 +118,7 @@
             "design_filtergroup": "default",
             "title": "Tags",
             "filtergroup": "Vintage,tops,shirts",
-            "show_label": false,
+            "show_label": true,
             "use_accordion": true,
             "open_filtergroup": true
           }
