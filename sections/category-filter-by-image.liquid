@@ -1,4 +1,4 @@
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
  
@@ -149,9 +149,9 @@
           <div class="category-item swiper-slide">
             <div class="cart-inner-wrapper">
               {% if block.settings.collection_img != blank %}
-                <div class="category-img ">
-                  <a class="filter-tag-btn" href="#" data-tag="{{ block.settings.custom_url | handleize }}">
-                    <img class="filter-tag-btn"
+                <div class="category-img">
+                  <a href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                    <img
                       src="{{ block.settings.collection_img |  img_url: 'master' }}"
                       loading="lazy"
                       alt="">
@@ -159,7 +159,7 @@
                 </div>
               {% endif %}
               {% if block.settings.collection_name != blank %}
-                <a class="collection-title filter-tag-btn" href="#" data-tag="{{ block.settings.custom_url | handleize }}">
+                <a class="collection-title ajax-tag" href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
                   <span class="{{ section.settings.c_n_text }}">
                     {{ block.settings.collection_name }}
                   </span>
@@ -169,7 +169,7 @@
                 </a>
 
               {%- else -%}
-                <a class="filter-tag-btn" href="#" data-tag="{{ block.settings.custom_url | handleize }}">
+                <a href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
                   <span>{{ block.settings.collection.title }}</span>
                 </a>
               {% endif %}
@@ -180,37 +180,33 @@
     </div>
   </div>
 </div>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Filter logic
-    const filterButtons = document.querySelectorAll('.filter-tag-btn');
-    const productCards = document.querySelectorAll('.m-product-item');
+    const filterLinks = document.querySelectorAll('.ajax-tag');
 
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function (e) {
+    filterLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
+        const url = this.href;
 
-        const selectedTag = this.dataset.tag;
+        fetch(url)
+          .then(response => response.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
 
-        productCards.forEach(card => {
-          const tags = card.dataset.tags;
+            // Replace product grid
+            const newProducts = doc.querySelector('.m-collection-products');
+            document.querySelector('.m-collection-products').innerHTML = newProducts.innerHTML;
 
-          if (tags.includes(selectedTag)) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
-        
-        const url = new URL(window.location);
-        url.searchParams.set('tag', selectedTag);
-        window.history.pushState({}, '', url);
+            // Optional: update URL
+            history.pushState(null, '', url);
+          });
       });
     });
   });
 </script>
-
 {% schema %}
   {
     "name": "APEX Collection Filter",
