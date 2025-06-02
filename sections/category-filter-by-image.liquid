@@ -1,8 +1,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 <style>
-
-
   /* common css end  */
   .category-area {
     padding: 60px 0;
@@ -149,9 +147,6 @@
           <div class="category-item swiper-slide">
             <div class="cart-inner-wrapper">
               {% if block.settings.collection_img != blank %}
-                <script>
-                  console.log({{block.settings.custom_url}});
-                </script>
                 <div class="category-img">
                   <a href="{{ collection.url }}/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
                     <img
