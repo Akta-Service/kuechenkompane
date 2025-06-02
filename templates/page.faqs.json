@@ -23,8 +23,10 @@
       "type": "custom-content",
       "settings": {
         "heading": "FAQs",
+        "heading_type": "mrk-h1",
         "subheading": "",
         "description": "",
+        "p_size": "p-medium",
         "container": "container-fluid",
         "color_scheme": "",
         "content_color_scheme": "",
@@ -317,7 +319,7 @@
           "type": "accordion",
           "settings": {
             "title": "Wie läuft eine Rücksendung ab?",
-            "content": "<p>1️⃣ Kontaktiere unseren Kundenservice und beantrage eine Rücksendung.<br/>2️⃣ Du erhältst ein Rücksendeetikett und alle notwendigen Infos.<br/>3️⃣ Sende das Paket an uns zurück – nach Erhalt erfolgt die Rückerstattung.</p>",
+            "content": "<p>1️⃣ Kontaktiere unseren Kundenservice und beantrage eine Rücksendung.<br/>2️⃣ Du erhältst eine Rücksendeadresse und alle notwendigen Infos.<br/>3️⃣ Sende das Paket an uns zurück – nach Erhalt erfolgt die Rückerstattung.</p>",
             "open": false
           }
         },
@@ -557,16 +559,26 @@
     "banner_version_2_gRbjx6": {
       "type": "banner-version-2",
       "settings": {
+        "color_scheme": "",
         "u": "https://cdn.shopify.com/videos/c/o/v/bfddd4ffc23e4801bb72eb108dadbd31.mp4",
         "u_mobile": "https://cdn.shopify.com/videos/c/o/v/aa429ef4f1a64d94bffd7e063a8de73e.mp4",
         "mt": 0,
         "mb": 0,
         "mt_mobile": 0,
         "mb_mobile": 0,
+        "top_text": "p-medium",
         "title": "Meisterhaft kochen beginnt hier",
+        "heading_type": "mrk-h1",
         "sub_title": "",
+        "sub_title_text": "p-medium",
         "btn_text": "Produkte entdecken",
-        "btn_link": "shopify://pages/collection-bestseller"
+        "btn_link": "shopify://pages/collection-bestseller",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "b_overlay": false,
+        "image_overlay_color": "#000000",
+        "image_overlay_opacity": 50,
+        "image_overlay_opacity_mobile": 30
       }
     },
     "branded_image_version_2_RUeynx": {
@@ -590,11 +602,18 @@
         "text_8DpMLx"
       ],
       "settings": {
+        "color_scheme": "",
+        "shape_bg": "#deceba",
         "margin_top": 0,
         "margin_bottom": 0,
         "mobile_margin_top": 0,
         "mobile_margin_bottom": 0,
-        "bg_img": "shopify://shop_images/IMG_0714_1.jpg"
+        "bg_img": "shopify://shop_images/IMG_0714_1.jpg",
+        "heading_type": "mrk-h1",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium",
+        "button_style": "m-button--primary",
+        "button_size": ""
       }
     }
   },
