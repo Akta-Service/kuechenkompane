@@ -137,6 +137,10 @@
     
   }
 </style>
+
+
+
+
 <div class="category-area m-color-{{ section.settings.color_scheme }}">
   <div class="container">
     <div class="section-title">
@@ -145,12 +149,15 @@
     <div class="category-list swiper category-slider">
       <div class="swiper-wrapper">
         {% for block in section.blocks %}
-          {%- assign collection = block.settings.collection -%}
+
+         
+
+
           <div class="category-item swiper-slide">
             <div class="cart-inner-wrapper">
               {% if block.settings.collection_img != blank %}
                 <div class="category-img">
-                  <a href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                  <a href="{{ collection.url }}/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
                     <img
                       src="{{ block.settings.collection_img |  img_url: 'master' }}"
                       loading="lazy"
@@ -159,7 +166,7 @@
                 </div>
               {% endif %}
               {% if block.settings.collection_name != blank %}
-                <a class="collection-title ajax-tag" href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                <a class="collection-title ajax-tag" href="{{ collection.url }}/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
                   <span class="{{ section.settings.c_n_text }}">
                     {{ block.settings.collection_name }}
                   </span>
@@ -169,7 +176,7 @@
                 </a>
 
               {%- else -%}
-                <a href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                <a href="{{ collection.url }}/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
                   <span>{{ block.settings.collection.title }}</span>
                 </a>
               {% endif %}
@@ -189,6 +196,7 @@
       link.addEventListener('click', function (e) {
         e.preventDefault();
         const url = this.href;
+        console.log(url)
 
         fetch(url)
           .then(response => response.text())
@@ -201,7 +209,7 @@
             document.querySelector('.m-collection-products').innerHTML = newProducts.innerHTML;
 
             // Optional: update URL
-            // history.pushState(null, '', url);
+            history.pushState(null, '', url);
           });
       });
     });
