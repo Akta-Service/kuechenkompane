@@ -62,6 +62,14 @@
           "type": "item",
           "settings": {
             "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db.jpg",
+            "collection_name": "Küchenmesser",
+            "custom_url": "Küchenmesser"
+          }
+        },
+        "item_rktrNh": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/Jishaku_mit-Messer_ec38eea5-dcbe-4fd6-8ac8-e69a48146c53.jpg",
             "collection_name": "Messerblock",
             "custom_url": "Messerblock"
           }
@@ -81,23 +89,14 @@
             "collection_name": "Ausverkauf",
             "custom_url": "Ausverkauf"
           }
-        },
-        "item_rktrNh": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
-            "collection_name": "",
-            "custom_url": ""
-          }
         }
       },
       "block_order": [
         "item_LNGV6x",
         "item_nwxAVH",
+        "item_rktrNh",
         "item_Bd4xRW",
-        "item_KtcacC",
-        "item_rktrNh"
+        "item_KtcacC"
       ],
       "settings": {
         "color_scheme": "default",
@@ -106,7 +105,7 @@
         "mobile_pt": 30,
         "mobile_pb": 30,
         "heading_type": "mrk-h1",
-        "title": "Nach Kategorien suchen",
+        "title": "Wähle deine Kategorie",
         "c_n_text": "p-medium"
       }
     },
