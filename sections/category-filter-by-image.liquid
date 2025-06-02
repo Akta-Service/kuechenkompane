@@ -150,16 +150,18 @@
             <div class="cart-inner-wrapper">
               {% if block.settings.collection_img != blank %}
                 <div class="category-img">
-                  <a href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                  <a href="#" data-tag="{{ block.settings.custom_url }}">
                     <img
                       src="{{ block.settings.collection_img |  img_url: 'master' }}"
                       loading="lazy"
+                      height=""
+                      width=""
                       alt="">
                   </a>
                 </div>
               {% endif %}
               {% if block.settings.collection_name != blank %}
-                <a class="collection-title ajax-tag" href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                <a class="collection-title ajax-tag" href="#" data-tag="{{ block.settings.custom_url }}">
                   <span class="{{ section.settings.c_n_text }}">
                     {{ block.settings.collection_name }}
                   </span>
@@ -169,7 +171,7 @@
                 </a>
 
               {%- else -%}
-                <a href="/collections/sale/{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                <a href="" data-tag="{{ block.settings.custom_url }}">
                   <span>{{ block.settings.collection.title }}</span>
                 </a>
               {% endif %}
@@ -181,7 +183,7 @@
   </div>
 </div>
 
-<script>
+{% comment %} <script>
   document.addEventListener('DOMContentLoaded', function () {
     const filterLinks = document.querySelectorAll('.ajax-tag');
 
@@ -201,12 +203,38 @@
             document.querySelector('.m-collection-products').innerHTML = newProducts.innerHTML;
 
             // Optional: update URL
-            // history.pushState(null, '', url);
+            history.pushState(null, '', url);
+          });
+      });
+    });
+  });
+</script> {% endcomment %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.ajax-tag').forEach(item => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        const tag = this.getAttribute('data-tag');
+        console.log(tag)
+
+        const url = window.location.pathname + '/' + tag;
+        console.log(url)
+
+        fetch(url + '?view=ajax') // Use `view=ajax` to load only the product grid
+          .then(response => response.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const newProducts = doc.querySelector('.m-collection-products'); // Match your grid class
+            document.querySelector('.m-collection-products').innerHTML = newProducts.innerHTML;
           });
       });
     });
   });
 </script>
+
+
 {% schema %}
   {
     "name": "APEX Collection Filter",
