@@ -42,6 +42,13 @@
    .banner-top-item {
     text-align: center;
   }
+  {% if section.settings.sticky_top %}
+    .apex-top {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+  {% endif %}
 </style>
 <div class="banner-top {{ section.id }} m-color-{{ section.settings.color_scheme }}">
   <div class="rs-container">
@@ -71,7 +78,14 @@
 {% schema %}
   {
     "name": "APEX Top Slider",
-    "settings": [   
+    "class": "apex-top",
+    "settings": [  
+      {
+        "type": "checkbox",
+        "id": "sticky_top",
+        "label": "Top Slider Sticky",
+        "default": true
+      }, 
       {
         "type": "color_scheme",
         "id": "color_scheme",
