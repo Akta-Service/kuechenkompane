@@ -42,7 +42,7 @@
 }
 {% endif %}
 </style>
-<div class="announcement-bar m-color-{{ section.settings.color_scheme }}">
+<div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
   <div class="announcement-container">
     <div class="announcement-bar-content">
       <strong class="ann_title" style=" ">
@@ -52,11 +52,40 @@
     </div>
   </div>
 </div>
+{% if section.settings.enable_scroll_to_show %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const announcementBar = document.getElementById('announcement-bar');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > {{ section.settings.px_to_show }}) {
+        announcementBar.style.display = 'block';
+      } else {
+        announcementBar.style.display = 'none';
+      }
+    });
+  });
+</script>
+{% endif %}
+
+
 {% schema %}
 {
   "name": "APEX Announcement Bar 1",
   "class": "apex-Announcement-sticky",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_scroll_to_show",
+      "label": "Scroll To Show Announcement",
+      "default": false
+    }, 
+    {
+      "type": "number",
+      "id": "px_to_show",
+      "label": "Set Px To Show",
+      "default": 500
+    },
     {
       "type": "checkbox",
       "id": "sticky_top",
