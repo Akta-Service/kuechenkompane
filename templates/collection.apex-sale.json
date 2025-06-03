@@ -9,6 +9,41 @@
  */
 {
   "sections": {
+    "apex_top_slider_cLWmNy": {
+      "type": "apex-top-slider",
+      "blocks": {
+        "text_yyFMTt": {
+          "type": "text",
+          "settings": {
+            "top_item": "140.000+ zufriedene Kunden"
+          }
+        },
+        "text_KykYUz": {
+          "type": "text",
+          "settings": {
+            "top_item": "30 Tage Testen"
+          }
+        },
+        "text_KDtkJQ": {
+          "type": "text",
+          "settings": {
+            "top_item": "Kostenloser Versand"
+          }
+        }
+      },
+      "block_order": [
+        "text_yyFMTt",
+        "text_KykYUz",
+        "text_KDtkJQ"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "pt": 15,
+        "pb": 15,
+        "mt_mobile": 15,
+        "mb_mobile": 15
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -278,6 +313,7 @@
     }
   },
   "order": [
+    "apex_top_slider_cLWmNy",
     "collection-header",
     "apex_timer_9PnBtn",
     "category_selection_iMrTd6",
