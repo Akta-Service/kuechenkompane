@@ -14,7 +14,7 @@
     "announcement_bar_version_1_eGCFfx": {
       "type": "announcement-bar-version-1",
       "settings": {
-        "enable_scroll_to_show": true,
+        "enable_scroll_to_show": false,
         "px_to_show": 500,
         "sticky_top": true,
         "color_scheme": "dark",
