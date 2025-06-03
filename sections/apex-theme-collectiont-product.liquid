@@ -60,6 +60,16 @@
 .apex-theme-collection .m-collection-products {
   align-items: self-end;
 }
+.apex-theme-collection .m-product-card--soldout::after {
+    position: absolute;
+    inset: 0;
+    background: #000000;
+    opacity: {{ section.settings.overlay_opacity }};
+    z-index: 9;
+    content: "";
+    border-radius: 5px;
+}
+
 </style>
 <section
   class="facest-filters-section apex-theme-collection m-color-{{ section.settings.color_scheme }}"
@@ -472,7 +482,22 @@
         }
       ],
       "default": ""
-    }  
+    },
+    {
+      "type": "header",
+      "content": "Sold Out Product Overlay"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay Opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "unit": "%",
+      "default": 0.5
+    }
+
 
   ],
   "blocks": [
