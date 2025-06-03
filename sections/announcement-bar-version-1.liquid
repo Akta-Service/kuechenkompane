@@ -34,7 +34,13 @@
   font-size: {{- section.settings.ann_title_size_m -}}px;  
 }
 }
-
+{% if section.settings.sticky_top %}
+.apex-Announcement-sticky{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+{% endif %}
 </style>
 <div class="announcement-bar m-color-{{ section.settings.color_scheme }}">
   <div class="announcement-container">
@@ -49,7 +55,14 @@
 {% schema %}
 {
   "name": "APEX Announcement Bar 1",
+  "class": "apex-Announcement-sticky",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "sticky_top",
+      "label": "Top Slider Sticky",
+      "default": true
+    }, 
     {
       "type": "color_scheme",
       "id": "color_scheme",
