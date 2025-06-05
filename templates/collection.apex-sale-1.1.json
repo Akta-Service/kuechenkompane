@@ -9,6 +9,41 @@
  */
 {
   "sections": {
+    "apex_top_slider_cLWmNy": {
+      "type": "apex-top-slider",
+      "blocks": {
+        "text_yyFMTt": {
+          "type": "text",
+          "settings": {
+            "top_item": "140.000+ zufriedene Kunden"
+          }
+        },
+        "text_KykYUz": {
+          "type": "text",
+          "settings": {
+            "top_item": "30 Tage Testen"
+          }
+        },
+        "text_KDtkJQ": {
+          "type": "text",
+          "settings": {
+            "top_item": "Kostenloser Versand"
+          }
+        }
+      },
+      "block_order": [
+        "text_yyFMTt",
+        "text_KykYUz",
+        "text_KDtkJQ"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "pt": 15,
+        "pb": 15,
+        "mt_mobile": 15,
+        "mb_mobile": 15
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -32,7 +67,6 @@
     "apex_timer_9PnBtn": {
       "type": "Apex-timer",
       "disabled": true,
-      "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#c6d1c4",
         "section_pt": 15,
@@ -48,8 +82,87 @@
         "target_time": "00:00:00"
       }
     },
+    "category_selection_iMrTd6": {
+      "type": "category-filter-by-image",
+      "blocks": {
+        "item_LNGV6x": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718_1.jpg",
+            "collection_name": "Sets",
+            "custom_url": "kuchenmesser-set"
+          }
+        },
+        "item_nwxAVH": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db_1.jpg",
+            "collection_name": "Einzelne",
+            "custom_url": "Küchenmesser"
+          }
+        },
+        "item_rktrNh": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/Jishaku_mit-Messer_ec38eea5-dcbe-4fd6-8ac8-e69a48146c53_1.jpg",
+            "collection_name": "Messerblock",
+            "custom_url": "messerblock"
+          }
+        },
+        "item_Bd4xRW": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d_1.jpg",
+            "collection_name": "Zubehör",
+            "custom_url": "zubehör"
+          }
+        },
+        "item_KtcacC": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_9602_V7_766bf07d-e962-44cd-88f4-f20ad783e139_1.jpg",
+            "collection_name": "Ausverkauf",
+            "custom_url": "Ausverkauf"
+          }
+        }
+      },
+      "block_order": [
+        "item_LNGV6x",
+        "item_nwxAVH",
+        "item_rktrNh",
+        "item_Bd4xRW",
+        "item_KtcacC"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "pt": 30,
+        "pb": 30,
+        "mobile_pt": 30,
+        "mobile_pb": 30,
+        "heading_type": "mrk-h1",
+        "title": "Wähle deine Kategorie",
+        "c_n_text": "p-medium"
+      }
+    },
     "main": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "filter_TQEkVc": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "default",
+            "title": "Tags",
+            "filtergroup": "Vintage,tops,shirts",
+            "show_label": true,
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        }
+      },
+      "block_order": [
+        "filter_TQEkVc"
+      ],
+      "disabled": true,
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
         ".m-collection-filters-form {margin-bottom: 0;}"
@@ -58,21 +171,52 @@
         "container": "container-fluid",
         "grid_layout": "grid",
         "grid_columns": "4",
-        "show_columns_switcher": true,
+        "show_columns_switcher": false,
         "pagination_limit": 30,
         "paginate_type": "paginate",
-        "show_sorting": true,
+        "show_sorting": false,
         "show_filter": false,
-        "filters_type": "storefront_filters",
+        "filters_type": "tags_filter",
         "sidebar": "leftColumn",
         "sidebar_title": "Filters",
         "limit_height_widget": true,
         "limit_height": 300,
         "change_product_variant_on_fitlering": true,
         "show_product_count": true,
-        "collapsed_groups": "Product type, Brand, Vendor, Size",
+        "collapsed_groups": "Product type, Brand, Vendor, Size{{ collection.title }}",
         "color_swatches": "color,colour,couleur,farbe",
-        "color_swatches_design": "list"
+        "color_swatches_design": "list",
+        "overlay_opacity": 0.3
+      }
+    },
+    "apex_theme_collectiont_product_h4QEfc": {
+      "type": "apex-theme-collectiont-product",
+      "name": "Apex Theme Collection",
+      "settings": {
+        "color_scheme": "",
+        "container": "container",
+        "grid_layout": "grid",
+        "grid_columns": "3",
+        "show_columns_switcher": true,
+        "pagination_limit": 12,
+        "paginate_type": "paginate",
+        "show_sorting": true,
+        "show_filter": false,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": false,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "inline",
+        "add_btn_bg": "#1e1e1e",
+        "add_btn_text_color": "#000000",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "overlay_opacity": 0.1
       }
     },
     "promotion_banner_dgKacc": {
@@ -90,7 +234,6 @@
       "block_order": [
         "promotion_NBbJbf"
       ],
-      "name": "Promotion banner",
       "settings": {
         "container": "container-fluid",
         "color_scheme": "",
@@ -170,9 +313,12 @@
     }
   },
   "order": [
+    "apex_top_slider_cLWmNy",
     "collection-header",
     "apex_timer_9PnBtn",
+    "category_selection_iMrTd6",
     "main",
+    "apex_theme_collectiont_product_h4QEfc",
     "promotion_banner_dgKacc",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"
