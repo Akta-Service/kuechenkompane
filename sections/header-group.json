@@ -13,6 +13,7 @@
   "sections": {
     "announcement_bar_version_1_rc6jDA": {
       "type": "announcement-bar-version-1",
+      "disabled": true,
       "name": "APEX Announcement Bar 1",
       "settings": {
         "sticky_top": true,
@@ -29,6 +30,7 @@
     },
     "announcement_bar_sticky_scroll_Bk3YD6": {
       "type": "announcement-bar-sticky-scroll",
+      "disabled": true,
       "name": "APEX Announcement Sticky",
       "settings": {
         "enable_scroll_to_show": true,
