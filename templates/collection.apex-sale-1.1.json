@@ -11,12 +11,11 @@
   "sections": {
     "announcement_bar_sticky_scroll_gnrpHz": {
       "type": "announcement-bar-sticky-scroll",
-      "disabled": true,
       "name": "APEX Announcement Sticky",
       "settings": {
         "enable_scroll_to_show": true,
         "px_to_show": 200,
-        "sticky_top": false,
+        "sticky_top": true,
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
