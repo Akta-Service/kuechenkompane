@@ -11,6 +11,7 @@
   "sections": {
     "announcement_bar_sticky_scroll_gnrpHz": {
       "type": "announcement-bar-sticky-scroll",
+      "disabled": true,
       "name": "APEX Announcement Sticky",
       "settings": {
         "enable_scroll_to_show": true,
