@@ -15,7 +15,7 @@
       "settings": {
         "enable_scroll_to_show": false,
         "px_to_show": 200,
-        "sticky_top": false,
+        "sticky_top": true,
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
