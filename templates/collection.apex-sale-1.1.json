@@ -9,6 +9,60 @@
  */
 {
   "sections": {
+    "announcement_bar_sticky_scroll_gnrpHz": {
+      "type": "announcement-bar-sticky-scroll",
+      "disabled": true,
+      "name": "APEX Announcement Sticky",
+      "settings": {
+        "enable_scroll_to_show": true,
+        "px_to_show": 200,
+        "sticky_top": true,
+        "color_scheme": "dark",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "",
+        "ann_title_size": 16,
+        "ann_title_size_m": 16,
+        "text": "<p>Jetzt oder nie: 48h bis -75 % auf Auslaufmodelle</p>",
+        "text_size": 16,
+        "text_size_m": 16
+      }
+    },
+    "apex_top_slider_cLWmNy": {
+      "type": "apex-top-slider",
+      "blocks": {
+        "text_yyFMTt": {
+          "type": "text",
+          "settings": {
+            "top_item": "140.000+ zufriedene Kunden"
+          }
+        },
+        "text_KykYUz": {
+          "type": "text",
+          "settings": {
+            "top_item": "30 Tage Testen"
+          }
+        },
+        "text_KDtkJQ": {
+          "type": "text",
+          "settings": {
+            "top_item": "Kostenloser Versand"
+          }
+        }
+      },
+      "block_order": [
+        "text_yyFMTt",
+        "text_KykYUz",
+        "text_KDtkJQ"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "pt": 15,
+        "pb": 15,
+        "mt_mobile": 15,
+        "mb_mobile": 15
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -53,41 +107,33 @@
         "item_LNGV6x": {
           "type": "item",
           "settings": {
-            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
-            "collection_name": "Sets",
-            "custom_url": "kuchenmesser-set"
+            "collection_img": "shopify://shop_images/3_1_46ec59f6_4656_4c94_98bc_3ebbb2c7153c_2_V4_2fd2100d-1e5a-4cbe-9245-292e1e82d00c.jpg",
+            "collection_name": "Bestseller",
+            "custom_url": "Bestseller"
           }
         },
         "item_nwxAVH": {
           "type": "item",
           "settings": {
-            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db.jpg",
-            "collection_name": "Einzelne",
-            "custom_url": "Küchenmesser"
+            "collection_img": "shopify://shop_images/IMG_0742_a5508e47-6988-413a-8ef4-f002e4bd4902.jpg",
+            "collection_name": "Messerset",
+            "custom_url": "Küchenmesser-set"
           }
         },
         "item_rktrNh": {
           "type": "item",
           "settings": {
-            "collection_img": "shopify://shop_images/Jishaku_mit-Messer_ec38eea5-dcbe-4fd6-8ac8-e69a48146c53.jpg",
-            "collection_name": "Messerblock",
-            "custom_url": "messerblock"
+            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db_1.jpg",
+            "collection_name": "Damast",
+            "custom_url": "Küchenmesser"
           }
         },
         "item_Bd4xRW": {
           "type": "item",
           "settings": {
-            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d.webp",
+            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d_1.jpg",
             "collection_name": "Zubehör",
             "custom_url": "zubehör"
-          }
-        },
-        "item_KtcacC": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_9602_V7_766bf07d-e962-44cd-88f4-f20ad783e139.jpg",
-            "collection_name": "Ausverkauf",
-            "custom_url": "Ausverkauf"
           }
         }
       },
@@ -95,8 +141,7 @@
         "item_LNGV6x",
         "item_nwxAVH",
         "item_rktrNh",
-        "item_Bd4xRW",
-        "item_KtcacC"
+        "item_Bd4xRW"
       ],
       "settings": {
         "color_scheme": "default",
@@ -154,18 +199,18 @@
         "overlay_opacity": 0.3
       }
     },
-    "apex_theme_collectiont_product_FHQXyw": {
+    "apex_theme_collectiont_product_h4QEfc": {
       "type": "apex-theme-collectiont-product",
       "name": "Apex Theme Collection",
       "settings": {
         "color_scheme": "",
         "container": "container",
         "grid_layout": "grid",
-        "grid_columns": "4",
+        "grid_columns": "3",
         "show_columns_switcher": true,
-        "pagination_limit": 12,
+        "pagination_limit": 40,
         "paginate_type": "paginate",
-        "show_sorting": false,
+        "show_sorting": true,
         "show_filter": false,
         "filters_type": "storefront_filters",
         "sidebar": "leftColumn",
@@ -181,7 +226,7 @@
         "add_btn_text_color": "#000000",
         "button_style": "m-button--primary",
         "button_size": "",
-        "overlay_opacity": 0.5
+        "overlay_opacity": 0.1
       }
     },
     "promotion_banner_dgKacc": {
@@ -278,11 +323,13 @@
     }
   },
   "order": [
+    "announcement_bar_sticky_scroll_gnrpHz",
+    "apex_top_slider_cLWmNy",
     "collection-header",
     "apex_timer_9PnBtn",
     "category_selection_iMrTd6",
     "main",
-    "apex_theme_collectiont_product_FHQXyw",
+    "apex_theme_collectiont_product_h4QEfc",
     "promotion_banner_dgKacc",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"
