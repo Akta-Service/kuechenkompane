@@ -35,27 +35,28 @@
 }
 }
 {% if section.settings.sticky_top %}
-.apex-Announcement-sticky-1{
+.{{ section.id }}.{{ section.settings.class }} .sticky-wrapper{
   position: sticky;
   top: 0;
   z-index: 99999;
 }
 {% endif %}
 </style>
-<div class="announcement-bar m-color-{{ section.settings.color_scheme }}">
-  <div class="announcement-container">
-    <div class="announcement-bar-content">
-      <strong class="ann_title" style=" ">
-        {{- section.settings.ann_title -}}
-      </strong>
-      {{ section.settings.text }}
+<div class="announcement-bar m-color-{{ section.settings.color_scheme }} {{ section.settings.class }} {{ section.id }}">
+  <div class="sticky-wrapper">
+    <div class="announcement-container">
+      <div class="announcement-bar-content">
+        <strong class="ann_title" style=" ">
+          {{- section.settings.ann_title -}}
+        </strong>
+        {{ section.settings.text }}
+      </div>
     </div>
   </div>
 </div>
 {% schema %}
 {
-  "name": "APEX Announcement Bar 1",
-  "class": "apex-Announcement-sticky-1",
+  "name": "APEX Announcement Bar 1", 
   "settings": [
     {
       "type": "checkbox",
@@ -63,6 +64,12 @@
       "label": "Sticky Announcement",
       "default": false
     }, 
+    {
+      "type": "text",
+      "id": "class",
+      "label": "Custom Class",
+      "default":"Custom-class"
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",

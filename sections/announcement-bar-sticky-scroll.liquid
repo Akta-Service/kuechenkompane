@@ -35,7 +35,7 @@
 }
 }
 {% if section.settings.sticky_top %}
-.apex-Announcement-sticky{
+.sticky-wrapper{
   position: sticky;
   top: {{ section.settings.top_px }}px;
   z-index: 99999;
@@ -43,12 +43,14 @@
 {% endif %}
 </style>
 <div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
-  <div class="announcement-container">
-    <div class="announcement-bar-content">
-      <strong class="ann_title" style=" ">
-        {{- section.settings.ann_title -}}
-      </strong>
-      {{ section.settings.text }}
+  <div class="sticky-wrapper">
+    <div class="announcement-container">
+      <div class="announcement-bar-content">
+        <strong class="ann_title" style=" ">
+          {{- section.settings.ann_title -}}
+        </strong>
+        {{ section.settings.text }}
+      </div>
     </div>
   </div>
 </div>
@@ -72,7 +74,7 @@
 {% schema %}
 {
   "name": "APEX Announcement Sticky",
-  "class": "apex-Announcement-sticky",
+  
   "settings": [
     {
       "type": "checkbox",
