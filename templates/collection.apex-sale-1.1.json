@@ -89,24 +89,24 @@
           "type": "item",
           "settings": {
             "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718_1.jpg",
-            "collection_name": "Sets",
-            "custom_url": "kuchenmesser-set"
+            "collection_name": "Bestseller",
+            "custom_url": "Bestseller"
           }
         },
         "item_nwxAVH": {
           "type": "item",
           "settings": {
             "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db_1.jpg",
-            "collection_name": "Einzelne",
-            "custom_url": "Küchenmesser"
+            "collection_name": "Messerset",
+            "custom_url": "Küchenmesser-set"
           }
         },
         "item_rktrNh": {
           "type": "item",
           "settings": {
-            "collection_img": "shopify://shop_images/Jishaku_mit-Messer_ec38eea5-dcbe-4fd6-8ac8-e69a48146c53_1.jpg",
-            "collection_name": "Messerblock",
-            "custom_url": "messerblock"
+            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db_1.jpg",
+            "collection_name": "Damast",
+            "custom_url": "Küchenmesser"
           }
         },
         "item_Bd4xRW": {
@@ -116,22 +116,13 @@
             "collection_name": "Zubehör",
             "custom_url": "zubehör"
           }
-        },
-        "item_KtcacC": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_9602_V7_766bf07d-e962-44cd-88f4-f20ad783e139_1.jpg",
-            "collection_name": "Ausverkauf",
-            "custom_url": "Ausverkauf"
-          }
         }
       },
       "block_order": [
         "item_LNGV6x",
         "item_nwxAVH",
         "item_rktrNh",
-        "item_Bd4xRW",
-        "item_KtcacC"
+        "item_Bd4xRW"
       ],
       "settings": {
         "color_scheme": "default",
