@@ -13,7 +13,7 @@
       "type": "announcement-bar-sticky-scroll",
       "name": "APEX Announcement Sticky",
       "settings": {
-        "enable_scroll_to_show": false,
+        "enable_scroll_to_show": true,
         "px_to_show": 200,
         "sticky_top": true,
         "color_scheme": "dark",
