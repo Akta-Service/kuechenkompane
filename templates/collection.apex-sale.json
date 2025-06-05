@@ -9,24 +9,6 @@
  */
 {
   "sections": {
-    "apex_timer_progress_VgfCKt": {
-      "type": "Apex-timer-progress",
-      "name": "Apex Timer Progress",
-      "settings": {
-        "bg_color": "#DCE5DC",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#D2861A",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "400",
-        "timer_text": "Unser Exklusives Angebot läuft bald ab!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-04-28",
-        "target_time": "00:00:00"
-      }
-    },
     "apex_top_slider_cLWmNy": {
       "type": "apex-top-slider",
       "blocks": {
@@ -331,7 +313,6 @@
     }
   },
   "order": [
-    "apex_timer_progress_VgfCKt",
     "apex_top_slider_cLWmNy",
     "collection-header",
     "apex_timer_9PnBtn",
