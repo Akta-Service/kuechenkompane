@@ -15,7 +15,7 @@
       "type": "announcement-bar-version-1",
       "name": "APEX Announcement Bar 1",
       "settings": {
-        "enable_scroll_to_show": true,
+        "sticky_top": true,
         "color_scheme": "",
         "pt": 15,
         "pb": 15,
