@@ -281,52 +281,54 @@
 }
 {% endschema %}
 <script>
- document.addEventListener('DOMContentLoaded', function () {
-  // Config from Shopify schema
-  const maxCount = {{ section.settings.max_count | default: 100 }};           
-  const updateInterval = ({{ section.settings.update_interval | default: 5 }} * 1000) || 5000;     
-  const incrementBy = {{ section.settings.increment_by | default: 1 }} || 1;             
-  const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: false }}; // checkbox true/false
+  document.addEventListener('DOMContentLoaded', function () {
+    const maxCount = {{ section.settings.max_count | default: 100 }};           
+    const updateInterval = ({{ section.settings.update_interval | default: 5 }} * 1000) || 5000;     
+    const incrementBy = {{ section.settings.increment_by | default: 1 }} || 1;             
+    const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: false }};
+    const storageKey = 'test_customer_offer_count';
 
-  const storageKey = 'test_customer_offer_count';
-  let currentCount = parseInt(localStorage.getItem(storageKey)) || 0;
+    let storedCount = parseInt(localStorage.getItem(storageKey));
+    let currentCount = isNaN(storedCount) ? 0 : storedCount;
 
-  const currentEl = document.getElementById('customer-count');
-  const maxEl = document.getElementById('max-count');
-
-  maxEl.textContent = maxCount;
-  currentEl.textContent = currentCount;
-
-  function updateCounter() {
-    // Only increase if not already at max
-    if (currentCount < maxCount) {
-      currentCount += incrementBy;
-
-      // Ensure we don't exceed maxCount
-      if (currentCount > maxCount) {
-        currentCount = maxCount;
-      }
-
-      currentEl.textContent = currentCount;
+    // Fix: reset on load if needed
+    if (resetWhenMaxReached && currentCount >= maxCount) {
+      currentCount = 0;
       localStorage.setItem(storageKey, currentCount);
+    }
 
-      // If reached max
-      if (currentCount === maxCount) {
-        if (resetWhenMaxReached) {
-          setTimeout(() => {
-            currentCount = 0;
-            currentEl.textContent = currentCount;
-            localStorage.setItem(storageKey, currentCount);
-          }, updateInterval); // optional delay before reset
-        } else {
-          clearInterval(intervalId); // stop updating
+    const currentEl = document.getElementById('customer-count');
+    const maxEl = document.getElementById('max-count');
+    maxEl.textContent = maxCount;
+    currentEl.textContent = currentCount;
+
+    function updateCounter() {
+      if (currentCount < maxCount) {
+        currentCount += incrementBy;
+
+        if (currentCount > maxCount) {
+          currentCount = maxCount;
+        }
+
+        currentEl.textContent = currentCount;
+        localStorage.setItem(storageKey, currentCount);
+
+        if (currentCount === maxCount) {
+          if (resetWhenMaxReached) {
+            setTimeout(() => {
+              currentCount = 0;
+              currentEl.textContent = currentCount;
+              localStorage.setItem(storageKey, currentCount);
+            }, updateInterval);
+          } else {
+            clearInterval(intervalId);
+          }
         }
       }
     }
-  }
 
-  const intervalId = setInterval(updateCounter, updateInterval);
-});
+    const intervalId = setInterval(updateCounter, updateInterval);
+  });
 
 </script>
 
