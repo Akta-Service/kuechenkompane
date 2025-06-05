@@ -1,48 +1,48 @@
 <style>
-  /* common css end  */
-  .announcement-container {
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
+    /* common css end  */
+    .announcement-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
 
-  .announcement-bar {   
-    padding-top: {{ section.settings.pt}}px;
-    padding-bottom: {{ section.settings.pb}}px;
-  }
+    .announcement-bar {
+      padding-top: {{ section.settings.pt}}px;
+      padding-bottom: {{ section.settings.pb}}px;
+    }
 
-  .announcement-bar-content {
-    text-align: center;
-  }
-.ann_title{
-  font-size: {{- section.settings.ann_title_size -}}px;   
-}
-  .announcement-bar-content strong {   
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  .announcement-bar-content p {
-    font-size: {{ section.settings.text_size }}px;    
-    line-height: 1;
-  }
-@media only screen and (max-width: 768px){
-  .announcement-bar-content p {
-    font-size: {{ section.settings.text_size_m }}px;   
-  }
+    .announcement-bar-content {
+      text-align: center;
+    }
   .ann_title{
-  font-size: {{- section.settings.ann_title_size_m -}}px;  
-}
-}
-{% if section.settings.sticky_top %}
-.apex-Announcement-sticky{
-  position: sticky;
-  top: 0;
-  z-index: 99999;
-}
-{% endif %}
+    font-size: {{- section.settings.ann_title_size -}}px;
+  }
+    .announcement-bar-content strong {
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .announcement-bar-content p {
+      font-size: {{ section.settings.text_size }}px;
+      line-height: 1;
+    }
+  @media only screen and (max-width: 768px){
+    .announcement-bar-content p {
+      font-size: {{ section.settings.text_size_m }}px;
+    }
+    .ann_title{
+    font-size: {{- section.settings.ann_title_size_m -}}px;
+  }
+  }
+  {% if section.settings.sticky_top %}
+  .apex-Announcement-sticky{
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+  }
+  {% endif %}
 </style>
-<div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
+<div id="announcement-bar-{{ section.id }}" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
   <div class="announcement-container">
     <div class="announcement-bar-content">
       <strong class="ann_title" style=" ">
@@ -53,21 +53,20 @@
   </div>
 </div>
 {% if section.settings.enable_scroll_to_show %}
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const announcementBar = document.getElementById('announcement-bar');
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const announcementBar = document.getElementById('announcement-bar-{{ section.id }}');
 
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > {{ section.settings.px_to_show }}) {
-        announcementBar.style.display = 'block';
-      } else {
-        announcementBar.style.display = 'none';
-      }
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > {{ section.settings.px_to_show }}) {
+          announcementBar.style.display = 'block';
+        } else {
+          announcementBar.style.display = 'none';
+        }
+      });
     });
-  });
-</script>
+  </script>
 {% endif %}
-
 
 {% schema %}
 {
@@ -79,7 +78,7 @@
       "id": "enable_scroll_to_show",
       "label": "Scroll To Show Announcement",
       "default": false
-    }, 
+    },
     {
       "type": "number",
       "id": "px_to_show",
@@ -91,12 +90,12 @@
       "id": "sticky_top",
       "label": "Sticky Announcement",
       "default": false
-    }, 
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
-    },  
+    },
     {
       "type": "range",
       "id": "pt",
@@ -170,7 +169,7 @@
       "min": 10,
       "max": 30,
       "step": 1
-    } 
+    }
   ],
   "presets": [
     {
