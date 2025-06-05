@@ -11,23 +11,6 @@
   "type": "header",
   "name": "Header",
   "sections": {
-    "announcement_bar_version_1_7FLEy9": {
-      "type": "announcement-bar-version-1",
-      "disabled": true,
-      "name": "APEX Announcement Bar 1",
-      "settings": {
-        "sticky_top": true,
-        "color_scheme": "",
-        "pt": 15,
-        "pb": 15,
-        "ann_title": "LEI OF LOVE",
-        "ann_title_size": 16,
-        "ann_title_size_m": 16,
-        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
-        "text_size": 16,
-        "text_size_m": 16
-      }
-    },
     "announcement_bar_sticky_scroll_BmdWmV": {
       "type": "announcement-bar-sticky-scroll",
       "name": "APEX Announcement Sticky",
@@ -214,7 +197,6 @@
     }
   },
   "order": [
-    "announcement_bar_version_1_7FLEy9",
     "announcement_bar_sticky_scroll_BmdWmV",
     "announcement_bar_sticky_scroll_Bk3YD6",
     "apex_global_offer_timer_gMjjdD",
