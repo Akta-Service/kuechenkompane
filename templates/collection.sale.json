@@ -26,7 +26,7 @@
         "max_count": 500,
         "update_interval": 0.5,
         "increment_by": 2,
-        "reset_when_max_reached": true
+        "reset_when_max_reached": false
       }
     },
     "collection-header": {
