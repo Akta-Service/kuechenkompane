@@ -1,60 +1,59 @@
 <style>
-    .rs_timerwrapper {
-      text-align: center;
-      padding: 15px;    
-      
-      text-transform: uppercase;
-      font-weight: 700;
-      line-height: 1;
-      position: relative;
-    }
+  .rs_timerwrapper {
+    text-align: center;
+    padding: 15px;
 
-    .rs_timerwrapper .rslink {
-      position: absolute;
-      z-index: 999;
-      width: 100%;
-      left: 0;
-      top: 0;
-      right: 0;
-      height: 100%;
-      bottom: 0;
-      background: none;
-    }
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    position: relative;
+  }
 
-    .timer_text_wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
+  .rs_timerwrapper .rslink {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    bottom: 0;
+    background: none;
+  }
 
-    .timer_clock {
-      display: inline-block;
-      line-height: 1;
-      margin-right: 5px;
-     
-      width: fit-content;
-      letter-spacing: 0.5px;
-      
-      
-      font-family: "Roboto", sans-serif;
-    }
+  .timer_text_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
 
-    .timer_text {    
-      font-family: "Roboto", sans-serif;
-      font-size: 12px;
-      line-height: 1;
-      margin: 0;
-      padding: 0;
-      display: inline-block;
-      color: #dcad27;
-      font-weight: 700;
-    }
-    .timer_text_wrapper {
-      font-family: "Roboto", sans-serif;
-    }
+  .timer_clock {
+    display: inline-block;
+    line-height: 1;
+    margin-right: 5px;
 
+    width: fit-content;
+    letter-spacing: 0.5px;
+
+
+    font-family: "Roboto", sans-serif;
+  }
+
+  .timer_text {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    color: #dcad27;
+    font-weight: 700;
+  }
+  .timer_text_wrapper {
+    font-family: "Roboto", sans-serif;
+  }
 </style>
 <div
   class="rs_timerwrapper global-timer{{ section.id }}"
@@ -72,16 +71,11 @@
       {{ section.settings.timer_text }}
     </p>
   </div>
-
- 
-
-
 </div>
-
 
 {% schema %}
 {
-  "name": "Apex Timer Progress",  
+  "name": "Apex Timer Progress",
 
   "settings": [
     {
@@ -110,7 +104,7 @@
     },
     {
       "type": "header",
-      "content": "Clock Text Settings"
+      "content": "Count Down Text Settings"
     },
     {
       "type": "color",
@@ -190,7 +184,7 @@
       "max": 50,
       "step": 1
     },
-    
+
     {
       "type": "color",
       "id": "timer_color",
@@ -250,7 +244,7 @@
       "id": "max_count",
       "label": "Max Count Number",
       "default": 100
-    },    
+    },
     {
       "type": "number",
       "id": "increment_by",
@@ -271,7 +265,7 @@
     }
 
 
-    
+
 
   ],
   "presets": [
@@ -327,5 +321,3 @@
     });
   });
 </script>
-
-
