@@ -30,13 +30,12 @@
     },
     "announcement_bar_sticky_scroll_Bk3YD6": {
       "type": "announcement-bar-sticky-scroll",
-      "disabled": true,
       "name": "APEX Announcement Sticky",
       "settings": {
-        "enable_scroll_to_show": true,
+        "enable_scroll_to_show": false,
         "px_to_show": 500,
-        "top_px": 70,
-        "sticky_top": true,
+        "top_px": 0,
+        "sticky_top": false,
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
