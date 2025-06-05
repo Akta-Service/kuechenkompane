@@ -35,14 +35,14 @@
 }
 }
 {% if section.settings.sticky_top %}
-.sticky-wrapper{
+  .{{ section.id }} .sticky-wrapper{
   position: sticky;
   top: {{ section.settings.top_px }}px;
   z-index: 99999;
 }
 {% endif %}
 </style>
-<div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
+<div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }} {{ section.id }}">
   <div class="sticky-wrapper">
     <div class="announcement-container">
       <div class="announcement-bar-content">
