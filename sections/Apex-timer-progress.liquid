@@ -281,7 +281,7 @@
 }
 {% endschema %}
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
    
     const maxCount =  {{ section.settings.max_count | default: 100 }};           
     const updateInterval =  ({{ section.settings.update_interval | default: 5 }} * 1000) || 5000;     
@@ -306,11 +306,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (resetWhenMaxReached) {
           currentCount = 0;
+          // Show reset immediately
+          setTimeout(() => {
+            currentEl.textContent = currentCount;
+            localStorage.setItem(storageKey, currentCount);
+          }, updateInterval); // Optional: wait before showing reset
         } else {
           clearInterval(intervalId);
           return;
         }
+
+        return; // Avoid re-rendering max again below
       }
+
 
       currentEl.textContent = currentCount;
       localStorage.setItem(storageKey, currentCount);
