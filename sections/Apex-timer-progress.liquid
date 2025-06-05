@@ -1,8 +1,8 @@
 <style>
     .rs_timerwrapper {
       text-align: center;
-      padding: 15px;     
-      color: white;
+      padding: 15px;    
+      
       text-transform: uppercase;
       font-weight: 700;
       line-height: 1;
@@ -59,7 +59,9 @@
 >
   <!-- <a class="rslink" href="#"></a> -->
   <div class="timer_text_wrapper">
-    <span class="timer_clock" style="color: {{ section.settings.timer_clock }}; font-size: {{ section.settings.timer_clock_text_font_size }}px; font-weight: {{ section.settings.clock_font_weight }};" id="customer-count">00:00:00</span>
+    <div style="color: {{ section.settings.timer_clock }}; font-size: {{ section.settings.timer_clock_text_font_size }}px; font-weight: {{ section.settings.clock_font_weight }};">
+      <span class="" id="customer-count">0</span>/<span id="max-count">{{ section.settings.max_count }}</span>
+    </div>
     <p
       class="timer_text"
       style="font-size: {{ section.settings.timer_font_size }}px; color: {{ section.settings.timer_color }};  font-weight: {{ section.settings.timer_font_weight }};"
@@ -67,13 +69,12 @@
       {{ section.settings.timer_text }}
     </p>
   </div>
+
+ 
+
+
 </div>
-<script>
-  window.apexTimerSettings = {
-    targetDate: "{{ section.settings.target_date }}",
-    targetTime: "{{ section.settings.target_time }}"
-  };
-</script>
+
 
 {% schema %}
 {
@@ -239,20 +240,34 @@
     },
     {
       "type": "header",
-      "content": "Countdown Target Settings"
+      "content": "Progress Settings"
     },
     {
-      "type": "text",
-      "id": "target_date",
-      "label": "Target Date (YYYY-MM-DD)",
-      "default": "2025-04-28"
+      "type": "number",
+      "id": "max_count",
+      "label": "Max Count Number",
+      "default": 100
     },
     {
-      "type": "text",
-      "id": "target_time",
-      "label": "Target Time (HH:MM:SS, 24h format)",
-      "default": "00:00:00"
+      "type": "number",
+      "id": "update_interval",
+      "label": "Update Interval (seconds)",
+      "default": 5
+    },
+    {
+      "type": "number",
+      "id": "increment_by",
+      "label": "Increment By",
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "reset_when_max_reached",
+      "label": "Restart from 0 after reaching max?",
+      "default": true
     }
+
+    
 
   ],
   "presets": [
@@ -264,11 +279,11 @@
 {% endschema %}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    // Testable Config
-    const maxCount = 100;               // Max number
-    const updateInterval = 5000;        // Update interval (ms)
-    const incrementBy = 1;              // Increment value
-    const resetWhenMaxReached = true;   // Should restart after max?
+   
+    const maxCount =  {{ section.settings.max_count | default: 100 }};           
+    const updateInterval =  ({{ section.settings.update_interval | default: 5 }} * 1000) || 5000;     
+    const incrementBy =  {{ section.settings.increment_by | default: 1 }} || 1;             
+    const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: true }};
     const storageKey = 'test_customer_offer_count';
 
     let currentCount = parseInt(localStorage.getItem(storageKey)) || 0;
