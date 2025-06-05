@@ -9,26 +9,6 @@
  */
 {
   "sections": {
-    "apex_timer_progress_ehqpUq": {
-      "type": "Apex-timer-progress",
-      "name": "Apex Timer Progress",
-      "settings": {
-        "bg_color": "#dce5dc",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#3a8735",
-        "timer_clock_text_font_size": 14,
-        "clock_font_weight": "400",
-        "timer_text": "Unser Exklusives Angebot läuft bald ab!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "max_count": 500,
-        "increment_by": 2,
-        "reset_when_max_reached": true,
-        "start_count": 32
-      }
-    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -298,7 +278,6 @@
     }
   },
   "order": [
-    "apex_timer_progress_ehqpUq",
     "collection-header",
     "apex_timer_9PnBtn",
     "category_selection_iMrTd6",
