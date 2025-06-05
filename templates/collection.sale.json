@@ -23,7 +23,7 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "400",
-        "max_count": 100,
+        "max_count": 500,
         "update_interval": 5,
         "increment_by": 1,
         "reset_when_max_reached": true
