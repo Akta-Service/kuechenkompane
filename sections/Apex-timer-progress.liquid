@@ -268,7 +268,14 @@
       "id": "reset_when_max_reached",
       "label": "Restart from 0 after reaching max?",
       "default": false
+    },
+    {
+      "type": "number",
+      "id": "start_count",
+      "label": "Start Count",
+      "default": 32
     }
+
 
     
 
@@ -282,18 +289,20 @@
 {% endschema %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const maxCount = {{ section.settings.max_count | default: 100 }};           
-    const updateInterval = ({{ section.settings.update_interval | default: 5 }} * 1000) || 5000;     
-    const incrementBy = {{ section.settings.increment_by | default: 1 }} || 1;             
+    const maxCount = {{ section.settings.max_count | default: 100 }};
+    const startCount = {{ section.settings.start_count | default: 0 }};
+    const incrementBy = {{ section.settings.increment_by | default: 1 }};
     const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: false }};
     const storageKey = 'test_customer_offer_count';
 
-    let storedCount = parseInt(localStorage.getItem(storageKey));
-    let currentCount = isNaN(storedCount) ? 0 : storedCount;
+    const updateDelays = [5000, 35000, 250000, 500000, 700000]; // in ms
 
-    // Fix: reset on load if needed
+    let storedCount = parseInt(localStorage.getItem(storageKey));
+    let currentCount = isNaN(storedCount) ? startCount : storedCount;
+
+    // Reset if needed
     if (resetWhenMaxReached && currentCount >= maxCount) {
-      currentCount = 0;
+      currentCount = startCount;
       localStorage.setItem(storageKey, currentCount);
     }
 
@@ -305,31 +314,24 @@
     function updateCounter() {
       if (currentCount < maxCount) {
         currentCount += incrementBy;
-
-        if (currentCount > maxCount) {
-          currentCount = maxCount;
-        }
-
+        if (currentCount > maxCount) currentCount = maxCount;
         currentEl.textContent = currentCount;
         localStorage.setItem(storageKey, currentCount);
+      }
 
-        if (currentCount === maxCount) {
-          if (resetWhenMaxReached) {
-            setTimeout(() => {
-              currentCount = 0;
-              currentEl.textContent = currentCount;
-              localStorage.setItem(storageKey, currentCount);
-            }, updateInterval);
-          } else {
-            clearInterval(intervalId);
-          }
-        }
+      if (currentCount === maxCount && resetWhenMaxReached) {
+        currentCount = startCount;
+        localStorage.setItem(storageKey, currentCount);
+        currentEl.textContent = currentCount;
       }
     }
 
-    const intervalId = setInterval(updateCounter, updateInterval);
+    updateDelays.forEach((delay, index) => {
+      setTimeout(() => {
+        updateCounter();
+      }, delay);
+    });
   });
-
 </script>
 
 
