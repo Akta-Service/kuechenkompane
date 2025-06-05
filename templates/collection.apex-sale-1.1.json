@@ -9,6 +9,24 @@
  */
 {
   "sections": {
+    "announcement_bar_sticky_scroll_gnrpHz": {
+      "type": "announcement-bar-sticky-scroll",
+      "name": "APEX Announcement Sticky",
+      "settings": {
+        "enable_scroll_to_show": true,
+        "px_to_show": 200,
+        "sticky_top": false,
+        "color_scheme": "dark",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "",
+        "ann_title_size": 16,
+        "ann_title_size_m": 16,
+        "text": "<p>Jetzt oder nie: 48h bis -75 % auf Auslaufmodelle</p>",
+        "text_size": 16,
+        "text_size_m": 16
+      }
+    },
     "apex_top_slider_cLWmNy": {
       "type": "apex-top-slider",
       "blocks": {
@@ -304,6 +322,7 @@
     }
   },
   "order": [
+    "announcement_bar_sticky_scroll_gnrpHz",
     "apex_top_slider_cLWmNy",
     "collection-header",
     "apex_timer_9PnBtn",
