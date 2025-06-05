@@ -37,7 +37,7 @@
 {% if section.settings.sticky_top %}
 .apex-Announcement-sticky{
   position: sticky;
-  top: 0;
+  top: {{ section.settings.top_px }};
   z-index: 99999;
 }
 {% endif %}
@@ -85,6 +85,12 @@
       "id": "px_to_show",
       "label": "Set Px To Show",
       "default": 500
+    },
+    {
+      "type": "number",
+      "id": "top_px",
+      "label": "Top Position",
+      "default": 0
     },
     {
       "type": "checkbox",
