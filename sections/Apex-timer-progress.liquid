@@ -62,7 +62,7 @@
   <!-- <a class="rslink" href="#"></a> -->
   <div class="timer_text_wrapper">
     <div style="color: {{ section.settings.timer_clock }}; font-size: {{ section.settings.timer_clock_text_font_size }}px; font-weight: {{ section.settings.clock_font_weight }};">
-      <span class="" id="customer-count">0</span>/<span id="max-count">{{ section.settings.max_count }}</span>
+      <span class="" id="customer-count">0</span>/<span id="max-count">{{ section.settings.max_count_show }}</span>
     </div>
     <p
       class="timer_text"
@@ -243,6 +243,12 @@
       "type": "number",
       "id": "max_count",
       "label": "Max Count Number",
+      "default": 89
+    },
+    {
+      "type": "number",
+      "id": "max_count_show",
+      "label": "Max Count Number Show",
       "default": 100
     },
     {
@@ -277,111 +283,111 @@
 {% endschema %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // const maxCount = {{ section.settings.max_count | default: 100 }};
-    // const startCount = {{ section.settings.start_count | default: 0 }};
-    // const incrementBy = {{ section.settings.increment_by | default: 1 }};
-    // const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: false }};
-    // const storageKey = 'test_customer_offer_count';
+    const maxCount = {{ section.settings.max_count | default: 100 }};
+    const startCount = {{ section.settings.start_count | default: 0 }};
+    const incrementBy = {{ section.settings.increment_by | default: 1 }};
+    const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: false }};
+    const storageKey = 'test_customer_offer_count';
 
-    // const updateDelays = [5000, 35000, 250000, 500000, 700000]; // in ms
+    const updateDelays = [5000, 35000, 250000, 500000, 700000]; // in ms
 
-    // let storedCount = parseInt(localStorage.getItem(storageKey));
-    // let currentCount = isNaN(storedCount) ? startCount : storedCount;
+    let storedCount = parseInt(localStorage.getItem(storageKey));
+    let currentCount = isNaN(storedCount) ? startCount : storedCount;
 
-    // // Reset if needed
-    // if (resetWhenMaxReached && currentCount >= maxCount) {
-    //   currentCount = startCount;
-    //   localStorage.setItem(storageKey, currentCount);
-    // }
+    // Reset if needed
+    if (resetWhenMaxReached && currentCount >= maxCount) {
+      currentCount = startCount;
+      localStorage.setItem(storageKey, currentCount);
+    }
 
-    // const currentEl = document.getElementById('customer-count');
-    // const maxEl = document.getElementById('max-count');
-    // maxEl.textContent = maxCount;
-    // currentEl.textContent = currentCount;
+    const currentEl = document.getElementById('customer-count');
+    const maxEl = document.getElementById('max-count');
+    maxEl.textContent = maxCount;
+    currentEl.textContent = currentCount;
 
-    // function updateCounter() {
-    //   if (currentCount < maxCount) {
-    //     currentCount += incrementBy;
-    //     if (currentCount > maxCount) currentCount = maxCount;
-    //     currentEl.textContent = currentCount;
-    //     localStorage.setItem(storageKey, currentCount);
-    //   }
+    function updateCounter() {
+      if (currentCount < maxCount) {
+        currentCount += incrementBy;
+        if (currentCount > maxCount) currentCount = maxCount;
+        currentEl.textContent = currentCount;
+        localStorage.setItem(storageKey, currentCount);
+      }
 
-    //   if (currentCount === maxCount && resetWhenMaxReached) {
-    //     currentCount = startCount;
-    //     localStorage.setItem(storageKey, currentCount);
-    //     currentEl.textContent = currentCount;
-    //   }
-    // }
+      if (currentCount === maxCount && resetWhenMaxReached) {
+        currentCount = startCount;
+        localStorage.setItem(storageKey, currentCount);
+        currentEl.textContent = currentCount;
+      }
+    }
 
-    // updateDelays.forEach((delay, index) => {
-    //   setTimeout(() => {
-    //     updateCounter();
-    //   }, delay);
-    // });
+    updateDelays.forEach((delay, index) => {
+      setTimeout(() => {
+        updateCounter();
+      }, delay);
+    });
 
  
 
   });
 
 
-  document.addEventListener('DOMContentLoaded', function () {
-  const maxCount = {{ section.settings.max_count | default: 100 }};
-  const startCount = {{ section.settings.start_count | default: 0 }};
-  const incrementBy = {{ section.settings.increment_by | default: 1 }};
-  const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: false }};
-  const storageKey = 'test_customer_offer_count';
-  const reached89TimeKey = 'test_customer_offer_reached_89_time';
+// document.addEventListener('DOMContentLoaded', function () {
+//   const maxCount = {{ section.settings.max_count | default: 100 }};
+//   const startCount = {{ section.settings.start_count | default: 0 }};
+//   const incrementBy = {{ section.settings.increment_by | default: 1 }};
+//   const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: false }};
+//   const storageKey = 'test_customer_offer_count';
+//   const reached89TimeKey = 'test_customer_offer_reached_89_time';
 
-  const updateDelays = [5000, 35000, 250000, 500000, 700000]; // in ms
+//   const updateDelays = [5000, 35000, 250000, 500000, 700000]; // in ms
 
-  let storedCount = parseInt(localStorage.getItem(storageKey));
-  let currentCount = isNaN(storedCount) ? startCount : storedCount;
+//   let storedCount = parseInt(localStorage.getItem(storageKey));
+//   let currentCount = isNaN(storedCount) ? startCount : storedCount;
 
-  let timeoutIDs = [];
+//   let timeoutIDs = [];
 
-  // Reset if needed
-  if (resetWhenMaxReached && currentCount >= maxCount) {
-    currentCount = startCount;
-    localStorage.setItem(storageKey, currentCount);
-  }
+//   // Reset if needed
+//   if (resetWhenMaxReached && currentCount >= maxCount) {
+//     currentCount = startCount;
+//     localStorage.setItem(storageKey, currentCount);
+//   }
 
-  const currentEl = document.getElementById('customer-count');
-  const maxEl = document.getElementById('max-count');
+//   const currentEl = document.getElementById('customer-count');
+//   const maxEl = document.getElementById('max-count');
 
-  if (maxEl) maxEl.textContent = maxCount;
-  if (currentEl) currentEl.textContent = currentCount;
+//   if (maxEl) maxEl.textContent = maxCount;
+//   if (currentEl) currentEl.textContent = currentCount;
 
-  function updateCounter() {
-    if (currentCount < maxCount) {
-      currentCount += incrementBy;
-      if (currentCount > maxCount) currentCount = maxCount;
+//   function updateCounter() {
+//     if (currentCount < maxCount) {
+//       currentCount += incrementBy;
+//       if (currentCount > maxCount) currentCount = maxCount;
 
-      if (currentEl) currentEl.textContent = currentCount;
-      localStorage.setItem(storageKey, currentCount);
+//       if (currentEl) currentEl.textContent = currentCount;
+//       localStorage.setItem(storageKey, currentCount);
 
-      if (currentCount === 89) {
-        const timestamp = new Date().toISOString();
-        localStorage.setItem(reached89TimeKey, timestamp);
-        console.log(`Reached 89 at ${timestamp}`);
+//       if (currentCount === 89) {
+//         const timestamp = new Date().toISOString();
+//         localStorage.setItem(reached89TimeKey, timestamp);
+//         console.log(`Reached 89 at ${timestamp}`);
 
-        // Cancel remaining timeouts
-        timeoutIDs.forEach((id) => clearTimeout(id));
-        timeoutIDs = [];
-      }
-    }
+//         // Cancel remaining timeouts
+//         timeoutIDs.forEach((id) => clearTimeout(id));
+//         timeoutIDs = [];
+//       }
+//     }
 
-    if (currentCount === maxCount && resetWhenMaxReached) {
-      currentCount = startCount;
-      localStorage.setItem(storageKey, currentCount);
-      if (currentEl) currentEl.textContent = currentCount;
-    }
-  }
+//     if (currentCount === maxCount && resetWhenMaxReached) {
+//       currentCount = startCount;
+//       localStorage.setItem(storageKey, currentCount);
+//       if (currentEl) currentEl.textContent = currentCount;
+//     }
+//   }
 
-  // Save timeout IDs so we can cancel them if needed
-  updateDelays.forEach((delay) => {
-    const id = setTimeout(updateCounter, delay);
-    timeoutIDs.push(id);
-  });
-});
+//   // Save timeout IDs so we can cancel them if needed
+//   updateDelays.forEach((delay) => {
+//     const id = setTimeout(updateCounter, delay);
+//     timeoutIDs.push(id);
+//   });
+// });
 </script>
