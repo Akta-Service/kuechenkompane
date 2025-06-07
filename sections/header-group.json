@@ -62,7 +62,7 @@
         "timer_color": "#000000",
         "timer_font_weight": "400",
         "max_count": 89,
-        "max_count_show": 100,
+        "max_count_show": 1000,
         "increment_by": 1,
         "reset_when_max_reached": false,
         "start_count": 32
