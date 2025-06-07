@@ -63,7 +63,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Jetzt exklusiv beim Spiegel Kaufradar",
+            "subtitle": "Mehr als nur Wasser: kaltgepresst, natürlich, ehrlich",
             "subtitle_font_size": 16,
             "subtitle_weight": "400"
           }
@@ -79,12 +79,12 @@
         "ratings_fD4VNJ": {
           "type": "ratings",
           "settings": {
-            "likeImg1": "shopify://shop_images/Testi3.webp",
-            "likeImg2": "shopify://shop_images/Testi1_06655792-039c-4c4c-a68d-210b3c8a4ab8.webp",
-            "likeImg3": "shopify://shop_images/Testi2.jpg",
+            "likeImg1": "shopify://shop_images/Orange_Zitrone_Basilikum_Image_1_1.jpg",
+            "likeImg2": "shopify://shop_images/Orange_Zitrone_Basilikum_Image_2_1.jpg",
+            "likeImg3": "shopify://shop_images/Beere_1_1.jpg",
             "likecount": "90,532+ Personen",
             "like_bg": "#ddede0",
-            "likeinfo": "lieben unsere Küchenmesser!",
+            "likeinfo": "lieben unsere Produkte!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
           }
@@ -133,7 +133,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Produkte nur für kurze Zeit im Angebot!</p>",
+            "featurelist_item": "<p>100 % Naturlich und ohne Zusätze</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -142,7 +142,7 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Nur für Spiegel-Leser erhältlich – nicht im Einzelhandel verfügbar</p>",
+            "featurelist_item": "<p>Kaltgepresst & mit 4.000 Bar haltbar gemacht</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -177,7 +177,7 @@
             "info_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
             "info_text_2": "Kostenloser Versand",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
-            "info_text_3": "2 Jahre Garantie",
+            "info_text_3": "Natürlichkeits Garantie",
             "info_bg_color": "#ffffff",
             "info_border_color": "#000000",
             "info_text_color": "#000000",
@@ -232,22 +232,22 @@
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
-            "question": "365 Tage Schleifservice (Gratis)",
-            "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand. </p>"
+            "question": "Frische-Versprechen – Qualität, der du vertrauen kannst",
+            "answer": "<p>Unsere Zutaten sind 100 % natürlich, kaltgepresst und durch Hochdruck (HPP) haltbar gemacht – für maximalen Geschmack und höchste Qualität.</p><p>✔️ <strong>Keine Massenware – sondern echtes Handwerk.</strong><br/><br/>✔️ <strong>Nicht zufrieden? Sprich uns an – wir finden eine Lösung.</strong><br/><br/>✔️ <strong>Vertrauen, wie es sein sollte – ehrlich, unkompliziert & transparent.</strong></p>"
           }
         },
         "faq_kQAWhE": {
           "type": "faq",
           "settings": {
             "question": "Versand & Zahlungsoptionen",
-            "answer": "<p><strong>Kostenloser Versand  EU-weit (1-3 Tage)</strong></p><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine geringe Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p><strong>Versand in andere Länder z.B. Schweiz</strong></p><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p><strong>Zahlungsoptionen</strong></p><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
+            "answer": "<p><strong>Kostenloser Versand  EU-weit (1-3 Tage)</strong></p><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p><strong>Versand in andere Länder z.B. Schweiz</strong></p><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p><strong>Zahlungsoptionen</strong></p><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
           }
         },
         "faq_pDwHXa": {
           "type": "faq",
           "settings": {
-            "question": "Produktinfos & Lieferumfang",
-            "answer": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}"
+            "question": "Was du bekommst – natürlich & hochwertig",
+            "answer": "<p>🧃 1 Flasche VIVI Water – Sorte „Sellerie Zitrone“ (500 ml)<br/><br/>🌱 100 % kaltgepresste, natürliche Zutaten<br/><br/>🛡 Haltbar durch schonendes Hochdruckverfahren (HPP) – ohne Hitze, ohne Zusätze<br/><br/>🇩🇪 Hergestellt in Deutschland – vegan, ungekühlt haltbar</p><p><strong>Ein Drink, der hält, was er verspricht.</strong></p>"
           }
         }
       },
@@ -258,9 +258,9 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "IM SET ENTHALTEN:",
+        "title": "Natürlich. Frisch. Anders.",
         "heading_type": "mrk-h3",
-        "description": "{{ product.description }}",
+        "description": "<p>{{ product.description }}</p>",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": false,
@@ -557,45 +557,80 @@
         "custom_class": ""
       }
     },
-    "benefit_text_P4XApk": {
-      "type": "benefit-text",
+    "feature_highlight_ypFpCc": {
+      "type": "feature-highlight",
       "blocks": {
-        "subtitle_jER8HM": {
-          "type": "subtitle",
+        "feature_item_left_PwzGyn": {
+          "type": "feature_item_left",
           "settings": {
-            "subtitle": "Nur für kurze Zeit erhältlich"
+            "item_title": "Kaltgepresst & roh verarbeitet",
+            "item_info": "Vitamine und Enzyme bleiben vollständig erhalten – dank schonender Verarbeitung ohne Erhitzen.",
+            "item_icon": "shopify://shop_images/ChatGPT_Image_6._Juni_2025_14_01_35_1.png"
           }
         },
-        "title_hXWbxr": {
-          "type": "title",
+        "feature_item_left_WCMPKe": {
+          "type": "feature_item_left",
           "settings": {
-            "title": "Spare jetzt über 120 € auf unser exklusives Messer-Set!"
+            "item_title": "Haltbar durch 4.000 Bar Hochdruck",
+            "item_info": "Mit modernem HPP-Verfahren – ganz ohne Hitze oder Konservierungsstoffe.",
+            "item_icon": "shopify://shop_images/Screenshot_51_1.jpg"
           }
         },
-        "description_abE8wX": {
-          "type": "description",
+        "feature_item_left_kUretw": {
+          "type": "feature_item_left",
           "settings": {
-            "description": "Dieses Set vereint alles, was du für deine Küche brauchst. Nur solange der Vorrat reicht – viele Produkte gehen nicht mehr in Nachproduktion!"
+            "item_title": "Ohne Zucker & ohne Zusätze",
+            "item_info": "Kein zugesetzter Zucker. Keine Aromen. Keine Zusatzstoffe. Nur reine Natur.",
+            "item_icon": "shopify://shop_images/ChatGPT_Image_6._Juni_2025_14_12_47_1.jpg"
+          }
+        },
+        "feature_center_image_HRH7Jm": {
+          "type": "feature_center_image",
+          "settings": {
+            "center_image": "shopify://shop_images/Vivi-Water-Orange-Zitrone-Basilikum_1_-_Kopie_f1027ff5-29a0-47bd-9044-5d46ca93e7af.jpg"
+          }
+        },
+        "feature_item_right_yQLHrE": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Hergestellt in Deutschland",
+            "item_info": "Regional produziert nach höchsten Qualitätsstandards – fair, sicher, kontrolliert.",
+            "item_icon": "shopify://shop_images/ChatGPT_Image_6._Juni_2025_14_14_21_1.jpg"
+          }
+        },
+        "feature_item_right_qEJUPp": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Vegan & ungekühlt haltbar",
+            "item_info": "Pflanzlich, leicht lagerbar und haltbar – ganz ohne Kühlung.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V5_1.png"
+          }
+        },
+        "feature_item_right_xcJcbE": {
+          "type": "feature_item_right",
+          "settings": {
+            "item_title": "Klarer Geschmack – voller Inhalt",
+            "item_info": "Du schmeckst jede Zutat – pur, intensiv und unverfälscht.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V6_1.png"
           }
         }
       },
       "block_order": [
-        "subtitle_jER8HM",
-        "title_hXWbxr",
-        "description_abE8wX"
+        "feature_item_left_PwzGyn",
+        "feature_item_left_WCMPKe",
+        "feature_item_left_kUretw",
+        "feature_center_image_HRH7Jm",
+        "feature_item_right_yQLHrE",
+        "feature_item_right_qEJUPp",
+        "feature_item_right_xcJcbE"
       ],
+      "name": "Apex Fature Highlight",
       "settings": {
-        "color_scheme": "",
-        "media_type": "image",
-        "image": "{{ product.metafields.custom.product_grid_image_1.value }}",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": false,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h3",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
+        "pt": 50,
+        "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
+        "title": "Das macht uns einzigartig"
       }
     },
     "feature_highlight_ktLbnH": {
@@ -672,70 +707,6 @@
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "Im Set enthalten:"
-      }
-    },
-    "product_explanation_video_xNFp3M": {
-      "type": "product-explanation-video",
-      "blocks": {
-        "sub_heading_aBnF8i": {
-          "type": "sub_heading",
-          "settings": {
-            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten"
-          }
-        },
-        "heading_jQDwbJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "Qualität, die begeistert.",
-            "h1_text_align": "center",
-            "title": "Your Title Here",
-            "padding_top": 1,
-            "padding_bottom": 1,
-            "padding_top_tablet": 1,
-            "padding_bottom_tablet": 1,
-            "padding_top_mobile": 1,
-            "padding_bottom_mobile": 1
-          }
-        },
-        "details_erg8QM": {
-          "type": "details",
-          "settings": {
-            "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
-            "p_text_align": "left",
-            "p_padding_top": 10,
-            "p_padding_bottom": 10,
-            "p_padding_top_tablet": 8,
-            "p_padding_bottom_tablet": 8,
-            "p_padding_top_mobile": 5,
-            "p_padding_bottom_mobile": 5
-          }
-        },
-        "video_XLLb9A": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
-            "autoplay": false,
-            "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
-            "loop": true,
-            "muted": true,
-            "playsinline": true,
-            "controls": true
-          }
-        }
-      },
-      "block_order": [
-        "sub_heading_aBnF8i",
-        "heading_jQDwbJ",
-        "details_erg8QM",
-        "video_XLLb9A"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "vertical_padding": 50,
-        "vertical_padding_mobile": 30,
-        "heading_type": "mrk-h3",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
       }
     },
     "us_vs_them_8Tbqki": {
@@ -1227,9 +1198,8 @@
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
-    "benefit_text_P4XApk",
+    "feature_highlight_ypFpCc",
     "feature_highlight_ktLbnH",
-    "product_explanation_video_xNFp3M",
     "us_vs_them_8Tbqki",
     "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
