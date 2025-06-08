@@ -119,6 +119,19 @@
 {% endif %}
 {% comment %} {% endif %} {% endcomment %}
 <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        function updateViewersCount() {
+          // Randomly generate a number of viewers between 5 and 20
+          var viewersCount = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
+          document.getElementById('viewers-count').innerText = viewersCount + ' ';
+        }
+      
+        // Update the count every second (1000 milliseconds)
+        setInterval(updateViewersCount, {{ block.settings.viewer_count_time}});
+    
+</script>
+
+<script>
 document.addEventListener('DOMContentLoaded', function () {
   const stockKey = 'product_stock_count';
   const timestampKey = 'product_stock_start_time';
