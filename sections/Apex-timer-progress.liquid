@@ -62,7 +62,7 @@
   <!-- <a class="rslink" href="#"></a> -->
   <div class="timer_text_wrapper">
     <div style="color: {{ section.settings.timer_clock }}; font-size: {{ section.settings.timer_clock_text_font_size }}px; font-weight: {{ section.settings.clock_font_weight }};">
-      <span class="" id="customer-count">0</span>/<span id="max-count">{{ section.settings.max_count_show }}</span>
+      <span class="" id="customer-count">0</span>/<span id="max-countt">{{ section.settings.max_count_show }}</span>
     </div>
     <p
       class="timer_text"
@@ -283,7 +283,7 @@
 {% endschema %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const maxCount = {{ section.settings.max_count | default: 100 }};
+    const maxCount = {{ section.settings.max_count | default: 89 }};
     const startCount = {{ section.settings.start_count | default: 0 }};
     const incrementBy = {{ section.settings.increment_by | default: 1 }};
     const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: false }};
