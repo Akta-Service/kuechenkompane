@@ -119,31 +119,64 @@
 {% endif %}
 {% comment %} {% endif %} {% endcomment %}
 <script>
-      document.addEventListener('DOMContentLoaded', function () {
-    function updateViewersCount() {
-      // Randomly generate a number of viewers between 5 and 20
-      var viewersCount = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
-      document.getElementById('viewers-count').innerText = viewersCount + ' ';
-    }
-      
-    // Update the count every second (1000 milliseconds)
-    setInterval(updateViewersCount, {{ block.settings.viewer_count_time}});
-      
-    // Initialize the stock count with a random number between 5 and 20
-    var stockCount = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
-    document.getElementById('stock-count').innerText = ' ' + stockCount + ' ';
-      
-    function decreaseStock() {
-      if (stockCount > 3) {
-        stockCount--;
-      } else {
-        // Reset the stock count to 20 when it reaches 3 or below
-        stockCount = 20;
+document.addEventListener('DOMContentLoaded', function () {
+  const stockKey = 'product_stock_count';
+  const timestampKey = 'product_stock_start_time';
+  const lifespanDays = 3;
+  const decreaseInterval = {{ block.settings.stock_count_time | default: 20000 }}; // in ms
+  const minStock = 3;
+  const maxStock = 20;
+  const stockElement = document.getElementById('stock-count');
+
+  function getDaysBetween(date1, date2) {
+    return (date2 - date1) / (1000 * 60 * 60 * 24);
+  }
+
+  function initStockCountdown() {
+    let stockData = localStorage.getItem(stockKey);
+    let startTime = localStorage.getItem(timestampKey);
+    const now = Date.now();
+
+    if (stockData && startTime) {
+      const daysPassed = getDaysBetween(parseInt(startTime), now);
+
+      if (daysPassed > lifespanDays) {
+        // Expired, reset values
+        localStorage.removeItem(stockKey);
+        localStorage.removeItem(timestampKey);
+        return initStockCountdown();
       }
-      document.getElementById('stock-count').innerText = ' ' + stockCount + ' ';
+
+      let elapsed = now - parseInt(startTime);
+      let decreases = Math.floor(elapsed / decreaseInterval);
+      let currentStock = Math.max(maxStock - decreases, minStock);
+      stockElement.innerText = ' ' + currentStock + ' ';
+      runCountdown(currentStock, parseInt(startTime));
+    } else {
+      // First-time visit or expired data
+      const initialStock = Math.floor(Math.random() * (maxStock - 10)) + 10; // Between 10–20
+      const now = Date.now();
+      localStorage.setItem(stockKey, initialStock);
+      localStorage.setItem(timestampKey, now);
+      stockElement.innerText = ' ' + initialStock + ' ';
+      runCountdown(initialStock, now);
     }
-      
-    // Decrease stock count every second
-    setInterval(decreaseStock, {{ block.settings.stock_count_time | default: 20000 }});
-      });
+  }
+
+  function runCountdown(initialStock, startTime) {
+    let currentStock = initialStock;
+
+    setInterval(() => {
+      const now = Date.now();
+      let decreases = Math.floor((now - startTime) / decreaseInterval);
+      let newStock = Math.max(maxStock - decreases, minStock);
+      if (newStock !== currentStock) {
+        currentStock = newStock;
+        stockElement.innerText = ' ' + currentStock + ' ';
+      }
+    }, 5000); // Check every 5 seconds for changes
+  }
+
+  initStockCountdown();
+});
 </script>
