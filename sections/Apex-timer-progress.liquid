@@ -1,60 +1,59 @@
 <style>
-    .rs_timerwrapper {
-      text-align: center;
-      padding: 15px;    
-      
-      text-transform: uppercase;
-      font-weight: 700;
-      line-height: 1;
-      position: relative;
-    }
+  .rs_timerwrapper {
+    text-align: center;
+    padding: 15px;
 
-    .rs_timerwrapper .rslink {
-      position: absolute;
-      z-index: 999;
-      width: 100%;
-      left: 0;
-      top: 0;
-      right: 0;
-      height: 100%;
-      bottom: 0;
-      background: none;
-    }
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    position: relative;
+  }
 
-    .timer_text_wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
+  .rs_timerwrapper .rslink {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    bottom: 0;
+    background: none;
+  }
 
-    .timer_clock {
-      display: inline-block;
-      line-height: 1;
-      margin-right: 5px;
-     
-      width: fit-content;
-      letter-spacing: 0.5px;
-      
-      
-      font-family: "Roboto", sans-serif;
-    }
+  .timer_text_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
 
-    .timer_text {    
-      font-family: "Roboto", sans-serif;
-      font-size: 12px;
-      line-height: 1;
-      margin: 0;
-      padding: 0;
-      display: inline-block;
-      color: #dcad27;
-      font-weight: 700;
-    }
-    .timer_text_wrapper {
-      font-family: "Roboto", sans-serif;
-    }
+  .timer_clock {
+    display: inline-block;
+    line-height: 1;
+    margin-right: 5px;
 
+    width: fit-content;
+    letter-spacing: 0.5px;
+
+
+    font-family: "Roboto", sans-serif;
+  }
+
+  .timer_text {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    color: #dcad27;
+    font-weight: 700;
+  }
+  .timer_text_wrapper {
+    font-family: "Roboto", sans-serif;
+  }
 </style>
 <div
   class="rs_timerwrapper global-timer{{ section.id }}"
@@ -63,7 +62,7 @@
   <!-- <a class="rslink" href="#"></a> -->
   <div class="timer_text_wrapper">
     <div style="color: {{ section.settings.timer_clock }}; font-size: {{ section.settings.timer_clock_text_font_size }}px; font-weight: {{ section.settings.clock_font_weight }};">
-      <span class="" id="customer-count">0</span>/<span id="max-count">{{ section.settings.max_count }}</span>
+      <span class="" id="customer-count">0</span>/<span id="max-count">{{ section.settings.max_count_show }}</span>
     </div>
     <p
       class="timer_text"
@@ -72,16 +71,11 @@
       {{ section.settings.timer_text }}
     </p>
   </div>
-
- 
-
-
 </div>
-
 
 {% schema %}
 {
-  "name": "Apex Timer Progress",  
+  "name": "Apex Timer Progress",
 
   "settings": [
     {
@@ -190,7 +184,7 @@
       "max": 50,
       "step": 1
     },
-    
+
     {
       "type": "color",
       "id": "timer_color",
@@ -249,8 +243,14 @@
       "type": "number",
       "id": "max_count",
       "label": "Max Count Number",
+      "default": 89
+    },
+    {
+      "type": "number",
+      "id": "max_count_show",
+      "label": "Max Count Number Show",
       "default": 100
-    },    
+    },
     {
       "type": "number",
       "id": "increment_by",
@@ -271,7 +271,7 @@
     }
 
 
-    
+
 
   ],
   "presets": [
@@ -283,7 +283,7 @@
 {% endschema %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const maxCount = {{ section.settings.max_count | default: 100 }};
+    const maxCount = {{ section.settings.max_count | default: 89 }};
     const startCount = {{ section.settings.start_count | default: 0 }};
     const incrementBy = {{ section.settings.increment_by | default: 1 }};
     const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: false }};
@@ -301,8 +301,8 @@
     }
 
     const currentEl = document.getElementById('customer-count');
-    const maxEl = document.getElementById('max-count');
-    maxEl.textContent = maxCount;
+    // const maxEl = document.getElementById('max-count');
+    // maxEl.textContent = maxCount;
     currentEl.textContent = currentCount;
 
     function updateCounter() {
@@ -325,7 +325,69 @@
         updateCounter();
       }, delay);
     });
+
+ 
+
   });
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const maxCount = {{ section.settings.max_count | default: 100 }};
+//   const startCount = {{ section.settings.start_count | default: 0 }};
+//   const incrementBy = {{ section.settings.increment_by | default: 1 }};
+//   const resetWhenMaxReached = {{ section.settings.reset_when_max_reached | default: false }};
+//   const storageKey = 'test_customer_offer_count';
+//   const reached89TimeKey = 'test_customer_offer_reached_89_time';
+
+//   const updateDelays = [5000, 35000, 250000, 500000, 700000]; // in ms
+
+//   let storedCount = parseInt(localStorage.getItem(storageKey));
+//   let currentCount = isNaN(storedCount) ? startCount : storedCount;
+
+//   let timeoutIDs = [];
+
+//   // Reset if needed
+//   if (resetWhenMaxReached && currentCount >= maxCount) {
+//     currentCount = startCount;
+//     localStorage.setItem(storageKey, currentCount);
+//   }
+
+//   const currentEl = document.getElementById('customer-count');
+//   const maxEl = document.getElementById('max-count');
+
+//   if (maxEl) maxEl.textContent = maxCount;
+//   if (currentEl) currentEl.textContent = currentCount;
+
+//   function updateCounter() {
+//     if (currentCount < maxCount) {
+//       currentCount += incrementBy;
+//       if (currentCount > maxCount) currentCount = maxCount;
+
+//       if (currentEl) currentEl.textContent = currentCount;
+//       localStorage.setItem(storageKey, currentCount);
+
+//       if (currentCount === 89) {
+//         const timestamp = new Date().toISOString();
+//         localStorage.setItem(reached89TimeKey, timestamp);
+//         console.log(`Reached 89 at ${timestamp}`);
+
+//         // Cancel remaining timeouts
+//         timeoutIDs.forEach((id) => clearTimeout(id));
+//         timeoutIDs = [];
+//       }
+//     }
+
+//     if (currentCount === maxCount && resetWhenMaxReached) {
+//       currentCount = startCount;
+//       localStorage.setItem(storageKey, currentCount);
+//       if (currentEl) currentEl.textContent = currentCount;
+//     }
+//   }
+
+//   // Save timeout IDs so we can cancel them if needed
+//   updateDelays.forEach((delay) => {
+//     const id = setTimeout(updateCounter, delay);
+//     timeoutIDs.push(id);
+//   });
+// });
 </script>
-
-

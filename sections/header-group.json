@@ -39,12 +39,33 @@
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
-        "ann_title": "🔥 ENDGÜLTIGER AUSVERKAUF – KEINE NACHPRODUKTION! 🔥",
+        "ann_title": "🔥Bis zu -75 % auf Auslaufmodelle!🔥",
         "ann_title_size": 16,
         "ann_title_size_m": 15,
-        "text": "<p><a href=\"/collections/ausverkauf\" title=\"Ausverkauf\">Jetzt oder nie: 48h bis -75 % auf Auslaufmodelle</a></p>",
+        "text": "<p>Nur noch für die nächsten 100 Bestellungen</p>",
         "text_size": 16,
         "text_size_m": 16
+      }
+    },
+    "apex_timer_progress_yCDcUj": {
+      "type": "Apex-timer-progress",
+      "name": "Apex Timer Progress",
+      "settings": {
+        "bg_color": "#dce5dc",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#d2861a",
+        "timer_clock_text_font_size": 14,
+        "clock_font_weight": "100",
+        "timer_text": "Bestellungen wurden bereits eingelöst",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "400",
+        "max_count": 96,
+        "max_count_show": 100,
+        "increment_by": 1,
+        "reset_when_max_reached": false,
+        "start_count": 64
       }
     },
     "apex_global_offer_timer_gMjjdD": {
@@ -197,6 +218,7 @@
   "order": [
     "announcement_bar_version_1_rc6jDA",
     "announcement_bar_sticky_scroll_Bk3YD6",
+    "apex_timer_progress_yCDcUj",
     "apex_global_offer_timer_gMjjdD",
     "annoucement",
     "header",
