@@ -93,7 +93,6 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
-            "taxes_included": false,
             "show_saving": false,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -126,7 +125,7 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
-            "viewer_count_time": 3000,
+            "viewer_count_time": 2500,
             "stock_count_time": 50000,
             "stock_count_show": true
           }
