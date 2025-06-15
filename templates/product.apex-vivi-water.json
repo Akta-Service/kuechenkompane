@@ -93,6 +93,7 @@
           "type": "price",
           "settings": {
             "taxes_included": true,
+            "taxes_included_text": "Inkl. MwSt.",
             "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
