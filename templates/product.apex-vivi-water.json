@@ -772,6 +772,13 @@
             "faq_body": "<p>HPP (High Pressure Processing) ist ein modernes Verfahren, bei dem das Getränk unter 4.000 Bar Druck schonend haltbar gemacht wird – ohne Erhitzen, ohne Chemie. So bleibt alles Gute erhalten.</p>"
           }
         },
+        "item_9JjGkE": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Wie hoch sind die Versandkosten?",
+            "faq_body": "<p><strong>Der Versand ist für dich komplett kostenlos.</strong><br/><br/>Egal, wie viele Flaschen du bestellst – wir liefern versandfrei direkt zu dir nach Hause.</p>"
+          }
+        },
         "item_xpq4qN": {
           "type": "item",
           "settings": {
@@ -789,29 +796,22 @@
         "item_cDC8UT": {
           "type": "item",
           "settings": {
-            "faq_title": "Gibt es eine Geld-zurück-Garantie oder ein Rückgaberecht?",
-            "faq_body": "<p>Ja! Wir bieten eine <strong>100-Tage-Geld-zurück-Garantie</strong>. Teste die Messer völlig risikofrei. Solltest du nicht zufrieden sein, kannst du sie unkompliziert zurücksenden – ohne Wenn und Aber!</p>"
+            "faq_title": "Wo wird VIVI Water hergestellt?",
+            "faq_body": "<p>VIVI Water wird in Niedersachsen, Deutschland produziert – mit regionalem Quellwasser und frischen Zutaten aus kontrollierter Herkunft.</p>"
           }
         },
         "item_PNKhQY": {
           "type": "item",
           "settings": {
-            "faq_title": "Wie lange dauert der Versand und gibt es eine Expressoption?",
-            "faq_body": "<p><strong>Standardversand</strong>: 1-3 Werktage<br/><strong>Expressversand</strong>: 20-36 Stunden für eine schnelle Lieferung</p><p>Alle Bestellungen werden mit Sendungsverfolgung versendet, damit du dein Paket jederzeit nachverfolgen kannst.</p>"
+            "faq_title": "Wie kann ich bezahlen?",
+            "faq_body": "<p>Du kannst bequem bezahlen mit:<br/><br/><strong>Klarna, PayPal, Kreditkarte, Apple Pay, Google Pay, Sofortüberweisung u.v.m.</strong></p>"
           }
         },
         "item_889zGP": {
           "type": "item",
           "settings": {
-            "faq_title": "Welche Zahlungsmethoden werden akzeptiert?",
-            "faq_body": "<p>Wir bieten <strong>sichere und flexible Zahlungsmöglichkeiten</strong>, darunter:<br/>Kreditkarte (Visa, Mastercard, AMEX)<br/>PayPal, Klarna (Rechnung & Sofort)<br/>Apple Pay & Google Pay</p>"
-          }
-        },
-        "item_9JjGkE": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Gibt es eine Garantie auf die Messer?",
-            "faq_body": "<p>Ja! Unsere Messer kommen mit <strong>2</strong> <strong>Jahren Garantie auf Material- und Herstellungsfehler</strong>. Sollte es ein Problem geben, sorgen wir für einen schnellen Ersatz oder eine Lösung.</p>"
+            "faq_title": "Kann ich VIVI Water zurückgeben?",
+            "faq_body": "<p>Da es sich um ein frisches Lebensmittel handelt, ist eine Rückgabe nur bei Qualitätsmängeln möglich. Sollte etwas nicht stimmen, melde dich – wir finden eine Lösung.</p>"
           }
         }
       },
@@ -820,12 +820,12 @@
         "item_J7jdRT",
         "item_V7NfBy",
         "item_Q9DGdb",
+        "item_9JjGkE",
         "item_xpq4qN",
         "item_XFGU6y",
         "item_cDC8UT",
         "item_PNKhQY",
-        "item_889zGP",
-        "item_9JjGkE"
+        "item_889zGP"
       ],
       "settings": {
         "color_scheme": "badge-hot",
