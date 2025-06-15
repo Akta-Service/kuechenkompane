@@ -72,6 +72,42 @@
 
     {{ 'swiper.css' | asset_url | stylesheet_tag }}
 
+
+
+    <script>
+      (function() {
+        document.addEventListener("DOMContentLoaded", function () {
+          const settings = window.__passwordProtectionSettings;
+    
+          if (!settings) return;
+    
+          const path = window.location.pathname;
+          const isProtectedCollection = path.includes("/collections/" + settings.collectionHandle);
+          const hasAccess = localStorage.getItem(settings.key) === "true";
+    
+          if (isProtectedCollection && !hasAccess) {
+            document.documentElement.style.visibility = 'hidden';
+          }
+        });
+      })();
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {% comment %}
       <style>
         .mrk-btn {
