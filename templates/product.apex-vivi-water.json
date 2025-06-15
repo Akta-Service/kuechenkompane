@@ -92,8 +92,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
-            "taxes_included": false,
-            "show_saving": false,
+            "taxes_included": true,
+            "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 5,
