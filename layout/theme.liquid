@@ -43,10 +43,7 @@
       const collectionHandle = "{{ settings.collection_handle }}";
       const collectionKey = "collectionAccess_" + collectionHandle;
 
-      // Block page rendering early
-      if (localStorage.getItem(collectionKey) !== "true") {
-        // document.documentElement.style.display = 'none';
-      }
+    
 
       function lockScroll() {
         document.body.classList.add('scroll-lock');
@@ -67,8 +64,7 @@
 
         if (userPassword === correctPassword) {
           localStorage.setItem(collectionKey, "true");
-          document.getElementById("password-popup").style.display = "none";
-          document.documentElement.style.display = "block";
+          document.getElementById("password-popup").style.display = "none";          
           unlockScroll();
         } else {
           errorMessage.style.display = "block";
@@ -83,8 +79,7 @@
         const popup = document.getElementById("password-popup");
 
         if (localStorage.getItem(collectionKey) === "true") {
-          popup.style.display = "none";
-          document.documentElement.style.display = "block";
+          popup.style.display = "none";          
           unlockScroll();
         } else {
           popup.style.display = "flex";
