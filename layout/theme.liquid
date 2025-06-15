@@ -38,58 +38,62 @@
 {% comment %} pass ptotected collection js  {% endcomment %}
 
 <script>
-  const correctPassword = "{{ settings.password | escape }}";
-  const collectionKey = "collectionAccess_{{ settings.collection.handle }}";
+    (function () {
+      const correctPassword = "{{ settings.password | escape }}";
+      const collectionHandle = "{{ settings.collection_handle }}";
+      const collectionKey = "collectionAccess_" + collectionHandle;
 
-  // Lock scroll (iOS safe)
-  function lockScroll() {
-    document.body.classList.add('scroll-lock');
-  }
+      // Block page rendering early
+      if (localStorage.getItem(collectionKey) !== "true") {
+        document.documentElement.style.display = 'none';
+      }
 
-  // Unlock scroll
-  function unlockScroll() {
-    document.body.classList.remove('scroll-lock');
-  }
+      function lockScroll() {
+        document.body.classList.add('scroll-lock');
+      }
 
-  // Fix iOS 100vh issue
-  function setRealVh() {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
+      function unlockScroll() {
+        document.body.classList.remove('scroll-lock');
+      }
 
-  // Handle password check
-  function checkPassword() {
-    const userPassword = document.getElementById("popup-password").value;
-    const errorMessage = document.getElementById("error-message");
+      function setRealVh() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
 
-    if (userPassword === correctPassword) {
-      localStorage.setItem(collectionKey, "true");
-      document.getElementById("password-popup").style.display = "none";
-      unlockScroll();
-    } else {
-      errorMessage.style.display = "block";
-    }
-  }
+      function checkPassword() {
+        const userPassword = document.getElementById("popup-password").value;
+        const errorMessage = document.getElementById("error-message");
 
-  // Setup popup on load
-  window.addEventListener('load', function () {
-    setRealVh();
-    window.addEventListener('resize', setRealVh);
+        if (userPassword === correctPassword) {
+          localStorage.setItem(collectionKey, "true");
+          document.getElementById("password-popup").style.display = "none";
+          document.documentElement.style.display = "block";
+          unlockScroll();
+        } else {
+          errorMessage.style.display = "block";
+        }
+      }
 
-    const popup = document.getElementById("password-popup");
+      document.addEventListener('DOMContentLoaded', function () {
+        setRealVh();
+        window.addEventListener('resize', setRealVh);
 
-    if (localStorage.getItem(collectionKey) === "true") {
-      popup.style.display = "none";
-      unlockScroll();
-    } else {
-      popup.style.display = "flex";
-      lockScroll();
-    }
+        const popup = document.getElementById("password-popup");
 
-    // Attach checkPassword function globally
-    window.checkPassword = checkPassword;
-  });
-</script>
+        if (localStorage.getItem(collectionKey) === "true") {
+          popup.style.display = "none";
+          document.documentElement.style.display = "block";
+          unlockScroll();
+        } else {
+          popup.style.display = "flex";
+          lockScroll();
+        }
+
+        window.checkPassword = checkPassword;
+      });
+    })();
+  </script>
   
 {% comment %} pass ptotected collection js end {% endcomment %}
 
