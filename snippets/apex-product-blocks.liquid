@@ -256,7 +256,11 @@
           %}
           {%- if block.settings.taxes_included != false -%}
             <div class="m-product-tax">
-              {{ 'products.product.include_taxes' | t }}
+              {%- if block.settings.taxes_included_text != blank -%}
+                {{ block.settings.taxes_included_text }}
+              {%- else -%}
+                {{ 'products.product.include_taxes' | t }}
+              {%- endif -%}
             </div>
           {%- endif -%}
           </div>
