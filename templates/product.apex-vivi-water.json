@@ -258,9 +258,9 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "Natürlich. Frisch. Anders.",
+        "title": "{{ product.metafields.custom.df_type.value }}",
         "heading_type": "mrk-h3",
-        "description": "<p>{{ product.description }}</p>",
+        "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": false,
