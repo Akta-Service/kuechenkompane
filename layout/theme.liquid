@@ -30,6 +30,80 @@
   {% endif %}
 >
   <head>
+
+  
+{% comment %} pass ptotected collection js  {% endcomment %}
+{% comment %} pass ptotected collection js  {% endcomment %}
+{% comment %} pass ptotected collection js  {% endcomment %}
+{% comment %} pass ptotected collection js  {% endcomment %}
+
+<script>
+  const correctPassword = "{{ settings.password | escape }}";
+  const collectionKey = "collectionAccess_{{ settings.collection.handle }}";
+
+  // Lock scroll (iOS safe)
+  function lockScroll() {
+    document.body.classList.add('scroll-lock');
+  }
+
+  // Unlock scroll
+  function unlockScroll() {
+    document.body.classList.remove('scroll-lock');
+  }
+
+  // Fix iOS 100vh issue
+  function setRealVh() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  // Handle password check
+  function checkPassword() {
+    const userPassword = document.getElementById("popup-password").value;
+    const errorMessage = document.getElementById("error-message");
+
+    if (userPassword === correctPassword) {
+      localStorage.setItem(collectionKey, "true");
+      document.getElementById("password-popup").style.display = "none";
+      unlockScroll();
+    } else {
+      errorMessage.style.display = "block";
+    }
+  }
+
+  // Setup popup on load
+  window.addEventListener('load', function () {
+    setRealVh();
+    window.addEventListener('resize', setRealVh);
+
+    const popup = document.getElementById("password-popup");
+
+    if (localStorage.getItem(collectionKey) === "true") {
+      popup.style.display = "none";
+      unlockScroll();
+    } else {
+      popup.style.display = "flex";
+      lockScroll();
+    }
+
+    // Attach checkPassword function globally
+    window.checkPassword = checkPassword;
+  });
+</script>
+  
+{% comment %} pass ptotected collection js end {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
@@ -71,81 +145,6 @@
     {% render 'typegraphy' %}
 
     {{ 'swiper.css' | asset_url | stylesheet_tag }}
-
-
-
-
-{% comment %} pass ptotected collection js  {% endcomment %}
-{% comment %} pass ptotected collection js  {% endcomment %}
-{% comment %} pass ptotected collection js  {% endcomment %}
-
-  <script>
-    const correctPassword = "{{ settings.password | escape }}";
-    const collectionKey = "collectionAccess_{{ settings.collection.handle }}";
-
-    // Lock scroll (iOS safe)
-    function lockScroll() {
-      document.body.classList.add('scroll-lock');
-    }
-
-    // Unlock scroll
-    function unlockScroll() {
-      document.body.classList.remove('scroll-lock');
-    }
-
-    // Fix iOS 100vh issue
-    function setRealVh() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-
-    // Handle password check
-    function checkPassword() {
-      const userPassword = document.getElementById("popup-password").value;
-      const errorMessage = document.getElementById("error-message");
-
-      if (userPassword === correctPassword) {
-        localStorage.setItem(collectionKey, "true");
-        document.getElementById("password-popup").style.display = "none";
-        unlockScroll();
-      } else {
-        errorMessage.style.display = "block";
-      }
-    }
-
-    // Setup popup on load
-    window.addEventListener('load', function () {
-      setRealVh();
-      window.addEventListener('resize', setRealVh);
-
-      const popup = document.getElementById("password-popup");
-
-      if (localStorage.getItem(collectionKey) === "true") {
-        popup.style.display = "none";
-        unlockScroll();
-      } else {
-        popup.style.display = "flex";
-        lockScroll();
-      }
-
-      // Attach checkPassword function globally
-      window.checkPassword = checkPassword;
-    });
-  </script>
-    
-{% comment %} pass ptotected collection js end {% endcomment %}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
