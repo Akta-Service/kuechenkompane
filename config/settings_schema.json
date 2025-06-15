@@ -8,6 +8,21 @@
     "theme_support_url": "https://foxecom.com"
   },
   {
+    "name": "Password Protected Collection Settings",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection to protect"
+      },
+      {
+        "type": "text",
+        "id": "password",
+        "label": "Password"
+      }
+    ]
+  },
+  {
     "name": "General settings",
     "settings": [
       {
