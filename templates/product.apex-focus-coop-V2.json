@@ -92,6 +92,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "taxes_included": false,
+            "taxes_included_text": "",
             "show_saving": false,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -246,7 +248,7 @@
           "type": "faq",
           "settings": {
             "question": "Produktinfos & Lieferumfang",
-            "answer": "<p><strong>Jedes unserer Küchenmesser wird von Hand geschliffen – für maximale Schärfe und Präzision in deiner Küche.</strong><br/><br/>Der ergonomische Griff aus edlem Pakkaholz liegt perfekt in der Hand und sorgt für höchsten Komfort – auch bei stundenlangem Arbeiten. So wird jede Zutat zum Genuss – vom ersten Schnitt bis zum letzten Handgriff.</p><p><strong>Lieferumfang:</strong><br/><br/><strong>1. Asiatisches Chefmesser – Wert: 69 €<br/>2. Asiatisches Santoku 7\" Messer – Wert: 69 €<br/><br/> Inklusive edler Aufbewahrungsbox – gratis für dich dabei!</strong><br/></p>"
+            "answer": "<h2>Produktbeschreibung</h2><ul><li><strong>Set-Inhalt:</strong> Chefmesser, Santokumesser 7\", Nakirimesser, Filetiermesser, Brotmesser, Yanagiba Messer, Santoku Messer 5\", Petty Messer</li><li><strong>Klingen:</strong> Handgeschliffene Klingen aus robustem 7CR17 Edelstahl</li><li><strong>Härtegrad:</strong> 60 ± 2 HRC</li><li><strong>Schliff:</strong> 15° beidseitig</li><li><strong>Griff:</strong> Robuster Epoxidharzgriff</li><li><strong>Balance:</strong> Ausgewogen für ermüdungsarmes Schneiden</li><li><strong>Verpackung:</strong> Edle Geschenkbox inklusive 365 Tage Schleifservice</li></ul><p><strong>Lieferumfang:</strong><br/><br/><strong>1. Asiatisches Chefmesser – Wert: 69 €<br/>2. Asiatisches Santoku 7\" Messer – Wert: 69 €<br/><br/> Inklusive edler Aufbewahrungsbox – gratis für dich dabei!</strong><br/></p>"
           }
         }
       },
