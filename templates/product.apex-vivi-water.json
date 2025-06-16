@@ -248,7 +248,7 @@
           "type": "faq",
           "settings": {
             "question": "Was du bekommst – natürlich & hochwertig",
-            "answer": "<p>🧃 1 Flasche VIVI Water – Sorte „Sellerie Zitrone“ (500 ml)<br/><br/>🌱 100 % kaltgepresste, natürliche Zutaten<br/><br/>🛡 Haltbar durch schonendes Hochdruckverfahren (HPP) – ohne Hitze, ohne Zusätze<br/><br/>🇩🇪 Hergestellt in Deutschland – vegan, ungekühlt haltbar</p><p><strong>Ein Drink, der hält, was er verspricht.</strong></p>"
+            "answer": "<p>🧃 1 Flasche VIVI Water – Sorte „Sellerie Zitrone“ (320 ml)<br/><br/>🌱 100 % kaltgepresste, natürliche Zutaten<br/><br/>🛡 Haltbar durch schonendes Hochdruckverfahren (HPP) – ohne Hitze, ohne Zusätze<br/><br/>🇩🇪 Hergestellt in Deutschland – vegan, ungekühlt haltbar</p><p><strong>Ein Drink, der hält, was er verspricht.</strong></p>"
           }
         }
       },
@@ -261,7 +261,7 @@
         "color_scheme": "badge-hot",
         "title": "{{ product.metafields.custom.df_type.value }}",
         "heading_type": "mrk-h3",
-        "description": "<p>{{ product.description }}</p>",
+        "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": false,
