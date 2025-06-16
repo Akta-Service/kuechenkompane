@@ -94,7 +94,7 @@
           "settings": {
             "taxes_included": false,
             "taxes_included_text": "",
-            "show_saving": false,
+            "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 5,
@@ -134,7 +134,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Preis nur für kurze Zeit – danach wieder 138€</p>",
+            "featurelist_item": "<p>Preis nur für kurze Zeit – danach wieder 559,00€</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
