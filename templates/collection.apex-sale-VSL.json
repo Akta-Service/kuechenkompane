@@ -72,10 +72,10 @@
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/f057090e002c42618d027081b895b46f.mov",
             "autoplay": false,
-            "loop": true,
+            "loop": false,
             "muted": true,
             "playsinline": true,
-            "controls": true
+            "controls": false
           }
         }
       },
