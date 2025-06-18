@@ -9,6 +9,114 @@
  */
 {
   "sections": {
+    "apex_top_slider_cLWmNy": {
+      "type": "apex-top-slider",
+      "blocks": {
+        "text_yyFMTt": {
+          "type": "text",
+          "settings": {
+            "top_item": "140.000+ zufriedene Kunden"
+          }
+        },
+        "text_KykYUz": {
+          "type": "text",
+          "settings": {
+            "top_item": "30 Tage Testen"
+          }
+        },
+        "text_KDtkJQ": {
+          "type": "text",
+          "settings": {
+            "top_item": "Kostenloser Versand"
+          }
+        }
+      },
+      "block_order": [
+        "text_yyFMTt",
+        "text_KykYUz",
+        "text_KDtkJQ"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "pt": 15,
+        "pb": 15,
+        "mt_mobile": 15,
+        "mb_mobile": 15
+      }
+    },
+    "product_explanation_video_ca4Wbj": {
+      "type": "product-explanation-video",
+      "blocks": {
+        "heading_pUrb6A": {
+          "type": "heading",
+          "settings": {
+            "heading": "Eine kurze Nachricht vom Gründer",
+            "h1_text_align": "left",
+            "title": "",
+            "padding_top": 20,
+            "padding_bottom": 20,
+            "padding_top_tablet": 15,
+            "padding_bottom_tablet": 15,
+            "padding_top_mobile": 10,
+            "padding_bottom_mobile": 10
+          }
+        },
+        "sub_heading_MNcAYg": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "Dieses Angebot war so nicht geplant – aber jetzt ist es da. Im Video erfährst du, warum genau jetzt der perfekte Moment ist."
+          }
+        },
+        "video_wNqeK7": {
+          "type": "video",
+          "settings": {
+            "video_mt": 20,
+            "video_url": "",
+            "video": "shopify://files/videos/0618 (1).mov",
+            "autoplay": false,
+            "loop": false,
+            "muted": true,
+            "playsinline": true,
+            "controls": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pUrb6A",
+        "sub_heading_MNcAYg",
+        "video_wNqeK7"
+      ],
+      "name": "APEX Pr Explanation Video",
+      "settings": {
+        "color_scheme": "",
+        "vertical_padding": 24,
+        "vertical_padding_mobile": 24,
+        "heading_type": "mrk-h1",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
+    "announcement_bar_sticky_scroll_gnrpHz": {
+      "type": "announcement-bar-sticky-scroll",
+      "disabled": true,
+      "name": "APEX Announcement Sticky",
+      "settings": {
+        "enable_scroll_to_show": true,
+        "px_to_show": 200,
+        "top_px": 0,
+        "sticky_top": true,
+        "color_scheme": "dark",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "",
+        "ann_title_size": 16,
+        "ann_title_size_m": 16,
+        "text": "<p>Jetzt oder nie: 48h bis -75 % auf Auslaufmodelle</p>",
+        "text_size": 16,
+        "text_size_m": 16
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -32,7 +140,6 @@
     "apex_timer_9PnBtn": {
       "type": "Apex-timer",
       "disabled": true,
-      "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#c6d1c4",
         "section_pt": 15,
@@ -50,6 +157,23 @@
     },
     "main": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "filter_TQEkVc": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "default",
+            "title": "Tags",
+            "filtergroup": "Vintage,tops,shirts",
+            "show_label": true,
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        }
+      },
+      "block_order": [
+        "filter_TQEkVc"
+      ],
+      "disabled": true,
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
         ".m-collection-filters-form {margin-bottom: 0;}"
@@ -58,22 +182,63 @@
         "container": "container-fluid",
         "grid_layout": "grid",
         "grid_columns": "4",
-        "show_columns_switcher": true,
+        "show_columns_switcher": false,
         "pagination_limit": 30,
         "paginate_type": "paginate",
-        "show_sorting": true,
+        "show_sorting": false,
         "show_filter": false,
-        "filters_type": "storefront_filters",
+        "filters_type": "tags_filter",
         "sidebar": "leftColumn",
         "sidebar_title": "Filters",
         "limit_height_widget": true,
         "limit_height": 300,
         "change_product_variant_on_fitlering": true,
         "show_product_count": true,
-        "collapsed_groups": "Product type, Brand, Vendor, Size",
+        "collapsed_groups": "Product type, Brand, Vendor, Size{{ collection.title }}",
         "color_swatches": "color,colour,couleur,farbe",
         "color_swatches_design": "list",
-        "overlay_opacity": 0
+        "overlay_opacity": 0.3
+      }
+    },
+    "apex_theme_collectiont_product_h4QEfc": {
+      "type": "apex-theme-collectiont-product",
+      "name": "Apex Theme Collection",
+      "settings": {
+        "color_scheme": "",
+        "container": "container",
+        "grid_layout": "grid",
+        "grid_columns": "4",
+        "show_columns_switcher": false,
+        "pagination_limit": 40,
+        "paginate_type": "paginate",
+        "show_sorting": false,
+        "show_filter": false,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": false,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "inline",
+        "add_btn_bg": "#1e1e1e",
+        "add_btn_text_color": "#000000",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "overlay_opacity": 0.1
+      }
+    },
+    "breadcrumb_fjiNLC": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
       }
     },
     "promotion_banner_dgKacc": {
@@ -91,7 +256,6 @@
       "block_order": [
         "promotion_NBbJbf"
       ],
-      "name": "Promotion banner",
       "settings": {
         "container": "container-fluid",
         "color_scheme": "",
@@ -168,26 +332,19 @@
         "collection_pt_m": 30,
         "collection_pb_m": 30
       }
-    },
-    "breadcrumb_F6nG4x": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
     }
   },
   "order": [
+    "apex_top_slider_cLWmNy",
+    "product_explanation_video_ca4Wbj",
+    "announcement_bar_sticky_scroll_gnrpHz",
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
-    "breadcrumb_F6nG4x",
-    "usp_list_nd6t8y",
+    "apex_theme_collectiont_product_h4QEfc",
+    "breadcrumb_fjiNLC",
     "promotion_banner_dgKacc",
+    "usp_list_nd6t8y",
     "collection_description_KrcbiD"
   ]
 }
