@@ -168,14 +168,26 @@
         "collection_pt_m": 30,
         "collection_pb_m": 30
       }
+    },
+    "breadcrumb_F6nG4x": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
     }
   },
   "order": [
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
-    "promotion_banner_dgKacc",
+    "breadcrumb_F6nG4x",
     "usp_list_nd6t8y",
+    "promotion_banner_dgKacc",
     "collection_description_KrcbiD"
   ]
 }
