@@ -122,6 +122,7 @@
           {% when 'video' %}
             <div class="product-explanation-video-item">
               <video
+                id="product-video-{{ block.id }}"
                 {% if block.settings.autoplay %}
                   autoplay
                 {% endif %}
@@ -143,6 +144,17 @@
               >
                 <source src="{{ block.settings.video_url }}" type="video/mp4">
               </video>
+              
+              {% if block.settings.autoplay == false %}
+                <!-- Custom Button -->
+                <button class="video-toggle-btn" data-target="product-video-{{ block.id }}" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#000" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                </button>
+              {% endif %}
+
+
             </div>
         {% endcase %}
       {% endfor %}
@@ -496,3 +508,45 @@
   ]
 }
 {% endschema %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+  const playIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#000" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    `;
+
+    const pauseIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#000" viewBox="0 0 24 24">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    `;
+
+
+
+
+    document.querySelectorAll('.video-toggle-btn').forEach(button => {
+      const videoId = button.getAttribute('data-target');
+      const video = document.getElementById(videoId);
+
+      if (!video) {
+        console.warn('Video element not found for ID:', videoId);
+        return;
+      }
+
+      button.addEventListener('click', function () {
+        console.log('button clicked')
+        if (video.paused) {
+          video.muted = false; // ✅ Unmute on play
+          video.play();
+          button.innerHTML = pauseIcon; // Pause icon
+        } else {
+          video.pause();
+          button.innerHTML = playIcon; // Play icon
+        }
+      });
+    });
+  });
+</script>
