@@ -156,6 +156,7 @@
                   <source src="{{ block.settings.video_url }}" type="video/mp4">
                 </video>
               {% else %}
+
               {{ block.settings.video | video_tag: 
                 autoplay: block.settings.autoplay,
                 loop: block.settings.loop,
@@ -482,6 +483,12 @@
           "default": "https://cdn.shopify.com/videos/c/o/v/4e0b38fe26e7454c8d484e92f7d891b1.mp4"
         },
         {
+          "type": "video",
+          "id": "video",
+          "label": "video",
+          "info": "If Blank Url use this"
+        },
+        {
           "type": "checkbox",
           "id": "autoplay",
           "label": "Autoplay",
@@ -522,7 +529,8 @@
           "default": true
         }
       ]
-    }
+    },
+    
   ],
   "presets": [
     {
