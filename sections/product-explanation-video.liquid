@@ -163,7 +163,7 @@
                 muted: block.settings.muted,
                 playsinline: block.settings.playsinline,
                 controls: block.settings.controls,
-                image_size: "600x"
+                image_size: "1000x"             
               }}
 
 
@@ -539,11 +539,9 @@
   ]
 }
 {% endschema %}
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-
-  const playIcon = `
+    const playIcon = `
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#000" viewBox="0 0 24 24">
         <path d="M8 5v14l11-7z"/>
       </svg>
@@ -555,29 +553,29 @@
       </svg>
     `;
 
+    document.querySelectorAll('.product-explanation-video-item').forEach(item => {
+      const video = item.querySelector('video');
+      const button = item.querySelector('.video-toggle-btn');
 
-
-
-    document.querySelectorAll('.video-toggle-btn').forEach(button => {
-      const videoId = button.getAttribute('data-target');
-      const video = document.getElementById(videoId);
-
-      if (!video) {
-        console.warn('Video element not found for ID:', videoId);
+      if (!video || !button) {
+        console.warn('Missing video or button inside:', item);
         return;
       }
 
+      // Initialize icon based on video state
+      button.innerHTML = video.paused ? playIcon : pauseIcon;
+
       button.addEventListener('click', function () {
-        console.log('button clicked')
         if (video.paused) {
-          video.muted = false; 
+          video.muted = false;
           video.play();
-          button.innerHTML = pauseIcon; 
+          button.innerHTML = pauseIcon;
         } else {
           video.pause();
-          button.innerHTML = playIcon; 
+          button.innerHTML = playIcon;
         }
       });
     });
   });
 </script>
+
