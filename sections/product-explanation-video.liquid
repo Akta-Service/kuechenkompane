@@ -131,29 +131,42 @@
         {% case block.type %}
           {% when 'video' %}
             <div class="product-explanation-video-item">
-              <video
-                id="product-video-{{ block.id }}"
-                {% if block.settings.autoplay %}
-                  autoplay
-                {% endif %}
-                {% if block.settings.loop %}
-                  loop
-                {% endif %}
-                {% if block.settings.muted %}
-                  muted
-                {% endif %}
-                {% if block.settings.playsinline %}
-                  playsinline
-                {% endif %}
-                {% if block.settings.controls %}
-                  controls
-                {% endif %}
-                {% if block.settings.explanation_video_poster %}
-                  poster="{{ block.settings.explanation_video_poster | img_url : 'master'  }}"
-                {% endif %}
-              >
-                <source src="{{ block.settings.video_url }}" type="video/mp4">
-              </video>
+              {% if block.settings.video_url != blank %}
+                <video
+                  id="product-video-{{ block.id }}"
+                  {% if block.settings.autoplay %}
+                    autoplay
+                  {% endif %}
+                  {% if block.settings.loop %}
+                    loop
+                  {% endif %}
+                  {% if block.settings.muted %}
+                    muted
+                  {% endif %}
+                  {% if block.settings.playsinline %}
+                    playsinline
+                  {% endif %}
+                  {% if block.settings.controls %}
+                    controls
+                  {% endif %}
+                  {% if block.settings.explanation_video_poster %}
+                    poster="{{ block.settings.explanation_video_poster | img_url : 'master'  }}"
+                  {% endif %}
+                >
+                  <source src="{{ block.settings.video_url }}" type="video/mp4">
+                </video>
+              {% else %}
+              {{ block.settings.video | video_tag: 
+                autoplay: block.settings.autoplay,
+                loop: block.settings.loop,
+                muted: block.settings.muted,
+                playsinline: block.settings.playsinline,
+                controls: block.settings.controls,
+                image_size: "600x"
+              }}
+
+
+              {% endif %}
               
               {% if block.settings.autoplay == false %}
                 <!-- Custom Button -->
