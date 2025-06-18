@@ -71,7 +71,7 @@
           "type": "video",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/f057090e002c42618d027081b895b46f.mov",
-            "autoplay": true,
+            "autoplay": false,
             "loop": true,
             "muted": true,
             "playsinline": true,
