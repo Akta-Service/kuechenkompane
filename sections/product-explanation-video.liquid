@@ -56,6 +56,52 @@
     transform: translate(-50%, -50%);
   }
 
+  button.video-toggle-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    background: #fff;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    animation: bubble-glow 1.5s infinite ease-in-out;
+    transition: 0.3s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+@keyframes bubble-glow {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.336);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.384);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 rgba(15, 15, 15, 0.329);
+  }
+}
+
+
+.video-toggle-btn svg {
+  filter: drop-shadow(0 0 10px rgba(36, 36, 36, 0.473));
+}
+
+
+
+
+
+
+
   @media screen and (max-width: 767px) {
     .product-explanation-video-section {
       padding: {{ section.settings.vertical_padding_mobile }}px 15px;
@@ -539,6 +585,8 @@
   ]
 }
 {% endschema %}
+
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const playIcon = `
@@ -562,20 +610,43 @@
         return;
       }
 
-      // Initialize icon based on video state
+      // Set initial icon
       button.innerHTML = video.paused ? playIcon : pauseIcon;
 
-      button.addEventListener('click', function () {
+      // Click on video toggles play/pause
+      video.addEventListener('click', () => {
         if (video.paused) {
           video.muted = false;
           video.play();
-          button.innerHTML = pauseIcon;
         } else {
           video.pause();
-          button.innerHTML = playIcon;
         }
+      });
+
+      // Play button click
+      button.addEventListener('click', function () {
+        video.muted = false;
+        video.play();
+      });
+
+      // When video plays
+      video.addEventListener('play', () => {
+        button.style.display = 'none';
+      });
+
+      // When video pauses
+      video.addEventListener('pause', () => {
+        button.style.display = 'flex';
+        button.innerHTML = playIcon;
+      });
+
+      // Optional: hide play button after end
+      video.addEventListener('ended', () => {
+        button.style.display = 'flex';
+        button.innerHTML = playIcon;
       });
     });
   });
 </script>
+
 
