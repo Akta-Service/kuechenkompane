@@ -175,9 +175,9 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'video' %}
-            <div class="product-explanation-video-item">
+            <div class="product-explanation-video-item {{ block.id }}">
               <style>
-                .product-explanation-video-item{
+                .product-explanation-video-item.{{ block.id }}{
                   margin-top: {{ block.settings.video_mt }}px;
                 }
               </style>
