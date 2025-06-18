@@ -570,12 +570,12 @@
       button.addEventListener('click', function () {
         console.log('button clicked')
         if (video.paused) {
-          video.muted = false; // ✅ Unmute on play
+          video.muted = false; 
           video.play();
-          button.innerHTML = pauseIcon; // Pause icon
+          button.innerHTML = pauseIcon; 
         } else {
           video.pause();
-          button.innerHTML = playIcon; // Play icon
+          button.innerHTML = playIcon; 
         }
       });
     });
