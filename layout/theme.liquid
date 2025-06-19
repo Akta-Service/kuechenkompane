@@ -1,3 +1,599 @@
+<<<<<<< HEAD
+{% liquid
+  assign enable_rtl = settings.enable_rtl
+  assign language_support_rtl = settings.language_support_rtl
+  if enable_rtl and language_support_rtl != blank
+    assign shop_locale = localization.language.iso_code
+    assign language_support_rtl_list = language_support_rtl | split: ','
+    assign is_rtl = language_support_rtl_list | where: shop_locale
+    if is_rtl.size > 0
+      assign enable_rtl = true
+    else
+      assign enable_rtl = false
+    endif
+  endif
+
+  assign body_classes = 'template-' | append: template.name | append: ' ' | append: template.suffix | append: ' m-gradient m-color-' | append: settings.default_color_scheme
+  if settings.page_transition
+    assign body_classes = body_classes | append: ' m:overflow-hidden'
+  endif
+  if template.suffix == 'about-us'
+    assign body_classes = body_classes | append: ' sf__page-about'
+  endif
+%}
+<!doctype html>
+<html
+  class="no-js {% if settings.page_transition %} m:overflow-hidden{% endif %}"
+  lang="{{ request.locale.iso_code }}"
+  data-template="{{ template.name }}"
+  {% if enable_rtl %}
+    dir="rtl"
+  {% endif %}
+>
+  <head>
+
+  
+{% comment %} pass ptotected collection js  {% endcomment %}
+{% comment %} pass ptotected collection js  {% endcomment %}
+{% comment %} pass ptotected collection js  {% endcomment %}
+{% comment %} pass ptotected collection js  {% endcomment %}
+
+<script>
+    (function () {
+      const correctPassword = "{{ settings.password | escape }}";
+      const collectionHandle = "{{ settings.collection_handle }}";
+      const collectionKey = "collectionAccess_" + collectionHandle;
+
+    
+
+      function lockScroll() {
+        document.body.classList.add('scroll-lock');
+      }
+
+      function unlockScroll() {
+        document.body.classList.remove('scroll-lock');
+      }
+
+      function setRealVh() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+
+      function checkPassword() {
+        const userPassword = document.getElementById("popup-password").value;
+        const errorMessage = document.getElementById("error-message");
+
+        if (userPassword === correctPassword) {
+          localStorage.setItem(collectionKey, "true");
+          document.getElementById("password-popup").style.display = "none";          
+          unlockScroll();
+        } else {
+          errorMessage.style.display = "block";
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log('a am load')
+        setRealVh();
+        window.addEventListener('resize', setRealVh);
+
+        const popup = document.getElementById("password-popup");
+
+        if (localStorage.getItem(collectionKey) === "true") {
+          popup.style.display = "none";          
+          unlockScroll();
+        } else {
+          popup.style.display = "flex";
+          lockScroll();
+        }
+
+        window.checkPassword = checkPassword;
+      });
+    })();
+  </script>
+  
+{% comment %} pass ptotected collection js end {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="{{ settings.color_primary }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.use_favicon == true and settings.favicon != blank -%}
+      <link rel="shortcut icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    <title>
+      {{- page_title -}}
+      {%- if current_tags -%}
+        {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+      {%- endif -%}
+      {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif -%}
+      {%- if template == 'password' -%}
+        {{- shop.name -}}
+      {%- else -%}
+        {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- endif -%}
+    </title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {%- liquid
+      render 'social-meta-tags'
+      render 'font-face'
+      render 'critical-css'
+
+      echo 'main.css' | asset_url | stylesheet_tag: preload: true
+
+      render 'style-tags'
+    -%}
+    {% render 'typegraphy' %}
+
+    {{ 'swiper.css' | asset_url | stylesheet_tag }}
+
+
+
+
+    {% comment %}
+      <style>
+        .mrk-btn {
+          background-color: {{ settings.btn_bg }} !important;
+          color: {{ settings.btn_text }} !important;
+          font-size: {{ settings.btn_font_size }}px !important;
+          padding: {{ settings.btn_padding_vr }}px {{ settings.btn_padding_hr }}px !important;
+          border-radius: {{ settings.btn_border_radius_mrk | default: "5" }}px !important;
+          border: {% if settings.btn_border_width_mrk > 0 %}{{ settings.btn_border_width_mrk }}px solid {{ settings.btn_border }}{% else %}none{% endif %} !important;
+          {% if settings.btn_box_shadow != blank %}box-shadow: {{ settings.btn_box_shadow }} !important;{% endif %}
+          text-decoration: none !important;
+          transition: 0.3s;
+        }
+
+        .mrk-btn:hover {
+          background-color: {{ settings.btn_hover_bg }} !important;
+          color: {{ settings.btn_hover_text }} !important;
+          border-color: {{ settings.btn_hover_bg }} !important;
+        }
+      </style>
+    {% endcomment %}
+    <style>
+
+      :root {
+
+        --mrk-h1-color: {{ settings.h1_color }} !important;
+        --mrk-h1-size-desktop: {{ settings.h1_size_desktop }}px !important;
+        --mrk-h1-size-laptop: {{ settings.h1_size_laptop }}px !important;
+        --mrk-h1-size-mobile: {{ settings.h1_size_mobile }}px !important;
+        --mrk-h1-margin-desktop: {{ settings.h1_mt_desktop }}px {{ settings.h1_mr_desktop }}px {{ settings.h1_mb_desktop }}px {{ settings.h1_ml_desktop }}px !important;
+        --mrk-h1-margin-laptop: {{ settings.h1_mt_laptop }}px {{ settings.h1_mr_laptop }}px {{ settings.h1_mb_laptop }}px {{ settings.h1_ml_laptop }}px !important;
+        --mrk-h1-margin-mobile: {{ settings.h1_mt_mobile }}px {{ settings.h1_mr_mobile }}px {{ settings.h1_mb_mobile }}px {{ settings.h1_ml_mobile }}px !important;
+
+        --mrk-h2-color: {{ settings.h2_color }} !important;
+        --mrk-h2-size-desktop: {{ settings.h2_size_desktop }}px !important;
+        --mrk-h2-size-laptop: {{ settings.h2_size_laptop }}px !important;
+        --mrk-h2-size-mobile: {{ settings.h2_size_mobile }}px !important;
+        --mrk-h2-margin-desktop: {{ settings.h2_mt_desktop }}px {{ settings.h2_mr_desktop }}px {{ settings.h2_mb_desktop }}px {{ settings.h2_ml_desktop }}px !important;
+        --mrk-h2-margin-laptop: {{ settings.h2_mt_laptop }}px {{ settings.h2_mr_laptop }}px {{ settings.h2_mb_laptop }}px {{ settings.h2_ml_laptop }}px !important;
+        --mrk-h2-margin-mobile: {{ settings.h2_mt_mobile }}px {{ settings.h2_mr_mobile }}px {{ settings.h2_mb_mobile }}px {{ settings.h2_ml_mobile }}px !important;
+
+        --mrk-h3-color: {{ settings.h3_color }} !important;
+        --mrk-h3-size-desktop: {{ settings.h3_size_desktop }}px !important;
+        --mrk-h3-size-laptop: {{ settings.h3_size_laptop }}px !important;
+        --mrk-h3-size-mobile: {{ settings.h3_size_mobile }}px !important;
+        --mrk-h3-margin-desktop: {{ settings.h3_mt_desktop }}px {{ settings.h3_mr_desktop }}px {{ settings.h3_mb_desktop }}px {{ settings.h3_ml_desktop }}px !important;
+        --mrk-h3-margin-laptop: {{ settings.h3_mt_laptop }}px {{ settings.h3_mr_laptop }}px {{ settings.h3_mb_laptop }}px {{ settings.h3_ml_laptop }}px !important;
+        --mrk-h3-margin-mobile: {{ settings.h3_mt_mobile }}px {{ settings.h3_mr_mobile }}px {{ settings.h3_mb_mobile }}px {{ settings.h3_ml_mobile }}px !important;
+
+        --mrk-h4-color: {{ settings.h4_color }} !important;
+        --mrk-h4-size-desktop: {{ settings.h4_size_desktop }}px !important;
+        --mrk-h4-size-laptop: {{ settings.h4_size_laptop }}px !important;
+        --mrk-h4-size-mobile: {{ settings.h4_size_mobile }}px !important;
+        --mrk-h4-margin-desktop: {{ settings.h4_mt_desktop }}px {{ settings.h4_mr_desktop }}px {{ settings.h4_mb_desktop }}px {{ settings.h4_ml_desktop }}px !important;
+        --mrk-h4-margin-laptop: {{ settings.h4_mt_laptop }}px {{ settings.h4_mr_laptop }}px {{ settings.h4_mb_laptop }}px {{ settings.h4_ml_laptop }}px !important;
+        --mrk-h4-margin-mobile: {{ settings.h4_mt_mobile }}px {{ settings.h4_mr_mobile }}px {{ settings.h4_mb_mobile }}px {{ settings.h4_ml_mobile }}px !important;
+
+        --mrk-h5-color: {{ settings.h5_color }} !important;
+        --mrk-h5-size-desktop: {{ settings.h5_size_desktop }}px !important;
+        --mrk-h5-size-laptop: {{ settings.h5_size_laptop }}px !important;
+        --mrk-h5-size-mobile: {{ settings.h5_size_mobile }}px !important;
+        --mrk-h5-margin-desktop: {{ settings.h5_mt_desktop }}px {{ settings.h5_mr_desktop }}px {{ settings.h5_mb_desktop }}px {{ settings.h5_ml_desktop }}px !important;
+        --mrk-h5-margin-laptop: {{ settings.h5_mt_laptop }}px {{ settings.h5_mr_laptop }}px {{ settings.h5_mb_laptop }}px {{ settings.h5_ml_laptop }}px !important;
+        --mrk-h5-margin-mobile: {{ settings.h5_mt_mobile }}px {{ settings.h5_mr_mobile }}px {{ settings.h5_mb_mobile }}px {{ settings.h5_ml_mobile }}px !important;
+
+        --mrk-h6-color: {{ settings.h6_color }} !important;
+        --mrk-h6-size-desktop: {{ settings.h6_size_desktop }}px !important;
+        --mrk-h6-size-laptop: {{ settings.h6_size_laptop }}px !important;
+        --mrk-h6-size-mobile: {{ settings.h6_size_mobile }}px !important;
+        --mrk-h6-margin-desktop: {{ settings.h6_mt_desktop }}px {{ settings.h6_mr_desktop }}px {{ settings.h6_mb_desktop }}px {{ settings.h6_ml_desktop }}px !important;
+        --mrk-h6-margin-laptop: {{ settings.h6_mt_laptop }}px {{ settings.h6_mr_laptop }}px {{ settings.h6_mb_laptop }}px {{ settings.h6_ml_laptop }}px !important;
+        --mrk-h6-margin-mobile: {{ settings.h6_mt_mobile }}px {{ settings.h6_mr_mobile }}px {{ settings.h6_mb_mobile }}px {{ settings.h6_ml_mobile }}px !important;
+      }
+
+      .mrk-h1 {
+        font-size: var(--mrk-h1-size-desktop) !important;
+        margin: var(--mrk-h1-margin-desktop) !important;
+        font-weight: {{ settings.mrk_h1_font_weight }} !important;
+      }
+
+      .mrk-h2 {
+        font-size: var(--mrk-h2-size-desktop) !important;
+        margin: var(--mrk-h2-margin-desktop) !important;
+        font-weight: {{ settings.mrk_h2_font_weight }} !important;
+
+      }
+
+      .mrk-h3 {
+        font-size: var(--mrk-h3-size-desktop) !important;
+        margin: var(--mrk-h3-margin-desktop) !important;
+        font-weight: {{ settings.mrk_h3_font_weight }} !important;
+
+      }
+
+      .mrk-h4 {
+        font-size: var(--mrk-h4-size-desktop) !important;
+        margin: var(--mrk-h4-margin-desktop) !important;
+        font-weight: {{ settings.mrk_h4_font_weight }} !important;
+
+      }
+
+      .mrk-h5 {
+        font-size: var(--mrk-h5-size-desktop) !important;
+        margin: var(--mrk-h5-margin-desktop) !important;
+        font-weight: {{ settings.mrk_h5_font_weight }} !important;
+
+      }
+
+      .mrk-h6 {
+        font-size: var(--mrk-h6-size-desktop) !important;
+        margin: var(--mrk-h6-margin-desktop) !important;
+        font-weight: {{ settings.mrk_h6_font_weight }} !important;
+
+      }
+
+      /* Responsive font size adjustments */
+      @media (max-width: 1024px) {
+        .mrk-h1 {
+          font-size: var(--mrk-h1-size-laptop) !important;
+          margin: var(--mrk-h1-margin-laptop) !important;
+        }
+        .mrk-h2 {
+          font-size: var(--mrk-h2-size-laptop) !important;
+          margin: var(--mrk-h2-margin-laptop) !important;
+        }
+        .mrk-h3 {
+          font-size: var(--mrk-h3-size-laptop) !important;
+          margin: var(--mrk-h3-margin-laptop) !important;
+        }
+        .mrk-h4 {
+          font-size: var(--mrk-h4-size-laptop) !important;
+          margin: var(--mrk-h4-margin-laptop) !important;
+        }
+        .mrk-h5 {
+          font-size: var(--mrk-h5-size-laptop) !important;
+          margin: var(--mrk-h5-margin-laptop) !important;
+        }
+        .mrk-h6 {
+          font-size: var(--mrk-h6-size-laptop) !important;
+          margin: var(--mrk-h6-margin-laptop) !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mrk-h1 {
+          font-size: var(--mrk-h1-size-mobile) !important;
+          margin: var(--mrk-h1-margin-mobile) !important;
+        }
+        .mrk-h2 {
+          font-size: var(--mrk-h2-size-mobile) !important;
+          margin: var(--mrk-h2-margin-mobile) !important;
+        }
+        .mrk-h3 {
+          font-size: var(--mrk-h3-size-mobile) !important;
+          margin: var(--mrk-h3-margin-mobile) !important;
+        }
+        .mrk-h4 {
+          font-size: var(--mrk-h4-size-mobile) !important;
+          margin: var(--mrk-h4-margin-mobile) !important;
+        }
+        .mrk-h5 {
+          font-size: var(--mrk-h5-size-mobile) !important;
+          margin: var(--mrk-h5-margin-mobile) !important;
+        }
+        .mrk-h6 {
+          font-size: var(--mrk-h6-size-mobile) !important;
+          margin: var(--mrk-h6-margin-mobile) !important;
+        }
+      }
+      .m-tooltip.m-spinner-button,  .m-button--icon {
+      display: none;
+      }
+      .template-page #MainContent {
+          padding-bottom: 0px;
+      }
+      .m-slider-controls__button {
+          width: 44px !important;
+      }
+    </style>
+
+    <style>
+      /* Base Styles (Default: Desktop) */
+      .p-xl, .p-xl p {
+        font-weight: {{ settings.p_xl_font_weight }};
+        font-size: {{ settings.p_xl_size_desktop }}px;
+        line-height: {{ settings.p_xl_line_height }};
+
+      }
+
+      .p-large,  .p-large p  {
+        font-weight: {{ settings.p_large_font_weight }};
+        font-size: {{ settings.p_large_size_desktop }}px;
+        line-height: {{ settings.p_large_line_height }};
+
+      }
+
+      .p-medium,  .p-medium p  {
+        font-weight: {{ settings.p_medium_font_weight }};
+        font-size: {{ settings.p_medium_size_desktop }}px;
+        line-height: {{ settings.p_medium_line_height }};
+      }
+
+      .p-small, .p-small p {
+        font-weight: {{ settings.p_small_font_weight }};
+        font-size: {{ settings.p_small_size_desktop }}px;
+        line-height: {{ settings.p_small_line_height }};
+      }
+
+      .p-x-small,  .p-x-small p {
+        font-weight: {{ settings.p_xs_font_weight }};
+        font-size: {{ settings.p_xs_size_desktop }}px;
+        line-height: {{ settings.p_xs_line_height }};
+      }
+
+      /* Responsive: Laptop */
+      @media (max-width: 1024px) {
+        .p-xl, .p-xl p {
+          font-size: {{ settings.p_xl_size_laptop }}px;
+
+        }
+        .p-large, .p-large p {
+          font-size: {{ settings.p_large_size_laptop }}px;
+
+        }
+        .p-medium, .p-medium p {
+          font-size: {{ settings.p_medium_size_laptop }}px;
+
+        }
+        .p-small, .p-small p {
+          font-size: {{ settings.p_small_size_laptop }}px;
+
+        }
+        .p-x-small, .p-x-small p {
+          font-size: {{ settings.p_xs_size_laptop }}px;
+
+        }
+      }
+
+      /* Responsive: Mobile */
+      @media (max-width: 767px) {
+        .p-xl {
+          font-size: {{ settings.p_xl_size_mobile }}px;
+
+        }
+        .p-large {
+          font-size: {{ settings.p_large_size_mobile }}px;
+
+        }
+        .p-medium {
+          font-size: {{ settings.p_medium_size_mobile }}px;
+
+        }
+        .p-small {
+          font-size: {{ settings.p_small_size_mobile }}px;
+
+        }
+        .p-x-small {
+          font-size: {{ settings.p_xs_size_mobile }}px;
+
+        }
+      }
+    </style> 
+
+    <script>
+      (function() {
+        // Find all <noscript> tags on the page
+        const noscriptTags = document.querySelectorAll('noscript');
+
+        // Loop through each <noscript> tag
+        noscriptTags.forEach(noscript => {
+          // Check if the <noscript> contains any CSS (e.g., inside <style> tags)
+          const styleTags = noscript.querySelectorAll('style');
+
+          // If there's any <style> tag inside the <noscript>, extract and add it to the <head>
+          styleTags.forEach(style => {
+            const styleCopy = document.createElement('style');
+            styleCopy.textContent = style.textContent;
+
+            // Append the copied <style> tag to the <head> of the document
+            document.head.appendChild(styleCopy);
+          });
+        });
+      })();
+    </script>
+    <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'theme-global.js' | asset_url }}" defer="defer"></script>
+    {%- if settings.animations != 'none' -%}
+      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    {%- if request.design_mode -%}
+      <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
+    {{ content_for_header }}
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      if (Shopify.designMode) {
+        document.documentElement.classList.add('shopify-design-mode');
+      }
+    </script>
+    {% render 'theme-data' %}
+    {% render 'custom-code-head' %}
+
+    <!-- Start cookieyes banner -->
+    <script
+      id="cookieyes"
+      type="text/javascript"
+      src="https://cdn-cookieyes.com/client_data/5cdf30a6137b4503a8278cf6/script.js"
+    ></script>
+    <!-- End cookieyes banner -->
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+{% include 'stack-discounts-script' %}
+</head>
+
+  <body
+    id="m-theme"
+    class="{{ body_classes }}"
+    {% if template.name == 'product' %}
+      data-product-id="{{ product.id }}"
+    {% endif %}
+  >
+    {%- liquid
+      render 'page-transition'
+      render 'scroll-top-button'
+      sections 'header-group'
+    -%}
+
+    <main role="main" id="MainContent">
+      {{ content_for_layout }}
+    </main>
+
+    {%- liquid
+      sections 'footer-group'
+      render 'script-tags'
+      render 'cookie-banner'
+      render 'custom-code-body'
+    -%}
+
+    <script src="{{ 'product-quick-view.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'compare-product.js' | asset_url }}" defer="defer"></script>
+
+    {%- if settings.enable_predictive_search -%}
+      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {%- if linklists['gift-wrapping'].links != blank
+      and linklists['gift-wrapping'].links.first.type == 'product_link'
+    -%}
+      <script src="{{ 'gift-wrapping.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {%- if settings.show_swatch_option -%}
+      <script src="{{ 'product-card-swatch.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    <style>
+      .swiper-button-next:after, .swiper-button-prev:after{
+       display:none;
+      }
+    </style>
+    <script>
+      Shopify.cart_drawer = Shopify.cart_drawer || {};
+      Shopify.cart_drawer.freeProduct1 = {
+        title: "{{ settings.cart_free_product_1.title }}",
+        available: "{{ settings.cart_free_product_1.selected_or_first_available_variant.available }}",
+        url: "{{ settings.cart_free_product_1.url }}",
+        handle: "{{ settings.cart_free_product_1.handle }}",
+        variantId: "{{ settings.cart_free_product_1.selected_or_first_available_variant.id }}",
+        rule: "{{ settings.cart_free_product_1_rule }}",
+        condition: "cart-total"
+      };
+      Shopify.cart_drawer.freeProduct2 = {
+        title: "{{ settings.cart_free_product_2.title }}",
+        available: "{{ settings.cart_free_product_2.selected_or_first_available_variant.available }}",
+        url: "{{ settings.cart_free_product_2.url }}",
+        handle: "{{ settings.cart_free_product_2.handle }}",
+        variantId: "{{ settings.cart_free_product_2.selected_or_first_available_variant.id }}",
+        rule: "{{ settings.cart_free_product_2_rule }}",
+        condition: "cart-total"
+      };
+      Shopify.cart_drawer.extraAddon = {
+        parentProduct: "{{ settings.eadn_parent_product.id }}",
+        freeProduct1: "{{ settings.eadn_free_product_1.selected_or_first_available_variant.id }}",
+        freeProduct2: "{{ settings.eadn_free_product_2.selected_or_first_available_variant.id }}"
+      };
+    </script>
+
+    {%- if settings.enable_cart_drawer and template != 'cart' -%}
+      {% render 'cart-drawer' %}
+    {%- endif -%}
+
+
+{%- render 'mobile-menu' -%}
+
+
+
+
+
+{%- comment -%} ADCELL TRACKING SCRIPTS {%- endcomment -%}
+    
+{% if template == 'index' %}
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=track&pid=10239&type=startpage" async></script>
+{% endif %}
+
+{% if template contains 'product' and product %}
+  <!-- Produktseite -->
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=product&pid=10239&productId={{ product.id }}&productName={{ product.title | url_encode }}&categoryId={{ product.collections.first.id }}" async></script>
+{% endif %}
+
+{%- if template contains 'collection' and collection -%}
+  <!-- Kategorieseite -->
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=category&pid=10239&categoryName={{ collection.title | url_encode }}&categoryId={{ collection.id }}" async></script>
+{%- endif -%}
+
+{%- if template contains 'search' and search.terms -%}
+  <!-- Suchergebnisse -->
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=search&pid=10239&search={{ search.terms | url_encode }}"></script>
+{%- endif -%}
+
+{% if template contains 'cart' %}
+  <!-- Warenkorb -->
+  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=basket&pid=10239&basketProductCount={{ cart.item_count }}&basketTotal={{ cart.total_price | money_without_currency }}" async></script>
+{% endif %}
+
+    
+  </body>
+</html>
+=======
 {% liquid
   assign enable_rtl = settings.enable_rtl
   assign language_support_rtl = settings.language_support_rtl
@@ -583,3 +1179,4 @@
     
   </body>
 </html>
+>>>>>>> 45bc240b87dfdf8db88a591cf12d3620c7ad9292
