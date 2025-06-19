@@ -13,17 +13,17 @@
   {% render 'breadcrumb' %}
 {% endcomment %}
 {%- liquid
-  if container != nil and container == 'w-full'
+  if container != null and container == 'w-full'
     assign container = 'container-full'
   endif
-  if container == nil
+  if container == null
     assign container = 'container-fluid'
   endif
 
-  if animated == nil
+  if animated == null
     assign animated = false
   endif
-  if animation_effect == nil
+  if animation_effect == null
     assign animation_effect = settings.animations
   endif
 
@@ -70,7 +70,9 @@
             {{ separator }}
             {% if current_collection.handle %}
               {% capture url %}/collections/{{ current_collection.handle }}{% endcapture %}
-              <a href="{{ url }}" class="m-breadcrumb--item">{{ current_collection.title }}</a>
+              <h1>
+                <a href="{{ url }}" class="m-breadcrumb--item">{{ current_collection.title }}</a>
+              </h1>
             {% endif %}
           {% endif %}
           {% unless hide_current == true %}
@@ -85,7 +87,7 @@
             {{ separator }}
             <span class="m-breadcrumb--item m-breadcrumb--item-current">{{ current_tags | join: ' + ' }}</span>
           {% else %}
-            <span class="m-breadcrumb--item m-breadcrumb--item-current">{{ collection.title }}</span>
+            <h1 class="m-breadcrumb--item m-breadcrumb--item-current">{{ collection.title }}</h1>
           {% endif %}
 
         {% elsif template.name == 'blog' %}

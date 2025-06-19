@@ -39,16 +39,17 @@
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
-        "ann_title": "🔥Bis zu -75 % auf Auslaufmodelle!🔥",
+        "ann_title": "🔥Finaler Lagerausverkauf - keine Nachproduktion!🔥",
         "ann_title_size": 16,
         "ann_title_size_m": 15,
-        "text": "<p>Nur noch für die nächsten 100 Bestellungen</p>",
+        "text": "<p><a href=\"/collections/ausverkauf-final\" title=\"Ausverkauf final\">Nur</a> jetzt: 48h lang bis zu <strong>-75% auf Auslaufmodelle</strong></p>",
         "text_size": 16,
         "text_size_m": 16
       }
     },
     "apex_timer_progress_yCDcUj": {
       "type": "Apex-timer-progress",
+      "disabled": true,
       "name": "Apex Timer Progress",
       "settings": {
         "bg_color": "#dce5dc",
@@ -65,12 +66,11 @@
         "max_count_show": 100,
         "increment_by": 1,
         "reset_when_max_reached": false,
-        "start_count": 64
+        "start_count": 83
       }
     },
     "apex_global_offer_timer_gMjjdD": {
       "type": "Apex-global-offer-timer",
-      "disabled": true,
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
@@ -82,7 +82,7 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "500",
-        "target_date": "2025-05-26",
+        "target_date": "2025-06-20",
         "target_time": "00:00:00"
       }
     },

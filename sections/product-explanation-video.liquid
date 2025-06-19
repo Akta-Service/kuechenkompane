@@ -45,6 +45,61 @@
     max-height: 400px;
     object-fit: cover;
   }
+  .product-explanation-video-item {
+      position: relative;
+   }
+
+  button.video-toggle-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  button.video-toggle-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    background: #fff;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    animation: bubble-glow 1.5s infinite ease-in-out;
+    transition: 0.3s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
+
+@keyframes bubble-glow {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.336);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.384);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 rgba(15, 15, 15, 0.329);
+  }
+}
+
+
+.video-toggle-btn svg {
+  filter: drop-shadow(0 0 10px rgba(36, 36, 36, 0.473));
+}
+
+
+
 
   @media screen and (max-width: 767px) {
     .product-explanation-video-section {
@@ -120,29 +175,60 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'video' %}
-            <div class="product-explanation-video-item">
-              <video
-                {% if block.settings.autoplay %}
-                  autoplay
-                {% endif %}
-                {% if block.settings.loop %}
-                  loop
-                {% endif %}
-                {% if block.settings.muted %}
-                  muted
-                {% endif %}
-                {% if block.settings.playsinline %}
-                  playsinline
-                {% endif %}
-                {% if block.settings.controls %}
-                  controls
-                {% endif %}
-                {% if block.settings.explanation_video_poster %}
-                  poster="{{ block.settings.explanation_video_poster | img_url : 'master'  }}"
-                {% endif %}
-              >
-                <source src="{{ block.settings.video_url }}" type="video/mp4">
-              </video>
+            <div class="product-explanation-video-item {{ block.id }}">
+              <style>
+                .product-explanation-video-item.{{ block.id }}{
+                  margin-top: {{ block.settings.video_mt }}px;
+                }
+              </style>
+              {% if block.settings.video_url != blank %}
+                <video
+                  id="product-video-{{ block.id }}"
+                  {% if block.settings.autoplay %}
+                    autoplay
+                  {% endif %}
+                  {% if block.settings.loop %}
+                    loop
+                  {% endif %}
+                  {% if block.settings.muted %}
+                    muted
+                  {% endif %}
+                  {% if block.settings.playsinline %}
+                    playsinline
+                  {% endif %}
+                  {% if block.settings.controls %}
+                    controls
+                  {% endif %}
+                  {% if block.settings.explanation_video_poster %}
+                    poster="{{ block.settings.explanation_video_poster | img_url : 'master'  }}"
+                  {% endif %}
+                >
+                  <source src="{{ block.settings.video_url }}" type="video/mp4">
+                </video>
+              {% else %}
+
+              {{ block.settings.video | video_tag: 
+                autoplay: block.settings.autoplay,
+                loop: block.settings.loop,
+                muted: block.settings.muted,
+                playsinline: block.settings.playsinline,
+                controls: block.settings.controls,
+                image_size: "1000x"             
+              }}
+
+
+              {% endif %}
+              
+              {% if block.settings.autoplay == false %}
+                <!-- Custom Button -->
+                <button class="video-toggle-btn" data-target="product-video-{{ block.id }}" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                </button>
+              {% endif %}
+
+
             </div>
         {% endcase %}
       {% endfor %}
@@ -441,10 +527,26 @@
       "name": "Video",
       "settings": [
         {
+          "type": "range",
+          "id": "video_mt",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 0
+        },
+        {
           "type": "text",
           "id": "video_url",
           "label": "Video URL",
           "default": "https://cdn.shopify.com/videos/c/o/v/4e0b38fe26e7454c8d484e92f7d891b1.mp4"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "video",
+          "info": "If Blank Url use this"
         },
         {
           "type": "checkbox",
@@ -487,7 +589,8 @@
           "default": true
         }
       ]
-    }
+    },
+    
   ],
   "presets": [
     {
@@ -496,3 +599,68 @@
   ]
 }
 {% endschema %}
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const playIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    `;
+
+    const pauseIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000" viewBox="0 0 24 24">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    `;
+
+    document.querySelectorAll('.product-explanation-video-item').forEach(item => {
+      const video = item.querySelector('video');
+      const button = item.querySelector('.video-toggle-btn');
+
+      if (!video || !button) {
+        console.warn('Missing video or button inside:', item);
+        return;
+      }
+
+      // Set initial icon
+      button.innerHTML = video.paused ? playIcon : pauseIcon;
+
+      // Click on video toggles play/pause
+      video.addEventListener('click', () => {
+        if (video.paused) {
+          video.muted = false;
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+
+      // Play button click
+      button.addEventListener('click', function () {
+        video.muted = false;
+        video.play();
+      });
+
+      // When video plays
+      video.addEventListener('play', () => {
+        button.style.display = 'none';
+      });
+
+      // When video pauses
+      video.addEventListener('pause', () => {
+        button.style.display = 'flex';
+        button.innerHTML = playIcon;
+      });
+
+      // Optional: hide play button after end
+      video.addEventListener('ended', () => {
+        button.style.display = 'flex';
+        button.innerHTML = playIcon;
+      });
+    });
+  });
+</script>
+
+

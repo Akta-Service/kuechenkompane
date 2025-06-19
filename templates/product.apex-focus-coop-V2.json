@@ -63,7 +63,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Mehr als nur Wasser: kaltgepresst, natürlich, ehrlich",
+            "subtitle": "Jetzt exklusiv nur bei FOCUS-ONLINE",
             "subtitle_font_size": 16,
             "subtitle_weight": "400"
           }
@@ -79,12 +79,12 @@
         "ratings_fD4VNJ": {
           "type": "ratings",
           "settings": {
-            "likeImg1": "shopify://shop_images/Orange_Zitrone_Basilikum_Image_1_1.jpg",
-            "likeImg2": "shopify://shop_images/Orange_Zitrone_Basilikum_Image_2_1.jpg",
-            "likeImg3": "shopify://shop_images/Beere_1_1.jpg",
+            "likeImg1": "shopify://shop_images/Testi3.webp",
+            "likeImg2": "shopify://shop_images/Testi1_06655792-039c-4c4c-a68d-210b3c8a4ab8.webp",
+            "likeImg3": "shopify://shop_images/Testi2.jpg",
             "likecount": "90,532+ Personen",
             "like_bg": "#ddede0",
-            "likeinfo": "lieben unsere Produkte!",
+            "likeinfo": "lieben unsere Küchenmesser!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
           }
@@ -92,8 +92,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
-            "taxes_included": true,
-            "taxes_included_text": "Inkl. MwSt.",
+            "taxes_included": false,
+            "taxes_included_text": "",
             "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -134,7 +134,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>100 % Naturlich und ohne Zusätze</p>",
+            "featurelist_item": "<p>Preis nur für kurze Zeit – danach wieder 559,00€</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -143,7 +143,7 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Kaltgepresst & mit 4.000 Bar haltbar gemacht</p>",
+            "featurelist_item": "<p>Nur für FOCUS-Leser erhältlich – nicht im Einzelhandel verfügbar</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -176,9 +176,9 @@
             "info_img_1": "shopify://shop_images/Garntie_d60e2759-1e67-4bce-b8fb-cfaf27d7576c.png",
             "info_text_1": "100 Tage risikofrei testen",
             "info_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
-            "info_text_2": "Kostenloser Versand",
+            "info_text_2": "Kostenloser Versand ab 100€",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
-            "info_text_3": "Natürlichkeits Garantie",
+            "info_text_3": "2 Jahre Garantie",
             "info_bg_color": "#ffffff",
             "info_border_color": "#000000",
             "info_text_color": "#000000",
@@ -233,22 +233,22 @@
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
-            "question": "Frische-Versprechen – Qualität, der du vertrauen kannst",
-            "answer": "<p>Unsere Zutaten sind 100 % natürlich, kaltgepresst und durch Hochdruck (HPP) haltbar gemacht – für maximalen Geschmack und höchste Qualität.</p><p>✔️ <strong>Keine Massenware – sondern echtes Handwerk.</strong><br/><br/>✔️ <strong>Nicht zufrieden? Sprich uns an – wir finden eine Lösung.</strong><br/><br/>✔️ <strong>Vertrauen, wie es sein sollte – ehrlich, unkompliziert & transparent.</strong></p>"
+            "question": "365 Tage Schleifservice (Gratis)",
+            "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand. </p>"
           }
         },
         "faq_kQAWhE": {
           "type": "faq",
           "settings": {
             "question": "Versand & Zahlungsoptionen",
-            "answer": "<p><strong>Kostenloser Versand  EU-weit (1-3 Tage)</strong></p><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p><strong>Versand in andere Länder z.B. Schweiz</strong></p><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p><strong>Zahlungsoptionen</strong></p><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
+            "answer": "<p><strong>Kostenloser Versand  EU-weit (1-3 Tage)</strong></p><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine geringe Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p><strong>Versand in andere Länder z.B. Schweiz</strong></p><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p><strong>Zahlungsoptionen</strong></p><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
           }
         },
         "faq_pDwHXa": {
           "type": "faq",
           "settings": {
-            "question": "Was du bekommst – natürlich & hochwertig",
-            "answer": "<p>🧃 VIVI Water – Sorte „Sellerie Zitrone“ (320 ml)<br/><br/>🌱 100 % kaltgepresste, natürliche Zutaten<br/><br/>🛡 Haltbar durch schonendes Hochdruckverfahren (HPP) – ohne Hitze, ohne Zusätze<br/><br/>🇩🇪 Hergestellt in Deutschland – vegan, ungekühlt haltbar</p><p><strong>Ein Drink, der hält, was er verspricht.</strong></p>"
+            "question": "Produktinfos & Lieferumfang",
+            "answer": "<h2>Produktbeschreibung</h2><ul><li><strong>Set-Inhalt:</strong> Chefmesser, Santokumesser 7\", Nakirimesser, Filetiermesser, Brotmesser, Yanagiba Messer, Santoku Messer 5\", Petty Messer</li><li><strong>Klingen:</strong> Handgeschliffene Klingen aus robustem 7CR17 Edelstahl</li><li><strong>Härtegrad:</strong> 60 ± 2 HRC</li><li><strong>Schliff:</strong> 15° beidseitig</li><li><strong>Griff:</strong> Robuster Epoxidharzgriff</li><li><strong>Balance:</strong> Ausgewogen für ermüdungsarmes Schneiden</li><li><strong>Verpackung:</strong> Edle Geschenkbox inklusive 365 Tage Schleifservice</li></ul><p></p><h3><strong>Lieferumfang:</strong></h3><p>1x Brotmesser</p><p>1x Chefmesser</p><p>1x Yanagibamesser</p><p>1x Santokumesser</p><p>1x Nakirimesser</p><p>1x Filetiermesser</p><p>1x Santokumesser 5\"</p><p>1x Schälmesser</p><p>1x Gratis Aufbewahrungsbox<br/></p>"
           }
         }
       },
@@ -259,7 +259,7 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "{{ product.metafields.custom.df_type.value }}",
+        "title": "IM SET ENTHALTEN:",
         "heading_type": "mrk-h3",
         "description": "{{ product.description }}",
         "mt": 30,
@@ -558,80 +558,45 @@
         "custom_class": ""
       }
     },
-    "feature_highlight_ypFpCc": {
-      "type": "feature-highlight",
+    "benefit_text_P4XApk": {
+      "type": "benefit-text",
       "blocks": {
-        "feature_item_left_PwzGyn": {
-          "type": "feature_item_left",
+        "subtitle_jER8HM": {
+          "type": "subtitle",
           "settings": {
-            "item_title": "Kaltgepresst & roh verarbeitet",
-            "item_info": "Vitamine und Enzyme bleiben vollständig erhalten – dank schonender Verarbeitung ohne Erhitzen.",
-            "item_icon": "shopify://shop_images/ChatGPT_Image_6._Juni_2025_14_01_35_1.png"
+            "subtitle": "Nur für kurze Zeit erhältlich"
           }
         },
-        "feature_item_left_WCMPKe": {
-          "type": "feature_item_left",
+        "title_hXWbxr": {
+          "type": "title",
           "settings": {
-            "item_title": "Haltbar durch 4.000 Bar Hochdruck",
-            "item_info": "Mit modernem HPP-Verfahren – ganz ohne Hitze oder Konservierungsstoffe.",
-            "item_icon": "shopify://shop_images/Screenshot_51_1.jpg"
+            "title": "Spare jetzt über 430 € auf unser exklusives Messer-Set!"
           }
         },
-        "feature_item_left_kUretw": {
-          "type": "feature_item_left",
+        "description_abE8wX": {
+          "type": "description",
           "settings": {
-            "item_title": "Ohne Zucker & ohne Zusätze",
-            "item_info": "Kein zugesetzter Zucker. Keine Aromen. Keine Zusatzstoffe. Nur reine Natur.",
-            "item_icon": "shopify://shop_images/ChatGPT_Image_6._Juni_2025_14_12_47_1.jpg"
-          }
-        },
-        "feature_center_image_HRH7Jm": {
-          "type": "feature_center_image",
-          "settings": {
-            "center_image": "shopify://shop_images/Vivi-Water-Orange-Zitrone-Basilikum_1_-_Kopie_f1027ff5-29a0-47bd-9044-5d46ca93e7af.jpg"
-          }
-        },
-        "feature_item_right_yQLHrE": {
-          "type": "feature_item_right",
-          "settings": {
-            "item_title": "Hergestellt in Deutschland",
-            "item_info": "Regional produziert nach höchsten Qualitätsstandards – fair, sicher, kontrolliert.",
-            "item_icon": "shopify://shop_images/ChatGPT_Image_15._Juni_2025_07_54_53_1.png"
-          }
-        },
-        "feature_item_right_qEJUPp": {
-          "type": "feature_item_right",
-          "settings": {
-            "item_title": "Vegan & ohne Konservierungsstoffe",
-            "item_info": "Pflanzlich, leicht lagerbar und komplett natürlich haltbar gemacht",
-            "item_icon": "shopify://shop_images/ChatGPT_Image_15._Juni_2025_07_48_30_1.png"
-          }
-        },
-        "feature_item_right_xcJcbE": {
-          "type": "feature_item_right",
-          "settings": {
-            "item_title": "Klarer Geschmack – voller Inhalt",
-            "item_info": "Du schmeckst jede Zutat – pur, intensiv und unverfälscht und 100% natürlich",
-            "item_icon": "shopify://shop_images/ChatGPT_Image_15_Juni_2025_07_49_51_1_png_V1_1.png"
+            "description": "Dieses Set vereint alles, was du für deine Küche brauchst. Nur solange der Vorrat reicht – viele Produkte gehen nicht mehr in Nachproduktion!"
           }
         }
       },
       "block_order": [
-        "feature_item_left_PwzGyn",
-        "feature_item_left_WCMPKe",
-        "feature_item_left_kUretw",
-        "feature_center_image_HRH7Jm",
-        "feature_item_right_yQLHrE",
-        "feature_item_right_qEJUPp",
-        "feature_item_right_xcJcbE"
+        "subtitle_jER8HM",
+        "title_hXWbxr",
+        "description_abE8wX"
       ],
-      "name": "Apex Fature Highlight",
       "settings": {
-        "pt": 50,
-        "pb": 50,
-        "pt_mobile": 30,
-        "pb_mobile": 30,
-        "title": "Das macht uns einzigartig"
+        "color_scheme": "",
+        "media_type": "image",
+        "image": "shopify://shop_images/25_5_1_6e0900bd-0eb0-4f9d-8f65-2985d35b9e4b_1.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
       }
     },
     "feature_highlight_ktLbnH": {
@@ -710,6 +675,70 @@
         "title": "Im Set enthalten:"
       }
     },
+    "product_explanation_video_xNFp3M": {
+      "type": "product-explanation-video",
+      "blocks": {
+        "sub_heading_aBnF8i": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten"
+          }
+        },
+        "heading_jQDwbJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Qualität, die begeistert.",
+            "h1_text_align": "center",
+            "title": "Your Title Here",
+            "padding_top": 1,
+            "padding_bottom": 1,
+            "padding_top_tablet": 1,
+            "padding_bottom_tablet": 1,
+            "padding_top_mobile": 1,
+            "padding_bottom_mobile": 1
+          }
+        },
+        "details_erg8QM": {
+          "type": "details",
+          "settings": {
+            "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
+            "p_text_align": "left",
+            "p_padding_top": 10,
+            "p_padding_bottom": 10,
+            "p_padding_top_tablet": 8,
+            "p_padding_bottom_tablet": 8,
+            "p_padding_top_mobile": 5,
+            "p_padding_bottom_mobile": 5
+          }
+        },
+        "video_XLLb9A": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
+            "autoplay": false,
+            "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
+            "loop": true,
+            "muted": true,
+            "playsinline": true,
+            "controls": true
+          }
+        }
+      },
+      "block_order": [
+        "sub_heading_aBnF8i",
+        "heading_jQDwbJ",
+        "details_erg8QM",
+        "video_XLLb9A"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "vertical_padding": 50,
+        "vertical_padding_mobile": 30,
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
     "us_vs_them_8Tbqki": {
       "type": "us-vs-them",
       "blocks": {
@@ -748,71 +777,71 @@
         "item_Y76Jjj": {
           "type": "item",
           "settings": {
-            "faq_title": "Was genau ist VIVI Water?",
-            "faq_body": "<p>VIVI Water ist stilles Wasser, das mit kaltgepresstem Saft aus frischen Zutaten wie Zitrone, Sellerie, Gurke, Beeren oder Ingwer verfeinert wird – 100 % natürlich, ohne Zuckerzusatz oder künstliche Zusätze.</p>"
+            "faq_title": "Wie scharf sind die Messer von Küchenkompane?",
+            "faq_body": "<p>Unsere Messer sind auf <strong>Rasiermesserschärfe</strong> geschliffen. Dank des hochwertigen Stahls und der präzisen Verarbeitung gleiten sie mühelos durch jedes Schnittgut – für maximale Präzision und Freude beim Kochen.</p>"
           }
         },
         "item_J7jdRT": {
           "type": "item",
           "settings": {
-            "faq_title": "Sind Konservierungsstoffe oder Zucker enthalten?",
-            "faq_body": "<p>Nein. VIVI Water enthält <strong>keine Konservierungsstoffe, keinen zugesetzten Zucker und keine Aromen</strong> – nur Wasser und frisch gepresste Natur.</p>"
+            "faq_title": "Welches Material wird für die Klingen verwendet?",
+            "faq_body": "<p>Wir setzen auf <strong>hochwertigen gehärteten Edelstahl (7CR17)</strong>, bekannt für seine außergewöhnliche Schärfe, Langlebigkeit und Widerstandsfähigkeit gegen Rost und Abnutzung. Die Klingen werden von uns durch eine speziell entwickelte Methode gehärtet, um eine Härte von <strong>60+ HRC</strong> zu erreichen.</p>"
           }
         },
         "item_V7NfBy": {
           "type": "item",
           "settings": {
-            "faq_title": "Was bedeutet „kaltgepresst“?",
-            "faq_body": "<p>Bei der Kaltpressung werden die Zutaten ohne Hitze verarbeitet, sodass Vitamine, Nährstoffe und Geschmack vollständig erhalten bleiben – anders als bei herkömmlichen Säften.</p>"
+            "faq_title": "Bleiben die Messer lange scharf oder müssen sie oft nachgeschärft werden?",
+            "faq_body": "<p>Dank der <strong>professionellen und besonderen Härtung</strong> behalten unsere Messer ihre Schärfe <strong>wesentlich länger</strong> als herkömmliche Küchenmesser. Regelmäßiges Nachschärfen ist erst nach langer Nutzung nötig.</p>"
           }
         },
         "item_Q9DGdb": {
           "type": "item",
           "settings": {
-            "faq_title": "Was ist das HPP-Verfahren?",
-            "faq_body": "<p>HPP (High Pressure Processing) ist ein modernes Verfahren, bei dem das Getränk unter 4.000 Bar Druck schonend haltbar gemacht wird – ohne Erhitzen, ohne Chemie. So bleibt alles Gute erhalten.</p>"
-          }
-        },
-        "item_9JjGkE": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Wie hoch sind die Versandkosten?",
-            "faq_body": "<p><strong>Der Versand ist für dich komplett kostenlos.</strong><br/><br/>Egal, wie viele Flaschen du bestellst – wir liefern versandfrei direkt zu dir nach Hause.</p>"
+            "faq_title": "Sind die Messer rostfrei und spülmaschinengeeignet?",
+            "faq_body": "<p>Unsere Messer sind <strong>hochgradig rostbeständig</strong>, da wir ausschließlich korrosionsbeständige Premium-Stähle verwenden. Für maximale Langlebigkeit empfehlen wir jedoch die <strong>Handwäsche</strong>, da Spülmaschinen aggressive Reinigungsmittel nutzen, die die Schärfe der Klinge beeinträchtigen können.</p>"
           }
         },
         "item_xpq4qN": {
           "type": "item",
           "settings": {
-            "faq_title": "Wie wird VIVI Water geliefert?",
-            "faq_body": "<p>Deine Bestellung wird sorgfältig verpackt und <strong>innerhalb von 1–3 Werktagen</strong> mit DHL verschickt. Du bekommst eine mit liebe verpacktes Paket, indem die Flaschen sicher verstaut sind.</p>"
+            "faq_title": "Warum sind Küchenkompane Messer besser als herkömmliche Messer?",
+            "faq_body": "<p><strong>Präzise Handwerkskunst</strong>: Jedes Messer wird mit höchster Sorgfalt gefertigt<br/><strong>Extrem scharf</strong>: Rasiermesserschärfe für müheloses Schneiden<br/><strong>Langlebig & robust</strong>: Gehärteter Premium-Stahl für jahrelange Nutzung<strong>Ergonomischer Griff</strong>: Perfekte Balance für eine komfortable Handhabung<br/><strong>Exklusives Design</strong>: Ein Blickfang in jeder Küche</p>"
           }
         },
         "item_XFGU6y": {
           "type": "item",
           "settings": {
-            "faq_title": "Wie lange ist VIVI Water haltbar?",
-            "faq_body": "<p>Ungeöffnet ist VIVI Water <strong>mehrere Monate haltbar</strong>, je nach Sorte. Das genaue Mindesthaltbarkeitsdatum findest du auf jeder Flasche. Nach dem Öffnen bitte kühl lagern und zügig trinken.</p>"
+            "faq_title": "Welche Messer sind im Set enthalten?",
+            "faq_body": "<p>Das 8-teilige Messerset wurde speziell zusammengestellt, um jede Schneideaufgabe in der Küche perfekt zu meistern. Jedes Messer hat seinen eigenen Einsatzzweck:</p><ul><li><strong>Chefmesser</strong> – Der Allrounder für alle Lebensmittel</li><li><strong>Santoku 7 Inch Messer</strong> – Ideal für Fisch, Fleisch & Gemüse</li><li><strong>Nakiri Messer</strong> – Perfekt für große Mengen an Gemüse</li><li><strong>Filetiermesser</strong> – Präzise Schnitte für Fisch & Geflügel</li><li><strong>Brotmesser</strong> – Schneidet mühelos durch jede Kruste</li><li><strong>Yanagiba Messer</strong> – Speziell für Sushi, Schinken & Carpaccio</li><li><strong>Santoku 5 Inch Messer</strong> – Die kompakte Variante für feine Schnitte</li><li><strong>Petty Messer</strong> – Perfekt für Obst, Gemüse und filigrane Arbeiten</li></ul><p>Jedes Messer wurde mit höchster Präzision gefertigt und sorgt für mühelose, saubere Schnitte in jeder Situation.</p>"
           }
         },
         "item_cDC8UT": {
           "type": "item",
           "settings": {
-            "faq_title": "Wo wird VIVI Water hergestellt?",
-            "faq_body": "<p>VIVI Water wird in Niedersachsen, Deutschland produziert – mit regionalem Quellwasser und frischen Zutaten aus kontrollierter Herkunft.</p>"
+            "faq_title": "Gibt es eine Geld-zurück-Garantie oder ein Rückgaberecht?",
+            "faq_body": "<p>Ja! Wir bieten eine <strong>100-Tage-Geld-zurück-Garantie</strong>. Teste die Messer völlig risikofrei. Solltest du nicht zufrieden sein, kannst du sie unkompliziert zurücksenden – ohne Wenn und Aber!</p>"
           }
         },
         "item_PNKhQY": {
           "type": "item",
           "settings": {
-            "faq_title": "Wie kann ich bezahlen?",
-            "faq_body": "<p>Du kannst bequem bezahlen mit:<br/><br/><strong>Klarna, PayPal, Kreditkarte, Apple Pay, Google Pay, Sofortüberweisung u.v.m.</strong></p>"
+            "faq_title": "Wie lange dauert der Versand und gibt es eine Expressoption?",
+            "faq_body": "<p><strong>Standardversand</strong>: 1-3 Werktage<br/><strong>Expressversand</strong>: 20-36 Stunden für eine schnelle Lieferung</p><p>Alle Bestellungen werden mit Sendungsverfolgung versendet, damit du dein Paket jederzeit nachverfolgen kannst.</p>"
           }
         },
         "item_889zGP": {
           "type": "item",
           "settings": {
-            "faq_title": "Kann ich VIVI Water zurückgeben?",
-            "faq_body": "<p>Da es sich um ein frisches Lebensmittel handelt, ist eine Rückgabe nur bei Qualitätsmängeln möglich. Sollte etwas nicht stimmen, melde dich – wir finden eine Lösung.</p>"
+            "faq_title": "Welche Zahlungsmethoden werden akzeptiert?",
+            "faq_body": "<p>Wir bieten <strong>sichere und flexible Zahlungsmöglichkeiten</strong>, darunter:<br/>Kreditkarte (Visa, Mastercard, AMEX)<br/>PayPal, Klarna (Rechnung & Sofort)<br/>Apple Pay & Google Pay</p>"
+          }
+        },
+        "item_9JjGkE": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Gibt es eine Garantie auf die Messer?",
+            "faq_body": "<p>Ja! Unsere Messer kommen mit <strong>2</strong> <strong>Jahren Garantie auf Material- und Herstellungsfehler</strong>. Sollte es ein Problem geben, sorgen wir für einen schnellen Ersatz oder eine Lösung.</p>"
           }
         }
       },
@@ -821,12 +850,12 @@
         "item_J7jdRT",
         "item_V7NfBy",
         "item_Q9DGdb",
-        "item_9JjGkE",
         "item_xpq4qN",
         "item_XFGU6y",
         "item_cDC8UT",
         "item_PNKhQY",
-        "item_889zGP"
+        "item_889zGP",
+        "item_9JjGkE"
       ],
       "settings": {
         "color_scheme": "badge-hot",
@@ -849,19 +878,19 @@
         "subtitle_8kbCAt": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Der Getränketrend 2025"
+            "subtitle": "Der Küchen-Trend 2025"
           }
         },
         "title_KU4fTr": {
           "type": "title",
           "settings": {
-            "title": "Kaltgepresst und natürlich"
+            "title": "Perfekte Schnitte in Sekunden"
           }
         },
         "description_PBBAnQ": {
           "type": "description",
           "settings": {
-            "description": "Erlebe die pure Frische aus echten Zitronen – kaltgepresst ohne Hitze, verarbeitet mit modernster HPP-Technologie bei 4.000 Bar Druck.\nSo bleiben Geschmack, Vitamine und Nährstoffe vollständig erhalten – ganz ohne Zucker, ohne Konservierungsstoffe, ohne Kompromisse."
+            "description": "Erlebe die nächste Stufe der Messerschärfe mit unserem Premium-Messerset. Jede Klinge ist auf Rasiermesserschärfe geprüft und sorgt für mühelose Präzision bei jedem Schnitt – egal ob Fleisch, Gemüse oder Brot."
           }
         }
       },
@@ -873,7 +902,7 @@
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
-        "image": "shopify://shop_images/ChatGPT_Image_15._Juni_2025_08_24_26_1.jpg",
+        "image": "shopify://shop_images/DSC04954_1_1_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -911,7 +940,6 @@
         "title_YwDaTz",
         "description_j4ByyM"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -933,44 +961,44 @@
           "type": "block",
           "settings": {
             "tes_title": "Sehr gute Qualität",
-            "tes_text": "Die Säfte schmecken hervorragend. Fühlt sich gesund an, ich schmecke defenetiv die Qualität.",
-            "user_name": "Karen T.",
+            "tes_text": "Die Produkte sind auf der Website sehr gut fotografiert und beschrieben, ohne dabei zu viel zu versprechen. Die Ware kam zum vereinbarten Datum. Was bei mir ankam hat mich in zwei Punkten positiv überrascht:erstens die perfekte Qualität der Ware und zweitens die absolut maßgeschneiderte und robuste Verpackung.",
+            "user_name": "Fam. Lemke",
             "date": "Vor 2 Stunden"
           }
         },
         "block_Cjk3qr": {
           "type": "block",
           "settings": {
-            "tes_title": "LECKER!",
-            "tes_text": "Wirklick wow. Die Säfte schmecken so natürlich und lecker. Das ist mein absolutes Lieblingsgetränk ab jetzt.",
-            "user_name": "Lara W.",
+            "tes_title": "Sehr Zufrieden",
+            "tes_text": "Das Messer weist eine optisch ansprechende und stabile Verarbeitung auf. Die Klinge ist außerordentlich scharf und durchtrennte den Spülschwamm mühelos beim Reinigen ohne großen Druck. Der Handgriff ist zudem gut dimensioniert. Insgesamt handelt es sich um ein äußerst ansprechendes Produkt.",
+            "user_name": "Lisa",
             "date": "Vor 8 Stunden"
           }
         },
         "block_ncTrUJ": {
           "type": "block",
           "settings": {
-            "tes_title": "Fühlt sich gesund an",
-            "tes_text": "Das Infused Water schmeckt sehr gut und fühlt sich wirklich sehr gesund an zu trinken. Ohne Zucker und trotzdem so stark im geschmack.",
-            "user_name": "Jörg H.",
+            "tes_title": "Insgesamt sehr gute Messer",
+            "tes_text": "Insgesamt sehr gute Messer,\nmit einer Ausnahme, bei einem gab es ein kleines Qualitätsproblem. Aber da wurde sehr schnell und kundenorientiert reagiert!",
+            "user_name": "Jean",
             "date": "Vor 19 Stunden"
           }
         },
         "block_tk6TF7": {
           "type": "block",
           "settings": {
-            "tes_title": "Überraschend gut",
-            "tes_text": "5-Sterne Bewertung von mir. Deutlich besser als erwartet!",
-            "user_name": "Peter R.",
+            "tes_title": "8 teile Scharfmesser",
+            "tes_text": "8 teile Scharfmesser , Holzbrett und Steakmesser sind sehr zufrieden . Ordentliche Packung und schnelle Lieferung .",
+            "user_name": "Nicole Kunath",
             "date": "Vor 25 Stunden"
           }
         },
         "block_qCCEJY": {
           "type": "block",
           "settings": {
-            "tes_title": "Ich war skeptisch, aber MEGA!",
-            "tes_text": "Ich war mit erst nicht sicher, ob die Getränke wirklich gut sind. Ich wurde überrascht, sie sind besser als nur gut!",
-            "user_name": "Tina Z.",
+            "tes_title": "Ich war skeptisch,ob die Qualität der…",
+            "tes_text": "Ich war skeptisch,ob die Qualität der Messer, im Vergleich zum Preis passen würde. Aber meine Frau war begeistert von der Qualität der Messer es waren alle Messer hervorragend geschärft und hochwertige Verpackt geliefert worden innerhalb von 5 Werktagen inkl.Einem Feiertag. Mittlerweile sind die Messer einen Monat in Gebrauch und immer noch sehr scharf .Wir würden das Messerset immer wieder kaufen. Ein hervorragendes Preis Leistungsverhältnis.",
+            "user_name": "Benrdt B.",
             "date": "Vor 47 Stunden"
           }
         },
@@ -1169,7 +1197,7 @@
           "settings": {
             "icon": "icon5",
             "svg-code": "",
-            "store_benefit_text": "2 JAHRE GARANTIE"
+            "store_benefit_text": "LEBENSLANGE GARANTIE"
           }
         }
       },
@@ -1200,8 +1228,9 @@
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
-    "feature_highlight_ypFpCc",
+    "benefit_text_P4XApk",
     "feature_highlight_ktLbnH",
+    "product_explanation_video_xNFp3M",
     "us_vs_them_8Tbqki",
     "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",

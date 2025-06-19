@@ -9,26 +9,6 @@
  */
 {
   "sections": {
-    "announcement_bar_sticky_scroll_gnrpHz": {
-      "type": "announcement-bar-sticky-scroll",
-      "disabled": true,
-      "name": "APEX Announcement Sticky",
-      "settings": {
-        "enable_scroll_to_show": true,
-        "px_to_show": 200,
-        "top_px": 0,
-        "sticky_top": true,
-        "color_scheme": "dark",
-        "pt": 15,
-        "pb": 15,
-        "ann_title": "",
-        "ann_title_size": 16,
-        "ann_title_size_m": 16,
-        "text": "<p>Jetzt oder nie: 48h bis -75 % auf Auslaufmodelle</p>",
-        "text_size": 16,
-        "text_size_m": 16
-      }
-    },
     "apex_top_slider_cLWmNy": {
       "type": "apex-top-slider",
       "blocks": {
@@ -56,12 +36,86 @@
         "text_KykYUz",
         "text_KDtkJQ"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "pt": 15,
         "pb": 15,
         "mt_mobile": 15,
         "mb_mobile": 15
+      }
+    },
+    "product_explanation_video_ca4Wbj": {
+      "type": "product-explanation-video",
+      "blocks": {
+        "heading_pUrb6A": {
+          "type": "heading",
+          "settings": {
+            "heading": "Eine kurze Nachricht vom Gründer",
+            "h1_text_align": "left",
+            "title": "",
+            "padding_top": 20,
+            "padding_bottom": 20,
+            "padding_top_tablet": 15,
+            "padding_bottom_tablet": 15,
+            "padding_top_mobile": 10,
+            "padding_bottom_mobile": 10
+          }
+        },
+        "sub_heading_MNcAYg": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "Dieses Angebot war so nicht geplant – aber jetzt ist es da. Im Video erfährst du, warum genau jetzt der perfekte Moment ist."
+          }
+        },
+        "video_wNqeK7": {
+          "type": "video",
+          "settings": {
+            "video_mt": 20,
+            "video_url": "",
+            "video": "shopify://files/videos/0618 (1).mov",
+            "autoplay": false,
+            "explanation_video_poster": "shopify://shop_images/IMG_6389_MOV_V4_1.jpg",
+            "loop": false,
+            "muted": true,
+            "playsinline": true,
+            "controls": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pUrb6A",
+        "sub_heading_MNcAYg",
+        "video_wNqeK7"
+      ],
+      "name": "APEX Pr Explanation Video",
+      "settings": {
+        "color_scheme": "",
+        "vertical_padding": 24,
+        "vertical_padding_mobile": 24,
+        "heading_type": "mrk-h1",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
+    "announcement_bar_sticky_scroll_gnrpHz": {
+      "type": "announcement-bar-sticky-scroll",
+      "disabled": true,
+      "name": "APEX Announcement Sticky",
+      "settings": {
+        "enable_scroll_to_show": true,
+        "px_to_show": 200,
+        "top_px": 0,
+        "sticky_top": true,
+        "color_scheme": "dark",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "",
+        "ann_title_size": 16,
+        "ann_title_size_m": 16,
+        "text": "<p>Jetzt oder nie: 48h bis -75 % auf Auslaufmodelle</p>",
+        "text_size": 16,
+        "text_size_m": 16
       }
     },
     "collection-header": {
@@ -100,70 +154,6 @@
         "timer_font_weight": "500",
         "target_date": "2025-04-28",
         "target_time": "00:00:00"
-      }
-    },
-    "category_selection_iMrTd6": {
-      "type": "category-filter-by-image",
-      "blocks": {
-        "item_LNGV6x": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/3_1_46ec59f6_4656_4c94_98bc_3ebbb2c7153c_2_V4_2fd2100d-1e5a-4cbe-9245-292e1e82d00c.jpg",
-            "collection_name": "Bestseller",
-            "custom_url": "Bestseller"
-          }
-        },
-        "item_nwxAVH": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_0742_a5508e47-6988-413a-8ef4-f002e4bd4902.jpg",
-            "collection_name": "Messerset",
-            "custom_url": "Küchenmesser-set"
-          }
-        },
-        "item_rktrNh": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db_1.jpg",
-            "collection_name": "Damast",
-            "custom_url": "Küchenmesser"
-          }
-        },
-        "item_Bd4xRW": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d_1.jpg",
-            "collection_name": "Zubehör",
-            "custom_url": "zubehör"
-          }
-        }
-      },
-      "block_order": [
-        "item_LNGV6x",
-        "item_nwxAVH",
-        "item_rktrNh",
-        "item_Bd4xRW"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "pt": 30,
-        "pb": 30,
-        "mobile_pt": 30,
-        "mobile_pb": 30,
-        "heading_type": "mrk-h1",
-        "title": "Wähle deine Kategorie",
-        "c_n_text": "p-medium"
-      }
-    },
-    "breadcrumb_fjiNLC": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
       }
     },
     "main": {
@@ -218,11 +208,11 @@
         "color_scheme": "",
         "container": "container",
         "grid_layout": "grid",
-        "grid_columns": "3",
-        "show_columns_switcher": true,
+        "grid_columns": "4",
+        "show_columns_switcher": false,
         "pagination_limit": 40,
         "paginate_type": "paginate",
-        "show_sorting": true,
+        "show_sorting": false,
         "show_filter": false,
         "filters_type": "storefront_filters",
         "sidebar": "leftColumn",
@@ -239,6 +229,17 @@
         "button_style": "m-button--primary",
         "button_size": "",
         "overlay_opacity": 0.1
+      }
+    },
+    "breadcrumb_fjiNLC": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
       }
     },
     "promotion_banner_dgKacc": {
@@ -335,11 +336,11 @@
     }
   },
   "order": [
-    "announcement_bar_sticky_scroll_gnrpHz",
     "apex_top_slider_cLWmNy",
+    "product_explanation_video_ca4Wbj",
+    "announcement_bar_sticky_scroll_gnrpHz",
     "collection-header",
     "apex_timer_9PnBtn",
-    "category_selection_iMrTd6",
     "main",
     "apex_theme_collectiont_product_h4QEfc",
     "breadcrumb_fjiNLC",
