@@ -51,7 +51,7 @@
         "heading_pUrb6A": {
           "type": "heading",
           "settings": {
-            "heading": "Eine kurze Nachricht vom Gründer",
+            "heading": "Jetzt 100 Tage risikofrei testen",
             "h1_text_align": "left",
             "title": "",
             "padding_top": 20,
@@ -65,28 +65,13 @@
         "sub_heading_MNcAYg": {
           "type": "sub_heading",
           "settings": {
-            "sub_heading": "Dieses Angebot war so nicht geplant – aber jetzt ist es da. Im Video erfährst du, warum genau jetzt der perfekte Moment ist."
-          }
-        },
-        "video_wNqeK7": {
-          "type": "video",
-          "settings": {
-            "video_mt": 20,
-            "video_url": "",
-            "video": "shopify://files/videos/IMG_6389_V2 (3).mp4",
-            "autoplay": false,
-            "explanation_video_poster": "shopify://shop_images/IMG_6389_MOV_V4_1.jpg",
-            "loop": false,
-            "muted": true,
-            "playsinline": true,
-            "controls": false
+            "sub_heading": "Du hast jetzt die Chance, eines der schärfsten Kochmesser Deutschlands 100 Tage lang zu testen – ohne Risiko. Bezahle nur dann, wenn du nach 100 Tagen wirklich begeistert bist. Aber Achtung: Die Anzahl der Testplätze ist streng limitiert."
           }
         }
       },
       "block_order": [
         "heading_pUrb6A",
-        "sub_heading_MNcAYg",
-        "video_wNqeK7"
+        "sub_heading_MNcAYg"
       ],
       "name": "APEX Pr Explanation Video",
       "settings": {
@@ -349,4 +334,3 @@
     "collection_description_KrcbiD"
   ]
 }
-
