@@ -60,6 +60,14 @@
             "font_weight_t": "700"
           }
         },
+        "review_WwHezr": {
+          "type": "review",
+          "settings": {
+            "p": "4.7/5 Sterne auf Trustpilot",
+            "star_range": 5,
+            "star_color": "#000000"
+          }
+        },
         "loox_reviews_loox_rating_a8TFE7": {
           "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
@@ -226,6 +234,7 @@
       },
       "block_order": [
         "title_Bac9Mk",
+        "review_WwHezr",
         "loox_reviews_loox_rating_a8TFE7",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
