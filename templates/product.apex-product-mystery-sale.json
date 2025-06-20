@@ -91,7 +91,7 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
-            "taxes_included": false,
+            "taxes_included": true,
             "taxes_included_text": "",
             "show_saving": false,
             "sale_badge_type": "percentage",
@@ -111,7 +111,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Nur für",
+            "subtitle": "",
             "subtitle_font_size": 15,
             "subtitle_weight": "400"
           }
@@ -163,7 +163,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}</p>",
+            "featurelist_item": "{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -173,6 +173,15 @@
           "type": "featurelist_item",
           "settings": {
             "featurelist_item": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14,
+            "invert_img": false
+          }
+        },
+        "featurelist_item_JGQHBt": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -226,6 +235,7 @@
         "featurelist_item_iiW6aD",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
+        "featurelist_item_JGQHBt",
         "variant_picker_yCMzL4",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
