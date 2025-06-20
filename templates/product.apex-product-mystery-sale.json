@@ -19,11 +19,11 @@
         "timer_clock": "#fa8526",
         "timer_clock_text_font_size": 14,
         "clock_font_weight": "500",
-        "timer_text": "GEBURTSTAGS-AKTION - Bis zu 75% Rabatt!",
+        "timer_text": "Nur noch für kurze Zeit verfügbar.",
         "timer_font_size": 15,
         "timer_color": "#000000",
         "timer_font_weight": "500",
-        "target_date": "2025-05-09",
+        "target_date": "2025-06-23",
         "target_time": "00:00:00"
       }
     },
@@ -91,6 +91,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "taxes_included": false,
+            "taxes_included_text": "",
             "show_saving": false,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -109,13 +111,14 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "",
+            "subtitle": "Nur für",
             "subtitle_font_size": 15,
             "subtitle_weight": "400"
           }
         },
         "viewer_stock_count_MFNhKz": {
           "type": "viewerStockCount",
+          "disabled": true,
           "settings": {
             "viewer_count_font_size": 16,
             "view_main_text_1": "Personen",
@@ -554,6 +557,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/c3f04b6c0c574ca587cc7ad8532567e9.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04.jpg",
