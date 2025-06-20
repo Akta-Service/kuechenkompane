@@ -101,7 +101,7 @@
           "settings": {
             "taxes_included": true,
             "taxes_included_text": "",
-            "show_saving": false,
+            "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 18,
