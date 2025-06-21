@@ -440,8 +440,9 @@ ul.language--popup-slector li {
         {%- render 'arrow--icon-next' -%}
         <!-- sub item -->
         <div class="mobile--menu-navigation-item-content mobile--menu-sub-container">
-          {%- render 'sub-item-header'
-            , title: 'Messerwelt' -%}
+
+          {%- render 'sub-item-header', title: 'Messerwelt' -%}
+
           <div class="mobile--menu-sub-content">
 
             <ul class="mobile--menu-sub-navigation">
@@ -909,20 +910,11 @@ ul.language--popup-slector li {
         <span class="mobile--menu-item-title" >Getränke</span>
         {%- render 'arrow--icon-next' -%}
         <!-- sub item  -->
-        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >          
           
-        <div class="mobile--menu-header">
-          <button class="mobile--menu-back">
-            {%- render 'arrow--icon-back' -%} 
-            Back
-          </button>
-            <div class="mobile--menu-item-title">Getränke</div>
-            <button class="mobile--menu-close">
-              <svg class="menu--Icon menu--Icon--close" role="presentation" viewBox="0 0 16 14">
-                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
-              </svg>
-            </button>
-          </div>
+          {%- render 'sub-item-header', title: 'Getränke' -%}
+
+
           <div class="mobile--menu-sub-content">
             <ul class="mobile--menu-sub-navigation">
 
@@ -987,19 +979,10 @@ ul.language--popup-slector li {
         {%- render 'arrow--icon-next' -%}
 
         <!-- sub item  -->
-        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >
-          <div class="mobile--menu-header">
-            <button class="mobile--menu-back">
-              {%- render 'arrow--icon-back' -%} 
-              Back
-            </button>
-            <div class="mobile--menu-item-title">Mehr</div>
-            <button class="mobile--menu-close">
-              <svg class="menu--Icon menu--Icon--close" role="presentation" viewBox="0 0 16 14">
-                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
-              </svg>
-            </button>
-          </div>
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >         
+
+          {%- render 'sub-item-header', title: 'Mehr' -%}
+
           <div class="mobile--menu-sub-content">
             <ul class="mobile--menu-sub-navigation">
               {% comment %} sub item  {% endcomment %}
@@ -1087,18 +1070,10 @@ ul.language--popup-slector li {
 
         <!-- sub item  -->
         <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >
-          <div class="mobile--menu-header">
-            <button class="mobile--menu-back">
-              {%- render 'arrow--icon-back' -%} 
-              Back
-            </button>
-            <div class="mobile--menu-item-title">Sale</div>
-            <button class="mobile--menu-close">
-              <svg class="menu--Icon menu--Icon--close" role="presentation" viewBox="0 0 16 14">
-                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
-              </svg>
-            </button>
-          </div>
+
+
+          {%- render 'sub-item-header', title: 'Sale' -%}
+
           <div class="mobile--menu-sub-content">
             <ul class="mobile--menu-sub-navigation">
 
@@ -1155,18 +1130,9 @@ ul.language--popup-slector li {
 
         <!-- sub item  -->
         <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >
-          <div class="mobile--menu-header">
-            <button class="mobile--menu-back">
-              {%- render 'arrow--icon-back' -%} 
-              Back
-            </button>
-            <div class="mobile--menu-item-title">Ausverkauf</div>
-            <button class="mobile--menu-close">
-              <svg class="menu--Icon menu--Icon--close" role="presentation" viewBox="0 0 16 14">
-                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
-              </svg>
-            </button>
-          </div>
+                   
+          {%- render 'sub-item-header', title: 'Ausverkauf' -%}
+
           <div class="mobile--menu-sub-content">
             <ul class="mobile--menu-sub-navigation">
               <li class="mobile--menu-navigation-sub-item">
