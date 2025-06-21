@@ -426,10 +426,15 @@ ul.language--popup-slector img {
 ul.language--popup-slector li {
     font-size: 14px;
 }
+.mobile--menu-logo img {
+    width: 100px;
+}
 </style>
 <div class="mobile--menu-container">
   <div class="mobile--menu-header">
-    <a class="mobile--menu-logo" href="/">logo</a>
+    <a class="mobile--menu-logo" href="/">
+    <img src="https://kuechenkompane.de/cdn/shop/files/Kuchenkompane-svg-logo-color_752e6bb5-8fa2-406c-ab1c-530e5b49d7cc.svg?v=1680012730&width=250" alt="logo">
+    </a>
     <button class="mobile--menu-close">
       <svg
         class="menu--Icon menu--Icon--close"
@@ -447,8 +452,9 @@ ul.language--popup-slector li {
   </div>
   <div class="mobile--menu-content">
     <ul class="mobile--menu-navigation">
+       {% comment %} main item {% endcomment %}
       <li class="mobile--menu-navigation-item">
-        <span class="mobile--menu-item-title" >Damen</span>
+        <span class="mobile--menu-item-title" >Messerwelt</span>
         <svg class="Icon Icon--next" width="9" height="16" viewBox="0 0 9 16" fill="none">
           <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
             fill="#454545"></path></svg>
@@ -461,7 +467,8 @@ ul.language--popup-slector li {
                 <path d="M7.44802 16C7.27123 16 7.10169 15.9297 6.97669 15.8047L1.52869 10.3567C0.903786 9.7316 0.552734 8.88391 0.552734 8.00003C0.552734 7.11615 0.903786 6.26845 1.52869 5.64336L6.97669 0.19536C7.10242 0.0739218 7.27083 0.0067255 7.44562 0.00824444C7.62042 0.00976339 7.78763 0.079876 7.91124 0.203481C8.03484 0.327087 8.10495 0.494295 8.10647 0.669093C8.10799 0.843891 8.04079 1.01229 7.91936 1.13803L2.47136 6.58603C2.09641 6.96108 1.88578 7.4697 1.88578 8.00003C1.88578 8.53035 2.09641 9.03897 2.47136 9.41403L7.91936 14.862C8.01256 14.9553 8.07603 15.074 8.10175 15.2033C8.12746 15.3326 8.11426 15.4667 8.06381 15.5885C8.01336 15.7103 7.92794 15.8144 7.81833 15.8876C7.70872 15.9609 7.57986 16 7.44802 16Z" fill="black"></path>
               </g>
             </svg> Back</button>
-            <div class="mobile--menu-item-title">Damen</div>
+            {% comment %} title show  {% endcomment %}
+            <div class="mobile--menu-item-title">Messerwelt</div>
             <button class="mobile--menu-close">
               <svg class="menu--Icon menu--Icon--close" role="presentation" viewBox="0 0 16 14">
                 <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
@@ -470,10 +477,13 @@ ul.language--popup-slector li {
           </div>
           <div class="mobile--menu-sub-content">
             <ul class="mobile--menu-sub-navigation">
+
+
+            {% comment %} sub item  {% endcomment %}
               <li class="mobile--menu-navigation-sub-item">
                 <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Damen</span>
+                <img class="mobile--menu-navigation-item-image" src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0005_4_jpg_V1_1.jpg?v=1750149261" alt="">
+                <span class="mobile--menu-item-sub-title" >Messerset</span>
 
                 <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
                   <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
@@ -484,22 +494,53 @@ ul.language--popup-slector li {
 
                   <!-- Hidden child list -->
                   <ul class="mobile--menu-sub-dropdown">
-                    <li><a href="https://www.youtube.com/">
-                      <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Damen</span>
 
-                
-                    </a></li>
-                    <li><a href="#"><img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                      <span class="mobile--menu-item-sub-title" >Damen</span>
-
-                     </a></li>
+                  {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/asiatisches-messerset-1">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V98_1.jpg?v=1746661358" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title" >8-teilige Sets (Bestseller)</span> </a>
+                    </li>
+                  {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/damastmesser-set">
+                      <img class="mobile--menu-navigation-item-image" src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V163_1.jpg?v=1749085193" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title" >4-teilige Sets (Handgeschmiedet)</span> </a>
+                    </li>
+                  {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/limitierte-messersets">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-b430-c9a586d3291e.jpg?v=1746625916&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title" >Limitierte Messersets</span> </a>
+                    </li>
+                  {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/servieren-aufbewahren">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V33.jpg?v=1746630416&width=750" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title" >Outdoor & Käseset 2in1</span> </a>
+                    </li>
+                  {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/messerset">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V98_1.jpg?v=1746661358&width=750" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title" >Alle Messersets</span> </a>
+                    </li>
+                  {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/steakmesser-set">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V111_1.jpg?v=1746631325&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title" >Steakmesser Sets</span> </a>
+                    </li>
+                    
                   </ul>
               </li>
+
+
+            {% comment %} sub item  {% endcomment %}
               <li class="mobile--menu-navigation-sub-item">
                 <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Unterwäsche Damen</span>
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-b430-c9a586d3291e.jpg?v=1746625916&width=535" alt="">
+                <span class="mobile--menu-item-sub-title" >Kombipakete</span>
 
                 <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
                   <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
@@ -510,16 +551,195 @@ ul.language--popup-slector li {
 
                   <!-- Hidden child list -->
                   <ul class="mobile--menu-sub-dropdown">
-                    <li><a href="https://www.youtube.com/">
-                      <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Unterwäsche Damen</span>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/messerblock-mit-messer">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-b430-c9a586d3291e.jpg?v=1746625916&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title" >Kombipaket Burokku</span> </a>
+                    </li>
 
-              
-                    </a></li>
-                    <li><a href="#"><img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                      <span class="mobile--menu-item-sub-title" >Unterwäsche Damen</span>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/asiatisches-messerset">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V131.jpg?v=1746654499&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Kombipaket Jishaku</span> </a>
+                    </li>
 
-                     </a></li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/kombipaket-tsuisuto">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Asiatisches_1_c49c2629-9328-43d5-9541-52bc95d7fe49.jpg?v=1746548655&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Kombipaket Tsuisuto</span> </a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/kombipaket-hito">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/wood1_1.jpg?v=1711521585&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Kombipaket Hito</span> </a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/messerset-mit-magnetleiste">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V58_efa0b225-1094-4149-a947-9ae9f10ec16b.jpg?v=1746657191&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Kombipaket Kōyōju</span> </a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/metall-bundles">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V140_1.jpg?v=1749085077&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Kombipaket Nōburu</span> </a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/konpeki-kombipaket">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V34.jpg?v=1746624812&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Konpeki Kombipaket</span> </a>
+                    </li>
+
+
+                  </ul>
+              </li>
+
+
+            {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=535" alt="">
+                <span class="mobile--menu-item-sub-title" >Einzelne Küchenmesser</span>
+
+                <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
+                  <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+                    fill="#454545"></path>
+                </svg>
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/kuechenmesser">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=750" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Alle Küchenmesser</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/messer-mokuzai">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V88_64f48a72-31f5-4084-bb2c-b89221f7be56.jpg?v=1746630960&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Mokuzai Messer</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/messer-burakku">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V82_b0ce87ce-8560-43f6-be30-ab1084626844.jpg?v=1746653281&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Burakku Messer</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/messer-sheru">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V39_1360819e-ce09-4221-a41a-f27b31f291c0.jpg?v=1746653452&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Sheru Messer</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/messer-kiiro">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V29_d30f221b-1cb0-4b6d-8fea-e4e4dd3ac3b9.jpg?v=1746634524&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title"> Kiiro Messer </span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/messer-shikku">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V67_5148a252-a5d6-48fe-a709-94644b26d50a.jpg?v=1746653202&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title"> Shikku Messer </span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/grillmesser">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V30_9620cc27-f6bf-4769-a495-c35d06ec4c61.jpg?v=1746658346&width=360" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Grillmesser </span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/kuechenmesser">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V80_34dfb4f6-3e37-4664-a2f2-343fffa0f246.jpg?v=1746658704&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Japanische Messer </span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/kuechenmesser">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=360" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Damastmesser </span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/santokumesser">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V80_34dfb4f6-3e37-4664-a2f2-343fffa0f246.jpg?v=1746658704&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Santokumesser</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/nakiri-messer">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V29_d30f221b-1cb0-4b6d-8fea-e4e4dd3ac3b9.jpg?v=1746634524&width=360" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Nakiri Messer</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/filetiermesser">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V38_10b02504-3150-4b86-a949-2063a753d36b.jpg?v=1746659231&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Filetiermesser</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/brotmesser">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V55_9bb96a11-1671-4b2b-9119-da853d52d40b.jpg?v=1746659339&width=360" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Brotmesser</span></a>
+                    </li>
+                    
+                  </ul>
+              </li>
+
+            {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V150_1.jpg?v=1746657294&width=535" alt="">
+                <span class="mobile--menu-item-sub-title" >Messer Zubehör</span>
+
+                <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
+                  <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+                    fill="#454545"></path>
+                </svg>
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">
+                   {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/messerblock">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V150_1.jpg?v=1746657294&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Messerblock & Messerhalter</span></a>
+                    </li>
+                   {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/asiatisches-messerset">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V70_5bf9d8d7-9ce5-4431-88dc-b1e771f7f43f.jpg?v=1746659210&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title"> Messerschärfer</span></a>
+                    </li>
+                   {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/schneidebretter">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V23.jpg?v=1746625258&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Schneidebretter</span></a>
+                    </li>
+                   {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/pflegeprodukte">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V102_1.jpg?v=1746626616&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Pfelgeprodukte</span></a>
+                    </li>
+                   
+
+
                   </ul>
               </li>
 
@@ -608,8 +828,10 @@ ul.language--popup-slector li {
           </div>
         </div>
       </li>
+
+       {% comment %} main item {% endcomment %}
       <li class="mobile--menu-navigation-item">
-        <span class="mobile--menu-item-title" >Damen</span>
+        <span class="mobile--menu-item-title" >Kochwelt</span>
         <svg class="Icon Icon--next" width="9" height="16" viewBox="0 0 9 16" fill="none">
           <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
             fill="#454545"></path></svg>
@@ -622,7 +844,8 @@ ul.language--popup-slector li {
                 <path d="M7.44802 16C7.27123 16 7.10169 15.9297 6.97669 15.8047L1.52869 10.3567C0.903786 9.7316 0.552734 8.88391 0.552734 8.00003C0.552734 7.11615 0.903786 6.26845 1.52869 5.64336L6.97669 0.19536C7.10242 0.0739218 7.27083 0.0067255 7.44562 0.00824444C7.62042 0.00976339 7.78763 0.079876 7.91124 0.203481C8.03484 0.327087 8.10495 0.494295 8.10647 0.669093C8.10799 0.843891 8.04079 1.01229 7.91936 1.13803L2.47136 6.58603C2.09641 6.96108 1.88578 7.4697 1.88578 8.00003C1.88578 8.53035 2.09641 9.03897 2.47136 9.41403L7.91936 14.862C8.01256 14.9553 8.07603 15.074 8.10175 15.2033C8.12746 15.3326 8.11426 15.4667 8.06381 15.5885C8.01336 15.7103 7.92794 15.8144 7.81833 15.8876C7.70872 15.9609 7.57986 16 7.44802 16Z" fill="black"></path>
               </g>
             </svg> Back</button>
-            <div class="mobile--menu-item-title">Damen</div>
+            {% comment %} header title  {% endcomment %}
+            <div class="mobile--menu-item-title">Kochwelt</div>
             <button class="mobile--menu-close">
               <svg class="menu--Icon menu--Icon--close" role="presentation" viewBox="0 0 16 14">
                 <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
@@ -631,10 +854,201 @@ ul.language--popup-slector li {
           </div>
           <div class="mobile--menu-sub-content">
             <ul class="mobile--menu-sub-navigation">
+
+              {% comment %} sub item  {% endcomment %}
+                <li class="mobile--menu-navigation-sub-item">
+                  <div class="mobile--menu-navigation-sub-item-wrapper">
+                  <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V28_6842f3ee-f419-430d-a78f-8769079f52c5.jpg?v=1746633529&width=750" alt="">
+                  <span class="mobile--menu-item-sub-title" >Töpfe, Pfannen & Woks</span>
+
+                  <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
+                    <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+                      fill="#454545"></path>
+                  </svg>
+                  </div>
+                    <!-- menu item dropdown  -->
+
+                    <!-- Hidden child list -->
+                    <ul class="mobile--menu-sub-dropdown">
+                      {% comment %} dropdown item  {% endcomment %}
+                        <li>
+                          <a href="https://kuechenkompane.de/products/antihaft-pfanne-edelstahl">
+                          <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V85_0710a68f-0a61-4f1c-aa4d-029507322247.jpg?v=1746633227&width=713" width="" height="" alt="product image">
+                          <span class="mobile--menu-item-sub-title">Küchenkompane Pfanne</span></a>
+                        </li>
+                      {% comment %} dropdown item  {% endcomment %}
+                        <li>
+                          <a href="https://kuechenkompane.de/products/wok-pfanne">
+                          <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V121_1.jpg?v=1746633499&width=713" width="" height="" alt="product image">
+                          <span class="mobile--menu-item-sub-title">Küchenkompane Wok</span></a>
+                        </li>
+                      {% comment %} dropdown item  {% endcomment %}
+                        <li>
+                          <a href="https://kuechenkompane.de/products/antihaft-top-24-cm">
+                          <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V28_6842f3ee-f419-430d-a78f-8769079f52c5.jpg?v=1746633529&width=713" width="" height="" alt="product image">
+                          <span class="mobile--menu-item-sub-title">Küchenkompane Topf</span></a>
+                        </li>
+                     
+                       
+
+
+                     
+                    </ul>
+                </li>
+              {% comment %} sub item  {% endcomment %}
+                <li class="mobile--menu-navigation-sub-item">
+                  <div class="mobile--menu-navigation-sub-item-wrapper">
+                  <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Ku_echenkompane_2411290271.jpg?v=1746625258&width=535" alt="">
+                  <span class="mobile--menu-item-sub-title" >Schneide- und Servierbretter</span>
+
+                  <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
+                    <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+                      fill="#454545"></path>
+                  </svg>
+                  </div>
+                    <!-- menu item dropdown  -->
+
+                    <!-- Hidden child list -->
+                    <ul class="mobile--menu-sub-dropdown">
+                      {% comment %} dropdown item  {% endcomment %}
+                      <li>
+                        <a href="https://kuechenkompane.de/collections/schneidebretter">
+                        <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Ku_echenkompane_2411290271.jpg?v=1746625258&width=535" width="" height="" alt="product image">
+                        <span class="mobile--menu-item-sub-title">Schneidebretter</span></a>
+                      </li>
+                      {% comment %} dropdown item  {% endcomment %}
+                      <li>
+                        <a href="https://kuechenkompane.de/products/rustikales-schneidebrett">
+                        <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/products/AsiaSet006_1.png?v=1745806458&width=600" width="" height="" alt="product image">
+                        <span class="mobile--menu-item-sub-title">Servierbretter</span></a>
+                      </li>
+                   
+                      
+                    
+
+
+                    </ul>
+                </li>
+              {% comment %} sub item  {% endcomment %}
+                <li class="mobile--menu-navigation-sub-item">
+                  <div class="mobile--menu-navigation-sub-item-wrapper">
+                  <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Cutting_Board_in_Action_4_jpg_V26_1_1.jpg?v=1745518667&width=750" alt="">
+                  <span class="mobile--menu-item-sub-title" >Outdoor</span>
+
+                  <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
+                    <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+                      fill="#454545"></path>
+                  </svg>
+                  </div>
+                    <!-- menu item dropdown  -->
+
+                    <!-- Hidden child list -->
+                    <ul class="mobile--menu-sub-dropdown">
+                      {% comment %} dropdown item  {% endcomment %}
+                      <li>
+                        <a href="#">
+                        <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Cutting_Board_in_Action_4_jpg_V26_1_1.jpg?v=1745518667&width=750" width="" height="" alt="product image">
+                        <span class="mobile--menu-item-sub-title">BBQ Messer</span></a>
+                      </li>
+                      {% comment %} dropdown item  {% endcomment %}
+                      <li>
+                        <a href="https://kuechenkompane.de/products/grillbuerste">
+                        <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V56_fe297e29-d767-40d3-a93c-079fcdaca181.jpg?v=1746628764&width=600" width="" height="" alt="product image">
+                        <span class="mobile--menu-item-sub-title">Reinigungsbürste</span></a>
+                      </li>
+                      {% comment %} dropdown item  {% endcomment %}
+                      <li>
+                        <a href="https://kuechenkompane.de/products/grillmatte">
+                        <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V12.jpg?v=1746658955&width=713" width="" height="" alt="product image">
+                        <span class="mobile--menu-item-sub-title">Grillmatte</span></a>
+                      </li>
+                      {% comment %} dropdown item  {% endcomment %}
+                      <li>
+                        <a href="https://kuechenkompane.de/products/outdoor-messerset">
+                        <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V73.jpg?v=1746630299&width=713" width="" height="" alt="product image">
+                        <span class="mobile--menu-item-sub-title">Outdoor Messerset | 2in1</span></a>
+                      </li>
+                    </ul>
+                </li>           
+            </ul>
+          </div>
+
+        <div class="mobile--menu-content-inner">
+          <ul class="mobile--menu-navigation-sec">
+            <a href="#">Account</a>
+            <a href="#">Karriere</a>
+            <a href="#">Account</a>
+            <a href="#">Account</a>
+            <a href="#">Account</a>
+          </ul>              
+        </div>
+        <div class="language--switcher">
+          <img src="https://cdn.weglot.com/flags/square/de.svg" alt="">
+          <span>Deutsch</span>
+          <svg class="" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1L6.5 6.82353L1 1" stroke="#454545" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>   
+        </div>
+          <div class="mobile--menu-footer">
+            <div class="mobile--menu-footer-social">
+              <ul>
+                <li>
+                  <a href="#">
+                    <img src="//snocks.com/cdn/shop/files/Icon_-_Instagram_b47ef204-b171-4e4c-8c25-3411d0e9e4cd.svg?crop=center&height=25&v=1711374635&width=25" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="//snocks.com/cdn/shop/files/Icon_-_WhatsApp_3acab772-c84c-4e87-99df-3d2542e45d21.svg?crop=center&height=25&v=1711374635&width=25" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="  //snocks.com/cdn/shop/files/Icon_-_Facebook_4ae42cd0-1853-4f49-95e7-6b6c0c8c4d21.svg?crop=center&height=25&v=1711374572&width=25" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="//snocks.com/cdn/shop/files/Icon_-_Tiktok_01350e06-4c79-4172-8c6c-c7602bb413ff.svg?crop=center&height=25&v=1711374635&width=25" alt="">
+                  </a>
+                </li>           
+              </ul>
+    
+            </div>
+          </div>
+        </div>
+      </li>
+
+       {% comment %} main item {% endcomment %}
+      <li class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title" >Getränke</span>
+        <svg class="Icon Icon--next" width="9" height="16" viewBox="0 0 9 16" fill="none">
+          <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+            fill="#454545"></path></svg>
+
+        <!-- sub item  -->
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >
+          <div class="mobile--menu-header">
+            <button class="mobile--menu-back"><svg class="Icon Icon--back" width="9" height="16" viewBox="0 0 9 16" fill="none">
+              <g>
+                <path d="M7.44802 16C7.27123 16 7.10169 15.9297 6.97669 15.8047L1.52869 10.3567C0.903786 9.7316 0.552734 8.88391 0.552734 8.00003C0.552734 7.11615 0.903786 6.26845 1.52869 5.64336L6.97669 0.19536C7.10242 0.0739218 7.27083 0.0067255 7.44562 0.00824444C7.62042 0.00976339 7.78763 0.079876 7.91124 0.203481C8.03484 0.327087 8.10495 0.494295 8.10647 0.669093C8.10799 0.843891 8.04079 1.01229 7.91936 1.13803L2.47136 6.58603C2.09641 6.96108 1.88578 7.4697 1.88578 8.00003C1.88578 8.53035 2.09641 9.03897 2.47136 9.41403L7.91936 14.862C8.01256 14.9553 8.07603 15.074 8.10175 15.2033C8.12746 15.3326 8.11426 15.4667 8.06381 15.5885C8.01336 15.7103 7.92794 15.8144 7.81833 15.8876C7.70872 15.9609 7.57986 16 7.44802 16Z" fill="black"></path>
+              </g>
+            </svg> Back</button>
+            <div class="mobile--menu-item-title">Getränke</div>
+            <button class="mobile--menu-close">
+              <svg class="menu--Icon menu--Icon--close" role="presentation" viewBox="0 0 16 14">
+                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="mobile--menu-sub-content">
+            <ul class="mobile--menu-sub-navigation">
+
+            {% comment %} sub item  {% endcomment %}
               <li class="mobile--menu-navigation-sub-item">
                 <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Damen</span>
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/All_Flavors_jpg_V1_1.jpg?v=1749970438&width=535" alt="">
+                <span class="mobile--menu-item-sub-title" >Infused Water (NEU)</span>
 
                 <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
                   <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
@@ -645,44 +1059,142 @@ ul.language--popup-slector li {
 
                   <!-- Hidden child list -->
                   <ul class="mobile--menu-sub-dropdown">
-                    <li><a href="https://www.youtube.com/">
-                      <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Damen</span>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/vivi-water">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/All_Flavors_jpg_V1_1.jpg?v=1749970438&width=535" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Infused Water (NEU)</span></a>
+                    </li>
 
+                     
+                  </ul>
+              </li>
+             
+
+            </ul>
+
+          </div>
+
+        <div class="mobile--menu-content-inner">
+          <ul class="mobile--menu-navigation-sec">
+            <a href="#">Account</a>
+            <a href="#">Karriere</a>
+            <a href="#">Account</a>
+            <a href="#">Account</a>
+            <a href="#">Account</a>
+          </ul>              
+        </div>
+        <div class="language--switcher">
+          <img src="https://cdn.weglot.com/flags/square/de.svg" alt="">
+          <span>Deutsch</span>
+          <svg class="" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1L6.5 6.82353L1 1" stroke="#454545" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>   
+        </div>
+          <div class="mobile--menu-footer">
+            <div class="mobile--menu-footer-social">
+              <ul>
+                <li>
+                  <a href="#">
+                    <img src="//snocks.com/cdn/shop/files/Icon_-_Instagram_b47ef204-b171-4e4c-8c25-3411d0e9e4cd.svg?crop=center&height=25&v=1711374635&width=25" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="//snocks.com/cdn/shop/files/Icon_-_WhatsApp_3acab772-c84c-4e87-99df-3d2542e45d21.svg?crop=center&height=25&v=1711374635&width=25" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="  //snocks.com/cdn/shop/files/Icon_-_Facebook_4ae42cd0-1853-4f49-95e7-6b6c0c8c4d21.svg?crop=center&height=25&v=1711374572&width=25" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="//snocks.com/cdn/shop/files/Icon_-_Tiktok_01350e06-4c79-4172-8c6c-c7602bb413ff.svg?crop=center&height=25&v=1711374635&width=25" alt="">
+                  </a>
+                </li>           
+              </ul>
+    
+            </div>
+          </div>
+        </div>
+      </li>
+
+       {% comment %} main item {% endcomment %}
+      <li class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title" >Mehr</span>
+        <svg class="Icon Icon--next" width="9" height="16" viewBox="0 0 9 16" fill="none">
+          <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+            fill="#454545"></path></svg>
+
+        <!-- sub item  -->
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >
+          <div class="mobile--menu-header">
+            <button class="mobile--menu-back"><svg class="Icon Icon--back" width="9" height="16" viewBox="0 0 9 16" fill="none">
+              <g>
+                <path d="M7.44802 16C7.27123 16 7.10169 15.9297 6.97669 15.8047L1.52869 10.3567C0.903786 9.7316 0.552734 8.88391 0.552734 8.00003C0.552734 7.11615 0.903786 6.26845 1.52869 5.64336L6.97669 0.19536C7.10242 0.0739218 7.27083 0.0067255 7.44562 0.00824444C7.62042 0.00976339 7.78763 0.079876 7.91124 0.203481C8.03484 0.327087 8.10495 0.494295 8.10647 0.669093C8.10799 0.843891 8.04079 1.01229 7.91936 1.13803L2.47136 6.58603C2.09641 6.96108 1.88578 7.4697 1.88578 8.00003C1.88578 8.53035 2.09641 9.03897 2.47136 9.41403L7.91936 14.862C8.01256 14.9553 8.07603 15.074 8.10175 15.2033C8.12746 15.3326 8.11426 15.4667 8.06381 15.5885C8.01336 15.7103 7.92794 15.8144 7.81833 15.8876C7.70872 15.9609 7.57986 16 7.44802 16Z" fill="black"></path>
+              </g>
+            </svg> Back</button>
+            <div class="mobile--menu-item-title">Mehr</div>
+            <button class="mobile--menu-close">
+              <svg class="menu--Icon menu--Icon--close" role="presentation" viewBox="0 0 16 14">
+                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="mobile--menu-sub-content">
+            <ul class="mobile--menu-sub-navigation">
+              {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/50.png?v=1688042409&width=750" alt="">
+                <span class="mobile--menu-item-sub-title" >Mehr</span>
+
+                <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
+                  <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+                    fill="#454545"></path>
+                </svg>
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/collections/geschenkkarte">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/50.png?v=1688042409&width=750" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Geschenkkarten</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/blogs/herzlich-wilkommen">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/articles/nachhaltigkeit-in-der-kueche_0da00caf-fdac-4866-a076-b8bc2a11cbdf.jpg?v=1738917669&width=360" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Blog</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/blogs/rezepte">
+                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/articles/komprimiert_68b4253d-b8df-4439-be1c-b33890a3d08e.jpg?v=1742571965&width=360" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Rezepte</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/pages/pflegehinweise-fur-unsere-kuchenmesser">
+                      <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Pflegehinweise</span></a>
+                    </li>
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li>
+                      <a href="https://kuechenkompane.de/pages/haufige-fragen">
+                      <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" width="" height="" alt="product image">
+                      <span class="mobile--menu-item-sub-title">Häufige Fragen</span></a>
+                    </li>
+
+
+                  </ul>
+              </li>
               
-                    </a></li>
-                    <li><a href="#"><img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                      <span class="mobile--menu-item-sub-title" >Damen</span>
-
-                     </a></li>
-                  </ul>
-              </li>
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Unterwäsche Damen</span>
-
-                <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
-                  <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
-                    fill="#454545"></path>
-                </svg>
-                </div>
-                  <!-- menu item dropdown  -->
-
-                  <!-- Hidden child list -->
-                  <ul class="mobile--menu-sub-dropdown">
-                    <li><a href="https://www.youtube.com/">
-                      <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Unterwäsche Damen</span>
-
-                
-                    </a></li>
-                    <li><a href="#"><img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                      <span class="mobile--menu-item-sub-title" >Unterwäsche Damen</span>
-
-                     </a></li>
-                  </ul>
-              </li>
 
 
 
@@ -735,8 +1247,10 @@ ul.language--popup-slector li {
           </div>
         </div>
       </li>
+
+       {% comment %} main item {% endcomment %}
       <li class="mobile--menu-navigation-item">
-        <span class="mobile--menu-item-title" >Damen</span>
+        <span class="mobile--menu-item-title" >Sale</span>
         <svg class="Icon Icon--next" width="9" height="16" viewBox="0 0 9 16" fill="none">
           <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
             fill="#454545"></path></svg>
@@ -749,7 +1263,108 @@ ul.language--popup-slector li {
                 <path d="M7.44802 16C7.27123 16 7.10169 15.9297 6.97669 15.8047L1.52869 10.3567C0.903786 9.7316 0.552734 8.88391 0.552734 8.00003C0.552734 7.11615 0.903786 6.26845 1.52869 5.64336L6.97669 0.19536C7.10242 0.0739218 7.27083 0.0067255 7.44562 0.00824444C7.62042 0.00976339 7.78763 0.079876 7.91124 0.203481C8.03484 0.327087 8.10495 0.494295 8.10647 0.669093C8.10799 0.843891 8.04079 1.01229 7.91936 1.13803L2.47136 6.58603C2.09641 6.96108 1.88578 7.4697 1.88578 8.00003C1.88578 8.53035 2.09641 9.03897 2.47136 9.41403L7.91936 14.862C8.01256 14.9553 8.07603 15.074 8.10175 15.2033C8.12746 15.3326 8.11426 15.4667 8.06381 15.5885C8.01336 15.7103 7.92794 15.8144 7.81833 15.8876C7.70872 15.9609 7.57986 16 7.44802 16Z" fill="black"></path>
               </g>
             </svg> Back</button>
-            <div class="mobile--menu-item-title">Damen</div>
+            <div class="mobile--menu-item-title">Sale</div>
+            <button class="mobile--menu-close">
+              <svg class="menu--Icon menu--Icon--close" role="presentation" viewBox="0 0 16 14">
+                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="mobile--menu-sub-content">
+            <ul class="mobile--menu-sub-navigation">
+
+            {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
+                <span class="mobile--menu-item-sub-title" >Sale</span>
+
+                <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
+                  <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+                    fill="#454545"></path>
+                </svg>
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">
+                    {% comment %} dropdown item  {% endcomment %}
+                    <li><a href="https://kuechenkompane.de/collections/sale-final">
+                      <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
+                      <span class="mobile--menu-item-sub-title" >Sale</span></a>
+                    </li>
+                  </ul>
+              </li>
+             
+
+
+
+            </ul>
+
+          </div>
+
+        <div class="mobile--menu-content-inner">
+          <ul class="mobile--menu-navigation-sec">
+            <a href="#">Account</a>
+            <a href="#">Karriere</a>
+            <a href="#">Account</a>
+            <a href="#">Account</a>
+            <a href="#">Account</a>
+          </ul>              
+        </div>
+        <div class="language--switcher">
+          <img src="https://cdn.weglot.com/flags/square/de.svg" alt="">
+          <span>Deutsch</span>
+          <svg class="" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1L6.5 6.82353L1 1" stroke="#454545" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>   
+        </div>
+          <div class="mobile--menu-footer">
+            <div class="mobile--menu-footer-social">
+              <ul>
+                <li>
+                  <a href="#">
+                    <img src="//snocks.com/cdn/shop/files/Icon_-_Instagram_b47ef204-b171-4e4c-8c25-3411d0e9e4cd.svg?crop=center&height=25&v=1711374635&width=25" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="//snocks.com/cdn/shop/files/Icon_-_WhatsApp_3acab772-c84c-4e87-99df-3d2542e45d21.svg?crop=center&height=25&v=1711374635&width=25" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="  //snocks.com/cdn/shop/files/Icon_-_Facebook_4ae42cd0-1853-4f49-95e7-6b6c0c8c4d21.svg?crop=center&height=25&v=1711374572&width=25" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="//snocks.com/cdn/shop/files/Icon_-_Tiktok_01350e06-4c79-4172-8c6c-c7602bb413ff.svg?crop=center&height=25&v=1711374635&width=25" alt="">
+                  </a>
+                </li>           
+              </ul>
+    
+            </div>
+          </div>
+        </div>
+      </li>
+
+       {% comment %} main item {% endcomment %}
+      <li class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title" >Ausverkauf</span>
+        <svg class="Icon Icon--next" width="9" height="16" viewBox="0 0 9 16" fill="none">
+          <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+            fill="#454545"></path></svg>
+
+        <!-- sub item  -->
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >
+          <div class="mobile--menu-header">
+            <button class="mobile--menu-back"><svg class="Icon Icon--back" width="9" height="16" viewBox="0 0 9 16" fill="none">
+              <g>
+                <path d="M7.44802 16C7.27123 16 7.10169 15.9297 6.97669 15.8047L1.52869 10.3567C0.903786 9.7316 0.552734 8.88391 0.552734 8.00003C0.552734 7.11615 0.903786 6.26845 1.52869 5.64336L6.97669 0.19536C7.10242 0.0739218 7.27083 0.0067255 7.44562 0.00824444C7.62042 0.00976339 7.78763 0.079876 7.91124 0.203481C8.03484 0.327087 8.10495 0.494295 8.10647 0.669093C8.10799 0.843891 8.04079 1.01229 7.91936 1.13803L2.47136 6.58603C2.09641 6.96108 1.88578 7.4697 1.88578 8.00003C1.88578 8.53035 2.09641 9.03897 2.47136 9.41403L7.91936 14.862C8.01256 14.9553 8.07603 15.074 8.10175 15.2033C8.12746 15.3326 8.11426 15.4667 8.06381 15.5885C8.01336 15.7103 7.92794 15.8144 7.81833 15.8876C7.70872 15.9609 7.57986 16 7.44802 16Z" fill="black"></path>
+              </g>
+            </svg> Back</button>
+            <div class="mobile--menu-item-title">Ausverkauf</div>
             <button class="mobile--menu-close">
               <svg class="menu--Icon menu--Icon--close" role="presentation" viewBox="0 0 16 14">
                 <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
@@ -761,7 +1376,7 @@ ul.language--popup-slector li {
               <li class="mobile--menu-navigation-sub-item">
                 <div class="mobile--menu-navigation-sub-item-wrapper">
                 <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Damen</span>
+                <span class="mobile--menu-item-sub-title" >Ausverkauf</span>
 
                 <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
                   <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
@@ -772,45 +1387,14 @@ ul.language--popup-slector li {
 
                   <!-- Hidden child list -->
                   <ul class="mobile--menu-sub-dropdown">
-                    <li><a href="https://www.youtube.com/">
+                    <li><a href="https://kuechenkompane.de/collections/ausverkauf-final">
                       <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Damen</span>
-
-              
+                      <span class="mobile--menu-item-sub-title" >Ausverkauf</span>              
                     </a></li>
-                    <li><a href="#"><img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                      <span class="mobile--menu-item-sub-title" >Damen</span>
-
-                     </a></li>
+                   
                   </ul>
               </li>
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Unterwäsche Damen</span>
-
-                <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
-                  <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
-                    fill="#454545"></path>
-                </svg>
-                </div>
-                  <!-- menu item dropdown  -->
-
-                  <!-- Hidden child list -->
-                  <ul class="mobile--menu-sub-dropdown">
-                    <li><a href="https://www.youtube.com/">
-                      <img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                <span class="mobile--menu-item-sub-title" >Unterwäsche Damen</span>
-
-               
-                    </a></li>
-                    <li><a href="#"><img class="mobile--menu-navigation-item-image" src="https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429" alt="">
-                      <span class="mobile--menu-item-sub-title" >Unterwäsche Damen</span>
-
-                     </a></li>
-                  </ul>
-              </li>
-
+           
 
 
             </ul>
@@ -954,66 +1538,75 @@ ul.language--popup-slector li {
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".m-menu-button");
   const menuContainer = document.querySelector(".mobile--menu-container");
   const menuCloseBtns = document.querySelectorAll(".mobile--menu-close");
   const subItems = document.querySelectorAll(".mobile--menu-navigation-item");
-  const subContent = document.querySelector(
-    ".mobile--menu-navigation-item-content"
-  );
-  const backBtn = document.querySelector(".mobile--menu-back");
 
   // Open main menu
   menuBtn.addEventListener("click", () => {
     menuContainer.classList.add("menu--open");
   });
 
-  // Close menu
+  // Close main menu
   menuCloseBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       menuContainer.classList.remove("menu--open");
-      subContent.classList.remove("active");
+      document
+        .querySelectorAll(".mobile--menu-navigation-item-content.active")
+        .forEach((activeContent) => activeContent.classList.remove("active"));
     });
   });
 
-  // Open sub menu
-  subItems.forEach((subItem) =>{
+  // Handle each main menu item's submenu open
+  subItems.forEach((subItem) => {
+    const subContent = subItem.querySelector(".mobile--menu-navigation-item-content");
+    const backBtn = subItem.querySelector(".mobile--menu-back");
+
     subItem.addEventListener("click", () => {
-      subContent.classList.add("active");
+      // Close all others first
+      document
+        .querySelectorAll(".mobile--menu-navigation-item-content.active")
+        .forEach((el) => el.classList.remove("active"));
+
+      // Open only this item's submenu
+      if (subContent) subContent.classList.add("active");
     });
-  })
- 
 
-  // Go back to main menu
-  backBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    subContent.classList.remove("active");
-  });
-
-  document.querySelectorAll('.mobile--menu-navigation-sub-item > .mobile--menu-navigation-sub-item-wrapper').forEach(toggle => {
-  toggle.addEventListener('click', function (e) {
-    const parentItem = this.closest('.mobile--menu-navigation-sub-item');
-    const submenu = parentItem.querySelector('.mobile--menu-sub-dropdown');
-
-    if (!submenu) return; // no submenu to toggle
-
-    if (submenu.classList.contains('open')) {
-      // close submenu
-      submenu.style.maxHeight = submenu.scrollHeight + 'px'; 
-      submenu.offsetHeight; 
-      submenu.style.maxHeight = '0px';
-
-      submenu.classList.remove('open');
-      parentItem.classList.remove('open');
-    } else {
-      // open submenu
-      submenu.classList.add('open');
-      submenu.style.maxHeight = submenu.scrollHeight + 'px';
-      parentItem.classList.add('open');
+    // Back button only closes its own submenu
+    if (backBtn && subContent) {
+      backBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        subContent.classList.remove("active");
+      });
     }
   });
-});
+
+  // Toggle nested dropdown under submenu
+  document
+    .querySelectorAll(".mobile--menu-navigation-sub-item > .mobile--menu-navigation-sub-item-wrapper")
+    .forEach((toggle) => {
+      toggle.addEventListener("click", function (e) {
+        const parentItem = this.closest(".mobile--menu-navigation-sub-item");
+        const submenu = parentItem.querySelector(".mobile--menu-sub-dropdown");
+
+        if (!submenu) return;
+
+        if (submenu.classList.contains("open")) {
+          submenu.style.maxHeight = submenu.scrollHeight + "px";
+          submenu.offsetHeight;
+          submenu.style.maxHeight = "0px";
+          submenu.classList.remove("open");
+          parentItem.classList.remove("open");
+        } else {
+          submenu.classList.add("open");
+          submenu.style.maxHeight = submenu.scrollHeight + "px";
+          parentItem.classList.add("open");
+        }
+      });
+    });
+
 
   
 
