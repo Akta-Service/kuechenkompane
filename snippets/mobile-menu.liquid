@@ -1,0 +1,1331 @@
+<style>
+
+
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900 &display=swap");
+
+  * {
+    box-sizing: border-box;
+    font-family: "Roboto"
+    , sans-serif;
+  }
+  .menu-btn {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+
+  /* mobile menu css  */
+
+
+  .mobile--menu-container {
+    background-color: #fff;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate(-100%);
+    transition: transform 0.5s;
+    z-index: 100;
+  }
+
+  .menu--open {
+    pointer-events: all;
+    transform: translate(0);
+  }
+
+  .mobile--menu-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 14px 16px 16px;
+  }
+  .mobile--menu-logo {
+    text-decoration: none;
+    color: inherit;
+  }
+  .mobile--menu-close {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  .menu--Icon.menu--Icon--close {
+    fill: currentColor;
+    stroke-width: 1px;
+    background: none;
+    display: inline-block;
+    height: 1em;
+    pointer-events: none;
+    vertical-align: middle;
+    width: 1em;
+  }
+  ul.mobile--menu-navigation {
+    margin: 0;
+    padding: 0;
+  }
+  .mobile--menu-navigation-item {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 14px 0;
+    position: relative;
+  }
+  svg.Icon.Icon--next {
+    margin-left: auto;
+  }
+  .mobile--menu-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    padding: 0 16px 50px;
+    overflow: auto;
+  }
+  .mobile--menu-navigation-item:after {
+    background-color: #ededed;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    position: absolute;
+    width: 100%;
+  }
+  button.mobile--menu-back {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: 0;
+  }
+  .mobile--menu-item-title {
+    font-size: 18px;
+    line-height: 19px;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  span.mobile--menu-item-sub-title {
+    color: #454545;
+    line-height: 17px;
+    padding: 8px;
+    text-align: left;
+  }
+  span.mobile--menu-item-title {
+    color: #454545;
+    font-size: 16px;
+    line-height: 17px;
+    padding: 8px;
+    text-align: left;
+  }
+
+  /* submenu css csss */
+
+
+  /* submenu css csss */
+  /* submenu css csss */
+  /* submenu css csss */
+
+  /* submenu css csss */.mobile--menu-sub-container {
+    background-color: #fff;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate(100%);
+    transition: transform 0.5s;
+    z-index: 100;
+  }
+
+
+  .mobile--menu-sub-container.active {
+    pointer-events: all;
+    transform: translate(0);
+  }
+  ul.mobile--menu-sub-navigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .mobile--menu-navigation-sub-item {
+
+    /* padding: 14px 0; */
+    position: relative;
+  }
+  .mobile--menu-navigation-sub-item-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .mobile--menu-sub-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    padding: 0 16px 50px;
+    overflow: auto;
+  }
+
+  svg.Icon.Icon--next-down {
+    margin-left: auto;
+    transform: rotate(90deg);
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+  li.mobile--menu-navigation-sub-item.open svg.Icon.Icon--next-down {
+    transform: rotate(-90deg);
+  }
+  img.mobile--menu-navigation-item-image {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-right: 10px;
+  }
+  .mobile--menu-navigation-sub-item-wrapper {
+    position: relative;
+    padding: 14px 0;
+  }
+  .mobile--menu-navigation-sub-item-wrapper::after {
+    background-color: #ededed;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    position: absolute;
+    width: 100%;
+  }
+  .mobile--menu-sub-container .mobile--menu-header {
+    box-shadow: 0 2px 3px #0000000f;
+    /* padding: 12px 4px; */
+  }
+
+  .mobile--menu-content-inner {
+    padding: 0 16px 50px;
+  }
+  /* sub dropdown  */
+
+  ul.mobile--menu-sub-dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.mobile--menu-sub-dropdown a {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    padding: 14px 0;
+  }
+  ul.mobile--menu-sub-dropdown a::after {
+    background-color: #ededed;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    position: absolute;
+    width: 100%;
+  }
+  .mobile--menu-navigation-sub-item .mobile--menu-sub-dropdown {
+    /* display: none; */
+    padding-left: 35px;
+    /* animation: slideDown 0.3s ease forwards; */
+
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s all;
+
+  }
+
+  .mobile--menu-navigation-sub-item.open .mobile--menu-sub-dropdown {
+  ;
+  /* display: block; */
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* secondery menu */
+
+ul.mobile--menu-navigation-sec {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+ul.mobile--menu-navigation-sec a {
+  font-size: 12px;
+  line-height: 13px;
+  margin: 8px 0;
+  padding: 8px;
+  color: #454545;
+  text-decoration: none;
+}
+
+/* fo0ter social  */
+
+
+.mobile--menu-footer-social {
+  align-items: center;
+  background-color: #f9f9f9;
+  display: flex;
+  padding: 16px 0;
+  position: relative;
+  width: 100%;
+}
+.mobile--menu-footer-social img {
+  width: 25px;
+  height: 25px;
+}
+
+.mobile--menu-footer-social ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-inline: auto;
+}
+.mobile--menu-footer-social a {
+  width: 55px;
+  display: block;
+  text-align: center;
+}
+
+
+/* lang switcher  */
+
+.language--switcher img {
+  border-radius: 4px;
+  height: 20px;
+  margin-right: 8px;
+  word-spacing: -2px;
+}
+
+.language--switcher {
+  grid-gap: 10px;
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+  display: flex;
+  gap: 10px;
+  /* justify-content: space-between; */
+  padding: 15px;
+}
+
+.language--switcher svg {
+  margin-left: auto;
+}
+
+
+/* lang popup  */
+
+.language--popup img {
+  border-radius: 4px;
+  height: 20px;
+  margin-right: 8px;
+  word-spacing: -2px;
+}
+.language--popup {
+  align-items: start;
+  -webkit-animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.3s ease-out;
+  background: #0000004d;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 101;
+}
+.language--popup-innner {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  top: 0;
+  width: 90%;
+  background-color: #fff;
+  box-shadow: 0 3px 15px 6px #00000026;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px 59px;
+  position: relative;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px 6px #00000026;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+}
+.language--popup-close svg.Icon.Icon--close {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+h3.language--popup-ttle {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+p.language--popup-text {
+  color: #767676;
+  font-size: 13px;
+  font-weight: 400;
+  max-width: 80%;
+  text-align: center;
+  margin: auto;
+}
+ul.language--popup-slector {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 26px 0 0;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+ul.language--popup-slector img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: auto auto 10px;
+}
+ul.language--popup-slector li {
+  font-size: 14px;
+}
+.mobile--menu-logo img {
+  width: 100px;
+}
+</style>
+<div class="mobile--menu-container">
+  <div class="mobile--menu-header">
+    <a class="mobile--menu-logo" href="/">
+      <img src="https://kuechenkompane.de/cdn/shop/files/Kuchenkompane-svg-logo-color_752e6bb5-8fa2-406c-ab1c-530e5b49d7cc.svg?v=1680012730&width=250" alt="logo">
+    </a>
+    <button class="mobile--menu-close">
+      {%- render 'close--icon' -%}
+    </button>
+  </div>
+  <div class="mobile--menu-content">
+    <ul class="mobile--menu-navigation">
+
+      {% comment %} main item {% endcomment %}
+      <li class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title">Messerwelt</span>
+        {%- render 'arrow--icon-next' -%}
+        <!-- sub item -->
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container">
+
+          {%- render 'sub-item-header', title: 'Messerwelt' -%}
+
+          <div class="mobile--menu-sub-content">
+
+            <ul class="mobile--menu-sub-navigation">
+
+              {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                  <img
+                    class="mobile--menu-navigation-item-image"
+                    src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0005_4_jpg_V1_1.jpg?v=1750149261"
+                    loading="lazy"
+                    alt="">
+                  <span class="mobile--menu-item-sub-title">Messerset</span>
+
+                  {%- render 'arrow--icon-down' -%}
+                </div>
+                <!-- menu item dropdown -->
+
+                <!-- Hidden child list -->
+                <ul class="mobile--menu-sub-dropdown">
+
+
+                    {% comment %} dropdown item  {% endcomment %}
+                  {%- render 'dropdown-item',
+                    link: 'https://kuechenkompane.de/collections/asiatisches-messerset-1',
+                    image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V98_1.jpg?v=1746661358',
+                    link_title: '8-teilige Sets (Bestseller)'
+                  -%}
+
+
+                    {% comment %} dropdown item  {% endcomment %}
+                  {%- render 'dropdown-item', 
+                    link: 'https://kuechenkompane.de/collections/damastmesser-set',
+                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V163_1.jpg?v=1749085193',
+                    link_title: '4-teilige Sets (Handgeschmiedet)'
+                  -%}
+
+
+                    {% comment %} dropdown item  {% endcomment %}
+                  {%- render 'dropdown-item',
+                    link: 'https://kuechenkompane.de/collections/limitierte-messersets',
+                    image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-b430-c9a586d3291e.jpg?v=1746625916&width=535',
+                    link_title: 'Limitierte Messersets'
+                  -%}
+
+
+                    {% comment %} dropdown item  {% endcomment %}
+                  {%- render 'dropdown-item',
+                    link: 'https://kuechenkompane.de/collections/servieren-aufbewahren',
+                    image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V33.jpg?v=1746630416&width=750',
+                    link_title: 'O utdoor & Käseset 2in1'
+                  -%}
+
+                    {% comment %} dropdown item  {% endcomment %}
+                  {%- render 'dropdown-item',
+                    link: 'https://kuechenkompane.de/collections/messerset',
+                    image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V98_1.jpg?v=1746661358&width=750',
+                    link_title: 'Alle Messersets'
+                  -%}
+
+                    {% comment %} dropdown item  {% endcomment %}
+                  {%- render 'dropdown-item',
+                    link: 'https://kuechenkompane.de/collections/steakmesser-set',
+                    image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V111_1.jpg?v=1746631325&width=535',
+                    link_title: 'Steakmesser Sets'
+                  -%}
+
+
+
+                    {% comment %} dropdown item  {% endcomment %}
+                  {%- render 'dropdown-item',
+                    link: 'https://kuechenkompane.de/collections/steakmesser-set',
+                    image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V111_1.jpg?v=1746631325&width=535',
+                    link_title: 'Steakmesser Sets'
+                  -%}               
+               
+                                     
+                </ul>
+              </li>
+                    
+                    
+                {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-b430-c9a586d3291e.jpg?v=1746625916&width=535" loading="lazy" alt="">
+                <span class="mobile--menu-item-sub-title" >Kombipakete</span>
+
+                {%- render 'arrow--icon-down' -%}
+
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">                   
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messerblock-mit-messer',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-b430-c9a586d3291e.jpg?v=1746625916&width=535',
+                        link_title: 'Kombipaket Burokku'
+                      -%} 
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/asiatisches-messerset',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V131.jpg?v=1746654499&width=535',
+                        link_title: 'Kombipaket Jishaku'
+                      -%}  
+
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/kombipaket-tsuisuto',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Asiatisches_1_c49c2629-9328-43d5-9541-52bc95d7fe49.jpg?v=1746548655&width=535',
+                        link_title: 'Kombipaket Tsuisuto'
+                      -%}  
+
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/kombipaket-hito',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/wood1_1.jpg?v=1711521585&width=535',
+                        link_title: 'Kombipaket Hito'
+                      -%}  
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messerset-mit-magnetleiste',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V58_efa0b225-1094-4149-a947-9ae9f10ec16b.jpg?v=1746657191&width=535',
+                        link_title: 'Kombipaket Kōyōju'
+                      -%}  
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: '',
+                        image_src: '',
+                        link_title: ''
+                      -%}  
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/metall-bundles',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V140_1.jpg?v=1749085077&width=535',
+                        link_title: 'Kombipaket Nōburu'
+                      -%}  
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/konpeki-kombipaket',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V34.jpg?v=1746624812&width=535',
+                        link_title: 'Konpeki Kombipaket'
+                      -%}  
+
+
+                  </ul>
+              </li>
+                      
+                      
+                {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=535" loading="lazy" alt="image">
+                <span class="mobile--menu-item-sub-title" >Einzelne Küchenmesser</span>
+
+                {%- render 'arrow--icon-down' -%}
+
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">
+
+                    
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/kuechenmesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=750',
+                        link_title: 'Alle Küchenmesser'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messer-mokuzai',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V88_64f48a72-31f5-4084-bb2c-b89221f7be56.jpg?v=1746630960&width=535',
+                        link_title: 'Mokuzai Messer'
+                      -%}  
+
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messer-burakku',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V82_b0ce87ce-8560-43f6-be30-ab1084626844.jpg?v=1746653281&width=535',
+                        link_title: 'Burakku Messer'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messer-sheru',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V39_1360819e-ce09-4221-a41a-f27b31f291c0.jpg?v=1746653452&width=535',
+                        link_title: 'Sheru Messer'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messer-kiiro',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V29_d30f221b-1cb0-4b6d-8fea-e4e4dd3ac3b9.jpg?v=1746634524&width=535',
+                        link_title: 'Kiiro Messer'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messer-shikku',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V67_5148a252-a5d6-48fe-a709-94644b26d50a.jpg?v=1746653202&width=535',
+                        link_title: 'Shikku Messer'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/grillmesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V30_9620cc27-f6bf-4769-a495-c35d06ec4c61.jpg?v=1746658346&width=360',
+                        link_title: 'Grillmesser'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/kuechenmesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V80_34dfb4f6-3e37-4664-a2f2-343fffa0f246.jpg?v=1746658704&width=535',
+                        link_title: 'Japanische Messer'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/kuechenmesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=360',
+                        link_title: 'Damastmesser'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/santokumesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V80_34dfb4f6-3e37-4664-a2f2-343fffa0f246.jpg?v=1746658704&width=535',
+                        link_title: 'Santokumesser'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/nakiri-messer',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V29_d30f221b-1cb0-4b6d-8fea-e4e4dd3ac3b9.jpg?v=1746634524&width=360',
+                        link_title: 'Nakiri Messer'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/filetiermesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V38_10b02504-3150-4b86-a949-2063a753d36b.jpg?v=1746659231&width=535',
+                        link_title: 'Filetiermesser'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/brotmesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V55_9bb96a11-1671-4b2b-9119-da853d52d40b.jpg?v=1746659339&width=360',
+                        link_title: 'Brotmesser'
+                      -%}  
+
+                    
+                  </ul>
+              </li>
+
+                {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V150_1.jpg?v=1746657294&width=535" loading="lazy" alt="">
+                <span class="mobile--menu-item-sub-title" >Messer Zubehör</span>
+
+                  {%- render 'arrow--icon-down' -%}
+
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messerblock',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V150_1.jpg?v=1746657294&width=535',
+                        link_title: 'Messerblock & Messerhalter'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/asiatisches-messerset',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V70_5bf9d8d7-9ce5-4431-88dc-b1e771f7f43f.jpg?v=1746659210&width=535',
+                        link_title: 'Messerschärfer'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/schneidebretter',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V23.jpg?v=1746625258&width=535',
+                        link_title: 'Schneidebretter'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/pflegeprodukte',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V102_1.jpg?v=1746626616&width=535',
+                        link_title: 'Pfelgeprodukte'
+                      -%}          
+
+
+                  </ul>
+              </li> 
+                    
+            </ul>
+                    
+         
+                    
+          </div>
+                    
+          {% comment %} language--switcher  {% endcomment %}
+          {%- render 'language--switcher' -%}    
+
+          {% comment %} mobile--menu-footer {% endcomment %}
+          {%- render 'mobile--menu-footer-social'  -%}
+
+                    
+                    
+        </div>
+      </li>
+                    
+        {% comment %} main item {% endcomment %}
+      <li class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title" >Kochwelt</span>
+        {%- render 'arrow--icon-next' -%}
+
+        <!-- sub item  -->
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >          
+
+          {%- render 'sub-item-header', title: 'Kochwelt' -%}
+
+
+          <div class="mobile--menu-sub-content">
+            <ul class="mobile--menu-sub-navigation">
+
+                {% comment %} sub item  {% endcomment %}
+                <li class="mobile--menu-navigation-sub-item">
+                  <div class="mobile--menu-navigation-sub-item-wrapper">
+                    <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V28_6842f3ee-f419-430d-a78f-8769079f52c5.jpg?v=1746633529&width=750" loading="lazy" alt="">
+
+                    <span class="mobile--menu-item-sub-title" >Töpfe, Pfannen & Woks</span>
+
+                    {%- render 'arrow--icon-down' -%}
+
+                  </div>
+                    <!-- menu item dropdown  -->
+
+                    <!-- Hidden child list -->
+                    <ul class="mobile--menu-sub-dropdown">
+                      
+
+
+                        {% comment %} dropdown item  {% endcomment %}
+                        {%- render 'dropdown-item',
+                          link: 'https://kuechenkompane.de/products/antihaft-pfanne-edelstahl',
+                          image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V85_0710a68f-0a61-4f1c-aa4d-029507322247.jpg?v=1746633227&width=713',
+                          link_title: 'Küchenkompane Pfanne'
+                        -%}
+
+
+                        {% comment %} dropdown item  {% endcomment %}
+                        {%- render 'dropdown-item',
+                          link: 'https://kuechenkompane.de/products/wok-pfanne',
+                          image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V121_1.jpg?v=1746633499&width=713',
+                          link_title: 'Küchenkompane Wok'
+                        -%}
+
+
+                        {% comment %} dropdown item  {% endcomment %}
+                        {%- render 'dropdown-item',
+                          link: 'https://kuechenkompane.de/products/antihaft-top-24-cm',
+                          image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V28_6842f3ee-f419-430d-a78f-8769079f52c5.jpg?v=1746633529&width=713',
+                          link_title: 'Küchenkompane Topf'
+                        -%}
+
+                      
+                    </ul>
+                </li>
+                {% comment %} sub item  {% endcomment %}
+                <li class="mobile--menu-navigation-sub-item">
+                  <div class="mobile--menu-navigation-sub-item-wrapper">
+                  <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Ku_echenkompane_2411290271.jpg?v=1746625258&width=535" loading="lazy" alt="">
+                  <span class="mobile--menu-item-sub-title" >Schneide- und Servierbretter</span>
+
+                  {%- render 'arrow--icon-down' -%}
+                  </div>
+                    <!-- menu item dropdown  -->
+
+                    <!-- Hidden child list -->
+                    <ul class="mobile--menu-sub-dropdown">
+                     
+
+
+                        {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/schneidebretter',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Ku_echenkompane_2411290271.jpg?v=1746625258&width=535',
+                        link_title: 'Schneidebretter'
+                      -%}
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/products/rustikales-schneidebrett',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/products/AsiaSet006_1.png?v=1745806458&width=600',
+                        link_title: 'Servierbretter'
+                      -%}
+
+                    </ul>
+                </li>
+                {% comment %} sub item  {% endcomment %}
+                <li class="mobile--menu-navigation-sub-item">
+                  <div class="mobile--menu-navigation-sub-item-wrapper">
+                    <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Cutting_Board_in_Action_4_jpg_V26_1_1.jpg?v=1745518667&width=750" loading="lazy" alt="">
+                    <span class="mobile--menu-item-sub-title" >Outdoor</span>
+                    {%- render 'arrow--icon-down' -%}
+                  </div>
+
+                    <!-- menu item dropdown  -->
+                    <!-- Hidden child list -->
+                    <ul class="mobile--menu-sub-dropdown">
+
+                     
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: '',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Cutting_Board_in_Action_4_jpg_V26_1_1.jpg?v=1745518667&width=750',
+                        link_title: 'BBQ Messer'
+                      -%}
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/products/grillbuerste',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V56_fe297e29-d767-40d3-a93c-079fcdaca181.jpg?v=1746628764&width=600',
+                        link_title: 'Reinigungsbürste'
+                      -%}
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/products/grillmatte',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V12.jpg?v=1746658955&width=713',
+                        link_title: 'Grillmatte'
+                      -%}
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/products/outdoor-messerset',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V73.jpg?v=1746630299&width=713',
+                        link_title: 'Outdoor Messerset | 2in1'
+                      -%}
+                     
+                    </ul>
+                </li>           
+            </ul>
+          </div>
+
+        <div class="mobile--menu-content-inner">
+          {% comment %} <ul class="mobile--menu-navigation-sec">
+            <a href="#">Account</a>
+            <a href="#">Karriere</a>            
+          </ul>               {% endcomment %}
+        </div>
+        
+          {% comment %} language--switcher  {% endcomment %}
+
+          {%- render 'language--switcher' -%}
+
+      
+          {% comment %} mobile--menu-footer {% endcomment %}
+            {%- render 'mobile--menu-footer-social'  -%}
+        
+        </div>
+      </li>
+
+        {% comment %} main item {% endcomment %}
+      <li class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title" >Getränke</span>
+        {%- render 'arrow--icon-next' -%}
+        <!-- sub item  -->
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >          
+          
+          {%- render 'sub-item-header', title: 'Getränke' -%}
+
+
+          <div class="mobile--menu-sub-content">
+            <ul class="mobile--menu-sub-navigation">
+
+            {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/All_Flavors_jpg_V1_1.jpg?v=1749970438&width=535" loading="lazy" alt="">
+                <span class="mobile--menu-item-sub-title" >Infused Water (NEU)</span>
+
+                  {%- render 'arrow--icon-down' -%}
+
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">
+                   
+                    {% comment %} dropdown item  {% endcomment %}
+                    {%- render 'dropdown-item',
+                      link: 'https://kuechenkompane.de/collections/vivi-water',
+                      image_src: 'https://kuechenkompane.de/cdn/shop/files/All_Flavors_jpg_V1_1.jpg?v=1749970438&width=535',
+                      link_title: 'Infused Water (NEU)'
+                    -%}
+                      
+                  </ul>
+              </li>
+              
+
+            </ul>
+
+          </div>                 
+          
+          {% comment %} language--switcher  {% endcomment %}
+          {%- render 'language--switcher' -%}
+
+          {% comment %} mobile--menu-footer {% endcomment %}
+          {%- render 'mobile--menu-footer-social'  -%}
+
+        </div>
+
+      </li>
+
+        {% comment %} main item {% endcomment %}
+      <li class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title" >Mehr</span>
+        {%- render 'arrow--icon-next' -%}
+
+        <!-- sub item  -->
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >         
+
+          {%- render 'sub-item-header', title: 'Mehr' -%}
+
+          <div class="mobile--menu-sub-content">
+            <ul class="mobile--menu-sub-navigation">
+              {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/50.png?v=1688042409&width=750" loading="lazy" alt="">
+                <span class="mobile--menu-item-sub-title" >Mehr</span>
+
+               {%- render 'arrow--icon-down' -%}
+
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">
+                    
+                    {% comment %} dropdown item  {% endcomment %}
+                    {%- render 'dropdown-item',
+                      link: 'https://kuechenkompane.de/collections/geschenkkarte',
+                      image_src: 'https://kuechenkompane.de/cdn/shop/files/50.png?v=1688042409&width=750',
+                      link_title: 'Geschenkkarten'
+                    -%}
+
+                    {% comment %} dropdown item  {% endcomment %}
+                    {%- render 'dropdown-item',
+                      link: 'https://kuechenkompane.de/blogs/herzlich-wilkommen',
+                      image_src: 'https://kuechenkompane.de/cdn/shop/articles/nachhaltigkeit-in-der-kueche_0da00caf-fdac-4866-a076-b8bc2a11cbdf.jpg?v=1738917669&width=360',
+                      link_title: 'Blog'
+                    -%}
+
+                    {% comment %} dropdown item  {% endcomment %}
+                    {%- render 'dropdown-item',
+                      link: 'https://kuechenkompane.de/blogs/rezepte',
+                      image_src: 'https://kuechenkompane.de/cdn/shop/articles/komprimiert_68b4253d-b8df-4439-be1c-b33890a3d08e.jpg?v=1742571965&width=360',
+                      link_title: 'Rezepte'
+                    -%}
+
+                    {% comment %} dropdown item  {% endcomment %}
+                    {%- render 'dropdown-item',
+                      link: 'https://kuechenkompane.de/pages/pflegehinweise-fur-unsere-kuchenmesser',
+                      image_src: 'https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429',
+                      link_title: 'Pflegehinweise'
+                    -%}
+
+
+                    {% comment %} dropdown item  {% endcomment %}
+                    {%- render 'dropdown-item',
+                      link: 'https://kuechenkompane.de/pages/haufige-fragen',
+                      image_src: 'https://snocks.com/cdn/shop/files/socken-mobile_80x.png?v=1683277429',
+                      link_title: 'Häufige Fragen'
+                    -%}
+                  </ul>
+              </li>
+              
+
+
+
+            </ul>
+
+          </div>
+
+        
+          {% comment %} language--switcher  {% endcomment %}
+          {%- render 'language--switcher' -%}
+
+          {% comment %} mobile--menu-footer {% endcomment %}
+          {%- render 'mobile--menu-footer-social'  -%}
+
+        </div>
+      </li>
+
+        {% comment %} main item {% endcomment %}
+      <li class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title" >Sale</span>
+        {%- render 'arrow--icon-next' -%}
+
+        <!-- sub item  -->
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >
+
+
+          {%- render 'sub-item-header', title: 'Sale' -%}
+
+          <div class="mobile--menu-sub-content">
+            <ul class="mobile--menu-sub-navigation">
+
+            {% comment %} sub item  {% endcomment %}
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V98_1.jpg?v=1746661358&width=750" loading="lazy" alt="">
+                <span class="mobile--menu-item-sub-title" >Sale</span>
+
+               {%- render 'arrow--icon-down' -%}
+
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">
+                    
+                     {% comment %} dropdown item  {% endcomment %}
+                     {%- render 'dropdown-item',
+                      link: 'https://kuechenkompane.de/collections/sale-final',
+                      image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V98_1.jpg?v=1746661358&width=750',
+                      link_title: 'Sale'
+                   -%}
+                  </ul>
+              </li>
+
+            </ul>
+
+          </div>
+
+      
+          {% comment %} language--switcher  {% endcomment %}
+          {%- render 'language--switcher' -%}
+      
+          {% comment %} mobile--menu-footer {% endcomment %}
+          {%- render 'mobile--menu-footer-social'  -%}
+
+        </div>
+      </li>
+
+        {% comment %} main item {% endcomment %}
+      <li class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title" >Ausverkauf</span>
+        {%- render 'arrow--icon-next' -%}
+
+        <!-- sub item  -->
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container" >
+
+          {%- render 'sub-item-header', title: 'Ausverkauf' -%}
+
+          <div class="mobile--menu-sub-content">
+            <ul class="mobile--menu-sub-navigation">
+              <li class="mobile--menu-navigation-sub-item">
+                <div class="mobile--menu-navigation-sub-item-wrapper">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V128.jpg?v=1746653981&width=750" loading="lazy" alt="image">
+                <span class="mobile--menu-item-sub-title" >Ausverkauf</span>
+
+                {%- render 'arrow--icon-down' -%}
+
+                </div>
+                  <!-- menu item dropdown  -->
+
+                  <!-- Hidden child list -->
+                  <ul class="mobile--menu-sub-dropdown">                   
+
+                    {% comment %} dropdown item  {% endcomment %}
+                    {%- render 'dropdown-item',
+                      link: 'https://kuechenkompane.de/collections/ausverkauf-final',
+                      image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V128.jpg?v=1746653981&width=750',
+                      link_title: 'Ausverkauf'
+                    -%}
+
+                    
+                  </ul>
+              </li> 
+
+            </ul>
+          </div>
+       
+
+          {% comment %} language--switcher  {% endcomment %}
+
+          {%- render 'language--switcher' -%}
+
+          {% comment %} mobile--menu-footer {% endcomment %}
+            {%- render 'mobile--menu-footer-social'  -%}
+
+        </div>
+      </li>     
+
+
+      {% comment %} main item  test{% endcomment %}
+      <li class="mobile--menu-navigation-item">
+       <a href=""> <span class="mobile--menu-item-title" >test</span></a>
+       
+
+        
+      </li>
+
+
+
+
+    </ul>
+                        
+  </div>                  
+  
+
+  {%- render 'language--switcher' -%}
+  {%- render 'mobile--menu-footer-social'  -%}
+  
+</div>
+                    
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".m-menu-button");
+  const menuContainer = document.querySelector(".mobile--menu-container");
+  const menuCloseBtns = document.querySelectorAll(".mobile--menu-close");
+  const subItems = document.querySelectorAll(".mobile--menu-navigation-item");
+
+  // Open main menu
+  menuBtn.addEventListener("click", () => {
+    menuContainer.classList.add("menu--open");
+  });
+
+  // Close main menu
+  menuCloseBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      menuContainer.classList.remove("menu--open");
+      document
+        .querySelectorAll(".mobile--menu-navigation-item-content.active")
+        .forEach((activeContent) => activeContent.classList.remove("active"));
+    });
+  });
+
+  // Handle each main menu item's submenu open
+  subItems.forEach((subItem) => {
+    const subContent = subItem.querySelector(".mobile--menu-navigation-item-content");
+    const backBtn = subItem.querySelector(".mobile--menu-back");
+
+    subItem.addEventListener("click", () => {
+      // Close all others first
+      document
+        .querySelectorAll(".mobile--menu-navigation-item-content.active")
+        .forEach((el) => el.classList.remove("active"));
+
+      // Open only this item's submenu
+      if (subContent) subContent.classList.add("active");
+    });
+
+    // Back button only closes its own submenu
+    if (backBtn && subContent) {
+      backBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        subContent.classList.remove("active");
+      });
+    }
+  });
+
+  // Toggle nested dropdown under submenu
+  document
+    .querySelectorAll(".mobile--menu-navigation-sub-item > .mobile--menu-navigation-sub-item-wrapper")
+    .forEach((toggle) => {
+      toggle.addEventListener("click", function (e) {
+        const parentItem = this.closest(".mobile--menu-navigation-sub-item");
+        const submenu = parentItem.querySelector(".mobile--menu-sub-dropdown");
+
+        if (!submenu) return;
+
+        if (submenu.classList.contains("open")) {
+          submenu.style.maxHeight = submenu.scrollHeight + "px";
+          submenu.offsetHeight;
+          submenu.style.maxHeight = "0px";
+          submenu.classList.remove("open");
+          parentItem.classList.remove("open");
+        } else {
+          submenu.classList.add("open");
+          submenu.style.maxHeight = submenu.scrollHeight + "px";
+          parentItem.classList.add("open");
+        }
+      });
+    });
+
+
+  
+
+  document.querySelectorAll('.language--switcher').forEach(switcher => {
+    const popup = switcher.nextElementSibling;
+
+    // Toggle popup
+    switcher.addEventListener('click', (e) => {
+      e.stopPropagation();
+
+      // Close others
+      document.querySelectorAll('.language--popup').forEach(p => {
+        if (p !== popup) p.style.display = 'none';
+      });
+
+      // Toggle current popup
+      popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Close button inside popup
+    const closeBtn = popup.querySelector('.language--popup-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        popup.style.display = 'none';
+      });
+    }
+
+    // Language selection
+    popup.querySelectorAll('li').forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img')?.src;
+        const name = item.getAttribute('data-name');
+        const switcherImg = switcher.querySelector('img');
+        const switcherText = switcher.querySelector('span');
+
+        if (img && switcherImg) switcherImg.src = img;
+        if (name && switcherText) switcherText.textContent = name;
+
+        popup.style.display = 'none';
+      });
+    });
+
+    // Prevent closing when clicking inside popup-inner
+    const inner = popup.querySelector('.language--popup-innner');
+    if (inner) {
+      inner.addEventListener('click', (e) => e.stopPropagation());
+    }
+  });
+
+  // Global click — close if clicked outside
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.language--popup').forEach(p => {
+      p.style.display = 'none';
+    });
+  });
+
+
+
+
+
+    
+  });
+
+</script>
