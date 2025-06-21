@@ -453,6 +453,7 @@ ul.language--popup-slector li {
                   <img
                     class="mobile--menu-navigation-item-image"
                     src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0005_4_jpg_V1_1.jpg?v=1750149261"
+                    loading="lazy"
                     alt="">
                   <span class="mobile--menu-item-sub-title">Messerset</span>
 
@@ -526,7 +527,7 @@ ul.language--popup-slector li {
                 {% comment %} sub item  {% endcomment %}
               <li class="mobile--menu-navigation-sub-item">
                 <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-b430-c9a586d3291e.jpg?v=1746625916&width=535" alt="">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-b430-c9a586d3291e.jpg?v=1746625916&width=535" loading="lazy" alt="">
                 <span class="mobile--menu-item-sub-title" >Kombipakete</span>
 
                 {%- render 'arrow--icon-down' -%}
@@ -535,56 +536,65 @@ ul.language--popup-slector li {
                   <!-- menu item dropdown  -->
 
                   <!-- Hidden child list -->
-                  <ul class="mobile--menu-sub-dropdown">
+                  <ul class="mobile--menu-sub-dropdown">                   
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messerblock-mit-messer',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-b430-c9a586d3291e.jpg?v=1746625916&width=535',
+                        link_title: 'Kombipaket Burokku'
+                      -%} 
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/asiatisches-messerset',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V131.jpg?v=1746654499&width=535',
+                        link_title: 'Kombipaket Jishaku'
+                      -%}  
 
 
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/kombipaket-tsuisuto',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Asiatisches_1_c49c2629-9328-43d5-9541-52bc95d7fe49.jpg?v=1746548655&width=535',
+                        link_title: 'Kombipaket Tsuisuto'
+                      -%}  
 
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/messerblock-mit-messer">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-b430-c9a586d3291e.jpg?v=1746625916&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title" >Kombipaket Burokku</span> </a>
-                    </li>
 
-                    
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/kombipaket-hito',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/wood1_1.jpg?v=1711521585&width=535',
+                        link_title: 'Kombipaket Hito'
+                      -%}  
 
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/asiatisches-messerset">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V131.jpg?v=1746654499&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Kombipaket Jishaku</span> </a>
-                    </li>
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messerset-mit-magnetleiste',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V58_efa0b225-1094-4149-a947-9ae9f10ec16b.jpg?v=1746657191&width=535',
+                        link_title: 'Kombipaket Kōyōju'
+                      -%}  
 
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/kombipaket-tsuisuto">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Asiatisches_1_c49c2629-9328-43d5-9541-52bc95d7fe49.jpg?v=1746548655&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Kombipaket Tsuisuto</span> </a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/kombipaket-hito">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/wood1_1.jpg?v=1711521585&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Kombipaket Hito</span> </a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/messerset-mit-magnetleiste">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V58_efa0b225-1094-4149-a947-9ae9f10ec16b.jpg?v=1746657191&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Kombipaket Kōyōju</span> </a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/metall-bundles">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V140_1.jpg?v=1749085077&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Kombipaket Nōburu</span> </a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/konpeki-kombipaket">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V34.jpg?v=1746624812&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Konpeki Kombipaket</span> </a>
-                    </li>
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: '',
+                        image_src: '',
+                        link_title: ''
+                      -%}  
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/metall-bundles',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V140_1.jpg?v=1749085077&width=535',
+                        link_title: 'Kombipaket Nōburu'
+                      -%}  
+
+                       {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/konpeki-kombipaket',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V34.jpg?v=1746624812&width=535',
+                        link_title: 'Konpeki Kombipaket'
+                      -%}  
 
 
                   </ul>
@@ -594,7 +604,7 @@ ul.language--popup-slector li {
                 {% comment %} sub item  {% endcomment %}
               <li class="mobile--menu-navigation-sub-item">
                 <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=535" alt="">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=535" loading="lazy" alt="image">
                 <span class="mobile--menu-item-sub-title" >Einzelne Küchenmesser</span>
 
                 {%- render 'arrow--icon-down' -%}
@@ -604,84 +614,108 @@ ul.language--popup-slector li {
 
                   <!-- Hidden child list -->
                   <ul class="mobile--menu-sub-dropdown">
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/kuechenmesser">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=750" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Alle Küchenmesser</span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/messer-mokuzai">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V88_64f48a72-31f5-4084-bb2c-b89221f7be56.jpg?v=1746630960&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Mokuzai Messer</span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/messer-burakku">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V82_b0ce87ce-8560-43f6-be30-ab1084626844.jpg?v=1746653281&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Burakku Messer</span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/messer-sheru">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V39_1360819e-ce09-4221-a41a-f27b31f291c0.jpg?v=1746653452&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Sheru Messer</span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/messer-kiiro">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V29_d30f221b-1cb0-4b6d-8fea-e4e4dd3ac3b9.jpg?v=1746634524&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title"> Kiiro Messer </span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/messer-shikku">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V67_5148a252-a5d6-48fe-a709-94644b26d50a.jpg?v=1746653202&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title"> Shikku Messer </span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/grillmesser">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V30_9620cc27-f6bf-4769-a495-c35d06ec4c61.jpg?v=1746658346&width=360" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Grillmesser </span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/kuechenmesser">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V80_34dfb4f6-3e37-4664-a2f2-343fffa0f246.jpg?v=1746658704&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Japanische Messer </span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/kuechenmesser">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=360" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Damastmesser </span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/santokumesser">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V80_34dfb4f6-3e37-4664-a2f2-343fffa0f246.jpg?v=1746658704&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Santokumesser</span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/nakiri-messer">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V29_d30f221b-1cb0-4b6d-8fea-e4e4dd3ac3b9.jpg?v=1746634524&width=360" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Nakiri Messer</span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/filetiermesser">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V38_10b02504-3150-4b86-a949-2063a753d36b.jpg?v=1746659231&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Filetiermesser</span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/brotmesser">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V55_9bb96a11-1671-4b2b-9119-da853d52d40b.jpg?v=1746659339&width=360" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Brotmesser</span></a>
-                    </li>
+
+                    
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/kuechenmesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=750',
+                        link_title: 'Alle Küchenmesser'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messer-mokuzai',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V88_64f48a72-31f5-4084-bb2c-b89221f7be56.jpg?v=1746630960&width=535',
+                        link_title: 'Mokuzai Messer'
+                      -%}  
+
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messer-burakku',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V82_b0ce87ce-8560-43f6-be30-ab1084626844.jpg?v=1746653281&width=535',
+                        link_title: 'Burakku Messer'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messer-sheru',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V39_1360819e-ce09-4221-a41a-f27b31f291c0.jpg?v=1746653452&width=535',
+                        link_title: 'Sheru Messer'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messer-kiiro',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V29_d30f221b-1cb0-4b6d-8fea-e4e4dd3ac3b9.jpg?v=1746634524&width=535',
+                        link_title: 'Kiiro Messer'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messer-shikku',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V67_5148a252-a5d6-48fe-a709-94644b26d50a.jpg?v=1746653202&width=535',
+                        link_title: 'Shikku Messer'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/grillmesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V30_9620cc27-f6bf-4769-a495-c35d06ec4c61.jpg?v=1746658346&width=360',
+                        link_title: 'Grillmesser'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/kuechenmesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V80_34dfb4f6-3e37-4664-a2f2-343fffa0f246.jpg?v=1746658704&width=535',
+                        link_title: 'Japanische Messer'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/kuechenmesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V8.jpg?v=1746659010&width=360',
+                        link_title: 'Damastmesser'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/santokumesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V80_34dfb4f6-3e37-4664-a2f2-343fffa0f246.jpg?v=1746658704&width=535',
+                        link_title: 'Santokumesser'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/nakiri-messer',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V29_d30f221b-1cb0-4b6d-8fea-e4e4dd3ac3b9.jpg?v=1746634524&width=360',
+                        link_title: 'Nakiri Messer'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/filetiermesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V38_10b02504-3150-4b86-a949-2063a753d36b.jpg?v=1746659231&width=535',
+                        link_title: 'Filetiermesser'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/brotmesser',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V55_9bb96a11-1671-4b2b-9119-da853d52d40b.jpg?v=1746659339&width=360',
+                        link_title: 'Brotmesser'
+                      -%}  
+
                     
                   </ul>
               </li>
@@ -689,7 +723,7 @@ ul.language--popup-slector li {
                 {% comment %} sub item  {% endcomment %}
               <li class="mobile--menu-navigation-sub-item">
                 <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V150_1.jpg?v=1746657294&width=535" alt="">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V150_1.jpg?v=1746657294&width=535" loading="lazy" alt="">
                 <span class="mobile--menu-item-sub-title" >Messer Zubehör</span>
 
                   {%- render 'arrow--icon-down' -%}
@@ -699,31 +733,36 @@ ul.language--popup-slector li {
 
                   <!-- Hidden child list -->
                   <ul class="mobile--menu-sub-dropdown">
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/messerblock">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V150_1.jpg?v=1746657294&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Messerblock & Messerhalter</span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/asiatisches-messerset">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V70_5bf9d8d7-9ce5-4431-88dc-b1e771f7f43f.jpg?v=1746659210&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title"> Messerschärfer</span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/schneidebretter">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V23.jpg?v=1746625258&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Schneidebretter</span></a>
-                    </li>
-                    {% comment %} dropdown item  {% endcomment %}
-                    <li>
-                      <a href="https://kuechenkompane.de/collections/pflegeprodukte">
-                      <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V102_1.jpg?v=1746626616&width=535" width="" height="" alt="product image">
-                      <span class="mobile--menu-item-sub-title">Pfelgeprodukte</span></a>
-                    </li>
-                    
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/messerblock',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V150_1.jpg?v=1746657294&width=535',
+                        link_title: 'Messerblock & Messerhalter'
+                      -%}  
+
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/asiatisches-messerset',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V70_5bf9d8d7-9ce5-4431-88dc-b1e771f7f43f.jpg?v=1746659210&width=535',
+                        link_title: 'Messerschärfer'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/schneidebretter',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V23.jpg?v=1746625258&width=535',
+                        link_title: 'Schneidebretter'
+                      -%}  
+
+                      {% comment %} dropdown item  {% endcomment %}
+                      {%- render 'dropdown-item',
+                        link: 'https://kuechenkompane.de/collections/pflegeprodukte',
+                        image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V102_1.jpg?v=1746626616&width=535',
+                        link_title: 'Pfelgeprodukte'
+                      -%}          
 
 
                   </ul>
@@ -731,21 +770,12 @@ ul.language--popup-slector li {
                     
             </ul>
                     
-            {% comment %} <!-- ---------------------- innner  -->
-              <ul class="mobile--menu-navigation-sec">
-              <a href="#">Account</a>
-              <a href="#">Karriere</a>              
-            </ul>     {% endcomment %}
-
-                              
+         
                     
           </div>
                     
           {% comment %} language--switcher  {% endcomment %}
-
-          {%- render 'language--switcher' -%}
-    
-
+          {%- render 'language--switcher' -%}    
 
           {% comment %} mobile--menu-footer {% endcomment %}
           {%- render 'mobile--menu-footer-social'  -%}
@@ -815,7 +845,7 @@ ul.language--popup-slector li {
                 {% comment %} sub item  {% endcomment %}
                 <li class="mobile--menu-navigation-sub-item">
                   <div class="mobile--menu-navigation-sub-item-wrapper">
-                  <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Ku_echenkompane_2411290271.jpg?v=1746625258&width=535" alt="">
+                  <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Ku_echenkompane_2411290271.jpg?v=1746625258&width=535" loading="lazy" alt="">
                   <span class="mobile--menu-item-sub-title" >Schneide- und Servierbretter</span>
 
                   {%- render 'arrow--icon-down' -%}
@@ -924,7 +954,7 @@ ul.language--popup-slector li {
             {% comment %} sub item  {% endcomment %}
               <li class="mobile--menu-navigation-sub-item">
                 <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/All_Flavors_jpg_V1_1.jpg?v=1749970438&width=535" alt="">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/All_Flavors_jpg_V1_1.jpg?v=1749970438&width=535" loading="lazy" alt="">
                 <span class="mobile--menu-item-sub-title" >Infused Water (NEU)</span>
 
                   {%- render 'arrow--icon-down' -%}
@@ -975,7 +1005,7 @@ ul.language--popup-slector li {
               {% comment %} sub item  {% endcomment %}
               <li class="mobile--menu-navigation-sub-item">
                 <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/50.png?v=1688042409&width=750" alt="">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/50.png?v=1688042409&width=750" loading="lazy" alt="">
                 <span class="mobile--menu-item-sub-title" >Mehr</span>
 
                {%- render 'arrow--icon-down' -%}
@@ -1058,7 +1088,7 @@ ul.language--popup-slector li {
             {% comment %} sub item  {% endcomment %}
               <li class="mobile--menu-navigation-sub-item">
                 <div class="mobile--menu-navigation-sub-item-wrapper">
-                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V98_1.jpg?v=1746661358&width=750" alt="">
+                <img class="mobile--menu-navigation-item-image" src="https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V98_1.jpg?v=1746661358&width=750" loading="lazy" alt="">
                 <span class="mobile--menu-item-sub-title" >Sale</span>
 
                {%- render 'arrow--icon-down' -%}
@@ -1141,6 +1171,17 @@ ul.language--popup-slector li {
 
         </div>
       </li>     
+
+
+      {% comment %} main item  test{% endcomment %}
+      <li class="mobile--menu-navigation-item">
+       <a href=""> <span class="mobile--menu-item-title" >test</span></a>
+       
+
+        
+      </li>
+
+
 
 
     </ul>
