@@ -421,6 +421,38 @@ ul.language--popup-slector li {
 .mobile--menu-logo img {
   width: 100px;
 }
+
+
+/* menu search  */
+
+.menu-search {
+    position: relative;
+    border-radius: 5px;
+    height: 30px;
+    margin: 0 15px 13px;
+    padding: 0;
+    border: 1px solid #ededed;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+input.mobile-menu-search {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: #1c1c1c;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    padding: 0;
+}
+.mobile--menu-search-icon {
+    margin: 0;
+    padding: 0 8px;
+}
+
 </style>
 <div class="mobile--menu-container">
   <div class="mobile--menu-header">
@@ -431,6 +463,20 @@ ul.language--popup-slector li {
       {%- render 'close--icon' -%}
     </button>
   </div>
+
+
+  <m-search-popup class=" menu-search m:flex m:justify-center m:items-center" data-open-search-popup="">
+    <span class="m-header__search-icon mobile--menu-search-icon">
+      <svg class="Icon Icon--search" data-name="Icons black 4" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.65012 8.46656C6.75798 8.46656 8.46674 6.7578 8.46674 4.64993C8.46674 2.54207 6.75798 0.833313 4.65012 0.833313C2.54226 0.833313 0.833496 2.54207 0.833496 4.64993C0.833496 6.7578 2.54226 8.46656 4.65012 8.46656Z" stroke="#212121" stroke-width="0.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M11.7142 11.7141L7.34839 7.34827" stroke="#212121" stroke-width="0.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    </span> 
+    <input type="search" placeholder="search" class="mobile-menu-search">
+  </m-search-popup>
+
+
+
   <div class="mobile--menu-content">
     <ul class="mobile--menu-navigation">
 
