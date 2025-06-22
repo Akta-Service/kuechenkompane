@@ -23,6 +23,17 @@
     ]
   },
   {
+    "name": "search Collection",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "serch_recom_colection",
+        "label": "Collection For Search"
+      },
+      
+    ]
+  },
+  {
     "name": "General settings",
     "settings": [
       {

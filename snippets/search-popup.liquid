@@ -120,6 +120,15 @@
           </div>
           {%- endif -%}
       </div>
+
+      {%- assign collection = settings.serch_recom_colection -%}
+
+      <div class="search--recomend-product">
+        {% for product in collection.products %}
+          {%  render 'product-card-2' %}
+        {% endfor %}
+      </div>
+      
       {%- if settings.enable_predictive_search -%}
       </predictive-search>
       {%- endif -%}
