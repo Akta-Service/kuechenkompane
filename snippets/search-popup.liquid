@@ -143,10 +143,10 @@
           <div class="tag--column-tags">
             {% for i in (1..tag_count) %}
               {% assign link_key = "popular_tag_link_" | append: i %}
-              {% assign link = settings[link_key] %}
               {% assign text_key = "popular_tag_" | append: i | append: "_text" %}
+              {% assign link = settings[link_key] %}
               {% assign text = settings[text_key] %}
-              {% if link != blank and text != blank %}
+              {% if text != blank %}
                 <a href="{{ link }}">{{ text }}</a>
               {% endif %}
             {% endfor %}
@@ -158,10 +158,10 @@
           <div class="tag--column-tags">
             {% for i in (1..tag_count) %}
               {% assign link_key = "service_tag_link_" | append: i %}
-              {% assign link = settings[link_key] %}
               {% assign text_key = "service_tag_" | append: i | append: "_text" %}
+              {% assign link = settings[link_key] %}
               {% assign text = settings[text_key] %}
-              {% if link != blank and text != blank %}
+              {% if text != blank %}
                 <a href="{{ link }}">{{ text }}</a>
               {% endif %}
             {% endfor %}
@@ -173,18 +173,16 @@
           <div class="tag--column-tags">
             {% for i in (1..tag_count) %}
               {% assign link_key = "article_tag_link_" | append: i %}
-              {% assign link = settings[link_key] %}
               {% assign text_key = "article_tag_" | append: i | append: "_text" %}
+              {% assign link = settings[text_key] %}
               {% assign text = settings[text_key] %}
-              {% if link != blank and text != blank %}
+              {% if text != blank %}
                 <a href="{{ link }}">{{ text }}</a>
               {% endif %}
             {% endfor %}
           </div>
         </div>
         
-        
-
         
 
 
