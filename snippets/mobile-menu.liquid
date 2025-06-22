@@ -460,12 +460,21 @@ input.mobile-menu-search {
 .search--recomend-product-area{
   padding: 0 20px;
 }
+
+
+
+
 .search--recomend-product {   
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-top: 20px;
     margin-bottom: 50px;
+}
+@media (min-width: 768px){
+  .search--recomend-product {  
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .product--recom-header {
     display: flex;
@@ -517,6 +526,46 @@ h3.tag--column-title {
 .tag--column-tags {
     display: flex;
     overflow-x: auto;
+}
+.tag--columns-area {
+    padding: 0 20px;
+}
+
+
+@media (min-width: 768px){
+  .search--wrapper-area {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .tag--column-tags {
+    flex-direction: column;
+    row-gap: 15px;
+  }
+  .tag--column-tags a {
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+    padding: 0;
+    font-size: 16px;
+    margin: 0;
+    /* white-space: inherit; */
+  }
+  .tag--columns-area {
+    flex-basis: 290px;
+    max-width: 290px;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+  }
+  h3.tag--column-title {
+    font-size: 16px;    
+    font-weight: 700;
+    margin-bottom: 20px;    
+   }
+   .tag--column-tags a {
+    max-width: fit-content;
+    white-space: inherit;
+    color: #767676;
+    line-height: 1.5;
+  }
 }
 </style>
 <div class="mobile--menu-container">
