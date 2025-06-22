@@ -23,13 +23,185 @@
     ]
   },
   {
-    "name": "search Collection",
+    "name": "Menu Search Collection",
     "settings": [
+      {
+        "type": "header",
+        "content": "Collection Header"
+      },
+      {
+        "type": "text",
+        "id": "header_title",
+        "label": "Header Title",
+        "default": "Popular product"
+      },      
+      {
+        "type": "text",
+        "id": "collection_url_text",
+        "label": "Collection Url Text",
+        "default": "View all"
+      },
+      {
+        "type": "header",
+        "content": "Collection Select"
+      },
       {
         "type": "collection",
         "id": "serch_recom_colection",
         "label": "Collection For Search"
       },
+      {
+        "type": "header",
+        "content": "Popular Categorie tags"
+      },
+      {
+        "type": "text",
+        "id": "popular_tag_title",
+        "label": "Popular Categories Title",
+        "default": "Popular Categories"
+      },
+      {
+        "type": "text",
+        "id": "popular_tag_1_text",
+        "label": "Popular Tag 1 Text",
+        "default": "Socks"
+      },
+      {
+        "type": "url",
+        "id": "popular_tag_link_1",
+        "label": "Popular Tag 1 Link"
+      },
+      {
+        "type": "text",
+        "id": "popular_tag_2_text",
+        "label": "Popular Tag 2 Text",
+        "default": "Men's Underwear"
+      },
+      {
+        "type": "url",
+        "id": "popular_tag_link_2",
+        "label": "Popular Tag 2 Link"
+      },
+      {
+        "type": "text",
+        "id": "popular_tag_3_text",
+        "label": "Popular Tag 3 Text"
+      },
+      {
+        "type": "url",
+        "id": "popular_tag_link_3",
+        "label": "Popular Tag 3 Link"
+      },
+      {
+        "type": "text",
+        "id": "popular_tag_4_text",
+        "label": "Popular Tag 4 Text"
+      },
+      {
+        "type": "url",
+        "id": "popular_tag_link_4",
+        "label": "Popular Tag 4 Link"
+      },
+      {
+        "type": "header",
+        "content": "Service Categorie tags"
+      },
+      {
+        "type": "text",
+        "id": "service_tag_title",
+        "label": "Service Title",
+        "default": "Service"
+      },
+      {
+        "type": "text",
+        "id": "service_tag_1_text",
+        "label": "Service Tag 1 Text"
+      },
+      {
+        "type": "url",
+        "id": "service_tag_link_1",
+        "label": "Service Tag 1 Link"
+      },
+      {
+        "type": "text",
+        "id": "service_tag_2_text",
+        "label": "Service Tag 2 Text"
+      },
+      {
+        "type": "url",
+        "id": "service_tag_link_2",
+        "label": "Service Tag 2 Link"
+      },
+      {
+        "type": "text",
+        "id": "service_tag_3_text",
+        "label": "Service Tag 3 Text"
+      },
+      {
+        "type": "url",
+        "id": "service_tag_link_3",
+        "label": "Service Tag 3 Link"
+      },
+      {
+        "type": "text",
+        "id": "service_tag_4_text",
+        "label": "Service Tag 4 Text"
+      },
+      {
+        "type": "url",
+        "id": "service_tag_link_4",
+        "label": "Service Tag 4 Link"
+      },
+      {
+        "type": "header",
+        "content": "Article Categorie tags"
+      },
+      {
+        "type": "text",
+        "id": "article_tag_title",
+        "label": "Article Title",
+        "default": "Articles"
+      },
+      {
+        "type": "text",
+        "id": "article_tag_1_text",
+        "label": "Article Tag 1 Text"
+      },
+      {
+        "type": "url",
+        "id": "article_tag_link_1",
+        "label": "Article Tag 1 Link"
+      },
+      {
+        "type": "text",
+        "id": "article_tag_2_text",
+        "label": "Article Tag 2 Text"
+      },
+      {
+        "type": "url",
+        "id": "article_tag_link_2",
+        "label": "Article Tag 2 Link"
+      },
+      {
+        "type": "text",
+        "id": "article_tag_3_text",
+        "label": "Article Tag 3 Text"
+      },
+      {
+        "type": "url",
+        "id": "article_tag_link_3",
+        "label": "Article Tag 3 Link"
+      },
+      {
+        "type": "text",
+        "id": "article_tag_4_text",
+        "label": "Article Tag 4 Text"
+      },
+      {
+        "type": "url",
+        "id": "article_tag_link_4",
+        "label": "Article Tag 4 Link"
+      }
       
     ]
   },

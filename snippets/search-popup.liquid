@@ -121,14 +121,54 @@
           {%- endif -%}
       </div>
 
-      {%- assign collection = settings.serch_recom_colection -%}
+      <div class="search--recomend-product-area">
+        {%- assign collection = settings.serch_recom_colection -%}
 
-      <div class="search--recomend-product">
-        {% for product in collection.products %}
-          {%  render 'product-card-2', product: product %}
-        {% endfor %}
+        <div class="product--recom-header">
+          <h3>{{ settings.header_title }}</h3>
+          <a href="{{ collection.url }}">{{ settings.collection_url_text }}</a>
+        </div>
+
+        <div class="search--recomend-product">      
+
+          {% for product in collection.products limit: 4 %}
+            {%  render 'product-card-2', product: product %}
+          {% endfor %}
+        </div>
+
+        <div class="tag--column-wrapper popular-tags">
+          <h3 class="tag--column-title">{{ settings.popular_tag_title }}</h3>
+          <div class="tag--column-tags">
+            <a href="{{ settings.popular_tag_link_1 }}">{{ settings.popular_tag_1_text }}</a>
+            <a href="{{ settings.popular_tag_link_2 }}">{{ settings.popular_tag_2_text }}</a>
+            <a href="{{ settings.popular_tag_link_3 }}">{{ settings.popular_tag_3_text }}</a>
+            <a href="{{ settings.popular_tag_link_4 }}">{{ settings.popular_tag_4_text }}</a>
+          </div>
+        </div>
+        <div class="tag--column-wrapper service-tags">
+          <h3 class="tag--column-title">{{ settings.service_tag_title }}</h3>
+          <div class="tag--column-tags">
+            <a href="{{ settings.service_tag_link_1 }}">{{ settings.service_tag_1_text }}</a>
+            <a href="{{ settings.service_tag_link_2 }}">{{ settings.service_tag_2_text }}</a>
+            <a href="{{ settings.service_tag_link_3 }}">{{ settings.service_tag_3_text }}</a>
+            <a href="{{ settings.service_tag_link_4 }}">{{ settings.service_tag_4_text }}</a>
+          </div>
+        </div>
+        <div class="tag--column-wrapper article-tags">
+          <h3 class="tag--column-title">{{ settings.article_tag_title }}</h3>
+          <div class="tag--column-tags">
+            <a href="{{ settings.article_tag_link_1 }}">{{ settings.article_tag_1_text }}</a>
+            <a href="{{ settings.article_tag_link_2 }}">{{ settings.article_tag_2_text }}</a>
+            <a href="{{ settings.article_tag_link_3 }}">{{ settings.article_tag_3_text }}</a>
+            <a href="{{ settings.article_tag_link_4 }}">{{ settings.article_tag_4_text }}</a>
+          </div>
+        </div>
+        
+
+
+
+
       </div>
-      
       {%- if settings.enable_predictive_search -%}
       </predictive-search>
       {%- endif -%}

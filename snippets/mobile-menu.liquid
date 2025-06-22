@@ -456,14 +456,37 @@ input.mobile-menu-search {
 .m-search-popup{
   overflow: auto;
 }
-.search--recomend-product {
-    padding: 0 20px;
+ 
+.search--recomend-product-area{
+  padding: 0 20px;
+}
+.search--recomend-product {   
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-top: 20px;
 }
-
+.product--recom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 10px;
+}
+.product--recom-header h3 {
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19px;
+    text-transform: uppercase;
+}
+.product--recom-header a {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: underline;
+}
 </style>
 <div class="mobile--menu-container">
   <div class="mobile--menu-header">
