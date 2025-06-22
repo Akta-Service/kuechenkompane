@@ -125,7 +125,7 @@
 
       <div class="search--recomend-product">
         {% for product in collection.products %}
-          {%  render 'product-card-2' %}
+          {%  render 'product-card-2', product: product %}
         {% endfor %}
       </div>
       
