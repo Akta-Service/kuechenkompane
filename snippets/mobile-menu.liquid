@@ -1268,7 +1268,7 @@
   {%- render 'mobile--menu-footer-social' -%}
 </div>
 
-<script>
+{% comment %} <script>
   document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".m-menu-button");
   const menuContainer = document.querySelector(".mobile--menu-container");
@@ -1297,8 +1297,7 @@
 
     subItem.addEventListener("click", () => {
       // Close all others first
-      document
-        .querySelectorAll(".mobile--menu-navigation-item-content.active")
+      document.querySelectorAll(".mobile--menu-navigation-item-content.active")
         .forEach((el) => el.classList.remove("active"));
 
       // Open only this item's submenu
@@ -1315,8 +1314,7 @@
   });
 
   // Toggle nested dropdown under submenu
-  document
-    .querySelectorAll(".mobile--menu-navigation-sub-item > .mobile--menu-navigation-sub-item-wrapper")
+  document.querySelectorAll(".mobile--menu-navigation-sub-item > .mobile--menu-navigation-sub-item-wrapper")
     .forEach((toggle) => {
       toggle.addEventListener("click", function (e) {
         const parentItem = this.closest(".mobile--menu-navigation-sub-item");
@@ -1401,4 +1399,142 @@
 
 
   });
+</script> {% endcomment %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".m-menu-button");
+    const menuContainer = document.querySelector(".mobile--menu-container");
+    const menuCloseBtns = document.querySelectorAll(".mobile--menu-close");
+    const subItems = document.querySelectorAll(".mobile--menu-navigation-item");
+
+    // Open main menu
+    menuBtn.addEventListener("click", () => {
+      menuContainer.classList.add("menu--open");
+    });
+
+    // Close main menu
+    menuCloseBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        menuContainer.classList.remove("menu--open");
+        document
+          .querySelectorAll(".mobile--menu-navigation-item-content.active")
+          .forEach((activeContent) => activeContent.classList.remove("active"));
+      });
+    });
+
+    // Handle each main menu item's submenu open
+    subItems.forEach((subItem) => {
+      const subContent = subItem.querySelector(".mobile--menu-navigation-item-content");
+      const backBtn = subItem.querySelector(".mobile--menu-back");
+
+      subItem.addEventListener("click", () => {
+        // Close all others first
+        document.querySelectorAll(".mobile--menu-navigation-item-content.active")
+          .forEach((el) => el.classList.remove("active"));
+
+        // Open only this item's submenu
+        if (subContent) subContent.classList.add("active");
+      });
+
+      // Back button only closes its own submenu
+      if (backBtn && subContent) {
+        backBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          subContent.classList.remove("active");
+        });
+      }
+    });
+
+    // ✅ Toggle nested dropdown under submenu — with auto-open if only one sub-item
+    document.querySelectorAll(".mobile--menu-navigation-sub-item").forEach((subItem) => {
+      const toggle = subItem.querySelector(".mobile--menu-navigation-sub-item-wrapper");
+      const submenu = subItem.querySelector(".mobile--menu-sub-dropdown");
+
+      if (!submenu || !toggle) return;
+
+      const siblingSubItems = subItem.parentElement.querySelectorAll(".mobile--menu-navigation-sub-item");
+
+      // Auto-open if only one sub-item
+      if (siblingSubItems.length === 1) {
+        submenu.classList.add("open");
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+        subItem.classList.add("open");
+      }
+
+      // Toggle on click
+      toggle.addEventListener("click", function (e) {
+        const isOpen = submenu.classList.contains("open");
+
+        if (isOpen) {
+          submenu.style.maxHeight = submenu.scrollHeight + "px";
+          submenu.offsetHeight; // Force repaint
+          submenu.style.maxHeight = "0px";
+          submenu.classList.remove("open");
+          subItem.classList.remove("open");
+        } else {
+          submenu.classList.add("open");
+          submenu.style.maxHeight = submenu.scrollHeight + "px";
+          subItem.classList.add("open");
+        }
+      });
+    });
+
+    // Language switcher
+    document.querySelectorAll('.language--switcher').forEach(switcher => {
+      const popup = switcher.nextElementSibling;
+
+      // Toggle popup
+      switcher.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        // Close others
+        document.querySelectorAll('.language--popup').forEach(p => {
+          if (p !== popup) p.style.display = 'none';
+        });
+
+        // Toggle current popup
+        popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+      });
+
+      // Close button inside popup
+      const closeBtn = popup.querySelector('.language--popup-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          popup.style.display = 'none';
+        });
+      }
+
+      // Language selection
+      popup.querySelectorAll('li').forEach(item => {
+        item.addEventListener('click', () => {
+          const img = item.querySelector('img')?.src;
+          const name = item.getAttribute('data-name');
+          const switcherImg = switcher.querySelector('img');
+          const switcherText = switcher.querySelector('span');
+
+          if (img && switcherImg) switcherImg.src = img;
+          if (name && switcherText) switcherText.textContent = name;
+
+          popup.style.display = 'none';
+        });
+      });
+
+      // Prevent closing when clicking inside popup-inner
+      const inner = popup.querySelector('.language--popup-innner');
+      if (inner) {
+        inner.addEventListener('click', (e) => e.stopPropagation());
+      }
+    });
+
+    // Global click — close if clicked outside
+    document.addEventListener('click', (e) => {
+      document.querySelectorAll('.language--popup').forEach(p => {
+        p.style.display = 'none';
+      });
+    });
+
+  });
 </script>
+
