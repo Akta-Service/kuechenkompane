@@ -32,6 +32,7 @@
       "type": "announcement-bar-sticky-scroll",
       "name": "APEX Announcement Sticky",
       "settings": {
+        "target_collection": "lagerumzug-sale",
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
@@ -51,6 +52,7 @@
       "type": "announcement-different",
       "name": "APEX Different Ann",
       "settings": {
+        "target_collection": "lagerumzug-sale",
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
