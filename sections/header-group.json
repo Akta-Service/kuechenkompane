@@ -47,6 +47,25 @@
         "text_size_m": 16
       }
     },
+    "announcement_different_rRyBgT": {
+      "type": "announcement-different",
+      "name": "APEX Different Ann",
+      "settings": {
+        "enable_scroll_to_show": false,
+        "px_to_show": 500,
+        "top_px": 0,
+        "sticky_top": false,
+        "color_scheme": "",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "LEI OF LOVE",
+        "ann_title_size": 16,
+        "ann_title_size_m": 16,
+        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
+        "text_size": 16,
+        "text_size_m": 16
+      }
+    },
     "apex_timer_progress_yCDcUj": {
       "type": "Apex-timer-progress",
       "disabled": true,
@@ -219,6 +238,7 @@
   "order": [
     "announcement_bar_version_1_rc6jDA",
     "announcement_bar_sticky_scroll_Bk3YD6",
+    "announcement_different_rRyBgT",
     "apex_timer_progress_yCDcUj",
     "apex_global_offer_timer_gMjjdD",
     "annoucement",
