@@ -1,0 +1,191 @@
+<style>
+  /* common css end  */
+  .announcement-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .announcement-bar {   
+    padding-top: {{ section.settings.pt}}px;
+    padding-bottom: {{ section.settings.pb}}px;
+  }
+
+  .announcement-bar-content {
+    text-align: center;
+  }
+.ann_title{
+  font-size: {{- section.settings.ann_title_size -}}px;   
+}
+  .announcement-bar-content strong {   
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .announcement-bar-content p {
+    font-size: {{ section.settings.text_size }}px;    
+    line-height: 1;
+  }
+@media only screen and (max-width: 768px){
+  .announcement-bar-content p {
+    font-size: {{ section.settings.text_size_m }}px;   
+  }
+  .ann_title{
+  font-size: {{- section.settings.ann_title_size_m -}}px;  
+}
+}
+{% if section.settings.sticky_top %}
+.apex-Announcement-sticky{
+  position: sticky;
+  top: {{ section.settings.top_px }}px;
+  z-index: 99999;
+}
+{% endif %}
+</style>
+
+{% if template.handle == 'apex-different-announcement' %}
+  <div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
+    <div class="announcement-container">
+      <div class="announcement-bar-content">
+        <strong class="ann_title" style=" ">
+          {{- section.settings.ann_title -}}
+        </strong>
+        {{ section.settings.text }}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if section.settings.enable_scroll_to_show %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const announcementBar = document.getElementById('announcement-bar');
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > {{ section.settings.px_to_show }}) {
+          announcementBar.style.display = 'block';
+        } else {
+          announcementBar.style.display = 'none';
+        }
+      });
+    });
+  </script>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "APEX Different Ann",  
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_scroll_to_show",
+      "label": "Scroll To Show Announcement",
+      "default": false
+    }, 
+    {
+      "type": "number",
+      "id": "px_to_show",
+      "label": "Set Px To Show",
+      "default": 500
+    },
+    {
+      "type": "number",
+      "id": "top_px",
+      "label": "Top Position",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_top",
+      "label": "Sticky Announcement",
+      "default": false
+    }, 
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },  
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding Top",
+      "default": 15,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding Bottom",
+      "default": 15,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "text",
+      "id": "ann_title",
+      "label": "Title",
+      "default": "LEI OF LOVE"
+    },
+    {
+      "type": "range",
+      "id": "ann_title_size",
+      "label": "Font Size",
+      "default": 16,
+      "min": 10,
+      "max": 40,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "ann_title_size_m",
+      "label": "Font Size (Mobile)",
+      "default": 16,
+      "min": 10,
+      "max": 40,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text Font Size",
+      "default": 16,
+      "min": 10,
+      "max": 30,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "text_size_m",
+      "label": "Text Font Size (Mobile)",
+      "default": 16,
+      "min": 10,
+      "max": 30,
+      "step": 1
+    } 
+  ],
+  "presets": [
+    {
+      "name": "APEX Different Ann",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
