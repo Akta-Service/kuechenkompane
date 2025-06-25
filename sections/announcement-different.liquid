@@ -43,7 +43,7 @@
 {% endif %}
 </style>
 
-{% if collection.handle == 'lagerumzug-sale' %}
+{% if collection.handle == section.settings.target_collection.handle %}
   <div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
     <div class="announcement-container">
       <div class="announcement-bar-content">
@@ -77,6 +77,12 @@
 {
   "name": "APEX Different Ann",  
   "settings": [
+    {
+      "type": "collection",
+      "id": "target_collection",
+      "label": "Show only on this collection"
+    },
+
     {
       "type": "checkbox",
       "id": "enable_scroll_to_show",

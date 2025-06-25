@@ -42,16 +42,21 @@
 }
 {% endif %}
 </style>
-<div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
-  <div class="announcement-container">
-    <div class="announcement-bar-content">
-      <strong class="ann_title" style=" ">
-        {{- section.settings.ann_title -}}
-      </strong>
-      {{ section.settings.text }}
+
+{%  unless collection.handle == section.settings.target_collection.handle  %}  
+  <div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
+    <div class="announcement-container">
+      <div class="announcement-bar-content">
+        <strong class="ann_title" style=" ">
+          {{- section.settings.ann_title -}}
+        </strong>
+        {{ section.settings.text }}
+      </div>
     </div>
   </div>
-</div>
+{% endunless %}
+
+
 {% if section.settings.enable_scroll_to_show %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -74,6 +79,11 @@
   "name": "APEX Announcement Sticky",
   "class": "apex-Announcement-sticky",
   "settings": [
+    {
+      "type": "collection",
+      "id": "target_collection",
+      "label": "Not Show on this collection"
+    },
     {
       "type": "checkbox",
       "id": "enable_scroll_to_show",
