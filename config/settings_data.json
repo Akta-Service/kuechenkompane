@@ -542,6 +542,7 @@
       ".m-section__subheading,.m-richtext__subtitle {font-weight: 500; font-size: 18px;}",
       "span.x-cart-info-rule {display: none;}",
       ".m-section__header {--m-section-header-spacing-bottom: 40px;}",
+      ".m-search-popup__result.m-scrollbar--vertical {position: relative; z-index: 100;}",
       ".m-button--link {--btn-link-border: 1px;}"
     ]
   }
