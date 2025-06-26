@@ -219,6 +219,41 @@
         "mb_show_language_switcher": true
       }
     },
+    "text_banner_bjwwcx": {
+      "type": "text-banner",
+      "blocks": {
+        "title_LchWnQ": {
+          "type": "title",
+          "settings": {
+            "title": "Text1"
+          }
+        },
+        "text_HehJ7h": {
+          "type": "text",
+          "settings": {
+            "text": "Text 2"
+          }
+        }
+      },
+      "block_order": [
+        "title_LchWnQ",
+        "text_HehJ7h"
+      ],
+      "name": "Apex Text Banner",
+      "settings": {
+        "color_scheme": "",
+        "pt": 39,
+        "pb": 15,
+        "mt": 49,
+        "mb": 50,
+        "pt_mobile": 65,
+        "pb_mobile": 65,
+        "mt_mobile": 0,
+        "mb_mobile": 0,
+        "heading_type": "mrk-h1",
+        "des_size": "p-medium"
+      }
+    },
     "announcement_bar_version_1_copy_GBrcEC": {
       "type": "announcement-bar-version-1-copy",
       "settings": {
@@ -245,6 +280,7 @@
     "apex_global_offer_timer_gMjjdD",
     "annoucement",
     "header",
+    "text_banner_bjwwcx",
     "announcement_bar_version_1_copy_GBrcEC"
   ]
 }
