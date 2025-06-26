@@ -139,7 +139,7 @@
         "metafiledheading_6PYiFr": {
           "type": "metafiledheading",
           "settings": {
-            "metafiledheading": "test {{ collection.metafields.custom.title.value }}"
+            "metafiledheading": "{{ collection.metafields.custom.text_sale_heading.value }}"
           }
         },
         "text_hKxngY": {
