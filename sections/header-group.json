@@ -225,13 +225,13 @@
         "title_LchWnQ": {
           "type": "title",
           "settings": {
-            "title": "Text1"
+            "title": "Lagerumzug-Sale"
           }
         },
         "text_HehJ7h": {
           "type": "text",
           "settings": {
-            "text": "Text 2"
+            "text": "Wir ziehen um – und jedes einzelne Produkt, das mitkommt, kostet uns doppelt. Deshalb geben wir dir jetzt bis zu 75 % Rabatt auf fast alles. Nur solange der Vorrat im alten Lager reicht."
           }
         }
       },
@@ -248,9 +248,9 @@
         "mb": 50,
         "pt_mobile": 65,
         "pb_mobile": 65,
-        "mt_mobile": 0,
-        "mb_mobile": 0,
-        "heading_type": "mrk-h1",
+        "mt_mobile": 46,
+        "mb_mobile": 42,
+        "heading_type": "mrk-h2",
         "des_size": "p-medium"
       }
     },
