@@ -51,6 +51,46 @@
         "name": "multi_line_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "announcement_bar_line_1",
+      "namespace": "custom",
+      "name": "Announcement bar Line 1",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "announcement_bar_line_2",
+      "namespace": "custom",
+      "name": "Announcement Bar Line 2",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "offer_text_heading",
+      "namespace": "custom",
+      "name": "Offer Text Heading",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "offer_text",
+      "namespace": "custom",
+      "name": "Offer Text ",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
     }
   ],
   "company": [],
