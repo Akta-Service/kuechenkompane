@@ -1,3 +1,5 @@
+
+
 <style>
   /* common css end  */
   .announcement-container {
@@ -42,8 +44,14 @@
 }
 {% endif %}
 </style>
-
+{% comment %} 
 {% if collection.handle == section.settings.target_collection.handle %}
+{% endif %} {% endcomment %}
+
+
+{%- assign templates = section.settings.show_on_templates | split: ',' -%}
+{%- assign current_template = template.name | strip -%}
+{%- if templates contains current_template -%}
   <div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
     <div class="announcement-container">
       <div class="announcement-bar-content">
@@ -54,7 +62,7 @@
       </div>
     </div>
   </div>
-{% endif %}
+{%- endif -%}
 
 {% if section.settings.enable_scroll_to_show %}
   <script>
@@ -78,9 +86,10 @@
   "name": "APEX Different Ann",  
   "settings": [
     {
-      "type": "collection",
-      "id": "target_collection",
-      "label": "Show only on this collection"
+      "type": "text",
+      "id": "show_on_templates",
+      "label": "Show on collection templates",
+      "info": "Enter template names separated by commas (e.g., collection.template1,collection.template2)"
     },
 
     {
