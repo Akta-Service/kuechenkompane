@@ -57,6 +57,21 @@
                 {{ block.settings.subheading }}
               </p>
             {% endif %}
+
+          {%- when 'metafiledheading' -%}
+            {%- if block.settings.subheading != blank -%}
+              <h2
+                class="m-richtext__title {{ block.settings.heading_size }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
+                {% if animated %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.subheading }}
+              </h2>
+            {% endif %}
+
           {%- when 'text' -%}
             {%- if block.settings.text != blank -%}
               <div
