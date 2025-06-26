@@ -42,9 +42,9 @@
   .text-banner-content p {    
     
   }
-  h3.text-banner-title.mb-0 {
+  /* h3.text-banner-title.mb-0 {
     margin-bottom: 0 !important;
-  }
+  } */
   @media only screen and (max-width: 749px) {
    
 
@@ -59,11 +59,11 @@
         {%- when 'title' -%}
           <style>
             .text-banner-title{
-              margin-bottom: {{ block.settings.mb }}px;
+              margin-bottom: {{ block.settings.mb }}px !important;
             }
             @media (max-width: 768px){
               .text-banner-title{
-                margin-bottom: {{ block.settings.mb_m }}px;
+                margin-bottom: {{ block.settings.mb_m }}px !important;
               }
             }
           </style>
@@ -71,11 +71,11 @@
         {%- when 'title_style' -%}
            <style>
             .text-banner-subtitle.style{
-              margin-bottom: {{ block.settings.mb }}px;
+              margin-bottom: {{ block.settings.mb }}px !important;
             }
             @media (max-width: 768px){
               .text-banner-subtitle.style{
-                margin-bottom: {{ block.settings.mb_m }}px;
+                margin-bottom: {{ block.settings.mb_m }}px !important;
               }
             }
           </style>
@@ -83,11 +83,11 @@
         {%- when 'text' -%}
            <style>
             .text-banner-text{
-              margin-bottom: {{ block.settings.mb }}px;
+              margin-bottom: {{ block.settings.mb }}px !important;
             }
             @media (max-width: 768px){
               .text-banner-text{
-                margin-bottom: {{ block.settings.mb_m }}px;
+                margin-bottom: {{ block.settings.mb_m }}px !important;
               }
             }
           </style>
