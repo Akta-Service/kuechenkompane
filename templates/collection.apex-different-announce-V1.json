@@ -315,6 +315,17 @@
         "custom_class": "",
         "animations": "inherit"
       }
+    },
+    "breadcrumb_K6UFk4": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
     }
   },
   "order": [
@@ -323,6 +334,7 @@
     "category_selection_iMrTd6",
     "rich_text_bXpWiG",
     "main",
+    "breadcrumb_K6UFk4",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
     "collection_description_tUMerW",
