@@ -133,6 +133,38 @@
         "c_n_text": "p-medium"
       }
     },
+    "rich_text_bXpWiG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_C8Mgq4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Text 3",
+            "heading_size": "h2"
+          }
+        },
+        "text_hKxngY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Text 4</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_C8Mgq4",
+        "text_hKxngY"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "main": {
       "type": "apex-theme-collectiont-product",
       "custom_css": [
@@ -290,6 +322,7 @@
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
+    "rich_text_bXpWiG",
     "main",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
