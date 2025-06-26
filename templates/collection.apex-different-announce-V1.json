@@ -203,10 +203,10 @@
         "item_JVyQJ8": {
           "type": "item",
           "settings": {
-            "usp_icon": "shopify://shop_images/GEZ100.png",
-            "usp_title": "Geld-zurück-Garantie",
+            "usp_icon": "shopify://shop_images/cash-bag_10424649_1_6f03ca56-e0a1-4b7b-8008-ec1a63b5af92.png",
+            "usp_title": "100 Tage-geld-zurück Garantie",
             "title_size": 18,
-            "usp_info": "100 Tage Rückgaberecht - ohne Risiko.",
+            "usp_info": "Wir sind von der Qualität unserer Produkte überzeugt und möchten sicherstellen, dass Du zu 100% zufrieden bist.",
             "info_size": 14,
             "divider": true
           }
@@ -214,10 +214,10 @@
         "item_BRBV37": {
           "type": "item",
           "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "usp_title": "Kostenloser Versand",
+            "usp_icon": "shopify://shop_images/diamond_11883313_1_86a3e418-ab84-4bbe-b7f2-ee26ffefe136.png",
+            "usp_title": "140,000+ zufriedene Kunden",
             "title_size": 18,
-            "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
+            "usp_info": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?",
             "info_size": 14,
             "divider": true
           }
@@ -225,10 +225,10 @@
         "item_RKRMEB": {
           "type": "item",
           "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "usp_title": "Schärfe Garantie",
+            "usp_icon": "shopify://shop_images/thumb-up_16346369_1_9ff3d3f8-3884-4825-96f5-2dbac0938adb.png",
+            "usp_title": "Geprüfte Qualität",
             "title_size": 18,
-            "usp_info": "Maximale Schärfe für müheloses Schneiden.",
+            "usp_info": "Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit.",
             "info_size": 14,
             "divider": false
           }
@@ -315,17 +315,6 @@
         "custom_class": "",
         "animations": "inherit"
       }
-    },
-    "breadcrumb_K6UFk4": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
     }
   },
   "order": [
@@ -334,7 +323,6 @@
     "category_selection_iMrTd6",
     "rich_text_bXpWiG",
     "main",
-    "breadcrumb_K6UFk4",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
     "collection_description_tUMerW",
