@@ -50,9 +50,21 @@
     },
     "announcement_different_rRyBgT": {
       "type": "announcement-different",
+      "blocks": {
+        "announcement_JmM3Kw": {
+          "type": "announcement",
+          "settings": {
+            "collection": "bbq-outdoor",
+            "ann_title": "Special Offer",
+            "text": "<p>Exclusive deal for this collection!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_JmM3Kw"
+      ],
       "name": "APEX Different Ann",
       "settings": {
-        "target_collection": [],
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
@@ -60,10 +72,8 @@
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
-        "ann_title": "🛑 Letzte Chance: Diese Serie wird eingestellt",
         "ann_title_size": 16,
         "ann_title_size_m": 16,
-        "text": "<p>Nur jetzt: bis zu 75 % auf unsere auslaufenden Top-Sets</p>",
         "text_size": 16,
         "text_size_m": 16
       }
