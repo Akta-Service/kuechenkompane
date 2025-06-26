@@ -42,26 +42,70 @@
   .text-banner-content p {    
     
   }
-  h3.text-banner-title.mb-0 {
+  /* h3.text-banner-title.mb-0 {
     margin-bottom: 0 !important;
-  }
-  @media only screen and (max-width: 749px) {
-   
+  } */
+  @media only screen and (max-width: 749px) {  
 
     
-    
   }
+
+  {% for block in section.blocks %}
+      {%- case block.type -%}
+        {%- when 'title' -%}
+         
+          .text-banner-title{
+            margin-bottom: {{ block.settings.mb }}px !important;
+          }
+          @media (max-width: 768px){
+            .text-banner-title{
+              margin-bottom: {{ block.settings.mb_m }}px !important;
+            }
+          }
+
+        {%- when 'title_style' -%}
+
+          .text-banner-subtitle.style{
+            margin-bottom: {{ block.settings.mb }}px !important;
+          }
+          @media (max-width: 768px){
+            .text-banner-subtitle.style{
+              margin-bottom: {{ block.settings.mb_m }}px !important;
+            }
+          }
+
+        {%- when 'text' -%}          
+         
+          .text-banner-text{
+            margin-bottom: {{ block.settings.mb }}px !important;
+          }
+          @media (max-width: 768px){
+            .text-banner-text{
+              margin-bottom: {{ block.settings.mb_m }}px !important;
+            }
+          }
+        
+    {%- endcase -%}
+  {% endfor %}
+
+
+
 </style>
 <div class="text-banner-area m-color-{{ section.settings.color_scheme }}">
   <div class="text-banner-content">
     {% for block in section.blocks %}
       {%- case block.type -%}
         {%- when 'title' -%}
+          
           <h3 class="text-banner-title mb-0 {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
-        {%- when 'title_style' -%}
+
+        {%- when 'title_style' -%}          
+          
           <h3 class="text-banner-subtitle style {{ section.settings.heading_type }}"><i>{{ block.settings.style_title }}</i></h3>
+
         {%- when 'text' -%}
-          <p class="{{ section.settings.des_size}}">
+
+          <p class="text-banner-text {{ section.settings.des_size}}">
             {{ block.settings.text }}
           </p>
       {%- endcase -%}
@@ -230,8 +274,29 @@
           "id": "title",
           "label": "Title",
           "default": "100% MONEY BACK"
+        },
+        {
+          "type": "range",
+          "id": "mb",
+          "label": "Margin Bottom",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mb_m",
+          "label": "Margin Bottom (Mobile)",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px"
         }
-      ]
+      ],
+      
     },
     {
       "type": "title_style",
@@ -242,6 +307,26 @@
           "id": "style_title",
           "label": "Styled Title",
           "default": "guarantee"
+        },
+        {
+          "type": "range",
+          "id": "mb",
+          "label": "Margin Bottom",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mb_m",
+          "label": "Margin Bottom (Mobile)",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px"
         }
       ]
     },
@@ -254,6 +339,26 @@
           "id": "text",
           "label": "Text",
           "default": "We offer a 100% match guarantee on all our products. If you are not satisfied, you will receive a full refund without any hassle."
+        },
+        {
+          "type": "range",
+          "id": "mb",
+          "label": "Margin Bottom",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mb_m",
+          "label": "Margin Bottom (Mobile)",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px"
         }
       ]
     }
