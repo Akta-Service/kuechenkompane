@@ -30,6 +30,7 @@
     },
     "announcement_bar_sticky_scroll_Bk3YD6": {
       "type": "announcement-bar-sticky-scroll",
+      "disabled": true,
       "name": "APEX Announcement Sticky",
       "settings": {
         "target_collection": "lagerumzug-sale",
@@ -60,10 +61,10 @@
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
-        "ann_title": "{{ section.settings.target_collection.metafields.custom.announcement_bar_line_1.value }}",
+        "ann_title": "Text 1",
         "ann_title_size": 16,
         "ann_title_size_m": 16,
-        "text": "<p>{{ section.settings.target_collection.metafields.custom.announcement_bar_line_2.value }}</p>",
+        "text": "<p>Text 2</p>",
         "text_size": 16,
         "text_size_m": 16
       }
