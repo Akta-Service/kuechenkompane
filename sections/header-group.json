@@ -61,10 +61,46 @@
             "ann_title": "💥 Großer Lagerschlussverkauf",
             "text": "<p> Alles um bis zu 75% reduziert – nur solange der Lagerbestand reicht</p>"
           }
+        },
+        "announcement_UjeB7H": {
+          "type": "announcement",
+          "settings": {
+            "collection": "letzte-chance-auslaufserie",
+            "ann_title": "🚨 Letzte Chance: Diese Serien kommen nie wieder",
+            "text": "<p>Bis zu 75 % auf die letzten Bestseller – nur solange Vorrat reicht</p>"
+          }
+        },
+        "announcement_FDAfCN": {
+          "type": "announcement",
+          "settings": {
+            "collection": "grossbestellung-storniert",
+            "ann_title": "❌ Großbestellung geplatzt – jetzt profitierst du",
+            "text": "<p>Bis zu 75% auf echte Bestseller</p>"
+          }
+        },
+        "announcement_QXQcLy": {
+          "type": "announcement",
+          "settings": {
+            "collection": "interner-deal",
+            "ann_title": "🤫 Interner Top-Deal - jetzt live für 48h",
+            "text": "<p>Bis zu 75% auf unser stärksten Bestseller</p>"
+          }
+        },
+        "announcement_pwen7A": {
+          "type": "announcement",
+          "settings": {
+            "collection": "",
+            "ann_title": "🚨 Letzte Tage vor der Preiserhöhung",
+            "text": "<p>Letzte Chance: Bis zu 75% Rabatt vor der Erhöhung</p>"
+          }
         }
       },
       "block_order": [
-        "announcement_JmM3Kw"
+        "announcement_JmM3Kw",
+        "announcement_UjeB7H",
+        "announcement_FDAfCN",
+        "announcement_QXQcLy",
+        "announcement_pwen7A"
       ],
       "name": "APEX Different Ann",
       "settings": {
