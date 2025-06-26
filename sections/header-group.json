@@ -96,6 +96,14 @@
             "ann_title": "🚨 Letzte Tage vor der Preiserhöhung",
             "text": "<p>Bis zu 75% Rabatt vor der Erhöhung</p>"
           }
+        },
+        "announcement_CCnrUw": {
+          "type": "announcement",
+          "settings": {
+            "collection": "topdeal24-angebot",
+            "ann_title": "Exklusiv für TopDeal24 Leser",
+            "text": "<p>Jetzt einmalig bis zu 75% Rabatt</p>"
+          }
         }
       },
       "block_order": [
@@ -103,7 +111,8 @@
         "announcement_UjeB7H",
         "announcement_FDAfCN",
         "announcement_QXQcLy",
-        "announcement_pwen7A"
+        "announcement_pwen7A",
+        "announcement_CCnrUw"
       ],
       "name": "APEX Different Ann",
       "settings": {
