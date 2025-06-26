@@ -53,7 +53,7 @@
       "type": "announcement-different",
       "name": "APEX Different Ann",
       "settings": {
-        "target_collection": "lagerumzug-sale",
+        "show_on_templates": "apex-different-announce-V2",
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
@@ -226,13 +226,17 @@
         "title_LchWnQ": {
           "type": "title",
           "settings": {
-            "title": "Lagerumzug-Sale"
+            "title": "Lagerumzug-Sale",
+            "mb": 0,
+            "mb_m": 0
           }
         },
         "text_HehJ7h": {
           "type": "text",
           "settings": {
-            "text": "Wir ziehen um – und jedes einzelne Produkt, das mitkommt, kostet uns doppelt. Deshalb geben wir dir jetzt bis zu 75 % Rabatt auf fast alles. Nur solange der Vorrat im alten Lager reicht."
+            "text": "Wir ziehen um – und jedes einzelne Produkt, das mitkommt, kostet uns doppelt. Deshalb geben wir dir jetzt bis zu 75 % Rabatt auf fast alles. Nur solange der Vorrat im alten Lager reicht.",
+            "mb": 0,
+            "mb_m": 0
           }
         }
       },
