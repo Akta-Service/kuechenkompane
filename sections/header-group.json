@@ -30,6 +30,7 @@
     },
     "announcement_bar_sticky_scroll_Bk3YD6": {
       "type": "announcement-bar-sticky-scroll",
+      "disabled": true,
       "name": "APEX Announcement Sticky",
       "settings": {
         "target_collections": [
