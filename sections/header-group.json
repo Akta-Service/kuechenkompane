@@ -32,6 +32,7 @@
       "type": "announcement-bar-sticky-scroll",
       "name": "APEX Announcement Sticky",
       "settings": {
+        "target_collection": "lagerumzug-sale",
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
@@ -39,10 +40,30 @@
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
-        "ann_title": "🔥Finaler Lagerausverkauf - keine Nachproduktion!🔥",
+        "ann_title": "Finaler Lagerausverkauf - keine Nachproduktion!",
         "ann_title_size": 16,
         "ann_title_size_m": 15,
         "text": "<p><a href=\"/collections/ausverkauf-final\" title=\"Ausverkauf final\">Nur</a> jetzt: 48h lang bis zu <strong>-75% auf Auslaufmodelle</strong></p>",
+        "text_size": 16,
+        "text_size_m": 16
+      }
+    },
+    "announcement_different_rRyBgT": {
+      "type": "announcement-different",
+      "name": "APEX Different Ann",
+      "settings": {
+        "target_collection": "lagerumzug-sale",
+        "enable_scroll_to_show": false,
+        "px_to_show": 500,
+        "top_px": 0,
+        "sticky_top": false,
+        "color_scheme": "dark",
+        "pt": 15,
+        "pb": 15,
+        "ann_title": "{{ section.settings.target_collection.metafields.custom.announcement_bar_line_1.value }}",
+        "ann_title_size": 16,
+        "ann_title_size_m": 16,
+        "text": "<p>{{ section.settings.target_collection.metafields.custom.announcement_bar_line_2.value }}</p>",
         "text_size": 16,
         "text_size_m": 16
       }
@@ -71,6 +92,7 @@
     },
     "apex_global_offer_timer_gMjjdD": {
       "type": "Apex-global-offer-timer",
+      "disabled": true,
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
@@ -82,7 +104,7 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "500",
-        "target_date": "2025-06-20",
+        "target_date": "2025-06-21",
         "target_time": "00:00:00"
       }
     },
@@ -197,6 +219,42 @@
         "mb_show_language_switcher": true
       }
     },
+    "text_banner_bjwwcx": {
+      "type": "text-banner",
+      "blocks": {
+        "title_LchWnQ": {
+          "type": "title",
+          "settings": {
+            "title": "Lagerumzug-Sale"
+          }
+        },
+        "text_HehJ7h": {
+          "type": "text",
+          "settings": {
+            "text": "Wir ziehen um – und jedes einzelne Produkt, das mitkommt, kostet uns doppelt. Deshalb geben wir dir jetzt bis zu 75 % Rabatt auf fast alles. Nur solange der Vorrat im alten Lager reicht."
+          }
+        }
+      },
+      "block_order": [
+        "title_LchWnQ",
+        "text_HehJ7h"
+      ],
+      "disabled": true,
+      "name": "Apex Text Banner",
+      "settings": {
+        "color_scheme": "",
+        "pt": 39,
+        "pb": 15,
+        "mt": 49,
+        "mb": 50,
+        "pt_mobile": 65,
+        "pb_mobile": 65,
+        "mt_mobile": 46,
+        "mb_mobile": 42,
+        "heading_type": "mrk-h2",
+        "des_size": "p-medium"
+      }
+    },
     "announcement_bar_version_1_copy_GBrcEC": {
       "type": "announcement-bar-version-1-copy",
       "settings": {
@@ -218,10 +276,12 @@
   "order": [
     "announcement_bar_version_1_rc6jDA",
     "announcement_bar_sticky_scroll_Bk3YD6",
+    "announcement_different_rRyBgT",
     "apex_timer_progress_yCDcUj",
     "apex_global_offer_timer_gMjjdD",
     "annoucement",
     "header",
+    "text_banner_bjwwcx",
     "announcement_bar_version_1_copy_GBrcEC"
   ]
 }
