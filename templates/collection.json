@@ -159,16 +159,6 @@
         "animations": "inherit"
       }
     },
-    "collection_description_KrcbiD": {
-      "type": "collection-description",
-      "settings": {
-        "collection_bg": "#f8f8f8",
-        "collection_pt": 30,
-        "collection_pb": 30,
-        "collection_pt_m": 30,
-        "collection_pb_m": 30
-      }
-    },
     "breadcrumb_yifnda": {
       "type": "breadcrumb",
       "name": "Breadcrumb",
@@ -179,6 +169,16 @@
         "hide_on_mb": false,
         "animations": "inherit"
       }
+    },
+    "collection_description_KrcbiD": {
+      "type": "collection-description",
+      "settings": {
+        "collection_bg": "#f8f8f8",
+        "collection_pt": 30,
+        "collection_pb": 30,
+        "collection_pt_m": 30,
+        "collection_pb_m": 30
+      }
     }
   },
   "order": [
@@ -187,7 +187,7 @@
     "main",
     "usp_list_nd6t8y",
     "promotion_banner_dgKacc",
-    "collection_description_KrcbiD",
-    "breadcrumb_yifnda"
+    "breadcrumb_yifnda",
+    "collection_description_KrcbiD"
   ]
 }
