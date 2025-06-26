@@ -24,6 +24,7 @@ class PredictiveSearch extends HTMLElement {
     this.searchPopupSearults = this.querySelector(".m-search-popup__result");
     this.popularSearches = this.querySelector("[data-popular-searches]");
     this.searchCount = this.querySelector("[data-search-count]");
+    this.wrapperArea = this.container.querySelector('.search--wrapper-area'); // ✅ Target content wrapper
 
     this.setupEventListeners();
   }
@@ -57,8 +58,13 @@ class PredictiveSearch extends HTMLElement {
 
     if (!searchTerm.length) {
       this.close(true);
+      // ✅ Show wrapper when input is empty
+      this.wrapperArea && this.wrapperArea.classList.remove('hide');
       return;
     }
+
+    // ✅ Hide wrapper when input has value (search starts)
+    this.wrapperArea && this.wrapperArea.classList.add('hide');
 
     this.getSearchResults(searchTerm);
   }
@@ -71,6 +77,8 @@ class PredictiveSearch extends HTMLElement {
     event.preventDefault();
     this.input.value = "";
     this.onChange();
+    // ✅ Show wrapper when cleared
+    this.wrapperArea && this.wrapperArea.classList.remove('hide');
   }
 
   getSearchResults(searchTerm) {
@@ -122,7 +130,7 @@ class PredictiveSearch extends HTMLElement {
     this.predictiveSearchResults.innerHTML = resultsMarkup;
     this.setAttribute("results", true);
     const searchItemsWrapper = this.querySelector("[data-search-items-wrapper]");
-    if (searchItemsWrapper.childElementCount > 0) {
+    if (searchItemsWrapper && searchItemsWrapper.childElementCount > 0) {
       this.renderSearchQueryAndMessage(true);
     } else {
       this.renderSearchQueryAndMessage(false);
@@ -146,9 +154,15 @@ class PredictiveSearch extends HTMLElement {
     if (results) {
       searchMessage.textContent = resultsTitle;
       moreResultIcon.classList.add("m:hidden");
+
+      // ✅ Hide wrapper when results exist
+      this.wrapperArea && this.wrapperArea.classList.add('hide');
     } else {
       searchMessage.textContent = searchMessage.dataset.resultsTitle;
       moreResultIcon.classList.remove("m:hidden");
+
+      // ✅ Show wrapper when no results
+      this.wrapperArea && this.wrapperArea.classList.remove('hide');
     }
   }
 
@@ -174,6 +188,9 @@ class PredictiveSearch extends HTMLElement {
 
     this.popularSearches && this.popularSearches.classList.add("m:hidden");
     this.searchCount.classList.remove("m:hidden");
+
+    // ✅ Hide wrapper when open search
+    this.wrapperArea && this.wrapperArea.classList.add('hide');
   }
 
   close(clearSearchTerm = false) {
@@ -189,6 +206,9 @@ class PredictiveSearch extends HTMLElement {
     this.searchPopupSearults.classList.add("m:hidden");
     this.popularSearches && this.popularSearches.classList.remove("m:hidden");
     this.searchCount.classList.add("m:hidden");
+
+    // ✅ Show wrapper when close search
+    this.wrapperArea && this.wrapperArea.classList.remove('hide');
   }
 
   getResultsMaxHeight() {
