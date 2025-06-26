@@ -59,7 +59,7 @@
             {% endif %}
 
           {%- when 'metafiledheading' -%}
-            {%- if block.settings.subheading != blank -%}
+            {%- if block.settings.metafiledheading != blank -%}
               <h2
                 class="m-richtext__title {{ block.settings.heading_size }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
                 {% if animated %}
