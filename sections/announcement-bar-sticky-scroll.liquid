@@ -43,7 +43,14 @@
 {% endif %}
 </style>
 
-{%  unless collection.handle == section.settings.target_collection.handle  %}  
+{% assign hide_announcement = false %}
+{% for coll in section.settings.target_collections %}
+  {% if collection.handle == coll.handle %}
+    {% assign hide_announcement = true %}
+  {% endif %}
+{% endfor %}
+
+{% unless hide_announcement %}
   <div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
     <div class="announcement-container">
       <div class="announcement-bar-content">
@@ -80,9 +87,9 @@
   "class": "apex-Announcement-sticky",
   "settings": [
     {
-      "type": "collection",
-      "id": "target_collection",
-      "label": "Not Show on this collection"
+      "type": "collection_list",
+      "id": "target_collections",
+      "label": "Hide on these collections"
     },
     {
       "type": "checkbox",
