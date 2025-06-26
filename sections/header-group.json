@@ -30,10 +30,9 @@
     },
     "announcement_bar_sticky_scroll_Bk3YD6": {
       "type": "announcement-bar-sticky-scroll",
-      "disabled": true,
       "name": "APEX Announcement Sticky",
       "settings": {
-        "target_collection": "lagerumzug-sale",
+        "target_collections": [],
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
@@ -53,7 +52,7 @@
       "type": "announcement-different",
       "name": "APEX Different Ann",
       "settings": {
-        "show_on_templates": "apex-different-announce-V2",
+        "target_collection": [],
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
