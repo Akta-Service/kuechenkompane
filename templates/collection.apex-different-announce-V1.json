@@ -139,14 +139,14 @@
         "heading_C8Mgq4": {
           "type": "heading",
           "settings": {
-            "heading": "Umladen kostet uns – du bekommst den Rabatt",
-            "heading_size": "h2"
+            "heading": "",
+            "heading_size": "h3"
           }
         },
         "text_hKxngY": {
           "type": "text",
           "settings": {
-            "text": "<p>Unser Lager zieht um – und jedes einzelne Messer, das mitkommt, kostet uns bares Geld.<br/>Deshalb geben wir dir lieber jetzt <strong>bis zu 75 % Rabatt</strong>, statt später draufzuzahlen.<br/>Sets, Blöcke, Zubehör – alles reduziert, solange es noch im alten Lager liegt.<br/>Je mehr du uns abnimmst, desto weniger wir schleppen. Deal?</p>"
+            "text": "<p>{{ collection.metafields.custom.offer_text | metafield_tag }}</p>"
           }
         }
       },
