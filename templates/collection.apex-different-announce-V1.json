@@ -142,19 +142,6 @@
             "metafiledheading": "{{ collection.metafields.custom.text_sale_heading.value }}"
           }
         },
-        "subheading_RTHKW7": {
-          "type": "subheading",
-          "settings": {
-            "subheading": ""
-          }
-        },
-        "heading_C8Mgq4": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h3"
-          }
-        },
         "text_hKxngY": {
           "type": "text",
           "settings": {
@@ -164,8 +151,6 @@
       },
       "block_order": [
         "metafiledheading_6PYiFr",
-        "subheading_RTHKW7",
-        "heading_C8Mgq4",
         "text_hKxngY"
       ],
       "name": "Rich text",
