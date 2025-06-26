@@ -57,13 +57,13 @@
         "px_to_show": 500,
         "top_px": 0,
         "sticky_top": false,
-        "color_scheme": "",
+        "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
-        "ann_title": "LEI OF LOVE",
+        "ann_title": "{{ section.settings.target_collection.metafields.custom.announcement_bar_line_1.value }}",
         "ann_title_size": 16,
         "ann_title_size_m": 16,
-        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
+        "text": "<p>{{ section.settings.target_collection.metafields.custom.announcement_bar_line_2.value }}</p>",
         "text_size": 16,
         "text_size_m": 16
       }
