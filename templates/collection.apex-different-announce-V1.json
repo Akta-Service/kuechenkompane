@@ -247,38 +247,37 @@
         "horizontal_padding_mobile": 15
       }
     },
-    "branded_image_version_ffF3PX": {
-      "type": "branded-image-version-",
+    "promotion_banner_wLVh66": {
+      "type": "promotion-banner",
       "blocks": {
-        "title_AgFUHf": {
-          "type": "title",
+        "promotion_Gx7bfW": {
+          "type": "promotion",
           "settings": {
-            "title": "Kochen wie ein Profi"
-          }
-        },
-        "sub_title_GcWkqp": {
-          "type": "sub_title",
-          "settings": {
-            "text": "Von messerscharfer Präzision bis hin zu perfektem Kochgeschirr.\n<br>Unsere Produkte sind für höchste Ansprüche gemacht."
+            "subheading": "JETZT ODER NIE",
+            "heading": "-75%",
+            "text_alignment": "center"
           }
         }
       },
       "block_order": [
-        "title_AgFUHf",
-        "sub_title_GcWkqp"
+        "promotion_Gx7bfW"
       ],
+      "name": "Promotion banner",
       "settings": {
-        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
-        "shape_color": "#deceba",
-        "margin_top": 20,
-        "margin_bottom": 0,
-        "mobile_margin_top": 10,
-        "mobile_margin_bottom": 0,
-        "bg_img": "shopify://shop_images/IMG_9602_V6.jpg",
-        "heading_type": "mrk-h1",
-        "des_size": "p-medium",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "Entdecke unsere Auslaufmodelle",
+        "heading_size": "h2",
+        "text": "<p>Noch nicht das richtige gefunden? Entdecke jetzt unsere Auslaufmodelle bevor sie alle weg sind. Für die nächsten 48h bis zu -75% Rabatt.</p>",
+        "content_alignment": "left",
+        "banner_url": "",
+        "button_label": "",
         "button_style": "m-button--primary",
-        "button_size": ""
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
       }
     },
     "collection_description_tUMerW": {
@@ -324,7 +323,7 @@
     "rich_text_bXpWiG",
     "main",
     "usp_list_xQHfgQ",
-    "branded_image_version_ffF3PX",
+    "promotion_banner_wLVh66",
     "collection_description_tUMerW",
     "rich_text_ijBTPA"
   ]
