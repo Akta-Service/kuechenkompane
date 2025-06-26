@@ -139,14 +139,14 @@
         "heading_C8Mgq4": {
           "type": "heading",
           "settings": {
-            "heading": "Lager leer räumen – bevor wir’s schleppen",
+            "heading": "Umladen kostet uns – du bekommst den Rabatt",
             "heading_size": "h2"
           }
         },
         "text_hKxngY": {
           "type": "text",
           "settings": {
-            "text": "<p>Bevor wir jedes Messer durchs neue Lager wuchten, hauen wir’s lieber raus.<br/><strong>Bis zu 75 % Rabatt</strong> auf Sets, Blöcke und Zubehör – nur solange der Bestand im alten Lager reicht.<br/>Erst räumen, dann umziehen. Jetzt ist deine Chance.</p>"
+            "text": "<p>Unser Lager zieht um – und jedes einzelne Messer, das mitkommt, kostet uns bares Geld.<br/>Deshalb geben wir dir lieber jetzt <strong>bis zu 75 % Rabatt</strong>, statt später draufzuzahlen.<br/>Sets, Blöcke, Zubehör – alles reduziert, solange es noch im alten Lager liegt.<br/>Je mehr du uns abnimmst, desto weniger wir schleppen. Deal?</p>"
           }
         }
       },
@@ -159,8 +159,8 @@
         "container": "container",
         "color_scheme": "",
         "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
+        "padding_top": 20,
+        "padding_bottom": 0,
         "custom_class": "",
         "animations": "inherit"
       }
