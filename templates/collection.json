@@ -48,6 +48,48 @@
         "target_time": "00:00:00"
       }
     },
+    "rich_text_WWJFVX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BGfgq3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h2"
+          }
+        },
+        "text_fdMq4J": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post.<br/> Add details on availability, style, or even provide a review.{{ collection.metafields.custom.offer_text | metafield_tag }}</p>"
+          }
+        },
+        "button_nRqDqd": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Collection",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_BGfgq3",
+        "text_fdMq4J",
+        "button_nRqDqd"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "main": {
       "type": "main-collection-product-grid",
       "custom_css": [
@@ -76,36 +118,14 @@
         "overlay_opacity": 0
       }
     },
-    "promotion_banner_dgKacc": {
-      "type": "promotion-banner",
-      "blocks": {
-        "promotion_NBbJbf": {
-          "type": "promotion",
-          "settings": {
-            "subheading": "JETZT ODER NIE",
-            "heading": "-75%",
-            "text_alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "promotion_NBbJbf"
-      ],
-      "name": "Promotion banner",
+    "breadcrumb_F6nG4x": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
       "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "heading": "Entdecke unsere Auslaufmodelle",
-        "heading_size": "h2",
-        "text": "<p>Noch nicht das richtige gefunden? Entdecke jetzt unsere Auslaufmodelle bevor sie alle weg sind. Für die nächsten 48h bis zu -75% Rabatt.</p>",
-        "content_alignment": "left",
-        "banner_url": "shopify://collections/ausverkauf",
-        "button_label": "Ausverkauf entdecken",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "padding_top": 70,
-        "padding_bottom": 70,
-        "custom_class": "",
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
         "animations": "inherit"
       }
     },
@@ -159,6 +179,39 @@
         "horizontal_padding_mobile": 15
       }
     },
+    "promotion_banner_dgKacc": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_NBbJbf": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "JETZT ODER NIE",
+            "heading": "-75%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_NBbJbf"
+      ],
+      "name": "Promotion banner",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "Entdecke unsere Auslaufmodelle",
+        "heading_size": "h2",
+        "text": "<p>Noch nicht das richtige gefunden? Entdecke jetzt unsere Auslaufmodelle bevor sie alle weg sind. Für die nächsten 48h bis zu -75% Rabatt.</p>",
+        "content_alignment": "left",
+        "banner_url": "shopify://collections/ausverkauf",
+        "button_label": "Ausverkauf entdecken",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "collection_description_KrcbiD": {
       "type": "collection-description",
       "settings": {
@@ -168,22 +221,12 @@
         "collection_pt_m": 30,
         "collection_pb_m": 30
       }
-    },
-    "breadcrumb_F6nG4x": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
     }
   },
   "order": [
     "collection-header",
     "apex_timer_9PnBtn",
+    "rich_text_WWJFVX",
     "main",
     "breadcrumb_F6nG4x",
     "usp_list_nd6t8y",
