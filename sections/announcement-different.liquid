@@ -43,7 +43,14 @@
 {% endif %}
 </style>
 
-{% if collection.handle == section.settings.target_collection.handle %}
+{% assign show_announcement = false %}
+{% for coll in section.settings.target_collection %}
+  {% if coll.handle == collection.handle %}
+    {% assign show_announcement = true %}
+  {% endif %}
+{% endfor %}
+
+{% if show_announcement %}
   <div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
     <div class="announcement-container">
       <div class="announcement-bar-content">
