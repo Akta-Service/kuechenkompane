@@ -30,17 +30,12 @@
   {% endif %}
 >
   <head>
-
-
-
-    
-
     {% comment %} pass ptotected collection js  {% endcomment %}
     {% comment %} pass ptotected collection js  {% endcomment %}
     {% comment %} pass ptotected collection js  {% endcomment %}
     {% comment %} pass ptotected collection js  {% endcomment %}
-    
-      <script>
+
+    <script>
         (function () {
           const correctPassword = "{{ settings.password | escape }}";
           const collectionHandle = "{{ settings.collection_handle }}";
@@ -92,17 +87,10 @@
             window.checkPassword = checkPassword;
           });
         })();
-      </script>
-      
+    </script>
+
     {% comment %} pass ptotected collection js end {% endcomment %}
 
-
-
-
-
-
-
-    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
@@ -167,7 +155,6 @@
       </style>
     {% endcomment %}
     <style>
-
       :root {
 
         --mrk-h1-color: {{ settings.h1_color }} !important;
@@ -326,87 +313,91 @@
     </style>
 
     <style>
-      /* Base Styles (Default: Desktop) */
-      .p-xl, .p-xl p {
-        font-weight: {{ settings.p_xl_font_weight }};
-        font-size: {{ settings.p_xl_size_desktop }}px;
-        line-height: {{ settings.p_xl_line_height }};
+            /* Base Styles (Default: Desktop) */
+            .p-xl, .p-xl p {
+              font-weight: {{ settings.p_xl_font_weight }};
+              font-size: {{ settings.p_xl_size_desktop }}px;
+              line-height: {{ settings.p_xl_line_height }};
 
+            }
+
+            .p-large,  .p-large p  {
+              font-weight: {{ settings.p_large_font_weight }};
+              font-size: {{ settings.p_large_size_desktop }}px;
+              line-height: {{ settings.p_large_line_height }};
+
+            }
+
+            .p-medium,  .p-medium p  {
+              font-weight: {{ settings.p_medium_font_weight }};
+              font-size: {{ settings.p_medium_size_desktop }}px;
+              line-height: {{ settings.p_medium_line_height }};
+            }
+
+            .p-small, .p-small p {
+              font-weight: {{ settings.p_small_font_weight }};
+              font-size: {{ settings.p_small_size_desktop }}px;
+              line-height: {{ settings.p_small_line_height }};
+            }
+
+            .p-x-small,  .p-x-small p {
+              font-weight: {{ settings.p_xs_font_weight }};
+              font-size: {{ settings.p_xs_size_desktop }}px;
+              line-height: {{ settings.p_xs_line_height }};
+            }
+
+            /* Responsive: Laptop */
+            @media (max-width: 1024px) {
+              .p-xl, .p-xl p {
+                font-size: {{ settings.p_xl_size_laptop }}px;
+
+              }
+              .p-large, .p-large p {
+                font-size: {{ settings.p_large_size_laptop }}px;
+
+              }
+              .p-medium, .p-medium p {
+                font-size: {{ settings.p_medium_size_laptop }}px;
+
+              }
+              .p-small, .p-small p {
+                font-size: {{ settings.p_small_size_laptop }}px;
+
+              }
+              .p-x-small, .p-x-small p {
+                font-size: {{ settings.p_xs_size_laptop }}px;
+
+              }
+            }
+
+            /* Responsive: Mobile */
+            @media (max-width: 767px) {
+              .p-xl {
+                font-size: {{ settings.p_xl_size_mobile }}px;
+
+              }
+              .p-large {
+                font-size: {{ settings.p_large_size_mobile }}px;
+
+              }
+              .p-medium {
+                font-size: {{ settings.p_medium_size_mobile }}px;
+
+              }
+              .p-small {
+                font-size: {{ settings.p_small_size_mobile }}px;
+
+              }
+              .p-x-small {
+                font-size: {{ settings.p_xs_size_mobile }}px;
+
+              }
+              .m-search-popup__result.m-scrollbar--vertical {
+        position: relative;
+        z-index: 100;
       }
-
-      .p-large,  .p-large p  {
-        font-weight: {{ settings.p_large_font_weight }};
-        font-size: {{ settings.p_large_size_desktop }}px;
-        line-height: {{ settings.p_large_line_height }};
-
-      }
-
-      .p-medium,  .p-medium p  {
-        font-weight: {{ settings.p_medium_font_weight }};
-        font-size: {{ settings.p_medium_size_desktop }}px;
-        line-height: {{ settings.p_medium_line_height }};
-      }
-
-      .p-small, .p-small p {
-        font-weight: {{ settings.p_small_font_weight }};
-        font-size: {{ settings.p_small_size_desktop }}px;
-        line-height: {{ settings.p_small_line_height }};
-      }
-
-      .p-x-small,  .p-x-small p {
-        font-weight: {{ settings.p_xs_font_weight }};
-        font-size: {{ settings.p_xs_size_desktop }}px;
-        line-height: {{ settings.p_xs_line_height }};
-      }
-
-      /* Responsive: Laptop */
-      @media (max-width: 1024px) {
-        .p-xl, .p-xl p {
-          font-size: {{ settings.p_xl_size_laptop }}px;
-
-        }
-        .p-large, .p-large p {
-          font-size: {{ settings.p_large_size_laptop }}px;
-
-        }
-        .p-medium, .p-medium p {
-          font-size: {{ settings.p_medium_size_laptop }}px;
-
-        }
-        .p-small, .p-small p {
-          font-size: {{ settings.p_small_size_laptop }}px;
-
-        }
-        .p-x-small, .p-x-small p {
-          font-size: {{ settings.p_xs_size_laptop }}px;
-
-        }
-      }
-
-      /* Responsive: Mobile */
-      @media (max-width: 767px) {
-        .p-xl {
-          font-size: {{ settings.p_xl_size_mobile }}px;
-
-        }
-        .p-large {
-          font-size: {{ settings.p_large_size_mobile }}px;
-
-        }
-        .p-medium {
-          font-size: {{ settings.p_medium_size_mobile }}px;
-
-        }
-        .p-small {
-          font-size: {{ settings.p_small_size_mobile }}px;
-
-        }
-        .p-x-small {
-          font-size: {{ settings.p_xs_size_mobile }}px;
-
-        }
-      }
-    </style> 
+            }
+    </style>
 
     <script>
       (function() {
@@ -458,24 +449,10 @@
     ></script>
     <!-- End cookieyes banner -->
 
-    
-  
+    {%- render 'mobile-menu' -%}
 
-
-{%- render 'mobile-menu' -%}
-
-
-
-
-
-
-
-
-
-
-
-{% include 'stack-discounts-script' %}
-</head>
+    {% include 'stack-discounts-script' %}
+  </head>
 
   <body
     id="m-theme"
@@ -554,32 +531,49 @@
       {% render 'cart-drawer' %}
     {%- endif -%}
 
-{%- comment -%} ADCELL TRACKING SCRIPTS {%- endcomment -%}
-    
-{% if template == 'index' %}
-  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=track&pid=10239&type=startpage" async></script>
-{% endif %}
+    {%- comment -%} ADCELL TRACKING SCRIPTS {%- endcomment -%}
 
-{% if template contains 'product' and product %}
-  <!-- Produktseite -->
-  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=product&pid=10239&productId={{ product.id }}&productName={{ product.title | url_encode }}&categoryId={{ product.collections.first.id }}" async></script>
-{% endif %}
+    {% if template == 'index' %}
+      <script
+        type="text/javascript"
+        src="https://t.adcell.com/js/inlineretarget.js?method=track&pid=10239&type=startpage"
+        async
+      ></script>
+    {% endif %}
 
-{%- if template contains 'collection' and collection -%}
-  <!-- Kategorieseite -->
-  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=category&pid=10239&categoryName={{ collection.title | url_encode }}&categoryId={{ collection.id }}" async></script>
-{%- endif -%}
+    {% if template contains 'product' and product %}
+      <!-- Produktseite -->
+      <script
+        type="text/javascript"
+        src="https://t.adcell.com/js/inlineretarget.js?method=product&pid=10239&productId={{ product.id }}&productName={{ product.title | url_encode }}&categoryId={{ product.collections.first.id }}"
+        async
+      ></script>
+    {% endif %}
 
-{%- if template contains 'search' and search.terms -%}
-  <!-- Suchergebnisse -->
-  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=search&pid=10239&search={{ search.terms | url_encode }}"></script>
-{%- endif -%}
+    {%- if template contains 'collection' and collection -%}
+      <!-- Kategorieseite -->
+      <script
+        type="text/javascript"
+        src="https://t.adcell.com/js/inlineretarget.js?method=category&pid=10239&categoryName={{ collection.title | url_encode }}&categoryId={{ collection.id }}"
+        async
+      ></script>
+    {%- endif -%}
 
-{% if template contains 'cart' %}
-  <!-- Warenkorb -->
-  <script type="text/javascript" src="https://t.adcell.com/js/inlineretarget.js?method=basket&pid=10239&basketProductCount={{ cart.item_count }}&basketTotal={{ cart.total_price | money_without_currency }}" async></script>
-{% endif %}
+    {%- if template contains 'search' and search.terms -%}
+      <!-- Suchergebnisse -->
+      <script
+        type="text/javascript"
+        src="https://t.adcell.com/js/inlineretarget.js?method=search&pid=10239&search={{ search.terms | url_encode }}"
+      ></script>
+    {%- endif -%}
 
-    
+    {% if template contains 'cart' %}
+      <!-- Warenkorb -->
+      <script
+        type="text/javascript"
+        src="https://t.adcell.com/js/inlineretarget.js?method=basket&pid=10239&basketProductCount={{ cart.item_count }}&basketTotal={{ cart.total_price | money_without_currency }}"
+        async
+      ></script>
+    {% endif %}
   </body>
 </html>

@@ -259,7 +259,7 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "{{ product.metafields.custom.df_type.value }}",
+        "title": "{{ product.metafields.custom.product_feature_list | metafield_text }}",
         "heading_type": "mrk-h3",
         "description": "{{ product.description }}",
         "mt": 30,
@@ -588,7 +588,7 @@
         "feature_center_image_HRH7Jm": {
           "type": "feature_center_image",
           "settings": {
-            "center_image": "shopify://shop_images/Vivi-Water-Orange-Zitrone-Basilikum_1_-_Kopie_f1027ff5-29a0-47bd-9044-5d46ca93e7af.jpg"
+            "center_image": "shopify://shop_images/All_Flavors_jpg_V1_1_1.jpg"
           }
         },
         "feature_item_right_yQLHrE": {

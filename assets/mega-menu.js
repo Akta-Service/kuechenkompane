@@ -34,28 +34,28 @@ class Megamenu {
     MinimogTheme.headerSliders = this.sliders;
   }
 
-  // init() {
-  //   this.domNodes.hamburgerButtons.addEventListener("click", (e) => {
-  //     if (this.domNodes.hamburgerButtons.classList.contains("active")) {
-  //       this.closeMenu();
-  //     } else {
-  //       this.openMenu();
-  //     }
-  //     this.domNodes.hamburgerButtons.classList.toggle("active");
-  //   });
-  //   this.domNodes.backDrop.addEventListener("click", (e) => {
-  //     this.closeMenu();
-  //   });
-  //   this.initMobileMegaMenu();
-  //   this.initDesktopMegaMenu();
+  init() {
+    this.domNodes.hamburgerButtons.addEventListener("click", (e) => {
+      if (this.domNodes.hamburgerButtons.classList.contains("active")) {
+        this.closeMenu();
+      } else {
+        this.openMenu();
+      }
+      this.domNodes.hamburgerButtons.classList.toggle("active");
+    });
+    this.domNodes.backDrop.addEventListener("click", (e) => {
+      this.closeMenu();
+    });
+    this.initMobileMegaMenu();
+    this.initDesktopMegaMenu();
 
-  //   MinimogEvents.subscribe(MinimogTheme.pubSubEvents.openCartDrawer, () => {
-  //     this.open && this.closeMenu();
-  //   });
-  //   MinimogEvents.subscribe(MinimogTheme.pubSubEvents.openSearchPopup, () => {
-  //     this.open && this.closeMenu();
-  //   });
-  // }
+    MinimogEvents.subscribe(MinimogTheme.pubSubEvents.openCartDrawer, () => {
+      this.open && this.closeMenu();
+    });
+    MinimogEvents.subscribe(MinimogTheme.pubSubEvents.openSearchPopup, () => {
+      this.open && this.closeMenu();
+    });
+  }
   initDesktopMegaMenu() {
     [...this.menuData].forEach((menuItem) => {
       const { item, subMenu } = menuItem;

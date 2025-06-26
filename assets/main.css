@@ -5722,6 +5722,7 @@ variant-picker
   border-radius: var(--inputs-radius);
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1000;
 }
 @media screen and (max-width: 1279px) {
   .m-search-popup__result {
