@@ -136,6 +136,12 @@
     "rich_text_bXpWiG": {
       "type": "rich-text",
       "blocks": {
+        "metafiledheading_6PYiFr": {
+          "type": "metafiledheading",
+          "settings": {
+            "metafiledheading": "{{ collection.metafields.custom.text_sale_heading.value }}"
+          }
+        },
         "subheading_RTHKW7": {
           "type": "subheading",
           "settings": {
@@ -157,6 +163,7 @@
         }
       },
       "block_order": [
+        "metafiledheading_6PYiFr",
         "subheading_RTHKW7",
         "heading_C8Mgq4",
         "text_hKxngY"
