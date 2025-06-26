@@ -53,7 +53,7 @@
       "type": "announcement-different",
       "name": "APEX Different Ann",
       "settings": {
-        "show_on_templates": "collection.apex-different-announce-V3",
+        "show_on_templates": "apex-different-announce-V3",
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
