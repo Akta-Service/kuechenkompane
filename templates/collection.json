@@ -48,38 +48,6 @@
         "target_time": "00:00:00"
       }
     },
-    "rich_text_WWJFVX": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_BGfgq3": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h2"
-          }
-        },
-        "text_fdMq4J": {
-          "type": "text",
-          "settings": {
-            "text": "<p>{{ collection.metafields.custom.offer_text | metafield_tag }}</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_BGfgq3",
-        "text_fdMq4J"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "main": {
       "type": "main-collection-product-grid",
       "custom_css": [
@@ -205,7 +173,6 @@
   "order": [
     "collection-header",
     "apex_timer_9PnBtn",
-    "rich_text_WWJFVX",
     "main",
     "usp_list_nd6t8y",
     "promotion_banner_dgKacc",
