@@ -53,14 +53,6 @@
     "announcement_different_rRyBgT": {
       "type": "announcement-different",
       "blocks": {
-        "announcement_qadVff": {
-          "type": "announcement",
-          "settings": {
-            "collection": "interner-deal",
-            "ann_title": "Interner Deal",
-            "text": "<p>Interner Deal</p>"
-          }
-        },
         "announcement_JmM3Kw": {
           "type": "announcement",
           "settings": {
@@ -71,7 +63,6 @@
         }
       },
       "block_order": [
-        "announcement_qadVff",
         "announcement_JmM3Kw"
       ],
       "name": "APEX Different Ann",
