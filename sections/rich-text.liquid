@@ -46,7 +46,7 @@
             {% endif %}
           {%- when 'subheading' -%}
             {%- if block.settings.subheading != blank -%}
-              <p
+              <h2
                 class="m-richtext__subtitle{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
                 {% if animated %}
                   data-cascade
@@ -55,7 +55,7 @@
                 {{ block.shopify_attributes }}
               >
                 {{ block.settings.subheading }}
-              </p>
+              </h1>
             {% endif %}
           {%- when 'text' -%}
             {%- if block.settings.text != blank -%}
