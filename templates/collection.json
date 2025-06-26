@@ -61,7 +61,7 @@
         "text_fdMq4J": {
           "type": "text",
           "settings": {
-            "text": ""
+            "text": "<p>{{ collection.metafields.custom.offer_text | metafield_tag }}</p>"
           }
         }
       },
