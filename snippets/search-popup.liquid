@@ -30,6 +30,14 @@
   .search-close-button{
     display: flex;      
   }
+  .m-search-popup--header h3 {    
+    display: none;
+  }
+  .m-search-popup--header [data-close-search] {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 </style>
 
@@ -44,7 +52,7 @@
   style="visibility: hidden;"
 >
 
-<button data-close-search class="search-close-button">&times;</button>
+{% comment %} <button data-close-search class="search-close-button">&times;</button> {% endcomment %}
 
 
   <div class="m-search-popup--wrapper m-gradient m-color-{{ settings.drawer_popup_color_scheme }}" data-search-container>
@@ -56,7 +64,7 @@
       >
     {%- endif -%}
       <div class="container-fluid">
-          <div class="m-search-popup--header m:flex m:justify-between m:items-center md:m:hidden">
+          <div class="m-search-popup--header m:flex m:justify-between m:items-center">
             <h3 class="m:text-base">{{ 'general.search.title' | t }}</h3>
             <button data-close-search aria-label="Close">
               <svg class="m-svg-icon--medium" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
