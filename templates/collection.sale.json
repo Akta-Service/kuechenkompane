@@ -29,6 +29,17 @@
         "enable_bg_zoom_effect": true
       }
     },
+    "breadcrumb_mkkDYm": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "apex_timer_9PnBtn": {
       "type": "Apex-timer",
       "disabled": true,
@@ -275,26 +286,15 @@
         "collection_pt_m": 30,
         "collection_pb_m": 30
       }
-    },
-    "breadcrumb_mkkDYm": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
     }
   },
   "order": [
     "collection-header",
+    "breadcrumb_mkkDYm",
     "apex_timer_9PnBtn",
     "category_selection_iMrTd6",
     "main",
     "apex_theme_collectiont_product_FHQXyw",
-    "breadcrumb_mkkDYm",
     "promotion_banner_dgKacc",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"
