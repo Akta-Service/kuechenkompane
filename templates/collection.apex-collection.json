@@ -9,6 +9,17 @@
  */
 {
   "sections": {
+    "breadcrumb_bEhLYx": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -165,17 +176,6 @@
         "overlay_opacity": 0.1
       }
     },
-    "breadcrumb_bEhLYx": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
     "usp_list_xQHfgQ": {
       "type": "usp-list",
       "blocks": {
@@ -297,11 +297,11 @@
     }
   },
   "order": [
+    "breadcrumb_bEhLYx",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
     "main",
-    "breadcrumb_bEhLYx",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
     "collection_description_tUMerW",
