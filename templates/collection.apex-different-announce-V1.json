@@ -9,17 +9,6 @@
  */
 {
   "sections": {
-    "breadcrumb_LGp7Tz": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -328,7 +317,6 @@
     }
   },
   "order": [
-    "breadcrumb_LGp7Tz",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
