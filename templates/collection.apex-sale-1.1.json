@@ -14,6 +14,7 @@
       "disabled": true,
       "name": "APEX Announcement Sticky",
       "settings": {
+        "target_collections": [],
         "enable_scroll_to_show": true,
         "px_to_show": 200,
         "top_px": 0,
@@ -155,7 +156,7 @@
         "c_n_text": "p-medium"
       }
     },
-    "breadcrumb_fjiNLC": {
+    "breadcrumb_bLpHxJ": {
       "type": "breadcrumb",
       "name": "Breadcrumb",
       "settings": {
@@ -239,6 +240,17 @@
         "button_style": "m-button--primary",
         "button_size": "",
         "overlay_opacity": 0.1
+      }
+    },
+    "breadcrumb_fjiNLC": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
       }
     },
     "promotion_banner_dgKacc": {
@@ -340,6 +352,7 @@
     "collection-header",
     "apex_timer_9PnBtn",
     "category_selection_iMrTd6",
+    "breadcrumb_bLpHxJ",
     "main",
     "apex_theme_collectiont_product_h4QEfc",
     "breadcrumb_fjiNLC",
