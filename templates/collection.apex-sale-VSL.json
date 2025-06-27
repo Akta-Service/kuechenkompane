@@ -45,6 +45,17 @@
         "mb_mobile": 15
       }
     },
+    "breadcrumb_fjiNLC": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "product_explanation_video_ca4Wbj": {
       "type": "product-explanation-video",
       "blocks": {
@@ -103,6 +114,7 @@
       "disabled": true,
       "name": "APEX Announcement Sticky",
       "settings": {
+        "target_collections": [],
         "enable_scroll_to_show": true,
         "px_to_show": 200,
         "top_px": 0,
@@ -231,17 +243,6 @@
         "overlay_opacity": 0.1
       }
     },
-    "breadcrumb_fjiNLC": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
     "promotion_banner_dgKacc": {
       "type": "promotion-banner",
       "blocks": {
@@ -337,13 +338,13 @@
   },
   "order": [
     "apex_top_slider_cLWmNy",
+    "breadcrumb_fjiNLC",
     "product_explanation_video_ca4Wbj",
     "announcement_bar_sticky_scroll_gnrpHz",
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
     "apex_theme_collectiont_product_h4QEfc",
-    "breadcrumb_fjiNLC",
     "promotion_banner_dgKacc",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"
