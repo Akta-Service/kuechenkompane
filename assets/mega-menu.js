@@ -1,3 +1,6 @@
+//Dev note
+//  This is hidden dueo to new menu     
+    
     document.addEventListener("DOMContentLoaded", function () {
   const menuDrawer = document.querySelector("#m-menu-drawer");
   if (menuDrawer) {
