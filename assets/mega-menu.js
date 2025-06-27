@@ -1,3 +1,11 @@
+    document.addEventListener("DOMContentLoaded", function () {
+  const menuDrawer = document.querySelector("#m-menu-drawer");
+  if (menuDrawer) {
+
+
+    
+
+
 class Megamenu {
   constructor(container) {
     this.selectors = {
@@ -353,3 +361,6 @@ class SiteNav {
     });
   };
 }
+
+  }
+});
