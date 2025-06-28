@@ -96,6 +96,7 @@
             >
               {%- for product in collection.products -%}
                 {% unless product.tags contains 'NO SEARCH' %}
+                
                   <div class="m-product-item m:w-6/12 md:m:w-4/12" data-tags="{% for tag in product.tags %}{{ tag | handleize }} {% endfor %}">
                     {% liquid
                       case settings.pcard_layout
