@@ -32,7 +32,14 @@
       "type": "announcement-bar-sticky-scroll",
       "name": "APEX Announcement Sticky",
       "settings": {
-        "target_collection": "lagerumzug-sale",
+        "target_collections": [
+          "interner-deal",
+          "lagerumzug-sale",
+          "grossbestellung-storniert",
+          "letzte-chance-auslaufserie",
+          "vor-der-preiserhohung",
+          "topdeal24-angebot"
+        ],
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
@@ -40,19 +47,76 @@
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
-        "ann_title": "Finaler Lagerausverkauf - keine Nachproduktion!",
+        "ann_title": "Vertraut von über 140.000 Kochbegeisterten",
         "ann_title_size": 16,
         "ann_title_size_m": 15,
-        "text": "<p><a href=\"/collections/ausverkauf-final\" title=\"Ausverkauf final\">Nur</a> jetzt: 48h lang bis zu <strong>-75% auf Auslaufmodelle</strong></p>",
+        "text": "<p>100 Tage Probekochen | Kostenloser Versand</p>",
         "text_size": 16,
         "text_size_m": 16
       }
     },
     "announcement_different_rRyBgT": {
       "type": "announcement-different",
+      "blocks": {
+        "announcement_JmM3Kw": {
+          "type": "announcement",
+          "settings": {
+            "collection": "lagerumzug-sale",
+            "ann_title": "💥 Großer Lagerschlussverkauf",
+            "text": "<p>Bis zu 75 % auf echte Bestseller</p>"
+          }
+        },
+        "announcement_UjeB7H": {
+          "type": "announcement",
+          "settings": {
+            "collection": "letzte-chance-auslaufserie",
+            "ann_title": "🚨 Letzte Chance: Diese Serien kommen nie wieder",
+            "text": "<p>Nur solange der Vorrat reicht – bis zu 75% sparen</p>"
+          }
+        },
+        "announcement_FDAfCN": {
+          "type": "announcement",
+          "settings": {
+            "collection": "grossbestellung-storniert",
+            "ann_title": "❌ Großbestellung geplatzt – jetzt profitierst du",
+            "text": "<p>Bis zu 75 % auf echte Bestseller</p>"
+          }
+        },
+        "announcement_QXQcLy": {
+          "type": "announcement",
+          "settings": {
+            "collection": "interner-deal",
+            "ann_title": "🤫 Interner Top-Deal - jetzt live für 48h",
+            "text": "<p>Bis zu 75% auf unser stärksten Bestseller</p>"
+          }
+        },
+        "announcement_pwen7A": {
+          "type": "announcement",
+          "settings": {
+            "collection": "vor-der-preiserhohung",
+            "ann_title": "🚨 Letzte Tage vor der Preiserhöhung",
+            "text": "<p>Bis zu 75% Rabatt vor der Erhöhung</p>"
+          }
+        },
+        "announcement_CCnrUw": {
+          "type": "announcement",
+          "settings": {
+            "collection": "topdeal24-angebot",
+            "ann_title": "Exklusiv für TopDeal24-Leser",
+            "text": "<p>Bis zu 75 % Rabatt auf ausgewählte Produkte</p>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_JmM3Kw",
+        "announcement_UjeB7H",
+        "announcement_FDAfCN",
+        "announcement_QXQcLy",
+        "announcement_pwen7A",
+        "announcement_CCnrUw"
+      ],
       "name": "APEX Different Ann",
       "settings": {
-        "target_collection": "lagerumzug-sale",
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
@@ -60,10 +124,8 @@
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
-        "ann_title": "{{ section.settings.target_collection.metafields.custom.announcement_bar_line_1.value }}",
         "ann_title_size": 16,
         "ann_title_size_m": 16,
-        "text": "<p>{{ section.settings.target_collection.metafields.custom.announcement_bar_line_2.value }}</p>",
         "text_size": 16,
         "text_size_m": 16
       }
@@ -226,7 +288,7 @@
           "type": "title",
           "settings": {
             "title": "Lagerumzug-Sale",
-            "mb": 19,
+            "mb": 0,
             "mb_m": 0
           }
         },
@@ -243,6 +305,7 @@
         "title_LchWnQ",
         "text_HehJ7h"
       ],
+      "disabled": true,
       "name": "Apex Text Banner",
       "settings": {
         "color_scheme": "",

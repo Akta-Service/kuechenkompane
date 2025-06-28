@@ -9,6 +9,17 @@
  */
 {
   "sections": {
+    "breadcrumb_yifnda": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -76,39 +87,6 @@
         "overlay_opacity": 0
       }
     },
-    "promotion_banner_dgKacc": {
-      "type": "promotion-banner",
-      "blocks": {
-        "promotion_NBbJbf": {
-          "type": "promotion",
-          "settings": {
-            "subheading": "JETZT ODER NIE",
-            "heading": "-75%",
-            "text_alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "promotion_NBbJbf"
-      ],
-      "name": "Promotion banner",
-      "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "heading": "Entdecke unsere Auslaufmodelle",
-        "heading_size": "h2",
-        "text": "<p>Noch nicht das richtige gefunden? Entdecke jetzt unsere Auslaufmodelle bevor sie alle weg sind. Für die nächsten 48h bis zu -75% Rabatt.</p>",
-        "content_alignment": "left",
-        "banner_url": "shopify://collections/ausverkauf",
-        "button_label": "Ausverkauf entdecken",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "padding_top": 70,
-        "padding_bottom": 70,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "usp_list_nd6t8y": {
       "type": "usp-list",
       "blocks": {
@@ -159,6 +137,39 @@
         "horizontal_padding_mobile": 15
       }
     },
+    "promotion_banner_dgKacc": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_NBbJbf": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "JETZT ODER NIE",
+            "heading": "-75%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_NBbJbf"
+      ],
+      "name": "Promotion banner",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "Entdecke unsere Auslaufmodelle",
+        "heading_size": "h2",
+        "text": "<p>Noch nicht das richtige gefunden? Entdecke jetzt unsere Auslaufmodelle bevor sie alle weg sind. Für die nächsten 48h bis zu -75% Rabatt.</p>",
+        "content_alignment": "left",
+        "banner_url": "shopify://collections/ausverkauf",
+        "button_label": "",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "collection_description_KrcbiD": {
       "type": "collection-description",
       "settings": {
@@ -168,24 +179,13 @@
         "collection_pt_m": 30,
         "collection_pb_m": 30
       }
-    },
-    "breadcrumb_F6nG4x": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
     }
   },
   "order": [
+    "breadcrumb_yifnda",
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
-    "breadcrumb_F6nG4x",
     "usp_list_nd6t8y",
     "promotion_banner_dgKacc",
     "collection_description_KrcbiD"

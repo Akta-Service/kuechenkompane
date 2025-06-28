@@ -133,6 +133,38 @@
         "c_n_text": "p-medium"
       }
     },
+    "rich_text_bg4Fta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pBJTCk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Diese Serie kommt nie wieder zurück",
+            "heading_size": "h2"
+          }
+        },
+        "text_XrgRxY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Diese Messerserie wird nicht mehr produziert – und wenn sie weg ist, ist sie weg.<br/>Du bekommst jetzt die letzten Exemplare mit <strong>bis zu 75 % Rabatt</strong>.<br/>Keine Nachproduktion. Kein Restock. Nur noch: Jetzt oder nie.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pBJTCk",
+        "text_XrgRxY"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "main": {
       "type": "apex-theme-collectiont-product",
       "custom_css": [
@@ -284,13 +316,26 @@
         "custom_class": "",
         "animations": "inherit"
       }
+    },
+    "breadcrumb_gm3YmH": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
     }
   },
   "order": [
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
+    "rich_text_bg4Fta",
     "main",
+    "breadcrumb_gm3YmH",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
     "collection_description_tUMerW",

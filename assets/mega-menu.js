@@ -1,3 +1,14 @@
+//Dev note
+//  This is hidden dueo to new menu     
+    
+    document.addEventListener("DOMContentLoaded", function () {
+  const menuDrawer = document.querySelector("#m-menu-drawer");
+  if (menuDrawer) {
+
+
+    
+
+
 class Megamenu {
   constructor(container) {
     this.selectors = {
@@ -34,28 +45,28 @@ class Megamenu {
     MinimogTheme.headerSliders = this.sliders;
   }
 
-  init() {
-    this.domNodes.hamburgerButtons.addEventListener("click", (e) => {
-      if (this.domNodes.hamburgerButtons.classList.contains("active")) {
-        this.closeMenu();
-      } else {
-        this.openMenu();
-      }
-      this.domNodes.hamburgerButtons.classList.toggle("active");
-    });
-    this.domNodes.backDrop.addEventListener("click", (e) => {
-      this.closeMenu();
-    });
-    this.initMobileMegaMenu();
-    this.initDesktopMegaMenu();
+  // init() {
+  //   this.domNodes.hamburgerButtons.addEventListener("click", (e) => {
+  //     if (this.domNodes.hamburgerButtons.classList.contains("active")) {
+  //       this.closeMenu();
+  //     } else {
+  //       this.openMenu();
+  //     }
+  //     this.domNodes.hamburgerButtons.classList.toggle("active");
+  //   });
+  //   this.domNodes.backDrop.addEventListener("click", (e) => {
+  //     this.closeMenu();
+  //   });
+  //   this.initMobileMegaMenu();
+  //   this.initDesktopMegaMenu();
 
-    MinimogEvents.subscribe(MinimogTheme.pubSubEvents.openCartDrawer, () => {
-      this.open && this.closeMenu();
-    });
-    MinimogEvents.subscribe(MinimogTheme.pubSubEvents.openSearchPopup, () => {
-      this.open && this.closeMenu();
-    });
-  }
+  //   MinimogEvents.subscribe(MinimogTheme.pubSubEvents.openCartDrawer, () => {
+  //     this.open && this.closeMenu();
+  //   });
+  //   MinimogEvents.subscribe(MinimogTheme.pubSubEvents.openSearchPopup, () => {
+  //     this.open && this.closeMenu();
+  //   });
+  // }
   initDesktopMegaMenu() {
     [...this.menuData].forEach((menuItem) => {
       const { item, subMenu } = menuItem;
@@ -353,3 +364,6 @@ class SiteNav {
     });
   };
 }
+
+  }
+});
