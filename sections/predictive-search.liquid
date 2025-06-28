@@ -119,7 +119,7 @@
             <div class="m-search-result__products-list">
               {%- for product in predictive_search.resources.products -%}
                 {% unless product.tags contains 'NO SEARCH' %}
-                <a href="{{ product.url }}" class="m-search-item m-search-item--with-thumbnail">
+                  <a href="{{ product.url }}" class="m-search-item m-search-item--with-thumbnail">
                   <div class="m-search-item--image">
                     {% if product.featured_media %}
                       <img
@@ -145,7 +145,7 @@
                     </div>
                   </div>
                 </a>
-              {% endunless %}
+                {% endunless %}
               {% endfor %}
             </div>
           </div>
