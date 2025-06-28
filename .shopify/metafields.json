@@ -73,9 +73,19 @@
       }
     },
     {
-      "key": "offer_text_heading",
+      "key": "offer_text",
       "namespace": "custom",
-      "name": "Offer Text Heading",
+      "name": "Offer Text ",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "text_sale_heading",
+      "namespace": "custom",
+      "name": "Text Sale Heading",
       "description": "",
       "type": {
         "name": "single_line_text_field",
@@ -83,12 +93,22 @@
       }
     },
     {
-      "key": "offer_text",
+      "key": "text_sale_heading_1",
       "namespace": "custom",
-      "name": "Offer Text ",
+      "name": "Text Sale Heading - 1",
       "description": "",
       "type": {
-        "name": "multi_line_text_field",
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "here_is_the_new_haidn",
+      "namespace": "custom",
+      "name": "Here is the new haidn",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
         "category": "TEXT"
       }
     }
