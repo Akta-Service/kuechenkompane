@@ -15,7 +15,7 @@
         "text_7wEFPw": {
           "type": "text",
           "settings": {
-            "top_item": "140.000+ zufriedene Kunden"
+            "top_item": "160.000+ zufriedene Kunden"
           }
         },
         "text_GFQwB3": {
@@ -356,6 +356,7 @@
         "video_cTydVn": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/c3f04b6c0c574ca587cc7ad8532567e9.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/1920_IMG_1.png",
