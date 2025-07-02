@@ -143,6 +143,7 @@ class MCartDrawer extends HTMLElement {
         selector: "[data-minimog-gift-wrapping]",
         block: "cart-footer",
       },
+      
     ];
   }
 
@@ -179,6 +180,11 @@ class MCartDrawerItems extends MCartTemplate {
         id: "MinimogCartDrawer",
         section: "cart-drawer",
         selector: "[data-minimog-gift-wrapping]",
+      },
+      {
+        id: "cart-drawer",
+        selector: "[data-point]",
+        block: "cart-footer",
       },
     ];
   }

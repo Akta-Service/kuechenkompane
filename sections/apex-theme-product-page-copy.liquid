@@ -1796,3 +1796,8 @@
   ]
 }
 {% endschema %}
+{% if product.tags contains 'NO SEARCH' %}
+  <script>
+    window.location.href = "/collections/all";
+  </script>
+{% endif %}

@@ -32,9 +32,9 @@
 %}
 
 {% style %}
-.m-0{
-  margin: 0;
-}
+  .m-0{
+    margin: 0;
+  }
   {% for block in section.blocks %}
     {%  case block.type %}
     {%- when 'title' -%}
@@ -562,6 +562,13 @@
               data-selected-variant="{{ selected_variant_id }}"
               disabled
             >
+
+          {% if from_collection %}
+            <input type="hidden" name="properties[From_Collection]" value="{{ from_collection }}">
+          {% endif %}
+
+
+
             {%- if gift_card_recipient_feature_active -%}
               {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
             {%- endif -%}
@@ -634,6 +641,7 @@
             <div class="m-product-form-message"></div>
           {%- endform -%}
         </product-form>
+
         <link
           rel="stylesheet"
           href="{{ 'pickup-availability.css' | asset_url }}"
@@ -1035,3 +1043,29 @@
     {%- endcase -%}
   </div>
 {%- endfor -%}
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const fromCollection = urlParams.get('from');
+
+  if (fromCollection) {
+    // Select ALL forms that add to cart
+    const forms = document.querySelectorAll('form[action^="/cart/add"]');
+
+    forms.forEach(function(form) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "properties[From_Collection]";
+      input.value = fromCollection;
+      form.appendChild(input);
+
+      console.log('✅ Hidden input added to form:', form);
+    });
+  } else {
+    console.log('❌ No from collection parameter found in URL');
+  }
+});
+</script>
