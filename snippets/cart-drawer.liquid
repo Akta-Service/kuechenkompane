@@ -340,7 +340,7 @@ p.upsell--product__price.compare--price {
           
           {% if total_points > 0 %}
             <div class="cart-points-summary" data-point>
-              🎁 Total Points: {{ total_points }}
+             {{ settings.total_points }} {{ total_points }}
             </div>
           {% endif %}
 
