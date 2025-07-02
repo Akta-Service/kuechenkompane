@@ -54,6 +54,21 @@ p.upsell--product__price.compare--price {
     font-size: 14px;
     background: #FF8E4F;
 }
+
+
+.point--count {
+    font-size: 14px;
+}
+.cart-points-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+
+
 @media only screen and (max-width:768px){
   .c_bootom_list li span {
     font-size: {{ settings.b_text_size_m |  append: 'px' }};
@@ -89,6 +104,9 @@ p.upsell--product__price.compare--price {
         {% endif %}
         <foxkit-cart-goal></foxkit-cart-goal>
       </div>
+
+      {% assign total_points = 0 %}
+
 
       <m-cart-drawer-items
         data-minimog-cart-items
@@ -202,6 +220,29 @@ p.upsell--product__price.compare--price {
       </m-cart-drawer-items>
  
       <div class="m-cart-drawer__footer" id="MinimogCartDrawerFooter">
+
+
+      {% assign total_points = 0 %}
+
+      {% for item in cart.items %}
+        {% if item.properties.From_Collection == 'aktion-3-for-2' %}
+          
+          {% assign price = item.final_line_price | divided_by: item.quantity %}
+          {% assign points = price | divided_by: 1000 %}   
+      
+          {% assign total_points = total_points | plus: points %}      
+       
+        {% endif %}
+      {% endfor %}
+      
+      
+      
+      
+      
+
+
+
+
       
         {% # render 'cart-addons', form_id: 'cart-drawer-form' %}
         <div class="m-cart-drawer__gift-wrapping" data-minimog-gift-wrapping>
@@ -282,6 +323,28 @@ p.upsell--product__price.compare--price {
               </ul>
             {%- endif -%}
           </div>
+
+
+
+          
+          {% assign total_points = 0 %}
+
+          {% for item in cart.items %}
+            {% if item.properties.From_Collection == 'aktion-3-for-2' %}
+              {% assign price = item.variant.price %}
+              {% assign single_points = price | divided_by: 1000 %}
+              {% assign points = single_points | times: item.quantity %}
+              {% assign total_points = total_points | plus: points %}
+            {% endif %}
+          {% endfor %}
+          
+          {% if total_points > 0 %}
+            <div class="cart-points-summary" data-point>
+              🎁 Total Points: {{ total_points }}
+            </div>
+          {% endif %}
+
+
           {% assign total_compare_at_price = 0 %}
           {% for item in cart.items %}
             {% if item.variant.compare_at_price > item.variant.price %}
@@ -308,6 +371,9 @@ p.upsell--product__price.compare--price {
               
             </div>
           </div>
+
+
+          
         </div>
         <div class="m:flex m:flex-col m:items-center">
           {% assign show_terms = false %}
