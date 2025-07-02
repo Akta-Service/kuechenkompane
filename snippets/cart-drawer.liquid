@@ -90,6 +90,9 @@ p.upsell--product__price.compare--price {
         <foxkit-cart-goal></foxkit-cart-goal>
       </div>
 
+      {% assign total_points = 0 %}
+
+
       <m-cart-drawer-items
         data-minimog-cart-items
         class="m-cart-drawer__body m-scrollbar--vertical m:flex m:flex-col m:flex-1"
@@ -114,7 +117,8 @@ p.upsell--product__price.compare--price {
                   item: item,
                   gift_wrap_id: gift_wrap_id,
                   gift_wraps_in_cart: gift_wraps_in_cart,
-                  items_in_cart: items_in_cart
+                  items_in_cart: items_in_cart,
+                  total_points: total_points
                 %}
               {% endfor %}
             </div>
@@ -202,6 +206,12 @@ p.upsell--product__price.compare--price {
       </m-cart-drawer-items>
  
       <div class="m-cart-drawer__footer" id="MinimogCartDrawerFooter">
+
+
+
+
+
+
       
         {% # render 'cart-addons', form_id: 'cart-drawer-form' %}
         <div class="m-cart-drawer__gift-wrapping" data-minimog-gift-wrapping>

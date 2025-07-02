@@ -32,9 +32,9 @@
 %}
 
 {% style %}
-.m-0{
-  margin: 0;
-}
+  .m-0{
+    margin: 0;
+  }
   {% for block in section.blocks %}
     {%  case block.type %}
     {%- when 'title' -%}
@@ -540,6 +540,14 @@
             assign show_dynamic_checkout = false
           endif
         %}
+
+
+        
+
+        {% assign from_collection = request.params.from %}
+
+        <p>From Collection Parameter: {{ from_collection | json }}</p>
+
         <product-form class="m-product-form m-product-form--main" data-product-id="{{ product.id }}">
           {%- form 'product',
             product,
@@ -562,6 +570,13 @@
               data-selected-variant="{{ selected_variant_id }}"
               disabled
             >
+
+          {% if from_collection %}
+            <input type="hidden" name="properties[From_Collection]" value="{{ from_collection }}">
+          {% endif %}
+
+
+
             {%- if gift_card_recipient_feature_active -%}
               {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
             {%- endif -%}
@@ -634,6 +649,17 @@
             <div class="m-product-form-message"></div>
           {%- endform -%}
         </product-form>
+
+        {% if from_collection == 'special-collection-handle' %}
+          <div class="special-offer">
+            🎉 You're shopping from the Special Collection! Adding this will earn you points.
+          </div>
+        {% endif %}
+
+
+
+
+
         <link
           rel="stylesheet"
           href="{{ 'pickup-availability.css' | asset_url }}"

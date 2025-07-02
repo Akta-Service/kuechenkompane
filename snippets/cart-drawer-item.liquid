@@ -321,6 +321,11 @@
   
     </div>
   </div>
+
+
+
+
+
   {% comment %}Custom element for FoxKit In-cart upsells{% endcomment %}
   {% liquid
     assign collections = ''
@@ -601,3 +606,14 @@
     ></foxkit-incart-upsell>
   </div>
 {% endcomment %}
+
+{% if item.properties.From_Collection == 'aktion-3-for-2' %}
+  <p style="color:green;">✔ Eligible for Points</p>
+
+  {% assign price = item.final_line_price | divided_by: item.quantity %}
+  {% assign points = price | divided_by: 1000 %}
+  <p>Earn Points: {{ points }}</p>
+
+  {% assign total_points = total_points | plus: points %}  
+{% endif %}
+

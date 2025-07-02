@@ -101,7 +101,7 @@
                     {% liquid
                       case settings.pcard_layout
                         when '1'
-                          render 'product-card-1', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
+                          render 'product-card-1-point', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
                         when '2'
                           render 'product-card-2', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
                         when '3'
