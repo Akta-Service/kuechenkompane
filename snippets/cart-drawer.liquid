@@ -219,29 +219,8 @@ p.upsell--product__price.compare--price {
 
       </m-cart-drawer-items>
  
-      <div class="m-cart-drawer__footer" id="MinimogCartDrawerFooter">
-
-
-      {% assign total_points = 0 %}
-
-      {% for item in cart.items %}
-        {% if item.properties.From_Collection == 'aktion-3-for-2' %}
-          
-          {% assign price = item.final_line_price | divided_by: item.quantity %}
-          {% assign points = price | divided_by: 1000 %}   
+      <div class="m-cart-drawer__footer" id="MinimogCartDrawerFooter">   
       
-          {% assign total_points = total_points | plus: points %}      
-       
-        {% endif %}
-      {% endfor %}
-      
-      
-      
-      
-      
-
-
-
 
       
         {% # render 'cart-addons', form_id: 'cart-drawer-form' %}
