@@ -15,7 +15,7 @@
         "text_7wEFPw": {
           "type": "text",
           "settings": {
-            "top_item": "140.000+ zufriedene Kunden"
+            "top_item": "160.000+ zufriedene Kunden"
           }
         },
         "text_GFQwB3": {
@@ -356,6 +356,7 @@
         "video_cTydVn": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/c3f04b6c0c574ca587cc7ad8532567e9.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/1920_IMG_1.png",
@@ -510,7 +511,7 @@
           "type": "benefit",
           "settings": {
             "benefit_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
-            "title": "140,000+ zufriedene Kunden",
+            "title": "160,000+ zufriedene Kunden",
             "text": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?"
           }
         },

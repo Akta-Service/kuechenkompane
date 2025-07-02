@@ -29,24 +29,13 @@
         "enable_bg_zoom_effect": true
       }
     },
-    "breadcrumb_bEhLYx": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
     "apex_top_slider_GBwqAg": {
       "type": "apex-top-slider",
       "blocks": {
         "text_zLPY9B": {
           "type": "text",
           "settings": {
-            "top_item": "140.000+ zufriedene Kunden"
+            "top_item": "160.000+ zufriedene Kunden"
           }
         },
         "text_i4KwPb": {
@@ -73,6 +62,17 @@
         "pb": 15,
         "mt_mobile": 15,
         "mb_mobile": 15
+      }
+    },
+    "breadcrumb_bEhLYx": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
       }
     },
     "category_selection_iMrTd6": {
