@@ -100,7 +100,7 @@
                 {% assign price = item.variant.price %}
               {% assign single_points = price | divided_by: 1000 %}
               {% assign points = single_points | times: item.quantity %}
-                <p class="point--count">Earn Points: {{ points }}</p>
+                <p class="point--count">{{ settings.line_item_point }} {{ points }}</p>
                 <p>{{  }}</p>
               {% endif %}
               
