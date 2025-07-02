@@ -4075,6 +4075,22 @@
       },
       {
         "type": "header",
+        "content": "Bonus Point Settings"        
+      },
+      {
+        "type": "text",
+        "id": "line_item_point",
+        "label": "Line Item Point",
+        "default": "Earn Points:"
+      },
+      {
+        "type": "text",
+        "id": "total_points",
+        "label": "Total Points",
+        "default": "🎁 Total Points:"
+      },
+      {
+        "type": "header",
         "content": "Free Products/Shipping"
       },
       {
