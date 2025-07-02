@@ -540,14 +540,6 @@
             assign show_dynamic_checkout = false
           endif
         %}
-
-
-        
-
-        {% assign from_collection = request.params.from %}
-
-        <p>From Collection Parameter: {{ from_collection | json }}</p>
-
         <product-form class="m-product-form m-product-form--main" data-product-id="{{ product.id }}">
           {%- form 'product',
             product,
@@ -649,16 +641,6 @@
             <div class="m-product-form-message"></div>
           {%- endform -%}
         </product-form>
-
-        {% if from_collection == 'special-collection-handle' %}
-          <div class="special-offer">
-            🎉 You're shopping from the Special Collection! Adding this will earn you points.
-          </div>
-        {% endif %}
-
-
-
-
 
         <link
           rel="stylesheet"
@@ -1061,3 +1043,29 @@
     {%- endcase -%}
   </div>
 {%- endfor -%}
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const fromCollection = urlParams.get('from');
+
+  if (fromCollection) {
+    // Select ALL forms that add to cart
+    const forms = document.querySelectorAll('form[action^="/cart/add"]');
+
+    forms.forEach(function(form) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "properties[From_Collection]";
+      input.value = fromCollection;
+      form.appendChild(input);
+
+      console.log('✅ Hidden input added to form:', form);
+    });
+  } else {
+    console.log('❌ No from collection parameter found in URL');
+  }
+});
+</script>
