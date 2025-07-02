@@ -306,8 +306,8 @@ p.upsell--product__price.compare--price {
 
 
           
-           {% assign eligible_collections = section.settings.eligible_collections | split: ',' %}
-          {% assign conversion_rate = section.settings.points_rate %}
+           {% assign eligible_collections = settings.eligible_collections | split: ',' %}
+          {% assign conversion_rate = settings.points_rate %}
           {% assign total_points = 0 %}
           
           {% for item in cart.items %}
