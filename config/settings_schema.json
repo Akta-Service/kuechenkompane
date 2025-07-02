@@ -4078,7 +4078,7 @@
         "content": "Bonus Point Settings"        
       },
       {
-        "type": "text",
+        "type": "textarea",
         "id": "eligible_collections",
         "label": "Eligible Collections (comma separated)",
         "default": "aktion-3-for-2,deal-of-week,summer-sale"
