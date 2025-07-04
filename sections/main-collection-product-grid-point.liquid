@@ -30,10 +30,37 @@
     assign container = 'container-full'
   endif
 -%}
-
-
 <style>
-  .m-product-card--soldout::after {
+.apex-theme-collection s.m-price-item.m-price-item--regular {
+    color: #bc1e1e;
+}
+.apex-theme-collection .m-price__sale .m-price-item--last {
+    color: inherit;
+}
+.apex-theme-collection  .md\:m\:justify-between {
+    justify-content: end;
+}
+.apex-theme-collection  .m-product-card__content-footer {
+    display: block;
+    margin-top: 20px;
+}
+.apex-theme-collection .m-product-card__description {
+    display: none;
+}
+.apex-theme-collection .card-add-button button {
+    width: 100%;
+    min-width: 76px;
+    height: 44px;
+    min-height: 44px;
+    border: none;
+    /* background:  {{ section.settings.add_btn_bg }};
+    color: {{ section.settings.add_btn_text_color }}; */
+    border-radius: 5px;
+}
+.apex-theme-collection .m-collection-products {
+  align-items: self-end;
+}
+.apex-theme-collection .m-product-card--soldout::after {
     position: absolute;
     inset: 0;
     background: #000000;
@@ -42,11 +69,10 @@
     content: "";
     border-radius: 5px;
 }
+
 </style>
-
-
 <section
-  class="facest-filters-section"
+  class="facest-filters-section apex-theme-collection m-color-{{ section.settings.color_scheme }}"
   data-section-type="collection-template"
   data-section-id="{{ section.id }}"
   data-filters-type="{{ section.settings.filters_type }}"
@@ -58,6 +84,7 @@
   data-product-count="{{ collection.products.size }}"
   data-initial-column="{{ initial_column }}"
   data-view="{{ template.name }}"
+
 >
   <div class="{{ container }}">
     <div class="m-collection--wrapper {% if section.settings.show_filter %}m-sidebar--{{ section.settings.sidebar }}{% endif %}">
@@ -95,25 +122,11 @@
               data-product-container
             >
               {%- for product in collection.products -%}
-                {% unless product.tags contains 'NO SEARCH' %}
-                
-                  <div class="m-product-item m:w-6/12 md:m:w-4/12" data-tags="{% for tag in product.tags %}{{ tag | handleize }} {% endfor %}">
-                    {% liquid
-                      case settings.pcard_layout
-                        when '1'
-                          render 'product-card-1-point', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect, show_cart_button: true
-                        when '2'
-                          render 'product-card-2', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '3'
-                          render 'product-card-3', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '4'
-                          render 'product-card-4', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '5'
-                          render 'product-card-5', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                      endcase
-                    %}
-                  </div>
-                {% endunless %}
+                <div class="m-product-item m:w-6/12 md:m:w-4/12">
+                  {% liquid
+                  render 'apex-product-card-point-offer', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect    
+                  %}
+                </div>
               {%- endfor -%}
             </div>
             {% if paginate.pages > 1 %}
@@ -121,7 +134,7 @@
                 {%- if section.settings.paginate_type == 'paginate' -%}
                   {%- render 'pagination', paginate: paginate, anchor: '' -%}
                 {%- else -%}
-                  <button class="m-button mrk-btn m-button--primary m-spinner-button" data-load-more>
+                  <button class="m-button  m-button--primary m-spinner-button mrk-btn" data-load-more>
                     <span>
                       {%- render 'new-locale', key: 'collections.paginate.load_more' -%}
                     </span>
@@ -164,15 +177,19 @@
 </script>
 {% schema %}
 {
-  "name": "Product Point Offer",
+  "name": "Apex Theme Collection",
   "settings": [
     {
       "type": "checkbox",
       "id": "show_cart_button",
-      "label": "Show Add To Cart button",
+      "label": "Show Add To cart Button",
       "default": true
     },
-
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
     {
       "type": "paragraph",
       "content": "[Watch tutorial](https://foxecom.link/zHcHV5) or [read How-to](https://foxecom.link/CDVgnM)"
@@ -414,6 +431,66 @@
     },
     {
       "type": "header",
+      "content": "Add Button Settings"
+    },
+    {
+      "type": "color",
+      "id": "add_btn_bg",
+      "label": "Add Button Background Color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "add_btn_text_color",
+      "label": "Add Button Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "m-button--primary",
+          "label": "Primary button"
+        },
+        {
+          "value": "m-button--secondary",
+          "label": "Secondary button"
+        },
+        {
+          "value": "m-button--white",
+          "label": "White button"
+        },
+        {
+          "value": "m-button--link",
+          "label": "Underline button"
+        }
+      ],
+      "default": "m-button--primary"
+    },
+    {
+      "type": "select",
+      "id": "button_size",
+      "label": "Button size",
+      "options": [
+        {
+          "value": "m-button--small",
+          "label": "Button small"
+        },
+        {
+          "value": "",
+          "label": "Button medium"
+        },
+        {
+          "value": "m-button--large",
+          "label": "Button large"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "header",
       "content": "Sold Out Product Overlay"
     },
     {
@@ -426,6 +503,8 @@
       "unit": "%",
       "default": 0.5
     }
+
+
   ],
   "blocks": [
     {
@@ -746,6 +825,14 @@
           "default": false
         }
       ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Apex Theme Collection",
+      "settings": {
+        
+      }
     }
   ]
 }
