@@ -16,10 +16,10 @@
         "bg_color": "#c6d1c4",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#D2861A",
+        "timer_clock": "#d2861a",
         "timer_clock_text_font_size": 17,
         "clock_font_weight": "500",
-        "timer_text": "GEWINNSPIEL ENDET IN 48h",
+        "timer_text": "EXKLUSIV 3-fach Lose für die nächsten 48h",
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "400",
@@ -62,7 +62,7 @@
         "second_image_offset_top": 10,
         "title": "GEWINNSPIEL - REGELN:",
         "sub_title": "",
-        "text": "<p>🎟️ <strong>1 Los pro 50 € Einkaufswert</strong></p><p><strong>📅 Teilnahmezeitraum:05. Juli bis 07. Juli 2025</strong></p><p><strong>🏖️ Das gibt’s zu gewinnen: </strong>Eine unvergessliche <strong>Malediven-Reise für 2 Personen </strong>– inkl. Flug & Unterkunft im Wasserbungalow<br/></p><p><strong>🔔 Auslosung: </strong>Gewinner wird <strong>öffentlich gezogen & per E-Mail benachrichtigt</strong>.<br/><br/><br/><br/></p>",
+        "text": "<p>🎟️ <strong>3 Lose pro 50 € Einkaufswert  (NUR 48h)</strong></p><p>🎟️ <strong>1 Los pro 50 € Einkaufswert  (Ab Montag 08.07)</strong></p><p><strong>📅 Teilnahmezeitraum:05. Juli bis 12. Juli 2025</strong></p><p><strong>🏖️ Das gibt’s zu gewinnen: </strong>Eine unvergessliche <strong>Malediven-Reise für 2 Personen </strong>– inkl. Flug & Unterkunft im Wasserbungalow<br/></p><p><strong>🔔 Auslosung: </strong>Gewinner wird <strong>öffentlich gezogen & per E-Mail benachrichtigt</strong>.<br/><br/><br/><br/></p>",
         "text_size": "medium",
         "content_alignment": "left",
         "button_label": "",
@@ -121,6 +121,8 @@
         ".m-collection-filters-form {margin-bottom: 0;}"
       ],
       "settings": {
+        "show_cart_button": true,
+        "color_scheme": "",
         "container": "container-fluid",
         "grid_layout": "grid",
         "grid_columns": "4",
@@ -139,6 +141,10 @@
         "collapsed_groups": "Product type, Brand, Vendor, Size",
         "color_swatches": "color,colour,couleur,farbe",
         "color_swatches_design": "list",
+        "add_btn_bg": "#1e1e1e",
+        "add_btn_text_color": "#000000",
+        "button_style": "m-button--primary",
+        "button_size": "",
         "overlay_opacity": 0
       }
     },
