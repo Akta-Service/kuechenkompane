@@ -11,6 +11,7 @@
   "sections": {
     "breadcrumb_yifnda": {
       "type": "breadcrumb",
+      "disabled": true,
       "name": "Breadcrumb",
       "settings": {
         "container": "container",
@@ -18,6 +19,37 @@
         "hide_current": false,
         "hide_on_mb": false,
         "animations": "inherit"
+      }
+    },
+    "image_with_text_2_gnfraf": {
+      "type": "image-with-text-2",
+      "name": "Image with text overlay",
+      "settings": {
+        "color_scheme": "",
+        "container": "w-full",
+        "hero_size": "adapt",
+        "show_overlay": true,
+        "image_link": "",
+        "parallax": false,
+        "parallax_direction": "vertical",
+        "content_in_container": false,
+        "content_position": "center middle",
+        "text_alignment": "center",
+        "text_size": "medium",
+        "text_color": "white",
+        "title": "Gewinnspiel-Regeln",
+        "subtitle": "",
+        "text": "<p>1. Für <strong>je 50 € Einkaufswert</strong> erhältst du <strong>1 Los</strong><br/>2. Je höher dein Warenkorb, desto <strong>größer deine Gewinnchance<br/></strong>3. <strong>Teilnahmezeitraum: </strong>05.07 bis 13.07<br/>4. Der Gewinner oder die Gewinnerin wird öffentlich ausgelost & benachrichtigt</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "text_alignment_mobile": "center",
+        "mb_image": "shopify://shop_images/ChatGPT_Image_4._Juli_2025_11_20_29.png",
+        "use_content_above": false,
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
       }
     },
     "collection-header": {
@@ -183,6 +215,7 @@
   },
   "order": [
     "breadcrumb_yifnda",
+    "image_with_text_2_gnfraf",
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
