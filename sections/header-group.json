@@ -118,6 +118,14 @@
             "ann_title": "🌴 MALEDIVEN TRAUMREISE GEWINNSPIEL 🌴",
             "text": "<p>7 TAGE TRAUMREISE ZU FÜR 2 PERSONEN</p>"
           }
+        },
+        "announcement_XbBpcL": {
+          "type": "announcement",
+          "settings": {
+            "collection": "reise-gewinnen-malediven-1",
+            "ann_title": "🎉 GRÖßTER GEBURTSTAGS-SALE ALLER ZEITEN! 🎉",
+            "text": "<p>Nur für die nächsten 48h - Bis zu 75% Rabatt!</p>"
+          }
         }
       },
       "block_order": [
@@ -127,7 +135,8 @@
         "announcement_QXQcLy",
         "announcement_pwen7A",
         "announcement_CCnrUw",
-        "announcement_gzD8Dc"
+        "announcement_gzD8Dc",
+        "announcement_XbBpcL"
       ],
       "name": "APEX Different Ann",
       "settings": {
