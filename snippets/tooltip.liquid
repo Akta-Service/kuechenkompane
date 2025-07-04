@@ -86,6 +86,7 @@
         novalidate: 'novalidate'
       -%}
         <input type="hidden" name="id" value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}">
+        <input type="hidden" name="test" value="test" >
         <button
           class="m-tooltip m-spinner-button m-button--icon {{ class }} {{ class_name | default: 'm-tooltip--left' }} m-tooltip--style-{{ style | default: '1' }}"
           data-product-handle="{{ product.handle }}"

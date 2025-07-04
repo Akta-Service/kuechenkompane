@@ -1,0 +1,342 @@
+{% comment %} CSS & JS Assets {% endcomment %}
+{{ 'image-with-text.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'image-layer.js' | asset_url }}" defer="defer"></script>
+
+{% for block in section.blocks %}
+  {% if collection.handle == block.settings.collection_handle.handle %}
+    {% liquid
+      assign animation_effect = settings.animations
+      assign animated = false
+      if animation_effect != 'none'
+        assign animated = true
+        if block.settings.animations != 'inherit'
+          assign animation_effect = block.settings.animations
+        endif
+      endif
+
+      assign container = block.settings.container
+      if container == 'w-full'
+        assign container = 'container-full'
+      endif
+
+      assign heading_size = block.settings.text_size | replace: 'small', 'h3' | replace: 'medium', 'h2' | replace: 'large', 'h1'
+      assign subtext_size = block.settings.text_size | replace: 'small', 'h6' | replace: 'medium', 'h6' | replace: 'large', 'h5'
+
+      assign image_wrapper_class = 'm-image-with-text__image-wrapper' | append: ' m-image-with-text--' | append: block.settings.layout
+      if block.settings.hover_effect
+        assign image_wrapper_class = image_wrapper_class | append: ' m-scroll-trigger animate--' | append: animation_effect
+      endif
+
+      if block.settings.image_2 != blank
+        assign image_wrapper_class = image_wrapper_class | append: ' m-image-with-text--multiple'
+        if block.settings.image_overlap
+          assign image_wrapper_class = image_wrapper_class | append: ' m-image-with-text--layer'
+        endif
+      endif
+
+      if block.settings.show_image_reverse
+        assign image_wrapper_class = image_wrapper_class | append: ' m-image-with-text--reverse'
+      endif
+
+      if block.settings.image_animation == 'move-up-down'
+        assign image_wrapper_class = image_wrapper_class | append: ' m-image-with-text--move-up-down'
+      endif
+    %}
+
+    {%- capture section_classes -%}
+      m-section m-image-with-text {{ block.settings.custom_class }} m-section-{{ section.id }} m-gradient m-color-{{ block.settings.color_scheme }}
+    {%- endcapture -%}
+
+    <style>
+      .m-section-{{ section.id }} {
+        --section-padding-top: {{ block.settings.padding_top }}px;
+        --section-padding-bottom: {{ block.settings.padding_bottom }}px;
+        --column-gap: {{ block.settings.item_gap }}px;
+        --row-gap: {{ block.settings.item_gap | divided_by: 2 }}px;
+        --column-gap-mobile: {{ block.settings.item_gap_mobile }}px;
+        --row-gap-mobile: {{ block.settings.item_gap_mobile }}px;
+        background-color: {{ block.settings.background_color }};
+      }
+    </style>
+
+    <section id="m-section-{{ section.id }}" class="{{ section_classes }}">
+      <div class="{{ container }} m-section-my m-section-py">
+        <div class="m-image-with-text__inner m:flex m:flex-wrap{% if block.settings.layout == 'right' %} m:flex-row-reverse{% endif %}">
+          <div
+            class="m-image-with-text__image m:column m:w-full md:m:w-1/2 lg:m:w-{{ block.settings.image_column_size }}/12{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
+            {% if animated %}
+              data-cascade
+              style="--animation-order: 1;"
+            {% endif %}
+          >
+            <m-image-layer
+              class="{{ image_wrapper_class }}"
+              {% if block.settings.image_animation == 'parallax' and block.settings.image_overlap %}
+                data-enable-parallax="true"
+              {% endif %}
+              {% if block.settings.image_2 != blank %}
+                style="--offset-top: {{ block.settings.second_image_offset_top }}%"
+              {% endif %}
+            >
+              <div class="m-image-with-text__image-first{% if block.settings.hover_effect %} m-hover-box m-hover-box--scale-up{% endif %} m:blocks-radius">
+                {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+                {% if block.settings.image != blank %}
+                  {% render 'responsive-image', image: block.settings.image, image_class: 'm:w-full m:h-full' %}
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'm-placeholder-svg m:w-full m:h-full m:object-cover' }}
+                {% endif %}
+                {% if block.settings.link != blank %}</a>{% endif %}
+              </div>
+              {% if block.settings.image_2 != blank %}
+                <div class="m-image-with-text__image-second{% if block.settings.hover_effect %} m-hover-box m-hover-box--scale-up{% endif %} m:blocks-radius">
+                  {% if block.settings.link_2 != blank %}<a href="{{ block.settings.link_2 }}">{% endif %}
+                  {% render 'responsive-image', image: block.settings.image_2, image_class: 'm:w-full m:h-full' %}
+                  {% if block.settings.link_2 != blank %}</a>{% endif %}
+                </div>
+              {% endif %}
+            </m-image-layer>
+          </div>
+
+          <div
+            class="m-image-with-text__content m:column m:w-full md:m:w-1/2 lg:m:w-{{ 12 | minus: block.settings.image_column_size }}/12 {% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
+            {% if animated %}
+              data-cascade
+              style="--animation-order: 2;"
+            {% endif %}
+          >
+            <div class="m-content-box m-richtext m-richtext--{{ block.settings.text_size }} m:w-full m:text-{{ block.settings.content_alignment }}">
+              {% if block.settings.sub_title != blank %}
+                <p class="m-richtext__subtitle m-content-box__subheading {{ subtext_size }}">
+                  {{ block.settings.sub_title }}
+                </p>
+              {% endif %}
+              {% if block.settings.title != blank %}
+                <h3 class="m-richtext__title m-content-box__heading {{ heading_size }}">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <div class="m-richtext__description rte m-content-box__description {{ subtext_size }}">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+              {% if block.settings.button_label != blank %}
+                <div class="m-richtext__button">
+                  <a
+                    href="{{ block.settings.button_link | default: '#' }}"
+                    class="m-button {{ block.settings.button_style }} {{ block.settings.button_size }}"
+                  >
+                    {{ block.settings.button_label }}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Collection Image Blocks",
+  "tag": "section",
+  "class": "shopify-section--image-with-text",
+  "blocks": [
+    {
+      "type": "collection_content",
+      "name": "Collection Block",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection_handle",
+          "label": "Select collection"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Heading",
+          "default": "Image with text"
+        },
+        {
+          "type": "textarea",
+          "id": "sub_title",
+          "label": "Subheading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Second image"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Second image link"
+        },
+        {
+          "type": "range",
+          "id": "second_image_offset_top",
+          "label": "Offset top",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "default": 10,
+          "unit": "%"
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Image alignment",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "image_column_size",
+          "label": "Image container width",
+          "default": "6",
+          "options": [
+            { "value": "4", "label": "33%" },
+            { "value": "6", "label": "50%" },
+            { "value": "8", "label": "66%" }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "image_overlap",
+          "label": "Enable image overlap"
+        },
+        {
+          "type": "checkbox",
+          "id": "hover_effect",
+          "label": "Enable hover effect"
+        },
+        {
+          "type": "select",
+          "id": "image_animation",
+          "label": "Image animation",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "parallax", "label": "Parallax" },
+            { "value": "move-up-down", "label": "Move up/down" }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Text size",
+          "options": [
+            { "value": "small", "label": "Small" },
+            { "value": "medium", "label": "Medium" },
+            { "value": "large", "label": "Large" }
+          ],
+          "default": "medium"
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "Text alignment",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            { "value": "m-button--primary", "label": "Primary" },
+            { "value": "m-button--secondary", "label": "Secondary" },
+            { "value": "m-button--white", "label": "White" },
+            { "value": "m-button--link", "label": "Link" }
+          ],
+          "default": "m-button--link"
+        },
+        {
+          "type": "select",
+          "id": "button_size",
+          "label": "Button size",
+          "options": [
+            { "value": "", "label": "Medium" },
+            { "value": "m-button--small", "label": "Small" },
+            { "value": "m-button--large", "label": "Large" }
+          ],
+          "default": ""
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding Top",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 2
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding Bottom",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 2
+        },
+        {
+          "type": "text",
+          "id": "custom_class",
+          "label": "Custom class"
+        },
+        {
+          "type": "select",
+          "id": "animations",
+          "label": "Animation",
+          "default": "inherit",
+          "options": [
+            { "value": "inherit", "label": "Inherit" },
+            { "value": "fade-in", "label": "Fade In" },
+            { "value": "fade-in-up", "label": "Fade Up" },
+            { "value": "fade-in-left", "label": "Fade Left" },
+            { "value": "fade-in-right", "label": "Fade Right" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Image Blocks"
+    }
+  ]
+}
+{% endschema %}

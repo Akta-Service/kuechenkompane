@@ -124,7 +124,7 @@
               {%- for product in collection.products -%}
                 <div class="m-product-item m:w-6/12 md:m:w-4/12">
                   {% liquid
-                  render 'apex-product-card-point-offer', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect    
+                  render 'apex-product-card-point-offer', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect,   
                   %}
                 </div>
               {%- endfor -%}
