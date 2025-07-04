@@ -31,7 +31,7 @@
         "container": "container-fluid",
         "color_scheme": "",
         "item_gap": 100,
-        "item_gap_mobile": 30,
+        "item_gap_mobile": 16,
         "layout": "left",
         "image_column_size": "6",
         "image_overlap": false,
@@ -51,8 +51,8 @@
         "button_link": "",
         "button_style": "m-button--link",
         "button_size": "",
-        "padding_top": 50,
-        "padding_bottom": 50,
+        "padding_top": 26,
+        "padding_bottom": 0,
         "custom_class": "",
         "animations": "inherit"
       }
