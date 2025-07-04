@@ -123,7 +123,7 @@ class MCartDrawer extends HTMLElement {
 
   getSectionsToRender() {
 
-        if (!window.location.pathname.includes("products")) {
+        if (window.location.pathname.includes("products")) {
       return [
       {
         id: "cart-drawer",
