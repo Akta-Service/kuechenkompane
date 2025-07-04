@@ -179,6 +179,51 @@
         "animations": "inherit"
       }
     },
+    "main": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "filter_TQEkVc": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "default",
+            "title": "Tags",
+            "filtergroup": "Vintage,tops,shirts",
+            "show_label": true,
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        }
+      },
+      "block_order": [
+        "filter_TQEkVc"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
+        ".m-collection-filters-form {margin-bottom: 0;}"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "grid_layout": "grid",
+        "grid_columns": "4",
+        "show_columns_switcher": false,
+        "pagination_limit": 30,
+        "paginate_type": "paginate",
+        "show_sorting": false,
+        "show_filter": false,
+        "filters_type": "tags_filter",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": true,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Product type, Brand, Vendor, Size{{ collection.title }}",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "list",
+        "overlay_opacity": 0.3
+      }
+    },
     "collection_description_KrcbiD": {
       "type": "collection-description",
       "settings": {
@@ -197,6 +242,7 @@
     "apex_timer_9PnBtn",
     "usp_list_nd6t8y",
     "promotion_banner_dgKacc",
+    "main",
     "collection_description_KrcbiD"
   ]
 }
