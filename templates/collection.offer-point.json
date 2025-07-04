@@ -103,6 +103,7 @@
         ".m-collection-filters-form {margin-bottom: 0;}"
       ],
       "settings": {
+        "show_cart_button": true,
         "container": "container-fluid",
         "grid_layout": "grid",
         "grid_columns": "4",
@@ -216,6 +217,36 @@
         "collection_pt_m": 30,
         "collection_pb_m": 30
       }
+    },
+    "apex_theme_collectiont_product_xqGNan": {
+      "type": "apex-theme-collectiont-product",
+      "name": "Apex Theme Collection",
+      "settings": {
+        "color_scheme": "",
+        "container": "container",
+        "grid_layout": "grid",
+        "grid_columns": "3",
+        "show_columns_switcher": true,
+        "pagination_limit": 12,
+        "paginate_type": "paginate",
+        "show_sorting": true,
+        "show_filter": false,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": false,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "inline",
+        "add_btn_bg": "#1e1e1e",
+        "add_btn_text_color": "#000000",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "overlay_opacity": 0.5
+      }
     }
   },
   "order": [
@@ -223,6 +254,7 @@
     "image_with_text_jADKWn",
     "collection-header",
     "apex_timer_9PnBtn",
+    "apex_theme_collectiont_product_xqGNan",
     "main",
     "usp_list_nd6t8y",
     "promotion_banner_dgKacc",
