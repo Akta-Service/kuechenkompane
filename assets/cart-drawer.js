@@ -85,7 +85,7 @@ class MCartDrawer extends HTMLElement {
     fetch(`${MinimogSettings.routes.cart}?section_id=cart-drawer`)
       .then((response) => response.text())
       .then((responseText) => {
-        this.getSectionsToRendertwo().forEach((section) => {
+        this.getSectionsToRender().forEach((section) => {
           if (section.block === "cart-items") {
             const sectionElement = section.selector
               ? document.querySelector(section.selector)
