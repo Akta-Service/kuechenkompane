@@ -126,6 +126,14 @@
             "ann_title": "🎉 GRÖßTER GEBURTSTAGS-SALE ALLER ZEITEN! 🎉",
             "text": "<p>Nur für die nächsten 48h - Bis zu 75% Rabatt!</p>"
           }
+        },
+        "announcement_NzwhVJ": {
+          "type": "announcement",
+          "settings": {
+            "collection": "reise-gewinnen-malediven-2",
+            "ann_title": "🎉 GRÖßTER GEBURTSTAGS-SALE ALLER ZEITEN! 🎉",
+            "text": "<p>Nur für die nächsten 48h - Bis zu 75% Rabatt!</p>"
+          }
         }
       },
       "block_order": [
@@ -136,7 +144,8 @@
         "announcement_pwen7A",
         "announcement_CCnrUw",
         "announcement_gzD8Dc",
-        "announcement_XbBpcL"
+        "announcement_XbBpcL",
+        "announcement_NzwhVJ"
       ],
       "name": "APEX Different Ann",
       "settings": {
