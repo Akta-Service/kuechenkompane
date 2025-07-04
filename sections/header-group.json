@@ -142,6 +142,14 @@
             "ann_title": "💥 Großer Lagerschlussverkauf",
             "text": "<p>Bis zu 75 % auf echte Bestseller</p>"
           }
+        },
+        "announcement_4xFYEd": {
+          "type": "announcement",
+          "settings": {
+            "collection": "reise-gewinnen-malediven-4",
+            "ann_title": "💥 Großer Lagerschlussverkauf",
+            "text": "<p>Bis zu 75 % auf echte Bestseller</p>"
+          }
         }
       },
       "block_order": [
@@ -154,7 +162,8 @@
         "announcement_gzD8Dc",
         "announcement_XbBpcL",
         "announcement_NzwhVJ",
-        "announcement_qcxp9X"
+        "announcement_qcxp9X",
+        "announcement_4xFYEd"
       ],
       "name": "APEX Different Ann",
       "settings": {
