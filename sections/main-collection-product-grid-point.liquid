@@ -98,20 +98,11 @@
                 {% unless product.tags contains 'NO SEARCH' %}
                 
                   <div class="m-product-item m:w-6/12 md:m:w-4/12" data-tags="{% for tag in product.tags %}{{ tag | handleize }} {% endfor %}">
-                    {% liquid
-                      case settings.pcard_layout
-                        when '1'
-                          render 'product-card-1-point', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '2'
-                          render 'product-card-2', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '3'
-                          render 'product-card-3', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '4'
-                          render 'product-card-4', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '5'
-                          render 'product-card-5', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                      endcase
-                    %}
+                     <div class="m-product-item m:w-6/12 md:m:w-4/12">
+                      {% liquid
+                      render 'product-card-1-point', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect,   
+                      %}
+                    </div>
                   </div>
                 {% endunless %}
               {%- endfor -%}
