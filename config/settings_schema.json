@@ -4078,6 +4078,18 @@
         "content": "Bonus Point Settings"        
       },
       {
+        "type": "textarea",
+        "id": "eligible_collections",
+        "label": "Eligible Collections (comma separated)",
+        "default": "aktion-3-for-2,deal-of-week,summer-sale"
+      },
+      {
+        "type": "number",
+        "id": "points_rate",
+        "label": "Points Conversion (Example: 10 means 10 currency = 1 point)",
+        "default": 10
+      },
+      {
         "type": "text",
         "id": "line_item_point",
         "label": "Line Item Point",

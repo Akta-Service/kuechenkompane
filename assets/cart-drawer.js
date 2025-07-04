@@ -143,11 +143,7 @@ class MCartDrawer extends HTMLElement {
         selector: "[data-minimog-gift-wrapping]",
         block: "cart-footer",
       },
-      {
-        id: "cart-drawer",
-        selector: "[data-point]",
-        block: "cart-footer",
-      },
+      
     ];
   }
 
