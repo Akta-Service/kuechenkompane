@@ -1444,6 +1444,7 @@ if (!customElements.get("product-form")) {
         };
       }
       connectedCallback() {
+        // UI is called here: when the element is connected, the form and related UI are initialized and event listeners are attached.
         this.domNodes = queryDomNodes(this.selectors, this);
         this.form = this.domNodes.form;
         this.productInfo = this.closest(".m-main-product--info");
