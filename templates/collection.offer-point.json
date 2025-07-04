@@ -57,6 +57,42 @@
         "animations": "inherit"
       }
     },
+    "image_with_text_collection_yVegMf": {
+      "type": "image-with-text-collection",
+      "name": "Image text Collection",
+      "settings": {
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "layout": "left",
+        "image_column_size": "6",
+        "image_overlap": false,
+        "show_image_reverse": false,
+        "hover_effect": false,
+        "image_animation": "none",
+        "image": "shopify://shop_images/ChatGPT_Image_4._Juli_2025_11_20_29.png",
+        "link": "",
+        "link_2": "",
+        "second_image_offset_top": 10,
+        "title": "GEWINNSPIEL - REGELN:",
+        "sub_title": "",
+        "text": "<p>🎟️ <strong>1 Los pro 50 € Einkaufswert</strong></p><p><strong>📅 Teilnahmezeitraum:05. Juli bis 13. Juli 2025</strong></p><p><strong>🏖️ Das gibt’s zu gewinnen: </strong>Eine unvergessliche <strong>Malediven-Reise für 2 Personen </strong>– inkl. Flug & Unterkunft im Wasserbungalow<br/></p><p><strong>🔔 Auslosung: </strong>Gewinner wird <strong>öffentlich gezogen & per E-Mail benachrichtigt</strong>.<br/><br/><br/><br/></p>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "m-button--link",
+        "button_size": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "main": {
       "type": "main-collection-product-grid-point",
       "blocks": {
@@ -243,6 +279,7 @@
   "order": [
     "breadcrumb_yifnda",
     "image_with_text_jADKWn",
+    "image_with_text_collection_yVegMf",
     "main",
     "collection-header",
     "apex_timer_9PnBtn",
