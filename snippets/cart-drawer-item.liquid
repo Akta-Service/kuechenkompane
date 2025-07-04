@@ -103,6 +103,7 @@
               {% assign conversion_rate = settings.points_rate %}
               {% assign from_collection = item.properties.From_Collection | strip %}
 
+              
               {% if eligible_collections contains from_collection %}
                 {% assign price = item.variant.price %}
                 {% assign single_points = price | divided_by: 100 | divided_by: conversion_rate %}
