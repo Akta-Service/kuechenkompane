@@ -105,6 +105,14 @@
             "ann_title": "Exklusiv für TopDeal24-Leser",
             "text": "<p>Bis zu 75 % Rabatt auf ausgewählte Produkte</p>"
           }
+        },
+        "announcement_gzD8Dc": {
+          "type": "announcement",
+          "settings": {
+            "collection": "reise-gewinnen-malediven",
+            "ann_title": "LAGER AUSVERKAUF!",
+            "text": "<p>Exclusive deal for this collection!</p>"
+          }
         }
       },
       "block_order": [
@@ -113,7 +121,8 @@
         "announcement_FDAfCN",
         "announcement_QXQcLy",
         "announcement_pwen7A",
-        "announcement_CCnrUw"
+        "announcement_CCnrUw",
+        "announcement_gzD8Dc"
       ],
       "name": "APEX Different Ann",
       "settings": {
