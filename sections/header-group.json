@@ -38,7 +38,8 @@
           "grossbestellung-storniert",
           "letzte-chance-auslaufserie",
           "vor-der-preiserhohung",
-          "topdeal24-angebot"
+          "topdeal24-angebot",
+          "reise-gewinnen-malediven"
         ],
         "enable_scroll_to_show": false,
         "px_to_show": 500,
@@ -105,6 +106,14 @@
             "ann_title": "Exklusiv für TopDeal24-Leser",
             "text": "<p>Bis zu 75 % Rabatt auf ausgewählte Produkte</p>"
           }
+        },
+        "announcement_gzD8Dc": {
+          "type": "announcement",
+          "settings": {
+            "collection": "reise-gewinnen-malediven",
+            "ann_title": "🌴 MALEDIVEN TRAUMREISE GEWINNSPIEL 🌴",
+            "text": "<p>7 TAGE TRAUMREISE ZU FÜR 2 PERSONEN</p>"
+          }
         }
       },
       "block_order": [
@@ -113,7 +122,8 @@
         "announcement_FDAfCN",
         "announcement_QXQcLy",
         "announcement_pwen7A",
-        "announcement_CCnrUw"
+        "announcement_CCnrUw",
+        "announcement_gzD8Dc"
       ],
       "name": "APEX Different Ann",
       "settings": {

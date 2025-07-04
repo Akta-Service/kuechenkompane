@@ -1507,6 +1507,9 @@ if (!customElements.get("product-form")) {
           );
           formData.append("sections_url", window.location.pathname);
         }
+        if (window.location.href.includes("reise-gewinnen-malediven")) {
+          formData.append("properties[From_Collection]", "reise-gewinnen-malediven");
+        }
         config.body = formData;
         const { MinimogSettings, MinimogStrings } = window;
         fetch(`${MinimogSettings.routes.cart_add_url}`, config)

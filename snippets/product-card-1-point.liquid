@@ -14,7 +14,7 @@
   - remove_params: {Boolean} Remove url params (optional)
 
   Usage:
-  {% render 'product-card-1', product: product %}
+  {% render 'apex-product-card', product: product %}
 {% endcomment %}
 
 {% liquid
@@ -96,7 +96,7 @@
   endif
 
   if show_cart_button == null
-    assign show_cart_button = settings.show_cart_button
+    assign show_cart_button = section.settings.show_cart_button
   endif
 
   if show_quickview_button == null
@@ -167,7 +167,6 @@
     data-cascade
     style="--animation-order: {{ index }};"
   {% endif %}
-  data-tags="{{ product.tags | join: ', ' }}"
 >
   <div class="m-product-card__media">
     <a
@@ -516,7 +515,7 @@
       {%- endif -%}
       {%- if show_quickview_button or show_wishlist_button or show_compare_button or show_cart_button -%}
         <div class="m-product-card__action">
-          {% render 'product-card-quick-add-btn', product: product, quick_add_text: quick_add_text, section: section %}
+          {% render 'product-card-quick-add-btn', product: product, quick_add_text: quick_add_text, section: section, button_style: section.settings.button_style, button_size: section.settings.button_size %}
           <div class="m-product-card__action-icons">
             {% liquid
               assign tooltips = 'compare,quickview,'
