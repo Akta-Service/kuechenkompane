@@ -144,6 +144,7 @@ class MCartDrawer extends HTMLElement {
         block: "cart-footer",
       },
       
+      
     ];
   }
 
