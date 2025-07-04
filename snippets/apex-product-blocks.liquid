@@ -1045,7 +1045,7 @@
 {%- endfor -%}
 
 
-
+<!-- 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -1068,4 +1068,35 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('❌ No from collection parameter found in URL');
   }
 });
+</script> -->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const fromCollection = urlParams.get("from");
+
+    // ✅ Only run if: 1) there's a ?from= parameter, and 2) you're on a /products/ page
+    if (fromCollection && window.location.pathname.startsWith("/products/")) {
+      // Target only the main product form
+      const productForm = document.querySelector('form[action^="/cart/add"]:not(.quick-add):not(.drawer-form)');
+
+      if (productForm) {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = "properties[From_Collection]";
+        input.value = fromCollection;
+        productForm.appendChild(input);
+
+        console.log("✅ Hidden input added for special collection offer:", fromCollection);
+      } else {
+        console.log("⚠️ Product form not found.");
+      }
+    } else {
+      // Do nothing if the URL has no ?from= or isn't a product page
+      console.log("ℹ️ Not a special offer URL. Skipping hidden input injection.");
+    }
+  });
 </script>
+
+                        
