@@ -122,9 +122,7 @@ class MCartDrawer extends HTMLElement {
   }
 
   getSectionsToRender() {
-
-        if (window.location.pathname.includes("products")) {
-      return [
+    return [
       {
         id: "cart-drawer",
         selector: "[data-minimog-cart-items]",
@@ -145,40 +143,13 @@ class MCartDrawer extends HTMLElement {
         selector: "[data-minimog-gift-wrapping]",
         block: "cart-footer",
       },
-           
+      //       {
+      //   id: "cart-drawer",
+      //   selector: "[data-point]",
+      //   block: "cart-footer",
+      // },
       
     ];
-    } else {
-       return [
-      {
-        id: "cart-drawer",
-        selector: "[data-minimog-cart-items]",
-        block: "cart-items",
-      },
-      {
-        id: "cart-drawer",
-        selector: "[data-minimog-cart-discounts]",
-        block: "cart-footer",
-      },
-      {
-        id: "cart-drawer",
-        selector: "[data-cart-subtotal]",
-        block: "cart-footer",
-      },
-      {
-        id: "cart-drawer",
-        selector: "[data-minimog-gift-wrapping]",
-        block: "cart-footer",
-      },
-            {
-        id: "cart-drawer",
-        selector: "[data-point]",
-        block: "cart-footer",
-      },
-      
-    ];
-    }
-  
   }
 
   getSectionDOM(html, selector = ".shopify-section") {
