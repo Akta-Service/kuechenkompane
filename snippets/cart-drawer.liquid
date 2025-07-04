@@ -58,6 +58,8 @@ p.upsell--product__price.compare--price {
 
 .point--count {
     font-size: 14px;
+    position: relative;
+
 }
 .cart-points-summary {
     display: flex;
@@ -67,7 +69,49 @@ p.upsell--product__price.compare--price {
     font-weight: 700;
 }
 
+.info-tooltip {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 5px;
+  }
 
+  .info-tooltip .tooltip-text {
+    visibility: hidden;
+    width: 260px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%; /* position above */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .info-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .info-tooltip .tooltip-icon {
+    background-color: #a1a1a1;
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 @media only screen and (max-width:768px){
   .c_bootom_list li span {
