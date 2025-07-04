@@ -107,7 +107,14 @@
                 {% assign price = item.variant.price %}
                 {% assign single_points = price | divided_by: 100 | divided_by: conversion_rate %}
                 {% assign points = single_points | times: item.quantity %}
-                <p class="point--count">{{ settings.line_item_point }} {{ points }}</p>
+               <p class="point--count">{{ settings.line_item_point }} {{ points }}
+                  <span class="info-tooltip">
+                    <span class="tooltip-icon">i</span>
+                    <span class="tooltip-text">
+                     {{ settings.i_button_text }}
+                    </span>
+                  </span>
+                </p>
               {% endif %}
 
 
