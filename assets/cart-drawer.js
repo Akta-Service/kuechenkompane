@@ -81,10 +81,11 @@ class MCartDrawer extends HTMLElement {
   }
 
   onCartDrawerUpdate(updateFooter = true) {
+    console.log("cart update", updateFooter)
     fetch(`${MinimogSettings.routes.cart}?section_id=cart-drawer`)
       .then((response) => response.text())
       .then((responseText) => {
-        this.getSectionsToRender().forEach((section) => {
+        this.getSectionsToRendertwo().forEach((section) => {
           if (section.block === "cart-items") {
             const sectionElement = section.selector
               ? document.querySelector(section.selector)
@@ -148,6 +149,36 @@ class MCartDrawer extends HTMLElement {
       //   selector: "[data-point]",
       //   block: "cart-footer",
       // },
+      
+    ];
+  }
+  getSectionsToRendertwo() {
+    return [
+      {
+        id: "cart-drawer",
+        selector: "[data-minimog-cart-items]",
+        block: "cart-items",
+      },
+      {
+        id: "cart-drawer",
+        selector: "[data-minimog-cart-discounts]",
+        block: "cart-footer",
+      },
+      {
+        id: "cart-drawer",
+        selector: "[data-cart-subtotal]",
+        block: "cart-footer",
+      },
+      {
+        id: "cart-drawer",
+        selector: "[data-minimog-gift-wrapping]",
+        block: "cart-footer",
+      },
+            {
+        id: "cart-drawer",
+        selector: "[data-point]",
+        block: "cart-footer",
+      },
       
     ];
   }
