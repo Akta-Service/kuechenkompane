@@ -59,6 +59,23 @@
     },
     "image_with_text_collection_yVegMf": {
       "type": "image-with-text-collection",
+      "blocks": {
+        "collection_content_P4eAVY": {
+          "type": "collection_content",
+          "settings": {
+            "target_collection": "reise-gewinnen-malediven",
+            "custom_image": "shopify://shop_images/aerial_bungalows_villas_amazing_sea_lagoon_bay_beach_exotic_destination_summer_vacation_wallpaper_jpg_V2_1.jpg",
+            "custom_title": "",
+            "custom_subtitle": "",
+            "custom_text": "<p>test</p>",
+            "custom_button_label": "",
+            "custom_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_content_P4eAVY"
+      ],
       "name": "Image text Collection",
       "settings": {
         "heading": "",
