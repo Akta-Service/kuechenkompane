@@ -171,7 +171,7 @@
   <div class="m-product-card__media">
     <a
       class="m-product-card__link m:block m:w-full"
-      href="{{ product_url }}"
+      href="{{ product.url }}?from={{ collection.handle }}"
       aria-label="{{ product.title | default: 'product title' }}"
     >
       {% if preview_image != blank or first_media_type == 'video' %}
@@ -394,7 +394,7 @@
       {% if show_title == true %}
         <h3 class="m-product-card__title">
           <a
-            href="{{ product_url }}"
+            href="{{ product.url }}?from={{ collection.handle }}"
             class="m-product-card__name{% if settings.uppercase_prd_name %} m:uppercase{% endif %}"
           >
             {{ product.title }}
