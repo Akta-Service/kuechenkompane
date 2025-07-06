@@ -580,5 +580,26 @@
         async
       ></script>
     {% endif %}
+
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+          document.querySelectorAll('form[action*="/cart/add"][data-collection]').forEach(function (form) {
+            const collection = form.dataset.collection;
+
+            if (collection && localStorage.getItem('visited_collection_' + collection) === 'true') {
+              const input = document.createElement('input');
+              input.type = 'hidden';
+              input.name = 'properties[TrackedNote]';
+              input.value = 'Visited Collection: ' + collection;
+              form.appendChild(input);
+            }
+          });
+        }, 100);
+      });
+    </script>
+
   </body>
 </html>
