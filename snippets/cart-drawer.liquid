@@ -59,7 +59,6 @@ p.upsell--product__price.compare--price {
 .point--count {
     font-size: 14px;
     position: relative;
-
 }
 .cart-points-summary {
     display: flex;
@@ -368,6 +367,10 @@ p.upsell--product__price.compare--price {
           {% if total_points > 0 %}
             <div class="cart-points-summary" data-point>
              {{ settings.total_points }} {{ total_points }}
+            </div>
+          {% else %}
+                <div class="cart-points-summary" data-point>
+                
             </div>
           {% endif %}
 
