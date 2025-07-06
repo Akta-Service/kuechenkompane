@@ -837,3 +837,13 @@
   ]
 }
 {% endschema %}
+
+
+{% assign eligible_collections = 'aktion-3-for-2' | split: ',' %}
+
+{% if eligible_collections contains collection.handle %}
+  <script>
+    // Mark collection as visited
+    localStorage.setItem('visited_collection_{{ collection.handle }}', 'true');
+  </script>
+{% endif %}
