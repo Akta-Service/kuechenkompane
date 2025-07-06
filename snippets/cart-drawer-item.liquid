@@ -116,13 +116,15 @@
                   </span>
                 </p>
               {% endif %}
-
-
-
-
-
-              
+             
             </p>
+           
+            {% if item.properties['TrackedNote'] %}
+              <p><em>{{ item.properties['TrackedNote'] }}</em></p>
+            {% endif %}
+            
+
+
           {%- endfor -%}
               </div>
 
