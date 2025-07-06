@@ -586,12 +586,11 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        // Find all product forms that belong to a tracked collection
+        // Look for all add-to-cart forms with a data-collection attribute
         document.querySelectorAll('form[action*="/cart/add"][data-collection]').forEach(function (form) {
           const collection = form.dataset.collection;
     
           if (collection && localStorage.getItem('visited_collection_' + collection) === 'true') {
-            // Create hidden input to pass the note
             const input = document.createElement('input');
             input.type = 'hidden';
             input.name = 'properties[TrackedNote]';

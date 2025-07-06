@@ -23,6 +23,19 @@
 {%- if settings.show_cart_button -%}
   <div class="m-product-card__action-wrapper">
     {%- if product.has_only_default_variant -%}
+
+      {% assign eligible_collections = 'summer-collection,winter-deals' | split: ',' %}
+      {% assign matched_collection = '' %}
+      
+      {% for collection in product.collections %}
+        {% if eligible_collections contains collection.handle %}
+          {% assign matched_collection = collection.handle %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      
+
+
       <product-form class="m-product-form m:w-full" data-product-id="{{ product.id }}">
         {%- form 'product',
           product,
@@ -63,6 +76,19 @@
             </span>
           </button>
         {%- endform -%}
+
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            var form = document.querySelector('form[data-product-id="{{ product.id }}"]');
+            if (form && "{{ matched_collection }}" !== "") {
+              form.setAttribute('data-collection', '{{ matched_collection }}');
+            }
+          });
+        </script>
+
+
+
       </product-form>
     {% else %}
       {% if settings.select_option_button_action == 'popup' %}
