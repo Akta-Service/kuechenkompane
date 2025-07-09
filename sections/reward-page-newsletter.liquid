@@ -125,16 +125,44 @@
       <div class="subscription-content">
           <h3 class="subscription-title">{{ section.settings.title }}</h3>
           <p class="subscription-text">{{ section.settings.newsletter_text }}</p>
-          <div class="subscription-input-group">
-              <div class="input-group__fields">
-                  <input type="email" id="email" class="input-group__field" value="" placeholder="Your email"
-                      name="email" aria-label="Your email">
-              </div>
-              <div class="input-group__btn-wrapper">
-                  <button type="submit" name="subscribe" id="subscribe"
-                      class="input-group__btn">Register</button>
-              </div>
-          </div>
+
+
+          {% form 'customer', class: 'newsletter-form' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+
+            <div class="subscription-input-group">
+                <div class="input-group__fields">
+                    <input 
+                    id="NewsletterForm--{{ section.id }}"
+                    type="email"
+                    name="contact[email]"                  
+                    value="{{ form.email }}"
+                    aria-required="true"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    {% if form.errors %}
+                      autofocus
+                      aria-invalid="true"
+                      aria-describedby="Newsletter-error--{{ section.id }}"
+                    {% elsif form.posted_successfully? %}
+                      aria-describedby="Newsletter-success--{{ section.id }}"
+                    {% endif %}
+                    placeholder="{{ section.settings.place_holder_text }}"
+                    required
+                    class="input-group__field"                         
+                        
+                      >
+                </div>
+                <div class="input-group__btn-wrapper">
+                    <button
+                    type="submit"                  
+                    name="commit"
+                    id="Subscribe"                                        
+                    class="input-group__btn">{{ section.settings.btn_text }}</button>
+                </div>
+            </div>
+          {% endform %}
       </div>
   </div>
 </section>
@@ -160,6 +188,18 @@
       "id": "newsletter_text",
       "label": "Newsletter Text",
       "default": "Stay updated with our latest news and offers."
+    },
+    {
+      "type": "text",
+      "id": "place_holder_text",
+      "label": "Input Placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Subscribe"
     }
   ],
   "presets": [
