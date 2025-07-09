@@ -170,7 +170,7 @@
             "secondary_button_text_color": "#000000",
             "hover_btn": "#000000",
             "hover_text_color": "#ffffff",
-            "custom_css": "/* Add your custom styles here */"
+            "custom_css": "#loloyal-ways-to-redeem .ll-page-cards-item{\n    background: linear-gradient(135deg, #d1f3ff 0%, #fce0f4 100%) !important;\n\n}"
           }
         }
       },
@@ -230,7 +230,9 @@
       "settings": {
         "bg_img": "shopify://shop_images/subscription-bg.png",
         "title": "Stay in the loop",
-        "newsletter_text": "Subscribe to stay up-to-date with our latest news, special offers and e-bike tips."
+        "newsletter_text": "Subscribe to stay up-to-date with our latest news, special offers and e-bike tips.",
+        "place_holder_text": "Enter your email",
+        "btn_text": "Subscribe"
       }
     }
   },
