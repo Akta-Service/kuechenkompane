@@ -9,6 +9,37 @@
  */
 {
   "sections": {
+    "reward_banner_ixQph3": {
+      "type": "reward-banner",
+      "blocks": {
+        "title_zeHXHC": {
+          "type": "title",
+          "settings": {
+            "title": "Your Reward Banner Title"
+          }
+        },
+        "text_8RhiQy": {
+          "type": "text",
+          "settings": {
+            "text": "Your reward banner description goes here."
+          }
+        },
+        "button_nrHibw": {
+          "type": "Button",
+          "settings": {
+            "btn_text": "Learn More",
+            "btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_zeHXHC",
+        "text_8RhiQy",
+        "button_nrHibw"
+      ],
+      "name": "Reward Banner",
+      "settings": {}
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -24,7 +55,7 @@
           "type": "shopify://apps/loloyal/blocks/app-banner/930ac91f-2bf2-4655-9ba0-574771f782d6",
           "settings": {
             "img_opacity": 0,
-            "bg_color": "#F6F6F6",
+            "bg_color": "#f6f6f6",
             "banner_height": "400",
             "content_position": "ll-middle-left",
             "content_alignment": "left",
@@ -34,11 +65,11 @@
             "subtitle_color": "#000000",
             "btn_radius": 30,
             "primary_button_color": "#000000",
-            "primary_button_text_color": "#FFFFFF",
-            "secondary_button_color": "#FFFFFF",
+            "primary_button_text_color": "#ffffff",
+            "secondary_button_color": "#ffffff",
             "secondary_button_text_color": "#000000",
             "hover_btn": "#000000",
-            "hover_text_color": "#FFFFFF",
+            "hover_text_color": "#ffffff",
             "custom_css": "/* Add your custom styles here */"
           }
         }
@@ -80,15 +111,15 @@
             "subtitle_color": "#000000",
             "name_color": "#000000",
             "details_color": "#000000",
-            "card_bg_color": "#FFFFFF",
+            "card_bg_color": "#ffffff",
             "background_color": "#ffffff",
             "border_color": "#ececec",
             "primary_button_color": "#000000",
-            "primary_button_text_color": "#FFFFFF",
-            "secondary_button_color": "#FFFFFF",
+            "primary_button_text_color": "#ffffff",
+            "secondary_button_color": "#ffffff",
             "secondary_button_text_color": "#000000",
             "hover_btn": "#000000",
-            "hover_text_color": "#FFFFFF",
+            "hover_text_color": "#ffffff",
             "custom_css": "/* Add your custom styles here */"
           }
         }
@@ -130,15 +161,15 @@
             "subtitle_color": "#000000",
             "name_color": "#000000",
             "details_color": "#000000",
-            "card_bg_color": "#FFFFFF",
+            "card_bg_color": "#ffffff",
             "background_color": "#ffffff",
             "border_color": "#ececec",
             "primary_button_color": "#000000",
-            "primary_button_text_color": "#FFFFFF",
-            "secondary_button_color": "#FFFFFF",
+            "primary_button_text_color": "#ffffff",
+            "secondary_button_color": "#ffffff",
             "secondary_button_text_color": "#000000",
             "hover_btn": "#000000",
-            "hover_text_color": "#FFFFFF",
+            "hover_text_color": "#ffffff",
             "custom_css": "/* Add your custom styles here */"
           }
         }
@@ -162,6 +193,7 @@
     }
   },
   "order": [
+    "reward_banner_ixQph3",
     "main",
     "1751878483f5d466c2",
     "175187851140e57500",
