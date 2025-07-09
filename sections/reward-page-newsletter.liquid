@@ -161,6 +161,29 @@
                     id="Subscribe"                                        
                     class="input-group__btn">{{ section.settings.btn_text }}</button>
                 </div>
+                {%- if form.errors -%}
+                  <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                    <span class="svg-wrapper">
+                      {{- 'icon-error.svg' | inline_asset_content -}}
+                    </span>
+                    {{- form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email -}}
+                  </small>
+                {%- endif -%}
+                {%- if form.posted_successfully? -%}
+                  <h3
+                    class="newsletter-form__message newsletter-form__message--success form__message"
+                    id="Newsletter-success--{{ section.id }}"
+                    tabindex="-1"
+                    autofocus
+                  >
+                    <span class="svg-wrapper">
+                      {{- 'icon-success.svg' | inline_asset_content -}}
+                    </span>
+                    {{ section.settings.success_text | default: 'Thank you for subscribing!' }}
+                  </h3>
+                {%- endif -%}
+                
             </div>
           {% endform %}
       </div>
@@ -200,6 +223,12 @@
       "id": "btn_text",
       "label": "Button Text",
       "default": "Subscribe"
+    },
+    {
+      "type": "text",
+      "id": "success_text",
+      "label": "Success Message",
+      "default": "Thank you for subscribing!"
     }
   ],
   "presets": [
