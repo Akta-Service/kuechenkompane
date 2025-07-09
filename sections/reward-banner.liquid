@@ -105,12 +105,12 @@
             {% for block in section.blocks %}
               {% case block.type %}
                 {% when 'title' %}
-                  <h1 class="hero-title">{{ block.settings.title }}</h1>
+                  <h1 class="hero-title" {{ block.shopify_attributes }}>{{ block.settings.title }}</h1>
                 {% when 'text' %}
-                  <p class="hero-text">{{ block.settings.text }}</p>
+                  <p class="hero-text" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
 
                 {% when 'Button' %}
-                  <a class="hero-btn" href="{{ block.settings.btn_url }}">{{ block.settings.btn_text }}</a>
+                  <a {{ block.shopify_attributes }} class="hero-btn" href="{{ block.settings.btn_url }}">{{ block.settings.btn_text }}</a>
 
 
             {% endcase %}
