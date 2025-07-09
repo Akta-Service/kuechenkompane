@@ -38,7 +38,9 @@
         "button_nrHibw"
       ],
       "name": "Reward Banner",
-      "settings": {}
+      "settings": {
+        "bg_image": "shopify://shop_images/hero-bg.jpg"
+      }
     },
     "main": {
       "type": "main-page",
