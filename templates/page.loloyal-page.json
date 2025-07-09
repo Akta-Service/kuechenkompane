@@ -218,7 +218,9 @@
         "info_MnHKFR"
       ],
       "name": "Support Section",
-      "settings": {}
+      "settings": {
+        "bg": "shopify://shop_images/cta-bg.png"
+      }
     }
   },
   "order": [
