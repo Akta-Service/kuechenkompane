@@ -39,7 +39,8 @@
       ],
       "name": "Reward Banner",
       "settings": {
-        "bg_image": "shopify://shop_images/hero-bg.jpg"
+        "bg_image": "shopify://shop_images/hero-bg.jpg",
+        "bg_image_mobile": "shopify://shop_images/hero-bg2.jpg"
       }
     },
     "main": {
