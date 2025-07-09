@@ -46,10 +46,7 @@
     "main": {
       "type": "page",
       "disabled": true,
-      "settings": {
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
+      "settings": {}
     },
     "1751878483f5d466c2": {
       "type": "apps",
@@ -193,6 +190,35 @@
         "padding_bottom_mobile": 30,
         "custom_class": ""
       }
+    },
+    "support_section_mypjCm": {
+      "type": "support-section",
+      "blocks": {
+        "icon_PHfCyL": {
+          "type": "icon",
+          "settings": {}
+        },
+        "title_dKQr6R": {
+          "type": "title",
+          "settings": {
+            "title": "Contact Our Support"
+          }
+        },
+        "info_MnHKFR": {
+          "type": "info",
+          "settings": {
+            "info_text": "We are here to help you with any questions.",
+            "email": "support@example.com"
+          }
+        }
+      },
+      "block_order": [
+        "icon_PHfCyL",
+        "title_dKQr6R",
+        "info_MnHKFR"
+      ],
+      "name": "Support Section",
+      "settings": {}
     }
   },
   "order": [
@@ -200,6 +226,7 @@
     "main",
     "1751878483f5d466c2",
     "175187851140e57500",
-    "1751878518df6e3564"
+    "1751878518df6e3564",
+    "support_section_mypjCm"
   ]
 }
