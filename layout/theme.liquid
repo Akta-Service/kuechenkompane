@@ -583,14 +583,12 @@
 
 
 
-
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        // Delay by 50ms to ensure inline scripts have set data-collection
         setTimeout(function () {
           document.querySelectorAll('form[action*="/cart/add"][data-collection]').forEach(function (form) {
             const collection = form.dataset.collection;
-    
+
             if (collection && localStorage.getItem('visited_collection_' + collection) === 'true') {
               const input = document.createElement('input');
               input.type = 'hidden';
@@ -599,18 +597,9 @@
               form.appendChild(input);
             }
           });
-        }, 50);
+        }, 100);
       });
     </script>
-    
-    
-
-
-
-
-
-
-
 
   </body>
 </html>

@@ -541,24 +541,14 @@
           endif
         %}
 
-
-
         {% assign eligible_collections = 'aktion-3-for-2' | split: ',' %}
         {% assign matched_collection = '' %}
-        
         {% for collection in product.collections %}
           {% if eligible_collections contains collection.handle %}
             {% assign matched_collection = collection.handle %}
             {% break %}
           {% endif %}
         {% endfor %}
-        
-
-
-
-
-
-
 
         <product-form class="m-product-form m-product-form--main" data-product-id="{{ product.id }}">
           {%- form 'product',
@@ -573,7 +563,8 @@
             data-dynamic-checkout: show_dynamic_checkout,
             data-enable-image-zoom: section.settings.show_zoom_button,
             data-enable-history-state: section.settings.enable_history_state,
-            data-enable-video-autoplay: section.settings.enable_video_autoplay           
+            data-enable-video-autoplay: section.settings.enable_video_autoplay,
+            data-collection: matched_collection
           -%}
             <input
               type="hidden"
@@ -660,20 +651,6 @@
             </div>
             <div class="m-product-form-message"></div>
           {%- endform -%}
-
-          <script>
-            document.addEventListener("DOMContentLoaded", function() {
-              var form = document.querySelector('form[data-product-id="{{ product.id }}"]');
-              if (form && "{{ matched_collection }}" !== "") {
-                form.setAttribute('data-collection', '{{ matched_collection }}');
-              }
-            });
-          </script>
-
-
-
-
-
         </product-form>
 
         <link

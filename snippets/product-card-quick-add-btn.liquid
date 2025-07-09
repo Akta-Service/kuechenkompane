@@ -24,24 +24,17 @@
   <div class="m-product-card__action-wrapper">
     {%- if product.has_only_default_variant -%}
 
-     
-      
+      {%- assign eligible_collections = 'aktion-3-for-2' | split: ',' -%}
+      {%- assign matched_collection = '' -%}
+      {%- for collection in product.collections -%}
+        {%- if eligible_collections contains collection.handle -%}
+          {%- assign matched_collection = collection.handle -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
 
 
       <product-form class="m-product-form m:w-full" data-product-id="{{ product.id }}">
-
-
-        {% assign eligible_collections = 'aktion-3-for-2' | split: ',' %}
-        {% assign matched_collection = '' %}
-        
-        {% for collection in product.collections %}
-          {% if eligible_collections contains collection.handle %}
-            {% assign matched_collection = collection.handle %}
-            {% break %}
-          {% endif %}
-        {% endfor %}        
-
-
         {%- form 'product',
           product,
           id: product_form_id,
@@ -82,19 +75,6 @@
             </span>
           </button>
         {%- endform -%}
-
-
-        {% comment %} <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            var form = document.querySelector('form[data-product-id="{{ product.id }}"]');
-            if (form && "{{ matched_collection }}" !== "") {
-              form.setAttribute('data-collection', '{{ matched_collection }}');
-            }
-          });
-        </script> {% endcomment %}
-
-
-
       </product-form>
     {% else %}
       {% if settings.select_option_button_action == 'popup' %}
