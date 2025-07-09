@@ -1,0 +1,171 @@
+<style>
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Racing+Sans+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+.subscription-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.subscription-bg img {
+    width: 100%;
+    min-height: 330px;
+}
+
+.subscription-content {
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.subscription-title {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    line-height: 52px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+}
+
+.subscription-text {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    padding: 25px 0;
+}
+
+.subscription-input-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.input-group__fields {
+    width: 265px;
+}
+
+.input-group__fields input {
+    width: 100%;
+    display: block;
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 999px;
+    background-color: transparent;
+    height: 50px;
+    padding-left: 12px;
+    color: #fff;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+}
+
+.input-group__fields input:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.input-group__fields input::placeholder {
+    color: #fff;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+}
+
+
+.input-group__btn {
+    background: #2676d5;
+    color: #fff;
+    border-color: #2676d5;
+    width: 260px;
+    height: 50px;
+    outline: 0;
+    border-radius: 999px;
+    box-shadow: none;
+    border-style: none;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    line-height: 1.25em;
+    letter-spacing: 0px;
+}
+
+@media (max-width: 767px) {
+    .subscription-content {
+        left: 10%;
+        right: 20px;
+    }
+
+    .subscription-input-group {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .subscription-title {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .subscription-text {
+        padding: 15px 0;
+    }
+
+}
+
+</style>
+
+
+<section class="subscription-section">
+<div class="subscription-bg">{% if section.settings.bg_img != blank %}<img src="{{ section.settings.bg_img |  image_url }}" alt="bg">{% endif %}</div>
+  <div class="subscription-container">
+      <div class="subscription-content">
+          <h3 class="subscription-title">{{ section.settings.title }}</h3>
+          <p class="subscription-text">{{ section.settings.newsletter_text }}</p>
+          <div class="subscription-input-group">
+              <div class="input-group__fields">
+                  <input type="email" id="email" class="input-group__field" value="" placeholder="Your email"
+                      name="email" aria-label="Your email">
+              </div>
+              <div class="input-group__btn-wrapper">
+                  <button type="submit" name="subscribe" id="subscribe"
+                      class="input-group__btn">Register</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Reward Page Newsletter",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Subscribe to our Newsletter"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_text",
+      "label": "Newsletter Text",
+      "default": "Stay updated with our latest news and offers."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reward Page Newsletter"
+    }
+  ]
+}
+{% endschema %}
