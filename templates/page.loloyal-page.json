@@ -224,10 +224,11 @@
         "bg": "shopify://shop_images/cta-bg.png"
       }
     },
-    "reward_page_newsletter_xU6fCV": {
+    "reward_page_newsletter_nBqU9x": {
       "type": "reward-page-newsletter",
       "name": "Reward Page Newsletter",
       "settings": {
+        "bg_img": "shopify://shop_images/subscription-bg.png",
         "title": "Subscribe to our Newsletter",
         "newsletter_text": "Stay updated with our latest news and offers."
       }
@@ -240,6 +241,6 @@
     "175187851140e57500",
     "1751878518df6e3564",
     "support_section_mypjCm",
-    "reward_page_newsletter_xU6fCV"
+    "reward_page_newsletter_nBqU9x"
   ]
 }
