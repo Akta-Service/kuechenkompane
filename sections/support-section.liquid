@@ -1,0 +1,161 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Racing+Sans+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.cta-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.cta-content {
+    text-align: center;
+    padding: 46px 0 50px 0;
+}
+
+.cta-title {
+    margin: 0;
+    padding: 0;
+    font-size: 46px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    color: #000f8f;
+}
+
+.cta-text {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    padding: 27px 0 20px 0;
+}
+
+.cta-link {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    color: #000;
+}
+
+
+@media (max-width: 576px) {
+    .cta-title {
+        font-size: 32px;
+    }
+    .cta-text {
+        font-size: 18px;
+    }
+    .cta-link {
+        font-size: 16px;
+    }
+}
+</style>
+
+<!-- Cta Section -->
+ <section class="cta-section">
+  <div class="cta-container">
+      <div class="cta-bg" style="background-image: url({{ section.settings.bg | image_url }});">
+          <div class="cta-content">
+            {% for block in section.blocks %}
+              {% case block.type %}
+               
+              {% when 'icon' %}
+                {% if block.settings.icon != blank %}
+                  <div class="cta-thumb">
+                      <img src="{{ block.settings.icon | img_url: 'master' }}" loading="lazy" alt="img">
+                  </div>
+                {% endif %}
+              {% when 'title' %}
+                <h1 class="cta-title">{{ block.settings.title }}</h1>
+
+              {% when 'info' %}
+
+              <p class="cta-text">{{ block.settings.info_text }}</p>
+              <a class="cta-link" href="mailto:{{ block.settings.email }}">{{ block.settings.email }}</a>
+            {% endcase %}
+          {% endfor %}         
+          
+          </div>
+      </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Support Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title Text",
+          "default": "Contact Our Support"
+        }
+      ]
+    },
+    {
+      "type": "info",
+      "name": "Info",
+      "settings": [
+        {
+          "type": "text",
+          "id": "info_text",
+          "label": "Info Text",
+          "default": "We are here to help you with any questions."
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Support Email",
+          "default": "support@example.com"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Support Section",
+      "blocks": [
+        {
+          "type": "icon"
+        },
+        {
+          "type": "title"
+        },
+        {
+          "type": "info"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
