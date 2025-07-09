@@ -196,12 +196,14 @@
       "blocks": {
         "icon_PHfCyL": {
           "type": "icon",
-          "settings": {}
+          "settings": {
+            "icon": "shopify://shop_images/service.png"
+          }
         },
         "title_dKQr6R": {
           "type": "title",
           "settings": {
-            "title": "Contact Our Support"
+            "title": "Meet Any Problem?"
           }
         },
         "info_MnHKFR": {
