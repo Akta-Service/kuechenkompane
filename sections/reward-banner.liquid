@@ -1,0 +1,90 @@
+<section class="hero-section">
+  <div class="hero-bg">
+      <div class="hero-container">
+          <div class="hero-content">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'title' %}
+                  <h1 class="hero-title">{{ block.settings.title }}</h1>
+                {% when 'text' %}
+                  <p class="hero-text">{{ block.settings.text }}</p>
+
+                {% when 'Button' %}
+                  <a class="hero-btn" href="{{ block.settings.btn_url }}">{{ block.settings.btn_text }}</a>
+
+
+            {% endcase %}
+          {% endfor %}
+
+
+          </div>
+      </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Reward Banner",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Your Reward Banner Title"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Your reward banner description goes here."
+        }
+      ]
+    },
+    {
+      "type": "Button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],  
+  "presets": [
+    {
+      "name": "Reward Banner",
+      "blocks": [
+        {
+          "type": "title"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "Button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
