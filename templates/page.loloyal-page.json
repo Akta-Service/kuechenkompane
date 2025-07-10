@@ -235,6 +235,23 @@
         "btn_text": "Subscribe",
         "success_text": "Thank you for subscribing!"
       }
+    },
+    "work_process_fCkNfp": {
+      "type": "work-process",
+      "name": "Work Process",
+      "settings": {
+        "shape_1": "shopify://shop_images/work-shape-left.png",
+        "title": "Our Work Process",
+        "shape_2": "shopify://shop_images/work-shape-right.png",
+        "bg_image": "shopify://shop_images/work-process-bg.png",
+        "bg_image_mobile": "shopify://shop_images/work-process-bg2.png",
+        "register": "REGISTER",
+        "register_info": "Create an account  and earn 100  points.",
+        "earn": "EARN",
+        "earn_info": "Earn points from your orders and activities.",
+        "redeem": "REDEEM",
+        "redeem_info": "Redeem points for exclusive offers."
+      }
     }
   },
   "order": [
@@ -244,6 +261,7 @@
     "175187851140e57500",
     "1751878518df6e3564",
     "support_section_mypjCm",
-    "reward_page_newsletter_nBqU9x"
+    "reward_page_newsletter_nBqU9x",
+    "work_process_fCkNfp"
   ]
 }
