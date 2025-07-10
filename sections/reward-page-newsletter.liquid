@@ -93,7 +93,9 @@
     line-height: 1.25em;
     letter-spacing: 0px;
 }
-
+.newsletter-form__message {
+    color: #fff;
+}
 @media (max-width: 767px) {
     .subscription-content {
         left: 10%;
@@ -160,8 +162,7 @@
                     name="commit"
                     id="Subscribe"                                        
                     class="input-group__btn">{{ section.settings.btn_text }}</button>
-                </div>
-                {%- if form.errors -%}
+                    {%- if form.errors -%}
                   <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
                     <span class="svg-wrapper">
                       {{- 'icon-error.svg' | inline_asset_content -}}
@@ -183,6 +184,8 @@
                     {{ section.settings.success_text | default: 'Thank you for subscribing!' }}
                   </h3>
                 {%- endif -%}
+                </div>
+                
                 
             </div>
           {% endform %}
