@@ -170,7 +170,7 @@
             "secondary_button_text_color": "#000000",
             "hover_btn": "#000000",
             "hover_text_color": "#ffffff",
-            "custom_css": "#loloyal-ways-to-redeem .ll-page-cards-item{\nbackground: linear-gradient(135deg, #d1f3ff 0%, #fce0f4 100%) !important;\n position: relative;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item::after {\n  content: \"\";\n  position: absolute;\n  bottom: 16px; /* adjust position as needed */\n  right: 16px;\n  width: 60px;\n  height: 60px;\n  background: url(https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Untitled-1_aa4155a2-6fc7-4b82-857d-794425de15db.png?v=1752092164) center center / contain no-repeat;\nright: 35px;\nbottom: 5px;\nz-index: 1;\n}\n#loloyal-ways-to-redeem .ll-mask{\nz-index: 2;\n}"
+            "custom_css": "#loloyal-ways-to-redeem .ll-page-cards-item{\nbackground: linear-gradient(135deg, #d1f3ff 0%, #fce0f4 100%) !important;\n position: relative;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item::after {\n  content: \"\";\n  position: absolute;\n  bottom: 16px; /* adjust position as needed */\n  right: 16px;\n  width: 60px;\n  height: 60px;\n  background: url(https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Untitled-1_aa4155a2-6fc7-4b82-857d-794425de15db.png?v=1752092164) center center / contain no-repeat;\nright: 35px;\nbottom: 5px;\nz-index: 1;\n}\n#loloyal-ways-to-redeem .ll-mask{\nz-index: 2;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item-content {    \n    position: relative;\n    z-index: 3;\n}"
           }
         }
       },
