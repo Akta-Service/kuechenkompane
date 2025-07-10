@@ -592,8 +592,8 @@
             if (collection && localStorage.getItem('visited_collection_' + collection) === 'true') {
               const input = document.createElement('input');
               input.type = 'hidden';
-              input.name = 'properties[TrackedNote]';
-              input.value = 'Visited Collection: ' + collection;
+              input.name = 'properties[Note]';
+              input.value = collection;
               form.appendChild(input);
             }
           });
