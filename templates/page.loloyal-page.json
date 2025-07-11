@@ -54,6 +54,7 @@
         "loloyal_app_banner_XkYUDN": {
           "type": "shopify://apps/loloyal/blocks/app-banner/930ac91f-2bf2-4655-9ba0-574771f782d6",
           "settings": {
+            "add_image": "shopify://shop_images/hero-bg.jpg",
             "img_opacity": 0,
             "bg_color": "#f6f6f6",
             "banner_height": "400",
