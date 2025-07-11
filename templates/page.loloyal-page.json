@@ -37,6 +37,7 @@
         "text_8RhiQy",
         "button_nrHibw"
       ],
+      "disabled": true,
       "name": "Reward Banner",
       "settings": {
         "bg_image": "shopify://shop_images/hero-bg.jpg",
@@ -54,7 +55,7 @@
         "loloyal_app_banner_XkYUDN": {
           "type": "shopify://apps/loloyal/blocks/app-banner/930ac91f-2bf2-4655-9ba0-574771f782d6",
           "settings": {
-            "add_image": "shopify://shop_images/hero-bg.jpg",
+            "add_image": "shopify://shop_images/bg_32602eea-e670-491d-8acc-b85945083761.jpg",
             "img_opacity": 0,
             "bg_color": "#f6f6f6",
             "banner_height": "400",
@@ -90,6 +91,21 @@
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 30,
         "custom_class": ""
+      }
+    },
+    "work_process_fCkNfp": {
+      "type": "work-process",
+      "name": "Work Process",
+      "settings": {
+        "title": "So funktioniert es",
+        "bg_image": "shopify://shop_images/pfeileeee_desktop.jpg",
+        "bg_image_mobile": "shopify://shop_images/pfeileee.jpg",
+        "register": "REGISTER",
+        "register_info": "Create an account  and earn 100  points.",
+        "earn": "EARN",
+        "earn_info": "Earn points from your orders and activities.",
+        "redeem": "REDEEM",
+        "redeem_info": "Redeem points for exclusive offers."
       }
     },
     "175187851140e57500": {
@@ -171,7 +187,7 @@
             "secondary_button_text_color": "#000000",
             "hover_btn": "#000000",
             "hover_text_color": "#ffffff",
-            "custom_css": "#loloyal-ways-to-redeem .ll-page-cards-item{\nbackground: linear-gradient(135deg, #d1f3ff 0%, #fce0f4 100%) !important;\n position: relative;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item::after {\n  content: \"\";\n  position: absolute;\n  bottom: 16px; /* adjust position as needed */\n  right: 16px;\n  width: 60px;\n  height: 60px;\n  background: url(https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Untitled-1_aa4155a2-6fc7-4b82-857d-794425de15db.png?v=1752092164) center center / contain no-repeat;\nright: 35px;\nbottom: 5px;\n}\n#loloyal-ways-to-redeem .ll-mask{\nz-index: 2;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item-content {    \n    position: relative;\n    z-index: 1;\n}"
+            "custom_css": "#loloyal-ways-to-redeem .ll-page-cards-item{\nbackground: linear-gradient(135deg,#8ba98e 0%, #ffffff 100%) !important;\n position: relative;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item::after {\n  content: \"\";\n  position: absolute;\n  bottom: 16px; /* adjust position as needed */\n  right: 16px;\n  width: 60px;\n  height: 60px;\n  background: url(https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Untitled-1_aa4155a2-6fc7-4b82-857d-794425de15db.png?v=1752092164) center center / contain no-repeat;\nright: 35px;\nbottom: 5px;\n}\n#loloyal-ways-to-redeem .ll-mask{\nz-index: 2;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item-content {    \n    position: relative;\n    z-index: 1;\n}"
           }
         }
       },
@@ -204,14 +220,14 @@
         "title_dKQr6R": {
           "type": "title",
           "settings": {
-            "title": "Meet Any Problem?"
+            "title": "Hast du eine Frage?"
           }
         },
         "info_MnHKFR": {
           "type": "info",
           "settings": {
-            "info_text": "If you meet any problem please don't hesitate to contact us:",
-            "email": "service@grundig-bike.com"
+            "info_text": "Unser Support-Team hilft dir sehr gerne weiter.",
+            "email": "info@kuechenkompane.de"
           }
         }
       },
@@ -220,13 +236,15 @@
         "title_dKQr6R",
         "info_MnHKFR"
       ],
+      "custom_css": [],
       "name": "Support Section",
       "settings": {
-        "bg": "shopify://shop_images/cta-bg.png"
+        "bg": "shopify://shop_images/bg_32602eea-e670-491d-8acc-b85945083761.jpg"
       }
     },
     "reward_page_newsletter_nBqU9x": {
       "type": "reward-page-newsletter",
+      "disabled": true,
       "name": "Reward Page Newsletter",
       "settings": {
         "bg_img": "shopify://shop_images/subscription-bg.png",
@@ -236,33 +254,16 @@
         "btn_text": "Subscribe",
         "success_text": "Thank you for subscribing!"
       }
-    },
-    "work_process_fCkNfp": {
-      "type": "work-process",
-      "name": "Work Process",
-      "settings": {
-        "shape_1": "shopify://shop_images/work-shape-left.png",
-        "title": "Our Work Process",
-        "shape_2": "shopify://shop_images/work-shape-right.png",
-        "bg_image": "shopify://shop_images/work-process-bg.png",
-        "bg_image_mobile": "shopify://shop_images/work-process-bg2.png",
-        "register": "REGISTER",
-        "register_info": "Create an account  and earn 100  points.",
-        "earn": "EARN",
-        "earn_info": "Earn points from your orders and activities.",
-        "redeem": "REDEEM",
-        "redeem_info": "Redeem points for exclusive offers."
-      }
     }
   },
   "order": [
     "reward_banner_ixQph3",
     "main",
     "1751878483f5d466c2",
+    "work_process_fCkNfp",
     "175187851140e57500",
     "1751878518df6e3564",
     "support_section_mypjCm",
-    "reward_page_newsletter_nBqU9x",
-    "work_process_fCkNfp"
+    "reward_page_newsletter_nBqU9x"
   ]
 }
