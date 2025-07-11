@@ -15,13 +15,13 @@
         "title_zeHXHC": {
           "type": "title",
           "settings": {
-            "title": "GRUNDIG REWARDS"
+            "title": "Küchenkompane Bonuspunkte"
           }
         },
         "text_8RhiQy": {
           "type": "text",
           "settings": {
-            "text": "As a Grundig rewards member, you'll get access to exclusive discounts and redeem special gift!"
+            "text": "Werde Teil der Küchenkompane Welt! Sammle unsere Bonuspunkte und erhalte tolle Geschenke. Erstelle jetzt ein Konto und erhalte 300 Punkte GRATIS"
           }
         },
         "button_nrHibw": {
@@ -37,11 +37,10 @@
         "text_8RhiQy",
         "button_nrHibw"
       ],
-      "disabled": true,
       "name": "Reward Banner",
       "settings": {
-        "bg_image": "shopify://shop_images/hero-bg.jpg",
-        "bg_image_mobile": "shopify://shop_images/hero-bg2.jpg"
+        "bg_image": "shopify://shop_images/banner_desktop.jpg",
+        "bg_image_mobile": "shopify://shop_images/handy_header.jpg"
       }
     },
     "main": {
@@ -79,6 +78,7 @@
       "block_order": [
         "loloyal_app_banner_XkYUDN"
       ],
+      "disabled": true,
       "settings": {
         "heading": "",
         "heading_size": "h3",
