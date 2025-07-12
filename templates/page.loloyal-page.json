@@ -71,7 +71,7 @@
             "secondary_button_text_color": "#000000",
             "hover_btn": "#fa8526",
             "hover_text_color": "#ffffff",
-            "custom_css": "/* Add your custom styles here */"
+            "custom_css": "#loloyal-hello .ll-banner-buttons button {\n  \n    border: 1px solid #fa8526;\n  \n}"
           }
         }
       },
