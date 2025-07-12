@@ -9,13 +9,44 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
+    "reward_banner_ixQph3": {
+      "type": "reward-banner",
+      "blocks": {
+        "title_zeHXHC": {
+          "type": "title",
+          "settings": {
+            "title": "Küchenkompane Bonuspunkte"
+          }
+        },
+        "text_8RhiQy": {
+          "type": "text",
+          "settings": {
+            "text": "Werde Teil der Küchenkompane Welt! Sammle unsere Bonuspunkte und erhalte tolle Geschenke. Erstelle jetzt ein Konto und erhalte 300 Punkte GRATIS"
+          }
+        },
+        "button_nrHibw": {
+          "type": "Button",
+          "settings": {
+            "btn_text": "Join Now",
+            "btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_zeHXHC",
+        "text_8RhiQy",
+        "button_nrHibw"
+      ],
+      "name": "Reward Banner",
       "settings": {
-        "padding_top": 0,
-        "padding_bottom": 0
+        "bg_image": "shopify://shop_images/banner_desktop.jpg",
+        "bg_image_mobile": "shopify://shop_images/handy_header.jpg"
       }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
     },
     "1751878483f5d466c2": {
       "type": "apps",
@@ -23,8 +54,9 @@
         "loloyal_app_banner_XkYUDN": {
           "type": "shopify://apps/loloyal/blocks/app-banner/930ac91f-2bf2-4655-9ba0-574771f782d6",
           "settings": {
+            "add_image": "shopify://shop_images/bg_32602eea-e670-491d-8acc-b85945083761.jpg",
             "img_opacity": 0,
-            "bg_color": "#F6F6F6",
+            "bg_color": "#f6f6f6",
             "banner_height": "400",
             "content_position": "ll-middle-left",
             "content_alignment": "left",
@@ -33,13 +65,13 @@
             "title_color": "#000000",
             "subtitle_color": "#000000",
             "btn_radius": 30,
-            "primary_button_color": "#000000",
-            "primary_button_text_color": "#FFFFFF",
-            "secondary_button_color": "#FFFFFF",
+            "primary_button_color": "#fa8526",
+            "primary_button_text_color": "#ffffff",
+            "secondary_button_color": "#ffffff",
             "secondary_button_text_color": "#000000",
-            "hover_btn": "#000000",
-            "hover_text_color": "#FFFFFF",
-            "custom_css": "/* Add your custom styles here */"
+            "hover_btn": "#fa8526",
+            "hover_text_color": "#ffffff",
+            "custom_css": "#loloyal-hello .ll-banner-buttons button {\n  \n    border: 1px solid #fa8526;\n  \n}"
           }
         }
       },
@@ -53,11 +85,26 @@
         "header_alignment": "center",
         "container": "container",
         "background_color": "",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 30,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
         "custom_class": ""
+      }
+    },
+    "work_process_fCkNfp": {
+      "type": "work-process",
+      "name": "Work Process",
+      "settings": {
+        "title": "So funktioniert es",
+        "bg_image": "shopify://shop_images/pfeileeee_desktop.jpg",
+        "bg_image_mobile": "shopify://shop_images/pfeileee.jpg",
+        "register": "REGISTER",
+        "register_info": "Create an account  and earn 100  points.",
+        "earn": "EARN",
+        "earn_info": "Earn points from your orders and activities.",
+        "redeem": "REDEEM",
+        "redeem_info": "Redeem points for exclusive offers."
       }
     },
     "175187851140e57500": {
@@ -80,16 +127,16 @@
             "subtitle_color": "#000000",
             "name_color": "#000000",
             "details_color": "#000000",
-            "card_bg_color": "#FFFFFF",
+            "card_bg_color": "#ffffff",
             "background_color": "#ffffff",
             "border_color": "#ececec",
-            "primary_button_color": "#000000",
-            "primary_button_text_color": "#FFFFFF",
-            "secondary_button_color": "#FFFFFF",
+            "primary_button_color": "#fa8526",
+            "primary_button_text_color": "#ffffff",
+            "secondary_button_color": "#ffffff",
             "secondary_button_text_color": "#000000",
-            "hover_btn": "#000000",
-            "hover_text_color": "#FFFFFF",
-            "custom_css": "/* Add your custom styles here */"
+            "hover_btn": "#fa8526",
+            "hover_text_color": "#ffffff",
+            "custom_css": "#loloyal-ways-to-earn .ll-page-cards-item{\nbackground: linear-gradient(135deg,#8ba98e 0%, #ffffff 100%) !important;\n position: relative;\n}\n#loloyal-ways-to-earn .ll-page-cards-item::after {\n  content: \"\";\n  position: absolute;\n  bottom: 16px; /* adjust position as needed */\n  right: 16px;\n  width: 60px;\n  height: 60px;\n  background: url(https://cdn.shopify.com/s/files/1/0018/5329/2643/files/KK_Points.png?v=1752270902) center center / contain no-repeat;\nright: 35px;\nbottom: 5px;\n}\n#loloyal-ways-to-earn .ll-center {  \n    z-index: 2;\n}\n#loloyal-ways-to-earn .ll-page-cards-item-content {   \n    z-index: 1;\n}\n#loloyal-ways-to-earn .ll-mask-btn button {   \n  border: 1px solid #fa8526;\n}"
           }
         }
       },
@@ -130,16 +177,16 @@
             "subtitle_color": "#000000",
             "name_color": "#000000",
             "details_color": "#000000",
-            "card_bg_color": "#FFFFFF",
+            "card_bg_color": "#ffffff",
             "background_color": "#ffffff",
             "border_color": "#ececec",
-            "primary_button_color": "#000000",
-            "primary_button_text_color": "#FFFFFF",
-            "secondary_button_color": "#FFFFFF",
+            "primary_button_color": "#fa8526",
+            "primary_button_text_color": "#ffffff",
+            "secondary_button_color": "#ffffff",
             "secondary_button_text_color": "#000000",
-            "hover_btn": "#000000",
-            "hover_text_color": "#FFFFFF",
-            "custom_css": "/* Add your custom styles here */"
+            "hover_btn": "#fa8526",
+            "hover_text_color": "#ffffff",
+            "custom_css": "#loloyal-ways-to-redeem .ll-page-cards-item{\nbackground: linear-gradient(135deg,#8ba98e 0%, #ffffff 100%) !important;\n position: relative;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item::after {\n  content: \"\";\n  position: absolute;\n  bottom: 16px; /* adjust position as needed */\n  right: 16px;\n  width: 60px;\n  height: 60px;\n  background: url(https://cdn.shopify.com/s/files/1/0018/5329/2643/files/KK_Points.png?v=1752270902) center center / contain no-repeat;\nright: 35px;\nbottom: 5px;\n}\n#loloyal-ways-to-redeem .ll-mask{\nz-index: 2;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item-content {    \n    position: relative;\n    z-index: 1;\n}\n#loloyal-ways-to-redeem .ll-mask-btn button {   \n  border: 1px solid #fa8526;\n}"
           }
         }
       },
@@ -159,12 +206,63 @@
         "padding_bottom_mobile": 30,
         "custom_class": ""
       }
+    },
+    "support_section_mypjCm": {
+      "type": "support-section",
+      "blocks": {
+        "icon_PHfCyL": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/service_1.png"
+          }
+        },
+        "title_dKQr6R": {
+          "type": "title",
+          "settings": {
+            "title": "Hast du eine Frage?"
+          }
+        },
+        "info_MnHKFR": {
+          "type": "info",
+          "settings": {
+            "info_text": "Unser Support-Team hilft dir sehr gerne weiter.",
+            "email": "info@kuechenkompane.de"
+          }
+        }
+      },
+      "block_order": [
+        "icon_PHfCyL",
+        "title_dKQr6R",
+        "info_MnHKFR"
+      ],
+      "custom_css": [],
+      "name": "Support Section",
+      "settings": {
+        "bg": "shopify://shop_images/bg_32602eea-e670-491d-8acc-b85945083761.jpg"
+      }
+    },
+    "reward_page_newsletter_nBqU9x": {
+      "type": "reward-page-newsletter",
+      "disabled": true,
+      "name": "Reward Page Newsletter",
+      "settings": {
+        "bg_img": "shopify://shop_images/subscription-bg.png",
+        "title": "Stay in the loop",
+        "newsletter_text": "Subscribe to stay up-to-date with our latest news, special offers and e-bike tips.",
+        "place_holder_text": "Enter your email",
+        "btn_text": "Subscribe",
+        "success_text": "Thank you for subscribing!"
+      }
     }
   },
   "order": [
+    "reward_banner_ixQph3",
     "main",
     "1751878483f5d466c2",
+    "work_process_fCkNfp",
     "175187851140e57500",
-    "1751878518df6e3564"
+    "1751878518df6e3564",
+    "support_section_mypjCm",
+    "reward_page_newsletter_nBqU9x"
   ]
 }
