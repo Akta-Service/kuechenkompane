@@ -27,7 +27,7 @@
         "button_nrHibw": {
           "type": "Button",
           "settings": {
-            "btn_text": "Join Now",
+            "btn_text": "Los geht´s",
             "btn_url": ""
           }
         }
@@ -78,6 +78,7 @@
       "block_order": [
         "loloyal_app_banner_XkYUDN"
       ],
+      "disabled": true,
       "settings": {
         "heading": "",
         "heading_size": "h3",
@@ -99,12 +100,12 @@
         "title": "So funktioniert es",
         "bg_image": "shopify://shop_images/pfeileeee_desktop.jpg",
         "bg_image_mobile": "shopify://shop_images/pfeileee.jpg",
-        "register": "REGISTER",
-        "register_info": "Create an account  and earn 100  points.",
-        "earn": "EARN",
-        "earn_info": "Earn points from your orders and activities.",
-        "redeem": "REDEEM",
-        "redeem_info": "Redeem points for exclusive offers."
+        "register": "ANMELDEN",
+        "register_info": "Account erstellen und 300 Punkte sichern.",
+        "earn": "VERDIENEN",
+        "earn_info": "Sammle Punkte für deine Bestellungen und Aktivitäten.",
+        "redeem": "EINLÖSEN",
+        "redeem_info": "Belohne dich mit exklusiven Angeboten, dank deiner Punkte."
       }
     },
     "175187851140e57500": {
