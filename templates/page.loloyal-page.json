@@ -187,7 +187,7 @@
             "secondary_button_text_color": "#000000",
             "hover_btn": "#000000",
             "hover_text_color": "#ffffff",
-            "custom_css": "#loloyal-ways-to-redeem .ll-page-cards-item{\nbackground: linear-gradient(135deg,#8ba98e 0%, #ffffff 100%) !important;\n position: relative;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item::after {\n  content: \"\";\n  position: absolute;\n  bottom: 16px; /* adjust position as needed */\n  right: 16px;\n  width: 60px;\n  height: 60px;\n  background: url(https://cdn.shopify.com/s/files/1/0018/5329/2643/files/KK_Points.png?v=1752270902) center center / contain no-repeat;\nright: 35px;\nbottom: 5px;\n}\n#loloyal-ways-to-redeem .ll-mask{\nz-index: 2;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item-content {    \n    position: relative;\n    z-index: 1;\n}\n.ll-mask-btn a:first-child button {\n    border-color: transparent !important;\n}"
+            "custom_css": "#loloyal-ways-to-redeem .ll-page-cards-item{\nbackground: linear-gradient(135deg,#8ba98e 0%, #ffffff 100%) !important;\n position: relative;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item::after {\n  content: \"\";\n  position: absolute;\n  bottom: 16px; /* adjust position as needed */\n  right: 16px;\n  width: 60px;\n  height: 60px;\n  background: url(https://cdn.shopify.com/s/files/1/0018/5329/2643/files/KK_Points.png?v=1752270902) center center / contain no-repeat;\nright: 35px;\nbottom: 5px;\n}\n#loloyal-ways-to-redeem .ll-mask{\nz-index: 2;\n}\n#loloyal-ways-to-redeem .ll-page-cards-item-content {    \n    position: relative;\n    z-index: 1;\n}\n#loloyal-ways-to-redeem .ll-mask-btn button {   \n  border: 1px solid #fa8526;\n}"
           }
         }
       },
