@@ -93,7 +93,8 @@
           "type": "price",
           "settings": {
             "taxes_included": false,
-            "show_saving": false,
+            "taxes_included_text": "",
+            "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 5,
@@ -713,6 +714,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
