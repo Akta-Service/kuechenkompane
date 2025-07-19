@@ -56,18 +56,36 @@
             document.documentElement.style.setProperty('--vh', `${vh}px`);
           }
     
-          function checkPassword() {
-            const userPassword = document.getElementById("popup-password").value;
-            const errorMessage = document.getElementById("error-message");
+          // function checkPassword() {
+          //   const userPassword = document.getElementById("popup-password").value;
+          //   const errorMessage = document.getElementById("error-message");
     
-            if (userPassword === correctPassword) {
+          //   if (userPassword === correctPassword) {
+          //     localStorage.setItem(collectionKey, "true");
+          //     document.getElementById("password-popup").style.display = "none";          
+          //     unlockScroll();
+          //   } else {
+          //     errorMessage.style.display = "block";
+          //   }
+          // }
+
+
+            //  update case sensitive 
+            
+          function checkPassword() {
+            const userPassword = document.getElementById("popup-password").value.toLowerCase(); // Convert input to lowercase
+            const correct = correctPassword.toLowerCase(); // Convert correct password to lowercase
+            const errorMessage = document.getElementById("error-message");
+
+            if (userPassword === correct) {
               localStorage.setItem(collectionKey, "true");
-              document.getElementById("password-popup").style.display = "none";          
+              document.getElementById("password-popup").style.display = "none";
               unlockScroll();
             } else {
               errorMessage.style.display = "block";
             }
           }
+
     
           document.addEventListener('DOMContentLoaded', function () {
             console.log('a am load')
