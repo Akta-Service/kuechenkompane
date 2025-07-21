@@ -96,7 +96,7 @@
               data-product-container
             >
               {%- for product in collection.products -%}
-                {% unless product.tags contains 'NO SEARCH' %}
+                {% comment %} {% unless product.tags contains 'NO SEARCH' %} {% endcomment %}
                 
                   <div class="m-product-item m:w-6/12 md:m:w-4/12" data-tags="{% for tag in product.tags %}{{ tag | handleize }} {% endfor %}">
                     {% liquid
@@ -114,7 +114,7 @@
                       endcase
                     %}
                   </div>
-                {% endunless %}
+                {% comment %} {% endunless %} {% endcomment %}
               {%- endfor -%}
             </div>
             {% if paginate.pages > 1 %}
