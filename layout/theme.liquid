@@ -626,29 +626,32 @@
     var klaviyo = klaviyo || [];
     klaviyo.init({
       account: "TzvBp6",
+      list: "TMJS3c",
       platform: "shopify"
     });
     klaviyo.enable("backinstock",{ 
     trigger: {
-      product_page_text: "Notify Me When Available",
-      product_page_class: "btn",
+      product_page_text: "Informier mich, wenn der Artikel wieder verfügbar ist",
+      product_page_class: "button button--xl button--outline w-full",
       product_page_text_align: "center",
       product_page_margin: "0px",
-      replace_anchor: false
+      replace_anchor: true,
+      alternate_anchor: "product-form-8546766782728-template--19582609064200__main",
     },
     modal: {
      headline: "{product_name}",
-     body_content: "Register to receive a notification when this item comes back in stock.",
-     email_field_label: "Email",
-     button_label: "Notify me when available",
-     subscription_success_label: "You're in! We'll let you know when it's back.",
-     footer_content: '',
+     body_content: "Melde dich an, um direkt informiert zu werden, wenn dein Artikel wieder verfügbar ist",
+     email_field_label: "E-Mail",
+     button_label: "Benachrichtigung aktivieren",
+     subscription_success_label: "Das hat geklappt! Wir werden dich informieren, wenn der Artikel wieder verfügbar ist.",
+    newsletter_subscribe_label: "Zum Newsletter anmelden & zusätzlich 10% Gutschein erhalten",
+     footer_content: 'Du erhältst eine E-Mail sobald der Artikel verfügbar ist',
      additional_styles: "@import url('https://fonts.googleapis.com/css?family=Helvetica+Neue');",
      drop_background_color: "#000",
      background_color: "#fff",
      text_color: "#222",
      button_text_color: "#fff",
-     button_background_color: "#439fdb",
+     button_background_color: "Black",
      close_button_color: "#ccc",
      error_background_color: "#fcd6d7",
      error_text_color: "#C72E2F",
