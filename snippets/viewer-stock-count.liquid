@@ -118,7 +118,7 @@
     </p>
 
 {%- else -%}
-  <p class="product-count-mobile" style="font-size:{{block.settings.product_count_font_size}}px; color: {{block.settings.product_text_color}};">
+  <p class="product-count-mobile" style="font-size:{{block.settings.product_count_font_size}}px; color: {{ block.settings.soldout_color }};">
     <span class="count-icon"></span> 
     {{ block.settings.product_stock_out }}
   </p>
