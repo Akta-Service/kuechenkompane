@@ -83,6 +83,7 @@
           "type": "price",
           "settings": {
             "taxes_included": false,
+            "taxes_included_text": "",
             "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -133,6 +134,7 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
+            "product_stock_out": "Derzeit ausverkauft",
             "viewer_count_time": 30000,
             "stock_count_time": 50000,
             "stock_count_show": true
@@ -558,6 +560,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/c3f04b6c0c574ca587cc7ad8532567e9.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04.jpg",
