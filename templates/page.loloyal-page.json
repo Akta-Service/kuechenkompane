@@ -254,6 +254,49 @@
         "btn_text": "Subscribe",
         "success_text": "Thank you for subscribing!"
       }
+    },
+    "17531751973442dd06": {
+      "type": "apps",
+      "blocks": {
+        "loloyal_app_banner_YQUipB": {
+          "type": "shopify://apps/loloyal/blocks/app-banner/930ac91f-2bf2-4655-9ba0-574771f782d6",
+          "settings": {
+            "img_opacity": 0,
+            "bg_color": "#F6F6F6",
+            "banner_height": "400",
+            "content_position": "ll-middle-left",
+            "content_alignment": "left",
+            "title_font_size": 40,
+            "subtitle_font_size": 13,
+            "title_color": "#000000",
+            "subtitle_color": "#000000",
+            "btn_radius": 30,
+            "primary_button_color": "#000000",
+            "primary_button_text_color": "#FFFFFF",
+            "secondary_button_color": "#FFFFFF",
+            "secondary_button_text_color": "#000000",
+            "hover_btn": "#000000",
+            "hover_text_color": "#FFFFFF",
+            "custom_css": "/* Add your custom styles here */"
+          }
+        }
+      },
+      "block_order": [
+        "loloyal_app_banner_YQUipB"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "custom_class": ""
+      }
     }
   },
   "order": [
@@ -264,6 +307,7 @@
     "175187851140e57500",
     "1751878518df6e3564",
     "support_section_mypjCm",
-    "reward_page_newsletter_nBqU9x"
+    "reward_page_newsletter_nBqU9x",
+    "17531751973442dd06"
   ]
 }
