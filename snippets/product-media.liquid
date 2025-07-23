@@ -350,6 +350,26 @@
                       </div>
                     {%- endif -%}
                   </div>
+
+                  {% if product.available == false %}
+                    <div class="m-product-media--sold-out-overlay">
+                      <button class="m-button--sold-out" disabled>Sold Out</button>
+                    </div>
+                  {% endif %}
+
+                   <span
+                    class="m-product-tag m-product-tag--soldout m-gradient m-color-{{ settings.soldout_badge_color_scheme }}"
+                    {% unless sold_out %}
+                      style="display: none;"
+                    {% endunless %}
+                  >
+                    {{- 'products.product.sold_out' | t -}}
+                  </span>
+
+
+
+
+
                 {% endfor %}
               </div>
               {% if show_nav and product.media.size > 1 %}
@@ -367,6 +387,10 @@
                 </div>
               {% endif %}
             </div>
+
+          
+
+
           </div>
           {% if show_thumbnails and product.media.size > 1 %}
             <div class="m-product-media--slider__thumbnails">

@@ -419,8 +419,6 @@ span.faq-icon {
     font-size: 25px !important;
   }
 
-
-
   .appex-faqs-area .rs-container {
     padding: 0 15px;
   }
@@ -538,6 +536,33 @@ a.m-button.m-button--primary:hover {
   text-align: center;
   padding-bottom: 15px;
 }
+.m-product-media {
+  position: relative;
+}
+
+.m-product-media--sold-out-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.m-button--sold-out {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 4px;
+  pointer-events: auto;
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
 @media only screen and (max-width: 768px) {
   .apex-product-page .m-product-media {
     padding: 2 !important;

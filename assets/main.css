@@ -5191,6 +5191,10 @@ deferred-media {
 .m-product-quickview--media .m-product-media--slider__images {
   margin-bottom: 0;
 }
+
+.m-product-media--slider__images {
+  position: relative;
+}
 .m-product-quickview--info {
   overflow-y: auto;
   height: 100%;
@@ -7683,4 +7687,17 @@ variant-picker
 .rs-price p {
   margin-top: 0.5%;
   font-size: 12px;
+}
+
+.m-product-media--wrapper {
+  position: relative;
+}
+.m-product-tag--soldout-overlay.product-page-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  padding: 10px 20px;
+  font-size: 16px;
+  transform: translate(-50%);
 }
