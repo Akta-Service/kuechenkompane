@@ -3922,7 +3922,7 @@ deferred-media {
   padding-bottom: var(--f-sticky-atc-bar-height, 0px);
 }
 .template-product #MainContent {
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
 }
 .animate-spin {
   animation: mSpin 1s linear infinite;
