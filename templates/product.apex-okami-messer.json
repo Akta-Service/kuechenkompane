@@ -63,7 +63,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Jetzt exklusiv beim Spiegel Kaufradar",
+            "subtitle": "Die Revolution der Küchenmsser",
             "subtitle_font_size": 16,
             "subtitle_weight": "400"
           }
@@ -93,6 +93,7 @@
           "type": "price",
           "settings": {
             "taxes_included": false,
+            "taxes_included_text": "",
             "show_saving": false,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -125,6 +126,8 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
             "viewer_count_time": 2500,
             "stock_count_time": 50000,
             "stock_count_show": false
@@ -133,7 +136,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Produkte nur für kurze Zeit im Angebot!</p>",
+            "featurelist_item": "<p>67 Lagen Damaststahl zum Preis von Edelstahl Messern</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -142,7 +145,7 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Nur für Spiegel-Leser erhältlich – nicht im Einzelhandel verfügbar</p>",
+            "featurelist_item": "<p>Japanische Schmiedekunst trifft deutsche Perfektion</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -200,6 +203,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
@@ -713,6 +717,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
