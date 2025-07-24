@@ -602,6 +602,47 @@
         "des_size": "p-medium"
       }
     },
+    "benefit_text_right_AFHFhC": {
+      "type": "benefit-text-right",
+      "blocks": {
+        "subtitle_XPX87U": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Robust & langlebig"
+          }
+        },
+        "title_YwDaTz": {
+          "type": "title",
+          "settings": {
+            "title": "Hält jeder Herausforderung stand"
+          }
+        },
+        "description_j4ByyM": {
+          "type": "description",
+          "settings": {
+            "description": "Unsere Messer sind aus hochwertigem Stahl gefertigt und bleiben extrem scharf – ohne Absplittern oder Abnutzen. Die widerstandsfähige Klinge sorgt für jahrelange Höchstleistung in der Küche."
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_XPX87U",
+        "title_YwDaTz",
+        "description_j4ByyM"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "media_type": "image",
+        "image": "shopify://shop_images/IMG_6134_ae49332e-9534-4225-ac85-cfc57ca44395.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": true,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
     "benefit_text_MCeGiV": {
       "type": "benefit-text",
       "blocks": {
@@ -742,47 +783,6 @@
         "sub_title_font_size": 20,
         "faq_title_font_size": 18,
         "faq_text_font_size": 16
-      }
-    },
-    "benefit_text_right_AFHFhC": {
-      "type": "benefit-text-right",
-      "blocks": {
-        "subtitle_XPX87U": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Robust & langlebig"
-          }
-        },
-        "title_YwDaTz": {
-          "type": "title",
-          "settings": {
-            "title": "Hält jeder Herausforderung stand"
-          }
-        },
-        "description_j4ByyM": {
-          "type": "description",
-          "settings": {
-            "description": "Unsere Messer sind aus hochwertigem Stahl gefertigt und bleiben extrem scharf – ohne Absplittern oder Abnutzen. Die widerstandsfähige Klinge sorgt für jahrelange Höchstleistung in der Küche."
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_XPX87U",
-        "title_YwDaTz",
-        "description_j4ByyM"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "media_type": "image",
-        "image": "shopify://shop_images/IMG_6134_ae49332e-9534-4225-ac85-cfc57ca44395.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": true,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
       }
     },
     "product_explanation_video_xNFp3M": {
@@ -1125,9 +1125,9 @@
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
     "benefit_text_P4XApk",
+    "benefit_text_right_AFHFhC",
     "benefit_text_MCeGiV",
     "apex_faqs_jx7hp6",
-    "benefit_text_right_AFHFhC",
     "product_explanation_video_xNFp3M",
     "trustpilot_testimonials_YbXp3E",
     "cta_final_9B8iN9",
