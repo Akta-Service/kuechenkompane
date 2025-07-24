@@ -602,176 +602,44 @@
         "des_size": "p-medium"
       }
     },
-    "feature_highlight_ktLbnH": {
-      "type": "feature-highlight",
+    "benefit_text_MCeGiV": {
+      "type": "benefit-text",
       "blocks": {
-        "feature_item_left_KLYLgM": {
-          "type": "feature_item_left",
+        "subtitle_8kbCAt": {
+          "type": "subtitle",
           "settings": {
-            "item_title": "8-teiliges Messerset",
-            "item_info": "Mit extra scharfen Klingen aus deutschem 7CR17-Edelstahl.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V7_1.png"
+            "subtitle": "Der Küchen-Trend 2025"
           }
         },
-        "feature_item_left_etKjAM": {
-          "type": "feature_item_left",
+        "title_KU4fTr": {
+          "type": "title",
           "settings": {
-            "item_title": "Drehbarer Messerblock",
-            "item_info": "Magnetischer und drehbarer Messerblock für das ganze Set",
-            "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
+            "title": "Perfekte Schnitte in Sekunden"
           }
         },
-        "feature_item_left_zGYhna": {
-          "type": "feature_item_left",
+        "description_PBBAnQ": {
+          "type": "description",
           "settings": {
-            "item_title": "Messerschärfer",
-            "item_info": "Jedes Messer ist in Sekunden wieder scharf.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
-          }
-        },
-        "feature_center_image_mBHAJH": {
-          "type": "feature_center_image",
-          "settings": {
-            "center_image": "shopify://shop_images/Artboard_2_Kopie_5_1_51f9998a-33b1-4ffd-bfc3-ab3d5b8a61bd.jpg"
-          }
-        },
-        "feature_item_right_YpUkf4": {
-          "type": "feature_item_right",
-          "settings": {
-            "item_title": "Mizo Schneidebrette",
-            "item_info": "Aus Akazienholz, perfekt für schnelle und kleine Schneidearbeiten.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V4_1.png"
-          }
-        },
-        "feature_item_right_dN8J9K": {
-          "type": "feature_item_right",
-          "settings": {
-            "item_title": "Pflegöl",
-            "item_info": "Kamelienöl schützt und pflegt Klinge und Griff.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V5_1.png"
-          }
-        },
-        "feature_item_right_jLCbWD": {
-          "type": "feature_item_right",
-          "settings": {
-            "item_title": "365 Tage Schleifservice",
-            "item_info": "Kostenloser Nachschliff für ein Jahr - immer scharf.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V6_1.png"
+            "description": "Erlebe die nächste Stufe der Messerschärfe mit unserem Premium-Messerset. Jede Klinge ist auf Rasiermesserschärfe geprüft und sorgt für mühelose Präzision bei jedem Schnitt – egal ob Fleisch, Gemüse oder Brot."
           }
         }
       },
       "block_order": [
-        "feature_item_left_KLYLgM",
-        "feature_item_left_etKjAM",
-        "feature_item_left_zGYhna",
-        "feature_center_image_mBHAJH",
-        "feature_item_right_YpUkf4",
-        "feature_item_right_dN8J9K",
-        "feature_item_right_jLCbWD"
-      ],
-      "disabled": true,
-      "settings": {
-        "pt": 50,
-        "pb": 50,
-        "pt_mobile": 30,
-        "pb_mobile": 30,
-        "title": "Im Set enthalten:"
-      }
-    },
-    "product_explanation_video_xNFp3M": {
-      "type": "product-explanation-video",
-      "blocks": {
-        "sub_heading_aBnF8i": {
-          "type": "sub_heading",
-          "settings": {
-            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten"
-          }
-        },
-        "heading_jQDwbJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "Qualität, die begeistert.",
-            "h1_text_align": "center",
-            "title": "Your Title Here",
-            "padding_top": 1,
-            "padding_bottom": 1,
-            "padding_top_tablet": 1,
-            "padding_bottom_tablet": 1,
-            "padding_top_mobile": 1,
-            "padding_bottom_mobile": 1
-          }
-        },
-        "details_erg8QM": {
-          "type": "details",
-          "settings": {
-            "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
-            "p_text_align": "left",
-            "p_padding_top": 10,
-            "p_padding_bottom": 10,
-            "p_padding_top_tablet": 8,
-            "p_padding_bottom_tablet": 8,
-            "p_padding_top_mobile": 5,
-            "p_padding_bottom_mobile": 5
-          }
-        },
-        "video_XLLb9A": {
-          "type": "video",
-          "settings": {
-            "video_mt": 0,
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
-            "autoplay": false,
-            "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
-            "loop": true,
-            "muted": true,
-            "playsinline": true,
-            "controls": true
-          }
-        }
-      },
-      "block_order": [
-        "sub_heading_aBnF8i",
-        "heading_jQDwbJ",
-        "details_erg8QM",
-        "video_XLLb9A"
+        "subtitle_8kbCAt",
+        "title_KU4fTr",
+        "description_PBBAnQ"
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "vertical_padding": 50,
-        "vertical_padding_mobile": 30,
-        "heading_type": "mrk-h3",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
-      }
-    },
-    "us_vs_them_8Tbqki": {
-      "type": "us-vs-them",
-      "blocks": {
-        "title_F4F6qE": {
-          "type": "title",
-          "settings": {
-            "title": "KÜCHENKOMPANE® vs. ANDERE"
-          }
-        },
-        "description_9Mxcd4": {
-          "type": "description",
-          "settings": {
-            "description": "<p>Unsere Vergleichsgrafik zeigt, warum Küchenkompane die beste Wahl ist. Mit messerscharfer Präzision, hochwertigem Stahl und ergonomischem Design bieten unsere Messer maximale Qualität und Komfort.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "title_F4F6qE",
-        "description_9Mxcd4"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "img": "shopify://shop_images/steel_kitchen_knives_V11_1.jpg",
+        "media_type": "image",
+        "image": "shopify://shop_images/IMG_6143_e8c44b3d-deb9-4b95-9841-4e8cf7838f12.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
+        "reverse": false,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h1",
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
         "des_size": "p-medium"
       }
     },
@@ -876,47 +744,6 @@
         "faq_text_font_size": 16
       }
     },
-    "benefit_text_MCeGiV": {
-      "type": "benefit-text",
-      "blocks": {
-        "subtitle_8kbCAt": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Der Küchen-Trend 2025"
-          }
-        },
-        "title_KU4fTr": {
-          "type": "title",
-          "settings": {
-            "title": "Perfekte Schnitte in Sekunden"
-          }
-        },
-        "description_PBBAnQ": {
-          "type": "description",
-          "settings": {
-            "description": "Erlebe die nächste Stufe der Messerschärfe mit unserem Premium-Messerset. Jede Klinge ist auf Rasiermesserschärfe geprüft und sorgt für mühelose Präzision bei jedem Schnitt – egal ob Fleisch, Gemüse oder Brot."
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_8kbCAt",
-        "title_KU4fTr",
-        "description_PBBAnQ"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "media_type": "image",
-        "image": "shopify://shop_images/IMG_6143_e8c44b3d-deb9-4b95-9841-4e8cf7838f12.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": false,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
-      }
-    },
     "benefit_text_right_AFHFhC": {
       "type": "benefit-text-right",
       "blocks": {
@@ -954,6 +781,71 @@
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 50,
         "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
+    "product_explanation_video_xNFp3M": {
+      "type": "product-explanation-video",
+      "blocks": {
+        "sub_heading_aBnF8i": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten"
+          }
+        },
+        "heading_jQDwbJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Qualität, die begeistert.",
+            "h1_text_align": "center",
+            "title": "Your Title Here",
+            "padding_top": 1,
+            "padding_bottom": 1,
+            "padding_top_tablet": 1,
+            "padding_bottom_tablet": 1,
+            "padding_top_mobile": 1,
+            "padding_bottom_mobile": 1
+          }
+        },
+        "details_erg8QM": {
+          "type": "details",
+          "settings": {
+            "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
+            "p_text_align": "left",
+            "p_padding_top": 10,
+            "p_padding_bottom": 10,
+            "p_padding_top_tablet": 8,
+            "p_padding_bottom_tablet": 8,
+            "p_padding_top_mobile": 5,
+            "p_padding_bottom_mobile": 5
+          }
+        },
+        "video_XLLb9A": {
+          "type": "video",
+          "settings": {
+            "video_mt": 0,
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
+            "autoplay": false,
+            "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
+            "loop": true,
+            "muted": true,
+            "playsinline": true,
+            "controls": true
+          }
+        }
+      },
+      "block_order": [
+        "sub_heading_aBnF8i",
+        "heading_jQDwbJ",
+        "details_erg8QM",
+        "video_XLLb9A"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "vertical_padding": 50,
+        "vertical_padding_mobile": 30,
+        "heading_type": "mrk-h3",
         "sub_heading": "p-medium",
         "des_size": "p-medium"
       }
@@ -1233,12 +1125,10 @@
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
     "benefit_text_P4XApk",
-    "feature_highlight_ktLbnH",
-    "product_explanation_video_xNFp3M",
-    "us_vs_them_8Tbqki",
-    "apex_faqs_jx7hp6",
     "benefit_text_MCeGiV",
+    "apex_faqs_jx7hp6",
     "benefit_text_right_AFHFhC",
+    "product_explanation_video_xNFp3M",
     "trustpilot_testimonials_YbXp3E",
     "cta_final_9B8iN9",
     "benefit_list_gif_iJWmYF",
