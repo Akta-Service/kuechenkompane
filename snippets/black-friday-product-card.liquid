@@ -219,8 +219,8 @@
   {% endif %}
 >
   <div class="m-product-card__media">
-    {% if product.metafields.custom.product_badge != blank %}
-      <div class="product--badge">{{ product.metafields.custom.product_badge }}</div>
+    {% if section.settings.badge != blank %}
+      <div class="product--badge">{{ section.settings.badge }}</div>
 
     {% endif %}
 
@@ -466,9 +466,9 @@
           </div>
         </div>
       {% endif %}
-      {% if product.metafields.custom.product_short_description  %}
+      {% if section.settings.product_short_description  %}
         <div class="card-product-description">
-        <p>{{ product.metafields.custom.product_short_description }}</p>
+        <p>{{ section.settings.product_short_description }}</p>
         </div>
       {% endif %}
 
