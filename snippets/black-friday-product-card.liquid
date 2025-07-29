@@ -446,6 +446,10 @@
       {%- if show_vendor -%}
         <span class="m-product-card__vendor">{{ product.vendor }}</span>
       {%- endif -%}
+      
+      <div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>
+
+
       {% if show_title == true %}
         <div class="card--title-wrapper">
           <h3 class="m-product-card__title">
