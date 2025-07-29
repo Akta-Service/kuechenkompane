@@ -1,0 +1,369 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  .snow-banner-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .snow-banner-bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    object-fit: cover;
+  }
+
+  .snow-banner-bg img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .snow-banner_mobile {
+    display: none;
+  }
+
+  .snow-banner-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .snow-banner-content {
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    padding: 200px 0 50px 0;
+  }
+
+  .snow-banner-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #fff;
+  }
+
+  .snow-banner-text1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #fff;
+    margin: 26px 0 50px;
+  }
+
+  .snow-banner-collection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 24px;
+  }
+
+  .snow-banner-collection img {
+    width: 100%;
+  }
+
+  .snow-banner-text2 {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 31px;
+    line-height: 150%;
+    letter-spacing: 0;
+    text-align: center;
+    color: #fff;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .snow-banner-text3 {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 31px;
+    line-height: 150%;
+    letter-spacing: 0;
+    text-align: center;
+    color: #fff;
+    max-width: 780px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+  }
+
+  .snow-banner-partner img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1600px) {
+    .snow-banner-title {
+      font-size: 90px;
+    }
+
+    .snow-banner-text1 {
+      font-size: 30px;
+      margin: 25px 0 40px;
+    }
+
+    .snow-banner-text2 {
+      font-size: 28px;
+    }
+
+    .snow-banner-text3 {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .snow-banner-title {
+      font-size: 75px;
+    }
+
+    .snow-banner-text1 {
+      font-size: 24px;
+      margin: 20px 0 30px;
+    }
+
+    .snow-banner-text2 {
+      font-size: 28px;
+    }
+
+    .snow-banner-text3 {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .snow-banner-title {
+      font-size: 55px;
+    }
+
+    .snow-banner-text1 {
+      font-size: 20px;
+      margin: 16px 0 30px;
+    }
+
+    .snow-banner-text2 {
+      font-size: 20px;
+    }
+
+    .snow-banner-text3 {
+      font-size: 20px;
+    }
+
+    .snow-banner-collection {
+      max-width: 300px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .snow-banner_desktop {
+      display: none;
+    }
+
+    .snow-banner_mobile {
+      display: block;
+    }
+
+    .snow-banner-content {
+      padding-top: 520px;
+    }
+
+    .snow-banner-title {
+      font-size: 58px;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
+    .snow-banner-text1 {
+      font-size: 14px;
+      margin: 16px 0 45px;
+    }
+
+    .snow-banner-text2 {
+      font-size: 15px;
+    }
+
+    .snow-banner-text3 {
+      font-size: 15px;
+    }
+
+    .snow-banner-partner {
+      max-width: 270px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .snow-banner-content {
+      padding-top: 320px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .snow-banner-content {
+      padding-top: 220px;
+    }
+  }
+</style>
+
+<!-- Intro Section -->
+{% comment %}
+  <section class="snow-banner-section">
+    <div class="snow-banner-bg">
+      <img class="snow-banner_desktop" src="images/banner/banner_bg.jpg" alt="thumb">
+      <img class="snow-banner_mobile" src="images/banner/mobil-banner-bg.jpg" alt="thumb">
+    </div>
+    <div class="snow-banner-container">
+      <div class="snow-banner-content">
+        <h1 class="snow-banner-title">BLACK FRIDAY IN JULY</h1>
+        <div class="snow-banner-text1">For our birthday this year, we are celebrating with Black Friday in July!</div>
+        <div class="snow-banner-collection">
+          <div class="snow-banner-collection__thumb">
+            <img src="images/banner/banner-collection1.svg" alt="collection">
+          </div>
+          <div class="snow-banner-collection__thumb">
+            <img src="images/banner/banner-collection2.svg" alt="collection">
+          </div>
+          <div class="snow-banner-collection__thumb">
+            <img src="images/banner/banner-collection3.svg" alt="collection">
+          </div>
+        </div>
+        <div class="snow-banner-text2">#1 Trusted Brand in America* Trusted by Millions</div>
+        <div class="snow-banner-text3">60-Day Money Back Guarantee</div>
+        <div class="snow-banner-partner">
+          <img src="images/banner/banner-partner_3_3.png" alt="Partner">
+        </div>
+      </div>
+    </div>
+  </section>
+{% endcomment %}
+
+<!-- Intro Section -->
+<section class="snow-banner-section">
+  <div class="snow-banner-bg">
+    {% if section.settings.banner_bg_desktop %}
+      <img
+        class="snow-banner_desktop"
+        src="{{ section.settings.banner_bg_desktop | img_url: 'master' }}"
+        alt="Desktop Banner"
+      >
+    {% endif %}
+    {% if section.settings.banner_bg_mobile %}
+      <img
+        class="snow-banner_mobile"
+        src="{{ section.settings.banner_bg_mobile | img_url: 'master' }}"
+        alt="Mobile Banner"
+      >
+    {% endif %}
+  </div>
+
+  <div class="snow-banner-container">
+    <div class="snow-banner-content">
+      <h1 class="snow-banner-title">{{ section.settings.banner_title }}</h1>
+      <div class="snow-banner-text1">{{ section.settings.text1 }}</div>
+
+      <div class="snow-banner-collection">
+        {% for block in section.blocks %}
+          <div class="snow-banner-collection__thumb">
+            <img src="{{ block.settings.image | img_url: 'master' }}" alt="Collection">
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="snow-banner-text2">{{ section.settings.text2 }}</div>
+      <div class="snow-banner-text3">{{ section.settings.text3 }}</div>
+
+      {% if section.settings.partner_logo %}
+        <div class="snow-banner-partner">
+          <img src="{{ section.settings.partner_logo | img_url: 'master' }}" alt="Partner Logo">
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Snow Banner",
+  "class": "snow-banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_bg_desktop",
+      "label": "Desktop Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_bg_mobile",
+      "label": "Mobile Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_title",
+      "label": "Banner Title",
+      "default": "BLACK FRIDAY IN JULY"
+    },
+    {
+      "type": "textarea",
+      "id": "text1",
+      "label": "Text 1",
+      "default": "For our birthday this year, we are celebrating with Black Friday in July!"
+    },
+    {
+      "type": "textarea",
+      "id": "text2",
+      "label": "Text 2",
+      "default": "#1 Trusted Brand in America* Trusted by Millions"
+    },
+    {
+      "type": "text",
+      "id": "text3",
+      "label": "Text 3",
+      "default": "60-Day Money Back Guarantee"
+    },
+    {
+      "type": "image_picker",
+      "id": "partner_logo",
+      "label": "Partner Logo"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_image",
+      "name": "Collection Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Collection Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Snow Banner",
+      "category": "Custom",
+      "blocks": [{ "type": "collection_image" }, { "type": "collection_image" }, { "type": "collection_image" }]
+    }
+  ]
+}
+{% endschema %}
