@@ -282,16 +282,18 @@
 
       <div class="snow-banner-collection">
         {% for block in section.blocks %}
-          <div class="snow-banner-collection__thumb">
-            <img src="{{ block.settings.image | img_url: 'master' }}" alt="Collection">
-          </div>
+          {% if block.settings.image != blank %}
+            <div class="snow-banner-collection__thumb">
+              <img src="{{ block.settings.image | img_url: 'master' }}" alt="Collection">
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
 
       <div class="snow-banner-text2">{{ section.settings.text2 }}</div>
       <div class="snow-banner-text3">{{ section.settings.text3 }}</div>
 
-      {% if section.settings.partner_logo %}
+      {% if section.settings.partner_logo != blank %}
         <div class="snow-banner-partner">
           <img src="{{ section.settings.partner_logo | img_url: 'master' }}" alt="Partner Logo">
         </div>
