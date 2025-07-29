@@ -63,7 +63,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Jetzt exklusiv nur bei NTV",
+            "subtitle": "Die neue Ära der Damastmesser",
             "subtitle_font_size": 16,
             "subtitle_weight": "400"
           }
@@ -92,7 +92,7 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
-            "taxes_included": false,
+            "taxes_included": true,
             "taxes_included_text": "",
             "show_saving": true,
             "sale_badge_type": "percentage",
@@ -126,6 +126,8 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
             "viewer_count_time": 2500,
             "stock_count_time": 50000,
             "stock_count_show": false
@@ -134,7 +136,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Produkte nur für kurze Zeit im Angebot!</p>",
+            "featurelist_item": "<p>Echter Damaststahl – wo andere nur Edelstahl bieten</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -143,7 +145,7 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Nur für NTV-Leser erhältlich – nicht im Einzelhandel verfügbar</p>",
+            "featurelist_item": "<p>Handgeschliffene Klinge, japanische Schärfe in deiner Küche</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -201,6 +203,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
@@ -209,7 +212,7 @@
         "enable_variant_group_images": false,
         "disable_selected_variant_default": false,
         "show_featured_media": true,
-        "show_zoom_button": true,
+        "show_zoom_button": false,
         "enable_video_autoplay": false,
         "show_nav_media_mobile": false,
         "show_pagination_mobile": true,
@@ -259,7 +262,7 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "IM SET ENTHALTEN:",
+        "title": "Produktbeschreibung:",
         "heading_type": "mrk-h3",
         "description": "{{ product.description }}",
         "mt": 30,
@@ -564,19 +567,19 @@
         "subtitle_jER8HM": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Nur für kurze Zeit erhältlich"
+            "subtitle": "🔥 Nur jetzt für kurze Zeit!"
           }
         },
         "title_hXWbxr": {
           "type": "title",
           "settings": {
-            "title": "{{ product.metafields.zem.section_title.value }}"
+            "title": "OKAMI Messerset einmalig zum Einführungspreis sichern!"
           }
         },
         "description_abE8wX": {
           "type": "description",
           "settings": {
-            "description": "Dieses Set vereint alles, was du für deine Küche brauchst. Nur solange der Vorrat reicht – viele Produkte gehen nicht mehr in Nachproduktion!"
+            "description": "Das OKAMI Set ist unser neuestes Highlight – 7 Damastmesser aus 67 Lagen Stahl, entwickelt für höchste Ansprüche in deiner Küche.\n\nNur zur Markteinführung erhältst du das gesamte Set mit über 600 € Rabatt."
           }
         }
       },
@@ -594,85 +597,192 @@
         "reverse": false,
         "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h3",
+        "heading_type": "mrk-h2",
         "sub_heading": "p-medium",
         "des_size": "p-medium"
       }
     },
-    "feature_highlight_ktLbnH": {
-      "type": "feature-highlight",
+    "benefit_text_right_AFHFhC": {
+      "type": "benefit-text-right",
       "blocks": {
-        "feature_item_left_KLYLgM": {
-          "type": "feature_item_left",
+        "subtitle_XPX87U": {
+          "type": "subtitle",
           "settings": {
-            "item_title": "8-teiliges Messerset",
-            "item_info": "Mit extra scharfen Klingen aus deutschem 7CR17-Edelstahl.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V7_1.png"
+            "subtitle": "Robust & langlebig"
           }
         },
-        "feature_item_left_etKjAM": {
-          "type": "feature_item_left",
+        "title_YwDaTz": {
+          "type": "title",
           "settings": {
-            "item_title": "Drehbarer Messerblock",
-            "item_info": "Magnetischer und drehbarer Messerblock für das ganze Set",
-            "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
+            "title": "Hält jeder Herausforderung stand"
           }
         },
-        "feature_item_left_zGYhna": {
-          "type": "feature_item_left",
+        "description_j4ByyM": {
+          "type": "description",
           "settings": {
-            "item_title": "Messerschärfer",
-            "item_info": "Jedes Messer ist in Sekunden wieder scharf.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
-          }
-        },
-        "feature_center_image_mBHAJH": {
-          "type": "feature_center_image",
-          "settings": {
-            "center_image": "shopify://shop_images/Artboard_2_Kopie_5_1_51f9998a-33b1-4ffd-bfc3-ab3d5b8a61bd.jpg"
-          }
-        },
-        "feature_item_right_YpUkf4": {
-          "type": "feature_item_right",
-          "settings": {
-            "item_title": "Mizo Schneidebrette",
-            "item_info": "Aus Akazienholz, perfekt für schnelle und kleine Schneidearbeiten.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V4_1.png"
-          }
-        },
-        "feature_item_right_dN8J9K": {
-          "type": "feature_item_right",
-          "settings": {
-            "item_title": "Pflegöl",
-            "item_info": "Kamelienöl schützt und pflegt Klinge und Griff.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V5_1.png"
-          }
-        },
-        "feature_item_right_jLCbWD": {
-          "type": "feature_item_right",
-          "settings": {
-            "item_title": "365 Tage Schleifservice",
-            "item_info": "Kostenloser Nachschliff für ein Jahr - immer scharf.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V6_1.png"
+            "description": "Unsere Messer sind aus hochwertigem Stahl gefertigt und bleiben extrem scharf – ohne Absplittern oder Abnutzen. Die widerstandsfähige Klinge sorgt für jahrelange Höchstleistung in der Küche."
           }
         }
       },
       "block_order": [
-        "feature_item_left_KLYLgM",
-        "feature_item_left_etKjAM",
-        "feature_item_left_zGYhna",
-        "feature_center_image_mBHAJH",
-        "feature_item_right_YpUkf4",
-        "feature_item_right_dN8J9K",
-        "feature_item_right_jLCbWD"
+        "subtitle_XPX87U",
+        "title_YwDaTz",
+        "description_j4ByyM"
       ],
-      "disabled": true,
       "settings": {
+        "color_scheme": "badge-hot",
+        "media_type": "image",
+        "image": "shopify://shop_images/IMG_6134_ae49332e-9534-4225-ac85-cfc57ca44395.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": true,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
+    "benefit_text_MCeGiV": {
+      "type": "benefit-text",
+      "blocks": {
+        "subtitle_8kbCAt": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Der Küchen-Trend 2025"
+          }
+        },
+        "title_KU4fTr": {
+          "type": "title",
+          "settings": {
+            "title": "Perfekte Schnitte in Sekunden"
+          }
+        },
+        "description_PBBAnQ": {
+          "type": "description",
+          "settings": {
+            "description": "Erlebe die nächste Stufe der Messerschärfe mit unserem Premium-Messerset. Jede Klinge ist auf Rasiermesserschärfe geprüft und sorgt für mühelose Präzision bei jedem Schnitt – egal ob Fleisch, Gemüse oder Brot."
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_8kbCAt",
+        "title_KU4fTr",
+        "description_PBBAnQ"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "media_type": "image",
+        "image": "shopify://shop_images/IMG_6143_e8c44b3d-deb9-4b95-9841-4e8cf7838f12.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
+    "apex_faqs_jx7hp6": {
+      "type": "apex-faqs",
+      "blocks": {
+        "item_Y76Jjj": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Wie scharf sind die OKAMI Messer?",
+            "faq_body": "<p>Unsere OKAMI Klingen sind rasiermesserscharf und gleiten mühelos durch Fleisch, Gemüse oder Brot. Dank der 67 Lagen Damaststahl bieten sie eine außergewöhnlich lange Schnitthaltigkeit.</p>"
+          }
+        },
+        "item_J7jdRT": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Welches Material wird für die OKAMI Klingen verwendet?",
+            "faq_body": "<p>Jede Klinge besteht aus 67 Lagen echtem, handgeschmiedetem Damaststahl mit einem hochfesten VG10-Stahlkern – für maximale Härte und Präzision.</p>"
+          }
+        },
+        "item_V7NfBy": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Bleiben die OKAMI Messer lange scharf oder müssen sie oft nachgeschärft werden?",
+            "faq_body": "<p>Dank des Damastaufbaus bleiben OKAMI Messer besonders lange scharf. Bei normalem Gebrauch genügt gelegentliches Abziehen – professionelles Nachschärfen ist selten nötig.</p>"
+          }
+        },
+        "item_Q9DGdb": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Sind die OKAMI Messer rostfrei und spülmaschinengeeignet?",
+            "faq_body": "<p>Die Messer sind rostfrei – jedoch nicht für die Spülmaschine geeignet. Bitte von Hand abspülen und gut trocknen, um Klinge und Griff dauerhaft zu schützen.</p>"
+          }
+        },
+        "item_xpq4qN": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Was macht die OKAMI Messer besser als herkömmliche Küchenmesser?",
+            "faq_body": "<p>OKAMI Messer bieten dir Damaststahl-Qualität, die sonst nur in der Oberklasse vorkommt – aber zu einem Preis, den sich jeder leisten kann. Sie vereinen japanische Schmiedekunst mit moderner Fertigung und perfekter Balance.</p>"
+          }
+        },
+        "item_XFGU6y": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Welche Messer sind im OKAMI 7er Set enthalten?",
+            "faq_body": "<p>Im Set enthalten sind:<br/><br/>• <strong>OKAMI Ten </strong>– Chefmesser<br/><br/>• <strong>OKAMI Rei</strong> – Santoku<br/><br/>• <strong>OKAMI Arashi </strong>– Brotmesser<br/><br/>• <strong>OKAMI Do</strong> – Hackmesser<br/><br/>• <strong>OKAMI Sei</strong> – Nakiri<br/><br/>• <strong>OKAMI Ha </strong>– Universalmesser<br/><br/>• <strong>OKAMI Sen</strong> – Officemesser</p>"
+          }
+        },
+        "item_cDC8UT": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Gibt es eine Geld-zurück-Garantie oder ein Rückgaberecht?",
+            "faq_body": "<p>Ja! Wir bieten eine <strong>100-Tage-Geld-zurück-Garantie</strong>. Teste die Messer völlig risikofrei. Solltest du nicht zufrieden sein, kannst du sie unkompliziert zurücksenden – ohne Wenn und Aber!</p>"
+          }
+        },
+        "item_PNKhQY": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Wie lange dauert der Versand und gibt es eine Expressoption?",
+            "faq_body": "<p><strong>Standardversand</strong>: 1-3 Werktage<br/><strong>Expressversand</strong>: 20-36 Stunden für eine schnelle Lieferung</p><p>Alle Bestellungen werden mit Sendungsverfolgung versendet, damit du dein Paket jederzeit nachverfolgen kannst.</p>"
+          }
+        },
+        "item_889zGP": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Welche Zahlungsmethoden werden akzeptiert?",
+            "faq_body": "<p>Wir bieten <strong>sichere und flexible Zahlungsmöglichkeiten</strong>, darunter:<br/>Kreditkarte (Visa, Mastercard, AMEX)<br/>PayPal, Klarna (Rechnung & Sofort)<br/>Apple Pay & Google Pay</p>"
+          }
+        },
+        "item_9JjGkE": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Gibt es eine Garantie auf die Messer?",
+            "faq_body": "<p>Ja! Unsere Messer kommen mit <strong>2</strong> <strong>Jahren Garantie auf Material- und Herstellungsfehler</strong>. Sollte es ein Problem geben, sorgen wir für einen schnellen Ersatz oder eine Lösung.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_Y76Jjj",
+        "item_J7jdRT",
+        "item_V7NfBy",
+        "item_Q9DGdb",
+        "item_xpq4qN",
+        "item_XFGU6y",
+        "item_cDC8UT",
+        "item_PNKhQY",
+        "item_889zGP",
+        "item_9JjGkE"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "icon_color": "#000000",
         "pt": 50,
         "pb": 50,
         "pt_mobile": 30,
         "pb_mobile": 30,
-        "title": "Im Set enthalten:"
+        "title": "FAQ - Häufige Fragen",
+        "heading_type": "mrk-h2",
+        "sub_title": "",
+        "sub_title_font_size": 20,
+        "faq_title_font_size": 18,
+        "faq_text_font_size": 16
       }
     },
     "product_explanation_video_xNFp3M": {
@@ -736,221 +846,6 @@
         "vertical_padding": 50,
         "vertical_padding_mobile": 30,
         "heading_type": "mrk-h3",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
-      }
-    },
-    "us_vs_them_8Tbqki": {
-      "type": "us-vs-them",
-      "blocks": {
-        "title_F4F6qE": {
-          "type": "title",
-          "settings": {
-            "title": "KÜCHENKOMPANE® vs. ANDERE"
-          }
-        },
-        "description_9Mxcd4": {
-          "type": "description",
-          "settings": {
-            "description": "<p>Unsere Vergleichsgrafik zeigt, warum Küchenkompane die beste Wahl ist. Mit messerscharfer Präzision, hochwertigem Stahl und ergonomischem Design bieten unsere Messer maximale Qualität und Komfort.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "title_F4F6qE",
-        "description_9Mxcd4"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "img": "shopify://shop_images/steel_kitchen_knives_V11_1.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h1",
-        "des_size": "p-medium"
-      }
-    },
-    "apex_faqs_jx7hp6": {
-      "type": "apex-faqs",
-      "blocks": {
-        "item_Y76Jjj": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Wie scharf sind die Messer von Küchenkompane?",
-            "faq_body": "<p>Unsere Messer sind auf <strong>Rasiermesserschärfe</strong> geschliffen. Dank des hochwertigen Stahls und der präzisen Verarbeitung gleiten sie mühelos durch jedes Schnittgut – für maximale Präzision und Freude beim Kochen.</p>"
-          }
-        },
-        "item_J7jdRT": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Welches Material wird für die Klingen verwendet?",
-            "faq_body": "<p>Wir setzen auf <strong>hochwertigen gehärteten Edelstahl (7CR17)</strong>, bekannt für seine außergewöhnliche Schärfe, Langlebigkeit und Widerstandsfähigkeit gegen Rost und Abnutzung. Die Klingen werden von uns durch eine speziell entwickelte Methode gehärtet, um eine Härte von <strong>60+ HRC</strong> zu erreichen.</p>"
-          }
-        },
-        "item_V7NfBy": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Bleiben die Messer lange scharf oder müssen sie oft nachgeschärft werden?",
-            "faq_body": "<p>Dank der <strong>professionellen und besonderen Härtung</strong> behalten unsere Messer ihre Schärfe <strong>wesentlich länger</strong> als herkömmliche Küchenmesser. Regelmäßiges Nachschärfen ist erst nach langer Nutzung nötig.</p>"
-          }
-        },
-        "item_Q9DGdb": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Sind die Messer rostfrei und spülmaschinengeeignet?",
-            "faq_body": "<p>Unsere Messer sind <strong>hochgradig rostbeständig</strong>, da wir ausschließlich korrosionsbeständige Premium-Stähle verwenden. Für maximale Langlebigkeit empfehlen wir jedoch die <strong>Handwäsche</strong>, da Spülmaschinen aggressive Reinigungsmittel nutzen, die die Schärfe der Klinge beeinträchtigen können.</p>"
-          }
-        },
-        "item_xpq4qN": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Warum sind Küchenkompane Messer besser als herkömmliche Messer?",
-            "faq_body": "<p><strong>Präzise Handwerkskunst</strong>: Jedes Messer wird mit höchster Sorgfalt gefertigt<br/><strong>Extrem scharf</strong>: Rasiermesserschärfe für müheloses Schneiden<br/><strong>Langlebig & robust</strong>: Gehärteter Premium-Stahl für jahrelange Nutzung<strong>Ergonomischer Griff</strong>: Perfekte Balance für eine komfortable Handhabung<br/><strong>Exklusives Design</strong>: Ein Blickfang in jeder Küche</p>"
-          }
-        },
-        "item_XFGU6y": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Welche Messer sind im Set enthalten?",
-            "faq_body": "<p>Das 8-teilige Messerset wurde speziell zusammengestellt, um jede Schneideaufgabe in der Küche perfekt zu meistern. Jedes Messer hat seinen eigenen Einsatzzweck:</p><ul><li><strong>Chefmesser</strong> – Der Allrounder für alle Lebensmittel</li><li><strong>Santoku 7 Inch Messer</strong> – Ideal für Fisch, Fleisch & Gemüse</li><li><strong>Nakiri Messer</strong> – Perfekt für große Mengen an Gemüse</li><li><strong>Filetiermesser</strong> – Präzise Schnitte für Fisch & Geflügel</li><li><strong>Brotmesser</strong> – Schneidet mühelos durch jede Kruste</li><li><strong>Yanagiba Messer</strong> – Speziell für Sushi, Schinken & Carpaccio</li><li><strong>Santoku 5 Inch Messer</strong> – Die kompakte Variante für feine Schnitte</li><li><strong>Petty Messer</strong> – Perfekt für Obst, Gemüse und filigrane Arbeiten</li></ul><p>Jedes Messer wurde mit höchster Präzision gefertigt und sorgt für mühelose, saubere Schnitte in jeder Situation.</p>"
-          }
-        },
-        "item_cDC8UT": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Gibt es eine Geld-zurück-Garantie oder ein Rückgaberecht?",
-            "faq_body": "<p>Ja! Wir bieten eine <strong>100-Tage-Geld-zurück-Garantie</strong>. Teste die Messer völlig risikofrei. Solltest du nicht zufrieden sein, kannst du sie unkompliziert zurücksenden – ohne Wenn und Aber!</p>"
-          }
-        },
-        "item_PNKhQY": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Wie lange dauert der Versand und gibt es eine Expressoption?",
-            "faq_body": "<p><strong>Standardversand</strong>: 1-3 Werktage<br/><strong>Expressversand</strong>: 20-36 Stunden für eine schnelle Lieferung</p><p>Alle Bestellungen werden mit Sendungsverfolgung versendet, damit du dein Paket jederzeit nachverfolgen kannst.</p>"
-          }
-        },
-        "item_889zGP": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Welche Zahlungsmethoden werden akzeptiert?",
-            "faq_body": "<p>Wir bieten <strong>sichere und flexible Zahlungsmöglichkeiten</strong>, darunter:<br/>Kreditkarte (Visa, Mastercard, AMEX)<br/>PayPal, Klarna (Rechnung & Sofort)<br/>Apple Pay & Google Pay</p>"
-          }
-        },
-        "item_9JjGkE": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Gibt es eine Garantie auf die Messer?",
-            "faq_body": "<p>Ja! Unsere Messer kommen mit <strong>2</strong> <strong>Jahren Garantie auf Material- und Herstellungsfehler</strong>. Sollte es ein Problem geben, sorgen wir für einen schnellen Ersatz oder eine Lösung.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "item_Y76Jjj",
-        "item_J7jdRT",
-        "item_V7NfBy",
-        "item_Q9DGdb",
-        "item_xpq4qN",
-        "item_XFGU6y",
-        "item_cDC8UT",
-        "item_PNKhQY",
-        "item_889zGP",
-        "item_9JjGkE"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "icon_color": "#000000",
-        "pt": 50,
-        "pb": 50,
-        "pt_mobile": 30,
-        "pb_mobile": 30,
-        "title": "FAQ - Häufige Fragen",
-        "heading_type": "mrk-h2",
-        "sub_title": "",
-        "sub_title_font_size": 20,
-        "faq_title_font_size": 18,
-        "faq_text_font_size": 16
-      }
-    },
-    "benefit_text_MCeGiV": {
-      "type": "benefit-text",
-      "blocks": {
-        "subtitle_8kbCAt": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Der Küchen-Trend 2025"
-          }
-        },
-        "title_KU4fTr": {
-          "type": "title",
-          "settings": {
-            "title": "Perfekte Schnitte in Sekunden"
-          }
-        },
-        "description_PBBAnQ": {
-          "type": "description",
-          "settings": {
-            "description": "Erlebe die nächste Stufe der Messerschärfe mit unserem Premium-Messerset. Jede Klinge ist auf Rasiermesserschärfe geprüft und sorgt für mühelose Präzision bei jedem Schnitt – egal ob Fleisch, Gemüse oder Brot."
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_8kbCAt",
-        "title_KU4fTr",
-        "description_PBBAnQ"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "media_type": "image",
-        "image": "shopify://shop_images/DSC04954_1_1_1.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": false,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
-      }
-    },
-    "benefit_text_right_AFHFhC": {
-      "type": "benefit-text-right",
-      "blocks": {
-        "subtitle_XPX87U": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Robust & langlebig"
-          }
-        },
-        "title_YwDaTz": {
-          "type": "title",
-          "settings": {
-            "title": "Hält jeder Herausforderung stand"
-          }
-        },
-        "description_j4ByyM": {
-          "type": "description",
-          "settings": {
-            "description": "Unsere Messer sind aus hochwertigem Stahl gefertigt und bleiben extrem scharf – ohne Absplittern oder Abnutzen. Die widerstandsfähige Klinge sorgt für jahrelange Höchstleistung in der Küche."
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_XPX87U",
-        "title_YwDaTz",
-        "description_j4ByyM"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "media_type": "image",
-        "image": "shopify://shop_images/db3759d136d351495e659830d75d6596_1_1_1_V1_1.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": true,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2",
         "sub_heading": "p-medium",
         "des_size": "p-medium"
       }
@@ -1230,12 +1125,10 @@
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
     "benefit_text_P4XApk",
-    "feature_highlight_ktLbnH",
-    "product_explanation_video_xNFp3M",
-    "us_vs_them_8Tbqki",
-    "apex_faqs_jx7hp6",
-    "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
+    "benefit_text_MCeGiV",
+    "apex_faqs_jx7hp6",
+    "product_explanation_video_xNFp3M",
     "trustpilot_testimonials_YbXp3E",
     "cta_final_9B8iN9",
     "benefit_list_gif_iJWmYF",

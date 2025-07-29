@@ -27,7 +27,7 @@
         "button_nrHibw": {
           "type": "Button",
           "settings": {
-            "btn_text": "Join Now",
+            "btn_text": "Los geht´s",
             "btn_url": ""
           }
         }
@@ -37,6 +37,7 @@
         "text_8RhiQy",
         "button_nrHibw"
       ],
+      "disabled": true,
       "name": "Reward Banner",
       "settings": {
         "bg_image": "shopify://shop_images/banner_desktop.jpg",
@@ -54,7 +55,8 @@
         "loloyal_app_banner_XkYUDN": {
           "type": "shopify://apps/loloyal/blocks/app-banner/930ac91f-2bf2-4655-9ba0-574771f782d6",
           "settings": {
-            "add_image": "shopify://shop_images/bg_32602eea-e670-491d-8acc-b85945083761.jpg",
+            "add_image": "shopify://shop_images/banner_desktop.jpg",
+            "add_mobile_image": "shopify://shop_images/handy_header.jpg",
             "img_opacity": 0,
             "bg_color": "#f6f6f6",
             "banner_height": "400",
@@ -99,12 +101,12 @@
         "title": "So funktioniert es",
         "bg_image": "shopify://shop_images/pfeileeee_desktop.jpg",
         "bg_image_mobile": "shopify://shop_images/pfeileee.jpg",
-        "register": "REGISTER",
-        "register_info": "Create an account  and earn 100  points.",
-        "earn": "EARN",
-        "earn_info": "Earn points from your orders and activities.",
-        "redeem": "REDEEM",
-        "redeem_info": "Redeem points for exclusive offers."
+        "register": "ANMELDEN",
+        "register_info": "Account erstellen und 300 Punkte sichern.",
+        "earn": "VERDIENEN",
+        "earn_info": "Sammle Punkte für deine Bestellungen und Aktivitäten.",
+        "redeem": "EINLÖSEN",
+        "redeem_info": "Belohne dich mit exklusiven Angeboten, dank deiner Punkte."
       }
     },
     "175187851140e57500": {

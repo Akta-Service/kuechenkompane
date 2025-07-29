@@ -71,7 +71,7 @@
         "grid_columns": "4",
         "show_columns_switcher": true,
         "pagination_limit": 30,
-        "paginate_type": "paginate",
+        "paginate_type": "infinite",
         "show_sorting": true,
         "show_filter": false,
         "filters_type": "storefront_filters",

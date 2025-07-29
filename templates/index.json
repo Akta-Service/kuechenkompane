@@ -50,8 +50,8 @@
         "heading_type": "mrk-h2",
         "sub_title": "",
         "sub_title_text": "p-medium",
-        "btn_text": "AUSVERKAUF ENTDECKEN",
-        "btn_link": "shopify://collections/ausverkauf",
+        "btn_text": "ANGEBOTE ENTDECKEN",
+        "btn_link": "shopify://collections/sale-aktuell",
         "button_style": "m-button--primary",
         "button_size": "",
         "b_overlay": true,
@@ -138,7 +138,7 @@
         "header_alignment": "center",
         "color_scheme": "",
         "container": "container-fluid",
-        "collection": "geburtstags-aktion-bestseller",
+        "collection": "top-8-produkte-im-sale",
         "enable_flashsale": false,
         "show_countdown": false,
         "product_to_show": 8,
@@ -175,7 +175,7 @@
           "settings": {
             "color_scheme": "",
             "width": "33%",
-            "image": "shopify://shop_images/Unbenannt_1_0007_2_1_3_jpg_V92_1.jpg",
+            "image": "shopify://shop_images/asiatisches-messerset-premium-mobile_1.jpg",
             "top_1": 51,
             "left_1": 51,
             "product_1": "",
@@ -205,7 +205,7 @@
             "alignment": "center",
             "align_text": "center",
             "button_label": "JETZT ENTDECKEN",
-            "button_link": "shopify://products/akarui-messerset-premium",
+            "button_link": "shopify://products/premium",
             "button_style": "m-button--primary",
             "button_size": "",
             "block_custom_class": "",
@@ -401,7 +401,7 @@
           "type": "btn",
           "settings": {
             "button_text": "Jetzt entdecken",
-            "button_link": "https://kuechenkompane.de/collections/asiatisches-messerset-1"
+            "button_link": "shopify://products/premium"
           }
         }
       },

@@ -1,102 +1,101 @@
 <style>
-    .collection-container {
-        max-width: 1400px;
-        margin: auto;
-        padding: 0 15px;
-   }
-  .collection-description-area{
-    background: {{ section.settings.collection_bg }};
-    padding-top: {{ section.settings.collection_pt }}px;
-    padding-bottom: {{ section.settings.collection_pb }}px;
+      .collection-container {
+          max-width: 1400px;
+          margin: auto;
+          padding: 0 15px;
+     }
+    .collection-description-area{
+      background: {{ section.settings.collection_bg }};
+      padding-top: {{ section.settings.collection_pt }}px;
+      padding-bottom: {{ section.settings.collection_pb }}px;
+    }
+    .collection-description h2 {
+      color: #000;
+    }
+    .collection-description ul {
+      margin-bottom: 15px;
+    }
+    .collection-description h3 {
+      color: #000;
+    }
+  @media only screen and (max-width: 768px){
+    .collection-description-area {
+      padding-top: {{ section.settings.collection_pt_m }}px;
+      padding-bottom: {{ section.settings.collection_pb_m }}px;
+    }
   }
-  .collection-description h2 {
-    color: #000;
-  }
-  .collection-description ul {   
-    margin-bottom: 15px;
-  }
-  .collection-description h3 {
-    color: #000;
-  }
-@media only screen and (max-width: 768px){
-  .collection-description-area {    
-    padding-top: {{ section.settings.collection_pt_m }}px;
-    padding-bottom: {{ section.settings.collection_pb_m }}px;
-  }
-}
 </style>
-
-<div class="collection-description-area">
+{% if collection.description != blank %}
+  <div class="collection-description-area">
     <div class="collection-container">
-        {% if collection.description != blank %}
-            <div class="collection-description">
-                {{ collection.description }}
-            </div>
-        {% endif %}        
+      <div class="collection-description">
+        {{ collection.description }}
+      </div>
     </div>
-</div>
+  </div>
+{% endif %}
 {% schema %}
-  {
-    "name": "Apex Collection Des",
-   
-    "settings": [
-        {
-          "type": "header",
-          "content": "Section Settings"
-        },
-        {
-          "type": "color",
-          "id": "collection_bg",
-          "label": "Background Color",
-          "default": "#f8f8f8"
-        },
-        {
-          "type": "range",
-          "id": "collection_pt",
-          "label": "Padding Top",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "default": 30,
-          "unit": "px"
-        },
-        {
-          "type": "range",
-          "id": "collection_pb",
-          "label": "Padding Bottom",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "default": 30,
-          "unit": "px"
-        },
-        {
-          "type": "range",
-          "id": "collection_pt_m",
-          "label": "Padding Top (Mobile)",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "default": 30,
-          "unit": "px"
-        },
-        {
-          "type": "range",
-          "id": "collection_pb_m",
-          "label": "Padding Bottom (Mobile)",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "default": 30,
-          "unit": "px"
-        }
-    ],
-    "presets": [
+{
+  "name": "Apex Collection Des",
+
+  "settings": [
       {
-        "name": "Apex Collection Des",
-        "settings": {
-        }
+        "type": "header",
+        "content": "Section Settings"
+      },
+      {
+        "type": "color",
+        "id": "collection_bg",
+        "label": "Background Color",
+        "default": "#f8f8f8"
+      },
+      {
+        "type": "range",
+        "id": "collection_pt",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 30,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "collection_pb",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 30,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "collection_pt_m",
+        "label": "Padding Top (Mobile)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 30,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "collection_pb_m",
+        "label": "Padding Bottom (Mobile)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 30,
+        "unit": "px"
       }
-    ]
-  }
+  ],
+  "presets": [
+    {
+      "name": "Apex Collection Des",
+      "settings": {
+      }
+    }
+  ]
+}
 {% endschema %}

@@ -43,18 +43,28 @@
 {% endif %}
 </style>
 
-{% if collection.handle == section.settings.target_collection.handle %}
+{% assign show_announcement = false %}
+
+{% for block in section.blocks %}
+  {% if block.settings.collection != blank and block.settings.collection.handle == collection.handle %}
+    {% assign show_announcement = true %}
+    {% assign current_block = block %}
+  {% endif %}
+{% endfor %}
+
+{% if show_announcement %}
   <div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
     <div class="announcement-container">
       <div class="announcement-bar-content">
-        <strong class="ann_title" style=" ">
-          {{- section.settings.ann_title -}}
+        <strong class="ann_title" style="">
+          {{ current_block.settings.ann_title }}
         </strong>
-        {{ section.settings.text }}
+        {{ current_block.settings.text }}
       </div>
     </div>
   </div>
 {% endif %}
+
 
 {% if section.settings.enable_scroll_to_show %}
   <script>
@@ -76,12 +86,7 @@
 {% schema %}
 {
   "name": "APEX Different Ann",  
-  "settings": [
-    {
-      "type": "collection",
-      "id": "target_collection",
-      "label": "Show only on this collection"
-    },
+  "settings": [    
 
     {
       "type": "checkbox",
@@ -133,13 +138,7 @@
     {
       "type": "header",
       "content": "Title"
-    },
-    {
-      "type": "text",
-      "id": "ann_title",
-      "label": "Title",
-      "default": "LEI OF LOVE"
-    },
+    },   
     {
       "type": "range",
       "id": "ann_title_size",
@@ -161,13 +160,7 @@
     {
       "type": "header",
       "content": "Text"
-    },
-    {
-      "type": "richtext",
-      "id": "text",
-      "label": "Text",
-      "default": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>"
-    },
+    },    
     {
       "type": "range",
       "id": "text_size",
@@ -187,6 +180,32 @@
       "step": 1
     } 
   ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Target Collection To show"
+        },
+        {
+          "type": "text",
+          "id": "ann_title",
+          "label": "Title",
+          "default": "Special Offer"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Exclusive deal for this collection!</p>"
+        }
+      ]
+    }
+  ],
+
   "presets": [
     {
       "name": "APEX Different Ann",
