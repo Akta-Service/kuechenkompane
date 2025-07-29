@@ -150,6 +150,14 @@
             "ann_title": "💥 Großer Lagerschlussverkauf",
             "text": "<p>Bis zu 75 % auf echte Bestseller</p>"
           }
+        },
+        "announcement_4K73ww": {
+          "type": "announcement",
+          "settings": {
+            "collection": "grunder-im-urlaub",
+            "ann_title": "Der Gründer hat Geburtstag",
+            "text": "<p>Wir geben unglaubliche Rabatte!</p>"
+          }
         }
       },
       "block_order": [
@@ -163,7 +171,8 @@
         "announcement_XbBpcL",
         "announcement_NzwhVJ",
         "announcement_qcxp9X",
-        "announcement_4xFYEd"
+        "announcement_4xFYEd",
+        "announcement_4K73ww"
       ],
       "name": "APEX Different Ann",
       "settings": {
