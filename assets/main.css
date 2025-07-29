@@ -3922,7 +3922,7 @@ deferred-media {
   padding-bottom: var(--f-sticky-atc-bar-height, 0px);
 }
 .template-product #MainContent {
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
 }
 .animate-spin {
   animation: mSpin 1s linear infinite;
@@ -5190,6 +5190,10 @@ deferred-media {
 }
 .m-product-quickview--media .m-product-media--slider__images {
   margin-bottom: 0;
+}
+
+.m-product-media--slider__images {
+  position: relative;
 }
 .m-product-quickview--info {
   overflow-y: auto;
@@ -7683,4 +7687,17 @@ variant-picker
 .rs-price p {
   margin-top: 0.5%;
   font-size: 12px;
+}
+
+.m-product-media--wrapper {
+  position: relative;
+}
+.m-product-tag--soldout-overlay.product-page-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  padding: 10px 20px;
+  font-size: 16px;
+  transform: translate(-50%);
 }

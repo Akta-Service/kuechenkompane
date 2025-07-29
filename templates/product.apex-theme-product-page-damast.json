@@ -101,6 +101,7 @@
           "type": "price",
           "settings": {
             "taxes_included": false,
+            "taxes_included_text": "",
             "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -141,6 +142,8 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
             "viewer_count_time": 30000,
             "stock_count_time": 50000,
             "stock_count_show": true
@@ -240,6 +243,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
@@ -565,6 +569,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/c3f04b6c0c574ca587cc7ad8532567e9.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04.jpg",
@@ -1222,6 +1227,29 @@
         "custom_class": ""
       }
     },
+    "product_recommendations_UBnt9L": {
+      "type": "product-recommendations",
+      "name": "Product recommendations",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "remove_params": false,
+        "heading": "Das könnte dir auch gefallen",
+        "heading_size": "h3",
+        "text_align": "left",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": true,
+        "use_scroll_mobile": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "store_benefits_bottom_NPnyUL": {
       "type": "store-benefits-bottom",
       "blocks": {
@@ -1305,6 +1333,7 @@
     "cta_final_9B8iN9",
     "benefit_list_gif_iJWmYF",
     "1741277518a98c9482",
+    "product_recommendations_UBnt9L",
     "store_benefits_bottom_NPnyUL"
   ]
 }

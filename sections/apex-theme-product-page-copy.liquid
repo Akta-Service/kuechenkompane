@@ -116,6 +116,21 @@
       <div class="m-main-product--media m:column {{ media_class }}">
         <div class="m-product-media--desktop m-product-media--wrapper m-product-media--{{ section.settings.layout }} m:justify-end ">
           {% render 'product-media', section: section, template_product: true %}
+
+          {% if section.settings.show_sold_out_badge_on_image != false %}
+
+            {% if product.available == false %}
+              <span
+                class="m-product-tag m-product-tag--soldout-overlay product-page-badge m-gradient m-color-{{ settings.soldout_badge_color_scheme }}"
+              >
+                {{- 'products.product.sold_out' | t -}}
+              </span>
+            {% endif %}
+          {% endif %}
+
+
+
+
         </div>
         <div class="m-product-media--mobile m-product-media--{{ section.settings.layout }} md:m:hidden">
           {%- render 'product-media-mobile',
@@ -222,6 +237,12 @@
 {
   "name": "APEX Product Infos",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_sold_out_badge_on_image",
+      "label": "Show Sold Out badge on image",
+      "default": true
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
@@ -913,6 +934,18 @@
           "id": "product_main_text_2",
           "label": "Product Main Text",
           "default": "left in stock"
+        },
+        {
+          "type": "text",
+          "id": "product_stock_out",
+          "label": "Product Stock out Text",
+          "default": "Derzeit ausverkauft"
+        },
+        {
+          "type": "color",
+          "id": "soldout_color",
+          "label": "Sold Out Text Color",
+          "default": "#ff0000"
         },
 
 
@@ -1796,8 +1829,8 @@
   ]
 }
 {% endschema %}
-{% if product.tags contains 'NO SEARCH' %}
+{% comment %} {% if product.tags contains 'NO SEARCH' %}
   <script>
     window.location.href = "/collections/all";
   </script>
-{% endif %}
+{% endif %} {% endcomment %}

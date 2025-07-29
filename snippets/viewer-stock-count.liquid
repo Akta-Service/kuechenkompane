@@ -105,16 +105,26 @@
 {% comment %} {% if product.tags contains "STOCK" %} {% endcomment %}
  {% if block.settings.stock_count_show %}
   <div class="product-count">
-    <p class="product-count-mobile" style="font-size:{{block.settings.product_count_font_size}}px; color: {{block.settings.product_text_color}};">
-      <span class="count-icon"></span>
-      {{ block.settings.product_main_text_1 }}
 
+
+{% if product.available %}
+  <p class="product-count-mobile" style="font-size:{{block.settings.product_count_font_size}}px; color: {{block.settings.product_text_color}};">
+      <span class="count-icon"></span> 
+      {{ block.settings.product_main_text_1 }}
       <span id="stock-count" style="color: {{block.settings.product_count_text_color}};">
         13
       </span>
-
       {{ block.settings.product_main_text_2 }}
     </p>
+
+{%- else -%}
+  <p class="product-count-mobile" style="font-size:{{block.settings.product_count_font_size}}px; color: {{ block.settings.soldout_color }};">
+    <span class="count-icon"></span> 
+    {{ block.settings.product_stock_out }}
+  </p>
+{% endif %}
+
+
   </div>
 {% endif %}
 {% comment %} {% endif %} {% endcomment %}

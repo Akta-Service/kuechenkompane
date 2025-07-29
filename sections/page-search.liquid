@@ -98,22 +98,24 @@
               >
                 {% for item in search.results limit: section.settings.results_per_page %}
                   {% if item.object_type == 'product' %}
-                    <div class="m:column m:w-1/2 sm:m:w-4/12 lg:m:w-3/12">
-                      {% liquid
-                        case settings.pcard_layout
-                          when '1'
-                            render 'product-card-1', product: item, section: section
-                          when '2'
-                            render 'product-card-2', product: item, section: section
-                          when '3'
-                            render 'product-card-3', product: item, section: section
-                          when '4'
-                            render 'product-card-4', product: item, section: section
-                          when '5'
-                            render 'product-card-5', product: item, section: section
-                        endcase
-                      %}
-                    </div>
+                    {% comment %} {% unless item.tags contains 'NO SEARCH' %} {% endcomment %}
+                      <div class="m:column m:w-1/2 sm:m:w-4/12 lg:m:w-3/12">
+                        {% liquid
+                          case settings.pcard_layout
+                            when '1'
+                              render 'product-card-1', product: item, section: section
+                            when '2'
+                              render 'product-card-2', product: item, section: section
+                            when '3'
+                              render 'product-card-3', product: item, section: section
+                            when '4'
+                              render 'product-card-4', product: item, section: section
+                            when '5'
+                              render 'product-card-5', product: item, section: section
+                          endcase
+                        %}
+                      </div>
+                    {% comment %} {% endunless %} {% endcomment %}
                   {% endif %}
                   {% if item.object_type == 'article' %}
                     <div class="m:column m:w-1/2 sm:m:w-4/12 lg:m:w-3/12">
