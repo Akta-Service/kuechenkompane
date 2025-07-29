@@ -159,6 +159,14 @@
             "ann_title": "🎉 Geburtstagsaktion – Spare jetzt bei Küchenkompane!",
             "text": "<p>Exklusive Rabatte zum Geburtstag unseres Gründers 🥳</p>"
           }
+        },
+        "announcement_kAPTNe": {
+          "type": "announcement",
+          "settings": {
+            "collection": "grunder-im-urlaub",
+            "ann_title": "🚨 Nur jetzt: Rabatte hinterm Rücken vom Chef!",
+            "text": "<p>Der Gründer ist weg – wir machen die Preise!</p>"
+          }
         }
       },
       "block_order": [
@@ -173,7 +181,8 @@
         "announcement_NzwhVJ",
         "announcement_qcxp9X",
         "announcement_4xFYEd",
-        "announcement_4K73ww"
+        "announcement_4K73ww",
+        "announcement_kAPTNe"
       ],
       "name": "APEX Different Ann",
       "settings": {
