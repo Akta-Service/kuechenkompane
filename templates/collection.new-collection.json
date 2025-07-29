@@ -365,6 +365,81 @@
         "custom_class": "",
         "animations": "inherit"
       }
+    },
+    "t_testimonial_kGiRB7": {
+      "type": "t-testimonial",
+      "blocks": {
+        "testimonial_dde3kb": {
+          "type": "testimonial",
+          "settings": {
+            "rating": "5",
+            "title": "Worth every penny!",
+            "quote": "Beautiful product! My teeth are at least 5 shades whiter and they look great!",
+            "author": "CATHALINA A.",
+            "verified": "Verified Purchase",
+            "image": "shopify://shop_images/review2.png"
+          }
+        },
+        "testimonial_4UBMrr": {
+          "type": "testimonial",
+          "settings": {
+            "rating": "5",
+            "title": "Worth every penny!",
+            "quote": "Beautiful product! My teeth are at least 5 shades whiter and they look great!",
+            "author": "CATHALINA A.",
+            "verified": "Verified Purchase",
+            "image": "shopify://shop_images/review2.png"
+          }
+        },
+        "testimonial_RWDxcE": {
+          "type": "testimonial",
+          "settings": {
+            "rating": "5",
+            "title": "Worth every penny!",
+            "quote": "Beautiful product! My teeth are at least 5 shades whiter and they look great!",
+            "author": "CATHALINA A.",
+            "verified": "Verified Purchase",
+            "image": "shopify://shop_images/review2.png"
+          }
+        },
+        "testimonial_8GexML": {
+          "type": "testimonial",
+          "settings": {
+            "rating": "5",
+            "title": "Worth every penny!",
+            "quote": "Beautiful product! My teeth are at least 5 shades whiter and they look great!",
+            "author": "CATHALINA A.",
+            "verified": "Verified Purchase",
+            "image": "shopify://shop_images/review2.png"
+          }
+        },
+        "testimonial_9zDkN8": {
+          "type": "testimonial",
+          "settings": {
+            "rating": "5",
+            "title": "Worth every penny!",
+            "quote": "Beautiful product! My teeth are at least 5 shades whiter and they look great!",
+            "author": "CATHALINA A.",
+            "verified": "Verified Purchase",
+            "image": "shopify://shop_images/review2.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_dde3kb",
+        "testimonial_4UBMrr",
+        "testimonial_RWDxcE",
+        "testimonial_8GexML",
+        "testimonial_9zDkN8"
+      ],
+      "name": "Snow Testimonial Slider",
+      "settings": {
+        "heading": "35,000+ Reviews",
+        "subheading1": "Guaranteed Results",
+        "subheading2": "Millions of Happy Customers",
+        "enable_pagination": "false",
+        "enable_navigation": "true"
+      }
     }
   },
   "order": [
@@ -378,6 +453,7 @@
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
     "collection_description_tUMerW",
-    "rich_text_ijBTPA"
+    "rich_text_ijBTPA",
+    "t_testimonial_kGiRB7"
   ]
 }
