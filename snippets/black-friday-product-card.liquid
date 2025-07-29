@@ -461,12 +461,11 @@
           </div>
         </div>
       {% endif %}
-
-      <div class="card-product-description">
-       <p>{{ product.metafields.product }}</p>
-
-      </div>
-
+      {% if product.metafields.custom.product_short_description  %}
+        <div class="card-product-description">
+        <p>{{ product.metafields.custom.product_short_description }}</p>
+        </div>
+      {% endif %}
 
       {% if settings.show_review_badge %}
         <div class="m-product-card__reviews m:text-color-body">
