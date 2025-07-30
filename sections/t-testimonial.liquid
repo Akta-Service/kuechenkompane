@@ -4,7 +4,9 @@
   .snow-testimonial {
     overflow: hidden;
     padding: 10vw 0 50px;
-    background-image: url(../images/testimonial/t-testimonial_bg.jpg);
+    {% if section.settings.bg_image != blank %}
+      background-image: url({{ section.settings.bg_image |  image_url }});
+    {% endif %}
     background-size: cover;
     background-repeat: no-repeat;
   }
