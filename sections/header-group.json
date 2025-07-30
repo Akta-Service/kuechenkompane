@@ -28,6 +28,30 @@
         "text_size_m": 16
       }
     },
+    "snow_topbar_xrgiBG": {
+      "type": "snow-topbar",
+      "name": "Countdown Timer",
+      "settings": {
+        "target_collections": [
+          "100-tage-risikofrei-testen"
+        ],
+        "color_scheme": "dark",
+        "top_title": "Black Friday in July Ends:",
+        "countdown_time": "Jun 5, 2026 15:37:25"
+      }
+    },
+    "announcement_bar_Ui3U6X": {
+      "type": "announcement--bar",
+      "name": "Announcement Bar new",
+      "settings": {
+        "target_collections": [
+          "100-tage-risikofrei-testen"
+        ],
+        "color_scheme": "dark",
+        "announcement_url": "",
+        "announcement_text": "FREE GIFTS + UP TO 49% OFF"
+      }
+    },
     "announcement_bar_sticky_scroll_Bk3YD6": {
       "type": "announcement-bar-sticky-scroll",
       "name": "APEX Announcement Sticky",
@@ -387,22 +411,12 @@
         "text_size_m": 16,
         "text_fw": "400"
       }
-    },
-    "snow_topbar_xrgiBG": {
-      "type": "snow-topbar",
-      "name": "Countdown Timer",
-      "settings": {
-        "target_collections": [
-          "100-tage-risikofrei-testen"
-        ],
-        "top_title": "Black Friday in July Ends:",
-        "countdown_time": "Jun 5, 2026 15:37:25"
-      }
     }
   },
   "order": [
     "announcement_bar_version_1_rc6jDA",
     "snow_topbar_xrgiBG",
+    "announcement_bar_Ui3U6X",
     "announcement_bar_sticky_scroll_Bk3YD6",
     "announcement_different_rRyBgT",
     "apex_timer_progress_yCDcUj",
