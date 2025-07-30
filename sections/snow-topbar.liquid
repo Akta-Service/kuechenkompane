@@ -101,42 +101,54 @@
   }
 </style>
 
-<div class="snow-topbar">
-  <div class="snow-topbar-container">
-    <div class="snow-topbar-content">
-      <div class="snow-topbar-title">{{ section.settings.top_title }}</div>
-      <div class="snow-topbar-timer">
-        <div id="countdown-{{ section.id }}" class="countdown-container">
-          <div class="timer-item">
-            <span id="day-{{ section.id }}">00</span>
-            <span class="timer-text">Days</span>
-          </div>
-          <div class="timer-item">
-            <span class="divider">:</span>
-          </div>
-          <div class="timer-item">
-            <span id="hrs-{{ section.id }}">00</span>
-            <span class="timer-text">Hrs</span>
-          </div>
-          <div class="timer-item">
-            <span class="divider">:</span>
-          </div>
-          <div class="timer-item">
-            <span id="min-{{ section.id }}">00</span>
-            <span class="timer-text">Mins</span>
-          </div>
-          <div class="timer-item">
-            <span class="divider">:</span>
-          </div>
-          <div class="timer-item">
-            <span id="sec-{{ section.id }}">00</span>
-            <span class="timer-text">Secs</span>
+{% assign show_countdown = false %}
+
+{% for coll in section.settings.target_collections %}
+  {% if collection.handle == coll.handle %}
+    {% assign show_countdown = true %}
+  {% endif %}
+{% endfor %}
+
+
+
+{% if show_countdown %}
+  <div class="snow-topbar">
+    <div class="snow-topbar-container">
+      <div class="snow-topbar-content">
+        <div class="snow-topbar-title">{{ section.settings.top_title }}</div>
+        <div class="snow-topbar-timer">
+          <div id="countdown-{{ section.id }}" class="countdown-container">
+            <div class="timer-item">
+              <span id="day-{{ section.id }}">00</span>
+              <span class="timer-text">Days</span>
+            </div>
+            <div class="timer-item">
+              <span class="divider">:</span>
+            </div>
+            <div class="timer-item">
+              <span id="hrs-{{ section.id }}">00</span>
+              <span class="timer-text">Hrs</span>
+            </div>
+            <div class="timer-item">
+              <span class="divider">:</span>
+            </div>
+            <div class="timer-item">
+              <span id="min-{{ section.id }}">00</span>
+              <span class="timer-text">Mins</span>
+            </div>
+            <div class="timer-item">
+              <span class="divider">:</span>
+            </div>
+            <div class="timer-item">
+              <span id="sec-{{ section.id }}">00</span>
+              <span class="timer-text">Secs</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+{% endif %}
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -180,6 +192,11 @@
   "tag": "section",
   "class": "countdown-timer-section",
   "settings": [
+    {
+      "type": "collection_list",
+      "id": "target_collections",
+      "label": "Show on these collections"
+    },
     {
         "type": "text",
         "id": "top_title",
