@@ -2,8 +2,15 @@
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
   .snow-announcement-bar {
-    background-color: #f0ff00;
-    overflow: hidden;
+    /* background-color: #f0ff00; */
+    overflow: clip;
+    position: sticky !important;
+    top: 0;
+  }
+  .Announcement--sticky{
+    position: sticky !important;
+    top: 0;
+    z-index: 999;
   }
   .snow-announcement-bar a {
     text-decoration: none;
@@ -16,7 +23,7 @@
   }
 
   .snow-announcement-bar-text {
-    color: #000;
+    /* color: #000; */
     font-family: 'DM Sans';
     font-weight: 700;
     font-size: 20px;
@@ -53,7 +60,7 @@
 {% schema %}
 {
   "name": "Announcement Bar new",
-  "class": "announcement_bar",
+  "class": "announcement_bar Announcement--sticky",
   "settings": [
     {
       "type": "collection_list",
