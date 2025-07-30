@@ -24,7 +24,7 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     display: inline-block;
-    background-color: rgb(255, 234, 0);
+    background-color: {{ section.settings.heading_bg_color  }};
     font-size: 48px;
     line-height: 130%;
   }
@@ -56,8 +56,8 @@
     border-radius: 12px;
     text-align: center;
     padding: 30px 20px 0 20px;
-    /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); */
-    box-shadow: 0 6px 20px ;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    /* box-shadow: 0 6px 20px ; */
   }
 
   .snow-testimonial__ratings {
@@ -355,6 +355,12 @@
       "id": "heading",
       "label": "Main Heading",
       "default": "35,000+ Reviews"
+    },
+    {
+      "type": "color",
+      "id": "heading_bg_color",
+      "label": "Heading Bg Color",
+      "default":"#074a97"
     },
     {
       "type": "text",
