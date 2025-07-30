@@ -32,19 +32,39 @@
   }
 </style>
 
-<div class="snow-announcement-bar">
-  <a href="{{ section.settings.announcement_url }}">
-    <div class="snow-announcement-bar-container">
-      <div class="snow-announcement-bar-text">{{ section.settings.announcement_text }}</div>
-    </div>
-  </a>
-</div>
 
+{% assign show_announment = false %}
+
+{% for coll in section.settings.target_collections %}
+  {% if collection.handle == coll.handle %}
+    {% assign show_announment = true %}
+  {% endif %}
+{% endfor %}
+
+{% if show_announment %}
+  <div class="snow-announcement-bar m-color-{{ section.settings.color_scheme }}">
+    <a href="{{ section.settings.announcement_url }}">
+      <div class="snow-announcement-bar-container">
+        <div class="snow-announcement-bar-text">{{ section.settings.announcement_text }}</div>
+      </div>
+    </a>
+  </div>
+{% endif %}
 {% schema %}
 {
   "name": "Announcement Bar new",
   "class": "announcement_bar",
   "settings": [
+    {
+      "type": "collection_list",
+      "id": "target_collections",
+      "label": "Show on these collections"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    }, 
     {
       "type": "url",
       "id": "announcement_url",

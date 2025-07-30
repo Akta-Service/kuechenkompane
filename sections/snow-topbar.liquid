@@ -112,7 +112,7 @@
 
 
 {% if show_countdown %}
-  <div class="snow-topbar">
+  <div class="snow-topbar m-color-{{ section.settings.color_scheme }}">
     <div class="snow-topbar-container">
       <div class="snow-topbar-content">
         <div class="snow-topbar-title">{{ section.settings.top_title }}</div>
@@ -197,6 +197,11 @@
       "id": "target_collections",
       "label": "Show on these collections"
     },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    }, 
     {
         "type": "text",
         "id": "top_title",
