@@ -64,6 +64,14 @@
         "mb_mobile": 15
       }
     },
+    "snow_topbar_EBXEnQ": {
+      "type": "snow-topbar",
+      "name": "Countdown Timer",
+      "settings": {
+        "top_title": "Black Friday in July Ends:",
+        "countdown_time": "Jun 5, 2026 15:37:25"
+      }
+    },
     "breadcrumb_bEhLYx": {
       "type": "breadcrumb",
       "name": "Breadcrumb",
@@ -447,6 +455,7 @@
   "order": [
     "collection-header",
     "apex_top_slider_GBwqAg",
+    "snow_topbar_EBXEnQ",
     "breadcrumb_bEhLYx",
     "category_selection_iMrTd6",
     "t_banner_AfAVcQ",
