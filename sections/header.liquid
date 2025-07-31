@@ -250,12 +250,12 @@
 
     {% comment %}Header Desktop{% endcomment %}
     <header
-      class="m-header__desktop {{ design }} m-gradient 
-      {% if template contains 'collection' and collection.handle == section.settings.custom_collection.handle %}
-        m-color-{{ section.settings.collection_color_scheme }}
+      class="m-header__desktop {{ design }} m-gradient  
+      {% if collection.handle == section.settings.custom_collection.handle %}
+        m-color-{{ section.settings.collection_color_scheme }} 44444
       {% else %}
-        m-color-{{ section.settings.color_scheme }} 
-      {% endif %}"
+        m-color-{{ section.settings.color_scheme }} test111
+      {% endif %} "
       data-screen="m-header__desktop"
       data-transparent="{{ transparent_on_top }}"
     >
