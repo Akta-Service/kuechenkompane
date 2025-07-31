@@ -249,6 +249,38 @@
         "overlay_opacity": 0.1
       }
     },
+    "black_friday_collectiont_product_PkULKY": {
+      "type": "black-friday-collectiont-product",
+      "name": "Apex Theme Collection",
+      "settings": {
+        "title": "Weitere Produkte im Angebot",
+        "subtitle": "Entdecke weitere Angebote.",
+        "select_custom_collection": true,
+        "collection": "zem-damastmesser",
+        "color_scheme": "",
+        "container": "container",
+        "grid_layout": "grid",
+        "grid_columns": "3",
+        "show_columns_switcher": true,
+        "pagination_limit": 12,
+        "paginate_type": "paginate",
+        "show_sorting": true,
+        "show_filter": false,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": false,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "inline",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "overlay_opacity": 0.5
+      }
+    },
     "branded_image_version_ffF3PX": {
       "type": "branded-image-version-",
       "blocks": {
@@ -425,6 +457,7 @@
     "t_banner_AfAVcQ",
     "main",
     "black_friday_collectiont_product_qP4xyH",
+    "black_friday_collectiont_product_PkULKY",
     "branded_image_version_ffF3PX",
     "t_testimonial_kGiRB7",
     "usp_list_xQHfgQ"
