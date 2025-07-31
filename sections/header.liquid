@@ -250,7 +250,12 @@
 
     {% comment %}Header Desktop{% endcomment %}
     <header
-      class="m-header__desktop {{ design }} m-gradient m-color-{{ section.settings.color_scheme }}"
+      class="m-header__desktop {{ design }} m-gradient 
+      {% if template contains 'collection' and collection.handle == section.settings.custom_collection.handle %}
+        m-color-{{ section.settings.collection_color_scheme }}
+      {% else %}
+        m-color-{{ section.settings.color_scheme }} 
+      {% endif %}"
       data-screen="m-header__desktop"
       data-transparent="{{ transparent_on_top }}"
     >
@@ -573,6 +578,16 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
+    },
+    {
+      "type": "collection",
+      "id": "custom_collection",
+      "label": "Apply color scheme to this collection"
+    },
+    {
+      "type": "color_scheme",
+      "id": "collection_color_scheme",
+      "label": "Color scheme (For Collection Only)"
     },
     {
       "type": "color_scheme",

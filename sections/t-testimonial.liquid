@@ -54,12 +54,11 @@
   }
 
   .snow-testimonial-card {
-    /* background: #ffffff; */
-    border-radius: 12px;
-    text-align: center;
-    padding: 30px 20px 0 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    /* box-shadow: 0 6px 20px ; */
+      /* background: #ffffff; */
+      border-radius: 12px;
+      text-align: center;
+      padding: 30px 20px 15px 20px;
+      height: 100%;
   }
 
   .snow-testimonial__ratings {
@@ -221,6 +220,15 @@
       padding-bottom: 80px;
     }
   }
+
+
+  .snow-testimonial__ratings span {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 3px;
+    margin-left: 2px;
+}
 </style>
 
 <section class="snow-testimonial m-color-{{ section.settings.color_scheme }}">
@@ -243,7 +251,7 @@
                       <img src="{{ block.settings.star | img_url: 'master' }}" alt="Star">
                     </div>
                   {% endif %}
-                  {{ block.settings.rating }}
+                 <span> {{ block.settings.rating }}</span>
                 </div>
                 <h4 class="snow-testimonial__title">{{ block.settings.title }}</h4>
                 <div class="snow-testimonial__quote">“{{ block.settings.quote }}”</div>
