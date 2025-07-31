@@ -28,6 +28,18 @@
         "text_size_m": 16
       }
     },
+    "snow_topbar_Wc6BME": {
+      "type": "snow-topbar",
+      "name": "Countdown Timer",
+      "settings": {
+        "target_collections": [
+          "bestseller-angebot"
+        ],
+        "color_scheme": "dark",
+        "top_title": "Black Friday in July Ends:",
+        "countdown_time": "Aug 5, 2025 15:37:25"
+      }
+    },
     "announcement_bar_sticky_scroll_Bk3YD6": {
       "type": "announcement-bar-sticky-scroll",
       "name": "APEX Announcement Sticky",
@@ -410,22 +422,11 @@
         "text_size_m": 16,
         "text_fw": "400"
       }
-    },
-    "snow_topbar_Wc6BME": {
-      "type": "snow-topbar",
-      "name": "Countdown Timer",
-      "settings": {
-        "target_collections": [
-          "bestseller-angebot"
-        ],
-        "color_scheme": "dark",
-        "top_title": "Black Friday in July Ends:",
-        "countdown_time": "Aug 5, 2025 15:37:25"
-      }
     }
   },
   "order": [
     "announcement_bar_version_1_rc6jDA",
+    "snow_topbar_Wc6BME",
     "announcement_bar_sticky_scroll_Bk3YD6",
     "announcement_different_rRyBgT",
     "apex_timer_progress_yCDcUj",
@@ -433,7 +434,6 @@
     "annoucement",
     "header",
     "text_banner_bjwwcx",
-    "announcement_bar_version_1_copy_GBrcEC",
-    "snow_topbar_Wc6BME"
+    "announcement_bar_version_1_copy_GBrcEC"
   ]
 }
