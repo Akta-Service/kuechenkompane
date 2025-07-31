@@ -111,6 +111,26 @@
         "name": "single_line_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "kollection_uberschrift",
+      "namespace": "custom",
+      "name": "Kollection-Überschrift",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "kollektion_main_text",
+      "namespace": "custom",
+      "name": "Kollektion-Main-Text",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
     }
   ],
   "company": [],
@@ -1690,6 +1710,26 @@
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "product_badge",
+      "namespace": "custom",
+      "name": "Product Badge",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_short_description",
+      "namespace": "custom",
+      "name": "Product Short Description",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
       }
     }
   ],

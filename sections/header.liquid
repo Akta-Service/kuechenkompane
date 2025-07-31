@@ -153,7 +153,7 @@
       %}
 
       {% if collection.handle == section.settings.custom_collection.handle %}
-        <div class="{{ class | strip_newlines }}">
+        <div class="{{ class | strip_newlines }} collection_mobile_log">
           {% if section.settings.collection_mobile_log != blank %}
             <img src="{{ section.settings.collection_mobile_log |  img_url: 'master' }}" alt="{{ shop.name }}">
           {% endif %}
@@ -269,9 +269,9 @@
       class="
         m-header__desktop {{ design }} m-gradient
         {% if collection.handle == section.settings.custom_collection.handle %}
-          m-color-{{ section.settings.collection_color_scheme }} 44444
+          m-color-{{ section.settings.collection_color_scheme }} desktop-collection-header
         {% else %}
-          m-color-{{ section.settings.color_scheme }} test111
+          m-color-{{ section.settings.color_scheme }} test111  
         {% endif %}
       "
       data-screen="m-header__desktop"
@@ -288,11 +288,11 @@
               </div>
               <div class="m-header__center m:w-2/12">
                 {% if collection.handle == section.settings.custom_collection.handle %}
-                  <div class="{{ class | strip_newlines }} collection-logo-desktop">
+                  <div class="{{ class | strip_newlines }} ">
                     {% if section.settings.collection_mobile_log != blank %}
-                      <img
+                      <img class="collection-logo-desktop"
                         src="{{ section.settings.collection_desktop_log |  img_url: 'master' }}"
-                        alt="{{ shop.name }}"
+                        alt="{{ shop.name }}" width="110px"
                       >
                     {% endif %}
                   </div>
