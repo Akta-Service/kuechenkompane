@@ -9,8 +9,10 @@
  */
 {
   "current": {
-    "allowed_handles": [],
-    "password": "SOMMER",
+    "allowed_handles": [
+      "vip-sale"
+    ],
+    "password": "Privat",
     "header_title": "Beliebte Produkte",
     "collection_url_text": "Alle ansehen",
     "serch_recom_colection": "bestseller-facebook-12-best",
