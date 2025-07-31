@@ -249,56 +249,6 @@
         "overlay_opacity": 0.1
       }
     },
-    "usp_list_xQHfgQ": {
-      "type": "usp-list",
-      "blocks": {
-        "item_JVyQJ8": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/GEZ100.png",
-            "usp_title": "Geld-zurück-Garantie",
-            "title_size": 18,
-            "usp_info": "100 Tage Rückgaberecht - ohne Risiko.",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_BRBV37": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "usp_title": "Kostenloser Versand",
-            "title_size": 18,
-            "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_RKRMEB": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "usp_title": "Schärfe Garantie",
-            "title_size": 18,
-            "usp_info": "Maximale Schärfe für müheloses Schneiden.",
-            "info_size": 14,
-            "divider": false
-          }
-        }
-      },
-      "block_order": [
-        "item_JVyQJ8",
-        "item_BRBV37",
-        "item_RKRMEB"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "verticle_padding": 50,
-        "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
-      }
-    },
     "branded_image_version_ffF3PX": {
       "type": "branded-image-version-",
       "blocks": {
@@ -319,6 +269,7 @@
         "title_AgFUHf",
         "sub_title_GcWkqp"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
         "shape_color": "#deceba",
@@ -331,41 +282,6 @@
         "des_size": "p-medium",
         "button_style": "m-button--primary",
         "button_size": ""
-      }
-    },
-    "collection_description_tUMerW": {
-      "type": "collection-description",
-      "disabled": true,
-      "settings": {
-        "collection_bg": "#c6d1c4",
-        "collection_pt": 30,
-        "collection_pb": 30,
-        "collection_pt_m": 30,
-        "collection_pb_m": 30
-      }
-    },
-    "rich_text_ijBTPA": {
-      "type": "rich-text",
-      "blocks": {
-        "text_Pp4WF3": {
-          "type": "text",
-          "settings": {
-            "text": "{{ collection.description }}"
-          }
-        }
-      },
-      "block_order": [
-        "text_Pp4WF3"
-      ],
-      "disabled": true,
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 108,
-        "padding_bottom": 116,
-        "custom_class": "",
-        "animations": "inherit"
       }
     },
     "t_testimonial_kGiRB7": {
@@ -449,6 +365,56 @@
         "arrow_bg": "#074a97",
         "bg_image": "shopify://shop_images/rev_slider_bg.jpg"
       }
+    },
+    "usp_list_xQHfgQ": {
+      "type": "usp-list",
+      "blocks": {
+        "item_JVyQJ8": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/GEZ100.png",
+            "usp_title": "Geld-zurück-Garantie",
+            "title_size": 18,
+            "usp_info": "100 Tage Rückgaberecht - ohne Risiko.",
+            "info_size": 14,
+            "divider": true
+          }
+        },
+        "item_BRBV37": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
+            "usp_title": "Kostenloser Versand",
+            "title_size": 18,
+            "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
+            "info_size": 14,
+            "divider": true
+          }
+        },
+        "item_RKRMEB": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
+            "usp_title": "Schärfe Garantie",
+            "title_size": 18,
+            "usp_info": "Maximale Schärfe für müheloses Schneiden.",
+            "info_size": 14,
+            "divider": false
+          }
+        }
+      },
+      "block_order": [
+        "item_JVyQJ8",
+        "item_BRBV37",
+        "item_RKRMEB"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "verticle_padding": 50,
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30,
+        "horizontal_padding_mobile": 15
+      }
     }
   },
   "order": [
@@ -459,10 +425,8 @@
     "t_banner_AfAVcQ",
     "main",
     "black_friday_collectiont_product_qP4xyH",
-    "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
-    "collection_description_tUMerW",
-    "rich_text_ijBTPA",
-    "t_testimonial_kGiRB7"
+    "t_testimonial_kGiRB7",
+    "usp_list_xQHfgQ"
   ]
 }
