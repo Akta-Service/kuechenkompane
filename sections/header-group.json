@@ -410,6 +410,18 @@
         "text_size_m": 16,
         "text_fw": "400"
       }
+    },
+    "snow_topbar_Wc6BME": {
+      "type": "snow-topbar",
+      "name": "Countdown Timer",
+      "settings": {
+        "target_collections": [
+          "bestseller-angebot"
+        ],
+        "color_scheme": "",
+        "top_title": "Black Friday in July Ends:",
+        "countdown_time": "Jun 5, 2026 15:37:25"
+      }
     }
   },
   "order": [
@@ -421,6 +433,7 @@
     "annoucement",
     "header",
     "text_banner_bjwwcx",
-    "announcement_bar_version_1_copy_GBrcEC"
+    "announcement_bar_version_1_copy_GBrcEC",
+    "snow_topbar_Wc6BME"
   ]
 }
