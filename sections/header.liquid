@@ -93,7 +93,11 @@
   <div class="m-header__wrapper">
     {% comment %}Header Mobile{% endcomment %}
     <header
-      class="m-header__mobile container-fluid m:flex m:items-center m-gradient m-color-{{ section.settings.color_scheme }}"
+      class="m-header__mobile container-fluid m:flex m:items-center m-gradient {% if collection.handle == section.settings.custom_collection.handle %}
+        m-color-{{ section.settings.collection_color_scheme }} 44444
+      {% else %}
+        m-color-{{ section.settings.color_scheme }} test111
+      {% endif %}"
       data-screen="m-header__mobile"
       data-transparent="{{ transparent_on_top }}"
     >
@@ -145,6 +149,18 @@
           assign class = class | append: ' m-logo--has-image'
         endif
       %}
+
+
+      {% if collection.handle == section.settings.custom_collection.handle %}
+
+        <div class="{{ class | strip_newlines }}">
+          {% if section.settings.collection_mobile_log != blank %}
+            <img src="{{ section.settings.collection_mobile_log |  img_url: 'master' }}" alt="{{ shop.name }}">
+          {% endif %}
+
+        </div>
+
+      {% else %}
 
       <div class="{{ class | strip_newlines }}">
         {% if logo != blank %}
@@ -221,6 +237,9 @@
           </a>
         {% endif %}
       </div>
+
+      {% endif %}
+
       {% comment %} End header logo mobile {% endcomment %}
       {% if show_cart_icon or search_settings != 'hide' %}
         <div class="m-header__mobile-right m:w-3/12 m:flex m:flex-1 m:justify-end">
@@ -269,7 +288,20 @@
                 {% render 'header-main-menu-container', section: section %}
               </div>
               <div class="m-header__center m:w-2/12">
-                {% render 'header-logo', header_settings: section.settings %}
+
+                {% if collection.handle == section.settings.custom_collection.handle %}
+                  <div class="{{ class | strip_newlines }} collection-logo-desktop">
+                    {% if section.settings.collection_mobile_log != blank %}
+                      <img src="{{ section.settings.collection_desktop_log |  img_url: 'master' }}" alt="{{ shop.name }}">
+                    {% endif %}
+
+                  </div>
+
+                {% else %}
+
+                  {% render 'header-logo', header_settings: section.settings %}
+                {% endif %}
+
               </div>
               <div class="m-header__right m:w-5/12">
                 {% liquid
@@ -580,6 +612,10 @@
       "label": "Color scheme"
     },
     {
+      "type": "header",
+      "content": "Custo Settings Oly For Selected Collection"
+    },
+    {
       "type": "collection",
       "id": "custom_collection",
       "label": "Apply color scheme to this collection"
@@ -588,6 +624,16 @@
       "type": "color_scheme",
       "id": "collection_color_scheme",
       "label": "Color scheme (For Collection Only)"
+    },
+    {
+      "type": "image_picker",
+      "id": "collection_mobile_log",
+      "label": "Logo (Mobile For Collection Page)"
+    },
+    {
+      "type": "image_picker",
+      "id": "collection_desktop_log",
+      "label": "Logo (Desktop For Collection Page)"
     },
     {
       "type": "color_scheme",
