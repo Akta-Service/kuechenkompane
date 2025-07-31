@@ -190,10 +190,10 @@
         ".m-collection-filters-form {margin-bottom: 0;}"
       ],
       "settings": {
-        "title": "Black Friday Collection",
-        "subtitle": "Shop our exclusive Black Friday deals!",
+        "title": "Bestseller im Angebot",
+        "subtitle": "Die beliebtesten Produkte jetzt im Angebote!",
         "select_custom_collection": false,
-        "collection": "",
+        "collection": "sale-aktuell-1",
         "color_scheme": "default",
         "container": "container-fluid",
         "grid_layout": "grid",
@@ -221,8 +221,8 @@
     "black_friday_collectiont_product_qP4xyH": {
       "type": "black-friday-collectiont-product",
       "settings": {
-        "title": "Black Friday Collection",
-        "subtitle": "Shop our exclusive Black Friday deals!",
+        "title": "Zubehör im Angebote",
+        "subtitle": "Die besten Angebote für unser Zubehör",
         "select_custom_collection": true,
         "collection": "kuechenmesser-set",
         "color_scheme": "default",
