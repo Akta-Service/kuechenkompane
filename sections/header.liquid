@@ -93,7 +93,13 @@
   <div class="m-header__wrapper">
     {% comment %}Header Mobile{% endcomment %}
     <header
-      class="m-header__mobile container-fluid m:flex m:items-center m-gradient m-color-{{ section.settings.color_scheme }}"
+      class="
+        m-header__mobile container-fluid m:flex m:items-center m-gradient {% if collection.handle == section.settings.custom_collection.handle %}
+          m-color-{{ section.settings.collection_color_scheme }} 44444
+        {% else %}
+          m-color-{{ section.settings.color_scheme }} test111
+        {% endif %}
+      "
       data-screen="m-header__mobile"
       data-transparent="{{ transparent_on_top }}"
     >
@@ -146,63 +152,34 @@
         endif
       %}
 
-      <div class="{{ class | strip_newlines }}">
-        {% if logo != blank %}
-          <a href="{{ routes.root_url }}" class="m-logo__image m:block" title="{{ shop.name }}">
-            {% if is_svg %}
-              <div class="m-logo__image-default m:display-flex m-image">
-                {% comment %}theme-check-disable RemoteAsset{% endcomment %}
-                <img src="{{ logo }}" alt="{{ logo_alt }}" width="auto" height="auto" loading="lazy">
-                {% comment %}theme-check-enable RemoteAsset{% endcomment %}
-              </div>
-            {% else %}
-              <div
-                class="m-logo__image-default m:display-flex m-image"
-                style="--aspect-ratio: {{ aspect_ratio }};--aspect-ratio-mobile: {{ aspect_ratio_mobile }}"
-              >
-                {% liquid
-                  assign logo_alt = logo.alt | default: shop.name | escape
-                  assign logo_height = section.settings.mobile_logo_max_width | divided_by: logo.aspect_ratio | round
-                %}
-                {{
-                  logo
-                  | image_url: width: section.settings.width
-                  | image_tag:
-                    class: 'm:inline-block',
-                    widths: '50, 100, 150, 200, 250, 300, 400',
-                    height: logo_height,
-                    width: section.settings.logo_width,
-                    alt: logo_alt
-                }}
-              </div>
-            {% endif %}
-            {% if transparent_on_top %}
-              {%- liquid
-                assign logo_transparent_mobile = ''
-                if logo_transparent_svg != blank
-                  assign logo_transparent_mobile = logo_transparent_svg
-                elsif logo_transparent != blank
-                  assign logo_transparent_mobile = logo_transparent
-                else
-                  assign logo_transparent_mobile = logo
-                endif
-              -%}
-              {% if logo_transparent_svg != blank %}
-                <div class="m-logo__image-transparent m:display-flex m-image">
-                  {% comment %} theme-check-disable RemoteAsset {% endcomment %}
-                  <img
-                    src="{{ logo_transparent_mobile }}"
-                    alt="{{ logo_alt }}"
-                    width="auto"
-                    height="auto"
-                    loading="lazy"
-                  >
-                  {% comment %} theme-check-enable RemoteAsset {% endcomment %}
+      {% if collection.handle == section.settings.custom_collection.handle %}
+        <div class="{{ class | strip_newlines }}">
+          {% if section.settings.collection_mobile_log != blank %}
+            <img src="{{ section.settings.collection_mobile_log |  img_url: 'master' }}" alt="{{ shop.name }}">
+          {% endif %}
+        </div>
+
+      {% else %}
+        <div class="{{ class | strip_newlines }}">
+          {% if logo != blank %}
+            <a href="{{ routes.root_url }}" class="m-logo__image m:block" title="{{ shop.name }}">
+              {% if is_svg %}
+                <div class="m-logo__image-default m:display-flex m-image">
+                  {% comment %}theme-check-disable RemoteAsset{% endcomment %}
+                  <img src="{{ logo }}" alt="{{ logo_alt }}" width="auto" height="auto" loading="lazy">
+                  {% comment %}theme-check-enable RemoteAsset{% endcomment %}
                 </div>
               {% else %}
-                <div class="m-logo__image-transparent m:display-flex m-image">
+                <div
+                  class="m-logo__image-default m:display-flex m-image"
+                  style="--aspect-ratio: {{ aspect_ratio }};--aspect-ratio-mobile: {{ aspect_ratio_mobile }}"
+                >
+                  {% liquid
+                    assign logo_alt = logo.alt | default: shop.name | escape
+                    assign logo_height = section.settings.mobile_logo_max_width | divided_by: logo.aspect_ratio | round
+                  %}
                   {{
-                    logo_transparent_mobile
+                    logo
                     | image_url: width: section.settings.width
                     | image_tag:
                       class: 'm:inline-block',
@@ -213,14 +190,53 @@
                   }}
                 </div>
               {% endif %}
-            {% endif %}
-          </a>
-        {% else %}
-          <a href="{{ routes.root_url }}" class="m:block m:text-center">
-            <strong>{{ logo_text | default: shop.name }}</strong>
-          </a>
-        {% endif %}
-      </div>
+              {% if transparent_on_top %}
+                {%- liquid
+                  assign logo_transparent_mobile = ''
+                  if logo_transparent_svg != blank
+                    assign logo_transparent_mobile = logo_transparent_svg
+                  elsif logo_transparent != blank
+                    assign logo_transparent_mobile = logo_transparent
+                  else
+                    assign logo_transparent_mobile = logo
+                  endif
+                -%}
+                {% if logo_transparent_svg != blank %}
+                  <div class="m-logo__image-transparent m:display-flex m-image">
+                    {% comment %} theme-check-disable RemoteAsset {% endcomment %}
+                    <img
+                      src="{{ logo_transparent_mobile }}"
+                      alt="{{ logo_alt }}"
+                      width="auto"
+                      height="auto"
+                      loading="lazy"
+                    >
+                    {% comment %} theme-check-enable RemoteAsset {% endcomment %}
+                  </div>
+                {% else %}
+                  <div class="m-logo__image-transparent m:display-flex m-image">
+                    {{
+                      logo_transparent_mobile
+                      | image_url: width: section.settings.width
+                      | image_tag:
+                        class: 'm:inline-block',
+                        widths: '50, 100, 150, 200, 250, 300, 400',
+                        height: logo_height,
+                        width: section.settings.logo_width,
+                        alt: logo_alt
+                    }}
+                  </div>
+                {% endif %}
+              {% endif %}
+            </a>
+          {% else %}
+            <a href="{{ routes.root_url }}" class="m:block m:text-center">
+              <strong>{{ logo_text | default: shop.name }}</strong>
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+
       {% comment %} End header logo mobile {% endcomment %}
       {% if show_cart_icon or search_settings != 'hide' %}
         <div class="m-header__mobile-right m:w-3/12 m:flex m:flex-1 m:justify-end">
@@ -250,7 +266,14 @@
 
     {% comment %}Header Desktop{% endcomment %}
     <header
-      class="m-header__desktop {{ design }} m-gradient m-color-{{ section.settings.color_scheme }}"
+      class="
+        m-header__desktop {{ design }} m-gradient
+        {% if collection.handle == section.settings.custom_collection.handle %}
+          m-color-{{ section.settings.collection_color_scheme }} 44444
+        {% else %}
+          m-color-{{ section.settings.color_scheme }} test111
+        {% endif %}
+      "
       data-screen="m-header__desktop"
       data-transparent="{{ transparent_on_top }}"
     >
@@ -264,7 +287,19 @@
                 {% render 'header-main-menu-container', section: section %}
               </div>
               <div class="m-header__center m:w-2/12">
-                {% render 'header-logo', header_settings: section.settings %}
+                {% if collection.handle == section.settings.custom_collection.handle %}
+                  <div class="{{ class | strip_newlines }} collection-logo-desktop">
+                    {% if section.settings.collection_mobile_log != blank %}
+                      <img
+                        src="{{ section.settings.collection_desktop_log |  img_url: 'master' }}"
+                        alt="{{ shop.name }}"
+                      >
+                    {% endif %}
+                  </div>
+
+                {% else %}
+                  {% render 'header-logo', header_settings: section.settings %}
+                {% endif %}
               </div>
               <div class="m-header__right m:w-5/12">
                 {% liquid
@@ -573,6 +608,30 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Custo Settings Oly For Selected Collection"
+    },
+    {
+      "type": "collection",
+      "id": "custom_collection",
+      "label": "Apply color scheme to this collection"
+    },
+    {
+      "type": "color_scheme",
+      "id": "collection_color_scheme",
+      "label": "Color scheme (For Collection Only)"
+    },
+    {
+      "type": "image_picker",
+      "id": "collection_mobile_log",
+      "label": "Logo (Mobile For Collection Page)"
+    },
+    {
+      "type": "image_picker",
+      "id": "collection_desktop_log",
+      "label": "Logo (Desktop For Collection Page)"
     },
     {
       "type": "color_scheme",
