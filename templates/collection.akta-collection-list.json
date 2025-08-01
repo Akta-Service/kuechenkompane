@@ -180,7 +180,7 @@
         "text1": "Hol dir dein asiatisches Messerset\nund schneide wie ein PROFI!",
         "text2": "Von 160.000+ Kunden empfohlen",
         "text3": "100 Tage Geld-zurück-Garantie",
-        "partner_logo": "shopify://shop_images/imgi_146_n_tv_logo_V2_1_V1_1_1_fe74a011-eca6-4165-8729-7ee4905e069c.png"
+        "partner_logo": "shopify://shop_images/imgi_146_n_tv_logo_V2_1_V6_1.png"
       }
     },
     "main": {
@@ -191,7 +191,7 @@
       ],
       "settings": {
         "title": "Bestseller im Angebot",
-        "subtitle": "Die beliebtesten Produkte jetzt im Angebote!",
+        "subtitle": "Die beliebtesten Produkte jetzt im Ausverkauf!",
         "select_custom_collection": true,
         "collection": "bestseller-angebot",
         "color_scheme": "default",
@@ -260,9 +260,9 @@
         "color_scheme": "",
         "container": "container",
         "grid_layout": "grid",
-        "grid_columns": "3",
+        "grid_columns": "4",
         "show_columns_switcher": false,
-        "pagination_limit": 12,
+        "pagination_limit": 26,
         "paginate_type": "paginate",
         "show_sorting": false,
         "show_filter": false,
@@ -391,7 +391,7 @@
       "settings": {
         "color_scheme": "default",
         "color_scheme_card": "",
-        "heading": "35,000+ Bewertungen",
+        "heading": "35.000+ Bewertungen",
         "heading_bg_color": "#fff38c",
         "subheading1": "Garantierte Schärfe",
         "subheading2": "160.000+ zufriedene Kunden",
