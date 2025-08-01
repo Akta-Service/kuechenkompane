@@ -1,3 +1,5 @@
+
+
 {{ 'component-product-inventory.css' | asset_url | stylesheet_tag }}
 {{ 'collection.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'collection.js' | asset_url }}" defer="defer"></script>
@@ -111,6 +113,11 @@
 
 
 </style>
+
+
+
+
+
 <section
   class="facest-filters-section black-friday apex-theme-collection m-color-{{ section.settings.color_scheme }}"
   data-section-type="collection-template"
@@ -153,21 +160,32 @@
             endif
           endif
         -%}
+
+        {% if section.settings.select_custom_collection == true %}
+                {% assign collection = section.settings.collection %}
+
+              {% endif %}
+
+
+
         {%- paginate collection.products by section.settings.pagination_limit -%}
           {%- if collection.products.size == 0 -%}
             <div class="m-collection--empty m:flex m:flex-col m:w-full m:items-center">
               <span>{%- render 'icon', name: 'empty-collection', fill: '#9a9a9a' -%}</span>
               <p class="m-collection--empty-text">{{ 'collections.general.no_matches' | t }}</p>
             </div>
+ 
+
           {%- else -%}
             <div
               class="m-collection-products m:flex m:flex-wrap m-cols-{{ initial_column }}"
               data-total-pages="{{ paginate.pages }}"
               data-product-container
             >
-              {% if section.settings.select_custom_collection == true %}
-                {% assign collection = section.settings.collection %}
-              {% endif %}
+
+              
+
+
 
               {%- for product in collection.products -%}
                 {% comment %} {% unless product.tags contains 'NO SEARCH' %} {% endcomment %}
