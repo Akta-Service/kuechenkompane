@@ -33,7 +33,9 @@
       "name": "Countdown Timer",
       "settings": {
         "target_collections": [
-          "bestseller-angebot"
+          "bestseller-angebot",
+          "grunder-geburtstag-1",
+          "grunder-im-urlaub-1"
         ],
         "color_scheme": "dark",
         "top_title": "Ausverkauf endet bald",
