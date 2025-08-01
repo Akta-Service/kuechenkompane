@@ -1,5 +1,13 @@
 
 
+  {% if section.settings.select_custom_collection == true %}
+    {% assign collection = section.settings.collection %}
+
+  {% endif %}
+
+
+
+
 {{ 'component-product-inventory.css' | asset_url | stylesheet_tag }}
 {{ 'collection.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'collection.js' | asset_url }}" defer="defer"></script>
@@ -161,11 +169,7 @@
           endif
         -%}
 
-        {% if section.settings.select_custom_collection == true %}
-                {% assign collection = section.settings.collection %}
-
-              {% endif %}
-
+      
 
 
         {%- paginate collection.products by section.settings.pagination_limit -%}
