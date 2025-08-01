@@ -192,7 +192,7 @@
       "settings": {
         "title": "Bestseller im Angebot",
         "subtitle": "Die beliebtesten Produkte jetzt im Ausverkauf!",
-        "select_custom_collection": true,
+        "select_custom_collection": false,
         "collection": "bestseller-angebot",
         "color_scheme": "default",
         "container": "container-fluid",
