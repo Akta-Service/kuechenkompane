@@ -39,7 +39,7 @@
         ],
         "color_scheme": "dark",
         "top_title": "Angebot endet in",
-        "countdown_time": "Aug 5, 2025 15:37:25"
+        "countdown_time": "Aug 4, 2025 15:37:25"
       }
     },
     "announcement_bar_AidTMy": {
@@ -49,7 +49,9 @@
         "target_collections": [
           "grunder-geburtstag-1",
           "grunder-im-urlaub-1",
-          "bestseller-angebot"
+          "bestseller-angebot",
+          "grunder-im-urlaub",
+          "grunder-geburtstag"
         ],
         "color_scheme": "scheme-74cef576-6976-437f-b943-846d48553c4f",
         "announcement_url": "",
