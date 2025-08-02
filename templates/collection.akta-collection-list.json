@@ -51,11 +51,7 @@
           }
         }
       },
-      "block_order": [
-        "text_zLPY9B",
-        "text_i4KwPb",
-        "text_KKpaJj"
-      ],
+      "block_order": ["text_zLPY9B", "text_i4KwPb", "text_KKpaJj"],
       "disabled": true,
       "settings": {
         "color_scheme": "default",
@@ -177,7 +173,7 @@
         "banner_bg_desktop": "shopify://shop_images/KK_-_Collection_Banner_1920x1080_1.jpg",
         "banner_bg_mobile": "shopify://shop_images/KK_-_Collection_Banner_1080x1080_1.jpg",
         "banner_title": "LAGERUMZUG",
-        "text1": "Bevor wir alles einpacken, darfst du alles abräumen. Wir ziehen um – und du sparst dabei richtig. \n\nAlles, was nicht mit ins neue Lager soll, bekommst du jetzt bis zu 75% günstiger.",
+        "text1": "<p>Bevor wir alles einpacken, darfst du alles abräumen. Wir ziehen um – und du sparst dabei richtig. \n\nAlles, was nicht mit ins neue Lager soll, bekommst du jetzt bis zu 75% günstiger.</p>",
         "text2": "Von 160.000+ Kunden empfohlen",
         "text3": "100 Tage Geld-zurück-Garantie",
         "partner_logo": "shopify://shop_images/imgi_146_n_tv_logo_V2_1_V6_1.png"
@@ -297,10 +293,7 @@
           }
         }
       },
-      "block_order": [
-        "title_AgFUHf",
-        "sub_title_GcWkqp"
-      ],
+      "block_order": ["title_AgFUHf", "sub_title_GcWkqp"],
       "disabled": true,
       "settings": {
         "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
@@ -440,11 +433,7 @@
           }
         }
       },
-      "block_order": [
-        "item_JVyQJ8",
-        "item_BRBV37",
-        "item_RKRMEB"
-      ],
+      "block_order": ["item_JVyQJ8", "item_BRBV37", "item_RKRMEB"],
       "settings": {
         "color_scheme": "",
         "verticle_padding": 50,

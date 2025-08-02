@@ -78,6 +78,7 @@
   }
 {% endstyle %}
 
+
 {% assign custom_collection = false %}
 {% for custom_col in section.settings.custom_collection_list %}
   {% if collection.handle == custom_col.handle %}
@@ -85,6 +86,10 @@
     {% break %}
   {% endif %}
 {% endfor %}
+
+
+
+
 
 
 
@@ -627,7 +632,7 @@
       "content": "Custo Settings Oly For Selected Collection"
     },
     {
-      "type": "collection",
+      "type": "collection_list",
       "id": "custom_collection_list",
       "label": "Apply color scheme to this collection"
     },
