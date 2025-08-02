@@ -77,6 +77,19 @@
     --header-transparent-text-color: {{ section.settings.transparent_text_color.red }}, {{ section.settings.transparent_text_color.green }}, {{ section.settings.transparent_text_color.blue }};
   }
 {% endstyle %}
+
+{% assign custom_collection = false %}
+{% for custom_col in section.settings.custom_collection_list %}
+  {% if collection.handle == custom_col.handle %}
+    {% assign custom_collection = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+
+
+
+
 <m-header
   data-section-id="{{ section.id }}"
   data-section-type="header"
@@ -94,7 +107,7 @@
     {% comment %}Header Mobile{% endcomment %}
     <header
       class="
-        m-header__mobile container-fluid m:flex m:items-center m-gradient {% if collection.handle == section.settings.custom_collection.handle %}
+        m-header__mobile container-fluid m:flex m:items-center m-gradient {% if custom_collection %}
           m-color-{{ section.settings.collection_color_scheme }} 44444
         {% else %}
           m-color-{{ section.settings.color_scheme }} test111
@@ -152,7 +165,7 @@
         endif
       %}
 
-      {% if collection.handle == section.settings.custom_collection.handle %}
+      {% if custom_collection %}
         <div class="{{ class | strip_newlines }} collection_mobile_log">
           {% if section.settings.collection_mobile_log != blank %}
             <img src="{{ section.settings.collection_mobile_log |  img_url: 'master' }}" alt="{{ shop.name }}">
@@ -268,7 +281,7 @@
     <header
       class="
         m-header__desktop {{ design }} m-gradient
-        {% if collection.handle == section.settings.custom_collection.handle %}
+        {% if custom_collection %}
           m-color-{{ section.settings.collection_color_scheme }} desktop-collection-header
         {% else %}
           m-color-{{ section.settings.color_scheme }} test111  
@@ -287,7 +300,7 @@
                 {% render 'header-main-menu-container', section: section %}
               </div>
               <div class="m-header__center m:w-2/12">
-                {% if collection.handle == section.settings.custom_collection.handle %}
+                {% if custom_collection %}
                   <div class="{{ class | strip_newlines }} ">
                     {% if section.settings.collection_mobile_log != blank %}
                       <img class="collection-logo-desktop"
@@ -615,7 +628,7 @@
     },
     {
       "type": "collection",
-      "id": "custom_collection",
+      "id": "custom_collection_list",
       "label": "Apply color scheme to this collection"
     },
     {
