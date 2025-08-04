@@ -106,7 +106,11 @@
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 19,
-            "price_font_weight": "600"
+            "price_font_weight": "600",
+            "price_tag_bg": "#90ee90",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#90ee90"
           }
         },
         "viewer_stock_count_MFNhKz": {
