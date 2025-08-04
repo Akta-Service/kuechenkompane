@@ -75,6 +75,17 @@
         "animations": "inherit"
       }
     },
+    "breadcrumb_h1_b4RT8P": {
+      "type": "breadcrumb-h1",
+      "name": "Breadcrumb h1",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "category_selection_iMrTd6": {
       "type": "category-selection",
       "blocks": {
@@ -300,6 +311,7 @@
     "collection-header",
     "apex_top_slider_GBwqAg",
     "breadcrumb_bEhLYx",
+    "breadcrumb_h1_b4RT8P",
     "category_selection_iMrTd6",
     "main",
     "usp_list_xQHfgQ",
