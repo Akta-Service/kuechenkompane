@@ -105,7 +105,16 @@
     }
   {% endif %}
 
-
+@media (max-width: 600px){
+  .green-label {   
+    top: -20px;    
+  }
+   {% if product.metafields.custom.price_individual_tag %}
+    .rs-price {
+      margin-top: 20px;
+    }
+  {% endif %}
+}
 
 </style>
 <div
