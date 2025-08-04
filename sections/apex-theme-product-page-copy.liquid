@@ -73,9 +73,7 @@
       width: fit-content;
   }
   .green-label {
-    display: block;
-    background: #16a008;
-    color: #fff;
+    display: block;    
     font-weight: bold;
     border-radius: 3px;
     padding: 5px;
@@ -87,16 +85,14 @@
     left: 50px;
     white-space: nowrap;
   }
- .green-label::before {
-    transform: translateY(-50%);
-    background: #16a008;
+ .green-label::before {    
     content: "";
     position: absolute;
-    bottom: -9px;
+    bottom: -3px;
     left: 0px;
-    width: 26px;
-    border-radius: 1px;
-    height: 10px;
+    width: 16px;
+    /* border-radius: 1px; */
+    height: 5px;
     clip-path: polygon(0 0%, 0 100%, 100% 0);
   }
   .p-relative {
@@ -839,6 +835,28 @@
               "label": "Extra Extra Bold (900)"
             }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Price Badge"
+        },
+        {
+          "type": "color",
+          "id": "price_tag_bg",
+          "label": "Price Tag Bg Color",
+          "default": "#fa8526"
+        },
+        {
+          "type": "color",
+          "id": "price_tag_text_color",
+          "label": "Price Tag Text Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "price_tag_arrow_bg",
+          "label": "Price Tag arrow Color",
+          "default": "#fa8526"
         }
       ]
     },

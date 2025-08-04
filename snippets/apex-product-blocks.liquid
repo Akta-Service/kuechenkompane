@@ -86,6 +86,17 @@
           font-size: {{ block.settings.f_s_m |  append: 'px' }};
         }
       }
+
+       .green-label {   
+        background: {{ block.settings.price_tag_bg }}; 
+        color: {{ block.settings.price_tag_text_color }};  
+      }
+      .green-label::before {
+        background:  {{ block.settings.price_tag_arrow_bg }};        
+      }
+
+
+
       {% when 'featurelist_header' %}
         .feature-header{
           padding-top: {{ block.settings.f_h_pt }}px;
@@ -98,6 +109,9 @@
         }
 
       }
+
+     
+
 
 
 
