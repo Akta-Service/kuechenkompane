@@ -392,14 +392,14 @@
         <span class="m-product-card__vendor">{{ product.vendor }}</span>
       {%- endif -%}
       {% if show_title == true %}
-        <h3 class="m-product-card__title">
+        <p class="m-product-card__title">
           <a
             href="{{ product.url }}?from={{ collection.handle }}"
             class="m-product-card__name{% if settings.uppercase_prd_name %} m:uppercase{% endif %}"
           >
             {{ product.title }}
           </a>
-        </h3>
+        </p>
       {% endif %}
       {% if settings.show_review_badge %}
         <div class="m-product-card__reviews m:text-color-body">
