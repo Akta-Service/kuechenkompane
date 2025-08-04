@@ -68,6 +68,36 @@
       padding-left: 15px;
     }
   }
+
+.rs-price {
+    width: fit-content;
+}
+  .green-label {
+    display: block;
+    background: #16a008;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 5px 10px;
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    width: fit-content;
+    margin-left: auto;
+  }
+  .green-label::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 15px;
+    background: #16a008;
+    clip-path: polygon(100% 100%, 100% 0, 0 50%);
+  }
+
+
 </style>
 <div
   data-section-type="product-page"

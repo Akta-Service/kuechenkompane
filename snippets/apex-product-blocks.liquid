@@ -246,7 +246,14 @@
               {% assign discount_percentage = discount_amount | times: 100 | divided_by: compare_price | round: 0 %}
               <span class="discount-percentage">-{{ discount_percentage }}%</span>
             {% endif %} {% endcomment %}
+
+     
+          {% if product.metafields.custom.price_individual_tag %}
+            <span class="green-label">{{ product.metafields.custom.price_individual_tag }}</span>
+          {% endif %}
+
           
+
           {% render 'rs-product-prices',
             use_variant: true,
             product: product,
