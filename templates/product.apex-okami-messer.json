@@ -93,7 +93,7 @@
           "type": "price",
           "settings": {
             "taxes_included": true,
-            "taxes_included_text": "",
+            "taxes_included_text": "Inkl. MwSt.",
             "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -106,7 +106,11 @@
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 19,
-            "price_font_weight": "600"
+            "price_font_weight": "600",
+            "price_tag_bg": "#e84e4e",
+            "price_tag_text_color": "#ffffff",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#e84e4e"
           }
         },
         "viewer_stock_count_MFNhKz": {
