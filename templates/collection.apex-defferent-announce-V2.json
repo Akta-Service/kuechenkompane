@@ -165,6 +165,28 @@
         "animations": "inherit"
       }
     },
+    "breadcrumb_gm3YmH": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
+    "breadcrumb_h1_Tg3zF6": {
+      "type": "breadcrumb-h1",
+      "name": "Breadcrumb h1",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "main": {
       "type": "apex-theme-collectiont-product",
       "custom_css": [
@@ -316,17 +338,6 @@
         "custom_class": "",
         "animations": "inherit"
       }
-    },
-    "breadcrumb_gm3YmH": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
     }
   },
   "order": [
@@ -334,8 +345,9 @@
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
     "rich_text_bg4Fta",
-    "main",
+    "breadcrumb_h1_Tg3zF6",
     "breadcrumb_gm3YmH",
+    "main",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
     "collection_description_tUMerW",
