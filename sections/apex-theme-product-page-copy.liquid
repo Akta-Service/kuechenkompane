@@ -68,6 +68,54 @@
       padding-left: 15px;
     }
   }
+
+  .rs-price {
+      width: fit-content;
+  }
+  .green-label {
+    display: block;    
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 5px;
+    position: absolute;
+    font-family: "Roboto", sans-serif;    
+    line-height: 1;
+    margin-left: auto;
+    top: -24px;
+    left: 50px;
+    white-space: nowrap;
+  }
+ .green-label::before {    
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0px;
+    width: 16px;
+    /* border-radius: 1px; */
+    height: 5px;
+    clip-path: polygon(0 0%, 0 100%, 100% 0);
+  }
+  .p-relative {
+    position: relative;
+  }
+
+  {% if product.metafields.custom.price_individual_tag %}
+    .rs-price {
+      margin-top: 30px;
+    }
+  {% endif %}
+
+@media (max-width: 600px){
+  .green-label {   
+    top: -20px;    
+  }
+   {% if product.metafields.custom.price_individual_tag %}
+    .rs-price {
+      margin-top: 20px;
+    }
+  {% endif %}
+}
+
 </style>
 <div
   data-section-type="product-page"
@@ -796,6 +844,37 @@
               "label": "Extra Extra Bold (900)"
             }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Price Badge"
+        },
+        {
+          "type": "color",
+          "id": "price_tag_bg",
+          "label": "Price Tag Bg Color",
+          "default": "#fa8526"
+        },
+        {
+          "type": "color",
+          "id": "price_tag_text_color",
+          "label": "Price Tag Text Color",
+          "default": "#fff"
+        },
+        {
+          "type": "range",
+          "id": "price_tag_font_size",
+          "label": "Price Tag Text Size",
+          "min": 2,
+          "max": 20,
+          "step": 1,
+          "default": 8
+        },
+        {
+          "type": "color",
+          "id": "price_tag_arrow_bg",
+          "label": "Price Tag arrow Color",
+          "default": "#fa8526"
         }
       ]
     },

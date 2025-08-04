@@ -51,14 +51,19 @@
       {{ money_price }}
     </span>
     {%- unless target.price_varies == false and target.compare_at_price_varies %}
-      <span class="m:visually-hidden m:visually-hidden--inline rs-current-price">{{ 'products.product.price.regular_price' | t }}</span>
-      <s class="m-price-item m-price-item--regular rs-compare-price">
-        {% if settings.currency_code_enabled %}
-          {{ compare_at_price | money_with_currency }}
-        {% else %}
-          {{ compare_at_price | money }}
+      <span class="m:visually-hidden m:visually-hidden--inline rs-current-price ">{{ 'products.product.price.regular_price' | t }}</span>
+      <div class="p-relative">   
+        {% if product.metafields.custom.price_individual_tag %}
+          <span class="green-label">{{ product.metafields.custom.price_individual_tag }}</span>
         {% endif %}
-      </s>
+        <s class="m-price-item m-price-item--regular rs-compare-price">
+          {% if settings.currency_code_enabled %}
+            {{ compare_at_price | money_with_currency }}
+          {% else %}
+            {{ compare_at_price | money }}
+          {% endif %}
+        </s>
+      </div>
     {%- endunless -%}
   </div>
   <div class="m-price__unit-wrapper{% if selected_variant.unit_price_measurement == nil %} m:hidden{% endif %}">

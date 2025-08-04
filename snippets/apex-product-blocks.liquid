@@ -86,6 +86,18 @@
           font-size: {{ block.settings.f_s_m |  append: 'px' }};
         }
       }
+
+       .green-label {   
+        background: {{ block.settings.price_tag_bg }}; 
+        color: {{ block.settings.price_tag_text_color }};  
+        font-size: {{ block.settings.price_tag_font_size }}px;
+      }
+      .green-label::before {
+        background:  {{ block.settings.price_tag_arrow_bg }};        
+      }
+
+
+
       {% when 'featurelist_header' %}
         .feature-header{
           padding-top: {{ block.settings.f_h_pt }}px;
@@ -98,6 +110,9 @@
         }
 
       }
+
+     
+
 
 
 
@@ -246,7 +261,12 @@
               {% assign discount_percentage = discount_amount | times: 100 | divided_by: compare_price | round: 0 %}
               <span class="discount-percentage">-{{ discount_percentage }}%</span>
             {% endif %} {% endcomment %}
+
+     
           
+
+          
+
           {% render 'rs-product-prices',
             use_variant: true,
             product: product,
