@@ -133,17 +133,6 @@
         "c_n_text": "p-medium"
       }
     },
-    "breadcrumb_h1_n6qcnW": {
-      "type": "breadcrumb-h1",
-      "name": "Breadcrumb h1",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
     "main": {
       "type": "apex-theme-collectiont-product",
       "custom_css": [
@@ -301,7 +290,6 @@
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
-    "breadcrumb_h1_n6qcnW",
     "main",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
