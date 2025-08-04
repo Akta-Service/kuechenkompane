@@ -29,6 +29,17 @@
         "enable_bg_zoom_effect": true
       }
     },
+    "breadcrumb_h1_ht4BXh": {
+      "type": "breadcrumb-h1",
+      "name": "Breadcrumb h1",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "breadcrumb_mkkDYm": {
       "type": "breadcrumb",
       "name": "Breadcrumb",
@@ -290,6 +301,7 @@
   },
   "order": [
     "collection-header",
+    "breadcrumb_h1_ht4BXh",
     "breadcrumb_mkkDYm",
     "apex_timer_9PnBtn",
     "category_selection_iMrTd6",
