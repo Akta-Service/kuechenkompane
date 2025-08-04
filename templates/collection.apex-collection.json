@@ -64,9 +64,9 @@
         "mb_mobile": 15
       }
     },
-    "breadcrumb_bEhLYx": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
+    "breadcrumb_h1_b4RT8P": {
+      "type": "breadcrumb-h1",
+      "name": "Breadcrumb h1",
       "settings": {
         "container": "container",
         "text_alignment": "center",
@@ -75,9 +75,9 @@
         "animations": "inherit"
       }
     },
-    "breadcrumb_h1_b4RT8P": {
-      "type": "breadcrumb-h1",
-      "name": "Breadcrumb h1",
+    "breadcrumb_bEhLYx": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
       "settings": {
         "container": "container",
         "text_alignment": "center",
@@ -310,8 +310,8 @@
   "order": [
     "collection-header",
     "apex_top_slider_GBwqAg",
-    "breadcrumb_bEhLYx",
     "breadcrumb_h1_b4RT8P",
+    "breadcrumb_bEhLYx",
     "category_selection_iMrTd6",
     "main",
     "usp_list_xQHfgQ",
