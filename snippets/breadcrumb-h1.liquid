@@ -1,0 +1,67 @@
+<!-- /snippets/breadcrumb.liquid -->
+{% comment %}
+  Documentation - http://docs.shopify.com/support/your-website/navigation/creating-a-breadcrumb-navigation
+{% endcomment %}
+{% comment %}
+  Accepts:
+  - container: {String} Container class (optional)
+  - justify: {String} Defines how the browser distributes space between and around content items along the main-axis of a flex container (optional)
+  - class: {String} Extra classes (optional)
+  - hide_current: {Boolean} Hide current item (optional)
+
+  Usage:
+  {% render 'breadcrumb' %}
+{% endcomment %}
+{%- liquid
+  if container != null and container == 'w-full'
+    assign container = 'container-full'
+  endif
+  if container == null
+    assign container = 'container-fluid'
+  endif
+
+  if animated == null
+    assign animated = false
+  endif
+  if animation_effect == null
+    assign animation_effect = settings.animations
+  endif
+
+  if animation_effect != 'none'
+    assign animated = true
+  endif
+-%}
+
+{%- capture separator -%}
+    <span aria-hidden="true" class="m-breadcrumb--separator">
+      <svg class="m-svg-icon--small m-rlt-reverse-x" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"/></svg>
+    </span>
+{%- endcapture -%}
+
+{%- capture home -%}
+    <a href="{{ routes.root_url }}" class="m-breadcrumb--item" title="{{ 'general.breadcrumbs.home_link_title' | t }}">
+        {{ 'general.breadcrumbs.home' | t }}
+    </a>
+{%- endcapture -%}
+
+{% unless template == 'index' %}
+  <nav
+    class="m-breadcrumb m:w-full {{ class }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
+    role="navigation"
+    aria-label="breadcrumbs"
+  >
+    <div class="{{ container }}">
+      <div class="m-breadcrumb--wrapper m:flex m:items-center m:justify-{{ justify | default: 'start' }}">
+       
+
+        
+
+        {% if template.name == 'collection' and collection.handle %}        
+          
+            <h1 class="m-breadcrumb--item m-breadcrumb--item-current">{{ collection.title }}</h1>
+         
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+{% endunless %}
