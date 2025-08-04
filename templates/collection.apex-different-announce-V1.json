@@ -133,6 +133,17 @@
         "c_n_text": "p-medium"
       }
     },
+    "breadcrumb_h1_UxG7wm": {
+      "type": "breadcrumb-h1",
+      "name": "Breadcrumb h1",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "rich_text_bXpWiG": {
       "type": "rich-text",
       "blocks": {
@@ -321,6 +332,7 @@
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
     "rich_text_bXpWiG",
+    "breadcrumb_h1_UxG7wm",
     "main",
     "usp_list_xQHfgQ",
     "promotion_banner_wLVh66",
