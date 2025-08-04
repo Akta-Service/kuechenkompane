@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* benefit text area css start  */
 .rs-container {
   max-width: 1470px;
@@ -576,3 +577,583 @@ a.m-button.m-button--primary:hover {
     margin-right: 10px !important;
   }
 }
+=======
+/* benefit text area css start  */
+.rs-container {
+  max-width: 1470px;
+  padding: 0 15px;
+  margin: auto;
+}
+
+.benefit-row {
+  display: flex;
+  column-gap: 60px;
+  row-gap: 30px;
+  align-items: center;
+}
+
+.benefit-subtitle {
+  display: inline-block;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.benefit-title {
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 13px;
+  max-width: 450px;
+}
+
+.benefit-description {
+  margin: 0;
+  padding-right: 10px;
+}
+
+.benefit-content {
+  max-width: 40%;
+}
+
+.benefit-image {
+  width: 650px;
+  max-width: 650px;
+  height: 400px;
+  max-height: 400px;
+}
+
+.benefit-image img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.rs-reverse {
+  flex-direction: row-reverse;
+}
+
+.rs-reverse .benefit-image {
+  margin-right: auto;
+}
+
+/* magazine quote area css start  */
+
+.magazine-content {
+  text-align: center;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.magazine-title,
+img.magazine-title-img {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+img.magazine-title-img {
+  max-width: 220px;
+}
+.ratings {
+  line-height: 1;
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+}
+
+.magazine-quote {
+  font-size: 26px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.magazine-quote p {
+  margin: 0;
+  margin-top: 28px;
+}
+.benefit-video video {
+  width: 100%;
+  height: 100%;
+}
+/* us vs css start  */
+.us-them-row {
+  display: flex;
+}
+
+.us-them-content .us-them-img {
+  width: 50%;
+}
+
+.us-them-content {
+  flex: 0 0 auto;
+  width: 50%;
+  padding-left: 30px;
+}
+
+.us-them-img {
+  width: 50%;
+}
+.us-them-img img {
+  width: 100%;
+}
+
+.us-them-row {
+  display: flex;
+  align-items: center;
+}
+
+.content-box {
+  max-width: 430px;
+  margin: auto;
+}
+
+.us-them-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.us-them-description p {
+  margin: 0;
+}
+
+.us-them-description {
+  font-weight: 300;
+  line-height: 26px;
+}
+
+/* usp css  */
+.usp-list-main {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.usp-list-item {
+  text-align: center;
+  position: relative;
+  height: auto;
+}
+
+.usp-list-item img {
+  /*max-width: 32px;*/
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .usp-list-section {
+    padding: 50px 8px;
+  }
+  .usp-list-item img {
+    max-width: 100px;
+  }
+}
+
+.usp-list-item h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #121212;
+  margin: 12px 0;
+  text-align: center;
+}
+
+.usp-list-item p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #454545;
+  margin: 0;
+  text-align: center;
+}
+
+.usp-list-border {
+  width: 2px;
+  height: 92px;
+  display: block;
+  border: 1px solid #eaeaea;
+  margin: auto;
+}
+
+/* faq css  */
+.appex-faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 21px 0 11px;
+  gap: 20px;
+  cursor: pointer;
+}
+span.faq-icon {
+  transition: 0.3s;
+}
+
+.appex-faq-item {
+  border-bottom: 1px solid #cbcbcb;
+}
+.appex-faq-body p {
+  padding: 16px 0;
+}
+.faqs-sub-title {
+  margin-bottom: 20px;
+}
+.appex-faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.appex-faq-header.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.appex-faq-title {
+  font-weight: 500;
+}
+.appex-faqs-area .rs-container {
+  max-width: 1540px;
+  padding: 0 50px;
+}
+.appex-faq-body {
+  max-width: 90%;
+}
+
+/* store benefit  */
+
+.store-benefit-text {
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+.store-benefit-icon {
+  width: 26px;
+  height: 26px;
+}
+.store-benefit-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.store-benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.store-benefits-bottom .rs-container {
+  max-width: 1540px;
+  padding: 0 50px;
+}
+
+/* benefit list gif  */
+.benefit-list-gif-area .rs-container {
+  padding: 0 50px;
+}
+.benefit-list-row {
+  display: flex;
+  gap: 40px;
+}
+.benefit-list-content {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  width: 100%;
+}
+.benefit-list-heading {
+  min-width: 320px;
+}
+.benefit-list-content-rich-text {
+  max-width: 430px;
+}
+.benefit-list-content-rich-text p {
+  margin-block: 8px;
+}
+.benefit-list-content-rich-text p:not(:first-child) strong {
+  margin-top: 40px;
+  display: block;
+}
+.benefit-list-content-video video {
+  max-width: 410px;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+}
+.benefit-list-content-rich-text *:last-child {
+  margin-bottom: 0;
+}
+.benefit-list-content-rich-text *:first-child {
+  margin-top: 0;
+}
+.benefit-list-title {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.benefit-list-title.style-title {
+  line-height: 0.6;
+}
+.m-section__heading {
+  font-size: 25px;
+}
+/* ------------------------------------ 
+---------------------------------------
+      resposive css 
+---------------------------------------
+--------------------------------------- */
+
+@media screen and (max-width: 991px) {
+  .usp-list-section {
+    padding: 0px 16px 32px;
+    overflow: hidden;
+  }
+
+  .usp-list-main {
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: stretch;
+    align-content: center;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  }
+
+  .usp-list-main::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari */
+  }
+
+  .usp-list-item {
+    margin-top: 32px;
+    min-width: 68%;
+    scroll-snap-align: center;
+    flex: 50%;
+    text-align: center;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    height: auto;
+  }
+
+  .usp-list-border {
+    display: none;
+  }
+
+  .usp-list-item h4 {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  .usp-list-item p {
+    font-size: 12px;
+  }
+}
+/* ----------------------------------- */
+/* small device */
+/* ----------------------------------- */
+
+@media only screen and (max-width: 768px) {
+  .benefit-row {
+    flex-direction: column;
+  }
+
+  .benefit-content {
+    max-width: 100%;
+  }
+
+  .benefit-image {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+  }
+  .us-them-row {
+    flex-direction: column;
+  }
+  .us-them-content {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .content-box {
+    max-width: 500px;
+    text-align: center;
+  }
+  h2.us-them-title {
+    font-size: 25px !important;
+    margin-bottom: 15px;
+  }
+  .us-them-img {
+    width: 100%;
+  }
+  img.magazine-title-img {
+    max-width: 150px;
+  }
+  .magazine-quote {
+    font-size: 20px !important;
+  }
+  h2.benefit-title {
+    font-size: 25px !important;
+  }
+
+  .appex-faqs-area .rs-container {
+    padding: 0 15px;
+  }
+  .faqs-sub-title {
+    margin-bottom: 0;
+  }
+
+  .store-benefits-bottom .rs-container {
+    padding: 0 15px;
+  }
+  h3.m-richtext__title.h2 {
+    font-size: 25px !important;
+  }
+  .apex-product-page .rs-container {
+    padding: 0 15px;
+  }
+  .apex-theme-info {
+    padding-left: 0;
+  }
+  .info-card {
+    padding: 5px;
+  }
+  .rs-payment-icons {
+    margin-bottom: 20px;
+  }
+  button.m-add-to-cart.rs-add-btn {
+    margin-top: 10px;
+    margin-bottom: 18px;
+    min-width: fit-content !important;
+    max-width: 100%;
+  }
+  .m-sticky-addtocart .m-add-to-cart {
+    min-width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  span.m-add-to-cart--text {
+    font-size: 14px;
+    line-height: 1;
+  }
+  .m-sticky-addtocart .m-product-option--dropdown-select {
+    padding-left: 5px;
+    margin-right: 10px;
+    padding-right: 5px;
+    font-size: 14px;
+  }
+}
+.benefit-button {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  width: fit-content;
+  padding-bottom: 2px;
+  margin-top: 30px;
+  gap: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.benefit-button:after {
+  content: "";
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27%3E%3Cpath d=%27M12.5625 5.25L19.3125 12L12.5625 18.75M18.375 12H4.6875%27 stroke=%27white%27 stroke-width=%271.5%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27%3E%3Cpath d=%27M12.5625 5.25L19.3125 12L12.5625 18.75M18.375 12H4.6875%27 stroke=%27white%27 stroke-width=%271.5%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E");
+  background-size: 1.5rem 1.5rem;
+  height: 20px;
+  width: 20px;
+  background-color: #000;
+}
+.benefit-button.underline:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition: 0.3s;
+}
+.benefit-button.underline:hover:before {
+  width: 0;
+}
+.benefit-button.solid {
+  padding: 8px 40px;
+  color: #fff;
+  background: #000;
+  border-radius: 5px;
+}
+.benefit-button.solid:after {
+  background: #fff;
+}
+
+/* a.m-button.m-button--primary {
+  background: #fa8526 !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+a.m-button.m-button--primary:hover {
+  background: #333333 !important;
+} */
+/* a.m-button.m-button--secondary:hover {
+  border: 1px solid #000;
+} */
+/* .swiper.banner-top-slider {
+  max-width: 1000px;
+} */
+.apex-product-page
+  button.swiper-button-control.swiper-button-next.m-button--icon {
+  transform: rotate(180deg);
+}
+.m-product-media--slider .swiper-button-control {
+  background: #4b4b4b;
+}
+.gesehen-in {
+  font-family: var(--font-stack-header);
+  text-align: center;
+  padding-bottom: 15px;
+}
+.m-product-media {
+  position: relative;
+}
+
+.m-product-media--sold-out-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.m-button--sold-out {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 4px;
+  pointer-events: auto;
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+@media only screen and (max-width: 768px) {
+  .apex-product-page .m-product-media {
+    padding: 2 !important;
+  }
+  .apex-product-page
+    .m-product-media--layout-6
+    .m-product-media--slider__thumbnails
+    .swiper-slide {
+    height: inherit !important;
+    width: 60px !important;
+    margin-right: 10px !important;
+  }
+}
+>>>>>>> main

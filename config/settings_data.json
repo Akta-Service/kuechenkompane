@@ -10,7 +10,11 @@
 {
   "current": {
     "allowed_handles": [],
+<<<<<<< HEAD
     "password": "SOMMER",
+=======
+    "password": "Sommer",
+>>>>>>> main
     "header_title": "Beliebte Produkte",
     "collection_url_text": "Alle ansehen",
     "serch_recom_colection": "bestseller-facebook-12-best",
@@ -72,7 +76,11 @@
     "pcard_layout": "1",
     "pcard_alignment": "left",
     "pcard_image_ratio": "original",
+<<<<<<< HEAD
     "show_cart_button": true,
+=======
+    "show_cart_button": false,
+>>>>>>> main
     "show_quickview_button": false,
     "show_compare_button": false,
     "show_badge_sale": true,
