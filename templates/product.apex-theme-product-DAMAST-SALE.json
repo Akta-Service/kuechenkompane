@@ -287,7 +287,12 @@
           }
         }
       },
-      "block_order": ["faq_jkYPLV", "faq_pDwHXa", "faq_kQAWhE", "faq_6hwpUp"],
+      "block_order": [
+        "faq_jkYPLV",
+        "faq_pDwHXa",
+        "faq_kQAWhE",
+        "faq_6hwpUp"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "title": "",
@@ -338,9 +343,16 @@
           }
         }
       },
-      "block_order": ["tab_gknmWn", "tab", "tab_yXpqFL", "tab_LBwXaE"],
+      "block_order": [
+        "tab_gknmWn",
+        "tab",
+        "tab_yXpqFL",
+        "tab_LBwXaE"
+      ],
       "disabled": true,
-      "custom_css": [".m-tabs__header {justify-content: flex-start;}"],
+      "custom_css": [
+        ".m-tabs__header {justify-content: flex-start;}"
+      ],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -593,7 +605,11 @@
           }
         }
       },
-      "block_order": ["title_7bjmib", "ratings_qmMcyY", "quotation_g7QTma"],
+      "block_order": [
+        "title_7bjmib",
+        "ratings_qmMcyY",
+        "quotation_g7QTma"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "padding_top": 13,
@@ -624,7 +640,11 @@
           }
         }
       },
-      "block_order": ["subtitle_8kbCAt", "title_KU4fTr", "description_PBBAnQ"],
+      "block_order": [
+        "subtitle_8kbCAt",
+        "title_KU4fTr",
+        "description_PBBAnQ"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -661,7 +681,11 @@
           }
         }
       },
-      "block_order": ["subtitle_XPX87U", "title_YwDaTz", "description_j4ByyM"],
+      "block_order": [
+        "subtitle_XPX87U",
+        "title_YwDaTz",
+        "description_j4ByyM"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -692,7 +716,10 @@
           }
         }
       },
-      "block_order": ["title_F4F6qE", "description_9Mxcd4"],
+      "block_order": [
+        "title_F4F6qE",
+        "description_9Mxcd4"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "img": "shopify://shop_images/steel_kitchen_knives_V11_1.jpg",
@@ -826,9 +853,15 @@
           }
         }
       },
-      "block_order": ["iconbox_pJbJGA", "iconbox_RW46nE", "iconbox_EiwgTg"],
+      "block_order": [
+        "iconbox_pJbJGA",
+        "iconbox_RW46nE",
+        "iconbox_EiwgTg"
+      ],
       "disabled": true,
-      "custom_css": [".m-icon-box__heading {font-weight: 400;}"],
+      "custom_css": [
+        ".m-icon-box__heading {font-weight: 400;}"
+      ],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -875,7 +908,10 @@
           }
         }
       },
-      "block_order": ["left_content_kdVLJX", "right_content_6RynNR"],
+      "block_order": [
+        "left_content_kdVLJX",
+        "right_content_6RynNR"
+      ],
       "disabled": true,
       "settings": {
         "section_bg_color": "#ffffff",
@@ -1082,7 +1118,11 @@
           }
         }
       },
-      "block_order": ["item_9JUQhz", "item_NYUrjj", "item_Prmf4W"],
+      "block_order": [
+        "item_9JUQhz",
+        "item_NYUrjj",
+        "item_Prmf4W"
+      ],
       "settings": {
         "color_scheme": "footer",
         "subtitle": "Viele fragen mich als Gründer:",
@@ -1122,7 +1162,10 @@
           }
         }
       },
-      "block_order": ["heading_tWq74p", "content_nQLTqP"],
+      "block_order": [
+        "heading_tWq74p",
+        "content_nQLTqP"
+      ],
       "disabled": true,
       "settings": {
         "background_color": "#f6f0e6",
@@ -1151,7 +1194,9 @@
           }
         }
       },
-      "block_order": ["loox_reviews_loox_dynamic_section_FnN8Yz"],
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_FnN8Yz"
+      ],
       "settings": {
         "heading": "",
         "heading_size": "h3",
