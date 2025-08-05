@@ -14,6 +14,51 @@
       "disabled": true,
       "settings": {}
     },
+    "coupon_code_section_P7dfJg": {
+      "type": "coupon-code-section",
+      "blocks": {
+        "title_T4Bjg7": {
+          "type": "title",
+          "settings": {
+            "title": "25% OFF"
+          }
+        },
+        "subtitle_Umf37e": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "new year offer"
+          }
+        },
+        "coupon_code_jViVqr": {
+          "type": "coupon_code",
+          "settings": {
+            "coupon_text": "nye25"
+          }
+        },
+        "coupon_info_6393bE": {
+          "type": "coupon_info",
+          "settings": {
+            "coupon_info": "to take 25% off any of our in-stock and ready-to-ship pieces"
+          }
+        },
+        "coupon_button_39iad7": {
+          "type": "coupon_button",
+          "settings": {
+            "btn_text": "Shop Now",
+            "btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_T4Bjg7",
+        "subtitle_Umf37e",
+        "coupon_code_jViVqr",
+        "coupon_info_6393bE",
+        "coupon_button_39iad7"
+      ],
+      "name": "Coupon Code Section",
+      "settings": {}
+    },
     "apex_faqs_9M77yA": {
       "type": "apex-faqs",
       "blocks": {
@@ -71,6 +116,7 @@
   },
   "order": [
     "main",
+    "coupon_code_section_P7dfJg",
     "apex_faqs_9M77yA"
   ]
 }
