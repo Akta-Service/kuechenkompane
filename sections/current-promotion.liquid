@@ -185,7 +185,7 @@
   } 
 }
 </style>
-<section class="guarantee-banner" id="satisfaction-guarantee">
+<section class="guarantee-banner m-color-{{ section.settings.color_scheme }}" id="satisfaction-guarantee">
   <div class="guarantee-banner-container">
     <div class="guarantee-content-row">
       {% if section.settings.main_image != blank %}
@@ -265,6 +265,11 @@
 {
   "name": "Current Promotion",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
     {
       "type": "image_picker",
       "id": "main_image",
