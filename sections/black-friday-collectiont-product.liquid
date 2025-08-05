@@ -1,3 +1,13 @@
+
+
+  {% if section.settings.select_custom_collection == true %}
+    {% assign collection = section.settings.collection %}
+
+  {% endif %}
+
+
+
+
 {{ 'component-product-inventory.css' | asset_url | stylesheet_tag }}
 {{ 'collection.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'collection.js' | asset_url }}" defer="defer"></script>
@@ -31,81 +41,91 @@
   endif
 -%}
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-.apex-theme-collection s.m-price-item.m-price-item--regular {
-    color: #bc1e1e;
-}
-.apex-theme-collection .m-price__sale .m-price-item--last {
-    color: inherit;
-}
-.apex-theme-collection  .md\:m\:justify-between {
-    justify-content: end;
-}
-.apex-theme-collection  .m-product-card__content-footer {
+  .apex-theme-collection s.m-price-item.m-price-item--regular {
+      color: #bc1e1e;
+  }
+  .apex-theme-collection .m-price__sale .m-price-item--last {
+      color: inherit;
+  }
+  .apex-theme-collection  .md\:m\:justify-between {
+      justify-content: end;
+  }
+  .apex-theme-collection  .m-product-card__content-footer {
+      display: block;
+      margin-top: 20px;
+  }
+  .apex-theme-collection .m-product-card__description {
+      display: none;
+  }
+  .apex-theme-collection .card-add-button button {
+      width: 100%;
+      min-width: 76px;
+      height: 44px;
+      min-height: 44px;
+      border: none;
+      /* background:  {{ section.settings.add_btn_bg }};
+      color: {{ section.settings.add_btn_text_color }}; */
+      border-radius: 5px;
+  }
+  .apex-theme-collection .m-collection-products {
+    align-items: self-end;
+  }
+  .black-friday .m-product-card--soldout::after {
+      position: absolute;
+      inset: 0;
+      background: #000000;
+      opacity: {{ section.settings.overlay_opacity }};
+      z-index: 9;
+      /* content: ""; */
+      border-radius: 0;
+  }
+  .black-friday .m-collection-products .m-add-to-cart {
     display: block;
-    margin-top: 20px;
-}
-.apex-theme-collection .m-product-card__description {
-    display: none;
-}
-.apex-theme-collection .card-add-button button {
-    width: 100%;
-    min-width: 76px;
-    height: 44px;
-    min-height: 44px;
-    border: none;
-    /* background:  {{ section.settings.add_btn_bg }};
-    color: {{ section.settings.add_btn_text_color }}; */
-    border-radius: 5px;
-}
-.apex-theme-collection .m-collection-products {
-  align-items: self-end;
-}
-.black-friday .m-product-card--soldout::after {
-    position: absolute;
-    inset: 0;
-    background: #000000;
-    opacity: {{ section.settings.overlay_opacity }};
-    z-index: 9;
-    /* content: ""; */
     border-radius: 0;
-}
-.black-friday .m-collection-products .m-add-to-cart {
-  display: block;
-  border-radius: 0;
-}
+  }
 
-.section--title-area {
-  max-width: 800px;
-  text-align: center;
-  margin: auto;
-  margin-bottom: 20px;
-}
-h2.collection--title {
-  font-size: 40px;
-  font-family: "DM Sans", sans-serif;
-  color: #000;
-  margin-bottom: 20px;
-}
-p.collection--sub-title {
-  font-size: 18px;
-  font-weight: 400;
-  font-family: Poppins, sans-serif;
-}
-
-@media (max-width:768px){
-  .m-collection--wrapper {
-    margin: 40px 0;
+  .section--title-area {
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
   }
   h2.collection--title {
-    font-size: 26px;
-    margin-bottom: 8px;
+    font-size: 40px;
+    font-family: "DM Sans", sans-serif;
+    color: #000;
+    margin-bottom: 20px;
   }
+  p.collection--sub-title {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Poppins, sans-serif;
+  }
+
+  @media (max-width:768px){
+    .m-collection--wrapper {
+      margin: 40px 0;
+    }
+    h2.collection--title {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .black-friday.apex-theme-collection .m-collection-products {
+    align-items: start;
 }
+
+
 </style>
+
+
+
+
+
 <section
   class="facest-filters-section black-friday apex-theme-collection m-color-{{ section.settings.color_scheme }}"
   data-section-type="collection-template"
@@ -119,7 +139,6 @@ p.collection--sub-title {
   data-product-count="{{ collection.products.size }}"
   data-initial-column="{{ initial_column }}"
   data-view="{{ template.name }}"
-
 >
   <div class="{{ container }}">
     <div class="m-collection--wrapper {% if section.settings.show_filter %}m-sidebar--{{ section.settings.sidebar }}{% endif %}">
@@ -129,14 +148,10 @@ p.collection--sub-title {
         animation_effect: animation_effect
       -%}
       <div id="CollectionProductGrid" class="m:flex-1" data-collection-id="{{ collection.id }}">
-
-      <div class="section--title-area">
-        <h2 class="collection--title">{{ section.settings.title }}</h2>
-        <p class="collection--sub-title">{{ section.settings.subtitle }}</p>
-      </div>
-
-
-
+        <div class="section--title-area">
+          <h2 class="collection--title">{{ section.settings.title }}</h2>
+          <p class="collection--sub-title">{{ section.settings.subtitle }}</p>
+        </div>
 
         {%- render 'collection-page-toolbar',
           section: section,
@@ -153,12 +168,18 @@ p.collection--sub-title {
             endif
           endif
         -%}
+
+      
+
+
         {%- paginate collection.products by section.settings.pagination_limit -%}
           {%- if collection.products.size == 0 -%}
             <div class="m-collection--empty m:flex m:flex-col m:w-full m:items-center">
               <span>{%- render 'icon', name: 'empty-collection', fill: '#9a9a9a' -%}</span>
               <p class="m-collection--empty-text">{{ 'collections.general.no_matches' | t }}</p>
             </div>
+ 
+
           {%- else -%}
             <div
               class="m-collection-products m:flex m:flex-wrap m-cols-{{ initial_column }}"
@@ -166,17 +187,17 @@ p.collection--sub-title {
               data-product-container
             >
 
-            {% if section.settings.select_custom_collection == true %}
-              {% assign collection = section.settings.collection %}
-            {% endif %}
+              
+
+
 
               {%- for product in collection.products -%}
                 {% comment %} {% unless product.tags contains 'NO SEARCH' %} {% endcomment %}
-                  <div class="m-product-item m:w-6/12 md:m:w-4/12">
-                    {% liquid
-                    render 'black-friday-product-card', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect    
-                    %}
-                  </div>
+                <div class="m-product-item m:w-6/12 md:m:w-4/12">
+                  {% liquid
+                    render 'black-friday-product-card', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
+                  %}
+                </div>
                 {% comment %} {% endunless %} {% endcomment %}
               {%- endfor -%}
             </div>
@@ -245,7 +266,7 @@ p.collection--sub-title {
       "id": "subtitle",
       "label": "Subtitle",
       "default": "Shop our exclusive Black Friday deals!"
-    },    
+    },
     {
       "type": "header",
       "content": "Collection Settings"
@@ -259,7 +280,7 @@ p.collection--sub-title {
     {
       "type": "collection",
       "id": "collection",
-      "label": "Custom collection",      
+      "label": "Custom collection",
       "info": "Select a custom collection to display instead of the current collection. Only works if enabled above."
     },
     {
@@ -509,7 +530,7 @@ p.collection--sub-title {
     {
       "type": "header",
       "content": "Add Button Settings"
-    },    
+    },
     {
       "type": "select",
       "id": "button_style",
@@ -568,8 +589,6 @@ p.collection--sub-title {
       "unit": "%",
       "default": 0.5
     }
-
-
   ],
   "blocks": [
     {
@@ -895,9 +914,7 @@ p.collection--sub-title {
   "presets": [
     {
       "name": "Apex Theme Collection",
-      "settings": {
-        
-      }
+      "settings": {}
     }
   ]
 }
