@@ -9,7 +9,9 @@
  */
 {
   "current": {
-    "allowed_handles": [],
+    "allowed_handles": [
+      "vip-sale"
+    ],
     "password": "Sommer",
     "header_title": "Beliebte Produkte",
     "collection_url_text": "Alle ansehen",
