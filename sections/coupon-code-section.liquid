@@ -1,6 +1,38 @@
-<div class="coupon--wrapper">
+<style>
+.coupon--wrapper {
+  padding: 100px 0;
+}
+.coupon-container {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.coupon--title {
+  font-size: 80px;
+  line-height: 1.2;
+}
+.coupon--subtitle {
+  font-size: 50px;
+  font-style: italic;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+.coupon--code {
+  border: 1px solid #000;
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 24px;
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+</style>
+
+<div class="coupon--wrapper m-color-{{ section.settings.color_scheme }}">
   <div class="coupon-container">
-    {% for block in section.blocks %}
+    <div class="coupon--box">
+      {% for block in section.blocks %}
       {% case block.type %}
         {% when 'title' %}
           <h2 class="coupon--title">{{ block.settings.title }}</h2>
@@ -15,13 +47,20 @@
         {% else %}
       {% endcase %}
     {% endfor %}
+    </div>
   </div>
 </div>
 
 {% schema %}
 {
   "name": "Coupon Code Section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+  ],
   "blocks": [
     {
       "type": "title",
