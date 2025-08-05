@@ -115,25 +115,36 @@
     <meta name="theme-color" content="{{ settings.color_primary }}">
 
     {% comment %}
-      Collections SEO Logic:
-      • Page 1 without noindex metafield → Standard canonical
-      • All other pages (paginated or with noindex metafield) → noindex,follow + Clean canonical to main collection
+      Collections SEO Logic - Funktionierende Version:
+      • Seite 1 ohne Noindex-Metafield → Standard-Canonical
+      • Alle anderen Seiten (paginiert oder mit noindex) → noindex,follow + Clean-Canonical
     {% endcomment %}
 
     {% if template == 'collection' %}
-      {% comment %} Check if this is a paginated page {% endcomment %}
+      {% comment %} Robust pagination detection {% endcomment %}
       {% assign is_paginated = false %}
-      {% if request.page_info.current_page > 1 %}
-        {% assign is_paginated = true %}
-      {% endif %}
       
-      {% comment %} Alternative method if page_info is not available {% endcomment %}
+      {% comment %} Method 1: Check URL parameters {% endcomment %}
+      {% assign url_parts = request.query_string | split: '&' %}
+      {% for param in url_parts %}
+        {% if param contains 'page=' %}
+          {% assign page_value = param | split: '=' | last %}
+          {% assign page_number = page_value | plus: 0 %}
+          {% if page_number > 1 %}
+            {% assign is_paginated = true %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      
+      {% comment %} Method 2: Alternative check {% endcomment %}
       {% unless is_paginated %}
-        {% if request.query_string contains 'page=' %}
+        {% if request.query_string contains 'page=' and request.query_string != 'page=1' %}
           {% assign is_paginated = true %}
         {% endif %}
       {% endunless %}
       
+      {% comment %} Apply SEO rules {% endcomment %}
       {% if is_paginated or collection.metafields.custom.noindex == true %}
         <meta name="robots" content="noindex,follow">
         <link rel="canonical" href="{{ collection.url }}">
@@ -142,28 +153,6 @@
       {% endif %}
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
-    {% endif %}
-
-    {% if template == 'collection' %}
-    <script>
-      console.log('=== PAGINATION DEBUG INFO ===');
-      console.log('Template:', '{{ template }}');
-      console.log('Current Page (page_info):', '{{ request.page_info.current_page }}');
-      console.log('Query String:', '{{ request.query_string }}');
-      console.log('Collection URL:', '{{ collection.url }}');
-      console.log('Canonical URL:', '{{ canonical_url }}');
-      console.log('Collection Handle:', '{{ collection.handle }}');
-      console.log('Noindex Metafield:', '{{ collection.metafields.custom.noindex }}');
-      
-      // Check if page parameter exists
-      const urlParams = new URLSearchParams(window.location.search);
-      const pageParam = urlParams.get('page');
-      console.log('Page Parameter from URL:', pageParam);
-      
-      // Show current URL
-      console.log('Current URL:', window.location.href);
-      console.log('========================');
-    </script>
     {% endif %}
 
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
