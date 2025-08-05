@@ -114,36 +114,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="{{ settings.color_primary }}">
 
-    {% comment %}
-      SEO für Collections mit Infinite Scroll:
-      - Hauptseite: normale Canonical
-      - Alle ?page= URLs: noindex,follow + Canonical zur Hauptseite
-      - Metafield noindex: ebenfalls noindex,follow
+    {% comment %} 
+    SUPER EINFACHER TEST - Ersetzen Sie Ihren aktuellen Code temporär damit
     {% endcomment %}
 
     {% if template == 'collection' %}
-      {% comment %} 
-        Bei Infinite Scroll sind alle ?page= URLs unerwünscht,
-        da sie nicht mehr in der normalen Navigation erreichbar sind 
-      {% endcomment %}
+      <!-- DEBUG START -->
+      <!-- Query String: "{{ request.query_string }}" -->
+      <!-- Contains page=: {% if request.query_string contains 'page=' %}YES{% else %}NO{% endif %} -->
+      <!-- Noindex Metafield: "{{ collection.metafields.custom.noindex }}" -->
+      <!-- Template: {{ template }} -->
       
-      {% assign has_page_param = false %}
-      {% if request.query_string contains 'page=' %}
-        {% assign has_page_param = true %}
-      {% endif %}
-      
-      {% comment %} Noindex für alle paginierten URLs und Metafield-markierte Collections {% endcomment %}
-      {% if has_page_param or collection.metafields.custom.noindex == true %}
+      {% if request.query_string contains 'page=' or collection.metafields.custom.noindex == true %}
+        <!-- PAGINATED PAGE OR NOINDEX METAFIELD DETECTED -->
         <meta name="robots" content="noindex,follow">
         <link rel="canonical" href="{{ collection.url }}">
       {% else %}
-        {% comment %} Normale Hauptseite {% endcomment %}
+        <!-- MAIN PAGE -->
         <link rel="canonical" href="{{ canonical_url }}">
       {% endif %}
-      
+      <!-- DEBUG END -->
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
-    {% endif %}
+    {% endif %}}
 
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
