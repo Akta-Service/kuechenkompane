@@ -1,9 +1,12 @@
 <style>
 .coupon--wrapper {
   padding: 100px 0;
+  {% if section.settings.image != blank %}
+    background: url({{ section.settings.image | image_url }});
+  {% endif %}
 }
 .coupon-container {
-  max-width: 700px;
+  max-width: 600px;
   margin: auto;
   text-align: center;
   padding: 0 20px;
@@ -27,6 +30,21 @@
   line-height: 1;
   margin-bottom: 10px;
 }
+.coupon--short-text {
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.coupon--box {
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent white */
+  backdrop-filter: blur(10px); /* glass blur */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
 </style>
 
 <div class="coupon--wrapper m-color-{{ section.settings.color_scheme }}">
@@ -43,7 +61,7 @@
         {% when 'coupon_info' %}
           <p class="coupon--short-text">{{ block.settings.coupon_info }}</p>
         {% when 'coupon_button' %}
-          <a href="{{ block.settings.btn_url }}" class="coupon--btn">{{ block.settings.btn_text }}</a>
+          <a class="m-button m-button--primary" href="{{ block.settings.btn_url }}" class="coupon--btn">{{ block.settings.btn_text }}</a>
         {% else %}
       {% endcase %}
     {% endfor %}
@@ -60,6 +78,11 @@
       "id": "color_scheme",
       "label": "Color scheme"
     },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    }
   ],
   "blocks": [
     {
