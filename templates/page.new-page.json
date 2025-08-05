@@ -1,0 +1,76 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "apex_faqs_9M77yA": {
+      "type": "apex-faqs",
+      "blocks": {
+        "item_PeecPY": {
+          "type": "item",
+          "settings": {
+            "faq_title": "How long do the strips last unopened?",
+            "faq_body": "<p>The UV gel strips remain in their packaging and ready for use for over 2 years. Once opened, the strips have a shelf life of 3 months. Store the opened strips in an airtight container and in a dark place between uses to prevent premature hardening. Use our sticker from the UV gel strips packaging.</p>"
+          }
+        },
+        "item_HjHmkw": {
+          "type": "item",
+          "settings": {
+            "faq_title": "How long do the strips last unopened?",
+            "faq_body": "<p>The UV gel strips remain in their packaging and ready for use for over 2 years. Once opened, the strips have a shelf life of 3 months. Store the opened strips in an airtight container and in a dark place between uses to prevent premature hardening. Use our sticker from the UV gel strips packaging.</p>"
+          }
+        },
+        "item_AidNYx": {
+          "type": "item",
+          "settings": {
+            "faq_title": "How long do the strips last unopened?",
+            "faq_body": "<p>The UV gel strips remain in their packaging and ready for use for over 2 years. Once opened, the strips have a shelf life of 3 months. Store the opened strips in an airtight container and in a dark place between uses to prevent premature hardening. Use our sticker from the UV gel strips packaging.</p>"
+          }
+        },
+        "item_9MFfHr": {
+          "type": "item",
+          "settings": {
+            "faq_title": "How long do the strips last unopened?",
+            "faq_body": "<p>The UV gel strips remain in their packaging and ready for use for over 2 years. Once opened, the strips have a shelf life of 3 months. Store the opened strips in an airtight container and in a dark place between uses to prevent premature hardening. Use our sticker from the UV gel strips packaging.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_PeecPY",
+        "item_HjHmkw",
+        "item_AidNYx",
+        "item_9MFfHr"
+      ],
+      "name": "APEX FAQs",
+      "settings": {
+        "color_scheme": "",
+        "icon_color": "#000000",
+        "pt": 50,
+        "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
+        "title": "FAQ",
+        "heading_type": "mrk-h1",
+        "sub_title": "Common problems and simple solutions",
+        "sub_title_font_size": 14,
+        "faq_title_font_size": 18,
+        "faq_text_font_size": 16
+      }
+    }
+  },
+  "order": [
+    "main",
+    "apex_faqs_9M77yA"
+  ]
+}
