@@ -1,0 +1,116 @@
+<div class="coupon--wrapper">
+  <div class="coupon-container">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'title' %}
+          <h2 class="coupon--title">{{ block.settings.title }}</h2>
+        {% when 'subtitle' %}
+          <p class="coupon--subtitle">{{ block.settings.subtitle }}</p>    
+        {% when 'coupon_code' %}
+          <p class="coupon--code">{{ block.settings.coupon_text }}</p>
+        {% when 'coupon_info' %}
+          <p class="coupon--short-text">{{ block.settings.coupon_info }}</p>
+        {% when 'coupon_button' %}
+          <a href="{{ block.settings.btn_url }}" class="coupon--btn">{{ block.settings.btn_text }}</a>
+        {% else %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coupon Code Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default":"25% OFF"
+        }
+      ]
+    },
+    {
+      "type": "subtitle",
+      "name": "Subtitle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "new year offer"
+        }
+      ]
+    },
+    {
+      "type": "coupon_code",
+      "name": "Coupon Code",
+      "settings": [
+        {
+          "type": "text",
+          "id": "coupon_text",
+          "label": "Coupon Code",
+          "default":"nye25"
+        }
+      ]
+    },
+    {
+      "type": "coupon_info",
+      "name": "Coupon Info",
+      "settings": [
+        {
+          "type": "text",
+          "id": "coupon_info",
+          "label": "Coupon Info",
+          "default":"to take 25% off any of our in-stock and ready-to-ship pieces"
+        }
+      ]
+    },
+    {
+      "type": "coupon_button",
+      "name": "Coupon Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  
+  "presets": [
+    {
+      "name": "Coupon Code Section",
+      "blocks": [
+        {
+          "type": "title"
+        },
+        {
+          "type": "subtitle"
+        },
+        {
+          "type": "coupon_code"
+        },
+        {
+          "type": "coupon_info"
+        },
+        {
+          "type": "coupon_button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
