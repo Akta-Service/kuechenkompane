@@ -113,6 +113,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="{{ settings.color_primary }}">
+
+    {% if template == 'collection' %}
+      {% assign is_paginated = false %}
+      {% if canonical_url contains '?page=' or canonical_url contains '&page=' %}
+        {% assign is_paginated = true %}
+      {% endif %}
+      
+      {% if is_paginated or collection.metafields.custom.noindex == true %}
+        <meta name="robots" content="noindex,follow">
+        <link rel="canonical" href="{{ collection.url }}">
+      {% else %}
+        <link rel="canonical" href="{{ canonical_url }}">
+      {% endif %}
+    {% else %}
+      <link rel="canonical" href="{{ canonical_url }}">
+    {% endif %}
+
+
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
