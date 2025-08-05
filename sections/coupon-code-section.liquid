@@ -3,7 +3,11 @@
   padding: 100px 0;
   {% if section.settings.image != blank %}
     background: url({{ section.settings.image | image_url }});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   {% endif %}
+    
 }
 .coupon-container {
   max-width: 600px;
