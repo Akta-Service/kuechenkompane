@@ -113,9 +113,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="{{ settings.color_primary }}">
-    <link rel="canonical" href="{{ canonical_url }}">
+
+    {% comment %}
+      Collections:
+        • Page 1 ohne Noindex-Metafield → Standard-Canonical
+        • sonst (page > 1 oder Metafield=true) → noindex,follow + Clean-Canonical
+    {% endcomment %}
+    {% if template == 'collection' %}
+      {% if paginate.current_page == 1 and collection.metafields.custom.noindex != true %}
+        <link rel="canonical" href="{{ canonical_url }}">
+      {% else %}
+        <meta name="robots" content="noindex,follow">
+        <link rel="canonical" href="{{ collection.url | escape }}">
+      {% endif %}
+    {% else %}
+      <link rel="canonical" href="{{ canonical_url }}">
+    {% endif %}
+
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
 
     {%- if settings.use_favicon == true and settings.favicon != blank -%}
       <link rel="shortcut icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -449,17 +466,6 @@
 
     <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
 
-
-
-    {% comment %}
-      Block indexing only on:
-        • paginated collection pages (page > 1)
-        • OR collections with custom.noindex metafield = true
-    {% endcomment %}
-    {% if template == 'collection' and (paginate.current_page > 1 or collection.metafields.custom.noindex == true) %}
-      <meta name="robots" content="noindex,follow">
-      <link rel="canonical" href="{{ collection.url | escape }}">
-    {% endif %}
 
 
 
