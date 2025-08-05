@@ -117,11 +117,11 @@
     {% comment %}
       Collections:
         • Seite 1 ohne Noindex-Metafield → Standard-Canonical
-        • sonst (page > 1 oder Metafield = true) → noindex,follow + Clean-Canonical
+        • sonst (page > 1 oder Metafield=true) → noindex,follow + Clean-Canonical
     {% endcomment %}
 
     {% if template == 'collection' %}
-      {%- assign page = request.page | default: 1 | plus: 0 -%}
+      {%- assign page = paginate.current_page | default: 1 -%}
       {%- assign noindex_mf = collection.metafields.custom.noindex | default: false -%}
 
       {% if page > 1 or noindex_mf %}
@@ -133,6 +133,7 @@
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
+
 
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
