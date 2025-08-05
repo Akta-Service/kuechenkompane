@@ -115,42 +115,32 @@
     <meta name="theme-color" content="{{ settings.color_primary }}">
 
     {% comment %}
-      Collections SEO Logic - Funktionierende Version:
-      • Seite 1 ohne Noindex-Metafield → Standard-Canonical
-      • Alle anderen Seiten (paginiert oder mit noindex) → noindex,follow + Clean-Canonical
+      SEO für Collections mit Infinite Scroll:
+      - Hauptseite: normale Canonical
+      - Alle ?page= URLs: noindex,follow + Canonical zur Hauptseite
+      - Metafield noindex: ebenfalls noindex,follow
     {% endcomment %}
 
     {% if template == 'collection' %}
-      {% comment %} Robust pagination detection {% endcomment %}
-      {% assign is_paginated = false %}
+      {% comment %} 
+        Bei Infinite Scroll sind alle ?page= URLs unerwünscht,
+        da sie nicht mehr in der normalen Navigation erreichbar sind 
+      {% endcomment %}
       
-      {% comment %} Method 1: Check URL parameters {% endcomment %}
-      {% assign url_parts = request.query_string | split: '&' %}
-      {% for param in url_parts %}
-        {% if param contains 'page=' %}
-          {% assign page_value = param | split: '=' | last %}
-          {% assign page_number = page_value | plus: 0 %}
-          {% if page_number > 1 %}
-            {% assign is_paginated = true %}
-            {% break %}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
+      {% assign has_page_param = false %}
+      {% if request.query_string contains 'page=' %}
+        {% assign has_page_param = true %}
+      {% endif %}
       
-      {% comment %} Method 2: Alternative check {% endcomment %}
-      {% unless is_paginated %}
-        {% if request.query_string contains 'page=' and request.query_string != 'page=1' %}
-          {% assign is_paginated = true %}
-        {% endif %}
-      {% endunless %}
-      
-      {% comment %} Apply SEO rules {% endcomment %}
-      {% if is_paginated or collection.metafields.custom.noindex == true %}
+      {% comment %} Noindex für alle paginierten URLs und Metafield-markierte Collections {% endcomment %}
+      {% if has_page_param or collection.metafields.custom.noindex == true %}
         <meta name="robots" content="noindex,follow">
         <link rel="canonical" href="{{ collection.url }}">
       {% else %}
+        {% comment %} Normale Hauptseite {% endcomment %}
         <link rel="canonical" href="{{ canonical_url }}">
       {% endif %}
+      
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
