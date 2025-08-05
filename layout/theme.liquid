@@ -116,15 +116,19 @@
 
     {% comment %}
       Collections:
-        • Page 1 ohne Noindex-Metafield → Standard-Canonical
+        • Seite 1 ohne Noindex-Metafield → Standard-Canonical
         • sonst (page > 1 oder Metafield=true) → noindex,follow + Clean-Canonical
     {% endcomment %}
+
     {% if template == 'collection' %}
-      {% if paginate.current_page == 1 and collection.metafields.custom.noindex != true %}
-        <link rel="canonical" href="{{ canonical_url }}">
-      {% else %}
+      {%- assign page = paginate.current_page | default: 1 -%}
+      {%- assign noindex_mf = collection.metafields.custom.noindex | default: false -%}
+
+      {% if page > 1 or noindex_mf %}
         <meta name="robots" content="noindex,follow">
         <link rel="canonical" href="{{ collection.url | escape }}">
+      {% else %}
+        <link rel="canonical" href="{{ canonical_url }}">
       {% endif %}
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
