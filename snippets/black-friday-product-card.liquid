@@ -455,14 +455,14 @@
 
       {% if show_title == true %}
         <div class="card--title-wrapper">
-          <h3 class="m-product-card__title">
+          <p class="m-product-card__title">
             <a
               href="{{ product_url }}"
               class="m-product-card__name{% if settings.uppercase_prd_name %} m:uppercase{% endif %}"
             >
               {{ product.title }}
             </a>
-          </h3>
+          </p>
           <div class="m-product-card__price">
             {% render 'product-prices', product: product, is_product_card: true %}
           </div>
