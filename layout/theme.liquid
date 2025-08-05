@@ -114,35 +114,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="{{ settings.color_primary }}">
 
-    {% comment %} 
-    SUPER EINFACHER TEST - Ersetzen Sie Ihren aktuellen Code temporär damit
-    {% endcomment %}
-
     {% if template == 'collection' %}
-      <!-- DEBUG START -->
-      <!-- Query String: "{{ request.query_string }}" -->
-      <!-- Canonical URL: "{{ canonical_url }}" -->
-      <!-- Collection URL: "{{ collection.url }}" -->
-      <!-- Template: {{ template }} -->
-      
-      {% comment %} Check if canonical_url contains page parameter {% endcomment %}
       {% assign is_paginated = false %}
       {% if canonical_url contains '?page=' or canonical_url contains '&page=' %}
         {% assign is_paginated = true %}
       {% endif %}
       
-      <!-- Is Paginated: {% if is_paginated %}YES{% else %}NO{% endif %} -->
-      <!-- Noindex Metafield: "{{ collection.metafields.custom.noindex }}" -->
-      
       {% if is_paginated or collection.metafields.custom.noindex == true %}
-        <!-- PAGINATED PAGE OR NOINDEX METAFIELD DETECTED -->
         <meta name="robots" content="noindex,follow">
         <link rel="canonical" href="{{ collection.url }}">
       {% else %}
-        <!-- MAIN PAGE -->
         <link rel="canonical" href="{{ canonical_url }}">
       {% endif %}
-      <!-- DEBUG END -->
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
