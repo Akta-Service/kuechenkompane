@@ -144,6 +144,28 @@
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
 
+    {% if template == 'collection' %}
+    <script>
+      console.log('=== PAGINATION DEBUG INFO ===');
+      console.log('Template:', '{{ template }}');
+      console.log('Current Page (page_info):', '{{ request.page_info.current_page }}');
+      console.log('Query String:', '{{ request.query_string }}');
+      console.log('Collection URL:', '{{ collection.url }}');
+      console.log('Canonical URL:', '{{ canonical_url }}');
+      console.log('Collection Handle:', '{{ collection.handle }}');
+      console.log('Noindex Metafield:', '{{ collection.metafields.custom.noindex }}');
+      
+      // Check if page parameter exists
+      const urlParams = new URLSearchParams(window.location.search);
+      const pageParam = urlParams.get('page');
+      console.log('Page Parameter from URL:', pageParam);
+      
+      // Show current URL
+      console.log('Current URL:', window.location.href);
+      console.log('========================');
+    </script>
+    {% endif %}
+
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
