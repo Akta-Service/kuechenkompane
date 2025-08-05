@@ -448,7 +448,27 @@
     {%- endif -%}
 
     <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
+
+
+
+    {% if template == 'collection' and paginate.current_page > 1 %}
+      <!-- Prevent subpages (page=2,3,…) from being indexed, but still crawl their internal links -->
+      <meta name="robots" content="noindex,follow">
+      <!-- Point all paginated variants back to the main collection URL -->
+      <link rel="canonical" href="{{ collection.url | escape }}">
+    {% endif %}
+
+
+    {% if collection.metafields.custom.noindex == true %}
+      <meta name="robots" content="noindex,follow">
+      <link rel="canonical" href="{{ collection.url | escape }}">
+    {% endif %}
+
+
+
+
     {{ content_for_header }}
+
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
