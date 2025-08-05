@@ -39,7 +39,7 @@
         ],
         "color_scheme": "dark",
         "top_title": "Angebot endet in",
-        "countdown_time": "Aug 4, 2025 15:37:25"
+        "countdown_time": "Aug 6, 2025 15:37:25"
       }
     },
     "announcement_bar_AidTMy": {
@@ -299,7 +299,11 @@
           }
         }
       },
-      "block_order": ["item_dGj4GU", "item_6Ycmkw", "item_PjeGnW"],
+      "block_order": [
+        "item_dGj4GU",
+        "item_6Ycmkw",
+        "item_PjeGnW"
+      ],
       "disabled": true,
       "custom_css": [
         ".m-announcement-bar__container {--container-width: 600px;}",
@@ -338,7 +342,9 @@
           }
         }
       },
-      "block_order": ["5e153016-a9d7-46c9-a10e-30d16446793d"],
+      "block_order": [
+        "5e153016-a9d7-46c9-a10e-30d16446793d"
+      ],
       "custom_css": [
         ".m-topbar a[href*=\"facebook\"] {order: 2;}",
         ".social-media-links {column-gap: 30px;}"
@@ -406,7 +412,10 @@
           }
         }
       },
-      "block_order": ["title_LchWnQ", "text_HehJ7h"],
+      "block_order": [
+        "title_LchWnQ",
+        "text_HehJ7h"
+      ],
       "disabled": true,
       "name": "Apex Text Banner",
       "settings": {
