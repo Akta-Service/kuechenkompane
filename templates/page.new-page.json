@@ -57,7 +57,9 @@
         "coupon_button_39iad7"
       ],
       "name": "Coupon Code Section",
-      "settings": {}
+      "settings": {
+        "color_scheme": "footer"
+      }
     },
     "apex_faqs_9M77yA": {
       "type": "apex-faqs",
