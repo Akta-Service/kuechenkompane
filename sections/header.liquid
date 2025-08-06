@@ -179,15 +179,12 @@
         endif
       %}
 
-      {% if custom_collection %}
-       
+      {% if custom_collection %}       
         <div class="{{ class | strip_newlines }} collection_mobile_log">
           {% if section.settings.collection_mobile_log != blank %}
             <img src="{{ section.settings.collection_mobile_log |  img_url: 'master' }}" alt="{{ shop.name }}">
           {% endif %}
-        </div>
-       
-
+        </div>     
       {% else %}
         <div class="{{ class | strip_newlines }}">
           {% if logo != blank %}
