@@ -154,53 +154,70 @@
 {% endif %}
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    (function() {
-      const sectionId = '{{ section.id }}';
-      const dayEl = document.getElementById('day-' + sectionId);
-      const hrsEl = document.getElementById('hrs-' + sectionId);
-      const minEl = document.getElementById('min-' + sectionId);
-      const secEl = document.getElementById('sec-' + sectionId);
+class CountdownTimer {
+  constructor({ startTime, initialHours, thresholdHours, sectionId }) {
+    this.startTime = new Date(startTime).getTime();
+    this.initialHours = initialHours;
+    this.thresholdHours = thresholdHours;
+    this.sectionId = sectionId;
 
-      // Start hour set dynamically by merchant, e.g. 48
-      const startHour = {{ section.settings.start_hour | default: 48 }};
-      
-      // Start datetime from settings, fallback if not set
-      const startDateTimeStr = '{{ section.settings.start_datetime | default: "2025-08-06T12:00:00Z" }}';
-      const epochStart = new Date(startDateTimeStr).getTime();
+    // Elements
+    this.dayEl = document.getElementById(`day-${sectionId}`);
+    this.hrsEl = document.getElementById(`hrs-${sectionId}`);
+    this.minEl = document.getElementById(`min-${sectionId}`);
+    this.secEl = document.getElementById(`sec-${sectionId}`);
 
-      // Full countdown length: startHour hours to 0
-      const cycleLengthMs = startHour * 60 * 60 * 1000;
-      const startCountdownMs = cycleLengthMs;
+    this.updateTimer = this.updateTimer.bind(this);
+    this.start();
+  }
 
-      function updateTimer() {
-        const now = new Date().getTime();
-        
-        // Calculate elapsed time, always positive and under cycleLengthMs
-        let elapsed = (now - epochStart);
-        elapsed = elapsed % cycleLengthMs;
-        if (elapsed < 0) elapsed += cycleLengthMs;
+  updateTimer() {
+    const now = Date.now();
+    let elapsedHours = (now - this.startTime) / (1000 * 60 * 60);
 
-        // Remaining time from startHour down to zero
-        let remaining = startCountdownMs - elapsed;
-        if (remaining < 0) remaining = 0;  // avoid negative time
+    // Restart if threshold reached
+    if (this.initialHours - elapsedHours <= this.thresholdHours) {
+      this.startTime = now;
+      elapsedHours = 0;
+    }
 
-        const days = Math.floor(remaining / (24 * 60 * 60 * 1000));
-        const hours = Math.floor((remaining % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
-        const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
-        const seconds = Math.floor((remaining % (60 * 1000)) / 1000);
+    const remainingMs = (this.initialHours - elapsedHours) * 60 * 60 * 1000;
 
-        dayEl.textContent = days.toString().padStart(2, '0');
-        hrsEl.textContent = hours.toString().padStart(2, '0');
-        minEl.textContent = minutes.toString().padStart(2, '0');
-        secEl.textContent = seconds.toString().padStart(2, '0');
-      }
+    if (remainingMs <= 0) {
+      this.displayTime(0, 0, 0, 0);
+      return;
+    }
 
-      updateTimer();
-      setInterval(updateTimer, 1000);
-    })();
+    const days = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingMs % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingMs % (1000 * 60)) / 1000);
+
+    this.displayTime(days, hours, minutes, seconds);
+  }
+
+  displayTime(days, hours, minutes, seconds) {
+    this.dayEl.textContent = String(days).padStart(2, "0");
+    this.hrsEl.textContent = String(hours).padStart(2, "0");
+    this.minEl.textContent = String(minutes).padStart(2, "0");
+    this.secEl.textContent = String(seconds).padStart(2, "0");
+  }
+
+  start() {
+    this.updateTimer();
+    this.timerInterval = setInterval(this.updateTimer, 1000);
+  }
+}
+
+// Shopify Section-specific initialization
+document.addEventListener("DOMContentLoaded", () => {
+  new CountdownTimer({
+    startTime: "{{ section.settings.start_time }}", // e.g. 2025-08-06T10:00:00
+    initialHours: parseInt("{{ section.settings.initial_hours | default: 48 }}", 10),
+    thresholdHours: parseInt("{{ section.settings.threshold_hours | default: 24 }}", 10),
+    sectionId: "{{ section.id }}"
   });
-
+});
 </script>
 
 
@@ -230,24 +247,24 @@
       "default": "Black Friday in July Ends:"
     },
     {
+      "type": "text",
+      "id": "start_time",
+      "label": "Start Time (YYYY-MM-DDTHH:MM:SS)",
+      "default": "2025-08-06T10:00:00"
+    },
+    {
       "type": "number",
-      "id": "start_hour",
-      "label": "Start Hour",
+      "id": "initial_hours",
+      "label": "Initial Countdown Hours",
       "default": 48
     },
     {
       "type": "number",
-      "id": "end_hour",
-      "label": "End Hour",
+      "id": "threshold_hours",
+      "label": "Restart Threshold Hours",
       "default": 24
-    },
-    {
-      "type": "text",
-      "id": "start_datetime",
-      "label": "Countdown Start Date and Time (ISO format)",
-      "default": "2025-08-06T12:00:00Z",
-      "info": "Enter the start date/time in ISO 8601 format, e.g. 2025-08-06T12:00:00Z (UTC time)."
     }
+
 
 
   ],
