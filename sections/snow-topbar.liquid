@@ -102,6 +102,8 @@
   }
 </style>
 
+
+
 {% assign show_countdown = false %}
 
 {% for coll in section.settings.target_collections %}
@@ -109,6 +111,8 @@
     {% assign show_countdown = true %}
   {% endif %}
 {% endfor %}
+
+
 
 {% if show_countdown %}
   <div class="snow-topbar m-color-{{ section.settings.color_scheme }}">
@@ -151,32 +155,36 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var countDownDate = new Date('{{ section.settings.countdown_time }}').getTime();
     var containerId = '{{ section.id }}';
-
     var dayEl = document.getElementById('day-' + containerId);
     var hrsEl = document.getElementById('hrs-' + containerId);
     var minEl = document.getElementById('min-' + containerId);
     var secEl = document.getElementById('sec-' + containerId);
 
+    // Get settings from schema
+    var cycleHours = {{ section.settings.restart_hours | default: 48 }};
+    var cycleTime = cycleHours * 60 * 60 * 1000; // convert hours → ms
+
+    // Start date/time from schema
+    var startTimeString = '{{ section.settings.start_time }}'.replace(' ', 'T');
+    var anchorDate = new Date(startTimeString + 'Z').getTime();
+
     var x = setInterval(function () {
       var now = new Date().getTime();
-      var distance = countDownDate - now;
 
-      if (distance < 0) {
-        clearInterval(x);
-        if (dayEl) dayEl.innerHTML = '00';
-        if (hrsEl) hrsEl.innerHTML = '00';
-        if (minEl) minEl.innerHTML = '00';
-        if (secEl) secEl.innerHTML = '00';
-        return;
-      }
+      // How much time has passed since anchor
+      var elapsed = now - anchorDate;
 
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // Time left in the current cycle
+      var remaining = cycleTime - (elapsed % cycleTime);
 
+      // Convert to D/H/M/S
+      var days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+      // Update DOM
       if (dayEl) dayEl.innerHTML = days < 10 ? '0' + days : days;
       if (hrsEl) hrsEl.innerHTML = hours < 10 ? '0' + hours : hours;
       if (minEl) minEl.innerHTML = minutes < 10 ? '0' + minutes : minutes;
@@ -184,6 +192,7 @@
     }, 1000);
   });
 </script>
+
 
 {% schema %}
 {
@@ -209,10 +218,18 @@
     },
     {
       "type": "text",
-      "id": "countdown_time",
-      "label": "Countdown Target (e.g. Jun 5, 2026 15:37:25)",
-      "default": "Jun 5, 2026 15:37:25"
+      "id": "start_time",
+      "label": "Countdown start date & time (YYYY-MM-DD HH:MM:SS)",
+      "default": "2025-08-01 00:00:00"
+    },
+    {
+      "type": "number",
+      "id": "restart_hours",
+      "label": "Restart countdown every (hours)",
+      "default": 48,
+      
     }
+
   ],
 
   "presets": [
