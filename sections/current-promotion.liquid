@@ -1,0 +1,369 @@
+<style>
+  .guarantee-banner {
+    /* background: #0E1B4D; */
+    /* margin-top: 140px; */
+  } 
+
+  .guarantee-content-row {
+    display: flex;  
+    /* justify-content: center; */
+    gap: 60px;
+    position: relative;
+  }
+
+  .guarantee-content-title {
+    margin: 0;
+    
+    /* font-family: "Merriweather Sans"; */
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 13px;
+  }
+  .guarantee-banner-container {
+    margin: auto;
+    /* max-width: 1500px;    */
+  }
+  .guarantee-content {     
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+
+  .guarantee-image {
+    flex: 0 0 auto;
+    max-width: 45%;
+  }
+
+  p.guarantee-content-description {
+    margin: 0;
+   
+    /* font-family: Questrial; */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 25px;
+  }
+  .guarantee-badge {
+    /* transform: translateY(-50%); */
+    position: absolute;
+    top: -65px;
+  }
+  .guarantee-image img {
+    display: block;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+  .guarantee-btn {
+    display: inline-block;
+    padding: 11px 24px;
+    text-decoration: none;
+
+    margin-bottom: 0px;
+
+    width: 100%;
+    max-width: 413px;
+    border-radius: 10px;
+    background: #F58720;
+    text-align: center;
+    
+    /* font-family: "Merriweather Sans"; */
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .guarantee-btn span{
+    position: relative;
+    z-index: 3;
+  }
+
+  /* .guarantee-btn::after{
+    position: absolute;
+    content: '';
+    background: #1C1C1C;
+    width: 0;
+    left: -10%;
+    transition: 0.5s;
+    display: block;
+    z-index: 2;
+    border: 1px solid transparent;
+    box-shadow: none;
+    border-radius: 4px;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+  } */
+
+  /* .guarantee-btn:hover::after{
+    width: 120%;
+
+  } */
+
+
+
+
+
+
+.guarantee-btn-wrapper {
+    width: fit-content;
+   
+}
+
+
+.guarantee-content-row > * {
+    flex: 1;
+}
+
+.guarantee-rating span {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.guarantee-rating {   
+    text-align: center;
+    /* font-family: Questrial; */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin-top: 20px;
+    gap: 10px;
+}
+.guarantee-content {    
+  padding: 30px 100px 30px 0;
+}
+
+
+@media (max-width: 1440px) {
+    .guarantee-content-row {
+      gap: 40px;
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .guarantee-content {    
+    padding: 30px 30px 30px 0;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .guarantee-content-row{
+    flex-direction: column-reverse;
+  }
+  .guarantee-rating {   
+    justify-content: center;
+  }
+  .guarantee-badge {
+    transform: translateX(-50%);
+    position: absolute;
+    top: -65px;
+    left: 50%;
+  }
+  .guarantee-content {
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .guarantee-btn-wrapper {
+    width: 100%;
+  }
+  .guarantee-image {
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    max-width: 100%;
+  }
+  .guarantee-content-row {
+   gap: 0;
+  }
+
+}
+@media (max-width: 768px){
+  h2.guarantee-content-title {
+    font-size: 22px;
+  }
+  p.guarantee-content-description {
+    font-size: 12px;
+  }
+  a.guarantee-btn {
+    font-size: 16px;
+  }
+  .guarantee-banner {    
+    /* margin-top: 100px; */
+  } 
+}
+</style>
+<section class="guarantee-banner m-color-{{ section.settings.color_scheme }}" id="satisfaction-guarantee">
+  <div class="guarantee-banner-container">
+    <div class="guarantee-content-row">
+      {% if section.settings.main_image != blank %}
+        <div class="guarantee-image">
+          <img src="{{ section.settings.main_image |  img_url: 'master' }}" loading="lazy" width="" height="" alt="Woman with posture corrector">
+        </div>
+      {% endif %}
+      <div class="guarantee-content">
+
+        {% if section.settings.badge_image != blank %}
+          <img src="{{ section.settings.badge_image |  img_url: 'master' }}" loading="lazy" alt="100% Guarantee Badge" class="guarantee-badge" width="" height="" />
+        {% endif %}
+
+
+      {% for block in section.blocks %}
+        {%- case block.type -%}
+          {%- when 'title' -%}
+            <h2 class="guarantee-content-title">{{ block.settings.title }}</h2>
+          {% when 'description' %}
+            <p class="guarantee-content-description">{{ block.settings.description }}</p>
+          {% when 'button' %}
+            <div class="guarantee-btn-wrapper">
+              <a href="{% if block.settings.btn_url != blank %}{{ block.settings.btn_url }}{% else %}#main-product{% endif %} " class="m-button m-button--primary"><span>{{ block.settings.btn_text }}</span></a>
+        
+              <div class="guarantee-rating">
+                <span class="rating-stars">
+                  {% assign rating_value = block.settings.ratings | times: 1 %}
+                  {% for i in (1..5) %}
+                    {% assign i_minus_1 = i | minus: 1 %}
+                    {% if rating_value >= i %}
+                    
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <g clip-path="url(#clip0_19_1430)">
+                          <path d="M13.9635 5.37023C13.8719 5.08675 13.6204 4.8854 13.3229 4.85859L9.28216 4.49168L7.68432 0.751797C7.56651 0.477711 7.29819 0.300293 7.00007 0.300293C6.70195 0.300293 6.43364 0.477711 6.31582 0.752438L4.71798 4.49168L0.67656 4.85859C0.379616 4.88604 0.128816 5.08675 0.0366355 5.37023C-0.0555452 5.65372 0.0295858 5.96465 0.254216 6.16066L3.30857 8.83935L2.40791 12.8067C2.34201 13.0985 2.45523 13.4 2.69727 13.575C2.82737 13.669 2.97958 13.7168 3.13307 13.7168C3.26542 13.7168 3.39669 13.6811 3.51451 13.6106L7.00007 11.5274L10.4844 13.6106C10.7393 13.764 11.0607 13.75 11.3022 13.575C11.5444 13.3995 11.6575 13.0978 11.5916 12.8067L10.6909 8.83935L13.7453 6.16119C13.9699 5.96465 14.0557 5.65425 13.9635 5.37023Z" fill="#FFC107"/>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_19_1430">
+                            <rect width="14" height="14" fill="white"/>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    {% elsif rating_value > i_minus_1 %}
+                    
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <g clip-path="url(#clip0_19_1438)">
+                          <path d="M13.8775 5.75758L10.7508 8.96008L11.4858 13.4926C11.5506 13.8542 11.158 14.1191 10.8442 13.9476L7 11.8184V0.0175781C7.16333 0.0175781 7.32667 0.0934115 7.39667 0.250911L9.3275 4.36341L13.6267 5.01675C13.986 5.08091 14.1184 5.50383 13.8775 5.75758Z" fill="#D3D3D3"/>
+                          <path d="M7 0.0175781V11.8184L3.15583 13.9476C2.84725 14.1208 2.44883 13.8583 2.51416 13.4926L3.24916 8.96008L0.122497 5.75758C-0.11842 5.50383 0.0134135 5.08091 0.37333 5.01675L4.6725 4.36341L6.60333 0.250911C6.67333 0.0934115 6.83666 0.0175781 7 0.0175781Z" fill="#FFC107"/>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_19_1438">
+                            <rect width="14" height="14" fill="white"/>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    
+                    {% endif %}
+                  {% endfor %}
+                </span>
+                <span>{{ block.settings.ratings_text }}</span>
+              </div>
+            </div>
+
+
+
+         
+            
+          {%- endcase -%}
+      {% endfor %}
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Current Promotion",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image",
+      "label": "Guarantee Badge Image"
+    }  
+    
+  ],
+  "blocks": [
+    {
+      "name": "Title",
+      "type": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "100% Satisfaction Guarantee"
+        }
+      ]
+    },
+    {
+      "name": "Description",
+      "type": "description",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Your satisfaction is our priority. If you’re not completely happy with your purchase, simply reach out. We’ll make it right. No hassle, no worries."
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "default": "Get Yours Now"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button Link"        
+        },
+        {
+          "type": "range",
+          "id": "ratings",
+          "label": "Rating",
+          "min": 0,
+          "max": 5,
+          "step": 0.5,
+          "default": 4.5
+        },
+        {
+          "type": "inline_richtext",
+          "id": "ratings_text",
+          "label": "Rating Text",
+          "default": "Rated 4.3 by 792+ Happy Customers"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Current Promotion"
+    }
+  ]
+}
+{% endschema %}

@@ -131,6 +131,16 @@
         "name": "multi_line_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "noindex",
+      "namespace": "custom",
+      "name": "Noindex",
+      "description": "",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
     }
   ],
   "company": [],
