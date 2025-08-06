@@ -158,75 +158,75 @@
       </div>
     </div>
   </div>
-{% endif %}
 
-<script>
-  class MrkCountdownTimer {
-    constructor({ startTime, initialHours, thresholdHours, sectionId }) {
-      this.startTime = new Date(startTime).getTime();
-      this.initialHours = initialHours;
-      this.thresholdHours = thresholdHours;
-      this.sectionId = sectionId;
 
-      // Elements
-      this.dayEl = document.getElementById(`day-${sectionId}`);
-      this.hrsEl = document.getElementById(`hrs-${sectionId}`);
-      this.minEl = document.getElementById(`min-${sectionId}`);
-      this.secEl = document.getElementById(`sec-${sectionId}`);
+  <script>
+    class MrkCountdownTimer {
+      constructor({ startTime, initialHours, thresholdHours, sectionId }) {
+        this.startTime = new Date(startTime).getTime();
+        this.initialHours = initialHours;
+        this.thresholdHours = thresholdHours;
+        this.sectionId = sectionId;
 
-      this.updateTimer = this.updateTimer.bind(this);
-      this.start();
-    }
+        // Elements
+        this.dayEl = document.getElementById(`day-${sectionId}`);
+        this.hrsEl = document.getElementById(`hrs-${sectionId}`);
+        this.minEl = document.getElementById(`min-${sectionId}`);
+        this.secEl = document.getElementById(`sec-${sectionId}`);
 
-    updateTimer() {
-      const now = Date.now();
-      let elapsedHours = (now - this.startTime) / (1000 * 60 * 60);
-
-      // Restart if threshold reached
-      if (this.initialHours - elapsedHours <= this.thresholdHours) {
-        this.startTime = now;
-        elapsedHours = 0;
+        this.updateTimer = this.updateTimer.bind(this);
+        this.start();
       }
 
-      const remainingMs = (this.initialHours - elapsedHours) * 60 * 60 * 1000;
+      updateTimer() {
+        const now = Date.now();
+        let elapsedHours = (now - this.startTime) / (1000 * 60 * 60);
 
-      if (remainingMs <= 0) {
-        this.displayTime(0, 0, 0, 0);
-        return;
+        // Restart if threshold reached
+        if (this.initialHours - elapsedHours <= this.thresholdHours) {
+          this.startTime = now;
+          elapsedHours = 0;
+        }
+
+        const remainingMs = (this.initialHours - elapsedHours) * 60 * 60 * 1000;
+
+        if (remainingMs <= 0) {
+          this.displayTime(0, 0, 0, 0);
+          return;
+        }
+
+        const days = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((remainingMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((remainingMs % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((remainingMs % (1000 * 60)) / 1000);
+
+        this.displayTime(days, hours, minutes, seconds);
       }
 
-      const days = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((remainingMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((remainingMs % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((remainingMs % (1000 * 60)) / 1000);
+      displayTime(days, hours, minutes, seconds) {
+        this.dayEl.textContent = String(days).padStart(2, '0');
+        this.hrsEl.textContent = String(hours).padStart(2, '0');
+        this.minEl.textContent = String(minutes).padStart(2, '0');
+        this.secEl.textContent = String(seconds).padStart(2, '0');
+      }
 
-      this.displayTime(days, hours, minutes, seconds);
+      start() {
+        this.updateTimer();
+        this.timerInterval = setInterval(this.updateTimer, 1000);
+      }
     }
 
-    displayTime(days, hours, minutes, seconds) {
-      this.dayEl.textContent = String(days).padStart(2, '0');
-      this.hrsEl.textContent = String(hours).padStart(2, '0');
-      this.minEl.textContent = String(minutes).padStart(2, '0');
-      this.secEl.textContent = String(seconds).padStart(2, '0');
-    }
-
-    start() {
-      this.updateTimer();
-      this.timerInterval = setInterval(this.updateTimer, 1000);
-    }
-  }
-
-  // Shopify Section-specific initialization
-  document.addEventListener('DOMContentLoaded', () => {
-    new MrkCountdownTimer({
-      startTime: '{{ section.settings.start_time }}', // e.g. 2025-08-06T10:00:00
-      initialHours: parseInt('{{ section.settings.initial_hours | default: 48 }}', 10),
-      thresholdHours: parseInt('{{ section.settings.threshold_hours | default: 24 }}', 10),
-      sectionId: '{{ section.id }}',
+    // Shopify Section-specific initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      new MrkCountdownTimer({
+        startTime: '{{ section.settings.start_time }}', // e.g. 2025-08-06T10:00:00
+        initialHours: parseInt('{{ section.settings.initial_hours | default: 48 }}', 10),
+        thresholdHours: parseInt('{{ section.settings.threshold_hours | default: 24 }}', 10),
+        sectionId: '{{ section.id }}',
+      });
     });
-  });
-</script>
-
+  </script>
+{% endif %}
 {% schema %}
 {
   "name": "Countdown Timer",
