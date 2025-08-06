@@ -162,25 +162,28 @@
       const minEl = document.getElementById('min-' + sectionId);
       const secEl = document.getElementById('sec-' + sectionId);
 
+      // Start hour set dynamically by merchant, e.g. 48
       const startHour = {{ section.settings.start_hour | default: 48 }};
-      const endHour = {{ section.settings.end_hour | default: 24 }};
-
-      // Get start datetime string from settings; fallback to fixed date
+      
+      // Start datetime from settings, fallback if not set
       const startDateTimeStr = '{{ section.settings.start_datetime | default: "2025-08-06T12:00:00Z" }}';
       const epochStart = new Date(startDateTimeStr).getTime();
 
-      const cycleLengthMs = (startHour - endHour) * 60 * 60 * 1000;
-      const startCountdownMs = startHour * 60 * 60 * 1000;
-      const endCountdownMs = endHour * 60 * 60 * 1000;
+      // Full countdown length: startHour hours to 0
+      const cycleLengthMs = startHour * 60 * 60 * 1000;
+      const startCountdownMs = cycleLengthMs;
 
       function updateTimer() {
         const now = new Date().getTime();
-        let elapsed = (now - epochStart) % cycleLengthMs;
-        let remaining = startCountdownMs - elapsed;
+        
+        // Calculate elapsed time, always positive and under cycleLengthMs
+        let elapsed = (now - epochStart);
+        elapsed = elapsed % cycleLengthMs;
+        if (elapsed < 0) elapsed += cycleLengthMs;
 
-        if (remaining < endCountdownMs) {
-          remaining = startCountdownMs;
-        }
+        // Remaining time from startHour down to zero
+        let remaining = startCountdownMs - elapsed;
+        if (remaining < 0) remaining = 0;  // avoid negative time
 
         const days = Math.floor(remaining / (24 * 60 * 60 * 1000));
         const hours = Math.floor((remaining % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
@@ -197,6 +200,7 @@
       setInterval(updateTimer, 1000);
     })();
   });
+
 </script>
 
 
