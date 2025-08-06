@@ -180,11 +180,13 @@
       %}
 
       {% if custom_collection %}
+        <a href="{{ routes.root_url }}"  title="{{ shop.name }}">
         <div class="{{ class | strip_newlines }} collection_mobile_log">
           {% if section.settings.collection_mobile_log != blank %}
             <img src="{{ section.settings.collection_mobile_log |  img_url: 'master' }}" alt="{{ shop.name }}">
           {% endif %}
         </div>
+        </a>
 
       {% else %}
         <div class="{{ class | strip_newlines }}">
