@@ -102,8 +102,6 @@
   }
 </style>
 
-
-
 {% assign show_countdown = false %}
 
 {% for coll in section.settings.target_collections %}
@@ -163,75 +161,40 @@
 {% endif %}
 
 <script>
-class CountdownTimer {
-  constructor({ startTime, initialHours, thresholdHours, sectionId }) {
-    this.startTime = new Date(startTime).getTime();
-    this.initialHours = initialHours;
-    this.thresholdHours = thresholdHours;
-    this.sectionId = sectionId;
+  document.addEventListener('DOMContentLoaded', function () {
+    var countDownDate = new Date('{{ section.settings.countdown_time }}').getTime();
+    var containerId = '{{ section.id }}';
 
-    // Elements
-    this.dayEl = document.getElementById(`day-${sectionId}`);
-    this.hrsEl = document.getElementById(`hrs-${sectionId}`);
-    this.minEl = document.getElementById(`min-${sectionId}`);
-    this.secEl = document.getElementById(`sec-${sectionId}`);
+    var dayEl = document.getElementById('day-' + containerId);
+    var hrsEl = document.getElementById('hrs-' + containerId);
+    var minEl = document.getElementById('min-' + containerId);
+    var secEl = document.getElementById('sec-' + containerId);
 
-    this.updateTimer = this.updateTimer.bind(this);
-    this.start();
-  }
+    var x = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
 
-  updateTimer() {
-    const now = Date.now();
-    let elapsedHours = (now - this.startTime) / (1000 * 60 * 60);
+      if (distance < 0) {
+        clearInterval(x);
+        if (dayEl) dayEl.innerHTML = '00';
+        if (hrsEl) hrsEl.innerHTML = '00';
+        if (minEl) minEl.innerHTML = '00';
+        if (secEl) secEl.innerHTML = '00';
+        return;
+      }
 
-    // Restart if threshold reached
-    if (this.initialHours - elapsedHours <= this.thresholdHours) {
-      this.startTime = now;
-      elapsedHours = 0;
-    }
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    const remainingMs = (this.initialHours - elapsedHours) * 60 * 60 * 1000;
-
-    if (remainingMs <= 0) {
-      this.displayTime(0, 0, 0, 0);
-      return;
-    }
-
-    const days = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((remainingMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((remainingMs % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((remainingMs % (1000 * 60)) / 1000);
-
-    this.displayTime(days, hours, minutes, seconds);
-  }
-
-  displayTime(days, hours, minutes, seconds) {
-    this.dayEl.textContent = String(days).padStart(2, "0");
-    this.hrsEl.textContent = String(hours).padStart(2, "0");
-    this.minEl.textContent = String(minutes).padStart(2, "0");
-    this.secEl.textContent = String(seconds).padStart(2, "0");
-  }
-
-  start() {
-    this.updateTimer();
-    this.timerInterval = setInterval(this.updateTimer, 1000);
-  }
-}
-
-// Shopify Section-specific initialization
-document.addEventListener("DOMContentLoaded", () => {
-  new CountdownTimer({
-    startTime: "{{ section.settings.start_time }}", // e.g. 2025-08-06T10:00:00
-    initialHours: parseInt("{{ section.settings.initial_hours | default: 48 }}", 10),
-    thresholdHours: parseInt("{{ section.settings.threshold_hours | default: 24 }}", 10),
-    sectionId: "{{ section.id }}"
+      if (dayEl) dayEl.innerHTML = days < 10 ? '0' + days : days;
+      if (hrsEl) hrsEl.innerHTML = hours < 10 ? '0' + hours : hours;
+      if (minEl) minEl.innerHTML = minutes < 10 ? '0' + minutes : minutes;
+      if (secEl) secEl.innerHTML = seconds < 10 ? '0' + seconds : seconds;
+    }, 1000);
   });
-});
 </script>
-
-
-
-
 
 {% schema %}
 {
@@ -263,25 +226,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       "type": "text",
-      "id": "start_time",
-      "label": "Start Time (YYYY-MM-DDTHH:MM:SS)",
-      "default": "2025-08-06T10:00:00"
-    },
-    {
-      "type": "number",
-      "id": "initial_hours",
-      "label": "Initial Countdown Hours",
-      "default": 48
-    },
-    {
-      "type": "number",
-      "id": "threshold_hours",
-      "label": "Restart Threshold Hours",
-      "default": 24
+      "id": "countdown_time",
+      "label": "Countdown Target (e.g. Jun 5, 2026 15:37:25)",
+      "default": "Jun 5, 2026 15:37:25"
     }
-
-
-
   ],
 
   "presets": [

@@ -317,10 +317,12 @@
                 {% if custom_collection %}
                   <div class="{{ class | strip_newlines }} ">
                     {% if section.settings.collection_mobile_log != blank %}
-                      <img class="collection-logo-desktop"
-                        src="{{ section.settings.collection_desktop_log |  img_url: 'master' }}"
-                        alt="{{ shop.name }}" width="110px"
-                      >
+                      <a href="/">
+                        <img class="collection-logo-desktop"
+                          src="{{ section.settings.collection_desktop_log |  img_url: 'master' }}"
+                          alt="{{ shop.name }}" width="110px" height=""
+                        >
+                      </a>
                     {% endif %}
                   </div>
 
