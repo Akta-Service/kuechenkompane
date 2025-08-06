@@ -154,28 +154,29 @@
 {% endif %}
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-   (function() {
-      const sectionId = '{{ section.id }}';  // your dynamic section id
+  document.addEventListener('DOMContentLoaded', function() {
+    (function() {
+      const sectionId = '{{ section.id }}';
       const dayEl = document.getElementById('day-' + sectionId);
       const hrsEl = document.getElementById('hrs-' + sectionId);
       const minEl = document.getElementById('min-' + sectionId);
       const secEl = document.getElementById('sec-' + sectionId);
 
-      const cycleLengthMs = 24 * 60 * 60 * 1000;  // 24 hours
-      const startCountdownMs = 48 * 60 * 60 * 1000; // starting from 48 hours
-      const endCountdownMs = 24 * 60 * 60 * 1000;   // ending at 24 hours
+      // Get dynamic values from section settings
+      const startHour = {{ section.settings.start_hour | default: 48 }};
+      const endHour = {{ section.settings.end_hour | default: 24 }};
+
+      const cycleLengthMs = (startHour - endHour) * 60 * 60 * 1000;
+      const startCountdownMs = startHour * 60 * 60 * 1000;
+      const endCountdownMs = endHour * 60 * 60 * 1000;
 
       const epochStart = new Date('2020-01-01T00:00:00Z').getTime();
 
       function updateTimer() {
         const now = new Date().getTime();
         let elapsed = (now - epochStart) % cycleLengthMs;
-
-        // Map elapsed time (0 to 24h) into countdown from 48h down to 24h
         let remaining = startCountdownMs - elapsed;
 
-        // Ensure countdown does not go below 24 hours
         if (remaining < endCountdownMs) {
           remaining = startCountdownMs;
         }
@@ -194,9 +195,9 @@
       updateTimer();
       setInterval(updateTimer, 1000);
     })();
-
   });
 </script>
+
 
 
 
@@ -223,24 +224,16 @@
       "default": "Black Friday in July Ends:"
     },
     {
-      "type": "text",
-      "id": "start_time",
-      "label": "Countdown start date & time (YYYY-MM-DD HH:MM:SS)",
-      "default": "2025-08-01 00:00:00"
+      "type": "number",
+      "id": "start_hour",
+      "label": "Start Hour",
+      "default": 48
     },
     {
       "type": "number",
-      "id": "restart_hours",
-      "label": "countdown every (hours)",
-      "default": 48,
-      
-    },
-    {
-      "type": "number",
-      "id": "resetTimeHours",
-      "label": "Reset countdown every (hours)",
-      "default": 24,
-      
+      "id": "end_hour",
+      "label": "End Hour",
+      "default": 24
     }
 
   ],
