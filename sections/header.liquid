@@ -88,6 +88,15 @@
 {% endfor %}
 
 
+{% assign included_pages = section.settings.target_pages | strip | split: ',' %}
+{% for pg_handle in included_pages %}
+  {% assign pg_handle_trimmed = pg_handle | strip %}
+  {% if page and page.handle == pg_handle_trimmed %}
+    {% assign custom_collection = true %}
+  {% endif %}
+{% endfor %}
+
+
 
 
 
@@ -635,6 +644,12 @@
       "type": "collection_list",
       "id": "custom_collection_list",
       "label": "Apply color scheme to this collection"
+    },
+    {
+      "type": "textarea",
+      "id": "target_pages",
+      "label": "Page handles to  Show (e.g: about-us,contact)",
+     
     },
     {
       "type": "color_scheme",
