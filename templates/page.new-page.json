@@ -98,6 +98,14 @@
         "main_image": "shopify://shop_images/IMG_6143_e8c44b3d-deb9-4b95-9841-4e8cf7838f12.jpg"
       }
     },
+    "custom_liquid_zdTVmB": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"klaviyo-form-WR3f9r\"></div>",
+        "custom_class": ""
+      }
+    },
     "apex_faqs_9M77yA": {
       "type": "apex-faqs",
       "blocks": {
@@ -158,6 +166,7 @@
     "main",
     "coupon_code_section_P7dfJg",
     "current_promotion_CLUBzr",
+    "custom_liquid_zdTVmB",
     "apex_faqs_9M77yA"
   ]
 }
