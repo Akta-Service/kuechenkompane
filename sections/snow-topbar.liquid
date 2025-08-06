@@ -155,47 +155,46 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var containerId = '{{ section.id }}';
-    var dayEl = document.getElementById('day-' + containerId);
-    var hrsEl = document.getElementById('hrs-' + containerId);
-    var minEl = document.getElementById('min-' + containerId);
-    var secEl = document.getElementById('sec-' + containerId);
+   (function() {
+      const sectionId = '{{ section.id }}';  // your dynamic section id
+      const dayEl = document.getElementById('day-' + sectionId);
+      const hrsEl = document.getElementById('hrs-' + sectionId);
+      const minEl = document.getElementById('min-' + sectionId);
+      const secEl = document.getElementById('sec-' + sectionId);
 
-    // Settings from schema
-    var cycleHours = {{ section.settings.restart_hours | default: 48 }}; // usually 48
-    var cycleTime = cycleHours * 60 * 60 * 1000; // ms
-    var resetPointHours = {{ section.settings.resetTimeHours | default: 24 }}; // when it hits this, restart
-    var resetPointTime = resetPointHours * 60 * 60 * 1000; // ms
+      const cycleLengthMs = 24 * 60 * 60 * 1000;  // 24 hours
+      const startCountdownMs = 48 * 60 * 60 * 1000; // starting from 48 hours
+      const endCountdownMs = 24 * 60 * 60 * 1000;   // ending at 24 hours
 
-    // Global start time from schema
-    var startTimeString = '{{ section.settings.start_time }}'.replace(' ', 'T');
-    var anchorDate = new Date(startTimeString + 'Z').getTime();
+      const epochStart = new Date('2020-01-01T00:00:00Z').getTime();
 
-    var x = setInterval(function () {
-      var now = new Date().getTime();
-      var elapsed = now - anchorDate;
+      function updateTimer() {
+        const now = new Date().getTime();
+        let elapsed = (now - epochStart) % cycleLengthMs;
 
-      // Remaining time in current cycle
-      var remaining = cycleTime - (elapsed % cycleTime);
+        // Map elapsed time (0 to 24h) into countdown from 48h down to 24h
+        let remaining = startCountdownMs - elapsed;
 
-      // If reached the reset point (24 hours), restart from full 48
-      if (remaining <= resetPointTime) {
-        // Shift anchor so everyone restarts together at 48h
-        var cyclesPassed = Math.floor(elapsed / cycleTime);
-        anchorDate = anchorDate + (cyclesPassed + 1) * cycleTime;
-        remaining = cycleTime;
+        // Ensure countdown does not go below 24 hours
+        if (remaining < endCountdownMs) {
+          remaining = startCountdownMs;
+        }
+
+        const days = Math.floor(remaining / (24 * 60 * 60 * 1000));
+        const hours = Math.floor((remaining % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+        const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
+        const seconds = Math.floor((remaining % (60 * 1000)) / 1000);
+
+        dayEl.textContent = days.toString().padStart(2, '0');
+        hrsEl.textContent = hours.toString().padStart(2, '0');
+        minEl.textContent = minutes.toString().padStart(2, '0');
+        secEl.textContent = seconds.toString().padStart(2, '0');
       }
 
-      var days = Math.floor(remaining / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    })();
 
-      if (dayEl) dayEl.innerHTML = days < 10 ? '0' + days : days;
-      if (hrsEl) hrsEl.innerHTML = hours < 10 ? '0' + hours : hours;
-      if (minEl) minEl.innerHTML = minutes < 10 ? '0' + minutes : minutes;
-      if (secEl) secEl.innerHTML = seconds < 10 ? '0' + seconds : seconds;
-    }, 1000);
   });
 </script>
 
