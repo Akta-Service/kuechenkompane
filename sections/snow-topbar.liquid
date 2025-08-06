@@ -162,15 +162,16 @@
       const minEl = document.getElementById('min-' + sectionId);
       const secEl = document.getElementById('sec-' + sectionId);
 
-      // Get dynamic values from section settings
       const startHour = {{ section.settings.start_hour | default: 48 }};
       const endHour = {{ section.settings.end_hour | default: 24 }};
+
+      // Get start datetime string from settings; fallback to fixed date
+      const startDateTimeStr = '{{ section.settings.start_datetime | default: "2025-08-06T12:00:00Z" }}';
+      const epochStart = new Date(startDateTimeStr).getTime();
 
       const cycleLengthMs = (startHour - endHour) * 60 * 60 * 1000;
       const startCountdownMs = startHour * 60 * 60 * 1000;
       const endCountdownMs = endHour * 60 * 60 * 1000;
-
-      const epochStart = new Date('2020-01-01T00:00:00Z').getTime();
 
       function updateTimer() {
         const now = new Date().getTime();
@@ -197,6 +198,7 @@
     })();
   });
 </script>
+
 
 
 
@@ -234,7 +236,15 @@
       "id": "end_hour",
       "label": "End Hour",
       "default": 24
+    },
+    {
+      "type": "text",
+      "id": "start_datetime",
+      "label": "Countdown Start Date and Time (ISO format)",
+      "default": "2025-08-06T12:00:00Z",
+      "info": "Enter the start date/time in ISO 8601 format, e.g. 2025-08-06T12:00:00Z (UTC time)."
     }
+
 
   ],
 
