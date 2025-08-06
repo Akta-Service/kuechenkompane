@@ -39,9 +39,9 @@
         ],
         "color_scheme": "dark",
         "top_title": "Angebot endet in",
-        "start_hour": 48,
-        "end_hour": 24,
-        "start_datetime": "2025-08-05T12:00:00Z"
+        "start_time": "2025-08-06T14:33:00",
+        "initial_hours": 48,
+        "threshold_hours": 24
       }
     },
     "announcement_bar_AidTMy": {
