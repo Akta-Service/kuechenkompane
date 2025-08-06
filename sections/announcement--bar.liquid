@@ -45,6 +45,19 @@
   {% endif %}
 {% endfor %}
 
+{% assign included_pages = section.settings.target_pages | strip | split: ',' %}
+{% for pg_handle in included_pages %}
+  {% assign pg_handle_trimmed = pg_handle | strip %}
+  {% if page and page.handle == pg_handle_trimmed %}
+    {% assign show_announment = true %}
+  {% endif %}
+{% endfor %}
+
+
+
+
+
+
 {% if show_announment %}
   <div class="snow-announcement-bar m-color-{{ section.settings.color_scheme }}">
     <a href="{{ section.settings.announcement_url }}">
@@ -63,6 +76,12 @@
       "type": "collection_list",
       "id": "target_collections",
       "label": "Show on these collections"
+    },
+    {
+      "type": "textarea",
+      "id": "target_pages",
+      "label": "Page handles to  Show (comma separated)",
+      "default": "about-us,contact"
     },
     {
       "type": "color_scheme",
