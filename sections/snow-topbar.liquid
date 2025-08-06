@@ -161,30 +161,36 @@
     var minEl = document.getElementById('min-' + containerId);
     var secEl = document.getElementById('sec-' + containerId);
 
-    // Get settings from schema
-    var cycleHours = {{ section.settings.restart_hours | default: 48 }};
-    var cycleTime = cycleHours * 60 * 60 * 1000; // convert hours → ms
+    // Settings from schema
+    var cycleHours = {{ section.settings.restart_hours | default: 48 }}; // usually 48
+    var cycleTime = cycleHours * 60 * 60 * 1000; // ms
+    var resetPointHours = {{ section.settings.resetTimeHours | default: 24 }}; // when it hits this, restart
+    var resetPointTime = resetPointHours * 60 * 60 * 1000; // ms
 
-    // Start date/time from schema
+    // Global start time from schema
     var startTimeString = '{{ section.settings.start_time }}'.replace(' ', 'T');
     var anchorDate = new Date(startTimeString + 'Z').getTime();
 
     var x = setInterval(function () {
       var now = new Date().getTime();
-
-      // How much time has passed since anchor
       var elapsed = now - anchorDate;
 
-      // Time left in the current cycle
+      // Remaining time in current cycle
       var remaining = cycleTime - (elapsed % cycleTime);
 
-      // Convert to D/H/M/S
+      // If reached the reset point (24 hours), restart from full 48
+      if (remaining <= resetPointTime) {
+        // Shift anchor so everyone restarts together at 48h
+        var cyclesPassed = Math.floor(elapsed / cycleTime);
+        anchorDate = anchorDate + (cyclesPassed + 1) * cycleTime;
+        remaining = cycleTime;
+      }
+
       var days = Math.floor(remaining / (1000 * 60 * 60 * 24));
       var hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((remaining % (1000 * 60)) / 1000);
 
-      // Update DOM
       if (dayEl) dayEl.innerHTML = days < 10 ? '0' + days : days;
       if (hrsEl) hrsEl.innerHTML = hours < 10 ? '0' + hours : hours;
       if (minEl) minEl.innerHTML = minutes < 10 ? '0' + minutes : minutes;
@@ -192,6 +198,7 @@
     }, 1000);
   });
 </script>
+
 
 
 {% schema %}
@@ -225,8 +232,15 @@
     {
       "type": "number",
       "id": "restart_hours",
-      "label": "Restart countdown every (hours)",
+      "label": "countdown every (hours)",
       "default": 48,
+      
+    },
+    {
+      "type": "number",
+      "id": "resetTimeHours",
+      "label": "Reset countdown every (hours)",
+      "default": 24,
       
     }
 
