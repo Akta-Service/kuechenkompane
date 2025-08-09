@@ -13,17 +13,17 @@
       "type": "Apex-timer",
       "name": "Apex Product Timer",
       "settings": {
-        "bg_color": "#1c1d1d",
+        "bg_color": "#c6d1c4",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#fff",
+        "timer_clock": "#000000",
         "timer_clock_text_font_size": 12,
-        "clock_font_weight": "400",
+        "clock_font_weight": "700",
         "timer_text": "Aktion endet in Kürze",
         "timer_font_size": 12,
-        "timer_color": "#dcad27",
+        "timer_color": "#000000",
         "timer_font_weight": "400",
-        "target_date": "2026-08-11",
+        "target_date": "2025-08-11",
         "target_time": "23:59:59"
       }
     },
