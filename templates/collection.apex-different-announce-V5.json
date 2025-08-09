@@ -9,6 +9,56 @@
  */
 {
   "sections": {
+    "apex_timer_8KXfky": {
+      "type": "Apex-timer",
+      "name": "Apex Product Timer",
+      "settings": {
+        "bg_color": "#1c1d1d",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#fff",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "400",
+        "timer_text": "Aktion endet in Kürze",
+        "timer_font_size": 12,
+        "timer_color": "#dcad27",
+        "timer_font_weight": "400",
+        "target_date": "2026-08-11",
+        "target_time": "23:59:59"
+      }
+    },
+    "rich_text_MPfPJc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HLFfDJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "🚨 Restposten-Alarm 🚨",
+            "heading_size": "h2"
+          }
+        },
+        "text_nAHzLU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ab Montag kommt unser neues Karton-Design – deshalb müssen jetzt alle Produkte im bisherigen Design raus. Nur dieses Wochenende mit Mega-Rabatten!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HLFfDJ",
+        "text_nAHzLU"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -287,6 +337,8 @@
     }
   },
   "order": [
+    "apex_timer_8KXfky",
+    "rich_text_MPfPJc",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
