@@ -27,9 +27,7 @@
           }
         }
       },
-      "block_order": [
-        "title_PyKV3e"
-      ],
+      "block_order": ["title_PyKV3e"],
       "name": "Title Block",
       "settings": {
         "h2": 20,
@@ -88,7 +86,7 @@
       }
     },
     "main": {
-      "type": "main-collection-product-grid",
+      "type": "akta-new-collection-product-grid",
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
         ".m-collection-filters-form {margin-bottom: 0;}"
@@ -152,11 +150,7 @@
           }
         }
       },
-      "block_order": [
-        "item_aVKf6y",
-        "item_9zb4Pn",
-        "item_4VaJ6g"
-      ],
+      "block_order": ["item_aVKf6y", "item_9zb4Pn", "item_4VaJ6g"],
       "settings": {
         "color_scheme": "",
         "verticle_padding": 50,
@@ -177,9 +171,7 @@
           }
         }
       },
-      "block_order": [
-        "promotion_NBbJbf"
-      ],
+      "block_order": ["promotion_NBbJbf"],
       "name": "Promotion banner",
       "settings": {
         "container": "container-fluid",
