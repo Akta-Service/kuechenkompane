@@ -58,6 +58,17 @@
     },
     "product_feature_Cw9WYk": {
       "type": "product-feature",
+      "blocks": {
+        "slide_J4tnPQ": {
+          "type": "slide",
+          "settings": {
+            "title": "rr"
+          }
+        }
+      },
+      "block_order": [
+        "slide_J4tnPQ"
+      ],
       "name": "Product Feature Slider",
       "settings": {
         "slides_per_view_small": 1,
