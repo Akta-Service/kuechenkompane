@@ -56,6 +56,18 @@
         "image_2": "shopify://shop_images/Best-seller-mobile_1894438e-c7ec-41aa-99af-062ef5ec1538.jpg"
       }
     },
+    "product_feature_Cw9WYk": {
+      "type": "product-feature",
+      "name": "Product Feature Slider",
+      "settings": {
+        "slides_per_view_small": 1,
+        "slides_per_view_medium": 1,
+        "slides_per_view_large": 4,
+        "space_between": 20,
+        "autoplay_delay": 3000,
+        "speed": 1000
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -222,6 +234,7 @@
     "testing_ahDQMJ",
     "breadcrumb_yifnda",
     "collection_img_banner_mfwPM4",
+    "product_feature_Cw9WYk",
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
