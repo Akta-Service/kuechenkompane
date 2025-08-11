@@ -36,75 +36,71 @@
     {% comment %} pass ptotected collection js  {% endcomment %}
 
     <script>
-        (function () {
-          const correctPassword = "{{ settings.password | escape }}";
-          const collectionHandle = "{{ settings.collection_handle }}";
-          const collectionKey = "collectionAccess_" + collectionHandle;
-    
-        
-    
-          function lockScroll() {
-            document.body.classList.add('scroll-lock');
-          }
-    
-          function unlockScroll() {
-            document.body.classList.remove('scroll-lock');
-          }
-    
-          function setRealVh() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-          }
-    
-          // function checkPassword() {
-          //   const userPassword = document.getElementById("popup-password").value;
-          //   const errorMessage = document.getElementById("error-message");
-    
-          //   if (userPassword === correctPassword) {
-          //     localStorage.setItem(collectionKey, "true");
-          //     document.getElementById("password-popup").style.display = "none";          
-          //     unlockScroll();
-          //   } else {
-          //     errorMessage.style.display = "block";
-          //   }
-          // }
+      (function () {
+        const correctPassword = '{{ settings.password | escape }}';
+        const collectionHandle = '{{ settings.collection_handle }}';
+        const collectionKey = 'collectionAccess_' + collectionHandle;
 
+        function lockScroll() {
+          document.body.classList.add('scroll-lock');
+        }
 
-            //  update case sensitive 
-            
-          function checkPassword() {
-            const userPassword = document.getElementById("popup-password").value.toLowerCase(); // Convert input to lowercase
-            const correct = correctPassword.toLowerCase(); // Convert correct password to lowercase
-            const errorMessage = document.getElementById("error-message");
+        function unlockScroll() {
+          document.body.classList.remove('scroll-lock');
+        }
 
-            if (userPassword === correct) {
-              localStorage.setItem(collectionKey, "true");
-              document.getElementById("password-popup").style.display = "none";
-              unlockScroll();
-            } else {
-              errorMessage.style.display = "block";
-            }
+        function setRealVh() {
+          const vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        // function checkPassword() {
+        //   const userPassword = document.getElementById("popup-password").value;
+        //   const errorMessage = document.getElementById("error-message");
+
+        //   if (userPassword === correctPassword) {
+        //     localStorage.setItem(collectionKey, "true");
+        //     document.getElementById("password-popup").style.display = "none";
+        //     unlockScroll();
+        //   } else {
+        //     errorMessage.style.display = "block";
+        //   }
+        // }
+
+        //  update case sensitive
+
+        function checkPassword() {
+          const userPassword = document.getElementById('popup-password').value.toLowerCase(); // Convert input to lowercase
+          const correct = correctPassword.toLowerCase(); // Convert correct password to lowercase
+          const errorMessage = document.getElementById('error-message');
+
+          if (userPassword === correct) {
+            localStorage.setItem(collectionKey, 'true');
+            document.getElementById('password-popup').style.display = 'none';
+            unlockScroll();
+          } else {
+            errorMessage.style.display = 'block';
+          }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          console.log('a am load');
+          setRealVh();
+          window.addEventListener('resize', setRealVh);
+
+          const popup = document.getElementById('password-popup');
+
+          if (localStorage.getItem(collectionKey) === 'true') {
+            popup.style.display = 'none';
+            unlockScroll();
+          } else {
+            popup.style.display = 'flex';
+            lockScroll();
           }
 
-    
-          document.addEventListener('DOMContentLoaded', function () {
-            console.log('a am load')
-            setRealVh();
-            window.addEventListener('resize', setRealVh);
-    
-            const popup = document.getElementById("password-popup");
-    
-            if (localStorage.getItem(collectionKey) === "true") {
-              popup.style.display = "none";          
-              unlockScroll();
-            } else {
-              popup.style.display = "flex";
-              lockScroll();
-            }
-    
-            window.checkPassword = checkPassword;
-          });
-        })();
+          window.checkPassword = checkPassword;
+        });
+      })();
     </script>
 
     {% comment %} pass ptotected collection js end {% endcomment %}
@@ -114,22 +110,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="{{ settings.color_primary }}">
 
-    {% if template == 'collection' %}
-      {% assign is_paginated = false %}
-      {% if canonical_url contains '?page=' or canonical_url contains '&page=' %}
-        {% assign is_paginated = true %}
-      {% endif %}
-      
-      {% if is_paginated or collection.metafields.custom.noindex == true %}
-        <meta name="robots" content="noindex,follow">
-        <link rel="canonical" href="{{ collection.url }}">
+    {% comment %}
+      {% if template == 'collection' %}
+        {% assign is_paginated = false %}
+        {% if canonical_url contains '?page=' or canonical_url contains '&page=' %}
+          {% assign is_paginated = true %}
+        {% endif %}
+
+        {% if is_paginated or collection.metafields.custom.noindex == true %}
+          <meta name="robots" content="noindex,follow">
+          <link rel="canonical" href="{{ collection.url }}">
+        {% else %}
+          <link rel="canonical" href="{{ canonical_url }}">
+        {% endif %}
       {% else %}
         <link rel="canonical" href="{{ canonical_url }}">
       {% endif %}
-    {% else %}
-      <link rel="canonical" href="{{ canonical_url }}">
-    {% endif %}
-
+    {% endcomment %}
 
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
@@ -436,17 +433,17 @@
     </style>
 
     <script>
-      (function() {
+      (function () {
         // Find all <noscript> tags on the page
         const noscriptTags = document.querySelectorAll('noscript');
 
         // Loop through each <noscript> tag
-        noscriptTags.forEach(noscript => {
+        noscriptTags.forEach((noscript) => {
           // Check if the <noscript> contains any CSS (e.g., inside <style> tags)
           const styleTags = noscript.querySelectorAll('style');
 
           // If there's any <style> tag inside the <noscript>, extract and add it to the <head>
-          styleTags.forEach(style => {
+          styleTags.forEach((style) => {
             const styleCopy = document.createElement('style');
             styleCopy.textContent = style.textContent;
 
@@ -487,13 +484,8 @@
 
     {%- render 'mobile-menu' -%}
 
-    
-  
-
-
-
-{% include 'stack-discounts-script' %}
-</head>
+    {% include 'stack-discounts-script' %}
+  </head>
 
   <body
     id="m-theme"
@@ -544,27 +536,27 @@
     <script>
       Shopify.cart_drawer = Shopify.cart_drawer || {};
       Shopify.cart_drawer.freeProduct1 = {
-        title: "{{ settings.cart_free_product_1.title }}",
-        available: "{{ settings.cart_free_product_1.selected_or_first_available_variant.available }}",
-        url: "{{ settings.cart_free_product_1.url }}",
-        handle: "{{ settings.cart_free_product_1.handle }}",
-        variantId: "{{ settings.cart_free_product_1.selected_or_first_available_variant.id }}",
-        rule: "{{ settings.cart_free_product_1_rule }}",
-        condition: "cart-total"
+        title: '{{ settings.cart_free_product_1.title }}',
+        available: '{{ settings.cart_free_product_1.selected_or_first_available_variant.available }}',
+        url: '{{ settings.cart_free_product_1.url }}',
+        handle: '{{ settings.cart_free_product_1.handle }}',
+        variantId: '{{ settings.cart_free_product_1.selected_or_first_available_variant.id }}',
+        rule: '{{ settings.cart_free_product_1_rule }}',
+        condition: 'cart-total',
       };
       Shopify.cart_drawer.freeProduct2 = {
-        title: "{{ settings.cart_free_product_2.title }}",
-        available: "{{ settings.cart_free_product_2.selected_or_first_available_variant.available }}",
-        url: "{{ settings.cart_free_product_2.url }}",
-        handle: "{{ settings.cart_free_product_2.handle }}",
-        variantId: "{{ settings.cart_free_product_2.selected_or_first_available_variant.id }}",
-        rule: "{{ settings.cart_free_product_2_rule }}",
-        condition: "cart-total"
+        title: '{{ settings.cart_free_product_2.title }}',
+        available: '{{ settings.cart_free_product_2.selected_or_first_available_variant.available }}',
+        url: '{{ settings.cart_free_product_2.url }}',
+        handle: '{{ settings.cart_free_product_2.handle }}',
+        variantId: '{{ settings.cart_free_product_2.selected_or_first_available_variant.id }}',
+        rule: '{{ settings.cart_free_product_2_rule }}',
+        condition: 'cart-total',
       };
       Shopify.cart_drawer.extraAddon = {
-        parentProduct: "{{ settings.eadn_parent_product.id }}",
-        freeProduct1: "{{ settings.eadn_free_product_1.selected_or_first_available_variant.id }}",
-        freeProduct2: "{{ settings.eadn_free_product_2.selected_or_first_available_variant.id }}"
+        parentProduct: '{{ settings.eadn_parent_product.id }}',
+        freeProduct1: '{{ settings.eadn_free_product_1.selected_or_first_available_variant.id }}',
+        freeProduct2: '{{ settings.eadn_free_product_2.selected_or_first_available_variant.id }}',
       };
     </script>
 
@@ -617,8 +609,6 @@
       ></script>
     {% endif %}
 
-
-
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
@@ -636,6 +626,5 @@
         }, 100);
       });
     </script>
-
   </body>
 </html>

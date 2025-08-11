@@ -133,17 +133,6 @@
         "c_n_text": "p-medium"
       }
     },
-    "breadcrumb_h1_UxG7wm": {
-      "type": "breadcrumb-h1",
-      "name": "Breadcrumb h1",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
     "rich_text_bXpWiG": {
       "type": "rich-text",
       "blocks": {
@@ -172,6 +161,18 @@
         "padding_top": 20,
         "padding_bottom": 20,
         "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "breadcrumb_h1_UxG7wm": {
+      "type": "breadcrumb-h1",
+      "disabled": true,
+      "name": "Breadcrumb h1",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
         "animations": "inherit"
       }
     },

@@ -88,6 +88,15 @@
 {% endfor %}
 
 
+{% assign included_pages = section.settings.target_pages | strip | split: ',' %}
+{% for pg_handle in included_pages %}
+  {% assign pg_handle_trimmed = pg_handle | strip %}
+  {% if page and page.handle == pg_handle_trimmed %}
+    {% assign custom_collection = true %}
+  {% endif %}
+{% endfor %}
+
+
 
 
 
@@ -171,11 +180,13 @@
       %}
 
       {% if custom_collection %}
-        <div class="{{ class | strip_newlines }} collection_mobile_log">
+        <a href="{{ routes.root_url }}" class="collection_mobile_log" title="{{ shop.name }}">
+        <div class=" ">
           {% if section.settings.collection_mobile_log != blank %}
             <img src="{{ section.settings.collection_mobile_log |  img_url: 'master' }}" alt="{{ shop.name }}">
           {% endif %}
         </div>
+        </a>
 
       {% else %}
         <div class="{{ class | strip_newlines }}">
@@ -308,10 +319,12 @@
                 {% if custom_collection %}
                   <div class="{{ class | strip_newlines }} ">
                     {% if section.settings.collection_mobile_log != blank %}
-                      <img class="collection-logo-desktop"
-                        src="{{ section.settings.collection_desktop_log |  img_url: 'master' }}"
-                        alt="{{ shop.name }}" width="110px"
-                      >
+                      <a href="/">
+                        <img class="collection-logo-desktop"
+                          src="{{ section.settings.collection_desktop_log |  img_url: 'master' }}"
+                          alt="{{ shop.name }}" width="110px" height=""
+                        >
+                      </a>
                     {% endif %}
                   </div>
 
@@ -635,6 +648,12 @@
       "type": "collection_list",
       "id": "custom_collection_list",
       "label": "Apply color scheme to this collection"
+    },
+    {
+      "type": "textarea",
+      "id": "target_pages",
+      "label": "Page handles to  Show (e.g: about-us,contact)",
+     
     },
     {
       "type": "color_scheme",

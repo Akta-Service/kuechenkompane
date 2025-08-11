@@ -37,11 +37,9 @@
           "grunder-geburtstag-1",
           "grunder-im-urlaub-1"
         ],
+        "target_pages": "apex-new-page",
         "color_scheme": "dark",
-        "top_title": "Angebot endet in",
-        "start_time": "2025-08-06T14:33:00",
-        "initial_hours": 48,
-        "threshold_hours": 24
+        "top_title": "Angebot endet in"
       }
     },
     "announcement_bar_AidTMy": {
@@ -51,10 +49,9 @@
         "target_collections": [
           "grunder-geburtstag-1",
           "grunder-im-urlaub-1",
-          "bestseller-angebot",
-          "grunder-im-urlaub",
-          "grunder-geburtstag"
+          "bestseller-angebot"
         ],
+        "target_pages": "apex-new-page",
         "color_scheme": "scheme-74cef576-6976-437f-b943-846d48553c4f",
         "announcement_url": "",
         "announcement_text": "BIS zu 75% RABATT AUF ALLES"
@@ -81,6 +78,7 @@
           "grunder-geburtstag-1",
           "grunder-im-urlaub-1"
         ],
+        "target_pages": "apex-new-page",
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
@@ -359,6 +357,7 @@
           "grunder-geburtstag-1",
           "bestseller-angebot"
         ],
+        "target_pages": "apex-new-page",
         "collection_color_scheme": "dark",
         "collection_mobile_log": "shopify://shop_images/Kuechenkompane_-_Logo2023_-_DarkGreen_background_V5_1_256x_77ef1980-7a10-44ee-b7ef-57c2ede38211.png",
         "collection_desktop_log": "shopify://shop_images/Kuechenkompane_-_Logo2023_-_DarkGreen_background_V5_1_256x_77ef1980-7a10-44ee-b7ef-57c2ede38211.png",

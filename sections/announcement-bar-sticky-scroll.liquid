@@ -50,6 +50,16 @@
   {% endif %}
 {% endfor %}
 
+
+{% assign excluded_pages = section.settings.target_pages | strip | split: ',' %}
+{% for pg_handle in excluded_pages %}
+  {% assign pg_handle_trimmed = pg_handle | strip %}
+  {% if page and page.handle == pg_handle_trimmed %}
+    {% assign hide_announcement = true %}
+  {% endif %}
+{% endfor %}
+
+
 {% unless hide_announcement %}
   <div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
     <div class="announcement-container">
@@ -90,6 +100,12 @@
       "type": "collection_list",
       "id": "target_collections",
       "label": "Hide on these collections"
+    },
+    {
+      "type": "textarea",
+      "id": "target_pages",
+      "label": "Page handles to hide (e.g: about-us,contact)",
+      
     },
     {
       "type": "checkbox",
