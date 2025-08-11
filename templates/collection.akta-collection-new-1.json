@@ -56,18 +56,43 @@
         "image_2": "shopify://shop_images/Best-seller-mobile_1894438e-c7ec-41aa-99af-062ef5ec1538.jpg"
       }
     },
-    "product_feature_Cw9WYk": {
+    "product_feature_EP3YFm": {
       "type": "product-feature",
       "blocks": {
-        "slide_J4tnPQ": {
+        "slide_9PqAD3": {
           "type": "slide",
           "settings": {
-            "title": "rr"
+            "image": "shopify://shop_images/icon2.webp",
+            "title": "Free Delivery"
+          }
+        },
+        "slide_LhLWdJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/doc_icon2.webp",
+            "title": "Podiatrist Recommended"
+          }
+        },
+        "slide_dMjRTb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/icon3.webp",
+            "title": "Pain-Relief Solution"
+          }
+        },
+        "slide_9KKp76": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/icon1.webp",
+            "title": "Wide Toe Box"
           }
         }
       },
       "block_order": [
-        "slide_J4tnPQ"
+        "slide_9PqAD3",
+        "slide_LhLWdJ",
+        "slide_dMjRTb",
+        "slide_9KKp76"
       ],
       "name": "Product Feature Slider",
       "settings": {
@@ -76,7 +101,7 @@
         "slides_per_view_large": 4,
         "space_between": 20,
         "autoplay_delay": 3000,
-        "speed": 1000
+        "speed": 600
       }
     },
     "collection-header": {
@@ -245,7 +270,7 @@
     "testing_ahDQMJ",
     "breadcrumb_yifnda",
     "collection_img_banner_mfwPM4",
-    "product_feature_Cw9WYk",
+    "product_feature_EP3YFm",
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
