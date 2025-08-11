@@ -27,6 +27,10 @@
     height: 12px;
     margin-right: 3px;
   }
+  .akta-new-collection .m-product-quickview-button {
+    display: flex !important;
+  } 
+
 </style>
 
 {% comment %}
@@ -130,7 +134,9 @@
     assign show_cart_button = settings.show_cart_button
   endif
 
-
+  if show_quickview_button == null
+    assign show_quickview_button = section.settings.show_quickview_button
+  endif
 
   if show_wishlist_button == null
     assign show_wishlist_button = settings.show_wishlist_button
@@ -364,7 +370,7 @@
       </span>
     {%- endif -%}
 
-    {%- if section.settings.show_quickview_button !=false -%}
+    {%- if show_quickview_button or show_wishlist_button or show_compare_button or show_cart_button -%}
       <div class="m-product-card__action m-product-card__action--top m-product-card__addons m:display-flex">
         {% liquid
           assign tooltips = 'compare,quickview'

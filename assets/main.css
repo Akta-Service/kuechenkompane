@@ -7647,7 +7647,10 @@ variant-picker
 .m-collection-products .m-add-to-cart {
   display: none;
 }
-
+.m-tooltip.m-spinner-button,
+.m-button--icon {
+  display: none;
+}
 .m-collection-products .m-product-quickview-button {
   display: none;
 }

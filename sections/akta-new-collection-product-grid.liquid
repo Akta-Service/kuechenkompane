@@ -91,14 +91,14 @@
             </div>
           {%- else -%}
             <div
-              class="m-collection-products m:flex m:flex-wrap m-cols-{{ initial_column }}"
+              class="m-collection-products akta-new-collection m:flex m:flex-wrap m-cols-{{ initial_column }}"
               data-total-pages="{{ paginate.pages }}"
               data-product-container
             >
               {%- for product in collection.products -%}
                 {% comment %} {% unless product.tags contains 'NO SEARCH' %} {% endcomment %}
                 
-                  <div class="m-product-item m:w-6/12 md:m:w-4/12" data-tags="{% for tag in product.tags %}{{ tag | handleize }} {% endfor %}">
+                  <div class="m-product-item  m:w-6/12 md:m:w-4/12" data-tags="{% for tag in product.tags %}{{ tag | handleize }} {% endfor %}">
                     {% liquid
                       case settings.pcard_layout
                         when '1'
