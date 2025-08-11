@@ -48,6 +48,14 @@
         "animations": "inherit"
       }
     },
+    "collection_img_banner_mfwPM4": {
+      "type": "collection-img-banner",
+      "name": "Collection Image Banner",
+      "settings": {
+        "image_1": "shopify://shop_images/Best-seller-desktop_d986dfe6-c66e-44bc-ab56-de328a45e273.jpg",
+        "image_2": "shopify://shop_images/Best-seller-mobile_1894438e-c7ec-41aa-99af-062ef5ec1538.jpg"
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -94,6 +102,7 @@
         ".m-collection-filters-form {margin-bottom: 0;}"
       ],
       "settings": {
+        "show_review_badge": true,
         "container": "container-fluid",
         "grid_layout": "grid",
         "grid_columns": "4",
@@ -212,6 +221,7 @@
   "order": [
     "testing_ahDQMJ",
     "breadcrumb_yifnda",
+    "collection_img_banner_mfwPM4",
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
