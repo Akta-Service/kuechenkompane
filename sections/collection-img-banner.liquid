@@ -1,0 +1,71 @@
+<style>
+  .collection-img-banner {
+      background: #dfdfdf99;
+      overflow: hidden;
+      padding: 0 0 5px;
+  }
+  .collection-img-banner img {
+    border-radius: 6px;
+  }
+  .collection-img-banner-desktop {
+      display: block;
+      transform: translateY(-5px);
+  }
+  .collection-img-banner-mobile {
+      display: none;
+      transform: translateY(-5px);
+  }
+
+  @media only screen and (max-width: 1023px) {
+      .collection-img-banner-desktop {
+          display: none;
+      }
+      .collection-img-banner-mobile {
+          display: block;
+      }
+  }
+</style>
+
+<div class="collection-img-banner">
+  <div class="collection-img-banner-desktop">
+    {% if section.settings.image_1 != blank %}
+      {{
+        section.settings.image_1
+        | image_url: width: section.settings.image_1.width, height: section.settings.image_1.height
+        | image_tag: alt: section.settings.image_1.alt, loading: 'lazy', draggable: 'false'
+      }}
+    {% endif %}
+  </div>
+  <div class="collection-img-banner-mobile">
+    {% if section.settings.image_2 != blank %}
+      {{
+        section.settings.image_2
+        | image_url: width: section.settings.image_2.width, height: section.settings.image_2.height
+        | image_tag: alt: section.settings.image_2.alt, loading: 'lazy', draggable: 'false'
+      }}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Image Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Image Banner"
+    }
+  ]
+}
+{% endschema %}
