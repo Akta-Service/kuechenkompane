@@ -1,0 +1,197 @@
+<style>
+  .product-feature-section {
+      padding: 20px 0;
+      background: #f9f9f9;
+      position: relative;
+  }
+  .product-feature-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+  }
+  .product-feature-card-img img {
+      width: 100%;
+      max-width: 36px;
+  }
+  .product-feature-card-content h4 {
+      font-weight: 100 !important;
+      font-size: 16px;
+      color: #444444;
+  }
+  .product-feature-section .swiper-pagination {
+      position: absolute;
+      bottom: 20px !important;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+      display: none;
+      gap: 2px;
+      align-items: center;
+  }
+  .product-feature-section .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      opacity: 1;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+  }
+  .product-feature-section .swiper-pagination-bullet:before {
+      width: 6px;
+      height: 6px;
+      background: #dedede;
+  }
+  .product-feature-section .swiper-pagination-bullet:hover:before {
+      width: 6px;
+      height: 6px;
+      background: #3f3f3f;
+  }
+  .product-feature-section .swiper-pagination-bullet-active:before {
+      background: #3f3f3f;
+      opacity: 1;
+  }
+  .product-feature-section .swiper-pagination-bullet-active:after {
+      display: none;
+  }
+  @media only screen and (max-width: 1023px) {
+      .product-feature-section {
+        padding: 20px 0 49px;
+    }
+    .product-feature-section .swiper-pagination {
+        display: flex;
+    }
+  }
+</style>
+
+<div class="product-feature-section">
+  <div class="container">
+    <div class="swiper product-feature">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="product-feature-card">
+              <div class="product-feature-card-img">
+                {% if block.settings.image != blank %}
+                  {{
+                    block.settings.image
+                    | image_url: width: block.settings.image.width, height: block.settings.image.height
+                    | image_tag: alt: block.settings.image.alt, loading: 'lazy'
+                  }}
+                {% endif %}
+              </div>
+              <div class="product-feature-card-content">
+                <h4>{{ block.settings.title | escape }}</h4>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- Pagination bullets -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('.product-feature', {
+        loop: true,
+        slidesPerView: {{ section.settings.slides_per_view | default: 4 }},
+        spaceBetween: {{ section.settings.space_between | default: 20 }},
+        grabCursor: true,
+        autoplay: {
+          delay: {{ section.settings.autoplay_delay | default: 3000 }},
+          disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        speed: {{ section.settings.speed | default: 1000 }},
+        breakpoints: {
+          320: {  slidesPerView: {{ section.settings.slides_per_view_small | default: 1 }} },
+          640: { slidesPerView: {{ section.settings.slides_per_view_medium | default: 2 }} },
+          1024: { slidesPerView: {{ section.settings.slides_per_view_large | default: 4 }} }
+        }
+      });
+    }
+  });
+</script>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+{% schema %}
+{
+  "name": "Product Feature Slider",
+  "settings": [
+    {
+      "type": "number",
+      "id": "slides_per_view_small",
+      "label": "Slides per view (mobile)",
+      "default": 1
+    },
+    {
+      "type": "number",
+      "id": "slides_per_view_medium",
+      "label": "Slides per view (tablet)",
+      "default": 1
+    },
+    {
+      "type": "number",
+      "id": "slides_per_view_large",
+      "label": "Slides per view (desktop)",
+      "default": 4
+    },
+    {
+      "type": "number",
+      "id": "space_between",
+      "label": "Space between slides (px)",
+      "default": 20
+    },
+    {
+      "type": "number",
+      "id": "autoplay_delay",
+      "label": "Autoplay delay (ms)",
+      "default": 3000
+    },
+    {
+      "type": "number",
+      "id": "speed",
+      "label": "Transition speed (ms)",
+      "default": 1000
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select Product Feature Card Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Write Product Feature Card Title"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Product Feature Slider",
+      "category": "Sliders"
+    }
+  ]
+}
+{% endschema %}
