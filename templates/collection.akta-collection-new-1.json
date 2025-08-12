@@ -39,6 +39,7 @@
     },
     "breadcrumb_yifnda": {
       "type": "breadcrumb",
+      "disabled": true,
       "name": "Breadcrumb",
       "settings": {
         "container": "container",
@@ -151,6 +152,7 @@
       ],
       "settings": {
         "show_review_badge": true,
+        "show_quickview_button": true,
         "container": "container-fluid",
         "grid_layout": "grid",
         "grid_columns": "4",
