@@ -39,7 +39,10 @@
         ],
         "target_pages": "apex-new-page",
         "color_scheme": "dark",
-        "top_title": "Angebot endet in"
+        "top_title": "Angebot endet in",
+        "start_time": "2025-08-06T10:00:00",
+        "initial_hours": 48,
+        "threshold_hours": 24
       }
     },
     "announcement_bar_AidTMy": {
@@ -55,6 +58,47 @@
         "color_scheme": "scheme-74cef576-6976-437f-b943-846d48553c4f",
         "announcement_url": "",
         "announcement_text": "BIS zu 75% RABATT AUF ALLES"
+      }
+    },
+    "announcement_bar_PMGLwc": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_BXHi7m": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>"
+          }
+        },
+        "announcement_FWCNDQ": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>"
+          }
+        },
+        "announcement_DU9qL9": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p><strong>30-day</strong> money-back guarantee</p>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_BXHi7m",
+        "announcement_FWCNDQ",
+        "announcement_DU9qL9"
+      ],
+      "name": "Header Announcement Bar",
+      "settings": {
+        "announcement_animation_type": "slider",
+        "bg_color": "#7e7e7e",
+        "font_size": 1.5,
+        "marquee_speed": 40,
+        "slides_per_view_small": 1,
+        "slides_per_view_medium": 1,
+        "slides_per_view_large": 1,
+        "space_between": 20,
+        "autoplay_delay": 4000,
+        "speed": 1500
       }
     },
     "announcement_bar_sticky_scroll_Bk3YD6": {
@@ -455,6 +499,7 @@
     "announcement_bar_version_1_rc6jDA",
     "snow_topbar_Wc6BME",
     "announcement_bar_AidTMy",
+    "announcement_bar_PMGLwc",
     "announcement_bar_sticky_scroll_Bk3YD6",
     "announcement_different_rRyBgT",
     "apex_timer_progress_yCDcUj",
