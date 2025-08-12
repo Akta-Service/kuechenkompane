@@ -52,72 +52,86 @@
   }
 </style>
 
-<div
-  class="announcement-bar-wrapper"
-  style="--announcement-bg: {{ section.settings.bg_color }}; --announcement-font-size: {{ section.settings.font_size }}rem;"
->
-  <div class="announcement-bar-container">
-    {% case section.settings.announcement_animation_type %}
-      {% when 'marquee' %}
-        <div class="announcement-marquee">
-          {% if section.blocks.size > 0 %}
-            {% assign blocks_exist = true %}
-          {% else %}
-            {% assign blocks_exist = false %}
-          {% endif %}
-          {% for row in (1..3) %}
-            <div class="announcement-marquee-track" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
-              {% if blocks_exist %}
-                {% for block in section.blocks %}
+{% liquid
+  assign show_announcement = false
+
+  assign collection_list = section.settings.collection_list
+
+  for coll in collection_list
+    if collection.handle == coll.handle
+      assign show_announcement = true
+    endif
+  endfor
+%}
+
+{% if show_announcement %}
+  <div
+    class="announcement-bar-wrapper"
+    style="--announcement-bg: {{ section.settings.bg_color }}; --announcement-font-size: {{ section.settings.font_size }}rem;"
+  >
+    <div class="announcement-bar-container">
+      {% case section.settings.announcement_animation_type %}
+        {% when 'marquee' %}
+          <div class="announcement-marquee">
+            {% if section.blocks.size > 0 %}
+              {% assign blocks_exist = true %}
+            {% else %}
+              {% assign blocks_exist = false %}
+            {% endif %}
+            {% for row in (1..3) %}
+              <div class="announcement-marquee-track" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
+                {% if blocks_exist %}
+                  {% for block in section.blocks %}
+                    <span class="announcement-marquee-item">
+                      {{ block.settings.block_text }}
+                    </span>
+                  {% endfor %}
+                {% else %}
                   <span class="announcement-marquee-item">
-                    {{ block.settings.block_text }}
+                    <p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>
                   </span>
+                  <span class="announcement-marquee-item">
+                    <p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>
+                  </span>
+                  <span class="announcement-marquee-item">
+                    <p><strong>30-day</strong> money-back guarantee</p>
+                  </span>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+
+        {% when 'slider' %}
+          <div class="swiper announcement-slider">
+            <div class="swiper-wrapper">
+              {% if section.blocks.size > 0 %}
+                {% for block in section.blocks %}
+                  <div class="swiper-slide">
+                    {{ block.settings.block_text }}
+                  </div>
                 {% endfor %}
               {% else %}
-                <span class="announcement-marquee-item">
+                <div class="swiper-slide">
                   <p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>
-                </span>
-                <span class="announcement-marquee-item">
+                </div>
+                <div class="swiper-slide">
                   <p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>
-                </span>
-                <span class="announcement-marquee-item">
+                </div>
+                <div class="swiper-slide">
                   <p><strong>30-day</strong> money-back guarantee</p>
-                </span>
+                </div>
               {% endif %}
             </div>
-          {% endfor %}
-        </div>
-
-      {% when 'slider' %}
-        <div class="swiper announcement-slider">
-          <div class="swiper-wrapper">
-            {% if section.blocks.size > 0 %}
-              {% for block in section.blocks %}
-                <div class="swiper-slide">
-                  {{ block.settings.block_text }}
-                </div>
-              {% endfor %}
-            {% else %}
-              <div class="swiper-slide">
-                <p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>
-              </div>
-              <div class="swiper-slide">
-                <p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>
-              </div>
-              <div class="swiper-slide">
-                <p><strong>30-day</strong> money-back guarantee</p>
-              </div>
-            {% endif %}
           </div>
-        </div>
 
-      {% else %}
-        <div class="announcement-bar-content">
-          <p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>
-        </div>
-    {% endcase %}
+        {% else %}
+          <div class="announcement-bar-content">
+            <p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>
+          </div>
+      {% endcase %}
+    </div>
   </div>
-</div>
+{% endif %}
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
