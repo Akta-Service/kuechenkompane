@@ -1988,7 +1988,7 @@
   window.productData = {{ product | json }};
 </script>
 
-<script>
+{% comment %} <script>
   document.addEventListener('DOMContentLoaded', () => {
     const mediaGallery = document.querySelector('media-gallery');
     const productData = window.productData;
@@ -2026,4 +2026,4 @@
       return productData.variants.find((v) => v.options.every((opt, index) => opt === selectedOptions[index]));
     }
   });
-</script>
+</script> {% endcomment %}
