@@ -11,6 +11,7 @@
   "sections": {
     "apex_timer_8KXfky": {
       "type": "Apex-timer",
+      "disabled": true,
       "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#c6d1c4",
@@ -33,14 +34,14 @@
         "heading_HLFfDJ": {
           "type": "heading",
           "settings": {
-            "heading": "🚨 Restposten-Alarm 🚨",
+            "heading": "Endlich wieder verfügbar! 🎉",
             "heading_size": "h2"
           }
         },
         "text_nAHzLU": {
           "type": "text",
           "settings": {
-            "text": "<p>Ab Dienstag kommt unser neues Karton-Design – deshalb müssen jetzt alle Produkte im bisherigen Design raus. Nur jetzt mit Mega-Rabatten!</p>"
+            "text": "<p>Unsere handgeschmiedeten Damastmesser sind zurück im Lager.</p>"
           }
         }
       },
