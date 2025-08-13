@@ -31,91 +31,90 @@
   >
 {%- endif -%}
 <style>
-  .apex-product-page .rs-container {
-    padding: 0 30px;
-  }
-  .apex-product-page .nav-swiper-container {
-    max-height: 450px;
-    width: 100px;
-  }
-  .apex-product-page .m-product-media--slider__images {
-    width: calc(100% - 120px);
-    margin-bottom: 0;
-  }
-  .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
-    height: inherit !important;
-  }
-
-  .apex-product-page .m-product-media {
-    padding: 3px !important;
-  }
-  @media (max-width: 1024px) {
-    .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
-      height: inherit !important;
-      width: 100% !important;
+    .apex-product-page .rs-container {
+      padding: 0 30px;
+    }
+    .apex-product-page .nav-swiper-container {
+      max-height: 450px;
+      width: 100px;
     }
     .apex-product-page .m-product-media--slider__images {
-      margin-bottom: 20px;
-      width: 100%;
+      width: calc(100% - 120px);
+      margin-bottom: 0;
     }
-    .m-product-media--mobile.m-product-media--layout-6.md\:m\:hidden {
-      display: none;
+    .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
+      height: inherit !important;
     }
-    .m-product-media--desktop.m-product-media--wrapper.m-product-media--layout-6 {
+
+    .apex-product-page .m-product-media {
+      padding: 3px !important;
+    }
+    @media (max-width: 1024px) {
+      .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
+        height: inherit !important;
+        width: 100% !important;
+      }
+      .apex-product-page .m-product-media--slider__images {
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      .m-product-media--mobile.m-product-media--layout-6.md\:m\:hidden {
+        display: none;
+      }
+      .m-product-media--desktop.m-product-media--wrapper.m-product-media--layout-6 {
+        display: block;
+      }
+      .apex-theme-info {
+        padding-left: 15px;
+      }
+    }
+
+    .rs-price {
+        width: fit-content;
+    }
+    .green-label {
       display: block;
+      font-weight: bold;
+      border-radius: 3px;
+      padding: 5px;
+      position: absolute;
+      font-family: "Roboto", sans-serif;
+      line-height: 1;
+      margin-left: auto;
+      top: -24px;
+      left: 50px;
+      white-space: nowrap;
     }
-    .apex-theme-info {
-      padding-left: 15px;
+   .green-label::before {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0px;
+      width: 16px;
+      /* border-radius: 1px; */
+      height: 5px;
+      clip-path: polygon(0 0%, 0 100%, 100% 0);
     }
-  }
-
-  .rs-price {
-      width: fit-content;
-  }
-  .green-label {
-    display: block;    
-    font-weight: bold;
-    border-radius: 3px;
-    padding: 5px;
-    position: absolute;
-    font-family: "Roboto", sans-serif;    
-    line-height: 1;
-    margin-left: auto;
-    top: -24px;
-    left: 50px;
-    white-space: nowrap;
-  }
- .green-label::before {    
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 0px;
-    width: 16px;
-    /* border-radius: 1px; */
-    height: 5px;
-    clip-path: polygon(0 0%, 0 100%, 100% 0);
-  }
-  .p-relative {
-    position: relative;
-  }
-
-  {% if product.metafields.custom.price_individual_tag %}
-    .rs-price {
-      margin-top: 30px;
+    .p-relative {
+      position: relative;
     }
-  {% endif %}
 
-@media (max-width: 600px){
-  .green-label {   
-    top: -20px;    
-  }
-   {% if product.metafields.custom.price_individual_tag %}
-    .rs-price {
-      margin-top: 20px;
+    {% if product.metafields.custom.price_individual_tag %}
+      .rs-price {
+        margin-top: 30px;
+      }
+    {% endif %}
+
+  @media (max-width: 600px){
+    .green-label {
+      top: -20px;
     }
-  {% endif %}
-}
-
+     {% if product.metafields.custom.price_individual_tag %}
+      .rs-price {
+        margin-top: 20px;
+      }
+    {% endif %}
+  }
 </style>
 <div
   data-section-type="product-page"
@@ -166,7 +165,6 @@
           {% render 'product-media', section: section, template_product: true %}
 
           {% if section.settings.show_sold_out_badge_on_image != false %}
-
             {% if product.available == false %}
               <span
                 class="m-product-tag m-product-tag--soldout-overlay product-page-badge m-gradient m-color-{{ settings.soldout_badge_color_scheme }}"
@@ -175,10 +173,6 @@
               </span>
             {% endif %}
           {% endif %}
-
-
-
-
         </div>
         <div class="m-product-media--mobile m-product-media--{{ section.settings.layout }} md:m:hidden">
           {%- render 'product-media-mobile',
@@ -270,7 +264,7 @@
 {%- if product.options_with_values.size > 0 -%}
   <script src="{{ 'variant-picker.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
- <script src="{{ 'mrk-mobile-variant-picker.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'mrk-mobile-variant-picker.js' | asset_url }}" defer="defer"></script>
 {%- render 'product-data' -%}
 
 <script>
@@ -676,7 +670,7 @@
       "type": "price",
       "name": "Price Block",
       "settings": [
-         {
+        {
           "type": "checkbox",
           "id": "taxes_included",
           "default": false,
@@ -684,7 +678,7 @@
         },
         {
           "type": "text",
-          "id": "taxes_included_text",          
+          "id": "taxes_included_text",
           "label": "Taxes Included Text"
         },
         {
@@ -1027,7 +1021,6 @@
           "default": "#ff0000"
         },
 
-
         {
           "type": "number",
           "id": "viewer_count_time",
@@ -1236,6 +1229,79 @@
           "default": "Size",
           "label": "Size option title",
           "info": "Enter the option titles which you want to show Size guide button, separate with a comma"
+        }
+      ]
+    },
+    {
+      "type": "bundle_slector",
+      "name": "Bundle Selector",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Quantity 1 Settings"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_1_title",
+          "label": "Quantity 1 title",
+          "default": "EzyVac"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_1_save_info",
+          "label": "Quantity 1 save Info",
+          "default": "Buy 1 and Save 67%"
+        },
+        {
+          "type": "text",
+          "id": "b1_badge",
+          "label": "Quantity 1 Badge",
+          "default": "Most Popular"
+        },
+
+        {
+          "type": "header",
+          "content": "Quantity 2 Settings"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_2_title",
+          "label": "Quantity 2 title",
+          "default": "EzyVac"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_2_save_info",
+          "label": "Quantity 2 save Info",
+          "default": "Buy 1 and Save 67%"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_2_price",
+          "label": "Quantity 2 price",
+          "default": "€180"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_2_compare_price",
+          "label": "Quantity 2 Compare price",
+          "default": "€190"
+        },
+        {
+          "type": "text",
+          "id": "title_bage",
+          "label": "Title Badge",
+          "default": "Today Only!"
+        },
+
+        {
+          "type": "header",
+          "content": "Other Product Settings"
+        },
+        {
+          "type": "product_list",
+          "id": "addon_products",
+          "label": "Addon Products"
         }
       ]
     },
@@ -1908,8 +1974,10 @@
   ]
 }
 {% endschema %}
-{% comment %} {% if product.tags contains 'NO SEARCH' %}
-  <script>
-    window.location.href = "/collections/all";
-  </script>
-{% endif %} {% endcomment %}
+{% comment %}
+  {% if product.tags contains 'NO SEARCH' %}
+    <script>
+      window.location.href = "/collections/all";
+    </script>
+  {% endif %}
+{% endcomment %}
