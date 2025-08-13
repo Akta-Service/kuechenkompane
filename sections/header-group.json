@@ -57,7 +57,9 @@
       ],
       "name": "Header Announcement Bar",
       "settings": {
-        "collection_list": [],
+        "collection_list": [
+          "100-tage-risikofrei-testen"
+        ],
         "announcement_animation_type": "slider",
         "bg_color": "#4b4b4b",
         "font_size": 1.5,
