@@ -211,7 +211,7 @@
         "buy_buttons_3hQqVi": {
           "type": "buy_buttons",
           "settings": {
-            "show_quantity_selector": true,
+            "show_quantity_selector": false,
             "show_atc_button": true,
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
