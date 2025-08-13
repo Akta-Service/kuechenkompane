@@ -96,7 +96,11 @@
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 18,
-            "price_font_weight": "600"
+            "price_font_weight": "600",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0"
           }
         },
         "subtitle_xQXVba": {
@@ -180,8 +184,23 @@
             "invert_img": false
           }
         },
+        "bundle_slector_bCVLjH": {
+          "type": "bundle_slector",
+          "settings": {
+            "Quantity_1_title": "EzyVac",
+            "Quantity_1_save_info": "Buy 1 and Save 67%",
+            "b1_badge": "Most Popular",
+            "Quantity_2_title": "EzyVac",
+            "Quantity_2_save_info": "Buy 1 and Save 67%",
+            "Quantity_2_price": "€180",
+            "Quantity_2_compare_price": "€190",
+            "title_bage": "Today Only!",
+            "addon_products": []
+          }
+        },
         "variant_picker_i4dPYA": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "size_title": "Size"
           }
@@ -230,6 +249,7 @@
         "featurelist_item_iiW6aD",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
+        "bundle_slector_bCVLjH",
         "variant_picker_i4dPYA",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
@@ -1099,7 +1119,8 @@
         "sub_title": "",
         "sub_title_font_size": 14,
         "faq_title_font_size": 18,
-        "faq_text_font_size": 16
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "cta_final_9B8iN9": {
