@@ -27,7 +27,9 @@
           }
         }
       },
-      "block_order": ["title_PyKV3e"],
+      "block_order": [
+        "title_PyKV3e"
+      ],
       "name": "Title Block",
       "settings": {
         "h2": 20,
@@ -51,8 +53,8 @@
       "type": "collection-img-banner",
       "name": "Collection Image Banner",
       "settings": {
-        "image_1": "shopify://shop_images/Best-seller-desktop_d986dfe6-c66e-44bc-ab56-de328a45e273.jpg",
-        "image_2": "shopify://shop_images/Best-seller-mobile_1894438e-c7ec-41aa-99af-062ef5ec1538.jpg"
+        "image_1": "shopify://shop_images/KK_-_New_Collection_HIKE_2_-_2_1.jpg",
+        "image_2": "shopify://shop_images/KK_-_New_Collection_HIKE_1_-_2_1.jpg"
       }
     },
     "product_feature_EP3YFm": {
@@ -209,7 +211,11 @@
           }
         }
       },
-      "block_order": ["item_aVKf6y", "item_9zb4Pn", "item_4VaJ6g"],
+      "block_order": [
+        "item_aVKf6y",
+        "item_9zb4Pn",
+        "item_4VaJ6g"
+      ],
       "settings": {
         "color_scheme": "",
         "verticle_padding": 50,
@@ -230,7 +236,9 @@
           }
         }
       },
-      "block_order": ["promotion_NBbJbf"],
+      "block_order": [
+        "promotion_NBbJbf"
+      ],
       "name": "Promotion banner",
       "settings": {
         "container": "container-fluid",
