@@ -28,6 +28,48 @@
         "text_size_m": 16
       }
     },
+    "announcement_bar_mbKA4K": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_NefGWg": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>"
+          }
+        },
+        "announcement_nPhBbE": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>"
+          }
+        },
+        "announcement_VjA8mp": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p><strong>30-day</strong> money-back guarantee</p>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_NefGWg",
+        "announcement_nPhBbE",
+        "announcement_VjA8mp"
+      ],
+      "name": "Header Announcement Bar",
+      "settings": {
+        "collection_list": [],
+        "announcement_animation_type": "slider",
+        "bg_color": "#4b4b4b",
+        "font_size": 1.5,
+        "marquee_speed": 40,
+        "slides_per_view_small": 1,
+        "slides_per_view_medium": 1,
+        "slides_per_view_large": 1,
+        "space_between": 20,
+        "autoplay_delay": 4000,
+        "speed": 1500
+      }
+    },
     "snow_topbar_Wc6BME": {
       "type": "snow-topbar",
       "name": "Countdown Timer",
@@ -40,7 +82,9 @@
         "target_pages": "apex-new-page",
         "color_scheme": "dark",
         "top_title": "Angebot endet in",
-        "countdown_time": "Aug 8, 2025 15:37:25"
+        "start_time": "2025-08-06T10:00:00",
+        "initial_hours": 48,
+        "threshold_hours": 24
       }
     },
     "announcement_bar_AidTMy": {
@@ -454,6 +498,7 @@
   },
   "order": [
     "announcement_bar_version_1_rc6jDA",
+    "announcement_bar_mbKA4K",
     "snow_topbar_Wc6BME",
     "announcement_bar_AidTMy",
     "announcement_bar_sticky_scroll_Bk3YD6",
