@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Loop over selected variants
       Object.values(this.selectedVariants).forEach((variantId) => {
         if (!variantId) {
-          alert(
+          console.log(
             "Please select valid variant options for all products in this bundle."
           );
           throw new Error("Invalid variant selected");
@@ -242,26 +242,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Add To Cart buttons
-  const addToCartButtons = document.querySelectorAll(".rs-add-btn.mrk-btn");
+  const bundlesHas = document.querySelectorAll(".bundle-option");
 
-  addToCartButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
+  if (bundlesHas.length > 0) {
+    const addToCartButtons = document.querySelectorAll(".rs-add-btn.mrk-btn");
 
-      // Find active bundle globally
-      const activeBundle = document.querySelector(".bundle-option.active");
-      if (!activeBundle) {
-        alert("Please select a product bundle.");
-        return;
-      }
+    addToCartButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
 
-      // Find the bundle manager for active bundle
-      const manager = bundleManagers.find((m) => m.bundle === activeBundle);
-      if (manager) {
-        manager.addToCart();
-      }
+        // Only run bundle logic if bundles exist on the page
+
+        const activeBundle = document.querySelector(".bundle-option.active");
+        if (!activeBundle) {
+          console.log("Please select a product bundle.");
+          return;
+        }
+
+        const manager = bundleManagers.find((m) => m.bundle === activeBundle);
+        if (manager) {
+          manager.addToCart();
+        }
+      });
     });
-  });
+  }
 
   // Bundle selection click
   bundles.forEach((bundle) => {
