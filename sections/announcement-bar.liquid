@@ -1,4 +1,9 @@
 <style>
+.header--sticky-ann{
+    position: sticky;
+    top: 0;
+    z-index: 12;
+  }
   .announcement-bar-wrapper {
     width: 100%;
     background-color: var(--announcement-bg, #494949);
@@ -175,7 +180,7 @@
 {
   "name": "Header Announcement Bar",
   "tag": "section",
-  "class": "header-announcement",
+  "class": "header-announcement header--sticky-ann",
   "settings": [
     {
       "type": "collection_list",
