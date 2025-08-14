@@ -74,6 +74,15 @@
         line-height: 1;
         font-size: 14px;
       }
+
+
+
+
+
+
+
+
+
       @media only screen and (max-width:768px){
         .rs-price{
           padding-top: {{ block.settings.p_pt_m }}px;
@@ -197,7 +206,7 @@
         <h4
           class="rs-product-subtitle"
           style="
-                                                                        font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+                                                                                    font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
           "
         >
           {{ block.settings.subtitle }}
