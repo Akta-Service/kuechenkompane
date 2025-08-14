@@ -70,9 +70,9 @@
             {{ separator }}
             {% if current_collection.handle %}
               {% capture url %}/collections/{{ current_collection.handle }}{% endcapture %}
-              <h1>
+              <p>
                 <a href="{{ url }}" class="m-breadcrumb--item">{{ current_collection.title }}</a>
-              </h1>
+              </p>
             {% endif %}
           {% endif %}
           {% unless hide_current == true %}

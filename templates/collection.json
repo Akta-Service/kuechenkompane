@@ -9,6 +9,34 @@
  */
 {
   "sections": {
+    "testing_ahDQMJ": {
+      "type": "testing",
+      "blocks": {
+        "title_PyKV3e": {
+          "type": "Title",
+          "disabled": true,
+          "settings": {
+            "title": "{{ collection.title }}",
+            "padding_top": 20,
+            "padding_left": 20,
+            "padding_bottom": 20,
+            "padding_top_mobile": 10,
+            "padding_left_mobile": 10,
+            "padding_bottom_mobile": 10,
+            "font_size": "<h1 class='first-title title-style'> | </h1>"
+          }
+        }
+      },
+      "block_order": [
+        "title_PyKV3e"
+      ],
+      "name": "Title Block",
+      "settings": {
+        "h2": 20,
+        "h1font-wight": "bold",
+        "h1-color": ""
+      }
+    },
     "breadcrumb_yifnda": {
       "type": "breadcrumb",
       "name": "Breadcrumb",
@@ -71,7 +99,7 @@
         "grid_columns": "4",
         "show_columns_switcher": true,
         "pagination_limit": 30,
-        "paginate_type": "paginate",
+        "paginate_type": "infinite",
         "show_sorting": true,
         "show_filter": false,
         "filters_type": "storefront_filters",
@@ -182,6 +210,7 @@
     }
   },
   "order": [
+    "testing_ahDQMJ",
     "breadcrumb_yifnda",
     "collection-header",
     "apex_timer_9PnBtn",

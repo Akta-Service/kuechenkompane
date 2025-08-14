@@ -98,7 +98,7 @@
               >
                 {% for item in search.results limit: section.settings.results_per_page %}
                   {% if item.object_type == 'product' %}
-                    {% comment %} {% unless item.tags contains 'NO SEARCH' %} {% endcomment %}
+                    {% unless item.tags contains 'NO SEARCH' %}
                       <div class="m:column m:w-1/2 sm:m:w-4/12 lg:m:w-3/12">
                         {% liquid
                           case settings.pcard_layout
@@ -115,7 +115,7 @@
                           endcase
                         %}
                       </div>
-                    {% comment %} {% endunless %} {% endcomment %}
+                    {% endunless %}
                   {% endif %}
                   {% if item.object_type == 'article' %}
                     <div class="m:column m:w-1/2 sm:m:w-4/12 lg:m:w-3/12">

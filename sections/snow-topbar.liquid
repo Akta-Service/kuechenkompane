@@ -1,0 +1,284 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+  .snow-topbar {
+    /* background-color: #074a97; */
+    overflow: hidden;
+  }
+  .snow-topbar-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .snow-topbar-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+    padding: 10px 0;
+  }
+
+  .snow-topbar-title {
+    /* color: #ffffff; */
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .countdown-container {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 12px;
+  }
+
+  .timer-item {
+    text-align: center;
+    position: relative;
+  }
+
+  .timer-item span {
+    font-family: 'DM Sans';
+    font-size: 24px;
+    line-height: 24px;
+    /* color: #ffffff; */
+    display: block;
+  }
+
+  .timer-item .timer-text {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .timer-item .divider {
+    font-size: 34px;
+    line-height: 1;
+    /* margin-top: -6px; */
+  }
+
+  @media (max-width: 767px) {
+    .snow-topbar-content {
+      gap: 20px;
+    }
+
+    .snow-topbar-title {
+      font-size: 18px;
+    }
+    .timer-item span {
+      font-size: 18px;
+    }
+    .timer-item .divider {
+      font-size: 24px;
+    }
+  }
+  @media (max-width: 575px) {
+    .countdown-container {
+      gap: 5px;
+    }
+
+    .snow-topbar-title {
+      font-size: 14px;
+    }
+    .timer-item span {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+    .timer-item .divider {
+      font-size: 16px;
+    }
+    .snow-topbar-content {
+      gap: 20px;
+    }
+    .snow-topbar-container {
+      padding: 0 10px;
+    }
+
+    .timer-item .timer-text {
+      font-size: 10px;
+      line-height: 10px;
+    }
+  }
+</style>
+
+{% assign show_countdown = false %}
+
+{% for coll in section.settings.target_collections %}
+  {% if collection.handle == coll.handle %}
+    {% assign show_countdown = true %}
+  {% endif %}
+{% endfor %}
+
+
+{% assign included_pages = section.settings.target_pages | strip | split: ',' %}
+{% for pg_handle in included_pages %}
+  {% assign pg_handle_trimmed = pg_handle | strip %}
+  {% if page and page.handle == pg_handle_trimmed %}
+    {% assign show_countdown = true %}
+  {% endif %}
+{% endfor %}
+
+
+
+{% if show_countdown %}
+  <div class="snow-topbar m-color-{{ section.settings.color_scheme }}">
+    <div class="snow-topbar-container">
+      <div class="snow-topbar-content">
+        <div class="snow-topbar-title">{{ section.settings.top_title }}</div>
+        <div class="snow-topbar-timer">
+          <div id="countdown-{{ section.id }}" class="countdown-container">
+            <div class="timer-item">
+              <span id="day-{{ section.id }}">00</span>
+              <span class="timer-text">Tage</span>
+            </div>
+            <div class="timer-item">
+              <span class="divider">:</span>
+            </div>
+            <div class="timer-item">
+              <span id="hrs-{{ section.id }}">00</span>
+              <span class="timer-text">Std</span>
+            </div>
+            <div class="timer-item">
+              <span class="divider">:</span>
+            </div>
+            <div class="timer-item">
+              <span id="min-{{ section.id }}">00</span>
+              <span class="timer-text">Min</span>
+            </div>
+            <div class="timer-item">
+              <span class="divider">:</span>
+            </div>
+            <div class="timer-item">
+              <span id="sec-{{ section.id }}">00</span>
+              <span class="timer-text">Sek</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    class MrkCountdownTimer {
+      constructor({ startTime, initialHours, thresholdHours, sectionId }) {
+        this.startTime = new Date(startTime).getTime();
+        this.initialHours = initialHours;
+        this.thresholdHours = thresholdHours;
+        this.sectionId = sectionId;
+
+        // Elements
+        this.dayEl = document.getElementById(`day-${sectionId}`);
+        this.hrsEl = document.getElementById(`hrs-${sectionId}`);
+        this.minEl = document.getElementById(`min-${sectionId}`);
+        this.secEl = document.getElementById(`sec-${sectionId}`);
+
+        this.updateTimer = this.updateTimer.bind(this);
+        this.start();
+      }
+
+      updateTimer() {
+        const now = Date.now();
+        let elapsedHours = (now - this.startTime) / (1000 * 60 * 60);
+
+        // Restart if threshold reached
+        if (this.initialHours - elapsedHours <= this.thresholdHours) {
+          this.startTime = now;
+          elapsedHours = 0;
+        }
+
+        const remainingMs = (this.initialHours - elapsedHours) * 60 * 60 * 1000;
+
+        if (remainingMs <= 0) {
+          this.displayTime(0, 0, 0, 0);
+          return;
+        }
+
+        const days = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((remainingMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((remainingMs % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((remainingMs % (1000 * 60)) / 1000);
+
+        this.displayTime(days, hours, minutes, seconds);
+      }
+
+      displayTime(days, hours, minutes, seconds) {
+        this.dayEl.textContent = String(days).padStart(2, '0');
+        this.hrsEl.textContent = String(hours).padStart(2, '0');
+        this.minEl.textContent = String(minutes).padStart(2, '0');
+        this.secEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      start() {
+        this.updateTimer();
+        this.timerInterval = setInterval(this.updateTimer, 1000);
+      }
+    }
+
+    // Shopify Section-specific initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      new MrkCountdownTimer({
+        startTime: '{{ section.settings.start_time }}', // e.g. 2025-08-06T10:00:00
+        initialHours: parseInt('{{ section.settings.initial_hours | default: 48 }}', 10),
+        thresholdHours: parseInt('{{ section.settings.threshold_hours | default: 24 }}', 10),
+        sectionId: '{{ section.id }}',
+      });
+    });
+  </script>
+{% endif %}
+{% schema %}
+{
+  "name": "Countdown Timer",
+  "tag": "section",
+  "class": "countdown-timer-section",
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "target_collections",
+      "label": "Show on these collections"
+    },
+    {
+      "type": "textarea",
+      "id": "target_pages",
+      "label": "Page handles to  Show (e.g: about-us,contact)",
+     
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "top_title",
+      "label": "Title Here",
+      "default": "Black Friday in July Ends:"
+    },
+    {
+      "type": "text",
+      "id": "start_time",
+      "label": "Start Time (YYYY-MM-DDTHH:MM:SS)",
+      "default": "2025-08-06T10:00:00"
+    },
+    {
+      "type": "number",
+      "id": "initial_hours",
+      "label": "Initial Countdown Hours",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "threshold_hours",
+      "label": "Restart Threshold Hours",
+      "default": 24
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Countdown Timer"
+    }
+  ]
+}
+{% endschema %}

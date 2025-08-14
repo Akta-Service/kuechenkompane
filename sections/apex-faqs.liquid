@@ -21,6 +21,15 @@
     font-size: {{- section.settings.faq_text_font_size -}}px ;
     
   }
+  .text-left {
+    text-align: left;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-right {
+    text-align: right;
+  }
   @media (max-width: 767px) {
     .appex-faqs-area {
       padding-top: {{- section.settings.pt_mobile -}}px;
@@ -34,8 +43,8 @@
 </style>
 <div class="appex-faqs-area m-color-{{ section.settings.color_scheme }} ">
   <div class="rs-container">
-    <h2 class="faqs-title {{ section.settings.heading_type }}">{{ section.settings.title }}</h2>
-    <p class="faqs-sub-title">{{ section.settings.sub_title }}</p>
+    <h2 class="faqs-title {{ section.settings.alignment }} {{ section.settings.heading_type }}">{{ section.settings.title }}</h2>
+    <p class="faqs-sub-title {{ section.settings.alignment }}">{{ section.settings.sub_title }}</p>
     <div class="appex-faq-wrapper">
       {% for block in section.blocks %}
         <div class="appex-faq-item">
@@ -194,6 +203,30 @@
       "min": 10,
       "max": 100,
       "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Alignment"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "text-left",
+          "label": "Left"
+        },
+        {
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Right"
+        }
+      ],
+      "default": "text-left"
     }
   ],
   "blocks": [

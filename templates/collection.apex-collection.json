@@ -64,6 +64,17 @@
         "mb_mobile": 15
       }
     },
+    "breadcrumb_h1_b4RT8P": {
+      "type": "breadcrumb-h1",
+      "name": "Breadcrumb h1",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "breadcrumb_bEhLYx": {
       "type": "breadcrumb",
       "name": "Breadcrumb",
@@ -299,6 +310,7 @@
   "order": [
     "collection-header",
     "apex_top_slider_GBwqAg",
+    "breadcrumb_h1_b4RT8P",
     "breadcrumb_bEhLYx",
     "category_selection_iMrTd6",
     "main",

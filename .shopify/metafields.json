@@ -111,6 +111,36 @@
         "name": "single_line_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "kollection_uberschrift",
+      "namespace": "custom",
+      "name": "Kollection-Überschrift",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "kollektion_main_text",
+      "namespace": "custom",
+      "name": "Kollektion-Main-Text",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "noindex",
+      "namespace": "custom",
+      "name": "Noindex",
+      "description": "",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
     }
   ],
   "company": [],
@@ -1689,6 +1719,56 @@
       "description": "Specifies the taste or flavor of a product, e.g. vanilla, mint",
       "type": {
         "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "product_badge",
+      "namespace": "custom",
+      "name": "Product Badge",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_short_description",
+      "namespace": "custom",
+      "name": "Product Short Description",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "price_individual_tag",
+      "namespace": "custom",
+      "name": "price_individual_tag",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_save_badge",
+      "namespace": "custom",
+      "name": "Product save badge",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_image",
+      "namespace": "custom",
+      "name": "Product Image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
         "category": "REFERENCE"
       }
     }

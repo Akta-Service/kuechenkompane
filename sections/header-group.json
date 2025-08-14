@@ -28,6 +28,82 @@
         "text_size_m": 16
       }
     },
+    "announcement_bar_mbKA4K": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_NefGWg": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>"
+          }
+        },
+        "announcement_nPhBbE": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>"
+          }
+        },
+        "announcement_VjA8mp": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p><strong>30-day</strong> money-back guarantee</p>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_NefGWg",
+        "announcement_nPhBbE",
+        "announcement_VjA8mp"
+      ],
+      "name": "Header Announcement Bar",
+      "settings": {
+        "collection_list": [
+          "sommer-kollektion"
+        ],
+        "announcement_animation_type": "slider",
+        "bg_color": "#4b4b4b",
+        "font_size": 1.5,
+        "marquee_speed": 40,
+        "slides_per_view_small": 1,
+        "slides_per_view_medium": 1,
+        "slides_per_view_large": 1,
+        "space_between": 20,
+        "autoplay_delay": 4000,
+        "speed": 1500
+      }
+    },
+    "snow_topbar_Wc6BME": {
+      "type": "snow-topbar",
+      "name": "Countdown Timer",
+      "settings": {
+        "target_collections": [
+          "bestseller-angebot",
+          "grunder-geburtstag-1",
+          "grunder-im-urlaub-1"
+        ],
+        "target_pages": "apex-new-page",
+        "color_scheme": "dark",
+        "top_title": "Angebot endet in",
+        "start_time": "2025-08-06T10:00:00",
+        "initial_hours": 48,
+        "threshold_hours": 24
+      }
+    },
+    "announcement_bar_AidTMy": {
+      "type": "announcement--bar",
+      "name": "Announcement Bar new",
+      "settings": {
+        "target_collections": [
+          "grunder-geburtstag-1",
+          "grunder-im-urlaub-1",
+          "bestseller-angebot"
+        ],
+        "target_pages": "apex-new-page",
+        "color_scheme": "scheme-74cef576-6976-437f-b943-846d48553c4f",
+        "announcement_url": "",
+        "announcement_text": "BIS zu 75% RABATT AUF ALLES"
+      }
+    },
     "announcement_bar_sticky_scroll_Bk3YD6": {
       "type": "announcement-bar-sticky-scroll",
       "name": "APEX Announcement Sticky",
@@ -36,15 +112,22 @@
           "interner-deal",
           "lagerumzug-sale",
           "grossbestellung-storniert",
-          "lagerumzug",
           "vor-der-preiserhohung",
           "topdeal24-angebot",
           "reise-gewinnen-malediven",
           "reise-gewinnen-malediven-1",
           "reise-gewinnen-malediven-2",
           "reise-gewinnen-malediven-3",
-          "reise-gewinnen-malediven-4"
+          "reise-gewinnen-malediven-4",
+          "grunder-geburtstag",
+          "grunder-im-urlaub",
+          "bestseller-angebot",
+          "grunder-geburtstag-1",
+          "grunder-im-urlaub-1",
+          "sommer-kollektion",
+          "auslaufmodelle"
         ],
+        "target_pages": "apex-new-page",
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
@@ -150,6 +233,30 @@
             "ann_title": "💥 Großer Lagerschlussverkauf",
             "text": "<p>Bis zu 75 % auf echte Bestseller</p>"
           }
+        },
+        "announcement_4K73ww": {
+          "type": "announcement",
+          "settings": {
+            "collection": "grunder-geburtstag",
+            "ann_title": "🎉 Geburtstagsaktion – Spare jetzt bei Küchenkompane!",
+            "text": "<p>Bis zu 75% Rabatt für die nächsten 48h 🥳</p>"
+          }
+        },
+        "announcement_kAPTNe": {
+          "type": "announcement",
+          "settings": {
+            "collection": "grunder-im-urlaub",
+            "ann_title": "🚨 Nur 48h: Rabatte hinterm Rücken vom Chef!",
+            "text": "<p>Der Chef ist weg – wir machen die Preise!</p>"
+          }
+        },
+        "announcement_xrURAy": {
+          "type": "announcement",
+          "settings": {
+            "collection": "auslaufmodelle",
+            "ann_title": "Alles muss raus! Jetzt 75% Rabatt auf Auslaufmodelle",
+            "text": "<p>Nur für kurze Zeit & solange der Vorrat reicht<br/><br/></p>"
+          }
         }
       },
       "block_order": [
@@ -163,7 +270,10 @@
         "announcement_XbBpcL",
         "announcement_NzwhVJ",
         "announcement_qcxp9X",
-        "announcement_4xFYEd"
+        "announcement_4xFYEd",
+        "announcement_4K73ww",
+        "announcement_kAPTNe",
+        "announcement_xrURAy"
       ],
       "name": "APEX Different Ann",
       "settings": {
@@ -173,7 +283,7 @@
         "sticky_top": false,
         "color_scheme": "dark",
         "pt": 15,
-        "pb": 15,
+        "pb": 0,
         "ann_title_size": 16,
         "ann_title_size_m": 16,
         "text_size": 16,
@@ -298,7 +408,18 @@
         ".social-media-links {column-gap: 30px;}"
       ],
       "settings": {
-        "color_scheme": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
+        "color_scheme": "default",
+        "custom_collection_list": [
+          "100-tage-risikofrei-testen",
+          "grunder-im-urlaub-1",
+          "grunder-geburtstag-1",
+          "bestseller-angebot",
+          "sommer-kollektion"
+        ],
+        "target_pages": "apex-new-page",
+        "collection_color_scheme": "dark",
+        "collection_mobile_log": "shopify://shop_images/Kuechenkompane_-_Logo2023_-_DarkGreen_background_V5_1_256x_77ef1980-7a10-44ee-b7ef-57c2ede38211.png",
+        "collection_desktop_log": "shopify://shop_images/Kuechenkompane_-_Logo2023_-_DarkGreen_background_V5_1_256x_77ef1980-7a10-44ee-b7ef-57c2ede38211.png",
         "color_scheme_menu": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
         "header_design": "logo-center-menu-left",
         "container": "container-fluid",
@@ -391,6 +512,9 @@
   },
   "order": [
     "announcement_bar_version_1_rc6jDA",
+    "announcement_bar_mbKA4K",
+    "snow_topbar_Wc6BME",
+    "announcement_bar_AidTMy",
     "announcement_bar_sticky_scroll_Bk3YD6",
     "announcement_different_rRyBgT",
     "apex_timer_progress_yCDcUj",

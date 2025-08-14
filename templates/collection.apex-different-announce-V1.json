@@ -164,6 +164,18 @@
         "animations": "inherit"
       }
     },
+    "breadcrumb_h1_UxG7wm": {
+      "type": "breadcrumb-h1",
+      "disabled": true,
+      "name": "Breadcrumb h1",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "main": {
       "type": "apex-theme-collectiont-product",
       "custom_css": [
@@ -321,6 +333,7 @@
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
     "rich_text_bXpWiG",
+    "breadcrumb_h1_UxG7wm",
     "main",
     "usp_list_xQHfgQ",
     "promotion_banner_wLVh66",

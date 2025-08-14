@@ -45,7 +45,7 @@
         "review_Tgbbak": {
           "type": "review",
           "settings": {
-            "p": "4441 Bewertungen",
+            "p": "5296 Bewertungen",
             "star_range": 5,
             "star_color": "#000000"
           }
@@ -96,7 +96,11 @@
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 18,
-            "price_font_weight": "600"
+            "price_font_weight": "600",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0"
           }
         },
         "subtitle_xQXVba": {
@@ -135,6 +139,7 @@
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
             "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
             "viewer_count_time": 30000,
             "stock_count_time": 50000,
             "stock_count_show": true
@@ -235,6 +240,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
@@ -1097,7 +1103,8 @@
         "sub_title": "",
         "sub_title_font_size": 14,
         "faq_title_font_size": 18,
-        "faq_text_font_size": 16
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "cta_final_9B8iN9": {
@@ -1218,6 +1225,29 @@
         "custom_class": ""
       }
     },
+    "product_recommendations_pz8BKV": {
+      "type": "product-recommendations",
+      "name": "Product recommendations",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "remove_params": false,
+        "heading": "Das könnte dir auch gefallen",
+        "heading_size": "h3",
+        "text_align": "left",
+        "limit": 8,
+        "columns": 5,
+        "column_gap": 30,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": true,
+        "use_scroll_mobile": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "store_benefits_bottom_NPnyUL": {
       "type": "store-benefits-bottom",
       "blocks": {
@@ -1308,6 +1338,7 @@
     "cta_final_9B8iN9",
     "benefit_list_gif_iJWmYF",
     "1741277518a98c9482",
+    "product_recommendations_pz8BKV",
     "store_benefits_bottom_NPnyUL",
     "custom_liquid_qdhU6F"
   ]

@@ -86,6 +86,18 @@
           font-size: {{ block.settings.f_s_m |  append: 'px' }};
         }
       }
+
+       .green-label {
+        background: {{ block.settings.price_tag_bg }};
+        color: {{ block.settings.price_tag_text_color }};
+        font-size: {{ block.settings.price_tag_font_size }}px;
+      }
+      .green-label::before {
+        background:  {{ block.settings.price_tag_arrow_bg }};
+      }
+
+
+
       {% when 'featurelist_header' %}
         .feature-header{
           padding-top: {{ block.settings.f_h_pt }}px;
@@ -98,6 +110,9 @@
         }
 
       }
+
+
+
 
 
 
@@ -182,7 +197,7 @@
         <h4
           class="rs-product-subtitle"
           style="
-                        font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+                                                font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
           "
         >
           {{ block.settings.subtitle }}
@@ -234,38 +249,38 @@
           {% endif %}
         </div>
       {% when 'price' %}
-
         <div class="product-block-group--price">
           <div class="rs-price">
-            {% comment %} <span class="rs-current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
-            {% if product.selected_or_first_available_variant.price < product.compare_at_price %}
-              <span class="rs-compare-price">{{ product.compare_at_price | money }}</span>
-              {% assign price = product.selected_or_first_available_variant.price %}
-              {% assign compare_price = product.compare_at_price %}
-              {% assign discount_amount = compare_price | minus: price %}
-              {% assign discount_percentage = discount_amount | times: 100 | divided_by: compare_price | round: 0 %}
-              <span class="discount-percentage">-{{ discount_percentage }}%</span>
-            {% endif %} {% endcomment %}
-          
-          {% render 'rs-product-prices',
-            use_variant: true,
-            product: product,
-            show_sale_badge: block.settings.show_saving,
-            price_text_size: 'm:text-xl md:m:text-2xl',
-            sale_badge_type: block.settings.sale_badge_type
-          %}
-          {%- if block.settings.taxes_included != false -%}
-            <div class="m-product-tax">
-              {%- if block.settings.taxes_included_text != blank -%}
-                {{ block.settings.taxes_included_text }}
-              {%- else -%}
-                {{ 'products.product.include_taxes' | t }}
-              {%- endif -%}
-            </div>
-          {%- endif -%}
+            {% comment %}
+              <span class="rs-current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+              {% if product.selected_or_first_available_variant.price < product.compare_at_price %}
+                <span class="rs-compare-price">{{ product.compare_at_price | money }}</span>
+                {% assign price = product.selected_or_first_available_variant.price %}
+                {% assign compare_price = product.compare_at_price %}
+                {% assign discount_amount = compare_price | minus: price %}
+                {% assign discount_percentage = discount_amount | times: 100 | divided_by: compare_price | round: 0 %}
+                <span class="discount-percentage">-{{ discount_percentage }}%</span>
+              {% endif %}
+            {% endcomment %}
+
+            {% render 'rs-product-prices',
+              use_variant: true,
+              product: product,
+              show_sale_badge: block.settings.show_saving,
+              price_text_size: 'm:text-xl md:m:text-2xl',
+              sale_badge_type: block.settings.sale_badge_type
+            %}
+            {%- if block.settings.taxes_included != false -%}
+              <div class="m-product-tax">
+                {%- if block.settings.taxes_included_text != blank -%}
+                  {{ block.settings.taxes_included_text }}
+                {%- else -%}
+                  {{ 'products.product.include_taxes' | t }}
+                {%- endif -%}
+              </div>
+            {%- endif -%}
           </div>
         </div>
-  
 
       {% when 'viewerStockCount' %}
         {% render 'viewer-stock-count', block: block %}
@@ -331,6 +346,10 @@
         {% if product.metafields.descriptor.short_description != blank %}
           <div class="m-product-description">{{ product.metafields.descriptor.short_description }}</div>
         {% endif %}
+
+      {%- when 'bundle_slector' -%}
+        {% render 'bundle-selector', block: block, section: section %}
+
       {%- when 'description' -%}
         <div class="m-product-description rte">
           {{ product.description }}
@@ -574,11 +593,9 @@
               disabled
             >
 
-          {% if from_collection %}
-            <input type="hidden" name="properties[From_Collection]" value="{{ from_collection }}">
-          {% endif %}
-
-
+            {% if from_collection %}
+              <input type="hidden" name="properties[From_Collection]" value="{{ from_collection }}">
+            {% endif %}
 
             {%- if gift_card_recipient_feature_active -%}
               {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
@@ -587,9 +604,11 @@
             <div class="m-product-form--wrapper m:display-flex m:flex-wrap m:items-center">
               {% if block.settings.show_quantity_selector %}
                 <div class="m-product-form--input">
-                  {% comment %} <label class="m-product-option--label">
-                    {{ 'products.product.quantity' | t }}
-                  </label> {% endcomment %}
+                  {% comment %}
+                    <label class="m-product-option--label">
+                      {{ 'products.product.quantity' | t }}
+                    </label>
+                  {% endcomment %}
                   {% render 'product-qty-input', product_form_id: product_form_id, product: product %}
                 </div>
               {% endif %}
@@ -1055,59 +1074,56 @@
   </div>
 {%- endfor -%}
 
-
-<!-- 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const fromCollection = urlParams.get('from');
-
-  if (fromCollection) {
-    // Select ALL forms that add to cart
-    const forms = document.querySelectorAll('form[action^="/cart/add"]');
-
-    forms.forEach(function(form) {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = "properties[From_Collection]";
-      input.value = fromCollection;
-      form.appendChild(input);
-
-      console.log('✅ Hidden input added to form:', form);
-    });
-  } else {
-    console.log('❌ No from collection parameter found in URL');
-  }
-});
-</script> -->
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
+<!--
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
-    const fromCollection = urlParams.get("from");
+    const fromCollection = urlParams.get('from');
 
-    // ✅ Only run if: 1) there's a ?from= parameter, and 2) you're on a /products/ page
-    if (fromCollection && window.location.pathname.startsWith("/products/")) {
-      // Target only the main product form
-      const productForm = document.querySelector('form[action^="/cart/add"]:not(.quick-add):not(.drawer-form)');
+    if (fromCollection) {
+      // Select ALL forms that add to cart
+      const forms = document.querySelectorAll('form[action^="/cart/add"]');
 
-      if (productForm) {
+      forms.forEach(function(form) {
         const input = document.createElement("input");
         input.type = "hidden";
         input.name = "properties[From_Collection]";
         input.value = fromCollection;
+        form.appendChild(input);
+
+        console.log('✅ Hidden input added to form:', form);
+      });
+    } else {
+      console.log('❌ No from collection parameter found in URL');
+    }
+  });
+  </script>
+-->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const fromCollection = urlParams.get('from');
+
+    // ✅ Only run if: 1) there's a ?from= parameter, and 2) you're on a /products/ page
+    if (fromCollection && window.location.pathname.startsWith('/products/')) {
+      // Target only the main product form
+      const productForm = document.querySelector('form[action^="/cart/add"]:not(.quick-add):not(.drawer-form)');
+
+      if (productForm) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'properties[From_Collection]';
+        input.value = fromCollection;
         productForm.appendChild(input);
 
-        console.log("✅ Hidden input added for special collection offer:", fromCollection);
+        console.log('✅ Hidden input added for special collection offer:', fromCollection);
       } else {
-        console.log("⚠️ Product form not found.");
+        console.log('⚠️ Product form not found.');
       }
     } else {
       // Do nothing if the URL has no ?from= or isn't a product page
-      console.log("ℹ️ Not a special offer URL. Skipping hidden input injection.");
+      console.log('ℹ️ Not a special offer URL. Skipping hidden input injection.');
     }
   });
 </script>
-
-                        

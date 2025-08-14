@@ -10,9 +10,9 @@
 {
   "current": {
     "allowed_handles": [
-      "vip-sale"
+      "aktion-2-fur-3"
     ],
-    "password": "SOMMER",
+    "password": "timo",
     "header_title": "Beliebte Produkte",
     "collection_url_text": "Alle ansehen",
     "serch_recom_colection": "bestseller-facebook-12-best",
@@ -74,7 +74,7 @@
     "pcard_layout": "1",
     "pcard_alignment": "left",
     "pcard_image_ratio": "original",
-    "show_cart_button": true,
+    "show_cart_button": false,
     "show_quickview_button": false,
     "show_compare_button": false,
     "show_badge_sale": true,
@@ -191,6 +191,11 @@
       },
       "14868561720390754469": {
         "type": "shopify://apps/loloyal/blocks/boom-cend/930ac91f-2bf2-4655-9ba0-574771f782d6",
+        "disabled": false,
+        "settings": {}
+      },
+      "1692329972272007824": {
+        "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_main/7411210d-7b32-4c09-9455-e129e3be4729",
         "disabled": false,
         "settings": {}
       }
@@ -534,6 +539,28 @@
           "text": "#ffffff",
           "subtext": "#222222",
           "heading_text": "#222222",
+          "button": "#fa8526",
+          "button_label": "#ffffff",
+          "outline_button_label": "#fa8526",
+          "button_hover": "#4b4b4b",
+          "button_text_hover": "#ffffff",
+          "price_sale": "#3a8735",
+          "price_regular": "#000000",
+          "form_field": "#ffffff",
+          "form_field_label": "#000000",
+          "tooltip": "#222222",
+          "tooltip_label": "#ffffff",
+          "border": "#eeeeee"
+        }
+      },
+      "scheme-5cb5b8d4-eaf3-4d52-86eb-c329c7a50ccb": {
+        "settings": {
+          "background": "#324a34",
+          "background_secondary": "#324a34",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "subtext": "#ffffff",
+          "heading_text": "#ffffff",
           "button": "#fa8526",
           "button_label": "#ffffff",
           "outline_button_label": "#fa8526",

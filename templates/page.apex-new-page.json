@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "coupon_code_section_P7dfJg": {
+      "type": "coupon-code-section",
+      "blocks": {
+        "title_T4Bjg7": {
+          "type": "title",
+          "settings": {
+            "title": "25% OFF"
+          }
+        },
+        "subtitle_Umf37e": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "new year offer"
+          }
+        },
+        "coupon_code_jViVqr": {
+          "type": "coupon_code",
+          "settings": {
+            "coupon_text": "nye25"
+          }
+        },
+        "coupon_info_6393bE": {
+          "type": "coupon_info",
+          "settings": {
+            "coupon_info": "to take 25% off any of our in-stock and ready-to-ship pieces"
+          }
+        },
+        "coupon_button_39iad7": {
+          "type": "coupon_button",
+          "settings": {
+            "btn_text": "Shop Now",
+            "btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_T4Bjg7",
+        "subtitle_Umf37e",
+        "coupon_code_jViVqr",
+        "coupon_info_6393bE",
+        "coupon_button_39iad7"
+      ],
+      "name": "Coupon Code Section",
+      "settings": {
+        "color_scheme": "scheme-f618ff52-b194-4c41-85c0-276af7413331",
+        "image": "shopify://shop_images/premium_photo-1683134066903-aef20412abf3.jpg"
+      }
+    },
+    "current_promotion_CLUBzr": {
+      "type": "current-promotion",
+      "blocks": {
+        "title_fYHgy8": {
+          "type": "title",
+          "settings": {
+            "title": "100% Satisfaction Guarantee"
+          }
+        },
+        "description_DaDR6t": {
+          "type": "description",
+          "settings": {
+            "description": "Your satisfaction is our priority. If you’re not completely happy with your purchase, simply reach out. We’ll make it right. No hassle, no worries."
+          }
+        },
+        "button_ANenYB": {
+          "type": "button",
+          "settings": {
+            "btn_text": "Get Yours Now",
+            "btn_url": "",
+            "ratings": 4.5,
+            "ratings_text": "Rated 4.3 by 792+ Happy Customers"
+          }
+        }
+      },
+      "block_order": ["title_fYHgy8", "description_DaDR6t", "button_ANenYB"],
+      "name": "Current Promotion",
+      "settings": {
+        "color_scheme": "scheme-5cb5b8d4-eaf3-4d52-86eb-c329c7a50ccb",
+        "main_image": "shopify://shop_images/IMG_6143_e8c44b3d-deb9-4b95-9841-4e8cf7838f12.jpg"
+      }
+    },
+    "custom_liquid_zdTVmB": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"klaviyo-form-WR3f9r\"></div>",
+        "custom_class": ""
+      }
+    },
+    "apex_faqs_9M77yA": {
+      "type": "apex-faqs",
+      "blocks": {
+        "item_PeecPY": {
+          "type": "item",
+          "settings": {
+            "faq_title": "How long do the strips last unopened?",
+            "faq_body": "<p>The UV gel strips remain in their packaging and ready for use for over 2 years. Once opened, the strips have a shelf life of 3 months. Store the opened strips in an airtight container and in a dark place between uses to prevent premature hardening. Use our sticker from the UV gel strips packaging.</p>"
+          }
+        },
+        "item_HjHmkw": {
+          "type": "item",
+          "settings": {
+            "faq_title": "How long do the strips last unopened?",
+            "faq_body": "<p>The UV gel strips remain in their packaging and ready for use for over 2 years. Once opened, the strips have a shelf life of 3 months. Store the opened strips in an airtight container and in a dark place between uses to prevent premature hardening. Use our sticker from the UV gel strips packaging.</p>"
+          }
+        },
+        "item_AidNYx": {
+          "type": "item",
+          "settings": {
+            "faq_title": "How long do the strips last unopened?",
+            "faq_body": "<p>The UV gel strips remain in their packaging and ready for use for over 2 years. Once opened, the strips have a shelf life of 3 months. Store the opened strips in an airtight container and in a dark place between uses to prevent premature hardening. Use our sticker from the UV gel strips packaging.</p>"
+          }
+        },
+        "item_9MFfHr": {
+          "type": "item",
+          "settings": {
+            "faq_title": "How long do the strips last unopened?",
+            "faq_body": "<p>The UV gel strips remain in their packaging and ready for use for over 2 years. Once opened, the strips have a shelf life of 3 months. Store the opened strips in an airtight container and in a dark place between uses to prevent premature hardening. Use our sticker from the UV gel strips packaging.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_PeecPY",
+        "item_HjHmkw",
+        "item_AidNYx",
+        "item_9MFfHr"
+      ],
+      "name": "APEX FAQs",
+      "settings": {
+        "color_scheme": "",
+        "icon_color": "#000000",
+        "pt": 50,
+        "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
+        "title": "FAQ",
+        "heading_type": "mrk-h1",
+        "sub_title": "Common problems and simple solutions",
+        "sub_title_font_size": 14,
+        "faq_title_font_size": 18,
+        "faq_text_font_size": 16,
+        "alignment": "text-center"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "coupon_code_section_P7dfJg",
+    "current_promotion_CLUBzr",
+    "custom_liquid_zdTVmB",
+    "apex_faqs_9M77yA"
+  ]
+}

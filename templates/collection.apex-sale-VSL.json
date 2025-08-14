@@ -45,6 +45,17 @@
         "mb_mobile": 15
       }
     },
+    "breadcrumb_h1_tYCMQ8": {
+      "type": "breadcrumb-h1",
+      "name": "Breadcrumb h1",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
     "breadcrumb_fjiNLC": {
       "type": "breadcrumb",
       "name": "Breadcrumb",
@@ -338,6 +349,7 @@
   },
   "order": [
     "apex_top_slider_cLWmNy",
+    "breadcrumb_h1_tYCMQ8",
     "breadcrumb_fjiNLC",
     "product_explanation_video_ca4Wbj",
     "announcement_bar_sticky_scroll_gnrpHz",

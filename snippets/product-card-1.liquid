@@ -392,14 +392,14 @@
         <span class="m-product-card__vendor">{{ product.vendor }}</span>
       {%- endif -%}
       {% if show_title == true %}
-        <h3 class="m-product-card__title">
+        <p class="m-product-card__title">
           <a
             href="{{ product_url }}"
             class="m-product-card__name{% if settings.uppercase_prd_name %} m:uppercase{% endif %}"
           >
             {{ product.title }}
           </a>
-        </h3>
+        </p>
       {% endif %}
       {% if settings.show_review_badge %}
         <div class="m-product-card__reviews m:text-color-body">
@@ -508,10 +508,9 @@
           {{ product.metafields.custom.product_form_short_description | metafield_tag }}
         {% else %}
           <div class="m-product-card__description">
-            {{ product.description | strip_html | truncatewords: 15, '...' }}  
+            {{ product.description | strip_html | truncatewords: 15, '...' }}
           </div>
         {% endif %}
-            
       {%- endif -%}
       {%- if show_quickview_button or show_wishlist_button or show_compare_button or show_cart_button -%}
         <div class="m-product-card__action">
