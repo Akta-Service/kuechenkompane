@@ -249,6 +249,14 @@
             "ann_title": "🚨 Nur 48h: Rabatte hinterm Rücken vom Chef!",
             "text": "<p>Der Chef ist weg – wir machen die Preise!</p>"
           }
+        },
+        "announcement_xrURAy": {
+          "type": "announcement",
+          "settings": {
+            "collection": "auslaufmodelle",
+            "ann_title": "Alles muss raus! Jetzt 75% Rabatt auf Auslaufmodelle",
+            "text": "<p>Nur für kurze Zeit & solange der Vorrat reicht<br/><br/></p>"
+          }
         }
       },
       "block_order": [
@@ -264,7 +272,8 @@
         "announcement_qcxp9X",
         "announcement_4xFYEd",
         "announcement_4K73ww",
-        "announcement_kAPTNe"
+        "announcement_kAPTNe",
+        "announcement_xrURAy"
       ],
       "name": "APEX Different Ann",
       "settings": {
