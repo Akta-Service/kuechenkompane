@@ -55,6 +55,7 @@
         "announcement_nPhBbE",
         "announcement_VjA8mp"
       ],
+      "disabled": true,
       "name": "Header Announcement Bar",
       "settings": {
         "collection_list": [
@@ -123,7 +124,9 @@
           "grunder-im-urlaub",
           "bestseller-angebot",
           "grunder-geburtstag-1",
-          "grunder-im-urlaub-1"
+          "grunder-im-urlaub-1",
+          "sommer-kollektion",
+          "auslaufmodelle"
         ],
         "target_pages": "apex-new-page",
         "enable_scroll_to_show": false,
@@ -247,6 +250,14 @@
             "ann_title": "🚨 Nur 48h: Rabatte hinterm Rücken vom Chef!",
             "text": "<p>Der Chef ist weg – wir machen die Preise!</p>"
           }
+        },
+        "announcement_xrURAy": {
+          "type": "announcement",
+          "settings": {
+            "collection": "auslaufmodelle",
+            "ann_title": "Alles muss raus! Jetzt 75% Rabatt auf Auslaufmodelle",
+            "text": "<p>Nur für kurze Zeit & solange der Vorrat reicht<br/><br/></p>"
+          }
         }
       },
       "block_order": [
@@ -262,7 +273,8 @@
         "announcement_qcxp9X",
         "announcement_4xFYEd",
         "announcement_4K73ww",
-        "announcement_kAPTNe"
+        "announcement_kAPTNe",
+        "announcement_xrURAy"
       ],
       "name": "APEX Different Ann",
       "settings": {
@@ -272,7 +284,7 @@
         "sticky_top": false,
         "color_scheme": "dark",
         "pt": 15,
-        "pb": 15,
+        "pb": 0,
         "ann_title_size": 16,
         "ann_title_size_m": 16,
         "text_size": 16,
@@ -402,7 +414,8 @@
           "100-tage-risikofrei-testen",
           "grunder-im-urlaub-1",
           "grunder-geburtstag-1",
-          "bestseller-angebot"
+          "bestseller-angebot",
+          "sommer-kollektion"
         ],
         "target_pages": "apex-new-page",
         "collection_color_scheme": "dark",

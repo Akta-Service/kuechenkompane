@@ -94,7 +94,7 @@
           "settings": {
             "taxes_included": true,
             "taxes_included_text": "Inkl. MwSt.",
-            "show_saving": true,
+            "show_saving": false,
             "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 5,
@@ -184,7 +184,7 @@
             "info_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
             "info_text_2": "Kostenloser Versand",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
-            "info_text_3": "2 Jahre Garantie",
+            "info_text_3": "Geschmiedeter Damaststahl",
             "info_bg_color": "#ffffff",
             "info_border_color": "#000000",
             "info_text_color": "#000000",
@@ -786,7 +786,8 @@
         "sub_title": "",
         "sub_title_font_size": 20,
         "faq_title_font_size": 18,
-        "faq_text_font_size": 16
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "product_explanation_video_xNFp3M": {
