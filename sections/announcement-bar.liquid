@@ -1,60 +1,64 @@
 <style>
-.header--sticky-ann{
-    position: sticky;
-    top: 0;
-    z-index: 12;
-  }
-  .announcement-bar-wrapper {
-    width: 100%;
-    background-color: var(--announcement-bg, #494949);
-    padding: 10px 0;
-  }
-  .announcement-bar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    width: 100%;
-    overflow: hidden;
-  }
-  .announcement-bar-content {
-    text-align: center;
-    color: #fff;
-    font-family: var(--announcement-font, Arial, sans-serif);
-    font-weight: 400;
-    font-size: var(--announcement-font-size);
-  }
+  .header--sticky-ann{
+      position: sticky;
+      top: 0;
+      z-index: 12;
+    }
+    .announcement-bar-wrapper {
+      width: 100%;
+      background-color: var(--announcement-bg, #494949);
+      padding: 10px 0;
+    }
+    .announcement-bar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .announcement-bar-content {
+      text-align: center;
+      color: #fff;
+      font-family: var(--announcement-font, Arial, sans-serif);
+      font-weight: 400;
+      font-size: var(--announcement-font-size);
 
-  /* Marquee Animation */
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
+    }
+    .announcement-bar-wrapper p {
+        line-height: 1;
+    }
 
-  .announcement-marquee {
-    white-space: nowrap;
-    width: 100%;
-  }
+    /* Marquee Animation */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
 
-  .announcement-marquee-track {
-    display: inline-flex;
-    animation: marquee var(--marquee-speed, 40s) linear infinite;
-    will-change: transform;
-  }
-  .announcement-marquee-item {
-    display: inline-flex;
-    align-items: center;
-    margin: 0 40px;
-    white-space: normal;
-    color: #fff;
-    font-size: var(--announcement-font-size, 1.25rem);
-  }
+    .announcement-marquee {
+      white-space: nowrap;
+      width: 100%;
+    }
 
-  /* Swiper Slides */
-  .announcement-slider .swiper-slide {
-    text-align: center;
-    color: #fff;
-    font-size: var(--announcement-font-size, 1.25rem);
-  }
+    .announcement-marquee-track {
+      display: inline-flex;
+      animation: marquee var(--marquee-speed, 40s) linear infinite;
+      will-change: transform;
+    }
+    .announcement-marquee-item {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 40px;
+      white-space: normal;
+      color: #fff;
+      font-size: var(--announcement-font-size, 1.25rem);
+    }
+
+    /* Swiper Slides */
+    .announcement-slider .swiper-slide {
+      text-align: center;
+      color: #fff;
+      font-size: var(--announcement-font-size, 1.25rem);
+    }
 </style>
 
 {% liquid

@@ -34,35 +34,29 @@
         "announcement_NefGWg": {
           "type": "announcement",
           "settings": {
-            "block_text": "<p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>"
+            "block_text": "<p><strong>SOMMER SALE: </strong>Bis zu -75% </p>"
           }
         },
         "announcement_nPhBbE": {
           "type": "announcement",
           "settings": {
-            "block_text": "<p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>"
-          }
-        },
-        "announcement_VjA8mp": {
-          "type": "announcement",
-          "settings": {
-            "block_text": "<p><strong>30-day</strong> money-back guarantee</p>"
+            "block_text": "<p>endet in Kürze | solange Vorrat reicht</p>"
           }
         }
       },
       "block_order": [
         "announcement_NefGWg",
-        "announcement_nPhBbE",
-        "announcement_VjA8mp"
+        "announcement_nPhBbE"
       ],
       "name": "Header Announcement Bar",
       "settings": {
         "collection_list": [
-          "sommer-kollektion"
+          "sommer-kollektion",
+          "varianten-collection"
         ],
         "announcement_animation_type": "slider",
-        "bg_color": "#4b4b4b",
-        "font_size": 1.5,
+        "bg_color": "#324a34",
+        "font_size": 1.2,
         "marquee_speed": 40,
         "slides_per_view_small": 1,
         "slides_per_view_medium": 1,
@@ -125,7 +119,8 @@
           "grunder-geburtstag-1",
           "grunder-im-urlaub-1",
           "sommer-kollektion",
-          "auslaufmodelle"
+          "auslaufmodelle",
+          "varianten-collection"
         ],
         "target_pages": "apex-new-page",
         "enable_scroll_to_show": false,
@@ -413,8 +408,7 @@
           "100-tage-risikofrei-testen",
           "grunder-im-urlaub-1",
           "grunder-geburtstag-1",
-          "bestseller-angebot",
-          "sommer-kollektion"
+          "bestseller-angebot"
         ],
         "target_pages": "apex-new-page",
         "collection_color_scheme": "dark",
