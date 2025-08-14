@@ -458,7 +458,7 @@
       {% endif %}
 
       <div class="m-product-card__price">
-        {% render 'product-prices', product: product, is_product_card: true %}
+        {% render 'akta-collectio-product-prices', product: product, is_product_card: true %}
       </div>
       {% if product.has_only_default_variant == false and show_variant_options %}
         {% render 'product-card-option',
