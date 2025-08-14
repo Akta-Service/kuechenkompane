@@ -197,7 +197,7 @@
         <h4
           class="rs-product-subtitle"
           style="
-                                                            font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+                                                                        font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
           "
         >
           {{ block.settings.subtitle }}
@@ -297,7 +297,7 @@
               {% endif %}
             {% endcomment %}
 
-            {% render 'rs-product-prices',
+            {% render 'rs-product-prices-new',
               use_variant: true,
               product: product,
               show_sale_badge: block.settings.show_saving,
