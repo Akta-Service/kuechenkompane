@@ -6,7 +6,7 @@
     padding: 0 15px;
   }
 
-  .announcement-bar {   
+  .announcement-bar.bar-{{section.id}} {   
     padding-top: {{ section.settings.pt}}px;
     padding-bottom: {{ section.settings.pb}}px;
   }
@@ -61,7 +61,7 @@
 
 
 {% unless hide_announcement %}
-  <div id="announcement-bar" class="announcement-bar m-color-{{ section.settings.color_scheme }}">
+  <div id="announcement-bar" class="announcement-bar bar-{{section.id}} m-color-{{ section.settings.color_scheme }}">
     <div class="announcement-container">
       <div class="announcement-bar-content">
         <strong class="ann_title" style=" ">
