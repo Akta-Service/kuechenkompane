@@ -115,8 +115,8 @@
     {% if product.metafields.custom.price_individual_tag %}
       <span class="green-label">{{ product.metafields.custom.price_individual_tag }} Ubp</span>
     {% endif %}
+    <span>UVP:</span>
     <s class="m-price-item m-price-item--regular rs-compare-price">
-      <span>UVP</span>
       {% if settings.currency_code_enabled %}
         {{ compare_at_price | money_with_currency }}
       {% else %}
