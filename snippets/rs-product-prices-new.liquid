@@ -60,7 +60,7 @@
           endif
         %}
         <div class="m-price__badge-sale" data-type="{{ sale_badge_type }}">
-          <span class="m-product-tag discount-percentage m-product-tag--sale m-gradient m-color-{{ settings.sale_badge_color_scheme }}">
+          <span class="m-product-tag discount-percentage discount-percentage-new m-product-tag--sale m-gradient m-color-{{ settings.sale_badge_color_scheme }}">
             {% unless sale_badge_type == 'text' %}
               {% comment %} {% render 'new-locale', key: 'products.product.save_html', param: '{{ amount }}', value: discount %} {% endcomment %}
               <span class="m-currency--saved m:font-medium" data-saved-price>-{{ discount }}</span>
