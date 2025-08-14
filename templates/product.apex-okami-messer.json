@@ -596,7 +596,7 @@
         "color_scheme": "",
         "media_type": "image",
         "image": "{{ product.metafields.custom.product_grid_image_1.value }}",
-        "padding_top": 50,
+        "padding_top": 10,
         "padding_bottom": 50,
         "reverse": false,
         "padding_top_mobile": 50,
