@@ -28,6 +28,10 @@
   assign sale_badge_type = sale_badge_type | default: 'percentage'
 -%}
 
+{%- if product.variants.size > 1 -%}
+  {%- assign money_price = money_price | prepend: 'Ab ' -%}
+{%- endif -%}
+
 <div
   class="
     m-price m:inline-flex m:items-center m:flex-wrap
