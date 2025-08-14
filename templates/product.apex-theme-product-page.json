@@ -105,7 +105,6 @@
         },
         "price_block_new_deeJAL": {
           "type": "price_block_new",
-          "disabled": true,
           "settings": {
             "taxes_included": false,
             "taxes_included_text": "",
