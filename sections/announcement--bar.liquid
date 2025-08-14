@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
@@ -107,3 +108,114 @@
   ]
 }
 {% endschema %}
+=======
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+  .snow-announcement-bar {
+    /* background-color: #f0ff00; */
+    overflow: clip;
+  }
+  .Announcement--sticky{
+    position: sticky !important;
+    top: 0;
+    z-index: 99;
+  }
+  .snow-announcement-bar a {
+    text-decoration: none;
+  }
+
+  .snow-announcement-bar-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .snow-announcement-bar-text {
+    /* color: #000; */
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 767px) {
+    .snow-announcement-bar-text {
+      font-size: 16px;
+    }
+  }
+</style>
+
+{% assign show_announment = false %}
+
+{% for coll in section.settings.target_collections %}
+  {% if collection.handle == coll.handle %}
+    {% assign show_announment = true %}
+  {% endif %}
+{% endfor %}
+
+{% assign included_pages = section.settings.target_pages | strip | split: ',' %}
+{% for pg_handle in included_pages %}
+  {% assign pg_handle_trimmed = pg_handle | strip %}
+  {% if page and page.handle == pg_handle_trimmed %}
+    {% assign show_announment = true %}
+  {% endif %}
+{% endfor %}
+
+
+
+
+
+
+{% if show_announment %}
+  <div class="snow-announcement-bar m-color-{{ section.settings.color_scheme }}">
+    <a href="{{ section.settings.announcement_url }}">
+      <div class="snow-announcement-bar-container">
+        <div class="snow-announcement-bar-text">{{ section.settings.announcement_text }}</div>
+      </div>
+    </a>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Announcement Bar new",
+  "class": "announcement_bar Announcement--sticky",
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "target_collections",
+      "label": "Show on these collections"
+    },
+    {
+      "type": "textarea",
+      "id": "target_pages",
+      "label": "Page handles to  Show (e.g: about-us,contact)",
+      
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "url",
+      "id": "announcement_url",
+      "label": "Announcement Link"
+    },
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "FREE GIFTS + UP TO 49% OFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar new"
+    }
+  ]
+}
+{% endschema %}
+>>>>>>> 49fc90dddb6791abc2042db22fdb563b565cb825

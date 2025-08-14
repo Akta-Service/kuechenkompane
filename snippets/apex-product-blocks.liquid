@@ -197,7 +197,11 @@
         <h4
           class="rs-product-subtitle"
           style="
+<<<<<<< HEAD
                                                 font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+=======
+                                    font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+>>>>>>> 49fc90dddb6791abc2042db22fdb563b565cb825
           "
         >
           {{ block.settings.subtitle }}
@@ -347,9 +351,12 @@
           <div class="m-product-description">{{ product.metafields.descriptor.short_description }}</div>
         {% endif %}
 
+<<<<<<< HEAD
       {%- when 'bundle_slector' -%}
         {% render 'bundle-selector', block: block, section: section %}
 
+=======
+>>>>>>> 49fc90dddb6791abc2042db22fdb563b565cb825
       {%- when 'description' -%}
         <div class="m-product-description rte">
           {{ product.description }}

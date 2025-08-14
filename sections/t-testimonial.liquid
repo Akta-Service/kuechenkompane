@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -496,3 +497,503 @@
   ]
 }
 {% endschema %}
+=======
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    .snow-testimonial {
+      overflow: hidden;
+      padding: 10vw 0 50px;
+      {% if section.settings.bg_image != blank %}
+        background-image: url({{ section.settings.bg_image |  image_url }});
+      {% endif %}
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .snow-testimonial-container {
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .snow-testimonial-head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .snow-testimonial-head__counter {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      display: inline-block;
+      background-color: {{ section.settings.heading_bg_color  }};
+      font-size: 48px;
+      line-height: 130%;
+    }
+
+    .snow-testimonial-head__title1 {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 10px;
+      text-align: center;
+      /* color: #074a97; */
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    .snow-testimonial-head__title2 {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      /* color: #074a97; */
+      font-size: 24px;
+      font-weight: 700;
+    }
+  .snow-testimonial-card {
+    /* background: #ffffff; */
+    border-radius: 12px;
+    text-align: center;
+    padding: 30px 0 20px;
+    height: 100%;
+  }
+
+    .snow-testimonial__ratings {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      gap: 6px;
+      font-size: 16px;
+      /* color: #074a97; */
+      font-weight: 700;
+    }
+
+    .snow-testimonial__title {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 10px;
+      text-align: center;
+      /* color: #074a97; */
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .snow-testimonial__quote {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      /* color: #161818; */
+      font-size: 12px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .snow-testimonial__author {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      text-align: center;
+      /* color: #074a97; */
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: auto;
+    }
+
+    .snow-testimonial__verified {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      /* color: #0074b2; */
+      text-align: center;
+    }
+
+    .snow-testimonial__images {
+      font-family: 'Poppins', sans-serif;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 10px auto;
+      border-radius: 6px;
+    }
+
+    .snow-testimonial__images img {
+      width: auto;
+      height: 220px;
+      margin: auto 0 0;
+      display: inline-block;
+      align-self: center;
+      border-radius: 5px;
+    }
+
+    .snow-testimonial__note {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      width: 100%;
+      text-align: center;
+      padding-top: 9px;
+      font-style: italic;
+    }
+
+    .snow-slider-nav-area {
+      position: relative;
+    }
+
+    .snow-slider-nav-area .swiper-next {
+      all: unset;
+      font-size: 0;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: {{ section.settings.arrow_bg }};
+      border-radius: 50%;
+      z-index: 3;
+      opacity: 0.8;
+      transition: 0.3s all;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .snow-slider-nav-area .swiper-prev {
+      all: unset;
+      font-size: 0;
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: {{ section.settings.arrow_bg }};
+      border-radius: 50%;
+      z-index: 3;
+      opacity: 0.8;
+      transition: 0.3s all;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .snow-slider-nav-area .swiper {
+      margin: 0 60px;
+    }
+
+    @media (max-width: 992px) {
+      .snow-testimonial-head__counter {
+        font-size: 36px;
+      }
+
+      .snow-testimonial-head__title1 {
+        font-size: 20px;
+      }
+
+      .snow-testimonial-head__title2 {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      
+     
+
+      .snow-slider-nav-area .swiper {
+        margin: 0;        
+      }
+    }
+
+
+    .snow-testimonial__ratings span {
+      display: flex;
+      align-items: center;
+      position: relative;
+      top: 3px;
+      margin-left: 2px;
+  }
+ @media (max-width:768px) {
+   .snow-testimonial-head {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .snow-testimonial {
+    
+    padding: 10vw 0 30px;
+    
+    }
+
+ }
+
+</style>
+
+<section class="snow-testimonial m-color-{{ section.settings.color_scheme }}">
+  <div class="snow-testimonial-container">
+    <div class="snow-testimonial-head">
+      <h2 class="snow-testimonial-head__counter">{{ section.settings.heading }}</h2>
+      <div class="snow-testimonial-head__title1">{{ section.settings.subheading1 }}</div>
+      <div class="snow-testimonial-head__title2">{{ section.settings.subheading2 }}</div>
+    </div>
+
+    <div class="snow-testimonial-slider-wrapper snow-slider-nav-area">
+      <div class="swiper snow-testimonial-slider1">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide m-color-{{ section.settings.color_scheme_card }}">
+              <div class="snow-testimonial-card">
+                <div class="snow-testimonial__ratings">
+                  {% if block.settings.star != blank %}
+                    <div class="star">
+                      <img src="{{ block.settings.star | img_url: 'master' }}" alt="Star">
+                    </div>
+                  {% endif %}
+                  <span> {{ block.settings.rating }}</span>
+                </div>
+                <h4 class="snow-testimonial__title">{{ block.settings.title }}</h4>
+                <div class="snow-testimonial__quote">“{{ block.settings.quote }}”</div>
+                <div class="snow-testimonial__author">{{ block.settings.author }}</div>
+                <div class="snow-testimonial__verified">{{ block.settings.verified }}</div>
+                {% if block.settings.image != blank %}
+                  <div class="snow-testimonial__images">
+                    <img src="{{ block.settings.image | img_url: 'master' }}" alt="testimonial image">
+                  </div>
+                {% endif %}
+                {% comment %} <div class="snow-testimonial__note"><em>*Results will vary</em></div> {% endcomment %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% if section.settings.enable_pagination == 'true' %}
+        <div class="swiper-pagination"></div>
+      {% endif %}
+
+      {% if section.settings.enable_navigation == 'true' %}
+        <div class="swiper-arrow">
+          {% if section.settings.right_arrow != blank %}
+            <div class="swiper-nav swiper-next">
+              <img src="{{ section.settings.right_arrow | img_url: 'master' }}" alt="Next">
+            </div>
+          {% endif %}
+          {% if section.settings.left_arrow != blank %}
+            <div class="swiper-nav swiper-prev">
+              <img src="{{ section.settings.left_arrow | img_url: 'master' }}" alt="Prev">
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Testimonial Slider js
+  document.addEventListener('DOMContentLoaded', function () {
+    var TestimonialSlider = new Swiper('.snow-testimonial-slider1', {
+      loop: true,
+      slidesPerView: 4,
+      spaceBetween: 10,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 13,
+        },
+        576: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1440: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        1800: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+
+
+       {% if section.settings.enable_navigation == "true" %}
+       navigation: {
+        nextEl: '.snow-slider-nav-area .swiper-next',
+        prevEl: '.snow-slider-nav-area .swiper-prev',
+      },
+      {% endif %}
+      {% if section.settings.enable_pagination == "true" %}
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      {% endif %}
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Snow Testimonial Slider",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme_card",
+      "label": "card Color scheme"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "35,000+ Reviews"
+    },
+    {
+      "type": "color",
+      "id": "heading_bg_color",
+      "label": "Heading Bg Color",
+      "default": "#074a97"
+    },
+    {
+      "type": "text",
+      "id": "subheading1",
+      "label": "Subheading 1",
+      "default": "Guaranteed Results"
+    },
+    {
+      "type": "text",
+      "id": "subheading2",
+      "label": "Subheading 2",
+      "default": "Millions of Happy Customers"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_arrow",
+      "label": "Left Arrow"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_arrow",
+      "label": "Right Arrow"
+    },
+    {
+      "type": "select",
+      "id": "enable_pagination",
+      "label": "Enable Pagination Dots",
+      "default": "true",
+      "options": [
+        { "label": "Enable", "value": "true" },
+        { "label": "Disable", "value": "false" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "enable_navigation",
+      "label": "Enable Navigation Arrows",
+      "default": "true",
+      "options": [
+        { "label": "Enable", "value": "true" },
+        { "label": "Disable", "value": "false" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Arrow Background Color"
+    },
+    {
+      "type": "color",
+      "id": "arrow_bg",
+      "label": "Arrow Background Color",
+      "default": "#074a97"
+    },
+    {
+      "type": "header",
+      "content": "Bg Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "rating",
+          "label": "Rating",
+          "default": "5"
+        },
+        {
+          "type": "image_picker",
+          "id": "star",
+          "label": "Ratings Star"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Worth every penny!"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Beautiful product! My teeth are at least 5 shades whiter and they look great!"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "CATHALINA A."
+        },
+        {
+          "type": "text",
+          "id": "verified",
+          "label": "Verified Text",
+          "default": "Verified Purchase"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Before & After Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Snow Testimonial Slider",
+      "category": "Testimonial"
+    }
+  ]
+}
+{% endschema %}
+>>>>>>> 49fc90dddb6791abc2042db22fdb563b565cb825
