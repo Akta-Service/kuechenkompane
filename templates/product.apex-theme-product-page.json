@@ -45,7 +45,7 @@
         "review_Tgbbak": {
           "type": "review",
           "settings": {
-            "p": "4441 Bewertungen",
+            "p": "5296 Bewertungen",
             "star_range": 5,
             "star_color": "#000000"
           }
@@ -96,7 +96,11 @@
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 18,
-            "price_font_weight": "600"
+            "price_font_weight": "600",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0"
           }
         },
         "subtitle_xQXVba": {
@@ -1099,7 +1103,8 @@
         "sub_title": "",
         "sub_title_font_size": 14,
         "faq_title_font_size": 18,
-        "faq_text_font_size": 16
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "cta_final_9B8iN9": {
