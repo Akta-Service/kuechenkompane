@@ -37,18 +37,6 @@
         "h1-color": ""
       }
     },
-    "breadcrumb_yifnda": {
-      "type": "breadcrumb",
-      "disabled": true,
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
     "collection_img_banner_mfwPM4": {
       "type": "collection-img-banner",
       "name": "Collection Image Banner",
@@ -125,25 +113,6 @@
         "enable_bg_zoom_effect": true
       }
     },
-    "apex_timer_9PnBtn": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "name": "Apex Product Timer",
-      "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#000000",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "600",
-        "timer_text": "Unser Angebot endet in kürze!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "500",
-        "target_date": "2025-04-28",
-        "target_time": "00:00:00"
-      }
-    },
     "main": {
       "type": "akta-new-collection-product-grid",
       "custom_css": [
@@ -174,89 +143,6 @@
         "overlay_opacity": 0
       }
     },
-    "usp_list_nd6t8y": {
-      "type": "usp-list",
-      "blocks": {
-        "item_aVKf6y": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
-            "usp_title": "100 Tage-geld-zurück Garantie",
-            "title_size": 18,
-            "usp_info": "Wir sind von der Qualität unserer Produkte überzeugt und möchten sicherstellen, dass Du zu 100% zufrieden bist.",
-            "info_size": 14,
-            "divider": false
-          }
-        },
-        "item_9zb4Pn": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
-            "usp_title": "140,000+ zufriedene Kunden",
-            "title_size": 18,
-            "usp_info": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?",
-            "info_size": 14,
-            "divider": false
-          }
-        },
-        "item_4VaJ6g": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png",
-            "usp_title": "Geprüfte Qualität",
-            "title_size": 18,
-            "usp_info": "Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit.",
-            "info_size": 14,
-            "divider": false
-          }
-        }
-      },
-      "block_order": [
-        "item_aVKf6y",
-        "item_9zb4Pn",
-        "item_4VaJ6g"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "verticle_padding": 50,
-        "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
-      }
-    },
-    "promotion_banner_dgKacc": {
-      "type": "promotion-banner",
-      "blocks": {
-        "promotion_NBbJbf": {
-          "type": "promotion",
-          "settings": {
-            "subheading": "JETZT ODER NIE",
-            "heading": "-75%",
-            "text_alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "promotion_NBbJbf"
-      ],
-      "name": "Promotion banner",
-      "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "heading": "Entdecke unsere Auslaufmodelle",
-        "heading_size": "h2",
-        "text": "<p>Noch nicht das richtige gefunden? Entdecke jetzt unsere Auslaufmodelle bevor sie alle weg sind. Für die nächsten 48h bis zu -75% Rabatt.</p>",
-        "content_alignment": "left",
-        "banner_url": "shopify://collections/ausverkauf",
-        "button_label": "",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "padding_top": 70,
-        "padding_bottom": 70,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "collection_description_KrcbiD": {
       "type": "collection-description",
       "settings": {
@@ -270,14 +156,10 @@
   },
   "order": [
     "testing_ahDQMJ",
-    "breadcrumb_yifnda",
     "collection_img_banner_mfwPM4",
     "product_feature_EP3YFm",
     "collection-header",
-    "apex_timer_9PnBtn",
     "main",
-    "usp_list_nd6t8y",
-    "promotion_banner_dgKacc",
     "collection_description_KrcbiD"
   ]
 }
