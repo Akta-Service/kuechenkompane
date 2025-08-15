@@ -13,17 +13,16 @@
   "sections": {
     "announcement_bar_version_1_rc6jDA": {
       "type": "announcement-bar-version-1",
-      "disabled": true,
       "name": "APEX Announcement Bar 1",
       "settings": {
         "sticky_top": true,
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
-        "ann_title": "LEI OF LOVE",
+        "ann_title": "🎉 Geburtstagsaktion",
         "ann_title_size": 16,
         "ann_title_size_m": 16,
-        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
+        "text": "<p>Bis zu 75% Rabatt für die nächsten 48h 🥳</p>",
         "text_size": 16,
         "text_size_m": 16
       }
@@ -473,7 +472,6 @@
         "title_LchWnQ",
         "text_HehJ7h"
       ],
-      "disabled": true,
       "name": "Apex Text Banner",
       "settings": {
         "color_scheme": "",
@@ -491,6 +489,7 @@
     },
     "announcement_bar_version_1_copy_GBrcEC": {
       "type": "announcement-bar-version-1-copy",
+      "disabled": true,
       "settings": {
         "target_tags": "sale announcement",
         "color_scheme": "dark",
