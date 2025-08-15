@@ -34,7 +34,7 @@
       "settings": {
         "target_collections": [
           "bestseller-angebot",
-          "grunder-geburtstag-1",
+          "grunder-geburtstag",
           "grunder-im-urlaub-1"
         ],
         "target_pages": "apex-new-page",
@@ -50,7 +50,7 @@
       "name": "Announcement Bar new",
       "settings": {
         "target_collections": [
-          "grunder-geburtstag-1",
+          "grunder-geburtstag",
           "grunder-im-urlaub-1",
           "bestseller-angebot"
         ],
@@ -122,7 +122,7 @@
           "grunder-geburtstag-2",
           "grunder-im-urlaub",
           "bestseller-angebot",
-          "grunder-geburtstag-1",
+          "grunder-geburtstag",
           "grunder-im-urlaub-1"
         ],
         "target_pages": "apex-new-page",
@@ -401,7 +401,7 @@
         "custom_collection_list": [
           "100-tage-risikofrei-testen",
           "grunder-im-urlaub-1",
-          "grunder-geburtstag-1",
+          "grunder-geburtstag",
           "bestseller-angebot"
         ],
         "target_pages": "apex-new-page",
