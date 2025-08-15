@@ -74,7 +74,7 @@
       "settings": {
         "target_collections": [
           "bestseller-angebot",
-          "grunder-geburtstag",
+          "gruender-geburtstag",
           "grunder-im-urlaub-1"
         ],
         "target_pages": "apex-new-page",
@@ -91,7 +91,7 @@
       "name": "Announcement Bar new",
       "settings": {
         "target_collections": [
-          "grunder-geburtstag",
+          "gruender-geburtstag",
           "grunder-im-urlaub-1",
           "bestseller-angebot"
         ],
@@ -119,7 +119,7 @@
           "grunder-geburtstag-2",
           "grunder-im-urlaub",
           "bestseller-angebot",
-          "grunder-geburtstag",
+          "gruender-geburtstag",
           "grunder-im-urlaub-1",
           "sommer-kollektion",
           "auslaufmodelle",
@@ -235,7 +235,7 @@
         "announcement_4K73ww": {
           "type": "announcement",
           "settings": {
-            "collection": "grunder-geburtstag",
+            "collection": "gruender-geburtstag",
             "ann_title": "Geburtstagsaktion 🎉",
             "text": "<p>Bis zu 75% Rabatt für die nächsten 48h 🥳</p>"
           }
@@ -392,7 +392,7 @@
         "custom_collection_list": [
           "100-tage-risikofrei-testen",
           "grunder-im-urlaub-1",
-          "grunder-geburtstag",
+          "gruender-geburtstag",
           "bestseller-angebot"
         ],
         "target_pages": "apex-new-page",
