@@ -13,6 +13,7 @@
   "sections": {
     "announcement_bar_version_1_rc6jDA": {
       "type": "announcement-bar-version-1",
+      "disabled": true,
       "name": "APEX Announcement Bar 1",
       "settings": {
         "sticky_top": true,
@@ -454,6 +455,7 @@
         "title_LchWnQ",
         "text_HehJ7h"
       ],
+      "disabled": true,
       "name": "Apex Text Banner",
       "settings": {
         "color_scheme": "",
@@ -489,6 +491,7 @@
     },
     "apex_global_offer_timer_gMjjdD": {
       "type": "Apex-global-offer-timer",
+      "disabled": true,
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
