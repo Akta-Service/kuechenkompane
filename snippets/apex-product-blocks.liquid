@@ -109,6 +109,67 @@
 
 
 
+      {% when 'price_block_new' %}
+      .rs-price{
+        padding-top: {{ block.settings.p_pt }}px;
+        padding-bottom: {{ block.settings.p_pb }}px;
+      }
+      .rs-price .rs-current-price{
+        color: {{ block.settings.price_color }};
+        font-weight: {{ block.settings.price_font_weight }};
+        font-size: {{ block.settings.f_s |  append: 'px' }};
+      }
+      .rs-price .rs-compare-price{
+        color: {{ block.settings.c_price_color }};
+        font-weight: {{ block.settings.price_font_weight }};
+        text-decoration: line-through;
+        margin-right: 3px;
+        font-size: {{ block.settings.f_s |  append: 'px' }};
+      }
+      span.discount-percentage {
+        display: inline-block;
+        background: {{ block.settings.per_badge_bg }};
+        color: {{ block.settings.per_badge_color }};
+        font-weight: {{ block.settings.price_font_weight }};
+        border-radius: 14px;
+        padding: 5px 10px;
+        line-height: 1;
+        font-size: 14px;
+      }
+
+
+      .discount-percentage.discount-percentage-new {
+          border-radius: 4px;
+      }
+
+
+
+
+
+
+      @media only screen and (max-width:768px){
+        .rs-price{
+          padding-top: {{ block.settings.p_pt_m }}px;
+          padding-bottom: {{ block.settings.p_pb_m }}px;
+        }
+        .rs-price .rs-current-price{
+          font-size: {{ block.settings.f_s_m |  append: 'px' }};
+        }
+        .rs-price .rs-compare-price{
+          font-size: {{ block.settings.f_s_m |  append: 'px' }};
+        }
+      }
+
+       .green-label {
+        background: {{ block.settings.price_tag_bg }};
+        color: {{ block.settings.price_tag_text_color }};
+        font-size: {{ block.settings.price_tag_font_size }}px;
+      }
+      .green-label::before {
+        background:  {{ block.settings.price_tag_arrow_bg }};
+      }
+
+
       {% when 'featurelist_header' %}
         .feature-header{
           padding-top: {{ block.settings.f_h_pt }}px;
