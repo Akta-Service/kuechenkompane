@@ -119,9 +119,9 @@
         font-weight: {{ block.settings.price_font_weight }};
         font-size: {{ block.settings.f_s |  append: 'px' }};
       }
-      .rs-price .rs-compare-price{
+      .rs-price .rs-compare-price.new{
         color: {{ block.settings.c_price_color }};
-        font-size: {{ block.settings.c_price_size }}px;
+        font-size: {{ block.settings.c_price_size }}px !important;
         font-weight: {{ block.settings.price_font_weight }};
         text-decoration: line-through;
         margin-right: 3px;
@@ -156,8 +156,8 @@
         .rs-price .rs-current-price{
           font-size: {{ block.settings.f_s_m |  append: 'px' }};
         }
-        .rs-price .rs-compare-price{
-          font-size: {{ block.settings.c_price_size_m |  append: 'px' }};
+        .rs-price .rs-compare-price.new{
+          font-size: {{ block.settings.c_price_size_m |  append: 'px' }} !important;
         }
       }
 
