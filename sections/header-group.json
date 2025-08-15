@@ -48,6 +48,7 @@
         "announcement_NefGWg",
         "announcement_nPhBbE"
       ],
+      "disabled": true,
       "name": "Header Announcement Bar",
       "settings": {
         "collection_list": [
@@ -68,6 +69,7 @@
     },
     "snow_topbar_Wc6BME": {
       "type": "snow-topbar",
+      "disabled": true,
       "name": "Countdown Timer",
       "settings": {
         "target_collections": [
@@ -85,6 +87,7 @@
     },
     "announcement_bar_AidTMy": {
       "type": "announcement--bar",
+      "disabled": true,
       "name": "Announcement Bar new",
       "settings": {
         "target_collections": [
