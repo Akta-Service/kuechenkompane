@@ -606,22 +606,22 @@
         "des_size": "p-medium"
       }
     },
-    "benefit_text_right_AFHFhC": {
-      "type": "benefit-text-right",
+    "benefit_text_jDfrnL": {
+      "type": "benefit-text",
       "blocks": {
-        "subtitle_XPX87U": {
+        "subtitle_ACRGCp": {
           "type": "subtitle",
           "settings": {
             "subtitle": "Robust & langlebig"
           }
         },
-        "title_YwDaTz": {
+        "title_AEcwN7": {
           "type": "title",
           "settings": {
             "title": "Hält jeder Herausforderung stand"
           }
         },
-        "description_j4ByyM": {
+        "description_HFAYRE": {
           "type": "description",
           "settings": {
             "description": "Unsere Messer sind aus hochwertigem Stahl gefertigt und bleiben extrem scharf – ohne Absplittern oder Abnutzen. Die widerstandsfähige Klinge sorgt für jahrelange Höchstleistung in der Küche."
@@ -629,18 +629,19 @@
         }
       },
       "block_order": [
-        "subtitle_XPX87U",
-        "title_YwDaTz",
-        "description_j4ByyM"
+        "subtitle_ACRGCp",
+        "title_AEcwN7",
+        "description_HFAYRE"
       ],
+      "name": "APEX Benefit Photo Right",
       "settings": {
-        "color_scheme": "badge-hot",
+        "color_scheme": "",
         "media_type": "image",
         "image": "shopify://shop_images/IMG_6134_ae49332e-9534-4225-ac85-cfc57ca44395.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": true,
-        "padding_top_mobile": 30,
+        "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
         "heading_type": "mrk-h2",
         "sub_heading": "p-medium",
@@ -1130,7 +1131,7 @@
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
     "benefit_text_P4XApk",
-    "benefit_text_right_AFHFhC",
+    "benefit_text_jDfrnL",
     "benefit_text_MCeGiV",
     "apex_faqs_jx7hp6",
     "product_explanation_video_xNFp3M",
