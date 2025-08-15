@@ -1,0 +1,165 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "testing_ahDQMJ": {
+      "type": "testing",
+      "blocks": {
+        "title_PyKV3e": {
+          "type": "Title",
+          "disabled": true,
+          "settings": {
+            "title": "{{ collection.title }}",
+            "padding_top": 20,
+            "padding_left": 20,
+            "padding_bottom": 20,
+            "padding_top_mobile": 10,
+            "padding_left_mobile": 10,
+            "padding_bottom_mobile": 10,
+            "font_size": "<h1 class='first-title title-style'> | </h1>"
+          }
+        }
+      },
+      "block_order": [
+        "title_PyKV3e"
+      ],
+      "name": "Title Block",
+      "settings": {
+        "h2": 20,
+        "h1font-wight": "bold",
+        "h1-color": ""
+      }
+    },
+    "collection_img_banner_mfwPM4": {
+      "type": "collection-img-banner",
+      "name": "Collection Image Banner",
+      "settings": {
+        "image_1": "shopify://shop_images/KK_-_New_Collection_HIKE_2_-_2_1.jpg",
+        "image_2": "shopify://shop_images/KK_-_New_Collection_HIKE_1_-_2_1.jpg"
+      }
+    },
+    "product_feature_EP3YFm": {
+      "type": "product-feature",
+      "blocks": {
+        "slide_9PqAD3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Ku_echenkompane_Icons_D1-01.png",
+            "title": "Schneller Versand"
+          }
+        },
+        "slide_LhLWdJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Kuechenkompane_Icons_Deutsch.png",
+            "title": "100 Tage Testen"
+          }
+        },
+        "slide_dMjRTb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Ku_echenkompane_Icons_D1-03.png",
+            "title": "Nach japanischer Art"
+          }
+        },
+        "slide_9KKp76": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Ku_echenkompane_Icons_D1-04.png",
+            "title": "Meisterhafte Schärfe"
+          }
+        }
+      },
+      "block_order": [
+        "slide_9PqAD3",
+        "slide_LhLWdJ",
+        "slide_dMjRTb",
+        "slide_9KKp76"
+      ],
+      "name": "Product Feature Slider",
+      "settings": {
+        "slides_per_view_small": 1,
+        "slides_per_view_medium": 1,
+        "slides_per_view_large": 4,
+        "space_between": 20,
+        "autoplay_delay": 3000,
+        "speed": 600
+      }
+    },
+    "collection-header": {
+      "type": "collection-page-header",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container": "container-fluid",
+        "layout": "outside_no_border",
+        "image_position": "background",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "text_alignment": "center",
+        "text_color": "inherit",
+        "upper_title": false,
+        "show_desc": false,
+        "collection_all_desc": "",
+        "padding_top": 22,
+        "padding_bottom": 18,
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "main": {
+      "type": "akta-new-collection-product-grid",
+      "custom_css": [
+        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
+        ".m-collection-filters-form {margin-bottom: 0;}"
+      ],
+      "settings": {
+        "show_review_badge": true,
+        "show_quickview_button": true,
+        "container": "container-fluid",
+        "grid_layout": "grid",
+        "grid_columns": "4",
+        "show_columns_switcher": false,
+        "pagination_limit": 30,
+        "paginate_type": "infinite",
+        "show_sorting": false,
+        "show_filter": false,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": true,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": false,
+        "show_product_count": false,
+        "collapsed_groups": "Product type, Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "list",
+        "overlay_opacity": 0
+      }
+    },
+    "collection_description_KrcbiD": {
+      "type": "collection-description",
+      "settings": {
+        "collection_bg": "#f8f8f8",
+        "collection_pt": 30,
+        "collection_pb": 30,
+        "collection_pt_m": 30,
+        "collection_pb_m": 30
+      }
+    }
+  },
+  "order": [
+    "testing_ahDQMJ",
+    "collection_img_banner_mfwPM4",
+    "product_feature_EP3YFm",
+    "collection-header",
+    "main",
+    "collection_description_KrcbiD"
+  ]
+}
