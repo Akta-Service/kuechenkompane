@@ -121,6 +121,7 @@
       }
       .rs-price .rs-compare-price{
         color: {{ block.settings.c_price_color }};
+        font-size: {{ block.settings.c_price_size }}px;
         font-weight: {{ block.settings.price_font_weight }};
         text-decoration: line-through;
         margin-right: 3px;
@@ -156,7 +157,7 @@
           font-size: {{ block.settings.f_s_m |  append: 'px' }};
         }
         .rs-price .rs-compare-price{
-          font-size: {{ block.settings.f_s_m |  append: 'px' }};
+          font-size: {{ block.settings.c_price_size_m |  append: 'px' }};
         }
       }
 
