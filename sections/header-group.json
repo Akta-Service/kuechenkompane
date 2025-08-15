@@ -123,7 +123,8 @@
           "grunder-im-urlaub-1",
           "sommer-kollektion",
           "auslaufmodelle",
-          "varianten-collection"
+          "varianten-collection",
+          "okami-damastmesser"
         ],
         "target_pages": "apex-new-page",
         "enable_scroll_to_show": false,
@@ -144,6 +145,14 @@
     "announcement_different_rRyBgT": {
       "type": "announcement-different",
       "blocks": {
+        "announcement_rKpUAD": {
+          "type": "announcement",
+          "settings": {
+            "collection": "okami-damastmesser",
+            "ann_title": "Die neue Ära der Damastmesser",
+            "text": "<p>Bessere Qualität. Unschlagbare Preise.</p>"
+          }
+        },
         "announcement_JmM3Kw": {
           "type": "announcement",
           "settings": {
@@ -258,6 +267,7 @@
         }
       },
       "block_order": [
+        "announcement_rKpUAD",
         "announcement_JmM3Kw",
         "announcement_UjeB7H",
         "announcement_FDAfCN",
