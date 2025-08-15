@@ -9,6 +9,24 @@
  */
 {
   "sections": {
+    "apex_timer_8KXfky": {
+      "type": "Apex-timer",
+      "name": "Apex Product Timer",
+      "settings": {
+        "bg_color": "#c6d1c4",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#c89d00",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "700",
+        "timer_text": "Aktion endet in Kürze",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "400",
+        "target_date": "2025-08-18",
+        "target_time": "00:00:00"
+      }
+    },
     "rich_text_MPfPJc": {
       "type": "rich-text",
       "blocks": {
@@ -39,24 +57,6 @@
         "padding_bottom": 52,
         "custom_class": "",
         "animations": "inherit"
-      }
-    },
-    "apex_timer_8KXfky": {
-      "type": "Apex-timer",
-      "name": "Apex Product Timer",
-      "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#c89d00",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "700",
-        "timer_text": "Aktion endet in Kürze",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-08-18",
-        "target_time": "00:00:00"
       }
     },
     "collection-header": {
@@ -336,8 +336,8 @@
     }
   },
   "order": [
-    "rich_text_MPfPJc",
     "apex_timer_8KXfky",
+    "rich_text_MPfPJc",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
