@@ -255,7 +255,7 @@
           "type": "faq",
           "settings": {
             "question": "Produktinfos & Lieferumfang",
-            "answer": "<p><strong>Jedes unserer Küchenmesser wird von Hand geschliffen – für maximale Schärfe und Präzision in deiner Küche.</strong><br/><br/>Der ergonomische Griff aus edlem Pakkaholz liegt perfekt in der Hand und sorgt für höchsten Komfort – auch bei stundenlangem Arbeiten. So wird jede Zutat zum Genuss – vom ersten Schnitt bis zum letzten Handgriff.</p><p><strong>Lieferumfang:</strong><br/><br/><strong>1. Asiatisches Chefmesser – Wert: 69 €<br/>2. Asiatisches Santoku 7\" Messer – Wert: 69 €<br/><br/> Inklusive edler Aufbewahrungsbox – gratis für dich dabei!</strong><br/></p>"
+            "answer": "<p><strong>Jedes unserer Küchenmesser wird von Hand geschliffen – für maximale Schärfe und Präzision in deiner Küche.</strong><br/><br/>Der ergonomische Griff aus edlem Pakkaholz liegt perfekt in der Hand und sorgt für höchsten Komfort – auch bei stundenlangem Arbeiten. So wird jede Zutat zum Genuss – vom ersten Schnitt bis zum letzten Handgriff.</p><p>{{ product.metafields.custom.product_short_description.value }}<strong><br/><br/> Inklusive edler Aufbewahrungsbox – gratis für dich dabei!</strong><br/></p>"
           }
         }
       },
