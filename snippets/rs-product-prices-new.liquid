@@ -29,6 +29,7 @@
 -%}
 
 {%- unless target.price_varies == false and target.compare_at_price_varies %}
+  {% if product.compare_at_price  %}
   <span class="m:visually-hidden m:visually-hidden--inline rs-current-price ">
     {{- 'products.product.price.regular_price' | t -}}
   </span>
@@ -38,9 +39,9 @@
         <span class="green-label">{{ product.metafields.custom.price_individual_tag }}</span>
       {% endif %}
     {% endcomment %}
-     {% if product.compare_at_price !=blank %}
+     
     <span class="comprae-text">UVP:</span>
-     {% endif %}
+   
     
     <s class="m-price-item m-price-item--regular rs-compare-price new">
       {% if settings.currency_code_enabled %}
@@ -51,6 +52,7 @@
       {% endif %}
     </s>
   </div>
+    {% endif %}
 {%- endunless -%}
 
 <div
