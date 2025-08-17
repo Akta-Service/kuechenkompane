@@ -145,6 +145,14 @@
     "announcement_different_rRyBgT": {
       "type": "announcement-different",
       "blocks": {
+        "announcement_JxFegn": {
+          "type": "announcement",
+          "settings": {
+            "collection": "okami-damastmesser-sale",
+            "ann_title": "Die Damastmesser Revolution",
+            "text": "<p>Bis zu 65% Rabatt | Kostenloser Versand</p>"
+          }
+        },
         "announcement_rKpUAD": {
           "type": "announcement",
           "settings": {
@@ -267,6 +275,7 @@
         }
       },
       "block_order": [
+        "announcement_JxFegn",
         "announcement_rKpUAD",
         "announcement_JmM3Kw",
         "announcement_UjeB7H",
