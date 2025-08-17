@@ -56,6 +56,9 @@
         {% if product.metafields.custom.price_individual_tag %}
           <span class="green-label">{{ product.metafields.custom.price_individual_tag }}</span>
         {% endif %}
+       
+
+
         <s class="m-price-item m-price-item--regular rs-compare-price">
           {% if settings.currency_code_enabled %}
             {{ compare_at_price | money_with_currency }}
