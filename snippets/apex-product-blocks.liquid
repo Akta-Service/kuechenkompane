@@ -104,7 +104,22 @@
       .green-label::before {
         background:  {{ block.settings.price_tag_arrow_bg }};
       }
+    {% if product.metafields.custom.price_individual_tag != blank %}
+          .rs-price {
+            margin-top: 30px;
+          }
+        {% endif %}
 
+      @media (max-width: 600px){
+        .green-label {
+          top: -20px;
+        }
+        {% if product.metafields.custom.price_individual_tag != blank %}
+          .rs-price {
+            margin-top: 20px;
+          }
+        {% endif %}
+      }
 
 
     {% when 'price_block_new' %}
@@ -273,7 +288,7 @@
         <h4
           class="rs-product-subtitle"
           style="
-                                                                                                                                                            font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+                                                                                                                                                                        font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
           "
         >
           {{ block.settings.subtitle }}
