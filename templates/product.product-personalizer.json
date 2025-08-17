@@ -243,6 +243,10 @@
             "info_text_color": "#000000",
             "invert_img_color": false
           }
+        },
+        "product_personalizer_9Wz7G4": {
+          "type": "product_personalizer",
+          "settings": {}
         }
       },
       "block_order": [
@@ -262,7 +266,8 @@
         "variant_picker_i4dPYA",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
-        "product_info_9Yqdn9"
+        "product_info_9Yqdn9",
+        "product_personalizer_9Wz7G4"
       ],
       "settings": {
         "show_sold_out_badge_on_image": true,
