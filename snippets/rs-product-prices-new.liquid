@@ -33,6 +33,9 @@
     {{- 'products.product.price.regular_price' | t -}}
   </span>
   <div class="p-relative">
+    {% if product.metafields.custom.price_individual_tag %}
+      <span class="green-label">{{ product.metafields.custom.price_individual_tag }}</span>
+    {% endif %}
     <span class="comprae-text">UVP:</span>
     <s class="m-price-item m-price-item--regular rs-compare-price new">
       {% if settings.currency_code_enabled %}
