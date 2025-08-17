@@ -605,7 +605,7 @@
       "settings": {
         "color_scheme": "badge-hot",
         "vertical_padding": 50,
-        "vertical_padding_mobile": 30,
+        "vertical_padding_mobile": 10,
         "heading_type": "mrk-h2",
         "sub_heading": "p-medium",
         "des_size": "p-medium"
@@ -646,8 +646,8 @@
         "color_scheme": "badge-hot",
         "padding_top": 13,
         "padding_bottom": 50,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 50
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 12
       }
     },
     "benefit_text_MCeGiV": {
