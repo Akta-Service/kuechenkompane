@@ -42,10 +42,10 @@
 
     <s class="m-price-item m-price-item--regular rs-compare-price new">
       {% if settings.currency_code_enabled %}
-            <span class="comprae-text">UVP:</span>
+         
         {{ compare_at_price | money_with_currency }}
       {% else %}
-        
+           <span class="comprae-text">UVP:</span>
         {{ compare_at_price | money }}
       {% endif %}
     </s>
