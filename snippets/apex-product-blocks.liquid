@@ -74,7 +74,9 @@
         line-height: 1;
         font-size: 14px;
       }
-
+      span.comprae-text{
+        color: {{ block.settings.c_price_color }};
+      }
 
 
 
@@ -304,7 +306,7 @@
         <h4
           class="rs-product-subtitle"
           style="
-                                                                                                                                                                                                                                                                        font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+                                                                                                                                                                                                                                                                                    font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
           "
         >
           {{ block.settings.subtitle }}
