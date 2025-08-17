@@ -100,7 +100,7 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
-            "taxes_included": false,
+            "taxes_included": true,
             "taxes_included_text": "",
             "show_saving": true,
             "sale_badge_type": "percentage",
@@ -635,7 +635,7 @@
         "padding_top": 10,
         "padding_bottom": 48,
         "padding_top_mobile": 0,
-        "padding_bottom_mobile": 50
+        "padding_bottom_mobile": 30
       }
     },
     "benefit_text_MCeGiV": {
