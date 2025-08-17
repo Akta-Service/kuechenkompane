@@ -149,7 +149,7 @@
           "type": "announcement",
           "settings": {
             "collection": "okami-damastmesser",
-            "ann_title": "Die neue Ära der Damastmesser",
+            "ann_title": "Die Damastmesser Revolution",
             "text": "<p>Bessere Qualität. Unschlagbare Preise.</p>"
           }
         },
@@ -291,7 +291,7 @@
         "sticky_top": false,
         "color_scheme": "dark",
         "pt": 15,
-        "pb": 15,
+        "pb": 10,
         "ann_title_size": 16,
         "ann_title_size_m": 16,
         "text_size": 16,
