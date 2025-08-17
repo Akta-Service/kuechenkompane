@@ -57,7 +57,7 @@
             "likeImg2": "shopify://shop_images/Kopie_von_Bild6_2_1.jpg",
             "likeImg3": "shopify://shop_images/Screenshot_2025-03-17_at_08.21.14_1.jpg",
             "likecount": "140.000+ Personen",
-            "like_bg": "#f8f8f8",
+            "like_bg": "#ddede0",
             "likeinfo": "lieben unser Set!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
@@ -121,11 +121,9 @@
             "per_badge_color": "#000000",
             "f_s": 16,
             "f_s_m": 16,
-            "price_font_weight": "400",
-            "price_tag_bg": "#ddede0",
-            "price_tag_text_color": "#000000",
-            "price_tag_font_size": 8,
-            "price_tag_arrow_bg": "#ddede0"
+            "c_price_size": 16,
+            "c_price_size_m": 16,
+            "price_font_weight": "400"
           }
         },
         "subtitle_xQXVba": {
