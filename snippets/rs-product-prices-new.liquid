@@ -28,16 +28,13 @@
   assign sale_badge_type = sale_badge_type | default: 'percentage'
 -%}
 
-
 {%- unless target.price_varies == false and target.compare_at_price_varies %}
   <span class="m:visually-hidden m:visually-hidden--inline rs-current-price ">
     {{- 'products.product.price.regular_price' | t -}}
   </span>
   <div class="p-relative">
-
-    
-    <s class="m-price-item m-price-item--regular rs-compare-price new" >
-      <span>UVP:</span>
+    <s class="m-price-item m-price-item--regular rs-compare-price new">
+      <span class="comprae-text">UVP:</span>
       {% if settings.currency_code_enabled %}
         {{ compare_at_price | money_with_currency }}
       {% else %}
@@ -47,16 +44,17 @@
   </div>
 {%- endunless -%}
 
-
-<div class="
+<div
+  class="
     m-price m:inline-flex m:items-center m:flex-wrap
     {%- if alignment %} m-price--{{ alignment }}{% endif -%}
     {%- if price_class %} {{ price_class }}{% endif -%}
     {%- if available == false %} m-price--sold-out {% endif -%}
     {%- if compare_at_price > price %} m-price--on-sale {% endif -%}
     {%- if target.price_varies == false and target.compare_at_price_varies %} m-price--no-compare{% endif -%}
-  " data-sale-badge-type="{{ sale_badge_type }}">
-
+  "
+  data-sale-badge-type="{{ sale_badge_type }}"
+>
   <div class="m-price__regular">
     <span class="m:visually-hidden m:visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
     <span class="m-price-item m-price-item--regular {{ price_text_size }} rs-current-price">
@@ -116,13 +114,11 @@
               {% comment %} {% render 'new-locale', key: 'products.product.save_html', param: '{{ amount }}', value: discount %} {% endcomment %}
               <span class="m-currency--saved m:font-medium" data-saved-price>-{{ discount }}</span>
             {% else %}
-              {% render 'new-locale'
-                , key: 'products.product.sale_text' %}
+              {% render 'new-locale', key: 'products.product.sale_text' %}
             {% endunless %}
           </span>
         </div>
       {% endif %}
     </div>
   {% endif %}
-
 </div>
