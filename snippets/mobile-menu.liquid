@@ -673,7 +673,6 @@
                     image_src: 'https://kuechenkompane.de/cdn/shop/files/Unbenannt_1_0007_2_1_3_jpg_V111_1.jpg?v=1746631325&width=535',
                     link_title: 'Steakmesser Sets'
                   -%}
-
                 </ul>
               </li>
 
@@ -903,8 +902,6 @@
               </li>
             </ul>
           </div>
-
-       
         </div>
       </li>
 
@@ -1047,13 +1044,8 @@
               </ul>
             {% endcomment %}
           </div>
-
-        
-        
         </div>
       </li>
-
-   
 
       {% comment %} main item {% endcomment %}
       <li class="mobile--menu-navigation-item">
@@ -1121,200 +1113,25 @@
               </li>
             </ul>
           </div>
-
-        
         </div>
       </li>
 
       {% comment %} main item {% endcomment %}
-      <li class="mobile--menu-navigation-item">
-        <span class="mobile--menu-item-title">Sale</span>
-        {%- render 'arrow--icon-next' -%}
-
-        <!-- sub item -->
-        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container">
-          {%- render 'sub-item-header', title: 'Sale' -%}
-
-          <div class="mobile--menu-sub-content">
-            <ul class="mobile--menu-sub-navigation">
-              {% comment %} sub item  {% endcomment %}
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                  <img
-                    class="mobile--menu-navigation-item-image"
-                    src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/ChatGPT_Image_24._Juni_2025_14_07_21.jpg?v=1750766908"
-                    loading="lazy"
-                    alt=""
-                  >
-                  <span class="mobile--menu-item-sub-title">Sale</span>
-
-                  {%- render 'arrow--icon-down' -%}
-                </div>
-                <!-- menu item dropdown -->
-
-                             <!-- Hidden child list -->
-                <ul class="mobile--menu-sub-dropdown">
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/sale-aktuell',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/ChatGPT_Image_24._Juni_2025_14_07_21.jpg?v=1750766908',
-                    link_title: 'Sale'
-                  -%}
-                </ul>
-              </li>
-            </ul>
-          </div>
-         
-        </div>        
-      </li>        
-
+      <a href="/collections/sale-aktuell" class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title">Bonuspunkte</span>
+      </a>
 
       {% comment %} main item {% endcomment %}
       <a href="https://kuechenkompane.de/pages/bonuspunkte" class="mobile--menu-navigation-item">
-        <span class="mobile--menu-item-title">Bonuspunkte</span>                
-      </a>        
-    </ul>   
-
-   
+        <span class="mobile--menu-item-title">Bonuspunkte</span>
+      </a>
+    </ul>
   </div>
- 
 </div>
 
-{% comment %} <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.querySelector(".m-menu-button");
-  const menuContainer = document.querySelector(".mobile--menu-container");
-  const menuCloseBtns = document.querySelectorAll(".mobile--menu-close");
-  const subItems = document.querySelectorAll(".mobile--menu-navigation-item");
-
-  // Open main menu
-  menuBtn.addEventListener("click", () => {
-    menuContainer.classList.add("menu--open");
-  });
-
-  // Close main menu
-  menuCloseBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      menuContainer.classList.remove("menu--open");
-      document
-        .querySelectorAll(".mobile--menu-navigation-item-content.active")
-        .forEach((activeContent) => activeContent.classList.remove("active"));
-    });
-  });
-
-  // Handle each main menu item's submenu open
-  subItems.forEach((subItem) => {
-    const subContent = subItem.querySelector(".mobile--menu-navigation-item-content");
-    const backBtn = subItem.querySelector(".mobile--menu-back");
-
-    subItem.addEventListener("click", () => {
-      // Close all others first
-      document.querySelectorAll(".mobile--menu-navigation-item-content.active")
-        .forEach((el) => el.classList.remove("active"));
-
-      // Open only this item's submenu
-      if (subContent) subContent.classList.add("active");
-    });
-
-    // Back button only closes its own submenu
-    if (backBtn && subContent) {
-      backBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        subContent.classList.remove("active");
-      });
-    }
-  });
-
-  // Toggle nested dropdown under submenu
-  document.querySelectorAll(".mobile--menu-navigation-sub-item > .mobile--menu-navigation-sub-item-wrapper")
-    .forEach((toggle) => {
-      toggle.addEventListener("click", function (e) {
-        const parentItem = this.closest(".mobile--menu-navigation-sub-item");
-        const submenu = parentItem.querySelector(".mobile--menu-sub-dropdown");
-
-        if (!submenu) return;
-
-        if (submenu.classList.contains("open")) {
-          submenu.style.maxHeight = submenu.scrollHeight + "px";
-          submenu.offsetHeight;
-          submenu.style.maxHeight = "0px";
-          submenu.classList.remove("open");
-          parentItem.classList.remove("open");
-        } else {
-          submenu.classList.add("open");
-          submenu.style.maxHeight = submenu.scrollHeight + "px";
-          parentItem.classList.add("open");
-        }
-      });
-    });
-
-
-
-
-  document.querySelectorAll('.language--switcher').forEach(switcher => {
-    const popup = switcher.nextElementSibling;
-
-    // Toggle popup
-    switcher.addEventListener('click', (e) => {
-      e.stopPropagation();
-
-      // Close others
-      document.querySelectorAll('.language--popup').forEach(p => {
-        if (p !== popup) p.style.display = 'none';
-      });
-
-      // Toggle current popup
-      popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    // Close button inside popup
-    const closeBtn = popup.querySelector('.language--popup-close');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        popup.style.display = 'none';
-      });
-    }
-
-    // Language selection
-    popup.querySelectorAll('li').forEach(item => {
-      item.addEventListener('click', () => {
-        const img = item.querySelector('img')?.src;
-        const name = item.getAttribute('data-name');
-        const switcherImg = switcher.querySelector('img');
-        const switcherText = switcher.querySelector('span');
-
-        if (img && switcherImg) switcherImg.src = img;
-        if (name && switcherText) switcherText.textContent = name;
-
-        popup.style.display = 'none';
-      });
-    });
-
-    // Prevent closing when clicking inside popup-inner
-    const inner = popup.querySelector('.language--popup-innner');
-    if (inner) {
-      inner.addEventListener('click', (e) => e.stopPropagation());
-    }
-  });
-
-  // Global click — close if clicked outside
-  document.addEventListener('click', (e) => {
-    document.querySelectorAll('.language--popup').forEach(p => {
-      p.style.display = 'none';
-    });
-  });
-
-
-
-
-
-
-  });
-</script> {% endcomment %}
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
+{% comment %}
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.querySelector(".m-menu-button");
     const menuContainer = document.querySelector(".mobile--menu-container");
     const menuCloseBtns = document.querySelectorAll(".mobile--menu-close");
@@ -1358,41 +1175,32 @@
       }
     });
 
-    // ✅ Toggle nested dropdown under submenu — with auto-open if only one sub-item
-    document.querySelectorAll(".mobile--menu-navigation-sub-item").forEach((subItem) => {
-      const toggle = subItem.querySelector(".mobile--menu-navigation-sub-item-wrapper");
-      const submenu = subItem.querySelector(".mobile--menu-sub-dropdown");
+    // Toggle nested dropdown under submenu
+    document.querySelectorAll(".mobile--menu-navigation-sub-item > .mobile--menu-navigation-sub-item-wrapper")
+      .forEach((toggle) => {
+        toggle.addEventListener("click", function (e) {
+          const parentItem = this.closest(".mobile--menu-navigation-sub-item");
+          const submenu = parentItem.querySelector(".mobile--menu-sub-dropdown");
 
-      if (!submenu || !toggle) return;
+          if (!submenu) return;
 
-      const siblingSubItems = subItem.parentElement.querySelectorAll(".mobile--menu-navigation-sub-item");
-
-      // Auto-open if only one sub-item
-      if (siblingSubItems.length === 1) {
-        submenu.classList.add("open");
-        submenu.style.maxHeight = submenu.scrollHeight + "px";
-        subItem.classList.add("open");
-      }
-
-      // Toggle on click
-      toggle.addEventListener("click", function (e) {
-        const isOpen = submenu.classList.contains("open");
-
-        if (isOpen) {
-          submenu.style.maxHeight = submenu.scrollHeight + "px";
-          submenu.offsetHeight; // Force repaint
-          submenu.style.maxHeight = "0px";
-          submenu.classList.remove("open");
-          subItem.classList.remove("open");
-        } else {
-          submenu.classList.add("open");
-          submenu.style.maxHeight = submenu.scrollHeight + "px";
-          subItem.classList.add("open");
-        }
+          if (submenu.classList.contains("open")) {
+            submenu.style.maxHeight = submenu.scrollHeight + "px";
+            submenu.offsetHeight;
+            submenu.style.maxHeight = "0px";
+            submenu.classList.remove("open");
+            parentItem.classList.remove("open");
+          } else {
+            submenu.classList.add("open");
+            submenu.style.maxHeight = submenu.scrollHeight + "px";
+            parentItem.classList.add("open");
+          }
+        });
       });
-    });
 
-    // Language switcher
+
+
+
     document.querySelectorAll('.language--switcher').forEach(switcher => {
       const popup = switcher.nextElementSibling;
 
@@ -1447,6 +1255,148 @@
       });
     });
 
+
+
+
+
+
+    });
+  </script>
+{% endcomment %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.querySelector('.m-menu-button');
+    const menuContainer = document.querySelector('.mobile--menu-container');
+    const menuCloseBtns = document.querySelectorAll('.mobile--menu-close');
+    const subItems = document.querySelectorAll('.mobile--menu-navigation-item');
+
+    // Open main menu
+    menuBtn.addEventListener('click', () => {
+      menuContainer.classList.add('menu--open');
+    });
+
+    // Close main menu
+    menuCloseBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        menuContainer.classList.remove('menu--open');
+        document
+          .querySelectorAll('.mobile--menu-navigation-item-content.active')
+          .forEach((activeContent) => activeContent.classList.remove('active'));
+      });
+    });
+
+    // Handle each main menu item's submenu open
+    subItems.forEach((subItem) => {
+      const subContent = subItem.querySelector('.mobile--menu-navigation-item-content');
+      const backBtn = subItem.querySelector('.mobile--menu-back');
+
+      subItem.addEventListener('click', () => {
+        // Close all others first
+        document
+          .querySelectorAll('.mobile--menu-navigation-item-content.active')
+          .forEach((el) => el.classList.remove('active'));
+
+        // Open only this item's submenu
+        if (subContent) subContent.classList.add('active');
+      });
+
+      // Back button only closes its own submenu
+      if (backBtn && subContent) {
+        backBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          subContent.classList.remove('active');
+        });
+      }
+    });
+
+    // ✅ Toggle nested dropdown under submenu — with auto-open if only one sub-item
+    document.querySelectorAll('.mobile--menu-navigation-sub-item').forEach((subItem) => {
+      const toggle = subItem.querySelector('.mobile--menu-navigation-sub-item-wrapper');
+      const submenu = subItem.querySelector('.mobile--menu-sub-dropdown');
+
+      if (!submenu || !toggle) return;
+
+      const siblingSubItems = subItem.parentElement.querySelectorAll('.mobile--menu-navigation-sub-item');
+
+      // Auto-open if only one sub-item
+      if (siblingSubItems.length === 1) {
+        submenu.classList.add('open');
+        submenu.style.maxHeight = submenu.scrollHeight + 'px';
+        subItem.classList.add('open');
+      }
+
+      // Toggle on click
+      toggle.addEventListener('click', function (e) {
+        const isOpen = submenu.classList.contains('open');
+
+        if (isOpen) {
+          submenu.style.maxHeight = submenu.scrollHeight + 'px';
+          submenu.offsetHeight; // Force repaint
+          submenu.style.maxHeight = '0px';
+          submenu.classList.remove('open');
+          subItem.classList.remove('open');
+        } else {
+          submenu.classList.add('open');
+          submenu.style.maxHeight = submenu.scrollHeight + 'px';
+          subItem.classList.add('open');
+        }
+      });
+    });
+
+    // Language switcher
+    document.querySelectorAll('.language--switcher').forEach((switcher) => {
+      const popup = switcher.nextElementSibling;
+
+      // Toggle popup
+      switcher.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        // Close others
+        document.querySelectorAll('.language--popup').forEach((p) => {
+          if (p !== popup) p.style.display = 'none';
+        });
+
+        // Toggle current popup
+        popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+      });
+
+      // Close button inside popup
+      const closeBtn = popup.querySelector('.language--popup-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          popup.style.display = 'none';
+        });
+      }
+
+      // Language selection
+      popup.querySelectorAll('li').forEach((item) => {
+        item.addEventListener('click', () => {
+          const img = item.querySelector('img')?.src;
+          const name = item.getAttribute('data-name');
+          const switcherImg = switcher.querySelector('img');
+          const switcherText = switcher.querySelector('span');
+
+          if (img && switcherImg) switcherImg.src = img;
+          if (name && switcherText) switcherText.textContent = name;
+
+          popup.style.display = 'none';
+        });
+      });
+
+      // Prevent closing when clicking inside popup-inner
+      const inner = popup.querySelector('.language--popup-innner');
+      if (inner) {
+        inner.addEventListener('click', (e) => e.stopPropagation());
+      }
+    });
+
+    // Global click — close if clicked outside
+    document.addEventListener('click', (e) => {
+      document.querySelectorAll('.language--popup').forEach((p) => {
+        p.style.display = 'none';
+      });
+    });
   });
 </script>
-
