@@ -33,8 +33,8 @@
     {{- 'products.product.price.regular_price' | t -}}
   </span>
   <div class="p-relative">
+    <span class="comprae-text">UVP:</span>
     <s class="m-price-item m-price-item--regular rs-compare-price new">
-      <span class="comprae-text">UVP:</span>
       {% if settings.currency_code_enabled %}
         {{ compare_at_price | money_with_currency }}
       {% else %}
