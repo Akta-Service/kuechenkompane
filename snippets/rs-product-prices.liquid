@@ -51,13 +51,15 @@
       {{ money_price }}
     </span>
     {%- unless target.price_varies == false and target.compare_at_price_varies %}
-      <span class="m:visually-hidden m:visually-hidden--inline rs-current-price ">{{ 'products.product.price.regular_price' | t }}</span>
-      <div class="p-relative">   
-        {% if product.metafields.custom.price_individual_tag %}
-          <span class="green-label">{{ product.metafields.custom.price_individual_tag }}</span>
-        {% endif %}
-       
-
+      <span class="m:visually-hidden m:visually-hidden--inline rs-current-price ">
+        {{- 'products.product.price.regular_price' | t -}}
+      </span>
+      <div class="p-relative">
+        {% comment %}
+          {% if product.metafields.custom.price_individual_tag %}
+            <span class="green-label">{{ product.metafields.custom.price_individual_tag }}</span>
+          {% endif %}
+        {% endcomment %}
 
         <s class="m-price-item m-price-item--regular rs-compare-price">
           {% if settings.currency_code_enabled %}
@@ -115,7 +117,7 @@
           <span class="m-product-tag discount-percentage m-product-tag--sale m-gradient m-color-{{ settings.sale_badge_color_scheme }}">
             {% unless sale_badge_type == 'text' %}
               {% comment %} {% render 'new-locale', key: 'products.product.save_html', param: '{{ amount }}', value: discount %} {% endcomment %}
-               <span class="m-currency--saved m:font-medium" data-saved-price>-{{ discount }}</span>
+              <span class="m-currency--saved m:font-medium" data-saved-price>-{{ discount }}</span>
             {% else %}
               {% render 'new-locale', key: 'products.product.sale_text' %}
             {% endunless %}
