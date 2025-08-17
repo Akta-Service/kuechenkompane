@@ -441,13 +441,15 @@
           id="emojiInput"
           placeholder="Type something and add emojis... "
         >
-        <ul class="emoji-list">
-          <li>Chefkoch Max</li>
-          <li>Küchenmeister</li>
-          <li>Für Papa</li>
-          <li>BBQ King</li>
-          <li>Beste Köchin</li>
-        </ul>
+        {% comment %}
+          <ul class="emoji-list">
+            <li>Chefkoch Max</li>
+            <li>Küchenmeister</li>
+            <li>Für Papa</li>
+            <li>BBQ King</li>
+            <li>Beste Köchin</li>
+          </ul>
+        {% endcomment %}
       </div>
       <div class="modal-footer">
         <button id="saveEmojiBtn">{{ section.settings.save_btn }}</button>
