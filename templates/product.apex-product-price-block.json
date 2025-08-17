@@ -99,10 +99,7 @@
             "c_price_size": 16,
             "c_price_size_m": 16,
             "price_font_weight": "500",
-            "price_tag_bg": "#ddede0",
-            "price_tag_text_color": "#000000",
-            "price_tag_font_size": 8,
-            "price_tag_arrow_bg": "#ddede0"
+            "border_radius": 25
           }
         },
         "price_block_new_deeJAL": {
@@ -126,10 +123,7 @@
             "c_price_size": 16,
             "c_price_size_m": 16,
             "price_font_weight": "400",
-            "price_tag_bg": "#ddede0",
-            "price_tag_text_color": "#000000",
-            "price_tag_font_size": 8,
-            "price_tag_arrow_bg": "#ddede0"
+            "border_radius": 2
           }
         },
         "subtitle_xQXVba": {
