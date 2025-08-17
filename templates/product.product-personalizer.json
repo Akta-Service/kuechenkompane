@@ -96,34 +96,13 @@
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 18,
+            "c_price_size": 16,
+            "c_price_size_m": 16,
             "price_font_weight": "600",
             "price_tag_bg": "#ddede0",
             "price_tag_text_color": "#000000",
             "price_tag_font_size": 8,
-            "price_tag_arrow_bg": "#ddede0"
-          }
-        },
-        "price_block_new_deeJAL": {
-          "type": "price_block_new",
-          "disabled": true,
-          "settings": {
-            "taxes_included": false,
-            "taxes_included_text": "",
-            "show_saving": true,
-            "sale_badge_type": "percentage",
-            "p_pt": 5,
-            "p_pb": 5,
-            "p_pt_m": 5,
-            "p_pb_m": 5,
-            "price_color": "#008000",
-            "c_price_color": "#008000",
-            "per_badge_bg": "#008000",
-            "per_badge_color": "#000000",
-            "f_s": 16,
-            "f_s_m": 16,
-            "c_price_size": 16,
-            "c_price_size_m": 16,
-            "price_font_weight": "400",
+            "price_tag_arrow_bg": "#ddede0",
             "border_radius": 2
           }
         },
@@ -255,7 +234,6 @@
         "ratings_fD4VNJ",
         "loox_reviews_loox_rating_DQFemx",
         "price_J4wXWJ",
-        "price_block_new_deeJAL",
         "subtitle_xQXVba",
         "subtitle_mGfN7N",
         "viewer_stock_count_MFNhKz",
@@ -294,7 +272,11 @@
         "show_stk_icon": true,
         "glitter_effec": true,
         "bubble_before_color": "#000000",
-        "bubble_after_color": "#1e1e1e"
+        "bubble_after_color": "#1e1e1e",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Bestätigen (Kostenlos)",
+        "cancel_btn": "Abbrechen"
       }
     },
     "product_descrption_accordion_btdDtQ": {
