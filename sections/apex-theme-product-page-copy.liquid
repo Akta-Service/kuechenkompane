@@ -99,7 +99,7 @@
       position: relative;
     }
 
-    {% if product.metafields.custom.price_individual_tag %}
+    {% if product.metafields.custom.price_individual_tag != blank %}
       .rs-price {
         margin-top: 30px;
       }
@@ -109,7 +109,7 @@
     .green-label {
       top: -20px;
     }
-     {% if product.metafields.custom.price_individual_tag %}
+     {% if product.metafields.custom.price_individual_tag != blank %}
       .rs-price {
         margin-top: 20px;
       }
