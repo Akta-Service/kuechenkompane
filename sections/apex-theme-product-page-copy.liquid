@@ -230,6 +230,9 @@
     {% render 'apex-sticky-atc', section: section, product: product, first_3d_model: first_3d_model %}
   {% endif %}
 </div>
+
+{% render 'add-emoji-popup', section: section, product: product %}
+
 {%- if section.settings.show_zoom_button -%}
   <script src="{{ 'photoswipe.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
