@@ -63,7 +63,8 @@
         font-weight: {{ block.settings.price_font_weight }};
         text-decoration: line-through;
         margin-right: 3px;
-        font-size: {{ block.settings.f_s |  append: 'px' }};
+        /* font-size: {{ block.settings.f_s |  append: 'px' }}; */
+        font-size: 18px;
       }
       span.discount-percentage {
         display: inline-block;
@@ -125,7 +126,7 @@
       }
 
 
-   
+
 
     {% when 'featurelist_header' %}
         .feature-header{
@@ -226,7 +227,7 @@
         <h4
           class="rs-product-subtitle"
           style="
-                                                                                                                                                                                                                                                                                    font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+                                                                                                                                                                                                                                                                                                font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
           "
         >
           {{ block.settings.subtitle }}
