@@ -227,7 +227,7 @@
         <h4
           class="rs-product-subtitle"
           style="
-                                                                                                                                                                                                                                                                                                                                    font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+                                                                                                                                                                                                                                                                                                            font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
           "
         >
           {{ block.settings.subtitle }}
@@ -347,10 +347,29 @@
         </div>
 
       {% when 'product_personalizer' %}
+        {% comment %}
+          <div class="button-and-info-wrap">
+            <div class="modal-button-and-text-show show-text" data-open-modal>
+              <div class="logo-add-content">
+                <h4>Add engraving</h4>
+                <p>
+                  Have a combination of emojis, names, initials, and numbers engraved to make your AirPods Max unique.
+                  Only at Apple.
+                </p>
+              </div>
+              <button id="openModal" class="btn">Add Logo</button>
+            </div>
+            <div class="add-logo-no-selection show-text2">
+              <h3 id="showTextEmoji"></h3>
+              <button data-open-modal class="btn">Add Logo &plus;</button>
+            </div>
+          </div>
+        {% endcomment %}
+
         <div class="button-and-info-wrap">
           <div class="modal-button-and-text-show show-text" data-open-modal>
             <div class="logo-add-content">
-              <h4>Add engraving</h4>
+              <h4>{{ block.settings.heading }}</h4>
               <p>
                 {{ block.settings.text }}
               </p>
