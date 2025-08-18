@@ -226,9 +226,7 @@
       {% when 'subtitle' %}
         <h4
           class="rs-product-subtitle"
-          style="
-                                                                                                                                                                                                                                                                                                            font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
-          "
+          style="font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};"
         >
           {{ block.settings.subtitle }}
         </h4>
@@ -369,7 +367,7 @@
         <div class="button-and-info-wrap">
           <div class="modal-button-and-text-show show-text" data-open-modal>
             <div class="logo-add-content">
-              <h4>{{ block.settings.heading }}</h4>
+              <h5>{{ block.settings.heading }}</h5>
               <p>
                 {{ block.settings.text }}
               </p>
