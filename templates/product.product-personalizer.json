@@ -222,7 +222,12 @@
         },
         "product_personalizer_9Wz7G4": {
           "type": "product_personalizer",
-          "settings": {}
+          "settings": {
+            "heading": "Personalisierung hinzufügen",
+            "text": "Verleihe deinem Küchenmesser eine persönliche Gravur - ob Initialien, Name oder Widmung.",
+            "button_Logo_text": "Hinzufügen",
+            "button_text": "Hinzufügen"
+          }
         }
       },
       "block_order": [
