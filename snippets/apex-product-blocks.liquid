@@ -227,7 +227,7 @@
         <h4
           class="rs-product-subtitle"
           style="
-                                                                                                                                                                                                                                                                                                font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
+                                                                                                                                                                                                                                                                                                            font-size: clamp(10px, {{ block.settings.subtitle_font_size | default: 16 }}px, 40px); font-weight:{{ block.settings.subtitle_weight }};
           "
         >
           {{ block.settings.subtitle }}
@@ -360,7 +360,7 @@
           </div>
           <div class="add-logo-no-selection show-text2">
             <h3 id="showTextEmoji"></h3>
-            <button data-open-modal class="btn">Add Logo &plus;</button>
+            <button data-open-modal class="btn">{{ block.settings.button_text }} &plus;</button>
           </div>
         </div>
 
