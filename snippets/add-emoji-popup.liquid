@@ -466,7 +466,7 @@
             <img
               id="variantImageInModal_variant_meta"
               src="
-                                                                                                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
+                                                                                                                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
               "
               alt="{{ product.title }}"
             >
@@ -515,6 +515,17 @@
     </div>
   </div>
 </div>
+
+{% comment %} helper liquid  {% endcomment %}
+
+{% for variant in product.variants %}
+  <div
+    class="variant-data visually-hidden"
+    data-variant-id="{{ variant.id }}"
+    data-variant-meta-image="{% if variant.metafields.custom.personalization_image != blank %}{{ variant.metafields.custom.personalization_image.value | image_url: width: 800 }}{% endif %}"
+  ></div>
+{% endfor %}
+
 <script>
   const modalModule = (() => {
     const openBtn = document.getElementById('openModal');
