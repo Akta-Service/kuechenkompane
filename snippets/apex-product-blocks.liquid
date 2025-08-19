@@ -380,7 +380,9 @@
 
               <div>
                 <button data-open-modal class="btn">{{ block.settings.button_text }}</button>
-                <button data-open-modal class="btn">{{ block.settings.remove_button_text }}</button>
+                <button data-open-modal class="btn">
+                  {{ block.settings.remove_button_text | default: 'Löschen' }}
+                </button>
               </div>
             </div>
             <p class="add-logo-no-selection-text">Dein Personalisierung war erfolgreich.</p>
