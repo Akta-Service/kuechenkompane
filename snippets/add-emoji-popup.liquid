@@ -723,7 +723,7 @@
     }); {% endcomment %}
 
 
-    const modalVariantImage = document.getElementById('variantImageInModal_variant_meta');
+    const modalVariantImage = document.getElementById('variantImageInModal');
 
     document.addEventListener('variant:changed', function (e) {
       if (!modalVariantImage) return;
@@ -731,19 +731,18 @@
       const variant = e.detail.variant;
       if (!variant) return;
 
-      
       const variantData = document.querySelector(`.variant-data[data-variant-id="${variant.id}"]`);
       const variantMetaImage = variantData ? variantData.getAttribute("data-variant-meta-image") : null;
 
       if (variantMetaImage) {
         
         modalVariantImage.src = variantMetaImage;
+      } else if ({{ product.metafields.custom.personalizer_image != blank | json }}) {
+        
+        modalVariantImage.src = {{ product.metafields.custom.personalizer_image | image_url: width: 800 | json }};
       } else if (variant.featured_image && variant.featured_image.src) {
-        // 2️⃣ Fallback to variant featured image
+        
         modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1');
-      } else {
-        // 3️⃣ Last fallback (product image set in Liquid)
-        console.log("No variant image found, keeping default.");
       }
     });
 
