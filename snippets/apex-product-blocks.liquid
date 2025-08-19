@@ -377,15 +377,14 @@
           <div class="add-logo-no-selection show-text2">
             <div class="add-logo-no-selection-content">
               <h3>Personalisierung: <span id="showTextEmoji"></span></h3>
-
-              <div class="btn--wrapper">
-                <button data-open-modal class="btn">{{ block.settings.button_text }}</button>
-                <button class="btn" id="remove_btn">
-                  {{ block.settings.remove_button_text | default: 'Löschen' }}
-                </button>
-              </div>
+              <p class="add-logo-no-selection-text">Dein Personalisierung war erfolgreich.</p>
             </div>
-            <p class="add-logo-no-selection-text">Dein Personalisierung war erfolgreich.</p>
+            <div class="btn--wrapper">
+              <button data-open-modal class="btn">{{ block.settings.button_text }}</button>
+              <button class="btn" id="remove_btn">
+                {{ block.settings.remove_button_text | default: 'Löschen' }}
+              </button>
+            </div>
           </div>
         </div>
 
