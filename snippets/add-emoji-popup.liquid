@@ -626,10 +626,10 @@
     }
   }
   updateActiveClass();
-  const observer = new MutationObserver(() => {
+  const observerNew = new MutationObserver(() => {
     updateActiveClass();
   });
-  observer.observe(document.body, {
+  observerNew.observe(document.body, {
     childList: true,
     subtree: true,
   });
