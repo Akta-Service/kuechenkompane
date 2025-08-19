@@ -466,7 +466,7 @@
             <img
               id="variantImageInModal_variant_meta"
               src="
-                                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
+                                                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
               "
               alt="{{ product.title }}"
             >
@@ -709,6 +709,15 @@
     const forms = document.querySelectorAll('form[action^="/cart/add"]');
     const modalVariantImage = document.getElementById('variantImageInModal');
 
+    {% comment %} document.addEventListener('variant:changed', function (e) {
+      if (!modalVariantImage) return;
+
+      const variant = e.detail.variant;
+      if (variant && variant.featured_image && variant.featured_image.src) {
+        modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1');
+      }
+    }); {% endcomment %}
+
     document.addEventListener('variant:changed', function (e) {
       if (!modalVariantImage) return;
 
@@ -717,6 +726,7 @@
         modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1');
       }
     });
+
 
     function updateForms() {
       const emojiInputValue = localStorage.getItem('emojiInputValue') || '';
