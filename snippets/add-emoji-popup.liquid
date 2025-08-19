@@ -707,7 +707,8 @@
     const urlParams = new URLSearchParams(window.location.search);
     const fromCollection = urlParams.get('from');
     const forms = document.querySelectorAll('form[action^="/cart/add"]');
-    const modalVariantImage = document.getElementById('variantImageInModal');
+    {% comment %} const modalVariantImage = document.getElementById('variantImageInModal'); {% endcomment %}
+    const modalVariantImage = document.getElementById('variantImageInModal_variant_meta');
 
     {% comment %} document.addEventListener('variant:changed', function (e) {
       if (!modalVariantImage) return;
@@ -722,6 +723,10 @@
       if (!modalVariantImage) return;
 
       const variant = e.detail.variant;
+
+      let variant_mata_image = 
+
+
       if (variant && variant.featured_image && variant.featured_image.src) {
         modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1');
       }
