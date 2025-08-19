@@ -462,28 +462,21 @@
         <div class="product-image-wrap">
           <div id="emojiDisplay"></div>
           {% comment %} <img src="{{ product.featured_image | image_url: width: "800" }}" alt=""> {% endcomment %}
-          {% if product.selected_or_first_available_variant.metafields.custom.personalization_image != blank %}
-            <img
-              id="variantImageInModal_variant_meta"
-              src="
-                                                                                                                                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
-              "
-              alt="{{ product.title }}"
-            >
-
-          {% elsif product.metafields.custom.personalizer_image != blank %}
-            <img
-              id="variantImageInModal_meta"
-              src="{{ product.metafields.custom.personalizer_image | image_url: width: 800 }}"
-              alt="{{ product.title }}"
-            >
-          {% else %}
-            <img
-              id="variantImageInModal"
-              src="{{ product.featured_image | image_url: width: 800 }}"
-              alt=""
-            >
-          {% endif %}
+          <img
+            id="variantImageInModal"
+            src="
+              {% if product.selected_or_first_available_variant.metafields.custom.personalization_image != blank %}
+                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
+              {% elsif product.metafields.custom.personalizer_image != blank %}
+                {{ product.metafields.custom.personalizer_image | image_url: width: 800 }}
+              {% else %}
+                {{ product.featured_image | image_url: width: 800 }}
+              {% endif %}
+            "
+            alt="{{ product.title }}"
+            width=""
+            height=""
+          >
         </div>
 
         <input
