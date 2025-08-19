@@ -635,6 +635,13 @@
       if (showTextEmoji) {
         showTextEmoji.textContent = '';
       }
+
+      input.value = '';
+      oldValue = '';
+
+      localStorage.removeItem('emojiInputValue');
+
+      renderWithAnimation('', '');
     });
 
     // Initialize saved value
