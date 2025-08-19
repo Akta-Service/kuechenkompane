@@ -707,6 +707,14 @@
 </script>
 
 <script>
+  const productMetaImage = {% if product.metafields.custom.personalizer_image != blank %}
+    "{{ product.metafields.custom.personalizer_image.value | image_url: width: 800 }}"
+  {% else %}
+    null
+  {% endif %};
+</script>
+
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const fromCollection = urlParams.get('from');
