@@ -787,9 +787,9 @@
 
 
 
-const modalVariantImage = document.getElementById('variantImageInModal');
+      const modalVariantImage = document.getElementById('variantImageInModal');
 
-      // Product metafield fallback
+      
       const productMetaImage = {% if product.metafields.custom.personalizer_image != blank %}
         "{{ product.metafields.custom.personalizer_image.value | image_url: width: 800 }}"
       {% else %}
@@ -802,36 +802,23 @@ const modalVariantImage = document.getElementById('variantImageInModal');
         const variant = e.detail.variant;
         if (!variant) return;
 
-        // Find variant metafield image
+       
         const variantData = document.querySelector(`.variant-data[data-variant-id="${variant.id}"]`);
         const variantMetaImage = variantData ? variantData.getAttribute("data-variant-meta-image") : null;
 
         if (variantMetaImage) {
-          // 1️⃣ Use variant metafield image if exists
+          
           modalVariantImage.src = variantMetaImage;
         } else if (productMetaImage) {
-          // 2️⃣ Use product metafield fallback
+          
           modalVariantImage.src = productMetaImage;
         } else if (variant.featured_image && variant.featured_image.src) {
-          // 3️⃣ Use variant featured image (your original code)
+         
           modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1');
         } else {
           console.log("No image found for this variant");
         }
       });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
