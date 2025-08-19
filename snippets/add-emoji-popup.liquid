@@ -466,7 +466,7 @@
             <img
               id="variantImageInModal_variant_meta"
               src="
-                                                                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
+                                                                                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
               "
               alt="{{ product.title }}"
             >
@@ -726,7 +726,7 @@
 
       let variant_mata_image = variant.metafields.custom.personalization_image
 
-      console.log(variant_mata_image)
+      console.log("variant meta image", variant_mata_image)
 
 
       if (variant && variant.featured_image && variant.featured_image.src) {
