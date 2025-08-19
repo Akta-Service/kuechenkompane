@@ -555,34 +555,6 @@
 </script>
 
 <script>
-  const modalVariantImage = document.getElementById('variantImageInModal');
-
-  function checkVariantMetaImage(variantId) {
-    const variantData = document.querySelector(`.variant-data[data-variant-id="${variantId}"]`);
-    const hasVariantMetaImage = variantData && variantData.getAttribute('data-variant-meta-image') ? true : false;
-
-    console.log('Selected variant ID:', variantId);
-    console.log('Variant metafield image exists?', hasVariantMetaImage);
-
-    return hasVariantMetaImage;
-  }
-
-  // ✅ On page load: check the first selected variant
-  document.addEventListener('DOMContentLoaded', function () {
-    const initialVariantId = document.querySelector('select[name="id"]').value;
-    checkVariantMetaImage(initialVariantId);
-  });
-
-  // ✅ On variant change
-  document.addEventListener('variant:changed', function (e) {
-    const variant = e.detail.variant;
-    if (!variant) return;
-
-    checkVariantMetaImage(variant.id);
-  });
-</script>
-
-<script>
   const modalModule = (() => {
     const openBtn = document.getElementById('openModal');
     const closeBtn = document.getElementById('closeModal');
