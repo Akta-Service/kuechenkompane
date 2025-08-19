@@ -529,6 +529,22 @@
 {% endfor %}
 
 <script>
+  document.addEventListener('variant:changed', function (e) {
+    const variant = e.detail.variant;
+    if (!variant) return;
+
+    // Find the hidden div for this variant
+    const variantData = document.querySelector(`.variant-data[data-variant-id="${variant.id}"]`);
+
+    // Check if variant metafield image exists
+    const hasVariantMetaImage = variantData && variantData.getAttribute('data-variant-meta-image') ? true : false;
+
+    console.log('Selected variant ID:', variant.id);
+    console.log('Variant metafield image exists?', hasVariantMetaImage);
+  });
+</script>
+
+<script>
   const modalModule = (() => {
     const openBtn = document.getElementById('openModal');
     const closeBtn = document.getElementById('closeModal');
