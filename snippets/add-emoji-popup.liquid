@@ -462,6 +462,7 @@
         <div class="product-image-wrap">
           <div id="emojiDisplay"></div>
           {% comment %} <img src="{{ product.featured_image | image_url: width: "800" }}" alt=""> {% endcomment %}
+
           <img
             id="variantImageInModal_metafield"
             src="{{ product.metafields.custom.personalizer_image.value | image_url: width: 800 }}"
