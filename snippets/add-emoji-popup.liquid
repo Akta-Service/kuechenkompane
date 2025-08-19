@@ -507,7 +507,7 @@
     const openButtons = document.querySelectorAll('[data-open-modal]');
     const hideButtons = document.querySelectorAll('[data-hide-modal]');
 
-    const remove_btn = document.getElementById('saveEmojiBtn');
+    const remove_btn = document.getElementById('remove_btn');
 
     openButtons.forEach((btn) => {
       btn.addEventListener('click', show);
@@ -628,6 +628,13 @@
         showTextEmoji.textContent = input.value;
       }
       hide();
+    });
+
+    // delete button
+    remove_btn.addEventListener('click', () => {
+      if (showTextEmoji) {
+        showTextEmoji.textContent = '';
+      }
     });
 
     // Initialize saved value
