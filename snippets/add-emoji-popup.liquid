@@ -743,14 +743,11 @@
       const variantMetaImage = variantData ? variantData.getAttribute("data-variant-meta-image") : null;
 
       if (variantMetaImage) {
-        
-        modalVariantImage.src = variantMetaImage;
-      } else if ({{ product.metafields.custom.personalizer_image != blank | json }}) {
-        
-        modalVariantImage.src = {{ product.metafields.custom.personalizer_image | image_url: width: 800 | json }};
+        modalVariantImage.src = variantMetaImage; // Variant metafield
+      } else if (productMetaImage) {
+        modalVariantImage.src = productMetaImage; // Product metafield fallback
       } else if (variant.featured_image && variant.featured_image.src) {
-        
-        modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1');
+        modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1'); // Variant featured image fallback
       }
     });
 
