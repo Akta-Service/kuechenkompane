@@ -462,21 +462,28 @@
         <div class="product-image-wrap">
           <div id="emojiDisplay"></div>
           {% comment %} <img src="{{ product.featured_image | image_url: width: "800" }}" alt=""> {% endcomment %}
-          <img
-            id="variantImageInModal"
-            src="
-              {% if product.selected_or_first_available_variant.metafields.custom.personalization_image != blank %}
-                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
-              {% elsif product.metafields.custom.personalizer_image != blank %}
-                {{ product.metafields.custom.personalizer_image | image_url: width: 800 }}
-              {% else %}
-                {{ product.featured_image | image_url: width: 800 }}
-              {% endif %}
-            "
-            alt="{{ product.title }}"
-            width=""
-            height=""
-          >
+          {% if product.selected_or_first_available_variant.metafields.custom.personalization_image != blank %}
+            <img
+              id="variantImageInModal_variant_meta"
+              src="
+                                                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
+              "
+              alt="{{ product.title }}"
+            >
+
+          {% elsif product.metafields.custom.personalizer_image != blank %}
+            <img
+              id="variantImageInModal_meta"
+              src="{{ product.metafields.custom.personalizer_image | image_url: width: 800 }}"
+              alt="{{ product.title }}"
+            >
+          {% else %}
+            <img
+              id="variantImageInModal"
+              src="{{ product.featured_image | image_url: width: 800 }}"
+              alt=""
+            >
+          {% endif %}
         </div>
 
         <input
@@ -508,17 +515,6 @@
     </div>
   </div>
 </div>
-
-{% comment %} helper liquid  {% endcomment %}
-
-{% for variant in product.variants %}
-  <div
-    class="variant-data visually-hidden"
-    data-variant-id="{{ variant.id }}"
-    data-variant-meta-image="{% if variant.metafields.custom.personalization_image != blank %}{{ variant.metafields.custom.personalization_image.value | image_url: width: 800 }}{% endif %}"
-  ></div>
-{% endfor %}
-
 <script>
   const modalModule = (() => {
     const openBtn = document.getElementById('openModal');
@@ -707,52 +703,20 @@
 </script>
 
 <script>
-  const productMetaImage = {% if product.metafields.custom.personalizer_image != blank %}
-    "{{ product.metafields.custom.personalizer_image.value | image_url: width: 800 }}"
-  {% else %}
-    null
-  {% endif %};
-</script>
-
-<script>
   document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const fromCollection = urlParams.get('from');
     const forms = document.querySelectorAll('form[action^="/cart/add"]');
-    {% comment %} const modalVariantImage = document.getElementById('variantImageInModal'); {% endcomment %}
-
-    {% comment %} document.addEventListener('variant:changed', function (e) {
-      if (!modalVariantImage) return;
-
-      const variant = e.detail.variant;
-      if (variant && variant.featured_image && variant.featured_image.src) {
-        modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1');
-      }
-    }); {% endcomment %}
-
-
     const modalVariantImage = document.getElementById('variantImageInModal');
 
     document.addEventListener('variant:changed', function (e) {
       if (!modalVariantImage) return;
 
       const variant = e.detail.variant;
-      if (!variant) return;
-
-      const variantData = document.querySelector(`.variant-data[data-variant-id="${variant.id}"]`);
-      const variantMetaImage = variantData ? variantData.getAttribute("data-variant-meta-image") : null;
-
-      console.log('variant meta', variantMetaImage)
-
-      if (variantMetaImage) {
-        modalVariantImage.src = variantMetaImage; 
-      } else if (productMetaImage) {
-        modalVariantImage.src = productMetaImage; 
-      } else if (variant.featured_image && variant.featured_image.src) {
-        modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1'); 
+      if (variant && variant.featured_image && variant.featured_image.src) {
+        modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1');
       }
     });
-
 
     function updateForms() {
       const emojiInputValue = localStorage.getItem('emojiInputValue') || '';
