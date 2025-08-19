@@ -56,17 +56,6 @@
         "animations": "inherit"
       }
     },
-    "breadcrumb_fjiNLC": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
     "product_explanation_video_ca4Wbj": {
       "type": "product-explanation-video",
       "blocks": {
@@ -126,6 +115,7 @@
       "name": "APEX Announcement Sticky",
       "settings": {
         "target_collections": [],
+        "target_pages": "",
         "enable_scroll_to_show": true,
         "px_to_show": 200,
         "top_px": 0,
@@ -350,7 +340,6 @@
   "order": [
     "apex_top_slider_cLWmNy",
     "breadcrumb_h1_B4wewV",
-    "breadcrumb_fjiNLC",
     "product_explanation_video_ca4Wbj",
     "announcement_bar_sticky_scroll_gnrpHz",
     "collection-header",
