@@ -277,6 +277,9 @@
           {% endif %}
         </div>
       {% when 'price_old' %}
+        {% render 'custom-bundle', block: block, product: product %}
+
+      {% when 'price_old' %}
         <div class="product-block-group--price">
           <div class="rs-price">
             {% comment %}
