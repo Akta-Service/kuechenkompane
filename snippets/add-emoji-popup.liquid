@@ -524,7 +524,7 @@
   <div
     class="variant-data visually-hidden"
     data-variant-id="{{ variant.id }}"
-    data-variant-meta-image="{% if variant.metafields.custom.personalization_image != blank %}{{ variant.metafields.custom.personalization_image.value | image_url: width: 800 }}{% endif %}"
+    data-variant-meta-image="{% if variant.metafields.custom.personalization_image != blank %}{{ variant.metafields.custom.personalization_image | image_url: width: 800 }}{% endif %}"
   ></div>
 {% endfor %}
 
