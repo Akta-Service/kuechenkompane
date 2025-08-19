@@ -37,9 +37,9 @@
         "h1-color": ""
       }
     },
-    "breadcrumb_yifnda": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
+    "breadcrumb_h1_EGVDXm": {
+      "type": "breadcrumb-h1",
+      "name": "Breadcrumb h1",
       "settings": {
         "container": "container",
         "text_alignment": "center",
@@ -212,7 +212,7 @@
   },
   "order": [
     "testing_ahDQMJ",
-    "breadcrumb_yifnda",
+    "breadcrumb_h1_EGVDXm",
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
