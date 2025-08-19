@@ -276,7 +276,10 @@
             </div>
           {% endif %}
         </div>
-      {% when 'price_old' %}
+      {% when 'recomendation_text' %}
+        <div class="recomendation_text"></div>
+
+      {% when 'custom_bundle' %}
         {% render 'custom-bundle', block: block, product: product %}
 
       {% when 'price_old' %}
