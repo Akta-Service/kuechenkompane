@@ -506,6 +506,9 @@
     const showTextEmoji = document.getElementById('showTextEmoji');
     const openButtons = document.querySelectorAll('[data-open-modal]');
     const hideButtons = document.querySelectorAll('[data-hide-modal]');
+
+    const remove_btn = document.getElementById('saveEmojiBtn');
+
     openButtons.forEach((btn) => {
       btn.addEventListener('click', show);
     });
