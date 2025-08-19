@@ -1,0 +1,384 @@
+<style>
+    .bundle-option {
+      border: 2px solid #ddd;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .bundle-option.active {
+      border-color: black;
+      background: #fff;
+    }
+    .bundle-header--wrapper {
+      padding: 10px 20px;
+    }
+    .bundle-header {
+      align-items: start;
+      display: flex;
+      gap: 18px;
+    }
+    .bundle--prices {
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .bundle-header input[type="radio"] {
+      transform: scale(1.5);
+      margin: 0;
+       accent-color: #000000;
+       margin-top: 6px;
+    }
+    .badge {
+      background: black;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .color-selectors {
+      margin-top: 5px;
+    }
+   .color-selectors label {
+      display: block;
+      font-size: 14px;
+      color: #000;
+    }
+    .addons {
+      display: none;
+    }
+    .addon {
+      cursor: pointer;
+      align-items: center;
+      padding: 8px;
+      padding-inline: 2px;
+      background-color: rgba(0, 0, 0, 0.26);
+      display: flex;
+      gap: 10px;
+      padding-right: 15px;
+      position: relative;
+    }
+    .addon::after {
+      position: absolute;
+      height: 1px;
+      background: #fff;
+      width: calc(100% - 10px);
+      left: 5px;
+      content: "";
+      bottom: 0;
+    }
+    .addon:last-child::after {
+      display: none;
+    }
+   .addon input[type="checkbox"] {
+      pointer-events: none;
+      transform: scale(1.5);
+      margin-left: 10px;
+      accent-color: #181818;
+  }
+    .addon label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    span.addon-price {
+      margin-left: auto;
+    }
+    .addon label img {
+      width: 30px;
+      height: 30px;
+      display: block;
+      border-radius: 3px;
+    }
+    .color-selectors select {
+      border: 1px solid #000;
+      border-radius: 5px;
+      padding: 6px 24px 6px 6px !important;
+      margin: 2.5px 0 !important;
+      color: #000;
+      font-size: 14px;
+      line-height: normal !important;
+      max-width: 210px !important;
+      outline: none;
+      width: auto;
+    }
+    .bundle-option.active .addons {
+      display: block;
+    }
+    .bundle-badge.bundle-1-badge {
+      background-color: #000;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      font-family: inter, sans-serif;
+      line-height: 1;
+      margin: 0 15px;
+      padding: 6px 8px;
+      word-break: break-all;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      width: fit-content;
+      margin-left: auto;
+      margin-top: -9px;
+      position: relative;
+    }
+    .bundle-badge.bundle-1-badge::after,
+    .bundle-badge.bundle-1-badge::before {
+      border-bottom-color: #000000;
+      border-bottom-style: solid;
+      border-bottom-width: 8px;
+      content: "";
+      display: block;
+      height: 0;
+      position: absolute;
+      top: 0;
+      border-left: 8px solid transparent;
+      border-left-color: transparent !important;
+      left: -7px;
+    }
+    .bundle-badge.bundle-1-badge::after {
+      border-bottom-color: #000000;
+      left: auto;
+      right: -7px;
+      border-right: 8px solid transparent;
+      border-left: 0;
+  }
+  .bundle--title {
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      flex-wrap: wrap;
+  }
+  .bundle-header small {
+      color: rgb(85, 85, 85);
+      font-size: 13px;
+      font-weight: normal;
+  }
+  .color-selectors {
+      display: none;
+  }
+  .bundle-option.active .color-selectors {
+      display: block;
+  }
+  .bundle--prices span {
+      font-size: 16px;
+      font-weight: 500;
+  }
+  .bundle--prices del {
+      font-size: 15px;
+      font-weight: normal;
+      text-align: end;
+  }
+  span.title-badge {
+      padding: 4px 6px;
+      vertical-align: top;
+      width: -moz-fit-content;
+      width: fit-content;
+      word-break: break-word;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      display: inline-block;
+      background: #000;
+      border-radius: 5px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+  }
+  @media (max-width: 380px){
+    .bundle--title {
+      font-size: 14px;
+    }
+    .bundle-header--wrapper {
+      padding: 10px 15px;
+    }
+  }
+</style>
+
+<div id="hidden-inputs-container" style="display:none;"></div>
+
+{% assign bundle_number = 1 %}
+<div
+  id="bundle-1"
+  class="bundle-option active"
+  data-bundle="1"
+  data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+>
+  {% if block.settings.b1_badge != blank %}
+    <div class="bundle-badge bundle-1-badge">
+      {{ block.settings.b1_badge }}
+    </div>
+  {% endif %}
+
+  <div class="bundle-header--wrapper">
+    <div class="bundle-header">
+      <input type="radio" name="bundle" value="1" checked>
+      <div>
+        <h3 class="bundle--title">{{ block.settings.Quantity_1_title }}</h3>
+        <small>{{ block.settings.Quantity_1_save_info }}</small>
+      </div>
+      <div class="bundle--prices">
+        <span> {{ product.price | money }} </span>
+        {% if product.price < product.compare_at_price %}
+          <del>{{ product.compare_at_price | money }} </del>
+        {% endif %}
+      </div>
+    </div>
+    <div class="color-selectors">
+      {% for option in product.options_with_values %}
+        <label>
+          {{ option.name }}:
+          <div class="option-dropdown-wrapper">
+            <span>#{{ forloop.index }}</span>
+            <select
+              id="bundle{{ bundle_number }}-prod1-option{{ forloop.index }}"
+              name="bundle{{ bundle_number }}_prod1_option_{{ forloop.index }}"
+              data-bundle="{{ bundle_number }}"
+              data-product-index="1"
+            >
+              {% for value in option.values %}
+                <option value="{{ value }}">{{ value }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </label>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="addons">
+    {% for addon_product in block.settings.addon_products %}
+      {% if addon_product %}
+        <div class="addon">
+          <input
+            type="checkbox"
+            class="addon-check"
+            data-product-id="{{ addon_product.selected_or_first_available_variant.id }}"
+            id="addon-{{ bundle_number }}-{{ forloop.index }}"
+            name="addon_{{ forloop.index }}"
+            checked
+          >
+          <label for="addon-{{ bundle_number }}-{{ forloop.index }}">
+            {% if addon_product.metafields.custom.product_image != blank %}
+              <img
+                src="{{ addon_product.metafields.custom.product_image | img_url: 'master' }}"
+                alt="{{ addon_product.title }}"
+              >
+            {% endif %}
+            + <span>{{ addon_product.title }}</span>
+            <span class="addon-price">{{ addon_product.price | money }}</span>
+          </label>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% assign bundle_number = 2 %}
+<div
+  id="bundle-2"
+  class="bundle-option"
+  data-bundle="2"
+  data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+>
+  <div class="bundle-header--wrapper">
+    <div class="bundle-header">
+      <input type="radio" name="bundle" value="2">
+      <div>
+        <h3 class="bundle--title">
+          {{ block.settings.Quantity_2_title }}
+
+          {% if block.settings.title_bage != blank %}
+            <span class="title-badge">
+              {{ block.settings.title_bage }}
+            </span>
+          {% endif %}
+        </h3>
+        <small>{{ block.settings.Quantity_2_save_info }}</small>
+      </div>
+      <div class="bundle--prices">
+        <span> {{ block.settings.Quantity_2_price }} </span>
+        <del> {{ block.settings.Quantity_2_compare_price }} </del>
+      </div>
+    </div>
+
+    <!-- First product in bundle 2 -->
+    <div class="color-selectors">
+      {% for option in product.options_with_values %}
+        <label>
+          {{ option.name }}:
+          <select
+            id="bundle2-prod1-option{{ forloop.index }}"
+            name="bundle2_prod1_option_{{ forloop.index }}"
+            data-bundle="2"
+            data-product-index="1"
+          >
+            {% for value in option.values %}
+              <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      {% endfor %}
+    </div>
+
+    <!-- Second product in bundle 2 -->
+    <div class="color-selectors">
+      {% for option in product.options_with_values %}
+        <label>
+          {{ option.name }}:
+          <select
+            id="bundle2-prod2-option{{ forloop.index }}"
+            name="bundle2_prod2_option_{{ forloop.index }}"
+            data-bundle="2"
+            data-product-index="2"
+          >
+            {% for value in option.values %}
+              <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="addons">
+    {% for addon_product in block.settings.addon_products %}
+      {% if addon_product %}
+        <div class="addon">
+          <input
+            type="checkbox"
+            class="addon-check"
+            data-product-id="{{ addon_product.selected_or_first_available_variant.id }}"
+            id="addon-{{ bundle_number }}-{{ forloop.index }}"
+            name="addon_{{ forloop.index }}"
+            checked
+          >
+          <label for="addon-{{ bundle_number }}-{{ forloop.index }}">
+            {% if addon_product.metafields.custom.product_image != blank %}
+              <img
+                src="{{ addon_product.metafields.custom.product_image | img_url: 'master' }}"
+                alt="{{ addon_product.title }}"
+              >
+            {% endif %}
+            + <span>{{ addon_product.title }}</span>
+            <span class="addon-price">{{ addon_product.price | money }}</span>
+          </label>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  // Expose all product variants to JS for lookup
+  window.productVariants = {{ product.variants | json }};
+</script>

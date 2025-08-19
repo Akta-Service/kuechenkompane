@@ -63,7 +63,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Jetzt exklusiv nur bei FOCUS-ONLINE",
+            "subtitle": "Jetzt exklusiv nur bei SPIEGEL",
             "subtitle_font_size": 16,
             "subtitle_weight": "400"
           }
@@ -92,6 +92,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "taxes_included": true,
+            "taxes_included_text": "",
             "show_saving": false,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -104,7 +106,11 @@
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 19,
-            "price_font_weight": "600"
+            "price_font_weight": "600",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0"
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -124,6 +130,8 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
             "viewer_count_time": 2500,
             "stock_count_time": 50000,
             "stock_count_show": false
@@ -132,7 +140,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Preis nur für kurze Zeit – danach wieder 138€</p>",
+            "featurelist_item": "<p>Preis nur für kurze Zeit im Sonderangebot</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -141,7 +149,7 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Nur für FOCUS-Leser erhältlich – nicht im Einzelhandel verfügbar</p>",
+            "featurelist_item": "<p>Nur für SPIEGEL-Leser erhältlich – nicht im Einzelhandel verfügbar</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -199,6 +207,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
@@ -246,7 +255,7 @@
           "type": "faq",
           "settings": {
             "question": "Produktinfos & Lieferumfang",
-            "answer": "<p><strong>Jedes unserer Küchenmesser wird von Hand geschliffen – für maximale Schärfe und Präzision in deiner Küche.</strong><br/><br/>Der ergonomische Griff aus edlem Pakkaholz liegt perfekt in der Hand und sorgt für höchsten Komfort – auch bei stundenlangem Arbeiten. So wird jede Zutat zum Genuss – vom ersten Schnitt bis zum letzten Handgriff.</p><p><strong>Lieferumfang:</strong><br/><br/><strong>1. Asiatisches Chefmesser – Wert: 69 €<br/>2. Asiatisches Santoku 7\" Messer – Wert: 69 €<br/><br/> Inklusive edler Aufbewahrungsbox – gratis für dich dabei!</strong><br/></p>"
+            "answer": "<p><strong>Jedes unserer Küchenmesser wird von Hand geschliffen – für maximale Schärfe und Präzision in deiner Küche.</strong><br/><br/>Der ergonomische Griff aus edlem Pakkaholz liegt perfekt in der Hand und sorgt für höchsten Komfort – auch bei stundenlangem Arbeiten. So wird jede Zutat zum Genuss – vom ersten Schnitt bis zum letzten Handgriff.</p><p>{{ product.metafields.custom.product_short_description.value }}<strong><br/><br/> Inklusive edler Aufbewahrungsbox – gratis für dich dabei!</strong><br/></p>"
           }
         }
       },
@@ -262,7 +271,7 @@
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": false,
+        "add_showore_btn": true,
         "readmore": "Mehr lesen",
         "readless": "Weniger Lesen",
         "br_color": "#000000",
@@ -562,13 +571,13 @@
         "subtitle_jER8HM": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Nur für kurze Zeit erhältlich"
+            "subtitle": "Nur für kurze Zeit erhältlich:"
           }
         },
         "title_hXWbxr": {
           "type": "title",
           "settings": {
-            "title": "Spare jetzt über 98 € auf unser exklusives Messer-Set!"
+            "title": "Spare jetzt über 80% auf unsere exklusiven Damastmesser"
           }
         },
         "description_abE8wX": {
@@ -586,7 +595,7 @@
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "shopify://shop_images/Artboard8_977307bb-023d-4b16-9c2a-3cfedc349133.jpg",
+        "image": "shopify://shop_images/finaleeee_9a85bc40-3a9c-4d3c-9005-c3fb8e1f897c.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -712,6 +721,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
@@ -867,7 +877,8 @@
         "sub_title": "",
         "sub_title_font_size": 20,
         "faq_title_font_size": 18,
-        "faq_text_font_size": 16
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "benefit_text_MCeGiV": {

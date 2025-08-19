@@ -9,24 +9,6 @@
  */
 {
   "sections": {
-    "apex_timer_kk8rAh": {
-      "type": "Apex-timer",
-      "name": "Apex Product Timer",
-      "settings": {
-        "bg_color": "#dce5dc",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#fa8526",
-        "timer_clock_text_font_size": 14,
-        "clock_font_weight": "500",
-        "timer_text": "Nur noch für kurze Zeit verfügbar.",
-        "timer_font_size": 15,
-        "timer_color": "#000000",
-        "timer_font_weight": "500",
-        "target_date": "2025-06-23",
-        "target_time": "00:00:00"
-      }
-    },
     "main": {
       "type": "main-product",
       "disabled": true,
@@ -57,30 +39,15 @@
           "settings": {
             "p_t_s": 29,
             "p_t_s_m": 20,
-            "font_weight_t": "700"
+            "font_weight_t": "600"
           }
         },
-        "review_WwHezr": {
+        "review_Tgbbak": {
           "type": "review",
           "settings": {
-            "p": "4.7/5 Sterne auf Trustpilot",
+            "p": "5296 Bewertungen",
             "star_range": 5,
             "star_color": "#000000"
-          }
-        },
-        "loox_reviews_loox_rating_a8TFE7": {
-          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "settings": {
-            "contentSize": 16,
-            "pattern": "([count]) Bewertungen",
-            "hideText": false,
-            "alignment": "",
-            "layout": "",
-            "textColor": "",
-            "starColor": "",
-            "showAllReviews": false,
-            "looxOpenFloatingWidget": false,
-            "emptyRatingWidget": false
           }
         },
         "ratings_fD4VNJ": {
@@ -96,7 +63,23 @@
             "demandText": "überdurchschnittlich oft besucht!"
           }
         },
-        "price_J4wXWJ": {
+        "loox_reviews_loox_rating_DQFemx": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "contentSize": 16,
+            "pattern": "([count]) Bewertungen",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
+        "price_88mqqq": {
           "type": "price",
           "settings": {
             "taxes_included": true,
@@ -104,28 +87,37 @@
             "show_saving": false,
             "sale_badge_type": "percentage",
             "p_pt": 5,
-            "p_pb": 18,
+            "p_pb": 5,
             "p_pt_m": 5,
-            "p_pb_m": 18,
-            "price_color": "#000000",
-            "c_price_color": "#a7a7a7",
-            "per_badge_bg": "#000000",
-            "per_badge_color": "#ffffff",
-            "f_s": 22,
-            "f_s_m": 18,
-            "price_font_weight": "600",
-            "price_tag_bg": "#ddede0",
-            "price_tag_text_color": "#000000",
-            "price_tag_font_size": 8,
-            "price_tag_arrow_bg": "#ddede0"
+            "p_pb_m": 5,
+            "price_color": "#008000",
+            "c_price_color": "#008000",
+            "per_badge_bg": "#008000",
+            "per_badge_color": "#000000",
+            "f_s": 16,
+            "f_s_m": 16,
+            "c_price_size": 16,
+            "c_price_size_m": 16,
+            "price_font_weight": "400",
+            "border_radius": 2
           }
         },
         "subtitle_xQXVba": {
           "type": "subtitle",
+          "disabled": true,
           "settings": {
-            "subtitle": "",
+            "subtitle": "👉 Update: Geburtstags-Sale endet morgen",
             "subtitle_font_size": 15,
-            "subtitle_weight": "400"
+            "subtitle_weight": "500"
+          }
+        },
+        "subtitle_mGfN7N": {
+          "type": "subtitle",
+          "disabled": true,
+          "settings": {
+            "subtitle": "Limitiert auf 100 Sets",
+            "subtitle_font_size": 16,
+            "subtitle_weight": "500"
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -176,7 +168,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}",
+            "featurelist_item": "<p>{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -191,16 +183,7 @@
             "invert_img": false
           }
         },
-        "featurelist_item_JGQHBt": {
-          "type": "featurelist_item",
-          "settings": {
-            "featurelist_item": "<p>Produkte, die es nicht mehr geben wird</p>",
-            "featurelist_item_color": "#000000",
-            "featurelist_item_size": 14,
-            "invert_img": false
-          }
-        },
-        "variant_picker_yCMzL4": {
+        "variant_picker_i4dPYA": {
           "type": "variant_picker",
           "settings": {
             "size_title": "Size"
@@ -239,18 +222,18 @@
       },
       "block_order": [
         "title_Bac9Mk",
-        "review_WwHezr",
-        "loox_reviews_loox_rating_a8TFE7",
+        "review_Tgbbak",
         "ratings_fD4VNJ",
-        "price_J4wXWJ",
+        "loox_reviews_loox_rating_DQFemx",
+        "price_88mqqq",
         "subtitle_xQXVba",
+        "subtitle_mGfN7N",
         "viewer_stock_count_MFNhKz",
         "featurelist_header_tfxtpf",
         "featurelist_item_iiW6aD",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
-        "featurelist_item_JGQHBt",
-        "variant_picker_yCMzL4",
+        "variant_picker_i4dPYA",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
@@ -262,7 +245,7 @@
         "layout": "layout-6",
         "show_atwl": false,
         "enable_history_state": true,
-        "enable_variant_group_images": false,
+        "enable_variant_group_images": true,
         "disable_selected_variant_default": false,
         "show_featured_media": true,
         "show_zoom_button": false,
@@ -290,28 +273,28 @@
           "type": "faq",
           "settings": {
             "question": "365 Tage Schleifservice (Gratis)",
-            "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand. </p>"
+            "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand.</p>"
           }
         },
         "faq_pDwHXa": {
           "type": "faq",
           "settings": {
-            "question": "Produktinfos & Lieferumfang",
+            "question": "Produktdetails und Lieferumfang",
             "answer": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}"
           }
         },
         "faq_kQAWhE": {
           "type": "faq",
           "settings": {
-            "question": "Versand & Zahlungsoptionen",
-            "answer": "<p><strong>Versand & Zahlung</strong></p><ul><li><strong>EU-weiter Standardversand</strong> (1–3 Werktage): kostenlos</li><li><strong>Expressversand EU</strong> (nächster Werktag): + 9,90 €</li><li><strong>Internationaler Standardversand</strong> (2–5 Werktage): 16,90 €</li><li><strong>Express International</strong> (meist in 2–3 Werktagen): + 39,90 €</li></ul><p></p><p><strong>Zahlungsoptionen</strong></p><ul><li>PayPal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
+            "question": "Versand und Zahlung",
+            "answer": "<p><strong>Versand & Zahlung</strong></p><ul><li><strong>EU-weiter Standardversand</strong> (1–3 Werktage): kostenlos</li><li><strong>Expressversand EU</strong> (nächster Werktag): + 9,90 €</li><li><strong>Internationaler Standardversand</strong> (2–5 Werktage): 16,90 €</li><li><strong>Express International</strong> (meist in 2–3 Werktagen): + 39,90 €</li></ul><p></p><p><strong>Zahlungsoptionen</strong></p><ul><li>PayPal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
           }
         },
-        "faq_6hwpUp": {
+        "faq_nQHFGw": {
           "type": "faq",
           "settings": {
-            "question": "100 Tage risikofrei testen",
-            "answer": "<p>Online einkaufen soll für dich so unkompliziert wie möglich sein. Bestelle unsere Produkte und teste sie in Ruhe bei dir zuhause. Solltest du nicht rundum zufrieden sein, kannst du sie innerhalb von <strong>100 Tagen</strong> ohne Risiko zurückschicken. Unser Tipp: Bestellen und selbst überzeugen!</p>"
+            "question": "100 Tage Geld-zurück-Garantie",
+            "answer": "<p>Online einkaufen soll für dich so unkompliziert wie möglich sein. Bestelle unsere Produkte und teste sie in Ruhe bei dir zuhause. Solltest du nicht rundum zufrieden sein, kannst du sie innerhalb von 100 Tagen ohne Risiko zurückschicken. <strong>Unser Tipp:</strong> Bestellen und selbst überzeugen!</p>"
           }
         }
       },
@@ -319,13 +302,13 @@
         "faq_jkYPLV",
         "faq_pDwHXa",
         "faq_kQAWhE",
-        "faq_6hwpUp"
+        "faq_nQHFGw"
       ],
       "settings": {
         "color_scheme": "badge-hot",
         "title": "",
-        "heading_type": "mrk-h3",
-        "description": "{{ product.description }}",
+        "heading_type": "mrk-h2",
+        "description": "<p>{{ product.description }}</p>",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true,
@@ -398,7 +381,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V7_1.png",
-            "image_height": 120,
+            "image_height": 80,
             "image_link": ""
           }
         },
@@ -406,7 +389,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "image_height": 100,
+            "image_height": 80,
             "image_link": ""
           }
         },
@@ -414,7 +397,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V2_1.png",
-            "image_height": 100,
+            "image_height": 80,
             "image_link": ""
           }
         },
@@ -422,7 +405,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V4_1.png",
-            "image_height": 100,
+            "image_height": 80,
             "image_link": ""
           }
         },
@@ -430,7 +413,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/n_tv_logo_V3_1.png",
-            "image_height": 100,
+            "image_height": 80,
             "image_link": ""
           }
         }
@@ -446,7 +429,7 @@
         ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
       ],
       "settings": {
-        "Gesehen_title": "Gesehen In",
+        "Gesehen_title": "Bekannt aus",
         "heading_type": "mrk-h3",
         "text_alignment": "center",
         "container": "w-full",
@@ -455,8 +438,8 @@
         "item_gap": 50,
         "item_gap_mobile": 30,
         "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
-        "padding_top": 40,
-        "padding_bottom": 30,
+        "padding_top": 10,
+        "padding_bottom": 10,
         "custom_class": ""
       }
     },
@@ -603,7 +586,7 @@
         "color_scheme": "badge-hot",
         "vertical_padding": 50,
         "vertical_padding_mobile": 30,
-        "heading_type": "mrk-h3",
+        "heading_type": "mrk-h2",
         "sub_heading": "p-medium",
         "des_size": "p-medium"
       }
@@ -642,9 +625,9 @@
       "settings": {
         "color_scheme": "badge-hot",
         "padding_top": 13,
-        "padding_bottom": 40,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 22
+        "padding_bottom": 50,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 50
       }
     },
     "benefit_text_MCeGiV": {
@@ -826,8 +809,8 @@
         "pb": 50,
         "pt_mobile": 30,
         "pb_mobile": 30,
-        "title": "Das Messerset erobert Deutschland",
-        "heading_type": "mrk-h3",
+        "title": "unser Messerset erobert Deutschland",
+        "heading_type": "mrk-h2",
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "",
         "autoplay": false
@@ -1115,7 +1098,7 @@
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "FAQ - Häufige Fragen",
-        "heading_type": "mrk-h3",
+        "heading_type": "mrk-h2",
         "sub_title": "",
         "sub_title_font_size": 14,
         "faq_title_font_size": 18,
@@ -1155,10 +1138,10 @@
       ],
       "settings": {
         "color_scheme": "footer",
-        "subtitle": "Viele fragen mich als Gründer:",
-        "sub_heading": "p-medium",
-        "title": "“Warum bieten wir eine 100 Tage Geld-zurück-Garantie?”",
-        "heading_type": "mrk-h3",
+        "subtitle": "Viele fragen uns als Gründer:",
+        "sub_heading": "p-xl",
+        "title": "„Warum bietet ihr eine 100 Tage Geld-zurück-Garantie?“",
+        "heading_type": "mrk-h2",
         "des": "Die Antwort ist einfach: Wir sind zu 100% überzeugt von unseren Produkten! Und das aus gutem Grund, denn unsere Produkte wurden:",
         "des_size": "p-medium",
         "img": "shopify://shop_images/Grunder_DE_1.png",
@@ -1241,6 +1224,29 @@
         "custom_class": ""
       }
     },
+    "product_recommendations_pz8BKV": {
+      "type": "product-recommendations",
+      "name": "Product recommendations",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "remove_params": false,
+        "heading": "Das könnte dir auch gefallen",
+        "heading_size": "h3",
+        "text_align": "left",
+        "limit": 8,
+        "columns": 5,
+        "column_gap": 30,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": true,
+        "use_scroll_mobile": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "store_benefits_bottom_NPnyUL": {
       "type": "store-benefits-bottom",
       "blocks": {
@@ -1301,10 +1307,17 @@
         "ptm": 30,
         "pbm": 30
       }
+    },
+    "custom_liquid_qdhU6F": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
+      "settings": {
+        "custom_liquid": "<script>\n  window.addEventListener('load', function() {\n  var _learnq = window._learnq || [];\n  function addedToCart() {\n   fetch(`${window.location.origin}/cart.js`)\n   .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price/100,\n      $value: data.total_price/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n       _learnq.push(['track', 'Added to Cart', cart]);\n       klAjax = false;\n      }\n   }))\n  };\n  (function (ns, fetch) {\n    ns.fetch = function() {\n      const response = fetch.apply(this, arguments);\n      response.then(res => {\n        if (`${window.location.origin}/cart/add.js`\n          .includes(res.url) && res.url !== '') {\n              addedToCart()\n        }\n      });\n      return response\n     }\n  }(window, window.fetch));\n  var klAjax = true;\n  var atcButtons = document.querySelectorAll(\"form[action*='/cart/add'] button[type='submit']\");\n  for (var i = 0; i < atcButtons.length; i++) { \n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n  }\n  });\n</script>",
+        "custom_class": ""
+      }
     }
   },
   "order": [
-    "apex_timer_kk8rAh",
     "main",
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
@@ -1324,6 +1337,8 @@
     "cta_final_9B8iN9",
     "benefit_list_gif_iJWmYF",
     "1741277518a98c9482",
-    "store_benefits_bottom_NPnyUL"
+    "product_recommendations_pz8BKV",
+    "store_benefits_bottom_NPnyUL",
+    "custom_liquid_qdhU6F"
   ]
 }
