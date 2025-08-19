@@ -464,9 +464,9 @@
           {% comment %} <img src="{{ product.featured_image | image_url: width: "800" }}" alt=""> {% endcomment %}
           {% if product.selected_or_first_available_variant.metafields.custom.personalization_image != blank %}
             <img
-              id="variantImageInModal_meta"
+              id="variantImageInModal_variant_meta"
               src="
-                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
+                                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
               "
               alt="{{ product.title }}"
             >
