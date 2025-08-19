@@ -466,7 +466,7 @@
             <img
               id="variantImageInModal_meta"
               src="
-                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
+                                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
               "
               alt="{{ product.title }}"
             >
@@ -708,6 +708,7 @@
     const fromCollection = urlParams.get('from');
     const forms = document.querySelectorAll('form[action^="/cart/add"]');
     const modalVariantImage = document.getElementById('variantImageInModal');
+
     document.addEventListener('variant:changed', function (e) {
       if (!modalVariantImage) return;
 
@@ -716,6 +717,7 @@
         modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1');
       }
     });
+
     function updateForms() {
       const emojiInputValue = localStorage.getItem('emojiInputValue') || '';
       forms.forEach(function (form) {
