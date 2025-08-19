@@ -464,7 +464,7 @@
           {% comment %} <img src="{{ product.featured_image | image_url: width: "800" }}" alt=""> {% endcomment %}
           {% if product.metafields.custom.personalizer_image != blank %}
             <img
-              id="variantImageInModal_metafield"
+              id="variantImageInModal"
               src="{{ product.metafields.custom.personalizer_image.value | image_url: width: 800 }}"
               alt="{{ product.title }}"
             >
