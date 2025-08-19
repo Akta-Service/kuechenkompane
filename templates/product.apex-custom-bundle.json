@@ -34,6 +34,12 @@
     "apex_theme_product_page_copy_bfPEWH": {
       "type": "apex-theme-product-page-copy",
       "blocks": {
+        "follower_recom_text_nDqNpL": {
+          "type": "follower_recom_text",
+          "settings": {
+            "follower_text": "Recommended by Dr. Marta Riniker Verified Podiatrist"
+          }
+        },
         "title_Bac9Mk": {
           "type": "title",
           "settings": {
@@ -225,6 +231,7 @@
         }
       },
       "block_order": [
+        "follower_recom_text_nDqNpL",
         "title_Bac9Mk",
         "review_Tgbbak",
         "ratings_fD4VNJ",
