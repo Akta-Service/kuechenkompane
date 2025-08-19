@@ -87,7 +87,7 @@
             {{ separator }}
             <span class="m-breadcrumb--item m-breadcrumb--item-current">{{ current_tags | join: ' + ' }}</span>
           {% else %}
-            <h1 class="m-breadcrumb--item m-breadcrumb--item-current">{{ collection.title }}</h1>
+            <p class="m-breadcrumb--item m-breadcrumb--item-current">{{ collection.title }}</p>
           {% endif %}
 
         {% elsif template.name == 'blog' %}
