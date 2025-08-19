@@ -463,31 +463,49 @@
           <div id="emojiDisplay"></div>
           {% comment %} <img src="{{ product.featured_image | image_url: width: "800" }}" alt=""> {% endcomment %}
 
-          {% if product.selected_or_first_available_variant.metafields.custom.personalization_image != blank %}
-            <img
-              id="variantImageInModal_variant_meta"
-              src="{{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}"
-              alt="{{ product.title }}"
-              height=""
-              width=""
-            >
-          {% elsif product.metafields.custom.personalizer_image != blank %}
-            <img
-              id="variantImageInModal_meta"
-              src="{{ product.metafields.custom.personalizer_image | image_url: width: 800 }}"
-              alt="{{ product.title }}"
-              height=""
-              width=""
-            >
-          {% else %}
-            <img
-              id="variantImageInModal"
-              src="{{ product.featured_image | image_url: width: 800 }}"
-              alt=""
-              height=""
-              width=""
-            >
-          {% endif %}
+          {% comment %}
+            {% if product.selected_or_first_available_variant.metafields.custom.personalization_image != blank %}
+              <img
+                id="variantImageInModal_variant_meta"
+                src="{{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}"
+                alt="{{ product.title }}"
+                height=""
+                width=""
+              >
+            {% elsif product.metafields.custom.personalizer_image != blank %}
+              <img
+                id="variantImageInModal_meta"
+                src="{{ product.metafields.custom.personalizer_image | image_url: width: 800 }}"
+                alt="{{ product.title }}"
+                height=""
+                width=""
+              >
+            {% else %}
+              <img
+                id="variantImageInModal"
+                src="{{ product.featured_image | image_url: width: 800 }}"
+                alt=""
+                height=""
+                width=""
+              >
+            {% endif %}
+          {% endcomment %}
+
+          <img
+            id="variantImageInModal"
+            src="
+              {% if product.selected_or_first_available_variant.metafields.custom.personalization_image != blank %}
+                {{ product.selected_or_first_available_variant.metafields.custom.personalization_image | image_url: width: 800 }}
+              {% elsif product.metafields.custom.personalizer_image != blank %}
+                {{ product.metafields.custom.personalizer_image | image_url: width: 800 }}
+              {% else %}
+                {{ product.featured_image | image_url: width: 800 }}
+              {% endif %}
+            "
+            alt="{{ product.title }}"
+            width=""
+            height=""
+          >
         </div>
 
         <input
