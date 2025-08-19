@@ -31,91 +31,73 @@
   >
 {%- endif -%}
 <style>
-  .apex-product-page .rs-container {
-    padding: 0 30px;
-  }
-  .apex-product-page .nav-swiper-container {
-    max-height: 450px;
-    width: 100px;
-  }
-  .apex-product-page .m-product-media--slider__images {
-    width: calc(100% - 120px);
-    margin-bottom: 0;
-  }
-  .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
-    height: inherit !important;
-  }
+   .apex-product-page .rs-container {
+     padding: 0 30px;
+   }
+   .apex-product-page .nav-swiper-container {
+     max-height: 450px;
+     width: 100px;
+   }
+   .apex-product-page .m-product-media--slider__images {
+     width: calc(100% - 120px);
+     margin-bottom: 0;
+   }
+   .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
+     height: inherit !important;
+   }
 
-  .apex-product-page .m-product-media {
-    padding: 3px !important;
-  }
-  @media (max-width: 1024px) {
-    .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
-      height: inherit !important;
-      width: 100% !important;
-    }
-    .apex-product-page .m-product-media--slider__images {
-      margin-bottom: 20px;
-      width: 100%;
-    }
-    .m-product-media--mobile.m-product-media--layout-6.md\:m\:hidden {
-      display: none;
-    }
-    .m-product-media--desktop.m-product-media--wrapper.m-product-media--layout-6 {
-      display: block;
-    }
-    .apex-theme-info {
-      padding-left: 15px;
-    }
-  }
+   .apex-product-page .m-product-media {
+     padding: 3px !important;
+   }
+   @media (max-width: 1024px) {
+     .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
+       height: inherit !important;
+       width: 100% !important;
+     }
+     .apex-product-page .m-product-media--slider__images {
+       margin-bottom: 20px;
+       width: 100%;
+     }
+     .m-product-media--mobile.m-product-media--layout-6.md\:m\:hidden {
+       display: none;
+     }
+     .m-product-media--desktop.m-product-media--wrapper.m-product-media--layout-6 {
+       display: block;
+     }
+     .apex-theme-info {
+       padding-left: 15px;
+     }
+   }
 
-  .rs-price {
-      width: fit-content;
-  }
-  .green-label {
-    display: block;    
-    font-weight: bold;
-    border-radius: 3px;
-    padding: 5px;
-    position: absolute;
-    font-family: "Roboto", sans-serif;    
-    line-height: 1;
-    margin-left: auto;
-    top: -24px;
-    left: 50px;
-    white-space: nowrap;
-  }
- .green-label::before {    
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 0px;
-    width: 16px;
-    /* border-radius: 1px; */
-    height: 5px;
-    clip-path: polygon(0 0%, 0 100%, 100% 0);
-  }
-  .p-relative {
-    position: relative;
-  }
-
-  {% if product.metafields.custom.price_individual_tag %}
-    .rs-price {
-      margin-top: 30px;
-    }
-  {% endif %}
-
-@media (max-width: 600px){
-  .green-label {   
-    top: -20px;    
-  }
-   {% if product.metafields.custom.price_individual_tag %}
-    .rs-price {
-      margin-top: 20px;
-    }
-  {% endif %}
-}
-
+   .rs-price {
+       width: fit-content;
+   }
+   .green-label {
+     display: block;
+     font-weight: bold;
+     border-radius: 3px;
+     padding: 5px;
+     position: absolute;
+     font-family: "Roboto", sans-serif;
+     line-height: 1;
+     margin-left: auto;
+     top: -24px;
+     left: 50px;
+     white-space: nowrap;
+   }
+  .green-label::before {
+     content: "";
+     position: absolute;
+     bottom: -3px;
+     left: 0px;
+     width: 16px;
+     /* border-radius: 1px; */
+     height: 5px;
+     clip-path: polygon(0 0%, 0 100%, 100% 0);
+   }
+   .p-relative {
+     position: relative;
+   }
 </style>
 <div
   data-section-type="product-page"
@@ -166,7 +148,6 @@
           {% render 'product-media', section: section, template_product: true %}
 
           {% if section.settings.show_sold_out_badge_on_image != false %}
-
             {% if product.available == false %}
               <span
                 class="m-product-tag m-product-tag--soldout-overlay product-page-badge m-gradient m-color-{{ settings.soldout_badge_color_scheme }}"
@@ -175,10 +156,6 @@
               </span>
             {% endif %}
           {% endif %}
-
-
-
-
         </div>
         <div class="m-product-media--mobile m-product-media--{{ section.settings.layout }} md:m:hidden">
           {%- render 'product-media-mobile',
@@ -253,6 +230,9 @@
     {% render 'apex-sticky-atc', section: section, product: product, first_3d_model: first_3d_model %}
   {% endif %}
 </div>
+
+{% render 'add-emoji-popup', section: section, product: product %}
+
 {%- if section.settings.show_zoom_button -%}
   <script src="{{ 'photoswipe.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
@@ -270,7 +250,7 @@
 {%- if product.options_with_values.size > 0 -%}
   <script src="{{ 'variant-picker.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
- <script src="{{ 'mrk-mobile-variant-picker.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'mrk-mobile-variant-picker.js' | asset_url }}" defer="defer"></script>
 {%- render 'product-data' -%}
 
 <script>
@@ -500,11 +480,60 @@
       "id": "bubble_after_color",
       "label": "Bubble Color ( After)",
       "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Personalizer Settings"
+    },
+    {
+      "type": "text",
+      "id": "per_title",
+      "label": "Personalizer title",
+      "default": "Personalisierung"
+    },
+    {
+      "type": "textarea",
+      "id": "per_sub_title",
+      "label": "Personalizer sub title",
+      "default": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren."
+    },
+    {
+      "type": "header",
+      "content": "Personalizer Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "save_btn",
+      "label": "Personalizer Save Btn",
+      "default": "Save"
+    },
+    {
+      "type": "text",
+      "id": "cancel_btn",
+      "label": "Personalizer cancel Btn",
+      "default": "Cancel"
     }
   ],
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "follower_recom_text",
+      "name": "follower recomendation",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "follower_img",
+          "label": "Follower Image"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "follower_text",
+          "label": "Follower Text",
+          "default": "Recommended by Dr. Marta Riniker Verified Podiatrist "
+        }
+      ]
     },
     {
       "type": "title",
@@ -673,10 +702,10 @@
       ]
     },
     {
-      "type": "price",
-      "name": "Price Block",
+      "type": "price_old",
+      "name": "Price Block old",
       "settings": [
-         {
+        {
           "type": "checkbox",
           "id": "taxes_included",
           "default": false,
@@ -684,7 +713,7 @@
         },
         {
           "type": "text",
-          "id": "taxes_included_text",          
+          "id": "taxes_included_text",
           "label": "Taxes Included Text"
         },
         {
@@ -879,6 +908,272 @@
       ]
     },
     {
+      "type": "price",
+      "name": "Price Block",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "taxes_included",
+          "default": false,
+          "label": "Show Tax Notice"
+        },
+        {
+          "type": "text",
+          "id": "taxes_included_text",
+          "label": "Taxes Included Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_saving",
+          "default": false,
+          "label": "Show saving amount"
+        },
+        {
+          "type": "select",
+          "label": "Type",
+          "id": "sale_badge_type",
+          "default": "percentage",
+          "options": [
+            {
+              "label": "Percentage",
+              "value": "percentage"
+            },
+            {
+              "label": "Text",
+              "value": "text"
+            },
+            {
+              "label": "Fixed amount",
+              "value": "fixed_amount"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "p_pt",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Top",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "p_pb",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Bottom",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "p_pt_m",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Top (Mobile)",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "p_pb_m",
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Space Bottom (Mobile)",
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "color"
+        },
+        {
+          "type": "color",
+          "id": "price_color",
+          "label": "Price color",
+          "default": "#008000"
+        },
+        {
+          "type": "color",
+          "id": "c_price_color",
+          "label": "Compare Price color",
+          "default": "#008000"
+        },
+        {
+          "type": "color",
+          "id": "per_badge_bg",
+          "label": "Percent Badge Background Color",
+          "default": "#008000"
+        },
+        {
+          "type": "color",
+          "id": "per_badge_color",
+          "label": "Percent Badge text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "f_s",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Price Text Font Size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "f_s_m",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Price Text Font Size (Mobile)",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "c_price_size",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Compare Price Font Size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "c_price_size_m",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Price Text Font Size (Mobile)",
+          "default": 16
+        },
+        {
+          "type": "select",
+          "id": "price_font_weight",
+          "label": "Font Weight",
+          "default": "400",
+          "options": [
+            {
+              "value": "100",
+              "label": "Thin (100)"
+            },
+            {
+              "value": "200",
+              "label": "Extra Light (200)"
+            },
+            {
+              "value": "300",
+              "label": "Light (300)"
+            },
+            {
+              "value": "400",
+              "label": "Regular (400)"
+            },
+            {
+              "value": "500",
+              "label": "Medium (500)"
+            },
+            {
+              "value": "600",
+              "label": "Semi Bold (600)"
+            },
+            {
+              "value": "700",
+              "label": "Bold (700)"
+            },
+            {
+              "value": "800",
+              "label": "Extra Bold (800)"
+            },
+            {
+              "value": "900",
+              "label": "Extra Extra Bold (900)"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Price Badge"
+        },
+        {
+          "type": "color",
+          "id": "price_tag_bg",
+          "label": "Price Tag Bg Color",
+          "default": "#ddede0"
+        },
+        {
+          "type": "color",
+          "id": "price_tag_text_color",
+          "label": "Price Tag Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "price_tag_font_size",
+          "label": "Price Tag Text Size",
+          "min": 2,
+          "max": 20,
+          "step": 1,
+          "default": 8
+        },
+        {
+          "type": "color",
+          "id": "price_tag_arrow_bg",
+          "label": "Price Tag arrow Color",
+          "default": "#ddede0"
+        },
+        {
+          "type": "range",
+          "id": "border_radius",
+          "label": "badge Border Radius",
+          "min": 0,
+          "max": 50,
+          "unit": "px",
+          "default": 2,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "type": "product_personalizer",
+      "name": "Product Personalizer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Add engraving"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Have a combination of emojis, names, initials, and numbers engraved to make your AirPods Max unique. Only at Apple."
+        },
+        {
+          "type": "text",
+          "id": "button_Logo_text",
+          "label": "Logo Button Text",
+          "default": "Add Logo"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Secondary Button Text",
+          "default": "Add Logo"
+        }
+      ]
+    },
+    {
       "type": "viewerStockCount",
       "name": "View and Stock Count",
       "settings": [
@@ -1026,7 +1321,6 @@
           "label": "Sold Out Text Color",
           "default": "#ff0000"
         },
-
 
         {
           "type": "number",
@@ -1236,6 +1530,79 @@
           "default": "Size",
           "label": "Size option title",
           "info": "Enter the option titles which you want to show Size guide button, separate with a comma"
+        }
+      ]
+    },
+    {
+      "type": "bundle_slector",
+      "name": "Bundle Selector",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Quantity 1 Settings"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_1_title",
+          "label": "Quantity 1 title",
+          "default": "EzyVac"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_1_save_info",
+          "label": "Quantity 1 save Info",
+          "default": "Buy 1 and Save 67%"
+        },
+        {
+          "type": "text",
+          "id": "b1_badge",
+          "label": "Quantity 1 Badge",
+          "default": "Most Popular"
+        },
+
+        {
+          "type": "header",
+          "content": "Quantity 2 Settings"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_2_title",
+          "label": "Quantity 2 title",
+          "default": "EzyVac"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_2_save_info",
+          "label": "Quantity 2 save Info",
+          "default": "Buy 1 and Save 67%"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_2_price",
+          "label": "Quantity 2 price",
+          "default": "€180"
+        },
+        {
+          "type": "text",
+          "id": "Quantity_2_compare_price",
+          "label": "Quantity 2 Compare price",
+          "default": "€190"
+        },
+        {
+          "type": "text",
+          "id": "title_bage",
+          "label": "Title Badge",
+          "default": "Today Only!"
+        },
+
+        {
+          "type": "header",
+          "content": "Other Product Settings"
+        },
+        {
+          "type": "product_list",
+          "id": "addon_products",
+          "label": "Addon Products"
         }
       ]
     },
@@ -1908,8 +2275,56 @@
   ]
 }
 {% endschema %}
-{% comment %} {% if product.tags contains 'NO SEARCH' %}
-  <script>
-    window.location.href = "/collections/all";
-  </script>
-{% endif %} {% endcomment %}
+{% comment %}
+  {% if product.tags contains 'NO SEARCH' %}
+    <script>
+      window.location.href = "/collections/all";
+    </script>
+  {% endif %}
+{% endcomment %}
+
+<script src="{{ 'bundle-quantity-slector.js' | asset_url }}"></script>
+
+<script>
+  window.productData = {{ product | json }};
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mediaGallery = document.querySelector('media-gallery');
+    const productData = window.productData;
+
+    const bundles = document.querySelectorAll('.bundle-option');
+
+    bundles.forEach((bundle) => {
+      const products = bundle.querySelectorAll('.color-selectors');
+
+      products.forEach((productOptions) => {
+        const selects = productOptions.querySelectorAll('select');
+
+        updateMediaGallery(selects);
+
+        selects.forEach((select) => {
+          select.addEventListener('change', () => {
+            updateMediaGallery(selects);
+          });
+        });
+      });
+    });
+
+    function updateMediaGallery(selects) {
+      const selectedVariant = getSelectedVariant(selects);
+      if (selectedVariant && mediaGallery && typeof mediaGallery.setActiveMedia === 'function') {
+        mediaGallery.setActiveMedia(selectedVariant);
+      }
+    }
+
+    function getSelectedVariant(selects) {
+      const selectedOptions = Array.from(selects).map((s) => s.value);
+
+      console.log(selectedOptions);
+
+      return productData.variants.find((v) => v.options.every((opt, index) => opt === selectedOptions[index]));
+    }
+  });
+</script>
