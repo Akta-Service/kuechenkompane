@@ -626,10 +626,10 @@
     }
   }
   updateActiveClass();
-  const observerNew = new MutationObserver(() => {
+  const observer = new MutationObserver(() => {
     updateActiveClass();
   });
-  observerNew.observe(document.body, {
+  observer.observe(document.body, {
     childList: true,
     subtree: true,
   });
@@ -664,11 +664,11 @@
           inputFrom.value = fromCollection;
         }
         // Emoji input
-        let inputEmoji = form.querySelector('input[name="properties[Personalisierung:]"]');
+        let inputEmoji = form.querySelector('input[name="properties[Emoji_Text]"]');
         if (!inputEmoji) {
           inputEmoji = document.createElement('input');
           inputEmoji.type = 'hidden';
-          inputEmoji.name = 'properties[Personalisierung:]';
+          inputEmoji.name = 'properties[Emoji_Text]';
           form.appendChild(inputEmoji);
         }
         inputEmoji.value = emojiInputValue;
