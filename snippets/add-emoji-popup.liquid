@@ -529,6 +529,14 @@
 {% endfor %}
 
 <script>
+  const productMetaImage = {% if product.metafields.custom.personalizer_image != blank %}
+    "{{ product.metafields.custom.personalizer_image.value | image_url: width: 800 }}"
+  {% else %}
+    null
+  {% endif %};
+</script>
+
+<script>
   const modalVariantImage = document.getElementById('variantImageInModal');
 
   function checkVariantMetaImage(variantId) {
