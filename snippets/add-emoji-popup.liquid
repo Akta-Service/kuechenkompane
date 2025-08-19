@@ -742,12 +742,14 @@
       const variantData = document.querySelector(`.variant-data[data-variant-id="${variant.id}"]`);
       const variantMetaImage = variantData ? variantData.getAttribute("data-variant-meta-image") : null;
 
+      console.log('variant meta', variantMetaImage)
+
       if (variantMetaImage) {
-        modalVariantImage.src = variantMetaImage; // Variant metafield
+        modalVariantImage.src = variantMetaImage; 
       } else if (productMetaImage) {
-        modalVariantImage.src = productMetaImage; // Product metafield fallback
+        modalVariantImage.src = productMetaImage; 
       } else if (variant.featured_image && variant.featured_image.src) {
-        modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1'); // Variant featured image fallback
+        modalVariantImage.src = variant.featured_image.src.replace(/(\.[^.]*)$/, '_800x$1'); 
       }
     });
 
