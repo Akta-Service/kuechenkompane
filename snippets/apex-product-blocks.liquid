@@ -277,8 +277,9 @@
           {% endif %}
         </div>
       {% when 'follower_recomendation_text' %}
-        <div class="recomendation_text">
-          <img src="{{ block.settings.recom_author }}">
+        <div class="follower_recomendation_text">
+          <img src="{{ block.settings.follower_img | img_url: 'master' }}" alt="image">
+          <p class="follower_text">{{ block.settings.follower_text }}</p>
         </div>
 
       {% when 'custom_bundle' %}
