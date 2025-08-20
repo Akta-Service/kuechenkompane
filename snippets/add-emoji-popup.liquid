@@ -809,14 +809,21 @@
           inputFrom.value = fromCollection;
         }
         // Emoji input
-        let inputEmoji = form.querySelector('input[name="properties[Emoji_Text]"]');
-        if (!inputEmoji) {
-          inputEmoji = document.createElement('input');
-          inputEmoji.type = 'hidden';
-          inputEmoji.name = 'properties[Personalisierung:]';
-          form.appendChild(inputEmoji);
-        }
-        inputEmoji.value = emojiInputValue;
+
+if (emojiInputValue && emojiInputValue.trim() !== "") {
+  let inputEmoji = form.querySelector('input[name="properties[Emoji_Text]"]');
+  
+  if (!inputEmoji) {
+    inputEmoji = document.createElement('input');
+    inputEmoji.type = 'hidden';
+    inputEmoji.name = 'properties[Emoji_Text]'; // keep the same name
+    form.appendChild(inputEmoji);
+  }
+  
+  inputEmoji.value = emojiInputValue;
+}
+
+
       });
     }
     updateForms();
