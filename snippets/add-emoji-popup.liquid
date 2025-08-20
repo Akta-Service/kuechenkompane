@@ -160,11 +160,19 @@
           transition: opacity 1s ease
           , transform 1s ease;
           position: absolute;
-          margin-left: 130px;
-          margin-bottom: 30px;
+                 margin-left: -12%;
+        margin-bottom: 68px;
+        
           min-width: 200px;
           text-align: left;
         }
+
+             {% comment %} @media (max-width: 1200px) {
+      #emojiDisplay {
+         margin-left: 130px;
+          margin-bottom: 30px;
+      }
+             } {% endcomment %}
         @media (max-width: 767px) {
           {% comment %} #emojiDisplay {
             margin-left: 48px;
@@ -186,7 +194,19 @@
           color: rgb(255 255 255);
           /* font-family: panettone; */
           font-family: Optima;
+          font-size: 20px;
+        }
+        @media (max-width: 1500px) {
+        #emojiDisplay span {
+ 
+          font-size: 17px;
+        }
+        }
+        @media (max-width: 1020px) {
+        #emojiDisplay span {
+ 
           font-size: 14px;
+        }
         }
         @media (max-width: 767px) {
           #emojiDisplay span {
@@ -241,9 +261,17 @@
         .emoji-list li:active {
           transform: scale(0.95);
         }
-
+ @media screen and (max-width: 600px) and (min-width: 450px)   {
+          #emojiDisplay{
+                    font-size: 1.5rem;
+                    min-height: 2.5rem;
+                    margin-bottom: 20px;
+                            margin-left: -22px;
+                          
+          }
+    }
         /* Responsive */
-        @media (max-width: 420px) {
+        @media (max-width: 449px) {
           .modal {
             border-radius: 10px;
             width: calc(100% - 24px);
@@ -255,7 +283,10 @@
           #emojiDisplay {
             font-size: 1.5rem;
             min-height: 2.5rem;
-            margin-bottom: 20px;
+            {% comment %} margin-bottom: 20px;
+                    margin-left: -22px; {% endcomment %}
+                              margin-bottom: 35px;
+            margin-left: 42px;
           }
         }
 
@@ -816,7 +847,7 @@ if (emojiInputValue && emojiInputValue.trim() !== "") {
   if (!inputEmoji) {
     inputEmoji = document.createElement('input');
     inputEmoji.type = 'hidden';
-    inputEmoji.name = 'properties[Emoji_Text]'; // keep the same name
+    inputEmoji.name = 'properties[Personalisierung:]'; // keep the same name
     form.appendChild(inputEmoji);
   }
   
