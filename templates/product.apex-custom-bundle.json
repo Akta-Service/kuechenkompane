@@ -724,47 +724,6 @@
         "des_size": "p-medium"
       }
     },
-    "benefit_text_right_AFHFhC": {
-      "type": "benefit-text-right",
-      "blocks": {
-        "subtitle_XPX87U": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Nie wieder stumpfe Messer"
-          }
-        },
-        "title_YwDaTz": {
-          "type": "title",
-          "settings": {
-            "title": "365 Tage Schleifservice (gratis)"
-          }
-        },
-        "description_j4ByyM": {
-          "type": "description",
-          "settings": {
-            "description": "Lass dein Messer einfach kostenlos nachschleifen! Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand."
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_XPX87U",
-        "title_YwDaTz",
-        "description_j4ByyM"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "media_type": "image",
-        "image": "shopify://shop_images/Kopie_von_product-image-02_1.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": true,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h3",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
-      }
-    },
     "ugc_video_testimonial_D4kJ9X": {
       "type": "ugc-video-testimonial",
       "blocks": {
@@ -1316,7 +1275,6 @@
     "logo_greyed_out_FMbnW7",
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
-    "benefit_text_right_AFHFhC",
     "ugc_video_testimonial_D4kJ9X",
     "icon_box_9UtNky",
     "expert_testimonial_adCtdF",
