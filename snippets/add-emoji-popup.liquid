@@ -62,7 +62,7 @@
 
         .modal-header,
         .modal-footer {
-          padding: 16px 20px;
+          padding: 0 16px 0 20px;
           background: #fff;
         }
 
@@ -142,7 +142,7 @@
           font-family: inherit;
           outline: none;
           transition: border-color 0.2s ease;
-          margin-bottom: 16px;
+          margin-bottom: 0px;
         }
 
         #emojiInput:focus {
@@ -667,8 +667,8 @@
 
     // Input typing
     input.addEventListener('input', () => {
-      let val = input.value.slice(0, 20);
-      input.value = val;
+  let val = input.value.replace(/[^a-zA-Z0-9 #@!%^&*()\[\];',<>?\/+\-]/g, '').slice(0, 20);
+  input.value = val;
       updateDisplayWithDelay(val);
     });
 
