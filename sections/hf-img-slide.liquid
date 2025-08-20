@@ -1,0 +1,102 @@
+{{ 'hf-style.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+<div class="image-slide-section">
+  <div class="image-slide-container">
+    <h2 class="image-slide__title">{{ section.settings.title }}</h2>
+    <div class="swiper image-slide__active">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="image-item">
+              {% if block.settings.slide_img != blank %}
+                <img src="{{ block.settings.slide_img | img_url: 'master' }}" alt="Image">
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const headingSwiper = new Swiper('.image-slide__active', {
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      speed: 8000,
+      loop: true,
+      freeMode: true,
+      autoplay: {
+        delay: 0,
+        reverseDirection: false,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        375: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        1200: {
+          slidesPerView: 5,
+          spaceBetween: 20,
+        },
+        1440: {
+          slidesPerView: 5,
+          spaceBetween: 20,
+        },
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Hf Image Slide",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Top Title",
+      "default": "Customers love our shoes!"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Slider",
+      "name": "Slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slide_img",
+          "label": "Slider Image"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Hf Image Slide"
+    }
+  ]
+}
+{% endschema %}
