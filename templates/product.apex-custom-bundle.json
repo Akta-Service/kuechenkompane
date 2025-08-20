@@ -282,6 +282,11 @@
         "cancel_btn": "Cancel"
       }
     },
+    "hf_collection_pByY4V": {
+      "type": "hf-collection",
+      "name": "HF Collection Section",
+      "settings": {}
+    },
     "product_descrption_accordion_btdDtQ": {
       "type": "product-descrption-accordion",
       "blocks": {
@@ -1336,6 +1341,7 @@
   "order": [
     "main",
     "apex_theme_product_page_copy_bfPEWH",
+    "hf_collection_pByY4V",
     "product_descrption_accordion_btdDtQ",
     "product-details-tabs",
     "scrolling_promotion_UKXeX3",
