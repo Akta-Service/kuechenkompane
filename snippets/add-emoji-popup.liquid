@@ -667,8 +667,8 @@
 
     // Input typing
     input.addEventListener('input', () => {
-      let val = input.value.slice(0, 20);
-      input.value = val;
+ let val = input.value.replace(/[^a-zA-Z0-9 #@!%^&*()\[\];',<>?\/+\-]/g, '').slice(0, 20);
+  input.value = val;
       updateDisplayWithDelay(val);
     });
 
