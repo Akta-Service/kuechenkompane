@@ -379,6 +379,73 @@
       "name": "HF Feature Section",
       "settings": {}
     },
+    "hf_img_slide_44H8DE": {
+      "type": "hf-img-slide",
+      "blocks": {
+        "slider_H7irUq": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/slide-image9.jpg"
+          }
+        },
+        "slider_mYXLQD": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/slide-image9.jpg"
+          }
+        },
+        "slider_KhrGC7": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/slide-image9.jpg"
+          }
+        },
+        "slider_E4PfWV": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/slide-image9.jpg"
+          }
+        },
+        "slider_JhFjm7": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/slide-image9.jpg"
+          }
+        },
+        "slider_rX7PnX": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/slide-image9.jpg"
+          }
+        },
+        "slider_tyD4zJ": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/slide-image9.jpg"
+          }
+        },
+        "slider_VgcXWN": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/slide-image9.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slider_H7irUq",
+        "slider_mYXLQD",
+        "slider_KhrGC7",
+        "slider_E4PfWV",
+        "slider_JhFjm7",
+        "slider_rX7PnX",
+        "slider_tyD4zJ",
+        "slider_VgcXWN"
+      ],
+      "name": "Hf Image Slide",
+      "settings": {
+        "title": "Customers love our shoes!"
+      }
+    },
     "product-details-tabs": {
       "type": "product-details-tabs",
       "disabled": true,
@@ -1343,6 +1410,7 @@
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
     "hf_feature_DUi7Kt",
+    "hf_img_slide_44H8DE",
     "product-details-tabs",
     "scrolling_promotion_UKXeX3",
     "logo_greyed_out_FMbnW7",
