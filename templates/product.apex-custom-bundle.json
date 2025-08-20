@@ -500,8 +500,8 @@
       "settings": {
         "padding_top": 20,
         "padding_bottom": 20,
-        "position": "left",
-        "reverse_layout": true,
+        "position": "right",
+        "reverse_layout": false,
         "media_type": "image",
         "image": "shopify://shop_images/hf-img-text1.jpg"
       }
