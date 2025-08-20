@@ -446,6 +446,35 @@
         "title": "Customers love our shoes!"
       }
     },
+    "hf_img_with_text_QxNtXq": {
+      "type": "hf-img-with-text",
+      "blocks": {
+        "title_MVPqmk": {
+          "type": "title",
+          "settings": {
+            "title": "Ancestral nutrition made simple."
+          }
+        },
+        "description_VnEqPD": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Our Hike Footwear shoes are recommended by<strong>Dr. Marta Riniker</strong>, a board-certified podiatrist at the Phoenix Foot and Ankle Institute. With extensive experience in managing chronic foot pain, mobility concerns, and sports injuries, Dr. Riniker values footwear that supports natural movement and long-term health. Crafted with clinical insight, designed for lasting comfort and support—Hike takes care of your feet, so you can focus on the journey.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title_MVPqmk",
+        "description_VnEqPD"
+      ],
+      "name": "HF Image With Text2",
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "position": "left",
+        "reverse_layout": false,
+        "media_type": "image"
+      }
+    },
     "product-details-tabs": {
       "type": "product-details-tabs",
       "disabled": true,
@@ -1411,6 +1440,7 @@
     "product_descrption_accordion_btdDtQ",
     "hf_feature_DUi7Kt",
     "hf_img_slide_44H8DE",
+    "hf_img_with_text_QxNtXq",
     "product-details-tabs",
     "scrolling_promotion_UKXeX3",
     "logo_greyed_out_FMbnW7",
