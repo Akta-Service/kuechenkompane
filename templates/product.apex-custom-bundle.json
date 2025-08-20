@@ -765,37 +765,6 @@
         "des_size": "p-medium"
       }
     },
-    "us_vs_them_8Tbqki": {
-      "type": "us-vs-them",
-      "blocks": {
-        "title_F4F6qE": {
-          "type": "title",
-          "settings": {
-            "title": "KÜCHENKOMPANE vs. ANDERE"
-          }
-        },
-        "description_9Mxcd4": {
-          "type": "description",
-          "settings": {
-            "description": "<p>Unsere Vergleichsgrafik zeigt, warum Küchenkompane die beste Wahl ist. Mit messerscharfer Präzision, hochwertigem Stahl und ergonomischem Design hast du maximale Qualität und Komfort.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "title_F4F6qE",
-        "description_9Mxcd4"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "img": "shopify://shop_images/steel_kitchen_knives_V11_1.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h3",
-        "des_size": "p-medium"
-      }
-    },
     "ugc_video_testimonial_D4kJ9X": {
       "type": "ugc-video-testimonial",
       "blocks": {
@@ -1348,7 +1317,6 @@
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
-    "us_vs_them_8Tbqki",
     "ugc_video_testimonial_D4kJ9X",
     "icon_box_9UtNky",
     "expert_testimonial_adCtdF",
