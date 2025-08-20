@@ -282,11 +282,6 @@
         "cancel_btn": "Cancel"
       }
     },
-    "hf_collection_pByY4V": {
-      "type": "hf-collection",
-      "name": "HF Collection Section",
-      "settings": {}
-    },
     "product_descrption_accordion_btdDtQ": {
       "type": "product-descrption-accordion",
       "blocks": {
@@ -329,7 +324,7 @@
         "color_scheme": "badge-hot",
         "title": "",
         "heading_type": "mrk-h2",
-        "description": "<p>{{ product.description }}</p>",
+        "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
         "add_showore_btn": true,
@@ -339,48 +334,53 @@
         "icon_color": "#000000"
       }
     },
-    "product-details-tabs": {
-      "type": "product-details-tabs",
+    "hf_feature_DUi7Kt": {
+      "type": "hf-feature",
       "blocks": {
-        "tab_gknmWn": {
-          "type": "tab",
+        "item_LEzXDB": {
+          "type": "item",
           "settings": {
-            "header": "Beschreibung",
-            "content": "",
-            "content_page": ""
+            "image": "shopify://shop_images/hf-collection3.png",
+            "title": "Thin Soles",
+            "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
           }
         },
-        "tab": {
-          "type": "tab",
+        "item_p3HhWc": {
+          "type": "item",
           "settings": {
-            "header": "Lieferumfang",
-            "content": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}",
-            "content_page": ""
+            "image": "shopify://shop_images/hf-collection3.png",
+            "title": "Thin Soles",
+            "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
           }
         },
-        "tab_yXpqFL": {
-          "type": "tab",
+        "item_hibNiT": {
+          "type": "item",
           "settings": {
-            "header": "Versand",
-            "content": "",
-            "content_page": ""
+            "image": "shopify://shop_images/hf-collection3.png",
+            "title": "Thin Soles",
+            "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
           }
         },
-        "tab_LBwXaE": {
-          "type": "tab",
+        "item_EGqxge": {
+          "type": "item",
           "settings": {
-            "header": "Garantie",
-            "content": "",
-            "content_page": ""
+            "image": "shopify://shop_images/hf-collection3.png",
+            "title": "Thin Soles",
+            "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
           }
         }
       },
       "block_order": [
-        "tab_gknmWn",
-        "tab",
-        "tab_yXpqFL",
-        "tab_LBwXaE"
+        "item_LEzXDB",
+        "item_p3HhWc",
+        "item_hibNiT",
+        "item_EGqxge"
       ],
+      "name": "HF Feature Section",
+      "settings": {}
+    },
+    "product-details-tabs": {
+      "type": "product-details-tabs",
       "disabled": true,
       "custom_css": [
         ".m-tabs__header {justify-content: flex-start;}"
@@ -1341,8 +1341,8 @@
   "order": [
     "main",
     "apex_theme_product_page_copy_bfPEWH",
-    "hf_collection_pByY4V",
     "product_descrption_accordion_btdDtQ",
+    "hf_feature_DUi7Kt",
     "product-details-tabs",
     "scrolling_promotion_UKXeX3",
     "logo_greyed_out_FMbnW7",
