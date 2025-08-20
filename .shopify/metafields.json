@@ -1771,6 +1771,16 @@
         "name": "file_reference",
         "category": "REFERENCE"
       }
+    },
+    {
+      "key": "personalizer_image",
+      "namespace": "custom",
+      "name": "personalization  image",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "variant": [
@@ -1902,6 +1912,16 @@
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
+      }
+    },
+    {
+      "key": "personalization_image",
+      "namespace": "custom",
+      "name": "personalization  image ",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
       }
     }
   ],
