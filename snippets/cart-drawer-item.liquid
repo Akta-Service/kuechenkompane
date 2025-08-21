@@ -120,6 +120,15 @@
             {% endif %}
           </p>
         {%- endfor -%}
+
+        {% for p in item.properties %}
+          {% unless p.last == blank %}
+            <div class="cart-property">
+              <span class="property-label">{{ p.first }}:</span>
+              <span class="property-value">{{ p.last }}</span>
+            </div>
+          {% endunless %}
+        {% endfor %}
       </div>
 
       <div
