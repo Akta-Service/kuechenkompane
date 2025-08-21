@@ -730,10 +730,9 @@
 
       input.value = '';
       oldValue = '';
-
       localStorage.removeItem('emojiInputValue');
-
       renderWithAnimation('', '');
+      saveToMemory(input.value);
     });
 
     // Initialize saved value
