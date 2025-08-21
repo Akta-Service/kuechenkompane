@@ -727,10 +727,10 @@
       if (showTextEmoji) {
         showTextEmoji.textContent = '';
       }
+      input.value = '';
       let inputValue = input.value;
       console.log(inputValue);
 
-      input.value = '';
       oldValue = '';
       localStorage.removeItem('emojiInputValue');
       renderWithAnimation('', '');
