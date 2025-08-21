@@ -825,7 +825,7 @@
 
 
 
-    function updateForms() {
+    {% comment %} function updateForms() {
       const emojiInputValue = localStorage.getItem('emojiInputValue') || '';
       forms.forEach(function (form) {
         // From_Collection input
@@ -841,22 +841,28 @@
         }
         // Emoji input
 
-    if (emojiInputValue && emojiInputValue.trim() !== "") {
-      let inputEmoji = form.querySelector('input[name="properties[Personalisierung]"]');
-      
-      if (!inputEmoji) {
-        inputEmoji = document.createElement('input');
-        inputEmoji.type = 'hidden';
-        inputEmoji.name = 'properties[Personalisierung]'; // keep the same name
-        form.appendChild(inputEmoji);
-      }
-      
-      inputEmoji.value = emojiInputValue;
-    }
+        if (emojiInputValue && emojiInputValue.trim() !== "") {
+          let inputEmoji = form.querySelector('input[name="properties[Personalisierung]"]');
+          
+          if (!inputEmoji) {
+            inputEmoji = document.createElement('input');
+            inputEmoji.type = 'hidden';
+            inputEmoji.name = 'properties[Personalisierung]'; // keep the same name
+            form.appendChild(inputEmoji);
+          }
+          
+          inputEmoji.value = emojiInputValue;
+        }
 
 
       });
-    }
+    } {% endcomment %}
+
+
+
+    
+
+
     updateForms();
     window.addEventListener('storage', function (e) {
       if (e.key === 'emojiInputValue') {
