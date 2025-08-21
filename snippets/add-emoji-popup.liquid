@@ -860,7 +860,35 @@
 
 
 
-    
+    function updateForms() {
+      const emojiInputValue = localStorage.getItem('emojiInputValue') || '';
+      forms.forEach(function (form) {
+        // From_Collection input
+        if (fromCollection) {
+          let inputFrom = form.querySelector('input[name="properties[From_Collection]"]');
+          if (!inputFrom) {
+            inputFrom = document.createElement('input');
+            inputFrom.type = 'hidden';
+            inputFrom.name = 'properties[From_Collection]';
+            form.appendChild(inputFrom);
+          }
+          inputFrom.value = fromCollection;
+        }
+
+        // Personalisierung input
+        let inputEmoji = form.querySelector('input[name="properties[Personalisierung]"]');
+        if (!inputEmoji) {
+          inputEmoji = document.createElement('input');
+          inputEmoji.type = 'hidden';
+          inputEmoji.name = 'properties[Personalisierung]';
+          form.appendChild(inputEmoji);
+        }
+
+        // Always update — clear when empty
+        inputEmoji.value = emojiInputValue;
+      });
+    }
+
 
 
     updateForms();
