@@ -591,6 +591,32 @@
         "custom_class": ""
       }
     },
+    "hf_video_p3YTtB": {
+      "type": "hf-video",
+      "blocks": {
+        "video_block_VT4hBz": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=XKVH16ONIzQ"
+          }
+        },
+        "video_block_BPFAYf": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=XKVH16ONIzQ"
+          }
+        }
+      },
+      "block_order": [
+        "video_block_VT4hBz",
+        "video_block_BPFAYf"
+      ],
+      "name": "HF Video Section",
+      "settings": {
+        "heading": "WHAT OUR CUSTOMERS SAY..",
+        "subheading": "More than 956,000+ satisfied customers enjoy our HIKE collection!"
+      }
+    },
     "logo_greyed_out_FMbnW7": {
       "type": "logo-greyed-out",
       "blocks": {
@@ -1303,6 +1329,7 @@
     "hf_img_with_text_TDBjAa",
     "product-details-tabs",
     "scrolling_promotion_UKXeX3",
+    "hf_video_p3YTtB",
     "logo_greyed_out_FMbnW7",
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
