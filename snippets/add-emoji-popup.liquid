@@ -725,15 +725,22 @@
     // delete button
     remove_btn.addEventListener('click', () => {
       input.value = '';
+      oldValue = '';
+
       let inputValue = input.value;
       console.log(inputValue);
 
-      oldValue = '';
       localStorage.removeItem('emojiInputValue');
       renderWithAnimation('', '');
       saveToMemory(inputValue);
       if (showTextEmoji) {
         showTextEmoji.textContent = '';
+      }
+
+      let inputEmoji = form.querySelector('input[name="properties[Personalisierung]"]');
+
+      if (!inputEmoji) {
+        inputEmoji.value = '';
       }
     });
 
