@@ -724,9 +724,6 @@
 
     // delete button
     remove_btn.addEventListener('click', () => {
-      if (showTextEmoji) {
-        showTextEmoji.textContent = '';
-      }
       input.value = '';
       let inputValue = input.value;
       console.log(inputValue);
@@ -735,6 +732,9 @@
       localStorage.removeItem('emojiInputValue');
       renderWithAnimation('', '');
       saveToMemory(inputValue);
+      if (showTextEmoji) {
+        showTextEmoji.textContent = '';
+      }
     });
 
     // Initialize saved value
