@@ -126,7 +126,8 @@
           "varianten-collection",
           "okami-damastmesser",
           "okami-damastmesser-sale",
-          "sale-aktuell"
+          "sale-aktuell",
+          "unser-grunder-ist-im-urlaub"
         ],
         "target_pages": "apex-new-page",
         "enable_scroll_to_show": false,
@@ -147,6 +148,14 @@
     "announcement_different_rRyBgT": {
       "type": "announcement-different",
       "blocks": {
+        "announcement_NBcHH9": {
+          "type": "announcement",
+          "settings": {
+            "collection": "unser-grunder-ist-im-urlaub",
+            "ann_title": "🤫 Geheimaktion gestartet!",
+            "text": "<p>Bis zu 80% Rabatt für die nächsten 48h</p>"
+          }
+        },
         "announcement_acXHcK": {
           "type": "announcement",
           "settings": {
@@ -285,6 +294,7 @@
         }
       },
       "block_order": [
+        "announcement_NBcHH9",
         "announcement_acXHcK",
         "announcement_JxFegn",
         "announcement_rKpUAD",
