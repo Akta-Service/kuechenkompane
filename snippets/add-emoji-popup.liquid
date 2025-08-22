@@ -1,471 +1,470 @@
 {% comment %} {{ 'modal-with-input-emoji.css' | asset_url | stylesheet_tag }} {% endcomment %}
 {% comment %} <script src="{{ 'modal-with-input-emoji.js' | asset_url }}" defer="defer"></script> {% endcomment %}
+
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
-
-
-
-       :root {
-         --bg: rgba(0, 0, 0, 0.56);
-         --white: #fff;
-         --primary: #1f7a8c;
-         --duration: 280ms;
-       }
-       .custom-popup-custom-text {
-         /* Modal Backdrop */
-         .backdrop {
-           position: fixed;
-           inset: 0;
-           display: none;
-           align-items: center;
-           justify-content: center;
-           z-index: 1000;
-           background: transparent;
+         :root {
+           --bg: rgba(0, 0, 0, 0.56);
+           --white: #fff;
+           --primary: #1f7a8c;
+           --duration: 280ms;
          }
-
-         .backdrop.show {
-           display: flex;
-           animation: backdropFadeIn var(--duration) ease forwards;
-         }
-
-         .backdrop.hide {
-           animation: backdropFadeOut var(--duration) ease forwards;
-         }
-
-
-         /* Modal Panel */
-         .modal {
-           width: min(700px, 92%);
-           max-height: 90vh;
-           background: var(--white);
-           border-radius: 12px;
-           box-shadow: 0 20px 60px rgba(11, 18, 32, 0.32);
-           overflow: hidden;
-           transform-origin: center top;
-           opacity: 0;
-           pointer-events: none;
-         }
-         @media (max-width: 767px) {
-           .modal {
-             overflow-y: scroll;
+         .custom-popup-custom-text {
+           /* Modal Backdrop */
+           .backdrop {
+             position: fixed;
+             inset: 0;
+             display: none;
+             align-items: center;
+             justify-content: center;
+             z-index: 1000;
+             background: transparent;
            }
-         }
-         .modal:focus-visible {
-           outline: none !important;
-         }
-         .modal.enter {
-           animation: modalIn 360ms cubic-bezier(0.2, 0.9, 0.25, 1) forwards;
-           pointer-events: auto;
-         }
 
-         .modal.leave {
-           animation: modalOut 220ms ease forwards;
-           pointer-events: none;
-         }
+           .backdrop.show {
+             display: flex;
+             animation: backdropFadeIn var(--duration) ease forwards;
+           }
+
+           .backdrop.hide {
+             animation: backdropFadeOut var(--duration) ease forwards;
+           }
 
 
-         .modal-header,
-         .modal-footer {
-                padding: 0 20px 8px 20px;
-           background: #fff;
-         }
+           /* Modal Panel */
+           .modal {
+             width: min(700px, 92%);
+             max-height: 90vh;
+             background: var(--white);
+             border-radius: 12px;
+             box-shadow: 0 20px 60px rgba(11, 18, 32, 0.32);
+             overflow: hidden;
+             transform-origin: center top;
+             opacity: 0;
+             pointer-events: none;
+           }
+           @media (max-width: 767px) {
+             .modal {
+               overflow-y: scroll;
+             }
+           }
+           .modal:focus-visible {
+             outline: none !important;
+           }
+           .modal.enter {
+             animation: modalIn 360ms cubic-bezier(0.2, 0.9, 0.25, 1) forwards;
+             pointer-events: auto;
+           }
 
-         .modal-header h2 {
-           font-size: 30px;
-           padding-top: 20px;
-         }
+           .modal.leave {
+             animation: modalOut 220ms ease forwards;
+             pointer-events: none;
+           }
 
-         .modal-header {
-           display: flex;
-           font-weight: 700;
-           color: #1f2937;
-           position: relative;
-           flex-direction: column;
-           align-items: center;
-           justify-content: center;
-           text-align: center;
-           gap: 0px;
-         }
-         #backdrop .modal-header .close-btn {
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           font-weight: 700;
-           color: #1f2937;
-           position: absolute;
-           right: 15px;
-           top: 15px;
-         }
 
-         .modal-body {
-           padding: 20px;
-           min-height: 120px;
-           background: #fff;
-         }
-         button#saveEmojiBtn {
-           display: block;
-           text-align: center;
-           background: #fa8526;
-           padding: 14px 20px;
-           width: 100%;
-           border-radius: 6px;
-           color: #fff;
-         }
-         .close-btn {
-           background: none;
-           border: none;
-           font-size: 20px;
-           cursor: pointer;
-           width: 36px;
-           height: 36px;
-           display: inline-flex;
-           align-items: center;
-           justify-content: center;
-           border-radius: 8px;
-           transition: transform 160ms ease
-           , background 120ms ease;
-           color: #6b7280;
-         }
-         .footer-close-btn {
-           text-align: center;
-           padding: 4px 0 0px 0;
-           display: block;
-           width: 100%;
-         }
-         .close-btn:hover {
-           background: rgba(11, 18, 32, 0.04);
-         }
+           .modal-header,
+           .modal-footer {
+                  padding: 0 20px 8px 20px;
+             background: #fff;
+           }
 
-         /* Emoji Input Styles */
-         #emojiInput {
-           width: 100%;
-           padding: 12px;
-           border: 2px solid #e5e7eb;
-           border-radius: 8px;
-           font-size: 16px;
-           font-family: inherit;
-           outline: none;
-           transition: border-color 0.2s ease;
-           margin-bottom: 0px;
-         }
+           .modal-header h2 {
+             font-size: 30px;
+             padding-top: 20px;
+           }
 
-         #emojiInput:focus {
-           border-color: var(--primary);
-         }
+           .modal-header {
+             display: flex;
+             font-weight: 700;
+             color: #1f2937;
+             position: relative;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             text-align: center;
+             gap: 0px;
+           }
+           #backdrop .modal-header .close-btn {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             font-weight: 700;
+             color: #1f2937;
+             position: absolute;
+             right: 15px;
+             top: 15px;
+           }
 
+           .modal-body {
+             padding: 20px;
+             min-height: 120px;
+             background: #fff;
+           }
+           button#saveEmojiBtn {
+             display: block;
+             text-align: center;
+             background: #fa8526;
+             padding: 14px 20px;
+             width: 100%;
+             border-radius: 6px;
+             color: #fff;
+           }
+           .close-btn {
+             background: none;
+             border: none;
+             font-size: 20px;
+             cursor: pointer;
+             width: 36px;
+             height: 36px;
+             display: inline-flex;
+             align-items: center;
+             justify-content: center;
+             border-radius: 8px;
+             transition: transform 160ms ease
+             , background 120ms ease;
+             color: #6b7280;
+           }
+           .footer-close-btn {
+             text-align: center;
+             padding: 4px 0 0px 0;
+             display: block;
+             width: 100%;
+           }
+           .close-btn:hover {
+             background: rgba(11, 18, 32, 0.04);
+           }
+
+           /* Emoji Input Styles */
+           #emojiInput {
+             width: 100%;
+             padding: 12px;
+             border: 2px solid #e5e7eb;
+             border-radius: 8px;
+             font-size: 16px;
+             font-family: inherit;
+             outline: none;
+             transition: border-color 0.2s ease;
+             margin-bottom: 0px;
+           }
+
+           #emojiInput:focus {
+             border-color: var(--primary);
+           }
+
+           #emojiDisplay {
+             font-size: 2rem;
+             min-height: 3rem;
+             user-select: none;
+             padding: 12px;
+             border-radius: 8px;
+             line-height: 1.4;
+             display: none;
+             transition: opacity 1s ease
+             , transform 1s ease;
+             position: absolute;
+                    margin-left: -12%;
+           margin-bottom: 68px;
+
+             min-width: 200px;
+             text-align: left;
+           }
+
+                {% comment %} @media (max-width: 1200px) {
          #emojiDisplay {
-           font-size: 2rem;
-           min-height: 3rem;
-           user-select: none;
-           padding: 12px;
-           border-radius: 8px;
-           line-height: 1.4;
-           display: none;
-           transition: opacity 1s ease
-           , transform 1s ease;
-           position: absolute;
-                  margin-left: -12%;
-         margin-bottom: 68px;
-
-           min-width: 200px;
-           text-align: left;
-         }
-
-              {% comment %} @media (max-width: 1200px) {
-       #emojiDisplay {
-          margin-left: 130px;
-           margin-bottom: 30px;
-       }
-              } {% endcomment %}
-         @media (max-width: 767px) {
-           {% comment %} #emojiDisplay {
-             margin-left: 48px;
+            margin-left: 130px;
              margin-bottom: 30px;
-           } {% endcomment %}
          }
-         #emojiDisplay.show {
-           display: block;
-           animation: displayFadeIn 1s ease forwards;
-         }
+                } {% endcomment %}
+           @media (max-width: 767px) {
+             {% comment %} #emojiDisplay {
+               margin-left: 48px;
+               margin-bottom: 30px;
+             } {% endcomment %}
+           }
+           #emojiDisplay.show {
+             display: block;
+             animation: displayFadeIn 1s ease forwards;
+           }
 
-         #emojiDisplay.hide {
-           animation: displayFadeOut 1s ease forwards;
-         }
+           #emojiDisplay.hide {
+             animation: displayFadeOut 1s ease forwards;
+           }
 
-         #emojiDisplay span {
-           display: inline-block;
-           font-weight: 400;
-           color: rgb(255 255 255);
-           /* font-family: panettone; */
-           font-family: Optima;
-           font-size: 20px;
-         }
-         @media (max-width: 1500px) {
-         #emojiDisplay span {
-
-           font-size: 17px;
-         }
-         }
-         @media (max-width: 1020px) {
-         #emojiDisplay span {
-
-           font-size: 14px;
-         }
-         }
-         @media (max-width: 767px) {
            #emojiDisplay span {
              display: inline-block;
              font-weight: 400;
              color: rgb(255 255 255);
-             font-size: 15px;
+             /* font-family: panettone; */
+             font-family: Optima;
+             font-size: 20px;
            }
-         }
-         #emojiDisplay span:empty::before {
-           content: "\00A0";
-           /* non-breaking space */
-           display: inline-block;
-         }
-         .highlight {
-           animation: highlightAnim 1s ease forwards;
-         }
-         /* Heading fade animation */
-         .heading-fade-out {
-           animation: fadeOut 1s ease forwards;
-         }
+           @media (max-width: 1500px) {
+           #emojiDisplay span {
 
-         .heading-fade-in {
-           animation: fadeIn 1s ease forwards;
-         }
-
-         .emoji-list {
-           list-style: none;
-           padding: 0;
-           margin: 0;
-           display: grid;
-           grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-           gap: 8px;
-         }
-
-         .emoji-list li {
-           font-size: 1.5rem;
-           padding: 8px;
-           text-align: center;
-           cursor: pointer;
-           border-radius: 6px;
-           transition: all 0.2s ease;
-           user-select: none;
-           font-size: 16px;
-         }
-
-         .emoji-list li:hover {
-           background: #f3f4f6;
-           transform: scale(1.1);
-         }
-
-         .emoji-list li:active {
-           transform: scale(0.95);
-         }
-  @media screen and (max-width: 600px) and (min-width: 450px)   {
-           #emojiDisplay{
-                     font-size: 1.5rem;
-                     min-height: 2.5rem;
-                     margin-bottom: 20px;
-                             margin-left: -22px;
-
+             font-size: 17px;
            }
-     }
-         /* Responsive */
-         @media (max-width: 449px) {
-           .modal {
-             border-radius: 10px;
-             width: calc(100% - 24px);
            }
-           .modal-body {
-             min-height: 90px;
-             padding: 16px;
+           @media (max-width: 1020px) {
+           #emojiDisplay span {
+
+             font-size: 14px;
            }
-           #emojiDisplay {
+           }
+           @media (max-width: 767px) {
+             #emojiDisplay span {
+               display: inline-block;
+               font-weight: 400;
+               color: rgb(255 255 255);
+               font-size: 15px;
+             }
+           }
+           #emojiDisplay span:empty::before {
+             content: "\00A0";
+             /* non-breaking space */
+             display: inline-block;
+           }
+           .highlight {
+             animation: highlightAnim 1s ease forwards;
+           }
+           /* Heading fade animation */
+           .heading-fade-out {
+             animation: fadeOut 1s ease forwards;
+           }
+
+           .heading-fade-in {
+             animation: fadeIn 1s ease forwards;
+           }
+
+           .emoji-list {
+             list-style: none;
+             padding: 0;
+             margin: 0;
+             display: grid;
+             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+             gap: 8px;
+           }
+
+           .emoji-list li {
              font-size: 1.5rem;
-             min-height: 2.5rem;
-             {% comment %} margin-bottom: 20px;
-                     margin-left: -22px; {% endcomment %}
-                margin-bottom: 33px;
-             margin-left: 31px;
+             padding: 8px;
+             text-align: center;
+             cursor: pointer;
+             border-radius: 6px;
+             transition: all 0.2s ease;
+             user-select: none;
+             font-size: 16px;
+           }
+
+           .emoji-list li:hover {
+             background: #f3f4f6;
+             transform: scale(1.1);
+           }
+
+           .emoji-list li:active {
+             transform: scale(0.95);
+           }
+    @media screen and (max-width: 600px) and (min-width: 450px)   {
+             #emojiDisplay{
+                       font-size: 1.5rem;
+                       min-height: 2.5rem;
+                       margin-bottom: 20px;
+                               margin-left: -22px;
+
+             }
+       }
+           /* Responsive */
+           @media (max-width: 449px) {
+             .modal {
+               border-radius: 10px;
+               width: calc(100% - 24px);
+             }
+             .modal-body {
+               min-height: 90px;
+               padding: 16px;
+             }
+             #emojiDisplay {
+               font-size: 1.5rem;
+               min-height: 2.5rem;
+               {% comment %} margin-bottom: 20px;
+                       margin-left: -22px; {% endcomment %}
+                  margin-bottom: 33px;
+               margin-left: 31px;
+             }
+           }
+
+           .product-image-wrap {
+             max-height: 300px;
+             overflow: hidden;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             margin-bottom: 0px;
+           }
+           .product-image-wrap img {
+             object-fit: cover;
+           }
+         }
+         .modal-button-and-text-show.show-text.active {
+           display: none;
+         }
+         .modal-button-and-text-show {
+           display: grid;
+           grid-template-columns: 1fr 130px;
+           gap: 20px;
+           padding: 20px;
+           border: 1px solid currentColor;
+           border-radius: 10px;
+           margin-top: 20px;
+           cursor: pointer;
+         }
+         .modal-button-and-text-show p {
+           margin-top: 10;
+           font-size: 14px;
+         }
+         .add-logo-no-selection.show-text2 {
+           display: none;
+         }
+         p.add-logo-no-selection-text {
+           font-size: 16px;
+           {% comment %} color: green; {% endcomment %}
+         }
+
+         .add-logo-no-selection.show-text2.active {
+           display: flex;
+           justify-content: space-between;
+           padding: 10px 0;
+           gap: 20px;
+           padding: 20px;
+           border: 1px solid currentColor;
+           border-radius: 10px;
+           margin-top: 20px;
+           cursor: pointer;
+         }
+
+       .btn--wrapper {
+         display: flex;
+         flex-direction: column;
+         align-items: start;
+       }
+
+
+         .add-logo-no-selection.show-text2.active button {
+           {% comment %} color: #fa8526; {% endcomment %}
+         }
+         .add-logo-no-selection.show-text2.active button span {
+           transform: rotate(45deg);
+         }
+
+         .add-logo-no-selection-content {
+           display: block;
+           justify-content: space-between;
+           cursor: pointer;
+           width: 100%;
+       }
+
+       button#remove_btn {
+         color: red;
+     }
+
+         @keyframes fadeOut {
+           0% {
+             opacity: 1;
+             transform: translateY(0);
+           }
+           100% {
+             opacity: 0;
+             transform: translateY(-20px);
            }
          }
 
-         .product-image-wrap {
-           max-height: 300px;
-           overflow: hidden;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           margin-bottom: 0px;
+         @keyframes fadeIn {
+           0% {
+             opacity: 0;
+             transform: translateY(-20px);
+           }
+           100% {
+             opacity: 1;
+             transform: translateY(0);
+           }
          }
-         .product-image-wrap img {
-           object-fit: cover;
+         @keyframes highlightAnim {
+           0% {
+             background-color: #fef3c7;
+             transform: scale(1.2);
+           }
+           100% {
+             background-color: transparent;
+             transform: scale(1);
+           }
          }
-       }
-       .modal-button-and-text-show.show-text.active {
-         display: none;
-       }
-       .modal-button-and-text-show {
-         display: grid;
-         grid-template-columns: 1fr 130px;
-         gap: 20px;
-         padding: 20px;
-         border: 1px solid currentColor;
-         border-radius: 10px;
-         margin-top: 20px;
-         cursor: pointer;
-       }
-       .modal-button-and-text-show p {
-         margin-top: 10;
-         font-size: 14px;
-       }
-       .add-logo-no-selection.show-text2 {
-         display: none;
-       }
-       p.add-logo-no-selection-text {
-         font-size: 16px;
-         {% comment %} color: green; {% endcomment %}
-       }
+         @keyframes displayFadeIn {
+           0% {
+             opacity: 0;
+             transform: scale(0.8);
+             transform-origin: left center;
+           }
+           100% {
+             opacity: 1;
+             transform: scale(1);
+             transform-origin: left center;
+           }
+         }
 
-       .add-logo-no-selection.show-text2.active {
-         display: flex;
-         justify-content: space-between;
-         padding: 10px 0;
-         gap: 20px;
-         padding: 20px;
-         border: 1px solid currentColor;
-         border-radius: 10px;
-         margin-top: 20px;
-         cursor: pointer;
-       }
+         @keyframes displayFadeOut {
+           0% {
+             opacity: 1;
+             transform: scale(1);
+             transform-origin: left center;
+           }
+           100% {
+             opacity: 0;
+             transform: scale(0.8);
+             transform-origin: left center;
+           }
+         }
+         @keyframes backdropFadeIn {
+           from {
+             background: rgba(0, 0, 0, 0);
+           }
+           to {
+             background: var(--bg);
+           }
+         }
 
-     .btn--wrapper {
-       display: flex;
-       flex-direction: column;
-       align-items: start;
-     }
+         @keyframes backdropFadeOut {
+           from {
+             background: var(--bg);
+           }
+           to {
+             background: rgba(0, 0, 0, 0);
+           }
+         }
+         @keyframes modalIn {
+           0% {
+             transform: translateY(-18px) scale(0.96);
+             opacity: 0;
+           }
+           60% {
+             transform: translateY(6px) scale(1.02);
+             opacity: 1;
+           }
+           100% {
+             transform: translateY(0) scale(1);
+             opacity: 1;
+           }
+         }
 
-
-       .add-logo-no-selection.show-text2.active button {
-         {% comment %} color: #fa8526; {% endcomment %}
-       }
-       .add-logo-no-selection.show-text2.active button span {
-         transform: rotate(45deg);
-       }
-
-       .add-logo-no-selection-content {
-         display: block;
-         justify-content: space-between;
-         cursor: pointer;
-         width: 100%;
-     }
-
-     button#remove_btn {
-       color: red;
-   }
-
-       @keyframes fadeOut {
-         0% {
-           opacity: 1;
-           transform: translateY(0);
+         @keyframes modalOut {
+           0% {
+             transform: translateY(0) scale(1);
+             opacity: 1;
+           }
+           100% {
+             transform: translateY(-8px) scale(0.98);
+             opacity: 0;
+           }
          }
-         100% {
-           opacity: 0;
-           transform: translateY(-20px);
-         }
-       }
-
-       @keyframes fadeIn {
-         0% {
-           opacity: 0;
-           transform: translateY(-20px);
-         }
-         100% {
-           opacity: 1;
-           transform: translateY(0);
-         }
-       }
-       @keyframes highlightAnim {
-         0% {
-           background-color: #fef3c7;
-           transform: scale(1.2);
-         }
-         100% {
-           background-color: transparent;
-           transform: scale(1);
-         }
-       }
-       @keyframes displayFadeIn {
-         0% {
-           opacity: 0;
-           transform: scale(0.8);
-           transform-origin: left center;
-         }
-         100% {
-           opacity: 1;
-           transform: scale(1);
-           transform-origin: left center;
-         }
-       }
-
-       @keyframes displayFadeOut {
-         0% {
-           opacity: 1;
-           transform: scale(1);
-           transform-origin: left center;
-         }
-         100% {
-           opacity: 0;
-           transform: scale(0.8);
-           transform-origin: left center;
-         }
-       }
-       @keyframes backdropFadeIn {
-         from {
-           background: rgba(0, 0, 0, 0);
-         }
-         to {
-           background: var(--bg);
-         }
-       }
-
-       @keyframes backdropFadeOut {
-         from {
-           background: var(--bg);
-         }
-         to {
-           background: rgba(0, 0, 0, 0);
-         }
-       }
-       @keyframes modalIn {
-         0% {
-           transform: translateY(-18px) scale(0.96);
-           opacity: 0;
-         }
-         60% {
-           transform: translateY(6px) scale(1.02);
-           opacity: 1;
-         }
-         100% {
-           transform: translateY(0) scale(1);
-           opacity: 1;
-         }
-       }
-
-       @keyframes modalOut {
-         0% {
-           transform: translateY(0) scale(1);
-           opacity: 1;
-         }
-         100% {
-           transform: translateY(-8px) scale(0.98);
-           opacity: 0;
-         }
-       }
 </style>
 
 <div class="custom-popup-custom-text">
