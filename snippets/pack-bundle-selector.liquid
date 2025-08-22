@@ -524,7 +524,7 @@
       return items;
     }
 
-    // POST multiple line items to cart
+    // POST multiple line items to cart and update drawer
     async function addItemsToCart(items) {
       const res = await fetch('/cart/add.js', {
         method: 'POST',
@@ -540,7 +540,18 @@
         throw new Error(err?.description || 'Failed to add to cart.');
       }
 
-      return res.json();
+      const data = await res.json();
+
+      // 🔄 Update cart drawer section
+      const cartDrawer = document.querySelector('m-cart-drawer');
+      if (cartDrawer) {
+        // re-render contents
+        cartDrawer.onCartDrawerUpdate(true);
+        // open drawer so user sees the update
+        cartDrawer.open();
+      }
+
+      return data;
     }
 
     // Optional: cart count update (if #cart-count exists)
