@@ -79,6 +79,10 @@
             "emptyRatingWidget": false
           }
         },
+        "pack_bundle_slector_jGQyXF": {
+          "type": "pack_bundle_slector",
+          "settings": {}
+        },
         "price_88mqqq": {
           "type": "price",
           "settings": {
@@ -99,6 +103,10 @@
             "c_price_size": 16,
             "c_price_size_m": 16,
             "price_font_weight": "400",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0",
             "border_radius": 2
           }
         },
@@ -225,6 +233,7 @@
         "review_Tgbbak",
         "ratings_fD4VNJ",
         "loox_reviews_loox_rating_DQFemx",
+        "pack_bundle_slector_jGQyXF",
         "price_88mqqq",
         "subtitle_xQXVba",
         "subtitle_mGfN7N",
@@ -263,7 +272,11 @@
         "show_stk_icon": true,
         "glitter_effec": true,
         "bubble_before_color": "#000000",
-        "bubble_after_color": "#1e1e1e"
+        "bubble_after_color": "#1e1e1e",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "product_descrption_accordion_btdDtQ": {
