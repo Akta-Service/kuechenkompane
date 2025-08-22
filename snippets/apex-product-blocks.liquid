@@ -462,6 +462,9 @@
       {%- when 'bundle_slector' -%}
         {% render 'bundle-selector', block: block, section: section %}
 
+      {%- when 'pack_bundle_slector' -%}
+        {% render 'pack-bundle-selector', block: block, section: section %}
+
       {%- when 'description' -%}
         <div class="m-product-description rte">
           {{ product.description }}
