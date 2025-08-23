@@ -538,7 +538,6 @@
       let selectedVariant;
 
       if (isCustom) {
-        // For custom product, find media element from data-variant-id-for-selector
         const mediaEl = document.querySelector(`[data-variant-id-for-selector="${variantId}"]`);
         if (!mediaEl) return;
 
@@ -550,7 +549,6 @@
           },
         };
       } else {
-        // Default product
         selectedVariant = gallery.productData.variants.find((v) => v.id === Number(variantId));
       }
 
@@ -560,14 +558,12 @@
       }
     };
 
-    // Radio buttons
     radios.forEach((radio) => {
       radio.addEventListener('change', (e) => {
         handleSelection(e.target.dataset.variantId);
       });
     });
 
-    // Dropdown
     if (dropdown) {
       dropdown.addEventListener('change', (e) => {
         const selectedOption = e.target.options[e.target.selectedIndex];
