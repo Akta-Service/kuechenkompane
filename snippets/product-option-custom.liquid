@@ -207,7 +207,7 @@
       };
 
       this.dropdown.addEventListener('change', updateDropdown);
-      this.dropdown.addEventListener('focus', updateDropdown);
+      {% comment %} this.dropdown.addEventListener('focus', updateDropdown); {% endcomment %}
       this.dropdown.addEventListener('click', updateDropdown);
     }
 
