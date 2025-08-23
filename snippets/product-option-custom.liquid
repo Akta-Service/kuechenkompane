@@ -107,6 +107,7 @@
     {% assign first_custom_id = '' %}
 
     {%- for custom_product in block.settings.custom_product_list -%}
+      {% assign first_custom_id = custom_product.selected_or_first_available_variant.id %}
     {%- endfor -%}
 
     <label class="product-radio-option option-dropdown">
