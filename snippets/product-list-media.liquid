@@ -1,24 +1,22 @@
 {% for block in section.blocks %}
   {% case block.type %}
-    {%- when 'variant_picker_custom' -%}
-      {%- if block.settings.custom_product_list != blank -%}
-        {%- assign base_index = product.media.size | default: 0 -%}
-        {# so indices continue after main media #}
+    {% when 'variant_picker_custom' %}
+      {% if block.settings.custom_product_list != blank %}
+        {% assign base_index = product.media.size | default: 0 %}
 
-        {%- for custom_product in block.settings.custom_product_list -%}
-          {%- comment -%}
-            custom_product may be a Product object (from a products picker)
-            or a handle/string. Normalize to product_obj.
-          {%- endcomment -%}
-          {%- assign product_obj = custom_product -%}
-          {%- if product_obj == blank or product_obj.id == blank -%}
-            {%- assign product_obj = all_products[custom_product] -%}
-          {%- endif -%}
+        {% for custom_product in block.settings.custom_product_list %}
+          {% comment %}
+            Normalize: custom_product might be a handle string or a product object
+          {% endcomment %}
+          {% assign product_obj = custom_product %}
+          {% if product_obj == blank or product_obj.id == blank %}
+            {% assign product_obj = all_products[custom_product] %}
+          {% endif %}
 
-          {%- if product_obj -%}
-            {%- assign media_obj = product_obj.featured_media | default: product_obj.media.first -%}
-            {%- if media_obj -%}
-              {%- assign idx = base_index | plus: forloop.index0 -%}
+          {% if product_obj %}
+            {% assign media_obj = product_obj.featured_media | default: product_obj.media.first %}
+            {% if media_obj %}
+              {% assign idx = base_index | plus: forloop.index0 %}
               <div
                 class="swiper-slide m-product-media--item media-type-{{ media_obj.media_type | default: 'image' }}"
                 data-index="{{ idx }}"
@@ -35,15 +33,22 @@
                   product: product_obj
                 %}
 
-                {%- if enable_zoom and (media_obj.media_type == blank or media_obj.media_type == 'image') -%}
+                {% assign is_zoomable = false %}
+                {% if enable_zoom %}
+                  {% if media_obj.media_type == blank or media_obj.media_type == 'image' %}
+                    {% assign is_zoomable = true %}
+                  {% endif %}
+                {% endif %}
+
+                {% if is_zoomable %}
                   <div class="m-product-media--zoom-icon">
                     {% render 'tooltip', type: 'zoom-in', class_name: ' m-tooltip--left' %}
                   </div>
-                {%- endif -%}
+                {% endif %}
               </div>
-            {%- endif -%}
-          {%- endif -%}
-        {%- endfor -%}
-      {%- endif -%}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
   {% endcase %}
 {% endfor %}
