@@ -196,7 +196,15 @@
         },
         "variant_picker_custom_dDjK3a": {
           "type": "variant_picker_custom",
-          "settings": {}
+          "settings": {
+            "custom_product_list": [
+              "akarui-messerset-premium",
+              "akarui-kombipaket-tsuisuto",
+              "akarui-bundle-edelstahlblock",
+              "bundle-holzleiste-akarui",
+              "asiatisches-bundle-kurai"
+            ]
+          }
         },
         "buy_buttons_3hQqVi": {
           "type": "buy_buttons",
