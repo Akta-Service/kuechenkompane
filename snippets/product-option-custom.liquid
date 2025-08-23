@@ -1,7 +1,7 @@
 {% liquid
   assign is_size = false
   assign size_title_downcase = size_title | downcase
-  assign picker_type = settings.variant_picker_type
+  assign picker_type = block.settings.variant_picker_type
   assign picker_types = ''
   assign option_labels = ''
 
