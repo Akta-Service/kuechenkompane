@@ -321,29 +321,31 @@
     }
 
     onVariantChange(selectedId) {
-      // Media swap (optional)
+      console.log('Selected Variant ID:', selectedId);
+
+      // Update media
       const mediaElement = document.querySelector(`[data-variant-id="${selectedId}"]`);
       if (mediaElement) {
         document.querySelectorAll('.product-media-item').forEach((el) => (el.style.display = 'none'));
         mediaElement.style.display = 'block';
+        console.log('Media ID:', mediaElement.dataset.variantId);
       }
 
-      // Update Add to Cart state
-      if (this.addToCartBtn && this.hiddenInput) {
-        const selectedElement = this.container.querySelector(
-          `input[value="${selectedId}"], option[value="${selectedId}"]`
-        );
-        const available = selectedElement?.dataset?.available === 'true';
+      // ✅ Always try <option> first, then radio
+      let selectedElement =
+        this.container.querySelector(`option[value="${selectedId}"]`) ||
+        this.container.querySelector(`input[value="${selectedId}"]`);
 
-        if (!available) {
-          this.addToCartBtn.disabled = true;
-          this.addToCartBtn.textContent = 'Sold Out';
-          this.addToCartBtn.classList.add('btn-disabled');
-        } else {
-          this.addToCartBtn.disabled = false;
-          this.addToCartBtn.textContent = 'Add to cart';
-          this.addToCartBtn.classList.remove('btn-disabled');
-        }
+      const available = selectedElement?.dataset?.available === 'true';
+
+      if (!available) {
+        this.addToCartBtn.disabled = true;
+        this.addToCartBtn.textContent = 'Sold Out';
+        this.addToCartBtn.classList.add('btn-disabled');
+      } else {
+        this.addToCartBtn.disabled = false;
+        this.addToCartBtn.textContent = 'Add to cart';
+        this.addToCartBtn.classList.remove('btn-disabled');
       }
     }
 
