@@ -136,12 +136,25 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const radios = document.querySelectorAll('input[name="variant_or_custom"]');
+    const dropdown = document.querySelector('.custom-product-dropdown');
     const hiddenInput = document.querySelector('#selectedVariantId');
 
+    // Update hidden input when a radio is selected
     radios.forEach((radio) => {
       radio.addEventListener('change', () => {
         hiddenInput.value = radio.value;
+        // Reset dropdown when a radio is selected
+        if (dropdown) dropdown.value = '';
       });
     });
+
+    // Update hidden input when dropdown changes
+    if (dropdown) {
+      dropdown.addEventListener('change', () => {
+        hiddenInput.value = dropdown.value;
+        // Uncheck all radios when dropdown is used
+        radios.forEach((r) => (r.checked = false));
+      });
+    }
   });
 </script>
