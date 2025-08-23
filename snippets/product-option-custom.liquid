@@ -58,3 +58,16 @@
 
   <button type="submit" class="btn">Add to cart</button>
 </form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const radios = document.querySelectorAll('input[name="variant_or_custom"]');
+    const hiddenInput = document.querySelector('#selectedVariantId');
+
+    radios.forEach((radio) => {
+      radio.addEventListener('change', () => {
+        hiddenInput.value = radio.value;
+      });
+    });
+  });
+</script>
