@@ -1,11 +1,11 @@
 <style>
-    .product-radio-options {
+  .product-radio-options {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    }
+    gap: 20px;
+  }
 
-    .product-radio-option {
+  .product-radio-option {
     display: flex;
     {% comment %} justify-content: space-between; {% endcomment %}
     align-items: center;
@@ -18,29 +18,29 @@
     font-size: 16px;
     position: relative;
     gap: 10px;
-    }
-
-
-
-    .product-radio-option .title {
-    font-weight: 600;
-    }
-
-   .product-radio-option .price {
-      font-weight: bold;
-      font-size: 16px;
-      margin-left: auto;
   }
 
-    .product-radio-option .price .compare {
+
+
+  .product-radio-option .title {
+    font-weight: 600;
+  }
+
+  .product-radio-option .price {
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: auto;
+  }
+
+  .product-radio-option .price .compare {
     text-decoration: line-through;
     margin-left: 8px;
     color: #999;
     font-weight: normal;
-    }
+  }
 
-    /* Badges */
-    .product-radio-option .badge {
+  /* Badges */
+  .product-radio-option .badge {
     position: absolute;
     top: -10px;
     right: 12px;
@@ -51,56 +51,56 @@
     padding: 2px 8px;
     border-radius: 6px;
     text-transform: uppercase;
-    }
+  }
 
-    .product-radio-option .badge-red {
+  .product-radio-option .badge-red {
     background: #a92424; /* red */
-    }
+  }
 
-    /* Selected state */
-    .product-radio-option input[type="radio"]:checked + .title,
-    .product-radio-option input[type="radio"]:checked ~ .title {
-    /* fallback if using + or ~ structure */
-    }
+  /* Selected state */
+  .product-radio-option input[type="radio"]:checked + .title,
+  .product-radio-option input[type="radio"]:checked ~ .title {
+  /* fallback if using + or ~ structure */
+  }
 
-    .product-radio-option input[type="radio"]:checked + span,
-    .product-radio-option input[type="radio"]:checked ~ * {
+  .product-radio-option input[type="radio"]:checked + span,
+  .product-radio-option input[type="radio"]:checked ~ * {
     color: #000;
 
-    }
+  }
 
-    .product-radio-option:has(input[type="radio"]:checked) {
+  .product-radio-option:has(input[type="radio"]:checked) {
     border-color: #f68b1e; /* orange border on select */
     background-color: #fff9f3;
-    }
-    select.custom-product-dropdown {
-      width: 100%;
-      padding: 14px 18px;
-    }
-    label.product-radio-option.option-dropdown {
-      padding: 0;
-    }
-    label.product-radio-option.option-dropdown.active select.custom-product-dropdown{
-      border-color: #f68b1e;
-      background-color: #fff9f3;
-      }
-      button.btn.add-btn-custom {
-      background: #fa8526;
-      color: #fff;
-      box-shadow: none;
-      border: none;
-      outline: none;
-      margin-top: 15px;
-      margin-bottom: 25px;
-      padding: 15px;
-      border-radius: 5px;
-    }
+  }
+  select.custom-product-dropdown {
+    width: 100%;
+    padding: 14px 18px;
+  }
+  label.product-radio-option.option-dropdown {
+    padding: 0;
+  }
+  label.product-radio-option.option-dropdown.active select.custom-product-dropdown{
+    border-color: #f68b1e;
+    background-color: #fff9f3;
+  }
+  button.btn.add-btn-custom {
+    background: #fa8526;
+    color: #fff;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 5px;
+  }
 
-    label.product-radio-option.option-dropdown.active {
-      border-color: #f68b1e;
-      background-color: #fff9f3;
-      overflow: hidden;
-    }
+  label.product-radio-option.option-dropdown.active {
+    border-color: #f68b1e;
+    background-color: #fff9f3;
+    overflow: hidden;
+  }
 </style>
 <div class="product-radio-options" {{ block.shopify_attributes }}>
   {%- for variant in product.variants -%}
