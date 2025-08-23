@@ -356,6 +356,31 @@
                   {% case block.type %}
                     {%- when 'variant_picker_custom' -%}
                       {%- if block.settings.custom_product_list != blank -%}
+                         {%- for custom_product in block.settings.custom_product_list -%}
+                            <div
+                                class="swiper-slide m-product-media--item media-type-{{ media.media_type }}"
+                                data-index="{{ forloop.index0 }}"
+                                data-media-type="{{ media.media_type }}"
+                                data-media-id="{{ media.id }}"
+                                data-aspect-ratio="{{ media.aspect_ratio | default: '1' }}"
+                            >
+                                {% render 'product-thumbnail',
+                                media: media,
+                                index: forloop.index0,
+                                autoplay: enable_video_autoplay,
+                                loop: true,
+                                media_layout: media_layout,
+                                product: product
+                                %}
+                                {%- if enable_zoom and media.media_type == 'image' -%}
+                                <div class="m-product-media--zoom-icon">
+                                    {% render 'tooltip', type: 'zoom-in', class_name: ' m-tooltip--left' %}
+                                </div>
+                                {%- endif -%}
+                            </div>
+
+
+                        {% endfor %}
                       {% endif %}
                   {% endcase %}
                 {% endfor %}
