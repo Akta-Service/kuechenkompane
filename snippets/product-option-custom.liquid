@@ -123,8 +123,8 @@
       >
       <span class="title">{{ variant.title }}</span>
 
-      {% if variant.metafields.custom.variant_badge != blank %}
-        <img src="{{ variant.metafields.custom.variant_image }}" alt="variant-image">
+      {% if variant.metafields.custom.variant_image != blank %}
+        <img src="{{ variant.metafields.custom.variant_image | img_url: 'master' }}" alt="variant-image">
       {% endif %}
       <span class="price">
         {{ variant.price | money }}
