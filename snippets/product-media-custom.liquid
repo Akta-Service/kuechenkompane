@@ -355,8 +355,8 @@
                 {% for block in section.blocks %}
                   {% case block.type %}
                     {%- when 'variant_picker_custom' -%}
-                    {% else %}
-
+                      {%- if block.settings.custom_product_list != blank -%}
+                      {% endif %}
                   {% endcase %}
                 {% endfor %}
               </div>
