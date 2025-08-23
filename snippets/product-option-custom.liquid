@@ -142,36 +142,6 @@
         {%- endfor -%}
       </select>
     </label>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const radios = document.querySelectorAll('input[name="variant_or_custom"]');
-        const dropdown = document.querySelector('.custom-product-dropdown');
-        const hiddenInput = document.querySelector('#selectedVariantId');
-
-        // Update hidden input when a radio is selected
-        radios.forEach((radio) => {
-          radio.addEventListener('change', () => {
-            hiddenInput.value = radio.value;
-            if (dropdown) dropdown.value = ''; // reset dropdown
-          });
-        });
-
-        // Update hidden input when dropdown changes
-        if (dropdown) {
-          dropdown.addEventListener('change', () => {
-            hiddenInput.value = dropdown.value;
-            // uncheck all radios when dropdown is used
-            radios.forEach((r) => (r.checked = false));
-          });
-        }
-
-        // Set initial value from pre-selected dropdown
-        if (dropdown && dropdown.value) {
-          hiddenInput.value = dropdown.value;
-        }
-      });
-    </script>
   {%- endif -%}
 </div>
 
@@ -189,6 +159,7 @@
     radios.forEach((radio) => {
       radio.addEventListener('change', () => {
         hiddenInput.value = radio.value;
+        if (dropdown) dropdown.value = ''; // reset dropdown
       });
     });
 
@@ -196,7 +167,14 @@
     if (dropdown) {
       dropdown.addEventListener('change', () => {
         hiddenInput.value = dropdown.value;
+        // uncheck all radios when dropdown is used
+        radios.forEach((r) => (r.checked = false));
       });
+    }
+
+    // Set initial value from pre-selected dropdown
+    if (dropdown && dropdown.value) {
+      hiddenInput.value = dropdown.value;
     }
   });
 </script>
