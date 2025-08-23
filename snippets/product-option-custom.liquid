@@ -165,9 +165,16 @@
       >
       <span class="title">1pcs</span>
       <span class="price">
-        {{ variant.price | money }}
-        {% if variant.compare_at_price > variant.price %}
-          <span class="compare">{{ variant.compare_at_price | money }}</span>
+        {{ block.settings.custom_product_list.first.selected_or_first_available_variant.price | money }}
+        {% if block.settings.custom_product_list.first.selected_or_first_available_variant.compare_at_price
+            > block.settings.custom_product_list.first.selected_or_first_available_variant.price
+        %}
+          <span class="compare">
+            {{-
+              block.settings.custom_product_list.first.selected_or_first_available_variant.compare_at_price
+              | money
+            -}}
+          </span>
         {% endif %}
       </span>
       <div class="custom-products-list">
