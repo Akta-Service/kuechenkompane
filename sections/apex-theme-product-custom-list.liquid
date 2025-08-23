@@ -155,7 +155,7 @@
       <product-recently-viewed data-product-id="{{ product.id }}" class="m:hidden"></product-recently-viewed>
       <div class="m-main-product--media m:column {{ media_class }}">
         <div class="m-product-media--desktop m-product-media--wrapper m-product-media--{{ section.settings.layout }} m:justify-end ">
-          {% render 'product-media', section: section, template_product: true %}
+          {% render 'product-media-custom', section: section, template_product: true %}
 
           {% if section.settings.show_sold_out_badge_on_image != false %}
             {% if product.available == false %}
