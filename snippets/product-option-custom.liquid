@@ -74,7 +74,6 @@
   background-color: #fff9f3;
   }
 </style>
-
 <div class="product-radio-options" {{ block.shopify_attributes }}>
   {%- for variant in product.variants -%}
     <label class="product-radio-option">
@@ -95,37 +94,39 @@
           <span class="compare">{{ variant.compare_at_price | money }}</span>
         {% endif %}
       </span>
-      {% if forloop.first -%}
+      {% if forloop.first %}
         <span class="badge">MOST POPULAR!</span>
-      {%- endif %}
-      {% if forloop.last -%}
+      {% endif %}
+      {% if forloop.last %}
         <span class="badge badge-red">BEST DEAL</span>
-      {%- endif %}
+      {% endif %}
     </label>
   {%- endfor -%}
 
   {%- if block.settings.custom_product_list != blank -%}
-    {%- for custom_product in block.settings.custom_product_list -%}
-      {%- if custom_product -%}
-        <label class="product-radio-option">
-          <input
-            type="radio"
-            name="variant_or_custom"
-            value="{{ custom_product.first_available_variant.id }}"
-            data-custom="true"
-            data-price="{{ custom_product.first_available_variant.price | money }}"
-            data-compare="{{ custom_product.first_available_variant.compare_at_price | money }}"
-          >
-          <span class="title">{{ custom_product.title }}</span>
-          <span class="price">
-            {{ custom_product.first_available_variant.price | money }}
-            {% if p.first_available_variant.compare_at_price > custom_product.first_available_variant.price %}
-              <span class="compare">{{ custom_product.first_available_variant.compare_at_price | money }}</span>
-            {% endif %}
-          </span>
-        </label>
-      {%- endif -%}
-    {%- endfor -%}
+    <label class="product-radio-option">
+      <span class="title">Custom Products</span>
+      <select name="variant_or_custom" class="custom-product-dropdown">
+        <option value="" selected>Select a custom product</option>
+        {%- for custom_product in block.settings.custom_product_list -%}
+          {%- if custom_product -%}
+            <option
+              value="{{ custom_product.first_available_variant.id }}"
+              data-custom="true"
+              data-price="{{ custom_product.first_available_variant.price | money }}"
+              data-compare="{{ custom_product.first_available_variant.compare_at_price | money }}"
+            >
+              {{ custom_product.title }}
+              {% if custom_product.first_available_variant.compare_at_price
+                  > custom_product.first_available_variant.price
+              %}
+                (Compare at {{ custom_product.first_available_variant.compare_at_price | money }})
+              {% endif %}
+            </option>
+          {%- endif -%}
+        {%- endfor -%}
+      </select>
+    </label>
   {%- endif -%}
 </div>
 
