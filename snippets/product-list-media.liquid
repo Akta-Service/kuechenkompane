@@ -23,6 +23,7 @@
                 data-media-type="{{ media_obj.media_type | default: 'image' }}"
                 data-media-id="{{ media_obj.id | default: media_obj.preview_image.id }}"
                 data-aspect-ratio="{{ media_obj.preview_image.aspect_ratio | default: 1 }}"
+                data-variant-id-for-selector="{{ product_obj.selected_or_first_available_variant.id }}"
               >
                 {% render 'product-thumbnail',
                   media: media_obj,
