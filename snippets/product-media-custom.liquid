@@ -527,40 +527,53 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const inputs = document.querySelectorAll(
-      ".product-radio-options input[type='radio'], .product-radio-options select.custom-product-dropdown"
-    );
+    const container = document.querySelector('.product-radio-options');
+    const radios = container.querySelectorAll('input[type="radio"]');
+    const dropdown = container.querySelector('.custom-product-dropdown');
+    const gallery = document.querySelector('media-gallery');
 
-    inputs.forEach((input) => {
-      const logMedia = (e) => {
-        let variantId;
+    const handleSelection = (variantId, isCustom = false) => {
+      if (!gallery) return;
 
-        if (e.target.tagName.toLowerCase() === 'select') {
-          const selectedOption = e.target.options[e.target.selectedIndex];
-          variantId = selectedOption.dataset.variantId || selectedOption.dataset.variantIdForSelector;
-        } else {
-          variantId = e.target.dataset.variantId || e.target.dataset.variantIdForSelector;
-        }
+      let selectedVariant;
 
-        if (!variantId) return;
+      if (isCustom) {
+        // For custom product, find media element from data-variant-id-for-selector
+        const mediaEl = document.querySelector(`[data-variant-id-for-selector="${variantId}"]`);
+        if (!mediaEl) return;
 
-        console.log('Selected Variant ID:', variantId);
+        selectedVariant = {
+          id: Number(variantId),
+          featured_media: {
+            id: mediaEl.dataset.mediaId || mediaEl.dataset.mediaIdForSelector,
+            position: Number(mediaEl.dataset.index || 0),
+          },
+        };
+      } else {
+        // Default product
+        selectedVariant = gallery.productData.variants.find((v) => v.id === Number(variantId));
+      }
 
-        // Find media element corresponding to variant
-        const mediaElement = document.querySelector(
-          `[data-variant-id="${variantId}"], [data-variant-id-for-selector="${variantId}"]`
-        );
+      if (selectedVariant) {
+        gallery.setActiveMedia(selectedVariant);
+        console.log('Active media set for variant:', selectedVariant.id);
+      }
+    };
 
-        if (mediaElement) {
-          console.log('Matched Media Element:', mediaElement);
-          console.log('Matched Media ID:', mediaElement.dataset.mediaId || mediaElement.dataset.mediaIdForSelector);
-        } else {
-          console.warn('No media matched for variant ID:', variantId);
-        }
-      };
-
-      input.addEventListener('change', logMedia);
-      input.addEventListener('click', logMedia); // optional for dropdown click
+    // Radio buttons
+    radios.forEach((radio) => {
+      radio.addEventListener('change', (e) => {
+        handleSelection(e.target.dataset.variantId);
+      });
     });
+
+    // Dropdown
+    if (dropdown) {
+      dropdown.addEventListener('change', (e) => {
+        const selectedOption = e.target.options[e.target.selectedIndex];
+        const variantId = selectedOption.dataset.variantId || selectedOption.dataset.variantIdForSelector;
+        handleSelection(variantId, true);
+      });
+    }
   });
 </script>
