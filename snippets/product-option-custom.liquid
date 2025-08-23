@@ -154,95 +154,131 @@
 <button type="submit" class="btn">Add to cart</button>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const radios = document.querySelectorAll('input[name="variant_or_custom"]');
-    const dropdown = document.querySelector('.custom-product-dropdown');
-    const hiddenInput = document.querySelector('#selectedVariantId');
-    const priceElement = document.querySelector('.product-price'); // adjust selector
-    const compareElement = document.querySelector('.product-compare-price'); // adjust selector
+  class ProductVariantSelector {
+    constructor(container) {
+      this.container = container;
+      this.radios = container.querySelectorAll('input[name="variant_or_custom"]');
+      this.dropdown = container.querySelector('.custom-product-dropdown');
+      this.hiddenInput = container.querySelector('#selectedVariantId');
+      this.addToCartBtn = container.querySelector('.btn[type="submit"]');
+      this.priceElement = container.querySelector('.product-price');
+      this.compareElement = container.querySelector('.product-compare-price');
+      this.init();
+    }
 
-    function updateActive(selectedValue) {
-      radios.forEach((r) => {
+    init() {
+      this.setupRadios();
+      this.setupDropdown();
+      this.setupAddToCart();
+      this.initState();
+    }
+
+    setupRadios() {
+      this.radios.forEach((radio) => {
+        radio.addEventListener('change', () => {
+          this.hiddenInput.value = radio.value;
+          this.updateActive(radio.value);
+          this.onVariantChange(radio.value);
+        });
+      });
+    }
+
+    setupDropdown() {
+      if (!this.dropdown) return;
+      const wrapper = this.dropdown.closest('.product-radio-option.option-dropdown');
+
+      const updateDropdownActive = () => {
+        this.radios.forEach((r) => (r.checked = false));
+        this.updateActive(this.dropdown.value);
+        this.onVariantChange(this.dropdown.value);
+      };
+
+      this.dropdown.addEventListener('change', () => {
+        this.hiddenInput.value = this.dropdown.value;
+        updateDropdownActive();
+      });
+
+      this.dropdown.addEventListener('focus', updateDropdownActive);
+      this.dropdown.addEventListener('click', updateDropdownActive);
+    }
+
+    setupAddToCart() {
+      if (!this.addToCartBtn || !this.hiddenInput) return;
+
+      this.addToCartBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const variantId = this.hiddenInput.value;
+        if (!variantId) {
+          console.warn('No variant selected!');
+          return;
+        }
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log('Added to cart:', data);
+            document.dispatchEvent(new CustomEvent('cart-updated', { detail: data }));
+            alert(`Added ${data.quantity} × ${data.title} to cart!`);
+          })
+          .catch((err) => console.error('Error adding to cart:', err));
+      });
+    }
+
+    updateActive(selectedValue) {
+      this.radios.forEach((r) => {
         r.closest('.product-radio-option').classList.toggle('active', r.value === selectedValue);
       });
-      if (dropdown) {
-        dropdown
+      if (this.dropdown) {
+        this.dropdown
           .closest('.product-radio-option.option-dropdown')
-          .classList.toggle('active', dropdown.value === selectedValue);
+          .classList.toggle('active', this.dropdown.value === selectedValue);
       }
     }
 
-    function onVariantChange(selectedId) {
+    onVariantChange(selectedId) {
       console.log('Selected Variant ID:', selectedId);
 
-      // Dispatch event for other scripts (e.g., media update)
-      const event = new CustomEvent('variant-change', {
-        detail: { variantId: selectedId },
-      });
-      document.dispatchEvent(event);
-
-      // Update price dynamically
-      let option = null;
-      if (dropdown) {
-        option = dropdown.querySelector(`option[value="${selectedId}"]`);
-      }
-      radios.forEach((r) => {
+      // Update price/compare
+      let option = this.dropdown ? this.dropdown.querySelector(`option[value="${selectedId}"]`) : null;
+      this.radios.forEach((r) => {
         if (r.value === selectedId) option = r;
       });
 
       if (option) {
-        if (priceElement) priceElement.textContent = option.dataset.price || option.value;
-        if (compareElement) compareElement.textContent = option.dataset.compare || '';
+        if (this.priceElement) this.priceElement.textContent = option.dataset.price || option.value;
+        if (this.compareElement) this.compareElement.textContent = option.dataset.compare || '';
       }
 
-      // Example: update media
+      // Update media
       const mediaElement = document.querySelector(`[data-variant-id="${selectedId}"]`);
       if (mediaElement) {
-        // Hide all media
         document.querySelectorAll('.product-media-item').forEach((el) => (el.style.display = 'none'));
         mediaElement.style.display = 'block';
         console.log('Media ID:', mediaElement.dataset.variantId);
       }
+
+      // Dispatch variant-change event
+      const event = new CustomEvent('variant-change', { detail: { variantId: selectedId } });
+      document.dispatchEvent(event);
     }
 
-    // Radio change
-    radios.forEach((r) => {
-      r.addEventListener('change', () => {
-        hiddenInput.value = r.value;
-        updateActive(r.value);
-        onVariantChange(r.value);
-      });
+    initState() {
+      const checkedRadio = this.container.querySelector('input[name="variant_or_custom"]:checked');
+      const initialValue = checkedRadio ? checkedRadio.value : this.dropdown ? this.dropdown.value : '';
+      this.hiddenInput.value = initialValue;
+      this.updateActive(initialValue);
+      this.onVariantChange(initialValue);
+    }
+  }
+
+  // Initialize all product forms with the class
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.product-radio-options').forEach((container) => {
+      new ProductVariantSelector(container);
     });
-
-    // Dropdown change
-    if (dropdown) {
-      const dropdownWrapper = dropdown.closest('.product-radio-option.option-dropdown');
-
-      dropdown.addEventListener('change', () => {
-        hiddenInput.value = dropdown.value;
-        radios.forEach((r) => (r.checked = false));
-        updateActive(dropdown.value);
-        onVariantChange(dropdown.value);
-      });
-
-      // Make dropdown visually active on click/focus
-      dropdown.addEventListener('focus', () => {
-        radios.forEach((r) => (r.checked = false));
-        updateActive(dropdown.value);
-        onVariantChange(dropdown.value);
-      });
-      dropdown.addEventListener('click', () => {
-        radios.forEach((r) => (r.checked = false));
-        updateActive(dropdown.value);
-        onVariantChange(dropdown.value);
-      });
-    }
-
-    // Initialize on page load
-    const checkedRadio = document.querySelector('input[name="variant_or_custom"]:checked');
-    const initialValue = checkedRadio ? checkedRadio.value : dropdown ? dropdown.value : '';
-    hiddenInput.value = initialValue;
-    updateActive(initialValue);
-    onVariantChange(initialValue);
   });
 </script>
