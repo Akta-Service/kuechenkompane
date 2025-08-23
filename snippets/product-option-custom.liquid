@@ -208,34 +208,46 @@
     }
 
     setupAddToCart() {
-      if (!this.addToCartBtn) return;
+    if (!this.addToCartBtn || !this.hiddenInput) return;
 
-      this.addToCartBtn.addEventListener('click', (e) => {
+    this.addToCartBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const variantId = this.hiddenInput.value;
 
         if (!variantId) {
-          console.warn('No variant selected!');
-          return;
+        console.warn('No variant selected!');
+        return;
         }
 
+        // Check availability
+        const selectedElement = this.container.querySelector(
+        `input[value="${variantId}"], option[value="${variantId}"]`
+        );
+        const available = selectedElement?.dataset?.available === "true";
+
+        if (!available) {
+        console.warn('Selected variant is sold out!');
+        return;
+        }
+
+        // Add to cart
         fetch('/cart/add.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] }),
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] }),
         })
-          .then((res) => res.json())
-          .then((data) => {
+        .then((res) => res.json())
+        .then((data) => {
             console.log('Added to cart:', data);
-            // Update cart UI if exists
+            // Update cart drawer if exists
             const cartDrawer = document.querySelector("m-cart-drawer");
             if (cartDrawer) {
             cartDrawer.onCartDrawerUpdate(true);
             cartDrawer.open();
             }
-          })
-          .catch((err) => console.error('Error adding to cart:', err));
-      });
+        })
+        .catch((err) => console.error('Error adding to cart:', err));
+    });
     }
 
     updateActive(selectedValue) {
