@@ -105,10 +105,9 @@
 <div class="product-radio-options" {{ block.shopify_attributes }}>
   {%- for variant in product.variants -%}
     <label class="product-radio-option">
-
-    {% if Variant.metafields.custom.variant_badge != %}
-      <span class="badge">{{ Variant.metafields.custom.variant_badge }}</span>
-    {% endif %}
+      {% if Variant.metafields.custom.variant_badge != blank %}
+        <span class="badge">{{ Variant.metafields.custom.variant_badge }}</span>
+      {% endif %}
 
       <input
         type="radio"
