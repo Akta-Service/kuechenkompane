@@ -148,9 +148,8 @@
     </label>
   {%- endif -%}
   <input type="hidden" name="id" id="selectedVariantId" value="{{ product.selected_or_first_available_variant.id }}">
+  <button class="btn add-btn-custom">Add to cart</button>
 </div>
-
-<button class="btn add-btn-custom">Add to cart</button>
 
 <script>
   class ProductVariantSelector {
