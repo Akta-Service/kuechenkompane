@@ -134,12 +134,6 @@
   {%- endfor -%}
 
   {%- if block.settings.custom_product_list != blank -%}
-    {% assign first_custom_id = '' %}
-
-    {%- for custom_product in block.settings.custom_product_list -%}
-      {% assign first_custom_id = custom_product.selected_or_first_available_variant.id %}
-    {%- endfor -%}
-
     <label class="product-radio-option option-dropdown">
       <select name="variant_or_custom" class="custom-product-dropdown">
         {%- for custom_product in block.settings.custom_product_list -%}
