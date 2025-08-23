@@ -175,9 +175,7 @@
       this.radios = container.querySelectorAll('input[name="variant_or_custom"]');
       this.dropdown = container.querySelector('.custom-product-dropdown');
       this.hiddenInput = container.querySelector('#selectedVariantId');
-      this.addToCartBtn = container.querySelector('.btn add-btn-custom');
-      this.priceElement = container.querySelector('.product-price');
-      this.compareElement = container.querySelector('.product-compare-price');
+      this.addToCartBtn = container.querySelector('.btn.add-btn-custom');
       this.init();
     }
 
@@ -200,33 +198,28 @@
 
     setupDropdown() {
       if (!this.dropdown) return;
-      const wrapper = this.dropdown.closest('.product-radio-option.option-dropdown');
-
-      const updateDropdownActive = () => {
+      const updateDropdown = () => {
+        this.hiddenInput.value = this.dropdown.value;
+        // uncheck radios logically
         this.radios.forEach((r) => (r.checked = false));
         this.updateActive(this.dropdown.value);
         this.onVariantChange(this.dropdown.value);
       };
 
-      this.dropdown.addEventListener('change', () => {
-        this.hiddenInput.value = this.dropdown.value;
-        updateDropdownActive();
-      });
-
-      this.dropdown.addEventListener('focus', updateDropdownActive);
-      this.dropdown.addEventListener('click', updateDropdownActive);
+      this.dropdown.addEventListener('change', updateDropdown);
+      this.dropdown.addEventListener('focus', updateDropdown);
+      this.dropdown.addEventListener('click', updateDropdown);
     }
 
     setupAddToCart() {
-      if (!this.addToCartBtn || !this.hiddenInput) return;
+      if (!this.addToCartBtn) return;
 
       this.addToCartBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const variantId = this.hiddenInput.value;
-        console.log('variant btn clicked');
 
         if (!variantId) {
-          console.log('No variant selected!');
+          console.warn('No variant selected!');
           return;
         }
 
@@ -257,28 +250,12 @@
     onVariantChange(selectedId) {
       console.log('Selected Variant ID:', selectedId);
 
-      // Update price/compare
-      let option = this.dropdown ? this.dropdown.querySelector(`option[value="${selectedId}"]`) : null;
-      this.radios.forEach((r) => {
-        if (r.value === selectedId) option = r;
-      });
-
-      if (option) {
-        if (this.priceElement) this.priceElement.textContent = option.dataset.price || option.value;
-        if (this.compareElement) this.compareElement.textContent = option.dataset.compare || '';
-      }
-
-      // Update media
       const mediaElement = document.querySelector(`[data-variant-id="${selectedId}"]`);
       if (mediaElement) {
         document.querySelectorAll('.product-media-item').forEach((el) => (el.style.display = 'none'));
         mediaElement.style.display = 'block';
         console.log('Media ID:', mediaElement.dataset.variantId);
       }
-
-      // Dispatch variant-change event
-      const event = new CustomEvent('variant-change', { detail: { variantId: selectedId } });
-      document.dispatchEvent(event);
     }
 
     initState() {
@@ -290,7 +267,7 @@
     }
   }
 
-  // Initialize all product forms with the class
+  // Initialize
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.product-radio-options').forEach((container) => {
       new ProductVariantSelector(container);
