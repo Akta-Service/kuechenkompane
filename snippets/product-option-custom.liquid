@@ -251,7 +251,7 @@
           if (isDropdownRadio && this.dropdown) {
             // Dropdown radio clicked → show dropdown
             this.setDropdownVisibility(true);
-            this.dropdownRadio.value = this.dropdown.value; // sync value
+            this.dropdownRadio.value = this.dropdown.value;
             this.hiddenInput.value = this.dropdown.value;
             this.updateActive(this.dropdown.value);
             this.updateVariant(this.dropdown.value);
@@ -277,7 +277,7 @@
         if (this.dropdownRadio) {
           this.radios.forEach((r) => (r.checked = false));
           this.dropdownRadio.checked = true;
-          this.dropdownRadio.value = selectedId; // sync value
+          this.dropdownRadio.value = selectedId;
         }
 
         this.setDropdownVisibility(true);
