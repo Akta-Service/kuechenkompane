@@ -214,7 +214,7 @@
       if (!this.dropdown) return;
       const updateDropdown = () => {
         this.hiddenInput.value = this.dropdown.value;
-        this.radios.forEach((r) => (r.checked = false));
+        {% comment %} this.radios.forEach((r) => (r.checked = false)); {% endcomment %}
         this.updateActive(this.dropdown.value);
         this.onVariantChange(this.dropdown.value);
         
