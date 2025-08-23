@@ -164,6 +164,12 @@
         data-available="{{ block.settings.custom_product_list.first.selected_or_first_available_variant.available }}"
       >
       <span class="title">1pcs</span>
+      <span class="price">
+        {{ variant.price | money }}
+        {% if variant.compare_at_price > variant.price %}
+          <span class="compare">{{ variant.compare_at_price | money }}</span>
+        {% endif %}
+      </span>
       <div class="custom-products-list">
         <select name="variant_or_custom" class="custom-product-dropdown">
           {%- for custom_product in block.settings.custom_product_list -%}
