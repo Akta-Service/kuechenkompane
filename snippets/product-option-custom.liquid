@@ -108,6 +108,9 @@
   label.product-radio-option.option-dropdown {
     display: block;
   }
+  label.product-radio-option.option-dropdown span.title {
+    margin-left: 5px;
+  }
 </style>
 <div class="product-radio-options" {{ block.shopify_attributes }}>
   {%- for variant in product.variants -%}
