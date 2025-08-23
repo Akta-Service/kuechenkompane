@@ -198,10 +198,19 @@
   class ProductVariantSelector {
     constructor(container) {
       this.container = container;
+
+      // Cache elements
       this.radios = container.querySelectorAll('input[name="variant_or_custom"]');
-      this.dropdown = container.querySelector('.custom-product-dropdown');
+      this.dropdownContainer = container.querySelector('.product-radio-option.option-dropdown');
+      this.dropdownRadio = this.dropdownContainer ? this.dropdownContainer.querySelector('input[type="radio"]') : null;
+      this.dropdownListWrap = this.dropdownContainer
+        ? this.dropdownContainer.querySelector('.custom-products-list')
+        : null;
+      this.dropdown = this.dropdownContainer ? this.dropdownContainer.querySelector('.custom-product-dropdown') : null;
+
       this.hiddenInput = container.querySelector('#selectedVariantId');
       this.addToCartBtn = container.querySelector('.btn.add-btn-custom');
+
       this.init();
     }
 
@@ -212,19 +221,30 @@
       this.initState();
     }
 
+    // Show/Hide the custom select
+    setDropdownVisibility(show) {
+      if (!this.dropdownListWrap) return;
+      this.dropdownListWrap.style.display = show ? 'block' : 'none';
+    }
+
     setupRadios() {
       this.radios.forEach((radio) => {
         radio.addEventListener('change', () => {
-          this.hiddenInput.value = radio.value;
-          this.updateActive(radio.value);
-          this.onVariantChange(radio.value);
+          const clickedIsDropdownRadio = this.dropdownRadio && radio === this.dropdownRadio;
 
-          // ✅ Show dropdown only if "1pcs" radio (the dropdown radio) is clicked
-          const isDropdownRadio = radio.closest('.option-dropdown');
-          if (isDropdownRadio) {
-            this.container.querySelector('.custom-products-list').style.display = 'block';
+          if (clickedIsDropdownRadio && this.dropdown) {
+            // Keep dropdown radio checked and sync its value to the select's value
+            this.dropdownRadio.value = this.dropdown.value;
+            this.hiddenInput.value = this.dropdown.value;
+            this.setDropdownVisibility(true);
+            this.updateActive(this.dropdown.value);
+            this.onVariantChange(this.dropdown.value);
           } else {
-            this.container.querySelector('.custom-products-list').style.display = 'none';
+            // Normal variant radio
+            this.hiddenInput.value = radio.value;
+            this.setDropdownVisibility(false);
+            this.updateActive(radio.value);
+            this.onVariantChange(radio.value);
           }
         });
       });
@@ -232,18 +252,18 @@
 
     setupDropdown() {
       if (!this.dropdown) return;
-      const updateDropdown = () => {
-        this.hiddenInput.value = this.dropdown.value;
 
-        // ✅ Make sure dropdown’s radio stays checked
-        const dropdownRadio = this.dropdown.closest('.product-radio-option').querySelector('input[type="radio"]');
-        if (dropdownRadio) {
-          // Uncheck other radios first
+      const updateDropdown = () => {
+        // Always sync dropdown radio's value to match the selected option
+        if (this.dropdownRadio) {
+          // Uncheck others, check only the dropdown radio
           this.radios.forEach((r) => (r.checked = false));
-          // Then check only the dropdown radio
-          dropdownRadio.checked = true;
+          this.dropdownRadio.value = this.dropdown.value;
+          this.dropdownRadio.checked = true;
         }
 
+        this.hiddenInput.value = this.dropdown.value;
+        this.setDropdownVisibility(true);
         this.updateActive(this.dropdown.value);
         this.onVariantChange(this.dropdown.value);
       };
@@ -258,22 +278,13 @@
       this.addToCartBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const variantId = this.hiddenInput.value;
+        if (!variantId) return console.warn('No variant selected!');
 
-        if (!variantId) {
-          console.warn('No variant selected!');
-          return;
-        }
-
-        // Check availability before adding
         const selectedElement = this.container.querySelector(
           `input[value="${variantId}"], option[value="${variantId}"]`
         );
         const available = selectedElement?.dataset?.available === 'true';
-
-        if (!available) {
-          console.warn('Selected variant is sold out!');
-          return;
-        }
+        if (!available) return console.warn('Selected variant is sold out!');
 
         fetch('/cart/add.js', {
           method: 'POST',
@@ -294,11 +305,13 @@
     }
 
     updateActive(selectedValue) {
+      // Toggle active and checked states for radios
       this.radios.forEach((r) => {
         r.closest('.product-radio-option').classList.toggle('active', r.value === selectedValue);
         r.checked = r.value === selectedValue;
       });
 
+      // Keep dropdown container visually active if its select value is chosen
       if (this.dropdown) {
         this.dropdown
           .closest('.product-radio-option.option-dropdown')
@@ -307,17 +320,14 @@
     }
 
     onVariantChange(selectedId) {
-      console.log('Selected Variant ID:', selectedId);
-
-      // Update media
+      // Media swap (optional)
       const mediaElement = document.querySelector(`[data-variant-id="${selectedId}"]`);
       if (mediaElement) {
         document.querySelectorAll('.product-media-item').forEach((el) => (el.style.display = 'none'));
         mediaElement.style.display = 'block';
-        console.log('Media ID:', mediaElement.dataset.variantId);
       }
 
-      // Update Add to Cart button based on availability
+      // Update Add to Cart state
       if (this.addToCartBtn && this.hiddenInput) {
         const selectedElement = this.container.querySelector(
           `input[value="${selectedId}"], option[value="${selectedId}"]`
@@ -338,22 +348,34 @@
 
     initState() {
       const checkedRadio = this.container.querySelector('input[name="variant_or_custom"]:checked');
-      const initialValue = checkedRadio ? checkedRadio.value : this.dropdown ? this.dropdown.value : '';
-      this.hiddenInput.value = initialValue;
-      this.updateActive(initialValue);
-      this.onVariantChange(initialValue);
+      const dropdownIsChecked = checkedRadio && this.dropdownRadio && checkedRadio === this.dropdownRadio;
 
-      // ✅ Handle dropdown visibility on page load
-      const isDropdownRadio = checkedRadio && checkedRadio.closest('.option-dropdown');
-      if (isDropdownRadio) {
-        this.container.querySelector('.custom-products-list').style.display = 'block';
-      } else {
-        this.container.querySelector('.custom-products-list').style.display = 'none';
+      // Ensure dropdown radio has the right value from the start
+      if (this.dropdown && this.dropdownRadio) {
+        this.dropdownRadio.value = this.dropdown.value;
       }
+
+      const initialValue = dropdownIsChecked
+        ? this.dropdown
+          ? this.dropdown.value
+          : ''
+        : checkedRadio
+        ? checkedRadio.value
+        : this.dropdown
+        ? this.dropdown.value
+        : '';
+
+      if (initialValue) {
+        this.hiddenInput.value = initialValue;
+        this.updateActive(initialValue);
+        this.onVariantChange(initialValue);
+      }
+
+      // Show/hide dropdown on load
+      this.setDropdownVisibility(!!dropdownIsChecked);
     }
   }
 
-  // Initialize all product forms
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.product-radio-options').forEach((container) => {
       new ProductVariantSelector(container);
