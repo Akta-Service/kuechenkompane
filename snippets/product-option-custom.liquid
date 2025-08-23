@@ -151,7 +151,7 @@
 
 <input type="hidden" name="id" id="selectedVariantId" value="{{ product.selected_or_first_available_variant.id }}">
 
-<button type="submit" class="btn">Add to cart</button>
+<button class="btn add-btn-custom">Add to cart</button>
 
 <script>
   class ProductVariantSelector {
@@ -160,7 +160,7 @@
       this.radios = container.querySelectorAll('input[name="variant_or_custom"]');
       this.dropdown = container.querySelector('.custom-product-dropdown');
       this.hiddenInput = container.querySelector('#selectedVariantId');
-      this.addToCartBtn = container.querySelector('.btn[type="submit"]');
+      this.addToCartBtn = container.querySelector('.btn add-btn-custom');
       this.priceElement = container.querySelector('.product-price');
       this.compareElement = container.querySelector('.product-compare-price');
       this.init();
