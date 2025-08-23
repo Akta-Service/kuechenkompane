@@ -196,64 +196,62 @@
       if (!this.dropdown) return;
       const updateDropdown = () => {
         this.hiddenInput.value = this.dropdown.value;
-        // uncheck radios logically
         this.radios.forEach((r) => (r.checked = false));
         this.updateActive(this.dropdown.value);
         this.onVariantChange(this.dropdown.value);
       };
 
       this.dropdown.addEventListener('change', updateDropdown);
-      {% comment %} this.dropdown.addEventListener('focus', updateDropdown); {% endcomment %}
       this.dropdown.addEventListener('click', updateDropdown);
     }
 
     setupAddToCart() {
-    if (!this.addToCartBtn || !this.hiddenInput) return;
+      if (!this.addToCartBtn || !this.hiddenInput) return;
 
-    this.addToCartBtn.addEventListener('click', (e) => {
+      this.addToCartBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const variantId = this.hiddenInput.value;
 
         if (!variantId) {
-        console.warn('No variant selected!');
-        return;
+          console.warn('No variant selected!');
+          return;
         }
 
-        // Check availability
+        // Check availability before adding
         const selectedElement = this.container.querySelector(
-        `input[value="${variantId}"], option[value="${variantId}"]`
+          `input[value="${variantId}"], option[value="${variantId}"]`
         );
-        const available = selectedElement?.dataset?.available === "true";
+        const available = selectedElement?.dataset?.available === 'true';
 
         if (!available) {
-        console.warn('Selected variant is sold out!');
-        return;
+          console.warn('Selected variant is sold out!');
+          return;
         }
 
-        // Add to cart
         fetch('/cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] }),
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] }),
         })
-        .then((res) => res.json())
-        .then((data) => {
+          .then((res) => res.json())
+          .then((data) => {
             console.log('Added to cart:', data);
-            // Update cart drawer if exists
-            const cartDrawer = document.querySelector("m-cart-drawer");
+            const cartDrawer = document.querySelector('m-cart-drawer');
             if (cartDrawer) {
-            cartDrawer.onCartDrawerUpdate(true);
-            cartDrawer.open();
+              cartDrawer.onCartDrawerUpdate(true);
+              cartDrawer.open();
             }
-        })
-        .catch((err) => console.error('Error adding to cart:', err));
-    });
+          })
+          .catch((err) => console.error('Error adding to cart:', err));
+      });
     }
 
     updateActive(selectedValue) {
       this.radios.forEach((r) => {
         r.closest('.product-radio-option').classList.toggle('active', r.value === selectedValue);
+        r.checked = r.value === selectedValue;
       });
+
       if (this.dropdown) {
         this.dropdown
           .closest('.product-radio-option.option-dropdown')
@@ -264,11 +262,30 @@
     onVariantChange(selectedId) {
       console.log('Selected Variant ID:', selectedId);
 
+      // Update media
       const mediaElement = document.querySelector(`[data-variant-id="${selectedId}"]`);
       if (mediaElement) {
         document.querySelectorAll('.product-media-item').forEach((el) => (el.style.display = 'none'));
         mediaElement.style.display = 'block';
         console.log('Media ID:', mediaElement.dataset.variantId);
+      }
+
+      // Update Add to Cart button based on availability
+      if (this.addToCartBtn && this.hiddenInput) {
+        const selectedElement = this.container.querySelector(
+          `input[value="${selectedId}"], option[value="${selectedId}"]`
+        );
+        const available = selectedElement?.dataset?.available === 'true';
+
+        if (!available) {
+          this.addToCartBtn.disabled = true;
+          this.addToCartBtn.textContent = 'Sold Out';
+          this.addToCartBtn.classList.add('btn-disabled');
+        } else {
+          this.addToCartBtn.disabled = false;
+          this.addToCartBtn.textContent = 'Add to cart';
+          this.addToCartBtn.classList.remove('btn-disabled');
+        }
       }
     }
 
@@ -281,7 +298,7 @@
     }
   }
 
-  // Initialize
+  // Initialize all product forms
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.product-radio-options').forEach((container) => {
       new ProductVariantSelector(container);
