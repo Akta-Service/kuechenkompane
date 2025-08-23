@@ -200,11 +200,6 @@
                 data-variant-id="{{ custom_product.selected_or_first_available_variant.id }}"
               >
                 {{ custom_product.title }}
-                {% if custom_product.first_available_variant.compare_at_price
-                    > custom_product.first_available_variant.price
-                %}
-                  (Compare at {{ custom_product.first_available_variant.compare_at_price | money }})
-                {% endif %}
               </option>
             {%- endif -%}
           {%- endfor -%}
