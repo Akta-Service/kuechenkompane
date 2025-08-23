@@ -123,8 +123,9 @@
       >
       <span class="title">{{ variant.title }}</span>
 
-      <img src="{{  }}" alt="variant-image">
-
+      {% if variant.metafields.custom.variant_badge != blank %}
+        <img src="{{ variant.metafields.custom.variant_image }}" alt="variant-image">
+      {% endif %}
       <span class="price">
         {{ variant.price | money }}
         {% if variant.compare_at_price > variant.price %}
