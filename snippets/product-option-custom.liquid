@@ -116,6 +116,7 @@
         data-available="{{ variant.available }}"
         data-price="{{ variant.price | money }}"
         data-compare="{{ variant.compare_at_price | money }}"
+        data-variant-id="{{ variant.id }}"
       >
       <span class="title">{{ variant.title }}</span>
       <span class="price">
@@ -147,6 +148,7 @@
                 selected
               {% endif %}
               data-available="{{ custom_product.selected_or_first_available_variant.available }}"
+              data-variant-id="{{ custom_product.selected_or_first_available_variant.id }}"
             >
               {{ custom_product.title }}
               {% if custom_product.first_available_variant.compare_at_price
