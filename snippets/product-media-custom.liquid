@@ -527,21 +527,45 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const radios = document.querySelectorAll(".product-radio-options input[type='radio']");
+    const radios = document.querySelectorAll(
+      ".product-radio-options input[type='radio'], .product-radio-options select.custom-product-dropdown"
+    );
 
-    radios.forEach((radio) => {
-      radio.addEventListener('change', (e) => {
-        const variantId = e.target.dataset.variantId;
+    radios.forEach((input) => {
+      const updateMedia = (e) => {
+        let variantId = e.target.dataset.variantId;
+
+        // For <select> dropdowns, get the selected option's variant ID
+        if (e.target.tagName.toLowerCase() === 'select') {
+          const selectedOption = e.target.options[e.target.selectedIndex];
+          variantId = selectedOption.dataset.variantId || selectedOption.dataset.variantIdForSelector;
+        }
+
+        // fallback for radio buttons: check data-variant-id-for-selector
+        if (!variantId) {
+          variantId = e.target.dataset.variantIdForSelector;
+        }
+
+        if (!variantId) return;
+
         const gallery = document.querySelector('media-gallery');
 
-        if (gallery && gallery.productData && gallery.productData.variants) {
-          const selectedVariant = gallery.productData.variants.find((v) => v.id === Number(variantId));
+        if (gallery && gallery.productData) {
+          // Try to find the variant in productData variants
+          let selectedVariant = gallery.productData.variants.find((v) => v.id === Number(variantId));
 
-          if (selectedVariant) {
-            gallery.setActiveMedia(selectedVariant);
+          // If not found, fallback to a custom variant placeholder
+          if (!selectedVariant) {
+            // Optionally, you can create a minimal object to pass to setActiveMedia
+            selectedVariant = { id: Number(variantId), featured_media: null };
           }
+
+          gallery.setActiveMedia(selectedVariant);
         }
-      });
+      };
+
+      input.addEventListener('change', updateMedia);
+      input.addEventListener('click', updateMedia); // optional for dropdown
     });
   });
 </script>
