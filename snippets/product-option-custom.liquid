@@ -253,37 +253,16 @@
       }
     }
 
- onVariantChange(selectedId) {
-  console.log('Selected Variant ID:', selectedId);
+    onVariantChange(selectedId) {
+      console.log('Selected Variant ID:', selectedId);
 
-  // Update media
-  const mediaElement = document.querySelector(`[data-variant-id="${selectedId}"]`);
-  if(mediaElement){
-    document.querySelectorAll('.product-media-item').forEach(el => el.style.display = 'none');
-    mediaElement.style.display = 'block';
-    console.log('Media ID:', mediaElement.dataset.variantId);
-  }
-
-  // Check availability
-  const selectedOption = this.container.querySelector(
-    `input[value="${selectedId}"], option[value="${selectedId}"]`
-  );
-  const available = selectedOption?.dataset?.available === "true";
-
-  console.log(available)
-
-  if(this.addToCartBtn){
-    if(!available){
-      this.addToCartBtn.disabled = true;
-      this.addToCartBtn.textContent = "Sold Out";
-      this.addToCartBtn.classList.add('btn-disabled');
-    } else {
-      this.addToCartBtn.disabled = false;
-      this.addToCartBtn.textContent = "Add to cart";
-      this.addToCartBtn.classList.remove('btn-disabled');
+      const mediaElement = document.querySelector(`[data-variant-id="${selectedId}"]`);
+      if (mediaElement) {
+        document.querySelectorAll('.product-media-item').forEach((el) => (el.style.display = 'none'));
+        mediaElement.style.display = 'block';
+        console.log('Media ID:', mediaElement.dataset.variantId);
+      }
     }
-  }
-}
 
     initState() {
       const checkedRadio = this.container.querySelector('input[name="variant_or_custom"]:checked');
