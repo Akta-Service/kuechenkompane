@@ -150,32 +150,34 @@
         type="radio"
         name="variant_or_custom"
       >
-      <span class="title">1pcs</span>
+      <div>
+        <span class="title">1pcs</span>
 
-      <select name="variant_or_custom" class="custom-product-dropdown">
-        {%- for custom_product in block.settings.custom_product_list -%}
-          {%- if custom_product -%}
-            <option
-              value="{{ custom_product.selected_or_first_available_variant.id }}"
-              data-custom="true"
-              data-price="{{ custom_product.first_available_variant.price | money }}"
-              data-compare="{{ custom_product.first_available_variant.compare_at_price | money }}"
-              {% if forloop.first %}
-                selected
-              {% endif %}
-              data-available="{{ custom_product.selected_or_first_available_variant.available }}"
-              data-variant-id="{{ custom_product.selected_or_first_available_variant.id }}"
-            >
-              {{ custom_product.title }}
-              {% if custom_product.first_available_variant.compare_at_price
-                  > custom_product.first_available_variant.price
-              %}
-                (Compare at {{ custom_product.first_available_variant.compare_at_price | money }})
-              {% endif %}
-            </option>
-          {%- endif -%}
-        {%- endfor -%}
-      </select>
+        <select name="variant_or_custom" class="custom-product-dropdown">
+          {%- for custom_product in block.settings.custom_product_list -%}
+            {%- if custom_product -%}
+              <option
+                value="{{ custom_product.selected_or_first_available_variant.id }}"
+                data-custom="true"
+                data-price="{{ custom_product.first_available_variant.price | money }}"
+                data-compare="{{ custom_product.first_available_variant.compare_at_price | money }}"
+                {% if forloop.first %}
+                  selected
+                {% endif %}
+                data-available="{{ custom_product.selected_or_first_available_variant.available }}"
+                data-variant-id="{{ custom_product.selected_or_first_available_variant.id }}"
+              >
+                {{ custom_product.title }}
+                {% if custom_product.first_available_variant.compare_at_price
+                    > custom_product.first_available_variant.price
+                %}
+                  (Compare at {{ custom_product.first_available_variant.compare_at_price | money }})
+                {% endif %}
+              </option>
+            {%- endif -%}
+          {%- endfor -%}
+        </select>
+      </div>
     </label>
   {%- endif -%}
   <input type="hidden" name="id" id="selectedVariantId" value="{{ product.selected_or_first_available_variant.id }}">
