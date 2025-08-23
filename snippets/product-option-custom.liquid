@@ -183,6 +183,15 @@
       });
     }
 
+    dropdown.addEventListener('focus', () => {
+      radios.forEach((r) => (r.checked = false));
+      updateActive(dropdown.value);
+    });
+    dropdown.addEventListener('click', () => {
+      radios.forEach((r) => (r.checked = false));
+      updateActive(dropdown.value);
+    });
+
     // Initialize active state on page load
     const checkedRadio = document.querySelector('input[name="variant_or_custom"]:checked');
     const initialValue = checkedRadio ? checkedRadio.value : dropdown ? dropdown.value : '';
