@@ -124,6 +124,12 @@
   .selected-variant-price {
     margin-left: auto;
   }
+  span.dp-p-compare-price.compare {
+    text-decoration: line-through;
+    margin-left: 8px;
+    color: #999;
+    font-weight: normal;
+  }
 </style>
 <div class="product-radio-options" {{ block.shopify_attributes }}>
   {%- for variant in product.variants -%}
