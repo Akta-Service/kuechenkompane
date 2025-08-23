@@ -106,23 +106,21 @@
 
   {%- if block.settings.custom_product_list != blank -%}
     {%- for custom_product in block.settings.custom_product_list -%}
-      {{ custom_product.title }}
-
-      {%- if p and p.available -%}
+      {%- if custom_product and custom_product.available -%}
         <label class="product-radio-option">
           <input
             type="radio"
             name="variant_or_custom"
-            value="{{ p.first_available_variant.id }}"
+            value="{{ custom_product.first_available_variant.id }}"
             data-custom="true"
-            data-price="{{ p.first_available_variant.price | money }}"
-            data-compare="{{ p.first_available_variant.compare_at_price | money }}"
+            data-price="{{ custom_product.first_available_variant.price | money }}"
+            data-compare="{{ custom_product.first_available_variant.compare_at_price | money }}"
           >
-          <span class="title">{{ p.title }}</span>
+          <span class="title">{{ custom_product.title }}</span>
           <span class="price">
-            {{ p.first_available_variant.price | money }}
-            {% if p.first_available_variant.compare_at_price > p.first_available_variant.price %}
-              <span class="compare">{{ p.first_available_variant.compare_at_price | money }}</span>
+            {{ custom_product.first_available_variant.price | money }}
+            {% if p.first_available_variant.compare_at_price > custom_product.first_available_variant.price %}
+              <span class="compare">{{ custom_product.first_available_variant.compare_at_price | money }}</span>
             {% endif %}
           </span>
         </label>
