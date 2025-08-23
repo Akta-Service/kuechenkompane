@@ -75,7 +75,7 @@
   }
 </style>
 
-<div class="product-radio-options">
+<div class="product-radio-options" {{ block.shopify_attributes }}>
   {%- for variant in product.variants -%}
     <label class="product-radio-option">
       <input
