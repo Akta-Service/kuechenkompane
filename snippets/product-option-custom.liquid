@@ -159,6 +159,7 @@
       <input
         type="radio"
         name="variant_or_custom"
+        value="{{ block.settings.custom_product_list.first.selected_or_first_available_variant.id }}"
       >
       <span class="title">1pcs</span>
       <div class="custom-products-list">
@@ -229,28 +230,27 @@
       });
     }
 
- setupDropdown() {
-  if (!this.dropdown) return;
-  const updateDropdown = () => {
-    this.hiddenInput.value = this.dropdown.value;
+    setupDropdown() {
+      if (!this.dropdown) return;
+      const updateDropdown = () => {
+        this.hiddenInput.value = this.dropdown.value;
 
-    // ✅ Make sure dropdown’s radio stays checked
-    const dropdownRadio = this.dropdown.closest('.product-radio-option').querySelector('input[type="radio"]');
-    if (dropdownRadio) {
-      // Uncheck other radios first
-      this.radios.forEach((r) => (r.checked = false));
-      // Then check only the dropdown radio
-      dropdownRadio.checked = true;
+        // ✅ Make sure dropdown’s radio stays checked
+        const dropdownRadio = this.dropdown.closest('.product-radio-option').querySelector('input[type="radio"]');
+        if (dropdownRadio) {
+          // Uncheck other radios first
+          this.radios.forEach((r) => (r.checked = false));
+          // Then check only the dropdown radio
+          dropdownRadio.checked = true;
+        }
+
+        this.updateActive(this.dropdown.value);
+        this.onVariantChange(this.dropdown.value);
+      };
+
+      this.dropdown.addEventListener('change', updateDropdown);
+      this.dropdown.addEventListener('click', updateDropdown);
     }
-
-    this.updateActive(this.dropdown.value);
-    this.onVariantChange(this.dropdown.value);
-  };
-
-  this.dropdown.addEventListener('change', updateDropdown);
-  this.dropdown.addEventListener('click', updateDropdown);
-}
-
 
     setupAddToCart() {
       if (!this.addToCartBtn || !this.hiddenInput) return;
