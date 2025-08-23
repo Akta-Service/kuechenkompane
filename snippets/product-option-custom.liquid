@@ -149,10 +149,6 @@
       <input
         type="radio"
         name="variant_or_custom"
-        value="{{ variant.id }}"
-        {% if forloop.first %}
-          checked
-        {% endif %}
       >
 
       <select name="variant_or_custom" class="custom-product-dropdown">
@@ -213,7 +209,7 @@
       });
     }
 
-    setupDropdown() {
+    {% comment %} setupDropdown() {
       if (!this.dropdown) return;
       const updateDropdown = () => {
         this.hiddenInput.value = this.dropdown.value;
@@ -224,7 +220,32 @@
 
       this.dropdown.addEventListener('change', updateDropdown);
       this.dropdown.addEventListener('click', updateDropdown);
+    } {% endcomment %}
+
+    setupDropdown() {
+      if (!this.dropdown) return;
+      const updateDropdown = () => {
+        this.hiddenInput.value = this.dropdown.value;
+
+        // Clear other radios
+        this.radios.forEach((r) => (r.checked = false));
+
+        // ✅ Check the radio that belongs to the dropdown
+        const dropdownRadio = this.dropdown.closest('.product-radio-option').querySelector('input[type="radio"]');
+        if (dropdownRadio) {
+          dropdownRadio.checked = true;
+        }
+
+        this.updateActive(this.dropdown.value);
+        this.onVariantChange(this.dropdown.value);
+      };
+
+      this.dropdown.addEventListener('change', updateDropdown);
+      this.dropdown.addEventListener('click', updateDropdown);
     }
+
+
+
 
     setupAddToCart() {
       if (!this.addToCartBtn || !this.hiddenInput) return;
