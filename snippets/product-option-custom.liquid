@@ -116,6 +116,11 @@
   .custom-products-list {
     display: none;
   }
+  .option-dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 </style>
 <div class="product-radio-options" {{ block.shopify_attributes }}>
   {%- for variant in product.variants -%}
