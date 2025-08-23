@@ -146,6 +146,15 @@
 
   {%- if block.settings.custom_product_list != blank -%}
     <label class="product-radio-option option-dropdown">
+      <input
+        type="radio"
+        name="variant_or_custom"
+        value="{{ variant.id }}"
+        {% if forloop.first %}
+          checked
+        {% endif %}
+      >
+
       <select name="variant_or_custom" class="custom-product-dropdown">
         {%- for custom_product in block.settings.custom_product_list -%}
           {%- if custom_product -%}
