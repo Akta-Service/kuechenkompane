@@ -217,35 +217,24 @@
           this.hiddenInput.value = radio.value;
           this.updateActive(radio.value);
           this.onVariantChange(radio.value);
+
+          // ✅ Show dropdown only if "1pcs" radio (the dropdown radio) is clicked
+          const isDropdownRadio = radio.closest('.option-dropdown');
+          if (isDropdownRadio) {
+            this.container.querySelector('.custom-products-list').style.display = 'block';
+          } else {
+            this.container.querySelector('.custom-products-list').style.display = 'none';
+          }
         });
       });
     }
 
-     setupDropdown() {      
-      if (!this.dropdown) return;
-      const updateDropdown = () => {
-        this.hiddenInput.value = this.dropdown.value;
-        {% comment %} this.radios.forEach((r) => (r.checked = false)); {% endcomment %}
-        this.updateActive(this.dropdown.value);
-        this.onVariantChange(this.dropdown.value);
-        
-      };
-
-      this.dropdown.addEventListener('change', updateDropdown);
-      this.dropdown.addEventListener('click', updateDropdown);
-    } 
-
-    
-
-    {% comment %} setupDropdown() {
+    setupDropdown() {
       if (!this.dropdown) return;
       const updateDropdown = () => {
         this.hiddenInput.value = this.dropdown.value;
 
-        // Clear other radios
-        this.radios.forEach((r) => (r.checked = false));
-
-        // ✅ Check the radio that belongs to the dropdown
+        // ✅ Ensure the dropdown's radio is checked
         const dropdownRadio = this.dropdown.closest('.product-radio-option').querySelector('input[type="radio"]');
         if (dropdownRadio) {
           dropdownRadio.checked = true;
@@ -258,9 +247,6 @@
       this.dropdown.addEventListener('change', updateDropdown);
       this.dropdown.addEventListener('click', updateDropdown);
     }
- {% endcomment %}
-
-
 
     setupAddToCart() {
       if (!this.addToCartBtn || !this.hiddenInput) return;
@@ -352,6 +338,14 @@
       this.hiddenInput.value = initialValue;
       this.updateActive(initialValue);
       this.onVariantChange(initialValue);
+
+      // ✅ Handle dropdown visibility on page load
+      const isDropdownRadio = checkedRadio && checkedRadio.closest('.option-dropdown');
+      if (isDropdownRadio) {
+        this.container.querySelector('.custom-products-list').style.display = 'block';
+      } else {
+        this.container.querySelector('.custom-products-list').style.display = 'none';
+      }
     }
   }
 
