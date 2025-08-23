@@ -157,16 +157,18 @@
 
   {%- if block.settings.custom_product_list != blank -%}
     <label class="product-radio-option option-dropdown">
-      <input
-        type="radio"
-        name="variant_or_custom"
-        value="{{ block.settings.custom_product_list.first.selected_or_first_available_variant.id }}"
-        data-available="{{ block.settings.custom_product_list.first.selected_or_first_available_variant.available }}"
-      >
-      <span class="title">1pcs</span>
-      <div class="selected-variant-price">
-        <span class="price-value"></span>
-        <span class="compare-price"></span>
+      <div>
+        <input
+          type="radio"
+          name="variant_or_custom"
+          value="{{ block.settings.custom_product_list.first.selected_or_first_available_variant.id }}"
+          data-available="{{ block.settings.custom_product_list.first.selected_or_first_available_variant.available }}"
+        >
+        <span class="title">1pcs</span>
+        <div class="selected-variant-price">
+          <span class="price-value"></span>
+          <span class="compare-price"></span>
+        </div>
       </div>
       <div class="custom-products-list">
         <select name="variant_or_custom" class="custom-product-dropdown">
