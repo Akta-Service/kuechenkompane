@@ -1,63 +1,61 @@
-<form method="post" action="/cart/add" id="product-form-{{ section.id }}">
-  <div class="product-radio-options">
-    {%- for variant in product.variants -%}
-      <label class="product-radio-option">
-        <input
-          type="radio"
-          name="variant_or_custom"
-          value="{{ variant.id }}"
-          {% if forloop.first %}
-            checked
-          {% endif %}
-          data-price="{{ variant.price | money }}"
-          data-compare="{{ variant.compare_at_price | money }}"
-        >
-        <span class="title">{{ variant.title }}</span>
-        <span class="price">
-          {{ variant.price | money }}
-          {% if variant.compare_at_price > variant.price %}
-            <span class="compare">{{ variant.compare_at_price | money }}</span>
-          {% endif %}
-        </span>
-        {% if forloop.first -%}
-          <span class="badge">MOST POPULAR!</span>
-        {%- endif %}
-        {% if forloop.last -%}
-          <span class="badge badge-red">BEST DEAL</span>
-        {%- endif %}
-      </label>
+<div class="product-radio-options">
+  {%- for variant in product.variants -%}
+    <label class="product-radio-option">
+      <input
+        type="radio"
+        name="variant_or_custom"
+        value="{{ variant.id }}"
+        {% if forloop.first %}
+          checked
+        {% endif %}
+        data-price="{{ variant.price | money }}"
+        data-compare="{{ variant.compare_at_price | money }}"
+      >
+      <span class="title">{{ variant.title }}</span>
+      <span class="price">
+        {{ variant.price | money }}
+        {% if variant.compare_at_price > variant.price %}
+          <span class="compare">{{ variant.compare_at_price | money }}</span>
+        {% endif %}
+      </span>
+      {% if forloop.first -%}
+        <span class="badge">MOST POPULAR!</span>
+      {%- endif %}
+      {% if forloop.last -%}
+        <span class="badge badge-red">BEST DEAL</span>
+      {%- endif %}
+    </label>
+  {%- endfor -%}
+
+  {%- if section.settings.custom_product_list != blank -%}
+    {%- for custom_product in section.settings.custom_product_list -%}
+      {%- assign p = all_products[custom_product] -%}
+      {%- if p and p.available -%}
+        <label class="product-radio-option">
+          <input
+            type="radio"
+            name="variant_or_custom"
+            value="{{ p.first_available_variant.id }}"
+            data-custom="true"
+            data-price="{{ p.first_available_variant.price | money }}"
+            data-compare="{{ p.first_available_variant.compare_at_price | money }}"
+          >
+          <span class="title">{{ p.title }}</span>
+          <span class="price">
+            {{ p.first_available_variant.price | money }}
+            {% if p.first_available_variant.compare_at_price > p.first_available_variant.price %}
+              <span class="compare">{{ p.first_available_variant.compare_at_price | money }}</span>
+            {% endif %}
+          </span>
+        </label>
+      {%- endif -%}
     {%- endfor -%}
+  {%- endif -%}
+</div>
 
-    {%- if section.settings.custom_product_list != blank -%}
-      {%- for custom_product in section.settings.custom_product_list -%}
-        {%- assign p = all_products[custom_product] -%}
-        {%- if p and p.available -%}
-          <label class="product-radio-option">
-            <input
-              type="radio"
-              name="variant_or_custom"
-              value="{{ p.first_available_variant.id }}"
-              data-custom="true"
-              data-price="{{ p.first_available_variant.price | money }}"
-              data-compare="{{ p.first_available_variant.compare_at_price | money }}"
-            >
-            <span class="title">{{ p.title }}</span>
-            <span class="price">
-              {{ p.first_available_variant.price | money }}
-              {% if p.first_available_variant.compare_at_price > p.first_available_variant.price %}
-                <span class="compare">{{ p.first_available_variant.compare_at_price | money }}</span>
-              {% endif %}
-            </span>
-          </label>
-        {%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-  </div>
+<input type="hidden" name="id" id="selectedVariantId" value="{{ product.selected_or_first_available_variant.id }}">
 
-  <input type="hidden" name="id" id="selectedVariantId" value="{{ product.selected_or_first_available_variant.id }}">
-
-  <button type="submit" class="btn">Add to cart</button>
-</form>
+<button type="submit" class="btn">Add to cart</button>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
