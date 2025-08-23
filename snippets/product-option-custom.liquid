@@ -108,6 +108,8 @@
       <select name="variant_or_custom" class="custom-product-dropdown">
         <option value="" selected>Select a custom product</option>
         {%- for custom_product in block.settings.custom_product_list -%}
+          {{ custom_product.selected_or_first_available_variant.id }}
+
           {%- if custom_product -%}
             <option
               value="{{ custom_product.first_available_variant.id }}"
