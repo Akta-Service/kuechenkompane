@@ -210,20 +210,23 @@
       });
     }
 
-    {% comment %} setupDropdown() {
+     setupDropdown() {      
       if (!this.dropdown) return;
       const updateDropdown = () => {
         this.hiddenInput.value = this.dropdown.value;
         this.radios.forEach((r) => (r.checked = false));
         this.updateActive(this.dropdown.value);
         this.onVariantChange(this.dropdown.value);
+        
       };
 
       this.dropdown.addEventListener('change', updateDropdown);
       this.dropdown.addEventListener('click', updateDropdown);
-    } {% endcomment %}
+    } 
 
-    setupDropdown() {
+    
+
+    {% comment %} setupDropdown() {
       if (!this.dropdown) return;
       const updateDropdown = () => {
         this.hiddenInput.value = this.dropdown.value;
@@ -244,7 +247,7 @@
       this.dropdown.addEventListener('change', updateDropdown);
       this.dropdown.addEventListener('click', updateDropdown);
     }
-
+ {% endcomment %}
 
 
 
