@@ -231,6 +231,12 @@
           .then((res) => res.json())
           .then((data) => {
             console.log('Added to cart:', data);
+            // Update cart UI if exists
+            const cartDrawer = document.querySelector("m-cart-drawer");
+            if (cartDrawer) {
+            cartDrawer.onCartDrawerUpdate(true);
+            cartDrawer.open();
+            }
           })
           .catch((err) => console.error('Error adding to cart:', err));
       });
