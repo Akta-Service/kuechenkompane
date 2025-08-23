@@ -351,6 +351,17 @@
                     {%- endif -%}
                   </div>
                 {% endfor %}
+
+                {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when first_value %}
+
+                    {% when second_value %}
+
+                    {% else %}
+
+                  {% endcase %}
+                {% endfor %}
               </div>
               {% if show_nav and product.media.size > 1 %}
                 <div class="m-product-media--slider__navigation">
