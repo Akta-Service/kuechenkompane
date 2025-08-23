@@ -162,8 +162,6 @@
     if (dropdown) {
       dropdown.addEventListener('change', () => {
         hiddenInput.value = dropdown.value;
-        // Uncheck all radios when dropdown is used
-        radios.forEach((r) => (r.checked = false));
       });
     }
   });
