@@ -570,6 +570,11 @@
         const variantId = selectedOption.dataset.variantId || selectedOption.dataset.variantIdForSelector;
         handleSelection(variantId, true);
       });
+      dropdown.addEventListener('click', (e) => {
+        const selectedOption = e.target.options[e.target.selectedIndex];
+        const variantId = selectedOption.dataset.variantId || selectedOption.dataset.variantIdForSelector;
+        handleSelection(variantId, true);
+      });
     }
   });
 </script>
