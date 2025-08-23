@@ -229,24 +229,28 @@
       });
     }
 
-    setupDropdown() {
-      if (!this.dropdown) return;
-      const updateDropdown = () => {
-        this.hiddenInput.value = this.dropdown.value;
+ setupDropdown() {
+  if (!this.dropdown) return;
+  const updateDropdown = () => {
+    this.hiddenInput.value = this.dropdown.value;
 
-        // ✅ Ensure the dropdown's radio is checked
-        const dropdownRadio = this.dropdown.closest('.product-radio-option').querySelector('input[type="radio"]');
-        if (dropdownRadio) {
-          dropdownRadio.checked = true;
-        }
-
-        this.updateActive(this.dropdown.value);
-        this.onVariantChange(this.dropdown.value);
-      };
-
-      this.dropdown.addEventListener('change', updateDropdown);
-      this.dropdown.addEventListener('click', updateDropdown);
+    // ✅ Make sure dropdown’s radio stays checked
+    const dropdownRadio = this.dropdown.closest('.product-radio-option').querySelector('input[type="radio"]');
+    if (dropdownRadio) {
+      // Uncheck other radios first
+      this.radios.forEach((r) => (r.checked = false));
+      // Then check only the dropdown radio
+      dropdownRadio.checked = true;
     }
+
+    this.updateActive(this.dropdown.value);
+    this.onVariantChange(this.dropdown.value);
+  };
+
+  this.dropdown.addEventListener('change', updateDropdown);
+  this.dropdown.addEventListener('click', updateDropdown);
+}
+
 
     setupAddToCart() {
       if (!this.addToCartBtn || !this.hiddenInput) return;
