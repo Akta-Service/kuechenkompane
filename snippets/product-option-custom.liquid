@@ -159,7 +159,8 @@
     radios.forEach((radio) => {
       radio.addEventListener('change', () => {
         hiddenInput.value = radio.value;
-        if (dropdown) dropdown.value = ''; // reset dropdown
+        // Optional: keep dropdown showing last selected value
+        // Do not reset dropdown
       });
     });
 
@@ -167,14 +168,13 @@
     if (dropdown) {
       dropdown.addEventListener('change', () => {
         hiddenInput.value = dropdown.value;
-        // uncheck all radios when dropdown is used
+        // Uncheck radios
         radios.forEach((r) => (r.checked = false));
       });
     }
 
-    // Set initial value from pre-selected dropdown
-    if (dropdown && dropdown.value) {
-      hiddenInput.value = dropdown.value;
-    }
+    // Set initial hidden input value to the selected radio or dropdown
+    const checkedRadio = document.querySelector('input[name="variant_or_custom"]:checked');
+    hiddenInput.value = checkedRadio ? checkedRadio.value : dropdown ? dropdown.value : '';
   });
 </script>
