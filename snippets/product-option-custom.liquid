@@ -113,6 +113,7 @@
         {% if forloop.first %}
           checked
         {% endif %}
+        data-available="{{ variant.available }}"
         data-price="{{ variant.price | money }}"
         data-compare="{{ variant.compare_at_price | money }}"
       >
