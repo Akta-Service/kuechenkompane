@@ -527,45 +527,40 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const radios = document.querySelectorAll(
+    const inputs = document.querySelectorAll(
       ".product-radio-options input[type='radio'], .product-radio-options select.custom-product-dropdown"
     );
 
-    radios.forEach((input) => {
-      const updateMedia = (e) => {
-        let variantId = e.target.dataset.variantId;
+    inputs.forEach((input) => {
+      const logMedia = (e) => {
+        let variantId;
 
-        // For <select> dropdowns, get the selected option's variant ID
         if (e.target.tagName.toLowerCase() === 'select') {
           const selectedOption = e.target.options[e.target.selectedIndex];
           variantId = selectedOption.dataset.variantId || selectedOption.dataset.variantIdForSelector;
-        }
-
-        // fallback for radio buttons: check data-variant-id-for-selector
-        if (!variantId) {
-          variantId = e.target.dataset.variantIdForSelector;
+        } else {
+          variantId = e.target.dataset.variantId || e.target.dataset.variantIdForSelector;
         }
 
         if (!variantId) return;
 
-        const gallery = document.querySelector('media-gallery');
+        console.log('Selected Variant ID:', variantId);
 
-        if (gallery && gallery.productData) {
-          // Try to find the variant in productData variants
-          let selectedVariant = gallery.productData.variants.find((v) => v.id === Number(variantId));
+        // Find media element corresponding to variant
+        const mediaElement = document.querySelector(
+          `[data-variant-id="${variantId}"], [data-variant-id-for-selector="${variantId}"]`
+        );
 
-          // If not found, fallback to a custom variant placeholder
-          if (!selectedVariant) {
-            // Optionally, you can create a minimal object to pass to setActiveMedia
-            selectedVariant = { id: Number(variantId), featured_media: null };
-          }
-
-          gallery.setActiveMedia(selectedVariant);
+        if (mediaElement) {
+          console.log('Matched Media Element:', mediaElement);
+          console.log('Matched Media ID:', mediaElement.dataset.mediaId || mediaElement.dataset.mediaIdForSelector);
+        } else {
+          console.warn('No media matched for variant ID:', variantId);
         }
       };
 
-      input.addEventListener('change', updateMedia);
-      input.addEventListener('click', updateMedia); // optional for dropdown
+      input.addEventListener('change', logMedia);
+      input.addEventListener('click', logMedia); // optional for dropdown click
     });
   });
 </script>
