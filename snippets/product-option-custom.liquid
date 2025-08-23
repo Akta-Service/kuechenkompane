@@ -153,8 +153,6 @@
     radios.forEach((radio) => {
       radio.addEventListener('change', () => {
         hiddenInput.value = radio.value;
-        // Reset dropdown when a radio is selected
-        if (dropdown) dropdown.value = '';
       });
     });
 
