@@ -1,77 +1,85 @@
 <style>
-  .product-radio-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+    .product-radio-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    }
+
+    .product-radio-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+    font-family: inherit;
+    font-size: 16px;
+    position: relative;
+    }
+
+    /* Hide native radio, keep label clickable */
+    .product-radio-option input[type="radio"] {
+    display: none;
+    }
+
+    .product-radio-option .title {
+    font-weight: 600;
+    }
+
+    .product-radio-option .price {
+    font-weight: bold;
+    font-size: 16px;
+    }
+
+    .product-radio-option .price .compare {
+    text-decoration: line-through;
+    margin-left: 8px;
+    color: #999;
+    font-weight: normal;
+    }
+
+    /* Badges */
+    .product-radio-option .badge {
+    position: absolute;
+    top: -10px;
+    right: 12px;
+    background: #2d7a2d; /* green */
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    }
+
+    .product-radio-option .badge-red {
+    background: #a92424; /* red */
+    }
+
+    /* Selected state */
+    .product-radio-option input[type="radio"]:checked + .title,
+    .product-radio-option input[type="radio"]:checked ~ .title {
+    /* fallback if using + or ~ structure */
+    }
+
+    .product-radio-option input[type="radio"]:checked + span,
+    .product-radio-option input[type="radio"]:checked ~ * {
+    color: #000;
+    }
+
+    .product-radio-option:has(input[type="radio"]:checked) {
+    border-color: #f68b1e; /* orange border on select */
+    background-color: #fff9f3;
+    }
+
+    .custom-product-dropdown {
+    color: #aaa; /* placeholder color */
   }
 
-  .product-radio-option {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 18px;
-  border: 2px solid #ddd;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: border-color 0.2s, background-color 0.2s;
-  font-family: inherit;
-  font-size: 16px;
-  position: relative;
-  }
-
-  /* Hide native radio, keep label clickable */
-  .product-radio-option input[type="radio"] {
-  display: none;
-  }
-
-  .product-radio-option .title {
-  font-weight: 600;
-  }
-
-  .product-radio-option .price {
-  font-weight: bold;
-  font-size: 16px;
-  }
-
-  .product-radio-option .price .compare {
-  text-decoration: line-through;
-  margin-left: 8px;
-  color: #999;
-  font-weight: normal;
-  }
-
-  /* Badges */
-  .product-radio-option .badge {
-  position: absolute;
-  top: -10px;
-  right: 12px;
-  background: #2d7a2d; /* green */
-  color: white;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 6px;
-  text-transform: uppercase;
-  }
-
-  .product-radio-option .badge-red {
-  background: #a92424; /* red */
-  }
-
-  /* Selected state */
-  .product-radio-option input[type="radio"]:checked + .title,
-  .product-radio-option input[type="radio"]:checked ~ .title {
-  /* fallback if using + or ~ structure */
-  }
-
-  .product-radio-option input[type="radio"]:checked + span,
-  .product-radio-option input[type="radio"]:checked ~ * {
-  color: #000;
-  }
-
-  .product-radio-option:has(input[type="radio"]:checked) {
-  border-color: #f68b1e; /* orange border on select */
-  background-color: #fff9f3;
+  .custom-product-dropdown:focus {
+    color: #000; /* normal color on focus */
   }
 </style>
 <div class="product-radio-options" {{ block.shopify_attributes }}>
