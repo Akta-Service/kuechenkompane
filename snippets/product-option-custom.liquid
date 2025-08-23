@@ -152,29 +152,40 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const radios = document.querySelectorAll('input[name="variant_or_custom"]');
+    const dropdownWrapper = document.querySelector('.product-radio-option.option-dropdown');
     const dropdown = document.querySelector('.custom-product-dropdown');
     const hiddenInput = document.querySelector('#selectedVariantId');
 
-    // Update hidden input when a radio is selected
-    radios.forEach((radio) => {
-      radio.addEventListener('change', () => {
-        hiddenInput.value = radio.value;
-        // Optional: keep dropdown showing last selected value
-        // Do not reset dropdown
+    function updateActive(selectedValue) {
+      radios.forEach((r) => {
+        r.closest('.product-radio-option').classList.toggle('active', r.value === selectedValue);
+      });
+      if (dropdownWrapper) {
+        dropdownWrapper.classList.toggle('active', dropdown.value === selectedValue);
+      }
+    }
+
+    // Radio change
+    radios.forEach((r) => {
+      r.addEventListener('change', () => {
+        hiddenInput.value = r.value;
+        updateActive(r.value);
       });
     });
 
-    // Update hidden input when dropdown changes
+    // Dropdown change
     if (dropdown) {
       dropdown.addEventListener('change', () => {
         hiddenInput.value = dropdown.value;
-        // Uncheck radios
+        // uncheck radios logically
         radios.forEach((r) => (r.checked = false));
+        updateActive(dropdown.value);
       });
     }
 
-    // Set initial hidden input value to the selected radio or dropdown
+    // Initialize active state on page load
     const checkedRadio = document.querySelector('input[name="variant_or_custom"]:checked');
-    hiddenInput.value = checkedRadio ? checkedRadio.value : dropdown ? dropdown.value : '';
+    const initialValue = checkedRadio ? checkedRadio.value : dropdown ? dropdown.value : '';
+    updateActive(initialValue);
   });
 </script>
