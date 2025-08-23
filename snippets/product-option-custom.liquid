@@ -80,7 +80,11 @@
     }
     label.product-radio-option.option-dropdown {
       padding: 0;
-  }
+    }
+  label.product-radio-option.option-dropdown:has(select.custom-product-dropdown.active) {
+    border-color: #f68b1e;
+    background-color: #fff9f3;
+    }
 </style>
 <div class="product-radio-options" {{ block.shopify_attributes }}>
   {%- for variant in product.variants -%}
