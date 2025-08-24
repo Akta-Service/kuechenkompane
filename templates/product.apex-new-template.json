@@ -325,6 +325,35 @@
         "title": "Customers love our shoes!"
       }
     },
+    "pdp_v1_image_text_dKF9QP": {
+      "type": "PDP-V1-Image-Text",
+      "blocks": {
+        "title_GDAgP8": {
+          "type": "title",
+          "settings": {
+            "title": "Ancestral nutrition made simple."
+          }
+        },
+        "description_NnrUqx": {
+          "type": "description",
+          "settings": {
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_GDAgP8",
+        "description_NnrUqx"
+      ],
+      "name": "PDP V1 - Image Text",
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "position": "left",
+        "reverse_layout": false,
+        "media_type": "image"
+      }
+    },
     "product-details-tabs": {
       "type": "product-details-tabs",
       "blocks": {
@@ -1282,6 +1311,7 @@
     "product_descrption_accordion_btdDtQ",
     "pdp_v1_feature_46AkPR",
     "pdp_v1_image_slide_7M4DFc",
+    "pdp_v1_image_text_dKF9QP",
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
