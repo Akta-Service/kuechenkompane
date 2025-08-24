@@ -416,31 +416,31 @@
     "pdp_v1_image_text_mQUw6t": {
       "type": "PDP-V1-Image-Text",
       "blocks": {
-        "title_AUFqWi": {
+        "title_Yx3HNC": {
           "type": "title",
           "settings": {
-            "title": "67 Lagen Perfektion."
+            "title": "Mehr Schärfe. Mehr Kontrolle."
           }
         },
-        "description_JCqGCr": {
+        "description_xqzCX4": {
           "type": "description",
           "settings": {
-            "description": "<p>Dieses Messer verbindet 33 Lagen Edelstahl auf jeder Seite mit einem hochfesten 9Cr18MoV-Stahlkern. Durch diese einzigartige Kombination entsteht eine unvergleichliche Balance aus Härte, Schärfe und Flexibilität. Die aufwendige Damaststruktur macht jedes Messer zu einem Unikat und sorgt dafür, dass es nicht nur ein Werkzeug, sondern ein echtes Statement in deiner Küche ist.</p>"
+            "description": "<p>Gefertigt aus echtem Damaststahl überzeugt dieses Messer mit einer rasiermesserscharfen 12,5° V-Form, die müheloses Schneiden ermöglicht. Der Fingerschutz sorgt für ein sicheres Arbeiten, während der ergonomische Griff mit seiner einzigartigen Struktur perfekt in der Hand liegt. Dank seiner ausgewogenen Balance gleitet das Messer durch Fleisch, Fisch und Gemüse mit höchster Präzision. Es ist nicht nur ein Küchenmesser, sondern ein zuverlässiger Partner für jede kulinarische Herausforderung.</p>"
           }
         }
       },
       "block_order": [
-        "title_AUFqWi",
-        "description_JCqGCr"
+        "title_Yx3HNC",
+        "description_xqzCX4"
       ],
       "name": "PDP V1 - Image Text",
       "settings": {
         "padding_top": 20,
         "padding_bottom": 20,
-        "position": "left",
-        "reverse_layout": false,
+        "position": "right",
+        "reverse_layout": true,
         "media_type": "image",
-        "image": "shopify://shop_images/OKAMI_V3_2-Wiederhergestellt_1.jpg"
+        "image": "shopify://shop_images/Kuechenkompane_OKAMI_V3_1-Wiederhergestellt_1.jpg"
       }
     },
     "product-details-tabs": {
