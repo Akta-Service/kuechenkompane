@@ -332,7 +332,7 @@
     },
     "pdp_v1_image_slide_7M4DFc": {
       "type": "PDP-V1-Image-Slide",
-       "blocks": {
+      "blocks": {
         "slider_H7irUq": {
           "type": "Slider",
           "settings": {
@@ -697,47 +697,6 @@
         "padding_top": 20,
         "padding_bottom": 20,
         "custom_class": ""
-      }
-    },
-    "benefit_text_P4XApk": {
-      "type": "benefit-text",
-      "blocks": {
-        "subtitle_jER8HM": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Nur für kurze Zeit erhältlich"
-          }
-        },
-        "title_hXWbxr": {
-          "type": "title",
-          "settings": {
-            "title": "{{ product.metafields.zem.section_title.value }}"
-          }
-        },
-        "description_abE8wX": {
-          "type": "description",
-          "settings": {
-            "description": "Dieses Set vereint alles, was du für deine Küche brauchst. Nur solange der Vorrat reicht – viele Produkte gehen nicht mehr in Nachproduktion!"
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_jER8HM",
-        "title_hXWbxr",
-        "description_abE8wX"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "media_type": "image",
-        "image": "{{ product.metafields.custom.product_grid_image_1.value }}",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": false,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h3",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
       }
     },
     "feature_highlight_ktLbnH": {
@@ -1374,7 +1333,6 @@
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
-    "benefit_text_P4XApk",
     "feature_highlight_ktLbnH",
     "product_explanation_video_xNFp3M",
     "us_vs_them_8Tbqki",
