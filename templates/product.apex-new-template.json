@@ -171,10 +171,13 @@
             "size_title": "Size"
           }
         },
-        "pack_bundle_slector_dEQANx": {
-          "type": "pack_bundle_slector",
-          "disabled": true,
-          "settings": {}
+        "variant_picker_custom_3wFPza": {
+          "type": "variant_picker_custom",
+          "settings": {
+            "custom_product_list": [],
+            "single_title": "1pcs",
+            "enable_single": false
+          }
         },
         "buy_buttons_3hQqVi": {
           "type": "buy_buttons",
@@ -218,7 +221,7 @@
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
         "variant_picker_KkEnbw",
-        "pack_bundle_slector_dEQANx",
+        "variant_picker_custom_3wFPza",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
