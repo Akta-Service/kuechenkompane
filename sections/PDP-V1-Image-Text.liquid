@@ -1,0 +1,186 @@
+<style>
+  #hf_img-with-text_{{ section.id }}{
+   padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+
+  @media (max-width: 992px) {
+   #hf_img-with-text_{{ section.id }} .flex-reverse{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+</style>
+
+<section
+  class="hf_img-with-text-section"
+  id="hf_img-with-text_{{ section.id }}"
+  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="hf_img-with-text-container">
+    <div class="hf_img-with-text-wrapper {% if section.settings.reverse_layout %} flex-reverse {% endif %}">
+      {%- if section.settings.position == 'left' -%}
+        <div class="hf_img-with-text-thumb">
+          {% if section.settings.media_type == 'image' %}
+            {% if section.settings.image != blank %}
+              <img
+                src="{{ section.settings.image | img_url: 'master' }}"
+                alt="product"
+                style="width:100%; height:auto;"
+              >
+            {% endif %}
+          {% elsif section.settings.media_type == 'video' %}
+            {% if section.settings.video != blank %}
+              {{
+                section.settings.video
+                | video_tag:
+                  controls: false,
+                  autoplay: true,
+                  loop: true,
+                  muted: true,
+                  image_size: '600x',
+                  class: 'hf-video'
+              }}
+            {% endif %}
+          {% endif %}
+        </div>
+      {%- endif -%}
+
+      <div class="hf_img-with-text-content">
+        {% for block in section.blocks %}
+          {% if block.type == 'title' and block.settings.title != blank %}
+            <h3 class="hf_img-with-text-title">{{ block.settings.title }}</h3>
+          {% endif %}
+          {% if block.type == 'description' and block.settings.description != blank %}
+            <div class="hf_img-with-text-description">{{ block.settings.description }}</div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {%- if section.settings.position == 'right' -%}
+        <div class="hf_img-with-text-thumb">
+          {% if section.settings.media_type == 'image' %}
+            {% if section.settings.image != blank %}
+              <img
+                src="{{ section.settings.image | img_url: 'master' }}"
+                alt="product"
+                style="width:100%; height:auto;"
+              >
+            {% endif %}
+          {% elsif section.settings.media_type == 'video' %}
+            {% if section.settings.video != blank %}
+              {{
+                section.settings.video
+                | video_tag:
+                  controls: false,
+                  autoplay: true,
+                  loop: true,
+                  muted: true,
+                  image_size: '600x',
+                  class: 'hf-video'
+              }}
+            {% endif %}
+          {% endif %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PDP V1 - Image Text",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Image Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_layout",
+      "label": "Reverse Layout",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "visible_if": "{{ section.settings.media_type == 'image' }}"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "visible_if": "{{ section.settings.media_type == 'video' }}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Main Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Ancestral nutrition made simple."
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Main Description",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PDP V1 - Image Text",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

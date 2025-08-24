@@ -1,0 +1,65 @@
+{{ 'hf-style.css' | asset_url | stylesheet_tag }}
+
+<section class="hf-collection-section">
+  <div class="hf-collection-container">
+    <div class="hf-collection-wrapper">
+      {% for block in section.blocks %}
+        <div class="hf-collection-item">
+          <div class="hf-collection-item__thumb">
+            {% if block.settings.image != blank %}
+              <img
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.title | escape }}"
+              >
+            {% endif %}
+          </div>
+          <div class="hf-collection-item-content">
+            {% if block.settings.title != blank %}
+              <h4 class="hf-collection-item__title">{{ block.settings.title }}</h4>
+            {% endif %}
+            {% if block.settings.description != blank %}
+              <div class="hf-collection-item__description">{{ block.settings.description }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PDP V1 Feature",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Thin Soles"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PDP V1 Feature"
+    }
+  ]
+}
+{% endschema %}

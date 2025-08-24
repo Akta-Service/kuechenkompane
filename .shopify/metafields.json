@@ -1781,6 +1781,16 @@
         "name": "file_reference",
         "category": "REFERENCE"
       }
+    },
+    {
+      "key": "handle-color",
+      "namespace": "shopify",
+      "name": "Handle color",
+      "description": "Specifies the color of a product's handle, such as black or blue",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "variant": [
@@ -1918,6 +1928,26 @@
       "key": "personalization_image",
       "namespace": "custom",
       "name": "personalization  image ",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "variant_badge",
+      "namespace": "custom",
+      "name": "variant Badge",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "variant_image",
+      "namespace": "custom",
+      "name": "Variant Image",
       "description": "",
       "type": {
         "name": "file_reference",

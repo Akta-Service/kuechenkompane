@@ -1,0 +1,90 @@
+<section class="hf-video-section">
+  <div class="hf-video-container">
+    <div class="hf-video-header">
+      {% if section.settings.heading != blank %}
+        <h2 class="hf-video-title">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p class="hf-video-subtitle">{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+
+    <div class="hf-video-grid">
+      {% for block in section.blocks %}
+        {% if block.settings.shopify_video != blank %}
+          <video controls width="100%" preload="metadata" playsinline>
+            <source src="{{ block.settings.shopify_video | file_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        {% elsif block.settings.video_url != blank %}
+          {% assign video_id = '' %}
+          {% assign url = block.settings.video_url %}
+          {% if url contains 'youtu.be' %}
+            {% assign video_id = url | split: '/' | last %}
+          {% else %}
+            {% assign video_id = url | split: 'v=' | last | split: '&' | first %}
+          {% endif %}
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/{{ video_id }}"
+              frameborder="0"
+              allowfullscreen
+              width="100%"
+              height="315"
+            >
+            </iframe>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PDP V1 - Video",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "WHAT OUR CUSTOMERS SAY.."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Section Subheading",
+      "default": "More than 956,000+ satisfied customers enjoy our HIKE collection!"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_block",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "shopify_video",
+          "label": "Video (Upload video file)"
+        },
+        {
+          "type": "header",
+          "content": "OR"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "YouTube or Vimeo Video URL",
+          "info": "Paste YouTube or Vimeo video link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PDP V1 - Video",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
