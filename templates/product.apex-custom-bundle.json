@@ -287,58 +287,6 @@
         "cancel_btn": "Cancel"
       }
     },
-    "product_descrption_accordion_btdDtQ": {
-      "type": "product-descrption-accordion",
-      "blocks": {
-        "faq_jkYPLV": {
-          "type": "faq",
-          "settings": {
-            "question": "365 Tage Schleifservice (Gratis)",
-            "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand.</p>"
-          }
-        },
-        "faq_pDwHXa": {
-          "type": "faq",
-          "settings": {
-            "question": "Produktdetails und Lieferumfang",
-            "answer": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}"
-          }
-        },
-        "faq_kQAWhE": {
-          "type": "faq",
-          "settings": {
-            "question": "Versand und Zahlung",
-            "answer": "<p><strong>Versand & Zahlung</strong></p><ul><li><strong>EU-weiter Standardversand</strong> (1–3 Werktage): kostenlos</li><li><strong>Expressversand EU</strong> (nächster Werktag): + 9,90 €</li><li><strong>Internationaler Standardversand</strong> (2–5 Werktage): 16,90 €</li><li><strong>Express International</strong> (meist in 2–3 Werktagen): + 39,90 €</li></ul><p></p><p><strong>Zahlungsoptionen</strong></p><ul><li>PayPal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
-          }
-        },
-        "faq_nQHFGw": {
-          "type": "faq",
-          "settings": {
-            "question": "100 Tage Geld-zurück-Garantie",
-            "answer": "<p>Online einkaufen soll für dich so unkompliziert wie möglich sein. Bestelle unsere Produkte und teste sie in Ruhe bei dir zuhause. Solltest du nicht rundum zufrieden sein, kannst du sie innerhalb von 100 Tagen ohne Risiko zurückschicken. <strong>Unser Tipp:</strong> Bestellen und selbst überzeugen!</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_jkYPLV",
-        "faq_pDwHXa",
-        "faq_kQAWhE",
-        "faq_nQHFGw"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "title": "",
-        "heading_type": "mrk-h2",
-        "description": "{{ product.description }}",
-        "mt": 30,
-        "mb": 40,
-        "add_showore_btn": true,
-        "readmore": "Mehr lesen",
-        "readless": "Weniger Lesen",
-        "br_color": "#000000",
-        "icon_color": "#000000"
-      }
-    },
     "hf_feature_DUi7Kt": {
       "type": "hf-feature",
       "blocks": {
@@ -521,6 +469,58 @@
       "settings": {
         "heading": "WHAT OUR CUSTOMERS SAY..",
         "subheading": "More than 956,000+ satisfied customers enjoy our HIKE collection!"
+      }
+    },
+    "product_descrption_accordion_btdDtQ": {
+      "type": "product-descrption-accordion",
+      "blocks": {
+        "faq_jkYPLV": {
+          "type": "faq",
+          "settings": {
+            "question": "365 Tage Schleifservice (Gratis)",
+            "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand.</p>"
+          }
+        },
+        "faq_pDwHXa": {
+          "type": "faq",
+          "settings": {
+            "question": "Produktdetails und Lieferumfang",
+            "answer": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}"
+          }
+        },
+        "faq_kQAWhE": {
+          "type": "faq",
+          "settings": {
+            "question": "Versand und Zahlung",
+            "answer": "<p><strong>Versand & Zahlung</strong></p><ul><li><strong>EU-weiter Standardversand</strong> (1–3 Werktage): kostenlos</li><li><strong>Expressversand EU</strong> (nächster Werktag): + 9,90 €</li><li><strong>Internationaler Standardversand</strong> (2–5 Werktage): 16,90 €</li><li><strong>Express International</strong> (meist in 2–3 Werktagen): + 39,90 €</li></ul><p></p><p><strong>Zahlungsoptionen</strong></p><ul><li>PayPal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
+          }
+        },
+        "faq_nQHFGw": {
+          "type": "faq",
+          "settings": {
+            "question": "100 Tage Geld-zurück-Garantie",
+            "answer": "<p>Online einkaufen soll für dich so unkompliziert wie möglich sein. Bestelle unsere Produkte und teste sie in Ruhe bei dir zuhause. Solltest du nicht rundum zufrieden sein, kannst du sie innerhalb von 100 Tagen ohne Risiko zurückschicken. <strong>Unser Tipp:</strong> Bestellen und selbst überzeugen!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_jkYPLV",
+        "faq_pDwHXa",
+        "faq_kQAWhE",
+        "faq_nQHFGw"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "title": "",
+        "heading_type": "mrk-h2",
+        "description": "{{ product.description }}",
+        "mt": 30,
+        "mb": 40,
+        "add_showore_btn": true,
+        "readmore": "Mehr lesen",
+        "readless": "Weniger Lesen",
+        "br_color": "#000000",
+        "icon_color": "#000000"
       }
     },
     "product-details-tabs": {
@@ -1313,12 +1313,12 @@
   "order": [
     "main",
     "apex_theme_product_page_copy_bfPEWH",
-    "product_descrption_accordion_btdDtQ",
     "hf_feature_DUi7Kt",
     "hf_img_slide_44H8DE",
     "hf_img_with_text_QxNtXq",
     "hf_img_with_text_TDBjAa",
     "hf_video_p3YTtB",
+    "product_descrption_accordion_btdDtQ",
     "product-details-tabs",
     "scrolling_promotion_UKXeX3",
     "logo_greyed_out_FMbnW7",
