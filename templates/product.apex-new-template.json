@@ -288,41 +288,99 @@
     "pdp_v1_feature_46AkPR": {
       "type": "PDP-V1-Feature",
       "blocks": {
-        "item_aAMyBh": {
+        "item_CmzMRJ": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Ku_echenkompane_Icons_D1-01.png",
             "title": "Thin Soles",
             "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
           }
         },
-        "item_ehnUhj": {
+        "item_p3HhWc": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Ku_echenkompane_Icons_D1-04.png",
             "title": "Thin Soles",
             "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
           }
         },
-        "item_AW3K7p": {
+        "item_hibNiT": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Kuechenkompane_Icons_Deutsch.png",
+            "title": "Thin Soles",
+            "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
+          }
+        },
+        "item_EGqxge": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Ku_echenkompane_Icons_D1-03.png",
             "title": "Thin Soles",
             "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
           }
         }
       },
       "block_order": [
-        "item_aAMyBh",
-        "item_ehnUhj",
-        "item_AW3K7p"
+        "item_CmzMRJ",
+        "item_p3HhWc",
+        "item_hibNiT",
+        "item_EGqxge"
       ],
       "name": "PDP V1 Feature",
       "settings": {}
     },
     "pdp_v1_image_slide_7M4DFc": {
       "type": "PDP-V1-Image-Slide",
+       "blocks": {
+        "slider_H7irUq": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/IMG_0558_1_V1.jpg"
+          }
+        },
+        "slider_mYXLQD": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/IMG_0558_1_V4.jpg"
+          }
+        },
+        "slider_KhrGC7": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/IMG_0558_1_V2.jpg"
+          }
+        },
+        "slider_E4PfWV": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/IMG_0558_1_V5.jpg"
+          }
+        },
+        "slider_JhFjm7": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/IMG_0558_1_V7_1.jpg"
+          }
+        },
+        "slider_rX7PnX": {
+          "type": "Slider",
+          "settings": {
+            "slide_img": "shopify://shop_images/IMG_0558_1_V6_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slider_H7irUq",
+        "slider_mYXLQD",
+        "slider_KhrGC7",
+        "slider_E4PfWV",
+        "slider_JhFjm7",
+        "slider_rX7PnX"
+      ],
       "name": "PDP V1 - Image Slide",
       "settings": {
-        "title": "Customers love our shoes!"
+        "title": "Unser Kunden lieben unsere Klingen"
       }
     },
     "product-details-tabs": {
