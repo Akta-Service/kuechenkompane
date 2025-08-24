@@ -318,6 +318,13 @@
       "name": "PDP V1 Feature",
       "settings": {}
     },
+    "pdp_v1_image_slide_7M4DFc": {
+      "type": "PDP-V1-Image-Slide",
+      "name": "PDP V1 - Image Slide",
+      "settings": {
+        "title": "Customers love our shoes!"
+      }
+    },
     "product-details-tabs": {
       "type": "product-details-tabs",
       "blocks": {
@@ -1274,6 +1281,7 @@
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
     "pdp_v1_feature_46AkPR",
+    "pdp_v1_image_slide_7M4DFc",
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
