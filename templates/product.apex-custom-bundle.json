@@ -445,6 +445,66 @@
         "image": "shopify://shop_images/Kuechenkompane_OKAMI_V3_1-Wiederhergestellt_1.jpg"
       }
     },
+    "hf_img_with_text_nTXD3z": {
+      "type": "hf-img-with-text",
+      "blocks": {
+        "title_pNVAqq": {
+          "type": "title",
+          "settings": {
+            "title": "Mehr Schärfe. Mehr Kontrolle."
+          }
+        },
+        "description_FyHhiF": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Gefertigt aus echtem Damaststahl überzeugt dieses Messer mit einer rasiermesserscharfen 12,5° V-Form, die müheloses Schneiden ermöglicht. Der Fingerschutz sorgt für ein sicheres Arbeiten, während der ergonomische Griff mit seiner einzigartigen Struktur perfekt in der Hand liegt. Dank seiner ausgewogenen Balance gleitet das Messer durch Fleisch, Fisch und Gemüse mit höchster Präzision. Es ist nicht nur ein Küchenmesser, sondern ein zuverlässiger Partner für jede kulinarische Herausforderung.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title_pNVAqq",
+        "description_FyHhiF"
+      ],
+      "name": "PDP V1 - Image Text",
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "position": "left",
+        "reverse_layout": false,
+        "media_type": "image",
+        "image": "shopify://shop_images/Kuechenkompane_OKAMI_V3_1-Wiederhergestellt_1.jpg"
+      }
+    },
+    "hf_img_with_text_U7Dj7G": {
+      "type": "hf-img-with-text",
+      "blocks": {
+        "title_7mFfrX": {
+          "type": "title",
+          "settings": {
+            "title": "Mehr Schärfe. Mehr Kontrolle."
+          }
+        },
+        "description_UYQ7hT": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Gefertigt aus echtem Damaststahl überzeugt dieses Messer mit einer rasiermesserscharfen 12,5° V-Form, die müheloses Schneiden ermöglicht. Der Fingerschutz sorgt für ein sicheres Arbeiten, während der ergonomische Griff mit seiner einzigartigen Struktur perfekt in der Hand liegt. Dank seiner ausgewogenen Balance gleitet das Messer durch Fleisch, Fisch und Gemüse mit höchster Präzision. Es ist nicht nur ein Küchenmesser, sondern ein zuverlässiger Partner für jede kulinarische Herausforderung.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title_7mFfrX",
+        "description_UYQ7hT"
+      ],
+      "name": "PDP V1 - Image Text",
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "position": "right",
+        "reverse_layout": true,
+        "media_type": "image",
+        "image": "shopify://shop_images/Kuechenkompane_OKAMI_V3_1-Wiederhergestellt_1.jpg"
+      }
+    },
     "hf_video_p3YTtB": {
       "type": "hf-video",
       "blocks": {
@@ -1317,6 +1377,8 @@
     "hf_img_slide_44H8DE",
     "hf_img_with_text_QxNtXq",
     "hf_img_with_text_TDBjAa",
+    "hf_img_with_text_nTXD3z",
+    "hf_img_with_text_U7Dj7G",
     "hf_video_p3YTtB",
     "product_descrption_accordion_btdDtQ",
     "product-details-tabs",
