@@ -1,0 +1,216 @@
+<style>
+    .product-radio-options {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .product-radio-option {
+      display: flex;
+      {% comment %} justify-content: space-between; {% endcomment %}
+      align-items: center;
+      padding: 14px 18px;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color 0.2s, background-color 0.2s;
+      font-family: inherit;
+      font-size: 16px;
+      position: relative;
+      gap: 10px;
+    }
+
+
+
+    .product-radio-option .title {
+      font-weight: 600;
+    }
+
+    .product-radio-option .price {
+      font-weight: bold;
+      font-size: 16px;
+      margin-left: auto;
+    }
+
+    .product-radio-option .price .compare {
+      text-decoration: line-through;
+      margin-left: 8px;
+      color: #999;
+      font-weight: normal;
+    }
+
+    /* Badges */
+    .product-radio-option .badge {
+      position: absolute;
+      top: -10px;
+      right: 12px;
+      background: #2d7a2d; /* green */
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    .product-radio-option .badge-red {
+      background: #a92424; /* red */
+    }
+
+    /* Selected state */
+    .product-radio-option input[type="radio"]:checked + .title,
+    .product-radio-option input[type="radio"]:checked ~ .title {
+    /* fallback if using + or ~ structure */
+    }
+
+    .product-radio-option input[type="radio"]:checked + span,
+    .product-radio-option input[type="radio"]:checked ~ * {
+      color: #000;
+
+    }
+
+    .product-radio-option:has(input[type="radio"]:checked) {
+      border-color: #f68b1e; /* orange border on select */
+      background-color: #fff9f3;
+    }
+  select.custom-product-dropdown {
+      width: 100%;
+      padding: 14px 18px;
+      margin-top: 10px;
+      border: 1px solid #ddd;
+  }
+    label.product-radio-option.option-dropdown {
+      {% comment %} padding: 0; {% endcomment %}
+    }
+    label.product-radio-option.option-dropdown.active select.custom-product-dropdown{
+      background-color: #fff9f3;
+    }
+    button.btn.add-btn-custom {
+      background: #fa8526;
+      color: #fff;
+      box-shadow: none;
+      border: none;
+      outline: none;
+      margin-top: 15px;
+      margin-bottom: 25px;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    label.product-radio-option.option-dropdown.active {
+      border-color: #f68b1e;
+      background-color: #fff9f3;
+      overflow: hidden;
+    }
+    img.variant-image {
+      width: 60px;
+      height: auto;
+    }
+    label.product-radio-option.option-dropdown {
+      display: block;
+      padding: 30px 18px;
+    }
+    label.product-radio-option.option-dropdown span.title {
+      margin-left: 5px;
+    }
+    .custom-products-list {
+      display: none;
+    }
+    .option-dropdown-header {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .selected-variant-price {
+      margin-left: auto;
+    }
+    span.dp-p-compare-price.compare {
+      text-decoration: line-through;
+      margin-left: 8px;
+      color: #999;
+      font-weight: normal;
+    }
+</style>
+<div class="product-radio-options" {{ block.shopify_attributes }}>
+  {%- for variant in product.variants -%}
+    <label class="product-radio-option">
+      {% if variant.metafields.custom.variant_badge != blank %}
+        <span class="badge">{{ variant.metafields.custom.variant_badge }}</span>
+      {% endif %}
+
+      <input
+        type="radio"
+        name="variant_or_custom"
+        value="{{ variant.id }}"
+        {% if forloop.first %}
+          checked
+        {% endif %}
+        data-available="{{ variant.available }}"
+        data-price="{{ variant.price | money }}"
+        data-compare="{{ variant.compare_at_price | money }}"
+        data-variant-id="{{ variant.id }}"
+      >
+      <span class="title">{{ variant.title }}</span>
+
+      {% if variant.metafields.custom.variant_image != blank %}
+        <img
+          class="variant-image"
+          src="{{ variant.metafields.custom.variant_image | img_url: 'master' }}"
+          alt="variant-image"
+        >
+      {% endif %}
+
+      <span class="price">
+        {{ variant.price | money }}
+        {% if variant.compare_at_price > variant.price %}
+          <span class="compare">{{ variant.compare_at_price | money }}</span>
+        {% endif %}
+      </span>
+    </label>
+  {%- endfor -%}
+
+  {% if block.settings.enable_single == true %}
+    {%- if block.settings.custom_product_list != blank -%}
+      <label class="product-radio-option option-dropdown">
+        <div class="option-dropdown-header">
+          <input
+            type="radio"
+            name="variant_or_custom"
+            value="{{ block.settings.custom_product_list.first.selected_or_first_available_variant.id }}"
+            data-available="{{ block.settings.custom_product_list.first.selected_or_first_available_variant.available }}"
+          >
+          <span class="title">{{ block.settings.single_title }}</span>
+          <div class="selected-variant-price">
+            <span class="price-value price"></span>
+            <span class="dp-p-compare-price compare"></span>
+          </div>
+        </div>
+        <div class="custom-products-list">
+          <select name="variant_or_custom" class="custom-product-dropdown">
+            {%- for custom_product in block.settings.custom_product_list -%}
+              {%- if custom_product -%}
+                <option
+                  value="{{ custom_product.selected_or_first_available_variant.id }}"
+                  data-custom="true"
+                  data-price="{{ custom_product.first_available_variant.price | money }}"
+                  data-compare="{{ custom_product.first_available_variant.compare_at_price | money }}"
+                  {% if forloop.first %}
+                    selected
+                  {% endif %}
+                  data-available="{{ custom_product.selected_or_first_available_variant.available }}"
+                  data-variant-id="{{ custom_product.selected_or_first_available_variant.id }}"
+                >
+                  {{ custom_product.title }}
+                </option>
+              {%- endif -%}
+            {%- endfor -%}
+          </select>
+        </div>
+      </label>
+    {%- endif -%}
+  {% endif %}
+
+  <input type="hidden" name="id" id="selectedVariantId" value="{{ product.selected_or_first_available_variant.id }}">
+  <button class="btn add-btn-custom">Add to cart</button>
+</div>
+

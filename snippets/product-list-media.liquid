@@ -1,0 +1,55 @@
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'variant_picker_custom' %}
+      {% if block.settings.custom_product_list != blank %}
+        {% assign base_index = product.media.size | default: 0 %}
+
+        {% for custom_product in block.settings.custom_product_list %}
+          {% comment %}
+            Normalize: custom_product might be a handle string or a product object
+          {% endcomment %}
+          {% assign product_obj = custom_product %}
+          {% if product_obj == blank or product_obj.id == blank %}
+            {% assign product_obj = all_products[custom_product] %}
+          {% endif %}
+
+          {% if product_obj %}
+            {% assign media_obj = product_obj.featured_media | default: product_obj.media.first %}
+            {% if media_obj %}
+              {% assign idx = base_index | plus: forloop.index0 %}
+              <div
+                class="swiper-slide m-product-media--item media-type-{{ media_obj.media_type | default: 'image' }}"
+                data-index="{{ idx }}"
+                data-media-type="{{ media_obj.media_type | default: 'image' }}"
+                data-media-id="{{ media_obj.id | default: media_obj.preview_image.id }}"
+                data-aspect-ratio="{{ media_obj.preview_image.aspect_ratio | default: 1 }}"
+                data-variant-id-for-selector="{{ product_obj.selected_or_first_available_variant.id }}"
+              >
+                {% render 'product-thumbnail',
+                  media: media_obj,
+                  index: idx,
+                  autoplay: enable_video_autoplay,
+                  loop: true,
+                  media_layout: media_layout,
+                  product: product_obj
+                %}
+
+                {% assign is_zoomable = false %}
+                {% if enable_zoom %}
+                  {% if media_obj.media_type == blank or media_obj.media_type == 'image' %}
+                    {% assign is_zoomable = true %}
+                  {% endif %}
+                {% endif %}
+
+                {% if is_zoomable %}
+                  <div class="m-product-media--zoom-icon">
+                    {% render 'tooltip', type: 'zoom-in', class_name: ' m-tooltip--left' %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+  {% endcase %}
+{% endfor %}
