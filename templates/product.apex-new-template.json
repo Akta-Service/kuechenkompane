@@ -164,6 +164,10 @@
             "size_title": "Size"
           }
         },
+        "pack_bundle_slector_dEQANx": {
+          "type": "pack_bundle_slector",
+          "settings": {}
+        },
         "buy_buttons_3hQqVi": {
           "type": "buy_buttons",
           "settings": {
@@ -205,6 +209,7 @@
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
         "variant_picker_KkEnbw",
+        "pack_bundle_slector_dEQANx",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
@@ -441,6 +446,32 @@
         "reverse_layout": true,
         "media_type": "image",
         "image": "shopify://shop_images/Kuechenkompane_OKAMI_V3_1-Wiederhergestellt_1.jpg"
+      }
+    },
+    "pdp_v1_video_cVzt66": {
+      "type": "PDP-V1-Video",
+      "blocks": {
+        "video_block_A8wpDV": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https://youtu.be/hjAfmLOpD00?si=Do9qDeSlaflA_ieN"
+          }
+        },
+        "video_block_8ektkG": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https://youtu.be/TJatDlMOGs0?si=P0FJs3ErDLpKmRO9"
+          }
+        }
+      },
+      "block_order": [
+        "video_block_A8wpDV",
+        "video_block_8ektkG"
+      ],
+      "name": "PDP V1 - Video",
+      "settings": {
+        "heading": "WHAT OUR CUSTOMERS SAY..",
+        "subheading": "More than 956,000+ satisfied customers enjoy our HIKE collection!"
       }
     },
     "product-details-tabs": {
@@ -1361,6 +1392,7 @@
     "pdp_v1_image_slide_7M4DFc",
     "pdp_v1_image_text_dKF9QP",
     "pdp_v1_image_text_mQUw6t",
+    "pdp_v1_video_cVzt66",
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
