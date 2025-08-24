@@ -497,22 +497,6 @@
         "image": "shopify://shop_images/Kuechenkompane_OKAMI_V3_1-Wiederhergestellt_1.jpg"
       }
     },
-    "product-details-tabs": {
-      "type": "product-details-tabs",
-      "disabled": true,
-      "custom_css": [
-        ".m-tabs__header {justify-content: flex-start;}"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "default_open": true,
-        "padding_top": 0,
-        "padding_bottom": 50,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "hf_video_p3YTtB": {
       "type": "hf-video",
       "blocks": {
@@ -537,6 +521,22 @@
       "settings": {
         "heading": "WHAT OUR CUSTOMERS SAY..",
         "subheading": "More than 956,000+ satisfied customers enjoy our HIKE collection!"
+      }
+    },
+    "product-details-tabs": {
+      "type": "product-details-tabs",
+      "disabled": true,
+      "custom_css": [
+        ".m-tabs__header {justify-content: flex-start;}"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "default_open": true,
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
       }
     },
     "scrolling_promotion_UKXeX3": {
@@ -1318,8 +1318,8 @@
     "hf_img_slide_44H8DE",
     "hf_img_with_text_QxNtXq",
     "hf_img_with_text_TDBjAa",
-    "product-details-tabs",
     "hf_video_p3YTtB",
+    "product-details-tabs",
     "scrolling_promotion_UKXeX3",
     "logo_greyed_out_FMbnW7",
     "magazine_quote_UQpqkk",
