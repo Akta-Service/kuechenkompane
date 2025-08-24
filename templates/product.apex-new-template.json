@@ -413,6 +413,36 @@
         "image": "shopify://shop_images/OKAMI_V3_2-Wiederhergestellt_1.jpg"
       }
     },
+    "pdp_v1_image_text_mQUw6t": {
+      "type": "PDP-V1-Image-Text",
+      "blocks": {
+        "title_AUFqWi": {
+          "type": "title",
+          "settings": {
+            "title": "67 Lagen Perfektion."
+          }
+        },
+        "description_JCqGCr": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Dieses Messer verbindet 33 Lagen Edelstahl auf jeder Seite mit einem hochfesten 9Cr18MoV-Stahlkern. Durch diese einzigartige Kombination entsteht eine unvergleichliche Balance aus Härte, Schärfe und Flexibilität. Die aufwendige Damaststruktur macht jedes Messer zu einem Unikat und sorgt dafür, dass es nicht nur ein Werkzeug, sondern ein echtes Statement in deiner Küche ist.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title_AUFqWi",
+        "description_JCqGCr"
+      ],
+      "name": "PDP V1 - Image Text",
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "position": "left",
+        "reverse_layout": false,
+        "media_type": "image",
+        "image": "shopify://shop_images/OKAMI_V3_2-Wiederhergestellt_1.jpg"
+      }
+    },
     "product-details-tabs": {
       "type": "product-details-tabs",
       "blocks": {
@@ -1330,6 +1360,7 @@
     "pdp_v1_feature_46AkPR",
     "pdp_v1_image_slide_7M4DFc",
     "pdp_v1_image_text_dKF9QP",
+    "pdp_v1_image_text_mQUw6t",
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
