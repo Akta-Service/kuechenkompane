@@ -52,6 +52,13 @@
     "apex_theme_product_page_copy_bfPEWH": {
       "type": "apex-theme-product-page-copy",
       "blocks": {
+        "follower_recom_text_J4dKLR": {
+          "type": "follower_recom_text",
+          "settings": {
+            "follower_img": "shopify://shop_images/Group_1000010018.png",
+            "follower_text": "Recommended by Dr. Marta Riniker Verified Podiatrist"
+          }
+        },
         "title_Bac9Mk": {
           "type": "title",
           "settings": {
@@ -201,6 +208,7 @@
         }
       },
       "block_order": [
+        "follower_recom_text_J4dKLR",
         "title_Bac9Mk",
         "subtitle_xQXVba",
         "review_Tgbbak",
@@ -245,51 +253,6 @@
         "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
         "save_btn": "Save",
         "cancel_btn": "Cancel"
-      }
-    },
-    "product_descrption_accordion_btdDtQ": {
-      "type": "product-descrption-accordion",
-      "blocks": {
-        "faq_jkYPLV": {
-          "type": "faq",
-          "settings": {
-            "question": "365 Tage Schleifservice (Gratis)",
-            "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand. </p>"
-          }
-        },
-        "faq_kQAWhE": {
-          "type": "faq",
-          "settings": {
-            "question": "Versand & Zahlungsoptionen",
-            "answer": "<p><strong>Kostenloser Versand  EU-weit (1-3 Tage)</strong></p><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine geringe Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p><strong>Versand in andere Länder z.B. Schweiz</strong></p><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p><strong>Zahlungsoptionen</strong></p><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
-          }
-        },
-        "faq_pDwHXa": {
-          "type": "faq",
-          "settings": {
-            "question": "Produktinfos & Lieferumfang",
-            "answer": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}"
-          }
-        }
-      },
-      "block_order": [
-        "faq_jkYPLV",
-        "faq_kQAWhE",
-        "faq_pDwHXa"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "badge-hot",
-        "title": "IM SET ENTHALTEN:",
-        "heading_type": "mrk-h3",
-        "description": "{{ product.description }}",
-        "mt": 30,
-        "mb": 40,
-        "add_showore_btn": false,
-        "readmore": "Mehr lesen",
-        "readless": "Weniger Lesen",
-        "br_color": "#000000",
-        "icon_color": "#000000"
       }
     },
     "pdp_v1_feature_46AkPR": {
@@ -1389,7 +1352,6 @@
     "apex_timer_9Rjc9m",
     "main",
     "apex_theme_product_page_copy_bfPEWH",
-    "product_descrption_accordion_btdDtQ",
     "pdp_v1_feature_46AkPR",
     "pdp_v1_image_slide_7M4DFc",
     "pdp_v1_image_text_dKF9QP",
