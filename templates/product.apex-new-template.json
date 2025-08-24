@@ -164,9 +164,14 @@
             "size_title": "Size"
           }
         },
-        "pack_bundle_slector_AC9gMC": {
-          "type": "pack_bundle_slector",
-          "settings": {}
+        "buy_buttons_3hQqVi": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
         },
         "payment_icon_tePtpf": {
           "type": "paymentIcon",
@@ -200,7 +205,7 @@
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
         "variant_picker_KkEnbw",
-        "pack_bundle_slector_AC9gMC",
+        "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
       ],
@@ -279,6 +284,39 @@
         "br_color": "#000000",
         "icon_color": "#000000"
       }
+    },
+    "pdp_v1_feature_46AkPR": {
+      "type": "PDP-V1-Feature",
+      "blocks": {
+        "item_aAMyBh": {
+          "type": "item",
+          "settings": {
+            "title": "Thin Soles",
+            "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
+          }
+        },
+        "item_ehnUhj": {
+          "type": "item",
+          "settings": {
+            "title": "Thin Soles",
+            "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
+          }
+        },
+        "item_AW3K7p": {
+          "type": "item",
+          "settings": {
+            "title": "Thin Soles",
+            "description": "Experience a real barefoot feeling and natural connection thanks to the ultra-thin soles."
+          }
+        }
+      },
+      "block_order": [
+        "item_aAMyBh",
+        "item_ehnUhj",
+        "item_AW3K7p"
+      ],
+      "name": "PDP V1 Feature",
+      "settings": {}
     },
     "product-details-tabs": {
       "type": "product-details-tabs",
@@ -1235,6 +1273,7 @@
     "main",
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
+    "pdp_v1_feature_46AkPR",
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
