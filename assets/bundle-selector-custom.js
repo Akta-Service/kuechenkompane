@@ -113,7 +113,7 @@
         this.addToCartBtn.classList.add('btn-disabled');
       } else {
         this.addToCartBtn.disabled = false;
-        this.addToCartBtn.textContent = 'Add to cart';
+        this.addToCartBtn.textContent = 'IN DEN WARENKORB';
         this.addToCartBtn.classList.remove('btn-disabled');
       }
 
