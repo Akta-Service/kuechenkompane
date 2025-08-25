@@ -140,7 +140,7 @@
     text-transform: uppercase;
   }
 </style>
-<div class="product-radio-options" {{ block.shopify_attributes }}>
+<div class="product-radio-options" data-section-id="{{ section.id }}" {{ block.shopify_attributes }}>
   {%- for variant in product.variants -%}
     <label class="product-radio-option">
       {% if variant.metafields.custom.variant_badge != blank %}
