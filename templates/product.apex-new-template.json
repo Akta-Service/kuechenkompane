@@ -197,8 +197,11 @@
           "type": "variant_picker_custom",
           "settings": {
             "custom_product_list": [],
+            "discount_text": "Off",
             "single_title": "1pcs",
-            "enable_single": false
+            "enable_single": false,
+            "discount_badge_bg": "#000000",
+            "variant_badge_bg": "#2d7a2d"
           }
         },
         "buy_buttons_3hQqVi": {
@@ -459,6 +462,7 @@
         "video_block_A8wpDV",
         "video_block_8ektkG"
       ],
+      "disabled": true,
       "name": "PDP V1 - Video",
       "settings": {
         "heading": "WHAT OUR CUSTOMERS SAY..",
