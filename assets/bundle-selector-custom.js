@@ -109,7 +109,7 @@
       // Update Add to cart button
       if (!available) {
         this.addToCartBtn.disabled = true;
-        this.addToCartBtn.textContent = 'Sold Out';
+        this.addToCartBtn.textContent = 'Ausverkauft';
         this.addToCartBtn.classList.add('btn-disabled');
       } else {
         this.addToCartBtn.disabled = false;
