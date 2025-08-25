@@ -277,7 +277,7 @@
           {% endif %}
         </div>
 
-        {% when 'follower_recom_text' %}
+      {% when 'follower_recom_text' %}
         <div class="follower_recomendation_text">
           {% if block.settings.follower_img != blank %}
             <img src="{{ block.settings.follower_img | img_url: 'master' }}" alt="image">
@@ -285,8 +285,6 @@
           <p class="follower_text">{{ block.settings.follower_text }}</p>
         </div>
 
-
-      
       {% when 'price_old' %}
         <div class="product-block-group--price">
           <div class="rs-price">
@@ -322,7 +320,7 @@
         </div>
 
       {% when 'price' %}
-        <div class="product-block-group--price">
+        <div class="product-block-group--price" id="price-group-{{  section.id }}">
           <div class="rs-price">
             {% comment %}
               <span class="rs-current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
@@ -668,7 +666,6 @@
           update_browser_history: update_browser_history
         %}
 
-        
       {%- when 'variant_picker_custom' -%}
         {% render 'product-option-custom',
           product: product,
@@ -678,9 +675,6 @@
           product_form_id: product_form_id,
           update_browser_history: update_browser_history
         %}
-
-
-
 
       {%- when 'buy_buttons' -%}
         {% liquid
