@@ -160,9 +160,11 @@
         >
       {% endif %}
 
-      {% if variant.metafields.custom.discount_bagde != blank %}
-        <span class="discoun-badge">{{ variant.metafields.custom.discount_bagde }}</span>
-      {% endif %}
+      {%- if variant.compare_at_price > variant.price -%}
+        {%- assign discount = variant.compare_at_price | minus: variant.price -%}
+        {%- assign discount_percent = discount | times: 100 | divided_by: variant.compare_at_price -%}
+        <span class="discount-badge">-{{ discount_percent }}%</span>
+      {%- endif -%}
 
       <span class="price">
         {{ variant.price | money }}
