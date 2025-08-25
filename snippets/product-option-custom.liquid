@@ -161,11 +161,7 @@
       {% endif %}
 
       {% if variant.metafields.custom.discount_bagde != blank %}
-        <img
-          class="variant-image"
-          src="{{ variant.metafields.custom.variant_image | img_url: 'master' }}"
-          alt="variant-image"
-        >
+        <span class="discoun-badge">{{ variant.metafields.custom.discount_bagde }}</span>
       {% endif %}
 
       <span class="price">
