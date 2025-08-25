@@ -160,6 +160,14 @@
         >
       {% endif %}
 
+      {% if variant.metafields.custom. != blank %}
+        <img
+          class="variant-image"
+          src="{{ variant.metafields.custom.variant_image | img_url: 'master' }}"
+          alt="variant-image"
+        >
+      {% endif %}
+
       <span class="price">
         {{ variant.price | money }}
         {% if variant.compare_at_price > variant.price %}
