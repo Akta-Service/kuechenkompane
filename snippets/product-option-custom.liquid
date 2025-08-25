@@ -172,7 +172,7 @@
       {%- if variant.compare_at_price > variant.price -%}
         {%- assign discount = variant.compare_at_price | minus: variant.price -%}
         {%- assign discount_percent = discount | times: 100 | divided_by: variant.compare_at_price -%}
-        <span class="discount-badge">-{{ discount_percent }}%</span>
+        <span class="discount-badge">-{{ discount_percent }}% {{ block.settings.discount_text }}</span>
       {%- endif -%}
 
       <span class="price">
@@ -180,7 +180,6 @@
         {% if variant.compare_at_price > variant.price %}
           <span class="compare">
             {{- variant.compare_at_price | money }}
-            {{ block.settings.discount_text }} off
           </span>
         {% endif %}
       </span>
