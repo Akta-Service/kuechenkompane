@@ -96,6 +96,33 @@
             "demandText": "überdurchschnittlich oft besucht!"
           }
         },
+        "price_NygfY8": {
+          "type": "price",
+          "settings": {
+            "taxes_included": false,
+            "taxes_included_text": "",
+            "show_saving": false,
+            "sale_badge_type": "percentage",
+            "p_pt": 5,
+            "p_pb": 5,
+            "p_pt_m": 5,
+            "p_pb_m": 5,
+            "price_color": "#eeeeee",
+            "c_price_color": "#000000",
+            "per_badge_bg": "#eeeeee",
+            "per_badge_color": "#000000",
+            "f_s": 16,
+            "f_s_m": 16,
+            "c_price_size": 16,
+            "c_price_size_m": 16,
+            "price_font_weight": "400",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
+          }
+        },
         "price_J4wXWJ": {
           "type": "price",
           "disabled": true,
@@ -212,6 +239,7 @@
         "subtitle_xQXVba",
         "review_Tgbbak",
         "ratings_fD4VNJ",
+        "price_NygfY8",
         "price_J4wXWJ",
         "viewer_stock_count_MFNhKz",
         "featurelist_item_tL79ih",
