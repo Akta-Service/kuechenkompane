@@ -179,6 +179,27 @@
           .catch((err) => console.error('Error adding to cart:', err));
       });
     }
+
+
+    updatePriceGroup(variantId) {
+  const sectionId = this.container.dataset.sectionId; // add data-section-id="{{ section.id }}" in your container
+  if (!sectionId) return;
+
+  fetch(`${window.location.pathname}?variant=${variantId}&section_id=${sectionId}`)
+    .then((res) => res.text())
+    .then((html) => {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const newPriceGroup = doc.querySelector(`#price-group-${sectionId}`);
+      const oldPriceGroup = document.querySelector(`#price-group-${sectionId}`);
+      if (newPriceGroup && oldPriceGroup) {
+        oldPriceGroup.replaceWith(newPriceGroup);
+      }
+    })
+    .catch((err) => console.error('Error updating price group:', err));
+}
+
+
+
   }
 
   // Init
