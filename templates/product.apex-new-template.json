@@ -174,9 +174,12 @@
         "variant_picker_custom_3wFPza": {
           "type": "variant_picker_custom",
           "settings": {
-            "custom_product_list": [],
+            "custom_product_list": [
+              "grillbuerste",
+              "akarui-bundle-edelstahlblock"
+            ],
             "single_title": "1pcs",
-            "enable_single": false
+            "enable_single": true
           }
         },
         "buy_buttons_3hQqVi": {
