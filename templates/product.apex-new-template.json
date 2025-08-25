@@ -197,7 +197,7 @@
           "type": "variant_picker_custom",
           "settings": {
             "custom_product_list": [],
-            "discount_text": "Off",
+            "discount_text": "Rabatt",
             "single_title": "1pcs",
             "enable_single": false,
             "discount_badge_bg": "#000000",
@@ -1193,38 +1193,6 @@
         "arrow_icon_color": "#000000"
       }
     },
-    "17561480766d6cb0aa": {
-      "type": "apps",
-      "blocks": {
-        "loox_reviews_loox_dynamic_section_4wB63P": {
-          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "settings": {
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": false,
-            "maxwidth": 1080,
-            "is_sample": true
-          }
-        }
-      },
-      "block_order": [
-        "loox_reviews_loox_dynamic_section_4wB63P"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "header_alignment": "center",
-        "container": "container",
-        "background_color": "",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "padding_top_mobile": 30,
-        "padding_bottom_mobile": 30,
-        "custom_class": ""
-      }
-    },
     "cta_final_9B8iN9": {
       "type": "cta-final",
       "blocks": {
@@ -1278,6 +1246,38 @@
         "item_bg": "#f0f0f3",
         "item_size": 16,
         "backBtn": "Zum Produkt"
+      }
+    },
+    "17561480766d6cb0aa": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_section_4wB63P": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_4wB63P"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "custom_class": ""
       }
     },
     "benefit_list_gif_iJWmYF": {
