@@ -98,6 +98,7 @@
         },
         "price_J4wXWJ": {
           "type": "price",
+          "disabled": true,
           "settings": {
             "taxes_included": true,
             "taxes_included_text": "",
@@ -173,7 +174,7 @@
               "akarui-bundle-edelstahlblock"
             ],
             "single_title": "1pcs",
-            "enable_single": true
+            "enable_single": false
           }
         },
         "buy_buttons_3hQqVi": {
