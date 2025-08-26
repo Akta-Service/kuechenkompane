@@ -463,8 +463,12 @@
     {%- endif -%}
 
     <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
-    {{ content_for_header }}
-
+    {% comment %} {{ content_for_header }} {% endcomment %}
+{% capture content_for_header2 %}{{ content_for_header }}{% endcapture %}
+{{ content_for_header2
+  | replace: 'accelerated-checkout-backwards-compat.css', 'main.css' 
+  | replace: '<script ', '<script defer '
+}}
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
       if (Shopify.designMode) {

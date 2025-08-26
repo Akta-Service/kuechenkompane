@@ -1,5 +1,5 @@
 {{ 'hf-style.css' | asset_url | stylesheet_tag }}
-{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
 
 <div class="image-slide-section">
   <div class="image-slide-container">
@@ -20,7 +20,6 @@
   </div>
 </div>
 
-<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const headingSwiper = new Swiper('.image-slide__active', {
