@@ -162,6 +162,9 @@
     {% render 'typegraphy' %}
 
     {{ 'swiper.css' | asset_url | stylesheet_tag }}
+    <link rel="preload" href="{{ 'swiper-bundle.min.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+   <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
+
 
     {% comment %}
       <style>
