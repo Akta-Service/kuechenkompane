@@ -477,6 +477,12 @@
     </script>
     {% render 'theme-data' %}
     {% render 'custom-code-head' %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var el = document.getElementById("shopify-accelerated-checkout-styles");
+  if (el) el.remove();
+});
+</script>
 
     <!-- Start cookieyes banner -->
     <script
