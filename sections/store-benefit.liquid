@@ -103,7 +103,7 @@
             <div class="store-benifits-item">
               {% if block.settings.benefit_icon %}
                 <div class="store-benefits-icon">
-                  <img src="{{ block.settings.benefit_icon |  img_url: 'master' }}" alt="icon">
+                  <img src="{{ block.settings.benefit_icon |  img_url: 'master' }}" alt="icon" loading="lazy">
                 </div>
               {% endif %}
               <div class="store-benefits-text">
