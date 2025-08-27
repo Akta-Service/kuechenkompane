@@ -1,4 +1,6 @@
 
+<script src="{{ 'ugc-video-testimonial.js' | asset_url }}" defer="defer"></script>
+
 <style>
   .video_area {
       padding: 70px 0;
@@ -368,63 +370,3 @@
   ]
 }
 {% endschema %}
-
-<script>
-  // Initialize Swiper
-  const video_slider = new Swiper('.video_slider_active', {
-    slidesPerView: 6,
-    spaceBetween: 8,
-    loop: false,
-    navigation: {
-      nextEl: '.video-next',
-      prevEl: '.video-prev',
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 2,
-        centeredSlides: true,
-        loop: true,
-      },
-      700: {
-        slidesPerView: 3,
-      },
-      1024: {
-        slidesPerView: 6,
-      },
-    },
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const videoItems = document.querySelectorAll('.video_item');
-
-    videoItems.forEach((videoItem) => {
-      const video = videoItem.querySelector('video');
-      const playButton = videoItem.querySelector('.play_btn');
-
-      // Play video on clicking anywhere inside the video_item
-      videoItem.addEventListener('click', function () {
-        if (video.paused) {
-          video.play();
-        }
-      });
-
-      // Hide play button when video starts playing
-      video.addEventListener('play', function () {
-        playButton.style.display = 'none';
-      });
-
-      // Show play button when video is paused
-      video.addEventListener('pause', function () {
-        playButton.style.display = 'flex';
-      });
-
-      // Prevent play button click from triggering the container click event
-      playButton.addEventListener('click', function (e) {
-        e.stopPropagation(); // Prevents event bubbling
-        video.play();
-      });
-    });
-  });
-</script>
