@@ -581,6 +581,7 @@ document.addEventListener("DOMContentLoaded", function() {
     {% if template == 'index' %}
       <script
         type="text/javascript"
+        defer="defer"
         src="https://t.adcell.com/js/inlineretarget.js?method=track&pid=10239&type=startpage"
         async
       ></script>
@@ -590,6 +591,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <!-- Produktseite -->
       <script
         type="text/javascript"
+        defer="defer"
         src="https://t.adcell.com/js/inlineretarget.js?method=product&pid=10239&productId={{ product.id }}&productName={{ product.title | url_encode }}&categoryId={{ product.collections.first.id }}"
         async
       ></script>
@@ -599,6 +601,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <!-- Kategorieseite -->
       <script
         type="text/javascript"
+        defer="defer"
         src="https://t.adcell.com/js/inlineretarget.js?method=category&pid=10239&categoryName={{ collection.title | url_encode }}&categoryId={{ collection.id }}"
         async
       ></script>
@@ -608,6 +611,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <!-- Suchergebnisse -->
       <script
         type="text/javascript"
+        defer="defer"
         src="https://t.adcell.com/js/inlineretarget.js?method=search&pid=10239&search={{ search.terms | url_encode }}"
       ></script>
     {%- endif -%}
@@ -616,6 +620,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <!-- Warenkorb -->
       <script
         type="text/javascript"
+        defer="defer"
         src="https://t.adcell.com/js/inlineretarget.js?method=basket&pid=10239&basketProductCount={{ cart.item_count }}&basketTotal={{ cart.total_price | money_without_currency }}"
         async
       ></script>
@@ -641,7 +646,7 @@ document.addEventListener("DOMContentLoaded", function() {
       </script>
     {% endcomment %}
 
-    <script src="{{ 'bundle-selector-custom.js' |  asset_url }}"></script>
+    <script src="{{ 'bundle-selector-custom.js' |  asset_url }}" defer="defer"></script>
 
 
 
