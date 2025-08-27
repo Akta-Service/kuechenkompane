@@ -1,4 +1,6 @@
 
+<script src="{{ 'banner-version-2.js' | asset_url }}" defer="defer"></script>
+
 <style>    
     a {
       text-decoration: none;
@@ -561,23 +563,3 @@
   ]
 }
 {% endschema %}
-
-<script>
-  const swiper = new Swiper('.banner-top-active', {
-    loop: true,
-    autoplay: {
-      delay: 5000,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-  });
-</script>
