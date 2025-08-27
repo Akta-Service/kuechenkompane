@@ -370,3 +370,36 @@
   ]
 }
 {% endschema %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const videoItems = document.querySelectorAll('.video_item');
+
+    videoItems.forEach((videoItem) => {
+      const video = videoItem.querySelector('video');
+      const playButton = videoItem.querySelector('.play_btn');
+
+      // Play video on clicking anywhere inside the video_item
+      videoItem.addEventListener('click', function () {
+        if (video.paused) {
+          video.play();
+        }
+      });
+
+      // Hide play button when video starts playing
+      video.addEventListener('play', function () {
+        playButton.style.display = 'none';
+      });
+
+      // Show play button when video is paused
+      video.addEventListener('pause', function () {
+        playButton.style.display = 'flex';
+      });
+
+      // Prevent play button click from triggering the container click event
+      playButton.addEventListener('click', function (e) {
+        e.stopPropagation(); // Prevents event bubbling
+        video.play();
+      });
+    });
+  });
+</script>
