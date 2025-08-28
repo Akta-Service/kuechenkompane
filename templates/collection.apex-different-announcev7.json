@@ -11,6 +11,7 @@
   "sections": {
     "apex_timer_8KXfky": {
       "type": "Apex-timer",
+      "disabled": true,
       "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#c6d1c4",
@@ -33,14 +34,14 @@
         "heading_HLFfDJ": {
           "type": "heading",
           "settings": {
-            "heading": "EINMALIGE PROZENTE-PARTY! 😱🎉",
+            "heading": "Unser Gründer hat Geburtstag!",
             "heading_size": "h2"
           }
         },
         "text_nAHzLU": {
           "type": "text",
           "settings": {
-            "text": "<p>Unser Gründer feiert Geburtstag. Und du feierst mit! Nur diese Woche: Bis zu 75 % Rabatt auf echte Küchenkompane-Bestseller.</p>"
+            "text": "<p>Daher sparst du jetzt für die nächsten 48 Stunden bis zu 75% auf Bestseller.</p>"
           }
         }
       },
