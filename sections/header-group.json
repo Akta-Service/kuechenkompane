@@ -20,16 +20,56 @@
         "color_scheme": "dark",
         "pt": 15,
         "pb": 15,
-        "ann_title": "LEI OF LOVE",
+        "ann_title": "🎉 Geburtstagsaktion",
         "ann_title_size": 16,
         "ann_title_size_m": 16,
-        "text": "<p>Jetzt für 69 €* shoppen & ein <strong>kostenloses Schmuckstück</strong> auswählen!</p>",
+        "text": "<p>Bis zu 75% Rabatt für die nächsten 48h 🥳</p>",
         "text_size": 16,
         "text_size_m": 16
       }
     },
+    "announcement_bar_mbKA4K": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_NefGWg": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p><strong>SOMMER SALE: </strong>Bis zu -75% </p>"
+          }
+        },
+        "announcement_nPhBbE": {
+          "type": "announcement",
+          "settings": {
+            "block_text": "<p>endet in Kürze | solange Vorrat reicht</p>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_NefGWg",
+        "announcement_nPhBbE"
+      ],
+      "disabled": true,
+      "name": "Header Announcement Bar",
+      "settings": {
+        "collection_list": [
+          "sommer-kollektion",
+          "varianten-collection"
+        ],
+        "announcement_animation_type": "slider",
+        "bg_color": "#324a34",
+        "font_size": 1.2,
+        "marquee_speed": 40,
+        "slides_per_view_small": 1,
+        "slides_per_view_medium": 1,
+        "slides_per_view_large": 1,
+        "space_between": 20,
+        "autoplay_delay": 4000,
+        "speed": 1500
+      }
+    },
     "snow_topbar_Wc6BME": {
       "type": "snow-topbar",
+      "disabled": true,
       "name": "Countdown Timer",
       "settings": {
         "target_collections": [
@@ -47,6 +87,7 @@
     },
     "announcement_bar_AidTMy": {
       "type": "announcement--bar",
+      "disabled": true,
       "name": "Announcement Bar new",
       "settings": {
         "target_collections": [
@@ -58,50 +99,6 @@
         "color_scheme": "scheme-74cef576-6976-437f-b943-846d48553c4f",
         "announcement_url": "",
         "announcement_text": "BIS zu 75% RABATT AUF ALLES"
-      }
-    },
-    "announcement_bar_PMGLwc": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement_BXHi7m": {
-          "type": "announcement",
-          "settings": {
-            "block_text": "<p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>"
-          }
-        },
-        "announcement_FWCNDQ": {
-          "type": "announcement",
-          "settings": {
-            "block_text": "<p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>"
-          }
-        },
-        "announcement_DU9qL9": {
-          "type": "announcement",
-          "settings": {
-            "block_text": "<p><strong>30-day</strong> money-back guarantee</p>"
-          }
-        }
-      },
-      "block_order": [
-        "announcement_BXHi7m",
-        "announcement_FWCNDQ",
-        "announcement_DU9qL9"
-      ],
-      "name": "Header Announcement Bar",
-      "settings": {
-        "collection_list": [
-          "100-tage-risikofrei-testen"
-        ],
-        "announcement_animation_type": "slider",
-        "bg_color": "#7e7e7e",
-        "font_size": 1.5,
-        "marquee_speed": 40,
-        "slides_per_view_small": 1,
-        "slides_per_view_medium": 1,
-        "slides_per_view_large": 1,
-        "space_between": 20,
-        "autoplay_delay": 4000,
-        "speed": 1500
       }
     },
     "announcement_bar_sticky_scroll_Bk3YD6": {
@@ -118,12 +115,18 @@
           "reise-gewinnen-malediven-1",
           "reise-gewinnen-malediven-2",
           "reise-gewinnen-malediven-3",
-          "reise-gewinnen-malediven-4",
+          "bestseller",
           "grunder-geburtstag-2",
           "grunder-im-urlaub",
           "bestseller-angebot",
           "gruender-geburtstag",
-          "grunder-im-urlaub-1"
+          "grunder-im-urlaub-1",
+          "sommer-kollektion",
+          "auslaufmodelle",
+          "varianten-collection",
+          "okami-damastmesser",
+          "okami-damastmesser-sale",
+          "sale-aktuell"
         ],
         "target_pages": "apex-new-page",
         "enable_scroll_to_show": false,
@@ -144,6 +147,30 @@
     "announcement_different_rRyBgT": {
       "type": "announcement-different",
       "blocks": {
+        "announcement_acXHcK": {
+          "type": "announcement",
+          "settings": {
+            "collection": "sale-aktuell",
+            "ann_title": "Bis zu 75% Rabatt auf alles",
+            "text": "<p>Nur für die nächsten 48 Stunden</p>"
+          }
+        },
+        "announcement_JxFegn": {
+          "type": "announcement",
+          "settings": {
+            "collection": "okami-damastmesser-sale",
+            "ann_title": "Die Damastmesser Revolution",
+            "text": "<p>Bis zu 65% Rabatt nur für die nächsten 48h</p>"
+          }
+        },
+        "announcement_rKpUAD": {
+          "type": "announcement",
+          "settings": {
+            "collection": "okami-damastmesser",
+            "ann_title": "Die Damastmesser Revolution",
+            "text": "<p>Bis zu 65% Rabatt nur für die nächsten 48h</p>"
+          }
+        },
         "announcement_JmM3Kw": {
           "type": "announcement",
           "settings": {
@@ -227,7 +254,7 @@
         "announcement_4xFYEd": {
           "type": "announcement",
           "settings": {
-            "collection": "reise-gewinnen-malediven-4",
+            "collection": "bestseller",
             "ann_title": "💥 Großer Lagerschlussverkauf",
             "text": "<p>Bis zu 75 % auf echte Bestseller</p>"
           }
@@ -235,8 +262,8 @@
         "announcement_4K73ww": {
           "type": "announcement",
           "settings": {
-            "collection": "grunder-geburtstag-2",
-            "ann_title": "🎉 Geburtstagsaktion – Spare jetzt bei Küchenkompane!",
+            "collection": "gruender-geburtstag",
+            "ann_title": "Geburtstagsaktion 🎉",
             "text": "<p>Bis zu 75% Rabatt für die nächsten 48h 🥳</p>"
           }
         },
@@ -247,9 +274,20 @@
             "ann_title": "🚨 Nur 48h: Rabatte hinterm Rücken vom Chef!",
             "text": "<p>Der Chef ist weg – wir machen die Preise!</p>"
           }
+        },
+        "announcement_xrURAy": {
+          "type": "announcement",
+          "settings": {
+            "collection": "auslaufmodelle",
+            "ann_title": "Jetzt 75% Rabatt auf Auslaufmodelle",
+            "text": "<p>Nur für die nächsten 48 Stunden<br/><br/></p>"
+          }
         }
       },
       "block_order": [
+        "announcement_acXHcK",
+        "announcement_JxFegn",
+        "announcement_rKpUAD",
         "announcement_JmM3Kw",
         "announcement_UjeB7H",
         "announcement_FDAfCN",
@@ -262,7 +300,8 @@
         "announcement_qcxp9X",
         "announcement_4xFYEd",
         "announcement_4K73ww",
-        "announcement_kAPTNe"
+        "announcement_kAPTNe",
+        "announcement_xrURAy"
       ],
       "name": "APEX Different Ann",
       "settings": {
@@ -271,8 +310,8 @@
         "top_px": 0,
         "sticky_top": false,
         "color_scheme": "dark",
-        "pt": 15,
-        "pb": 15,
+        "pt": 10,
+        "pb": 10,
         "ann_title_size": 16,
         "ann_title_size_m": 16,
         "text_size": 16,
@@ -299,24 +338,6 @@
         "increment_by": 1,
         "reset_when_max_reached": false,
         "start_count": 83
-      }
-    },
-    "apex_global_offer_timer_gMjjdD": {
-      "type": "Apex-global-offer-timer",
-      "disabled": true,
-      "settings": {
-        "bg_color": "#dce5dc",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#d2861a",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "400",
-        "timer_text": "DER AUSVERKAUF ENDET BALD!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "500",
-        "target_date": "2025-06-21",
-        "target_time": "00:00:00"
       }
     },
     "annoucement": {
@@ -446,15 +467,15 @@
         "title_LchWnQ": {
           "type": "title",
           "settings": {
-            "title": "Lagerumzug-Sale",
-            "mb": 0,
-            "mb_m": 0
+            "title": "Einmalige prozente party! 😱🎉",
+            "mb": 25,
+            "mb_m": 10
           }
         },
         "text_HehJ7h": {
           "type": "text",
           "settings": {
-            "text": "Wir ziehen um – und jedes einzelne Produkt, das mitkommt, kostet uns doppelt. Deshalb geben wir dir jetzt bis zu 75 % Rabatt auf fast alles. Nur solange der Vorrat im alten Lager reicht.",
+            "text": "Unser Gründer feiert Geburtstag – und du feierst mit! Nur für kurze Zeit: Bis zu 75 % Rabatt auf echte Küchenkompane-Bestseller.",
             "mb": 0,
             "mb_m": 0
           }
@@ -482,6 +503,7 @@
     },
     "announcement_bar_version_1_copy_GBrcEC": {
       "type": "announcement-bar-version-1-copy",
+      "disabled": true,
       "settings": {
         "target_tags": "sale announcement",
         "color_scheme": "dark",
@@ -496,20 +518,38 @@
         "text_size_m": 16,
         "text_fw": "400"
       }
+    },
+    "apex_global_offer_timer_gMjjdD": {
+      "type": "Apex-global-offer-timer",
+      "disabled": true,
+      "settings": {
+        "bg_color": "#dce5dc",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#d2861a",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "400",
+        "timer_text": "DIE AKTION ENDET BALD",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "500",
+        "target_date": "2025-08-18",
+        "target_time": "00:00:00"
+      }
     }
   },
   "order": [
     "announcement_bar_version_1_rc6jDA",
+    "announcement_bar_mbKA4K",
     "snow_topbar_Wc6BME",
     "announcement_bar_AidTMy",
-    "announcement_bar_PMGLwc",
     "announcement_bar_sticky_scroll_Bk3YD6",
     "announcement_different_rRyBgT",
     "apex_timer_progress_yCDcUj",
-    "apex_global_offer_timer_gMjjdD",
     "annoucement",
     "header",
     "text_banner_bjwwcx",
-    "announcement_bar_version_1_copy_GBrcEC"
+    "announcement_bar_version_1_copy_GBrcEC",
+    "apex_global_offer_timer_gMjjdD"
   ]
 }
