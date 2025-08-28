@@ -291,6 +291,14 @@
             "ann_title": "Jetzt 75% Rabatt auf Auslaufmodelle",
             "text": "<p>Nur für die nächsten 48 Stunden<br/><br/></p>"
           }
+        },
+        "announcement_jNxBEw": {
+          "type": "announcement",
+          "settings": {
+            "collection": "bestseller",
+            "ann_title": "Bis zu 75 % auf echte Bestseller",
+            "text": "<p>100 Tage testen | Kostenloser Versand</p>"
+          }
         }
       },
       "block_order": [
@@ -311,7 +319,8 @@
         "announcement_4xFYEd",
         "announcement_4K73ww",
         "announcement_kAPTNe",
-        "announcement_xrURAy"
+        "announcement_xrURAy",
+        "announcement_jNxBEw"
       ],
       "name": "APEX Different Ann",
       "settings": {
