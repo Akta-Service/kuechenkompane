@@ -149,6 +149,14 @@
     "announcement_different_rRyBgT": {
       "type": "announcement-different",
       "blocks": {
+        "announcement_xXLydM": {
+          "type": "announcement",
+          "settings": {
+            "collection": "lieferchaos",
+            "ann_title": "Special Offer",
+            "text": "<p>Exclusive deal for this collection!</p>"
+          }
+        },
         "announcement_NBcHH9": {
           "type": "announcement",
           "settings": {
@@ -303,6 +311,7 @@
         }
       },
       "block_order": [
+        "announcement_xXLydM",
         "announcement_NBcHH9",
         "announcement_acXHcK",
         "announcement_JxFegn",
