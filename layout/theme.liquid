@@ -165,9 +165,9 @@
       render 'style-tags'
     -%}
     {% render 'typegraphy' %}
-    
+  
 
-    {{ 'swiper.css' | asset_url | stylesheet_tag }}
+    {% comment %} {{ 'swiper.css' | asset_url | stylesheet_tag }} {% endcomment %}
   {% comment %} <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>  {% endcomment %}
 {% comment %} <link
   rel="stylesheet"
