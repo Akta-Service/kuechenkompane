@@ -40,7 +40,7 @@ class MHeader extends HTMLElement {
   }
 
   initAddon() {
-    this.megamenu = new Megamenu(this);
+    // this.megamenu = new Megamenu(this);
     if (Shopify.designMode) {
       MinimogTheme = MinimogTheme || {};
       MinimogTheme && MinimogTheme.Wishlist && MinimogTheme.Wishlist.updateWishlistCount();
