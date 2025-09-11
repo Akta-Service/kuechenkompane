@@ -160,11 +160,12 @@
       render 'critical-css'
 
       echo 'main.css' | asset_url | stylesheet_tag: preload: true
+      echo 'swiper-bundle.min.css' | asset_url | stylesheet_tag: preload: true
 
       render 'style-tags'
     -%}
     {% render 'typegraphy' %}
-    <link rel="preload" href="{{ 'swiper-bundle.min.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+    
 
     {{ 'swiper.css' | asset_url | stylesheet_tag }}
   {% comment %} <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>  {% endcomment %}
