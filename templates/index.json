@@ -430,7 +430,6 @@
         "item_fE7aKd": {
           "type": "item",
           "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_6_3a37263e-60c3-4ed4-99dd-a04263c96884.jpg",
             "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V1.mp4",
             "product": ""
           }
@@ -483,6 +482,7 @@
         "item_MeKj4G",
         "item_hQNcWm"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "pt": 70,
