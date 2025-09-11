@@ -1,4 +1,12 @@
-{{ 'custom-content.css' | asset_url | stylesheet_tag }}
+<link 
+  href="{{ 'custom-content.css' | asset_url }}" 
+  rel="stylesheet" 
+  media="print" 
+  onload="this.media='all'">
+<noscript>
+  <link href="{{ 'custom-content.css' | asset_url }}" rel="stylesheet">
+</noscript>
+
 {% liquid
   assign scrollMobile = section.settings.use_scroll_mobile
 
