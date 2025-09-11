@@ -153,11 +153,11 @@
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- endif -%}
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="main.css" media="print" onload="this.media='all'">
 
 
     
-      echo 'main.css' | asset_url | stylesheet_tag: preload: true
+      {% comment %} echo 'main.css' | asset_url | stylesheet_tag: preload: true {% endcomment %}
     {%- liquid
       render 'social-meta-tags'
       render 'font-face'
