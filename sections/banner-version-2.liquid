@@ -111,7 +111,7 @@
     class="banner-main {% if section.settings.b_overlay != false %}b_overlay{% endif %}"
     style="{% if section.settings.bg_igm != blank %} background-image: url('{{ section.settings.bg_igm |  img_url: 'master'  }}'); {% endif %}"
   >
-<div class="video-wrapper">
+{% comment %} <div class="video-wrapper">
   <!-- LCP Image -->
   <img
     class="lcp-image"
@@ -217,7 +217,115 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 400); // matches fade duration
   });
 });
+</script> {% endcomment %}
+
+<div class="video-wrapper">
+  <!-- LCP Image -->
+  <img
+    class="lcp-image"
+    src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V1_1_2_60866071-e175-40ea-bf6e-b283ad4fc52b.webp?v=1757623772"
+    alt="Banner image"
+    fetchpriority="high"
+    width="1920"
+    height="1080"
+  >
+
+  <!-- Desktop Video (no src yet, lazy loaded) -->
+  <video
+    class="video desktop-video"
+    muted
+    autoplay
+    loop
+    playsinline
+    preload="auto"
+    poster="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V2_dc7d4c96-f9fb-4cce-b580-c1c4b70846c1_2_1_3.webp?v=1757618603"
+  ></video>
+
+  <!-- Mobile Video (no src yet, lazy loaded) -->
+  <video
+    class="video mobile-video"
+    muted
+    autoplay
+    loop
+    playsinline
+    preload="auto"
+    poster="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V1_1_2_60866071-e175-40ea-bf6e-b283ad4fc52b.webp?v=1757623772"
+  ></video>
+</div>
+
+<style>
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.lcp-image,
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video {
+  display: none;
+}
+
+.desktop-video,
+.mobile-video {
+  display: none;
+}
+
+/* Desktop & laptop video */
+@media (min-width: 1025px) {
+  .desktop-video { display: block; }
+}
+
+/* Tablet uses desktop video */
+@media (768px <= width <= 1024px) {
+  .desktop-video { display: block; }
+}
+
+/* Mobile video */
+@media (max-width: 767px) {
+  .mobile-video { display: block; }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const image = document.querySelector(".lcp-image");
+  const desktopVideo = document.querySelector(".desktop-video");
+  const mobileVideo = document.querySelector(".mobile-video");
+
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  const activeVideo = isMobile ? mobileVideo : desktopVideo;
+
+  // Delay loading by 7s
+  setTimeout(() => {
+    const source = document.createElement("source");
+    source.src = isMobile ? "{{ section.settings.u_mobile }}" : "{{ section.settings.u }}";
+    source.type = "video/mp4";
+    activeVideo.appendChild(source);
+
+    // When video is ready, hide image and show video
+    activeVideo.addEventListener("canplaythrough", function () {
+      image.style.opacity = "0";
+      setTimeout(() => {
+        image.style.display = "none";
+        activeVideo.style.display = "block";
+      }, 400);
+    });
+
+    activeVideo.load(); // start loading video after 7s
+  }, 7000);
+});
 </script>
+
 
 
     <div class="banner-main-content">
