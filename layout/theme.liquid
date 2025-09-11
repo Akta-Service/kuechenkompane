@@ -153,13 +153,16 @@
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- endif -%}
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
 
+
+    
+      echo 'main.css' | asset_url | stylesheet_tag: preload: true
     {%- liquid
       render 'social-meta-tags'
       render 'font-face'
       render 'critical-css'
 
-      echo 'main.css' | asset_url | stylesheet_tag: preload: true
       echo 'swiper-bundle.min.css' | asset_url | stylesheet_tag: preload: true
       echo 'vendor.css' | asset_url | stylesheet_tag: preload: true
       echo 'header.css' | asset_url | stylesheet_tag: preload: true
