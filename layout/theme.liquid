@@ -168,8 +168,15 @@
   
 
 <script>
+  const preloadLink = document.createElement("link");
+preloadLink.href = "{{ 'swiper-bundle.min.js' | asset_url }}";
+preloadLink.rel = "preload";
+preloadLink.as = "script";
+document.head.appendChild(preloadLink);
 </script>
-        <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+<link rel="preload" href="{{ 'swiper-bundle.min.js' | asset_url }}" as="script">
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+     
     {% comment %} {{ 'swiper.css' | asset_url | stylesheet_tag }} {% endcomment %}
   {% comment %} <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>  {% endcomment %}
 {% comment %} <link
