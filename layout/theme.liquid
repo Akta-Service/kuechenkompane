@@ -459,6 +459,25 @@ document.head.appendChild(preloadLink);
           });
         });
       })();
+
+      <script>
+(function deferShopifyCheckoutCSS() {
+  var interval = setInterval(function() {
+    var link = document.querySelector('#shopify-accelerated-checkout-styles');
+    if (link) {
+      // Stop the interval once found
+      clearInterval(interval);
+
+      // Defer the stylesheet
+      link.media = "print";
+      link.onload = function() {
+        this.media = "all";
+      };
+    }
+  }, 100); // check every 100ms
+})();
+</script>
+
     </script>
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme-global.js' | asset_url }}" defer="defer"></script>
