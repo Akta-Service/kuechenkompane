@@ -46,7 +46,7 @@
   }
 </style>
 
-<script>
+{% comment %} <script>
   document.addEventListener('DOMContentLoaded', function () {
     var queue = new createjs.LoadQueue();
     var isMobile = window.matchMedia('(max-width: 767px)').matches;
@@ -79,7 +79,7 @@
       queue.loadFile({ id: 'desktop', src: '{{ section.settings.u }}' });
     }
   });
-</script>
+</script> {% endcomment %}
 
 <div class="banner-area-two m-color-{{ section.settings.color_scheme }}">
   <div class="banner-top">
