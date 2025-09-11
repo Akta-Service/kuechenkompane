@@ -68,10 +68,26 @@
             "subtitle_weight": "400"
           }
         },
+        "loox_reviews_loox_rating_WHXmqA": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "[rating]/5 ([count]) bei Trustpilot",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
         "review_Tgbbak": {
           "type": "review",
+          "disabled": true,
           "settings": {
-            "p": "4.7/5 bei Trustpilot",
+            "p": "4.7/5",
             "star_range": 5,
             "star_color": "#000000"
           }
@@ -106,11 +122,14 @@
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 19,
+            "c_price_size": 16,
+            "c_price_size_m": 16,
             "price_font_weight": "600",
             "price_tag_bg": "#ddede0",
             "price_tag_text_color": "#000000",
             "price_tag_font_size": 8,
-            "price_tag_arrow_bg": "#ddede0"
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -195,6 +214,7 @@
       "block_order": [
         "title_Bac9Mk",
         "subtitle_xQXVba",
+        "loox_reviews_loox_rating_WHXmqA",
         "review_Tgbbak",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
@@ -231,7 +251,11 @@
         "show_stk_icon": false,
         "glitter_effec": false,
         "bubble_before_color": "#4b4b4b",
-        "bubble_after_color": "#4b4b4b"
+        "bubble_after_color": "#4b4b4b",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "product_descrption_accordion_btdDtQ": {
@@ -703,7 +727,7 @@
           "type": "item",
           "settings": {
             "faq_title": "Welches Material wird für die OKAMI Klingen verwendet?",
-            "faq_body": "<p>Jede Klinge besteht aus 67 Lagen echtem, handgeschmiedetem Damaststahl mit einem hochfesten VG10-Stahlkern – für maximale Härte und Präzision.</p>"
+            "faq_body": "<p>Jede Klinge besteht aus 67 Lagen echtem, handgeschmiedetem Damaststahl mit einem hochfesten <strong>9cr18mov-Stahlkern</strong> für maximale Härte und Präzision.</p>"
           }
         },
         "item_V7NfBy": {

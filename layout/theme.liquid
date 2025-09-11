@@ -168,29 +168,7 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 /> {% endcomment %}
- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" >></script> 
-
-    {% comment %}
-      <style>
-        .mrk-btn {
-          background-color: {{ settings.btn_bg }} !important;
-          color: {{ settings.btn_text }} !important;
-          font-size: {{ settings.btn_font_size }}px !important;
-          padding: {{ settings.btn_padding_vr }}px {{ settings.btn_padding_hr }}px !important;
-          border-radius: {{ settings.btn_border_radius_mrk | default: "5" }}px !important;
-          border: {% if settings.btn_border_width_mrk > 0 %}{{ settings.btn_border_width_mrk }}px solid {{ settings.btn_border }}{% else %}none{% endif %} !important;
-          {% if settings.btn_box_shadow != blank %}box-shadow: {{ settings.btn_box_shadow }} !important;{% endif %}
-          text-decoration: none !important;
-          transition: 0.3s;
-        }
-
-        .mrk-btn:hover {
-          background-color: {{ settings.btn_hover_bg }} !important;
-          color: {{ settings.btn_hover_text }} !important;
-          border-color: {{ settings.btn_hover_bg }} !important;
-        }
-      </style>
-    {% endcomment %}
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script> 
     <style>
       :root {
 
@@ -347,9 +325,6 @@
       .m-slider-controls__button {
           width: 44px !important;
       }
-    </style>
-
-    <style>
             /* Base Styles (Default: Desktop) */
             .p-xl, .p-xl p {
               font-weight: {{ settings.p_xl_font_weight }};
@@ -466,7 +441,6 @@
       <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
     {% comment %} {{ content_for_header }} {% endcomment %}
 {% capture content_for_header2 %}{{ content_for_header }}{% endcapture %}
@@ -482,12 +456,6 @@
     </script>
     {% render 'theme-data' %}
     {% render 'custom-code-head' %}
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  var el = document.getElementById("shopify-accelerated-checkout-styles");
-  if (el) el.remove();
-});
-</script>
 
     <!-- Start cookieyes banner -->
     <script
@@ -629,27 +597,6 @@ document.addEventListener("DOMContentLoaded", function() {
         async
       ></script>
     {% endif %}
-
-    {% comment %}
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          setTimeout(function () {
-            document.querySelectorAll('form[action*="/cart/add"][data-collection]').forEach(function (form) {
-              const collection = form.dataset.collection;
-
-              if (collection && localStorage.getItem('visited_collection_' + collection) === 'true') {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = 'properties[Note]';
-                input.value = collection;
-                form.appendChild(input);
-              }
-            });
-          }, 100);
-        });
-      </script>
-    {% endcomment %}
-
     <script src="{{ 'bundle-selector-custom.js' |  asset_url }}" defer="defer"></script>
 
 

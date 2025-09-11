@@ -68,8 +68,24 @@
             "subtitle_weight": "400"
           }
         },
+        "loox_reviews_loox_rating_cLt3Jq": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 18,
+            "pattern": "[rating]/5 ([count]) bei Trustpilot",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
         "review_Tgbbak": {
           "type": "review",
+          "disabled": true,
           "settings": {
             "p": "4.7/5 bei Trustpilot",
             "star_range": 5,
@@ -106,7 +122,14 @@
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 19,
-            "price_font_weight": "600"
+            "c_price_size": 16,
+            "c_price_size_m": 16,
+            "price_font_weight": "600",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -126,6 +149,8 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
             "viewer_count_time": 2500,
             "stock_count_time": 50000,
             "stock_count_show": false
@@ -189,6 +214,7 @@
       "block_order": [
         "title_Bac9Mk",
         "subtitle_xQXVba",
+        "loox_reviews_loox_rating_cLt3Jq",
         "review_Tgbbak",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
@@ -201,6 +227,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
@@ -224,7 +251,11 @@
         "show_stk_icon": false,
         "glitter_effec": false,
         "bubble_before_color": "#4b4b4b",
-        "bubble_after_color": "#4b4b4b"
+        "bubble_after_color": "#4b4b4b",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "product_descrption_accordion_btdDtQ": {
@@ -870,7 +901,8 @@
         "sub_title": "",
         "sub_title_font_size": 20,
         "faq_title_font_size": 18,
-        "faq_text_font_size": 16
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "benefit_text_MCeGiV": {

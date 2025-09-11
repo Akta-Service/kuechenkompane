@@ -41,8 +41,8 @@
       "type": "collection-img-banner",
       "name": "Collection Image Banner",
       "settings": {
-        "image_1": "shopify://shop_images/KK_-_New_Collection_HIKE_2_-_2_1.jpg",
-        "image_2": "shopify://shop_images/KK_-_New_Collection_HIKE_1_-_2_1.jpg"
+        "image_1": "shopify://shop_images/KK_-_New_Collection_HIKE_2_-_3_1.jpg",
+        "image_2": "shopify://shop_images/KK_-_New_Collection_HIKE_1_-_3_1.jpg"
       }
     },
     "product_feature_EP3YFm": {
@@ -120,7 +120,7 @@
         ".m-collection-filters-form {margin-bottom: 0;}"
       ],
       "settings": {
-        "show_review_badge": true,
+        "show_review_badge": false,
         "show_quickview_button": true,
         "container": "container-fluid",
         "grid_layout": "grid",

@@ -60,8 +60,15 @@
             "font_weight_t": "600"
           }
         },
+        "custom_liquid_n3LYzx": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"loox-rating\" data-id=\"{{ product.id }}\" data-rating-stars=\"true\" data-rating-count=\"true\"></div>"
+          }
+        },
         "review_kfXQYg": {
           "type": "review",
+          "disabled": true,
           "settings": {
             "p": "4.9/5 Sternen",
             "star_range": 5,
@@ -70,10 +77,9 @@
         },
         "loox_reviews_loox_rating_E3wh98": {
           "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "disabled": true,
           "settings": {
-            "contentSize": 16,
-            "pattern": "",
+            "contentSize": 18,
+            "pattern": "[rating]/5 ([count])  Sternen",
             "hideText": false,
             "alignment": "",
             "layout": "",
@@ -234,6 +240,7 @@
       },
       "block_order": [
         "title_Bac9Mk",
+        "custom_liquid_n3LYzx",
         "review_kfXQYg",
         "loox_reviews_loox_rating_E3wh98",
         "ratings_fD4VNJ",
