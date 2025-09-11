@@ -111,43 +111,114 @@
     class="banner-main {% if section.settings.b_overlay != false %}b_overlay{% endif %}"
     style="{% if section.settings.bg_igm != blank %} background-image: url('{{ section.settings.bg_igm |  img_url: 'master'  }}'); {% endif %}"
   >
-    <div class="video-wrapper">
-      <!-- LCP Image (shows immediately for faster LCP) -->
-      <img
-        class="lcp-image"
-        src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V1_1_2_60866071-e175-40ea-bf6e-b283ad4fc52b.webp?v=1757623772"
-        alt="Banner image"
-        fetchpriority="high"
-        width="1920"
-        height="1080"
-      >
+<div class="video-wrapper">
+  <!-- LCP Image -->
+  <img
+    class="lcp-image"
+    src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V1_1_2_60866071-e175-40ea-bf6e-b283ad4fc52b.webp?v=1757623772"
+    alt="Banner image"
+    fetchpriority="high"
+    width="1920"
+    height="1080"
+  >
 
-      <!-- Desktop Video -->
-      <video
-        class="desktop-video"
-        muted
-        autoplay
-        loop
-        playsinline
-        fetchpriority="high"
-        poster="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V2_dc7d4c96-f9fb-4cce-b580-c1c4b70846c1_2_1_3.webp?v=1757618603"
-      >
-    <source src="{{ section.settings.u }}" type="video/mp4"> 
-      </video>
+  <!-- Desktop Video -->
+  <video
+    class="video desktop-video"
+    muted
+    autoplay
+    loop
+    playsinline
+    preload="auto"
+    poster="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V2_dc7d4c96-f9fb-4cce-b580-c1c4b70846c1_2_1_3.webp?v=1757618603"
+  >
+    <source src="{{ section.settings.u }}" type="video/mp4">
+  </video>
 
-      <!-- Mobile Video -->
-      <video
-        class="mobile-video"
-        muted
-        autoplay
-        loop
-        playsinline
-        fetchpriority="high"
-        poster="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V1_1_2_60866071-e175-40ea-bf6e-b283ad4fc52b.webp?v=1757623772"
-      >
-         <source src="{{ section.settings.u_mobile }}" type="video/mp4"> 
-      </video>
-    </div>
+  <!-- Mobile Video -->
+  <video
+    class="video mobile-video"
+    muted
+    autoplay
+    loop
+    playsinline
+    preload="auto"
+    poster="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V1_1_2_60866071-e175-40ea-bf6e-b283ad4fc52b.webp?v=1757623772"
+  >
+    <source src="{{ section.settings.u_mobile }}" type="video/mp4">
+  </video>
+</div>
+
+<style>
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full viewport height */
+  overflow: hidden;
+}
+
+.lcp-image,
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills container */
+}
+
+.video {
+  display: none; /* hide until loaded */
+}
+
+/* By default hide both videos */
+.desktop-video,
+.mobile-video {
+  display: none;
+}
+
+/* Desktop & laptop video */
+@media (min-width: 1025px) {
+  .desktop-video {
+    display: block;
+  }
+}
+
+/* Tablet video (if you want desktop here too) */
+@media (768px <= width <= 1024px) {
+  .desktop-video {
+    display: block;
+  }
+}
+
+/* Mobile video */
+@media (max-width: 767px) {
+  .mobile-video {
+    display: block;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const image = document.querySelector(".lcp-image");
+  const desktopVideo = document.querySelector(".desktop-video");
+  const mobileVideo = document.querySelector(".mobile-video");
+
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  const activeVideo = isMobile ? mobileVideo : desktopVideo;
+
+  // Show video only after it's ready
+  activeVideo.addEventListener("canplaythrough", function () {
+    image.style.opacity = "0"; // smooth fade
+    setTimeout(() => {
+      image.style.display = "none";
+      activeVideo.style.display = "block";
+    }, 400); // matches fade duration
+  });
+});
+</script>
+
 
     <div class="banner-main-content">
       <h1 class="{{ section.settings.heading_type }}">{{ section.settings.title }}</h1>
