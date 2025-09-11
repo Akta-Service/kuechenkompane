@@ -1,4 +1,4 @@
-  const swiper = new Swiper('.store-benefits-active', {
+  const store12 = new Swiper('.store-benefits-active', {
     slidesPerView: 5,
     spaceBetween: 10,
     loop: true,
