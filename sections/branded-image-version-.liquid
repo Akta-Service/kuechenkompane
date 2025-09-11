@@ -100,9 +100,14 @@
   <div class="branded-img-content">
     <div
       class="branded-left-item"
-      {% if section.settings.bg_img != blank %}
+      {% comment %} {% if section.settings.bg_img != blank %}
         style=" background-image: url('{{ section.settings.bg_img |  img_url: 'master' }}');"
-      {% endif %}
+      {% endif %} {% endcomment %}
+
+        {% if section.settings.bg_img != blank %}
+    data-bg="{{ section.settings.bg_img | img_url: 'master' }}"
+  {% endif %}
+
     >
       <svg
         class="banner-fluid__media-mask"
