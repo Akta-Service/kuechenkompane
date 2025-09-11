@@ -153,22 +153,23 @@
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- endif -%}
-    <link rel="stylesheet" href="{{ 'main.css' | asset_url }}" media="print" onload="this.media='all'">
 
-
-    
-      {% comment %} echo 'main.css' | asset_url | stylesheet_tag: preload: true {% endcomment %}
     {%- liquid
       render 'social-meta-tags'
       render 'font-face'
       render 'critical-css'
 
+      echo 'main.css' | asset_url | stylesheet_tag: preload: true
       echo 'swiper-bundle.min.css' | asset_url | stylesheet_tag: preload: true
       echo 'vendor.css' | asset_url | stylesheet_tag: preload: true
-      echo 'header.css' | asset_url | stylesheet_tag: preload: true
+      echo '' | asset_url | stylesheet_tag: preload: true
 
       render 'style-tags'
     -%}
+
+
+    <link rel="stylesheet" href="{{ 'header.css' | asset_url }}" media="print" onload="this.media='all'">
+
     {% render 'typegraphy' %}
   
 
