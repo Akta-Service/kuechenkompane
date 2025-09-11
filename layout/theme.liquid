@@ -160,14 +160,16 @@
       render 'critical-css'
 
       echo 'main.css' | asset_url | stylesheet_tag: preload: true
-      echo 'swiper-bundle.min.css' | asset_url | stylesheet_tag: preload: true
-      echo 'vendor.css' | asset_url | stylesheet_tag: preload: true
+      echo '' | asset_url | stylesheet_tag: preload: true
+      echo '' | asset_url | stylesheet_tag: preload: true
       echo '' | asset_url | stylesheet_tag: preload: true
 
       render 'style-tags'
     -%}
 
 
+    <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'vendor.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'header.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {% render 'typegraphy' %}
