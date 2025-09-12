@@ -186,6 +186,13 @@
             -%}
             {%- capture sizes -%}(min-width: {{ settings.container_width }}px) {{ settings.container_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2){%- endcapture -%}
             <responsive-image class="m-image" style="--aspect-ratio: {{ asp_rat }}">
+            
+     {% if product.metafields.custom.product_image != blank %}
+  <img 
+    src="{{ product.metafields.custom.product_image | image_url: width: 360 }}" 
+    alt="{{ product.title }}">
+
+            {% else %}
               {{
                 preview_image
                 | image_url: width: 1100
@@ -197,6 +204,9 @@
                   sizes: sizes,
                   widths: '165, 360, 535, 750, 940, 1100'
               }}
+            {% endif %}
+
+
             </responsive-image>
           </div>
 
