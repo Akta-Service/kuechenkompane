@@ -30,9 +30,12 @@
   {% endif %}
 >
   <head>
-
-
-      <link rel="preload" href="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V1_25eb48c6-a16e-44be-ad97-7615474a6aa8_1_2.webp?v=1757620448" as="image" type="image/webp" />
+    <link
+      rel="preload"
+      href="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V1_25eb48c6-a16e-44be-ad97-7615474a6aa8_1_2.webp?v=1757620448"
+      as="image"
+      type="image/webp"
+    >
 
     {% comment %} pass ptotected collection js  {% endcomment %}
     {% comment %} pass ptotected collection js  {% endcomment %}
@@ -162,99 +165,100 @@
       echo 'main.css' | asset_url | stylesheet_tag: preload: true
       echo 'header.css' | asset_url | stylesheet_tag: preload: true
 
-
       render 'style-tags'
     -%}
 
-          {% comment %} echo '' | asset_url | stylesheet_tag: preload: true
+    {% comment %}
       echo '' | asset_url | stylesheet_tag: preload: true
-      echo '' | asset_url | stylesheet_tag: preload: true {% endcomment %}
-
+      echo '' | asset_url | stylesheet_tag: preload: true
+      echo '' | asset_url | stylesheet_tag: preload: true
+    {% endcomment %}
 
     <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'vendor.css' | asset_url }}" media="print" onload="this.media='all'">
     {% comment %} <link rel="stylesheet" href="{{ '' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
 
     {% render 'typegraphy' %}
-  
 
-<script>
-  const preloadLink = document.createElement("link");
-preloadLink.href = "{{ 'swiper-bundle.min.js' | asset_url }}";
-preloadLink.rel = "preload";
-preloadLink.as = "script";
-document.head.appendChild(preloadLink);
-</script>
-{% comment %} <link rel="preload" href="{{ 'swiper-bundle.min.js' | asset_url }}" as="script">
-  {% endcomment %}
+    <script>
+      const preloadLink = document.createElement('link');
+      preloadLink.href = "{{ 'swiper-bundle.min.js' | asset_url }}";
+      preloadLink.rel = 'preload';
+      preloadLink.as = 'script';
+      document.head.appendChild(preloadLink);
+    </script>
+    {% comment %}
+      <link rel="preload" href="{{ 'swiper-bundle.min.js' | asset_url }}" as="script">
+    {% endcomment %}
 
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
 
-<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
-     
     {% comment %} {{ 'swiper.css' | asset_url | stylesheet_tag }} {% endcomment %}
-  {% comment %} <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>  {% endcomment %}
-{% comment %} <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/> {% endcomment %}
- {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>  {% endcomment %}
+    {% comment %} <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>  {% endcomment %}
+    {% comment %}
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      />
+    {% endcomment %}
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>  {% endcomment %}
     <style>
-      :root {
+            :root {
 
-        --mrk-h1-color: {{ settings.h1_color }} !important;
-        --mrk-h1-size-desktop: {{ settings.h1_size_desktop }}px !important;
-        --mrk-h1-size-laptop: {{ settings.h1_size_laptop }}px !important;
-        --mrk-h1-size-mobile: {{ settings.h1_size_mobile }}px !important;
-        --mrk-h1-margin-desktop: {{ settings.h1_mt_desktop }}px {{ settings.h1_mr_desktop }}px {{ settings.h1_mb_desktop }}px {{ settings.h1_ml_desktop }}px !important;
-        --mrk-h1-margin-laptop: {{ settings.h1_mt_laptop }}px {{ settings.h1_mr_laptop }}px {{ settings.h1_mb_laptop }}px {{ settings.h1_ml_laptop }}px !important;
-        --mrk-h1-margin-mobile: {{ settings.h1_mt_mobile }}px {{ settings.h1_mr_mobile }}px {{ settings.h1_mb_mobile }}px {{ settings.h1_ml_mobile }}px !important;
+              --mrk-h1-color: {{ settings.h1_color }} !important;
+              --mrk-h1-size-desktop: {{ settings.h1_size_desktop }}px !important;
+              --mrk-h1-size-laptop: {{ settings.h1_size_laptop }}px !important;
+              --mrk-h1-size-mobile: {{ settings.h1_size_mobile }}px !important;
+              --mrk-h1-margin-desktop: {{ settings.h1_mt_desktop }}px {{ settings.h1_mr_desktop }}px {{ settings.h1_mb_desktop }}px {{ settings.h1_ml_desktop }}px !important;
+              --mrk-h1-margin-laptop: {{ settings.h1_mt_laptop }}px {{ settings.h1_mr_laptop }}px {{ settings.h1_mb_laptop }}px {{ settings.h1_ml_laptop }}px !important;
+              --mrk-h1-margin-mobile: {{ settings.h1_mt_mobile }}px {{ settings.h1_mr_mobile }}px {{ settings.h1_mb_mobile }}px {{ settings.h1_ml_mobile }}px !important;
 
-        --mrk-h2-color: {{ settings.h2_color }} !important;
-        --mrk-h2-size-desktop: {{ settings.h2_size_desktop }}px !important;
-        --mrk-h2-size-laptop: {{ settings.h2_size_laptop }}px !important;
-        --mrk-h2-size-mobile: {{ settings.h2_size_mobile }}px !important;
-        --mrk-h2-margin-desktop: {{ settings.h2_mt_desktop }}px {{ settings.h2_mr_desktop }}px {{ settings.h2_mb_desktop }}px {{ settings.h2_ml_desktop }}px !important;
-        --mrk-h2-margin-laptop: {{ settings.h2_mt_laptop }}px {{ settings.h2_mr_laptop }}px {{ settings.h2_mb_laptop }}px {{ settings.h2_ml_laptop }}px !important;
-        --mrk-h2-margin-mobile: {{ settings.h2_mt_mobile }}px {{ settings.h2_mr_mobile }}px {{ settings.h2_mb_mobile }}px {{ settings.h2_ml_mobile }}px !important;
+              --mrk-h2-color: {{ settings.h2_color }} !important;
+              --mrk-h2-size-desktop: {{ settings.h2_size_desktop }}px !important;
+              --mrk-h2-size-laptop: {{ settings.h2_size_laptop }}px !important;
+              --mrk-h2-size-mobile: {{ settings.h2_size_mobile }}px !important;
+              --mrk-h2-margin-desktop: {{ settings.h2_mt_desktop }}px {{ settings.h2_mr_desktop }}px {{ settings.h2_mb_desktop }}px {{ settings.h2_ml_desktop }}px !important;
+              --mrk-h2-margin-laptop: {{ settings.h2_mt_laptop }}px {{ settings.h2_mr_laptop }}px {{ settings.h2_mb_laptop }}px {{ settings.h2_ml_laptop }}px !important;
+              --mrk-h2-margin-mobile: {{ settings.h2_mt_mobile }}px {{ settings.h2_mr_mobile }}px {{ settings.h2_mb_mobile }}px {{ settings.h2_ml_mobile }}px !important;
 
-        --mrk-h3-color: {{ settings.h3_color }} !important;
-        --mrk-h3-size-desktop: {{ settings.h3_size_desktop }}px !important;
-        --mrk-h3-size-laptop: {{ settings.h3_size_laptop }}px !important;
-        --mrk-h3-size-mobile: {{ settings.h3_size_mobile }}px !important;
-        --mrk-h3-margin-desktop: {{ settings.h3_mt_desktop }}px {{ settings.h3_mr_desktop }}px {{ settings.h3_mb_desktop }}px {{ settings.h3_ml_desktop }}px !important;
-        --mrk-h3-margin-laptop: {{ settings.h3_mt_laptop }}px {{ settings.h3_mr_laptop }}px {{ settings.h3_mb_laptop }}px {{ settings.h3_ml_laptop }}px !important;
-        --mrk-h3-margin-mobile: {{ settings.h3_mt_mobile }}px {{ settings.h3_mr_mobile }}px {{ settings.h3_mb_mobile }}px {{ settings.h3_ml_mobile }}px !important;
+              --mrk-h3-color: {{ settings.h3_color }} !important;
+              --mrk-h3-size-desktop: {{ settings.h3_size_desktop }}px !important;
+              --mrk-h3-size-laptop: {{ settings.h3_size_laptop }}px !important;
+              --mrk-h3-size-mobile: {{ settings.h3_size_mobile }}px !important;
+              --mrk-h3-margin-desktop: {{ settings.h3_mt_desktop }}px {{ settings.h3_mr_desktop }}px {{ settings.h3_mb_desktop }}px {{ settings.h3_ml_desktop }}px !important;
+              --mrk-h3-margin-laptop: {{ settings.h3_mt_laptop }}px {{ settings.h3_mr_laptop }}px {{ settings.h3_mb_laptop }}px {{ settings.h3_ml_laptop }}px !important;
+              --mrk-h3-margin-mobile: {{ settings.h3_mt_mobile }}px {{ settings.h3_mr_mobile }}px {{ settings.h3_mb_mobile }}px {{ settings.h3_ml_mobile }}px !important;
 
-        --mrk-h4-color: {{ settings.h4_color }} !important;
-        --mrk-h4-size-desktop: {{ settings.h4_size_desktop }}px !important;
-        --mrk-h4-size-laptop: {{ settings.h4_size_laptop }}px !important;
-        --mrk-h4-size-mobile: {{ settings.h4_size_mobile }}px !important;
-        --mrk-h4-margin-desktop: {{ settings.h4_mt_desktop }}px {{ settings.h4_mr_desktop }}px {{ settings.h4_mb_desktop }}px {{ settings.h4_ml_desktop }}px !important;
-        --mrk-h4-margin-laptop: {{ settings.h4_mt_laptop }}px {{ settings.h4_mr_laptop }}px {{ settings.h4_mb_laptop }}px {{ settings.h4_ml_laptop }}px !important;
-        --mrk-h4-margin-mobile: {{ settings.h4_mt_mobile }}px {{ settings.h4_mr_mobile }}px {{ settings.h4_mb_mobile }}px {{ settings.h4_ml_mobile }}px !important;
+              --mrk-h4-color: {{ settings.h4_color }} !important;
+              --mrk-h4-size-desktop: {{ settings.h4_size_desktop }}px !important;
+              --mrk-h4-size-laptop: {{ settings.h4_size_laptop }}px !important;
+              --mrk-h4-size-mobile: {{ settings.h4_size_mobile }}px !important;
+              --mrk-h4-margin-desktop: {{ settings.h4_mt_desktop }}px {{ settings.h4_mr_desktop }}px {{ settings.h4_mb_desktop }}px {{ settings.h4_ml_desktop }}px !important;
+              --mrk-h4-margin-laptop: {{ settings.h4_mt_laptop }}px {{ settings.h4_mr_laptop }}px {{ settings.h4_mb_laptop }}px {{ settings.h4_ml_laptop }}px !important;
+              --mrk-h4-margin-mobile: {{ settings.h4_mt_mobile }}px {{ settings.h4_mr_mobile }}px {{ settings.h4_mb_mobile }}px {{ settings.h4_ml_mobile }}px !important;
 
-        --mrk-h5-color: {{ settings.h5_color }} !important;
-        --mrk-h5-size-desktop: {{ settings.h5_size_desktop }}px !important;
-        --mrk-h5-size-laptop: {{ settings.h5_size_laptop }}px !important;
-        --mrk-h5-size-mobile: {{ settings.h5_size_mobile }}px !important;
-        --mrk-h5-margin-desktop: {{ settings.h5_mt_desktop }}px {{ settings.h5_mr_desktop }}px {{ settings.h5_mb_desktop }}px {{ settings.h5_ml_desktop }}px !important;
-        --mrk-h5-margin-laptop: {{ settings.h5_mt_laptop }}px {{ settings.h5_mr_laptop }}px {{ settings.h5_mb_laptop }}px {{ settings.h5_ml_laptop }}px !important;
-        --mrk-h5-margin-mobile: {{ settings.h5_mt_mobile }}px {{ settings.h5_mr_mobile }}px {{ settings.h5_mb_mobile }}px {{ settings.h5_ml_mobile }}px !important;
+              --mrk-h5-color: {{ settings.h5_color }} !important;
+              --mrk-h5-size-desktop: {{ settings.h5_size_desktop }}px !important;
+              --mrk-h5-size-laptop: {{ settings.h5_size_laptop }}px !important;
+              --mrk-h5-size-mobile: {{ settings.h5_size_mobile }}px !important;
+              --mrk-h5-margin-desktop: {{ settings.h5_mt_desktop }}px {{ settings.h5_mr_desktop }}px {{ settings.h5_mb_desktop }}px {{ settings.h5_ml_desktop }}px !important;
+              --mrk-h5-margin-laptop: {{ settings.h5_mt_laptop }}px {{ settings.h5_mr_laptop }}px {{ settings.h5_mb_laptop }}px {{ settings.h5_ml_laptop }}px !important;
+              --mrk-h5-margin-mobile: {{ settings.h5_mt_mobile }}px {{ settings.h5_mr_mobile }}px {{ settings.h5_mb_mobile }}px {{ settings.h5_ml_mobile }}px !important;
 
-        --mrk-h6-color: {{ settings.h6_color }} !important;
-        --mrk-h6-size-desktop: {{ settings.h6_size_desktop }}px !important;
-        --mrk-h6-size-laptop: {{ settings.h6_size_laptop }}px !important;
-        --mrk-h6-size-mobile: {{ settings.h6_size_mobile }}px !important;
-        --mrk-h6-margin-desktop: {{ settings.h6_mt_desktop }}px {{ settings.h6_mr_desktop }}px {{ settings.h6_mb_desktop }}px {{ settings.h6_ml_desktop }}px !important;
-        --mrk-h6-margin-laptop: {{ settings.h6_mt_laptop }}px {{ settings.h6_mr_laptop }}px {{ settings.h6_mb_laptop }}px {{ settings.h6_ml_laptop }}px !important;
-        --mrk-h6-margin-mobile: {{ settings.h6_mt_mobile }}px {{ settings.h6_mr_mobile }}px {{ settings.h6_mb_mobile }}px {{ settings.h6_ml_mobile }}px !important;
-      }
+              --mrk-h6-color: {{ settings.h6_color }} !important;
+              --mrk-h6-size-desktop: {{ settings.h6_size_desktop }}px !important;
+              --mrk-h6-size-laptop: {{ settings.h6_size_laptop }}px !important;
+              --mrk-h6-size-mobile: {{ settings.h6_size_mobile }}px !important;
+              --mrk-h6-margin-desktop: {{ settings.h6_mt_desktop }}px {{ settings.h6_mr_desktop }}px {{ settings.h6_mb_desktop }}px {{ settings.h6_ml_desktop }}px !important;
+              --mrk-h6-margin-laptop: {{ settings.h6_mt_laptop }}px {{ settings.h6_mr_laptop }}px {{ settings.h6_mb_laptop }}px {{ settings.h6_ml_laptop }}px !important;
+              --mrk-h6-margin-mobile: {{ settings.h6_mt_mobile }}px {{ settings.h6_mr_mobile }}px {{ settings.h6_mb_mobile }}px {{ settings.h6_ml_mobile }}px !important;
+            }
 
-    .mrk-h1{font-size:var(--mrk-h1-size-desktop)!important;margin:var(--mrk-h1-margin-desktop)!important;font-weight:{{settings.mrk_h1_font_weight}}!important}.mrk-h2{font-size:var(--mrk-h2-size-desktop)!important;margin:var(--mrk-h2-margin-desktop)!important;font-weight:{{settings.mrk_h2_font_weight}}!important}.mrk-h3{font-size:var(--mrk-h3-size-desktop)!important;margin:var(--mrk-h3-margin-desktop)!important;font-weight:{{settings.mrk_h3_font_weight}}!important}.mrk-h4{font-size:var(--mrk-h4-size-desktop)!important;margin:var(--mrk-h4-margin-desktop)!important;font-weight:{{settings.mrk_h4_font_weight}}!important}.mrk-h5{font-size:var(--mrk-h5-size-desktop)!important;margin:var(--mrk-h5-margin-desktop)!important;font-weight:{{settings.mrk_h5_font_weight}}!important}.mrk-h6{font-size:var(--mrk-h6-size-desktop)!important;margin:var(--mrk-h6-margin-desktop)!important;font-weight:{{settings.mrk_h6_font_weight}}!important}
-@media(max-width:1024px){.mrk-h1{font-size:var(--mrk-h1-size-laptop)!important;margin:var(--mrk-h1-margin-laptop)!important}.mrk-h2{font-size:var(--mrk-h2-size-laptop)!important;margin:var(--mrk-h2-margin-laptop)!important}.mrk-h3{font-size:var(--mrk-h3-size-laptop)!important;margin:var(--mrk-h3-margin-laptop)!important}.mrk-h4{font-size:var(--mrk-h4-size-laptop)!important;margin:var(--mrk-h4-margin-laptop)!important}.mrk-h5{font-size:var(--mrk-h5-size-laptop)!important;margin:var(--mrk-h5-margin-laptop)!important}.mrk-h6{font-size:var(--mrk-h6-size-laptop)!important;margin:var(--mrk-h6-margin-laptop)!important}}
-@media(max-width:768px){.mrk-h1{font-size:var(--mrk-h1-size-mobile)!important;margin:var(--mrk-h1-margin-mobile)!important}.mrk-h2{font-size:var(--mrk-h2-size-mobile)!important;margin:var(--mrk-h2-margin-mobile)!important}.mrk-h3{font-size:var(--mrk-h3-size-mobile)!important;margin:var(--mrk-h3-margin-mobile)!important}.mrk-h4{font-size:var(--mrk-h4-size-mobile)!important;margin:var(--mrk-h4-margin-mobile)!important}.mrk-h5{font-size:var(--mrk-h5-size-mobile)!important;margin:var(--mrk-h5-margin-mobile)!important}.mrk-h6{font-size:var(--mrk-h6-size-mobile)!important;margin:var(--mrk-h6-margin-mobile)!important}}.m-tooltip.m-spinner-button,.m-button--icon{display:none}.template-page #MainContent{padding-bottom:0px}.m-slider-controls__button{width:44px!important}.p-xl,.p-xl p{font-weight:{{settings.p_xl_font_weight}};font-size:{{settings.p_xl_size_desktop}}px;line-height:{{settings.p_xl_line_height}}}.p-large,.p-large p{font-weight:{{settings.p_large_font_weight}};font-size:{{settings.p_large_size_desktop}}px;line-height:{{settings.p_large_line_height}}}.p-medium,.p-medium p{font-weight:{{settings.p_medium_font_weight}};font-size:{{settings.p_medium_size_desktop}}px;line-height:{{settings.p_medium_line_height}}}.p-small,.p-small p{font-weight:{{settings.p_small_font_weight}};font-size:{{settings.p_small_size_desktop}}px;line-height:{{settings.p_small_line_height}}}.p-x-small,.p-x-small p{font-weight:{{settings.p_xs_font_weight}};font-size:{{settings.p_xs_size_desktop}}px;line-height:{{settings.p_xs_line_height}}}
-@media(max-width:1024px){.p-xl,.p-xl p{font-size:{{settings.p_xl_size_laptop}}px}.p-large,.p-large p{font-size:{{settings.p_large_size_laptop}}px}.p-medium,.p-medium p{font-size:{{settings.p_medium_size_laptop}}px}.p-small,.p-small p{font-size:{{settings.p_small_size_laptop}}px}.p-x-small,.p-x-small p{font-size:{{settings.p_xs_size_laptop}}px}}
-@media(max-width:767px){.p-xl{font-size:{{settings.p_xl_size_mobile}}px}.p-large{font-size:{{settings.p_large_size_mobile}}px}.p-medium{font-size:{{settings.p_medium_size_mobile}}px}.p-small{font-size:{{settings.p_small_size_mobile}}px}.p-x-small{font-size:{{settings.p_xs_size_mobile}}px}.m-search-popup__result.m-scrollbar--vertical{position:relative;z-index:100}}
+          .mrk-h1{font-size:var(--mrk-h1-size-desktop)!important;margin:var(--mrk-h1-margin-desktop)!important;font-weight:{{settings.mrk_h1_font_weight}}!important}.mrk-h2{font-size:var(--mrk-h2-size-desktop)!important;margin:var(--mrk-h2-margin-desktop)!important;font-weight:{{settings.mrk_h2_font_weight}}!important}.mrk-h3{font-size:var(--mrk-h3-size-desktop)!important;margin:var(--mrk-h3-margin-desktop)!important;font-weight:{{settings.mrk_h3_font_weight}}!important}.mrk-h4{font-size:var(--mrk-h4-size-desktop)!important;margin:var(--mrk-h4-margin-desktop)!important;font-weight:{{settings.mrk_h4_font_weight}}!important}.mrk-h5{font-size:var(--mrk-h5-size-desktop)!important;margin:var(--mrk-h5-margin-desktop)!important;font-weight:{{settings.mrk_h5_font_weight}}!important}.mrk-h6{font-size:var(--mrk-h6-size-desktop)!important;margin:var(--mrk-h6-margin-desktop)!important;font-weight:{{settings.mrk_h6_font_weight}}!important}
+      @media(max-width:1024px){.mrk-h1{font-size:var(--mrk-h1-size-laptop)!important;margin:var(--mrk-h1-margin-laptop)!important}.mrk-h2{font-size:var(--mrk-h2-size-laptop)!important;margin:var(--mrk-h2-margin-laptop)!important}.mrk-h3{font-size:var(--mrk-h3-size-laptop)!important;margin:var(--mrk-h3-margin-laptop)!important}.mrk-h4{font-size:var(--mrk-h4-size-laptop)!important;margin:var(--mrk-h4-margin-laptop)!important}.mrk-h5{font-size:var(--mrk-h5-size-laptop)!important;margin:var(--mrk-h5-margin-laptop)!important}.mrk-h6{font-size:var(--mrk-h6-size-laptop)!important;margin:var(--mrk-h6-margin-laptop)!important}}
+      @media(max-width:768px){.mrk-h1{font-size:var(--mrk-h1-size-mobile)!important;margin:var(--mrk-h1-margin-mobile)!important}.mrk-h2{font-size:var(--mrk-h2-size-mobile)!important;margin:var(--mrk-h2-margin-mobile)!important}.mrk-h3{font-size:var(--mrk-h3-size-mobile)!important;margin:var(--mrk-h3-margin-mobile)!important}.mrk-h4{font-size:var(--mrk-h4-size-mobile)!important;margin:var(--mrk-h4-margin-mobile)!important}.mrk-h5{font-size:var(--mrk-h5-size-mobile)!important;margin:var(--mrk-h5-margin-mobile)!important}.mrk-h6{font-size:var(--mrk-h6-size-mobile)!important;margin:var(--mrk-h6-margin-mobile)!important}}.m-tooltip.m-spinner-button,.m-button--icon{display:none}.template-page #MainContent{padding-bottom:0px}.m-slider-controls__button{width:44px!important}.p-xl,.p-xl p{font-weight:{{settings.p_xl_font_weight}};font-size:{{settings.p_xl_size_desktop}}px;line-height:{{settings.p_xl_line_height}}}.p-large,.p-large p{font-weight:{{settings.p_large_font_weight}};font-size:{{settings.p_large_size_desktop}}px;line-height:{{settings.p_large_line_height}}}.p-medium,.p-medium p{font-weight:{{settings.p_medium_font_weight}};font-size:{{settings.p_medium_size_desktop}}px;line-height:{{settings.p_medium_line_height}}}.p-small,.p-small p{font-weight:{{settings.p_small_font_weight}};font-size:{{settings.p_small_size_desktop}}px;line-height:{{settings.p_small_line_height}}}.p-x-small,.p-x-small p{font-weight:{{settings.p_xs_font_weight}};font-size:{{settings.p_xs_size_desktop}}px;line-height:{{settings.p_xs_line_height}}}
+      @media(max-width:1024px){.p-xl,.p-xl p{font-size:{{settings.p_xl_size_laptop}}px}.p-large,.p-large p{font-size:{{settings.p_large_size_laptop}}px}.p-medium,.p-medium p{font-size:{{settings.p_medium_size_laptop}}px}.p-small,.p-small p{font-size:{{settings.p_small_size_laptop}}px}.p-x-small,.p-x-small p{font-size:{{settings.p_xs_size_laptop}}px}}
+      @media(max-width:767px){.p-xl{font-size:{{settings.p_xl_size_mobile}}px}.p-large{font-size:{{settings.p_large_size_mobile}}px}.p-medium{font-size:{{settings.p_medium_size_mobile}}px}.p-small{font-size:{{settings.p_small_size_mobile}}px}.p-x-small{font-size:{{settings.p_xs_size_mobile}}px}.m-search-popup__result.m-scrollbar--vertical{position:relative;z-index:100}}
     </style>
 
     <script>
@@ -278,24 +282,22 @@ document.head.appendChild(preloadLink);
         });
       })();
 
-      
-  
-(function deferShopifyCheckoutCSS() {
-  var interval = setInterval(function() {
-    var link = document.querySelector('#shopify-accelerated-checkout-styles');
-    if (link) {
-      // Stop the interval once found
-      clearInterval(interval);
+      (function deferShopifyCheckoutCSS() {
+        var interval = setInterval(function () {
+          var link = document.querySelector('#shopify-accelerated-checkout-styles');
+          if (link) {
+            // Stop the interval once found
+            clearInterval(interval);
 
-      // Defer the stylesheet
-      link.media = "print";
-      link.onload = function() {
-        this.media = "all";
-      };
-    }
-  }, 100); // check every 100ms
-})();
-</script>
+            // Defer the stylesheet
+            link.media = 'print';
+            link.onload = function () {
+              this.media = 'all';
+            };
+          }
+        }, 100); // check every 100ms
+      })();
+    </script>
 
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme-global.js' | asset_url }}" defer="defer"></script>
@@ -306,13 +308,13 @@ document.head.appendChild(preloadLink);
       <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-
     {% comment %} {{ content_for_header }} {% endcomment %}
-{% capture content_for_header2 %}{{ content_for_header }}{% endcapture %}
-{{ content_for_header2
-  | replace: 'accelerated-checkout-backwards-compat.css', 'main.css' 
-  | replace: '<script ', '<script defer '
-}}
+    {% capture content_for_header2 %}{{ content_for_header }}{% endcapture %}
+    {{
+      content_for_header2
+      | replace: 'accelerated-checkout-backwards-compat.css', 'main.css'
+      | replace: '<script ', '<script defer '
+    }}
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
       if (Shopify.designMode) {
@@ -330,8 +332,6 @@ document.head.appendChild(preloadLink);
       src="https://cdn-cookieyes.com/client_data/5cdf30a6137b4503a8278cf6/script.js"
     ></script>
     <!-- End cookieyes banner -->
-
-    {%- render 'mobile-menu' -%}
 
     {% include 'stack-discounts-script' %}
   </head>
@@ -464,10 +464,6 @@ document.head.appendChild(preloadLink);
     {% endif %}
     <script src="{{ 'bundle-selector-custom.js' |  asset_url }}" defer="defer"></script>
 
-
-
-
-
-
+    {%- render 'mobile-menu' -%}
   </body>
 </html>
