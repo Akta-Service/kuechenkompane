@@ -269,7 +269,6 @@
     </style>
 
     <style>
-
          .mrk-h1 {
         font-size: var(--mrk-h1-size-desktop) !important;
         margin: var(--mrk-h1-margin-desktop) !important;
@@ -666,7 +665,7 @@
     {%- render 'mobile-menu' -%}
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        const menuOpenBtn = document.querySelector('.m-hamburger-box'); // update selector if needed
+        const menuOpenBtn = document.querySelector('.m-hamburger-box');
         const menuContainer = document.querySelector('.mobile--menu-container');
         let imagesLoaded = false;
 
@@ -678,7 +677,7 @@
                 img.src = img.getAttribute('data-src');
                 img.removeAttribute('data-src');
               });
-              imagesLoaded = true; // only load once
+              imagesLoaded = true;
             }
           });
         }
