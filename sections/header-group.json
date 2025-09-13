@@ -564,6 +564,7 @@
     },
     "apex_global_offer_timer_gMjjdD": {
       "type": "Apex-global-offer-timer",
+      "disabled": true,
       "settings": {
         "bg_color": "#dce5dc",
         "section_pt": 15,
