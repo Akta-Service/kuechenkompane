@@ -52,10 +52,18 @@
       <div class="x-card-empty-collection">
         <a href="{{ settings.empty_cart_collection.url }}">
           {% unless settings.empty_cart_collection.featured_image == blank %}
-            {{ settings.empty_cart_collection.featured_image | image_url: width: 400 | image_tag }}
+            <img
+              class="x-cart-empty-image"
+              data-src="{{ settings.empty_cart_collection.featured_image | image_url: width: 400 }}"
+              width=""
+              height=""
+              alt="{{ settings.empty_cart_collection.title }}"
+            >
           {% endunless %}
         </a>
-        <a class="x-cec-all-prods" href="{{ settings.empty_cart_collection.url }}">{{ settings.empty_cart_collection_text }}</a>
+        <a class="x-cec-all-prods" href="{{ settings.empty_cart_collection.url }}">
+          {{- settings.empty_cart_collection_text -}}
+        </a>
       </div>
     {% endunless %}
   </div>
