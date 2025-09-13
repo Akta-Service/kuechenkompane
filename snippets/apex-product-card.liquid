@@ -200,7 +200,9 @@
     "
     sizes="(max-width: 400px) 183px, 360px"
     alt="{{ product.title | escape }}"
-  {{fetchpriority: fetchpriority }}
+  {% if index < 4 %}
+
+  {% endif %}
     width="183"
     height="183"
   >
