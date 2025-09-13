@@ -682,6 +682,25 @@
           });
         }
       });
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const cartIcon = document.querySelector('.m-cart-icon-bubble');
+        const emptyCartContainer = document.querySelector('.x-card-empty-container');
+        let cartImageLoaded = false;
+
+        if (cartIcon && emptyCartContainer) {
+          cartIcon.addEventListener('click', function () {
+            if (!cartImageLoaded) {
+              const lazyImages = emptyCartContainer.querySelectorAll('img[data-src]');
+              lazyImages.forEach((img) => {
+                img.src = img.getAttribute('data-src');
+                img.removeAttribute('data-src');
+              });
+              cartImageLoaded = true;
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>
