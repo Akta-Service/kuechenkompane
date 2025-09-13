@@ -89,11 +89,14 @@
             "per_badge_color": "#ffffff",
             "f_s": 22,
             "f_s_m": 18,
+            "c_price_size": 16,
+            "c_price_size_m": 16,
             "price_font_weight": "600",
             "price_tag_bg": "#ddede0",
             "price_tag_text_color": "#000000",
             "price_tag_font_size": 8,
-            "price_tag_arrow_bg": "#ddede0"
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -224,7 +227,11 @@
         "show_stk_icon": false,
         "glitter_effec": false,
         "bubble_before_color": "#4b4b4b",
-        "bubble_after_color": "#4b4b4b"
+        "bubble_after_color": "#4b4b4b",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "product_descrption_accordion_btdDtQ": {

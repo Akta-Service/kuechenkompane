@@ -186,6 +186,26 @@
             -%}
             {%- capture sizes -%}(min-width: {{ settings.container_width }}px) {{ settings.container_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2){%- endcapture -%}
             <responsive-image class="m-image" style="--aspect-ratio: {{ asp_rat }}">
+            
+     {% if product.metafields.custom.product_image != blank %}
+{% assign image = product.metafields.custom.product_image | default: product.featured_image %}
+
+
+  <img
+    src="{{ image | image_url: width: 183 }}"  
+    srcset="
+      {{ image | image_url: width: 183 }} 183w,
+      {{ image | image_url: width: 360 }} 360w,
+      {{ image | image_url: width: 720 }} 720w
+    "
+    sizes="(max-width: 400px) 183px, 360px"
+    alt="{{ product.title | escape }}"
+    loading="lazy"
+    width="183"
+    height="183"
+  >
+
+            {% else %}
               {{
                 preview_image
                 | image_url: width: 1100
@@ -197,6 +217,9 @@
                   sizes: sizes,
                   widths: '165, 360, 535, 750, 940, 1100'
               }}
+            {% endif %}
+
+
             </responsive-image>
           </div>
 

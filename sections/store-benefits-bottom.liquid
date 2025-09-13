@@ -1,4 +1,7 @@
 
+
+<script src="{{ 'store-benefits-active.js' | asset_url }}" defer="defer"></script>
+
 <style>
     .store-benefits-bottom{
       padding-top: {{- section.settings.pt -}}px;
@@ -168,25 +171,4 @@
 {% endschema %}
 
 
-<!-- Initialize Swiper -->
-<script>
-  const swiper = new Swiper('.store-benefits-active', {
-    slidesPerView: 5,
-    spaceBetween: 10,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      1024: {
-        slidesPerView: 5,
-      },
-    },
-  });
-</script>
+

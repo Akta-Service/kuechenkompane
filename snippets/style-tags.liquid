@@ -178,7 +178,7 @@
 <noscript>{{ 'cart.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- liquid
-  echo 'vendor.css' | asset_url | stylesheet_tag
+
   if template contains 'customers/'
     echo 'customer.css' | asset_url | stylesheet_tag
   endif

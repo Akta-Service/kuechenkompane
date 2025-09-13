@@ -17,7 +17,7 @@
   <div class="usp-list-main">
     {% for block in section.blocks %}
       <div class="usp-list-item">
-        <img src="{{ block.settings.usp_icon |  img_url: 'medium' }}" alt="icon">
+        <img src="{{ block.settings.usp_icon |  img_url: 'medium' }}"  loading="lazy" alt="icon">
         <h4 style="color: {{ block.settings.title_color }}; font-size: {{- block.settings.title_size -}}px;">
           {{ block.settings.usp_title }}
         </h4>

@@ -465,7 +465,7 @@ p.upsell--product__price.compare--price {
             <li>
               <span>   
                 {% if  settings.list_img_2 != blank %}            
-                <img src="{{ settings.list_img_1 | img_url: 'master' }}" alt="icon">
+                <img src="{{ settings.list_img_1 | img_url: 'master' }}"  loading="lazy"  alt="icon">
                 {% elsif settings.list_svg_1 != blank %}
                   {{ settings.list_svg_1 }}
               {% endif %}
@@ -477,7 +477,7 @@ p.upsell--product__price.compare--price {
             <li>
               <span>
                 {% if  settings.list_img_2 != blank %}
-                <img src="{{ settings.list_img_2 | img_url: 'master' }}" alt="icon">
+                <img src="{{ settings.list_img_2 | img_url: 'master' }}" loading="lazy"  alt="icon">
                 {% elsif settings.list_svg_2 != blank %}
                   {{ settings.list_svg_2 }}
                 {% endif %}

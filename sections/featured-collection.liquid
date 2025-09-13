@@ -1,5 +1,21 @@
-{{ 'component-product-inventory.css' | asset_url | stylesheet_tag }}
-{{ 'featured-collection.css' | asset_url | stylesheet_tag }}
+<link 
+  href="{{ 'component-product-inventory.css' | asset_url }}" 
+  rel="stylesheet" 
+  media="print" 
+  onload="this.media='all'">
+<noscript>
+  <link href="{{ 'component-product-inventory.css' | asset_url }}" rel="stylesheet">
+</noscript>
+
+<link 
+  href="{{ 'featured-collection.css' | asset_url }}" 
+  rel="stylesheet" 
+  media="print" 
+  onload="this.media='all'">
+<noscript>
+  <link href="{{ 'featured-collection.css' | asset_url }}" rel="stylesheet">
+</noscript>
+
 <script src="{{ 'featured-collection.js' | asset_url }}" defer="defer"></script>
 {% liquid
   assign enable_slider = section.settings.enable_slider

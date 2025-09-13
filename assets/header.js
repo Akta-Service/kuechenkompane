@@ -32,7 +32,7 @@ class MHeader extends HTMLElement {
     this.handleSticky();
     document.addEventListener("matchMobile", () => this.handleSticky());
     document.addEventListener("unmatchMobile", () => this.handleSticky());
-    this.siteNav = new SiteNav(this);
+    // this.siteNav = new SiteNav(this);
     window.__sfHeader = this;
     window.addEventListener("resize", () => {
       this.innerWidth = window.innerWidth;
@@ -40,7 +40,7 @@ class MHeader extends HTMLElement {
   }
 
   initAddon() {
-    this.megamenu = new Megamenu(this);
+    // this.megamenu = new Megamenu(this);
     if (Shopify.designMode) {
       MinimogTheme = MinimogTheme || {};
       MinimogTheme && MinimogTheme.Wishlist && MinimogTheme.Wishlist.updateWishlistCount();
