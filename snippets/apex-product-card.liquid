@@ -203,6 +203,9 @@
   {% if index < 4 %}
 loading="eager"
 fetchpriority="high"
+  {% else %}
+    loading="lazy"
+fetchpriority="low"
   {% endif %}
     width="183"
     height="183"
