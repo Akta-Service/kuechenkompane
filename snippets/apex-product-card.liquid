@@ -201,7 +201,8 @@
     sizes="(max-width: 400px) 183px, 360px"
     alt="{{ product.title | escape }}"
   {% if index < 4 %}
-
+loading="eager"
+fetchpriority="high"
   {% endif %}
     width="183"
     height="183"
