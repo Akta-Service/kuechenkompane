@@ -146,12 +146,28 @@
     "announcement_different_rRyBgT": {
       "type": "announcement-different",
       "blocks": {
+        "announcement_Cbf9pg": {
+          "type": "announcement",
+          "settings": {
+            "collection": "uberraschungspakete",
+            "ann_title": "Deine Überraschung mit bis zu -90% 🎉",
+            "text": "<p>Nur für 48h – Einmaliger Preisvorteil<br/></p><p></p>"
+          }
+        },
         "announcement_xXLydM": {
           "type": "announcement",
           "settings": {
             "collection": "lieferchaos",
             "ann_title": "Notfall-Aktion läuft! 😱",
             "text": "<p>Bis zu 75 % Rabatt – nur 48h gültig</p>"
+          }
+        },
+        "announcement_dT4N9g": {
+          "type": "announcement",
+          "settings": {
+            "collection": "",
+            "ann_title": "Special Offer",
+            "text": "<p>Exclusive deal for this collection!</p>"
           }
         },
         "announcement_NBcHH9": {
@@ -308,7 +324,9 @@
         }
       },
       "block_order": [
+        "announcement_Cbf9pg",
         "announcement_xXLydM",
+        "announcement_dT4N9g",
         "announcement_NBcHH9",
         "announcement_acXHcK",
         "announcement_JxFegn",
