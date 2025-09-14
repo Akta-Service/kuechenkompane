@@ -150,7 +150,7 @@
 
   assign loading = 'lazy'
   assign fetchpriority = 'low'
-  if index == 1 and section_index <= 2
+  if index == 5
     assign loading = 'eager'
     assign fetchpriority = 'high'
   endif
@@ -200,7 +200,13 @@
     "
     sizes="(max-width: 400px) 183px, 360px"
     alt="{{ product.title | escape }}"
+  {% if index < 4 %}
+loading="eager"
+fetchpriority="high"
+  {% else %}
     loading="lazy"
+fetchpriority="low"
+  {% endif %}
     width="183"
     height="183"
   >

@@ -663,24 +663,37 @@
     <script src="{{ 'bundle-selector-custom.js' |  asset_url }}" defer="defer"></script>
 
     {%- render 'mobile-menu' -%}
-    <script>
+     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        const menuOpenBtn = document.querySelector('.m-hamburger-box');
-        const menuContainer = document.querySelector('.mobile--menu-container');
-        let imagesLoaded = false;
+        /**
+         * Lazy load images when a trigger is clicked.
+         * @param {string} triggerSelector - The element that triggers loading.
+         * @param {string} containerSelector - The container holding lazy images.
+         * @param {Function} [condition] - Optional condition before loading.
+         */
+        function lazyLoadOnClick(triggerSelector, containerSelector, condition) {
+          const trigger = document.querySelector(triggerSelector);
+          const container = document.querySelector(containerSelector);
+          let loaded = false;
 
-        if (menuOpenBtn && menuContainer) {
-          menuOpenBtn.addEventListener('click', function () {
-            if (window.innerWidth <= 1024 && !imagesLoaded) {
-              const lazyImages = menuContainer.querySelectorAll('img[data-src]');
-              lazyImages.forEach((img) => {
-                img.src = img.getAttribute('data-src');
-                img.removeAttribute('data-src');
-              });
-              imagesLoaded = true;
-            }
-          });
+          if (trigger && container) {
+            trigger.addEventListener('click', function () {
+              if (!loaded && (!condition || condition())) {
+                const lazyImages = container.querySelectorAll('img[data-src]');
+                lazyImages.forEach((img) => {
+                  img.src = img.getAttribute('data-src');
+                  img.removeAttribute('data-src');
+                });
+                loaded = true; // prevent reloading
+              }
+            });
+          }
         }
+
+        // Use the function for each case
+        lazyLoadOnClick('.m-hamburger-box', '.mobile--menu-container', () => window.innerWidth <= 1024);
+        lazyLoadOnClick('.m-cart-icon-bubble', '.x-card-empty-container');
+        lazyLoadOnClick('.m-header__search-icon', '.search--recomend-product');
       });
     </script>
   </body>
