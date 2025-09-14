@@ -493,8 +493,9 @@ p.upsell--product__price.compare--price {
     </div>
   </div>
 </m-cart-drawer>
+    <link rel="stylesheet" href="{{ 'cart-drawer-custom.css' | asset_url }}" media="print" onload="this.media='all'">
 
-{{ 'cart-drawer-custom.css' | asset_url | stylesheet_tag }}
-{{ 'cart-drawer-custom.js' | asset_url | script_tag }}
+<!-- {{ '' | asset_url | stylesheet_tag }} -->
+<script src="{{ 'cart-drawer-custom.js' | asset_url }}" defer="defer"></script>
 
 
