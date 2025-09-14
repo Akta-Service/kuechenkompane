@@ -1533,16 +1533,6 @@
       }
     },
     {
-      "key": "product_grid_image_3",
-      "namespace": "custom",
-      "name": "product grid image 3",
-      "description": "",
-      "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
       "key": "product_form_short_description",
       "namespace": "custom",
       "name": "product form short description",
@@ -1765,7 +1755,7 @@
     {
       "key": "product_image",
       "namespace": "custom",
-      "name": "Product Image",
+      "name": "Product Collection Image",
       "description": "",
       "type": {
         "name": "file_reference",
