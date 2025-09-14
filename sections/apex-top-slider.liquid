@@ -1,11 +1,10 @@
-
 <style>
   .banner-top.{{ section.id }} {
     padding-top: {{ section.settings.pt }}px;
     padding-bottom: {{ section.settings.pb }}px;
     position: relative;
     width: 100%;
-    max-width: 100%;    
+    max-width: 100%;
   }
   .banner-top-content {
       max-width: 1310px;
@@ -22,7 +21,7 @@
 
     .banner-top-content-item span i {
       font-size: 14px;
-      
+
       margin-right: 10px;
     }
 
@@ -42,7 +41,6 @@
    .banner-top-item {
     text-align: center;
   }
-  
 </style>
 <div class="banner-top {{ section.id }} m-color-{{ section.settings.color_scheme }}">
   <div class="rs-container">
@@ -70,94 +68,72 @@
   </div>
 </div>
 {% schema %}
-  {
-    "name": "APEX Top Slider",
-    "class": "apex-top",
-    "settings": [  
-      
-      {
-        "type": "color_scheme",
-        "id": "color_scheme",
-        "label": "Color scheme"
-      },        
-      {
-        "type": "range",
-        "id": "pt",
-        "label": "Padding Top",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "pb",
-        "label": "Padding Bottom",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "mt_mobile",
-        "label": "Margin Top (Mobile)",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "mb_mobile",
-        "label": "Margin Bottom (Mobile)",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      }       
-      
-    ],
-    "blocks": [
-      {
-        "type": "text",
-        "name": "Top Item",
-        "settings": [
-          {
-            "type": "text",
-            "id": "top_item",
-            "label": "Top Item Text",
-            "default": "100% Money Back"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "APEX Top Slider"
-      }
-    ]
-  }
-  {% endschema %}
+{
+  "name": "APEX Top Slider",
+  "class": "apex-top",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding Top",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding Bottom",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mt_mobile",
+      "label": "Margin Top (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mb_mobile",
+      "label": "Margin Bottom (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Top Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "top_item",
+          "label": "Top Item Text",
+          "default": "100% Money Back"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "APEX Top Slider"
+    }
+  ]
+}
+{% endschema %}
 
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-  const apexTopActive = new Swiper('.apex-top-active', {
-    loop: true,
-    autoplay: {
-      delay: 5000,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-  });
-  });
-</script>
+<script src="{{  'apex-top-slider.js' | asset_url }}" defer></script>
