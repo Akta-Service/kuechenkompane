@@ -1,9 +1,8 @@
-
 <style>
- 
+
 
   /* common css end  */
-  .category-area {   
+  .category-area {
     padding: 60px 0;
     padding-top: {{ section.settings.pt }}px;
     padding-bottom: {{ section.settings.pb }}px;
@@ -18,8 +17,8 @@
   .category-title {
     text-align: center;
     text-transform: uppercase;
-    margin-top: 0; 
-    padding-bottom: 10px;   
+    margin-top: 0;
+    padding-bottom: 10px;
   }
 
   .category-list {
@@ -84,7 +83,7 @@
     align-items: center;
     gap: 10px;
     line-height: 1;
-    justify-content: center;    
+    justify-content: center;
   }
   span.collection-icon {
     margin-top: 2px;
@@ -126,14 +125,14 @@
     }
     span.collection-icon {
     display: none;
-    }   
+    }
 
   }
   @media only screen and (max-width: 700px) {
     .category-img {
       max-width: 80px;
     }
-    
+
   }
 </style>
 <div class="category-area m-color-{{ section.settings.color_scheme }}">
@@ -153,18 +152,31 @@
                     <img
                       src="{{ block.settings.collection_img |  img_url: 'master' }}"
                       loading="lazy"
-                      alt="">
+                      alt=""
+                    >
                   </a>
                 </div>
               {% endif %}
               {% if block.settings.collection_name != blank %}
-                <a class="collection-title" href="{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                <a
+                  class="collection-title"
+                  href="{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}"
+                >
                   <span class="{{ section.settings.c_n_text }}">
                     {{ block.settings.collection_name }}
                   </span>
-                  <span class="collection-icon"><svg class="icon icon-small-arrow-right" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.9401 7.60002L7.6001 4.00002C6.68197 3.0994 4.85818 1.30066 3.9401 0.400024L3.47823 0.846904C4.30386 1.6569 5.39631 2.7357 6.36015 3.68194L0.400145 3.68194L0.400145 4.31758L6.36015 4.31758L3.47822 7.14814L3.9401 7.60002Z" fill="#1E1E1E"></path>
-                </svg></span>
+                  <span class="collection-icon">
+                    <svg
+                      class="icon icon-small-arrow-right"
+                      width="8"
+                      height="8"
+                      viewBox="0 0 8 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M3.9401 7.60002L7.6001 4.00002C6.68197 3.0994 4.85818 1.30066 3.9401 0.400024L3.47823 0.846904C4.30386 1.6569 5.39631 2.7357 6.36015 3.68194L0.400145 3.68194L0.400145 4.31758L6.36015 4.31758L3.47822 7.14814L3.9401 7.60002Z" fill="#1E1E1E"></path>
+                    </svg>
+                  </span>
                 </a>
 
               {%- else -%}
@@ -181,59 +193,59 @@
 </div>
 
 {% schema %}
-  {
-    "name": "APEX Category Selection",
-    "settings": [
-      {
-        "type": "color_scheme",
-        "id": "color_scheme",
-        "label": "Color scheme"
-      },
-      {
-        "type": "range",
-        "id": "pt",
-        "label": "Padding Top",
-        "default": 60,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "pb",
-        "label": "Padding Bottom",
-        "default": 60,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      },
-      {
-        "type": "header",
-        "content": "Mobile Spacing"
-      }, 
-      {
-        "type": "range",
-        "id": "mobile_pt",
-        "label": "Padding Top (Mobile)",
-        "default": 30,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      }, 
-      {
-        "type": "range",
-        "id": "mobile_pb",
-        "label": "Padding Bottom (Mobile)",
-        "default": 30,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      }, 
-      {
-        "type": "header",
-        "content": "Heading"
-      }, 
-      {
+{
+  "name": "APEX Category Selection",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding Top",
+      "default": 60,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding Bottom",
+      "default": 60,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Mobile Spacing"
+    },
+    {
+      "type": "range",
+      "id": "mobile_pt",
+      "label": "Padding Top (Mobile)",
+      "default": 30,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mobile_pb",
+      "label": "Padding Bottom (Mobile)",
+      "default": 30,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
       "type": "select",
       "id": "heading_type",
       "label": "Choose Heading Size",
@@ -264,95 +276,66 @@
         }
       ],
       "default": "mrk-h1"
-      },
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Heading",
-        "default": "Shop by Category"
-      },
-      {
-        "type": "header",
-        "content": "Select Name size"
-      },
-      {
-        "type": "select",
-        "id": "c_n_text",
-        "label": "Collection Name Size",
-        "default": "p-medium",
-        "options": [
-          { "value": "p-xl", "label": "Extra Large" },
-          { "value": "p-large", "label": "Large" },
-          { "value": "p-medium", "label": "Medium" },
-          { "value": "p-small", "label": "Small" },
-          { "value": "p-x-small", "label": "Extra Small" }        
-        ]
-      }
-      
-    ],
-    "blocks": [
-      {
-        "name": "Category item",
-        "type": "item",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "collection_img",
-            "label": "Collection Image"
-          }, {
-            "type": "collection",
-            "id": "collection",
-            "label": "Collection"
-          }, {
-            "type": "text",
-            "id": "collection_name",
-            "label": "Collection Name"
-          }, {
-            "type": "url",
-            "id": "custom_url",
-            "label": "Custom URL"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "APEX Category Selection",
-        "settings": {}
-      }
-    ]
-  }
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "header",
+      "content": "Select Name size"
+    },
+    {
+      "type": "select",
+      "id": "c_n_text",
+      "label": "Collection Name Size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Category item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "collection_img",
+          "label": "Collection Image"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "collection_name",
+          "label": "Collection Name"
+        },
+        {
+          "type": "url",
+          "id": "custom_url",
+          "label": "Custom URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "APEX Category Selection",
+      "settings": {}
+    }
+  ]
+}
 {% endschema %}
 
-<script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    const swiper_categroy_active = new Swiper('.category-slider_active', {
-      slidesPerView: 2,
-      spaceBetween: 20,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        50: {
-          slidesPerView: 3.5,
-        },
-        500: {
-          slidesPerView: 3.5,
-        },
-        768: {
-          slidesPerView: 4.5,
-        },
-        1024: {
-          slidesPerView: 5,
-        },
-      },
-    });
-  });
- 
-</script>
+<script src="{{ 'category-selection.js' | asset_url }}" defer></script>
