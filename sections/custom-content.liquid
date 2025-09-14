@@ -761,7 +761,10 @@
                       <div class="product-bundles__error"></div>
                     </m-product-bundle>
                   {% when 'lookbook' %}
-                    {{ 'lookbook.css' | asset_url | stylesheet_tag }}
+
+                      <link rel="stylesheet" href="{{ 'lookbook.css' | asset_url }}" media="print" onload="this.media='all'">
+
+                    <!-- {{ '' | asset_url | stylesheet_tag }} -->
                     {% render 'lookbook-card',
                       block: block,
                       image_aspect_ratio: 'original',
