@@ -6,4 +6,4 @@ document.addEventListener('DOMContentLoaded', function () {
         prevEl: '.banner-prev',
       },
     });
-  });
+});
