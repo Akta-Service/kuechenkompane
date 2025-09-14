@@ -1,5 +1,3 @@
-
-
 <style>
   * {
     margin: 0;
@@ -26,7 +24,7 @@
     padding: 0 50px;
   }
   @media only screen and (max-width: 768px) {
-  
+
     .container {
 
       padding: 0 16px;
@@ -378,32 +376,4 @@
 }
 {% endschema %}
 
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-  const swiper_best_salling = new Swiper('.best-seller-item', {
-    slidesPerView: 6,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      300: {
-        slidesPerView: 1,
-        loop: true,
-      },
-      576: {
-        slidesPerView: 3,
-        loop: true,
-      },
-      991: {
-        slidesPerView: 4,
-      },
-    },
-  });
-  });
-</script>
+<script src="{{ 'best-seller-slider.js' | asset_url }}" defer></script>
