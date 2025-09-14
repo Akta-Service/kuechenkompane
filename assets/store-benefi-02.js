@@ -1,3 +1,6 @@
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
 const storebenfit = new Swiper('.store-benefits', {
     loop: true,
     autoplay: {
@@ -31,4 +34,5 @@ const storebenfit = new Swiper('.store-benefits', {
 
       },
     },
+  });
   });

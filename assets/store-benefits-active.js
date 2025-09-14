@@ -1,4 +1,6 @@
-  const store12 = new Swiper('.store-benefits-active', {
+document.addEventListener("DOMContentLoaded", function(event) { 
+ 
+ const store12 = new Swiper('.store-benefits-active', {
     slidesPerView: 5,
     spaceBetween: 10,
     loop: true,
@@ -16,4 +18,5 @@
         slidesPerView: 5,
       },
     },
+  });
   });

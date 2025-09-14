@@ -141,6 +141,7 @@
   {% endschema %}
 
 <script>
+  document.addEventListener("DOMContentLoaded", function(event) {
   const apexTopActive = new Swiper('.apex-top-active', {
     loop: true,
     autoplay: {
@@ -157,5 +158,6 @@
         slidesPerView: 3,
       },
     },
+  });
   });
 </script>

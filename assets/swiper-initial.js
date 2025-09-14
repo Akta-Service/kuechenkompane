@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+
 const swiper_trush = new Swiper('.trustpilot-testimonials', {
     slidesPerView: 5,
     spaceBetween: 20,
@@ -23,4 +25,5 @@ const swiper_trush = new Swiper('.trustpilot-testimonials', {
         slidesPerView: 5,
       },
     },
+  });
   });

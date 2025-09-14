@@ -109,6 +109,7 @@
 
 <!-- Initialize Swiper -->
 <script>
+  document.addEventListener("DOMContentLoaded", function(event) {
   const swiper_logo = new Swiper('.logo-greyed-out-slider', {
     slidesPerView: 6,
     centeredSlides: true,
@@ -133,5 +134,6 @@
         spaceBetween: 5,
       },
     },
+  });
   });
 </script>

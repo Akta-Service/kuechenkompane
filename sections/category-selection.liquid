@@ -325,6 +325,7 @@
 {% endschema %}
 
 <script>
+  document.addEventListener("DOMContentLoaded", function(event) {
   document.addEventListener('DOMContentLoaded', () => {
     const swiper_categroy = new Swiper('.category-slider', {
       slidesPerView: 2,
@@ -352,5 +353,6 @@
         },
       },
     });
+  });
   });
 </script>

@@ -379,6 +379,7 @@
 {% endschema %}
 
 <script>
+  document.addEventListener("DOMContentLoaded", function(event) {
   const swiper_best_salling = new Swiper('.best-seller-item', {
     slidesPerView: 6,
     spaceBetween: 10,
@@ -403,5 +404,6 @@
         slidesPerView: 4,
       },
     },
+  });
   });
 </script>
