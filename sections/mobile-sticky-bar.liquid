@@ -1,4 +1,5 @@
-{{ 'mobile-sticky-bar.css' | asset_url | stylesheet_tag }}
+<!-- {{ '' | asset_url | stylesheet_tag }} -->
+                      <link rel="stylesheet" href="{{ 'mobile-sticky-bar.css' | asset_url }}" media="print" onload="this.media='all'">
 
 {% liquid
   assign should_show = section.settings.show_mobile_sticky
