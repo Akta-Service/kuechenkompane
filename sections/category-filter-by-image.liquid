@@ -1,4 +1,3 @@
-
 <style>
   /* common css end  */
   .category-area {
@@ -195,15 +194,15 @@
   document.addEventListener('DOMContentLoaded', function () {
     const filterLinks = document.querySelectorAll('.ajax-tag');
 
-    filterLinks.forEach(link => {
+    filterLinks.forEach((link) => {
       link.addEventListener('click', function (e) {
         e.preventDefault();
         const url = this.href;
-        console.log(url)
+        console.log(url);
 
         fetch(url)
-          .then(response => response.text())
-          .then(html => {
+          .then((response) => response.text())
+          .then((html) => {
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
 
@@ -272,36 +271,36 @@
       "content": "Heading"
     },
     {
-    "type": "select",
-    "id": "heading_type",
-    "label": "Choose Heading Size",
-    "options": [
-      {
-        "value": "mrk-h1",
-        "label": "H1"
-      },
-      {
-        "value": "mrk-h2",
-        "label": "H2"
-      },
-      {
-        "value": "mrk-h3",
-        "label": "H3"
-      },
-      {
-        "value": "mrk-h4",
-        "label": "H4"
-      },
-      {
-        "value": "mrk-h5",
-        "label": "H5"
-      },
-      {
-        "value": "mrk-h6",
-        "label": "H6"
-      }
-    ],
-    "default": "mrk-h1"
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        {
+          "value": "mrk-h1",
+          "label": "H1"
+        },
+        {
+          "value": "mrk-h2",
+          "label": "H2"
+        },
+        {
+          "value": "mrk-h3",
+          "label": "H3"
+        },
+        {
+          "value": "mrk-h4",
+          "label": "H4"
+        },
+        {
+          "value": "mrk-h5",
+          "label": "H5"
+        },
+        {
+          "value": "mrk-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "mrk-h1"
     },
     {
       "type": "text",
@@ -326,7 +325,6 @@
         { "value": "p-x-small", "label": "Extra Small" }
       ]
     }
-
   ],
   "blocks": [
     {
@@ -337,11 +335,13 @@
           "type": "image_picker",
           "id": "collection_img",
           "label": "Collection Image"
-        }, {
+        },
+        {
           "type": "text",
           "id": "collection_name",
           "label": "Tag title Name"
-        }, {
+        },
+        {
           "type": "text",
           "id": "custom_url",
           "label": "Show the tag"
@@ -358,34 +358,4 @@
 }
 {% endschema %}
 
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const swiper_categroy = new Swiper('.category-slider', {
-      slidesPerView: 2,
-      spaceBetween: 20,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        50: {
-          slidesPerView: 3.5,
-        },
-        500: {
-          slidesPerView: 3.5,
-        },
-        768: {
-          slidesPerView: 4.5,
-        },
-        1024: {
-          slidesPerView: 5,
-        },
-      },
-    });
-  });
-</script>
+<script src="{{ 'category-filter-img.js' | asset_url }}" defer></script>
