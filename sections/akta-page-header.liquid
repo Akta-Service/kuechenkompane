@@ -1,0 +1,66 @@
+{% comment %}
+  Page Header Section
+{% endcomment %}
+<section class="apex-page-header">
+  <div class="apex-page-header__inner">
+    {% if section.settings.show_title %}
+      <h1 class="apex-page-title" style="text-align: {{ section.settings.text_align }};">
+        {{ section.settings.custom_title | default: page.title }}
+      </h1>
+    {% endif %}
+
+    {% if section.settings.show_subtitle and section.settings.custom_subtitle != blank %}
+      <p class="apex-page-subtitle" style="text-align: {{ section.settings.text_align }};">
+        {{ section.settings.custom_subtitle }}
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "APex Page Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show title",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "custom_title",
+      "label": "Custom title",
+      "default": "Page Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subtitle",
+      "label": "Show subtitle",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "custom_subtitle",
+      "label": "Custom subtitle",
+      "default": "subtitle"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "APex Page Header"
+    }
+  ]
+}
+{% endschema %}
