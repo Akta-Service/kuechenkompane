@@ -24,10 +24,19 @@
         "custom_subtitle": "subtitle",
         "text_align": "center"
       }
+    },
+    "apex_vip_sale_banner_zQ6Tp6": {
+      "type": "apex-vip-sale-banner",
+      "name": "APEX VIP Sale Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/250719-peachyogurt-vip-presale-2400px-signuppage.jpg",
+        "mobile_image": "shopify://shop_images/250719-peachyogurt-vip-presale-750px-signuppage.jpg"
+      }
     }
   },
   "order": [
     "main",
-    "akta_page_header_7kzFVF"
+    "akta_page_header_7kzFVF",
+    "apex_vip_sale_banner_zQ6Tp6"
   ]
 }
