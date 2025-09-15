@@ -33,38 +33,12 @@
         "mobile_image": "shopify://shop_images/250719-peachyogurt-vip-presale-750px-signuppage.jpg"
       }
     },
-    "newsletter_qWXKEy": {
-      "type": "newsletter",
-      "name": "Newsletter",
+    "custom_liquid_gm6A4k": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
       "settings": {
-        "container": "w-full",
-        "color_scheme": "",
-        "form_layout": "vertical",
-        "form_design": "1",
-        "heading": "Stay up to date with all fashion news<br> and exclusive offers",
-        "description": "",
-        "text_size": "h2",
-        "email_placeholder": "Enter your email",
-        "submit_button": "Subscribe",
-        "text_color": "inherit",
-        "show_icon": true,
-        "icon_img_width": "30",
-        "show_agreement": false,
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
-    "reward_page_newsletter_kzV8yM": {
-      "type": "reward-page-newsletter",
-      "name": "Reward Page Newsletter",
-      "settings": {
-        "title": "Subscribe to our Newsletter",
-        "newsletter_text": "Stay updated with our latest news and offers.",
-        "place_holder_text": "Enter your email",
-        "btn_text": "Subscribe",
-        "success_text": "Thank you for subscribing!"
+        "custom_liquid": "",
+        "custom_class": ""
       }
     }
   },
@@ -72,7 +46,6 @@
     "main",
     "akta_page_header_7kzFVF",
     "apex_vip_sale_banner_zQ6Tp6",
-    "newsletter_qWXKEy",
-    "reward_page_newsletter_kzV8yM"
+    "custom_liquid_gm6A4k"
   ]
 }
