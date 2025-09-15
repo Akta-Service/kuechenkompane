@@ -13,9 +13,21 @@
       "type": "page",
       "disabled": true,
       "settings": {}
+    },
+    "akta_page_header_7kzFVF": {
+      "type": "akta-page-header",
+      "name": "APex Page Header",
+      "settings": {
+        "show_title": true,
+        "custom_title": "Page Title",
+        "show_subtitle": false,
+        "custom_subtitle": "subtitle",
+        "text_align": "center"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "akta_page_header_7kzFVF"
   ]
 }
