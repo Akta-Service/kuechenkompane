@@ -1,0 +1,538 @@
+{% stylesheet %}
+
+
+
+
+
+
+  /* Root */
+  #production-production-stop-hero {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    background: #f0eff5;
+    height: 80vh;
+  }
+
+  /* Wrapper layout */
+  .production-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 1420px;
+    margin: 0 auto;
+  }
+
+  /* Content (left) */
+  .production-content-wrapper {
+    width: 50%;
+  }
+
+  .production-content {
+    max-width: 490px;
+  }
+
+  /* Visual (right) */
+  .production-visual {
+    width: 50%;
+    display: block;
+    position: relative;
+  }
+
+  /* Images */
+  .production-image {
+    width: 100%;
+    height: 80vh;
+    display: block;
+    object-fit: cover;
+  }
+@media screen and (max-width: 992px) {
+  .production-image {
+  
+    height: auto;
+  }
+
+}
+  /* Typography */
+  .production-heading {
+    font-weight: 600;
+    color: #000000;
+    font-size: 60px;
+    line-height: 0.95;
+    margin: 0 0 12px;
+    letter-spacing: 1px;
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,.2));
+  }
+
+  .production-subheading {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 18px;
+  }
+  /* CTA button */
+  .production-cta {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #f98727;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 1px;
+    padding: 6px 22px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  /* Badge/logo */
+  .production-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+    color: #000000;
+    font-size: 13px;
+  }
+
+  /* Desktop/mobile image toggle */
+  .production-image--desktop {
+    display: block;
+    object-position: center;
+    height: 80vh;
+  }
+  .production-image--mobile {
+    display: none;
+  }
+
+  /* Accessibility focus */
+  .production-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    margin-top: 30px;
+  }
+
+  .production-badge img {
+    width: 104px;
+    height: auto;
+    display: block;
+  }
+
+  .production-badge p {
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 1.4;
+    text-align: left;
+    margin: 0;
+  }
+
+  .production-badge span {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0px;
+    margin-top: 2px;
+  }
+
+  /* Responsive */
+  @media (min-width: 1020px) and (max-width: 1299px) {
+    .production-wrapper {
+      gap: 20px;
+    }
+    .production-content-wrapper {
+      padding: 0 0 0 20px;
+    }
+  }
+  @media (max-width: 1019px) {
+  #production-production-stop-hero {
+    height: auto;
+  }
+
+    .production-wrapper {
+      flex-direction: column-reverse;
+      gap: 50px;
+    }
+
+    .production-content-wrapper {
+      width: 100%;
+      padding: 0;
+    }
+
+    .production-visual {
+      width: 100%;
+    }
+
+    .production-image--desktop {
+      display: none;
+    }
+    .production-image--mobile {
+      display: block;
+    }
+
+    .production-content {
+        max-width: 765px;
+    }
+
+    .production-heading {
+      text-align: center;
+    }
+
+    .production-subheading {
+      text-align: center;
+    }
+
+    .production-content-wrapper {
+      padding: 0 35px 80px;
+    }
+
+    .production-content {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 749px) {
+
+    .production-cta {
+      font-size: 28px;
+      padding: 10px 22px;
+    }
+  }
+  @media (max-width: 575px) {
+    .production-heading {
+      font-size: 42px;
+    }
+    .production-cta {
+      font-size: 22px;
+    }
+  }
+  @media (max-width: 449px) {
+    .production-content-wrapper {
+      padding: 0 20px 60px;
+    }
+    .production-subheading {
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 429px) {
+    .production-subheading {
+      font-size: 16px;
+    }
+    .production-cta {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 399px) {
+
+    .production-heading {
+      font-size: 34px;
+    }
+    .production-cta {
+      font-size: 17px;
+      padding: 10px 20px;
+    }
+    .production-badge img {
+      width: 85px;
+    }
+  }
+  @media (max-width: 374px) {
+    .production-content-wrapper {
+      padding: 0 15px 50px;
+    }
+    .production-heading {
+      font-size: 32px;
+    }
+    .production-subheading {
+      font-size: 13px;
+    }
+    .production-cta {
+      font-size: 16px;
+    }
+    .production-badge img {
+      width: 65px;
+    }
+    .production-badge p {
+      font-size: 14px;
+    }
+  }
+
+
+ 
+
+
+{% endstylesheet %}
+
+<style>
+   @media only screen and (min-width: 1000px) {
+  .image--mobile{
+
+    display: none;
+
+  }
+  }
+
+    @media only screen and (max-width: 999px) {
+  .image--desktop{
+
+    display: none;
+  }
+  }
+</style>
+
+<!-- Preload desktop image for large screens -->
+
+
+<section id="production-production-stop-hero" aria-label="Production stop hero (production-prefixed)">
+  <div class="production-wrapper">
+    <div class="production-content-wrapper">
+      <div class="production-content">
+        <h1 class="production-heading">
+          {{ section.settings.heading | escape }}
+        </h1>
+
+        {% if section.settings.subheading != blank %}
+          <p class="production-subheading">
+            {{ section.settings.subheading | escape }}
+          </p>
+        {% endif %}
+
+        <a
+          class="production-cta"
+          href="{{ section.settings.cta_url }}"
+          aria-label="{{ section.settings.cta_text | escape }}"
+        >
+          <span>{{ section.settings.cta_text }}</span>
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"></path>
+          </svg>
+        </a>
+
+        {% if section.settings.badge_image %}
+          <div class="production-badge">
+            {% if section.settings.badge_image %}
+              <img
+                src="{{ section.settings.badge_image | img_url: "master" }}"
+                alt="Badge"
+              >
+            {% endif %}
+            <p>
+              {{ section.settings.headline -}}
+              <br>
+              <span>
+                {{ section.settings.subtext }}
+              </span>
+            </p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="production-visual" role="img" aria-hidden="true">
+
+<img 
+  class="production-image image--desktop"
+  src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160" 
+  srcset="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/FInal_desktop_image.webp?v=1758053174 1024w, https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_2_1.webp?v=1758053158 480w" 
+  sizes="(max-width: 767px) 480px, 1024px"
+  width="1170"
+  id="responsive-image"
+  width="100vw"
+  height="100vh"
+  loading="eager" 
+  fetchpriority="high"
+  decoding="async"
+  alt="Responsive Image">
+
+
+<img 
+  class="production-image image--mobile"
+  src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160" 
+  srcset="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160 1024w, https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160 480w" 
+  sizes="(max-width: 767px) 480px, 1024px"
+  width="1170"
+  id="responsive-image   "
+  
+  width="100vw"
+  height="100vh"
+  loading="eager" 
+  fetchpriority="high"
+  decoding="async"
+  alt="Responsive Image">
+
+
+      <!-- {% if section.settings.desktop_image %}
+        <img
+          class="production-image production-image--desktop"
+          src="{{ section.settings.desktop_image | img_url: "master" }}"
+          alt="{{ section.settings.alt_text_desktop }}"
+          loading="eager"
+          id="dekstop-image"
+          fetchpriority="high"
+          decoding="async"
+          width="1170"
+          height="720"
+        >
+      {% else %}
+        <img
+          class="production-image production-image--desktop"
+          src="{{ 'no-image.svg' | asset_url }}"
+          alt="Desktop placeholder"
+          loading="eager"
+          fetchpriority="high"
+        >
+      {% endif %}
+
+      {% if section.settings.mobile_image %}
+        <img
+          class="production-image production-image--mobile"
+          src="{{ section.settings.mobile_image | img_url: "master" }}"
+          alt="{{ section.settings.alt_text_mobile }}" loading="eager"  fetchpriority="high"  decoding="async" id="mobile-image" width="400" height="400"
+        >
+      {% else %}<img  class="production-image production-image--mobile" src="{{ 'no-image.svg' | asset_url }}"  alt="Mobile placeholder"  loading="eager" fetchpriority="high"
+        >
+      {% endif %} -->
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  function updateResponsiveImage() {
+    var image = document.getElementById("responsive-image");
+    if (!image) return;
+
+    var desktopSrc = "{{ section.settings.desktop_image | img_url: 'master' }}";
+    var mobileSrc = "{{ section.settings.mobile_image | img_url: 'master' }}";
+    var desktopSrcset = "{{ section.settings.desktop_image | img_url: '2048x2048' }} 2048w, {{ section.settings.desktop_image | img_url: '1024x1024' }} 1024w";
+    var mobileSrcset = "{{ section.settings.mobile_image | img_url: '800x800' }} 800w, {{ section.settings.mobile_image | img_url: '400x400' }} 400w";
+
+    // Fallback if no image is set in settings
+    if (!desktopSrc || desktopSrc.indexOf('no-image') !== -1) {
+      desktopSrc = "{{ 'no-image.svg' | asset_url }}";
+      desktopSrcset = "";
+    }
+    if (!mobileSrc || mobileSrc.indexOf('no-image') !== -1) {
+      mobileSrc = "{{ 'no-image.svg' | asset_url }}";
+      mobileSrcset = "";
+    }
+
+    if (window.innerWidth >= 768) {
+      image.src = desktopSrc;
+      image.srcset = desktopSrcset;
+      image.sizes = "1024px";
+    } else {
+      image.src = mobileSrc;
+      image.srcset = mobileSrcset;
+      image.sizes = "480px";
+    }
+  }
+
+  var interacted = false;
+  function interactionHandler() {
+    if (!interacted) {
+      updateResponsiveImage();
+      interacted = true;
+      window.removeEventListener("mousemove", interactionHandler);
+      window.removeEventListener("keydown", interactionHandler);
+      window.removeEventListener("touchstart", interactionHandler);
+      window.removeEventListener("scroll", interactionHandler);
+    }
+  }
+
+  window.addEventListener("mousemove", interactionHandler);
+  window.addEventListener("keydown", interactionHandler);
+  window.addEventListener("touchstart", interactionHandler);
+  window.addEventListener("scroll", interactionHandler);
+</script>
+
+{% schema %}
+{
+  "name": "Production Stop Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image (>= 749px)"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image (< 749px)"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "PRODUKTIONS STOPP!"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Keine Nachproduktion für ausgewählte Serien"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "ANGEBOTE ENTDECKEN"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button URL",
+      "default": "/collections/all"
+    },
+    {
+      "type": "textarea",
+      "id": "alt_text_desktop",
+      "label": "Desktop image alt text",
+      "default": "Production stop desktop"
+    },
+    {
+      "type": "textarea",
+      "id": "alt_text_mobile",
+      "label": "Mobile image alt text",
+      "default": "Production stop mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image",
+      "label": "Badge Image"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Deutschlands Nr. 1 Messer"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Die besten Messer für deine Küche — geliebt von 160.000+ Menschen!"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Production Stop Hero (production)",
+      "category": "Hero"
+    }
+  ]
+}
+{% endschema %}
