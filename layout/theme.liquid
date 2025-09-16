@@ -31,12 +31,11 @@
 >
   <head>
     {% if template == 'index' %}
-      <link
-        rel="preload"
-        href="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Background-desktop__1_.jpg_V1_25eb48c6-a16e-44be-ad97-7615474a6aa8_1_2.webp?v=1757620448"
-        as="image"
-        type="image/webp"
-      >
+
+        <link rel="preload"   type="image/webp" as="image" href="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/FInal_desktop_image.webp?v=1758053174" media="(min-width: 768px)">
+
+<!-- Preload mobile image for small screens -->
+<link rel="preload"   type="image/webp" as="image" href="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_2_1.webp?v=1758053158" media="(max-width: 767px)">
     {% elsif template == 'collection' and collection.products.size > 0 %}
       {% for product in collection.products limit: 4 %}
         {% if product.featured_image %}

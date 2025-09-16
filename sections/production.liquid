@@ -35,11 +35,17 @@
   /* Images */
   .production-image {
     width: 100%;
-    height: auto;
+    height: 80vh;
     display: block;
     object-fit: cover;
   }
+@media screen and (max-width: 992px) {
+  .production-image {
+  
+    height: auto;
+  }
 
+}
   /* Typography */
   .production-heading {
     font-weight: 600;
@@ -250,6 +256,9 @@
   }
 {% endstylesheet %}
 
+<!-- Preload desktop image for large screens -->
+
+
 <section id="production-production-stop-hero" aria-label="Production stop hero (production-prefixed)">
   <div class="production-wrapper">
     <div class="production-content-wrapper">
@@ -304,12 +313,30 @@
     </div>
 
     <div class="production-visual" role="img" aria-hidden="true">
-      {% if section.settings.desktop_image %}
+
+<img 
+  class="production-image"
+  src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_2_1.webp?v=1758053158" 
+  srcset="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/FInal_desktop_image.webp?v=1758053174 1024w, https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_2_1.webp?v=1758053158 480w" 
+  sizes="(max-width: 767px) 480px, 1024px"
+  width="1170"
+  id="responsive-image"
+  width="100vw"
+  height="100vh"
+  loading="eager" 
+  fetchpriority="high"
+  decoding="async"
+  alt="Responsive Image">
+
+
+
+      <!-- {% if section.settings.desktop_image %}
         <img
           class="production-image production-image--desktop"
           src="{{ section.settings.desktop_image | img_url: "master" }}"
           alt="{{ section.settings.alt_text_desktop }}"
           loading="eager"
+          id="dekstop-image"
           fetchpriority="high"
           decoding="async"
           width="1170"
@@ -329,25 +356,38 @@
         <img
           class="production-image production-image--mobile"
           src="{{ section.settings.mobile_image | img_url: "master" }}"
-          alt="{{ section.settings.alt_text_mobile }}"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-                 width="400"
-          height="400"
+          alt="{{ section.settings.alt_text_mobile }}" loading="eager"  fetchpriority="high"  decoding="async" id="mobile-image" width="400" height="400"
         >
-      {% else %}
-        <img
-          class="production-image production-image--mobile"
-          src="{{ 'no-image.svg' | asset_url }}"
-          alt="Mobile placeholder"
-          loading="eager"
-          fetchpriority="high"
+      {% else %}<img  class="production-image production-image--mobile" src="{{ 'no-image.svg' | asset_url }}"  alt="Mobile placeholder"  loading="eager" fetchpriority="high"
         >
-      {% endif %}
+      {% endif %} -->
     </div>
   </div>
 </section>
+
+
+
+<script>
+  window.addEventListener("load", function () {
+    var image = document.getElementById("responsive-image");
+    if (!image) return;
+
+    var desktopSrc = "{{ section.settings.desktop_image | img_url: 'master' }}";
+    var mobileSrc = "{{ section.settings.mobile_image | img_url: 'master' }}";
+    var desktopSrcset = "{{ section.settings.desktop_image | img_url: '2048x2048' }} 2048w, {{ section.settings.desktop_image | img_url: '1024x1024' }} 1024w";
+    var mobileSrcset = "{{ section.settings.mobile_image | img_url: '800x800' }} 800w, {{ section.settings.mobile_image | img_url: '400x400' }} 400w";
+
+    if (window.innerWidth >= 768) {
+      image.src = desktopSrc;
+      image.srcset = desktopSrcset;
+      image.sizes = "1024px";
+    } else {
+      image.src = mobileSrc;
+      image.srcset = mobileSrcset;
+      image.sizes = "480px";
+    }
+  });
+</script>
 
 {% schema %}
 {
