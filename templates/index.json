@@ -36,6 +36,7 @@
         "text_y7CNYb",
         "text_HpEVnG"
       ],
+      "disabled": true,
       "name": "Banner Announcement Bar",
       "settings": {
         "top_text": "p-medium"
@@ -43,6 +44,7 @@
     },
     "production_8hMEjm": {
       "type": "production",
+      "disabled": true,
       "name": "Production Stop Hero (production)",
       "settings": {
         "desktop_image": "shopify://shop_images/MG_0888_1_2.webp",
@@ -85,7 +87,6 @@
         "text_GFQwB3",
         "text_J8yeUK"
       ],
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "color_scheme": "scheme-6381519f-31bf-4012-bd7e-d91d1a7c0ca3",
