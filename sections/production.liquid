@@ -367,27 +367,29 @@
 
 
 
-{% comment %} <script>
+<script>
   window.addEventListener("load", function () {
-    var image = document.getElementById("responsive-image");
-    if (!image) return;
+    setTimeout(function () {
+      var image = document.getElementById("responsive-image");
+      if (!image) return;
 
-    var desktopSrc = "{{ section.settings.desktop_image | img_url: 'master' }}";
-    var mobileSrc = "{{ section.settings.mobile_image | img_url: 'master' }}";
-    var desktopSrcset = "{{ section.settings.desktop_image | img_url: '2048x2048' }} 2048w, {{ section.settings.desktop_image | img_url: '1024x1024' }} 1024w";
-    var mobileSrcset = "{{ section.settings.mobile_image | img_url: '800x800' }} 800w, {{ section.settings.mobile_image | img_url: '400x400' }} 400w";
+      var desktopSrc = "{{ section.settings.desktop_image | img_url: 'master' }}";
+      var mobileSrc = "{{ section.settings.mobile_image | img_url: 'master' }}";
+      var desktopSrcset = "{{ section.settings.desktop_image | img_url: '2048x2048' }} 2048w, {{ section.settings.desktop_image | img_url: '1024x1024' }} 1024w";
+      var mobileSrcset = "{{ section.settings.mobile_image | img_url: '800x800' }} 800w, {{ section.settings.mobile_image | img_url: '400x400' }} 400w";
 
-    if (window.innerWidth >= 768) {
-      image.src = desktopSrc;
-      image.srcset = desktopSrcset;
-      image.sizes = "1024px";
-    } else {
-      image.src = mobileSrc;
-      image.srcset = mobileSrcset;
-      image.sizes = "480px";
-    }
+      if (window.innerWidth >= 768) {
+        image.src = desktopSrc;
+        image.srcset = desktopSrcset;
+        image.sizes = "1024px";
+      } else {
+        image.src = mobileSrc;
+        image.srcset = mobileSrcset;
+        image.sizes = "480px";
+      }
+    }, 3000);
   });
-</script> {% endcomment %}
+</script>
 
 {% schema %}
 {
