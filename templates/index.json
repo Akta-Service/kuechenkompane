@@ -9,6 +9,23 @@
  */
 {
   "sections": {
+    "production_8hMEjm": {
+      "type": "production",
+      "name": "Production Stop Hero (production)",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Screenshot_1.png",
+        "mobile_image": "shopify://shop_images/Screenshot_2.png",
+        "heading": "PRODUKTIONS STOPP!",
+        "subheading": "Keine Nachproduktion für ausgewählte Serien",
+        "cta_text": "ANGEBOTE ENTDECKEN",
+        "cta_url": "shopify://collections/all",
+        "alt_text_desktop": "Production stop desktop",
+        "alt_text_mobile": "Production stop mobile",
+        "badge_image": "shopify://shop_images/asiatisches-messerset-premium-mobile_1_1.webp",
+        "headline": "Deutschlands Nr. 1 Messer",
+        "subtext": "Die besten Messer für deine Küche — geliebt von 160.000+ Menschen!"
+      }
+    },
     "banner_version_2_4q968G": {
       "type": "banner-version-2",
       "blocks": {
@@ -36,6 +53,7 @@
         "text_GFQwB3",
         "text_J8yeUK"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "color_scheme": "scheme-6381519f-31bf-4012-bd7e-d91d1a7c0ca3",
@@ -315,21 +333,6 @@
         "heading_type": "mrk-h3",
         "title": "Nach Kategorie einkaufen",
         "c_n_text": "p-medium"
-      }
-    },
-    "production_8hMEjm": {
-      "type": "production",
-      "name": "Production Stop Hero (production)",
-      "settings": {
-        "desktop_image": "shopify://shop_images/Screenshot_1.png",
-        "mobile_image": "shopify://shop_images/Screenshot_2.png",
-        "heading": "PRODUKTIONS STOPP!",
-        "subheading": "Keine Nachproduktion für ausgewählte Serien",
-        "cta_text": "ANGEBOTE ENTDECKEN",
-        "cta_url": "shopify://collections/all",
-        "badge_image": "shopify://shop_images/asiatisches-messerset-premium-mobile_1_1.webp",
-        "alt_text_desktop": "Production stop desktop",
-        "alt_text_mobile": "Production stop mobile"
       }
     },
     "product_explanation_video_6ERhrB": {
@@ -624,12 +627,12 @@
     }
   },
   "order": [
+    "production_8hMEjm",
     "banner_version_2_4q968G",
     "scrolling_promotion_p4H4Y4",
     "featured_collection_3jbXQJ",
     "custom_content_btgYN3",
     "category_selection_dVGcxF",
-    "production_8hMEjm",
     "product_explanation_video_6ERhrB",
     "branded_image_version_NcNpYJ",
     "ugc_video_testimonial_fWJLpe",
