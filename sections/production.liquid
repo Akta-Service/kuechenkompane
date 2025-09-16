@@ -348,7 +348,7 @@
   srcset="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/FInal_desktop_image.webp?v=1758053174 1024w, https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_2_1.webp?v=1758053158 480w" 
   sizes="(max-width: 767px) 480px, 1024px"
   width="1170"
-  id="responsive-image"
+  id="responsive-image-desktop"
   width="100vw"
   height="100vh"
   loading="eager" 
@@ -408,13 +408,36 @@
   </div>
 </section>
 
+<img 
+  class="production-image image--desktop"
+  src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160" 
+  srcset="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/FInal_desktop_image.webp?v=1758053174 1024w, https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_2_1.webp?v=1758053158 480w" 
+  sizes="(max-width: 767px) 480px, 1024px"
+  width="1170"
+  id="responsive-image-desktop"
+  height="100vh"
+  loading="eager" 
+  fetchpriority="high"
+  decoding="async"
+  alt="Responsive Image">
 
+<img 
+  class="production-image image--mobile"
+  src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160" 
+  srcset="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160 1024w, https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160 480w" 
+  sizes="(max-width: 767px) 480px, 1024px"
+  width="1170"
+  id="responsive-image-mobile"
+  height="100vh"
+  loading="eager" 
+  fetchpriority="high"
+  decoding="async"
+  alt="Responsive Image">
 
 <script>
   function updateResponsiveImage() {
-    var desktopImage = document.getElementById("responsive-image");
+    var desktopImage = document.getElementById("responsive-image-desktop");
     var mobileImage = document.getElementById("responsive-image-mobile");
-    if (!desktopImage && !mobileImage) return;
 
     var desktopSrc = "{{ section.settings.desktop_image | image_url: 'master' }}";
     var mobileSrc = "{{ section.settings.mobile_image | image_url: 'master' }}";
@@ -455,10 +478,15 @@
     }
   }
 
-  window.addEventListener("mousemove", interactionHandler);
-  window.addEventListener("keydown", interactionHandler);
-  window.addEventListener("touchstart", interactionHandler);
-  window.addEventListener("scroll", interactionHandler);
+  window.addEventListener("mousemove", interactionHandler, { once: true });
+  window.addEventListener("keydown", interactionHandler, { once: true });
+  window.addEventListener("touchstart", interactionHandler, { once: true });
+  window.addEventListener("scroll", interactionHandler, { once: true });
+
+  // Also update on resize for better responsiveness
+  window.addEventListener("resize", function() {
+    updateResponsiveImage();
+  });
 </script>
 
 {% schema %}
