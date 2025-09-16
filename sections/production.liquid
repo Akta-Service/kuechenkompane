@@ -300,6 +300,7 @@
           src="{{ section.settings.desktop_image | img_url: "master" }}"
           alt="{{ section.settings.alt_text_desktop }}"
           loading="eager"
+          fetchpriority="high"
           decoding="async"
         >
       {% else %}
@@ -307,7 +308,8 @@
           class="production-image production-image--desktop"
           src="{{ 'no-image.svg' | asset_url }}"
           alt="Desktop placeholder"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
         >
       {% endif %}
 
@@ -316,7 +318,8 @@
           class="production-image production-image--mobile"
           src="{{ section.settings.mobile_image | img_url: "master" }}"
           alt="{{ section.settings.alt_text_mobile }}"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
           decoding="async"
         >
       {% else %}
@@ -324,7 +327,8 @@
           class="production-image production-image--mobile"
           src="{{ 'no-image.svg' | asset_url }}"
           alt="Mobile placeholder"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
         >
       {% endif %}
     </div>
