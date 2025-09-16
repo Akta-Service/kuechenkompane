@@ -9,6 +9,38 @@
  */
 {
   "sections": {
+    "banner_announcement_bar_rWFceh": {
+      "type": "banner-announcement-bar",
+      "blocks": {
+        "text_AbQDcL": {
+          "type": "text",
+          "settings": {
+            "top_item": "160.000+ zufriedene Kunden"
+          }
+        },
+        "text_y7CNYb": {
+          "type": "text",
+          "settings": {
+            "top_item": "100 Tage Geld-zurück-Garantie"
+          }
+        },
+        "text_HpEVnG": {
+          "type": "text",
+          "settings": {
+            "top_item": "Kostenloser Versand"
+          }
+        }
+      },
+      "block_order": [
+        "text_AbQDcL",
+        "text_y7CNYb",
+        "text_HpEVnG"
+      ],
+      "name": "Banner Announcement Bar",
+      "settings": {
+        "top_text": "p-medium"
+      }
+    },
     "production_8hMEjm": {
       "type": "production",
       "name": "Production Stop Hero (production)",
@@ -627,6 +659,7 @@
     }
   },
   "order": [
+    "banner_announcement_bar_rWFceh",
     "production_8hMEjm",
     "banner_version_2_4q968G",
     "scrolling_promotion_p4H4Y4",
