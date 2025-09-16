@@ -1,0 +1,101 @@
+<style>
+  .banner-top-content {
+    max-width: 1310px;
+    margin: 0 auto;
+    padding: 8px 0;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .banner-top-content-item {
+    padding: 0 18px;
+    text-align: center;
+  }
+
+  .banner-top-content-item span i {
+    font-size: 14px;
+    color: #1e1e1e;
+    margin-right: 10px;
+  }
+
+  .banner-top-content-item span {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: Pragmatica, sans-serif;
+  }
+</style>
+
+<div class="banner-top">
+  <div class="rs-container">
+    <div class="swiper banner-top-active">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="banner-top-item swiper-slide">
+            <p class="{{ section.settings.top_text }}">
+              <svg
+                class="icon icon-checkmark"
+                width="9"
+                height="8"
+                viewBox="0 0 9 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M7.85766 0.48999L7.29266 1.05999C5.76017 2.59562 4.5901 3.87807 3.1677 5.33007L1.6527 4.05007L1.0427 3.53506L0.0126953 4.75506L0.622695 5.27506L2.7027 7.03506L3.2627 7.51007L3.7827 6.99007C5.5059 5.26319 6.73278 3.88383 8.4227 2.19007L8.98769 1.62007L7.85766 0.48999Z" fill="currentColor"></path>
+              </svg>
+              {{ block.settings.top_item }}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Banner Announcement Bar",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Top Item Text Settings"
+    },
+    {
+      "type": "header",
+      "content": "Select Paragraph size"
+    },
+    {
+      "type": "select",
+      "id": "top_text",
+      "label": "Paragraph Size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Top Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "top_item",
+          "label": "Top Item Text",
+          "default": "100% Money Back"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Announcement Bar"
+    }
+  ]
+}
+{% endschema %}
