@@ -317,6 +317,21 @@
         "c_n_text": "p-medium"
       }
     },
+    "production_8hMEjm": {
+      "type": "production",
+      "name": "Production Stop Hero (production)",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Screenshot_1.png",
+        "mobile_image": "shopify://shop_images/Screenshot_2.png",
+        "heading": "PRODUKTIONS STOPP!",
+        "subheading": "Keine Nachproduktion für ausgewählte Serien",
+        "cta_text": "ANGEBOTE ENTDECKEN",
+        "cta_url": "shopify://collections/all",
+        "badge_image": "shopify://shop_images/asiatisches-messerset-premium-mobile_1_1.webp",
+        "alt_text_desktop": "Production stop desktop",
+        "alt_text_mobile": "Production stop mobile"
+      }
+    },
     "product_explanation_video_6ERhrB": {
       "type": "product-explanation-video",
       "blocks": {
@@ -614,6 +629,7 @@
     "featured_collection_3jbXQJ",
     "custom_content_btgYN3",
     "category_selection_dVGcxF",
+    "production_8hMEjm",
     "product_explanation_video_6ERhrB",
     "branded_image_version_NcNpYJ",
     "ugc_video_testimonial_fWJLpe",
