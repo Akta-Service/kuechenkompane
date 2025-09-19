@@ -25,11 +25,22 @@
         "text_align": "center"
       }
     },
+    "collection_img_banner_Na3ffU": {
+      "type": "collection-img-banner",
+      "disabled": true,
+      "custom_css": [
+        "img {display: block; margin-left: auto; margin-right: auto;}"
+      ],
+      "name": "Collection Image Banner",
+      "settings": {
+        "image_1": "shopify://shop_images/founder_name.jpg"
+      }
+    },
     "apex_vip_sale_banner_zQ6Tp6": {
       "type": "apex-vip-sale-banner",
       "name": "APEX VIP Sale Banner",
       "settings": {
-        "desktop_image": "shopify://shop_images/250719-peachyogurt-vip-presale-2400px-signuppage.jpg",
+        "desktop_image": "shopify://shop_images/founder_name.jpg",
         "mobile_image": "shopify://shop_images/250719-peachyogurt-vip-presale-750px-signuppage.jpg"
       }
     },
@@ -45,6 +56,7 @@
   "order": [
     "main",
     "akta_page_header_7kzFVF",
+    "collection_img_banner_Na3ffU",
     "apex_vip_sale_banner_zQ6Tp6",
     "custom_liquid_gm6A4k"
   ]
