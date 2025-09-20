@@ -1,6 +1,4 @@
 <style>
-
-
   /* common css end  */
   .category-area {
     padding: 60px 0;
@@ -152,7 +150,7 @@
                     <img
                       src="{{ block.settings.collection_img |  img_url: 'master' }}"
                       loading="lazy"
-                      alt=""
+                      alt="{{ collection.title | escape }}"
                     >
                   </a>
                 </div>
