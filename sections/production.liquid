@@ -5,15 +5,19 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       "Helvetica Neue", Arial, "Noto Sans", sans-serif;
     background: #f0eff5;
-    height: 65vh;
+    height: 70vh;
   }
 
   /* Wrapper layout */
   .production-wrapper {
     display: flex;
     align-items: center;
-    max-width: 1420px;
+    {% comment %} max-width: 1420px; {% endcomment %}
     margin: 0 auto;
+    gap: 70px;
+  }
+  .production-content-wrapper {
+    padding: 0 0 0 20px;
   }
 
   /* Content (left) */
@@ -22,7 +26,13 @@
   }
 
   .production-content {
-    max-width: 490px;
+    max-width: 560px;
+    margin-left: auto;
+  }
+  @media(max-width: 1920px){
+    .production-content {
+      max-width: 590px;
+    }
   }
 
   /* Visual (right) */
@@ -333,7 +343,7 @@
           loading="eager"
           fetchpriority="high"
           decoding="async"
-                 width="400"
+          width="400"
           height="400"
         >
       {% else %}
