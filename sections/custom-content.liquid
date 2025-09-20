@@ -1,8 +1,9 @@
-<link 
-  href="{{ 'custom-content.css' | asset_url }}" 
-  rel="stylesheet" 
-  media="print" 
-  onload="this.media='all'">
+<link
+  href="{{ 'custom-content.css' | asset_url }}"
+  rel="stylesheet"
+  media="print"
+  onload="this.media='all'"
+>
 <noscript>
   <link href="{{ 'custom-content.css' | asset_url }}" rel="stylesheet">
 </noscript>
@@ -328,7 +329,7 @@
                                     class="js-youtube"
                                     allow="autoplay; encrypted-media"
                                     allowfullscreen
-                                    title="{{ block.settings.video_title | escape }}"
+                                    title="{{ block.settings.video_title | escape | default: 'video' }}"
                                   ></iframe>
                                 {%- else -%}
                                   {% liquid
@@ -566,7 +567,9 @@
                           </span>
                         {% endif %}
                         {% if block.settings.title != blank %}
-                          <h3 class="m-richtext__title {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
+                          <h3 class="m-richtext__title {{ section.settings.heading_type }}">
+                            {{ block.settings.title }}
+                          </h3>
                         {% endif %}
                       </div>
                       <div class="product-bundles__list">
@@ -761,8 +764,12 @@
                       <div class="product-bundles__error"></div>
                     </m-product-bundle>
                   {% when 'lookbook' %}
-
-                      <link rel="stylesheet" href="{{ 'lookbook.css' | asset_url }}" media="print" onload="this.media='all'">
+                    <link
+                      rel="stylesheet"
+                      href="{{ 'lookbook.css' | asset_url }}"
+                      media="print"
+                      onload="this.media='all'"
+                    >
 
                     <!-- {{ '' | asset_url | stylesheet_tag }} -->
                     {% render 'lookbook-card',
@@ -925,7 +932,9 @@
                               <p class="m-richtext__subtitle {{ subtext_size }}">{{ block.settings.sub_title }}</p>
                             {% endif %}
                             {% if block.settings.title != blank %}
-                              <h3 class="m-richtext__title rte {{ section.settings.heading_type }}">{{ block.settings.title }}</h3>
+                              <h3 class="m-richtext__title rte {{ section.settings.heading_type }}">
+                                {{ block.settings.title }}
+                              </h3>
                             {% endif %}
                             {% if block.settings.text != blank %}
                               <div class="m-richtext__description m:text-color-subtext rte {{ subtext_size }}">
@@ -1427,7 +1436,7 @@
       "type": "textarea",
       "id": "description",
       "label": "Description"
-    }, 
+    },
     {
       "type": "header",
       "content": "Select Paragraph size"
@@ -1442,9 +1451,9 @@
         { "value": "p-large", "label": "Large" },
         { "value": "p-medium", "label": "Medium" },
         { "value": "p-small", "label": "Small" },
-        { "value": "p-x-small", "label": "Extra Small" }        
+        { "value": "p-x-small", "label": "Extra Small" }
       ]
-    },  
+    },
     {
       "type": "header",
       "content": "General"
@@ -1688,7 +1697,7 @@
               "label": "Right"
             }
           ]
-        },            
+        },
         {
           "type": "header",
           "content": "Button settings"
@@ -1989,7 +1998,7 @@
           "type": "textarea",
           "id": "video_title",
           "label": "Heading"
-        },       
+        },
         {
           "type": "select",
           "id": "play_style",
@@ -2608,7 +2617,7 @@
               "label": "Right"
             }
           ]
-        },        
+        },
         {
           "type": "header",
           "content": "Content"
@@ -2869,7 +2878,7 @@
               "label": "Right"
             }
           ]
-        },       
+        },
         {
           "type": "header",
           "content": "Content"
@@ -3370,7 +3379,7 @@
           "type": "text",
           "id": "subheading",
           "label": "Subheading"
-        },       
+        },
         {
           "type": "checkbox",
           "id": "show_reviews",
@@ -3834,7 +3843,7 @@
           "id": "heading",
           "label": "Heading",
           "default": "Subscribe to our newsletter"
-        },        
+        },
         {
           "type": "richtext",
           "id": "description",
@@ -4316,7 +4325,7 @@
           "id": "text",
           "label": "Text",
           "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
-        },        
+        },
         {
           "type": "select",
           "id": "content_alignment",
@@ -4535,7 +4544,7 @@
           "type": "richtext",
           "id": "text",
           "label": "Text"
-        },      
+        },
         {
           "content": "Button settings",
           "type": "header"
@@ -4770,7 +4779,7 @@
             }
           ],
           "default": ""
-        },        
+        },
         {
           "type": "select",
           "id": "content_alignment",
@@ -5063,7 +5072,7 @@
           "type": "richtext",
           "id": "text",
           "label": "Text"
-        },       
+        },
         {
           "type": "select",
           "id": "content_alignment",
