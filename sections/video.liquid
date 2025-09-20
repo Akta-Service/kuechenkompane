@@ -119,7 +119,7 @@
                   class="js-youtube"
                   allow="autoplay; encrypted-media"
                   allowfullscreen
-                  title="{{ section.settings.video_title | escape }}"
+                  title="{{ section.settings.video_title | escape | default: 'video'}}"
                 ></iframe>
               {%- else -%}
                 {% liquid
