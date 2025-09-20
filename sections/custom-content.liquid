@@ -360,7 +360,7 @@
                                     class="js-vimeo"
                                     allow="autoplay; encrypted-media"
                                     allowfullscreen
-                                    title="{{ block.settings.video_title | escape }}"
+                                    title="{{ block.settings.video_title | escape | default: 'video'}}"
                                   ></iframe>
                                 {%- endif -%}
                               {%- else -%}
