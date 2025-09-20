@@ -1,151 +1,151 @@
 <style>
-    /* product-explanation-video-section */
-  .product-explanation-video-section {
-    background: {{ section.settings.bg_color }} ;
-    padding: {{ section.settings.vertical_padding }}px 15px;
-  }
-
-  .product-explanation-video-main {
-    max-width: 712px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .product-explanation-video-uppercnt {
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .product-explanation-video-uppercnt h6 {   
-    font-weight: 500;   
-    margin-bottom: 6px;
-    text-align: center;
-  }
-
-  .product-explanation-video-title {
-    font-size: {{ section.settings.heading_size}}px;
-    font-weight: 500;  
-    margin: 0;
-    text-align: center;
-    font-family: sans-serif;
-  }
-
-  .product-explanation-video-uppercnt p {
-    /* font-size: 18px; */
-    /* font-weight: 400;    */
-    text-align: center;
-    margin: 16px 0px 30px;
-  }
-
-  .product-explanation-video-item video {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-  }
-  .product-explanation-video-item {
-      position: relative;
-   }
-
-  button.video-toggle-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  button.video-toggle-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-    background: #fff;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    animation: bubble-glow 1.5s infinite ease-in-out;
-    transition: 0.3s ease;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-  }
-
-@keyframes bubble-glow {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.336);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.384);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 0 rgba(15, 15, 15, 0.329);
-  }
-}
-
-
-.video-toggle-btn svg {
-  filter: drop-shadow(0 0 10px rgba(36, 36, 36, 0.473));
-}
-
-
-
-
-  @media screen and (max-width: 767px) {
+      /* product-explanation-video-section */
     .product-explanation-video-section {
-      padding: {{ section.settings.vertical_padding_mobile }}px 15px;
-
+      background: {{ section.settings.bg_color }} ;
+      padding: {{ section.settings.vertical_padding }}px 15px;
     }
+
+    .product-explanation-video-main {
+      max-width: 712px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .product-explanation-video-uppercnt {
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
     .product-explanation-video-uppercnt h6 {
-      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .product-explanation-video-title {
+      font-size: {{ section.settings.heading_size}}px;
+      font-weight: 500;
+      margin: 0;
+      text-align: center;
+      font-family: sans-serif;
     }
 
     .product-explanation-video-uppercnt p {
-      /* font-size: 16px; */
+      /* font-size: 18px; */
+      /* font-weight: 400;    */
+      text-align: center;
+      margin: 16px 0px 30px;
+    }
+
+    .product-explanation-video-item video {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .product-explanation-video-item {
+        position: relative;
+     }
+
+    button.video-toggle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    button.video-toggle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      background: #fff;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      animation: bubble-glow 1.5s infinite ease-in-out;
+      transition: 0.3s ease;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+
+  @keyframes bubble-glow {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.336);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.384);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: 0 0 0 rgba(15, 15, 15, 0.329);
     }
   }
-  {% for c in section.blocks %}
-    {% case c.type %}
-      {% when 'heading' %}
+
+
+  .video-toggle-btn svg {
+    filter: drop-shadow(0 0 10px rgba(36, 36, 36, 0.473));
+  }
+
+
+
+
+    @media screen and (max-width: 767px) {
+      .product-explanation-video-section {
+        padding: {{ section.settings.vertical_padding_mobile }}px 15px;
+
+      }
+      .product-explanation-video-uppercnt h6 {
+        font-size: 14px;
+      }
+
+      .product-explanation-video-uppercnt p {
+        /* font-size: 16px; */
+      }
+    }
+    {% for c in section.blocks %}
+      {% case c.type %}
+        {% when 'heading' %}
+        .akta-{{ section.id}} .heading-font{{forloop.index}} {
+          font-size: {{ c.settings.h1_font_size }}px;
+          font-weight: {{ c.settings.h1_font_weight }};
+          text-align: {{ c.settings.h1_text_align }};
+          padding-top: {{ c.settings.padding_top }}px;
+          padding-bottom: {{ c.settings.padding_bottom }}px;
+        }
+
+      @media (max-width: 1024px) { /* Tablet */
       .akta-{{ section.id}} .heading-font{{forloop.index}} {
-        font-size: {{ c.settings.h1_font_size }}px;
-        font-weight: {{ c.settings.h1_font_weight }};    
-        text-align: {{ c.settings.h1_text_align }};
-        padding-top: {{ c.settings.padding_top }}px;
-        padding-bottom: {{ c.settings.padding_bottom }}px;
+          font-size: {{ c.settings.h1_font_size_tablet }}px;
+          padding-top: {{ c.settings.padding_top_tablet | default: settings.padding_top }}px;
+          padding-bottom: {{ c.settings.padding_bottom_tablet | default: settings.padding_bottom }}px;
+        }
       }
 
-    @media (max-width: 1024px) { /* Tablet */
-    .akta-{{ section.id}} .heading-font{{forloop.index}} {
-        font-size: {{ c.settings.h1_font_size_tablet }}px;
-        padding-top: {{ c.settings.padding_top_tablet | default: settings.padding_top }}px;
-        padding-bottom: {{ c.settings.padding_bottom_tablet | default: settings.padding_bottom }}px;
+      @media (max-width: 768px) { /* Mobile */
+      .akta-{{ section.id}} .heading-font{{forloop.index}}  {
+          font-size: {{ c.settings.h1_font_size_mobile }}px;
+          padding-top: {{ c.settings.padding_top_mobile | default: settings.padding_top }}px;
+          padding-bottom: {{ c.settings.padding_bottom_mobile | default: settings.padding_bottom }}px;
+        }
       }
-    }
-
-    @media (max-width: 768px) { /* Mobile */
-    .akta-{{ section.id}} .heading-font{{forloop.index}}  {
-        font-size: {{ c.settings.h1_font_size_mobile }}px;
-        padding-top: {{ c.settings.padding_top_mobile | default: settings.padding_top }}px;
-        padding-bottom: {{ c.settings.padding_bottom_mobile | default: settings.padding_bottom }}px;
-      }
-    }
-   {% endcase %}
-  {% endfor %}
+     {% endcase %}
+    {% endfor %}
 </style>
 
 <!-- product-explanation-video-section start -->
- <div class="m-color-{{ section.settings.color_scheme }}">
+<div class="m-color-{{ section.settings.color_scheme }}">
   <div class="product-explanation-video-section akta-{{ section.id}}">
     <div class="product-explanation-video-main">
       <div class="product-explanation-video-uppercnt">
@@ -165,7 +165,7 @@
               {% comment %} parapgh-one {% endcomment %}
             {% when 'details' %}
               <p
-                class="description-font{{forloop.index}} {{ section.settings.des_size}}"               
+                class="description-font{{forloop.index}} {{ section.settings.des_size}}"
               >
                 {{ block.settings.details }}
               </p>
@@ -206,29 +206,26 @@
                   <source src="{{ block.settings.video_url }}" type="video/mp4">
                 </video>
               {% else %}
-
-              {{ block.settings.video | video_tag: 
-                autoplay: block.settings.autoplay,
-                loop: block.settings.loop,
-                muted: block.settings.muted,
-                playsinline: block.settings.playsinline,
-                controls: block.settings.controls,
-                image_size: "1000x"             
-              }}
-
-
+                {{
+                  block.settings.video
+                  | video_tag:
+                    autoplay: block.settings.autoplay,
+                    loop: block.settings.loop,
+                    muted: block.settings.muted,
+                    playsinline: block.settings.playsinline,
+                    controls: block.settings.controls,
+                    image_size: '1000x'
+                }}
               {% endif %}
-              
+
               {% if block.settings.autoplay == false %}
                 <!-- Custom Button -->
-                <button class="video-toggle-btn" data-target="product-video-{{ block.id }}" >
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
+                <button class="video-toggle-btn" data-target="product-video-{{ block.id }}" aria-label="Play video">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
                 </button>
               {% endif %}
-
-
             </div>
         {% endcase %}
       {% endfor %}
@@ -268,7 +265,7 @@
     {
       "type": "header",
       "content": "Heading"
-    },  
+    },
     {
       "type": "select",
       "id": "heading_type",
@@ -315,7 +312,7 @@
         { "value": "p-large", "label": "Large" },
         { "value": "p-medium", "label": "Medium" },
         { "value": "p-small", "label": "Small" },
-        { "value": "p-x-small", "label": "Extra Small" }        
+        { "value": "p-x-small", "label": "Extra Small" }
       ]
     },
     {
@@ -332,10 +329,9 @@
         { "value": "p-large", "label": "Large" },
         { "value": "p-medium", "label": "Medium" },
         { "value": "p-small", "label": "Small" },
-        { "value": "p-x-small", "label": "Extra Small" }        
+        { "value": "p-x-small", "label": "Extra Small" }
       ]
     }
-    
   ],
   "blocks": [
     {
@@ -347,7 +343,7 @@
           "id": "sub_heading",
           "label": "Sub Heading",
           "default": "Maniko - Explained in 2 Minutes"
-        },        
+        }
       ]
     },
     {
@@ -359,7 +355,7 @@
           "id": "heading",
           "label": "Heading",
           "default": "What are Maniko Nails?"
-        },        
+        },
         {
           "type": "select",
           "id": "h1_text_align",
@@ -448,7 +444,7 @@
           "id": "details",
           "label": "Details",
           "default": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:"
-        },          
+        },
         {
           "type": "select",
           "id": "p_text_align",
@@ -459,7 +455,7 @@
             { "value": "right", "label": "Right" }
           ],
           "default": "left"
-        },        
+        },
         {
           "type": "range",
           "id": "p_padding_top",
@@ -589,8 +585,7 @@
           "default": true
         }
       ]
-    },
-    
+    }
   ],
   "presets": [
     {
@@ -600,9 +595,8 @@
 }
 {% endschema %}
 
-
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener('DOMContentLoaded', function () {
     const playIcon = `
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000" viewBox="0 0 24 24">
         <path d="M8 5v14l11-7z"/>
@@ -615,7 +609,7 @@
       </svg>
     `;
 
-    document.querySelectorAll('.product-explanation-video-item').forEach(item => {
+    document.querySelectorAll('.product-explanation-video-item').forEach((item) => {
       const video = item.querySelector('video');
       const button = item.querySelector('.video-toggle-btn');
 
@@ -662,5 +656,3 @@
     });
   });
 </script>
-
-
