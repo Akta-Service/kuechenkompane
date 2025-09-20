@@ -38,7 +38,8 @@
             height: image_height,
             sizes: '100vw',
             widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
-            alt: 'image'
+            alt: image.alt
+          | escape
         }}
       </div>
     {% else %}
