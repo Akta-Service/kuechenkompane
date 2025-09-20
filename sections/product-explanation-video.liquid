@@ -152,9 +152,9 @@
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'sub_heading' %}
-              <h6 class="{{ section.settings.sub_heading }}">
+              <span  class="{{ section.settings.sub_heading }}">
                 {{ block.settings.sub_heading }}
-              </h6>
+              </span>
               {% comment %} product-explanation-video-title {% endcomment %}
             {% when 'heading' %}
               <h3
