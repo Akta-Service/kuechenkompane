@@ -92,6 +92,10 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "taxes_included": false,
+            "taxes_included_text": "",
+            "show_saving": false,
+            "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 5,
             "p_pt_m": 5,
@@ -102,7 +106,14 @@
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 19,
-            "price_font_weight": "600"
+            "c_price_size": 16,
+            "c_price_size_m": 16,
+            "price_font_weight": "600",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -122,6 +133,8 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
             "viewer_count_time": 2500,
             "stock_count_time": 50000,
             "stock_count_show": false
@@ -197,6 +210,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
@@ -220,7 +234,11 @@
         "show_stk_icon": false,
         "glitter_effec": false,
         "bubble_before_color": "#4b4b4b",
-        "bubble_after_color": "#4b4b4b"
+        "bubble_after_color": "#4b4b4b",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "product_descrption_accordion_btdDtQ": {
@@ -256,7 +274,12 @@
           }
         }
       },
-      "block_order": ["faq_fqQbjd", "faq_jkYPLV", "faq_kQAWhE", "faq_pDwHXa"],
+      "block_order": [
+        "faq_fqQbjd",
+        "faq_jkYPLV",
+        "faq_kQAWhE",
+        "faq_pDwHXa"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "title": "IM SET ENTHALTEN",
@@ -307,9 +330,16 @@
           }
         }
       },
-      "block_order": ["tab_gknmWn", "tab", "tab_yXpqFL", "tab_LBwXaE"],
+      "block_order": [
+        "tab_gknmWn",
+        "tab",
+        "tab_yXpqFL",
+        "tab_LBwXaE"
+      ],
       "disabled": true,
-      "custom_css": [".m-tabs__header {justify-content: flex-start;}"],
+      "custom_css": [
+        ".m-tabs__header {justify-content: flex-start;}"
+      ],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -389,6 +419,7 @@
         "pb_mobile": 30,
         "title": "Unsere Produkte in Aktion",
         "heading_type": "mrk-h1",
+        "show_button": false,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "@kuechenkompane",
         "autoplay": false
@@ -573,7 +604,11 @@
           }
         }
       },
-      "block_order": ["subtitle_jER8HM", "title_hXWbxr", "description_abE8wX"],
+      "block_order": [
+        "subtitle_jER8HM",
+        "title_hXWbxr",
+        "description_abE8wX"
+      ],
       "settings": {
         "color_scheme": "",
         "media_type": "image",
@@ -702,6 +737,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
@@ -743,7 +779,10 @@
           }
         }
       },
-      "block_order": ["title_F4F6qE", "description_9Mxcd4"],
+      "block_order": [
+        "title_F4F6qE",
+        "description_9Mxcd4"
+      ],
       "disabled": true,
       "settings": {
         "color_scheme": "",
@@ -854,7 +893,8 @@
         "sub_title": "",
         "sub_title_font_size": 20,
         "faq_title_font_size": 18,
-        "faq_text_font_size": 16
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "benefit_text_MCeGiV": {
@@ -879,7 +919,11 @@
           }
         }
       },
-      "block_order": ["subtitle_8kbCAt", "title_KU4fTr", "description_PBBAnQ"],
+      "block_order": [
+        "subtitle_8kbCAt",
+        "title_KU4fTr",
+        "description_PBBAnQ"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -916,7 +960,11 @@
           }
         }
       },
-      "block_order": ["subtitle_XPX87U", "title_YwDaTz", "description_j4ByyM"],
+      "block_order": [
+        "subtitle_XPX87U",
+        "title_YwDaTz",
+        "description_j4ByyM"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -1036,7 +1084,11 @@
           }
         }
       },
-      "block_order": ["item_9JUQhz", "item_NYUrjj", "item_Prmf4W"],
+      "block_order": [
+        "item_9JUQhz",
+        "item_NYUrjj",
+        "item_Prmf4W"
+      ],
       "custom_css": [
         ".item-icon {display: inline-block; width: 30px; height: 28px;}",
         "ul.health-feature img {width: 28px; height: 28px; object-fit: contain; border-radius: 0; line-height: 7;}"
@@ -1080,7 +1132,10 @@
           }
         }
       },
-      "block_order": ["heading_tWq74p", "content_nQLTqP"],
+      "block_order": [
+        "heading_tWq74p",
+        "content_nQLTqP"
+      ],
       "disabled": true,
       "settings": {
         "background_color": "#f6f0e6",
@@ -1109,7 +1164,9 @@
           }
         }
       },
-      "block_order": ["loox_reviews_loox_dynamic_section_9tFX78"],
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_9tFX78"
+      ],
       "disabled": true,
       "settings": {
         "heading": "",
@@ -1140,7 +1197,9 @@
           }
         }
       },
-      "block_order": ["loox_reviews_loox_dynamic_section_Y38TbV"],
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_Y38TbV"
+      ],
       "settings": {
         "heading": "",
         "heading_size": "h3",
