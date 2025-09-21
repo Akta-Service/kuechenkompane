@@ -177,7 +177,9 @@
   <div class="custom_container">
     <div class="video_title">
       <h3 class="{{ section.settings.heading_type }}">{{ section.settings.title }}</h3>
-      <a href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+      {% if section.settings.show_button == true %}
+        <a href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+      {% endif %}
     </div>
     <div class="video_slider">
       <div class="swiper video_slider video_slider_active">
@@ -323,15 +325,24 @@
       "default": "mrk-h1"
     },
     {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show Button",
+      "default": true
+    },
+    {
       "type": "url",
       "id": "btn_url",
-      "label": "Button URL"
+      "label": "Button URL",
+      "visible_if": "{{ section.settings.show_button == true }}"
     },
     {
       "type": "text",
       "id": "btn_text",
       "label": "Button Text",
-      "default": "@merodacosmetics"
+      "default": "@merodacosmetics",
+      "visible_if": "{{ section.settings.show_button == true }}"
+
     },
     {
       "type": "checkbox",
