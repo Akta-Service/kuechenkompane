@@ -101,6 +101,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "taxes_included": false,
+            "taxes_included_text": "",
             "show_saving": true,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -113,7 +115,14 @@
             "per_badge_color": "#ffffff",
             "f_s": 22,
             "f_s_m": 18,
-            "price_font_weight": "600"
+            "c_price_size": 16,
+            "c_price_size_m": 16,
+            "price_font_weight": "600",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
           }
         },
         "subtitle_ag37pg": {
@@ -149,6 +158,8 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
             "viewer_count_time": 30000,
             "stock_count_time": 50000,
             "stock_count_show": true
@@ -250,6 +261,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
@@ -273,7 +285,11 @@
         "show_stk_icon": true,
         "glitter_effec": true,
         "bubble_before_color": "#000000",
-        "bubble_after_color": "#1e1e1e"
+        "bubble_after_color": "#1e1e1e",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "product_descrption_accordion_btdDtQ": {
@@ -301,7 +317,11 @@
           }
         }
       },
-      "block_order": ["faq_jkYPLV", "faq_kQAWhE", "faq_pDwHXa"],
+      "block_order": [
+        "faq_jkYPLV",
+        "faq_kQAWhE",
+        "faq_pDwHXa"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "title": "",
@@ -352,9 +372,16 @@
           }
         }
       },
-      "block_order": ["tab_gknmWn", "tab", "tab_yXpqFL", "tab_LBwXaE"],
+      "block_order": [
+        "tab_gknmWn",
+        "tab",
+        "tab_yXpqFL",
+        "tab_LBwXaE"
+      ],
       "disabled": true,
-      "custom_css": [".m-tabs__header {justify-content: flex-start;}"],
+      "custom_css": [
+        ".m-tabs__header {justify-content: flex-start;}"
+      ],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -539,7 +566,11 @@
           }
         }
       },
-      "block_order": ["subtitle_wazFAC", "title_mVxTXy", "description_mye33Y"],
+      "block_order": [
+        "subtitle_wazFAC",
+        "title_mVxTXy",
+        "description_mye33Y"
+      ],
       "name": "APEX Benefit Photo Right",
       "settings": {
         "color_scheme": "",
@@ -652,6 +683,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/c3f04b6c0c574ca587cc7ad8532567e9.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04.jpg",
@@ -703,7 +735,11 @@
           }
         }
       },
-      "block_order": ["title_7bjmib", "ratings_qmMcyY", "quotation_g7QTma"],
+      "block_order": [
+        "title_7bjmib",
+        "ratings_qmMcyY",
+        "quotation_g7QTma"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "padding_top": 13,
@@ -734,7 +770,11 @@
           }
         }
       },
-      "block_order": ["subtitle_8kbCAt", "title_KU4fTr", "description_PBBAnQ"],
+      "block_order": [
+        "subtitle_8kbCAt",
+        "title_KU4fTr",
+        "description_PBBAnQ"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -771,7 +811,11 @@
           }
         }
       },
-      "block_order": ["subtitle_XPX87U", "title_YwDaTz", "description_j4ByyM"],
+      "block_order": [
+        "subtitle_XPX87U",
+        "title_YwDaTz",
+        "description_j4ByyM"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -802,7 +846,10 @@
           }
         }
       },
-      "block_order": ["title_F4F6qE", "description_9Mxcd4"],
+      "block_order": [
+        "title_F4F6qE",
+        "description_9Mxcd4"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "img": "shopify://shop_images/steel_kitchen_knives_V11_1.jpg",
@@ -882,6 +929,7 @@
         "pb_mobile": 30,
         "title": "Das Messerset erobert Deutschland",
         "heading_type": "mrk-h3",
+        "show_button": false,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "",
         "autoplay": false
@@ -936,9 +984,15 @@
           }
         }
       },
-      "block_order": ["iconbox_pJbJGA", "iconbox_RW46nE", "iconbox_EiwgTg"],
+      "block_order": [
+        "iconbox_pJbJGA",
+        "iconbox_RW46nE",
+        "iconbox_EiwgTg"
+      ],
       "disabled": true,
-      "custom_css": [".m-icon-box__heading {font-weight: 400;}"],
+      "custom_css": [
+        ".m-icon-box__heading {font-weight: 400;}"
+      ],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -985,7 +1039,10 @@
           }
         }
       },
-      "block_order": ["left_content_kdVLJX", "right_content_6RynNR"],
+      "block_order": [
+        "left_content_kdVLJX",
+        "right_content_6RynNR"
+      ],
       "disabled": true,
       "settings": {
         "section_bg_color": "#ffffff",
@@ -1164,7 +1221,8 @@
         "sub_title": "",
         "sub_title_font_size": 14,
         "faq_title_font_size": 18,
-        "faq_text_font_size": 16
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "cta_final_9B8iN9": {
@@ -1192,7 +1250,11 @@
           }
         }
       },
-      "block_order": ["item_9JUQhz", "item_NYUrjj", "item_Prmf4W"],
+      "block_order": [
+        "item_9JUQhz",
+        "item_NYUrjj",
+        "item_Prmf4W"
+      ],
       "disabled": true,
       "settings": {
         "color_scheme": "footer",
@@ -1233,7 +1295,10 @@
           }
         }
       },
-      "block_order": ["heading_tWq74p", "content_nQLTqP"],
+      "block_order": [
+        "heading_tWq74p",
+        "content_nQLTqP"
+      ],
       "disabled": true,
       "settings": {
         "background_color": "#f6f0e6",
@@ -1262,7 +1327,9 @@
           }
         }
       },
-      "block_order": ["loox_reviews_loox_dynamic_section_FnN8Yz"],
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_FnN8Yz"
+      ],
       "settings": {
         "heading": "",
         "heading_size": "h3",
