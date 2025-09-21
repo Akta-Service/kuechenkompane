@@ -179,8 +179,11 @@
               "grillbuerste",
               "3in1-grill-reinigungsburste-vip-sale"
             ],
+            "discount_text": "Off",
             "single_title": "1pcs",
-            "enable_single": true
+            "enable_single": true,
+            "discount_badge_bg": "#000000",
+            "variant_badge_bg": "#2d7a2d"
           }
         },
         "buy_buttons_3hQqVi": {
@@ -572,6 +575,7 @@
         "pb_mobile": 30,
         "title": "Unsere Produkte in Aktion",
         "heading_type": "mrk-h1",
+        "show_button": false,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "@kuechenkompane",
         "autoplay": false
