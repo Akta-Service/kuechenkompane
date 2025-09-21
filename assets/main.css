@@ -6701,7 +6701,6 @@ variant-picker
 }
 .m-price__sale .m-price-item--last {
   color: rgb(var(--color-price-sale));
-  font-weight: 500;
 }
 .m-price--on-sale .m-price__sale {
   display: flex;
