@@ -61,7 +61,7 @@
   align-items: self-end;
 }
 .apex-theme-collection .m-product-card--soldout::after {
-    position: absolute;
+    {% comment %} position: absolute; {% endcomment %}
     inset: 0;
     background: #000000;
     opacity: {{ section.settings.overlay_opacity }};
