@@ -112,6 +112,39 @@
         "overlay_opacity": 0.1
       }
     },
+    "promotion_banner_zN9WhN": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_8NQmaz": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "DEINE CHANCE AUF",
+            "heading": "-75%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_8NQmaz"
+      ],
+      "name": "Promotion banner",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "AUSVERKAUF VON RESTBESTÄNDEN",
+        "heading_size": "h2",
+        "text": "<p>Jetzt Restbestände zum Vorteilspreis: Spare bis zu <strong>75 % </strong>auf ausgewählte Artikel – nur solange der Vorrat reicht oder bis Preise angehoben werden.</p>",
+        "content_alignment": "left",
+        "banner_url": "shopify://collections/ausverkauf-von-restbestanden",
+        "button_label": "ANGEBOTE ENTDECKEN",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "usp_list_xQHfgQ": {
       "type": "usp-list",
       "blocks": {
@@ -203,6 +236,7 @@
     "rich_text_DTWea7",
     "collection-header",
     "main",
+    "promotion_banner_zN9WhN",
     "usp_list_xQHfgQ",
     "collection_description_tUMerW",
     "rich_text_ijBTPA"
