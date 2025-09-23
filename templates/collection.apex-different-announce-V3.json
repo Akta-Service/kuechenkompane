@@ -9,6 +9,56 @@
  */
 {
   "sections": {
+    "apex_global_offer_timer_b9GWdM": {
+      "type": "Apex-global-offer-timer",
+      "name": "Apex Global Timer",
+      "settings": {
+        "bg_color": "#DCE5DC",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#D2861A",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "400",
+        "timer_text": "Unser exklusives Angebot endet bald!",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "400",
+        "target_date": "2025-09-26",
+        "target_time": "00:00:00"
+      }
+    },
+    "rich_text_DTWea7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RdTMFb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ausverkauf von Restbeständen",
+            "heading_size": "h2"
+          }
+        },
+        "text_ALR8CN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Jetzt Restbestände zum Vorteilspreis: Spare bis zu <strong>75 % </strong>auf ausgewählte Artikel – nur solange der Vorrat reicht oder bis Preise angehoben werden.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RdTMFb",
+        "text_ALR8CN"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 24,
+        "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -27,110 +77,6 @@
         "padding_top": 36,
         "padding_bottom": 50,
         "enable_bg_zoom_effect": true
-      }
-    },
-    "apex_top_slider_GBwqAg": {
-      "type": "apex-top-slider",
-      "blocks": {
-        "text_zLPY9B": {
-          "type": "text",
-          "settings": {
-            "top_item": "140.000+ zufriedene Kunden"
-          }
-        },
-        "text_i4KwPb": {
-          "type": "text",
-          "settings": {
-            "top_item": "100 Tage Testen"
-          }
-        },
-        "text_KKpaJj": {
-          "type": "text",
-          "settings": {
-            "top_item": "Kostenloser Versand"
-          }
-        }
-      },
-      "block_order": [
-        "text_zLPY9B",
-        "text_i4KwPb",
-        "text_KKpaJj"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "default",
-        "pt": 15,
-        "pb": 15,
-        "mt_mobile": 15,
-        "mb_mobile": 15
-      }
-    },
-    "category_selection_iMrTd6": {
-      "type": "category-selection",
-      "blocks": {
-        "item_nwxAVH": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db.jpg",
-            "collection": "kuechenmesser-set",
-            "collection_name": "",
-            "custom_url": ""
-          }
-        },
-        "item_Bd4xRW": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d.webp",
-            "collection": "rustikales-servierbrett",
-            "collection_name": "",
-            "custom_url": ""
-          }
-        },
-        "item_LNGV6x": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
-            "collection": "damastmesser-set",
-            "collection_name": "",
-            "custom_url": ""
-          }
-        },
-        "item_KtcacC": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_9602_V7_766bf07d-e962-44cd-88f4-f20ad783e139.jpg",
-            "collection": "bbq-zubehor",
-            "collection_name": "",
-            "custom_url": ""
-          }
-        },
-        "item_rktrNh": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
-            "collection": "asiatisches-messerset-1",
-            "collection_name": "",
-            "custom_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_nwxAVH",
-        "item_Bd4xRW",
-        "item_LNGV6x",
-        "item_KtcacC",
-        "item_rktrNh"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "default",
-        "pt": 30,
-        "pb": 30,
-        "mobile_pt": 30,
-        "mobile_pb": 30,
-        "heading_type": "mrk-h1",
-        "title": "Nach Kategorien suchen",
-        "c_n_text": "p-medium"
       }
     },
     "main": {
@@ -216,40 +162,6 @@
         "horizontal_padding_mobile": 15
       }
     },
-    "branded_image_version_ffF3PX": {
-      "type": "branded-image-version-",
-      "blocks": {
-        "title_AgFUHf": {
-          "type": "title",
-          "settings": {
-            "title": "Kochen wie ein Profi"
-          }
-        },
-        "sub_title_GcWkqp": {
-          "type": "sub_title",
-          "settings": {
-            "text": "Von messerscharfer Präzision bis hin zu perfektem Kochgeschirr.\n<br>Unsere Produkte sind für höchste Ansprüche gemacht."
-          }
-        }
-      },
-      "block_order": [
-        "title_AgFUHf",
-        "sub_title_GcWkqp"
-      ],
-      "settings": {
-        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
-        "shape_color": "#deceba",
-        "margin_top": 20,
-        "margin_bottom": 0,
-        "mobile_margin_top": 10,
-        "mobile_margin_bottom": 0,
-        "bg_img": "shopify://shop_images/IMG_9602_V6.jpg",
-        "heading_type": "mrk-h1",
-        "des_size": "p-medium",
-        "button_style": "m-button--primary",
-        "button_size": ""
-      }
-    },
     "collection_description_tUMerW": {
       "type": "collection-description",
       "disabled": true,
@@ -287,12 +199,11 @@
     }
   },
   "order": [
+    "apex_global_offer_timer_b9GWdM",
+    "rich_text_DTWea7",
     "collection-header",
-    "apex_top_slider_GBwqAg",
-    "category_selection_iMrTd6",
     "main",
     "usp_list_xQHfgQ",
-    "branded_image_version_ffF3PX",
     "collection_description_tUMerW",
     "rich_text_ijBTPA"
   ]
