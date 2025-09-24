@@ -1,152 +1,152 @@
 {% stylesheet %}
-    /* Root */
-    #production-production-stop-hero {
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      background: #f0eff5;
-      height: 80vh;
-    }
+  /* Root */
+  #production-production-stop-hero {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    background: #f0eff5;
+    height: 80vh;
+  }
 
-    /* Wrapper layout */
-    .production-wrapper {
-      display: flex;
-      align-items: center;
-      max-width: 1420px;
-      margin: 0 auto;
-    }
+  /* Wrapper layout */
+  .production-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 1420px;
+    margin: 0 auto;
+  }
 
-    /* Content (left) */
-    .production-content-wrapper {
-      width: 50%;
-    }
+  /* Content (left) */
+  .production-content-wrapper {
+    width: 50%;
+  }
 
-    .production-content {
-      max-width: 490px;
-    }
+  .production-content {
+    max-width: 490px;
+  }
 
-    /* Visual (right) */
-    .production-visual {
-      width: 50%;
-      display: block;
-      position: relative;
-    }
+  /* Visual (right) */
+  .production-visual {
+    width: 50%;
+    display: block;
+    position: relative;
+  }
 
-    /* Images */
+  /* Images */
+  .production-image {
+    width: 100%;
+    height: 80vh;
+    display: block;
+    object-fit: cover;
+  }
+  @media screen and (max-width: 992px) {
     .production-image {
-      width: 100%;
-      height: 80vh;
-      display: block;
-      object-fit: cover;
-    }
-    @media screen and (max-width: 992px) {
-      .production-image {
 
-        height: auto;
-      }
-
-    }
-    /* Typography */
-    .production-heading {
-      font-weight: 600;
-      color: #000000;
-      font-size: 60px;
-      line-height: 0.95;
-      margin: 0 0 12px;
-      letter-spacing: 1px;
-      filter: drop-shadow(5px 5px 5px rgba(0,0,0,.2));
-    }
-
-    .production-subheading {
-      color: #000000;
-      font-size: 20px;
-      font-weight: 500;
-      margin: 0 0 18px;
-    }
-    /* CTA button */
-    .production-cta {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      background: #f98727;
-      width: 100%;
-      text-align: center;
-      white-space: nowrap;
-      color: #fff;
-      font-size: 30px;
-      letter-spacing: 1px;
-      padding: 6px 22px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.12s ease, box-shadow 0.12s ease;
-    }
-    /* Badge/logo */
-    .production-badge {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 18px;
-      color: #000000;
-      font-size: 13px;
-    }
-
-    /* Desktop/mobile image toggle */
-    .production-image--desktop {
-      display: block;
-      object-position: center;
-      height: 80vh;
-    }
-    .production-image--mobile {
-      display: none;
-    }
-
-    /* Accessibility focus */
-    .production-badge {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background-color: transparent;
-      margin-top: 30px;
-    }
-
-    .production-badge img {
-      width: 104px;
-      height: auto;
-      display: block;
-    }
-
-    .production-badge p {
-      font-size: 16px;
-      color: #000;
-      font-weight: 600;
-      letter-spacing: 0.6px;
-      line-height: 1.4;
-      text-align: left;
-      margin: 0;
-    }
-
-    .production-badge span {
-      display: block;
-      font-weight: 400;
-      font-size: 12px;
-      letter-spacing: 0px;
-      margin-top: 2px;
-    }
-
-    /* Responsive */
-    @media (min-width: 1020px) and (max-width: 1299px) {
-      .production-wrapper {
-        gap: 20px;
-      }
-      .production-content-wrapper {
-        padding: 0 0 0 20px;
-      }
-    }
-    @media (max-width: 1019px) {
-    #production-production-stop-hero {
       height: auto;
     }
+
+  }
+  /* Typography */
+  .production-heading {
+    font-weight: 600;
+    color: #000000;
+    font-size: 60px;
+    line-height: 0.95;
+    margin: 0 0 12px;
+    letter-spacing: 1px;
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,.2));
+  }
+
+  .production-subheading {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 18px;
+  }
+  /* CTA button */
+  .production-cta {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #f98727;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 1px;
+    padding: 6px 22px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  /* Badge/logo */
+  .production-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+    color: #000000;
+    font-size: 13px;
+  }
+
+  /* Desktop/mobile image toggle */
+  .production-image--desktop {
+    display: block;
+    object-position: center;
+    height: 80vh;
+  }
+  .production-image--mobile {
+    display: none;
+  }
+
+  /* Accessibility focus */
+  .production-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    margin-top: 30px;
+  }
+
+  .production-badge img {
+    width: 104px;
+    height: auto;
+    display: block;
+  }
+
+  .production-badge p {
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 1.4;
+    text-align: left;
+    margin: 0;
+  }
+
+  .production-badge span {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0px;
+    margin-top: 2px;
+  }
+
+  /* Responsive */
+  @media (min-width: 1020px) and (max-width: 1299px) {
+    .production-wrapper {
+      gap: 20px;
+    }
+    .production-content-wrapper {
+      padding: 0 0 0 20px;
+    }
+  }
+  @media (max-width: 1019px) {
+  #production-production-stop-hero {
+    height: auto;
+  }
 
     .production-wrapper {
       flex-direction: column-reverse;
