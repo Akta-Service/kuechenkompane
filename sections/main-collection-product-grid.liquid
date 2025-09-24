@@ -1,10 +1,16 @@
-    <link rel="stylesheet" href="{{ 'component-product-inventory.css' | asset_url }}" media="print" onload="this.media='all'">
+<link
+  rel="stylesheet"
+  href="{{ 'component-product-inventory.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
 
-    <link rel="stylesheet" href="{{ 'collection.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'collection.css' | asset_url }}" media="print" onload="this.media='all'">
 
-
-{% comment %} {{ 'component-product-inventory.css' | asset_url | stylesheet_tag }}
-{{ 'collection.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{% comment %}
+  {{ 'component-product-inventory.css' | asset_url | stylesheet_tag }}
+  {{ 'collection.css' | asset_url | stylesheet_tag }}
+{% endcomment %}
 <script src="{{ 'collection.js' | asset_url }}" defer="defer"></script>
 {%- if template.suffix == 'flash-sale' -%}
   <script src="{{ 'foxkit-flashsale-countdown.js' | asset_url }}" defer="defer"></script>
@@ -36,20 +42,20 @@
   endif
 -%}
 
-
-<style>
-  .m-product-card--soldout::after {
-    position: absolute;
-    inset: 0;
-    background: #000000;
-    opacity: {{ section.settings.overlay_opacity }};
-    z-index: 9;
-    content: "";
-    border-radius: 5px;
-    pointer-events: none;
-}
-</style>
-
+{% comment %}
+  <style>
+    .m-product-card--soldout::after {
+      position: absolute;
+      inset: 0;
+      background: #000000;
+      opacity: {{ section.settings.overlay_opacity }};
+      z-index: 9;
+      content: "";
+      border-radius: 5px;
+      pointer-events: none;
+  }
+  </style>
+{% endcomment %}
 
 <section
   class="facest-filters-section"
@@ -102,23 +108,26 @@
             >
               {%- for product in collection.products -%}
                 {% comment %} {% unless product.tags contains 'NO SEARCH' %} {% endcomment %}
-                
-                  <div class="m-product-item m:w-6/12 md:m:w-4/12" data-tags="{% for tag in product.tags %}{{ tag | handleize }} {% endfor %}">
-                    {% liquid
-                      case settings.pcard_layout
-                        when '1'
-                          render 'product-card-1', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '2'
-                          render 'product-card-2', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '3'
-                          render 'product-card-3', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '4'
-                          render 'product-card-4', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                        when '5'
-                          render 'product-card-5', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
-                      endcase
-                    %}
-                  </div>
+
+                <div
+                  class="m-product-item m:w-6/12 md:m:w-4/12"
+                  data-tags="{% for tag in product.tags %}{{ tag | handleize }} {% endfor %}"
+                >
+                  {% liquid
+                    case settings.pcard_layout
+                      when '1'
+                        render 'product-card-1', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
+                      when '2'
+                        render 'product-card-2', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
+                      when '3'
+                        render 'product-card-3', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
+                      when '4'
+                        render 'product-card-4', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
+                      when '5'
+                        render 'product-card-5', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
+                    endcase
+                  %}
+                </div>
                 {% comment %} {% endunless %} {% endcomment %}
               {%- endfor -%}
             </div>
