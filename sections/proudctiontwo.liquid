@@ -1,10 +1,4 @@
 {% stylesheet %}
-
-
-
-
-
-
   /* Root */
   #production-production-stop-hero {
     box-sizing: border-box;
@@ -45,13 +39,13 @@
     display: block;
     object-fit: cover;
   }
-@media screen and (max-width: 992px) {
-  .production-image {
-  
-    height: auto;
-  }
+  @media screen and (max-width: 992px) {
+    .production-image {
 
-}
+      height: auto;
+    }
+
+  }
   /* Typography */
   .production-heading {
     font-weight: 600;
@@ -78,6 +72,7 @@
     background: #f98727;
     width: 100%;
     text-align: center;
+    white-space: nowrap;
     color: #fff;
     font-size: 30px;
     letter-spacing: 1px;
@@ -260,11 +255,6 @@
       font-size: 14px;
     }
   }
-
-
- 
-
-
 {% endstylesheet %}
 
 <style>
@@ -285,7 +275,6 @@
 </style>
 
 <!-- Preload desktop image for large screens -->
-
 
 <section id="production-production-stop-hero" aria-label="Production stop hero (production-prefixed)">
   <div class="production-wrapper">
@@ -341,103 +330,104 @@
     </div>
 
     <div class="production-visual" role="img" aria-hidden="true">
+      <img
+        class="production-image image--desktop"
+        src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160"
+        srcset="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/FInal_desktop_image.webp?v=1758053174 1024w, https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_2_1.webp?v=1758053158 480w"
+        sizes="(max-width: 767px) 480px, 1024px"
+        width="1170"
+        id="responsive-image"
+        width="100vw"
+        height="100vh"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        alt="Responsive Image"
+      >
 
-<img 
-  class="production-image image--desktop"
-  src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160" 
-  srcset="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/FInal_desktop_image.webp?v=1758053174 1024w, https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_2_1.webp?v=1758053158 480w" 
-  sizes="(max-width: 767px) 480px, 1024px"
-  width="1170"
-  id="responsive-image"
-  width="100vw"
-  height="100vh"
-  loading="eager" 
-  fetchpriority="high"
-  decoding="async"
-  alt="Responsive Image">
+      <img
+        class="production-image image--mobile"
+        src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160"
+        srcset="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160 1024w, https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160 480w"
+        sizes="(max-width: 767px) 480px, 1024px"
+        width="1170"
+        id="responsive-image   "
 
+        width="100vw"
+        height="100vh"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        alt="Responsive Image"
+      >
 
-<img 
-  class="production-image image--mobile"
-  src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160" 
-  srcset="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160 1024w, https://cdn.shopify.com/s/files/1/0018/5329/2643/files/MG_0860_1_3_1.webp?v=1758062160 480w" 
-  sizes="(max-width: 767px) 480px, 1024px"
-  width="1170"
-  id="responsive-image   "
-  
-  width="100vw"
-  height="100vh"
-  loading="eager" 
-  fetchpriority="high"
-  decoding="async"
-  alt="Responsive Image">
+      <!--
+        {% if section.settings.desktop_image %}
+          <img
+            class="production-image production-image--desktop"
+            src="{{ section.settings.desktop_image | img_url: "master" }}"
+            alt="{{ section.settings.alt_text_desktop }}"
+            loading="eager"
+            id="dekstop-image"
+            fetchpriority="high"
+            decoding="async"
+            width="1170"
+            height="720"
+          >
+        {% else %}
+          <img
+            class="production-image production-image--desktop"
+            src="{{ 'no-image.svg' | asset_url }}"
+            alt="Desktop placeholder"
+            loading="eager"
+            fetchpriority="high"
+          >
+        {% endif %}
 
-
-      <!-- {% if section.settings.desktop_image %}
-        <img
-          class="production-image production-image--desktop"
-          src="{{ section.settings.desktop_image | img_url: "master" }}"
-          alt="{{ section.settings.alt_text_desktop }}"
-          loading="eager"
-          id="dekstop-image"
-          fetchpriority="high"
-          decoding="async"
-          width="1170"
-          height="720"
-        >
-      {% else %}
-        <img
-          class="production-image production-image--desktop"
-          src="{{ 'no-image.svg' | asset_url }}"
-          alt="Desktop placeholder"
-          loading="eager"
-          fetchpriority="high"
-        >
-      {% endif %}
-
-      {% if section.settings.mobile_image %}
-        <img
-          class="production-image production-image--mobile"
-          src="{{ section.settings.mobile_image | img_url: "master" }}"
-          alt="{{ section.settings.alt_text_mobile }}" loading="eager"  fetchpriority="high"  decoding="async" id="mobile-image" width="400" height="400"
-        >
-      {% else %}<img  class="production-image production-image--mobile" src="{{ 'no-image.svg' | asset_url }}"  alt="Mobile placeholder"  loading="eager" fetchpriority="high"
-        >
-      {% endif %} -->
+        {% if section.settings.mobile_image %}
+          <img
+            class="production-image production-image--mobile"
+            src="{{ section.settings.mobile_image | img_url: "master" }}"
+            alt="{{ section.settings.alt_text_mobile }}" loading="eager"  fetchpriority="high"  decoding="async" id="mobile-image" width="400" height="400"
+          >
+        {% else %}<img  class="production-image production-image--mobile" src="{{ 'no-image.svg' | asset_url }}"  alt="Mobile placeholder"  loading="eager" fetchpriority="high"
+          >
+        {% endif %}
+      -->
     </div>
   </div>
 </section>
 
-
-
 <script>
   function updateResponsiveImage() {
-    var image = document.getElementById("responsive-image");
+    var image = document.getElementById('responsive-image');
     if (!image) return;
 
     var desktopSrc = "{{ section.settings.desktop_image | img_url: 'master' }}";
     var mobileSrc = "{{ section.settings.mobile_image | img_url: 'master' }}";
-    var desktopSrcset = "{{ section.settings.desktop_image | img_url: '2048x2048' }} 2048w, {{ section.settings.desktop_image | img_url: '1024x1024' }} 1024w";
-    var mobileSrcset = "{{ section.settings.mobile_image | img_url: '800x800' }} 800w, {{ section.settings.mobile_image | img_url: '400x400' }} 400w";
+    var desktopSrcset =
+      "{{ section.settings.desktop_image | img_url: '2048x2048' }} 2048w, {{ section.settings.desktop_image | img_url: '1024x1024' }} 1024w";
+    var mobileSrcset =
+      "{{ section.settings.mobile_image | img_url: '800x800' }} 800w, {{ section.settings.mobile_image | img_url: '400x400' }} 400w";
 
     // Fallback if no image is set in settings
     if (!desktopSrc || desktopSrc.indexOf('no-image') !== -1) {
       desktopSrc = "{{ 'no-image.svg' | asset_url }}";
-      desktopSrcset = "";
+      desktopSrcset = '';
     }
     if (!mobileSrc || mobileSrc.indexOf('no-image') !== -1) {
       mobileSrc = "{{ 'no-image.svg' | asset_url }}";
-      mobileSrcset = "";
+      mobileSrcset = '';
     }
 
     if (window.innerWidth >= 768) {
       image.src = desktopSrc;
       image.srcset = desktopSrcset;
-      image.sizes = "1024px";
+      image.sizes = '1024px';
     } else {
       image.src = mobileSrc;
       image.srcset = mobileSrcset;
-      image.sizes = "480px";
+      image.sizes = '480px';
     }
   }
 
@@ -446,17 +436,17 @@
     if (!interacted) {
       updateResponsiveImage();
       interacted = true;
-      window.removeEventListener("mousemove", interactionHandler);
-      window.removeEventListener("keydown", interactionHandler);
-      window.removeEventListener("touchstart", interactionHandler);
-      window.removeEventListener("scroll", interactionHandler);
+      window.removeEventListener('mousemove', interactionHandler);
+      window.removeEventListener('keydown', interactionHandler);
+      window.removeEventListener('touchstart', interactionHandler);
+      window.removeEventListener('scroll', interactionHandler);
     }
   }
 
-  window.addEventListener("mousemove", interactionHandler);
-  window.addEventListener("keydown", interactionHandler);
-  window.addEventListener("touchstart", interactionHandler);
-  window.addEventListener("scroll", interactionHandler);
+  window.addEventListener('mousemove', interactionHandler);
+  window.addEventListener('keydown', interactionHandler);
+  window.addEventListener('touchstart', interactionHandler);
+  window.addEventListener('scroll', interactionHandler);
 </script>
 
 {% schema %}
