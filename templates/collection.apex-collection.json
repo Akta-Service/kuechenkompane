@@ -29,6 +29,24 @@
         "enable_bg_zoom_effect": true
       }
     },
+    "apex_global_offer_timer_LA36Gc": {
+      "type": "Apex-global-offer-timer",
+      "name": "Apex Global Timer",
+      "settings": {
+        "bg_color": "#DCE5DC",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#D2861A",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "400",
+        "timer_text": "Unser Exklusives Angebot läuft bald ab!",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "400",
+        "target_date": "2025-09-27",
+        "target_time": "00:00:00"
+      }
+    },
     "apex_top_slider_GBwqAg": {
       "type": "apex-top-slider",
       "blocks": {
@@ -56,6 +74,7 @@
         "text_i4KwPb",
         "text_KKpaJj"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "pt": 15,
@@ -72,6 +91,30 @@
         "text_alignment": "center",
         "hide_current": false,
         "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
+    "rich_text_9azB7H": {
+      "type": "rich-text",
+      "blocks": {
+        "text_m73wFf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Jetzt Restbestände zum Vorteilspreis: Spare bis zu <strong>75% </strong>auf ausgewählte Artikel – nur solange der Vorrat reicht oder bis Preise angehoben werden.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_m73wFf"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "",
         "animations": "inherit"
       }
     },
@@ -311,8 +354,10 @@
   },
   "order": [
     "collection-header",
+    "apex_global_offer_timer_LA36Gc",
     "apex_top_slider_GBwqAg",
     "breadcrumb_h1_b4RT8P",
+    "rich_text_9azB7H",
     "breadcrumb_bEhLYx",
     "category_selection_iMrTd6",
     "main",
