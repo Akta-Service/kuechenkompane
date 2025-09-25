@@ -161,12 +161,11 @@
             "soldout_color": "#ff0000",
             "viewer_count_time": 30000,
             "stock_count_time": 50000,
-            "stock_count_show": true
+            "stock_count_show": false
           }
         },
         "product_stock_status_769aJr": {
           "type": "product_stock_status",
-          "disabled": true,
           "settings": {}
         },
         "featurelist_header_tfxtpf": {
