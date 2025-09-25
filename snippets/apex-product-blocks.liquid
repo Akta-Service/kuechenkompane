@@ -399,6 +399,10 @@
 
       {% when 'viewerStockCount' %}
         {% render 'viewer-stock-count', block: block %}
+
+      {% when 'product_stock_status' %}
+        {% render 'stock-status', custom_class: 'ml-6', block: block, product: product %}
+
       {% when 'featurelist_header' %}
         <p
           class="feature-header"
