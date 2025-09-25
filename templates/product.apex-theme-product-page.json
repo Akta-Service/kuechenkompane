@@ -164,6 +164,11 @@
             "stock_count_show": true
           }
         },
+        "product_stock_status_769aJr": {
+          "type": "product_stock_status",
+          "disabled": true,
+          "settings": {}
+        },
         "featurelist_header_tfxtpf": {
           "type": "featurelist_header",
           "disabled": true,
@@ -188,7 +193,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}</p>",
+            "featurelist_item": "{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -250,6 +255,7 @@
         "subtitle_xQXVba",
         "subtitle_mGfN7N",
         "viewer_stock_count_MFNhKz",
+        "product_stock_status_769aJr",
         "featurelist_header_tfxtpf",
         "featurelist_item_iiW6aD",
         "featurelist_item_tL79ih",
