@@ -1,0 +1,127 @@
+<style>
+  .product--stock-count.ml-6 {
+    margin-left: 6px;
+   }
+  .stock_status_text {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .status-bubble {
+    position: relative;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+
+  .stock_status_text.stock-low .status-bubble {
+    background-color: red;
+  }
+  .stock_status_text.stock-limited .status-bubble {
+    background-color: orange;
+  }
+  .stock_status_text.stock-instock .status-bubble {
+    background-color: green;
+  }
+
+
+  .status-bubble::before,
+  .status-bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+    z-index: -1;
+    animation: pulse-ring 5s infinite;
+  }
+
+  .status-bubble::after {
+    animation-delay: 1s;
+  }
+
+
+  .stock_status_text.stock-low .status-bubble::before,
+  .stock_status_text.stock-low .status-bubble::after {
+    background: rgb(255, 0, 0);
+  }
+  .stock_status_text.stock-limited .status-bubble::before,
+  .stock_status_text.stock-limited .status-bubble::after {
+    background: rgb(255, 166, 0);
+  }
+  .stock_status_text.stock-instock .status-bubble::before,
+  .stock_status_text.stock-instock .status-bubble::after {
+    background: rgb(0, 128, 0);
+  }
+  .product--stock-count.mb-20 {
+    margin-bottom: 25px;
+  }
+
+  .product--stock-count.ml-15 {
+    margin-left: 5px;
+  }
+
+
+  @keyframes pulse-ring {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(2.2);
+      opacity: 0;
+    }
+  }
+  .product--stock-count.collection-stock p.stock_status_text {
+    font-weight: 400;
+    padding-bottom: 10px;
+    font-size: 14px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    button.m-add-to-cart.rs-add-btn {
+        margin-bottom: 0 !important;
+    }
+    .product--stock-count.mb-20 {
+      margin-bottom: 15px;
+    }
+    .center-mobile p.stock_status_text.stock-instock {
+      justify-content: center;
+    }
+  }
+</style>
+
+<div class="product--stock-count {{ custom_class }}">
+  {% comment %} {% assign stock_status_count = product.metafields.custom.stock_status | default: 25 | plus: 0 %} {% endcomment %}
+  {% if product.metafields.custom.stock_status != blank %}
+    {% assign stock_status_count = product.metafields.custom.stock_status | plus: 0 %}
+  {% else %}
+    {%- assign pseudo_random = product.id | modulo: 40 -%}
+    {% assign stock_status_count = pseudo_random | plus: 10 %}
+  {% endif %}
+  {% liquid
+    assign status_class = ''
+
+    if stock_status_count < 10
+      assign status_class = 'stock-low'
+    elsif stock_status_count >= 10 and stock_status_count < 50
+      assign status_class = 'stock-limited'
+    else
+      assign status_class = 'stock-instock'
+    endif
+  %}
+
+  <p class="stock_status_text {{ status_class }}">
+    <span class="status-bubble"></span>
+    <span>{{ stock_status_count }} Stück auf Lager</span>
+  </p>
+</div>
