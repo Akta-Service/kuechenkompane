@@ -465,6 +465,9 @@
           </p>
           <div class="m-product-card__price">
             {% render 'product-prices', product: product, is_product_card: true %}
+            {% if section.settings.show_stock_status %}
+              {% render 'stock-count-status', product: product, custom_class: 'ml-15 collection-stock' %}
+            {% endif %}
           </div>
         </div>
       {% endif %}
