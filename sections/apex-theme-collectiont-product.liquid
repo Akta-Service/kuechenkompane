@@ -31,45 +31,44 @@
   endif
 -%}
 <style>
-.apex-theme-collection s.m-price-item.m-price-item--regular {
-    color: #bc1e1e;
-}
-.apex-theme-collection .m-price__sale .m-price-item--last {
-    color: inherit;
-}
-.apex-theme-collection  .md\:m\:justify-between {
-    justify-content: end;
-}
-.apex-theme-collection  .m-product-card__content-footer {
-    display: block;
-    margin-top: 20px;
-}
-.apex-theme-collection .m-product-card__description {
-    display: none;
-}
-.apex-theme-collection .card-add-button button {
-    width: 100%;
-    min-width: 76px;
-    height: 44px;
-    min-height: 44px;
-    border: none;
-    /* background:  {{ section.settings.add_btn_bg }};
-    color: {{ section.settings.add_btn_text_color }}; */
-    border-radius: 5px;
-}
-.apex-theme-collection .m-collection-products {
-  align-items: self-end;
-}
-.apex-theme-collection .m-product-card--soldout::after {
-    {% comment %} position: absolute; {% endcomment %}
-    inset: 0;
-    background: #000000;
-    opacity: {{ section.settings.overlay_opacity }};
-    z-index: 9;
-    content: "";
-    border-radius: 5px;
-}
-
+  .apex-theme-collection s.m-price-item.m-price-item--regular {
+      color: #bc1e1e;
+  }
+  .apex-theme-collection .m-price__sale .m-price-item--last {
+      color: inherit;
+  }
+  .apex-theme-collection  .md\:m\:justify-between {
+      justify-content: end;
+  }
+  .apex-theme-collection  .m-product-card__content-footer {
+      display: block;
+      margin-top: 20px;
+  }
+  .apex-theme-collection .m-product-card__description {
+      display: none;
+  }
+  .apex-theme-collection .card-add-button button {
+      width: 100%;
+      min-width: 76px;
+      height: 44px;
+      min-height: 44px;
+      border: none;
+      /* background:  {{ section.settings.add_btn_bg }};
+      color: {{ section.settings.add_btn_text_color }}; */
+      border-radius: 5px;
+  }
+  .apex-theme-collection .m-collection-products {
+    align-items: self-end;
+  }
+  .apex-theme-collection .m-product-card--soldout::after {
+      {% comment %} position: absolute; {% endcomment %}
+      inset: 0;
+      background: #000000;
+      opacity: {{ section.settings.overlay_opacity }};
+      z-index: 9;
+      content: "";
+      border-radius: 5px;
+  }
 </style>
 <section
   class="facest-filters-section apex-theme-collection m-color-{{ section.settings.color_scheme }}"
@@ -84,7 +83,6 @@
   data-product-count="{{ collection.products.size }}"
   data-initial-column="{{ initial_column }}"
   data-view="{{ template.name }}"
-
 >
   <div class="{{ container }}">
     <div class="m-collection--wrapper {% if section.settings.show_filter %}m-sidebar--{{ section.settings.sidebar }}{% endif %}">
@@ -123,11 +121,11 @@
             >
               {%- for product in collection.products -%}
                 {% comment %} {% unless product.tags contains 'NO SEARCH' %} {% endcomment %}
-                  <div class="m-product-item m:w-6/12 md:m:w-4/12">
-                    {% liquid
-                    render 'apex-product-card', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect    
-                    %}
-                  </div>
+                <div class="m-product-item m:w-6/12 md:m:w-4/12">
+                  {% liquid
+                    render 'apex-product-card', product: product, section: section, index: forloop.index, section_index: section.index, animated: animated, animation_effect: animation_effect
+                  %}
+                </div>
                 {% comment %} {% endunless %} {% endcomment %}
               {%- endfor -%}
             </div>
@@ -498,9 +496,17 @@
       "step": 0.1,
       "unit": "%",
       "default": 0.5
+    },
+    {
+      "type": "header",
+      "content": "stock count"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stock_status",
+      "label": "Show stock count",
+      "default": false
     }
-
-
   ],
   "blocks": [
     {
@@ -826,9 +832,7 @@
   "presets": [
     {
       "name": "Apex Theme Collection",
-      "settings": {
-        
-      }
+      "settings": {}
     }
   ]
 }
