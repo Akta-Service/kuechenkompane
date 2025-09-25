@@ -409,6 +409,9 @@
 
       <div class="m-product-card__price">
         {% render 'product-prices', product: product, is_product_card: true %}
+        {% if section.settings.show_stock_status %}
+          {% render 'stock-count-status', product: product, custom_class: 'ml-15 collection-stock' %}
+        {% endif %}
       </div>
       {% if product.has_only_default_variant == false and show_variant_options %}
         {% render 'product-card-option',
