@@ -4,7 +4,7 @@
       // === SETTINGS ===
       const MIN_RANDOM = 5;
       const MAX_RANDOM = 70;
-      const DROP_INTERVAL = 1000; // 1 minute (10000 = 10s for testing)
+      const DROP_INTERVAL = 60000; // 1 minute (10000 = 10s for testing)
 
       function getRandomStock() {
         return Math.floor(Math.random() * (MAX_RANDOM - MIN_RANDOM + 1)) + MIN_RANDOM;
