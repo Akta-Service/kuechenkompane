@@ -50,14 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
       const available = el.dataset.available === "true";
 
       if (!available) {
-        // Out of stock
+        // Out of stock → show AUSVERKAUF + red bubble
         if (window.isProductPage) {
           countEl.textContent = 'AUSVERKAUF';
         } else {
-          // Collection page → hide via CSS with .stock-out
           countEl.textContent = '';
         }
-        pEl.className = 'stock_status_text stock-out';
+        pEl.className = 'stock_status_text stock-out stock-low'; 
         return;
       }
 
@@ -65,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (countEl) countEl.textContent = stock + ' Stück auf Lager';
       if (pEl) pEl.className = 'stock_status_text ' + getStatusClass(stock);
     }
+
 
     // Render
     document.querySelectorAll('.product--stock-count').forEach((el) => {
