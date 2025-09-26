@@ -68,6 +68,7 @@
           } else {
             // Collection / non-product page: add collection class so CSS can hide it
             // if (countEl) countEl.textContent = '';
+            if (countEl) countEl.textContent = 'AUSVERKAUF';
             el.classList.add('stock-out', 'collection-stock-out');
             if (pEl) {
               pEl.classList.remove('stock-limited', 'stock-instock', 'stock-low');
