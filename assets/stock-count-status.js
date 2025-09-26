@@ -79,7 +79,6 @@
         }
 
         // IN STOCK — normal behavior
-        if (bubble) bubble.style.display = 'inline-block';
         if (countEl) countEl.textContent = stock + ' Stück auf Lager';
         if (pEl) {
           pEl.className = 'stock_status_text ' + getStatusClass(stock);
