@@ -64,7 +64,7 @@
               pEl.classList.remove('stock-limited', 'stock-instock');
               pEl.classList.add('stock-out', 'stock-low');
             }
-            if (bubble) bubble.style.display = 'inline-block';
+            
           } else {
             // Collection / non-product page: add collection class so CSS can hide it
             if (countEl) countEl.textContent = '';
