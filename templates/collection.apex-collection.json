@@ -33,10 +33,10 @@
       "type": "Apex-global-offer-timer",
       "name": "Apex Global Timer",
       "settings": {
-        "bg_color": "#DCE5DC",
+        "bg_color": "#dce5dc",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#D2861A",
+        "timer_clock": "#d2861a",
         "timer_clock_text_font_size": 12,
         "clock_font_weight": "400",
         "timer_text": "Unser Exklusives Angebot läuft bald ab!",
@@ -232,6 +232,39 @@
         "show_stock_status": true
       }
     },
+    "promotion_banner_YmXxH9": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_79N4yn": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "DEINE CHANCE AUF",
+            "heading": "75%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_79N4yn"
+      ],
+      "name": "Promotion banner",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "AUSVERKAUF VON RESTBESTÄNDEN",
+        "heading_size": "h2",
+        "text": "<p>Jetzt Restbestände zum Vorteilspreis: Spare bis zu <strong>75 % </strong>auf ausgewählte Artikel – nur solange der Vorrat reicht oder bis Preise angehoben werden.</p>",
+        "content_alignment": "left",
+        "banner_url": "shopify://collections/ausverkauf-von-restbestanden",
+        "button_label": "Angebote entdecken",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "usp_list_xQHfgQ": {
       "type": "usp-list",
       "blocks": {
@@ -302,6 +335,7 @@
         "title_AgFUHf",
         "sub_title_GcWkqp"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
         "shape_color": "#deceba",
@@ -361,6 +395,7 @@
     "breadcrumb_bEhLYx",
     "category_selection_iMrTd6",
     "main",
+    "promotion_banner_YmXxH9",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
     "collection_description_tUMerW",
