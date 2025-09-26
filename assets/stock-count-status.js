@@ -73,8 +73,7 @@
               pEl.classList.remove('stock-limited', 'stock-instock', 'stock-low');
               pEl.classList.add('stock-out');
             }
-            // Hide bubble in lists (you can remove this if you prefer to hide via CSS)
-            if (bubble) bubble.style.display = 'none';
+            
           }
           return;
         }
