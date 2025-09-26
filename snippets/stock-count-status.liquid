@@ -101,9 +101,10 @@
 </style>
 
 <div
-  class="product--stock-count {{ custom_class }}"
+  class="product--stock-count {{ custom_class }} {% unless product.available %}stock-out{% endunless %}"
   data-product-id="{{ product.id }}"
   data-stock="{{ product.metafields.custom.stock_status }}"
+  data-available="{{ product.available }}"
 >
   <p class="stock_status_text">
     <span class="status-bubble"></span>
