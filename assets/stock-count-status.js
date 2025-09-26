@@ -59,7 +59,7 @@
             // Product page: show AUSVERKAUF + red bubble (use stock-low styles)
             if (countEl) countEl.textContent = 'AUSVERKAUF';
             el.classList.add('stock-out');
-            // ensure bubble is visible and red by using stock-low rules on the p element
+           
             if (pEl) {
               pEl.classList.remove('stock-limited', 'stock-instock');
               pEl.classList.add('stock-out', 'stock-low');
@@ -67,7 +67,7 @@
             
           } else {
             // Collection / non-product page: add collection class so CSS can hide it
-            // if (countEl) countEl.textContent = '';
+           
             if (countEl) countEl.textContent = 'AUSVERKAUF';
             el.classList.add('stock-out', 'collection-stock-out');
             if (pEl) {
