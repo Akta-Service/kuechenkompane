@@ -45,6 +45,23 @@
         "mobile_image": "shopify://shop_images/Header_Dektop_1.jpg"
       }
     },
+    "production_7QRFJa": {
+      "type": "production",
+      "name": "Production Stop Hero (production)",
+      "settings": {
+        "desktop_image": "shopify://shop_images/MG_0888_1_2_977f9dee-919b-4537-b4c7-fb7676d9e1b4.webp",
+        "mobile_image": "shopify://shop_images/MG_0888_1_2.webp",
+        "heading": "RESTBESTÄNDE AUSVERKAUF",
+        "subheading": "für die nächsten 48h - bis zu 75% Rabatt",
+        "cta_text": "ANGEBOTE ENTDECKEN",
+        "cta_url": "shopify://collections/ausverkauf-von-restbestanden",
+        "alt_text_desktop": "Ausverkauf von Restbeständen",
+        "alt_text_mobile": "Production stop mobile",
+        "badge_image": "shopify://shop_images/asiatisches-messerset-premium-mobile_1_1__1_-removebg-preview.png",
+        "headline": "Deutschlands Nr. 1 Messer",
+        "subtext": "Die besten Messer für deine Küche — geliebt von 160.000+ Menschen!"
+      }
+    },
     "custom_liquid_gm6A4k": {
       "type": "custom-liquid",
       "name": "Custom liquid",
@@ -58,6 +75,7 @@
     "main",
     "akta_page_header_7kzFVF",
     "collection_img_banner_Na3ffU",
+    "production_7QRFJa",
     "apex_vip_sale_banner_zQ6Tp6",
     "custom_liquid_gm6A4k"
   ]
