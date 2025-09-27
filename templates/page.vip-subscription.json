@@ -37,29 +37,74 @@
         "image_1": "shopify://shop_images/founder_name.jpg"
       }
     },
+    "production_7QRFJa": {
+      "type": "production",
+      "name": "Production Stop Hero (production)",
+      "settings": {
+        "desktop_image": "shopify://shop_images/IMG_9560_1.jpg",
+        "mobile_image": "shopify://shop_images/MG_0888_1_2.webp",
+        "heading": "END OF SUMMER VIP SALE",
+        "subheading": "Exklusiv für VIP's: 80% RABATT auf alles! WANN? 28.08 UM 10:00 UHR",
+        "cta_text": "",
+        "cta_url": "",
+        "alt_text_desktop": "",
+        "alt_text_mobile": "Production stop mobile",
+        "badge_image": "shopify://shop_images/Kuechenkompane_Messer_kueche_V75_1_V2_1.png",
+        "headline": "+ Gratis Damast Meserset",
+        "subtext": "für die ersten 25 Bestellungen"
+      }
+    },
     "apex_vip_sale_banner_zQ6Tp6": {
       "type": "apex-vip-sale-banner",
+      "disabled": true,
       "name": "APEX VIP Sale Banner",
       "settings": {
         "desktop_image": "shopify://shop_images/Header_Dektop_1.jpg",
         "mobile_image": "shopify://shop_images/Header_Dektop_1.jpg"
       }
     },
-    "production_7QRFJa": {
-      "type": "production",
-      "name": "Production Stop Hero (production)",
+    "rich_text_tL4UGJ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yJnkR7": {
+          "type": "heading",
+          "settings": {
+            "heading": "E-MAIL EINGEBEN UND RABATTE SICHERN",
+            "heading_size": "h2"
+          }
+        },
+        "text_7j8Jqe": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post.<br/> Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "button_7KbVVb": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Shop Collection",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_yJnkR7",
+        "text_7j8Jqe",
+        "button_7KbVVb"
+      ],
+      "name": "Rich text",
       "settings": {
-        "desktop_image": "shopify://shop_images/MG_0888_1_2_977f9dee-919b-4537-b4c7-fb7676d9e1b4.webp",
-        "mobile_image": "shopify://shop_images/MG_0888_1_2.webp",
-        "heading": "RESTBESTÄNDE AUSVERKAUF",
-        "subheading": "für die nächsten 48h - bis zu 75% Rabatt",
-        "cta_text": "ANGEBOTE ENTDECKEN",
-        "cta_url": "shopify://collections/ausverkauf-von-restbestanden",
-        "alt_text_desktop": "Ausverkauf von Restbeständen",
-        "alt_text_mobile": "Production stop mobile",
-        "badge_image": "shopify://shop_images/asiatisches-messerset-premium-mobile_1_1__1_-removebg-preview.png",
-        "headline": "Deutschlands Nr. 1 Messer",
-        "subtext": "Die besten Messer für deine Küche — geliebt von 160.000+ Menschen!"
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
       }
     },
     "custom_liquid_gm6A4k": {
@@ -77,6 +122,7 @@
     "collection_img_banner_Na3ffU",
     "production_7QRFJa",
     "apex_vip_sale_banner_zQ6Tp6",
+    "rich_text_tL4UGJ",
     "custom_liquid_gm6A4k"
   ]
 }
