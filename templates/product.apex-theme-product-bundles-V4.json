@@ -143,7 +143,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Nur jetzt im Angebot  – danach wieder 916 €</p>",
+            "featurelist_item": "<p>Nur jetzt im Sonderangebot sichern!</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -594,7 +594,7 @@
         "title_hXWbxr": {
           "type": "title",
           "settings": {
-            "title": "Sichere dir jetzt über 640 € Preisvorteil!"
+            "title": "Sichere dir jetzt über 270 € Preisvorteil!"
           }
         },
         "description_abE8wX": {
@@ -612,7 +612,7 @@
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "shopify://shop_images/3_1_A_1.jpg",
+        "image": "shopify://shop_images/147cceaa-23ff-4b50-a71f-36390e285380_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -629,54 +629,54 @@
         "feature_item_left_KLYLgM": {
           "type": "feature_item_left",
           "settings": {
-            "item_title": "Damast Messerset",
-            "item_info": "Drei limitierte Küchenmesser aus 67-lagigem Damaststahl.",
+            "item_title": "Chefmesser",
+            "item_info": "Allrounder für Fleisch, Fisch, Gemüse. Scharf & ausgewogen.",
             "item_icon": "shopify://shop_images/Untitled_Export_V7_1.png"
           }
         },
         "feature_item_left_etKjAM": {
           "type": "feature_item_left",
           "settings": {
-            "item_title": "Magnetischer Block",
-            "item_info": "Drehbarer magnetischer Messerblock aus Akazie.",
+            "item_title": "Brotmesser",
+            "item_info": "Wellenschliff: schneidet Kruste, schont Krume.",
             "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
           }
         },
         "feature_item_left_zGYhna": {
           "type": "feature_item_left",
           "settings": {
-            "item_title": "Schleifstein",
-            "item_info": "Jedes Messer ist in Sekunden wieder scharf.",
+            "item_title": "Schälmesser",
+            "item_info": "Kompakt fürs Schälen, Putzen, Feinschnitte.",
             "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
           }
         },
         "feature_center_image_mBHAJH": {
           "type": "feature_center_image",
           "settings": {
-            "center_image": "shopify://shop_images/3_1_A_1.jpg"
+            "center_image": "shopify://shop_images/147cceaa-23ff-4b50-a71f-36390e285380_1.jpg"
           }
         },
         "feature_item_right_YpUkf4": {
           "type": "feature_item_right",
           "settings": {
-            "item_title": "Schneidebrett Messhu",
-            "item_info": "Aus Akazienholz, perfekt für schnelle und kleine Schneidearbeiten.",
+            "item_title": "Schneidebrett Groß",
+            "item_info": "Akazienholz, viel Fläche für große Stücke.",
             "item_icon": "shopify://shop_images/Untitled_Export_V4_1.png"
           }
         },
         "feature_item_right_dN8J9K": {
           "type": "feature_item_right",
           "settings": {
-            "item_title": "Pflegeöl",
-            "item_info": "Schützt und pflegt Klinge und Griff.",
+            "item_title": "Schneidebrett Mittel",
+            "item_info": "Allround-Größe, klingenfreundlich & stabil.",
             "item_icon": "shopify://shop_images/Untitled_Export_V5_1.png"
           }
         },
         "feature_item_right_jLCbWD": {
           "type": "feature_item_right",
           "settings": {
-            "item_title": "365 Tage Schleifservice",
-            "item_info": "Kostenloser Nachschliff für ein Jahr - immer scharf.",
+            "item_title": "Schneidebrett Klein",
+            "item_info": "Für Kräuter & Obst – schnell zur Hand.",
             "item_icon": "shopify://shop_images/Untitled_Export_V6_1.png"
           }
         }
