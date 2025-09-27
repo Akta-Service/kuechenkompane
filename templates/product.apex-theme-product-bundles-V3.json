@@ -594,7 +594,7 @@
         "title_hXWbxr": {
           "type": "title",
           "settings": {
-            "title": "Sichere dir jetzt über 1400 € Preisvorteil!"
+            "title": "Sichere dir jetzt über 1500 € Preisvorteil!"
           }
         },
         "description_abE8wX": {
@@ -612,7 +612,7 @@
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "shopify://shop_images/04-B_1.jpg",
+        "image": "shopify://shop_images/7302e010-6b23-442f-b6d5-ee537488b683_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -642,30 +642,31 @@
             "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
           }
         },
-        "feature_item_left_zGYhna": {
-          "type": "feature_item_left",
-          "settings": {
-            "item_title": "Schleifstein + Pflegeöl",
-            "item_info": "Jedes Messer ist in Sekunden wieder scharf.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
-          }
-        },
         "feature_center_image_mBHAJH": {
           "type": "feature_center_image",
           "settings": {
-            "center_image": "shopify://shop_images/04-A_1.jpg"
+            "center_image": "shopify://shop_images/7302e010-6b23-442f-b6d5-ee537488b683_1.jpg"
+          }
+        },
+        "feature_item_left_zGYhna": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "Edelstahl Pfanne",
+            "item_info": "Mit einzigartiger Beschichtung für maximale Performance.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
           }
         },
         "feature_item_right_YpUkf4": {
           "type": "feature_item_right",
           "settings": {
-            "item_title": "Schneidebrett klein",
-            "item_info": "Aus Akazienholz, mit Epoxidharz Details.",
+            "item_title": "Edelstahl Wok",
+            "item_info": "Mit einzigartiger Beschichtung für maximale Performance.",
             "item_icon": "shopify://shop_images/Untitled_Export_V4_1.png"
           }
         },
         "feature_item_right_dN8J9K": {
           "type": "feature_item_right",
+          "disabled": true,
           "settings": {
             "item_title": "Schneidebrett mittel",
             "item_info": "Aus Akazienholz, mit Epoxidharz Details.",
@@ -674,6 +675,7 @@
         },
         "feature_item_right_jLCbWD": {
           "type": "feature_item_right",
+          "disabled": true,
           "settings": {
             "item_title": "Schneidebrett groß",
             "item_info": "Aus Akazienholz, mit Epoxidharz Details.",
@@ -684,8 +686,8 @@
       "block_order": [
         "feature_item_left_KLYLgM",
         "feature_item_left_etKjAM",
-        "feature_item_left_zGYhna",
         "feature_center_image_mBHAJH",
+        "feature_item_left_zGYhna",
         "feature_item_right_YpUkf4",
         "feature_item_right_dN8J9K",
         "feature_item_right_jLCbWD"
