@@ -260,6 +260,7 @@
         },
         "faq_pDwHXa": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "question": "Produktdetails & Lieferumfang",
             "answer": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}"
