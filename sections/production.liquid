@@ -274,25 +274,26 @@
             {{ section.settings.subheading | escape }}
           </p>
         {% endif %}
-
-        <a
-          class="production-cta"
-          href="{{ section.settings.cta_url }}"
-          aria-label="{{ section.settings.cta_text | escape }}"
-        >
-          <span>{{ section.settings.cta_text }}</span>
-          <svg
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 512 512"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+        {% if section.settings.show_button %}
+          <a
+            class="production-cta"
+            href="{{ section.settings.cta_url }}"
+            aria-label="{{ section.settings.cta_text | escape }}"
           >
-            <path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"></path>
-          </svg>
-        </a>
+            <span>{{ section.settings.cta_text }}</span>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"></path>
+            </svg>
+          </a>
+        {% endif %}
 
         {% if section.settings.badge_image %}
           <div class="production-badge">
@@ -386,6 +387,12 @@
       "id": "subheading",
       "label": "Subheading",
       "default": "Keine Nachproduktion für ausgewählte Serien"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show Button",
+      "default": true
     },
     {
       "type": "text",
