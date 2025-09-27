@@ -641,18 +641,18 @@
             "item_icon": "shopify://shop_images/Untitled_Export_V7_1.png"
           }
         },
+        "feature_center_image_mBHAJH": {
+          "type": "feature_center_image",
+          "settings": {
+            "center_image": "shopify://shop_images/46925aaa-4d11-4823-a130-4455a2bd2a48_1_1.jpg"
+          }
+        },
         "feature_item_left_etKjAM": {
           "type": "feature_item_left",
           "settings": {
             "item_title": "Magnetische Holzleiste",
             "item_info": "Perfekt zum verstauen an deiner Wand.",
             "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
-          }
-        },
-        "feature_center_image_mBHAJH": {
-          "type": "feature_center_image",
-          "settings": {
-            "center_image": "shopify://shop_images/46925aaa-4d11-4823-a130-4455a2bd2a48_1_1.jpg"
           }
         },
         "feature_item_left_zGYhna": {
@@ -674,8 +674,8 @@
       },
       "block_order": [
         "feature_item_left_KLYLgM",
-        "feature_item_left_etKjAM",
         "feature_center_image_mBHAJH",
+        "feature_item_left_etKjAM",
         "feature_item_left_zGYhna",
         "feature_item_right_YpUkf4"
       ],
