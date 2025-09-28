@@ -29,6 +29,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 0;
+  margin-bottom: 15px;
 }
 
 .akta-collection-grid-image {
