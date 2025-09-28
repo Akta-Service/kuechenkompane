@@ -3,68 +3,64 @@
 {% endcomment %}
 {{ 'akta-collection-grid.css' | asset_url | stylesheet_tag }}
 
-{% paginate current_collection.products by section.settings.products_limit %}
-  <div class="akta-collection-grid">
-    {% for product in current_collection.products %}
-      <div class="akta-collection-grid-item">
-        <a href="{{ product.url }}" class="akta-collection-grid-link">
-          <div class="akta-collection-grid-image-wrapper">
-            {%- if product.featured_image -%}
-              <img
-                src="{{ product.featured_image | image_url: width: 600 }}"
-                alt="{{ product.title }}"
-                class="akta-collection-grid-image akta-image-default"
-              >
-            {%- endif -%}
-
-            {%- if product.images.size > 1 -%}
-              <img
-                src="{{ product.images[1] | image_url: width: 600 }}"
-                alt="{{ product.title }}"
-                class="akta-collection-grid-image akta-image-hover"
-              >
-            {%- endif -%}
-          </div>
-          <div class="akta-collection-grid-content">
-            <h3 class="akta-collection-grid-title">{{ product.title }}</h3>
-            <div class="akta-collection-grid-prices">
-              {% if product.compare_at_price > product.price %}
-                <span class="akta-collection-grid-compare">{{ product.compare_at_price | money }}</span>
-                <span class="akta-collection-grid-price">{{ product.price | money }}</span>
-              {% else %}
-                <span class="akta-collection-grid-price">{{ product.price | money }}</span>
-              {% endif %}
-            </div>
-          </div>
-        </a>
-      </div>
-    {% endfor %}
+<div class="akta-collection-section">
+  <div class="akta-collection-header">
+    {% if section.settings.section_title != blank %}
+      <h2 class="akta-collection-title">{{ section.settings.section_title }}</h2>
+    {% endif %}
+    {% if section.settings.section_description != blank %}
+      <p class="akta-collection-description">{{ section.settings.section_description }}</p>
+    {% endif %}
   </div>
 
-  {% if paginate.pages > 1 %}
-    <nav class="akta-collection-pagination">
-      <ul>
-        {% if paginate.previous %}
-          <li><a href="{{ paginate.previous.url }}" class="prev">← Prev</a></li>
-        {% endif %}
-
-        {% for part in paginate.parts %}
-          {% if part.is_link %}
-            <li>
-              <a href="{{ part.url }}">{{ part.title }}</a>
-            </li>
-          {% else %}
-            <li class="active">{{ part.title }}</li>
-          {% endif %}
-        {% endfor %}
-
-        {% if paginate.next %}
-          <li><a href="{{ paginate.next.url }}" class="next">Next →</a></li>
-        {% endif %}
-      </ul>
-    </nav>
+  {% assign selected_collection = section.settings.collection %}
+  {% if selected_collection == blank %}
+    {% assign current_collection = collection %}
+  {% else %}
+    {% assign current_collection = collections[selected_collection] %}
   {% endif %}
-{% endpaginate %}
+
+  {% if current_collection != blank %}
+    <div class="akta-collection-grid">
+      {% for product in current_collection.products limit: section.settings.products_limit %}
+        <div class="akta-collection-grid-item">
+          <a href="{{ product.url }}" class="akta-collection-grid-link">
+            <div class="akta-collection-grid-image-wrapper">
+              {%- if product.featured_image -%}
+                <img
+                  src="{{ product.featured_image | image_url: width: 600 }}"
+                  alt="{{ product.title }}"
+                  class="akta-collection-grid-image akta-image-default"
+                >
+              {%- endif -%}
+
+              {%- if product.images.size > 1 -%}
+                <img
+                  src="{{ product.images[1] | image_url: width: 600 }}"
+                  alt="{{ product.title }}"
+                  class="akta-collection-grid-image akta-image-hover"
+                >
+              {%- endif -%}
+            </div>
+            <div class="akta-collection-grid-content">
+              <h3 class="akta-collection-grid-title">{{ product.title }}</h3>
+              <div class="akta-collection-grid-prices">
+                {% if product.compare_at_price > product.price %}
+                  <span class="akta-collection-grid-price">{{ product.price | money }}</span>
+                  <span class="akta-collection-grid-compare">{{ product.compare_at_price | money }}</span>
+                {% else %}
+                  <span class="akta-collection-grid-price">{{ product.price | money }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No collection selected or no products found.</p>
+  {% endif %}
+</div>
 
 {% schema %}
 {
