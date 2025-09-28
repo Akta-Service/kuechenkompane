@@ -1,0 +1,36 @@
+/* ==============================
+   Akta Collection Grid Responsive
+   ============================== */
+
+.akta-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Always 4 on desktop */
+  gap: 25px;
+}
+
+.akta-collection-grid-item {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.akta-collection-grid-item:hover {
+  transform: translateY(-5px);
+}
+
+/* ------- Responsive ------- */
+@media (max-width: 768px) {
+  .akta-collection-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet & mobile */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .akta-collection-grid {
+    grid-template-columns: repeat(2, 1fr); /* Still 2 on small mobile */
+    gap: 15px;
+  }
+}
