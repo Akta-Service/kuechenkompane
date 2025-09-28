@@ -158,6 +158,7 @@
       "type": "mrk-collection-grid-section",
       "name": "Akta Collection Grid",
       "settings": {
+        "show_section_header": true,
         "section_title": "Featured Collection",
         "section_description": "Explore our best-selling products.",
         "collection": "",
