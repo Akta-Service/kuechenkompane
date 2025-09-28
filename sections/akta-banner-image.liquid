@@ -2,23 +2,25 @@
   <div class="akta-banner-wrapper">
     <!-- Left text content -->
     <div class="akta-banner-text">
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'heading' %}
-            <h2 class="banner-heading">{{ block.settings.heading }}</h2>
+      <div class="akta-banner-text-wrapper">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'heading' %}
+              <h2 class="banner-heading">{{ block.settings.heading }}</h2>
 
-          {% when 'sub_heading' %}
-            <p class="banner-subheading">{{ block.settings.subheading }}</p>
+            {% when 'sub_heading' %}
+              <p class="banner-subheading">{{ block.settings.subheading }}</p>
 
-          {% when 'description' %}
-            <div class="banner-description">{{ block.settings.description }}</div>
+            {% when 'description' %}
+              <div class="banner-description">{{ block.settings.description }}</div>
 
-          {% when 'button' %}
-            <a href="{{ block.settings.button_link }}" class="banner-button">
-              {{ block.settings.button_label }}
-            </a>
-        {% endcase %}
-      {% endfor %}
+            {% when 'button' %}
+              <a href="{{ block.settings.button_link }}" class="banner-button">
+                {{ block.settings.button_label }}
+              </a>
+          {% endcase %}
+        {% endfor %}
+      </div>
     </div>
 
     <!-- Right image -->
