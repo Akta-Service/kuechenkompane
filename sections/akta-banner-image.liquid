@@ -3,9 +3,15 @@
     <!-- Left text content -->
     <div class="akta-banner-text">
       {% for block in section.blocks %}
-        {% if section.settings.heading != blank %}
-          <h2 class="banner-heading">{{ section.settings.heading }}</h2>
-        {% endif %}
+        {% case block.type %}
+          {% when 'heading' %}
+            <h2 class="banner-heading">{{ section.settings.heading }}</h2>
+
+          {% when second_value %}
+
+          {% else %}
+
+        {% endcase %}
 
         {% if section.settings.subheading != blank %}
           <p class="banner-subheading">{{ section.settings.subheading }}</p>
