@@ -12,8 +12,8 @@
           {% when 'description' %}
             <div class="banner-description">{{ block.settings.description }}</div>
           {% when 'button' %}
-            <a href="{{ section.settings.button_link }}" class="banner-button">
-              {{ section.settings.button_label }}
+            <a href="{{ block.settings.button_link }}" class="banner-button">
+              {{ block.settings.button_label }}
             </a>
         {% endcase %}
       {% endfor %}
