@@ -7,15 +7,12 @@
           {% when 'heading' %}
             <h2 class="banner-heading">{{ section.settings.heading }}</h2>
 
-          {% when second_value %}
+          {% when 'sub_heading' %}
+            <p class="banner-subheading">{{ section.settings.subheading }}</p>
 
           {% else %}
 
         {% endcase %}
-
-        {% if section.settings.subheading != blank %}
-          <p class="banner-subheading">{{ section.settings.subheading }}</p>
-        {% endif %}
 
         {% if section.settings.button_label != blank and section.settings.button_link != blank %}
           <a href="{{ section.settings.button_link }}" class="banner-button">
