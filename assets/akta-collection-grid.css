@@ -11,8 +11,7 @@
 .akta-collection-grid-item {
   position: relative;
   overflow: hidden;
-  background: #fff;
-  border-radius: 10px;
+  background: #fff; 
   transition: transform 0.3s ease;
 }
 
