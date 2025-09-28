@@ -28,17 +28,21 @@
             <div class="akta-collection-grid-image-wrapper">
               {%- if product.featured_image -%}
                 <img
-                  src="{{ product.featured_image | image_url: width: 600 }}"
+                  src="{{ product.featured_image | image_url }}"
                   alt="{{ product.title }}"
                   class="akta-collection-grid-image akta-image-default"
+                  width="100%"
+                  height=""
                 >
               {%- endif -%}
 
               {%- if product.images.size > 1 -%}
                 <img
-                  src="{{ product.images[1] | image_url: width: 600 }}"
+                  src="{{ product.images[1] | image_url }}"
                   alt="{{ product.title }}"
                   class="akta-collection-grid-image akta-image-hover"
+                  width="100%"
+                  height=""
                 >
               {%- endif -%}
             </div>
