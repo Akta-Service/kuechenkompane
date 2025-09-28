@@ -9,16 +9,13 @@
 
           {% when 'sub_heading' %}
             <p class="banner-subheading">{{ block.settings.subheading }}</p>
-
-          {% else %}
-
+          {% when 'description' %}
+            <div class="banner-description">{{ block.settings.description }}</div>
+          {% when 'button' %}
+            <a href="{{ section.settings.button_link }}" class="banner-button">
+              {{ section.settings.button_label }}
+            </a>
         {% endcase %}
-
-        {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-          <a href="{{ section.settings.button_link }}" class="banner-button">
-            {{ section.settings.button_label }}
-          </a>
-        {% endif %}
       {% endfor %}
     </div>
 
