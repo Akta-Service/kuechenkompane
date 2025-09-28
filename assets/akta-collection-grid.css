@@ -147,9 +147,11 @@
 }
 
 .akta-collection-pagination .active {
-  background: #222;
-  color: #fff;
-  pointer-events: none;
+    background: #222;
+    color: #fff;
+    pointer-events: none;
+    width: 44px;
+    height: 44px;
 }
 
 
