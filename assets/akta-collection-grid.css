@@ -161,7 +161,7 @@
 @media (max-width: 768px) {
   .akta-collection-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet & mobile */
-    gap: 20px;
+    gap: 40px 20px;
     padding: 0 15px;
   }
   .akta-collection-pagination {    
