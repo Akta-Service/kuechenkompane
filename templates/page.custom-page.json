@@ -28,6 +28,12 @@
             "subheading": "~80% Off"
           }
         },
+        "discount_img_LXKcxq": {
+          "type": "discount_img",
+          "settings": {
+            "discount_img": "shopify://shop_images/Screenshot_1_71699519-e73b-4e17-af76-2d8db12bab0f.jpg"
+          }
+        },
         "description_8JzMiA": {
           "type": "description",
           "settings": {
@@ -45,6 +51,7 @@
       "block_order": [
         "heading_eJFVba",
         "sub_heading_r4dg7E",
+        "discount_img_LXKcxq",
         "description_8JzMiA",
         "button_PTHQPx"
       ],
