@@ -2,19 +2,21 @@
   <div class="akta-banner-wrapper">
     <!-- Left text content -->
     <div class="akta-banner-text">
-      {% if section.settings.heading != blank %}
-        <h2 class="banner-heading">{{ section.settings.heading }}</h2>
-      {% endif %}
+      {% for block in section.blocks %}
+        {% if section.settings.heading != blank %}
+          <h2 class="banner-heading">{{ section.settings.heading }}</h2>
+        {% endif %}
 
-      {% if section.settings.subheading != blank %}
-        <p class="banner-subheading">{{ section.settings.subheading }}</p>
-      {% endif %}
+        {% if section.settings.subheading != blank %}
+          <p class="banner-subheading">{{ section.settings.subheading }}</p>
+        {% endif %}
 
-      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-        <a href="{{ section.settings.button_link }}" class="banner-button">
-          {{ section.settings.button_label }}
-        </a>
-      {% endif %}
+        {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+          <a href="{{ section.settings.button_link }}" class="banner-button">
+            {{ section.settings.button_label }}
+          </a>
+        {% endif %}
+      {% endfor %}
     </div>
 
     <!-- Right image -->
