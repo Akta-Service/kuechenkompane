@@ -75,6 +75,10 @@
     font-family: var(--font-stack-body);
     line-height: 1.4;
   }
+  span.akta-collection-grid-compare {
+    color: #bc1e1e;
+    font-size: 14px;
+  }
 
 /* ------- RESPONSIVE ------- */
 @media (max-width: 768px) {
