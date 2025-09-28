@@ -113,24 +113,35 @@
   "name": "Akta Collection Grid",
   "settings": [
     {
+      "type": "header",
+      "content": "Section Header Settings"
+    },
+    {
       "type": "checkbox",
       "id": "show_section_header",
       "label": "Show Section Header",
-      "default": true
+      "default": false
     },
 
     {
       "type": "text",
       "id": "section_title",
       "label": "Section Title",
-      "default": "Featured Collection"
+      "default": "Featured Collection",
+      "visible_if": "{{ section.settings.show_section_header }}"
     },
     {
       "type": "textarea",
       "id": "section_description",
       "label": "Section Description",
-      "default": "Explore our best-selling products."
+      "default": "Explore our best-selling products.",
+      "visible_if": "{{ section.settings.show_section_header }}"
     },
+    {
+      "type": "header",
+      "content": "Custom Collection Settings"
+    },
+
     {
       "type": "collection",
       "id": "collection",
