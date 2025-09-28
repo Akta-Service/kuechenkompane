@@ -31,12 +31,10 @@
   transition: transform 0.3s ease;
 }
 
-.akta-collection-grid-link {
-  display: block;
+
+.akta-collection-grid-link { 
   text-decoration: none;
   color: inherit;
-}
-a.akta-collection-grid-link {
     display: flex;
     flex-direction: column;
     height: 100%;
