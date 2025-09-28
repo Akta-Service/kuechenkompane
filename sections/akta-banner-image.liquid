@@ -1,12 +1,12 @@
 <div class="akta-banner">
   <div class="akta-banner-image">
-    {% if section.settings.banner_image_desktop or section.settings.banner_image_mobile %}
+    {% if section.settings.banner_image_desktop != blank or section.settings.banner_image_mobile != blank %}
       <picture>
         <!-- Mobile image -->
         {% if section.settings.banner_image_mobile %}
           <source
             media="(max-width: 767px)"
-            srcset="{{ section.settings.banner_image_mobile | image_url: width: 767 }}"
+            srcset="{{ section.settings.banner_image_mobile | image_url }}"
           >
         {% endif %}
 
@@ -14,17 +14,15 @@
         {% if section.settings.banner_image_desktop %}
           <source
             media="(min-width: 768px)"
-            srcset="{{ section.settings.banner_image_desktop | image_url: width: 2000 }}"
+            srcset="{{ section.settings.banner_image_desktop | image_url }}"
           >
         {% endif %}
 
-        <!-- Fallback (desktop if uploaded, else mobile) -->
         <img
-          src="{% if section.settings.banner_image_desktop %}{{ section.settings.banner_image_desktop | image_url: width: 1200 }}{% else %}{{ section.settings.banner_image_mobile | image_url: width: 767 }}{% endif %}"
-          alt="{{ section.settings.alt_text | escape }}"
-          width="{% if section.settings.banner_image_desktop %}{{ section.settings.banner_image_desktop.width }}{% else %}{{ section.settings.banner_image_mobile.width }}{% endif %}"
-          height="{% if section.settings.banner_image_desktop %}{{ section.settings.banner_image_desktop.height }}{% else %}{{ section.settings.banner_image_mobile.height }}{% endif %}"
-          loading="lazy"
+          src="{{  section.settings.banner_image_desktop | image_url }}"
+          alt="banner Image"
+          width="100%"
+          height=""
           class="banner-image"
         >
       </picture>
@@ -45,12 +43,6 @@
       "type": "image_picker",
       "id": "banner_image_mobile",
       "label": "Mobile Banner Image"
-    },
-    {
-      "type": "text",
-      "id": "alt_text",
-      "label": "Image Alt Text",
-      "default": "Banner"
     }
   ],
   "presets": [
