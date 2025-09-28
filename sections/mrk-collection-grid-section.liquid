@@ -48,6 +48,11 @@
                   class="akta-collection-grid-image akta-image-hover"
                   width="100%"
                   height=""
+                  {% if forloop.index <= 4 %}
+                    loading="eager" fetchpriority="high"
+                  {% else %}
+                    loading="lazy"
+                  {% endif %}
                 >
               {%- endif -%}
             </div>
