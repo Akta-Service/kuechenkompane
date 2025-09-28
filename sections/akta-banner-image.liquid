@@ -54,124 +54,117 @@
 </div>
 
 <style>
-    .akta-banner {
-      position: relative;
-      overflow: hidden;
-      padding: 50px 0;
-      display: flex;
-      align-items: center;
-      background: radial-gradient(circle at top left, #ffe6f0, #ffffff);
-    }
-
-    .akta-banner-wrapper {
-      position: relative;
-      display: flex;
-      width: 100%;
-      z-index: 2; /* text stays above background */
-      gap: 15px;
-      padding: 0 30px;
-      padding-left: 5%;
-    }
-
-    .akta-banner-text-wrapper {
-      max-width: 500px;
-      margin-left: auto;
-      text-align: center;
-      color: #f8badb;
-    }
-
-    .banner-heading {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      font-family: "GFS Didot", serif;
-      color: #f8badb;
-    }
-
-    .banner-subheading {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-      color: #f8badb;
-    }
-
-    .banner-description {
-      font-size: 20px;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-      margin-top: 20px;
-      font-family: "Roboto", sans-serif;
-      color: #f8badb;
-    }
-
-    .banner-button {
-      display: block;
-      padding: 0.75rem 1.5rem;
-      background: linear-gradient(to right, #ff6699a6, #ff339985);
-      color: #fff;
-      font-weight: 500;
-      font-size: 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: 0.3s ease;
-      font-family: "GFS Didot", serif;
-    }
-
-    .banner-button:hover {
-      opacity: 0.9;
-    }
-
-    /* Absolute background image */
-    .akta-banner-bg {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .akta-banner-bg img {
-      width: 100%;
-      display: block;
-    }
-    .banner-discount {
-      max-width: 370px;
-      margin: auto;
-      }
-
-    /* Mobile adjustments */
-    @media(max-width: 768px) {
-      .akta-banner-wrapper {
-        flex-direction: column;
-        text-align: center;
-      }
-      .banner-discount {
-      max-width: 200px;
-
-      }
-      .akta-banner-wrapper {
-      margin: auto;
-      padding: 0 20px;
+  .akta-banner {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at top left, #ffe6f0, #ffffff);
   }
 
+  .akta-banner-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    z-index: 2; /* text stays above background */
+    gap: 15px;
+    padding: 0 30px;
+    padding-left: 5%;
+  }
 
-      .akta-banner-bg {
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-      }
+  .akta-banner-text-wrapper {
+    max-width: 500px;
+    margin-left: auto;
+    text-align: center;
+    color: #f8badb;
+  }
 
-      .akta-banner-text-wrapper {
-        max-width: 100%;
-      }
-      a.banner-button {
-      margin-top: 400px;
-      }
+  .banner-heading {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: "GFS Didot", serif;
+    color: #f8badb;
+  }
+
+  .banner-subheading {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #f8badb;
+  }
+
+  .banner-description {
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+    color: #f8badb;
+  }
+
+  .banner-button {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, #ff6699a6, #ff339985);
+    color: #fff;
+    font-weight: 500;
+    font-size: 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-family: "GFS Didot", serif;
+  }
+
+  .banner-button:hover {
+    opacity: 0.9;
+  }
+
+  /* Absolute background image */
+  .akta-banner-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .akta-banner-bg img {
+    width: 100%;
+    display: block;
+  }
+  .banner-discount {
+    max-width: 370px;
+    margin: auto;
     }
+
+  /* Mobile adjustments */
+  @media(max-width: 768px) {
+    .akta-banner-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+    .banner-discount {
+      max-width: 200px;
+
+    }
+    .akta-banner-wrapper {
+      margin: auto;
+      padding: 0 20px;
+    }
+
+
+    .akta-banner-text-wrapper {
+      max-width: 100%;
+    }
+    a.banner-button {
+    margin-top: 400px;
+    }
+  }
 </style>
 
 {% schema %}
