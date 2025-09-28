@@ -10,6 +10,7 @@
 
             {% when 'sub_heading' %}
               <p class="banner-subheading" {{ block.shopify_attributes }}>{{ block.settings.subheading }}</p>
+
             {% when 'discount_img' %}
               <div class="banner-discount" {{ block.shopify_attributes }}>
                 <img src="{{ block.settings.discount_img | image_url }}" alt="discount percentage Image">
@@ -26,38 +27,134 @@
         {% endfor %}
       </div>
     </div>
-
-    <!-- Right image -->
-    <div class="akta-banner-image">
-      {% if section.settings.banner_image_desktop or section.settings.banner_image_mobile %}
-        <picture>
-          <!-- Mobile -->
-          {% if section.settings.banner_image_mobile %}
-            <source
-              media="(max-width: 767px)"
-              srcset="{{ section.settings.banner_image_mobile | image_url: width: 767 }}"
-            >
-          {% endif %}
-
-          <!-- Desktop -->
-          {% if section.settings.banner_image_desktop %}
-            <source
-              media="(min-width: 768px)"
-              srcset="{{ section.settings.banner_image_desktop | image_url: width: 2000 }}"
-            >
-          {% endif %}
-
-          <!-- Fallback -->
-          <img
-            src="{{ section.settings.banner_image_desktop | image_url: width: 1200 }}"
-            alt="{{ section.settings.alt_text | escape }}"
-            class="banner-image"
-          >
-        </picture>
-      {% endif %}
-    </div>
   </div>
+
+  <!-- Right background image -->
+  {% if section.settings.banner_image_desktop or section.settings.banner_image_mobile %}
+    <div class="akta-banner-bg">
+      <picture>
+        {% if section.settings.banner_image_mobile %}
+          <source
+            media="(max-width: 767px)"
+            srcset="{{ section.settings.banner_image_mobile | image_url: width: 767 }}"
+          >
+        {% endif %}
+        {% if section.settings.banner_image_desktop %}
+          <source
+            media="(min-width: 768px)"
+            srcset="{{ section.settings.banner_image_desktop | image_url: width: 2000 }}"
+          >
+        {% endif %}
+        <img
+          src="{{ section.settings.banner_image_desktop | image_url: width: 1200 }}"
+          alt="{{ section.settings.alt_text | escape }}"
+        >
+      </picture>
+    </div>
+  {% endif %}
 </div>
+
+<style>
+  .akta-banner {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .akta-banner-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    z-index: 2; /* text stays above background */
+    gap: 15px;
+    padding: 0 30px;
+  }
+
+  .akta-banner-text-wrapper {
+    max-width: 500px;
+    margin-left: auto;
+    text-align: center;
+    color: #f8badb;
+  }
+
+  .banner-heading {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: "GFS Didot", serif;
+  }
+
+  .banner-subheading {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .banner-description {
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .banner-button {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, #ff6699a6, #ff339985);
+    color: #fff;
+    font-weight: 500;
+    font-size: 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-family: "GFS Didot", serif;
+  }
+
+  .banner-button:hover {
+    opacity: 0.9;
+  }
+
+  /* Absolute background image */
+  .akta-banner-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%; /* cover right half */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .akta-banner-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Mobile adjustments */
+  @media(max-width: 768px) {
+    .akta-banner-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .akta-banner-bg {
+      left: 0; /* full width on mobile */
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .akta-banner-text-wrapper {
+      max-width: 100%;
+    }
+  }
+</style>
 
 {% schema %}
 {
@@ -65,13 +162,13 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "bg_image",
-      "label": "Desktop Banner bg"
+      "id": "banner_image_desktop",
+      "label": "Desktop Banner Image"
     },
     {
       "type": "image_picker",
-      "id": "bg_image_mobile",
-      "label": "Mobile Banner bg"
+      "id": "banner_image_mobile",
+      "label": "Mobile Banner Image"
     },
     {
       "type": "text",
@@ -155,99 +252,3 @@
   ]
 }
 {% endschema %}
-
-<style>
-      @import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
-    .akta-banner {
-      background: url({{ section.settings.bg_image | image_url }});
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-
-    }
-    .akta-banner-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 30px 0;
-    }
-
-    .akta-banner-image {
-      flex: 1;
-    }
-    .akta-banner-text-wrapper {
-        max-width: 500px;
-        margin-left: auto;
-        text-align: center;
-    }
-    .banner-discount img {
-        max-width: 370px;
-        margin: auto;
-        width: 100%;
-    }
-    .akta-banner-text {
-
-      flex: 1;
-      margin-left: auto;
-      padding-left: 30px;
-    }
-    .banner-heading {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      font-family: "GFS Didot", serif;
-      color: #f8badb;
-    }
-    .banner-subheading {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-      color: #f8badb;
-    }
-   .banner-description {
-      font-size: 20px;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-      margin-top: 20px;
-      font-family: "Roboto", sans-serif;
-      color: #f8badb;
-  }
-    .banner-button {
-      display: block;
-      padding: 0.75rem 1.5rem;
-      background:linear-gradient(to right, #ff6699a6, #ff339985);
-      color: #fff;
-      font-weight: 500;
-      font-size: 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: 0.3s ease;
-      font-family: "GFS Didot", serif;
-    }
-    .banner-button:hover {
-      opacity: 0.9;
-    }
-    .banner-image {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-
-    @media(max-width: 768px) {
-      .akta-banner {
-      background: url({{ section.settings.bg_image_mobile | image_url }});
-
-
-    }
-      .akta-banner-wrapper {
-        flex-direction: column;
-
-      }
-      .akta-banner-text {
-          max-width: 100%;
-      }
-      .akta-banner-text {
-        padding: 1rem;
-      }
-    }
-</style>
