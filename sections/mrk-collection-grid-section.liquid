@@ -75,7 +75,7 @@
     </div>
 
     {% if paginate.pages > 1 %}
-      <nav class="akta-collection-pagination">
+      <nav class="akta-collection-pagination akta-pagination-{{ section.settings.pagination_style }}">
         <ul>
           {% if paginate.previous %}
             <li><a href="{{ paginate.previous.url }}" class="prev">«</a></li>
