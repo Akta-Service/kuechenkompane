@@ -19,7 +19,7 @@
               <div class="banner-description" {{ block.shopify_attributes }}>{{ block.settings.description }}</div>
 
             {% when 'button' %}
-              <a href="{{ block.settings.button_link }}" {{ block.shopify_attributes }} class="banner-button">
+              <a href="{{ block.settings.button_link }}" class="banner-button" {{ block.shopify_attributes }}>
                 {{ block.settings.button_label }}
               </a>
           {% endcase %}
