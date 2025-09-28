@@ -3,9 +3,12 @@
    ============================== */
 
 .akta-collection-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 per row on desktop */
-  gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 20px;
 }
 
 .akta-collection-grid-item {
