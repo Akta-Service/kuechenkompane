@@ -160,7 +160,7 @@
 /* ------- RESPONSIVE ------- */
 @media (max-width: 768px) {
   .akta-collection-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet & mobile */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 40px 20px;
     padding: 0 15px;
   }
@@ -170,8 +170,5 @@
 }
 
 @media (max-width: 480px) {
-  .akta-collection-grid {
-    grid-template-columns: repeat(2, 1fr); /* keep 2 per row on small mobile */
-    gap: 15px;
-  }
+  
 }
