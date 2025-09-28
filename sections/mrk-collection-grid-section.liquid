@@ -44,11 +44,10 @@
             </div>
             <div class="akta-collection-grid-content">
               <h3 class="akta-collection-grid-title">{{ product.title }}</h3>
-              <p class="akta-collection-grid-price">{{ product.price | money }}</p>
               <div class="akta-collection-grid-prices">
                 {% if product.compare_at_price > product.price %}
-                  <span class="akta-collection-grid-compare">{{ product.compare_at_price | money }}</span>
                   <span class="akta-collection-grid-price">{{ product.price | money }}</span>
+                  <span class="akta-collection-grid-compare">{{ product.compare_at_price | money }}</span>
                 {% else %}
                   <span class="akta-collection-grid-price">{{ product.price | money }}</span>
                 {% endif %}
