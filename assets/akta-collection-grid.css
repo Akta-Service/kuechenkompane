@@ -5,6 +5,10 @@
   .akta-collection-header {
     text-align: center;
   }
+  h2.akta-collection-title {
+    font-size: 32px;
+    margin: 0 0 10px;
+  }
 
 .akta-collection-grid {
     display: grid;
