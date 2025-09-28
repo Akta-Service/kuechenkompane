@@ -68,11 +68,13 @@
   font-family: "Roboto", sans-serif;
 }
 
-.akta-collection-grid-price {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #111;
-}
+  .akta-collection-grid-price {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    font-family: var(--font-stack-body);
+    line-height: 1.4;
+  }
 
 /* ------- RESPONSIVE ------- */
 @media (max-width: 768px) {
