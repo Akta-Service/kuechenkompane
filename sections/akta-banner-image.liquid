@@ -10,6 +10,10 @@
 
             {% when 'sub_heading' %}
               <p class="banner-subheading">{{ block.settings.subheading }}</p>
+            {% when 'discount_img' %}
+              <div class="banner-discount">
+                <img src="{{ block.settings.discount_img | image_url }}" alt="discount percentage Image">
+              </div>
 
             {% when 'description' %}
               <div class="banner-description">{{ block.settings.description }}</div>
