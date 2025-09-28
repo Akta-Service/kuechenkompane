@@ -159,7 +159,9 @@
 
 /* ------- RESPONSIVE ------- */
 @media (max-width: 1279px) {
-  
+  .akta-collection-grid {    
+    padding: 0 15px;
+  }
 }
 /* ------- RESPONSIVE ------- */
 @media (max-width: 768px) {
