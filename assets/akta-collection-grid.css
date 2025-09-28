@@ -55,19 +55,23 @@
   transform: scale(1.1);
 }
 
-/* ------- CONTENT ------- */
-.akta-collection-grid-content {
-  padding: 15px; 
-}
+  /* ------- CONTENT ------- */
+  .akta-collection-grid-content {
+    padding: 15px; 
+  }
 
-.akta-collection-grid-title {
-  font-size: 16px;
-  margin: 0 0 5px;
-  font-weight: 500;
-  line-height: 1.5;
-  font-family: "Roboto", sans-serif;
-}
-
+  .akta-collection-grid-title {
+    font-size: 16px;
+    margin: 0 0 5px;
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: "Roboto", sans-serif;
+  }
+  .akta-collection-grid-prices {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
   .akta-collection-grid-prices span {
     font-size: 16px;
     font-weight: 400;
