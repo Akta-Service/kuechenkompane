@@ -1,0 +1,13 @@
+<div class="akta-collection-grid">
+  {% for product in collection.products %}
+    <div class="akta-collection-grid-item">
+      <div class="akta-collection-grid-image">
+        {{ product.featured_image | image_url: width: 600 | image_tag }}
+      </div>
+      <div class="akta-collection-grid-content">
+        <h3 class="akta-collection-grid-title">{{ product.title }}</h3>
+        <p class="akta-collection-grid-price">{{ product.price | money }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
