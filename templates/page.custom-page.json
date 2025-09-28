@@ -13,18 +13,6 @@
       "type": "page",
       "settings": {}
     },
-    "akta_banner_image_zhLHbi": {
-      "type": "akta-banner-image",
-      "name": "Banner with Text",
-      "settings": {
-        "heading": "Spa Glow Experience",
-        "subheading": "~80% Off",
-        "button_label": "Shop now",
-        "button_link": "shopify://collections/all",
-        "banner_image_desktop": "shopify://shop_images/Kuechenkompane_Messer_kueche_V102_1.jpg",
-        "alt_text": "Banner Image"
-      }
-    },
     "text_banner_zNYrd9": {
       "type": "text-banner",
       "blocks": {
@@ -519,7 +507,6 @@
   },
   "order": [
     "main",
-    "akta_banner_image_zhLHbi",
     "text_banner_zNYrd9",
     "store_benefit_tq7A77",
     "branded_image_version_2_ekLcgr",
