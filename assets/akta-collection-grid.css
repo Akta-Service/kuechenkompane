@@ -2,25 +2,25 @@
    Akta Collection Grid Responsive
    ============================== */
 
-  .akta-collection-header {
-    text-align: center;
-  }
-  h2.akta-collection-title {
-    font-size: 32px;
-    margin: 0 0 10px;
-  }
-  p.akta-collection-description {
-    font-size: 16px;
-    margin: 0;
-  }
+.akta-collection-header {
+  text-align: center;
+}
+.akta-collection-title {
+  font-size: 32px;
+  margin: 0 0 10px;
+}
+.akta-collection-description {
+  font-size: 16px;
+  margin: 0;
+}
 
 .akta-collection-grid {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 25px;
-    max-width: 1440px;
-    margin: auto;
-    padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 25px;
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 20px;
 }
 
 .akta-collection-grid-item {
