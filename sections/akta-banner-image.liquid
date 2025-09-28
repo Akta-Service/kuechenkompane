@@ -23,8 +23,10 @@
       <img
         src="{{ section.settings.banner_image | image_url: width: 1200 }}"
         alt="{{ section.settings.banner_image.alt | escape }}"
-        loading="lazy"
+
         class="banner-image"
+        width=""
+        height=""
       >
     </picture>
   </div>
