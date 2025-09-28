@@ -70,8 +70,8 @@
     },
     {
       "type": "image_picker",
-      "id": "banner_image_mobile",
-      "label": "Mobile Banner Image"
+      "id": "bg_image_mobile",
+      "label": "Mobile Banner bg"
     },
     {
       "type": "text",
@@ -234,6 +234,11 @@
 
 
     @media(max-width: 768px) {
+      .akta-banner {
+      background: url({{ section.settings.bg_image_mobile | image_url }});
+
+
+    }
       .akta-banner-wrapper {
         flex-direction: column;
 
