@@ -9,8 +9,10 @@
 
           {% when 'sub_heading' %}
             <p class="banner-subheading">{{ block.settings.subheading }}</p>
+
           {% when 'description' %}
             <div class="banner-description">{{ block.settings.description }}</div>
+
           {% when 'button' %}
             <a href="{{ block.settings.button_link }}" class="banner-button">
               {{ block.settings.button_label }}
@@ -43,8 +45,6 @@
           <img
             src="{{ section.settings.banner_image_desktop | image_url: width: 1200 }}"
             alt="{{ section.settings.alt_text | escape }}"
-            width="100%"
-            height=""
             class="banner-image"
           >
         </picture>
@@ -57,29 +57,6 @@
 {
   "name": "Banner with Text",
   "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Spa Glow Experience"
-    },
-    {
-      "type": "textarea",
-      "id": "subheading",
-      "label": "Subheading",
-      "default": "~80% Off"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button Label",
-      "default": "Shop now"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button Link"
-    },
     {
       "type": "image_picker",
       "id": "banner_image_desktop",
@@ -99,19 +76,74 @@
   ],
   "blocks": [
     {
-      "type": "heading"
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Spa Glow Experience"
+        }
+      ]
+    },
+    {
+      "type": "sub_heading",
+      "name": "Subheading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "~80% Off"
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>This is your banner description text.</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Shop now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
     }
   ],
   "presets": [
     {
       "name": "Banner with Text",
-      "category": "Image"
+      "category": "Image",
+      "blocks": [{ "type": "heading" }, { "type": "sub_heading" }, { "type": "description" }, { "type": "button" }]
     }
   ]
 }
 {% endschema %}
 
 <style>
+  .akta-banner {
+    background: radial-gradient(circle at top left, #ffe6f0, #ffffff);
+    padding: 2rem 0;
+  }
   .akta-banner-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -128,6 +160,10 @@
   }
   .banner-subheading {
     font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .banner-description {
+    font-size: 1rem;
     margin-bottom: 1.5rem;
   }
   .banner-button {
