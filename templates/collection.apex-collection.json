@@ -161,7 +161,8 @@
         "section_title": "Featured Collection",
         "section_description": "Explore our best-selling products.",
         "collection": "",
-        "products_limit": 12
+        "products_limit": 12,
+        "pagination_style": "square"
       }
     },
     "main": {
