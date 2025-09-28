@@ -6,20 +6,20 @@
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'heading' %}
-              <h2 class="banner-heading">{{ block.settings.heading }}</h2>
+              <h2 class="banner-heading" {{ block.shopify_attributes }}>{{ block.settings.heading }}</h2>
 
             {% when 'sub_heading' %}
-              <p class="banner-subheading">{{ block.settings.subheading }}</p>
+              <p class="banner-subheading" {{ block.shopify_attributes }}>{{ block.settings.subheading }}</p>
             {% when 'discount_img' %}
-              <div class="banner-discount">
+              <div class="banner-discount" {{ block.shopify_attributes }}>
                 <img src="{{ block.settings.discount_img | image_url }}" alt="discount percentage Image">
               </div>
 
             {% when 'description' %}
-              <div class="banner-description">{{ block.settings.description }}</div>
+              <div class="banner-description" {{ block.shopify_attributes }}>{{ block.settings.description }}</div>
 
             {% when 'button' %}
-              <a href="{{ block.settings.button_link }}" class="banner-button">
+              <a href="{{ block.settings.button_link }}" {{ block.shopify_attributes }} class="banner-button">
                 {{ block.settings.button_label }}
               </a>
           {% endcase %}
