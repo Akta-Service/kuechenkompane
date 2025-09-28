@@ -154,6 +154,16 @@
         "c_n_text": "p-medium"
       }
     },
+    "mrk_collection_grid_section_RPaaiT": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
+      "settings": {
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 4
+      }
+    },
     "main": {
       "type": "apex-theme-collectiont-product",
       "custom_css": [
@@ -313,6 +323,7 @@
     "breadcrumb_h1_b4RT8P",
     "breadcrumb_bEhLYx",
     "category_selection_iMrTd6",
+    "mrk_collection_grid_section_RPaaiT",
     "main",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
