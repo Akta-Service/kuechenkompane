@@ -41,11 +41,10 @@
 
           <!-- Fallback -->
           <img
-            src="{% if section.settings.banner_image_desktop %}{{ section.settings.banner_image_desktop | image_url: width: 1200 }}{% else %}{{ section.settings.banner_image_mobile | image_url: width: 767 }}{% endif %}"
+            src="{{ section.settings.banner_image_desktop | image_url: width: 1200 }}"
             alt="{{ section.settings.alt_text | escape }}"
-            width="{% if section.settings.banner_image_desktop %}{{ section.settings.banner_image_desktop.width }}{% else %}{{ section.settings.banner_image_mobile.width }}{% endif %}"
-            height="{% if section.settings.banner_image_desktop %}{{ section.settings.banner_image_desktop.height }}{% else %}{{ section.settings.banner_image_mobile.height }}{% endif %}"
-            loading="lazy"
+            width="100%"
+            height=""
             class="banner-image"
           >
         </picture>
