@@ -13,6 +13,47 @@
       "type": "page",
       "settings": {}
     },
+    "akta_banner_image_myjpUn": {
+      "type": "akta-banner-image",
+      "blocks": {
+        "heading_eJFVba": {
+          "type": "heading",
+          "settings": {
+            "heading": "Spa Glow Experience"
+          }
+        },
+        "sub_heading_r4dg7E": {
+          "type": "sub_heading",
+          "settings": {
+            "subheading": "~80% Off"
+          }
+        },
+        "description_8JzMiA": {
+          "type": "description",
+          "settings": {
+            "description": "<p>This is your banner description text.</p>"
+          }
+        },
+        "button_PTHQPx": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_eJFVba",
+        "sub_heading_r4dg7E",
+        "description_8JzMiA",
+        "button_PTHQPx"
+      ],
+      "name": "Banner with Text",
+      "settings": {
+        "banner_image_desktop": "shopify://shop_images/Kuechenkompane_Messer_kueche_V108_1.jpg",
+        "alt_text": "Banner Image"
+      }
+    },
     "text_banner_zNYrd9": {
       "type": "text-banner",
       "blocks": {
@@ -507,6 +548,7 @@
   },
   "order": [
     "main",
+    "akta_banner_image_myjpUn",
     "text_banner_zNYrd9",
     "store_benefit_tq7A77",
     "branded_image_version_2_ekLcgr",
