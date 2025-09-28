@@ -2,6 +2,10 @@
    Akta Collection Grid Responsive
    ============================== */
 
+  .akta-collection-header {
+    text-align: center;
+  }
+
 .akta-collection-grid {
     display: grid;
     grid-template-columns: repeat(4,1fr);
