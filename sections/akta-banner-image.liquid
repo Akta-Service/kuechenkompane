@@ -1,3 +1,31 @@
 <div class="akta-banner">
-  <div class="akta-banner-image"></div>
+  <div class="akta-banner-image">
+    <picture>
+      <!-- Mobile (up to 767px) -->
+      <source
+        media="(max-width: 767px)"
+        srcset="{{ section.settings.banner_image | image_url: width: 767 }}"
+      >
+
+      <!-- Tablet (768px to 1199px) -->
+      <source
+        media="(max-width: 1199px)"
+        srcset="{{ section.settings.banner_image | image_url: width: 1199 }}"
+      >
+
+      <!-- Desktop (1200px and up) -->
+      <source
+        media="(min-width: 1200px)"
+        srcset="{{ section.settings.banner_image | image_url: width: 2000 }}"
+      >
+
+      <!-- Fallback -->
+      <img
+        src="{{ section.settings.banner_image | image_url: width: 1200 }}"
+        alt="{{ section.settings.banner_image.alt | escape }}"
+        loading="lazy"
+        class="banner-image"
+      >
+    </picture>
+  </div>
 </div>
