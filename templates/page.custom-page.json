@@ -13,25 +13,43 @@
       "type": "page",
       "settings": {}
     },
+    "akta_banner_image_zhLHbi": {
+      "type": "akta-banner-image",
+      "name": "Banner with Text",
+      "settings": {
+        "heading": "Spa Glow Experience",
+        "subheading": "~80% Off",
+        "button_label": "Shop now",
+        "button_link": "shopify://collections/all",
+        "banner_image_desktop": "shopify://shop_images/Kuechenkompane_Messer_kueche_V102_1.jpg",
+        "alt_text": "Banner Image"
+      }
+    },
     "text_banner_zNYrd9": {
       "type": "text-banner",
       "blocks": {
         "title_LczJ49": {
           "type": "title",
           "settings": {
-            "title": "100% MONEY BACK"
+            "title": "100% MONEY BACK",
+            "mb": 0,
+            "mb_m": 0
           }
         },
         "title_style_hWGwhD": {
           "type": "title_style",
           "settings": {
-            "style_title": "<i>guarantee</i>"
+            "style_title": "<i>guarantee</i>",
+            "mb": 0,
+            "mb_m": 0
           }
         },
         "text_mFCHj9": {
           "type": "text",
           "settings": {
-            "text": "We offer a 100% match guarantee on all our products. If you are not satisfied, you will receive a full refund without any hassle."
+            "text": "We offer a 100% match guarantee on all our products. If you are not satisfied, you will receive a full refund without any hassle.",
+            "mb": 0,
+            "mb_m": 0
           }
         }
       },
@@ -249,6 +267,7 @@
     "announcement_bar_version_1_3Nznet": {
       "type": "announcement-bar-version-1",
       "settings": {
+        "sticky_top": false,
         "color_scheme": "scheme-568201fe-bcfa-44be-8567-5fd229c4d924",
         "pt": 15,
         "pb": 15,
@@ -500,6 +519,7 @@
   },
   "order": [
     "main",
+    "akta_banner_image_zhLHbi",
     "text_banner_zNYrd9",
     "store_benefit_tq7A77",
     "branded_image_version_2_ekLcgr",
