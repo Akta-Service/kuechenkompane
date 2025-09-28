@@ -164,6 +164,9 @@
     gap: 20px;
     padding: 0 15px;
   }
+  .akta-collection-pagination {    
+    margin-top: 30px;
+  }
 }
 
 @media (max-width: 480px) {
