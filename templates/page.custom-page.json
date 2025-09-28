@@ -50,8 +50,8 @@
       ],
       "name": "Banner with Text",
       "settings": {
-        "bg_image": "shopify://shop_images/Gemini_Generated_Image_k3oen0k3oen0k3oe.png",
-        "bg_image_mobile": "shopify://shop_images/Gemini_Generated_Image_zch9kezch9kezch9.png",
+        "banner_image_desktop": "shopify://shop_images/Gemini_Generated_Image_k3oen0k3oen0k3oe.png",
+        "banner_image_mobile": "shopify://shop_images/Gemini_Generated_Image_zch9kezch9kezch9.png",
         "alt_text": "Banner Image"
       }
     },
