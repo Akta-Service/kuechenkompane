@@ -1,0 +1,191 @@
+{% comment %}
+  Section: Akta Collection Grid
+{% endcomment %}
+{{ 'akta-collection-grid.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .akta-collection-pagination.akta-pagination-circle a,
+  .akta-collection-pagination.akta-pagination-circle .active {
+    border-radius: 50%;
+
+  }
+</style>
+
+<div class="akta-collection-section">
+  {% if section.settings.show_section_header %}
+    <div class="akta-collection-header">
+      {% if section.settings.section_title != blank %}
+        <h2 class="akta-collection-title">{{ section.settings.section_title }}</h2>
+      {% endif %}
+      {% if section.settings.section_description != blank %}
+        <p class="akta-collection-description">{{ section.settings.section_description }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% assign selected_collection = section.settings.collection %}
+  {% if selected_collection == blank %}
+    {% assign current_collection = collection %}
+  {% else %}
+    {% assign current_collection = collections[selected_collection] %}
+  {% endif %}
+
+  {% paginate current_collection.products by section.settings.products_limit %}
+    <div class="akta-collection-grid">
+      {% for product in current_collection.products %}
+        <div class="akta-collection-grid-item">
+          <a href="{{ product.url }}" class="akta-collection-grid-link">
+            <div class="akta-collection-grid-image-wrapper">
+              {%- if product.featured_image -%}
+                <img
+                  src="{{ product.featured_image | image_url }}"
+                  alt="{{ product.title }}"
+                  class="akta-collection-grid-image akta-image-default"
+                  width="100%"
+                  height=""
+                  {% if forloop.index <= 4 %}
+                    loading="eager" fetchpriority="high"
+                  {% else %}
+                    loading="lazy"
+                  {% endif %}
+                >
+              {%- endif -%}
+
+              {%- if product.images.size > 1 -%}
+                <img
+                  src="{{ product.images[1] | image_url }}"
+                  alt="{{ product.title }}"
+                  class="akta-collection-grid-image akta-image-hover"
+                  width="100%"
+                  height=""
+                  {% if forloop.index <= 4 %}
+                    loading="eager" fetchpriority="high"
+                  {% else %}
+                    loading="lazy"
+                  {% endif %}
+                >
+              {%- endif -%}
+            </div>
+            <div class="akta-collection-grid-content">
+              <h3 class="akta-collection-grid-title">{{ product.title }}</h3>
+              <div class="akta-collection-grid-prices">
+                {% if product.compare_at_price > product.price %}
+                  <span class="akta-collection-grid-price">{{ product.price | money }}</span>
+                  <span class="akta-collection-grid-compare">{{ product.compare_at_price | money }}</span>
+                {% else %}
+                  <span class="akta-collection-grid-price">{{ product.price | money }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <nav class="akta-collection-pagination akta-pagination-{{ section.settings.pagination_style }}">
+        <ul>
+          {% if paginate.previous %}
+            <li><a href="{{ paginate.previous.url }}" class="prev">«</a></li>
+          {% endif %}
+
+          {% for part in paginate.parts %}
+            {% if part.is_link %}
+              <li>
+                <a href="{{ part.url }}">{{ part.title }}</a>
+              </li>
+            {% else %}
+              <li class="active">{{ part.title }}</li>
+            {% endif %}
+          {% endfor %}
+
+          {% if paginate.next %}
+            <li><a href="{{ paginate.next.url }}" class="next">»</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    {% endif %}
+  {% endpaginate %}
+</div>
+
+{% schema %}
+{
+  "name": "Akta Collection Grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_section_header",
+      "label": "Show Section Header",
+      "default": false
+    },
+
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Featured Collection",
+      "visible_if": "{{ section.settings.show_section_header }}"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section Description",
+      "default": "Explore our best-selling products.",
+      "visible_if": "{{ section.settings.show_section_header }}"
+    },
+    {
+      "type": "header",
+      "content": "Custom Collection Settings"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection",
+      "info": "Keep Blank If no Need"
+    },
+    {
+      "type": "header",
+      "content": "Product To show"
+    },
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Number of Products",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Pagination Style"
+    },
+    {
+      "type": "select",
+      "id": "pagination_style",
+      "label": "Select Style",
+      "default": "circle",
+      "options": [
+        {
+          "value": "circle",
+          "label": "Circle"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Akta Collection Grid",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
