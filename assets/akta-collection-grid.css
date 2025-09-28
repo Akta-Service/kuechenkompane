@@ -121,6 +121,7 @@
   margin: 0;
   display: inline-flex;
   gap: 8px;
+  align-items: center;
 }
 
 .akta-collection-pagination li {
