@@ -70,16 +70,6 @@
   opacity: 0;
 }
 
-/* Hover Effect = Zoom + Swap */
-.akta-collection-grid-item:hover .akta-image-default {
-  opacity: 0;
-  transform: scale(1.1);
-}
-
-.akta-collection-grid-item:hover .akta-image-hover {
-  opacity: 1;
-  transform: scale(1.1);
-}
 
   /* ------- CONTENT ------- */
 
