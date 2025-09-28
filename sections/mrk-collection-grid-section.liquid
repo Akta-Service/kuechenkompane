@@ -11,6 +11,7 @@
   }
   .section-{{ section.id }}{
     padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 </style>
 
@@ -119,6 +120,15 @@
       "type": "range",
       "id": "padding_top",
       "label": "Padding Top (px)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
       "min": 0,
       "max": 100,
       "step": 1,
