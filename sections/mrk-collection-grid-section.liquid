@@ -103,6 +103,9 @@
                   <span class="akta-collection-grid-price">{{ product.price | money }}</span>
                 {% endif %}
               </div>
+              {% if section.settings.show_stock_status %}
+                {% render 'stock-count-status', product: product, custom_class: 'ml-15 collection-stock' %}
+              {% endif %}
             </div>
           </a>
         </div>
