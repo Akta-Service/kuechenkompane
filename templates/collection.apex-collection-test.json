@@ -210,7 +210,8 @@
         "collection": "",
         "products_limit": 35,
         "hover_second_image": false,
-        "pagination_style": "circle"
+        "pagination_style": "circle",
+        "show_stock_status": true
       }
     },
     "main": {
