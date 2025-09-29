@@ -198,24 +198,8 @@
         "c_n_text": "p-medium"
       }
     },
-    "mrk_collection_grid_section_tf99ae": {
-      "type": "mrk-collection-grid-section",
-      "name": "Akta Collection Grid",
-      "settings": {
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "show_section_header": false,
-        "section_title": "Featured Collection",
-        "section_description": "Explore our best-selling products.",
-        "collection": "",
-        "products_limit": 35,
-        "hover_second_image": false,
-        "pagination_style": "circle"
-      }
-    },
     "main": {
       "type": "apex-theme-collectiont-product",
-      "disabled": true,
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
         ".m-collection-filters-form {margin-bottom: 0;}"
@@ -410,7 +394,6 @@
     "rich_text_9azB7H",
     "breadcrumb_bEhLYx",
     "category_selection_iMrTd6",
-    "mrk_collection_grid_section_tf99ae",
     "main",
     "promotion_banner_YmXxH9",
     "usp_list_xQHfgQ",
