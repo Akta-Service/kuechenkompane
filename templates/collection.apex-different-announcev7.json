@@ -186,6 +186,39 @@
         "show_stock_status": false
       }
     },
+    "promotion_banner_9TTMGj": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_nqFrx6": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "JETZT BIS ZU",
+            "heading": "-80%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_nqFrx6"
+      ],
+      "name": "Promotion banner",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "BLACK FRIDAY ANGEBOTE",
+        "heading_size": "h2",
+        "text": "<p>Wir starten unsere besten Black-Friday Deals vor allen anderen. Es gelten Preisphasen statt Dauerrabatte.<strong> </strong>Unsere Angebote wechseln jeden Tag. Wer früh zuschlägt, spart am meisten.</p>",
+        "content_alignment": "left",
+        "banner_url": "shopify://collections/black-friday-angebote-1",
+        "button_label": "Angebote ansehen",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "usp_list_xQHfgQ": {
       "type": "usp-list",
       "blocks": {
@@ -277,6 +310,7 @@
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
     "main",
+    "promotion_banner_9TTMGj",
     "usp_list_xQHfgQ",
     "collection_description_tUMerW",
     "rich_text_ijBTPA"
