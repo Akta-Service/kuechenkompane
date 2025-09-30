@@ -45,17 +45,18 @@
       "type": "production",
       "name": "Production Stop Hero (production)",
       "settings": {
-        "desktop_image": "shopify://shop_images/MG_0888_1_2_977f9dee-919b-4537-b4c7-fb7676d9e1b4.webp",
-        "mobile_image": "shopify://shop_images/MG_0888_1_2.webp",
-        "heading": "RESTBESTÄNDE AUSVERKAUF",
-        "subheading": "für die nächsten 48h - bis zu 75% Rabatt",
-        "cta_text": "ANGEBOTE ENTDECKEN",
+        "desktop_image": "shopify://shop_images/Black_Friday_Angebote_1.jpg",
+        "mobile_image": "shopify://shop_images/Black_Friday_Angebote_1.jpg",
+        "heading": "Black Month Angebot starten",
+        "subheading": "Jetzt die besten Deals vor allen anderen sichern!",
+        "show_button": true,
+        "cta_text": "ANGEBOTE ANSEHEN",
         "cta_url": "shopify://collections/ausverkauf-von-restbestanden",
         "alt_text_desktop": "Ausverkauf von Restbeständen",
         "alt_text_mobile": "Production stop mobile",
-        "badge_image": "shopify://shop_images/asiatisches-messerset-premium-mobile_1_1__1_-removebg-preview.png",
-        "headline": "Deutschlands Nr. 1 Messer",
-        "subtext": "Die besten Messer für deine Küche — geliebt von 160.000+ Menschen!"
+        "badge_image": "shopify://shop_images/Gift-klein.jpg",
+        "headline": "3 Kochbücher + Kochkurs Gratis dazu",
+        "subtext": "Zu jeder Bestellung gibt es für kurze Zeit drei verschiedene Kochbücher und einen Kochkurs im Wert von insgesamgt 99,00€ gratis oben drauf!"
       }
     },
     "banner_version_2_4q968G": {
