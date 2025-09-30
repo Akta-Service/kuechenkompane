@@ -217,6 +217,39 @@
         "show_stock_status": false
       }
     },
+    "promotion_banner_fd8zPy": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_YV4int": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "JETZT BIS ZU",
+            "heading": "-80%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_YV4int"
+      ],
+      "name": "Promotion banner",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "BLACK FRIDAY ANGEBOTE",
+        "heading_size": "h2",
+        "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post.<br/> Add details on availability, style, or even provide a review.</p>",
+        "content_alignment": "left",
+        "banner_url": "",
+        "button_label": "Shop Collection",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "usp_list_xQHfgQ": {
       "type": "usp-list",
       "blocks": {
@@ -267,40 +300,6 @@
         "horizontal_padding_mobile": 15
       }
     },
-    "branded_image_version_ffF3PX": {
-      "type": "branded-image-version-",
-      "blocks": {
-        "title_AgFUHf": {
-          "type": "title",
-          "settings": {
-            "title": "Kochen wie ein Profi"
-          }
-        },
-        "sub_title_GcWkqp": {
-          "type": "sub_title",
-          "settings": {
-            "text": "Von messerscharfer Präzision bis hin zu perfektem Kochgeschirr.\n<br>Unsere Produkte sind für höchste Ansprüche gemacht."
-          }
-        }
-      },
-      "block_order": [
-        "title_AgFUHf",
-        "sub_title_GcWkqp"
-      ],
-      "settings": {
-        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
-        "shape_color": "#deceba",
-        "margin_top": 20,
-        "margin_bottom": 0,
-        "mobile_margin_top": 10,
-        "mobile_margin_bottom": 0,
-        "bg_img": "shopify://shop_images/IMG_9602_V6.jpg",
-        "heading_type": "mrk-h1",
-        "des_size": "p-medium",
-        "button_style": "m-button--primary",
-        "button_size": ""
-      }
-    },
     "collection_description_tUMerW": {
       "type": "collection-description",
       "settings": {
@@ -343,8 +342,8 @@
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
     "main",
+    "promotion_banner_fd8zPy",
     "usp_list_xQHfgQ",
-    "branded_image_version_ffF3PX",
     "collection_description_tUMerW",
     "rich_text_ijBTPA"
   ]
