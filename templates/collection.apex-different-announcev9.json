@@ -9,38 +9,20 @@
  */
 {
   "sections": {
-    "apex_timer_8KXfky": {
-      "type": "Apex-timer",
-      "name": "Apex Product Timer",
-      "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#c89d00",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "700",
-        "timer_text": "aktion endet in kürze",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-09-01",
-        "target_time": "00:00:00"
-      }
-    },
     "rich_text_MPfPJc": {
       "type": "rich-text",
       "blocks": {
         "heading_HLFfDJ": {
           "type": "heading",
           "settings": {
-            "heading": "Rabatte im Ausnahmezustand 🚨",
+            "heading": "Black-Deals zuerst sichern",
             "heading_size": "h2"
           }
         },
         "text_nAHzLU": {
           "type": "text",
           "settings": {
-            "text": "<p>So war das nie vorgesehen: Durch einen Speditionsfehler kam eine unserer Lieferungen viel zu früh. Jetzt brauchen wir Platz im Lager – und du sicherst dir dabei die höchsten Rabatte, die wir geben können!</p>"
+            "text": "<p>Wir starten dieses Jahr <strong>einen Monat früher</strong> – wegen <strong>hoher Nachfrage</strong> und <strong>limitierter Bestände</strong>. <strong>Ausgewählte Artikel</strong>, <strong>begrenzte Kontingente</strong>. Wir arbeiten mit <strong>Preisphasen</strong> statt Dauerrabatten; der <strong>Timer</strong> zeigt das nächste <strong>Preisupdate</strong>. <strong>Solange Vorrat reicht.</strong></p><p></p>"
           }
         }
       },
@@ -57,6 +39,24 @@
         "padding_bottom": 52,
         "custom_class": "",
         "animations": "inherit"
+      }
+    },
+    "apex_timer_8KXfky": {
+      "type": "Apex-timer",
+      "name": "Apex Product Timer",
+      "settings": {
+        "bg_color": "#eaeaea",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#c89d00",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "700",
+        "timer_text": "aktion endet in kürze",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "700",
+        "target_date": "2025-10-02",
+        "target_time": "00:00:00"
       }
     },
     "collection-header": {
@@ -213,7 +213,8 @@
         "add_btn_text_color": "#ffffff",
         "button_style": "m-button--primary",
         "button_size": "",
-        "overlay_opacity": 0.1
+        "overlay_opacity": 0.1,
+        "show_stock_status": false
       }
     },
     "usp_list_xQHfgQ": {
@@ -336,8 +337,8 @@
     }
   },
   "order": [
-    "apex_timer_8KXfky",
     "rich_text_MPfPJc",
+    "apex_timer_8KXfky",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
