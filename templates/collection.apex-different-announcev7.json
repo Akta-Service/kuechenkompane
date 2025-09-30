@@ -28,38 +28,6 @@
         "target_time": "00:00:00"
       }
     },
-    "rich_text_MPfPJc": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_HLFfDJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "Unser Gründer hat Geburtstag!",
-            "heading_size": "h2"
-          }
-        },
-        "text_nAHzLU": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Und du sparst dabei richtig. Die Lieblinge unseres Gründers, bekommst du jetzt bis zu 75% günstiger. Ob Sets, Blöcke, Zubehör oder andere Favoriten. Jetzt ist deine Chance.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_HLFfDJ",
-        "text_nAHzLU"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -339,7 +307,6 @@
   },
   "order": [
     "apex_timer_8KXfky",
-    "rich_text_MPfPJc",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
