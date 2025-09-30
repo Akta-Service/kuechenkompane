@@ -194,10 +194,10 @@
         "container": "container-fluid",
         "grid_layout": "grid",
         "grid_columns": "4",
-        "show_columns_switcher": true,
+        "show_columns_switcher": false,
         "pagination_limit": 48,
         "paginate_type": "paginate",
-        "show_sorting": true,
+        "show_sorting": false,
         "show_filter": false,
         "filters_type": "storefront_filters",
         "sidebar": "leftColumn",
@@ -213,7 +213,8 @@
         "add_btn_text_color": "#ffffff",
         "button_style": "m-button--primary",
         "button_size": "",
-        "overlay_opacity": 0.1
+        "overlay_opacity": 0.1,
+        "show_stock_status": false
       }
     },
     "usp_list_xQHfgQ": {
