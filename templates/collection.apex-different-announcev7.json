@@ -152,6 +152,48 @@
         "c_n_text": "p-medium"
       }
     },
+    "akta_banner_image_cpPAnR": {
+      "type": "akta-banner-image",
+      "blocks": {
+        "heading_E4dtTV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Spa Glow Experience"
+          }
+        },
+        "discount_img_YQeNyA": {
+          "type": "discount_img",
+          "settings": {
+            "discount_img": "shopify://shop_images/Gemini_Generated_Image_5tzqkm5tzqkm5tzq-removebg-preview.png"
+          }
+        },
+        "description_iP4wHn": {
+          "type": "description",
+          "settings": {
+            "description": "<p>This is your banner description text.</p>"
+          }
+        },
+        "button_pMrEnC": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_E4dtTV",
+        "discount_img_YQeNyA",
+        "description_iP4wHn",
+        "button_pMrEnC"
+      ],
+      "name": "Banner with Text",
+      "settings": {
+        "banner_image_desktop": "shopify://shop_images/Gemini_Generated_Image_k3oen0k3oen0k3oe.png",
+        "banner_image_mobile": "shopify://shop_images/Gemini_Generated_Image_zch9kezch9kezch9.png",
+        "alt_text": "Banner Image"
+      }
+    },
     "main": {
       "type": "apex-theme-collectiont-product",
       "custom_css": [
@@ -309,6 +351,7 @@
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
+    "akta_banner_image_cpPAnR",
     "main",
     "promotion_banner_9TTMGj",
     "usp_list_xQHfgQ",
