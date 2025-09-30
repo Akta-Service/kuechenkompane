@@ -35,8 +35,8 @@
         "container": "container",
         "color_scheme": "",
         "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
+        "padding_top": 24,
+        "padding_bottom": 0,
         "custom_class": "",
         "animations": "inherit"
       }
@@ -45,7 +45,7 @@
       "type": "Apex-timer",
       "name": "Apex Product Timer",
       "settings": {
-        "bg_color": "#eaeaea",
+        "bg_color": "#f2f2f2",
         "section_pt": 15,
         "section_pb": 15,
         "timer_clock": "#c89d00",
