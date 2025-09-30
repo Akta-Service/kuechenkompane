@@ -9,56 +9,6 @@
  */
 {
   "sections": {
-    "apex_timer_8KXfky": {
-      "type": "Apex-timer",
-      "name": "Apex Product Timer",
-      "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#c89d00",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "700",
-        "timer_text": "aktion endet in kürze",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-08-25",
-        "target_time": "00:00:00"
-      }
-    },
-    "rich_text_MPfPJc": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_HLFfDJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "RABATTE AUßER KONTROLLE! 😳🚨",
-            "heading_size": "h2"
-          }
-        },
-        "text_nAHzLU": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Diese Aktion geht nur, weil der Chef im Urlaub ist. Jetzt bestimmen wir die Preise und geben dir unsere Mitarbeiterpreise frei, die es so nie wieder geben wird!</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_HLFfDJ",
-        "text_nAHzLU"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -337,8 +287,6 @@
     }
   },
   "order": [
-    "apex_timer_8KXfky",
-    "rich_text_MPfPJc",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
