@@ -158,25 +158,23 @@
         "heading_E4dtTV": {
           "type": "heading",
           "settings": {
-            "heading": "Spa Glow Experience"
+            "heading": ""
           }
         },
         "discount_img_YQeNyA": {
           "type": "discount_img",
-          "settings": {
-            "discount_img": "shopify://shop_images/Gemini_Generated_Image_5tzqkm5tzqkm5tzq-removebg-preview.png"
-          }
+          "settings": {}
         },
         "description_iP4wHn": {
           "type": "description",
           "settings": {
-            "description": "<p>This is your banner description text.</p>"
+            "description": ""
           }
         },
         "button_pMrEnC": {
           "type": "button",
           "settings": {
-            "button_label": "Shop now",
+            "button_label": "",
             "button_link": ""
           }
         }
@@ -189,8 +187,8 @@
       ],
       "name": "Banner with Text",
       "settings": {
-        "banner_image_desktop": "shopify://shop_images/Gemini_Generated_Image_k3oen0k3oen0k3oe.png",
-        "banner_image_mobile": "shopify://shop_images/Gemini_Generated_Image_zch9kezch9kezch9.png",
+        "banner_image_desktop": "shopify://shop_images/Header_Desktop_1.jpg",
+        "banner_image_mobile": "shopify://shop_images/Header_Mobil_1.jpg",
         "alt_text": "Banner Image"
       }
     },
