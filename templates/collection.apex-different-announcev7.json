@@ -185,11 +185,44 @@
         "description_iP4wHn",
         "button_pMrEnC"
       ],
+      "disabled": true,
       "name": "Banner with Text",
       "settings": {
         "banner_image_desktop": "shopify://shop_images/Header_Desktop_1.jpg",
         "banner_image_mobile": "shopify://shop_images/Header_Mobil_1.jpg",
         "alt_text": "Banner Image"
+      }
+    },
+    "image_with_text_2_XpM3cW": {
+      "type": "image-with-text-2",
+      "name": "Image with text overlay",
+      "settings": {
+        "color_scheme": "",
+        "container": "w-full",
+        "hero_size": "adapt",
+        "show_overlay": false,
+        "image": "shopify://shop_images/Header_Desktop_1.jpg",
+        "image_link": "",
+        "parallax": false,
+        "parallax_direction": "vertical",
+        "content_in_container": false,
+        "content_position": "center middle",
+        "text_alignment": "center",
+        "text_size": "medium",
+        "text_color": "white",
+        "title": "",
+        "subtitle": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "text_alignment_mobile": "center",
+        "mb_image": "shopify://shop_images/Header_Mobil_1.jpg",
+        "use_content_above": false,
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
       }
     },
     "main": {
@@ -350,6 +383,7 @@
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
     "akta_banner_image_cpPAnR",
+    "image_with_text_2_XpM3cW",
     "main",
     "promotion_banner_9TTMGj",
     "usp_list_xQHfgQ",
