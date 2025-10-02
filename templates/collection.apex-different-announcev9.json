@@ -58,6 +58,23 @@
         "start_time": "00:00:00"
       }
     },
+    "apex_timer_left_text_YXwzCg": {
+      "type": "Apex-timer-left-text",
+      "name": "Apex Product Timer N",
+      "settings": {
+        "bg_color": "#1c1d1d",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#fff",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "400",
+        "timer_text": "Time’s running out on our biggest sale!",
+        "timer_font_size": 12,
+        "timer_color": "#dcad27",
+        "timer_font_weight": "400",
+        "start_time": "00:00:00"
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -337,6 +354,7 @@
   "order": [
     "rich_text_MPfPJc",
     "apex_timer_8KXfky",
+    "apex_timer_left_text_YXwzCg",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
