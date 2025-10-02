@@ -63,26 +63,29 @@
   endfor
 %}
 
-<div
-  class="rs_timerwrapper"
-  style="padding-top: {{ section.settings.section_pt }}px; padding-bottom: {{ section.settings.section_pb }}px;  background: {{ section.settings.bg_color }};"
->
-  <!-- <a class="rslink" href="#"></a> -->
-  <div class="timer_text_wrapper">
-    <p
-      class="timer_text"
-      style="font-size: {{ section.settings.timer_font_size }}px; color: {{ section.settings.timer_color }};  font-weight: {{ section.settings.timer_font_weight }};"
-    >
-      {{ section.settings.timer_text }}
-    </p>
-    <span
-      class="timer_clock"
-      style="color: {{ section.settings.timer_clock }};  font-size: {{ section.settings.timer_clock_text_font_size }}px;  font-weight: {{ section.settings.clock_font_weight }};"
-      id="countdown"
-      >00:00:00</span
-    >
+{% if show_announcement %}
+  <div
+    class="rs_timerwrapper"
+    style="padding-top: {{ section.settings.section_pt }}px; padding-bottom: {{ section.settings.section_pb }}px;  background: {{ section.settings.bg_color }};"
+  >
+    <!-- <a class="rslink" href="#"></a> -->
+    <div class="timer_text_wrapper">
+      <p
+        class="timer_text"
+        style="font-size: {{ section.settings.timer_font_size }}px; color: {{ section.settings.timer_color }};  font-weight: {{ section.settings.timer_font_weight }};"
+      >
+        {{ section.settings.timer_text }}
+      </p>
+      <span
+        class="timer_clock"
+        style="color: {{ section.settings.timer_clock }};  font-size: {{ section.settings.timer_clock_text_font_size }}px;  font-weight: {{ section.settings.clock_font_weight }};"
+        id="countdown"
+        >00:00:00</span
+      >
+    </div>
   </div>
-</div>
+{% endif %}
+
 <script>
   window.apexTimerSettings = {
     targetDate: '{{ section.settings.target_date }}',
