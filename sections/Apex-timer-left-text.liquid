@@ -52,6 +52,17 @@
     font-weight: 700;
   }
 </style>
+
+{% liquid
+  assign show_announcement = false
+
+  for col in section.settings.selected_collection
+    if col.handle == collection.handle
+      assign show_announcement = true
+    endif
+  endfor
+%}
+
 <div
   class="rs_timerwrapper"
   style="padding-top: {{ section.settings.section_pt }}px; padding-bottom: {{ section.settings.section_pb }}px;  background: {{ section.settings.bg_color }};"
