@@ -1,0 +1,319 @@
+<style>
+  .rs_timerwrapper {
+    text-align: center;
+    padding: 15px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    position: relative;
+  }
+
+  .rs_timerwrapper .rslink {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    bottom: 0;
+    background: none;
+  }
+
+  .timer_text_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+
+  .timer_clock {
+    display: inline-block;
+    line-height: 1;
+    margin-right: 5px;
+
+    width: fit-content;
+    letter-spacing: 0.5px;
+
+
+    font-family: "Roboto", sans-serif;
+  }
+
+  .timer_text {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    color: #dcad27;
+    font-weight: 700;
+  }
+</style>
+<div
+  class="rs_timerwrapper"
+  style="padding-top: {{ section.settings.section_pt }}px; padding-bottom: {{ section.settings.section_pb }}px;  background: {{ section.settings.bg_color }};"
+>
+  <!-- <a class="rslink" href="#"></a> -->
+  <div class="timer_text_wrapper">
+    <span
+      class="timer_clock"
+      style="color: {{ section.settings.timer_clock }};  font-size: {{ section.settings.timer_clock_text_font_size }}px;  font-weight: {{ section.settings.clock_font_weight }};"
+      id="countdown"
+      >00:00:00</span
+    >
+    <p
+      class="timer_text"
+      style="font-size: {{ section.settings.timer_font_size }}px; color: {{ section.settings.timer_color }};  font-weight: {{ section.settings.timer_font_weight }};"
+    >
+      {{ section.settings.timer_text }}
+    </p>
+  </div>
+</div>
+<script>
+  window.apexTimerSettings = {
+    targetDate: '{{ section.settings.target_date }}',
+    targetTime: '{{ section.settings.target_time }}',
+  };
+</script>
+
+{% schema %}
+{
+  "name": "Apex Product Timer",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#1c1d1d"
+    },
+    {
+      "type": "range",
+      "id": "section_pt",
+      "label": "Padding Top",
+      "default": 15,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "section_pb",
+      "label": "Padding Bottom",
+      "default": 15,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Clock Text Settings"
+    },
+    {
+      "type": "color",
+      "id": "timer_clock",
+      "label": "Timer Clock Font Color",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "timer_clock_text_font_size",
+      "label": "Font Size",
+      "default": 12,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "select",
+      "id": "clock_font_weight",
+      "label": "Font Weight",
+      "default": "400",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin (100)"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light (200)"
+        },
+        {
+          "value": "300",
+          "label": "Light (300)"
+        },
+        {
+          "value": "400",
+          "label": "Normal (400)"
+        },
+        {
+          "value": "500",
+          "label": "Medium (500)"
+        },
+        {
+          "value": "600",
+          "label": "Semi-Bold (600)"
+        },
+        {
+          "value": "700",
+          "label": "Bold (700)"
+        },
+        {
+          "value": "800",
+          "label": "Extra-Bold (800)"
+        },
+        {
+          "value": "900",
+          "label": "Black (900)"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Text Settings"
+    },
+    {
+      "type": "text",
+      "id": "timer_text",
+      "label": "Timer Text",
+      "default": "Time’s running out on our biggest sale!"
+    },
+    {
+      "type": "range",
+      "id": "timer_font_size",
+      "label": "Font Size",
+      "default": 12,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    },
+
+    {
+      "type": "color",
+      "id": "timer_color",
+      "label": "Font Color",
+      "default": "#dcad27"
+    },
+    {
+      "type": "select",
+      "id": "timer_font_weight",
+      "label": "Font Weight",
+      "default": "400",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin (100)"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light (200)"
+        },
+        {
+          "value": "300",
+          "label": "Light (300)"
+        },
+        {
+          "value": "400",
+          "label": "Normal (400)"
+        },
+        {
+          "value": "500",
+          "label": "Medium (500)"
+        },
+        {
+          "value": "600",
+          "label": "Semi-Bold (600)"
+        },
+        {
+          "value": "700",
+          "label": "Bold (700)"
+        },
+        {
+          "value": "800",
+          "label": "Extra-Bold (800)"
+        },
+        {
+          "value": "900",
+          "label": "Black (900)"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Countdown Target Settings"
+    },
+    {
+      "type": "text",
+      "id": "start_time",
+      "label": "Start Time (HH:MM:SS, 24h format)",
+      "default": "00:00:00"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Apex Product Timer"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const countdownElement = document.getElementById('countdown');
+
+    // Get start_time from schema (expected format "HH:MM:SS")
+    const startTimeParts = '{{ section.settings.start_time }}'.split(':').map(Number);
+
+    function getNextTarget() {
+      const now = new Date();
+
+      // Target = today at schema start time
+      let target = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        startTimeParts[0],
+        startTimeParts[1],
+        startTimeParts[2] || 0
+      );
+
+      // If already passed today, move to tomorrow
+      if (target <= now) {
+        target.setDate(target.getDate() + 1);
+      }
+
+      return target;
+    }
+
+    let targetDateTime = getNextTarget();
+
+    function updateTimer() {
+      const now = new Date();
+      let timeRemaining = targetDateTime - now;
+
+      if (timeRemaining <= 0) {
+        targetDateTime = getNextTarget();
+        timeRemaining = targetDateTime - now;
+      }
+
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
+      const seconds = Math.floor((timeRemaining / 1000) % 60);
+
+      countdownElement.textContent =
+        `${String(days).padStart(2, '0')}d ` +
+        `${String(hours).padStart(2, '0')}h ` +
+        `${String(minutes).padStart(2, '0')}m ` +
+        `${String(seconds).padStart(2, '0')}s`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  });
+</script>
