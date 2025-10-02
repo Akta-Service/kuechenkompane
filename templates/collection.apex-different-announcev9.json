@@ -43,6 +43,7 @@
     },
     "apex_timer_8KXfky": {
       "type": "Apex-timer",
+      "disabled": true,
       "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#f2f2f2",
