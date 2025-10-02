@@ -56,13 +56,12 @@
 {% liquid
   assign show_announcement = false
 
-  for col in section.settings.selected_collection
-    if col.handle == collection.handle
+  if section.settings.selected_collection
+    if section.settings.selected_collection.handle == collection.handle
       assign show_announcement = true
     endif
-  endfor
+  endif
 %}
-
 {% if show_announcement %}
   <div
     class="rs_timerwrapper"
