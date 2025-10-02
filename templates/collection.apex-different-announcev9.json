@@ -51,7 +51,7 @@
         "timer_clock": "#c89d00",
         "timer_clock_text_font_size": 12,
         "clock_font_weight": "700",
-        "timer_text": "ANGEBOT WECHSELT IN:",
+        "timer_text": "ANGEBOT WECHSELT BALD!",
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "700",
@@ -60,7 +60,6 @@
     },
     "apex_timer_left_text_YXwzCg": {
       "type": "Apex-timer-left-text",
-      "disabled": true,
       "name": "Apex Product Timer N",
       "settings": {
         "selected_collection": [
