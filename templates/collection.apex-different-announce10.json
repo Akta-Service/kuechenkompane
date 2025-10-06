@@ -1,0 +1,345 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_MPfPJc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HLFfDJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Black-Month Deals zuerst sichern",
+            "heading_size": "h2"
+          }
+        },
+        "text_nAHzLU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Frühstart: Wegen <strong>hoher Nachfrage </strong>und <strong>knapper Bestände </strong>starten wir unsere besten Black Month Deals vor allen anderen. <strong>Es gelten Preisphasen statt Dauerrabatte. </strong>Unsere Angebote wechseln jeden Tag. Wer <strong>früh zuschlägt</strong>, spart am meisten.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HLFfDJ",
+        "text_nAHzLU"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 24,
+        "padding_bottom": 12,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "apex_timer_8KXfky": {
+      "type": "Apex-timer",
+      "name": "Apex Product Timer",
+      "settings": {
+        "bg_color": "#f2f2f2",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#c89d00",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "700",
+        "timer_text": "ANGEBOT WECHSELT IN:",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "700",
+        "start_time": "00:00:00"
+      }
+    },
+    "collection-header": {
+      "type": "collection-page-header",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "dark",
+        "container": "container-fluid",
+        "layout": "inside",
+        "image_position": "background",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "text_alignment": "center",
+        "text_color": "inherit",
+        "upper_title": false,
+        "show_desc": true,
+        "collection_all_desc": "",
+        "padding_top": 36,
+        "padding_bottom": 50,
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "apex_top_slider_GBwqAg": {
+      "type": "apex-top-slider",
+      "blocks": {
+        "text_zLPY9B": {
+          "type": "text",
+          "settings": {
+            "top_item": "140.000+ zufriedene Kunden"
+          }
+        },
+        "text_i4KwPb": {
+          "type": "text",
+          "settings": {
+            "top_item": "100 Tage Testen"
+          }
+        },
+        "text_KKpaJj": {
+          "type": "text",
+          "settings": {
+            "top_item": "Kostenloser Versand"
+          }
+        }
+      },
+      "block_order": [
+        "text_zLPY9B",
+        "text_i4KwPb",
+        "text_KKpaJj"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "pt": 15,
+        "pb": 15,
+        "mt_mobile": 15,
+        "mb_mobile": 15
+      }
+    },
+    "category_selection_iMrTd6": {
+      "type": "category-selection",
+      "blocks": {
+        "item_nwxAVH": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db.jpg",
+            "collection": "kuechenmesser-set",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_Bd4xRW": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d.webp",
+            "collection": "rustikales-servierbrett",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_LNGV6x": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
+            "collection": "damastmesser-set",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_KtcacC": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_9602_V7_766bf07d-e962-44cd-88f4-f20ad783e139.jpg",
+            "collection": "bbq-zubehor",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_rktrNh": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
+            "collection": "asiatisches-messerset-1",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_nwxAVH",
+        "item_Bd4xRW",
+        "item_LNGV6x",
+        "item_KtcacC",
+        "item_rktrNh"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "pt": 30,
+        "pb": 30,
+        "mobile_pt": 30,
+        "mobile_pb": 30,
+        "heading_type": "mrk-h1",
+        "title": "Nach Kategorien suchen",
+        "c_n_text": "p-medium"
+      }
+    },
+    "main": {
+      "type": "apex-theme-collectiont-product",
+      "settings": {
+        "color_scheme": "default",
+        "container": "container-fluid",
+        "grid_layout": "grid",
+        "grid_columns": "4",
+        "show_columns_switcher": false,
+        "pagination_limit": 48,
+        "paginate_type": "paginate",
+        "show_sorting": false,
+        "show_filter": false,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": true,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Product type, Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "list",
+        "add_btn_bg": "#1e1e1e",
+        "add_btn_text_color": "#ffffff",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "overlay_opacity": 0.1,
+        "show_stock_status": false
+      }
+    },
+    "promotion_banner_fd8zPy": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_YV4int": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "JETZT BIS ZU",
+            "heading": "-80%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_YV4int"
+      ],
+      "name": "Promotion banner",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "BLACK FRIDAY ANGEBOTE",
+        "heading_size": "h2",
+        "text": "<p>Wir starten unsere besten Black-Friday Deals vor allen anderen. Es gelten Preisphasen statt Dauerrabatte.<strong> </strong>Unsere Angebote wechseln jeden Tag. Wer früh zuschlägt, spart am meisten.</p>",
+        "content_alignment": "left",
+        "banner_url": "shopify://collections/black-month-angebote",
+        "button_label": "Angebote ansehen",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "usp_list_xQHfgQ": {
+      "type": "usp-list",
+      "blocks": {
+        "item_JVyQJ8": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/GEZ100.png",
+            "usp_title": "Geld-zurück-Garantie",
+            "title_size": 18,
+            "usp_info": "100 Tage Rückgaberecht - ohne Risiko.",
+            "info_size": 14,
+            "divider": true
+          }
+        },
+        "item_BRBV37": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
+            "usp_title": "Kostenloser Versand",
+            "title_size": 18,
+            "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
+            "info_size": 14,
+            "divider": true
+          }
+        },
+        "item_RKRMEB": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
+            "usp_title": "Schärfe Garantie",
+            "title_size": 18,
+            "usp_info": "Maximale Schärfe für müheloses Schneiden.",
+            "info_size": 14,
+            "divider": false
+          }
+        }
+      },
+      "block_order": [
+        "item_JVyQJ8",
+        "item_BRBV37",
+        "item_RKRMEB"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "verticle_padding": 50,
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30,
+        "horizontal_padding_mobile": 15
+      }
+    },
+    "collection_description_tUMerW": {
+      "type": "collection-description",
+      "settings": {
+        "collection_bg": "#c6d1c4",
+        "collection_pt": 30,
+        "collection_pb": 30,
+        "collection_pt_m": 30,
+        "collection_pb_m": 30
+      }
+    },
+    "rich_text_ijBTPA": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Pp4WF3": {
+          "type": "text",
+          "settings": {
+            "text": "{{ collection.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "text_Pp4WF3"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 108,
+        "padding_bottom": 116,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "rich_text_MPfPJc",
+    "apex_timer_8KXfky",
+    "collection-header",
+    "apex_top_slider_GBwqAg",
+    "category_selection_iMrTd6",
+    "main",
+    "promotion_banner_fd8zPy",
+    "usp_list_xQHfgQ",
+    "collection_description_tUMerW",
+    "rich_text_ijBTPA"
+  ]
+}
