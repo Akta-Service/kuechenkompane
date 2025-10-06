@@ -38,7 +38,7 @@
           or item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
           or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
         %}
-          <a href="{{- item.url -}}" class="m-cart-item__title" style="pointer-events: none;">
+          <a href="{{- item.url -}}" class="m-cart-item__title m-cart-free-item__title" style="pointer-events: none;">
             {{- item.product.title -}}
           </a>
         {% else %}
