@@ -7,8 +7,11 @@
   margin-bottom: 50px;
 }
 .akta-collection-title {
-  font-size: 32px;
   margin: 0 0 10px;
+  font-size: 40px;
+  font-family: "DM Sans", sans-serif;
+  color: #000;
+  margin-bottom: 15px;
 }
 .akta-collection-description {
   font-size: 16px;
@@ -83,7 +86,9 @@
 
   /* ------- CONTENT ------- */
 
-
+  .loox-rating {
+    margin-bottom: 5px;
+  }
   .akta-collection-grid-title {
     font-size: 16px;
     margin: 0 0 5px;
@@ -158,6 +163,24 @@
 }
 
 
+/* sold out badge  */
+span.akta-sold-out-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 1px solid #ebf2e8;
+  font-size: 13px;
+  width: auto;
+  border-radius: 14px;
+  height: 35px;
+  color: #fff;
+  line-height: 1;
+  z-index: 9;
+  background: #324a34;
+  padding: 8px 12px;
+  text-transform: uppercase;
+}
 /* ------- RESPONSIVE ------- */
 @media (max-width: 1279px) {
   .akta-collection-grid {    
@@ -174,8 +197,15 @@
   .akta-collection-pagination {    
     margin-top: 30px;
   }
+  .akta-collection-title {   
+    font-size: 32px;   
+    margin-bottom: 10px;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 575px) {
+   .akta-collection-title {   
+    font-size: 28px; 
+  }
   
 }
