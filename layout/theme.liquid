@@ -692,27 +692,36 @@
       document.addEventListener('DOMContentLoaded', function () {
         /**
          * Lazy load images when a trigger is clicked.
+         * Waits for container if it’s not yet in the DOM.
          * @param {string} triggerSelector - The element that triggers loading.
          * @param {string} containerSelector - The container holding lazy images.
          * @param {Function} [condition] - Optional condition before loading.
          */
         function lazyLoadOnClick(triggerSelector, containerSelector, condition) {
           const trigger = document.querySelector(triggerSelector);
-          const container = document.querySelector(containerSelector);
           let loaded = false;
 
-          if (trigger && container) {
-            trigger.addEventListener('click', function () {
-              if (!loaded && (!condition || condition())) {
-                const lazyImages = container.querySelectorAll('img[data-src]');
-                lazyImages.forEach((img) => {
-                  img.src = img.getAttribute('data-src');
-                  img.removeAttribute('data-src');
-                });
-                loaded = true; // prevent reloading
-              }
-            });
+          function tryAttach(retries = 10) {
+            const container = document.querySelector(containerSelector);
+
+            if (container) {
+              trigger?.addEventListener('click', function () {
+                if (!loaded && (!condition || condition())) {
+                  const lazyImages = container.querySelectorAll('img[data-src]');
+                  lazyImages.forEach((img) => {
+                    img.src = img.getAttribute('data-src');
+                    img.removeAttribute('data-src');
+                  });
+                  loaded = true; // prevent reloading
+                }
+              });
+            } else if (retries > 0) {
+              // Retry every 300ms until container exists or retries exhausted
+              setTimeout(() => tryAttach(retries - 1), 300);
+            }
           }
+
+          if (trigger) tryAttach();
         }
 
         // Use the function for each case
