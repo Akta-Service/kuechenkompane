@@ -179,11 +179,12 @@
 
 
 
-  {% comment %} @media (max-width: 600px){
-  .m-cart-drawer__inner {
-  width: 100% !important;
+  @media (max-width: 475px){
+    .m-cart-free-item__title {
+      font-size: 14px;
+    }
+
   }
-  } {% endcomment %}
 </style>
 <m-cart-drawer id="MinimogCartDrawer" class="m-cart-drawer{% if cart == empty %} m-cart--empty{% endif %} ">
   <div class="m-cart-drawer__inner m:h-full m-gradient m-color-{{ settings.color_scheme }}">
