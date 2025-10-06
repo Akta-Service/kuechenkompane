@@ -4636,6 +4636,7 @@ deferred-media {
   padding: 0 0.75rem;
   max-height: 0px;
   margin: 10px 0;
+  display: none;
 }
 .notification svg {
   min-width: 24px;
