@@ -19,112 +19,170 @@
   .x-cart-info-rule{
   display: none;
   }
-  .c_bootom_list li span { 
+  .c_bootom_list li span {
   font-size: {{ settings.b_text_size |  append: 'px' }};
   font-weight: {{ settings.t_font_weight }};
- }
- .upsell--product {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 20px;
-    background: #e9e9e933;
-    padding-bottom: 0;
- }
- .upsell--product__image {
-    width: 102px;
-    overflow: hidden;
-    min-width: 102px;
-}
-h4.upsell--product__title {
-    font-size: 16px;
-}
-.upsell--product__button {
-    width: 100%;
-}
-.price--wrapper {
-    display: flex;
-    gap: 10px;
-}
-p.upsell--product__price.compare--price {
-    text-decoration: line-through;
-}
-.upsell--product__content button {
-    padding: 6px 0px;
-    font-size: 14px;
-    background: #FF8E4F;
-}
+  }
+  .upsell--product {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: #e9e9e933;
+  padding-bottom: 0;
+  }
+  .upsell--product__image {
+  width: 102px;
+  overflow: hidden;
+  min-width: 102px;
+  }
+  h4.upsell--product__title {
+  font-size: 16px;
+  }
+  .upsell--product__button {
+  width: 100%;
+  }
+  .price--wrapper {
+  display: flex;
+  gap: 10px;
+  }
+  p.upsell--product__price.compare--price {
+  text-decoration: line-through;
+  }
+  .upsell--product__content button {
+  padding: 6px 0px;
+  font-size: 14px;
+  background: #FF8E4F;
+  }
 
 
-.point--count {
-    font-size: 14px;
-    position: relative;
-}
-.cart-points-summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
+  .point--count {
+  font-size: 14px;
+  position: relative;
+  }
+  .cart-points-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-weight: 700;
+  }
 
-.info-tooltip {
-    display: inline-block;
-    cursor: pointer;
-    margin-left: 5px;
+  .info-tooltip {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 5px;
   }
 
   .info-tooltip .tooltip-text {
-    visibility: hidden;
-    width: 260px;
-    background-color: #333;
-    color: #fff;
-    text-align: left;
-    padding: 10px;
-    border-radius: 5px;
-    position: absolute;
-    z-index: 100;
-    bottom: 125%; /* position above */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 13px;
-    line-height: 1.4;
+  visibility: hidden;
+  width: 260px;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 100;
+  bottom: 125%; /* position above */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 13px;
+  line-height: 1.4;
   }
 
   .info-tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
   }
 
   .info-tooltip .tooltip-icon {
-    background-color: #a1a1a1;
-    color: rgb(0, 0, 0);
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    padding: 2px 6px;
-    font-size: 10px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: #a1a1a1;
+  color: rgb(0, 0, 0);
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
 
-@media only screen and (max-width:768px){
+  @media only screen and (max-width:768px){
   .c_bootom_list li span {
-    font-size: {{ settings.b_text_size_m |  append: 'px' }};
- }
- .c_bootom_list li svg, .c_bootom_list li img {
-    width: 16px !important;
-    height: 16px !important;
- }
- .c_bootom_list li {    
-    gap: 3px;
- }
-  
-}
+  font-size: {{ settings.b_text_size_m |  append: 'px' }};
+  }
+  .c_bootom_list li svg, .c_bootom_list li img {
+  width: 16px !important;
+  height: 16px !important;
+  }
+  .c_bootom_list li {
+  gap: 3px;
+  }
+
+  }
+
+  .item--drawer__wrapper-free {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 7px;
+  }
+  .item--drawer__wrapper-free .m-cart-item--drawer__wrapper {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  }
+  .item--drawer__wrapper-free .m-cart-item__image.m-cart-drawer-item__image {
+  {% comment %}
+  border-right: 1px solid rgb(var(--color-border)); {% endcomment %}
+  border: none;
+  }
+  .item--drawer__wrapper-free s.m-price-item.m-price-item--regular {
+  color: red;
+  color: #b1b1b1;
+  }
+  .m-cart-item--drawer__wrapper{
+  position: relative;
+  }
+  .free-item-badge {
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  z-index: 99;
+  background: #000;
+  font-size: 12px;
+  padding: 3px 7px;
+  border-radius: 20px;
+  color: #fff;
+  }
+  .free-item  span.m-cart-item__price--regular {
+  font-weight: 700;
+  }
+
+  .free-item .m-cart-item__title {
+  font-weight: 700;
+  }
+  .m-cart-drawer__footer.cart--free-only {
+    display: none;
+  }
+  .com-price {
+    color: #b1b1b1;
+  }
+  p.free-product-info {
+    font-size: 14px;
+  }
+
+
+
+  @media (max-width: 600px){
+  .m-cart-drawer__inner {
+  width: 100% !important;
+  }
+  }
 </style>
 <m-cart-drawer id="MinimogCartDrawer" class="m-cart-drawer{% if cart == empty %} m-cart--empty{% endif %} ">
   <div class="m-cart-drawer__inner m:h-full m-gradient m-color-{{ settings.color_scheme }}">
@@ -150,7 +208,6 @@ p.upsell--product__price.compare--price {
 
       {% assign total_points = 0 %}
 
-
       <m-cart-drawer-items
         data-minimog-cart-items
         class="m-cart-drawer__body m-scrollbar--vertical m:flex m:flex-col m:flex-1"
@@ -159,24 +216,48 @@ p.upsell--product__price.compare--price {
           {% render 'cart-drawer-empty' %}
         {% endif %}
 
-       
-
         {% if cart.total_price > 0 %}
           {% render 'cart-free-add-on' %}
         {% endif %}
-
-    
 
         <form action="{{ routes.cart_url }}" method="post" id="cart-drawer-form" class="m:w-full" novalidate>
           {%- if cart.items.size > 0 -%}
             <div class="m-cart-drawer__items">
               {% for item in cart.items %}
-                {% render 'cart-drawer-item',
-                  item: item,
-                  gift_wrap_id: gift_wrap_id,
-                  gift_wraps_in_cart: gift_wraps_in_cart,
-                  items_in_cart: items_in_cart
+                {% unless item.product.id == settings.cart_free_product_1.id
+                  or item.product.id == settings.cart_free_product_2.id
+                  or item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
+                  or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
                 %}
+                  {% render 'cart-drawer-item',
+                    item: item,
+                    items_in_cart: items_in_cart,
+                    gift_wrap_id: gift_wrap_id,
+                    gift_wraps_in_cart: gift_wraps_in_cart
+                  %}
+                {% endunless %}
+              {% endfor %}
+
+              {% for item in cart.items %}
+                {% if item.product.id == settings.cart_free_product_1.id
+                  or item.product.id == settings.cart_free_product_2.id
+                  or item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
+                  or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
+                %}
+                  {% if cart.total_price > 0 %}
+                    {% render 'cart-drawer-item-free',
+                      item: item,
+                      items_in_cart: items_in_cart,
+                      gift_wrap_id: gift_wrap_id,
+                      gift_wraps_in_cart: gift_wraps_in_cart,
+                      custom_class: 'free-item'
+                    %}
+                  {% else %}
+                    <div class="">
+                      {% render 'cart-drawer-empty' %}
+                    </div>
+                  {% endif %}
+                {% endif %}
               {% endfor %}
             </div>
           {%- else -%}
@@ -189,83 +270,78 @@ p.upsell--product__price.compare--price {
           {% render 'cart-addons', form_id: 'cart-drawer-form' %}
           {% render 'cart-cross-sell' %}
 
+          {% if cart.item_count > 0 %}
+            {%- assign up_product = settings.upsell__product -%}
 
-              {% if cart.item_count > 0 %}
-                {%- assign up_product = settings.upsell__product -%}
+            {% assign show_upsell = true %}
+            {%- for item in cart.items -%}
+              {% if item.product.id == up_product.id %}
+                {% assign show_upsell = false %}
+              {% endif %}
+            {%- endfor -%}
 
-                {% assign show_upsell = true %}
-                {%- for item in cart.items -%}
-                  {% if item.product.id == up_product.id %}
-                    {% assign show_upsell = false %}
-                  {% endif %}
-                {%- endfor -%}
-
-
-                {%- if up_product != blank and show_upsell-%} 
-
-                <h6>Die perfekte Ergänzung:</h6>
-                <div class="upsell--product">                              
-                  <div class="upsell--product__image">
-                    <a href="{{ up_product.url }}" class="upsell--product__link">
-                      <img
-                        src="{{ up_product.featured_image | img_url: '400x' }}"
-                        alt="{{ up_product.title }}"
-                        loading="lazy"
-                        width=""
-                        height=""
-                      >
-                    </a>
-                  </div>
-                  <div class="upsell--product__content">
-                    <h6 class="upsell--product__title">{{ up_product.title }}</h6>
-                    <div class="price--wrapper">
-                      <p class="upsell--product__price">{{ up_product.price | money }}</p>
-                      {% if up_product.price < up_product.compare_at_price %}
-                      <p class="upsell--product__price compare--price">{{ up_product.compare_at_price | money }}</p>
-                      {% endif %}
-                    </div>
-                    <product-form data-product-id="{{ up_product.id }}">
-                    {%- form 'product', up_product, novalidate: 'novalidate' -%}
-                    <input type="hidden" name="id" value="{{ up_product.selected_or_first_available_variant.id }}">
-                    <button
-                      type="submit"
-                      class="m-add-to-cart m-button m-button--primary {% unless up_product.selected_or_first_available_variant.available %}disabled{% endunless %} upsell--product__button"
+            {%- if up_product != blank and show_upsell -%}
+              <h6>Die perfekte Ergänzung:</h6>
+              <div class="upsell--product">
+                <div class="upsell--product__image">
+                  <a href="{{ up_product.url }}" class="upsell--product__link">
+                    <img
+                      src="{{ up_product.featured_image | img_url: '400x' }}"
+                      alt="{{ up_product.title }}"
+                      loading="lazy"
+                      width=""
+                      height=""
                     >
-                    <span class="m-spinner-icon">
-                      <svg
-                        class="animate-spin m-svg-icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                    </span>
-                      <span class="m-add-to-cart--text">
-                        {% if up_product.selected_or_first_available_variant.available %}
-                          Hinzufügen
-                        {% else %}
-                          {{ 'products.product.sold_out' | t }}
-                        {% endif %}
-                      </span>
-                    </button>
-                    {%- endform -%}
-                    </product-form>
-
-                  </div>
+                  </a>
                 </div>
-              {%- endif -%}
-            {% endif %}
-
+                <div class="upsell--product__content">
+                  <h6 class="upsell--product__title">{{ up_product.title }}</h6>
+                  <div class="price--wrapper">
+                    <p class="upsell--product__price">{{ up_product.price | money }}</p>
+                    {% if up_product.price < up_product.compare_at_price %}
+                      <p class="upsell--product__price compare--price">{{ up_product.compare_at_price | money }}</p>
+                    {% endif %}
+                  </div>
+                  <product-form data-product-id="{{ up_product.id }}">
+                    {%- form 'product', up_product, novalidate: 'novalidate' -%}
+                      <input type="hidden" name="id" value="{{ up_product.selected_or_first_available_variant.id }}">
+                      <button
+                        type="submit"
+                        class="m-add-to-cart m-button m-button--primary {% unless up_product.selected_or_first_available_variant.available %}disabled{% endunless %} upsell--product__button"
+                      >
+                        <span class="m-spinner-icon">
+                          <svg
+                            class="animate-spin m-svg-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                        </span>
+                        <span class="m-add-to-cart--text">
+                          {% if up_product.selected_or_first_available_variant.available %}
+                            Hinzufügen
+                          {% else %}
+                            {{ 'products.product.sold_out' | t }}
+                          {% endif %}
+                        </span>
+                      </button>
+                    {%- endform -%}
+                  </product-form>
+                </div>
+              </div>
+            {%- endif -%}
+          {% endif %}
         {% endif %}
-
       </m-cart-drawer-items>
- 
-      <div class="m-cart-drawer__footer" id="MinimogCartDrawerFooter">   
-      
 
-      
+      <div
+        class="m-cart-drawer__footer "
+
+        id="MinimogCartDrawerFooter"
+      >
         {% # render 'cart-addons', form_id: 'cart-drawer-form' %}
         <div class="m-cart-drawer__gift-wrapping" data-minimog-gift-wrapping>
           {%- if gift_wrapping != null -%}
@@ -346,16 +422,13 @@ p.upsell--product__price.compare--price {
             {%- endif -%}
           </div>
 
-
-
-          
-           {% assign eligible_collections = settings.eligible_collections | split: ',' %}
+          {% assign eligible_collections = settings.eligible_collections | split: ',' %}
           {% assign conversion_rate = settings.points_rate %}
           {% assign total_points = 0 %}
-          
+
           {% for item in cart.items %}
             {% assign from_collection = item.properties.From_Collection | strip %}
-          
+
             {% if eligible_collections contains from_collection %}
               {% assign price = item.variant.price %}
               {% assign single_points = price | divided_by: 100 | divided_by: conversion_rate %}
@@ -363,17 +436,15 @@ p.upsell--product__price.compare--price {
               {% assign total_points = total_points | plus: points %}
             {% endif %}
           {% endfor %}
-          
+
           {% if total_points > 0 %}
             <div class="cart-points-summary" data-point>
-             {{ settings.total_points }} {{ total_points }}
+              {{ settings.total_points }}
+              {{ total_points }}
             </div>
           {% else %}
-                <div class="cart-points-summary" data-point>
-                
-            </div>
+            <div class="cart-points-summary" data-point></div>
           {% endif %}
-
 
           {% assign total_compare_at_price = 0 %}
           {% for item in cart.items %}
@@ -383,14 +454,12 @@ p.upsell--product__price.compare--price {
             {% endif %}
           {% endfor %}
 
-
-
-          <div class="m-cart__subtotal m:flex m:justify-between" data-cart-subtotal>
+          <div
+            class="m-cart__subtotal m:flex m:justify-between"
+            data-cart-subtotal
+          >
             <span class="m-cart__subtotal--label m:font-medium">{{ 'cart.general.subtotal' | t }}</span>
             <div>
-              {% if cart.total_price < total_compare_at_price %}
-                <span class="total-compare m-cart__subtotal--price m:font-medium">{{ total_compare_at_price | money }}</span>
-              {% endif %}
               <span class="m-cart__subtotal--price m:font-medium" data-cart-subtotal-price>
                 {% if settings.currency_code_enabled %}
                   {{ cart.total_price | money_with_currency }}
@@ -398,12 +467,13 @@ p.upsell--product__price.compare--price {
                   {{ cart.total_price | money }}
                 {% endif %}
               </span>
-              
+              {% if cart.total_price < total_compare_at_price %}
+                <span class="total-compare m-cart__subtotal--price m:font-medium">
+                  {{- total_compare_at_price | money -}}
+                </span>
+              {% endif %}
             </div>
           </div>
-
-
-          
         </div>
         <div class="m:flex m:flex-col m:items-center">
           {% assign show_terms = false %}
@@ -463,21 +533,21 @@ p.upsell--product__price.compare--price {
         <div class="c_bootom_list">
           <ul>
             <li>
-              <span>   
-                {% if  settings.list_img_2 != blank %}            
-                <img src="{{ settings.list_img_1 | img_url: 'master' }}"  loading="lazy"  alt="icon">
+              <span>
+                {% if settings.list_img_2 != blank %}
+                  <img src="{{ settings.list_img_1 | img_url: 'master' }}" loading="lazy" alt="icon">
                 {% elsif settings.list_svg_1 != blank %}
                   {{ settings.list_svg_1 }}
-              {% endif %}
-              </span>             
+                {% endif %}
+              </span>
               <span>
                 {{ settings.list_1 }}
               </span>
             </li>
             <li>
               <span>
-                {% if  settings.list_img_2 != blank %}
-                <img src="{{ settings.list_img_2 | img_url: 'master' }}" loading="lazy"  alt="icon">
+                {% if settings.list_img_2 != blank %}
+                  <img src="{{ settings.list_img_2 | img_url: 'master' }}" loading="lazy" alt="icon">
                 {% elsif settings.list_svg_2 != blank %}
                   {{ settings.list_svg_2 }}
                 {% endif %}
@@ -489,13 +559,12 @@ p.upsell--product__price.compare--price {
           </ul>
         </div>
       </div>
+
       <div class="m-cart__overlay"></div>
     </div>
   </div>
 </m-cart-drawer>
-    <link rel="stylesheet" href="{{ 'cart-drawer-custom.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'cart-drawer-custom.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <!-- {{ '' | asset_url | stylesheet_tag }} -->
 <script src="{{ 'cart-drawer-custom.js' | asset_url }}" defer="defer"></script>
-
-
