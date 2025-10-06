@@ -68,9 +68,10 @@
             {% endif %}
 
             <a href="{{ product.url }}">
-              {%- if product.featured_image -%}
+              {%- if section.settings.use_metafield_image and product.metafields.custom.product_image != blank -%}
+                <!-- Show main image from metafield -->
                 <img
-                  src="{{ product.featured_image | image_url }}"
+                  src="{{ product.metafields.custom.product_image | image_url }}"
                   alt="{{ product.title }}"
                   class="akta-collection-grid-image akta-image-default"
                   width="100%"
@@ -81,8 +82,25 @@
                     loading="lazy"
                   {% endif %}
                 >
+              {%- else -%}
+                <!-- Show normal featured image -->
+                {%- if product.featured_image -%}
+                  <img
+                    src="{{ product.featured_image | image_url }}"
+                    alt="{{ product.title }}"
+                    class="akta-collection-grid-image akta-image-default"
+                    width="100%"
+                    height=""
+                    {% if forloop.index <= 4 %}
+                      loading="eager" fetchpriority="high"
+                    {% else %}
+                      loading="lazy"
+                    {% endif %}
+                  >
+                {%- endif -%}
               {%- endif -%}
 
+              <!-- Hover image always comes from product.images[1] -->
               {%- if section.settings.hover_second_image and product.images.size > 1 -%}
                 <img
                   src="{{ product.images[1] | image_url }}"
@@ -99,6 +117,7 @@
               {%- endif -%}
             </a>
           </div>
+
           <div class="akta-collection-grid-content">
             {% if section.settings.show_product_ratings %}
               <div
@@ -226,6 +245,17 @@
       "step": 1,
       "default": 20
     },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_metafield_image",
+      "label": "Use Metafield Image",
+      "default": false
+    },
+
     {
       "type": "checkbox",
       "id": "hover_second_image",
