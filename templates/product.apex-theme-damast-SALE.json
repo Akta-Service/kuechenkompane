@@ -22,9 +22,7 @@
         "timer_text": "GEBURTSTAGS-AKTION - Bis zu 75% Rabatt!",
         "timer_font_size": 14,
         "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-05-09",
-        "target_time": "00:00:00"
+        "timer_font_weight": "400"
       }
     },
     "main": {
@@ -102,7 +100,7 @@
             "p_pt_m": 5,
             "p_pb_m": 5,
             "price_color": "#000000",
-            "c_price_color": "#bbbbbb",
+            "c_price_color": "#b1b1b1",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 22,
