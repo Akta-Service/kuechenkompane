@@ -111,7 +111,9 @@
   }
   span.akta-collection-grid-compare {
     color: #bc1e1e;
+    color: #b1b1b1;
     font-size: 14px;
+    text-decoration: line-through;
   }
 
   /* ==============================
