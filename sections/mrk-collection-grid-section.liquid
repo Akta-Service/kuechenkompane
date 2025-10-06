@@ -61,8 +61,13 @@
     <div class="akta-collection-grid">
       {% for product in current_collection.products %}
         <div class="akta-collection-grid-item">
-          <a href="{{ product.url }}" class="akta-collection-grid-link">
-            <div class="akta-collection-grid-image-wrapper">
+          <div class="akta-collection-grid-image-wrapper">
+            {% if product.available %}
+            {% else %}
+              <span class="akta-sold-out-badge">Ausverkauft</span>
+            {% endif %}
+
+            <a href="{{ product.url }}">
               {%- if product.featured_image -%}
                 <img
                   src="{{ product.featured_image | image_url }}"
@@ -92,22 +97,34 @@
                   {% endif %}
                 >
               {%- endif -%}
-            </div>
-            <div class="akta-collection-grid-content">
+            </a>
+          </div>
+          <div class="akta-collection-grid-content">
+            {% if section.settings.show_product_ratings %}
+              <div
+                class="loox-rating"
+                data-id="{{ product.id }}"
+                data-rating="{{ product.metafields.loox.avg_rating }}"
+                data-raters="{{ product.metafields.loox.num_reviews }}"
+              ></div>
+            {% endif %}
+
+            <a href="{{ product.url }}">
               <h3 class="akta-collection-grid-title">{{ product.title }}</h3>
-              <div class="akta-collection-grid-prices">
-                {% if product.compare_at_price > product.price %}
-                  <span class="akta-collection-grid-price">{{ product.price | money }}</span>
-                  <span class="akta-collection-grid-compare">{{ product.compare_at_price | money }}</span>
-                {% else %}
-                  <span class="akta-collection-grid-price">{{ product.price | money }}</span>
-                {% endif %}
-              </div>
-              {% if section.settings.show_stock_status %}
-                {% render 'stock-count-status', product: product, custom_class: 'ml-15 collection-stock' %}
+            </a>
+
+            <div class="akta-collection-grid-prices">
+              {% if product.compare_at_price > product.price %}
+                <span class="akta-collection-grid-price">{{ product.price | money }}</span>
+                <span class="akta-collection-grid-compare">{{ product.compare_at_price | money }}</span>
+              {% else %}
+                <span class="akta-collection-grid-price">{{ product.price | money }}</span>
               {% endif %}
             </div>
-          </a>
+            {% if section.settings.show_stock_status %}
+              {% render 'stock-count-status', product: product, custom_class: 'ml-15 collection-stock' %}
+            {% endif %}
+          </div>
         </div>
       {% endfor %}
     </div>
@@ -213,7 +230,7 @@
       "type": "checkbox",
       "id": "hover_second_image",
       "label": "Enable Hover 2nd Image",
-      "default": true
+      "default": false
     },
     {
       "type": "header",
@@ -234,6 +251,16 @@
           "label": "Square"
         }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Ratings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_ratings",
+      "label": "Show Product Ratings",
+      "default": false
     },
     {
       "type": "header",
