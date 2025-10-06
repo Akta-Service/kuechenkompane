@@ -723,5 +723,137 @@
     </script>
 
     <script src="{{ 'stock-count-status.js' | asset_url }}" defer></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        function getCartCountAdjusted() {
+          return fetch('/cart.js')
+            .then((res) => res.json())
+            .then((cart) => {
+              const totalItems = cart.item_count;
+              const paidItems = cart.items.filter((item) => item.final_price > 0);
+              const paidCount = paidItems.reduce((sum, item) => sum + item.quantity, 0);
+
+              // If only free products exist (no paid ones), show count as 0
+              const count = paidCount === 0 ? 0 : totalItems;
+              console.log('Cart count (adjusted):', count, 'Paid items:', paidCount, 'Total:', totalItems);
+
+              // Update footer class
+              const footer = document.getElementById('MinimogCartDrawerFooter');
+              if (footer) {
+                if (!hasPaidItems(cart) && cart.item_count > 0) {
+                  footer.classList.add('cart--free-only');
+                  console.log('Footer class added: cart--free-only');
+                } else {
+                  footer.classList.remove('cart--free-only');
+                  console.log('Footer class removed');
+                }
+              }
+
+              return count;
+            });
+        }
+
+        function hasPaidItems(cart) {
+          return cart.items.some((item) => item.final_price > 0);
+        }
+
+        function updateCartBubbles() {
+          getCartCountAdjusted().then((count) => {
+            document.querySelectorAll('.m-cart-count-bubble').forEach((bubble) => {
+              bubble.textContent = count;
+              if (count === 0) {
+                bubble.classList.add('m:hidden');
+              } else {
+                bubble.classList.remove('m:hidden');
+              }
+            });
+          });
+        }
+
+        // Observe cart bubble changes dynamically
+        const observer = new MutationObserver(() => updateCartBubbles());
+
+        const startObserver = () => {
+          document.querySelectorAll('.m-cart-count-bubble').forEach((bubble) => {
+            observer.observe(bubble, { childList: true, characterData: true, subtree: true });
+          });
+        };
+
+        updateCartBubbles();
+        startObserver();
+
+        // Also update when Shopify triggers cart updates
+        document.addEventListener('cart:updated', updateCartBubbles);
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        async function getCart() {
+          console.log("Fetching current cart...");
+          const res = await fetch("/cart.js");
+          return await res.json();
+        }
+
+        async function addFreeProducts(variantIds) {
+          console.log("Adding these free variants:", variantIds);
+          const res = await fetch("/cart/add.js", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              items: variantIds.map(id => ({ id, quantity: 1 }))
+            })
+          });
+          if (res.ok) {
+            console.log("Free product(s) added successfully.");
+            const cartDrawer = document.querySelector("m-cart-drawer");
+            if (cartDrawer && typeof cartDrawer.onCartDrawerUpdate === "function") {
+              console.log("Refreshing cart drawer view...");
+              {% comment %} cartDrawer.onCartDrawerUpdate(); {% endcomment %}
+            }
+          } else {
+            console.log("Error adding free product(s):", res.status);
+          }
+        }
+
+        async function initFreeProductCheck() {
+          // Only variant IDs are used here
+          const FREE_PRODUCTS = [
+            {{ settings.cart_free_product_1.selected_or_first_available_variant.id | default: 'null' }},
+            {{ settings.cart_free_product_2.selected_or_first_available_variant.id | default: 'null' }},
+            {{ settings.eadn_free_product_1.selected_or_first_available_variant.id | default: 'null' }},
+            {{ settings.eadn_free_product_2.selected_or_first_available_variant.id | default: 'null' }}
+          ].filter(id => id !== null);
+
+          console.log("Free variant IDs from settings:", FREE_PRODUCTS);
+
+          if (FREE_PRODUCTS.length === 0) {
+            console.log("No free product variant IDs found in settings.");
+            return;
+          }
+
+          const cart = await getCart();
+          console.log("Cart items:", cart.items);
+
+          const cartVariantIds = cart.items.map(item => item.variant_id.toString());
+          console.log("Cart variant IDs:", cartVariantIds);
+
+          const missingFreeProducts = FREE_PRODUCTS.filter(
+            id => !cartVariantIds.includes(id.toString())
+          );
+
+          if (missingFreeProducts.length === 0) {
+            console.log("All free products already exist in cart. Nothing to add.");
+            return;
+          }
+
+          console.log("Missing free variants:", missingFreeProducts);
+          await addFreeProducts(missingFreeProducts);
+        }
+
+        initFreeProductCheck();
+      });
+    </script>
   </body>
 </html>
