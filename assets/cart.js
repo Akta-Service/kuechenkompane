@@ -289,64 +289,64 @@ class MCartTemplate extends HTMLElement {
     }
   }
 
-  async handleUpdateExtranAddOn(action) {
-    console.log("action----------", action)
-    const endpoint = action === "add" ? "/cart/add.js" : "/cart/change.js";
-    if(action === "add") {
-      var body = {
-            items: [
-              {
-                id: Shopify.cart_drawer.extraAddon.freeProduct1,
-                quantity: 1,
-              },
-              {
-                id: Shopify.cart_drawer.extraAddon.freeProduct2,
-                quantity: 1,
-              },
-            ],
-          }
-    } else if(action === "update") {
-      var body = {
-            items: [
-              {
-                id: Shopify.cart_drawer.extraAddon.freeProduct1,
-                quantity: 1,
-              },
-              {
-                id: Shopify.cart_drawer.extraAddon.freeProduct2,
-                quantity: 1,
-              },
-            ],
-          }
-    } else {
-      var body = {
-            items: [
-              {
-                id: Shopify.cart_drawer.extraAddon.freeProduct1,
-                quantity: 0,
-              },
-              {
-                id: Shopify.cart_drawer.extraAddon.freeProduct2,
-                quantity: 0,
-              },
-            ],
-          }
-    }
+  // async handleUpdateExtranAddOn(action) {
+  //   console.log("action----------", action)
+  //   const endpoint = action === "add" ? "/cart/add.js" : "/cart/change.js";
+  //   if(action === "add") {
+  //     var body = {
+  //           items: [
+  //             {
+  //               id: Shopify.cart_drawer.extraAddon.freeProduct1,
+  //               quantity: 1,
+  //             },
+  //             {
+  //               id: Shopify.cart_drawer.extraAddon.freeProduct2,
+  //               quantity: 1,
+  //             },
+  //           ],
+  //         }
+  //   } else if(action === "update") {
+  //     var body = {
+  //           items: [
+  //             {
+  //               id: Shopify.cart_drawer.extraAddon.freeProduct1,
+  //               quantity: 1,
+  //             },
+  //             {
+  //               id: Shopify.cart_drawer.extraAddon.freeProduct2,
+  //               quantity: 1,
+  //             },
+  //           ],
+  //         }
+  //   } else {
+  //     var body = {
+  //           items: [
+  //             {
+  //               id: Shopify.cart_drawer.extraAddon.freeProduct1,
+  //               quantity: 0,
+  //             },
+  //             {
+  //               id: Shopify.cart_drawer.extraAddon.freeProduct2,
+  //               quantity: 0,
+  //             },
+  //           ],
+  //         }
+  //   }
 
-    await fetch(endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
+  //   await fetch(endpoint, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(body),
+  //   });
 
-    this.loading.finish();
-    const cartDrawer = document.querySelector("m-cart-drawer");
-    if (cartDrawer) {
-      console.log("update card drawer-----------");
-      cartDrawer.onCartDrawerUpdate();
-      this.reInitCCS();
-    }
-  }
+  //   this.loading.finish();
+  //   const cartDrawer = document.querySelector("m-cart-drawer");
+  //   if (cartDrawer) {
+  //     console.log("update card drawer-----------");
+  //     cartDrawer.onCartDrawerUpdate();
+  //     this.reInitCCS();
+  //   }
+  // }
 
   async addOrRemoveAddOnProduct(config, cart) {
     const cartTotal = cart.total_price / 100;
