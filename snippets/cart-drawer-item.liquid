@@ -5,7 +5,7 @@
   data-product-id="{{- item.product_id -}}"
   data-index="{{- forloop.index -}}"
 >
-  <div class="m-cart-item--drawer__wrapper m:flex m:items-start">
+  <div class="m-cart-item--drawer__wrapper m:flex m:items-start {{ custom_class }}">
     <div class="m-cart-drawer-item__image m-cart-item__image m:blocks-radius-md">
       {% if item.product.id == settings.cart_free_product_1.id
         or item.product.id == settings.cart_free_product_2.id
@@ -164,7 +164,7 @@
             {% assign product_upsell = all_products[handle] %}
 
             {% assign compare_price = product_upsell.compare_at_price %}
-            <s class="m-price-item m-price-item--regular">
+            <s class="m-price-item m-price-item--regular com-price">
               {% if settings.currency_code_enabled %}
                 {{- compare_price | money_with_currency -}}
               {% else %}
