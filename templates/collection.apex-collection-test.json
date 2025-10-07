@@ -212,6 +212,7 @@
         "section_description": "Explore our best-selling products.",
         "collection": "",
         "products_limit": 35,
+        "use_metafield_image": false,
         "hover_second_image": false,
         "pagination_style": "circle",
         "show_product_ratings": false,
@@ -260,7 +261,7 @@
           "type": "promotion",
           "settings": {
             "subheading": "DEINE CHANCE AUF",
-            "heading": "75%",
+            "heading": "-80%",
             "text_alignment": "center"
           }
         }
@@ -272,9 +273,9 @@
       "settings": {
         "container": "container-fluid",
         "color_scheme": "",
-        "heading": "AUSVERKAUF VON RESTBESTÄNDEN",
+        "heading": "BLACK FRIDAY ANGEBOTE",
         "heading_size": "h2",
-        "text": "<p>Jetzt Restbestände zum Vorteilspreis: Spare bis zu <strong>75 % </strong>auf ausgewählte Artikel – nur solange der Vorrat reicht oder bis Preise angehoben werden.</p>",
+        "text": "<p>Wir starten unsere besten Black-Friday Deals vor allen anderen. Es gelten Preisphasen statt Dauerrabatte.<strong> </strong>Unsere Angebote wechseln jeden Tag. Wer früh zuschlägt, spart am meisten.</p>",
         "content_alignment": "left",
         "banner_url": "shopify://collections/ausverkauf-von-restbestanden",
         "button_label": "Angebote entdecken",
