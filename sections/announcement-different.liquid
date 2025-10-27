@@ -1,46 +1,46 @@
 <style>
-  /* common css end  */
-  .announcement-container {
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
+    /* common css end  */
+    .announcement-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
 
-  .announcement-bar.bar-{{section.id}} {   
-    padding-top: {{ section.settings.pt}}px;
-    padding-bottom: {{ section.settings.pb}}px;
-  }
+    .announcement-bar.bar-{{section.id}} {
+      padding-top: {{ section.settings.pt}}px;
+      padding-bottom: {{ section.settings.pb}}px;
+    }
 
-  .announcement-bar-content {
-    text-align: center;
-  }
-.ann_title{
-  font-size: {{- section.settings.ann_title_size -}}px;   
-}
-  .announcement-bar-content strong {   
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  .announcement-bar-content p {
-    font-size: {{ section.settings.text_size }}px;    
-    line-height: 1;
-  }
-@media only screen and (max-width: 768px){
-  .announcement-bar-content p {
-    font-size: {{ section.settings.text_size_m }}px;   
-  }
+    .announcement-bar-content {
+      text-align: center;
+    }
   .ann_title{
-  font-size: {{- section.settings.ann_title_size_m -}}px;  
-}
-}
-{% if section.settings.sticky_top %}
-.apex-Announcement-sticky{
-  position: sticky;
-  top: {{ section.settings.top_px }}px;
-  z-index: 99999;
-}
-{% endif %}
+    font-size: {{- section.settings.ann_title_size -}}px;
+  }
+    .announcement-bar-content strong {
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .announcement-bar-content p {
+      font-size: {{ section.settings.text_size }}px;
+      line-height: 1;
+    }
+  @media only screen and (max-width: 768px){
+    .announcement-bar-content p {
+      font-size: {{ section.settings.text_size_m }}px;
+    }
+    .ann_title{
+    font-size: {{- section.settings.ann_title_size_m -}}px;
+  }
+  }
+  {% if section.settings.sticky_top %}
+  .apex-Announcement-sticky{
+    position: sticky;
+    top: {{ section.settings.top_px }}px;
+    z-index: 99999;
+  }
+  {% endif %}
 </style>
 
 {% assign show_announcement = false %}
@@ -62,9 +62,13 @@
         {{ current_block.settings.text }}
       </div>
     </div>
+    {% if section.settings.show_button and section.settings.button_position == 'bottom' %}
+      <div class="button-wrap">
+        <a href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
+      </div>
+    {% endif %}
   </div>
 {% endif %}
-
 
 {% if section.settings.enable_scroll_to_show %}
   <script>
@@ -82,18 +86,16 @@
   </script>
 {% endif %}
 
-
 {% schema %}
 {
-  "name": "APEX Different Ann",  
-  "settings": [    
-
+  "name": "APEX Different Ann",
+  "settings": [
     {
       "type": "checkbox",
       "id": "enable_scroll_to_show",
       "label": "Scroll To Show Announcement",
       "default": false
-    }, 
+    },
     {
       "type": "number",
       "id": "px_to_show",
@@ -111,12 +113,12 @@
       "id": "sticky_top",
       "label": "Sticky Announcement",
       "default": false
-    }, 
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
-    },  
+    },
     {
       "type": "range",
       "id": "pt",
@@ -138,7 +140,7 @@
     {
       "type": "header",
       "content": "Title"
-    },   
+    },
     {
       "type": "range",
       "id": "ann_title_size",
@@ -160,7 +162,7 @@
     {
       "type": "header",
       "content": "Text"
-    },    
+    },
     {
       "type": "range",
       "id": "text_size",
@@ -178,7 +180,7 @@
       "min": 10,
       "max": 30,
       "step": 1
-    } 
+    }
   ],
   "blocks": [
     {
