@@ -365,7 +365,11 @@
         "ann_title_size": 16,
         "ann_title_size_m": 16,
         "text_size": 16,
-        "text_size_m": 16
+        "text_size_m": 16,
+        "show_button": true,
+        "button_position": "bottom",
+        "btn_text": "Learn more",
+        "btn_link": ""
       }
     },
     "apex_timer_progress_yCDcUj": {
