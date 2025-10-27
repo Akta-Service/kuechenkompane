@@ -61,6 +61,11 @@
         </strong>
         {{ current_block.settings.text }}
       </div>
+      {% if section.settings.show_button and section.settings.button_position == 'right_side' %}
+        <div class="button-wrap">
+          <a href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
+        </div>
+      {% endif %}
     </div>
     {% if section.settings.show_button and section.settings.button_position == 'bottom' %}
       <div class="button-wrap">
