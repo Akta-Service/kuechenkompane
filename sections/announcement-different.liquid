@@ -41,6 +41,15 @@
     z-index: 99999;
   }
   {% endif %}
+
+  {% if section.settings.button_position == 'right_side' %}
+    .announcement-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+  {% endif %}
 </style>
 
 {% assign show_announcement = false %}
