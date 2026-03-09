@@ -108,7 +108,7 @@
         "target_collections": [
           "interner-deal",
           "lagerumzug-sale",
-          "testttt",
+          "grossbestellung-storniert-1",
           "vor-der-preiserhohung",
           "topdeal24-angebot",
           "bestseller",
@@ -227,7 +227,7 @@
         "announcement_FDAfCN": {
           "type": "announcement",
           "settings": {
-            "collection": "testttt",
+            "collection": "grossbestellung-storniert-1",
             "ann_title": "❌ Großbestellung geplatzt – jetzt profitierst du",
             "text": "<p>Bis zu 75 % auf echte Bestseller</p>"
           }
