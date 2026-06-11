@@ -1,5 +1,3 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-
 window.cart_cross_sell_swiper = () => {
   if (document.querySelector(".ccs-swiper")) {
     new Swiper(".ccs-swiper", {
@@ -29,4 +27,3 @@ document.addEventListener("DOMContentLoaded", (e) => {
   cart_cross_sell_swiper();
 });
 
-});

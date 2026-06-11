@@ -1,0 +1,51 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "akta_page_header_7kzFVF": {
+      "type": "akta-page-header",
+      "name": "APex Page Header",
+      "settings": {
+        "show_title": true,
+        "custom_title": "Jetzt anmelden!",
+        "show_subtitle": false,
+        "custom_subtitle": "subtitle",
+        "text_align": "center"
+      }
+    },
+    "apex_vip_sale_banner_zQ6Tp6": {
+      "type": "apex-vip-sale-banner",
+      "name": "APEX VIP Sale Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/250719-peachyogurt-vip-presale-2400px-signuppage.jpg",
+        "mobile_image": "shopify://shop_images/250719-peachyogurt-vip-presale-750px-signuppage.jpg"
+      }
+    },
+    "custom_liquid_gm6A4k": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"klaviyo-form-Wzdgzf\"></div>",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "akta_page_header_7kzFVF",
+    "apex_vip_sale_banner_zQ6Tp6",
+    "custom_liquid_gm6A4k"
+  ]
+}

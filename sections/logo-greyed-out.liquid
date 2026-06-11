@@ -1,4 +1,3 @@
-
 <style>
   /* logo-greyed-out-section */
   .logo-greyed-out-section {
@@ -106,34 +105,5 @@
 }
 {% endschema %}
 
-
 <!-- Initialize Swiper -->
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-  const swiper_logo = new Swiper('.logo-greyed-out-slider', {
-    slidesPerView: 6,
-    centeredSlides: true,
-    loop: true,
-    spaceBetween: 5,
-    grabCursor: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false, // Keeps autoplay running after user interaction
-  },
-    breakpoints: {
-      0: {
-        slidesPerView: 3,
-        spaceBetween: 0,
-      },
-      768: {
-        slidesPerView: 6,
-        spaceBetween: 5,
-      },
-      1024: {
-        slidesPerView: 6,
-        spaceBetween: 5,
-      },
-    },
-  });
-  });
-</script>
+<script src="{{ 'logo-greyed-out-slider.js' | asset_url }}" defer></script>
