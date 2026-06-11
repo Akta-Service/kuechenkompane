@@ -1,6 +1,9 @@
 <style>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 727904ae2a03b5daa0b63a32aad8464d0c19913d
   /* common css end  */
   .category-area {
     padding: 60px 0;
@@ -148,11 +151,18 @@
             <div class="cart-inner-wrapper">
               {% if block.settings.collection_img != blank %}
                 <div class="category-img">
-                  <a href="{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}">
+                  <a
+                    href="{% if block.settings.custom_url != blank %}{{ block.settings.custom_url }}{% else %}{{ collection.url }}{% endif %}"
+                    aria-label="{{ collection.title | escape }}"
+                  >
                     <img
                       src="{{ block.settings.collection_img |  img_url: 'master' }}"
                       loading="lazy"
+<<<<<<< HEAD
                       alt=""
+=======
+                      alt="{{ collection.title | escape }}"
+>>>>>>> 727904ae2a03b5daa0b63a32aad8464d0c19913d
                     >
                   </a>
                 </div>

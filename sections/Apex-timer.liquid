@@ -1,7 +1,7 @@
 <style>
   .rs_timerwrapper {
     text-align: center;
-    padding: 15px;   
+    padding: 15px;
     color: white;
     text-transform: uppercase;
     font-weight: 700;
@@ -33,15 +33,15 @@
     display: inline-block;
     line-height: 1;
     margin-right: 5px;
-   
+
     width: fit-content;
     letter-spacing: 0.5px;
-   
-    
+
+
     font-family: "Roboto", sans-serif;
   }
 
-  .timer_text {    
+  .timer_text {
     font-family: "Roboto", sans-serif;
     font-size: 12px;
     line-height: 1;
@@ -58,26 +58,31 @@
 >
   <!-- <a class="rslink" href="#"></a> -->
   <div class="timer_text_wrapper">
-    <span class="timer_clock" style="color: {{ section.settings.timer_clock }};  font-size: {{ section.settings.timer_clock_text_font_size }}px;  font-weight: {{ section.settings.clock_font_weight }};" id="countdown">00:00:00</span>
     <p
       class="timer_text"
       style="font-size: {{ section.settings.timer_font_size }}px; color: {{ section.settings.timer_color }};  font-weight: {{ section.settings.timer_font_weight }};"
     >
       {{ section.settings.timer_text }}
     </p>
+    <span
+      class="timer_clock"
+      style="color: {{ section.settings.timer_clock }};  font-size: {{ section.settings.timer_clock_text_font_size }}px;  font-weight: {{ section.settings.clock_font_weight }};"
+      id="countdown"
+      >00:00:00</span
+    >
   </div>
 </div>
 <script>
   window.apexTimerSettings = {
-    targetDate: "{{ section.settings.target_date }}",
-    targetTime: "{{ section.settings.target_time }}"
+    targetDate: '{{ section.settings.target_date }}',
+    targetTime: '{{ section.settings.target_time }}',
   };
 </script>
 
 {% schema %}
 {
   "name": "Apex Product Timer",
-  "disabled_on": {    
+  "disabled_on": {
     "groups": ["header", "footer"]
   },
 
@@ -188,12 +193,12 @@
       "max": 50,
       "step": 1
     },
-    
+
     {
       "type": "color",
       "id": "timer_color",
       "label": "Font Color",
-      "default":"#dcad27"
+      "default": "#dcad27"
     },
     {
       "type": "select",
@@ -245,21 +250,14 @@
     },
     {
       "type": "text",
-      "id": "target_date",
-      "label": "Target Date (YYYY-MM-DD)",
-      "default": "2026-04-16"
-    },
-    {
-      "type": "text",
-      "id": "target_time",
-      "label": "Target Time (HH:MM:SS, 24h format)",
+      "id": "start_time",
+      "label": "Start Time (HH:MM:SS, 24h format)",
       "default": "00:00:00"
     }
-
   ],
   "presets": [
     {
-      "name": "Apex Product Timer",
+      "name": "Apex Product Timer"
     }
   ]
 }
@@ -267,27 +265,40 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const countdownElement = document.getElementById('countdown');
-    const settings = window.apexTimerSettings;
 
-    const targetDateParts = settings.targetDate.split('-').map(Number);
-    const targetTimeParts = settings.targetTime.split(':').map(Number);
+    // Get start_time from schema (expected format "HH:MM:SS")
+    const startTimeParts = '{{ section.settings.start_time }}'.split(':').map(Number);
 
-    const targetDateTime = new Date(
-      targetDateParts[0],
-      targetDateParts[1] - 1,
-      targetDateParts[2],
-      targetTimeParts[0],
-      targetTimeParts[1],
-      targetTimeParts[2]
-    );
+    function getNextTarget() {
+      const now = new Date();
+
+      // Target = today at schema start time
+      let target = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        startTimeParts[0],
+        startTimeParts[1],
+        startTimeParts[2] || 0
+      );
+
+      // If already passed today, move to tomorrow
+      if (target <= now) {
+        target.setDate(target.getDate() + 1);
+      }
+
+      return target;
+    }
+
+    let targetDateTime = getNextTarget();
 
     function updateTimer() {
       const now = new Date();
-      const timeRemaining = targetDateTime - now;
+      let timeRemaining = targetDateTime - now;
 
       if (timeRemaining <= 0) {
-        countdownElement.textContent = "00d 00h 00m 00s";
-        return;
+        targetDateTime = getNextTarget();
+        timeRemaining = targetDateTime - now;
       }
 
       const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
@@ -296,15 +307,13 @@
       const seconds = Math.floor((timeRemaining / 1000) % 60);
 
       countdownElement.textContent =
-        `${String(days).padStart(2, '0')}:` +
-        `${String(hours).padStart(2, '0')}:` +
-        `${String(minutes).padStart(2, '0')}:` +
-        `${String(seconds).padStart(2, '0')}`;
+        {% comment %} `${String(days).padStart(2, '0')}T ` + {% endcomment %}
+        `${String(hours).padStart(2, '0')}ST ` +
+        `${String(minutes).padStart(2, '0')}m ` +
+        `${String(seconds).padStart(2, '0')}s`;
     }
 
     updateTimer();
     setInterval(updateTimer, 1000);
   });
 </script>
-
-

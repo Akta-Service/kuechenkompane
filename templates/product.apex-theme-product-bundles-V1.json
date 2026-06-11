@@ -44,9 +44,7 @@
         "timer_text": "Unser exklusives Osterangebot läuft bald ab!",
         "timer_font_size": 12,
         "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-04-22",
-        "target_time": "00:00:00"
+        "timer_font_weight": "400"
       }
     },
     "apex_theme_product_page_copy_bfPEWH": {
@@ -99,6 +97,8 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "taxes_included": false,
+            "taxes_included_text": "",
             "show_saving": false,
             "sale_badge_type": "percentage",
             "p_pt": 5,
@@ -106,12 +106,19 @@
             "p_pt_m": 5,
             "p_pb_m": 5,
             "price_color": "#000000",
-            "c_price_color": "#bbbbbb",
+            "c_price_color": "#b1b1b1",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 19,
-            "price_font_weight": "600"
+            "c_price_size": 16,
+            "c_price_size_m": 16,
+            "price_font_weight": "600",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -131,6 +138,8 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
             "viewer_count_time": 2500,
             "stock_count_time": 50000,
             "stock_count_show": false
@@ -139,7 +148,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Nur jetzt im Angebot – danach wieder 2.026,00 €</p>",
+            "featurelist_item": "<p>Nur jetzt im Angebot erhältlich!</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -206,6 +215,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
@@ -229,7 +239,11 @@
         "show_stk_icon": false,
         "glitter_effec": false,
         "bubble_before_color": "#4b4b4b",
-        "bubble_after_color": "#4b4b4b"
+        "bubble_after_color": "#4b4b4b",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "product_descrption_accordion_btdDtQ": {
@@ -244,6 +258,7 @@
         },
         "faq_pDwHXa": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "question": "Produktdetails & Lieferumfang",
             "answer": "{{ product.metafields.custom.accordion_content_2 | metafield_tag }}"
@@ -409,6 +424,7 @@
         "pb_mobile": 30,
         "title": "Unsere Produkte in Aktion",
         "heading_type": "mrk-h1",
+        "show_button": false,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "@kuechenkompane",
         "autoplay": false
@@ -583,7 +599,7 @@
         "title_hXWbxr": {
           "type": "title",
           "settings": {
-            "title": "Sichere dir jetzt über 1400 € Preisvorteil!"
+            "title": "Sichere dir jetzt über 650 € Preisvorteil!"
           }
         },
         "description_abE8wX": {
@@ -601,7 +617,7 @@
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "shopify://shop_images/02-B_1.jpg",
+        "image": "shopify://shop_images/5e299ec8-c8eb-433a-9643-20100544f16e_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -618,54 +634,54 @@
         "feature_item_left_KLYLgM": {
           "type": "feature_item_left",
           "settings": {
-            "item_title": "Damast Messerset",
-            "item_info": "Drei Küchenmesser aus 67 lagigem Damaststahl.",
+            "item_title": "8-teiliges Messerset",
+            "item_info": "Für jede Aufgabe das passende Küchenmesser.",
             "item_icon": "shopify://shop_images/Untitled_Export_V7_1.png"
           }
         },
         "feature_item_left_etKjAM": {
           "type": "feature_item_left",
           "settings": {
-            "item_title": "Magnetische Messerhalter",
-            "item_info": "Drei Messerhalter mit Vakuum-Befestigung – haften sicher an jeder Wand.",
+            "item_title": "Magnetischer Block",
+            "item_info": "Schützt die Klingen, hält sie sichtbar & griffbereit.",
             "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
           }
         },
         "feature_item_left_zGYhna": {
           "type": "feature_item_left",
           "settings": {
-            "item_title": "Messerschärfer",
-            "item_info": "Jedes Messer ist in Sekunden wieder scharf.",
+            "item_title": "Messerschärfer Pro",
+            "item_info": "Schärft in Sekunden – für dauerhaft präzise Schnitte.",
             "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
           }
         },
         "feature_center_image_mBHAJH": {
           "type": "feature_center_image",
           "settings": {
-            "center_image": "shopify://shop_images/02-A_Kopie_1.jpg"
+            "center_image": "shopify://shop_images/5e299ec8-c8eb-433a-9643-20100544f16e_1.jpg"
           }
         },
         "feature_item_right_YpUkf4": {
           "type": "feature_item_right",
           "settings": {
-            "item_title": "Schneidebrett Saikoro",
-            "item_info": "Aus Akazienholz, perfekt für schnelle und kleine Schneidearbeiten.",
+            "item_title": "Schneidebrett Groß",
+            "item_info": "Akazienholz mit viel Fläche – ideal fürs Vorbereiten & große Stücke.",
             "item_icon": "shopify://shop_images/Untitled_Export_V4_1.png"
           }
         },
         "feature_item_right_dN8J9K": {
           "type": "feature_item_right",
           "settings": {
-            "item_title": "Pflegeöl",
-            "item_info": "Schützt und pflegt Klinge und Griff.",
+            "item_title": "Schneidebrett Mittel",
+            "item_info": "Der Allrounder – klingenfreundlich, stabil, alltagstauglich.",
             "item_icon": "shopify://shop_images/Untitled_Export_V5_1.png"
           }
         },
         "feature_item_right_jLCbWD": {
           "type": "feature_item_right",
           "settings": {
-            "item_title": "365 Tage Schleifservice",
-            "item_info": "Kostenloser Nachschliff für ein Jahr - Immer scahrf.",
+            "item_title": "Schneidebrett Klein",
+            "item_info": "Für Kräuter, Obst & kleine Aufgaben – schnell zur Hand.",
             "item_icon": "shopify://shop_images/Untitled_Export_V6_1.png"
           }
         }
@@ -726,6 +742,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
@@ -881,7 +898,8 @@
         "sub_title": "",
         "sub_title_font_size": 20,
         "faq_title_font_size": 18,
-        "faq_text_font_size": 16
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "benefit_text_MCeGiV": {
@@ -1060,14 +1078,14 @@
           "type": "Item",
           "settings": {
             "feature_item": "Mit hochwertigen Materialien für maximale Langlebigkeit gefertigt",
-            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/diamond_11883313_1.png?v=1739744170\">"
+            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/diamond_11883313_1.png?v=1739744170\" alt=\"icon\">"
           }
         },
         "item_Prmf4W": {
           "type": "Item",
           "settings": {
             "feature_item": "Mit Experten zusammen perfektioniert",
-            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/setting_9552070_1.png?v=1739744170\">"
+            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/setting_9552070_1.png?v=1739744170\" alt=\"icon\">"
           }
         }
       },

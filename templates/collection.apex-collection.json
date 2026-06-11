@@ -29,6 +29,24 @@
         "enable_bg_zoom_effect": true
       }
     },
+    "apex_global_offer_timer_LA36Gc": {
+      "type": "Apex-global-offer-timer",
+      "name": "Apex Global Timer",
+      "settings": {
+        "bg_color": "#dce5dc",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#d2861a",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "400",
+        "timer_text": "Unser Exklusives Angebot läuft bald ab!",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "400",
+        "target_date": "2025-09-31",
+        "target_time": "00:00:00"
+      }
+    },
     "apex_top_slider_GBwqAg": {
       "type": "apex-top-slider",
       "blocks": {
@@ -56,6 +74,7 @@
         "text_i4KwPb",
         "text_KKpaJj"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "pt": 15,
@@ -72,6 +91,30 @@
         "text_alignment": "center",
         "hide_current": false,
         "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
+    "rich_text_9azB7H": {
+      "type": "rich-text",
+      "blocks": {
+        "text_m73wFf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Jetzt Restbestände zum Vorteilspreis: Spare bis zu <strong>75% </strong>auf ausgewählte Artikel – nur solange der Vorrat reicht oder bis Preise angehoben werden.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_m73wFf"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "",
         "animations": "inherit"
       }
     },
@@ -155,37 +198,55 @@
         "c_n_text": "p-medium"
       }
     },
-    "main": {
-      "type": "apex-theme-collectiont-product",
-      "custom_css": [
-        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
-        ".m-collection-filters-form {margin-bottom: 0;}"
-      ],
+    "mrk_collection_grid_section_yUcxYV": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
       "settings": {
-        "color_scheme": "default",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": true,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": true
+      }
+    },
+    "promotion_banner_YmXxH9": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_79N4yn": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "DEINE CHANCE AUF",
+            "heading": "75%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_79N4yn"
+      ],
+      "name": "Promotion banner",
+      "settings": {
         "container": "container-fluid",
-        "grid_layout": "grid",
-        "grid_columns": "4",
-        "show_columns_switcher": true,
-        "pagination_limit": 48,
-        "paginate_type": "paginate",
-        "show_sorting": true,
-        "show_filter": false,
-        "filters_type": "storefront_filters",
-        "sidebar": "leftColumn",
-        "sidebar_title": "Filters",
-        "limit_height_widget": true,
-        "limit_height": 300,
-        "change_product_variant_on_fitlering": true,
-        "show_product_count": true,
-        "collapsed_groups": "Product type, Brand, Vendor, Size",
-        "color_swatches": "color,colour,couleur,farbe",
-        "color_swatches_design": "list",
-        "add_btn_bg": "#1e1e1e",
-        "add_btn_text_color": "#ffffff",
+        "color_scheme": "",
+        "heading": "AUSVERKAUF VON RESTBESTÄNDEN",
+        "heading_size": "h2",
+        "text": "<p>Jetzt Restbestände zum Vorteilspreis: Spare bis zu <strong>75 % </strong>auf ausgewählte Artikel – nur solange der Vorrat reicht oder bis Preise angehoben werden.</p>",
+        "content_alignment": "left",
+        "banner_url": "shopify://collections/ausverkauf-von-restbestanden",
+        "button_label": "Angebote entdecken",
         "button_style": "m-button--primary",
         "button_size": "",
-        "overlay_opacity": 0.1
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
       }
     },
     "usp_list_xQHfgQ": {
@@ -258,6 +319,7 @@
         "title_AgFUHf",
         "sub_title_GcWkqp"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
         "shape_color": "#deceba",
@@ -310,11 +372,14 @@
   },
   "order": [
     "collection-header",
+    "apex_global_offer_timer_LA36Gc",
     "apex_top_slider_GBwqAg",
     "breadcrumb_h1_b4RT8P",
+    "rich_text_9azB7H",
     "breadcrumb_bEhLYx",
     "category_selection_iMrTd6",
-    "main",
+    "mrk_collection_grid_section_yUcxYV",
+    "promotion_banner_YmXxH9",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
     "collection_description_tUMerW",

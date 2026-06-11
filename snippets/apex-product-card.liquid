@@ -186,46 +186,42 @@
             -%}
             {%- capture sizes -%}(min-width: {{ settings.container_width }}px) {{ settings.container_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2){%- endcapture -%}
             <responsive-image class="m-image" style="--aspect-ratio: {{ asp_rat }}">
-            
-     {% if product.metafields.custom.product_image != blank %}
-{% assign image = product.metafields.custom.product_image | default: product.featured_image %}
+              {% if product.metafields.custom.product_image != blank %}
+                {% assign image = product.metafields.custom.product_image | default: product.featured_image %}
 
+                <img
+                  src="{{ image | image_url: width: 183 }}"
+                  srcset="
+                    {{ image | image_url: width: 183 }} 183w,
+                    {{ image | image_url: width: 360 }} 360w,
+                    {{ image | image_url: width: 720 }} 720w
+                  "
+                  sizes="(max-width: 400px) 183px, 360px"
+                  alt="{{ product.title | escape }}"
+                  {% if index < 4 %}
+                    loading="eager"
+                    fetchpriority="high"
+                  {% else %}
+                    loading="lazy"
+                    fetchpriority="low"
+                  {% endif %}
+                  width="183"
+                  height="183"
+                >
 
-  <img
-    src="{{ image | image_url: width: 183 }}"  
-    srcset="
-      {{ image | image_url: width: 183 }} 183w,
-      {{ image | image_url: width: 360 }} 360w,
-      {{ image | image_url: width: 720 }} 720w
-    "
-    sizes="(max-width: 400px) 183px, 360px"
-    alt="{{ product.title | escape }}"
-  {% if index < 4 %}
-loading="eager"
-fetchpriority="high"
-  {% else %}
-    loading="lazy"
-fetchpriority="low"
-  {% endif %}
-    width="183"
-    height="183"
-  >
-
-            {% else %}
-              {{
-                preview_image
-                | image_url: width: 1100
-                | image_tag:
-                  loading: loading,
-                  fetchpriority: fetchpriority,
-                  class: 'm:w-full m:h-full',
-                  alt: alt,
-                  sizes: sizes,
-                  widths: '165, 360, 535, 750, 940, 1100'
-              }}
-            {% endif %}
-
-
+              {% else %}
+                {{
+                  preview_image
+                  | image_url: width: 1100
+                  | image_tag:
+                    loading: loading,
+                    fetchpriority: fetchpriority,
+                    class: 'm:w-full m:h-full',
+                    alt: alt,
+                    sizes: sizes,
+                    widths: '165, 360, 535, 750, 940, 1100'
+                }}
+              {% endif %}
             </responsive-image>
           </div>
 
@@ -438,6 +434,9 @@ fetchpriority="low"
 
       <div class="m-product-card__price">
         {% render 'product-prices', product: product, is_product_card: true %}
+        {% if section.settings.show_stock_status %}
+          {% render 'stock-count-status', product: product, custom_class: 'ml-15 collection-stock' %}
+        {% endif %}
       </div>
       {% if product.has_only_default_variant == false and show_variant_options %}
         {% render 'product-card-option',
@@ -537,14 +536,19 @@ fetchpriority="low"
           {{ product.metafields.custom.product_form_short_description | metafield_tag }}
         {% else %}
           <div class="m-product-card__description">
-            {{ product.description | strip_html | truncatewords: 15, '...' }}  
+            {{ product.description | strip_html | truncatewords: 15, '...' }}
           </div>
         {% endif %}
-            
       {%- endif -%}
       {%- if show_quickview_button or show_wishlist_button or show_compare_button or show_cart_button -%}
         <div class="m-product-card__action">
-          {% render 'product-card-quick-add-btn', product: product, quick_add_text: quick_add_text, section: section, button_style: section.settings.button_style, button_size: section.settings.button_size %}
+          {% render 'product-card-quick-add-btn',
+            product: product,
+            quick_add_text: quick_add_text,
+            section: section,
+            button_style: section.settings.button_style,
+            button_size: section.settings.button_size
+          %}
           <div class="m-product-card__action-icons">
             {% liquid
               assign tooltips = 'compare,quickview,'

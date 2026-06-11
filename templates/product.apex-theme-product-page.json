@@ -72,7 +72,7 @@
             "likeImg1": "shopify://shop_images/Screenshot_2025-03-17_at_08.24.39_1.jpg",
             "likeImg2": "shopify://shop_images/Kopie_von_Bild6_2_1.jpg",
             "likeImg3": "shopify://shop_images/Screenshot_2025-03-17_at_08.21.14_1.jpg",
-            "likecount": "140.000+ Personen",
+            "likecount": "160.000+ Personen",
             "like_bg": "#ddede0",
             "likeinfo": "lieben unser Set!",
             "demandBadge": "Hohe Nachfrage",
@@ -107,7 +107,7 @@
             "p_pt_m": 5,
             "p_pb_m": 15,
             "price_color": "#000000",
-            "c_price_color": "#a7a7a7",
+            "c_price_color": "#b1b1b1",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 19,
@@ -145,7 +145,7 @@
           "settings": {
             "viewer_count_font_size": 16,
             "view_main_text_1": "Personen",
-            "view_main_text_2": "sehen sich es gerade an",
+            "view_main_text_2": "sehen sich das gerade an",
             "viewer_margin_top": 10,
             "viewer_margin_bottom": 11,
             "margin_size_mobile_top": 1,
@@ -161,8 +161,12 @@
             "soldout_color": "#ff0000",
             "viewer_count_time": 30000,
             "stock_count_time": 50000,
-            "stock_count_show": true
+            "stock_count_show": false
           }
+        },
+        "product_stock_status_769aJr": {
+          "type": "product_stock_status",
+          "settings": {}
         },
         "featurelist_header_tfxtpf": {
           "type": "featurelist_header",
@@ -188,7 +192,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}</p>",
+            "featurelist_item": "{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -250,6 +254,7 @@
         "subtitle_xQXVba",
         "subtitle_mGfN7N",
         "viewer_stock_count_MFNhKz",
+        "product_stock_status_769aJr",
         "featurelist_header_tfxtpf",
         "featurelist_item_iiW6aD",
         "featurelist_item_tL79ih",
@@ -839,6 +844,7 @@
         "pb_mobile": 30,
         "title": "unser Messerset erobert Deutschland",
         "heading_type": "mrk-h2",
+        "show_button": false,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "",
         "autoplay": false
@@ -1141,21 +1147,21 @@
           "type": "Item",
           "settings": {
             "feature_item": "Umfassend getestet und auf höchste Qualität geprüft",
-            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/thumb-up_16346369_1.png?v=1739744170\" alt=\"Image\">"
+            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/thumb-up_16346369_1.png?v=1739744170\" alt=\"icon\">"
           }
         },
         "item_NYUrjj": {
           "type": "Item",
           "settings": {
             "feature_item": "Mit hochwertigen Materialien für maximale Langlebigkeit gefertigt",
-            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/diamond_11883313_1.png?v=1739744170\">"
+            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/diamond_11883313_1.png?v=1739744170\" alt=\"icon\">"
           }
         },
         "item_Prmf4W": {
           "type": "Item",
           "settings": {
             "feature_item": "Mit Profi-Köchen zusammen perfektioniert",
-            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/setting_9552070_1.png?v=1739744170\">"
+            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/setting_9552070_1.png?v=1739744170\" alt=\"icon\">"
           }
         }
       },

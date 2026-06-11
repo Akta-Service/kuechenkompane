@@ -467,6 +467,9 @@
             {% render 'product-prices', product: product, is_product_card: true %}
           </div>
         </div>
+        {% if section.settings.show_stock_status %}
+          {% render 'stock-count-status', product: product, custom_class: 'ml-15 collection-stock' %}
+        {% endif %}
       {% endif %}
       {% if product.metafields.custom.product_short_description %}
         <div class="card-product-description">

@@ -9,56 +9,6 @@
  */
 {
   "sections": {
-    "apex_timer_8KXfky": {
-      "type": "Apex-timer",
-      "name": "Apex Product Timer",
-      "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#c89d00",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "700",
-        "timer_text": "aktion endet in kürze",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-08-25",
-        "target_time": "00:00:00"
-      }
-    },
-    "rich_text_MPfPJc": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_HLFfDJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "RABATTE AUßER KONTROLLE! 😳🚨",
-            "heading_size": "h2"
-          }
-        },
-        "text_nAHzLU": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Diese Aktion geht nur, weil der Chef im Urlaub ist. Jetzt bestimmen wir die Preise und geben dir unsere Mitarbeiterpreise frei, die es so nie wieder geben wird!</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_HLFfDJ",
-        "text_nAHzLU"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -183,37 +133,55 @@
         "c_n_text": "p-medium"
       }
     },
-    "main": {
-      "type": "apex-theme-collectiont-product",
-      "custom_css": [
-        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
-        ".m-collection-filters-form {margin-bottom: 0;}"
-      ],
+    "mrk_collection_grid_section_cwWLPy": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
       "settings": {
-        "color_scheme": "default",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 50,
+        "use_metafield_image": true,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false
+      }
+    },
+    "promotion_banner_k9GQaQ": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_6jrPJ8": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "JETZT BIS ZU",
+            "heading": "-80%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_6jrPJ8"
+      ],
+      "name": "Promotion banner",
+      "settings": {
         "container": "container-fluid",
-        "grid_layout": "grid",
-        "grid_columns": "4",
-        "show_columns_switcher": true,
-        "pagination_limit": 48,
-        "paginate_type": "paginate",
-        "show_sorting": true,
-        "show_filter": false,
-        "filters_type": "storefront_filters",
-        "sidebar": "leftColumn",
-        "sidebar_title": "Filters",
-        "limit_height_widget": true,
-        "limit_height": 300,
-        "change_product_variant_on_fitlering": true,
-        "show_product_count": true,
-        "collapsed_groups": "Product type, Brand, Vendor, Size",
-        "color_swatches": "color,colour,couleur,farbe",
-        "color_swatches_design": "list",
-        "add_btn_bg": "#1e1e1e",
-        "add_btn_text_color": "#ffffff",
+        "color_scheme": "",
+        "heading": "BLACK MONTH ANGEBOTE",
+        "heading_size": "h2",
+        "text": "<p>Wir starten unsere besten Black-Friday Deals vor allen anderen. Es gelten Preisphasen statt Dauerrabatte.<strong> </strong>Unsere Angebote wechseln jeden Tag. Wer früh zuschlägt, spart am meisten.</p>",
+        "content_alignment": "left",
+        "banner_url": "shopify://collections/black-friday-angebote",
+        "button_label": "Angebote ansehen",
         "button_style": "m-button--primary",
         "button_size": "",
-        "overlay_opacity": 0.1
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
       }
     },
     "usp_list_xQHfgQ": {
@@ -266,40 +234,6 @@
         "horizontal_padding_mobile": 15
       }
     },
-    "branded_image_version_ffF3PX": {
-      "type": "branded-image-version-",
-      "blocks": {
-        "title_AgFUHf": {
-          "type": "title",
-          "settings": {
-            "title": "Kochen wie ein Profi"
-          }
-        },
-        "sub_title_GcWkqp": {
-          "type": "sub_title",
-          "settings": {
-            "text": "Von messerscharfer Präzision bis hin zu perfektem Kochgeschirr.\n<br>Unsere Produkte sind für höchste Ansprüche gemacht."
-          }
-        }
-      },
-      "block_order": [
-        "title_AgFUHf",
-        "sub_title_GcWkqp"
-      ],
-      "settings": {
-        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
-        "shape_color": "#deceba",
-        "margin_top": 20,
-        "margin_bottom": 0,
-        "mobile_margin_top": 10,
-        "mobile_margin_bottom": 0,
-        "bg_img": "shopify://shop_images/IMG_9602_V6.jpg",
-        "heading_type": "mrk-h1",
-        "des_size": "p-medium",
-        "button_style": "m-button--primary",
-        "button_size": ""
-      }
-    },
     "collection_description_tUMerW": {
       "type": "collection-description",
       "settings": {
@@ -336,14 +270,12 @@
     }
   },
   "order": [
-    "apex_timer_8KXfky",
-    "rich_text_MPfPJc",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
-    "main",
+    "mrk_collection_grid_section_cwWLPy",
+    "promotion_banner_k9GQaQ",
     "usp_list_xQHfgQ",
-    "branded_image_version_ffF3PX",
     "collection_description_tUMerW",
     "rich_text_ijBTPA"
   ]

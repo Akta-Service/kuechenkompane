@@ -10,9 +10,7 @@
       padding: 10px;
     }
 
-
     /* mobile menu css  */
-
 
     .mobile--menu-container {
       background-color: #fff;
@@ -67,6 +65,7 @@
     ul.mobile--menu-navigation {
       margin: 0;
       padding: 0;
+      list-style: none;
     }
     .mobile--menu-navigation-item {
       align-items: center;
@@ -579,7 +578,7 @@
         alt="logo"
       >
     </a>
-    <button class="mobile--menu-close">
+    <button class="mobile--menu-close" aria-label="Close menu">
       {%- render 'close--icon' -%}
     </button>
   </div>
@@ -620,7 +619,7 @@
                   <img
                     loading="lazy"
                     class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0005_4_jpg_V1_1.webp?v=1757616175"
+                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Asia-Premium-1.webp?v=1759638241"
                     loading="lazy"
                     alt=""
                   >
@@ -635,7 +634,7 @@
                   {% comment %} dropdown item  {% endcomment %}
                   {%- render 'dropdown-item',
                     link: 'https://kuechenkompane.de/collections/asiatisches-messerset-1',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0005_4_jpg_V1_1_1.webp?v=1757616288',
+                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Asia-Premium-1.webp?v=1759638241',
                     link_title: '8-teilige Sets (Bestseller)'
                   -%}
 
@@ -663,15 +662,8 @@
                   {% comment %} dropdown item  {% endcomment %}
                   {%- render 'dropdown-item',
                     link: 'https://kuechenkompane.de/collections/messerset',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0005_4_jpg_V1_1_1.webp?v=1757616288&width=750',
+                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Asia-Premium-1.webp?v=1759638241',
                     link_title: 'Alle Messersets'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/steakmesser-set',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_2.webp?v=1757616966',
-                    link_title: 'Steakmesser Sets'
                   -%}
                 </ul>
               </li>
@@ -717,13 +709,6 @@
 
                   {% comment %} dropdown item  {% endcomment %}
                   {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/kombipaket-hito',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_4.webp?v=1757617208',
-                    link_title: 'Kombipaket Hito'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
                     link: 'https://kuechenkompane.de/collections/messerset-mit-magnetleiste',
                     image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_5.webp?v=1757617275',
                     link_title: 'Kombipaket Kōyōju'
@@ -736,12 +721,6 @@
                     link_title: 'Kombipaket Nōburu'
                   -%}
 
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/konpeki-kombipaket',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_7.webp?v=1757617401',
-                    link_title: 'Konpeki Kombipaket'
-                  -%}
                 </ul>
               </li>
 
@@ -862,7 +841,7 @@
                   <img
                     loading="lazy"
                     class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V135_03377876-5563-4eab-b7a6-24938cb9d522.jpg?v=1750764916"
+                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Burokku-Messerblock-1080x1080_1.webp?v=1759639297"
                     loading="lazy"
                     alt=""
                   >
@@ -877,7 +856,7 @@
                   {% comment %} dropdown item  {% endcomment %}
                   {%- render 'dropdown-item',
                     link: 'https://kuechenkompane.de/collections/messerblock',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V135_03377876-5563-4eab-b7a6-24938cb9d522.jpg?v=1750764916',
+                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Burokku-Messerblock-1080x1080_1.webp?v=1759639297',
                     link_title: 'Messerblock & Messerhalter'
                   -%}
 
@@ -891,7 +870,7 @@
                   {% comment %} dropdown item  {% endcomment %}
                   {%- render 'dropdown-item',
                     link: 'https://kuechenkompane.de/collections/schneidebretter',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_17.webp?v=1757618569',
+                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Schneidebrett-1.webp?v=1759638148',
                     link_title: 'Schneidebretter'
                   -%}
 
@@ -966,7 +945,7 @@
                   <img
                     loading="lazy"
                     class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_22.webp?v=1757618937"
+                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Schneidebrett-1.webp?v=1759638148"
                     loading="lazy"
                     alt=""
                   >
@@ -981,14 +960,14 @@
                   {% comment %} dropdown item  {% endcomment %}
                   {%- render 'dropdown-item',
                     link: 'https://kuechenkompane.de/collections/schneidebretter',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_22.webp?v=1757618937',
+                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Schneidebrett-1.webp?v=1759638148',
                     link_title: 'Schneidebretter'
                   -%}
 
                   {% comment %} dropdown item  {% endcomment %}
                   {%- render 'dropdown-item',
                     link: 'https://kuechenkompane.de/products/rustikales-schneidebrett',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_23.webp?v=1757618995',
+                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/mobile_menu_servierbrett.webp?v=1759638672',
                     link_title: 'Servierbretter'
                   -%}
                 </ul>
@@ -999,7 +978,7 @@
                   <img
                     loading="lazy"
                     class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_24.webp?v=1757619050"
+                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Outdoor-Set-150x150.webp?v=1759638863"
                     loading="lazy"
                     alt=""
                   >
@@ -1012,7 +991,7 @@
                 <ul class="mobile--menu-sub-dropdown">
                   {% comment %} dropdown item  {% endcomment %}
                   {%- render 'dropdown-item',
-                    link: '',
+                    link: 'https://kuechenkompane.de/collections/bbq-outdoor',
                     image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_24.webp?v=1757619050',
                     link_title: 'BBQ Messer'
                   -%}
@@ -1034,7 +1013,7 @@
                   {% comment %} dropdown item  {% endcomment %}
                   {%- render 'dropdown-item',
                     link: 'https://kuechenkompane.de/products/outdoor-messerset',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_27.webp?v=1757619218',
+                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Outdoor-Set-150x150.webp?v=1759638863',
                     link_title: 'Outdoor Messerset | 2in1'
                   -%}
                 </ul>
@@ -1124,14 +1103,18 @@
       </li>
 
       {% comment %} main item {% endcomment %}
-      <a href="/collections/sommerschlussverkauf" class="mobile--menu-navigation-item">
-        <span class="mobile--menu-item-title">Sale</span>
-      </a>
+      <li>
+        <a class="mobile--menu-navigation-item" href="/collections/black-friday-angebote">
+          <span class="mobile--menu-item-title">Sale</span>
+        </a>
+      </li>
 
       {% comment %} main item {% endcomment %}
-      <a href="https://kuechenkompane.de/pages/bonuspunkte" class="mobile--menu-navigation-item">
-        <span class="mobile--menu-item-title">Bonuspunkte</span>
-      </a>
+      <li>
+        <a class="mobile--menu-navigation-item" href="/pages/bonuspunkte">
+          <span class="mobile--menu-item-title">Bonuspunkte</span>
+        </a>
+      </li>
     </ul>
   </div>
 </div>

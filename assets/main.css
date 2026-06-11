@@ -4636,6 +4636,7 @@ deferred-media {
   padding: 0 0.75rem;
   max-height: 0px;
   margin: 10px 0;
+  display: none;
 }
 .notification svg {
   min-width: 24px;
@@ -6698,6 +6699,8 @@ variant-picker
   font-size: 87.5%;
   text-decoration: line-through;
   color: rgb(var(--color-foreground-secondary));
+  color: #b1b1b1;
+
 }
 .m-price__sale .m-price-item--last {
   color: rgb(var(--color-price-sale));

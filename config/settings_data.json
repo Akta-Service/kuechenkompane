@@ -10,9 +10,9 @@
 {
   "current": {
     "allowed_handles": [
-      "aktion-3-for-2"
+      "vip-sale"
     ],
-    "password": "Sommer",
+    "password": "SOMMERENDE",
     "header_title": "Beliebte Produkte",
     "collection_url_text": "Alle ansehen",
     "serch_recom_colection": "bestseller-facebook-12-best",
@@ -122,7 +122,7 @@
     "total_points": "🎟️ Gesamte Lose:",
     "cart_free_shipping_label": "Glückwunsch! Dein Versand ist kostenlos",
     "cart_free_shipping_rule": 0,
-    "cart_free_product_1_label": "Kostenloser Kochkurs + Kochbuch PDF",
+    "cart_free_product_1_label": "Kostenloser Kochkurs + 3x Kochbuch (Wert 99€)",
     "cart_free_product_1": "kochbuch-kochkurs-kostenlos",
     "cart_free_product_1_rule": 0,
     "cart_free_product_2_label": "",
@@ -197,6 +197,11 @@
         "type": "shopify://apps/loox-reviews/blocks/loox-inject/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
         "disabled": false,
         "settings": {}
+      },
+      "10312807297210203588": {
+        "type": "shopify://apps/aftersell-by-rokt/blocks/utm-triggers/509ec35d-0632-4dfc-a105-fa799cd9d149",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
@@ -213,7 +218,7 @@
           "outline_button_label": "#fa8526",
           "button_hover": "#4b4b4b",
           "button_text_hover": "#ffffff",
-          "price_sale": "#3a8735",
+          "price_sale": "#000000",
           "price_regular": "#000000",
           "form_field": "#ffffff",
           "form_field_label": "#000000",

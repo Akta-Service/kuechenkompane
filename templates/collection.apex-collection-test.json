@@ -29,13 +29,32 @@
         "enable_bg_zoom_effect": true
       }
     },
+    "apex_global_offer_timer_LA36Gc": {
+      "type": "Apex-global-offer-timer",
+      "disabled": true,
+      "name": "Apex Global Timer",
+      "settings": {
+        "bg_color": "#dce5dc",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#d2861a",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "400",
+        "timer_text": "Unser Exklusives Angebot läuft bald ab!",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "400",
+        "target_date": "2025-09-31",
+        "target_time": "00:00:00"
+      }
+    },
     "apex_top_slider_GBwqAg": {
       "type": "apex-top-slider",
       "blocks": {
         "text_zLPY9B": {
           "type": "text",
           "settings": {
-            "top_item": "140.000+ zufriedene Kunden"
+            "top_item": "160.000+ zufriedene Kunden"
           }
         },
         "text_i4KwPb": {
@@ -63,6 +82,55 @@
         "pb": 15,
         "mt_mobile": 15,
         "mb_mobile": 15
+      }
+    },
+    "breadcrumb_h1_b4RT8P": {
+      "type": "breadcrumb-h1",
+      "disabled": true,
+      "name": "Breadcrumb h1",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
+      }
+    },
+    "rich_text_9azB7H": {
+      "type": "rich-text",
+      "blocks": {
+        "text_m73wFf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Jetzt Restbestände zum Vorteilspreis: Spare bis zu <strong>75% </strong>auf ausgewählte Artikel – nur solange der Vorrat reicht oder bis Preise angehoben werden.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_m73wFf"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "breadcrumb_bEhLYx": {
+      "type": "breadcrumb",
+      "disabled": true,
+      "name": "Breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false,
+        "animations": "inherit"
       }
     },
     "category_selection_iMrTd6": {
@@ -133,61 +201,7 @@
         "c_n_text": "p-medium"
       }
     },
-    "rich_text_bg4Fta": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_pBJTCk": {
-          "type": "heading",
-          "settings": {
-            "heading": "Diese Serie kommt nie wieder zurück",
-            "heading_size": "h2"
-          }
-        },
-        "text_XrgRxY": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Diese Messerserie wird nicht mehr produziert – und wenn sie weg ist, ist sie weg.<br/>Du bekommst jetzt die letzten Exemplare mit <strong>bis zu 75 % Rabatt</strong>.<br/>Keine Nachproduktion. Kein Restock. Nur noch: Jetzt oder nie.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_pBJTCk",
-        "text_XrgRxY"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
-    "breadcrumb_h1_Tg3zF6": {
-      "type": "breadcrumb-h1",
-      "name": "Breadcrumb h1",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
-    "breadcrumb_gm3YmH": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
-    "mrk_collection_grid_section_RRddhG": {
+    "mrk_collection_grid_section_tf99ae": {
       "type": "mrk-collection-grid-section",
       "name": "Akta Collection Grid",
       "settings": {
@@ -197,12 +211,80 @@
         "section_title": "Featured Collection",
         "section_description": "Explore our best-selling products.",
         "collection": "",
-        "products_limit": 20,
-        "use_metafield_image": true,
+        "products_limit": 35,
+        "use_metafield_image": false,
         "hover_second_image": false,
         "pagination_style": "circle",
         "show_product_ratings": false,
         "show_stock_status": false
+      }
+    },
+    "main": {
+      "type": "apex-theme-collectiont-product",
+      "disabled": true,
+      "custom_css": [
+        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
+        ".m-collection-filters-form {margin-bottom: 0;}"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container": "container-fluid",
+        "grid_layout": "grid",
+        "grid_columns": "4",
+        "show_columns_switcher": true,
+        "pagination_limit": 48,
+        "paginate_type": "paginate",
+        "show_sorting": true,
+        "show_filter": false,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": true,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Product type, Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "list",
+        "add_btn_bg": "#1e1e1e",
+        "add_btn_text_color": "#ffffff",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "overlay_opacity": 0.1,
+        "show_stock_status": true
+      }
+    },
+    "promotion_banner_YmXxH9": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_79N4yn": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "DEINE CHANCE AUF",
+            "heading": "-80%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_79N4yn"
+      ],
+      "name": "Promotion banner",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "BLACK FRIDAY ANGEBOTE",
+        "heading_size": "h2",
+        "text": "<p>Wir starten unsere besten Black-Friday Deals vor allen anderen. Es gelten Preisphasen statt Dauerrabatte.<strong> </strong>Unsere Angebote wechseln jeden Tag. Wer früh zuschlägt, spart am meisten.</p>",
+        "content_alignment": "left",
+        "banner_url": "shopify://collections/ausverkauf-von-restbestanden",
+        "button_label": "Angebote entdecken",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
       }
     },
     "usp_list_xQHfgQ": {
@@ -275,6 +357,7 @@
         "title_AgFUHf",
         "sub_title_GcWkqp"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
         "shape_color": "#deceba",
@@ -327,12 +410,15 @@
   },
   "order": [
     "collection-header",
+    "apex_global_offer_timer_LA36Gc",
     "apex_top_slider_GBwqAg",
+    "breadcrumb_h1_b4RT8P",
+    "rich_text_9azB7H",
+    "breadcrumb_bEhLYx",
     "category_selection_iMrTd6",
-    "rich_text_bg4Fta",
-    "breadcrumb_h1_Tg3zF6",
-    "breadcrumb_gm3YmH",
-    "mrk_collection_grid_section_RRddhG",
+    "mrk_collection_grid_section_tf99ae",
+    "main",
+    "promotion_banner_YmXxH9",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
     "collection_description_tUMerW",

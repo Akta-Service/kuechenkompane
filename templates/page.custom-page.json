@@ -13,25 +13,73 @@
       "type": "page",
       "settings": {}
     },
+    "akta_banner_image_myjpUn": {
+      "type": "akta-banner-image",
+      "blocks": {
+        "heading_eJFVba": {
+          "type": "heading",
+          "settings": {
+            "heading": "Spa Glow Experience"
+          }
+        },
+        "discount_img_LXKcxq": {
+          "type": "discount_img",
+          "settings": {
+            "discount_img": "shopify://shop_images/Gemini_Generated_Image_5tzqkm5tzqkm5tzq-removebg-preview.png"
+          }
+        },
+        "description_8JzMiA": {
+          "type": "description",
+          "settings": {
+            "description": "<p>* 10 Free Mask Packs with any <em>device</em></p><p>* Velvet Pouch with Booster Pro Mini</p>"
+          }
+        },
+        "button_PTHQPx": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_eJFVba",
+        "discount_img_LXKcxq",
+        "description_8JzMiA",
+        "button_PTHQPx"
+      ],
+      "name": "Banner with Text",
+      "settings": {
+        "banner_image_desktop": "shopify://shop_images/Gemini_Generated_Image_k3oen0k3oen0k3oe.png",
+        "banner_image_mobile": "shopify://shop_images/Gemini_Generated_Image_zch9kezch9kezch9.png",
+        "alt_text": "Banner Image"
+      }
+    },
     "text_banner_zNYrd9": {
       "type": "text-banner",
       "blocks": {
         "title_LczJ49": {
           "type": "title",
           "settings": {
-            "title": "100% MONEY BACK"
+            "title": "100% MONEY BACK",
+            "mb": 0,
+            "mb_m": 0
           }
         },
         "title_style_hWGwhD": {
           "type": "title_style",
           "settings": {
-            "style_title": "<i>guarantee</i>"
+            "style_title": "<i>guarantee</i>",
+            "mb": 0,
+            "mb_m": 0
           }
         },
         "text_mFCHj9": {
           "type": "text",
           "settings": {
-            "text": "We offer a 100% match guarantee on all our products. If you are not satisfied, you will receive a full refund without any hassle."
+            "text": "We offer a 100% match guarantee on all our products. If you are not satisfied, you will receive a full refund without any hassle.",
+            "mb": 0,
+            "mb_m": 0
           }
         }
       },
@@ -249,6 +297,7 @@
     "announcement_bar_version_1_3Nznet": {
       "type": "announcement-bar-version-1",
       "settings": {
+        "sticky_top": false,
         "color_scheme": "scheme-568201fe-bcfa-44be-8567-5fd229c4d924",
         "pt": 15,
         "pb": 15,
@@ -500,6 +549,7 @@
   },
   "order": [
     "main",
+    "akta_banner_image_myjpUn",
     "text_banner_zNYrd9",
     "store_benefit_tq7A77",
     "branded_image_version_2_ekLcgr",

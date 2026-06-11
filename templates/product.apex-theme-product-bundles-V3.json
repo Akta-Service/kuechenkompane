@@ -44,9 +44,7 @@
         "timer_text": "Unser exklusives Osterangebot läuft bald ab!",
         "timer_font_size": 12,
         "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-04-22",
-        "target_time": "00:00:00"
+        "timer_font_weight": "400"
       }
     },
     "apex_theme_product_page_copy_bfPEWH": {
@@ -92,17 +90,28 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "taxes_included": false,
+            "taxes_included_text": "",
+            "show_saving": false,
+            "sale_badge_type": "percentage",
             "p_pt": 5,
             "p_pb": 5,
             "p_pt_m": 5,
             "p_pb_m": 5,
             "price_color": "#000000",
-            "c_price_color": "#bbbbbb",
+            "c_price_color": "#b1b1b1",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 19,
-            "price_font_weight": "600"
+            "c_price_size": 16,
+            "c_price_size_m": 16,
+            "price_font_weight": "600",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
           }
         },
         "viewer_stock_count_MFNhKz": {
@@ -122,6 +131,8 @@
             "product_count_font_size": 16,
             "product_main_text_1": "Nur noch",
             "product_main_text_2": "auf Lager",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
             "viewer_count_time": 2500,
             "stock_count_time": 50000,
             "stock_count_show": false
@@ -130,7 +141,7 @@
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Nur jetzt im Angebot  – danach wieder 2.025,00 €</p>",
+            "featurelist_item": "<p>Nur jetzt im Sonderangebot sichern!</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -197,6 +208,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
         "layout": "layout-6",
@@ -220,7 +232,11 @@
         "show_stk_icon": false,
         "glitter_effec": false,
         "bubble_before_color": "#4b4b4b",
-        "bubble_after_color": "#4b4b4b"
+        "bubble_after_color": "#4b4b4b",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "product_descrption_accordion_btdDtQ": {
@@ -256,7 +272,12 @@
           }
         }
       },
-      "block_order": ["faq_fqQbjd", "faq_jkYPLV", "faq_kQAWhE", "faq_pDwHXa"],
+      "block_order": [
+        "faq_fqQbjd",
+        "faq_jkYPLV",
+        "faq_kQAWhE",
+        "faq_pDwHXa"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "title": "IM SET ENTHALTEN",
@@ -307,9 +328,16 @@
           }
         }
       },
-      "block_order": ["tab_gknmWn", "tab", "tab_yXpqFL", "tab_LBwXaE"],
+      "block_order": [
+        "tab_gknmWn",
+        "tab",
+        "tab_yXpqFL",
+        "tab_LBwXaE"
+      ],
       "disabled": true,
-      "custom_css": [".m-tabs__header {justify-content: flex-start;}"],
+      "custom_css": [
+        ".m-tabs__header {justify-content: flex-start;}"
+      ],
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -389,6 +417,7 @@
         "pb_mobile": 30,
         "title": "Unsere Produkte in Aktion",
         "heading_type": "mrk-h1",
+        "show_button": false,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "@kuechenkompane",
         "autoplay": false
@@ -563,7 +592,7 @@
         "title_hXWbxr": {
           "type": "title",
           "settings": {
-            "title": "Sichere dir jetzt über 1400 € Preisvorteil!"
+            "title": "Sichere dir jetzt über 1500 € Preisvorteil!"
           }
         },
         "description_abE8wX": {
@@ -573,11 +602,15 @@
           }
         }
       },
-      "block_order": ["subtitle_jER8HM", "title_hXWbxr", "description_abE8wX"],
+      "block_order": [
+        "subtitle_jER8HM",
+        "title_hXWbxr",
+        "description_abE8wX"
+      ],
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "shopify://shop_images/04-B_1.jpg",
+        "image": "shopify://shop_images/7302e010-6b23-442f-b6d5-ee537488b683_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -607,30 +640,31 @@
             "item_icon": "shopify://shop_images/Untitled_Export_V2_1.png"
           }
         },
-        "feature_item_left_zGYhna": {
-          "type": "feature_item_left",
-          "settings": {
-            "item_title": "Schleifstein + Pflegeöl",
-            "item_info": "Jedes Messer ist in Sekunden wieder scharf.",
-            "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
-          }
-        },
         "feature_center_image_mBHAJH": {
           "type": "feature_center_image",
           "settings": {
-            "center_image": "shopify://shop_images/04-A_1.jpg"
+            "center_image": "shopify://shop_images/7302e010-6b23-442f-b6d5-ee537488b683_1.jpg"
+          }
+        },
+        "feature_item_left_zGYhna": {
+          "type": "feature_item_left",
+          "settings": {
+            "item_title": "Edelstahl Pfanne",
+            "item_info": "Mit einzigartiger Beschichtung für maximale Performance.",
+            "item_icon": "shopify://shop_images/Untitled_Export_V3_1.png"
           }
         },
         "feature_item_right_YpUkf4": {
           "type": "feature_item_right",
           "settings": {
-            "item_title": "Schneidebrett klein",
-            "item_info": "Aus Akazienholz, mit Epoxidharz Details.",
+            "item_title": "Edelstahl Wok",
+            "item_info": "Mit einzigartiger Beschichtung für maximale Performance.",
             "item_icon": "shopify://shop_images/Untitled_Export_V4_1.png"
           }
         },
         "feature_item_right_dN8J9K": {
           "type": "feature_item_right",
+          "disabled": true,
           "settings": {
             "item_title": "Schneidebrett mittel",
             "item_info": "Aus Akazienholz, mit Epoxidharz Details.",
@@ -639,6 +673,7 @@
         },
         "feature_item_right_jLCbWD": {
           "type": "feature_item_right",
+          "disabled": true,
           "settings": {
             "item_title": "Schneidebrett groß",
             "item_info": "Aus Akazienholz, mit Epoxidharz Details.",
@@ -649,8 +684,8 @@
       "block_order": [
         "feature_item_left_KLYLgM",
         "feature_item_left_etKjAM",
-        "feature_item_left_zGYhna",
         "feature_center_image_mBHAJH",
+        "feature_item_left_zGYhna",
         "feature_item_right_YpUkf4",
         "feature_item_right_dN8J9K",
         "feature_item_right_jLCbWD"
@@ -702,6 +737,7 @@
         "video_XLLb9A": {
           "type": "video",
           "settings": {
+            "video_mt": 0,
             "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
             "autoplay": false,
             "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
@@ -743,7 +779,10 @@
           }
         }
       },
-      "block_order": ["title_F4F6qE", "description_9Mxcd4"],
+      "block_order": [
+        "title_F4F6qE",
+        "description_9Mxcd4"
+      ],
       "disabled": true,
       "settings": {
         "color_scheme": "",
@@ -854,7 +893,8 @@
         "sub_title": "",
         "sub_title_font_size": 20,
         "faq_title_font_size": 18,
-        "faq_text_font_size": 16
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "benefit_text_MCeGiV": {
@@ -879,7 +919,11 @@
           }
         }
       },
-      "block_order": ["subtitle_8kbCAt", "title_KU4fTr", "description_PBBAnQ"],
+      "block_order": [
+        "subtitle_8kbCAt",
+        "title_KU4fTr",
+        "description_PBBAnQ"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -916,7 +960,11 @@
           }
         }
       },
-      "block_order": ["subtitle_XPX87U", "title_YwDaTz", "description_j4ByyM"],
+      "block_order": [
+        "subtitle_XPX87U",
+        "title_YwDaTz",
+        "description_j4ByyM"
+      ],
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -1025,18 +1073,22 @@
           "type": "Item",
           "settings": {
             "feature_item": "Mit hochwertigen Materialien für maximale Langlebigkeit gefertigt",
-            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/diamond_11883313_1.png?v=1739744170\">"
+            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/diamond_11883313_1.png?v=1739744170\" alt=\"icon\">"
           }
         },
         "item_Prmf4W": {
           "type": "Item",
           "settings": {
             "feature_item": "Mit Experten zusammen perfektioniert",
-            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/setting_9552070_1.png?v=1739744170\">"
+            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/setting_9552070_1.png?v=1739744170\" alt=\"icon\">"
           }
         }
       },
-      "block_order": ["item_9JUQhz", "item_NYUrjj", "item_Prmf4W"],
+      "block_order": [
+        "item_9JUQhz",
+        "item_NYUrjj",
+        "item_Prmf4W"
+      ],
       "custom_css": [
         ".item-icon {display: inline-block; width: 30px; height: 28px;}",
         "ul.health-feature img {width: 28px; height: 28px; object-fit: contain; border-radius: 0; line-height: 7;}"
@@ -1080,7 +1132,10 @@
           }
         }
       },
-      "block_order": ["heading_tWq74p", "content_nQLTqP"],
+      "block_order": [
+        "heading_tWq74p",
+        "content_nQLTqP"
+      ],
       "disabled": true,
       "settings": {
         "background_color": "#f6f0e6",
@@ -1109,7 +1164,9 @@
           }
         }
       },
-      "block_order": ["loox_reviews_loox_dynamic_section_9tFX78"],
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_9tFX78"
+      ],
       "disabled": true,
       "settings": {
         "heading": "",
@@ -1140,7 +1197,9 @@
           }
         }
       },
-      "block_order": ["loox_reviews_loox_dynamic_section_Y38TbV"],
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_Y38TbV"
+      ],
       "settings": {
         "heading": "",
         "heading_size": "h3",

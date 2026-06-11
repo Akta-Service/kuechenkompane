@@ -108,7 +108,7 @@
         "target_collections": [
           "interner-deal",
           "lagerumzug-sale",
-          "grossbestellung-storniert",
+          "grossbestellung-storniert-1",
           "vor-der-preiserhohung",
           "topdeal24-angebot",
           "bestseller",
@@ -125,20 +125,26 @@
           "sale-aktuell",
           "unser-grunder-ist-im-urlaub",
           "lieferchaos",
-          "uberraschungspakete"
+          "uberraschungspakete",
+          "black-month-angebote",
+          "black-friday-angebote",
+          "black-friday-angebote-1"
+        ],
+        "target_products": [
+          "asiatisches-messerset-plus-gratis-produkte"
         ],
         "target_pages": "apex-new-page",
         "enable_scroll_to_show": false,
         "px_to_show": 500,
         "top_px": 0,
-        "sticky_top": false,
-        "color_scheme": "dark",
+        "sticky_top": true,
+        "color_scheme": "scheme-9c5e8ed6-b8f4-45f1-aa5a-c22d8f7122a7",
         "pt": 15,
         "pb": 15,
-        "ann_title": "Produktionsstopp - Keine Nachproduktion",
+        "ann_title": "BLACK FRIDAY DEALS - JETZT VERFÜGBAR",
         "ann_title_size": 16,
         "ann_title_size_m": 15,
-        "text": "<p><a href=\"/collections/produktionsstopp\" title=\"Produktionsstopp ausgewählter Produkte\">Ausgewählte Serien bis zu 75% Rabatt</a></p>",
+        "text": "<p><a href=\"https://kuechenkompane.de/collections/black-month-angebote\" title=\"BLACK FRIDAY ANGEBOTE\">Bis zu -80% Sparen </a>| Solange der Vorrat reicht</p>",
         "text_size": 16,
         "text_size_m": 16
       }
@@ -157,9 +163,9 @@
         "announcement_xXLydM": {
           "type": "announcement",
           "settings": {
-            "collection": "lieferchaos",
-            "ann_title": "Notfall-Aktion läuft! 😱",
-            "text": "<p>Bis zu 75 % Rabatt – nur 48h gültig</p>"
+            "collection": "black-month-angebote",
+            "ann_title": "BLACK MONTH STARTET JETZT",
+            "text": "<p>Frühstart im Black Month – bis zu <strong>80 %</strong> <a href=\"/blogs/herzlich-wilkommen\" title=\"Küchenmesser und Zubehör\">Rabatt</a></p>"
           }
         },
         "announcement_dT4N9g": {
@@ -173,9 +179,9 @@
         "announcement_NBcHH9": {
           "type": "announcement",
           "settings": {
-            "collection": "unser-grunder-ist-im-urlaub",
-            "ann_title": "Geheimaktion gestartet! 🤫",
-            "text": "<p>Bis zu 80% Rabatt für die nächsten 48h</p>"
+            "collection": "black-friday-angebote",
+            "ann_title": "BLACK MONTH STARTET JETZT",
+            "text": "<p>Frühstart im Black Month – bis zu <strong>80% </strong><a href=\"/blogs/herzlich-wilkommen/teflon-pfanne-giftig-risiken-fakten-amp-sichere-anwendung\" title=\"Teflon-Pfanne giftig? Risiken, Fakten & sichere Anwendung\">Rabatt</a></p>"
           }
         },
         "announcement_acXHcK": {
@@ -221,7 +227,7 @@
         "announcement_FDAfCN": {
           "type": "announcement",
           "settings": {
-            "collection": "grossbestellung-storniert",
+            "collection": "grossbestellung-storniert-1",
             "ann_title": "❌ Großbestellung geplatzt – jetzt profitierst du",
             "text": "<p>Bis zu 75 % auf echte Bestseller</p>"
           }
@@ -293,9 +299,9 @@
         "announcement_4K73ww": {
           "type": "announcement",
           "settings": {
-            "collection": "gruender-geburtstag",
-            "ann_title": "🎉 Große Geburtstags-Aktion",
-            "text": "<p>Bis zu 75 % auf echte Bestseller</p>"
+            "collection": "black-friday-angebote-1",
+            "ann_title": "BLACK MONTH STARTET JETZT",
+            "text": "<p>Frühstart im Black Month – bis zu <strong>80% </strong><a href=\"/products/grillbuerste\" title=\"3in1 Grill-Reinigungsbürste\">Rabatt</a></p>"
           }
         },
         "announcement_kAPTNe": {
@@ -353,13 +359,17 @@
         "px_to_show": 500,
         "top_px": 0,
         "sticky_top": false,
-        "color_scheme": "dark",
-        "pt": 10,
-        "pb": 10,
+        "color_scheme": "scheme-5dc77651-4cfe-4da9-a33e-3719e5cd8e15",
+        "pt": 14,
+        "pb": 14,
         "ann_title_size": 16,
         "ann_title_size_m": 16,
         "text_size": 16,
-        "text_size_m": 16
+        "text_size_m": 16,
+        "show_button": false,
+        "button_position": "bottom",
+        "btn_text": "Learn more",
+        "btn_link": ""
       }
     },
     "apex_timer_progress_yCDcUj": {

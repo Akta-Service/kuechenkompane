@@ -9,44 +9,26 @@
  */
 {
   "sections": {
-    "apex_global_offer_timer_b9GWdM": {
-      "type": "Apex-global-offer-timer",
-      "name": "Apex Global Timer",
-      "settings": {
-        "bg_color": "#dce5dc",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#d2861a",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "400",
-        "timer_text": "Unser exklusives Angebot endet bald!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "target_date": "2025-09-26",
-        "target_time": "00:00:00"
-      }
-    },
-    "rich_text_DTWea7": {
+    "rich_text_MPfPJc": {
       "type": "rich-text",
       "blocks": {
-        "heading_RdTMFb": {
+        "heading_HLFfDJ": {
           "type": "heading",
           "settings": {
-            "heading": "Ausverkauf von Restbeständen",
+            "heading": "Black-Month Deals zuerst sichern",
             "heading_size": "h2"
           }
         },
-        "text_ALR8CN": {
+        "text_nAHzLU": {
           "type": "text",
           "settings": {
-            "text": "<p>Jetzt Restbestände zum Vorteilspreis: Spare bis zu <strong>75% </strong>auf ausgewählte Artikel – nur solange der Vorrat reicht oder bis Preise angehoben werden.</p>"
+            "text": "<p>Frühstart: Wegen <strong>hoher Nachfrage </strong>und <strong>knapper Bestände </strong>starten wir unsere besten Black Month Deals vor allen anderen. <strong>Es gelten Preisphasen statt Dauerrabatte. </strong>Unsere Angebote wechseln jeden Tag. Wer <strong>früh zuschlägt</strong>, spart am meisten.</p>"
           }
         }
       },
       "block_order": [
-        "heading_RdTMFb",
-        "text_ALR8CN"
+        "heading_HLFfDJ",
+        "text_nAHzLU"
       ],
       "name": "Rich text",
       "settings": {
@@ -54,9 +36,26 @@
         "color_scheme": "",
         "content_alignment": "center",
         "padding_top": 24,
-        "padding_bottom": 0,
+        "padding_bottom": 12,
         "custom_class": "",
         "animations": "inherit"
+      }
+    },
+    "apex_timer_8KXfky": {
+      "type": "Apex-timer",
+      "name": "Apex Product Timer",
+      "settings": {
+        "bg_color": "#f2f2f2",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#c89d00",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "700",
+        "timer_text": "ANGEBOT WECHSELT IN:",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "700",
+        "start_time": "00:00:00"
       }
     },
     "collection-header": {
@@ -79,7 +78,111 @@
         "enable_bg_zoom_effect": true
       }
     },
-    "mrk_collection_grid_section_timGxN": {
+    "apex_top_slider_GBwqAg": {
+      "type": "apex-top-slider",
+      "blocks": {
+        "text_zLPY9B": {
+          "type": "text",
+          "settings": {
+            "top_item": "140.000+ zufriedene Kunden"
+          }
+        },
+        "text_i4KwPb": {
+          "type": "text",
+          "settings": {
+            "top_item": "100 Tage Testen"
+          }
+        },
+        "text_KKpaJj": {
+          "type": "text",
+          "settings": {
+            "top_item": "Kostenloser Versand"
+          }
+        }
+      },
+      "block_order": [
+        "text_zLPY9B",
+        "text_i4KwPb",
+        "text_KKpaJj"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "pt": 15,
+        "pb": 15,
+        "mt_mobile": 15,
+        "mb_mobile": 15
+      }
+    },
+    "category_selection_iMrTd6": {
+      "type": "category-selection",
+      "blocks": {
+        "item_nwxAVH": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db.jpg",
+            "collection": "kuechenmesser-set",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_Bd4xRW": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d.webp",
+            "collection": "rustikales-servierbrett",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_LNGV6x": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
+            "collection": "damastmesser-set",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_KtcacC": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_9602_V7_766bf07d-e962-44cd-88f4-f20ad783e139.jpg",
+            "collection": "bbq-zubehor",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        },
+        "item_rktrNh": {
+          "type": "item",
+          "settings": {
+            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
+            "collection": "asiatisches-messerset-1",
+            "collection_name": "",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_nwxAVH",
+        "item_Bd4xRW",
+        "item_LNGV6x",
+        "item_KtcacC",
+        "item_rktrNh"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "pt": 30,
+        "pb": 30,
+        "mobile_pt": 30,
+        "mobile_pb": 30,
+        "heading_type": "mrk-h1",
+        "title": "Nach Kategorien suchen",
+        "c_n_text": "p-medium"
+      }
+    },
+    "mrk_collection_grid_section_34Nfji": {
       "type": "mrk-collection-grid-section",
       "name": "Akta Collection Grid",
       "settings": {
@@ -90,38 +193,38 @@
         "section_description": "Explore our best-selling products.",
         "collection": "",
         "products_limit": 20,
-        "use_metafield_image": true,
+        "use_metafield_image": false,
         "hover_second_image": false,
         "pagination_style": "circle",
         "show_product_ratings": false,
-        "show_stock_status": true
+        "show_stock_status": false
       }
     },
-    "promotion_banner_zN9WhN": {
+    "promotion_banner_fd8zPy": {
       "type": "promotion-banner",
       "blocks": {
-        "promotion_8NQmaz": {
+        "promotion_YV4int": {
           "type": "promotion",
           "settings": {
-            "subheading": "DEINE CHANCE AUF",
-            "heading": "-75%",
+            "subheading": "JETZT BIS ZU",
+            "heading": "-80%",
             "text_alignment": "center"
           }
         }
       },
       "block_order": [
-        "promotion_8NQmaz"
+        "promotion_YV4int"
       ],
       "name": "Promotion banner",
       "settings": {
         "container": "container-fluid",
         "color_scheme": "",
-        "heading": "AUSVERKAUF VON RESTBESTÄNDEN",
+        "heading": "BLACK FRIDAY ANGEBOTE",
         "heading_size": "h2",
-        "text": "<p>Jetzt Restbestände zum Vorteilspreis: Spare bis zu <strong>75 % </strong>auf ausgewählte Artikel – nur solange der Vorrat reicht oder bis Preise angehoben werden.</p>",
+        "text": "<p>Wir starten unsere besten Black-Friday Deals vor allen anderen. Es gelten Preisphasen statt Dauerrabatte.<strong> </strong>Unsere Angebote wechseln jeden Tag. Wer früh zuschlägt, spart am meisten.</p>",
         "content_alignment": "left",
-        "banner_url": "shopify://collections/ausverkauf-von-restbestanden",
-        "button_label": "ANGEBOTE ENTDECKEN",
+        "banner_url": "shopify://collections/black-month-angebote",
+        "button_label": "Angebote ansehen",
         "button_style": "m-button--primary",
         "button_size": "",
         "padding_top": 70,
@@ -182,7 +285,6 @@
     },
     "collection_description_tUMerW": {
       "type": "collection-description",
-      "disabled": true,
       "settings": {
         "collection_bg": "#c6d1c4",
         "collection_pt": 30,
@@ -217,11 +319,13 @@
     }
   },
   "order": [
-    "apex_global_offer_timer_b9GWdM",
-    "rich_text_DTWea7",
+    "rich_text_MPfPJc",
+    "apex_timer_8KXfky",
     "collection-header",
-    "mrk_collection_grid_section_timGxN",
-    "promotion_banner_zN9WhN",
+    "apex_top_slider_GBwqAg",
+    "category_selection_iMrTd6",
+    "mrk_collection_grid_section_34Nfji",
+    "promotion_banner_fd8zPy",
     "usp_list_xQHfgQ",
     "collection_description_tUMerW",
     "rich_text_ijBTPA"

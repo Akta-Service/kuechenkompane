@@ -133,37 +133,72 @@
         "c_n_text": "p-medium"
       }
     },
-    "main": {
-      "type": "apex-theme-collectiont-product",
-      "custom_css": [
-        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
-        ".m-collection-filters-form {margin-bottom: 0;}"
-      ],
+    "apex_global_offer_timer_F9UiAH": {
+      "type": "Apex-global-offer-timer",
+      "name": "Apex Global Timer",
       "settings": {
-        "color_scheme": "default",
-        "container": "container-fluid",
-        "grid_layout": "grid",
-        "grid_columns": "4",
-        "show_columns_switcher": true,
-        "pagination_limit": 48,
-        "paginate_type": "paginate",
-        "show_sorting": true,
-        "show_filter": false,
-        "filters_type": "storefront_filters",
-        "sidebar": "leftColumn",
-        "sidebar_title": "Filters",
-        "limit_height_widget": true,
-        "limit_height": 300,
-        "change_product_variant_on_fitlering": true,
-        "show_product_count": true,
-        "collapsed_groups": "Product type, Brand, Vendor, Size",
-        "color_swatches": "color,colour,couleur,farbe",
-        "color_swatches_design": "list",
-        "add_btn_bg": "#1e1e1e",
-        "add_btn_text_color": "#ffffff",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "overlay_opacity": 0.1
+        "bg_color": "#dce5dc",
+        "section_pt": 15,
+        "section_pb": 15,
+        "timer_clock": "#d2861a",
+        "timer_clock_text_font_size": 12,
+        "clock_font_weight": "400",
+        "timer_text": "Vorteilsbundle Aktion endet in kürze!",
+        "timer_font_size": 12,
+        "timer_color": "#000000",
+        "timer_font_weight": "400",
+        "target_date": "2025-09-29",
+        "target_time": "00:00:00"
+      }
+    },
+    "rich_text_KM7URP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_A4Yj7P": {
+          "type": "heading",
+          "settings": {
+            "heading": "UNSCHLAGBARE VORTEILSPAKETE",
+            "heading_size": "h2"
+          }
+        },
+        "text_dTjenK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wir verkaufen unsere Restbestände und du profitierst. Aus Bestsellern und Favoriten haben wir Pakete gebündelt, auf die du jetzt einmalig 75% Rabatt sparen kannst! Einen Nachschub gibt es nicht mehr. Diese Aktion gilt nur, solange der Vorrat reicht.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_A4Yj7P",
+        "text_dTjenK"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 24,
+        "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "mrk_collection_grid_section_9wFQAL": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": true,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false
       }
     },
     "usp_list_xQHfgQ": {
@@ -290,7 +325,9 @@
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
-    "main",
+    "apex_global_offer_timer_F9UiAH",
+    "rich_text_KM7URP",
+    "mrk_collection_grid_section_9wFQAL",
     "usp_list_xQHfgQ",
     "branded_image_version_ffF3PX",
     "collection_description_tUMerW",

@@ -24,40 +24,7 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "400",
-        "target_date": "2025-08-28",
-        "target_time": "00:00:00"
-      }
-    },
-    "rich_text_MPfPJc": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_HLFfDJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "Unser Gründer hat Geburtstag!",
-            "heading_size": "h2"
-          }
-        },
-        "text_nAHzLU": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Und du sparst dabei richtig. Die Lieblinge unseres Gründers, bekommst du jetzt bis zu 75% günstiger. Ob Sets, Blöcke, Zubehör oder andere Favoriten. Jetzt ist deine Chance.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_HLFfDJ",
-        "text_nAHzLU"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "custom_class": "",
-        "animations": "inherit"
+        "start_time": "00:00:00"
       }
     },
     "collection-header": {
@@ -184,37 +151,128 @@
         "c_n_text": "p-medium"
       }
     },
-    "main": {
-      "type": "apex-theme-collectiont-product",
-      "custom_css": [
-        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
-        ".m-collection-filters-form {margin-bottom: 0;}"
+    "akta_banner_image_cpPAnR": {
+      "type": "akta-banner-image",
+      "blocks": {
+        "heading_E4dtTV": {
+          "type": "heading",
+          "settings": {
+            "heading": ""
+          }
+        },
+        "discount_img_YQeNyA": {
+          "type": "discount_img",
+          "settings": {}
+        },
+        "description_iP4wHn": {
+          "type": "description",
+          "settings": {
+            "description": ""
+          }
+        },
+        "button_pMrEnC": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_E4dtTV",
+        "discount_img_YQeNyA",
+        "description_iP4wHn",
+        "button_pMrEnC"
       ],
+      "disabled": true,
+      "name": "Banner with Text",
       "settings": {
-        "color_scheme": "default",
-        "container": "container-fluid",
-        "grid_layout": "grid",
-        "grid_columns": "4",
-        "show_columns_switcher": true,
-        "pagination_limit": 48,
-        "paginate_type": "paginate",
-        "show_sorting": true,
-        "show_filter": false,
-        "filters_type": "storefront_filters",
-        "sidebar": "leftColumn",
-        "sidebar_title": "Filters",
-        "limit_height_widget": true,
-        "limit_height": 300,
-        "change_product_variant_on_fitlering": true,
-        "show_product_count": true,
-        "collapsed_groups": "Product type, Brand, Vendor, Size",
-        "color_swatches": "color,colour,couleur,farbe",
-        "color_swatches_design": "list",
-        "add_btn_bg": "#1e1e1e",
-        "add_btn_text_color": "#ffffff",
+        "banner_image_desktop": "shopify://shop_images/Header_Desktop_1.jpg",
+        "banner_image_mobile": "shopify://shop_images/Header_Mobil_1.jpg",
+        "alt_text": "Banner Image"
+      }
+    },
+    "image_with_text_2_XpM3cW": {
+      "type": "image-with-text-2",
+      "name": "Image with text overlay",
+      "settings": {
+        "color_scheme": "",
+        "container": "w-full",
+        "hero_size": "adapt",
+        "show_overlay": false,
+        "image": "shopify://shop_images/Header_Desktop_1.jpg",
+        "image_link": "",
+        "parallax": false,
+        "parallax_direction": "vertical",
+        "content_in_container": false,
+        "content_position": "center middle",
+        "text_alignment": "center",
+        "text_size": "medium",
+        "text_color": "white",
+        "title": "",
+        "subtitle": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
         "button_style": "m-button--primary",
         "button_size": "",
-        "overlay_opacity": 0.1
+        "text_alignment_mobile": "center",
+        "mb_image": "shopify://shop_images/Header_Mobil_1.jpg",
+        "use_content_above": false,
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "mrk_collection_grid_section_bbiYNi": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": true,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false
+      }
+    },
+    "promotion_banner_9TTMGj": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_nqFrx6": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "JETZT BIS ZU",
+            "heading": "-80%",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_nqFrx6"
+      ],
+      "name": "Promotion banner",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "BLACK FRIDAY ANGEBOTE",
+        "heading_size": "h2",
+        "text": "<p>Wir starten unsere besten Black-Friday Deals vor allen anderen. Es gelten Preisphasen statt Dauerrabatte.<strong> </strong>Unsere Angebote wechseln jeden Tag. Wer früh zuschlägt, spart am meisten.</p>",
+        "content_alignment": "left",
+        "banner_url": "shopify://collections/black-friday-angebote-1",
+        "button_label": "Angebote ansehen",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
       }
     },
     "usp_list_xQHfgQ": {
@@ -267,40 +325,6 @@
         "horizontal_padding_mobile": 15
       }
     },
-    "branded_image_version_ffF3PX": {
-      "type": "branded-image-version-",
-      "blocks": {
-        "title_AgFUHf": {
-          "type": "title",
-          "settings": {
-            "title": "Kochen wie ein Profi"
-          }
-        },
-        "sub_title_GcWkqp": {
-          "type": "sub_title",
-          "settings": {
-            "text": "Von messerscharfer Präzision bis hin zu perfektem Kochgeschirr.\n<br>Unsere Produkte sind für höchste Ansprüche gemacht."
-          }
-        }
-      },
-      "block_order": [
-        "title_AgFUHf",
-        "sub_title_GcWkqp"
-      ],
-      "settings": {
-        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
-        "shape_color": "#deceba",
-        "margin_top": 20,
-        "margin_bottom": 0,
-        "mobile_margin_top": 10,
-        "mobile_margin_bottom": 0,
-        "bg_img": "shopify://shop_images/IMG_9602_V6.jpg",
-        "heading_type": "mrk-h1",
-        "des_size": "p-medium",
-        "button_style": "m-button--primary",
-        "button_size": ""
-      }
-    },
     "collection_description_tUMerW": {
       "type": "collection-description",
       "settings": {
@@ -338,13 +362,14 @@
   },
   "order": [
     "apex_timer_8KXfky",
-    "rich_text_MPfPJc",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
-    "main",
+    "akta_banner_image_cpPAnR",
+    "image_with_text_2_XpM3cW",
+    "mrk_collection_grid_section_bbiYNi",
+    "promotion_banner_9TTMGj",
     "usp_list_xQHfgQ",
-    "branded_image_version_ffF3PX",
     "collection_description_tUMerW",
     "rich_text_ijBTPA"
   ]

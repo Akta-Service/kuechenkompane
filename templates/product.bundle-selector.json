@@ -91,16 +91,19 @@
             "p_pt_m": 5,
             "p_pb_m": 15,
             "price_color": "#000000",
-            "c_price_color": "#a7a7a7",
+            "c_price_color": "#b1b1b1",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 21,
             "f_s_m": 18,
+            "c_price_size": 16,
+            "c_price_size_m": 16,
             "price_font_weight": "600",
             "price_tag_bg": "#ddede0",
             "price_tag_text_color": "#000000",
             "price_tag_font_size": 8,
-            "price_tag_arrow_bg": "#ddede0"
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
           }
         },
         "subtitle_xQXVba": {
@@ -283,7 +286,11 @@
         "show_stk_icon": true,
         "glitter_effec": true,
         "bubble_before_color": "#000000",
-        "bubble_after_color": "#1e1e1e"
+        "bubble_after_color": "#1e1e1e",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "product_descrption_accordion_btdDtQ": {
@@ -831,6 +838,7 @@
         "pb_mobile": 30,
         "title": "unser Messerset erobert Deutschland",
         "heading_type": "mrk-h2",
+        "show_button": false,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "",
         "autoplay": false
@@ -1140,14 +1148,14 @@
           "type": "Item",
           "settings": {
             "feature_item": "Mit hochwertigen Materialien für maximale Langlebigkeit gefertigt",
-            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/diamond_11883313_1.png?v=1739744170\">"
+            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/diamond_11883313_1.png?v=1739744170\" alt=\"icon\">"
           }
         },
         "item_Prmf4W": {
           "type": "Item",
           "settings": {
             "feature_item": "Mit Profi-Köchen zusammen perfektioniert",
-            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/setting_9552070_1.png?v=1739744170\">"
+            "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/setting_9552070_1.png?v=1739744170\" alt=\"icon\">"
           }
         }
       },

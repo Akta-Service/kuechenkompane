@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <style>
     section.apex-page-header {
         padding: 40px 20px;
@@ -74,3 +75,81 @@
   ]
 }
 {% endschema %}
+=======
+<style>
+    section.apex-page-header {
+        padding: 40px 20px;
+    }
+  .apex-page-title {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1;
+  }
+</style>
+
+<section class="apex-page-header">
+  <div class="apex-page-header__inner">
+    {% if section.settings.show_title %}
+      <h1 class="apex-page-title" style="text-align: {{ section.settings.text_align }};">
+        {{ section.settings.custom_title | default: page.title }}
+      </h1>
+    {% endif %}
+
+    {% if section.settings.show_subtitle and section.settings.custom_subtitle != blank %}
+      <p class="apex-page-subtitle" style="text-align: {{ section.settings.text_align }};">
+        {{ section.settings.custom_subtitle }}
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "APex Page Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show title",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "custom_title",
+      "label": "Custom title",
+      "visible_if": "{{ section.settings.show_title == true }}",
+      "default": "Page Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subtitle",
+      "label": "Show subtitle",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "custom_subtitle",
+      "label": "Custom subtitle",
+      "default": "subtitle",
+      "visible_if": "{{ section.settings.show_subtitle == true }}"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "APex Page Header"
+    }
+  ]
+}
+{% endschema %}
+>>>>>>> 727904ae2a03b5daa0b63a32aad8464d0c19913d

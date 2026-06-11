@@ -115,6 +115,7 @@
       "name": "APEX Announcement Sticky",
       "settings": {
         "target_collections": [],
+        "target_products": [],
         "target_pages": "",
         "enable_scroll_to_show": true,
         "px_to_show": 200,
@@ -165,8 +166,7 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "500",
-        "target_date": "2025-04-28",
-        "target_time": "00:00:00"
+        "start_time": "00:00:00"
       }
     },
     "main": {
@@ -211,37 +211,26 @@
         "collapsed_groups": "Product type, Brand, Vendor, Size{{ collection.title }}",
         "color_swatches": "color,colour,couleur,farbe",
         "color_swatches_design": "list",
-        "overlay_opacity": 0.3
+        "overlay_opacity": 0.3,
+        "show_stock_status": false
       }
     },
-    "apex_theme_collectiont_product_h4QEfc": {
-      "type": "apex-theme-collectiont-product",
-      "name": "Apex Theme Collection",
+    "mrk_collection_grid_section_ppayNa": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
       "settings": {
-        "color_scheme": "",
-        "container": "container",
-        "grid_layout": "grid",
-        "grid_columns": "4",
-        "show_columns_switcher": false,
-        "pagination_limit": 40,
-        "paginate_type": "paginate",
-        "show_sorting": false,
-        "show_filter": false,
-        "filters_type": "storefront_filters",
-        "sidebar": "leftColumn",
-        "sidebar_title": "Filters",
-        "limit_height_widget": false,
-        "limit_height": 300,
-        "change_product_variant_on_fitlering": true,
-        "show_product_count": true,
-        "collapsed_groups": "Brand, Vendor, Size",
-        "color_swatches": "color,colour,couleur,farbe",
-        "color_swatches_design": "inline",
-        "add_btn_bg": "#1e1e1e",
-        "add_btn_text_color": "#000000",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "overlay_opacity": 0.1
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": true,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false
       }
     },
     "promotion_banner_dgKacc": {
@@ -345,7 +334,7 @@
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
-    "apex_theme_collectiont_product_h4QEfc",
+    "mrk_collection_grid_section_ppayNa",
     "promotion_banner_dgKacc",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"

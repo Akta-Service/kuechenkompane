@@ -77,7 +77,7 @@
         font-size: 14px;
       }
       span.comprae-text{
-        color: {{ block.settings.c_price_color }};
+        color: #b1b1b1;
       }
 
 
@@ -385,7 +385,7 @@
           </div>
           <div class="add-logo-no-selection show-text2">
             <div class="add-logo-no-selection-content">
-              <h3>Personalisierung: <span id="showTextEmoji"></span></h3>
+              <h2>Personalisierung: <span id="showTextEmoji"></span></h2>
               <p class="add-logo-no-selection-text">Dein Personalisierung war erfolgreich.</p>
             </div>
             <div class="btn--wrapper">
@@ -399,6 +399,10 @@
 
       {% when 'viewerStockCount' %}
         {% render 'viewer-stock-count', block: block %}
+
+      {% when 'product_stock_status' %}
+        {% render 'stock-count-status', custom_class: 'ml-6', block: block, product: product %}
+
       {% when 'featurelist_header' %}
         <p
           class="feature-header"
