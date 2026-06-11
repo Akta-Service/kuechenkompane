@@ -1,0 +1,288 @@
+<td class="td-{{ block.id }}">
+  <div class="table-cell-{{ block.id }}">
+    {% if block.settings.icon %}
+      {% assign icon_class = 'icon-' | append: block.id %}
+      {{
+        block.settings.icon
+        | image_url: width: block.settings.icon.width, height: block.settings.icon.height
+        | image_tag: class: icon_class, loading: 'lazy'
+      }}
+    {% endif %}
+    {{ block.settings.text }}
+  </div>
+</td>
+
+{% style %}
+  .td-{{ block.id }} {
+    vertical-align: top;
+    padding: 0;
+  }
+
+  .table-cell-{{ block.id }} {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_right }}px {{ block.settings.padding_bottom }}px {{ block.settings.padding_left }}px;
+    border-radius: {{ block.settings.border_radius_top_left }}px {{ block.settings.border_radius_top_right }}px {{ block.settings.border_radius_bottom_right }}px {{ block.settings.border_radius_bottom_left }}px;
+    background: {{ block.settings.bg_color }};
+    display: flex;
+    flex-direction: {{ block.settings.flex_direction }};
+    align-items: center;
+    gap: {{ block.settings.gap }}px;
+    font-size: {{ block.settings.font_size }}px;
+  }
+
+  .table-cell-{{ block.id }}:not(:has(p)) {
+    justify-content: center;
+  }
+
+  .table-cell-{{ block.id }} p {
+    margin: 0 !important;
+    max-width: fit-content;
+
+    @media(max-width: 600px) {
+      font-size: smaller;
+      hyphens: auto;
+    }
+  }
+
+  .icon-{{ block.id }} {
+    height: {{ block.settings.icon_height }}px;
+    width: auto;
+    display: block;
+  }
+
+  @media(max-width: 768px) {
+    .table-cell-{{ block.id }} {
+      flex-direction: {{ block.settings.flex_direction_mobile }};
+      align-items: {{ block.settings.align_items_mobile }};
+      text-align: {{ block.settings.text_align_mobile }};
+      gap: {{ block.settings.gap_mobile }}px;
+    }
+    .table-cell-{{ block.id }} p {
+      max-width: 100%;
+    }
+    .icon-{{ block.id }} {
+      height: {{ block.settings.icon_height_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Floow Table Cell",
+  "presets": [{ "name": "Floow Table Cell", "category": "Floow" }],
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "range",
+      "id": "icon_height",
+      "label": "Icon Height Desktop",
+      "default": 24,
+      "unit": "px",
+      "min": 10,
+      "max": 150,
+      "step": 2
+    },
+    {
+      "type": "range",
+      "id": "icon_height_mobile",
+      "label": "Icon Height Mobile",
+      "default": 24,
+      "unit": "px",
+      "min": 10,
+      "max": 150,
+      "step": 2
+    },
+    {
+      "type": "richtext",
+      "label": "Text",
+      "id": "text",
+      "default": "<p>Text Content</p>"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font Size",
+      "default": 14,
+      "min": 5,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "flex_direction",
+      "label": "Flex Direction",
+      "default": "row",
+      "options": [
+        { "label": "Row", "value": "row" },
+        { "label": "Row Reverse", "value": "row-reverse" },
+        { "label": "Column", "value": "column" },
+        { "label": "Column Reverse", "value": "column-reverse" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap",
+      "default": 5,
+      "unit": "px",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "info": "Between icon and text"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Layout"
+    },
+    {
+      "type": "select",
+      "id": "flex_direction_mobile",
+      "label": "Flex Direction Mobile",
+      "default": "column",
+      "options": [
+        { "label": "Row", "value": "row" },
+        { "label": "Row Reverse", "value": "row-reverse" },
+        { "label": "Column (Icon oben)", "value": "column" },
+        { "label": "Column Reverse (Icon unten)", "value": "column-reverse" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "align_items_mobile",
+      "label": "Ausrichtung Mobile",
+      "default": "center",
+      "options": [
+        { "label": "Links", "value": "flex-start" },
+        { "label": "Mitte", "value": "center" },
+        { "label": "Rechts", "value": "flex-end" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align_mobile",
+      "label": "Text Ausrichtung Mobile",
+      "default": "center",
+      "options": [
+        { "label": "Links", "value": "left" },
+        { "label": "Mitte", "value": "center" },
+        { "label": "Rechts", "value": "right" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Gap Mobile",
+      "default": 4,
+      "unit": "px",
+      "min": 0,
+      "max": 30,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "label": "Right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "label": "Left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Border Radius"
+    },
+    {
+      "type": "range",
+      "id": "border_radius_top_left",
+      "label": "Border Radius (Top Left)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "border_radius_top_right",
+      "label": "Border Radius (Top Right)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "border_radius_bottom_right",
+      "label": "Border Radius (Bottom Right)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "border_radius_bottom_left",
+      "label": "Border Radius (Bottom Left)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ]
+}
+{% endschema %}

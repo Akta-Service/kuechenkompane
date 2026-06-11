@@ -11,6 +11,7 @@
   "sections": {
     "apex_timer_YVTRpL": {
       "type": "Apex-timer",
+      "disabled": true,
       "name": "Apex Product Timer",
       "settings": {
         "bg_color": "#dce5dc",
@@ -22,7 +23,8 @@
         "timer_text": "GEBURTSTAGS-AKTION - Bis zu 75% Rabatt!",
         "timer_font_size": 14,
         "timer_color": "#000000",
-        "timer_font_weight": "400"
+        "timer_font_weight": "400",
+        "start_time": "00:00:00"
       }
     },
     "main": {
@@ -91,16 +93,19 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "Show_lowest_price": false,
+            "lowest_price_text": "Der niedrigste Preis in den letzten 30 Tagen",
             "taxes_included": false,
             "taxes_included_text": "",
             "show_saving": false,
             "sale_badge_type": "percentage",
+            "badge_text": "",
             "p_pt": 5,
             "p_pb": 5,
             "p_pt_m": 5,
             "p_pb_m": 5,
             "price_color": "#000000",
-            "c_price_color": "#b1b1b1",
+            "c_price_color": "#bbbbbb",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 22,
@@ -178,7 +183,8 @@
             "show_quantity_selector": true,
             "show_atc_button": true,
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": true,
+            "btn_mt": 8
           }
         },
         "payment_icon_tePtpf": {
@@ -219,6 +225,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "selected_gift_product": "",
         "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
@@ -292,6 +299,669 @@
         "readless": "Weniger Lesen",
         "br_color": "#000000",
         "icon_color": "#000000"
+      }
+    },
+    "custom_liquid_VdW3mP": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
+      "settings": {
+        "custom_liquid": "<div id=\"floow-buybox-bundle\"></div>",
+        "custom_class": ""
+      }
+    },
+    "floow_comparison_table_with_image_EXV4yK": {
+      "type": "floow-comparison-table-with-image",
+      "blocks": {
+        "floow_table_group_tdrByR": {
+          "type": "_floow-table-group",
+          "settings": {
+            "show_only_in_editor": false,
+            "bg_color": "",
+            "border_radius": 0,
+            "width": 500,
+            "gap": 10,
+            "flex-wrap": "nowrap",
+            "flex-direction": "column",
+            "justify-content": "center",
+            "align-items": "center",
+            "width_mobile": 300,
+            "gap-mobile": 10,
+            "flex-wrap-mobile": "nowrap",
+            "flex-direction-mobile": "column",
+            "justify-content-mobile": "center",
+            "align-items-mobile": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0,
+            "margin_top": 0,
+            "margin_bottom": 0
+          },
+          "blocks": {
+            "floow_image_cF6ngX": {
+              "type": "_floow-image",
+              "settings": {
+                "image": "shopify://shop_images/kuechenkompane_vs_andere_final.png",
+                "width": 600,
+                "width_mobile": 600,
+                "radius": 26,
+                "radius_mobile": 20,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "margin_top_mobile": -80,
+                "margin_bottom_mobile": 0
+              },
+              "blocks": {}
+            },
+            "floow_heading_NJXa6E": {
+              "type": "_floow-heading",
+              "settings": {
+                "heading": "Küchenkompane vs. Andere Anbieter",
+                "heading_type": "h2",
+                "max_width": 0,
+                "font_size": 24,
+                "font_size_mobile": 18,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "color": "#000000",
+                "margin_top": 12,
+                "margin_bottom": 0,
+                "margin_top_mobile": 0,
+                "margin_bottom_mobile": 0
+              },
+              "blocks": {}
+            },
+            "floow_text_WT3T6x": {
+              "type": "_floow-text",
+              "settings": {
+                "text": "<p>Was uns von anderen abhebt:</p>",
+                "font_size": 18,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "text_type": "h2",
+                "alignment": "center",
+                "font_color": "#000000",
+                "background_color": "",
+                "padding_top": 0,
+                "padding_bottom": 0,
+                "padding_right": 0,
+                "padding_left": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "floow_image_cF6ngX",
+            "floow_heading_NJXa6E",
+            "floow_text_WT3T6x"
+          ]
+        },
+        "floow_table_group_EbYUD7": {
+          "type": "_floow-table-group",
+          "settings": {
+            "show_only_in_editor": false,
+            "bg_color": "",
+            "border_radius": 0,
+            "width": 500,
+            "gap": 10,
+            "flex-wrap": "nowrap",
+            "flex-direction": "column",
+            "justify-content": "center",
+            "align-items": "center",
+            "width_mobile": 600,
+            "gap-mobile": 10,
+            "flex-wrap-mobile": "nowrap",
+            "flex-direction-mobile": "column",
+            "justify-content-mobile": "center",
+            "align-items-mobile": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0,
+            "margin_top": 20,
+            "margin_bottom": 20
+          },
+          "blocks": {
+            "floow_table_EGJ4b3": {
+              "type": "_floow-table",
+              "settings": {
+                "bg_color": "#ffffff",
+                "border_radius": 15,
+                "padding": 10,
+                "padding_mobile": 10,
+                "enable_show_more": true,
+                "visible_rows": 7,
+                "show_more_text": "Mehr anzeigen",
+                "show_less_text": "Weniger anzeigen",
+                "button_bg_color": "#324a34",
+                "button_text_color": "#ffffff",
+                "button_border_radius": 8,
+                "button_font_size": 14,
+                "button_margin_top": 12
+              },
+              "blocks": {
+                "floow_table_row_fbCqhR": {
+                  "type": "_floow-table-row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_zDtwcb": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/kuechenkompane_logo_vs.png",
+                        "icon_height": 80,
+                        "icon_height_mobile": 50,
+                        "text": "",
+                        "font_size": 14,
+                        "flex_direction": "row",
+                        "gap": 0,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 5,
+                        "border_radius_top_right": 5,
+                        "border_radius_bottom_right": 5,
+                        "border_radius_bottom_left": 5
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_XFHJRK": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/andere-anbieter_e3f530b3-3aca-4bb0-8832-6212d37ee989.png",
+                        "icon_height": 80,
+                        "icon_height_mobile": 50,
+                        "text": "",
+                        "font_size": 14,
+                        "flex_direction": "row",
+                        "gap": 0,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_zDtwcb",
+                    "floow_table_cell_XFHJRK"
+                  ]
+                },
+                "floow_table_row_xwtEdL": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_YX6g8k": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Hoher Härtegrad  <br/>60+ HRC</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_JrkJn7": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Geringer Härtegrad <br/>&lt; 52 HRC</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 5,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_YX6g8k",
+                    "floow_table_cell_JrkJn7"
+                  ]
+                },
+                "floow_table_row_f7ijxx": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_NwwtAc": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Hochwertiger <br/>Premiumstahl</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_K447MU": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Billiger<br/>Stahl</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_NwwtAc",
+                    "floow_table_cell_K447MU"
+                  ]
+                },
+                "floow_table_row_PwwqAm": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_4Hx7Gp": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Ergonomische<br/>Griffe</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_T3J968": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Glatte haftende <br/>Fläche</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_4Hx7Gp",
+                    "floow_table_cell_T3J968"
+                  ]
+                },
+                "floow_table_row_3XdnAN": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_pV6QWr": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>100% <br/>Rostfrei</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_pTipA9": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Kaum<br/>rostbeständig</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_pV6QWr",
+                    "floow_table_cell_pTipA9"
+                  ]
+                },
+                "floow_table_row_H3Them": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_WLzmLy": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Von Hand<br/>gefertigt</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_f9nMRf": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Maschinell<br/>produziert</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_WLzmLy",
+                    "floow_table_cell_f9nMRf"
+                  ]
+                },
+                "floow_table_row_mGejhR": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_GJUcjH": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Eigene<br/>Herstellung</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_BhmJk9": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Meistens nur<br/>eingekauft</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_GJUcjH",
+                    "floow_table_cell_BhmJk9"
+                  ]
+                }
+              },
+              "block_order": [
+                "floow_table_row_fbCqhR",
+                "floow_table_row_xwtEdL",
+                "floow_table_row_f7ijxx",
+                "floow_table_row_PwwqAm",
+                "floow_table_row_3XdnAN",
+                "floow_table_row_H3Them",
+                "floow_table_row_mGejhR"
+              ]
+            }
+          },
+          "block_order": [
+            "floow_table_EGJ4b3"
+          ]
+        }
+      },
+      "block_order": [
+        "floow_table_group_tdrByR",
+        "floow_table_group_EbYUD7"
+      ],
+      "disabled": true,
+      "name": "Floow Comp Table & Image",
+      "settings": {
+        "show_only_in_editor": true,
+        "bg_color": "#c6d1c4",
+        "border_radius": 0,
+        "gap": 40,
+        "flex-wrap": "nowrap",
+        "flex-direction": "row",
+        "justify-content": "center",
+        "align-items": "center",
+        "gap-mobile": 10,
+        "flex-wrap-mobile": "nowrap",
+        "flex-direction-mobile": "column",
+        "justify-content-mobile": "center",
+        "align-items-mobile": "center",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_right": 25,
+        "padding_left": 25,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "padding_right_mobile": 10,
+        "padding_left_mobile": 10,
+        "margin_top": 60,
+        "margin_bottom": 40
       }
     },
     "product-details-tabs": {
@@ -418,6 +1088,7 @@
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "Unsere Produkte in Aktion",
+        "title_size": 20,
         "heading_type": "mrk-h1",
         "show_button": false,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
@@ -929,90 +1600,6 @@
         "alignment": "text-left"
       }
     },
-    "icon_box_9UtNky": {
-      "type": "icon-box",
-      "blocks": {
-        "iconbox_pJbJGA": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
-            "image_by_url": "",
-            "title": "30 Tage Rückgaberecht",
-            "description": "<p>Teste unsere hochwertigen Küchenmesser risikofrei – mit 30 Tagen Rückgaberecht.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_RW46nE": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "image_by_url": "",
-            "title": "Schärfe Garantiert",
-            "description": "<p>Unsere Messer stehen für Qualität und Langlebigkeit – garantiert ein Leben lang</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_EiwgTg": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "image_by_url": "",
-            "title": "Kostenloser Versand",
-            "description": "<p>Genieße kostenlosen Versand innerhalb der gesamten EU ab 100€ Bestellwert.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "iconbox_pJbJGA",
-        "iconbox_RW46nE",
-        "iconbox_EiwgTg"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".m-icon-box__heading {font-weight: 400;}"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "item_per_row": 3,
-        "item_gap": 30,
-        "item_gap_mobile": 10,
-        "card_style": "vertical",
-        "image_max_width": "70px",
-        "content_alignment": "center",
-        "hover_effect": "scaling-up",
-        "enable_slider": false,
-        "show_pagination": false,
-        "show_navigation": false,
-        "use_scroll_mobile": true,
-        "use_grid_column_mb": false,
-        "padding_top": 100,
-        "padding_bottom": 38,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "expert_testimonial_adCtdF": {
       "type": "expert-testimonial",
       "blocks": {
@@ -1109,6 +1696,8 @@
         "loox_reviews_loox_dynamic_section_9tFX78": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
             "limit": 20,
@@ -1141,19 +1730,36 @@
         "container": "container-fluid",
         "color_scheme": "",
         "remove_params": false,
+        "custom_class": "",
+        "padding_top": 100,
+        "padding_bottom": 100,
         "heading": "Das könnte dir auch gefallen",
         "heading_size": "h3",
         "text_align": "center",
         "limit": 8,
         "columns": 5,
+        "columns_tablet": 3,
+        "columns_mobile": 1,
+        "peek_tablet": 60,
+        "peek_mobile": 50,
+        "peek_mobile_sm": 40,
+        "mobile_gap": 12,
         "column_gap": 30,
         "enable_slider": true,
-        "show_pagination": false,
+        "slider_type": "loop",
+        "slider_speed": 550,
         "show_navigation": true,
-        "use_scroll_mobile": true,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "custom_class": "",
+        "show_pagination": false,
+        "autoplay": false,
+        "autoplay_speed": 4000,
+        "nav_bg_color": "#ffffff",
+        "nav_hover_bg_color": "#f7f3ee",
+        "nav_icon_color": "#000000",
+        "nav_border_color": "#e0e0e0",
+        "nav_shadow": "0 3px 14px rgba(0,0,0,0.14)",
+        "nav_size": 46,
+        "pagination_color": "#cccccc",
+        "pagination_active_color": "#000000",
         "animations": "inherit"
       }
     },
@@ -1224,6 +1830,8 @@
     "main",
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
+    "custom_liquid_VdW3mP",
+    "floow_comparison_table_with_image_EXV4yK",
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
@@ -1234,7 +1842,6 @@
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
     "apex_faqs_jx7hp6",
-    "icon_box_9UtNky",
     "expert_testimonial_adCtdF",
     "cta_final_9B8iN9",
     "1741277473f9b1112d",

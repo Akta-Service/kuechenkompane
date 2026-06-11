@@ -1,0 +1,299 @@
+
+<style>
+  #value-cards-{{ section.id }} {
+    background: {{ section.settings.section_bg }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #value-cards-{{ section.id }} .value-cards-heading {
+    margin: 0 0 34px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.7;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+  }
+
+  #value-cards-{{ section.id }} .value-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  #value-cards-{{ section.id }} .value-card {
+    background: {{ section.settings.card_bg }};
+    border-radius: {{ section.settings.card_radius }}px;
+      padding: 28px 22px;
+    text-align: center;
+    min-height: 100%;
+  }
+
+  #value-cards-{{ section.id }} .value-card-icon-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  #value-cards-{{ section.id }} .value-card-icon-circle {
+    width: 68px;
+    height: 68px;
+    border-radius: 999px;
+    background: {{ section.settings.icon_circle_bg }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #value-cards-{{ section.id }} .value-card-svg {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ section.settings.icon_color }};
+  }
+
+  #value-cards-{{ section.id }} .value-card-svg svg {
+    width: 30px;
+    height: 30px;
+    display: block;
+    stroke: #3d5a3d;
+    stroke-width: 2px;
+    fill: none;
+  }
+
+  #value-cards-{{ section.id }} .value-card-icon-text {
+    font-size: 28px;
+    line-height: 1;
+    color: {{ section.settings.icon_color }};
+    display: inline-block;
+  }
+
+  #value-cards-{{ section.id }} .value-card-title {
+    margin: 16px 0 12px;
+    font-size: 17.6px;
+    line-height: 1.7;
+    font-weight: 700;
+    color: {{ section.settings.card_title_color }};
+  }
+
+  #value-cards-{{ section.id }} .value-card-text {
+    font-size: 15.2px;
+    line-height: 1.65;
+    color: {{ section.settings.card_text_color }};
+    margin: 0 auto;
+  }
+
+  #value-cards-{{ section.id }} .value-card-text p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 1149px) {
+    #value-cards-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+    #value-cards-{{ section.id }} .value-cards-heading {
+      font-size: 21.6px;
+    }
+  }
+
+  @media screen and (max-width: 639px) {
+    #value-cards-{{ section.id }} .value-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+</style>
+  
+<section id="value-cards-{{ section.id }}" class="value-cards-section">
+  <div class="custom-container">
+    {% if section.settings.heading != blank %}
+      <h2 class="value-cards-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="value-cards-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'card' %}
+          <div class="value-card" {{ block.shopify_attributes }}>
+            <div class="value-card-icon-wrap">
+              <div class="value-card-icon-circle">
+                {% if block.settings.svg_code != blank %}
+                  <div class="value-card-svg">
+                    {{ block.settings.svg_code }}
+                  </div>
+                {% elsif block.settings.icon_text != blank %}
+                  <span class="value-card-icon-text">{{ block.settings.icon_text }}</span>
+                {% endif %}
+              </div>
+            </div>
+
+            {% if block.settings.title != blank %}
+              <h3 class="value-card-title">{{ block.settings.title }}</h3>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <div class="value-card-text rte">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Value cards",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Dafür stehen wir:"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Section background",
+      "default": "#eef0fb"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card title color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card text color",
+      "default": "#2e2e2e"
+    },
+    {
+      "type": "color",
+      "id": "icon_circle_bg",
+      "label": "Icon circle background",
+      "default": "#f0f1f8"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#486a48"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card corner radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Value card",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "svg_code",
+          "label": "SVG code",
+          "info": "Paste inline SVG code here"
+        },
+        {
+          "type": "text",
+          "id": "icon_text",
+          "label": "Fallback icon text",
+          "default": "☆",
+          "info": "Used if SVG code is empty"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Verlässliche Qualität"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Deine Auswahl an Produkten bei uns entsteht aus klaren Anforderungen an Material, Verarbeitung und Funktion.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Value cards",
+      "blocks": [
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

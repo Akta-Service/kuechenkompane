@@ -1,0 +1,11 @@
+<div
+  class="rs-gift-info"
+  {{ block.shopify_attributes }}
+  style="text-align: {{ block.settings.alignment }};"
+>
+  {% if block.settings.gift_info_icon != blank %}
+    <img class="gift-icon" src="{{ block.settings.gift_info_icon | image_url }}" width="" height="" alt="icon">
+  {% endif %}
+
+  {{ block.settings.gift_info }}
+</div>

@@ -9,54 +9,6 @@
  */
 {
   "sections": {
-    "breadcrumb_yifnda": {
-      "type": "breadcrumb",
-      "disabled": true,
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
-    "image_with_text_jADKWn": {
-      "type": "image-with-text",
-      "name": "Image with text",
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "item_gap": 100,
-        "item_gap_mobile": 16,
-        "layout": "left",
-        "image_column_size": "6",
-        "image_overlap": false,
-        "show_image_reverse": false,
-        "hover_effect": false,
-        "image_animation": "none",
-        "image": "shopify://shop_images/gelb_1.jpg",
-        "link": "",
-        "link_2": "",
-        "second_image_offset_top": 10,
-        "title": "GEWINNSPIEL - REGELN:",
-        "sub_title": "",
-        "text": "<p>🎟️ <strong>3 Lose pro 50 € Einkaufswert  (NUR 48h)</strong></p><p>🎟️ <strong>1 Los pro 50 € Einkaufswert  (Ab Montag 08.07)</strong></p><p><strong>📅 Teilnahmezeitraum: 05. Juli bis 12. Juli 2025</strong></p><p><strong>🏖️ Das gibt’s zu gewinnen: </strong>Eine unvergessliche All-Inclusive-<strong>Malediven-Reise für 2 Personen </strong>– inkl. Flug & Unterkunft im Wasserbungalow</p><p><strong>🔔 Auslosung: </strong>Gewinner wird <strong>öffentlich gezogen & per E-Mail benachrichtigt</strong>.</p>",
-        "text_size": "medium",
-        "content_alignment": "left",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "m-button--link",
-        "button_size": "",
-        "padding_top": 26,
-        "padding_bottom": 0,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -77,57 +29,81 @@
         "enable_bg_zoom_effect": true
       }
     },
-    "apex_timer_9PnBtn": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "name": "Apex Product Timer",
+    "apex_timer_restart_n6pK6H": {
+      "type": "APEX-timer-restart",
+      "name": "Apex Timer Restart",
       "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#000000",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "600",
-        "timer_text": "Unser Angebot endet in kürze!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "500",
-        "target_date": "2025-04-28",
-        "target_time": "00:00:00"
+        "bg_color": "#324a34",
+        "section_pt": 10,
+        "section_pb": 10,
+        "timer_clock": "#fff",
+        "timer_clock_text_font_size": 15,
+        "clock_font_weight": "400",
+        "timer_text": "HOHE NACHFRAGE – BELIEBTE MODELLE FAST AUSVERKAUFT",
+        "timer_font_size": 15,
+        "timer_color": "#dcad27",
+        "timer_font_weight": "600",
+        "timer_hide": true,
+        "start_countdown": true,
+        "start_datetime": "2025-12-25 00:00",
+        "not_started_text": "Countdown nicht gestartet",
+        "set_hour": 48,
+        "restart_on": true
       }
     },
-    "main": {
-      "type": "main-collection-product-grid-point",
-      "custom_css": [
-        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
-        ".m-collection-filters-form {margin-bottom: 0;}"
+    "rich_text_DBJGQC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GMheB4": {
+          "type": "heading",
+          "settings": {
+            "heading": "⚠️ Wichtige Mitteilung:",
+            "heading_size": "h2"
+          }
+        },
+        "text_jF9tRB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Aufgrund steigender <strong>Produktions- und Rohstoffkosten</strong> müssen wir unsere Preise in Kürze deutlich anpassen.</p><p>Bis dahin geben wir unsere aktuellen Lagerbestände noch <strong>bis zu -80% günstiger ab.</strong></p><p>Sobald der Vorrat ausverkauft ist oder die neuen Preise aktiv werden, endet diese Aktion endgültig.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GMheB4",
+        "text_jF9tRB"
       ],
+      "name": "Rich text",
       "settings": {
-        "show_cart_button": true,
+        "container": "container",
         "color_scheme": "",
-        "container": "container-fluid",
-        "grid_layout": "grid",
-        "grid_columns": "4",
-        "show_columns_switcher": true,
-        "pagination_limit": 30,
-        "paginate_type": "paginate",
-        "show_sorting": true,
-        "show_filter": false,
-        "filters_type": "storefront_filters",
-        "sidebar": "leftColumn",
-        "sidebar_title": "Filters",
-        "limit_height_widget": true,
-        "limit_height": 300,
-        "change_product_variant_on_fitlering": true,
-        "show_product_count": true,
-        "collapsed_groups": "Product type, Brand, Vendor, Size",
-        "color_swatches": "color,colour,couleur,farbe",
-        "color_swatches_design": "list",
-        "add_btn_bg": "#1e1e1e",
-        "add_btn_text_color": "#000000",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "overlay_opacity": 0
+        "content_alignment": "center",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "mrk_collection_grid_section_KxLwc9": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
+      "settings": {
+        "padding_top": 57,
+        "padding_bottom": 40,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": false,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false,
+        "show_gift_info": false,
+        "info_text": "",
+        "add_border_line": false,
+        "show_max_price": false,
+        "show_save_price": false
       }
     },
     "usp_list_nd6t8y": {
@@ -148,7 +124,7 @@
           "type": "item",
           "settings": {
             "usp_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
-            "usp_title": "140,000+ zufriedene Kunden",
+            "usp_title": "200,000+ zufriedene Kunden",
             "title_size": 18,
             "usp_info": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?",
             "info_size": 14,
@@ -176,41 +152,7 @@
         "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
-      }
-    },
-    "promotion_banner_dgKacc": {
-      "type": "promotion-banner",
-      "blocks": {
-        "promotion_NBbJbf": {
-          "type": "promotion",
-          "settings": {
-            "subheading": "JETZT ODER NIE",
-            "heading": "-75%",
-            "text_alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "promotion_NBbJbf"
-      ],
-      "name": "Promotion banner",
-      "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "heading": "Entdecke unsere Auslaufmodelle",
-        "heading_size": "h2",
-        "text": "<p>Noch nicht das richtige gefunden? Entdecke jetzt unsere Auslaufmodelle bevor sie alle weg sind. Für die nächsten 48h bis zu -75% Rabatt.</p>",
-        "content_alignment": "left",
-        "banner_url": "shopify://collections/ausverkauf",
-        "button_label": "",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "padding_top": 70,
-        "padding_bottom": 70,
-        "custom_class": "",
-        "animations": "inherit"
+        "verticle_padding_mobile": 30
       }
     },
     "collection_description_KrcbiD": {
@@ -225,13 +167,11 @@
     }
   },
   "order": [
-    "breadcrumb_yifnda",
-    "image_with_text_jADKWn",
     "collection-header",
-    "apex_timer_9PnBtn",
-    "main",
+    "apex_timer_restart_n6pK6H",
+    "rich_text_DBJGQC",
+    "mrk_collection_grid_section_KxLwc9",
     "usp_list_nd6t8y",
-    "promotion_banner_dgKacc",
     "collection_description_KrcbiD"
   ]
 }

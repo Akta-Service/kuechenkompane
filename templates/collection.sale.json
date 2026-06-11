@@ -9,6 +9,34 @@
  */
 {
   "sections": {
+    "hero_split_kghyJH": {
+      "type": "hero-split",
+      "name": "Hero Split Layout",
+      "settings": {
+        "color_scheme": "",
+        "container": "w-full",
+        "hero_size": "medium",
+        "show_overlay": true,
+        "image": "shopify://shop_images/New_Project_-_Arcads_image_asset_1_8a0b9d92-67c9-4df5-bebe-fbe34beb6eb6.jpg",
+        "image_link": "",
+        "parallax": false,
+        "parallax_direction": "vertical",
+        "content_in_container": false,
+        "text_size": "large",
+        "text_color": "white",
+        "title": "GRATIS DAMAST TASCHENMESSER",
+        "subtitle": "",
+        "text": "<p>Zu jeder Bestellung ab €99 legen wir ein handgeschmiedetes Damast-Taschenmesser im Wert von €89 gratis dazu.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "mb_image": "shopify://shop_images/New_Project_-_Arcads_image_asset_1_8a0b9d92-67c9-4df5-bebe-fbe34beb6eb6.jpg",
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -27,107 +55,6 @@
         "padding_top": 22,
         "padding_bottom": 18,
         "enable_bg_zoom_effect": true
-      }
-    },
-    "breadcrumb_h1_ht4BXh": {
-      "type": "breadcrumb-h1",
-      "name": "Breadcrumb h1",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
-    "breadcrumb_mkkDYm": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
-    "apex_timer_9PnBtn": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#000000",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "600",
-        "timer_text": "Unser Angebot endet in kürze!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "500",
-        "start_time": "00:00:00"
-      }
-    },
-    "category_selection_iMrTd6": {
-      "type": "category-filter-by-image",
-      "blocks": {
-        "item_LNGV6x": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
-            "collection_name": "Sets",
-            "custom_url": "kuchenmesser-set"
-          }
-        },
-        "item_nwxAVH": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db.jpg",
-            "collection_name": "Einzelne",
-            "custom_url": "Küchenmesser"
-          }
-        },
-        "item_rktrNh": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/Jishaku_mit-Messer_ec38eea5-dcbe-4fd6-8ac8-e69a48146c53.jpg",
-            "collection_name": "Messerblock",
-            "custom_url": "messerblock"
-          }
-        },
-        "item_Bd4xRW": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d.webp",
-            "collection_name": "Zubehör",
-            "custom_url": "zubehör"
-          }
-        },
-        "item_KtcacC": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_9602_V7_766bf07d-e962-44cd-88f4-f20ad783e139.jpg",
-            "collection_name": "Ausverkauf",
-            "custom_url": "Ausverkauf"
-          }
-        }
-      },
-      "block_order": [
-        "item_LNGV6x",
-        "item_nwxAVH",
-        "item_rktrNh",
-        "item_Bd4xRW",
-        "item_KtcacC"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "pt": 30,
-        "pb": 30,
-        "mobile_pt": 30,
-        "mobile_pb": 30,
-        "heading_type": "mrk-h1",
-        "title": "Wähle deine Kategorie",
-        "c_n_text": "p-medium"
       }
     },
     "main": {
@@ -176,54 +103,41 @@
         "show_stock_status": false
       }
     },
-    "mrk_collection_grid_section_y88W4d": {
+    "hide_sold_out_toggle_8BiD4U": {
+      "type": "hide-sold-out-toggle",
+      "name": "Floow Hide Sold Out",
+      "settings": {
+        "show_only_in_editor": true,
+        "section_id": "#shopify-section-template--26793915416957__mrk_collection_grid_section_PKCq6B",
+        "text": "Nur verfügbare Artikel anzeigen",
+        "box_layout": false,
+        "section_width": 1340,
+        "section_margin": 15,
+        "margin_top_bottom_desktop": 16,
+        "margin_top_bottom_mobile": 16
+      }
+    },
+    "mrk_collection_grid_section_HU3gdA": {
       "type": "mrk-collection-grid-section",
       "name": "Akta Collection Grid",
       "settings": {
-        "padding_top": 50,
-        "padding_bottom": 50,
+        "padding_top": 40,
+        "padding_bottom": 39,
         "show_section_header": false,
         "section_title": "Featured Collection",
         "section_description": "Explore our best-selling products.",
-        "collection": "",
+        "collection": "gratis-taschenmesser-2",
         "products_limit": 20,
-        "use_metafield_image": true,
+        "use_metafield_image": false,
         "hover_second_image": false,
         "pagination_style": "circle",
         "show_product_ratings": false,
-        "show_stock_status": false
-      }
-    },
-    "promotion_banner_dgKacc": {
-      "type": "promotion-banner",
-      "blocks": {
-        "promotion_NBbJbf": {
-          "type": "promotion",
-          "settings": {
-            "subheading": "JETZT ODER NIE",
-            "heading": "-75%",
-            "text_alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "promotion_NBbJbf"
-      ],
-      "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "heading": "Entdecke unsere Auslaufmodelle",
-        "heading_size": "h2",
-        "text": "<p>Noch nicht das richtige gefunden? Entdecke jetzt unsere Auslaufmodelle bevor sie alle weg sind. Für die nächsten 48h bis zu -75% Rabatt.</p>",
-        "content_alignment": "left",
-        "banner_url": "shopify://collections/ausverkauf",
-        "button_label": "Ausverkauf entdecken",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "padding_top": 70,
-        "padding_bottom": 70,
-        "custom_class": "",
-        "animations": "inherit"
+        "show_stock_status": false,
+        "show_gift_info": false,
+        "info_text": "",
+        "add_border_line": false,
+        "show_max_price": false,
+        "show_save_price": false
       }
     },
     "usp_list_nd6t8y": {
@@ -272,8 +186,7 @@
         "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
+        "verticle_padding_mobile": 30
       }
     },
     "collection_description_KrcbiD": {
@@ -288,14 +201,11 @@
     }
   },
   "order": [
+    "hero_split_kghyJH",
     "collection-header",
-    "breadcrumb_h1_ht4BXh",
-    "breadcrumb_mkkDYm",
-    "apex_timer_9PnBtn",
-    "category_selection_iMrTd6",
     "main",
-    "mrk_collection_grid_section_y88W4d",
-    "promotion_banner_dgKacc",
+    "hide_sold_out_toggle_8BiD4U",
+    "mrk_collection_grid_section_HU3gdA",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"
   ]

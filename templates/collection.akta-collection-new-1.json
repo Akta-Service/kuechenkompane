@@ -37,60 +37,26 @@
         "h1-color": ""
       }
     },
-    "collection_img_banner_mfwPM4": {
-      "type": "collection-img-banner",
-      "name": "Collection Image Banner",
+    "apex_timer_restart_3iWzi3": {
+      "type": "APEX-timer-restart",
+      "name": "Apex Timer Restart",
       "settings": {
-        "image_1": "shopify://shop_images/KK_-_New_Collection_HIKE_2_-_3_1.jpg",
-        "image_2": "shopify://shop_images/KK_-_New_Collection_HIKE_1_-_3_1.jpg"
-      }
-    },
-    "product_feature_EP3YFm": {
-      "type": "product-feature",
-      "blocks": {
-        "slide_9PqAD3": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Ku_echenkompane_Icons_D1-01.png",
-            "title": "Schneller Versand"
-          }
-        },
-        "slide_LhLWdJ": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Kuechenkompane_Icons_Deutsch.png",
-            "title": "100 Tage Testen"
-          }
-        },
-        "slide_dMjRTb": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Ku_echenkompane_Icons_D1-03.png",
-            "title": "Nach japanischer Art"
-          }
-        },
-        "slide_9KKp76": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Ku_echenkompane_Icons_D1-04.png",
-            "title": "Meisterhafte Schärfe"
-          }
-        }
-      },
-      "block_order": [
-        "slide_9PqAD3",
-        "slide_LhLWdJ",
-        "slide_dMjRTb",
-        "slide_9KKp76"
-      ],
-      "name": "Product Feature Slider",
-      "settings": {
-        "slides_per_view_small": 1,
-        "slides_per_view_medium": 1,
-        "slides_per_view_large": 4,
-        "space_between": 20,
-        "autoplay_delay": 3000,
-        "speed": 600
+        "bg_color": "#324a34",
+        "section_pt": 10,
+        "section_pb": 10,
+        "timer_clock": "#ffffff",
+        "timer_clock_text_font_size": 15,
+        "clock_font_weight": "400",
+        "timer_text": "NUR SO LANGE DER VORRAT REICHT!",
+        "timer_font_size": 15,
+        "timer_color": "#dcad27",
+        "timer_font_weight": "600",
+        "timer_hide": true,
+        "start_countdown": true,
+        "start_datetime": "2025-12-25 00:00",
+        "not_started_text": "Countdown nicht gestartet",
+        "set_hour": 48,
+        "restart_on": true
       }
     },
     "collection-header": {
@@ -111,6 +77,29 @@
         "padding_top": 22,
         "padding_bottom": 18,
         "enable_bg_zoom_effect": true
+      }
+    },
+    "mrk_collection_grid_section_ktwYgX": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 42,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": false,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false,
+        "show_gift_info": false,
+        "info_text": "",
+        "add_border_line": false,
+        "show_max_price": false,
+        "show_save_price": false
       }
     },
     "main": {
@@ -144,24 +133,6 @@
         "overlay_opacity": 0
       }
     },
-    "mrk_collection_grid_section_F9rURR": {
-      "type": "mrk-collection-grid-section",
-      "name": "Akta Collection Grid",
-      "settings": {
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "show_section_header": false,
-        "section_title": "Featured Collection",
-        "section_description": "Explore our best-selling products.",
-        "collection": "",
-        "products_limit": 20,
-        "use_metafield_image": true,
-        "hover_second_image": false,
-        "pagination_style": "circle",
-        "show_product_ratings": false,
-        "show_stock_status": false
-      }
-    },
     "collection_description_KrcbiD": {
       "type": "collection-description",
       "settings": {
@@ -175,11 +146,10 @@
   },
   "order": [
     "testing_ahDQMJ",
-    "collection_img_banner_mfwPM4",
-    "product_feature_EP3YFm",
+    "apex_timer_restart_3iWzi3",
     "collection-header",
+    "mrk_collection_grid_section_ktwYgX",
     "main",
-    "mrk_collection_grid_section_F9rURR",
     "collection_description_KrcbiD"
   ]
 }

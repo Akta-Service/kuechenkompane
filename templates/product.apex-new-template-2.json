@@ -22,7 +22,8 @@
         "timer_text": "Das Angebot endet in bald!",
         "timer_font_size": 12,
         "timer_color": "#000000",
-        "timer_font_weight": "400"
+        "timer_font_weight": "400",
+        "start_time": "00:00:00"
       }
     },
     "main": {
@@ -106,7 +107,7 @@
             "p_pt_m": 5,
             "p_pb_m": 5,
             "price_color": "#000000",
-            "c_price_color": "#b1b1b1",
+            "c_price_color": "#bbbbbb",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 21,
@@ -131,18 +132,7 @@
             "viewer_margin_bottom": 10,
             "margin_size_mobile_top": 1,
             "margin_size_mobile_bottom": 1,
-            "product_margin_top": 1,
-            "product_margin_bottom": 10,
-            "p_margin_size_mobile_top": 1,
-            "p_margin_size_mobile_bottom": 1,
-            "product_count_font_size": 16,
-            "product_main_text_1": "Nur noch",
-            "product_main_text_2": "auf Lager",
-            "product_stock_out": "Derzeit ausverkauft",
-            "soldout_color": "#ff0000",
-            "viewer_count_time": 2500,
-            "stock_count_time": 50000,
-            "stock_count_show": false
+            "viewer_count_time": 30
           }
         },
         "featurelist_item_tL79ih": {
@@ -172,6 +162,7 @@
         },
         "variant_picker_custom_3wFPza": {
           "type": "variant_picker_custom",
+          "disabled": true,
           "settings": {
             "custom_product_list": [
               "grillbuerste",

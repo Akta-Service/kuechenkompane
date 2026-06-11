@@ -1,0 +1,322 @@
+{{ 'black-friday-sign-up.css' | asset_url | stylesheet_tag }}
+<style>
+  .akta-black-friday {
+   background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+      url({{ section.settings.bg_img | image_url }}) !important;
+  }
+
+
+
+
+  {% if page.handle == 'christmas-vip-sale' %}
+    .announcement-bar {
+        display: none;
+    }
+
+    .m-header__wrapper {
+        display: none;
+    }
+
+    .footer-fixed {
+        display: none;
+    }
+
+  {% endif %}
+</style>
+
+<section class="akta-black-friday" id="akta-black-friday-{{ section.id }}">
+  <div class="akta-overlay"></div>
+
+  <div class="akta-wrapper">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'title_main' %}
+          <h1 class="akta-title-main" {{ block.shopify_attributes }}>{{ block.settings.text }}</h1>
+
+        {% when 'title_sub' %}
+          <h2 class="akta-title-sub" {{ block.shopify_attributes }}>{{ block.settings.text }}</h2>
+
+        {% when 'highlight_text' %}
+          <p class="akta-highlight" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+
+        {% when 'timer' %}
+          <div
+            class="akta-clock"
+            data-section-id="{{ section.id }}"
+            data-timer-date="{{ block.settings.target_date | escape }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="akta-clock-grid">
+              <div class="akta-clock-item">
+                <div class="akta-clock-number" data-unit="days">00</div>
+                <div class="akta-clock-label">TAGE</div>
+              </div>
+              <div class="akta-clock-item">
+                <div class="akta-clock-number" data-unit="hours">00</div>
+                <div class="akta-clock-label">STUNDEN</div>
+              </div>
+              <div class="akta-clock-item">
+                <div class="akta-clock-number" data-unit="minutes">00</div>
+                <div class="akta-clock-label">MIN</div>
+              </div>
+              <div class="akta-clock-item">
+                <div class="akta-clock-number" data-unit="seconds">00</div>
+                <div class="akta-clock-label">SEK</div>
+              </div>
+            </div>
+          </div>
+
+        {% when 'form' %}
+          {% comment %}
+            <form
+              id="akta-email-signup-{{ section.id }}"
+              action="{{ block.settings.form_action }}"
+              method="post"
+              class="akta-form"
+              {{ block.shopify_attributes }}
+            >
+              <input type="hidden" name="g" value="{{ block.settings.hidden_input_value }}">
+
+              <label for="akta-first-name" class="akta-label">Name</label>
+              <input
+                type="text"
+                id="akta-first-name"
+                name="$first_name"
+                class="akta-input"
+                placeholder="Your name"
+              >
+
+              <label for="akta-email" class="akta-label">Email Address</label>
+              <input
+                type="email"
+                id="akta-email"
+                name="$email"
+                class="akta-input"
+                placeholder="Your email address"
+                required
+              >
+
+              <label for="akta-phone" class="akta-label">Phone Number</label>
+              <input
+                type="tel"
+                id="akta-phone"
+                name="$phone_number"
+                class="akta-input"
+                placeholder="Your telephone number"
+                required
+              >
+                 {% if block.settings.form_subtitle != blank %}
+                  <p class="akta-subtitle">{{ block.settings.form_subtitle }}</p>
+                {% endif %}
+
+              <button type="submit" class="akta-submit">SUBMIT</button>
+            </form>
+          {% endcomment %}
+
+          <div class="klaviyo-form-WRMhXx"></div>
+
+        {% when 'info_text' %}
+          <p class="akta-info" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+
+        {% when 'footer' %}
+          <p class="akta-footer" {{ block.shopify_attributes }}>
+            <strong>{{ block.settings.footer_bold }}</strong> - {{ block.settings.footer_text }}
+          </p>
+        {% when 'menu' %}
+          <div class="akta-footer-menu" {{ block.shopify_attributes }}>
+            {% if block.settings.menu != blank %}
+              {% assign menu_items = linklists[block.settings.menu].links %}
+              <ul class="akta-footer-menu-list">
+                {% for item in menu_items %}
+                  <li class="akta-footer-menu-item">
+                    <a href="{{ item.url }}" class="akta-footer-menu-link">{{ item.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+
+        {% when 'logo' %}
+          <a href="{{ block.settings.logo_link }}" {{ block.shopify_attributes }} class="akta-logo-link">
+            <img
+              src="{{ block.settings.logo_image | image_url }}"
+              alt="Logo"
+              class="akta-logo"
+              width="600"
+              loading="lazy"
+            >
+          </a>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('#akta-black-friday-{{ section.id }}');
+    if (!section) return;
+
+    const clock = section.querySelector('.akta-clock');
+    if (!clock) return;
+
+    const targetDate = clock.dataset.timerDate;
+    if (!targetDate) return;
+
+    const endTime = new Date(targetDate).getTime();
+
+    const units = {
+      days: clock.querySelector('[data-unit="days"]'),
+      hours: clock.querySelector('[data-unit="hours"]'),
+      minutes: clock.querySelector('[data-unit="minutes"]'),
+      seconds: clock.querySelector('[data-unit="seconds"]'),
+    };
+
+    const updateClock = () => {
+      const now = new Date().getTime();
+      const distance = endTime - now;
+
+      if (distance <= 0) {
+        clearInterval(timer);
+        Object.values(units).forEach((el) => (el.textContent = '00'));
+        if (!section.querySelector('.akta-timer-ended')) {
+          const msg = document.createElement('p');
+          msg.className = 'akta-timer-ended';
+          msg.textContent = 'Sale is live!';
+          clock.insertAdjacentElement('afterend', msg);
+        }
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      units.days.textContent = String(days).padStart(2, '0');
+      units.hours.textContent = String(hours).padStart(2, '0');
+      units.minutes.textContent = String(minutes).padStart(2, '0');
+      units.seconds.textContent = String(seconds).padStart(2, '0');
+    };
+
+    updateClock();
+    const timer = setInterval(updateClock, 1000);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Black Friday Signup",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title_main",
+      "name": "Main Title",
+      "settings": [{ "type": "text", "id": "text", "label": "Main Title Text", "default": "BLACK FRIDAY" }]
+    },
+    {
+      "type": "title_sub",
+      "name": "Subtitle",
+      "settings": [{ "type": "text", "id": "text", "label": "Subtitle Text", "default": "SIGN UP FOR EARLY ACCESS" }]
+    },
+    {
+      "type": "highlight_text",
+      "name": "Highlight Text",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Highlight Text", "default": "BIGGEST SALE IN THE BRAND'S HISTORY" }
+      ]
+    },
+    {
+      "type": "timer",
+      "name": "Countdown Timer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "target_date",
+          "label": "Target Date & Time (e.g. 2025-11-29T19:00:00)",
+          "default": "2025-11-29T19:00:00"
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "name": "Signup Form",
+      "settings": [
+        {
+          "type": "text",
+          "id": "form_action",
+          "label": "Form Action URL",
+          "default": "https://manage.kmail-lists.com/subscriptions/subscribe?a=TmvcKZ&g=Y3xKR7"
+        },
+        { "type": "text", "id": "hidden_input_value", "label": "Hidden Input Value", "default": "XsQwPg" },
+        {
+          "type": "text",
+          "id": "form_subtitle",
+          "label": "Form Subtitle",
+          "default": "100% CASHBACK FOR THE FIRST 100 ORDERS!"
+        }
+      ]
+    },
+    {
+      "type": "info_text",
+      "name": "Info Paragraph",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Info Text",
+          "default": "On Thursday, November 13th, our online shop will be temporarily closed. Behind closed doors, we're preparing the next chapter of ICON: our most exclusive Black Friday yet. Join the VIP list to receive your private password and enjoy 14-hour early access starting at 7:00 PM CET."
+        }
+      ]
+    },
+    {
+      "type": "footer",
+      "name": "Footer",
+      "settings": [
+        { "type": "text", "id": "footer_bold", "label": "Footer Bold Text", "default": "ICON. AMSTERDAM" },
+        { "type": "text", "id": "footer_text", "label": "Footer Text", "default": "All Rights Reserved" }
+      ]
+    },
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        { "type": "image_picker", "id": "logo_image", "label": "Logo Image" },
+        { "type": "url", "id": "logo_link", "label": "Logo Link" }
+      ]
+    },
+    {
+      "type": "menu",
+      "name": "Menu Block",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Select Menu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Friday Signup",
+      "blocks": [
+        { "type": "title_main" },
+        { "type": "title_sub" },
+        { "type": "highlight_text" },
+        { "type": "timer" },
+        { "type": "form" },
+        { "type": "info_text" },
+        { "type": "footer" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}

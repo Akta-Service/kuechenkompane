@@ -1,118 +1,75 @@
 <style>
-  .product--stock-count.ml-6 {
-    margin-left: 6px;
-   }
-  .stock_status_text {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    gap: 10px;
-  }
+  .product--stock-count.ml-6 { margin-left: 6px; }
+.stock_status_text { display: flex; align-items: center; font-size: 16px; gap: 10px; }
+.status-bubble { position: relative; display: inline-block; width: 8px; height: 8px; border-radius: 50%; z-index: 1; }
+.stock_status_text.stock-low .status-bubble { background-color: red; }
+.stock_status_text.stock-limited .status-bubble { background-color: orange; }
+.stock_status_text.stock-instock .status-bubble { background-color: green; }
+.status-bubble::before,
+.status-bubble::after {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  width: 10px; height: 10px; border-radius: 50%;
+  transform: translate(-50%, -50%); opacity: 0.6; z-index: -1;
+  animation: pulse-ring 5s infinite;
+}
+.status-bubble::after { animation-delay: 1s; }
+.stock_status_text.stock-low .status-bubble::before,
+.stock_status_text.stock-low .status-bubble::after { background: rgb(255, 0, 0); }
+.stock_status_text.stock-limited .status-bubble::before,
+.stock_status_text.stock-limited .status-bubble::after { background: rgb(255, 166, 0); }
+.stock_status_text.stock-instock .status-bubble::before,
+.stock_status_text.stock-instock .status-bubble::after { background: rgb(0, 128, 0); }
+.product--stock-count.mb-20 { margin-bottom: 25px; }
+.product--stock-count.ml-15 { margin-left: 5px; }
+.product--stock-count { display: flex; gap: 12px; align-items: center; }
+.stock_status_text_inner { margin: 0; }
 
-  .status-bubble {
-    position: relative;
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    z-index: 1;
-  }
+@keyframes pulse-ring {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+  100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+}
 
+.product--stock-count.collection-stock p.stock_status_text {
+  font-weight: 400; padding-bottom: 10px; font-size: 14px;
+}
 
-  .stock_status_text.stock-low .status-bubble {
-    background-color: red;
-  }
-  .stock_status_text.stock-limited .status-bubble {
-    background-color: orange;
-  }
-  .stock_status_text.stock-instock .status-bubble {
-    background-color: green;
-  }
-
-
-  .status-bubble::before,
-  .status-bubble::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.6;
-    z-index: -1;
-    animation: pulse-ring 5s infinite;
-  }
-
-  .status-bubble::after {
-    animation-delay: 1s;
-  }
-
-
-  .stock_status_text.stock-low .status-bubble::before,
-  .stock_status_text.stock-low .status-bubble::after {
-    background: rgb(255, 0, 0);
-  }
-  .stock_status_text.stock-limited .status-bubble::before,
-  .stock_status_text.stock-limited .status-bubble::after {
-    background: rgb(255, 166, 0);
-  }
-  .stock_status_text.stock-instock .status-bubble::before,
-  .stock_status_text.stock-instock .status-bubble::after {
-    background: rgb(0, 128, 0);
-  }
-  .product--stock-count.mb-20 {
-    margin-bottom: 25px;
-  }
-
-  .product--stock-count.ml-15 {
-    margin-left: 5px;
-  }
-
-
-  @keyframes pulse-ring {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.4;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(2.2);
-      opacity: 0;
-    }
-  }
-  .product--stock-count.collection-stock p.stock_status_text {
-    font-weight: 400;
-    padding-bottom: 10px;
-    font-size: 14px;
-  }
-
-
-  @media only screen and (max-width: 768px) {
-    button.m-add-to-cart.rs-add-btn {
-        margin-bottom: 0 !important;
-    }
-    .product--stock-count.mb-20 {
-      margin-bottom: 15px;
-    }
-    .center-mobile p.stock_status_text.stock-instock {
-      justify-content: center;
-    }
-  }
+@media only screen and (max-width: 768px) {
+  button.m-add-to-cart.rs-add-btn { margin-bottom: 0 !important; }
+  .product--stock-count.mb-20 { margin-bottom: 15px; }
+  .center-mobile p.stock_status_text.stock-instock { justify-content: center; }
+}
 </style>
+{%- liquid
+  assign override_color = product.metafields.custom.stock_count_status | downcase | strip
+  assign initial_class = 'stock-instock'
+
+  if product.available == false
+    assign initial_class = 'stock-low'
+    assign initial_text = block.settings.unavailable_text | default: 'Derzeit ausverkauft'
+  elsif override_color contains 'orange'
+    assign initial_class = 'stock-limited'
+    assign initial_text = block.settings.text_limited | default: 'Nur noch wenige verfügbar'
+  elsif override_color contains 'green'
+    assign initial_class = 'stock-instock'
+    assign initial_text = block.settings.text_instock | default: 'Auf Lager - Sofort lieferbar'
+  else
+    assign initial_class = 'stock-instock'
+    assign initial_text = block.settings.text_instock | default: 'Auf Lager - Sofort lieferbar'
+  endif
+-%}
 
 <div
   class="product--stock-count {{ custom_class }} {% unless product.available %}stock-out{% endunless %}"
   data-product-id="{{ product.id }}"
   data-stock="{{ product.metafields.custom.stock_status }}"
+  data-color-override="{{ product.metafields.custom.stock_count_status }}"
   data-available="{{ product.available }}"
+  data-text-limited="{{ block.settings.text_limited | default: 'Nur noch wenige verfügbar' }}"
+  data-text-instock="{{ block.settings.text_instock | default: 'Auf Lager - Sofort lieferbar' }}"
+  data-text-unavailable="{{ block.settings.unavailable_text | default: 'Derzeit ausverkauft' }}"
 >
-  <p class="stock_status_text">
+  <div class="stock_status_text {{ initial_class }}">
     <span class="status-bubble"></span>
-    <span class="stock-count">00 Stück auf Lager</span>
-  </p>
+    <p class="stock_status_text_inner">{{ initial_text }}</p>
+  </div>
 </div>
-
-<script>
-  window.isProductPage = {% if template.name == 'product' %}true{% else %}false{% endif %};
-</script>

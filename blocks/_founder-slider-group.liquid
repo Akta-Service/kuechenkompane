@@ -1,0 +1,136 @@
+
+<style>
+  .founder-row-media {
+    min-width: 0;
+  }
+
+  .founder-group-splide-{{ block.id }} {
+    overflow: hidden;
+    border-radius: {{ block.settings.image_radius }}px;
+    position: relative;
+  }
+
+  /* Pagination dots */
+  .founder-group-splide-{{ block.id }} .splide__pagination {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .founder-group-splide-{{ block.id }} .splide__pagination__page {
+    width: 9px;
+    height: 9px;
+    margin: 0 4px;
+    opacity: 1;
+    background: #ffffff59;
+    border: 2px solid #ffffff;
+    transform: none;
+  }
+
+  .founder-group-splide-{{ block.id }} .splide__pagination__page:before,
+  .founder-group-splide-{{ block.id }} .splide__pagination__page:after {
+    display: none;
+  }
+
+  .founder-group-splide-{{ block.id }} .splide__pagination__page.is-active {
+    background: #ffffff;
+    transform: none;
+  }
+  .founder-group-splide-{{ block.id }} .splide__pagination li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.founder-group-splide-{{ block.id }} ul.splide__pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+  /* Square image — mobile only */
+  @media screen and (max-width: 749px) {
+    .founder-group-splide-{{ block.id }} .splide__slide img,
+    .founder-group-splide-{{ block.id }} .splide__slide > * {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+</style>
+
+<div class="founder-row-media" {{ block.shopify_attributes }}>
+
+  <div id="founder-group-splide-{{ block.id }}"
+       class="splide founder-group-splide-{{ block.id }}">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% content_for 'blocks' %}
+      </ul>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Splide('#founder-group-splide-{{ block.id }}', {
+      type      : {{ block.settings.enable_loop }} ? 'loop' : 'slide',
+      speed     : 800,
+      perPage   : 1,
+      gap       : 0,
+      arrows    : false,
+      pagination: true,
+    }).mount();
+  });
+</script>
+
+</div>
+
+{% schema %}
+{
+  "name": "Founder slider group",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_founder-slide-image"
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_loop",
+      "label": "Enable slider loop",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Image radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founder slider group",
+      "category": "Slider",
+      "blocks": [
+        {
+          "type": "_founder-slide-image"
+        },
+        {
+          "type": "_founder-slide-image"
+        },
+        {
+          "type": "_founder-slide-image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

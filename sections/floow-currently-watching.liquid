@@ -1,0 +1,170 @@
+{% assign ss = section.settings %}
+{% assign si = section.id %}
+{% assign si_ = section.id | remove: '-' %}
+
+<div class="html-{{ si }}">
+    <div class="flex-{{ si }}">
+        <div class="ring-container-{{ si }}">
+            <div class="ring-{{ si }}"></div>
+            <div class="circle-{{ si }}"></div>
+        </div>
+        <div class="text-{{ si }}">
+            {{ ss.text }}
+        </div>
+    </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const section = document.querySelector('.html-{{ si }}').innerHTML;
+    const block = document.querySelector('#floow-currently-watching');
+    if (block) {
+      block.innerHTML = section;
+      floowInitNumber_{{ si_ }}();
+    }
+
+    document.addEventListener('shopify:section:load', function () {
+      const updatedSection = document.querySelector('.html-{{ si }}').innerHTML;
+      if (block && updatedSection) {
+        block.innerHTML = updatedSection;
+        floowInitNumber_{{ si_ }}();
+      }
+    });
+  });
+
+  function floowInitNumber_{{ si_ }}() {
+    // Hole die aktuelle Produkt-ID
+    const productId = window.location.pathname.split('/products/')[1]?.split('?')[0] || 'default';
+    
+    // Hole das Storage-Objekt
+    let numberObject = JSON.parse(localStorage.getItem('floow_watching_numbers')) || {};
+    
+    // Wenn für dieses Produkt noch keine Zahl existiert, generiere eine
+    if (!numberObject[productId]) {
+      numberObject[productId] = Math.floor(Math.random() * ({{ ss.highest_number }} - {{ ss.lowest_number }} + 1)) + {{ ss.lowest_number }};
+      localStorage.setItem('floow_watching_numbers', JSON.stringify(numberObject));
+    }
+    
+    // Ersetze "number" im Text
+    const textElement = document.querySelector(".text-{{ si }}");
+    if (textElement) {
+      textElement.innerHTML = textElement.innerHTML.replace(/number/g, numberObject[productId]);
+    }
+    
+    console.log('Produkt:', productId, 'Anzahl:', numberObject[productId]);
+    console.log('Alle gespeicherten Zahlen:', numberObject);
+  }
+</script>
+
+<style>
+  {% if ss.show_only_in_editor %}
+    #floow-currently-watching {
+      display: none;
+    }
+    {% if request.design_mode %}
+      #floow-currently-watching {
+        display: block;
+      }
+    {% endif %}
+  {% endif %}
+  
+  #shopify-section-{{ si }} {
+    display: none;
+  }
+
+  .flex-{{ si }} {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .ring-container-{{ si }} {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+  }
+
+  .circle-{{ si }} {
+    width: 15px;
+    height: 15px;
+    background-color: {{ ss.dot_color }};
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    display: block !important;
+  }
+
+  .ring-{{ si }} {
+    border: 3px solid {{ ss.dot_color }};
+    border-radius: 30px;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    animation: pulsate-{{ si }} 2s ease-out infinite;
+    opacity: 0;
+    display: block !important;
+  }
+
+  @keyframes pulsate-{{ si }} {
+    0% {
+      transform: scale(0.1, 0.1);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.2, 1.2);
+      opacity: 0;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Floow Currently Watching",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_only_in_editor",
+      "label": "Show Only In Editor"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Text",
+      "info": "Type 'number' to display the number.",
+      "default": "<b>number Personen</b> schauen sich gerade dieses Produkt an."
+    },
+    {
+      "type": "number",
+      "id": "highest_number",
+      "label": "Highest number",
+      "default": 100
+    },
+    {
+      "type": "number",
+      "id": "lowest_number",
+      "label": "Lowest number",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "Dot color",
+      "default": "#62bd19"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Floow Currently Watching"
+    }
+  ]
+}
+{% endschema %}

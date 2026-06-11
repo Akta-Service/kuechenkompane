@@ -9,683 +9,660 @@
  */
 {
   "sections": {
-    "banner_announcement_bar_rWFceh": {
-      "type": "banner-announcement-bar",
+    "apex_image_only_74ABpj": {
+      "type": "apex-image-only",
+      "name": "Image only",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "desktop_image": "shopify://shop_images/Artboard_1_1_2a30be74-bc19-4e48-8239-457a13fc611a.jpg",
+        "mobile_image": "shopify://shop_images/MOBILE_4_5_1ca501c7-afae-4a88-928e-14526aae1431.jpg",
+        "url": "shopify://collections/sortimentswechsel",
+        "add_container": false,
+        "show_title": false,
+        "title": "VIP Sale",
+        "title_alignment": "center",
+        "title_bottom_space": 20,
+        "title_bottom_space_mobile": 15,
+        "show_button": false,
+        "show_button_desktop": false,
+        "button_text": "Shop Now",
+        "button_url": "",
+        "btn_alignment": "center"
+      }
+    },
+    "mrk_marque_slider_eEKdpq": {
+      "type": "mrk-marque-slider",
       "blocks": {
-        "text_AbQDcL": {
-          "type": "text",
+        "logo_7zxgfN": {
+          "type": "logo",
           "settings": {
-            "top_item": "160.000+ zufriedene Kunden"
+            "logo": "shopify://shop_images/n_tv_logo_V7_1_medium_aa02404e-1612-4b01-a59c-85636c5dbf4b.png",
+            "alt_text": ""
           }
         },
-        "text_y7CNYb": {
-          "type": "text",
+        "logo_WL3L9F": {
+          "type": "logo",
           "settings": {
-            "top_item": "100 Tage Geld-zurück-Garantie"
+            "logo": "shopify://shop_images/n_tv_logo_V6_1_medium_11345ce6-3b7b-4b95-b42f-bcac0e4ecad7.png",
+            "alt_text": ""
           }
         },
-        "text_HpEVnG": {
-          "type": "text",
+        "logo_nGrkd7": {
+          "type": "logo",
           "settings": {
-            "top_item": "Kostenloser Versand"
+            "logo": "shopify://shop_images/n_tv_logo_V2_1_medium_c4c8d48c-822e-4f62-bb39-53bcc4c65ef3.png",
+            "alt_text": ""
+          }
+        },
+        "logo_RdmFCa": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/n_tv_logo_V4_1_medium_9d4aac1a-cea6-44f5-8832-e2b89a732b22.png",
+            "alt_text": ""
+          }
+        },
+        "logo_J6Mk37": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/n_tv_logo_V3_1_medium_6d31660e-7b5d-464c-9d1d-3e993b5d8021.png",
+            "alt_text": ""
           }
         }
       },
       "block_order": [
-        "text_AbQDcL",
-        "text_y7CNYb",
-        "text_HpEVnG"
+        "logo_7zxgfN",
+        "logo_WL3L9F",
+        "logo_nGrkd7",
+        "logo_RdmFCa",
+        "logo_J6Mk37"
       ],
-      "name": "Banner Announcement Bar",
+      "name": "Akta marquee",
       "settings": {
-        "top_text": "p-medium"
+        "title": "",
+        "alignment": "text-left",
+        "heading_type": "mrk-h3",
+        "logo_height": 84,
+        "gap": 44,
+        "gap_mobile": 28,
+        "speed": 12,
+        "background_color": "#ffffff",
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
-    "production_8hMEjm": {
-      "type": "production",
-      "name": "Production Stop Hero (production)",
-      "settings": {
-<<<<<<< HEAD
-        "desktop_image": "shopify://shop_images/MG_0888_1_2.webp",
-        "mobile_image": "shopify://shop_images/MG_0860_1.webp",
-        "heading": "PRODUKTIONS STOPP!",
-        "subheading": "Keine Nachproduktion für ausgewählte Serien",
-        "cta_text": "ANGEBOTE ENTDECKEN",
-        "cta_url": "https://kuechenkompane.de/collections/produktionsstopp",
-        "alt_text_desktop": "Production stop desktop",
-        "alt_text_mobile": "Production stop mobile",
-        "badge_image": "shopify://shop_images/asiatisches-messerset-premium-mobile_1_1.webp",
-        "headline": "Deutschlands Nr. 1 Messer",
-        "subtext": "Die besten Messer für deine Küche — geliebt von 160.000+ Menschen!"
-=======
-        "desktop_image": "shopify://shop_images/freepik__realistic-photo-of-a-confident-young-man-with-blon__62705_1.jpg",
-        "mobile_image": "shopify://shop_images/freepik__realistic-photo-of-a-confident-young-man-with-blon__62705_1.jpg",
-        "heading": "BLACK FRIDAY ANGEBOTE",
-        "subheading": "Die besten Rabatte des Jahres - jetzt verfügbar!",
-        "show_button": true,
-        "cta_text": "ZU DEN ANGEBOTEN",
-        "cta_url": "shopify://collections/black-month-angebote",
-        "alt_text_desktop": "Ausverkauf von Restbeständen",
-        "alt_text_mobile": "Production stop mobile",
-        "badge_image": "shopify://shop_images/4_V2_1.png",
-        "headline": "HEUTE GRATIS DAZU: 3x Kochbücher + Online-Kochkurs (Wert 99 €)",
-        "subtext": "Automatisch im Warenkorb. Nur solange Vorrat."
->>>>>>> 727904ae2a03b5daa0b63a32aad8464d0c19913d
-      }
-    },
-    "banner_version_2_4q968G": {
-      "type": "banner-version-2",
+    "period_underwear_q4463F": {
+      "type": "black-friday-collection",
       "blocks": {
-        "text_7wEFPw": {
-          "type": "text",
+        "product_3P9ntz": {
+          "type": "product",
           "settings": {
-            "top_item": "160.000+ zufriedene Kunden"
+            "product": "premium"
           }
         },
-        "text_GFQwB3": {
-          "type": "text",
+        "product_tXHbrR": {
+          "type": "product",
           "settings": {
-            "top_item": "100 Tage Geld-zurück-Garantie"
+            "product": "asiatisches-bundle-premium"
           }
         },
-        "text_J8yeUK": {
-          "type": "text",
+        "product_FbEmCD": {
+          "type": "product",
           "settings": {
-            "top_item": "Kostenloser Versand"
+            "product": "akarui-messerset-akashia-schneidebrettset-messerscharfer-pro"
+          }
+        },
+        "product_QNwh7N": {
+          "type": "product",
+          "settings": {
+            "product": "okami-5er-messerset"
           }
         }
       },
       "block_order": [
-        "text_7wEFPw",
-        "text_GFQwB3",
-        "text_J8yeUK"
+        "product_3P9ntz",
+        "product_tXHbrR",
+        "product_FbEmCD",
+        "product_QNwh7N"
       ],
-      "disabled": true,
-      "custom_css": [],
+      "name": "Period underwear row",
       "settings": {
-        "color_scheme": "scheme-6381519f-31bf-4012-bd7e-d91d1a7c0ca3",
-        "u": "https://cdn.shopify.com/videos/c/o/v/d98e9d7a4ebb442eabcaf567118e86c5.mp4",
-        "u_mobile": "https://cdn.shopify.com/videos/c/o/v/03964288aaac4308bbce450d25d69f0b.mp4",
-        "mt": 0,
-        "mb": 0,
-        "mt_mobile": 0,
-        "mb_mobile": 0,
-        "top_text": "p-medium",
-        "title": "Meisterhaft kochen beginnt hier",
-        "heading_type": "mrk-h2",
-        "sub_title": "",
-        "sub_title_text": "p-medium",
-        "btn_text": "ANGEBOTE ENTDECKEN",
-        "btn_link": "shopify://collections/produktionsstopp",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "b_overlay": true,
-        "image_overlay_color": "#000000",
-        "image_overlay_opacity": 10,
-        "image_overlay_opacity_mobile": 25
-      }
-    },
-    "scrolling_promotion_p4H4Y4": {
-      "type": "scrolling-promotion",
-      "blocks": {
-        "image_anVUBW": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V7_1.png",
-            "image_height": 80,
-            "image_link": ""
-          }
-        },
-        "image_8cn9d3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "image_height": 80,
-            "image_link": ""
-          }
-        },
-        "image_wPjWzN": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V2_1.png",
-            "image_height": 80,
-            "image_link": ""
-          }
-        },
-        "image_fJt9dM": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V4_1.png",
-            "image_height": 80,
-            "image_link": ""
-          }
-        },
-        "image_Fj47eJ": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V3_1.png",
-            "image_height": 80,
-            "image_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_anVUBW",
-        "image_8cn9d3",
-        "image_wPjWzN",
-        "image_fJt9dM",
-        "image_Fj47eJ"
-      ],
-      "custom_css": [],
-      "settings": {
-        "Gesehen_title": "",
-        "heading_type": "mrk-h5",
-        "text_alignment": "center",
-        "container": "container-fluid",
-        "direction": "left",
-        "speed": 30,
-        "item_gap": 50,
-        "item_gap_mobile": 30,
-        "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
-        "padding_top": 30,
-        "padding_bottom": 40,
-        "custom_class": ""
-      }
-    },
-    "featured_collection_3jbXQJ": {
-      "type": "featured-collection",
-      "name": "Featured collection",
-      "settings": {
-        "heading": "Unsere Top 8 Produkte im Angebot:",
-        "heading_size": "h2",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "color_scheme": "default",
-        "container": "container-fluid",
-        "collection": "top-8-produkte-im-sale",
-        "enable_flashsale": false,
-        "show_countdown": false,
-        "product_to_show": 8,
-        "items_per_row": 4,
-        "item_gap": 30,
-        "pcard_layout": "1",
-        "pcard_image_ratio": "1/1",
-        "show_vendor": false,
-        "hide_title": false,
-        "enable_slider": false,
+        "bg_color": "#eeeff8",
+        "section_padding_top": 28,
+        "section_padding_bottom": 28,
+        "section_margin_bottom": 20,
+        "heading": "Angebote der Woche",
+        "title_color": "#000000",
+        "title_font_size": 20,
+        "header_margin_bottom": 20,
+        "badge_text": "BIS ZU 75% RABATT",
+        "button_text": "Alle Angebote",
+        "button_link": "shopify://collections/sortimentswechsel",
+        "btn_bg_color": "#000000",
+        "btn_text_color": "#ffffff",
+        "btn_font_size": 14,
+        "btn_padding_v": 8,
+        "btn_padding_h": 14,
+        "btn_border_radius": 0,
+        "card_bg_color": "#ffffff",
+        "card_border_radius": 8,
+        "card_title_color": "#000000",
+        "card_title_hover_color": "#f98727",
+        "card_title_font_size": 16,
+        "card_price_color": "#000000",
+        "card_compare_color": "#999999",
+        "badge_bg_color": "#000000",
+        "badge_text_color": "#ffffff",
+        "show_on_sale": false,
+        "sale_tag_text": "",
+        "image_aspect_ratio": "16/21",
+        "image_fit": "contain",
+        "collection": "",
+        "limit_products": 4,
+        "slider_type": "slide",
+        "slider_speed": 600,
+        "slide_gap": 12,
+        "slides_desktop": 4,
+        "slides_tablet": 2,
+        "peek_mobile": 35,
+        "peek_mobile_sm": 25,
+        "show_arrows": false,
         "show_pagination": false,
-        "show_navigation": false,
-        "show_button_on_header": false,
-        "button_type": "link",
-        "button_text": "",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "infinite_load": false,
-        "max_page_load": 3,
-        "mobile_disable_slider": false,
-        "use_scroll_mobile": false,
-        "item_gap_mobile": 16,
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
-    "custom_content_btgYN3": {
-      "type": "custom-content",
-      "blocks": {
-        "lookbook_hDUCNi": {
-          "type": "lookbook",
-          "settings": {
-            "color_scheme": "",
-            "width": "33%",
-            "image": "shopify://shop_images/asiatisches-messerset-premium-mobile_1_1.webp",
-            "top_1": 51,
-            "left_1": 51,
-            "product_1": "",
-            "top_2": 26,
-            "left_2": 50,
-            "product_2": "",
-            "top_3": 61,
-            "left_3": 48,
-            "product_3": "",
-            "top_4": 0,
-            "left_4": 0,
-            "product_4": "",
-            "top_5": 20,
-            "left_5": 0,
-            "product_5": "",
-            "block_custom_class": "",
-            "animations": "inherit"
-          }
-        },
-        "text_Xzzte7": {
-          "type": "text",
-          "settings": {
-            "title": "Das Messerset, das in keiner Küche fehlen darf.",
-            "subheading": "",
-            "text": "<p>Erlebe müheloses Schneiden in höchster Qualität zum besten Preis. Hol dir das elegante Messerset und schneide wie ein Profi!</p>",
-            "width": "66%",
-            "alignment": "center",
-            "align_text": "center",
-            "button_label": "JETZT ENTDECKEN",
-            "button_link": "shopify://products/premium",
-            "button_style": "m-button--primary",
-            "button_size": "",
-            "block_custom_class": "",
-            "animations": "inherit"
-          }
-        }
-      },
-      "block_order": [
-        "lookbook_hDUCNi",
-        "text_Xzzte7"
-      ],
-      "custom_css": [
-        ".m-custom-content__wrapper,.m-block-first {position: relative; z-index: 1;}",
-        "@media only screen and (max-width: 767px) {.m-richtext__title {font-size: 28px; }}"
-      ],
-      "settings": {
-        "heading": "#1 Bestes Preis-Leistungs-Verhältnis",
-        "heading_type": "mrk-h3",
-        "subheading": "",
-        "description": "",
-        "p_size": "p-medium",
-        "container": "container-fluid",
-        "color_scheme": "badge-hot",
-        "content_color_scheme": "badge-hot",
-        "enable_parallax": false,
-        "parallax_direction": "vertical",
-        "gap": 0,
-        "gap_mobile": 0,
-        "use_scroll_mobile": false,
-        "padding_top": 50,
-        "padding_bottom": 40,
-        "custom_class": ""
-      }
-    },
-    "category_selection_dVGcxF": {
-      "type": "category-selection",
-      "blocks": {
-        "item_kTcPeg": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_7091_V9_1.webp",
-            "collection": "kuechenmesser-set",
-            "collection_name": "Messer-Sets",
-            "custom_url": ""
-          }
-        },
-        "item_w6jhbR": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_0704_1_1.webp",
-            "collection": "kuechenmesser",
-            "collection_name": "Einzelne Messer",
-            "custom_url": ""
-          }
-        },
-        "item_ttVBji": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/Jishaku-Messerblock-mit-Messern_2_1dda46a1-6510-447a-8ab3-89ea887c8cae_1.webp",
-            "collection": "alle-bundles",
-            "collection_name": "Kombi-Pakete",
-            "custom_url": ""
-          }
-        },
-        "item_3f4ghi": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_9602_V6_a1db8af8-638c-4c8a-bb99-bb9d15c9d8df.webp",
-            "collection": "edelstahlpfanne",
-            "collection_name": "Pfannen & Töpfe",
-            "custom_url": ""
-          }
-        },
-        "item_CJkrKj": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_9602_V7.webp",
-            "collection": "messer-zubehoer",
-            "collection_name": "Messer Zubehör",
-            "custom_url": ""
-          }
-        },
-        "item_wXRnnG": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d_1.webp",
-            "collection": "schneidebretter",
-            "collection_name": "Bretter",
-            "custom_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_kTcPeg",
-        "item_w6jhbR",
-        "item_ttVBji",
-        "item_3f4ghi",
-        "item_CJkrKj",
-        "item_wXRnnG"
-      ],
-      "settings": {
-        "color_scheme": "scheme-f618ff52-b194-4c41-85c0-276af7413331",
-        "pt": 60,
-        "pb": 60,
-        "mobile_pt": 40,
-        "mobile_pb": 40,
-        "heading_type": "mrk-h3",
-        "title": "Nach Kategorie einkaufen",
-        "c_n_text": "p-medium"
-      }
-    },
-    "product_explanation_video_6ERhrB": {
-      "type": "product-explanation-video",
-      "blocks": {
-        "sub_heading_BEaeT9": {
-          "type": "sub_heading",
-          "settings": {
-            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten"
-          }
-        },
-        "heading_bih4qd": {
-          "type": "heading",
-          "settings": {
-            "heading": "Qualität, die begeistert.",
-            "h1_text_align": "center",
-            "title": "Your Title Here",
-            "padding_top": 1,
-            "padding_bottom": 1,
-            "padding_top_tablet": 1,
-            "padding_bottom_tablet": 1,
-            "padding_top_mobile": 1,
-            "padding_bottom_mobile": 10
-          }
-        },
-        "details_tLDmHe": {
-          "type": "details",
-          "settings": {
-            "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi.",
-            "p_text_align": "center",
-            "p_padding_top": 10,
-            "p_padding_bottom": 10,
-            "p_padding_top_tablet": 8,
-            "p_padding_bottom_tablet": 8,
-            "p_padding_top_mobile": 5,
-            "p_padding_bottom_mobile": 5
-          }
-        },
-        "video_cTydVn": {
-          "type": "video",
-          "settings": {
-            "video_mt": 0,
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/c3f04b6c0c574ca587cc7ad8532567e9.mp4",
-            "autoplay": false,
-            "explanation_video_poster": "shopify://shop_images/1920_IMG_1_cb14c5e6-d0e5-4acf-abc2-ad896399c206.webp",
-            "loop": true,
-            "muted": true,
-            "playsinline": true,
-            "controls": true
-          }
-        }
-      },
-      "block_order": [
-        "sub_heading_BEaeT9",
-        "heading_bih4qd",
-        "details_tLDmHe",
-        "video_cTydVn"
-      ],
-      "settings": {
-        "color_scheme": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
-        "vertical_padding": 50,
-        "vertical_padding_mobile": 40,
-        "heading_type": "mrk-h2",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
-      }
-    },
-    "branded_image_version_NcNpYJ": {
-      "type": "branded-image-version-",
-      "blocks": {
-        "title_CjqJ8T": {
-          "type": "title",
-          "settings": {
-            "title": "Schneiden auf höchstem Niveau"
-          }
-        },
-        "sub_title_hMMF7W": {
-          "type": "sub_title",
-          "settings": {
-            "text": "Erlebe traditionelles Schmiedehandwerk vereint mit moderner Präzision. Unsere handgefertigten Messer sind extrem scharf und stilvoll – perfekt für deine Küche!"
-          }
-        },
-        "btn_PFR3yi": {
-          "type": "btn",
-          "settings": {
-            "button_text": "JETZT ENTDECKEN",
-            "button_link": "shopify://products/premium"
-          }
-        }
-      },
-      "block_order": [
-        "title_CjqJ8T",
-        "sub_title_hMMF7W",
-        "btn_PFR3yi"
-      ],
-      "settings": {
-        "color_scheme": "scheme-f618ff52-b194-4c41-85c0-276af7413331",
-        "shape_color": "#ebf2e8",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "mobile_margin_top": 0,
-        "mobile_margin_bottom": 0,
-        "bg_img": "shopify://shop_images/Kopie_von_product-image-02_1.webp",
-        "heading_type": "mrk-h2",
-        "des_size": "p-medium",
-        "button_style": "m-button--primary",
-        "button_size": ""
-      }
-    },
-    "ugc_video_testimonial_fWJLpe": {
-      "type": "ugc-video-testimonial",
-      "blocks": {
-        "item_fE7aKd": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V1.mp4",
-            "product": ""
-          }
-        },
-        "item_BnUmzi": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_3_1082ab3d-85bc-4c18-a094-233faea0ce85.jpg",
-            "video": "shopify://files/videos/Review-2.mp4",
-            "product": ""
-          }
-        },
-        "item_tmE7zy": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_4_5fa09e1f-3a23-4af0-8777-8a43bd99061a.jpg",
-            "video": "shopify://files/videos/Reeview-1.mp4",
-            "product": ""
-          }
-        },
-        "item_BaadNU": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_1_3b6e77e5-376f-4b06-8b8a-08322b2c4258.jpg",
-            "video": "shopify://files/videos/Küchenkompane (3).mp4",
-            "product": ""
-          }
-        },
-        "item_MeKj4G": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_2_62263e23-4db9-4d09-aa97-f77db2fc70f9.jpg",
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V2.mov",
-            "product": ""
-          }
-        },
-        "item_hQNcWm": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V3.mp4",
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_fE7aKd",
-        "item_BnUmzi",
-        "item_tmE7zy",
-        "item_BaadNU",
-        "item_MeKj4G",
-        "item_hQNcWm"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "pt": 70,
-        "pb": 70,
-        "pt_mobile": 30,
-        "pb_mobile": 30,
-        "title": "unsere produkte in aktion",
-        "heading_type": "mrk-h3",
-        "show_button": true,
-        "btn_url": "",
-        "btn_text": "@kuechenkompane",
-        "autoplay": false
-      }
-    },
-    "store_benefit_WFUg3M": {
-      "type": "store-benefit",
-      "blocks": {
-        "benefit_Tyefcq": {
-          "type": "benefit",
-          "settings": {
-            "benefit_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
-            "title": "100 Tage geld-zurück-garantie",
-            "text": "Wir sind von der Qualität unserer Produkte überzeugt und möchten sicherstellen, dass Du zu 100% zufrieden bist."
-          }
-        },
-        "benefit_ATJt7t": {
-          "type": "benefit",
-          "settings": {
-            "benefit_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
-            "title": "160,000+ zufriedene Kunden",
-            "text": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?"
-          }
-        },
-        "benefit_ckbkae": {
-          "type": "benefit",
-          "settings": {
-            "benefit_icon": "shopify://shop_images/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png",
-            "title": "Geprüfte Qualität",
-            "text": "Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit."
-          }
-        }
-      },
-      "block_order": [
-        "benefit_Tyefcq",
-        "benefit_ATJt7t",
-        "benefit_ckbkae"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "invert_color": false,
-        "heading_type": "mrk-h5",
-        "des_size": "p-medium",
-        "pt": 70,
-        "pb": 70,
-        "ptm": 50,
-        "pbm": 50,
-        "autoplay_delay": 3000,
-        "speed": 500,
-        "items_mobile_sm": 1,
-        "items_mobile": 1,
-        "items_tablet": 2,
-        "items_desktop": 3,
-        "sbt_m": 10,
-        "sbt_t": 20,
-        "sbt_des": 30
-      }
-    },
-    "apex_home_logo_list_7wDRp3": {
-      "type": "apex-home-logo-list",
-      "blocks": {
-        "slide_wBaHFk": {
-          "type": "slide",
-          "settings": {
-            "home_logo": "shopify://shop_images/n_tv_logo_V6_1.png"
-          }
-        },
-        "slide_9WHHaB": {
-          "type": "slide",
-          "settings": {}
-        },
-        "slide_dVxw6b": {
-          "type": "slide",
-          "settings": {
-            "home_logo": "shopify://shop_images/n_tv_logo_V3_1.png"
-          }
-        },
-        "slide_f8yGEC": {
-          "type": "slide",
-          "settings": {
-            "home_logo": "shopify://shop_images/n_tv_logo_V4_1.png"
-          }
-        },
-        "slide_qFXV8Y": {
-          "type": "slide",
-          "settings": {
-            "home_logo": "shopify://shop_images/n_tv_logo_V2_1.png"
-          }
-        },
-        "slide_DAciDh": {
-          "type": "slide",
-          "settings": {
-            "home_logo": "shopify://shop_images/n_tv_logo_V7_1.png"
-          }
-        }
-      },
-      "block_order": [
-        "slide_wBaHFk",
-        "slide_9WHHaB",
-        "slide_dVxw6b",
-        "slide_f8yGEC",
-        "slide_qFXV8Y",
-        "slide_DAciDh"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "pt": 40,
-        "pb": 40,
-        "ptm": 40,
-        "pbm": 40,
-        "invert_color": false,
         "autoplay": false,
-        "loop": false
+        "autoplay_speed": 4000
+      }
+    },
+    "black_friday_announcement_qW4yyx": {
+      "type": "black-friday-announcement",
+      "blocks": {
+        "item_LiexaT": {
+          "type": "item",
+          "settings": {
+            "text": "2 Jahre Garantie",
+            "link": ""
+          }
+        },
+        "item_Wpz3C8": {
+          "type": "item",
+          "settings": {
+            "text": "4.8/5 Sterne",
+            "link": ""
+          }
+        },
+        "item_twF4aP": {
+          "type": "item",
+          "settings": {
+            "text": "2 Jahre Garantie",
+            "link": ""
+          }
+        },
+        "item_KYM3Ee": {
+          "type": "item",
+          "settings": {
+            "text": "4.8/5 Sterne",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_LiexaT",
+        "item_Wpz3C8",
+        "item_twF4aP",
+        "item_KYM3Ee"
+      ],
+      "name": "Black Friday Announcement",
+      "settings": {
+        "show_container": true,
+        "black_friday_padding_top": 12,
+        "black_friday_padding_bottom": 12,
+        "show_divider": false,
+        "color_1": "#171717",
+        "color_2": "#0b5c06"
+      }
+    },
+    "collection_grid_xx3TUH": {
+      "type": "collection-grid",
+      "blocks": {
+        "collection_card_kHKeRR": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/002_Manuel_Weidt_Photographer_DSC00653_V2_1.jpg",
+            "alt": "",
+            "title": "Bestseller",
+            "link": "shopify://collections/bestseller-menu",
+            "open_in_new_tab": false
+          }
+        },
+        "collection_card_YPCW7a": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/002_Manuel_Weidt_Photographer_DSC00653_V3_1.jpg",
+            "alt": "",
+            "title": "Kombipakete",
+            "link": "shopify://collections/alle-bundles",
+            "open_in_new_tab": false
+          }
+        },
+        "collection_card_wWUegk": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/002_Manuel_Weidt_Photographer_DSC00653_V7_1.jpg",
+            "alt": "",
+            "title": "Damastmesser",
+            "link": "shopify://collections/damastmesser-1",
+            "open_in_new_tab": false
+          }
+        },
+        "collection_card_WpTN3T": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/IMG_9622_adc3f512-063a-456c-b01e-e83d1ce70035_1.jpg",
+            "alt": "",
+            "title": "Töpfe & Pfannen",
+            "link": "shopify://collections/edelstahlpfanne",
+            "open_in_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_kHKeRR",
+        "collection_card_YPCW7a",
+        "collection_card_wWUegk",
+        "collection_card_WpTN3T"
+      ],
+      "name": "Collection grid",
+      "settings": {
+        "columns_class": "cols-4"
+      }
+    },
+    "features_section_3BQpt4": {
+      "type": "features-section",
+      "blocks": {
+        "feature_BiCCTK": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/1_ab0eb7be-176d-4128-87e7-d43d4ece584a.webp",
+            "icon_svg": "<svg width=\"49\" height=\"48\" viewbox=\"0 0 49 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M23.3353 42H12.3353C11.2745 42 10.257 41.5786 9.5069 40.8284C8.75675 40.0783 8.33533 39.0609 8.33533 38V14C8.33533 12.9391 8.75675 11.9217 9.5069 11.1716C10.257 10.4214 11.2745 10 12.3353 10H36.3353C37.3962 10 38.4136 10.4214 39.1638 11.1716C39.9139 11.9217 40.3353 12.9391 40.3353 14V22\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M32.3353 6V14\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.3353 6V14\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M8.33533 22H40.3353\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M36.3356 43.9992L43.0356 37.4312C43.4464 37.0325 43.7733 36.5556 43.9967 36.0285C44.2202 35.5014 44.3359 34.9349 44.3368 34.3624C44.3377 33.7898 44.2239 33.2229 44.0022 32.6951C43.7804 32.1673 43.4551 31.6893 43.0456 31.2892C42.2098 30.4719 41.088 30.0133 39.919 30.011C38.75 30.0088 37.6264 30.4631 36.7876 31.2772L36.3396 31.7172L35.8936 31.2772C35.0579 30.4605 33.9365 30.0022 32.768 30C31.5995 29.9978 30.4763 30.4517 29.6376 31.2652C29.2266 31.6638 28.8996 32.1407 28.6759 32.6677C28.4523 33.1947 28.3365 33.7612 28.3353 34.3337C28.3342 34.9062 28.4478 35.4732 28.6694 36.001C28.891 36.5289 29.2161 37.0071 29.6256 37.4072L36.3356 43.9992Z\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon_alt": "",
+            "title": "<p>100 Tage</p><p>risikofrei testen</p>",
+            "subtitle": ""
+          }
+        },
+        "feature_JWzD9L": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/2_bdd00a82-79c5-47b1-9b27-38774ba9318b.webp",
+            "icon_svg": "<svg width=\"48\" height=\"48\" viewbox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M18 9.09995C21.9517 7.50865 26.3737 7.55234 30.2933 9.22141C34.2128 10.8905 37.3087 14.0482 38.9 17.9999C40.4913 21.9517 40.4476 26.3737 38.7785 30.2932C37.1095 34.2127 33.9517 37.3086 30 38.8999M30 29.9999V39.9999H40\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M11.2617 14.3203V14.3403\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M8.12109 22V22.02\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9.26172 30.1992V30.2192\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M14.3201 36.74V36.76\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M22 39.8809V39.9009\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon_alt": "",
+            "title": "<p>Kostenloser Versand<br/>aus Deutschland</p>",
+            "subtitle": ""
+          }
+        },
+        "feature_M9FNkd": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/3_bf1ee752-e576-4646-b60d-dd8c943b7ee1.webp",
+            "icon_svg": "<svg version=\"1.1\" id=\"Icons\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 32 32\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\">\n<style type=\"text/css\">\n\t.st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n</style>\n<path class=\"st0\" d=\"M3,25l2.6-4.2c1.5-2.3,4-3.8,6.8-3.8H19v0c0,2.2-1.8,4-4,4h-2\"></path>\n<path class=\"st0\" d=\"M15,21h8l1.2-1.6c1.1-1.5,2.9-2.4,4.8-2.4h0l-2.7,4.8c-1.4,2.6-4.2,4.2-7.1,4.2h0c-4.7,0-9.3,1.4-13.2,4l0,0\"></path>\n<path class=\"st0\" d=\"M20,9c0,2.2-1.8,4-4,4s-4-1.8-4-4c0-3,4-7,4-7S20,6,20,9z\"></path>\n</svg>",
+            "icon_alt": "",
+            "title": "<p>Über 200.000 zufriedene Kunden</p>",
+            "subtitle": ""
+          }
+        },
+        "feature_knwFwU": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/4_07481556-6400-4799-bf98-79d06acbe367.webp",
+            "icon_svg": "<svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewbox=\"0 0 57.248 57.248\" style=\"enable-background:new 0 0 57.248 57.248;\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\">\n<g>\n\t<path d=\"M54.278,5.663l-3.029-3.029L31.133,22.75L4.258,49.624c-0.023,0.006-0.045,0.012-0.069,0.018l0.01,0.041l-4.2,4.2\n\t\tl1.761,0.404c0.954,0.22,1.954,0.329,3.002,0.329c8.586,0,20.296-7.363,34.877-21.944l0.707-0.707l-4.217-4.217\n\t\tc1.966-0.425,5.074-1.395,8.021-3.58c0.229-0.192,5.629-4.762,8.667-9.866l0.065-0.131c0.051-0.112,0.549-1.087,2.504-0.702\n\t\tL55.8,13.55l0.347-0.238c0.099-0.067,0.963-0.695,1.087-2.032C57.384,9.665,56.39,7.774,54.278,5.663z M31.133,25.578l2.518,2.518\n\t\tl0.001,0l1.427,1.427c-13.362,12.759-18.8,16.493-26.9,19.008L31.133,25.578z M4.113,52.596l1.173-1.173\n\t\tc11.047-2.878,16.592-6.525,31.208-20.485l1.023,1.023C23.421,45.916,11.949,52.996,4.113,52.596z M55.169,11.413\n\t\tc-2.463-0.269-3.725,1.062-4.106,1.925c-2.87,4.787-8.146,9.253-8.151,9.26c-3.435,2.545-7.24,3.25-8.509,3.422l-1.855-1.855\n\t\tL51.249,5.462l1.615,1.615c2.135,2.136,2.409,3.395,2.383,3.955C55.239,11.19,55.207,11.316,55.169,11.413z\"></path>\n\t<circle cx=\"37.936\" cy=\"22.111\" r=\"1.5\"></circle>\n\t<circle cx=\"49.936\" cy=\"10.111\" r=\"1.5\"></circle>\n</g>\n</svg>",
+            "icon_alt": "",
+            "title": "<p>365 Tage kostenloser </p><p>Profi-Schleifservice</p>",
+            "subtitle": ""
+          }
+        },
+        "feature_KgEUBX": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/5_50fc8df5-4dc5-4524-b166-3c1109aec93b.webp",
+            "icon_svg": "<svg width=\"48\" height=\"48\" viewbox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M39.0001 13.5C37.8913 15.1042 35.9001 16.0399 34.0001 15.9987C32.1001 16.0399 30.1088 15.1042 29.0001 13.5C27.8913 11.8958 25.9001 10.9601 24.0001 11.0013C22.1001 10.9601 20.2501 12.2507 19.0001 13.5C17.7501 14.7493 15.9001 16.0399 14.0001 15.9987C12.1001 16.0399 10.1088 15.1042 9.00006 13.5\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M39.0001 33.5C37.8913 35.1042 35.9001 36.0399 34.0001 35.9987C32.1001 36.0399 30.1088 35.1042 29.0001 33.5C27.8913 31.8958 25.9001 30.9601 24.0001 31.0013C22.1001 30.9601 20.2501 32.2507 19.0001 33.5C17.7501 34.7493 15.9001 36.0399 14.0001 35.9987C12.1001 36.0399 10.1088 35.1042 9.00006 33.5\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M44.0001 21.0013C42.1001 20.9601 40.1088 21.8958 39.0001 23.5C37.8913 25.1042 35.9001 26.0399 34.0001 25.9987C32.1001 26.0399 30.1088 25.1042 29.0001 23.5C27.8913 21.8958 25.9001 20.9601 24.0001 21.0013C22.1001 20.9601 20.2501 22.2507 19.0001 23.5C17.7501 24.7493 15.9001 26.0399 14.0001 25.9987C12.1001 26.0399 10.1088 25.1042 9.00006 23.5C7.89131 21.8958 5.90006 20.9601 4.00006 21.0013\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon_alt": "",
+            "title": "<p>Sicher bezahlen</p>",
+            "subtitle": ""
+          }
+        },
+        "feature_PnKQKA": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/6_5472be1b-2474-4b43-b6f7-6fcab3505bc0.webp",
+            "icon_svg": "<svg width=\"49\" height=\"48\" viewbox=\"0 0 49 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M14.6647 30H34.6647V38C34.6647 39.0609 34.2433 40.0783 33.4932 40.8284C32.743 41.5786 31.7256 42 30.6647 42H18.6647C17.6039 42 16.5865 41.5786 15.8363 40.8284C15.0862 40.0783 14.6647 39.0609 14.6647 38V30Z\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M24.6647 18C24.6647 14.8174 23.4005 11.7652 21.15 9.51472C18.8996 7.26428 15.8473 6 12.6647 6H6.66473V10C6.66473 13.1826 7.92902 16.2348 10.1795 18.4853C12.4299 20.7357 15.4821 22 18.6647 22H24.6647\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M24.6647 22C24.6647 18.8174 25.929 15.7652 28.1795 13.5147C30.4299 11.2643 33.4821 10 36.6647 10H42.6647V12C42.6647 15.1826 41.4005 18.2348 39.15 20.4853C36.8996 22.7357 33.8473 24 30.6647 24H24.6647\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M24.6647 30V18\" stroke=\"#FE5B00\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon_alt": "",
+            "title": "<p>Produktentwicklung in Deutschland<br/></p>",
+            "subtitle": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_BiCCTK",
+        "feature_JWzD9L",
+        "feature_M9FNkd",
+        "feature_knwFwU",
+        "feature_KgEUBX",
+        "feature_PnKQKA"
+      ],
+      "name": "Feature Row",
+      "settings": {
+        "columns_class": "cols-6"
+      }
+    },
+    "shop_by_category_tK9n9W": {
+      "type": "shop-by-category",
+      "blocks": {
+        "category_j6eyUw": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Artboard_3_10_jpg_2_V1_1_V1_1.jpg",
+            "alt": "",
+            "title": "Bestseller",
+            "link": "shopify://collections/bestseller-menu",
+            "open_in_new_tab": false
+          }
+        },
+        "category_Rpx4PQ": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Artboard_3_10_jpg_2_V1_1_V3.jpg",
+            "alt": "",
+            "title": "Kombipakete",
+            "link": "shopify://collections/alle-bundles",
+            "open_in_new_tab": false
+          }
+        },
+        "category_mWB6GC": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Artboard_3_10_jpg_2_V1_1_V8.jpg",
+            "alt": "",
+            "title": "Damastmesser",
+            "link": "shopify://collections/damastmesser-set",
+            "open_in_new_tab": false
+          }
+        },
+        "category_pzFDfb": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Artboard_3_10_jpg_2_V1_1_V12.jpg",
+            "alt": "",
+            "title": "Schneidebretter",
+            "link": "shopify://collections/schneidebretter",
+            "open_in_new_tab": false
+          }
+        },
+        "category_LnAfrE": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Artboard_3_10_jpg_2_V1_1_V4.jpg",
+            "alt": "",
+            "title": "Töpfe und Pfannen",
+            "link": "shopify://collections/edelstahlpfanne",
+            "open_in_new_tab": false
+          }
+        },
+        "category_T97ePK": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Artboard_3_10_jpg_2_V1_1_V9.jpg",
+            "alt": "",
+            "title": "Schäler",
+            "link": "shopify://collections/schaler",
+            "open_in_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "category_j6eyUw",
+        "category_Rpx4PQ",
+        "category_mWB6GC",
+        "category_pzFDfb",
+        "category_LnAfrE",
+        "category_T97ePK"
+      ],
+      "name": "Shop by Category",
+      "settings": {
+        "heading": "Nach Kategorie einkaufen"
+      }
+    },
+    "black_friday_banner_gK6BJK": {
+      "type": "black-friday-banner",
+      "name": "Black Friday Banner",
+      "settings": {
+        "desktop_img": "shopify://shop_images/100_days_dektop.jpg",
+        "mobile_img": "shopify://shop_images/100_days.jpg",
+        "url": "shopify://collections/sortimentswechsel"
+      }
+    },
+    "akta_new_products_4Xz78V": {
+      "type": "akta-new-products",
+      "name": "Akta New Products Slider",
+      "settings": {
+        "title": "NEUHEITEN",
+        "products": [
+          "3-teiliges-clever-kochen-set",
+          "schneidebrett-kuhle",
+          "spholzmuhle2er-set-01",
+          "folding-knife-d",
+          "folding-knife-c",
+          "salatschalen-besteck",
+          "shikku-petty"
+        ],
+        "tag": "NEU",
+        "vat_text": "",
+        "btn_text": "",
+        "btn_Url": ""
+      }
+    },
+    "image_gallery_eHgkYC": {
+      "type": "image-gallery",
+      "blocks": {
+        "gallery_image_4TB98P": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/s_abeO67r.jpg",
+            "alt": "Image 1",
+            "caption": "",
+            "link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "gallery_image_qcJVWG": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/TFxf7KedX_mid.jpg",
+            "alt": "Image 3",
+            "caption": "",
+            "link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "gallery_image_VdzT9x": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/Bgd0P9QdL.jpg",
+            "alt": "Image 2",
+            "caption": "",
+            "link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "gallery_image_a7de6P": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/8ojZIlBDa_mid.jpg",
+            "alt": "Image 4",
+            "caption": "",
+            "link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "gallery_image_RAe4Nh": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/xT12mfLow.jpg",
+            "alt": "Image 5",
+            "caption": "",
+            "link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "gallery_image_FAN6xb": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/85qhU6l8_mid.jpg",
+            "alt": "",
+            "caption": "",
+            "link": "",
+            "open_in_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "gallery_image_4TB98P",
+        "gallery_image_qcJVWG",
+        "gallery_image_VdzT9x",
+        "gallery_image_a7de6P",
+        "gallery_image_RAe4Nh",
+        "gallery_image_FAN6xb"
+      ],
+      "name": "Image gallery",
+      "settings": {
+        "columns_class": "cols-5",
+        "enable_lightbox": true
+      }
+    },
+    "trust_stores_rE6Kqa": {
+      "type": "trust-stores",
+      "name": "Trust & Retailers Row",
+      "settings": {
+        "trust_link": "",
+        "trust_text1": "Exzellent",
+        "trust_star": "<svg width=\"146\" height=\"26\" viewbox=\"0 0 146 26\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <rect width=\"26\" height=\"26\" fill=\"#219653\"></rect>\n    <path d=\"M12.9984 17.7793L16.9526 16.7205L18.6047 22.1004L12.9984 17.7793ZM22.0984 10.8255H15.138L12.9984 3.90039L10.8589 10.8255H3.89844L9.53177 15.118L7.39218 22.0431L13.0255 17.7507L16.4922 15.118L22.0984 10.8255Z\" fill=\"white\"></path>\n    <rect width=\"26\" height=\"26\" transform=\"translate(30)\" fill=\"#219653\"></rect>\n    <path d=\"M42.9984 17.7793L46.9526 16.7205L48.6047 22.1004L42.9984 17.7793ZM52.0984 10.8255H45.138L42.9984 3.90039L40.8589 10.8255H33.8984L39.5318 15.118L37.3922 22.0431L43.0255 17.7507L46.4922 15.118L52.0984 10.8255Z\" fill=\"white\"></path>\n    <rect width=\"26\" height=\"26\" transform=\"translate(60)\" fill=\"#219653\"></rect>\n    <path d=\"M72.9984 17.7793L76.9526 16.7205L78.6047 22.1004L72.9984 17.7793ZM82.0984 10.8255H75.138L72.9984 3.90039L70.8589 10.8255H63.8984L69.5318 15.118L67.3922 22.0431L73.0255 17.7507L76.4922 15.118L82.0984 10.8255Z\" fill=\"white\"></path>\n    <rect width=\"26\" height=\"26\" transform=\"translate(90)\" fill=\"#219653\"></rect>\n    <path d=\"M102.998 17.7793L106.953 16.7205L108.605 22.1004L102.998 17.7793ZM112.098 10.8255H105.138L102.998 3.90039L100.859 10.8255H93.8984L99.5318 15.118L97.3922 22.0431L103.026 17.7507L106.492 15.118L112.098 10.8255Z\" fill=\"white\"></path>\n    <rect width=\"26\" height=\"26\" transform=\"translate(120)\" fill=\"url(#paint0_linear_60930_22541)\"></rect>\n    <path d=\"M132.998 17.7793L136.953 16.7205L138.605 22.1004L132.998 17.7793ZM142.098 10.8255H135.138L132.998 3.90039L130.859 10.8255H123.898L129.532 15.118L127.392 22.0431L133.026 17.7507L136.492 15.118L142.098 10.8255Z\" fill=\"white\"></path>\n    <defs>\n    <lineargradient id=\"paint0_linear_60930_22541\" x1=\"0\" y1=\"13\" x2=\"26\" y2=\"13\" gradientunits=\"userSpaceOnUse\">\n    <stop stop-color=\"#219653\"></stop>\n    <stop offset=\"0.5\" stop-color=\"#219653\"></stop>\n    <stop offset=\"0.5001\" stop-color=\"#219653\" stop-opacity=\"0\"></stop>\n    <stop offset=\"0.5002\" stop-color=\"#D9D9D9\"></stop>\n    <stop offset=\"0.9998\" stop-color=\"#D9D9D9\"></stop>\n    <stop offset=\"0.9999\" stop-color=\"#219653\" stop-opacity=\"0\"></stop>\n    <stop offset=\"1\" stop-color=\"#D9D9D9\"></stop>\n    </lineargradient>\n    </defs>\n  </svg>",
+        "trust_text": "3,735 Bewertungen",
+        "trust_review": "<svg width=\"114\" height=\"28\" viewbox=\"0 0 114 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path d=\"M30.01 9.9248H41.5255V12.0786H36.9976V24.186H34.5078V12.0786H30V9.9248H30.01ZM41.0336 13.86H43.162V15.8527H43.2021C43.2724 15.5709 43.4029 15.2992 43.5937 15.0375C43.7844 14.7758 44.0153 14.5242 44.2864 14.3129C44.5575 14.0914 44.8586 13.9203 45.19 13.7794C45.5213 13.6486 45.8626 13.5782 46.204 13.5782C46.465 13.5782 46.6557 13.5882 46.7561 13.5983C46.8565 13.6084 46.9569 13.6285 47.0674 13.6385V15.8326C46.9067 15.8024 46.7461 15.7822 46.5754 15.7621C46.4048 15.742 46.2441 15.7319 46.0835 15.7319C45.702 15.7319 45.3406 15.8124 44.9992 15.9634C44.6579 16.1144 44.3667 16.3458 44.1157 16.6377C43.8647 16.9396 43.6639 17.302 43.5133 17.7448C43.3627 18.1876 43.2925 18.6908 43.2925 19.2645V24.1759H41.0235V13.86H41.0336ZM57.4985 24.186H55.2697V22.7468H55.2296C54.9485 23.2701 54.5368 23.6827 53.9847 23.9947C53.4325 24.3067 52.8703 24.4678 52.298 24.4678C50.9427 24.4678 49.9588 24.1356 49.3564 23.4613C48.754 22.787 48.4528 21.7705 48.4528 20.4118V13.86H50.7218V20.1904C50.7218 21.0962 50.8925 21.7403 51.2439 22.1127C51.5852 22.4851 52.0771 22.6763 52.6996 22.6763C53.1815 22.6763 53.573 22.6059 53.8943 22.4549C54.2156 22.3039 54.4766 22.1127 54.6674 21.8611C54.8682 21.6196 55.0087 21.3176 55.0991 20.9754C55.1894 20.6333 55.2296 20.2609 55.2296 19.8583V13.87H57.4985V24.186ZM61.3638 20.8748C61.4341 21.539 61.6851 22.002 62.1168 22.2737C62.5585 22.5354 63.0806 22.6763 63.693 22.6763C63.9038 22.6763 64.1448 22.6562 64.4158 22.626C64.6869 22.5958 64.9479 22.5253 65.1789 22.4348C65.4198 22.3442 65.6106 22.2033 65.7712 22.0221C65.9218 21.841 65.9921 21.6095 65.982 21.3176C65.972 21.0258 65.8615 20.7842 65.6608 20.6031C65.46 20.4118 65.209 20.2709 64.8977 20.1502C64.5865 20.0395 64.2351 19.9388 63.8335 19.8583C63.432 19.7778 63.0304 19.6872 62.6187 19.5966C62.1971 19.506 61.7855 19.3853 61.3939 19.2544C61.0024 19.1236 60.651 18.9424 60.3398 18.711C60.0285 18.4895 59.7775 18.1977 59.5968 17.8454C59.4061 17.4932 59.3157 17.0604 59.3157 16.5371C59.3157 15.9735 59.4563 15.5105 59.7273 15.1281C59.9984 14.7456 60.3498 14.4437 60.7614 14.2122C61.1831 13.9807 61.6449 13.8197 62.1569 13.7191C62.6689 13.6285 63.1609 13.5782 63.6227 13.5782C64.1548 13.5782 64.6668 13.6385 65.1487 13.7493C65.6306 13.86 66.0724 14.0411 66.4639 14.3028C66.8555 14.5544 67.1767 14.8865 67.4378 15.2891C67.6988 15.6917 67.8594 16.1848 67.9297 16.7585H65.5604C65.4499 16.215 65.209 15.8426 64.8174 15.6615C64.4259 15.4703 63.9741 15.3797 63.4721 15.3797C63.3115 15.3797 63.1207 15.3897 62.8999 15.4199C62.679 15.4501 62.4782 15.5004 62.2774 15.5709C62.0866 15.6413 61.926 15.7521 61.7855 15.893C61.6549 16.0339 61.5847 16.215 61.5847 16.4465C61.5847 16.7283 61.6851 16.9497 61.8758 17.1208C62.0666 17.2919 62.3176 17.4328 62.6288 17.5536C62.94 17.6643 63.2914 17.7649 63.693 17.8454C64.0946 17.9259 64.5062 18.0165 64.9279 18.1071C65.3395 18.1977 65.7411 18.3185 66.1427 18.4493C66.5442 18.5801 66.8956 18.7613 67.2069 18.9928C67.5181 19.2242 67.7691 19.506 67.9598 19.8482C68.1506 20.1904 68.251 20.6232 68.251 21.1264C68.251 21.7403 68.1104 22.2536 67.8293 22.6864C67.5482 23.1091 67.1868 23.4613 66.745 23.723C66.3033 23.9847 65.8013 24.186 65.2592 24.3067C64.717 24.4275 64.1749 24.4879 63.6428 24.4879C62.9902 24.4879 62.3878 24.4174 61.8357 24.2665C61.2835 24.1155 60.8016 23.8941 60.4 23.6022C59.9984 23.3003 59.6771 22.9279 59.4462 22.4851C59.2153 22.0423 59.0948 21.5089 59.0748 20.8949H61.3638V20.8748ZM68.8534 13.86H70.5701V10.7601H72.8391V13.86H74.8872V15.5608H72.8391V21.0761C72.8391 21.3176 72.8491 21.5189 72.8692 21.7001C72.8893 21.8712 72.9395 22.0221 73.0098 22.1429C73.08 22.2637 73.1905 22.3543 73.3411 22.4146C73.4917 22.475 73.6824 22.5052 73.9434 22.5052C74.1041 22.5052 74.2647 22.5052 74.4254 22.4952C74.586 22.4851 74.7466 22.465 74.9073 22.4247V24.186C74.6563 24.2162 74.4053 24.2363 74.1744 24.2665C73.9334 24.2967 73.6925 24.3067 73.4415 24.3067C72.8391 24.3067 72.3572 24.2463 71.9958 24.1356C71.6343 24.0249 71.3432 23.8538 71.1424 23.6324C70.9316 23.411 70.801 23.1393 70.7207 22.8071C70.6505 22.475 70.6003 22.0926 70.5902 21.6699V15.581H68.8734V13.86H68.8534ZM76.4935 13.86H78.642V15.2589H78.6822C79.0034 14.655 79.4452 14.2323 80.0174 13.9707C80.5897 13.709 81.2021 13.5782 81.8748 13.5782C82.688 13.5782 83.3907 13.7191 83.9931 14.0109C84.5955 14.2927 85.0975 14.6852 85.4991 15.1884C85.9007 15.6917 86.1918 16.2754 86.3926 16.9396C86.5934 17.6039 86.6938 18.3185 86.6938 19.0733C86.6938 19.7677 86.6034 20.442 86.4227 21.0861C86.242 21.7403 85.9709 22.314 85.6095 22.8172C85.2481 23.3204 84.7862 23.7129 84.224 24.0149C83.6618 24.3168 83.0092 24.4678 82.2462 24.4678C81.9149 24.4678 81.5836 24.4376 81.2523 24.3772C80.921 24.3168 80.5997 24.2162 80.2985 24.0853C79.9973 23.9545 79.7062 23.7834 79.4552 23.572C79.1942 23.3607 78.9833 23.1191 78.8026 22.8474H78.7625V28.0003H76.4935V13.86ZM84.4248 19.033C84.4248 18.5701 84.3646 18.1172 84.2441 17.6743C84.1236 17.2315 83.9429 16.8491 83.702 16.5069C83.461 16.1647 83.1598 15.893 82.8084 15.6917C82.447 15.4904 82.0354 15.3797 81.5736 15.3797C80.6198 15.3797 79.8969 15.7118 79.415 16.376C78.9331 17.0403 78.6922 17.9259 78.6922 19.033C78.6922 19.5564 78.7524 20.0395 78.8829 20.4823C79.0135 20.9251 79.1942 21.3076 79.4552 21.6296C79.7062 21.9517 80.0074 22.2033 80.3588 22.3844C80.7102 22.5757 81.1218 22.6662 81.5836 22.6662C82.1057 22.6662 82.5374 22.5555 82.8988 22.3442C83.2602 22.1328 83.5514 21.851 83.7823 21.5189C84.0132 21.1767 84.1839 20.7943 84.2843 20.3615C84.3746 19.9288 84.4248 19.4859 84.4248 19.033ZM88.4306 9.9248H90.6996V12.0786H88.4306V9.9248ZM88.4306 13.86H90.6996V24.186H88.4306V13.86ZM92.7276 9.9248H94.9966V24.186H92.7276V9.9248ZM101.954 24.4678C101.131 24.4678 100.398 24.3269 99.7553 24.0551C99.1128 23.7834 98.5707 23.4009 98.1189 22.9279C97.6771 22.4448 97.3358 21.8712 97.1049 21.2069C96.874 20.5427 96.7535 19.808 96.7535 19.0129C96.7535 18.2279 96.874 17.5032 97.1049 16.839C97.3358 16.1748 97.6771 15.6011 98.1189 15.118C98.5606 14.6349 99.1128 14.2625 99.7553 13.9908C100.398 13.7191 101.131 13.5782 101.954 13.5782C102.777 13.5782 103.51 13.7191 104.153 13.9908C104.795 14.2625 105.337 14.645 105.789 15.118C106.231 15.6011 106.572 16.1748 106.803 16.839C107.034 17.5032 107.155 18.2279 107.155 19.0129C107.155 19.808 107.034 20.5427 106.803 21.2069C106.572 21.8712 106.231 22.4448 105.789 22.9279C105.347 23.411 104.795 23.7834 104.153 24.0551C103.51 24.3269 102.777 24.4678 101.954 24.4678ZM101.954 22.6662C102.456 22.6662 102.898 22.5555 103.269 22.3442C103.641 22.1328 103.942 21.851 104.183 21.5088C104.424 21.1667 104.594 20.7742 104.715 20.3414C104.825 19.9086 104.886 19.4658 104.886 19.0129C104.886 18.5701 104.825 18.1373 104.715 17.6945C104.604 17.2516 104.424 16.8692 104.183 16.527C103.942 16.1848 103.641 15.9131 103.269 15.7017C102.898 15.4904 102.456 15.3797 101.954 15.3797C101.452 15.3797 101.01 15.4904 100.639 15.7017C100.267 15.9131 99.9662 16.1949 99.7252 16.527C99.4843 16.8692 99.3136 17.2516 99.1931 17.6945C99.0827 18.1373 99.0224 18.5701 99.0224 19.0129C99.0224 19.4658 99.0827 19.9086 99.1931 20.3414C99.3035 20.7742 99.4843 21.1667 99.7252 21.5088C99.9662 21.851 100.267 22.1328 100.639 22.3442C101.01 22.5656 101.452 22.6662 101.954 22.6662ZM107.817 13.86H109.534V10.7601H111.803V13.86H113.851V15.5608H111.803V21.0761C111.803 21.3176 111.813 21.5189 111.833 21.7001C111.853 21.8712 111.903 22.0221 111.974 22.1429C112.044 22.2637 112.154 22.3543 112.305 22.4146C112.455 22.475 112.646 22.5052 112.907 22.5052C113.068 22.5052 113.229 22.5052 113.389 22.4952C113.55 22.4851 113.71 22.465 113.871 22.4247V24.186C113.62 24.2162 113.369 24.2363 113.138 24.2665C112.897 24.2967 112.656 24.3067 112.405 24.3067C111.803 24.3067 111.321 24.2463 110.96 24.1356C110.598 24.0249 110.307 23.8538 110.106 23.6324C109.895 23.411 109.765 23.1393 109.685 22.8071C109.614 22.475 109.564 22.0926 109.554 21.6699V15.581H107.837V13.86H107.817Z\" fill=\"#191919\"></path>\n    <path d=\"M27.3625 9.92343H16.9615L13.7488 0L10.5261 9.92343L0.125 9.91337L8.54825 16.0526L5.32553 25.966L13.7488 19.8368L22.162 25.966L18.9493 16.0526L27.3625 9.92343Z\" fill=\"#00B67A\"></path>\n    <path d=\"M19.6734 18.2951L18.9505 16.0508L13.75 19.835L19.6734 18.2951Z\" fill=\"#005128\"></path>\n  <!-- Trustiplot rating  -->\n  </svg>"
+      }
+    },
+    "trustpilot_testimonials_YbXp3E": {
+      "type": "trustpilot-testimonials",
+      "blocks": {
+        "block_n66cBX": {
+          "type": "block",
+          "settings": {
+            "tes_title": "Sehr gute Qualität",
+            "tes_text": "Die Produkte sind auf der Website sehr gut fotografiert und beschrieben, ohne dabei zu viel zu versprechen. Die Ware kam zum vereinbarten Datum. Was bei mir ankam hat mich in zwei Punkten positiv überrascht:erstens die perfekte Qualität der Ware und zweitens die absolut maßgeschneiderte und robuste Verpackung.",
+            "user_name": "Fam. Lemke",
+            "date": "Vor 2 Stunden"
+          }
+        },
+        "block_Cjk3qr": {
+          "type": "block",
+          "settings": {
+            "tes_title": "Sehr Zufrieden",
+            "tes_text": "Das Messer weist eine optisch ansprechende und stabile Verarbeitung auf. Die Klinge ist außerordentlich scharf und durchtrennte den Spülschwamm mühelos beim Reinigen ohne großen Druck. Der Handgriff ist zudem gut dimensioniert. Insgesamt handelt es sich um ein äußerst ansprechendes Produkt.",
+            "user_name": "Lisa",
+            "date": "Vor 8 Stunden"
+          }
+        },
+        "block_ncTrUJ": {
+          "type": "block",
+          "settings": {
+            "tes_title": "Insgesamt sehr gute Messer",
+            "tes_text": "Insgesamt sehr gute Messer,\nmit einer Ausnahme, bei einem gab es ein kleines Qualitätsproblem. Aber da wurde sehr schnell und kundenorientiert reagiert!",
+            "user_name": "Jean",
+            "date": "Vor 19 Stunden"
+          }
+        },
+        "block_tk6TF7": {
+          "type": "block",
+          "settings": {
+            "tes_title": "8 teile Scharfmesser",
+            "tes_text": "8 teile Scharfmesser , Holzbrett und Steakmesser sind sehr zufrieden . Ordentliche Packung und schnelle Lieferung .",
+            "user_name": "Nicole Kunath",
+            "date": "Vor 25 Stunden"
+          }
+        },
+        "block_qCCEJY": {
+          "type": "block",
+          "settings": {
+            "tes_title": "Ich war skeptisch,ob die Qualität der…",
+            "tes_text": "Ich war skeptisch,ob die Qualität der Messer, im Vergleich zum Preis passen würde. Aber meine Frau war begeistert von der Qualität der Messer es waren alle Messer hervorragend geschärft und hochwertige Verpackt geliefert worden innerhalb von 5 Werktagen inkl.Einem Feiertag. Mittlerweile sind die Messer einen Monat in Gebrauch und immer noch sehr scharf .Wir würden das Messerset immer wieder kaufen. Ein hervorragendes Preis Leistungsverhältnis.",
+            "user_name": "Benrdt B.",
+            "date": "Vor 47 Stunden"
+          }
+        },
+        "block_AVgLTe": {
+          "type": "block",
+          "settings": {
+            "tes_title": "Gut, Schnell, Zuverlässig",
+            "tes_text": "Sehr gut, gesamte Bestellung hat die Erwartungen mehr als erfüllt. Probleme seitens DHL wurden sehr schnell von Küchen kompane gelöst.",
+            "user_name": "B.M.H.",
+            "date": "Vor 52 Stunden"
+          }
+        }
+      },
+      "block_order": [
+        "block_n66cBX",
+        "block_Cjk3qr",
+        "block_ncTrUJ",
+        "block_tk6TF7",
+        "block_qCCEJY",
+        "block_AVgLTe"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "content_color_scheme": "scheme-4e655027-1e2f-4337-9849-9e285e031119",
+        "mt": 30,
+        "mb": 30,
+        "mt_mobile": 20,
+        "mb_mobile": 20,
+        "title": "",
+        "title_highlight": "",
+        "heading_type": "mrk-h2",
+        "h_text_color": "#fa8526",
+        "arrow_icon_color": "#000000"
+      }
+    },
+    "centered_welcome_cta_HJdbPx": {
+      "type": "centered-welcome-cta",
+      "name": "Centered welcome CTA",
+      "settings": {
+        "background_desktop": "shopify://shop_images/Desktop_blanko_1.jpg",
+        "background_mobile": "shopify://shop_images/Mobil_blanko_1.jpg",
+        "heading": "DU SUCHST DAS PERFEKTE MESSER?",
+        "subheading": "ENTDECKE DIE PERFEKTEN MESSER FÜR DICH UND LASSE DICH INSPIRIEREN.",
+        "button_label": "MESSERFINDER AUSPROBIEREN",
+        "button_link": "shopify://pages/geschenkefinder"
       }
     }
   },
   "order": [
-    "banner_announcement_bar_rWFceh",
-    "production_8hMEjm",
-    "banner_version_2_4q968G",
-    "scrolling_promotion_p4H4Y4",
-    "featured_collection_3jbXQJ",
-    "custom_content_btgYN3",
-    "category_selection_dVGcxF",
-    "product_explanation_video_6ERhrB",
-    "branded_image_version_NcNpYJ",
-    "ugc_video_testimonial_fWJLpe",
-    "store_benefit_WFUg3M",
-    "apex_home_logo_list_7wDRp3"
+    "apex_image_only_74ABpj",
+    "mrk_marque_slider_eEKdpq",
+    "period_underwear_q4463F",
+    "black_friday_announcement_qW4yyx",
+    "collection_grid_xx3TUH",
+    "features_section_3BQpt4",
+    "shop_by_category_tK9n9W",
+    "black_friday_banner_gK6BJK",
+    "akta_new_products_4Xz78V",
+    "image_gallery_eHgkYC",
+    "trust_stores_rE6Kqa",
+    "trustpilot_testimonials_YbXp3E",
+    "centered_welcome_cta_HJdbPx"
   ]
 }

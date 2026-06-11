@@ -1,0 +1,213 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "testing_ahDQMJ": {
+      "type": "testing",
+      "blocks": {
+        "title_PyKV3e": {
+          "type": "Title",
+          "disabled": true,
+          "settings": {
+            "title": "{{ collection.title }}",
+            "padding_top": 20,
+            "padding_left": 20,
+            "padding_bottom": 20,
+            "padding_top_mobile": 10,
+            "padding_left_mobile": 10,
+            "padding_bottom_mobile": 10,
+            "font_size": "<h1 class='first-title title-style'> | </h1>"
+          }
+        }
+      },
+      "block_order": [
+        "title_PyKV3e"
+      ],
+      "name": "Title Block",
+      "settings": {
+        "h2": 20,
+        "h1font-wight": "bold",
+        "h1-color": ""
+      }
+    },
+    "apex_timer_restart_VmNUmb": {
+      "type": "APEX-timer-restart",
+      "name": "Apex Timer Restart",
+      "settings": {
+        "bg_color": "#324a34",
+        "section_pt": 10,
+        "section_pb": 10,
+        "timer_clock": "#ffffff",
+        "timer_clock_text_font_size": 15,
+        "clock_font_weight": "400",
+        "timer_text": "NUR SOLANGE DER VORRAT REICHT",
+        "timer_font_size": 15,
+        "timer_color": "#dcad27",
+        "timer_font_weight": "600",
+        "timer_hide": true,
+        "start_countdown": true,
+        "start_datetime": "NUR SOLANGE DER VORRAT REICHT",
+        "not_started_text": "NUR SOLANGE DER VORRAT REICHT",
+        "set_hour": 48,
+        "restart_on": false
+      }
+    },
+    "custom_liquid_KKKwbQ": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
+      "settings": {
+        "custom_liquid": "",
+        "custom_class": ""
+      }
+    },
+    "collection-header": {
+      "type": "collection-page-header",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container": "container-fluid",
+        "layout": "outside_no_border",
+        "image_position": "background",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "text_alignment": "center",
+        "text_color": "inherit",
+        "upper_title": false,
+        "show_desc": false,
+        "collection_all_desc": "",
+        "padding_top": 22,
+        "padding_bottom": 18,
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "mrk_collection_grid_section_PKCq6B": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
+      "settings": {
+        "padding_top": 30,
+        "padding_bottom": 0,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": false,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": true,
+        "show_stock_status": true,
+        "show_gift_info": false,
+        "info_text": "<strong>Kostenloses japanisches Messer</strong> inklusive",
+        "add_border_line": true,
+        "show_max_price": true,
+        "show_save_price": false
+      }
+    },
+    "main": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "custom_css": [
+        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
+        ".m-collection-filters-form {margin-bottom: 0;}"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "grid_layout": "grid",
+        "grid_columns": "4",
+        "show_columns_switcher": true,
+        "pagination_limit": 30,
+        "paginate_type": "infinite",
+        "show_sorting": true,
+        "show_filter": false,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": true,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Product type, Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "list",
+        "overlay_opacity": 0,
+        "show_stock_status": false
+      }
+    },
+    "usp_list_nd6t8y": {
+      "type": "usp-list",
+      "blocks": {
+        "item_aVKf6y": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
+            "usp_title": "100 Tage-geld-zurück Garantie",
+            "title_size": 18,
+            "usp_info": "Wir sind von der Qualität unserer Produkte überzeugt und möchten sicherstellen, dass Du zu 100% zufrieden bist.",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_9zb4Pn": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
+            "usp_title": "200,000+ zufriedene Kunden",
+            "title_size": 18,
+            "usp_info": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_4VaJ6g": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png",
+            "usp_title": "Geprüfte Qualität",
+            "title_size": 18,
+            "usp_info": "Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit.",
+            "info_size": 14,
+            "divider": false
+          }
+        }
+      },
+      "block_order": [
+        "item_aVKf6y",
+        "item_9zb4Pn",
+        "item_4VaJ6g"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "verticle_padding": 50,
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30
+      }
+    },
+    "collection_description_KrcbiD": {
+      "type": "collection-description",
+      "settings": {
+        "collection_bg": "#f8f8f8",
+        "collection_pt": 30,
+        "collection_pb": 30,
+        "collection_pt_m": 30,
+        "collection_pb_m": 30
+      }
+    }
+  },
+  "order": [
+    "testing_ahDQMJ",
+    "apex_timer_restart_VmNUmb",
+    "custom_liquid_KKKwbQ",
+    "collection-header",
+    "mrk_collection_grid_section_PKCq6B",
+    "main",
+    "usp_list_nd6t8y",
+    "collection_description_KrcbiD"
+  ]
+}

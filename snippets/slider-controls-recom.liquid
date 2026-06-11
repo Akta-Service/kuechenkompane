@@ -1,0 +1,93 @@
+
+{% comment %}
+  Accepts:
+  - show_pagination: {Boolean} Show Pagination (optional)
+  - show_nav: {Boolean} Show Navigation (optional)
+  - pagination_type: {String} Accepted value: bullets/fraction (optional)
+  - position: {String} Accepted value: top-left/top-center/top-right/middle-left/middle-right/bottom-left/bottom-center/bottom-right (optional)
+  - absolute: {Boolean} (optional)
+  - container: {String} (optional)
+  - pagination_class: {String} Pagination extra classes (optional)
+  - extra_classes: {String} Extra classes (optional)
+
+  Usage:
+  {% render 'slider-controls-recom',
+    show_pagination: false,
+    show_nav: false,
+    pagination_type: 'bullets',
+    position: 'bottom-center',
+    container: '',
+    absolute: false,
+    pagination_class: '',
+    extra_classes: ''
+  %}
+{% endcomment %}
+
+{% liquid
+  assign pagination_type = pagination_type | default: 'bullets'
+  assign position = position | default: 'bottom-center'
+
+  if show_pagination == null
+    assign show_pagination = true
+  endif
+
+  assign classes = 'm-slider-controls'
+  assign classes = classes | append: ' m-slider-controls--' | append: position
+
+  if show_nav
+    assign classes = classes | append: ' m-slider-controls--show-nav'
+  endif
+
+  if show_pagination
+    assign classes = classes | append: ' m-slider-controls--show-pagination'
+    assign classes = classes | append: ' m-slider-controls--pagination-' | append: pagination_type
+  endif
+
+  if absolute == true and pagination_type == 'bullets'
+    assign classes = classes | append: ' m-slider-controls--absolute'
+  else
+    assign classes = classes | append: ' m-slider-controls--group'
+  endif
+
+  if container == 'w-full' or container == 'container-full'
+    assign classes = classes | append: ' m-slider-controls--full'
+  endif
+
+  if animated
+    assign classes = classes | append: ' m-scroll-trigger animate--' | append: animation_effect
+  endif
+
+  if extra_classes
+    assign classes = classes | append: ' ' | append: extra_classes
+  endif
+%}
+
+<div class="{{ classes }}">
+  <div class="m-slider-controls__wrapper splide__arrows">
+    {% if show_nav %}
+      <button
+        class="m-slider-controls__button m-slider-controls__button-prev splide__arrow splide__arrow--prev {{ nav_class }}"
+        type="button"
+        aria-label="Previous"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <path d="M4.06673 -9.0518e-07L6.10829e-05 4C1.0202 5.00069 3.04664 6.99929 4.06673 8L4.57992 7.50347C3.66255 6.60347 2.44872 5.4048 1.37779 4.35342L8.00001 4.35342L8.00001 3.64716L1.37779 3.64716L4.57992 0.502097L4.06673 -9.0518e-07Z" fill="#1E1E1E"></path>
+        </svg>
+      </button>
+    {% endif %}
+    {% if show_pagination %}
+      <div class="splide__pagination m:w-full {{ pagination_class }}"></div>
+    {% endif %}
+    {% if show_nav %}
+      <button
+        class="m-slider-controls__button m-slider-controls__button-next splide__arrow splide__arrow--next {{ nav_class }}"
+        type="button"
+        aria-label="Next"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <path d="M3.93333 8L8 4C6.97986 2.99931 4.95342 1.00071 3.93333 -1.7776e-07L3.42014 0.496533C4.33751 1.39653 5.55134 2.5952 6.62228 3.64658L5.22927e-05 3.64658L5.22618e-05 4.35283L6.62228 4.35283L3.42014 7.4979L3.93333 8Z" fill="#1E1E1E"></path>
+        </svg>
+      </button>
+    {% endif %}
+  </div>
+</div>

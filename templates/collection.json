@@ -37,15 +37,12 @@
         "h1-color": ""
       }
     },
-    "breadcrumb_h1_EGVDXm": {
-      "type": "breadcrumb-h1",
-      "name": "Breadcrumb h1",
+    "custom_liquid_KKKwbQ": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
       "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
+        "custom_liquid": "",
+        "custom_class": ""
       }
     },
     "collection-header": {
@@ -68,22 +65,27 @@
         "enable_bg_zoom_effect": true
       }
     },
-    "apex_timer_9PnBtn": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "name": "Apex Product Timer",
+    "mrk_collection_grid_section_PKCq6B": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
       "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#000000",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "600",
-        "timer_text": "Unser Angebot endet in kürze!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "500",
-        "start_time": "00:00:00"
+        "padding_top": 30,
+        "padding_bottom": 0,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": false,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false,
+        "show_gift_info": false,
+        "info_text": "",
+        "add_border_line": false,
+        "show_max_price": false,
+        "show_save_price": false
       }
     },
     "main": {
@@ -116,24 +118,6 @@
         "show_stock_status": false
       }
     },
-    "mrk_collection_grid_section_YhMPk9": {
-      "type": "mrk-collection-grid-section",
-      "name": "Akta Collection Grid",
-      "settings": {
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "show_section_header": false,
-        "section_title": "Featured Collection",
-        "section_description": "Explore our best-selling products.",
-        "collection": "",
-        "products_limit": 20,
-        "use_metafield_image": true,
-        "hover_second_image": false,
-        "pagination_style": "circle",
-        "show_product_ratings": false,
-        "show_stock_status": false
-      }
-    },
     "usp_list_nd6t8y": {
       "type": "usp-list",
       "blocks": {
@@ -152,7 +136,7 @@
           "type": "item",
           "settings": {
             "usp_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
-            "usp_title": "140,000+ zufriedene Kunden",
+            "usp_title": "200,000+ zufriedene Kunden",
             "title_size": 18,
             "usp_info": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?",
             "info_size": 14,
@@ -180,42 +164,7 @@
         "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
-      }
-    },
-    "promotion_banner_dgKacc": {
-      "type": "promotion-banner",
-      "blocks": {
-        "promotion_NBbJbf": {
-          "type": "promotion",
-          "settings": {
-            "subheading": "JETZT ODER NIE",
-            "heading": "-75%",
-            "text_alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "promotion_NBbJbf"
-      ],
-      "disabled": true,
-      "name": "Promotion banner",
-      "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "heading": "Entdecke unsere Auslaufmodelle",
-        "heading_size": "h2",
-        "text": "<p>Noch nicht das richtige gefunden? Entdecke jetzt unsere Auslaufmodelle bevor sie alle weg sind. Für die nächsten 48h bis zu -75% Rabatt.</p>",
-        "content_alignment": "left",
-        "banner_url": "shopify://collections/ausverkauf",
-        "button_label": "",
-        "button_style": "m-button--primary",
-        "button_size": "",
-        "padding_top": 70,
-        "padding_bottom": 70,
-        "custom_class": "",
-        "animations": "inherit"
+        "verticle_padding_mobile": 30
       }
     },
     "collection_description_KrcbiD": {
@@ -231,13 +180,11 @@
   },
   "order": [
     "testing_ahDQMJ",
-    "breadcrumb_h1_EGVDXm",
+    "custom_liquid_KKKwbQ",
     "collection-header",
-    "apex_timer_9PnBtn",
+    "mrk_collection_grid_section_PKCq6B",
     "main",
-    "mrk_collection_grid_section_YhMPk9",
     "usp_list_nd6t8y",
-    "promotion_banner_dgKacc",
     "collection_description_KrcbiD"
   ]
 }

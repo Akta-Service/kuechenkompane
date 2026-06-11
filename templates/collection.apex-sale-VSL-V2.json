@@ -9,42 +9,6 @@
  */
 {
   "sections": {
-    "apex_top_slider_cLWmNy": {
-      "type": "apex-top-slider",
-      "blocks": {
-        "text_yyFMTt": {
-          "type": "text",
-          "settings": {
-            "top_item": "140.000+ zufriedene Kunden"
-          }
-        },
-        "text_KykYUz": {
-          "type": "text",
-          "settings": {
-            "top_item": "30 Tage Testen"
-          }
-        },
-        "text_KDtkJQ": {
-          "type": "text",
-          "settings": {
-            "top_item": "Kostenloser Versand"
-          }
-        }
-      },
-      "block_order": [
-        "text_yyFMTt",
-        "text_KykYUz",
-        "text_KDtkJQ"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "default",
-        "pt": 15,
-        "pb": 15,
-        "mt_mobile": 15,
-        "mb_mobile": 15
-      }
-    },
     "breadcrumb_h1_B4wewV": {
       "type": "breadcrumb-h1",
       "name": "Breadcrumb h1",
@@ -109,29 +73,6 @@
         "des_size": "p-medium"
       }
     },
-    "announcement_bar_sticky_scroll_gnrpHz": {
-      "type": "announcement-bar-sticky-scroll",
-      "disabled": true,
-      "name": "APEX Announcement Sticky",
-      "settings": {
-        "target_collections": [],
-        "target_products": [],
-        "target_pages": "",
-        "enable_scroll_to_show": true,
-        "px_to_show": 200,
-        "top_px": 0,
-        "sticky_top": true,
-        "color_scheme": "dark",
-        "pt": 15,
-        "pb": 15,
-        "ann_title": "",
-        "ann_title_size": 16,
-        "ann_title_size_m": 16,
-        "text": "<p>Jetzt oder nie: 48h bis -75 % auf Auslaufmodelle</p>",
-        "text_size": 16,
-        "text_size_m": 16
-      }
-    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -150,23 +91,6 @@
         "padding_top": 22,
         "padding_bottom": 18,
         "enable_bg_zoom_effect": true
-      }
-    },
-    "apex_timer_9PnBtn": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#000000",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "600",
-        "timer_text": "Unser Angebot endet in kürze!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "500",
-        "start_time": "00:00:00"
       }
     },
     "main": {
@@ -215,22 +139,41 @@
         "show_stock_status": false
       }
     },
-    "mrk_collection_grid_section_ppayNa": {
+    "hide_sold_out_toggle_H4DMYJ": {
+      "type": "hide-sold-out-toggle",
+      "name": "Floow Hide Sold Out",
+      "settings": {
+        "show_only_in_editor": true,
+        "section_id": "#shopify-section-template--26793915416957__mrk_collection_grid_section_PKCq6B",
+        "text": "Nur verfügbare Artikel anzeigen",
+        "box_layout": false,
+        "section_width": 1340,
+        "section_margin": 15,
+        "margin_top_bottom_desktop": 16,
+        "margin_top_bottom_mobile": 16
+      }
+    },
+    "mrk_collection_grid_section_eepPyV": {
       "type": "mrk-collection-grid-section",
       "name": "Akta Collection Grid",
       "settings": {
-        "padding_top": 50,
-        "padding_bottom": 50,
+        "padding_top": 39,
+        "padding_bottom": 23,
         "show_section_header": false,
         "section_title": "Featured Collection",
         "section_description": "Explore our best-selling products.",
         "collection": "",
         "products_limit": 20,
-        "use_metafield_image": true,
+        "use_metafield_image": false,
         "hover_second_image": false,
         "pagination_style": "circle",
         "show_product_ratings": false,
-        "show_stock_status": false
+        "show_stock_status": false,
+        "show_gift_info": false,
+        "info_text": "",
+        "add_border_line": false,
+        "show_max_price": false,
+        "show_save_price": false
       }
     },
     "promotion_banner_dgKacc": {
@@ -311,8 +254,7 @@
         "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
+        "verticle_padding_mobile": 30
       }
     },
     "collection_description_KrcbiD": {
@@ -327,14 +269,12 @@
     }
   },
   "order": [
-    "apex_top_slider_cLWmNy",
     "breadcrumb_h1_B4wewV",
     "product_explanation_video_ca4Wbj",
-    "announcement_bar_sticky_scroll_gnrpHz",
     "collection-header",
-    "apex_timer_9PnBtn",
     "main",
-    "mrk_collection_grid_section_ppayNa",
+    "hide_sold_out_toggle_H4DMYJ",
+    "mrk_collection_grid_section_eepPyV",
     "promotion_banner_dgKacc",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"

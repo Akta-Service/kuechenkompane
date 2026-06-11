@@ -12,7 +12,7 @@ if (!customElements.get("m-gmaps")) {
         return;
       }
     }
-
+    
     connectedCallback() {
       this.prepMapApi();
     }

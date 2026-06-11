@@ -24,7 +24,9 @@
         "timer_color": "#000000",
         "timer_font_weight": "400",
         "target_date": "2025-09-26",
-        "target_time": "00:00:00"
+        "target_time": "00:00:00",
+        "auto_restart": false,
+        "auto_interval_hours": 48
       }
     },
     "rich_text_DTWea7": {
@@ -79,22 +81,41 @@
         "enable_bg_zoom_effect": true
       }
     },
-    "mrk_collection_grid_section_timGxN": {
+    "hide_sold_out_toggle_YJq9yy": {
+      "type": "hide-sold-out-toggle",
+      "name": "Floow Hide Sold Out",
+      "settings": {
+        "show_only_in_editor": true,
+        "section_id": "#shopify-section-template--26793915416957__mrk_collection_grid_section_PKCq6B",
+        "text": "Nur verfügbare Artikel anzeigen",
+        "box_layout": false,
+        "section_width": 1340,
+        "section_margin": 15,
+        "margin_top_bottom_desktop": 16,
+        "margin_top_bottom_mobile": 16
+      }
+    },
+    "mrk_collection_grid_section_LpPYLP": {
       "type": "mrk-collection-grid-section",
       "name": "Akta Collection Grid",
       "settings": {
-        "padding_top": 50,
-        "padding_bottom": 50,
+        "padding_top": 40,
+        "padding_bottom": 21,
         "show_section_header": false,
         "section_title": "Featured Collection",
         "section_description": "Explore our best-selling products.",
         "collection": "",
         "products_limit": 20,
-        "use_metafield_image": true,
+        "use_metafield_image": false,
         "hover_second_image": false,
         "pagination_style": "circle",
         "show_product_ratings": false,
-        "show_stock_status": true
+        "show_stock_status": true,
+        "show_gift_info": false,
+        "info_text": "",
+        "add_border_line": false,
+        "show_max_price": false,
+        "show_save_price": false
       }
     },
     "promotion_banner_zN9WhN": {
@@ -176,43 +197,7 @@
         "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
-      }
-    },
-    "collection_description_tUMerW": {
-      "type": "collection-description",
-      "disabled": true,
-      "settings": {
-        "collection_bg": "#c6d1c4",
-        "collection_pt": 30,
-        "collection_pb": 30,
-        "collection_pt_m": 30,
-        "collection_pb_m": 30
-      }
-    },
-    "rich_text_ijBTPA": {
-      "type": "rich-text",
-      "blocks": {
-        "text_Pp4WF3": {
-          "type": "text",
-          "settings": {
-            "text": "{{ collection.description }}"
-          }
-        }
-      },
-      "block_order": [
-        "text_Pp4WF3"
-      ],
-      "disabled": true,
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 108,
-        "padding_bottom": 116,
-        "custom_class": "",
-        "animations": "inherit"
+        "verticle_padding_mobile": 30
       }
     }
   },
@@ -220,10 +205,9 @@
     "apex_global_offer_timer_b9GWdM",
     "rich_text_DTWea7",
     "collection-header",
-    "mrk_collection_grid_section_timGxN",
+    "hide_sold_out_toggle_YJq9yy",
+    "mrk_collection_grid_section_LpPYLP",
     "promotion_banner_zN9WhN",
-    "usp_list_xQHfgQ",
-    "collection_description_tUMerW",
-    "rich_text_ijBTPA"
+    "usp_list_xQHfgQ"
   ]
 }

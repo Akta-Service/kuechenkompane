@@ -1,108 +1,716 @@
+{% comment %}
+  Announcement Bar
+  Desktop : All blocks shown side-by-side in a flex row.
+  Mobile  : Either all blocks visible (compact row) or an auto-rotating Splide slider.
+{% endcomment %}
+
 <style>
-
-
-  .snow-announcement-bar {
-    /* background-color: #f0ff00; */
-    overflow: clip;
-  }
-  .Announcement--sticky{
-    position: sticky !important;
-    top: 0;
-    z-index: 99;
-  }
-  .snow-announcement-bar a {
-    text-decoration: none;
+  /* ── ROOT ── */
+  #kk-ann-{{ section.id }} {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: {{ section.settings.bg_color }};
   }
 
-  .snow-announcement-bar-container {
-    max-width: 1320px;
+  /* Background image */
+  #kk-ann-{{ section.id }} .ab-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  #kk-ann-{{ section.id }} .ab-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Overlay */
+  #kk-ann-{{ section.id }} .ab-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: {{ section.settings.overlay_color }};
+  }
+
+  /* Wrapper */
+  #kk-ann-{{ section.id }} .ab-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
   }
 
-  .snow-announcement-bar-text {
-    /* color: #000; */
-    font-family: 'DM Sans';
-    font-weight: 700;
-    font-size: 20px;
-    text-align: center;
-    padding: 10px 0;
-    text-transform: uppercase;
+  /* ── DESKTOP: all items in one row ── */
+  #kk-ann-{{ section.id }} .ab-desktop {
+    display: flex;
+    align-items: center;
+    padding: {{ section.settings.desktop_padding_top }}px 0 {{ section.settings.desktop_padding_bottom }}px;
   }
+
+  #kk-ann-{{ section.id }} .ab-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: {{ section.settings.icon_gap }}px;
+    padding: 0 16px;
+    position: relative;
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.desktop_font_size }}px;
+    font-weight: {{ section.settings.desktop_font_weight }};
+    line-height: {{ section.settings.desktop_line_height }};
+    letter-spacing: {{ section.settings.desktop_letter_spacing }}px;
+    text-transform: {{ section.settings.text_transform }};
+    text-align: center;
+  }
+  #kk-ann-{{ section.id }} .ab-item p { margin: 0; line-height: inherit; }
+
+  /* Desktop dividers */
+  {% if section.settings.show_desktop_dividers %}
+  #kk-ann-{{ section.id }} .ab-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: {{ section.settings.divider_color }};
+  }
+  {% endif %}
+
+  /* Icon */
+  #kk-ann-{{ section.id }} .ab-icon {
+    flex-shrink: 0;
+    width: {{ section.settings.desktop_icon_size }}px;
+    height: {{ section.settings.desktop_icon_size }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #kk-ann-{{ section.id }} .ab-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  #kk-ann-{{ section.id }} .ab-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: {{ section.settings.icon_color }};
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ── MOBILE ── */
+  #kk-ann-{{ section.id }} .ab-mobile { display: none; }
 
   @media (max-width: 767px) {
-    .snow-announcement-bar-text {
-      font-size: 16px;
+    #kk-ann-{{ section.id }} .ab-desktop { display: none; }
+
+    #kk-ann-{{ section.id }} .ab-mobile {
+      display: block;
+      padding: {{ section.settings.mobile_padding_top }}px 0 {{ section.settings.mobile_padding_bottom }}px;
     }
+
+    /* Compact row: all items visible */
+    #kk-ann-{{ section.id }} .ab-mobile-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #kk-ann-{{ section.id }} .ab-mobile-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 0 6px;
+      position: relative;
+      color: {{ section.settings.text_color }};
+      font-size: {{ section.settings.mobile_font_size }}px;
+      font-weight: {{ section.settings.mobile_font_weight }};
+      line-height: {{ section.settings.mobile_line_height }};
+      letter-spacing: {{ section.settings.mobile_letter_spacing }}px;
+      text-transform: {{ section.settings.text_transform }};
+      text-align: center;
+      white-space: nowrap;
+    }
+    #kk-ann-{{ section.id }} .ab-mobile-item p { margin: 0; line-height: inherit; }
+
+    {% if section.settings.mobile_divider_style == 'line' %}
+    #kk-ann-{{ section.id }} .ab-mobile-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 10%;
+      height: 80%;
+      width: 1px;
+      background: {{ section.settings.divider_color }};
+    }
+    {% elsif section.settings.mobile_divider_style == 'pipe' %}
+    #kk-ann-{{ section.id }} .ab-mobile-item:not(:last-child)::after {
+      content: '|';
+      position: absolute;
+      right: -3px;
+      color: {{ section.settings.divider_color }};
+      font-weight: 300;
+    }
+    {% endif %}
+
+    /* Hide icons on mobile when toggled off */
+    {% unless section.settings.show_mobile_icons %}
+    #kk-ann-{{ section.id }} .ab-mobile-item .ab-icon { display: none; }
+    {% endunless %}
+
+    /* Mobile icon size override */
+    #kk-ann-{{ section.id }} .ab-mobile-item .ab-icon,
+    #kk-ann-{{ section.id }} .ab-mobile-slider .ab-icon {
+      width: {{ section.settings.mobile_icon_size }}px;
+      height: {{ section.settings.mobile_icon_size }}px;
+    }
+
+    /* Slider mode */
+    #kk-ann-{{ section.id }} .ab-mobile-slider .splide__slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: {{ section.settings.text_color }};
+      font-size: {{ section.settings.mobile_font_size }}px;
+      font-weight: {{ section.settings.mobile_font_weight }};
+      line-height: {{ section.settings.mobile_line_height }};
+      letter-spacing: {{ section.settings.mobile_letter_spacing }}px;
+      text-transform: {{ section.settings.text_transform }};
+      text-align: center;
+    }
+    #kk-ann-{{ section.id }} .ab-mobile-slider .splide__slide p { margin: 0; }
+    #kk-ann-{{ section.id }} .ab-mobile-slider .splide__pagination,
+    #kk-ann-{{ section.id }} .ab-mobile-slider .splide__arrows { display: none; }
+
+    {% unless section.settings.show_mobile_icons %}
+    #kk-ann-{{ section.id }} .ab-mobile-slider .ab-icon { display: none; }
+    {% endunless %}
   }
 </style>
 
-{% assign show_announment = false %}
+{% comment %} Reusable icon macro via liquid capture {% endcomment %}
+{% capture icon_percent %}
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="9" cy="9" r="2.5"/>
+    <circle cx="15" cy="15" r="2.5"/>
+    <line x1="19" y1="5" x2="5" y2="19"/>
+  </svg>
+{% endcapture %}
+{% capture icon_package %}
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+    <line x1="12" y1="22.08" x2="12" y2="12"/>
+  </svg>
+{% endcapture %}
+{% capture icon_clock %}
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="12 6 12 12 16 14"/>
+  </svg>
+{% endcapture %}
+{% capture icon_truck %}
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <rect x="1" y="3" width="15" height="13"/>
+    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+    <circle cx="5.5" cy="18.5" r="2.5"/>
+    <circle cx="18.5" cy="18.5" r="2.5"/>
+  </svg>
+{% endcapture %}
+{% capture icon_shield %}
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </svg>
+{% endcapture %}
+{% capture icon_star %}
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </svg>
+{% endcapture %}
+{% capture icon_check %}
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+{% endcapture %}
 
-{% for coll in section.settings.target_collections %}
-  {% if collection.handle == coll.handle %}
-    {% assign show_announment = true %}
+<div id="kk-ann-{{ section.id }}" class="header--sticky-ann">
+  {% if section.settings.bg_image != blank %}
+    <div class="ab-bg">
+      {{- section.settings.bg_image | image_url: width: 1600 | image_tag: loading: 'eager', fetchpriority: 'high' -}}
+    </div>
   {% endif %}
-{% endfor %}
-
-{% assign included_pages = section.settings.target_pages | strip | split: ',' %}
-{% for pg_handle in included_pages %}
-  {% assign pg_handle_trimmed = pg_handle | strip %}
-  {% if page and page.handle == pg_handle_trimmed %}
-    {% assign show_announment = true %}
+  {% if section.settings.show_overlay %}
+    <div class="ab-overlay"></div>
   {% endif %}
-{% endfor %}
 
+  <div class="ab-inner">
 
+    {%- comment -%} ── DESKTOP ── {%- endcomment -%}
+    <div class="ab-desktop">
+      {% for block in section.blocks %}
+        <div class="ab-item" {{ block.shopify_attributes }}>
+          {% unless block.settings.icon_type == 'none' %}
+            <div class="ab-icon">
+              {% if block.settings.icon_image != blank %}
+                {{ block.settings.icon_image | image_url: width: 60 | image_tag: loading: 'eager' }}
+              {% else %}
+                {% case block.settings.icon_type %}
+                  {% when 'percent' %}{{ icon_percent }}
+                  {% when 'package' %}{{ icon_package }}
+                  {% when 'clock' %}{{ icon_clock }}
+                  {% when 'truck' %}{{ icon_truck }}
+                  {% when 'shield' %}{{ icon_shield }}
+                  {% when 'star' %}{{ icon_star }}
+                  {% when 'check' %}{{ icon_check }}
+                {% endcase %}
+              {% endif %}
+            </div>
+          {% endunless %}
+          <div class="ab-item-text">{{ block.settings.text }}</div>
+        </div>
+      {% endfor %}
+    </div>
 
+    {%- comment -%} ── MOBILE ── {%- endcomment -%}
+    <div class="ab-mobile">
+      {% if section.settings.mobile_layout == 'slider' %}
+        <div id="kk-ann-splide-{{ section.id }}" class="ab-mobile-slider splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              {% for block in section.blocks %}
+                <li class="splide__slide" {{ block.shopify_attributes }}>
+                  {% unless block.settings.icon_type == 'none' %}
+                    <div class="ab-icon">
+                      {% if block.settings.icon_image != blank %}
+                        {{ block.settings.icon_image | image_url: width: 40 | image_tag: loading: 'eager' }}
+                      {% else %}
+                        {% case block.settings.icon_type %}
+                          {% when 'percent' %}{{ icon_percent }}
+                          {% when 'package' %}{{ icon_package }}
+                          {% when 'clock' %}{{ icon_clock }}
+                          {% when 'truck' %}{{ icon_truck }}
+                          {% when 'shield' %}{{ icon_shield }}
+                          {% when 'star' %}{{ icon_star }}
+                          {% when 'check' %}{{ icon_check }}
+                        {% endcase %}
+                      {% endif %}
+                    </div>
+                  {% endunless %}
+                  <div>{{ block.settings.text }}</div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
 
+      {% else %}
+        <div class="ab-mobile-row">
+          {% for block in section.blocks %}
+            <div class="ab-mobile-item" {{ block.shopify_attributes }}>
+              {% unless block.settings.icon_type == 'none' %}
+                <div class="ab-icon">
+                  {% if block.settings.icon_image != blank %}
+                    {{ block.settings.icon_image | image_url: width: 40 | image_tag: loading: 'eager' }}
+                  {% else %}
+                    {% case block.settings.icon_type %}
+                      {% when 'percent' %}{{ icon_percent }}
+                      {% when 'package' %}{{ icon_package }}
+                      {% when 'clock' %}{{ icon_clock }}
+                      {% when 'truck' %}{{ icon_truck }}
+                      {% when 'shield' %}{{ icon_shield }}
+                      {% when 'star' %}{{ icon_star }}
+                      {% when 'check' %}{{ icon_check }}
+                    {% endcase %}
+                  {% endif %}
+                </div>
+              {% endunless %}
+              <div class="ab-mobile-item-text">{{ block.settings.text }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
 
-
-{% if show_announment %}
-  <div class="snow-announcement-bar m-color-{{ section.settings.color_scheme }}">
-    <a href="{{ section.settings.announcement_url }}">
-      <div class="snow-announcement-bar-container">
-        <div class="snow-announcement-bar-text">{{ section.settings.announcement_text }}</div>
-      </div>
-    </a>
   </div>
+</div>
+
+{% if section.settings.mobile_layout == 'slider' %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.getElementById('kk-ann-splide-{{ section.id }}');
+  if (!el || typeof Splide === 'undefined') return;
+  new Splide(el, {
+    type        : 'fade',
+    rewind      : true,
+    pagination  : false,
+    arrows      : false,
+    drag        : false,
+    autoplay    : true,
+    interval    : {{ section.settings.autoplay_delay }},
+    speed       : {{ section.settings.transition_speed }},
+    pauseOnHover: false,
+  }).mount();
+});
+</script>
 {% endif %}
+
 {% schema %}
 {
-  "name": "Announcement Bar new",
-  "class": "announcement_bar Announcement--sticky",
+  "name": "Announcement Bar",
+  "tag": "section",
+  "class": "header-announcement header--sticky-ann",
   "settings": [
     {
-      "type": "collection_list",
-      "id": "target_collections",
-      "label": "Show on these collections"
+      "type": "header",
+      "content": "Background"
     },
     {
-      "type": "textarea",
-      "id": "target_pages",
-      "label": "Page handles to  Show (e.g: about-us,contact)",
-      
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#1a2e1a"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme"
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image (optional)"
     },
     {
-      "type": "url",
-      "id": "announcement_url",
-      "label": "Announcement Link"
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show overlay on image",
+      "default": true
     },
     {
-      "type": "text",
-      "id": "announcement_text",
-      "label": "Announcement Text",
-      "default": "FREE GIFTS + UP TO 49% OFF"
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "rgba(0,0,0,0.45)",
+      "info": "Use rgba for transparency, e.g. rgba(0,0,0,0.4)"
+    },
+    {
+      "type": "header",
+      "content": "Text & Icons"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color (SVG icons)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text case",
+      "default": "uppercase",
+      "options": [
+        { "value": "uppercase", "label": "UPPERCASE" },
+        { "value": "capitalize", "label": "Capitalize" },
+        { "value": "none", "label": "As typed" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Dividers"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "rgba(255,255,255,0.35)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_desktop_dividers",
+      "label": "Show dividers on desktop",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "mobile_divider_style",
+      "label": "Mobile divider style",
+      "default": "pipe",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "pipe", "label": "Pipe (|)" },
+        { "value": "line", "label": "Thin line" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Desktop typography"
+    },
+    {
+      "type": "range",
+      "id": "desktop_font_size",
+      "label": "Font size (px)",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "select",
+      "id": "desktop_font_weight",
+      "label": "Font weight",
+      "default": "700",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi-bold (600)" },
+        { "value": "700", "label": "Bold (700)" },
+        { "value": "800", "label": "Extra-bold (800)" },
+        { "value": "900", "label": "Black (900)" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "desktop_line_height",
+      "label": "Line height",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "default": 1.3
+    },
+    {
+      "type": "number",
+      "id": "desktop_letter_spacing",
+      "label": "Letter spacing (px)",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "Padding top (px)",
+      "min": 4,
+      "max": 40,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "Padding bottom (px)",
+      "min": 4,
+      "max": 40,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "desktop_icon_size",
+      "label": "Icon size (px)",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "icon_gap",
+      "label": "Gap between icon and text (px)",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Mobile typography"
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "label": "Font size (px)",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "select",
+      "id": "mobile_font_weight",
+      "label": "Font weight",
+      "default": "700",
+      "options": [
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi-bold (600)" },
+        { "value": "700", "label": "Bold (700)" },
+        { "value": "800", "label": "Extra-bold (800)" },
+        { "value": "900", "label": "Black (900)" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "mobile_line_height",
+      "label": "Line height",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "default": 1.3
+    },
+    {
+      "type": "number",
+      "id": "mobile_letter_spacing",
+      "label": "Letter spacing (px)",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile display mode",
+      "default": "all_visible",
+      "options": [
+        { "value": "all_visible", "label": "All items visible (compact)" },
+        { "value": "slider", "label": "Auto-rotate slider" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Padding top (px)",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "default": 7
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Padding bottom (px)",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "default": 7
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_size",
+      "label": "Icon size (px)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile_icons",
+      "label": "Show icons on mobile",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Slider settings (mobile slider only)"
+    },
+    {
+      "type": "number",
+      "id": "autoplay_delay",
+      "label": "Autoplay delay (ms)",
+      "default": 3500
+    },
+    {
+      "type": "number",
+      "id": "transition_speed",
+      "label": "Transition speed (ms)",
+      "default": 1200
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon",
+          "default": "percent",
+          "options": [
+            { "value": "none",    "label": "None" },
+            { "value": "percent", "label": "Percent (%)" },
+            { "value": "package", "label": "Package / Box" },
+            { "value": "clock",   "label": "Clock" },
+            { "value": "truck",   "label": "Truck" },
+            { "value": "shield",  "label": "Shield" },
+            { "value": "star",    "label": "Star" },
+            { "value": "check",   "label": "Checkmark" },
+            { "value": "image",   "label": "Custom image (upload below)" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Custom icon image",
+          "info": "Used only when 'Custom image' is selected above."
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p><strong>BIS ZU -75%</strong> RABATT</p>"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Announcement Bar new"
+      "name": "Announcement Bar",
+      "settings": {
+        "bg_color": "#1a2e1a",
+        "mobile_layout": "all_visible",
+        "show_desktop_dividers": true,
+        "mobile_divider_style": "pipe"
+      },
+      "blocks": [
+        {
+          "type": "announcement",
+          "settings": {
+            "icon_type": "percent",
+            "text": "<p><strong>BIS ZU -75% RABATT</strong></p>"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "icon_type": "package",
+            "text": "<p><strong>KEINE NACHPRODUKTION</strong></p>"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "icon_type": "clock",
+            "text": "<p><strong>NUR SOLANGE DER VORRAT REICHT!</strong></p>"
+          }
+        }
+      ]
     }
   ]
 }

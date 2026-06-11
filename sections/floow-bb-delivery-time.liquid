@@ -1,0 +1,450 @@
+{% assign si = section.id %}
+{% assign ss = section.settings %}
+
+{% if product.available %}
+  {% render 'floow-delivery-time', si: si, ss: ss %}
+
+  {% if ss.show_low_stock %}
+    <div class="floow-low-stock-{{ si }}">
+      <span class="floow-pulse-wrapper">
+        <span class="floow-pulse-dot"></span>
+        <span class="floow-pulse-ring"></span>
+      </span>
+      <span>{{ ss.low_stock_text }}</span>
+    </div>
+  {% endif %}
+{% endif %}
+
+{% if ss.use_modal %}
+  <div class="floow-modal-hidden-content floow-modal-{{ si }}">
+    <div class="floow-modal-inner-{{ si }}">
+      <div class="floow-modal-header-{{ si }}">
+        <div class="floow-modal-icon-{{ si }}">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="{{ ss.icon_color }}"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        {% if ss.modal_heading != blank %}
+          <h3 class="floow-modal-heading-{{ si }}">{{ ss.modal_heading }}</h3>
+        {% endif %}
+      </div>
+      {% if ss.modal_content != blank %}
+        <div class="floow-modal-body-{{ si }}">{{ ss.modal_content }}</div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  #shopify-section-{{ si }} {
+    display: none;
+  }
+  {% if ss.show_only_in_editor %}
+    #floow-delivery-time {
+      display: none;
+      {% if request.design_mode %}
+        display: block;
+      {% endif %}
+    }
+    {% if request.design_mode %}
+        .product-info__inventory {
+            display: none;
+        }
+    {% endif %}
+  {% else %}
+    .product-info__inventory {
+        display: none;
+    }
+  {% endif %}
+
+  .floow-delivery-date-{{ si }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: {{ ss.padding_y }}px {{ ss.padding_x }}px;
+    margin-top: {{ ss.margin_top }}px;
+    margin-bottom: {{ ss.margin_bottom }}px;
+    background: {{ ss.bg_color }};
+    border-radius: {{ ss.border_radius }}px;
+    line-height: 1.5;
+    {% if ss.show_border %}
+      border: 1px solid {{ ss.border_color }};
+    {% endif %}
+  }
+
+  .floow-delivery-date-{{ si }}::before {
+    content: '';
+    display: inline-block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='{{ ss.icon_color | remove: '#' | prepend: '%23' }}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 3h15v13H1z'/%3E%3Cpath d='M16 8h4l3 4v5h-7V8z'/%3E%3Ccircle cx='5.5' cy='18.5' r='2.5'/%3E%3Ccircle cx='18.5' cy='18.5' r='2.5'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .floow-low-stock-{{ si }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: {{ ss.font_size }}px;
+    color: {{ ss.low_stock_color }};
+    font-weight: 600;
+  }
+
+  .floow-low-stock-{{ si }} .floow-pulse-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
+  .floow-low-stock-{{ si }} .floow-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: {{ ss.low_stock_color }};
+  }
+
+  .floow-low-stock-{{ si }} .floow-pulse-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: {{ ss.low_stock_color }};
+    opacity: 0;
+    animation: floowPulse-{{ si }} 1.8s ease-out infinite;
+  }
+
+  @keyframes floowPulse-{{ si }} {
+    0% {
+      opacity: 0.5;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2);
+    }
+  }
+
+  /*Modal*/
+  .floow-modal-inner-{{ si }} {
+    padding: 26px;
+    max-width: 500px;
+  }
+
+  .floow-modal-header-{{ si }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .floow-modal-icon-{{ si }} {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: {{ ss.bg_color }};
+    {% if ss.show_border %}
+        border: 1px solid {{ ss.border_color }};
+      {% endif %}
+  }
+
+  .floow-fb-modal-icon-{{ si }} img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .floow-fb-modal-icon-{{ si }} svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  .floow-modal-heading-{{ si }} {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .floow-modal-body-{{ si }} {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .floow-modal-body-{{ si }} ul,
+  .floow-modal-body-{{ si }} ol {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+
+  .floow-modal-body-{{ si }} li {
+    margin-bottom: 8px;
+  }
+
+  .floow-modal-content-container:has(.floow-modal-inner-{{ si }}) {
+    padding: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const section = document.querySelector('#shopify-section-{{ si }}').innerHTML;
+    const block = document.querySelector('#floow-delivery-time');
+    if (block) {
+      block.innerHTML = section;
+    }
+
+    document.addEventListener('shopify:section:load', function () {
+      const updatedSection = document.querySelector('#shopify-section-{{ si }}').innerHTML;
+      if (block && updatedSection) {
+        block.innerHTML = updatedSection;
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Floow Delivery Time",
+  "presets": [
+    {
+      "name": "Floow Delivery Time"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Allgemein"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_only_in_editor",
+      "label": "Nur im Editor anzeigen"
+    },
+    {
+      "type": "checkbox",
+      "id": "allow_saturday_delivery",
+      "label": "Lieferungen am Samstag erlauben",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "least_days",
+      "label": "Minimale Liefertage",
+      "default": 2
+    },
+    {
+      "type": "number",
+      "id": "most_days",
+      "label": "Maximale Liefertage",
+      "default": 5
+    },
+    {
+      "type": "inline_richtext",
+      "label": "Text",
+      "id": "text",
+      "default": "Lieferung am <strong>delivery_date</strong>, wenn Bestellung innerhalb remaining_time.",
+      "info": "delivery_date = Liefertag, remaining_time = verbleibende Zeit"
+    },
+    {
+      "type": "text",
+      "id": "url_text",
+      "default": "Details",
+      "label": "Link-Text"
+    },
+    {
+      "type": "range",
+      "id": "time_hours",
+      "label": "Bestellschluss Stunden",
+      "default": 11,
+      "step": 1,
+      "min": 0,
+      "max": 23,
+      "unit": "h"
+    },
+    {
+      "type": "range",
+      "id": "time_min",
+      "label": "Bestellschluss Minuten",
+      "default": 0,
+      "step": 1,
+      "min": 0,
+      "max": 59,
+      "unit": "min"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_modal",
+      "label": "Use Modal instead of URL"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Link für Details",
+      "visible_if": "{{ section.settings.use_modal == false }}"
+    },
+    {
+      "type": "header",
+      "content": "Modal",
+      "visible_if": "{{ section.settings.use_modal }}"
+    },
+    {
+      "type": "text",
+      "id": "modal_heading",
+      "label": "Modal-Überschrift",
+      "default": "Mehr erfahren",
+      "visible_if": "{{ section.settings.use_modal }}"
+    },
+    {
+      "type": "richtext",
+      "id": "modal_content",
+      "label": "Modal-Inhalt",
+      "default": "<p>Wir versenden direkt aus Deutschland – damit Ihre Arbeit nicht pausiert. <ol><li>Schneller Versand mit Sendungsverfolgung</li><li>Lieferzeit ca. 2–4 Werktage innerhalb Deutschlands Weltweiter Versand in alle Länder</li></ol></p>",
+      "visible_if": "{{ section.settings.use_modal }}"
+    },
+    {
+      "type": "header",
+      "content": "Lagerbestand"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_low_stock",
+      "label": "Niedriger Lagerbestand anzeigen",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "low_stock_text",
+      "label": "Lagerbestand Text",
+      "default": "Nur noch wenige auf Lager"
+    },
+    {
+      "type": "color",
+      "id": "low_stock_color",
+      "label": "Lagerbestand Farbe",
+      "default": "#e67e22"
+    },
+    {
+      "type": "header",
+      "content": "Design"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Außenabstand Oben",
+      "unit": "px",
+      "default": 0,
+      "step": 1,
+      "min": 0,
+      "max": 60
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Außenabstand Unten",
+      "unit": "px",
+      "default": 0,
+      "step": 1,
+      "min": 0,
+      "max": 60
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Schriftgröße",
+      "unit": "px",
+      "default": 14,
+      "step": 1,
+      "min": 10,
+      "max": 30
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon Farbe",
+      "default": "#308d2a"
+    },
+    {
+      "type": "color",
+      "id": "remaining_time_color",
+      "label": "Verbleibende Zeit Farbe",
+      "default": "#308d2a"
+    },
+    {
+      "type": "color",
+      "id": "url_color",
+      "label": "Link Farbe",
+      "default": "#587aa7"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Hintergrundfarbe",
+      "default": "#f0faf0"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Rahmen anzeigen",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Rahmenfarbe",
+      "default": "#d4edda"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Eckenradius",
+      "unit": "px",
+      "default": 8,
+      "step": 1,
+      "min": 0,
+      "max": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_y",
+      "label": "Innenabstand Vertikal",
+      "unit": "px",
+      "default": 12,
+      "step": 1,
+      "min": 0,
+      "max": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_x",
+      "label": "Innenabstand Horizontal",
+      "unit": "px",
+      "default": 14,
+      "step": 1,
+      "min": 0,
+      "max": 30
+    }
+  ]
+}
+{% endschema %}

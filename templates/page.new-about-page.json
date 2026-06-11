@@ -1,0 +1,589 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-about-us",
+      "disabled": true,
+      "settings": {}
+    },
+    "statement_heading_quote_xFgE6F": {
+      "type": "statement-heading-quote",
+      "name": "Statement heading quote",
+      "settings": {
+        "heading_prefix": "Messer, die halten, was sie",
+        "highlight_text": "versprechen.",
+        "heading_suffix": "",
+        "quote": "„Am Anfang stand nur der Anspruch, es besser zu machen.“",
+        "section_bg": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "highlight_color": "#3d5a3d",
+        "quote_color": "#444444",
+        "padding_top": 70,
+        "padding_bottom": 60,
+        "mobile_padding_top": 60,
+        "mobile_padding_bottom": 30
+      }
+    },
+    "founder_story_EgbT38": {
+      "type": "founder-story",
+      "blocks": {
+        "founder_row_jTWRgt": {
+          "type": "_founder-row",
+          "settings": {
+            "reverse_columns": false,
+            "show_top_border": true,
+            "show_bottom_border": true,
+            "bg_color": "#ffffff",
+            "border_color": "#eeeeee",
+            "padding_top": 80,
+            "padding_bottom": 80,
+            "mobile_padding_top": 30,
+            "mobile_padding_bottom": 30
+          },
+          "blocks": {
+            "founder_slider_group_YCq7CA": {
+              "type": "_founder-slider-group",
+              "name": "Founder slider group",
+              "settings": {
+                "enable_loop": false,
+                "image_radius": 12
+              },
+              "blocks": {
+                "founder_slide_image_6BtkbY": {
+                  "type": "_founder-slide-image",
+                  "settings": {
+                    "image": "shopify://shop_images/mats_1_1.jpg",
+                    "alt_text": "Bild vom Gründer"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_slide_image_6BtkbY"
+              ]
+            },
+            "founder_content_zdgrnj": {
+              "type": "_founder-content",
+              "settings": {},
+              "blocks": {
+                "founder_text_zfqNdQ": {
+                  "type": "_founder-text",
+                  "settings": {
+                    "text": "<p><strong>Ich bin Mats, der Gründer von Küchenkompane.</strong></p><p>Und diese Geschichte beginnt mit einem Moment, der meinen Blick auf Küchenmesser komplett verändert hat.</p><p>Stell dir vor, etwas ist so gut, dass du dich fragst, warum du es nicht früher hattest. </p>",
+                    "text_color": "#1a1a1a"
+                  },
+                  "blocks": {}
+                },
+                "founder_heading_HfCNK4": {
+                  "type": "_founder-heading",
+                  "settings": {
+                    "heading": "Genau dieses Gefühl wollen wir dir mit unseren Produkten geben.",
+                    "heading_color": "#1a1a1a"
+                  },
+                  "blocks": {}
+                },
+                "founder_body_qbJEKW": {
+                  "type": "_founder-body",
+                  "settings": {
+                    "body": "<p></p><p>So begann auch die Reise von Küchenkompane. Im Jahr 2018 zeigten mir zwei Messer aus Japan zum ersten Mal, wie sich ehrliche Schmiedekunst und echte Qualität wirklich anfühlen sollten.</p>",
+                    "text_color": "#444444"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_text_zfqNdQ",
+                "founder_heading_HfCNK4",
+                "founder_body_qbJEKW"
+              ]
+            }
+          },
+          "block_order": [
+            "founder_slider_group_YCq7CA",
+            "founder_content_zdgrnj"
+          ]
+        },
+        "founder_row_Qg6gW9": {
+          "type": "_founder-row",
+          "settings": {
+            "reverse_columns": true,
+            "show_top_border": false,
+            "show_bottom_border": false,
+            "bg_color": "#ffffff",
+            "border_color": "#eeeeee",
+            "padding_top": 80,
+            "padding_bottom": 80,
+            "mobile_padding_top": 30,
+            "mobile_padding_bottom": 30
+          },
+          "blocks": {
+            "founder_slider_group_f8A8hT": {
+              "type": "_founder-slider-group",
+              "name": "Founder slider group",
+              "settings": {
+                "enable_loop": false,
+                "image_radius": 12
+              },
+              "blocks": {
+                "founder_slide_image_QqPgcE": {
+                  "type": "_founder-slide-image",
+                  "settings": {
+                    "image": "shopify://shop_images/download_5.jpg",
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_slide_image_QqPgcE"
+              ]
+            },
+            "founder_content_qyqYWj": {
+              "type": "_founder-content",
+              "settings": {},
+              "blocks": {
+                "founder_body_pHGmbd": {
+                  "type": "_founder-body",
+                  "settings": {
+                    "body": "<p>Diese Erfahrung hat mich nicht mehr losgelassen. Ich begann, mich intensiver mit Messern zu beschäftigen. Mit Materialien, Schliffen, Verarbeitung und Herkunft. Vor allem aber mit den Unterschieden im Markt. Dabei stellte sich immer wieder dieselbe Frage: Warum kauft man in Japan Messer mit deutschen Namen darauf – und bekommt hier oft etwas, das diesem Anspruch nicht gerecht wird?</p><p>Aus dieser Frage entstand der Wunsch, es besser zu machen. Küchenkompane sollte für Produkte stehen, die halten, was sie versprechen. Für Messer, die man gerne benutzt und denen man vertraut. Für ehrliches Werkzeug für den Küchenalltag.</p><p>Beim Anfang von Küchenkompane gab es kein Büro und kein großes Team. Alles begann im Keller. Mit den ersten Messern, einem Laptop und der Idee, es besser zu machen. Direkt nach dem Abitur startete ich mit den ersten Testverkäufen über Online-Marktplätze. Die Nachfrage kam schneller als erwartet. Und aus einer Vision wurde Schritt für Schritt ein eigenes Unternehmen.</p>",
+                    "text_color": "#444444"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_body_pHGmbd"
+              ]
+            }
+          },
+          "block_order": [
+            "founder_slider_group_f8A8hT",
+            "founder_content_qyqYWj"
+          ]
+        },
+        "founder_row_pTPDVR": {
+          "type": "_founder-row",
+          "settings": {
+            "reverse_columns": false,
+            "show_top_border": false,
+            "show_bottom_border": false,
+            "bg_color": "#eeeff8",
+            "border_color": "#eeeeee",
+            "padding_top": 80,
+            "padding_bottom": 80,
+            "mobile_padding_top": 30,
+            "mobile_padding_bottom": 30
+          },
+          "blocks": {
+            "founder_slider_group_z4Kjqq": {
+              "type": "_founder-slider-group",
+              "name": "Founder slider group",
+              "settings": {
+                "enable_loop": false,
+                "image_radius": 12
+              },
+              "blocks": {
+                "founder_slide_image_9eW3C7": {
+                  "type": "_founder-slide-image",
+                  "name": "Founder slide image",
+                  "settings": {
+                    "image": "shopify://shop_images/59bea942-ccd6-4f5b-8041-48e5a4e60364.png",
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_slide_image_9eW3C7"
+              ]
+            },
+            "founder_content_wt3bnw": {
+              "type": "_founder-content",
+              "settings": {},
+              "blocks": {
+                "founder_body_V369LR": {
+                  "type": "_founder-body",
+                  "settings": {
+                    "body": "<p>2020 kam ein tiefer Einschnitt. Mein Vater starb unerwartet mit 59 Jahren. Eine Zeit, die vieles verändert hat. Die Arbeit wurde für mich Fokus und Verarbeitung zugleich. Aus einer Idee wurde eine langfristige Aufgabe. Der Anspruch wuchs. Ich wollte etwas aufbauen, das Bestand hat. Etwas, das Verantwortung trägt und ihn stolz gemacht hätte.</p><p>In den Jahren danach ist Küchenkompane stetig gewachsen. Aus einem kleinen Projekt wurde ein Unternehmen mit einem starken, eingespielten Team. Gemeinsam haben wir Strukturen aufgebaut, Prozesse verbessert und unsere Produkte konsequent weiterentwickelt. Immer mit dem Ziel, bessere Lösungen zu schaffen und keine Kompromisse bei der Qualität einzugehen.</p>",
+                    "text_color": "#222222"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_body_V369LR"
+              ]
+            }
+          },
+          "block_order": [
+            "founder_slider_group_z4Kjqq",
+            "founder_content_wt3bnw"
+          ]
+        },
+        "founder_row_h6JQc7": {
+          "type": "_founder-row",
+          "settings": {
+            "reverse_columns": true,
+            "show_top_border": false,
+            "show_bottom_border": false,
+            "bg_color": "#ffffff",
+            "border_color": "#eeeeee",
+            "padding_top": 80,
+            "padding_bottom": 80,
+            "mobile_padding_top": 30,
+            "mobile_padding_bottom": 30
+          },
+          "blocks": {
+            "founder_slider_group_zWEaGL": {
+              "type": "_founder-slider-group",
+              "name": "Founder slider group",
+              "settings": {
+                "enable_loop": false,
+                "image_radius": 12
+              },
+              "blocks": {
+                "founder_slide_image_M34CEA": {
+                  "type": "_founder-slide-image",
+                  "settings": {
+                    "image": "shopify://shop_images/mats_und_nele_1.jpg",
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_slide_image_M34CEA"
+              ]
+            },
+            "founder_content_t6KtDF": {
+              "type": "_founder-content",
+              "settings": {},
+              "blocks": {
+                "founder_body_am6brF": {
+                  "type": "_founder-body",
+                  "settings": {
+                    "body": "<p>Heute stehen wir für hochwertige Küchenprodukte mit klarer Haltung. Unser Anspruch ist es, stetig noch bessere Produkte zu entwickeln und unser Sortiment im Küchenbereich sinnvoll zu erweitern.</p><p>Insgesamt ist Küchenkompane aus dem Wunsch entstanden, etwas Eigenes aufzubauen. Aus echter Nähe zu Material, Handwerk und Qualität. Aus einer Begegnung mit japanischer Messerkultur, die Fragen aufgeworfen hat. Und aus dem inneren Antrieb, Dinge richtig zu machen. Mit Verantwortung, Verstand und Blick in die Zukunft.</p>",
+                    "text_color": "#222222"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_body_am6brF"
+              ]
+            }
+          },
+          "block_order": [
+            "founder_slider_group_zWEaGL",
+            "founder_content_t6KtDF"
+          ]
+        }
+      },
+      "block_order": [
+        "founder_row_jTWRgt",
+        "founder_row_Qg6gW9",
+        "founder_row_pTPDVR",
+        "founder_row_h6JQc7"
+      ],
+      "name": "Founder slider",
+      "settings": {}
+    },
+    "value_cards_G4dJnz": {
+      "type": "value-cards",
+      "blocks": {
+        "card_rkNBb4": {
+          "type": "card",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"size-6\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z\" />\n</svg>",
+            "icon_text": "",
+            "title": "Weil echte Qualität  spürbar ist",
+            "text": "<p>Beim ersten Benutzen merkst du sofort, wie groß der Unterschied wirklich ist. Genau für deinen Alltag gemacht.<br/></p><p><br/></p><p></p>"
+          }
+        },
+        "card_8kt3mj": {
+          "type": "card",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"size-6\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5\" />\n</svg>",
+            "icon_text": "",
+            "title": "Weil wir direkt aus Deutschland selbst entwickeln",
+            "text": "<p>Alle unsere Produkte werden aus eigener Nutzung heraus im Herzen von Hamburg selbst entwickelt. Mit klaren Anforderungen an Qualität und Funktion.</p><p></p>"
+          }
+        },
+        "card_jerqdd": {
+          "type": "card",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" class=\"size-6\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z\" />\n</svg>",
+            "icon_text": "",
+            "title": "Weil Preis & Leistung stimmen",
+            "text": "<p>„Wer billig kauft, kauft zweimal.“ Genau deshalb setzen wir auf Qualität, die bleibt. Wir machen keine Kompromisse.<br/></p><p><br/></p><p><br/></p><p></p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_rkNBb4",
+        "card_8kt3mj",
+        "card_jerqdd"
+      ],
+      "name": "Value cards",
+      "settings": {
+        "heading": "Warum Küchenkompane?",
+        "section_bg": "#eeeff8",
+        "heading_color": "#1a1a1a",
+        "card_bg": "#ffffff",
+        "card_title_color": "#1a1a1a",
+        "card_text_color": "#444444",
+        "icon_circle_bg": "#eeeff8",
+        "icon_color": "#486a48",
+        "card_radius": 12,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "team_members_grid_CiMmpy": {
+      "type": "team-members-grid",
+      "blocks": {
+        "member_qkkJR9": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/c035abaf-3368-404e-bd9c-49698ca3960a_1.jpg",
+            "name": "Mats",
+            "role": "Gründer & Geschäftsführer"
+          }
+        },
+        "member_wEjUGD": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/0256a921-825b-4fdd-a8ba-e70b7e5faeb1_1.jpg",
+            "name": "Nele",
+            "role": "Supply Chain & Produktentwicklung"
+          }
+        },
+        "member_iexYab": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/397b8e18-d9c3-457a-90da-ec2b24ab8dad_1.jpg",
+            "name": "Christian",
+            "role": "Qualität & Produktentwicklung"
+          }
+        },
+        "member_zN7FNp": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/64e68f52-5e1e-4521-98ac-1765c0daf731_1.jpg",
+            "name": "Moritz",
+            "role": "Finanzen & Procurement"
+          }
+        },
+        "member_8gtGQJ": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/85dc47f3-be80-4dce-8cdb-d44e1758521e_1.jpg",
+            "name": "Claudia",
+            "role": "Produktion & Partner"
+          }
+        },
+        "member_BLBXxQ": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/ff07ba4b-f8e4-4b45-bc96-3b15a445e6fa_1.jpg",
+            "name": "Timo",
+            "role": "Performance Marketing & Acquisition"
+          }
+        },
+        "member_6Pc4Xy": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_5.jpg",
+            "name": "Luca",
+            "role": "CRM & E-Mail Marketing"
+          }
+        },
+        "member_KCrhMP": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/6263e60b-a9b8-4b7d-a336-c7708de33ff2_1.jpg",
+            "name": "Anika",
+            "role": "Social Media & Content"
+          }
+        },
+        "member_Y7gVxE": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_36_1.jpg",
+            "name": "Lukas",
+            "role": "Video & Creative Produktion"
+          }
+        },
+        "member_8EBBWk": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_8_1.jpg",
+            "name": "Nicolai",
+            "role": "SEO, Data & Analytics"
+          }
+        },
+        "member_UhR47L": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_10_1.jpg",
+            "name": "Alessandro",
+            "role": "Copywriting & Mediendesign"
+          }
+        },
+        "member_MCtMrc": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/078c671d-f123-49f8-bac9-cc28a93f0d4b_1.jpg",
+            "name": "Sophia",
+            "role": "Webentwicklung & Onlineshop"
+          }
+        },
+        "member_WVJert": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_33_1.jpg",
+            "name": "Jens",
+            "role": "Logistik & Fulfillment"
+          }
+        },
+        "member_CJQpUW": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_13_1.jpg",
+            "name": "David",
+            "role": "Logistik & Versandabwicklung"
+          }
+        },
+        "member_QyRLqW": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_17_1.jpg",
+            "name": "Amelie",
+            "role": "Logistik & Versandabwicklung"
+          }
+        },
+        "member_49WExm": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_34_1.jpg",
+            "name": "Niklas",
+            "role": "Logistik & Versandabwicklung"
+          }
+        },
+        "member_Mifnqf": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_35_1.jpg",
+            "name": "Fabian",
+            "role": "Logistik & Versandabwicklung"
+          }
+        },
+        "member_4VGHtr": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_19_1.jpg",
+            "name": "Noel",
+            "role": "PR & Kooperationen"
+          }
+        },
+        "member_bHfjHJ": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/Luca_E-Mail_-_Arcads_image_asset_11_1.jpg",
+            "name": "Christian",
+            "role": "Kundenservice"
+          }
+        },
+        "member_6tRzY3": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/d6b91fbe-5e63-42e7-a68d-538d0a331ef9_1_c689609c-95cf-4f45-8b8a-78ee7683168c.jpg",
+            "name": "Alex",
+            "role": "Kundenservice"
+          }
+        }
+      },
+      "block_order": [
+        "member_qkkJR9",
+        "member_wEjUGD",
+        "member_iexYab",
+        "member_zN7FNp",
+        "member_8gtGQJ",
+        "member_BLBXxQ",
+        "member_6Pc4Xy",
+        "member_KCrhMP",
+        "member_Y7gVxE",
+        "member_8EBBWk",
+        "member_UhR47L",
+        "member_MCtMrc",
+        "member_WVJert",
+        "member_CJQpUW",
+        "member_QyRLqW",
+        "member_49WExm",
+        "member_Mifnqf",
+        "member_4VGHtr",
+        "member_bHfjHJ",
+        "member_6tRzY3"
+      ],
+      "name": "Team members grid",
+      "settings": {
+        "heading": "Das Team dahinter",
+        "description": "<p>Wir sind ein kleines Team mit hohem Anspruch. Jeder von uns trägt dazu bei, dass Produkte und Service das halten, was wir versprechen.</p>",
+        "section_bg": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "text_color": "#444444",
+        "card_bg": "#fafafa",
+        "card_border_color": "#eeeeee",
+        "avatar_icon_color": "#7a9a76",
+        "name_color": "#1a1a1a",
+        "role_color": "#444444",
+        "card_radius": 12,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "image_content_cta_QaWXKH": {
+      "type": "image-content-cta",
+      "name": "Image content CTA",
+      "settings": {
+        "image": "shopify://shop_images/Luca_About_us_page_-_Arcads_image_asset_25_1.jpg",
+        "reverse_columns": false,
+        "heading": "Das richtige Messer finden",
+        "text": "<p>Nutze unsere Kaufberatung oder stöbere durch unser kuratiertes Sortiment. Bei Fragen sind wir persönlich für dich da. Ohne Verkaufsdruck, ohne Floskeln.</p>",
+        "button_label": "Zum Shop →",
+        "button_link": "#",
+        "section_bg": "#eeeff8",
+        "heading_color": "#1a1a1a",
+        "text_color": "#444444",
+        "button_bg": "#f58327",
+        "button_text_color": "#ffffff",
+        "image_radius": 12,
+        "button_radius": 8,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "statement_heading_quote_xFgE6F",
+    "founder_story_EgbT38",
+    "value_cards_G4dJnz",
+    "team_members_grid_CiMmpy",
+    "image_content_cta_QaWXKH"
+  ]
+}

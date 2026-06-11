@@ -24,13 +24,11 @@
       "blocks": {
         "badge_ChqgGj": {
           "type": "badge",
-          "settings": {
-          }
+          "settings": {}
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
@@ -90,7 +88,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Shipping Infomation",
-            "content": "<p>Ship Happens! Your ultimate guide to speedy, stress-free shipping.<\/p>",
+            "content": "<p>Ship Happens! Your ultimate guide to speedy, stress-free shipping.</p>",
             "liquid": "",
             "default_open": false
           }
@@ -99,7 +97,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Returns Policy",
-            "content": "<p>Challenge Accepted: Return Policy No Match for Our Confidence!<\/p>",
+            "content": "<p>Challenge Accepted: Return Policy No Match for Our Confidence!</p>",
             "liquid": "",
             "default_open": false
           }
@@ -112,14 +110,13 @@
             "deliver_days": "7",
             "date_format": "%b %d",
             "show_shipping_text": true,
-            "shipping_text": "<p><strong>Free Shipping & Returns: <\/strong>On all orders over $75<\/p>"
+            "shipping_text": "<p><strong>Free Shipping & Returns: </strong>On all orders over $75</p>"
           }
         },
         "trust_badge_NyBMd4": {
           "type": "trust_badge",
           "settings": {
-            "trust_badges_text": "<p>Guarantee safe & secure checkout<\/p>",
-            "trust_badges_image": "shopify:\/\/shop_images\/trust_965c85b7-ca37-4190-bea4-b7f926fd38d7.png",
+            "trust_badges_text": "<p>Guarantee safe & secure checkout</p>",
             "trust_badges_image_width": "60%",
             "position": "below"
           }
@@ -176,7 +173,7 @@
           "type": "tab",
           "settings": {
             "header": "Shipping & Return",
-            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
             "content_page": ""
           }
         }
@@ -236,7 +233,7 @@
         "second_image_offset_top": 10,
         "title": "We are proudly Australian",
         "sub_title": "We're Good Performers",
-        "text": "<p>This piece features a cord collar, button-front closure, and two front pockets in durable organic cotton canvas.\u2028\u2028<br\/><\/p><p>Did You Know? Organic cotton uses crop rotation, cover crops, and organic fertilizers instead of toxic chemical fertilizers or pesticides—which means cleaner water, lower water usage, lower pesticide use, healthier soil, and a safer working environment for cotton farmers, compared to conventional.<\/p>",
+        "text": "<p>This piece features a cord collar, button-front closure, and two front pockets in durable organic cotton canvas.  <br/></p><p>Did You Know? Organic cotton uses crop rotation, cover crops, and organic fertilizers instead of toxic chemical fertilizers or pesticides—which means cleaner water, lower water usage, lower pesticide use, healthier soil, and a safer working environment for cotton farmers, compared to conventional.</p>",
         "text_size": "medium",
         "content_alignment": "left",
         "button_label": "",
@@ -257,7 +254,7 @@
           "settings": {
             "header": "How long does it take to process an order?",
             "text_size": "h4",
-            "content": "<p>Our 24\/7™ Lace Contour Plunge Bra combines gorgeous floral lace with sheer overlay straps that hold you in and eliminates gaping. Removable pads let you customize you<\/p>",
+            "content": "<p>Our 24/7™ Lace Contour Plunge Bra combines gorgeous floral lace with sheer overlay straps that hold you in and eliminates gaping. Removable pads let you customize you</p>",
             "content_page": "",
             "open": true
           }
@@ -267,7 +264,7 @@
           "settings": {
             "header": "Do you ship internationally?",
             "text_size": "h4",
-            "content": "<p>Expand Your Reach Globally: Seamless International Shipping Available<\/p>",
+            "content": "<p>Expand Your Reach Globally: Seamless International Shipping Available</p>",
             "content_page": "",
             "open": false
           }
@@ -277,7 +274,7 @@
           "settings": {
             "header": "What is your return policy?",
             "text_size": "h4",
-            "content": "<p>Expert analysis of your purchasing peace of mind - that lies in the return policies.<\/p>",
+            "content": "<p>Expert analysis of your purchasing peace of mind - that lies in the return policies.</p>",
             "content_page": "",
             "open": false
           }
@@ -287,7 +284,7 @@
           "settings": {
             "header": "What are your sizing options?",
             "text_size": "h4",
-            "content": "<p>Discover the Perfect Fit with Our Wide Range of Sizing Options.<\/p>",
+            "content": "<p>Discover the Perfect Fit with Our Wide Range of Sizing Options.</p>",
             "content_page": "",
             "open": false
           }
@@ -328,8 +325,8 @@
           "type": "testimonial",
           "settings": {
             "title": "",
-            "description": "<p>“ These are beautiful, well made & comfortable! I bought them to wear to work & casually. I wore them immediately walking in the city & has no problem. “<\/p>",
-            "footer": "<p>Dean D. US<\/p>",
+            "description": "<p>“ These are beautiful, well made & comfortable! I bought them to wear to work & casually. I wore them immediately walking in the city & has no problem. “</p>",
+            "footer": "<p>Dean D. US</p>",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -339,8 +336,8 @@
           "type": "testimonial",
           "settings": {
             "title": "",
-            "description": "<p>“ These are beautiful, well made & comfortable! I bought them to wear to work & casually. I wore them immediately walking in the city & has no problem. “<\/p>",
-            "footer": "<p>Dean D. US<\/p>",
+            "description": "<p>“ These are beautiful, well made & comfortable! I bought them to wear to work & casually. I wore them immediately walking in the city & has no problem. “</p>",
+            "footer": "<p>Dean D. US</p>",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -350,8 +347,8 @@
           "type": "testimonial",
           "settings": {
             "title": "",
-            "description": "<p>“ These are beautiful, well made & comfortable! I bought them to wear to work & casually. I wore them immediately walking in the city & has no problem. “<\/p>",
-            "footer": "<p>Dean D. US<\/p>",
+            "description": "<p>“ These are beautiful, well made & comfortable! I bought them to wear to work & casually. I wore them immediately walking in the city & has no problem. “</p>",
+            "footer": "<p>Dean D. US</p>",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -378,7 +375,7 @@
         "design": "testimonials-3",
         "show_stars": true,
         "autorotate": false,
-        "show_navigation": true,
+        "show_navigation": false,
         "show_pagination": true,
         "star_color": "#000000",
         "item_color_scheme": "",
@@ -396,12 +393,10 @@
           "settings": {
             "title": "Living out every single day and<br> be brave to show off your own true colors",
             "subheading": "Mix & Match",
-            "text": "<p>Our new cozy collection is made with environmentally friendly materials and <br\/>simple to care for so you can stay cozy wherever .<\/p>",
+            "text": "<p>Our new cozy collection is made with environmentally friendly materials and <br/>simple to care for so you can stay cozy wherever .</p>",
             "width": "100%",
             "alignment": "center",
             "align_text": "center",
-            "text_size": "medium",
-            "text_color": "inherit",
             "button_label": "Shop Collection",
             "button_link": "",
             "button_style": "m-button--link",
@@ -419,10 +414,10 @@
       ],
       "settings": {
         "heading": "",
-        "heading_size": "h3",
+        "heading_type": "mrk-h1",
         "subheading": "",
         "description": "",
-        "header_alignment": "center",
+        "p_size": "p-medium",
         "container": "container",
         "color_scheme": "",
         "content_color_scheme": "",
@@ -482,17 +477,36 @@
         "container": "container-fluid",
         "color_scheme": "",
         "remove_params": false,
+        "custom_class": "",
+        "padding_top": 100,
+        "padding_bottom": 100,
         "heading": "You Might Also Like",
         "heading_size": "h3",
         "text_align": "center",
         "limit": 8,
         "columns": 5,
+        "columns_tablet": 3,
+        "columns_mobile": 1,
+        "peek_tablet": 60,
+        "peek_mobile": 50,
+        "peek_mobile_sm": 40,
+        "mobile_gap": 12,
         "column_gap": 30,
         "enable_slider": true,
-        "use_scroll_mobile": true,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "custom_class": "",
+        "slider_type": "loop",
+        "slider_speed": 550,
+        "show_navigation": true,
+        "show_pagination": false,
+        "autoplay": false,
+        "autoplay_speed": 4000,
+        "nav_bg_color": "#ffffff",
+        "nav_hover_bg_color": "#f7f3ee",
+        "nav_icon_color": "#000000",
+        "nav_border_color": "#e0e0e0",
+        "nav_shadow": "0 3px 14px rgba(0,0,0,0.14)",
+        "nav_size": 46,
+        "pagination_color": "#cccccc",
+        "pagination_active_color": "#000000",
         "animations": "inherit"
       }
     },

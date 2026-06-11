@@ -1,0 +1,269 @@
+{% style %}
+  .ryze-newsletter {
+    background: #fcfbf3;
+    padding: 48px 0;
+    text-align: center;
+  }
+
+  .ryze-newsletter-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ryze-newsletter-subtitle {
+    color: #fa8526;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia Pro', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+  }
+
+  .ryze-newsletter-title {
+    color: #533a2d;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia Pro', sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.15;
+    text-transform: capitalize;
+    padding-bottom: 24px;
+  }
+
+  .ryze-newsletter-title .highlight-title{
+    color: #fa8526;
+  }
+
+  .ryze-newsletter-desc {
+    color: #533a2d;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia Pro', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 150%;
+  }
+
+  .ryze-newsletter-form {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: visible;
+    max-width: 600px;
+    margin: 0px auto;
+    border-radius: 8px;
+    border-style: none;
+    border-width: 0px;
+    border-color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding: 4px 5px 1px 1px;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 48px;
+  }
+
+  .ryze-newsletter-input {
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0px 0px 0px 16px;
+    height: 71px;
+    text-align: left;
+    color: #533a2d;
+    font-family: 'Sofia Pro', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    background-color: rgb(249, 241, 233);
+    border: 1px solid #533a2d;
+    width: 100%;
+  }
+
+  .ryze-newsletter-input:focus,
+  .ryze-newsletter-input:focus-visible {
+    outline: none;
+    box-shadow: none;
+    border-color: #533a2d;
+  }
+
+  .ryze-newsletter-input::placeholder {
+    color: #533a2d;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia Pro', sans-serif;
+    font-size: 20px;
+  }
+
+  .ryze-newsletter-btn {
+    background: #fa8526;
+    border-radius: 8px;
+    border-style: none;
+    border-color: rgb(0, 0, 0);
+    border-width: 2px;
+    color: rgb(255, 255, 255);
+    font-family: 'Sofia Pro', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 1;
+    font-style: normal;
+    white-space: normal;
+    padding: 0px 20px;
+    text-align: center;
+    word-break: break-word;
+    align-self: flex-end;
+    cursor: pointer;
+    pointer-events: auto;
+    height: 71px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .ryze-newsletter-btn:hover {
+    background: #333333;
+  }
+
+  @media (max-width: 768px) {
+    .ryze-newsletter-title {
+      font-size: clamp(24px, 3vw, 32px);
+    }
+
+    .ryze-newsletter-form {
+     margin-top: 30px;
+    }
+    .ryze-newsletter-subtitle {
+      font-size: clamp(14px, 2vw, 20px);
+    }
+    .ryze-newsletter-btn {
+          font-size: 18px;
+          height: 58px;
+    }
+    .ryze-newsletter-input {
+      height: 58px;
+      font-size: 18px;
+    }
+
+  }
+  @media (max-width: 575px) {
+    .ryze-newsletter-form {
+      align-items: center;
+      flex-direction: column;
+    }
+    .ryze-newsletter-btn {
+      width: 100%;
+    }
+  }
+  @media (max-width: 400px) {
+    .ryze-newsletter {
+      padding: 24px 0;
+    }
+
+
+
+
+    .ryze-newsletter-container {
+      padding: 0 14px;
+    }
+
+        .ryze-newsletter-title {
+
+        padding-bottom: 16px;
+    }
+  }
+{% endstyle %}
+
+<section class="ryze-newsletter">
+  <div class="ryze-newsletter-container">
+    {% if section.settings.subtitle != blank %}
+      <div class="ryze-newsletter-subtitle">
+        {{ section.settings.subtitle }}
+      </div>
+    {% endif %}
+
+    <h2 class="ryze-newsletter-title">
+      {{ section.settings.title }}
+      <span class="highlight-title">{{ section.settings['highlight-title'] }}</span>
+    </h2>
+
+    <p class="ryze-newsletter-desc">
+      {{ section.settings.description }}
+    </p>
+
+    {% form 'customer' %}
+      <div class="ryze-newsletter-form">
+        <input
+          type="email"
+          name="contact[email]"
+          class="ryze-newsletter-input"
+          placeholder="{{ section.settings.placeholder }}"
+          required
+        >
+
+        <button type="submit" class="ryze-newsletter-btn">
+          {{ section.settings.button_label }}
+        </button>
+      </div>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "RYZE Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "HOW I RYZE"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Join The"
+    },
+    {
+      "type": "text",
+      "id": "highlight-title",
+      "label": "Highlight Title",
+      "default": "RYZE Club"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "For exclusive offers, giveaways, and wellness tips"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Input Placeholder",
+      "default": "Enter Your Email Here*"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "SIGN UP"
+    }
+  ],
+  "presets": [
+    {
+      "name": "RYZE Newsletter"
+    }
+  ]
+}
+{% endschema %}

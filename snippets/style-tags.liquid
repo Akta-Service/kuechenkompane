@@ -174,31 +174,49 @@
    {{ style | strip_newlines }}
 {%- endstyle -%}
 
-<link rel="stylesheet" href="{{ 'cart.css' | asset_url }}" media="print" onload="this.media='all'">
-<noscript>{{ 'cart.css' | asset_url | stylesheet_tag }}</noscript>
 
-{%- liquid
+{%- if template.name == 'cart' -%}
+  <link rel="preload" href="{{ 'cart.css' | asset_url }}" as="style">
+  <link rel="stylesheet" href="{{ 'cart.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'cart.css' | asset_url | stylesheet_tag }}</noscript>
+{%- endif -%}
 
-  if template contains 'customers/'
-    echo 'customer.css' | asset_url | stylesheet_tag
-  endif
-  if template.suffix == 'about-us'
-    echo 'about-us.css' | asset_url | stylesheet_tag
-  endif
-  if enable_rtl
-    echo 'rtl.css' | asset_url | stylesheet_tag
-  endif
-  if shop.metafields.tcustomizer.config
-    echo 'tpo-integration.css' | asset_url | stylesheet_tag
-  endif
--%}
+{%- if template contains 'customers/' -%}
+  <link rel="preload" href="{{ 'customer.css' | asset_url }}" as="style">
+  <link rel="stylesheet" href="{{ 'customer.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'customer.css' | asset_url | stylesheet_tag }}</noscript>
+{%- endif -%}
+
+{%- if template.suffix == 'about-us' -%}
+  <link rel="preload" href="{{ 'about-us.css' | asset_url }}" as="style">
+  <link rel="stylesheet" href="{{ 'about-us.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'about-us.css' | asset_url | stylesheet_tag }}</noscript>
+{%- endif -%}
+
+{%- if enable_rtl -%}
+  <link rel="preload" href="{{ 'rtl.css' | asset_url }}" as="style">
+  <link rel="stylesheet" href="{{ 'rtl.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'rtl.css' | asset_url | stylesheet_tag }}</noscript>
+{%- endif -%}
+
+{%- if shop.metafields.tcustomizer.config -%}
+  <link rel="preload" href="{{ 'tpo-integration.css' | asset_url }}" as="style">
+  <link rel="stylesheet" href="{{ 'tpo-integration.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'tpo-integration.css' | asset_url | stylesheet_tag }}</noscript>
+{%- endif -%}
+
 {%- if linklists['gift-wrapping'].links != blank and linklists['gift-wrapping'].links.first.type == 'product_link' -%}
+  <link rel="preload" href="{{ 'gift-wrapping.css' | asset_url }}" as="style">
   <link rel="stylesheet" href="{{ 'gift-wrapping.css' | asset_url }}" media="print" onload="this.media='all'">
   <noscript>{{ 'gift-wrapping.css' | asset_url | stylesheet_tag }}</noscript>
 {%- endif -%}
+
+<link rel="preload" href="{{ 'custom-style.css' | asset_url }}" as="style">
 <link rel="stylesheet" href="{{ 'custom-style.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'custom.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'custom-style.css' | asset_url | stylesheet_tag }}</noscript>
+
+<link rel="preload" href="{{ 'custom.css' | asset_url }}" as="style">
+<link rel="stylesheet" href="{{ 'custom.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'custom.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- style -%}
@@ -211,5 +229,4 @@
   {% render 'customer-challenge-style' %}
 {% endif %}
 
-{% comment %} For init Product list of Recently product, Foxkit Related, Product recommendation {% endcomment %}
-<script src="{{ 'product-list.js' | asset_url }}" defer="defer"></script>
+

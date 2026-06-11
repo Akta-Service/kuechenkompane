@@ -1,3 +1,4 @@
+
 {% comment %}
   Accepts:
   - show_pagination: {Boolean} Show Pagination (optional)
@@ -64,7 +65,7 @@
   <div class="m-slider-controls__wrapper">
     {% if show_nav %}
       <button
-        class="m-slider-controls__button m-slider-controls__button-prev swiper-button-prev {{ nav_class }}"
+        class="m-slider-controls__button m-slider-controls__button-prev splide__arrow splide__arrow--prev {{ nav_class }}"
         aria-label="Previous"
       >
         <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,11 +74,11 @@
       </button>
     {% endif %}
     {% if show_pagination %}
-      <div class="swiper-pagination m:w-full {{ pagination_class }}"></div>
+      <div class="splide__pagination m:w-full {{ pagination_class }}"></div>
     {% endif %}
     {% if show_nav %}
       <button
-        class="m-slider-controls__button m-slider-controls__button-next swiper-button-next {{ nav_class }}"
+        class="m-slider-controls__button m-slider-controls__button-next splide__arrow splide__arrow--next {{ nav_class }}"
         aria-label="Next"
       >
         <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

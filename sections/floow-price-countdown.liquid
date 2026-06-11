@@ -1,0 +1,386 @@
+{% assign si = section.id %}
+{% assign ss = section.settings %}
+
+{% assign product_handle = request.path | split: '/' | last %}
+{% assign product = all_products[product_handle] %}
+
+<div
+  class="content-wrapper-{{ si }}"
+>
+  {% for variant in product.variants %}
+    <div
+      class="variant-container-{{ si }}"
+      data-variant-id="{{ variant.id }}"
+      style="
+        {% unless variant.id == closest.product.selected_or_first_available_variant.id %}
+          display: none;
+        {% endunless %}
+        {% if variant.compare_at_price > variant.price %}
+          border: 1px solid {{ ss.bg_color }};
+        {% endif %}
+      "
+    >
+      {% if variant.compare_at_price > variant.price and ss.box_heading contains 'percentage' %}
+        <p class="box-heading-{{ si }}">
+          {% assign discount_amount = variant.compare_at_price | minus: variant.price %}
+          {% assign discount_percentage = discount_amount
+            | times: 100.0
+            | divided_by: variant.compare_at_price
+            | round
+          %}
+          {{ ss.box_heading | replace: 'percentage', discount_percentage }}
+        </p>
+      {% endif %}
+      {% unless ss.box_heading contains 'percentage' %}
+        <p class="box-heading-{{ si }}">
+          {{ ss.box_heading }}
+        </p>
+      {% endunless %}
+      <div
+        class="left-container-{{ si }}"
+        {% if variant.compare_at_price > variant.price %}
+          style="padding: 10px 15px;"
+        {% endif %}
+      >
+        <div class="price-wrapper-{{ si }}">
+          <span class="price-{{ si }}">{{ variant.price | money }}</span>
+          {% if variant.compare_at_price > 0 %}
+            <span class="bubble-{{ si }}">
+              {{- ss.save_text }}
+              {{ variant.compare_at_price | minus: variant.price | money -}}
+            </span>
+          {% endif %}
+          {% if variant.compare_at_price > variant.price %}
+            <span class="compare-at-price-{{ si }}">{{ variant.compare_at_price | money }}</span>
+          {% endif %}
+        </div>
+        {% if section.settings.show_tax_info %}
+          {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
+            <span class="tax-info-{{ si }}">
+              {{ 'products.product.include_taxes' | t }}
+            </span>
+          {%- endif -%}
+        {% endif %}
+
+        <div class="lowest-price-text-wrapper lowest-price-{{ si }}">
+          <span class="lowest-price-text">{{ section.settings.lowest_price_text }}</span>
+          {% if product.metafields.custom.lowest_price_info.value %}
+            <span class="lowest_price"> {{ product.metafields.custom.lowest_price_info.value | money }}</span>
+          {% else %}
+            <span class="lowest_price" style="color: {{ ss.bg_color }}; font-weight: bold;">
+              {{ product.price | money }}
+            </span>
+          {% endif %}
+        </div>
+      </div>
+
+      {% assign current_date_seconds = 'now' | date: '%s' | plus: 0 %}
+      {% assign target_date_seconds = ss.countdown_date | date: '%s' | plus: 0 %}
+      {% if variant.compare_at_price > variant.price and target_date_seconds > current_date_seconds %}
+        <div class="right-container-{{ si }}">
+          <span class="countdown-text-{{ si }}">{{ ss.countdown_text }}</span>
+          <div class="countdown-container-{{ si }}">
+            <span class="hours-{{ si }}"></span>:<span class="min-{{ si }}"></span>:<span class="sec-{{ si }}"></span>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const section = document.querySelector('#shopify-section-{{ si }}').innerHTML;
+    const block = document.querySelector('#floow-price-countdown');
+    if (block) {
+      block.innerHTML = section;
+    }
+
+    const priceWrappers = document.querySelectorAll('.variant-container-{{ si }}');
+    document.addEventListener('variant:changed', function (event) {
+      const variant = event.detail.variant;
+      priceWrappers.forEach((wrapper) => {
+        const isMatchingVariant = wrapper.dataset.variantId == variant.id;
+        wrapper.style.display = isMatchingVariant ? '' : 'none';
+      });
+    });
+
+    const targetDate = new Date('{{ ss.countdown_date }}').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeDifference = targetDate - now;
+
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      const totalHours = days * 24 + hours;
+
+      const hourEls = document.querySelectorAll('.hours-{{ si }}');
+      const minEls = document.querySelectorAll('.min-{{ si }}');
+      const secEls = document.querySelectorAll('.sec-{{ si }}');
+
+      hourEls.forEach((el) => (el.textContent = String(totalHours).padStart(2, '0')));
+      minEls.forEach((el) => (el.textContent = String(minutes).padStart(2, '0')));
+      secEls.forEach((el) => (el.textContent = String(seconds).padStart(2, '0')));
+
+      if (timeDifference < 0) {
+        const countdownContainers = document.querySelectorAll('.countdown-container-{{ si }}');
+        countdownContainers.forEach((el) => (el.style.display = 'none'));
+        return false;
+      }
+      return true;
+    }
+
+    const isActive = updateCountdown();
+    if (isActive) {
+      const countdownInterval = setInterval(function () {
+        const shouldContinue = updateCountdown();
+        if (!shouldContinue) clearInterval(countdownInterval);
+      }, 1000);
+    }
+  });
+</script>
+
+<style>
+    #shopify-section-{{ si }} {
+      display: none;
+    }
+
+    #floow-price-countdown {
+      {% if ss.show_only_in_editor %}
+        display: none;
+        {% if request.design_mode %}
+            display: block;
+        {% endif %}
+      {% endif %}
+    }
+
+    {% if request.design_mode %}
+      .m-product-info--wrapper:has(#floow-price-countdown:not(:empty)) .main-product__block-price {
+      display: none;
+  }
+  {% endif %}
+
+    .content-wrapper-{{ si }} {
+      max-width: {{ ss.max_width }}px;
+      margin: 15px 0;
+      font-family: inherit;
+      line-height: 1.2;
+    }
+
+    .variant-container-{{ si }} {
+      overflow: hidden;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    .box-heading-{{ si }} {
+      background-color: {{ ss.bg_color }};
+      color: white;
+      padding: 8px 0;
+      margin: 0;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    .left-container-{{ si }} {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .price-{{ si }} {
+      color: {{ ss.price_color }};
+      font-size: 24px;
+      font-weight: 900;
+      white-space: nowrap;
+      margin: 0;
+    }
+
+    .bubble-{{ si }} {
+      background: {{ ss.bg_color }};
+      border-radius: 999px;
+      color: white;
+      padding: 4px 12px;
+      font-weight: bold;
+
+      @media(max-width: 700px) {
+          font-size: small;
+      }
+  }
+
+  .lowest-price-{{ si }} {
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #cbcbcb;
+  }
+
+    .price-wrapper-{{ si }} {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .tax-info-{{ si }} {
+      color: #888;
+      font-size: 11px;
+      margin-top: 4px;
+      line-height: 1.2;
+    }
+
+    .right-container-{{ si }} {
+      display: flex;
+      padding: 10px 15px;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      width: 100%;
+      border-top: 1px solid #eee;
+    }
+
+    .compare-at-price-{{ si }} {
+      color: {{ ss.compare_at_price_color }};
+      font-size: 18px;
+      text-decoration: line-through;
+      opacity: 0.7;
+      font-weight: 600;
+      white-space: nowrap;
+      margin-left: auto;
+    }
+
+    .countdown-text-{{ si }} {
+      color: {{ ss.countdown_text_color }};
+      font-size: 18px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .countdown-container-{{ si }} {
+      color: {{ ss.countdown_color }};
+      font-size: 18px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 480px) {
+      .left-container-{{ si }},
+      .right-container-{{ si }} {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+
+    .content-wrapper-{{ si }}:not(:has(.box-heading-{{ si }})) .lowest-price-{{ si }} {
+      padding-top: 0px;
+      border-top: none;
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Floow Price Countdown",
+  "presets": [
+    {
+      "name": "Floow Price Countdown"
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_only_in_editor",
+      "label": "Show Only In Editor?"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tax_info",
+      "label": "Show Tax Info",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max Width",
+      "min": 100,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "text",
+      "id": "countdown_date",
+      "label": "Countdown-Datum",
+      "info": "Example: November 11, 2024 16:39:00",
+      "default": "November 29, 2024 00:00:00"
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "text",
+      "id": "save_text",
+      "label": "Badge text for save",
+      "default": "Spare"
+    },
+    {
+      "type": "text",
+      "id": "lowest_price_text",
+      "label": "Lowest price Text",
+      "default": "Niedrigster Preis der letzten 30 Tage:"
+    },
+    {
+      "type": "inline_richtext",
+      "label": "Box Heading",
+      "id": "box_heading",
+      "default": "percentage% Rabatt in der Black Week",
+      "info": "Type percentage to display the difference between the price and compare at price in %"
+    },
+    {
+      "type": "inline_richtext",
+      "label": "Countdown Text",
+      "id": "countdown_text",
+      "default": "Endet in:"
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "countdown_color",
+      "label": "Countdown Color"
+    },
+    {
+      "type": "color",
+      "id": "countdown_text_color",
+      "label": "Countdown Text Color"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price Color"
+    },
+    {
+      "type": "color",
+      "id": "compare_at_price_color",
+      "label": "Compare At Price Color"
+    }
+  ]
+}
+{% endschema %}

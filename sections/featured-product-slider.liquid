@@ -2,6 +2,7 @@
 {{ 'featured-slider.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'featured-product-slider.js' | asset_url }}" defer="defer"></script>
+
 {%- liquid
   assign bg_color = section.settings.background_color
   assign has_bg = false
@@ -46,6 +47,29 @@
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
+  .m-splide-pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  .m-splide-pagination__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.25);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s;
+  }
+  .m-splide-pagination__dot.is-active {
+    background: currentColor;
+  }
 </style>
 
 <section
@@ -65,68 +89,71 @@
       class="m:block m-swiper-overflow"
     >
       <div class="m-featured-slider__container m:flex m:flex-col md:m:items-center{% if section.settings.image_placement == 'left' %} lg:m:flex-row-reverse {% else %} lg:m:flex-row{% endif %}">
+
         <div class="m-featured-slider__col-left m:w-full lg:m:w-1/2">
-          <div
-            class="m-featured-slider__products m-product-list swiper-container"
-            style="--items: 1;"
-          >
-            <div class="swiper-wrapper">
-              {% for block in section.blocks %}
-                {%- assign product = block.settings.product -%}
-                <div class="swiper-slide" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
-                  <div class="m-featured-slider__product">
-                    {% if block.settings.heading != blank or block.settings.description != blank %}
-                      <div class="m-featured-slider__product-content m:text-center{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
-                        {% if block.settings.heading != blank %}
-                          <h3>{{ block.settings.heading }}</h3>
-                        {% endif %}
-                        {% if block.settings.description != blank %}
-                          <div class="m-rte rte">{{ block.settings.description }}</div>
-                        {% endif %}
-                      </div>
-                    {% endif %}
-                    {% if product != blank %}
-                      <div class="m-featured-slider__product-item">
-                        {% liquid
-                          case card_style
-                            when '1'
-                              render 'product-card-1', product: product, image_ratio: image_ratio, show_vendor: show_vendor, pcard_alignment: pcard_alignment, index: forloop.index, animated: animated, animation_effect: animation_effect
-                            when '2'
-                              render 'product-card-2', product: product, image_ratio: image_ratio, show_vendor: show_vendor, pcard_alignment: pcard_alignment, index: forloop.index, animated: animated, animation_effect: animation_effect
-                            when '3'
-                              render 'product-card-3', product: product, image_ratio: image_ratio, show_vendor: show_vendor, pcard_alignment: pcard_alignment, index: forloop.index, animated: animated, animation_effect: animation_effect
-                            when '4'
-                              render 'product-card-4', product: product, image_ratio: image_ratio, show_vendor: show_vendor, pcard_alignment: pcard_alignment, index: forloop.index, animated: animated, animation_effect: animation_effect
-                            when '5'
-                              render 'product-card-5', product: product, image_ratio: image_ratio, show_vendor: show_vendor, pcard_alignment: pcard_alignment, index: forloop.index, animated: animated, animation_effect: animation_effect
-                          endcase
-                        %}
-                      </div>
-                    {% else %}
-                      <div
-                        class="m-product-card m-product-card--placeholder m:text-{{ pcard_alignment }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
-                        {% if animated %}
-                          data-cascade
-                          style="--animation-order: {{ forloop.index }};"
-                        {% endif %}
-                      >
-                        <div class="m-product-card__media" style="--aspect-ratio: 1/1;">
-                          {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
-                          {{ 'product-' | append: current | placeholder_svg_tag: 'm-placeholder-svg' }}
+
+          <!-- Product Slider -->
+          <div id="mrk-featured-products" class="m-featured-slider__products m-product-list splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for block in section.blocks %}
+                  {%- assign product = block.settings.product -%}
+                  <li class="splide__slide" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+                    <div class="m-featured-slider__product">
+                      {% if block.settings.heading != blank or block.settings.description != blank %}
+                        <div class="m-featured-slider__product-content m:text-center{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+                          {% if block.settings.heading != blank %}
+                            <h3>{{ block.settings.heading }}</h3>
+                          {% endif %}
+                          {% if block.settings.description != blank %}
+                            <div class="m-rte rte">{{ block.settings.description }}</div>
+                          {% endif %}
                         </div>
-                        <div class="m-product-card__name{% if settings.uppercase_prd_name %} m:uppercase{% endif %}">
-                          {{ 'homepage.onboarding.product_title' | t }}
+                      {% endif %}
+                      {% if product != blank %}
+                        <div class="m-featured-slider__product-item">
+                          {% liquid
+                            case card_style
+                              when '1'
+                                render 'product-card-1', product: product, image_ratio: image_ratio, show_vendor: show_vendor, pcard_alignment: pcard_alignment, index: forloop.index, animated: animated, animation_effect: animation_effect
+                              when '2'
+                                render 'product-card-2', product: product, image_ratio: image_ratio, show_vendor: show_vendor, pcard_alignment: pcard_alignment, index: forloop.index, animated: animated, animation_effect: animation_effect
+                              when '3'
+                                render 'product-card-3', product: product, image_ratio: image_ratio, show_vendor: show_vendor, pcard_alignment: pcard_alignment, index: forloop.index, animated: animated, animation_effect: animation_effect
+                              when '4'
+                                render 'product-card-4', product: product, image_ratio: image_ratio, show_vendor: show_vendor, pcard_alignment: pcard_alignment, index: forloop.index, animated: animated, animation_effect: animation_effect
+                              when '5'
+                                render 'product-card-5', product: product, image_ratio: image_ratio, show_vendor: show_vendor, pcard_alignment: pcard_alignment, index: forloop.index, animated: animated, animation_effect: animation_effect
+                            endcase
+                          %}
                         </div>
-                        <div class="m-product-card__price">
-                          <p class="m-price">$19.99</p>
+                      {% else %}
+                        <div
+                          class="m-product-card m-product-card--placeholder m:text-{{ pcard_alignment }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
+                          {% if animated %}
+                            data-cascade
+                            style="--animation-order: {{ forloop.index }};"
+                          {% endif %}
+                        >
+                          <div class="m-product-card__media" style="--aspect-ratio: 1/1;">
+                            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                            {{ 'product-' | append: current | placeholder_svg_tag: 'm-placeholder-svg' }}
+                          </div>
+                          <div class="m-product-card__name{% if settings.uppercase_prd_name %} m:uppercase{% endif %}">
+                            {{ 'homepage.onboarding.product_title' | t }}
+                          </div>
+                          <div class="m-product-card__price">
+                            <p class="m-price">$19.99</p>
+                          </div>
                         </div>
-                      </div>
-                    {% endif %}
-                  </div>
-                </div>
-              {% endfor %}
+                      {% endif %}
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
             </div>
           </div>
+
           {% if section.settings.container == 'w-full' %}
             {% render 'slider-controls',
               absolute: true,
@@ -136,34 +163,42 @@
               pagination_class: 'swiper-pagination--vertical'
             %}
           {% endif %}
-        </div>
-        <div class="m-featured-slider__col-right{% unless section.settings.show_featured_image == true %} m:hidden{% endunless %} lg:m:block m:w-full lg:m:w-1/2{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
-          <div class="m-featured-slider__images swiper-container">
-            <div class="swiper-wrapper">
-              {% for block in section.blocks %}
-                {%- liquid
-                  assign image = block.settings.image
-                  assign product = block.settings.product
-                  if image == blank and product != blank
-                    assign image = product.featured_image
-                  endif
-                -%}
 
-                <div
-                  class="m-featured-slider__img swiper-slide m-hover-box m-hover-box--scale-up m:blocks-radius"
-                  data-index="{{ forloop.index0 }}"
-                  {{ block.shopify_attributes }}
-                >
-                  {% if image == blank %}
-                    {{ 'image' | placeholder_svg_tag: 'm-placeholder-svg' }}
-                  {% else %}
-                    {% render 'responsive-image', image: image %}
-                  {% endif %}
-                </div>
-              {% endfor %}
+          {% if section.settings.show_pagination %}
+            <div class="m-splide-pagination"></div>
+          {% endif %}
+        </div>
+
+        <!-- Image Slider -->
+        <div class="m-featured-slider__col-right{% unless section.settings.show_featured_image == true %} m:hidden{% endunless %} lg:m:block m:w-full lg:m:w-1/2{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+          <div id="mrk-featured-images" class="m-featured-slider__images splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for block in section.blocks %}
+                  {%- liquid
+                    assign image = block.settings.image
+                    assign product = block.settings.product
+                    if image == blank and product != blank
+                      assign image = product.featured_image
+                    endif
+                  -%}
+                  <li
+                    class="m-featured-slider__img splide__slide m-hover-box m-hover-box--scale-up m:blocks-radius"
+                    data-index="{{ forloop.index0 }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    {% if image == blank %}
+                      {{ 'image' | placeholder_svg_tag: 'm-placeholder-svg' }}
+                    {% else %}
+                      {% render 'responsive-image', image: image %}
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
             </div>
           </div>
         </div>
+
         {% if section.settings.container != 'w-full' %}
           {% render 'slider-controls',
             absolute: true,
@@ -173,6 +208,7 @@
             pagination_class: 'swiper-pagination--vertical'
           %}
         {% endif %}
+
       </div>
     </m-featured-slider>
   </div>

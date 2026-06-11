@@ -1,0 +1,194 @@
+<div class="table-wrapper-{{ block.id }}">
+  <table class="table-{{ block.id }}">
+    <tbody>
+      {% content_for 'blocks' %}
+    </tbody>
+  </table>
+  {% if block.settings.enable_show_more %}
+    <button class="show-more-btn" onclick="toggleRows_{{ block.id | replace: '-', '_' }}(this)">
+      {{ block.settings.show_more_text }}
+    </button>
+  {% endif %}
+</div>
+
+{% style %}
+  .table-wrapper-{{ block.id }} {
+    background: {{ block.settings.bg_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+    padding: {{ block.settings.padding }}px;
+    width: 100%;
+    box-sizing: border-box;
+    @media(max-width: 768px) {
+      padding: {{ block.settings.padding_mobile }}px;
+    }
+  }
+  .table-{{ block.id }} {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  {% if block.settings.enable_show_more %}
+    .table-{{ block.id }} tbody tr:nth-child(n+{{ block.settings.visible_rows | plus: 1 }}) {
+      display: none;
+    }
+    .table-{{ block.id }}.show-all tbody tr {
+      display: table-row !important;
+    }
+
+    .show-more-btn {
+      display: block;
+      width: 100%;
+      margin: {{ block.settings.button_margin_top }}px 0 0 0;
+      padding: 10px 24px;
+      background: {{ block.settings.button_bg_color }};
+      color: {{ block.settings.button_text_color }};
+      border: none;
+      border-radius: {{ block.settings.button_border_radius }}px;
+      font-size: {{ block.settings.button_font_size }}px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .show-more-btn:hover {
+      opacity: 0.85;
+    }
+  {% endif %}
+{% endstyle %}
+
+{% if block.settings.enable_show_more %}
+  <script>
+    function toggleRows_{{ block.id | replace: '-', '_' }}(btn) {
+      const table = btn.parentElement.querySelector('.table-{{ block.id }}');
+      const isOpen = table.classList.toggle('show-all');
+      btn.textContent = isOpen ? '{{ block.settings.show_less_text }}' : '{{ block.settings.show_more_text }}';
+    }
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Floow Table",
+  "presets": [{ "name": "Floow Table", "category": "Floow" }],
+  "tag": null,
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border Radius",
+      "default": 0,
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding",
+      "default": 0,
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2
+    },
+    {
+      "type": "range",
+      "id": "padding_mobile",
+      "label": "Padding Mobile",
+      "default": 0,
+      "unit": "px",
+      "min": 0,
+      "max": 150,
+      "step": 2
+    },
+    {
+      "type": "header",
+      "content": "Mehr anzeigen"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_show_more",
+      "label": "Mehr anzeigen aktivieren",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "visible_rows",
+      "label": "Sichtbare Rows",
+      "default": 4,
+      "min": 1,
+      "max": 20,
+      "step": 1
+    },
+    {
+      "type": "text",
+      "id": "show_more_text",
+      "label": "Button Text (Mehr)",
+      "default": "Mehr anzeigen"
+    },
+    {
+      "type": "text",
+      "id": "show_less_text",
+      "label": "Button Text (Weniger)",
+      "default": "Weniger anzeigen"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Hintergrund",
+      "default": "#002949"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Textfarbe",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button Border Radius",
+      "default": 8,
+      "unit": "px",
+      "min": 0,
+      "max": 30,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button Font Size",
+      "default": 14,
+      "unit": "px",
+      "min": 10,
+      "max": 24,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "label": "Button Abstand oben",
+      "default": 12,
+      "unit": "px",
+      "min": 0,
+      "max": 40,
+      "step": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "_floow-table-row"
+    }
+  ]
+}
+{% endschema %}

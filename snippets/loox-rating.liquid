@@ -1,0 +1,85 @@
+{%- comment -%}
+  ----------------------------------------------------------------------------------------------------------------------
+  LOOX STAR RATING SNIPPET
+  ----------------------------------------------------------------------------------------------------------------------
+
+  Zeigt die Loox-Sternebewertung eines Produkts an.
+  Loox befüllt das Widget automatisch über seine eigene JS-Runtime anhand
+  der data-* Attribute – keine manuelle Konfiguration nötig.
+
+  ********************************************
+  Voraussetzungen
+  ********************************************
+
+  * Loox muss im Shop installiert und aktiv sein.
+  * Loox schreibt die Metafelder `loox.avg_rating` und `loox.num_reviews`
+    automatisch auf jedes Produkt, sobald mindestens eine Bewertung vorliegt.
+
+  ********************************************
+  Einbindung
+  ********************************************
+
+  Produktseite (mit Link zum Review-Anker):
+    {% render 'loox-rating', product: product, link_to_reviews: true %}
+
+  Produktkarten / Collection (ohne Link):
+    {% render 'loox-rating', product: product %}
+
+  ********************************************
+  Unterstützte Variablen
+  ********************************************
+
+  * product          – Produkt-Objekt (Pflicht)
+  * link_to_reviews  – bei true wird das Widget mit #looxReviews verlinkt
+                       (Standard: false)
+  * show_count       – bei false wird die Anzahl der Bewertungen ausgeblendet
+                       (Standard: true)
+  * data_pattern     – optionaler Text neben den Sternen, z. B. "[count] Bewertungen"
+                       Platzhalter: [count] = Anzahl, [rating] = Durchschnittswert
+                       (Standard: Loox-Standard "(x)")
+{%- endcomment -%}
+
+{%- liquid
+  assign avg_rating = product.metafields.loox.avg_rating
+  assign num_reviews = product.metafields.loox.num_reviews
+  assign show_count = show_count | default: true
+  assign link = link_to_reviews | default: false
+-%}
+
+{%- comment -%} Snippet nur rendern wenn Loox-Daten vorhanden {%- endcomment -%}
+<div class="floow-loox-ratings">
+  {%- if avg_rating != blank and num_reviews != blank and num_reviews > 0 -%}
+    {%- capture rating_widget -%}
+            <div
+              class="loox-rating"
+              data-id="{{ product.id }}"
+              data-rating="{{ avg_rating }}"
+              data-raters="{{ num_reviews }}"
+              {%- if show_count == false %} data-hide-count="true"{% endif -%}
+              {%- if data_pattern != blank %} data-pattern="{{ data_pattern | escape }}"{% endif -%}
+            ></div>
+          {%- endcapture -%}
+
+    {%- if link -%}
+      <a
+        href="#looxReviews"
+        class="loox-rating-link"
+        aria-label="{{ num_reviews }} Bewertungen für {{ product.title | escape }}"
+      >
+        {{- rating_widget -}}
+      </a>
+    {%- else -%}
+      {{- rating_widget -}}
+    {%- endif -%}
+  {%- endif -%}
+</div>
+
+<style>
+  .floow-loox-ratings {
+    padding-bottom: 10px;
+      display: none;
+      {% if request.design_mode %}
+          display: block;
+      {% endif %}
+  }
+</style>

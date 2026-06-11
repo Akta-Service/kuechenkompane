@@ -1,0 +1,746 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-page-header",
+      "disabled": true,
+      "custom_css": [
+        "@media (max-width: 767px) {.m-section-py {padding-bottom: 24px; }}"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container": "container-fluid",
+        "layout": "inside",
+        "image_position": "background",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "text_alignment": "center",
+        "text_color": "inherit",
+        "upper_title": false,
+        "show_desc": true,
+        "collection_all_desc": "",
+        "padding_top": 0,
+        "padding_bottom": 4,
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "main": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "banner_promotion_KppNc9": {
+          "type": "banner_promotion",
+          "settings": {
+            "color_scheme": "dark",
+            "text_size": "medium",
+            "text_color": "white",
+            "link": "",
+            "content_position": "bottom_center",
+            "content_alignment": "center",
+            "title": "SALE UP TO 25% OFF",
+            "subtitle": "Online Exclusive",
+            "button_label": "Shop The Sale",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "button_fixed": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_promotion_KppNc9"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".m-banner-promotion {order: 3 !important; margin-bottom: 0;}"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "grid_layout": "grid",
+        "grid_columns": "5",
+        "show_columns_switcher": true,
+        "pagination_limit": 15,
+        "paginate_type": "paginate",
+        "show_sorting": true,
+        "show_filter": true,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": true,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Brand, Vendor, Size, Product type",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "list",
+        "overlay_opacity": 0.5,
+        "show_stock_status": false
+      }
+    },
+    "mrk_collection_grid_section_tnxgC7": {
+      "type": "mrk-collection-grid-section",
+      "disabled": true,
+      "name": "Akta Collection Grid",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": false,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false,
+        "show_gift_info": false,
+        "info_text": "",
+        "add_border_line": false,
+        "show_max_price": false,
+        "show_save_price": false
+      }
+    },
+    "customer_banner_WFiRPm": {
+      "type": "customer-banner",
+      "name": "Customer Banner",
+      "settings": {
+        "title": "Das ist deine Chance",
+        "subtitle": "auf Premium Damastmesser im Wert von bis zu",
+        "price": "2.090€",
+        "price_shape": "shopify://shop_images/erasebg-transformed_1.png"
+      }
+    },
+    "rich_text_77qATN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_e9FTAe": {
+          "type": "heading",
+          "settings": {
+            "heading": "Kein Risiko für dich",
+            "heading_size": "h2"
+          }
+        },
+        "text_iqy3XY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✅ 100 Tage Geld zurück Garantie<br/>✅ Kostenloser Versand heute<br/>✅ Gefällt dir die Box nicht → Geld zurück</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_e9FTAe",
+        "text_iqy3XY"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "scheme-ed588b61-efa4-4f87-8a94-8598c6f35147",
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 16,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "trust_bar_bRNDnz": {
+      "type": "trust-bar",
+      "blocks": {
+        "trust_item_h8rCPq": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "truck",
+            "title": "Kostenloser Versand",
+            "subtitle": "Schnelle Lieferung"
+          }
+        },
+        "trust_item_czDaNJ": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shield",
+            "title": "100 Tage Testen",
+            "subtitle": "Risikofrei bestellen"
+          }
+        },
+        "trust_item_6aWUhQ": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "star",
+            "title": "200.000+ Kunden",
+            "subtitle": "4.8/5 Bewertung"
+          }
+        },
+        "trust_item_eG6g8P": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "lock",
+            "title": "Sicher bezahlen",
+            "subtitle": "PayPal Klarna Kreditkarte"
+          }
+        }
+      },
+      "block_order": [
+        "trust_item_h8rCPq",
+        "trust_item_czDaNJ",
+        "trust_item_6aWUhQ",
+        "trust_item_eG6g8P"
+      ],
+      "disabled": true,
+      "name": "Trust Bar",
+      "settings": {
+        "header_title": "Warum über 200.000 Kunden bei Kuchenkompane bestellen",
+        "title": "Exzellent",
+        "reviews": "3,735"
+      }
+    },
+    "mystery_box_grid_WypDEk": {
+      "type": "mystery-box-grid",
+      "blocks": {
+        "mystery_box_mczX79": {
+          "type": "mystery_box",
+          "settings": {
+            "product": "neu-mystery-box-small-3-zufallige-premium-kuchenmesser-kopie-2",
+            "gift_image": "shopify://shop_images/Mystery3er.jpg",
+            "box_title": "Mystery Box S",
+            "show_badge": false,
+            "badge_text": "Beliebteste Box",
+            "variant": "3 zufällige Messer",
+            "box_value": "Wert bis zu bis zu",
+            "show_save_text": false,
+            "save_text": "Du sparst bis zu",
+            "show_feature_text": false,
+            "feature_text": "",
+            "show_guarantee_text": false,
+            "guarantee_text": "100 Tage risikofrei testen",
+            "enable_ajax": true,
+            "button_text": "Jetzt bestellen",
+            "full_width": false,
+            "btn_bg": "#324b34",
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "mystery_box_BRfbHm": {
+          "type": "mystery_box",
+          "settings": {
+            "product": "neu-mystery-box-m-5-zufallige-premium-kuchenmesser-kopie-2",
+            "gift_image": "shopify://shop_images/ChatGPT_Image_9._Maerz_2026_23_19_13.jpg",
+            "box_title": "Mystery Box M",
+            "show_badge": true,
+            "badge_text": "Beliebteste Box",
+            "variant": "5 zufällige Messer",
+            "box_value": "Wert bis zu",
+            "show_save_text": false,
+            "save_text": "Du sparst bis zu",
+            "show_feature_text": false,
+            "feature_text": "",
+            "show_guarantee_text": false,
+            "guarantee_text": "100 Tage risikofrei testen",
+            "enable_ajax": true,
+            "button_text": "Jetzt bestellen",
+            "full_width": false,
+            "btn_bg": "#e4893e",
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "mystery_box_rx8jYq": {
+          "type": "mystery_box",
+          "settings": {
+            "product": "mystery-box-l-7-zufallige-premium-kuchenmesser-kopie-2",
+            "gift_image": "shopify://shop_images/ChatGPT_Image_9._Maerz_2026_23_18_57.jpg",
+            "box_title": "Mystery Box L",
+            "show_badge": false,
+            "badge_text": "Beliebteste Box",
+            "variant": "7 zufälige Messer",
+            "box_value": "Wert bis zu",
+            "show_save_text": false,
+            "save_text": "Du sparst bis zu",
+            "show_feature_text": false,
+            "feature_text": "",
+            "show_guarantee_text": false,
+            "guarantee_text": "100 Tage risikofrei testen",
+            "enable_ajax": true,
+            "button_text": "Jetzt bestellen",
+            "full_width": false,
+            "btn_bg": "#324b34",
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "mystery_box_mczX79",
+        "mystery_box_BRfbHm",
+        "mystery_box_rx8jYq"
+      ],
+      "name": "Mystery Box Grid",
+      "settings": {
+        "show_header": false,
+        "header_title": "Wähle deine Box:",
+        "header_subtitle": ""
+      }
+    },
+    "apex_knife_showcase_PzPpqq": {
+      "type": "apex-knife-showcase",
+      "blocks": {
+        "knife_zQJLFE": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "value_label": "£299 value",
+            "knife_name": "",
+            "handle_text": "",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_nMnDp4": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "value_label": "£399 value",
+            "knife_name": "",
+            "handle_text": "",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_HNxThx": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "value_label": "£499 value",
+            "knife_name": "",
+            "handle_text": "",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_pYAn7N": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "value_label": "£349 value",
+            "knife_name": "",
+            "handle_text": "",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        }
+      },
+      "block_order": [
+        "knife_zQJLFE",
+        "knife_nMnDp4",
+        "knife_HNxThx",
+        "knife_pYAn7N"
+      ],
+      "disabled": true,
+      "name": "Apex Knife Showcase",
+      "settings": {
+        "custom_class": "",
+        "bg_color": "#f8f8f8",
+        "section_padding_top": 60,
+        "section_padding_bottom": 60,
+        "title": "Diese hochwertigen Damastmesser",
+        "title_color": "#000000",
+        "title_style": "könntest du erhalten",
+        "title_style_color": "#765339",
+        "title_font_size": 32,
+        "subtitle": "Jedes Messer aus unserem Sortiment hat einen einzigartigen Griff",
+        "card_bg_color": "#ffffff",
+        "card_border_radius": 10,
+        "card_shadow_opacity": 8,
+        "image_aspect_ratio": "4/3",
+        "image_fit": "contain",
+        "image_bg_color": "#fafafa",
+        "badge_bg_color": "#f0e8da",
+        "badge_text_color": "#2d2020",
+        "badge_position": "top_left",
+        "slider_type": "loop",
+        "slide_gap": 20,
+        "slides_desktop": 3,
+        "slides_tablet": 2,
+        "slides_mobile": 1,
+        "peek_desktop": 80,
+        "peek_tablet": 60,
+        "peek_mobile": 50,
+        "show_arrows": true,
+        "show_pagination": true,
+        "autoplay": false,
+        "autoplay_speed": 4000
+      }
+    },
+    "knife_showcase_HyGBJN": {
+      "type": "knife-showcase",
+      "blocks": {
+        "knife_zCtzfY": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/IMG_0764_1_914af4d6-b323-486d-96b5-dba3eacaef65.webp",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "499€",
+            "handle_text": ""
+          }
+        },
+        "knife_9pzEbC": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/IMG_1753.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "299€",
+            "handle_text": ""
+          }
+        },
+        "knife_bHLhgi": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/Damast-Gyuto-Top-shot-2_aa63e7fa-9b9f-4cc2-ae0b-6e6e2c7f46e0.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "399€",
+            "handle_text": ""
+          }
+        },
+        "knife_VgHxgx": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/IMG_1756.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "299€",
+            "handle_text": ""
+          }
+        },
+        "knife_XXgwem": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/IMG_8610_1.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "399€",
+            "handle_text": ""
+          }
+        },
+        "knife_7kPX6z": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/Shikku-Chef-top-shot_412560e7-f839-4575-973b-3d0c44e8dbdb.webp",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "499€",
+            "handle_text": ""
+          }
+        },
+        "knife_KfB3TX": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/ChatGPT_Image_10._Maerz_2026_00_44_42_1.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "399€",
+            "handle_text": ""
+          }
+        },
+        "knife_PjyWJr": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/damast-chef-messer-946672.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "399€",
+            "handle_text": ""
+          }
+        },
+        "knife_VMUVYq": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/IMG_6149_1_1_2c1f34e1-bf89-4cfb-91b7-4bf68326c3ac.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "129€",
+            "handle_text": ""
+          }
+        },
+        "knife_fHJk7J": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/IMG_6143_1_1_23083ee4-23f3-4202-8ee2-c70326f95d98.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "109€",
+            "handle_text": ""
+          }
+        },
+        "knife_c6k96m": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/Asiatisches-Chefmesser-liegend_1_.jpgkomprimiert.webp",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "89€",
+            "handle_text": ""
+          }
+        },
+        "knife_JkUCD3": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/IMG_6147_1_1_de8a883b-e69e-4584-a8eb-9885d8b2ae98.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "109€",
+            "handle_text": ""
+          }
+        },
+        "knife_y8Gxc9": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/Nakiri-liegend_1_.jpgkomprimiert.webp",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "89€",
+            "handle_text": ""
+          }
+        },
+        "knife_pf8etJ": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/IMG_6147_1_1_de8a883b-e69e-4584-a8eb-9885d8b2ae98.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "109€",
+            "handle_text": ""
+          }
+        },
+        "knife_TWVNWE": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/IMG_6145_1_1_2a833bc8-55f9-471b-9c45-ac3f24462c2e_1.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "109€",
+            "handle_text": ""
+          }
+        },
+        "knife_gqqE9z": {
+          "type": "knife",
+          "settings": {
+            "kinfe_link": "",
+            "knife_image": "shopify://shop_images/Santoku-gross-liegend_1_.jpgkomprimiert_fe91e8b6-a240-45c1-a9bf-f760801e978f.jpg",
+            "knife_name": "",
+            "price_label": "Normalpreis:",
+            "price_value": "89€",
+            "handle_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "knife_zCtzfY",
+        "knife_9pzEbC",
+        "knife_bHLhgi",
+        "knife_VgHxgx",
+        "knife_XXgwem",
+        "knife_7kPX6z",
+        "knife_KfB3TX",
+        "knife_PjyWJr",
+        "knife_VMUVYq",
+        "knife_fHJk7J",
+        "knife_c6k96m",
+        "knife_JkUCD3",
+        "knife_y8Gxc9",
+        "knife_pf8etJ",
+        "knife_TWVNWE",
+        "knife_gqqE9z"
+      ],
+      "name": "Knife Showcase",
+      "settings": {
+        "custom_class": "",
+        "bg_color": "#f8f8f8",
+        "title": "Diese hochwertigen Damastmesser",
+        "title_style": "könntest du erhalten",
+        "subtitle": "Jedes Messer aus unserem Sortiment hat einen einzigartigen Griff"
+      }
+    },
+    "rich_text_wWGwqg": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7gmqbr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Warum wir Mystery Boxen anbieten",
+            "heading_size": "h2"
+          }
+        },
+        "text_TfdNYk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mache Messer bleiben aus älteren Produktionen übrig. </p><p>Mit den Mystery Boxen geben wir diese Messer zu einem besonders günstigen Preis weiter.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7gmqbr",
+        "text_TfdNYk"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "scheme-ed588b61-efa4-4f87-8a94-8598c6f35147",
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "usp_list_WrUFeL": {
+      "type": "usp-list",
+      "blocks": {
+        "item_czrtME": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
+            "usp_title": "100 Tage-geld-zurück Garantie",
+            "title_size": 18,
+            "usp_info": "Wir sind von der Qualität unserer Produkte überzeugt und möchten sicherstellen, dass Du zu 100% zufrieden bist.",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_Y6WPxz": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
+            "usp_title": "200,000+ zufriedene Kunden",
+            "title_size": 18,
+            "usp_info": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_m6VWDB": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png",
+            "usp_title": "Geprüfte Qualität",
+            "title_size": 18,
+            "usp_info": "Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit.",
+            "info_size": 14,
+            "divider": false
+          }
+        }
+      },
+      "block_order": [
+        "item_czrtME",
+        "item_Y6WPxz",
+        "item_m6VWDB"
+      ],
+      "name": "APEX USPs",
+      "settings": {
+        "color_scheme": "",
+        "verticle_padding": 50,
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30
+      }
+    },
+    "trust_bar_G9q8EF": {
+      "type": "trust-bar",
+      "blocks": {
+        "trust_item_YwVW73": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "truck",
+            "title": "Kostenloser Versand",
+            "subtitle": "Schnelle Lieferung"
+          }
+        },
+        "trust_item_FC8VpT": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shield",
+            "title": "100 Tage Testen",
+            "subtitle": "Risikofrei bestellen"
+          }
+        },
+        "trust_item_f6FUBq": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "star",
+            "title": "200.000+ Kunden",
+            "subtitle": "4.8/5 Bewertung"
+          }
+        },
+        "trust_item_zwX3at": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "lock",
+            "title": "Sicher bezahlen",
+            "subtitle": "PayPal Klarna Kreditkarte"
+          }
+        }
+      },
+      "block_order": [
+        "trust_item_YwVW73",
+        "trust_item_FC8VpT",
+        "trust_item_f6FUBq",
+        "trust_item_zwX3at"
+      ],
+      "disabled": true,
+      "name": "Trust Bar",
+      "settings": {
+        "header_title": "Warum über 200.000 Kunden bei Kuchenkompane bestellen",
+        "title": "Exzellent",
+        "reviews": "3,735"
+      }
+    }
+  },
+  "order": [
+    "collection-header",
+    "main",
+    "mrk_collection_grid_section_tnxgC7",
+    "customer_banner_WFiRPm",
+    "rich_text_77qATN",
+    "trust_bar_bRNDnz",
+    "mystery_box_grid_WypDEk",
+    "apex_knife_showcase_PzPpqq",
+    "knife_showcase_HyGBJN",
+    "rich_text_wWGwqg",
+    "usp_list_WrUFeL",
+    "trust_bar_G9q8EF"
+  ]
+}

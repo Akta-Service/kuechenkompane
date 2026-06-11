@@ -1,3 +1,4 @@
+
 {{ 'component-collection-card.css' | asset_url | stylesheet_tag }}
 {{ 'collection-list.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'collection-list.js' | asset_url }}" defer="defer"></script>
@@ -131,9 +132,8 @@
         <div class="m-section__description{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">{{ section.settings.description }}</div>
       {% endif %}
       {% if section.settings.button_label != blank %}
-
         {% capture arrow %}<svg class="m-rlt-reverse-x" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.03062 2.4694L12.0306 7.4694C12.1005 7.53908 12.156 7.62187 12.1939 7.71304C12.2317 7.8042 12.2512 7.90194 12.2512 8.00065C12.2512 8.09936 12.2317 8.1971 12.1939 8.28827C12.156 8.37943 12.1005 8.46222 12.0306 8.5319L7.03062 13.5319C6.88973 13.6728 6.69863 13.752 6.49937 13.752C6.30012 13.752 6.10902 13.6728 5.96812 13.5319C5.82723 13.391 5.74807 13.1999 5.74807 13.0007C5.74807 12.8014 5.82723 12.6103 5.96812 12.4694L10.4375 8.00003L5.9675 3.53065C5.8266 3.38976 5.74745 3.19866 5.74745 2.9994C5.74745 2.80015 5.8266 2.60905 5.9675 2.46815C6.10839 2.32726 6.29949 2.2481 6.49875 2.2481C6.69801 2.2481 6.8891 2.32726 7.03 2.46815L7.03062 2.4694Z" fill="currentColor"/>
+          <path d="M7.03062 2.4694L12.0306 7.4694C12.1005 7.53908 12.156 7.62187 12.1939 7.71304C12.2317 7.8042 12.2512 7.90194 12.2512 8.00065C12.2512 8.09936 12.2317 8.1971 12.1939 8.28827C12.156 8.37943 12.1005 8.46222 12.0306 8.5319L7.03062 13.5319C6.88973 13.6728 6.69863 13.752 6.49937 13.752C6.30012 13.752 6.10902 13.6728 5.96812 13.5319C5.82723 13.391 5.74807 13.1999 5.74807 13.0007C5.74807 12.8014 5.82723 12.6103 5.9675 3.53065C5.8266 3.38976 5.74745 3.19866 5.74745 2.9994C5.74745 2.80015 5.8266 2.60905 5.9675 2.46815C6.10839 2.32726 6.29949 2.2481 6.49875 2.2481C6.69801 2.2481 6.8891 2.32726 7.03 2.46815L7.03062 2.4694Z" fill="currentColor"/>
           </svg>
         {% endcapture %}
         {% liquid
@@ -144,6 +144,7 @@
           endif
         %}
         <div class="m-section__button{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+          {%- comment -%} FIX: Opening <a tag was missing in original code {%- endcomment -%}
           <a
             class="m-button{% if is_button_icon %} m-button--text-with-icon{% endif %} {{ section.settings.button_style }} mrk-btn"
             {% if section.settings.button_link != blank %}
@@ -159,12 +160,12 @@
       {% if enable_slider and expanded %}
         {% if section.settings.show_pagination or section.settings.show_navigation %}
           <div class="m-collection-list__controls m-collection-list__controls--top">
-            {% render 'slider-controls', 
-              extra_classes: slider_control_classes, 
+            {% render 'slider-controls',
+              extra_classes: slider_control_classes,
               position: slider_controls_position,
-              show_nav: show_navigation, 
-              show_pagination: show_pagination, 
-              pagination_class: 'm-dot-circle m-dot-circle--dark', 
+              show_nav: show_navigation,
+              show_pagination: show_pagination,
+              pagination_class: 'm-dot-circle m-dot-circle--dark',
               pagination_type: 'fraction'
             %}
           </div>
@@ -177,8 +178,9 @@
   {% if section.settings.layout != 'left-side' %}<div class="m-collection-list__content-container {{ container }}">{% endif %}
   <div class="m-collection-list__content">
     <div class="m-mixed-layout{% if mobile_disable_slider or enable_slider != true %} m-mixed-layout--mobile-grid{% if use_scroll_mobile %} m-mixed-layout--mobile-scroll{% endif %}{% endif %}">
-      <div class="m-mixed-layout__wrapper{% if enable_slider %} swiper-container swiper--equal-height{% endif %}">
-        <div class="m-mixed-layout__inner m:grid md:m:grid-{{ items_per_row_tablet }}-cols xl:m:grid-{{ items_per_row }}-cols{% if enable_slider %} swiper-wrapper{% endif %}">
+
+      <div class="m-mixed-layout__wrapper">
+        <div class="m-mixed-layout__inner m:grid md:m:grid-{{ items_per_row_tablet }}-cols xl:m:grid-{{ items_per_row }}-cols">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'collection_block' %}
@@ -186,25 +188,25 @@
                   assign collection = collections[block.settings.collection]
                   assign default_label = 'homepage.onboarding.collection_title' | t
                 %}
-                {% render 'collection-card', 
-                  section: section, 
-                  collection: collection, 
-                  card_style: card_style, 
-                  text_alignment: section.settings.text_alignment, 
-                  image: block.settings.item_image, 
-                  show_product_count: section.settings.show_product_count, 
-                  enable_slider: enable_slider, 
-                  image_rounded: section.settings.image_rounded, 
-                  hover_effect: section.settings.hover_effect, 
+                {% render 'collection-card',
+                  section: section,
+                  collection: collection,
+                  card_style: card_style,
+                  text_alignment: section.settings.text_alignment,
+                  image: block.settings.item_image,
+                  show_product_count: section.settings.show_product_count,
+                  enable_slider: enable_slider,
+                  image_rounded: section.settings.image_rounded,
+                  hover_effect: section.settings.hover_effect,
                   title: block.settings.title,
                   index: forloop.index,
-                  animated: animated, 
+                  animated: animated,
                   animation_effect: animation_effect
                 %}
               {% when 'banner' %}
                 {%- assign collection = collections[block.settings.collection] -%}
-                <div class="m:column{% if enable_slider %} swiper-slide{% endif %}">
-                  <div 
+                <div class="m:column">
+                  <div
                     class="m-collection-banner collection-card{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
                     {% if animated %}
                       data-cascade
@@ -213,14 +215,13 @@
                   >
                     <div class="m-collection-banner__inner m:text-center" style="--aspect-ratio: {{ first_ratio | default: '1' }}; background: {{ block.settings.item_bg }}">
                       <div class="m-collection-banner__content">
-                        <a href="{{ collection.url | default: "#" }}" class="m-hidden-link"></a>
+                        <a href="{{ collection.url | default: '#' }}" class="m-hidden-link"></a>
                         <h3 class="m-collection-banner__title" style="color: {{ block.settings.item_text_color }}">{{ block.settings.title }}</h3>
                         <p class="m-collection-banner__description" style="color: {{ block.settings.item_text_color }}">{{ block.settings.description }}</p>
                       </div>
                     </div>
-                    
                     {%- assign default_label = 'homepage.onboarding.collection_title' | t -%}
-                    <a class="m-collection-banner__collection-name m:text-{{ section.settings.text_alignment }}" href="{{ collection.url | default: "#" }}">
+                    <a class="m-collection-banner__collection-name m:text-{{ section.settings.text_alignment }}" href="{{ collection.url | default: '#' }}">
                       {{ collection.title | default: default_label }}
                       {% if section.settings.show_product_count == true %}
                         <sup>{{ collection.all_products_count }}</sup>
@@ -232,21 +233,22 @@
           {% endfor %}
         </div>
       </div>
+
       {% if enable_slider and expanded == false %}
         {% if section.settings.show_pagination or section.settings.show_navigation %}
           <div class="m-collection-list__controls m-collection-list__controls--bottom m:text-center">
-            {% render 'slider-controls', 
+            {% render 'slider-controls',
               extra_classes: slider_control_classes,
-              show_nav: show_navigation, 
-              show_pagination: show_pagination, 
-              pagination_class: 'm-dot-circle m-dot-circle--dark', 
+              show_nav: show_navigation,
+              show_pagination: show_pagination,
+              pagination_class: 'm-dot-circle m-dot-circle--dark',
               pagination_type: 'fraction'
             %}
           </div>
         {% endif %}
       {% endif %}
     </div>
-  </div> <!-- .m-collection-list__content -->
+  </div><!-- .m-collection-list__content -->
   {% if section.settings.layout != 'left-side' %}</div>{% endif %}
 {% endcapture %}
 

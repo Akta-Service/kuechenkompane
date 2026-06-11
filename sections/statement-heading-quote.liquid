@@ -1,0 +1,167 @@
+<style>
+  #statement-heading-quote-{{ section.id }} {
+    background: {{ section.settings.section_bg }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #statement-heading-quote-{{ section.id }} .statement-heading-quote-title {
+    margin: 0 0 24px;
+    font-size: 41.6px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: {{ section.settings.heading_color }};
+    text-align: center;
+  }
+
+  #statement-heading-quote-{{ section.id }} .statement-heading-quote-highlight {
+    color: {{ section.settings.highlight_color }};
+  }
+
+  #statement-heading-quote-{{ section.id }} .statement-heading-quote-text {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 19.2px;
+    line-height: 1.6;
+    font-style: italic;
+    color: {{ section.settings.quote_color }};
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1149px) {
+    #statement-heading-quote-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+    #statement-heading-quote-{{ section.id }} .statement-heading-quote-text {
+      font-size: 18.4px;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    #statement-heading-quote-{{ section.id }} .statement-heading-quote-title {
+      margin: 0 0 16px;
+      font-size: clamp(24px, 5vw, 28px);
+    }
+
+  }
+</style>
+
+<section id="statement-heading-quote-{{ section.id }}" class="statement-heading-quote-section">
+  <div class="custom-container">
+    {% if section.settings.heading_prefix != blank
+      or section.settings.highlight_text != blank
+      or section.settings.heading_suffix != blank
+    %}
+      <h2 class="statement-heading-quote-title">
+        {{ section.settings.heading_prefix }}
+        {% if section.settings.highlight_text != blank %}
+          <span class="statement-heading-quote-highlight">{{ section.settings.highlight_text }}</span>
+        {% endif %}
+        {{ section.settings.heading_suffix }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.quote != blank %}
+      <div class="statement-heading-quote-text">
+        {{ section.settings.quote }}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Statement heading quote",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_prefix",
+      "label": "Heading before highlight",
+      "default": "Messer, die halten, was sie "
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Highlighted text",
+      "default": "versprechen."
+    },
+    {
+      "type": "text",
+      "id": "heading_suffix",
+      "label": "Heading after highlight"
+    },
+    {
+      "type": "text",
+      "id": "quote",
+      "label": "Quote",
+      "default": "„Stell dir vor, etwas ist so gut, dass du dich fragst, warum du es nicht früher hattest.“"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight color",
+      "default": "#5f7758"
+    },
+    {
+      "type": "color",
+      "id": "quote_color",
+      "label": "Quote color",
+      "default": "#2d2d2d"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Statement heading quote"
+    }
+  ]
+}
+{% endschema %}

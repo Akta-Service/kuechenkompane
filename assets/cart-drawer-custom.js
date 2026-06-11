@@ -1,29 +1,21 @@
-window.cart_cross_sell_swiper = () => {
-  if (document.querySelector(".ccs-swiper")) {
-    new Swiper(".ccs-swiper", {
-      slidesPerView: 2.2,
-      spaceBetween: 0,
-      loop: true,
-      grabCursor: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+window.cart_cross_sell_splide = function() {
+  var el = document.querySelector('.ccs-splide');
+  if (el) {
+    new Splide(el, {
+      perPage     : 2,
+      perMove     : 1,
+      gap         : 0,
+      pagination  : false,
+      arrows      : true,
+      drag        : true,
+      rewind      : true,
+      breakpoints : {
+        600: { perPage: 1 },
       },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-        },
-        600: {
-          slidesPerView: 2.2,
-        },
-      },
-    });
-  } else {
-    console.log("ccs swiper element not found");
+    }).mount();
   }
 };
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  cart_cross_sell_swiper();
+document.addEventListener('DOMContentLoaded', function() {
+  cart_cross_sell_splide();
 });
-

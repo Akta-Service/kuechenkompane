@@ -1,0 +1,360 @@
+
+
+{% comment %}
+  RED INFO STRIP
+{% endcomment %}
+
+<style>
+  .bf-info-strip {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.section_bg }};
+  }
+
+  .bf-info-strip .bf-strip-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .bf-info-strip .bf-strip-inner {
+    position: relative;
+    min-height: 160px;
+    padding: 12px 60px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: {{ section.settings.strip_bg }};
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+    {% if section.settings.bg_image != blank %}
+      background-image: url('{{ section.settings.bg_image | image_url: width: 2500 }}');
+    {% endif %}
+  }
+
+  .bf-info-strip .bf-strip-splide {
+    overflow: visible;
+    width: 100%;
+  }
+
+  .bf-info-strip .splide__track {
+    overflow: hidden;
+  }
+
+  .bf-info-strip .splide__list {
+    align-items: center;
+  }
+
+.bf-info-strip .bf-strip-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: center;
+}
+
+.bf-info-strip .bf-strip-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-width: 0;
+}
+  .bf-info-strip .bf-strip-icon {
+    width: 64px;
+    height: 64px;
+    flex: 0 0 64px;
+    display: flex;
+  }
+
+  .bf-info-strip .bf-strip-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+.bf-info-strip .bf-strip-text {
+  color: {{ section.settings.text_color }};
+  font-size: {{ section.settings.text_size }}px;
+  line-height: 1.15;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 240px;
+  letter-spacing: -0.02em;
+}
+
+  .bf-info-strip .bf-mobile-slider {
+    display: none;
+  }
+
+@media screen and (max-width: 991px) {
+
+  .bf-info-strip .bf-strip-wrapper {
+    padding: 0;
+  }
+
+  .bf-info-strip .bf-strip-inner {
+    min-height: 96px;
+    padding: 18px 0 18px 24px;
+    background-color: {{ section.settings.mobile_strip_bg }};
+    background-size: {{ section.settings.mobile_bg_size }};
+    background-position: center center;
+
+    {% if section.settings.hide_bg_image_mobile %}
+      background-image: none;
+    {% elsif section.settings.mobile_bg_image != blank %}
+      background-image: url('{{ section.settings.mobile_bg_image | image_url: width: 1200 }}');
+    {% elsif section.settings.bg_image != blank %}
+      background-image: url('{{ section.settings.bg_image | image_url: width: 1200 }}');
+    {% endif %}
+  }
+
+  .bf-info-strip .bf-desktop-grid {
+    display: none !important;
+  }
+
+  .bf-info-strip .bf-mobile-slider {
+    display: block !important;
+    width: 100%;
+  }
+
+  .bf-info-strip .bf-strip-splide .splide__track {
+    overflow: hidden;
+  }
+
+  .bf-info-strip .bf-strip-splide .splide__slide {
+    display: flex;
+    align-items: center;
+  }
+
+  .bf-info-strip .bf-strip-item {
+    justify-content: flex-start;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  .bf-info-strip .bf-strip-icon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+  }
+
+  .bf-info-strip .bf-strip-text {
+    font-size: 16px;
+    line-height: 1.18;
+    text-align: left;
+    max-width: 150px;
+    font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .bf-info-strip .bf-strip-splide .splide__slide {
+    justify-content: center;
+  }
+
+  .bf-info-strip .bf-strip-item {
+    justify-content: center;
+  }
+}
+
+  @media screen and (min-width: 992px) {
+    .bf-info-strip .bf-desktop-grid {
+      display: grid !important;
+    }
+
+    .bf-info-strip .bf-mobile-slider {
+      display: none !important;
+    }
+  }
+</style>
+
+<section class="bf-info-strip">
+  <div class="bf-strip-wrapper">
+    <div class="bf-strip-inner">
+
+      <div class="bf-strip-grid bf-desktop-grid">
+        {%- for block in section.blocks -%}
+          <div class="bf-strip-item" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon_svg != blank -%}
+              <div class="bf-strip-icon">
+                {{ block.settings.icon_svg }}
+              </div>
+            {%- endif -%}
+
+            <div class="bf-strip-text">
+              {{ block.settings.text }}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div id="bf-strip-splide-{{ section.id }}" class="splide bf-strip-splide bf-mobile-slider">
+        <div class="splide__track">
+          <ul class="splide__list">
+
+            {%- for block in section.blocks -%}
+              <li class="splide__slide bf-strip-item" {{ block.shopify_attributes }}>
+
+                {%- if block.settings.icon_svg != blank -%}
+                  <div class="bf-strip-icon">
+                    {{ block.settings.icon_svg }}
+                  </div>
+                {%- endif -%}
+
+                <div class="bf-strip-text">
+                  {{ block.settings.text }}
+                </div>
+
+              </li>
+            {%- endfor -%}
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+
+  var section = document.currentScript.closest('.shopify-section') || document;
+  var sliderEl = section.querySelector('#bf-strip-splide-{{ section.id }}');
+  var splideInstance = null;
+
+  function isMobile() {
+    return window.matchMedia('(max-width: 991px)').matches;
+  }
+
+  function initSlider() {
+
+    if (!sliderEl || !isMobile()) return;
+
+    if (typeof Splide === 'undefined') {
+      setTimeout(initSlider, 150);
+      return;
+    }
+
+    if (!splideInstance) {
+
+      splideInstance = new Splide(sliderEl, {
+        type: 'slide',
+        perPage: 1,
+        perMove: 1,
+        gap: '16px',
+        padding: { right: '30%' },
+        arrows: false,
+        pagination: false,
+        drag: true,
+        snap: true,
+        autoplay: true,
+        interval: 3000,
+        pauseOnHover: true,
+        speed: 500,
+        breakpoints: {
+          575: {
+            padding:0,
+            gap: '12px'
+          }
+        }
+      });
+
+      splideInstance.mount();
+
+    } else {
+
+      setTimeout(function () {
+        splideInstance.refresh();
+      }, 100);
+
+    }
+  }
+
+  function destroySlider() {
+
+    if (splideInstance && !isMobile()) {
+      splideInstance.destroy(true);
+      splideInstance = null;
+    }
+
+  }
+
+  function handleResize() {
+
+    if (isMobile()) {
+      initSlider();
+    } else {
+      destroySlider();
+    }
+
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', handleResize);
+  } else {
+    handleResize();
+  }
+
+  window.addEventListener('load', function () {
+    setTimeout(handleResize, 300);
+  });
+
+  window.addEventListener('resize', function () {
+
+    clearTimeout(window.bfStripResizeTimer);
+
+    window.bfStripResizeTimer = setTimeout(function () {
+      handleResize();
+    }, 200);
+
+  });
+
+  document.addEventListener('shopify:section:load', function (event) {
+
+    if (event.target.querySelector('#bf-strip-splide-{{ section.id }}')) {
+      setTimeout(handleResize, 300);
+    }
+
+  });
+
+})();
+</script>
+{% schema %}
+{
+  "name": "kk Info Strip",
+  "settings": [
+    { "type": "image_picker", "id": "bg_image", "label": "Desktop Background Brush Image" },
+    { "type": "image_picker", "id": "mobile_bg_image", "label": "Mobile Background Image" },
+    { "type": "checkbox", "id": "hide_bg_image_mobile", "label": "Hide background image on mobile", "default": false },
+    { "type": "select", "id": "mobile_bg_size", "label": "Mobile Background Size", "options": [{ "value": "cover", "label": "Cover" }, { "value": "100% 100%", "label": "Stretch Full" }, { "value": "contain", "label": "Contain" }], "default": "cover" },
+    { "type": "color", "id": "section_bg", "label": "Section Background", "default": "#ffffff" },
+    { "type": "color", "id": "strip_bg", "label": "Desktop Strip Background", "default": "#d50000" },
+    { "type": "color", "id": "mobile_strip_bg", "label": "Mobile Strip Background", "default": "#d50000" },
+    { "type": "color", "id": "text_color", "label": "Text Color", "default": "#ffffff" },
+    { "type": "range", "id": "text_size", "label": "Text Size", "min": 12, "max": 32, "step": 1, "default": 22 },
+    { "type": "range", "id": "radius", "label": "Border Radius", "min": 0, "max": 30, "step": 1, "default": 0 },
+    { "type": "range", "id": "padding_top", "label": "Padding Top", "min": 0, "max": 100, "step": 4, "default": 20 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 0, "max": 100, "step": 4, "default": 20 }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Strip Item",
+      "limit": 3,
+      "settings": [
+        { "type": "textarea", "id": "icon_svg", "label": "SVG Icon" },
+        { "type": "text", "id": "text", "label": "Text", "default": "BIS ZU -75% RABATT" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "kk Info Strip",
+      "blocks": [{ "type": "item" }, { "type": "item" }, { "type": "item" }]
+    }
+  ]
+}
+{% endschema %}

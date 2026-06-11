@@ -1,69 +1,78 @@
 <style>
-  .header--sticky-ann{
-      position: sticky;
-      top: 0;
-      z-index: 12;
-    }
-    .announcement-bar-wrapper {
-      width: 100%;
-      background-color: var(--announcement-bg, #494949);
-      padding: 10px 0;
-    }
-    .announcement-bar-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-      width: 100%;
-      overflow: hidden;
-    }
-    .announcement-bar-content {
-      text-align: center;
-      color: #fff;
-      font-family: var(--announcement-font, Arial, sans-serif);
-      font-weight: 400;
-      font-size: var(--announcement-font-size);
+  .header--sticky-ann {
+    position: sticky;
+    top: 0;
+    z-index: 12;
+  }
+  .announcement-bar-wrapper {
+    width: 100%;
+    background-color: var(--announcement-bg, #494949);
+    padding: 10px 0;
+  }
+  .announcement-bar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .announcement-bar-content {
+    text-align: center;
+    color: #fff;
+    font-family: var(--announcement-font, Arial, sans-serif);
+    font-weight: 400;
+    font-size: var(--announcement-font-size);
+  }
+  .announcement-bar-wrapper p {
+    line-height: 1;
+  }
 
-    }
-    .announcement-bar-wrapper p {
-        line-height: 1;
-    }
+  /* Marquee */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  .announcement-marquee {
+    white-space: nowrap;
+    width: 100%;
+  }
+  .announcement-marquee-track {
+    display: inline-flex;
+    animation: marquee var(--marquee-speed, 40s) linear infinite;
+    will-change: transform;
+  }
+  .announcement-marquee-item {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 40px;
+    white-space: normal;
+    color: #fff;
+    font-size: var(--announcement-font-size, 1.25rem);
+  }
 
-    /* Marquee Animation */
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-
-    .announcement-marquee {
-      white-space: nowrap;
-      width: 100%;
-    }
-
-    .announcement-marquee-track {
-      display: inline-flex;
-      animation: marquee var(--marquee-speed, 40s) linear infinite;
-      will-change: transform;
-    }
-    .announcement-marquee-item {
-      display: inline-flex;
-      align-items: center;
-      margin: 0 40px;
-      white-space: normal;
-      color: #fff;
-      font-size: var(--announcement-font-size, 1.25rem);
-    }
-
-    /* Swiper Slides */
-    .announcement-slider .swiper-slide {
-      text-align: center;
-      color: #fff;
-      font-size: var(--announcement-font-size, 1.25rem);
-    }
+  /* Splide Slider */
+  .announcement-slider.splide {
+    width: 100%;
+  }
+  .announcement-slider .splide__slide {
+    text-align: center;
+    color: #fff;
+    font-size: var(--announcement-font-size, 1.25rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .announcement-slider .splide__track {
+    overflow: hidden;
+  }
+  .announcement-slider .splide__pagination,
+  .announcement-slider .splide__arrows {
+    display: none;
+  }
 </style>
 
 {% liquid
   assign show_announcement = false
-
   assign collection_list = section.settings.collection_list
 
   for coll in collection_list
@@ -80,6 +89,7 @@
   >
     <div class="announcement-bar-container">
       {% case section.settings.announcement_animation_type %}
+
         {% when 'marquee' %}
           <div class="announcement-marquee">
             {% if section.blocks.size > 0 %}
@@ -91,45 +101,31 @@
               <div class="announcement-marquee-track" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
                 {% if blocks_exist %}
                   {% for block in section.blocks %}
-                    <span class="announcement-marquee-item">
-                      {{ block.settings.block_text }}
-                    </span>
+                    <span class="announcement-marquee-item">{{ block.settings.block_text }}</span>
                   {% endfor %}
                 {% else %}
-                  <span class="announcement-marquee-item">
-                    <p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>
-                  </span>
-                  <span class="announcement-marquee-item">
-                    <p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>
-                  </span>
-                  <span class="announcement-marquee-item">
-                    <p><strong>30-day</strong> money-back guarantee</p>
-                  </span>
+                  <span class="announcement-marquee-item"><p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p></span>
+                  <span class="announcement-marquee-item"><p><strong>FREE </strong>Shipping On<strong> ALL </strong>Orders!</p></span>
+                  <span class="announcement-marquee-item"><p><strong>30-day</strong> money-back guarantee</p></span>
                 {% endif %}
               </div>
             {% endfor %}
           </div>
 
         {% when 'slider' %}
-          <div class="swiper announcement-slider">
-            <div class="swiper-wrapper">
-              {% if section.blocks.size > 0 %}
-                {% for block in section.blocks %}
-                  <div class="swiper-slide">
-                    {{ block.settings.block_text }}
-                  </div>
-                {% endfor %}
-              {% else %}
-                <div class="swiper-slide">
-                  <p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>
-                </div>
-                <div class="swiper-slide">
-                  <p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>
-                </div>
-                <div class="swiper-slide">
-                  <p><strong>30-day</strong> money-back guarantee</p>
-                </div>
-              {% endif %}
+          <div id="mrk-ann-slider--{{ section.id }}" class="splide announcement-slider">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% if section.blocks.size > 0 %}
+                  {% for block in section.blocks %}
+                    <li class="splide__slide">{{ block.settings.block_text }}</li>
+                  {% endfor %}
+                {% else %}
+                  <li class="splide__slide"><p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p></li>
+                  <li class="splide__slide"><p><strong>FREE </strong>Shipping On<strong> ALL </strong>Orders!</p></li>
+                  <li class="splide__slide"><p><strong>30-day</strong> money-back guarantee</p></li>
+                {% endif %}
+              </ul>
             </div>
           </div>
 
@@ -137,44 +133,33 @@
           <div class="announcement-bar-content">
             <p><strong>SUMMER SALE:&nbsp;</strong>Up to 70%</p>
           </div>
+
       {% endcase %}
     </div>
   </div>
 {% endif %}
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const animationType = {{ section.settings.announcement_animation_type | json }};
+document.addEventListener('DOMContentLoaded', function () {
+  var animationType = {{ section.settings.announcement_animation_type | json }};
+  if (animationType !== 'slider') return;
 
-    if (typeof Swiper !== 'undefined' && animationType === 'slider') {
-      const sliderEl = document.querySelector('.announcement-slider');
-      if (sliderEl) {
-        new Swiper(sliderEl, {
-          loop: true,
-          grabCursor: true,
-          effect: 'fade',
-          fadeEffect: {
-            crossFade: true
-          },
-          slidesPerView: {{ section.settings.slides_per_view_large }},
-          spaceBetween: {{ section.settings.space_between }},
-          autoplay: {
-            delay: {{ section.settings.autoplay_delay }},
-            disableOnInteraction: false
-          },
-          speed: {{ section.settings.speed }},
-          breakpoints: {
-            320: { slidesPerView: {{ section.settings.slides_per_view_small }} },
-            640: { slidesPerView: {{ section.settings.slides_per_view_medium }} },
-            1024: { slidesPerView: {{ section.settings.slides_per_view_large }} }
-          }
-        });
-      }
-    }
-  });
+  var el = document.getElementById('mrk-ann-slider--{{ section.id }}');
+  if (!el) return;
+
+  new Splide(el, {
+    type        : 'fade',
+    rewind      : true,
+    pagination  : false,
+    arrows      : false,
+    drag        : false,
+    autoplay    : true,
+    interval    : {{ section.settings.autoplay_delay }},
+    speed       : {{ section.settings.speed }},
+    pauseOnHover: false,
+  }).mount();
+});
 </script>
-
-
 
 {% schema %}
 {
@@ -229,33 +214,6 @@
     },
     {
       "type": "number",
-      "id": "slides_per_view_small",
-      "label": "Slides per view (mobile)",
-      "default": 1
-    },
-    {
-      "type": "number",
-      "id": "slides_per_view_medium",
-      "label": "Slides per view (tablet)",
-      "default": 1
-    },
-    {
-      "type": "number",
-      "id": "slides_per_view_large",
-      "label": "Slides per view (desktop)",
-      "default": 1
-    },
-    {
-      "type": "range",
-      "id": "space_between",
-      "label": "Space Between Slides",
-      "min": 0,
-      "max": 50,
-      "step": 5,
-      "default": 20
-    },
-    {
-      "type": "number",
       "id": "autoplay_delay",
       "label": "Autoplay Delay (ms)",
       "default": 4000
@@ -298,7 +256,7 @@
         {
           "type": "announcement",
           "settings": {
-            "block_text": "<p><strong>FREE </strong>Shipping<strong> </strong>On<strong> ALL </strong>Orders!</p>"
+            "block_text": "<p><strong>FREE </strong>Shipping On<strong> ALL </strong>Orders!</p>"
           }
         },
         {

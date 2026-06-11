@@ -1,0 +1,224 @@
+<style>
+    .custom-filters {
+    {% comment %} overflow: hidden; {% endcomment %}
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    }
+
+
+
+   .filters-open .custom-filters {
+    width: 280px;
+    border-right: 1px solid #e6e6e6;
+    padding-right: 20px;
+    font-family: sans-serif;
+     opacity: 1;
+   }
+
+
+  .filter-accordion {
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .filter-toggle {
+    width: 100%;
+    background: none;
+    border: 0;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .filter-toggle .icon {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+  }
+
+  .filter-toggle.active .icon {
+    transform: rotate(45deg);
+  }
+
+  /* BODY */
+  .filter-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .filter-body.open {
+    max-height: 500px;
+    padding-bottom: 15px;
+  }
+
+  /* LIST */
+  .filter-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .filter-body li {
+    margin-bottom: 12px;
+  }
+
+  /* CUSTOM CHECKBOX */
+  .custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .custom-checkbox input {
+    display: none;
+  }
+
+  .custom-checkbox .checkmark {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #111;
+    display: inline-block;
+    position: relative;
+    border-radius: 4px;
+  }
+
+  .custom-checkbox input:checked + .checkmark {
+    background: #111;
+  }
+
+  .custom-checkbox input:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    background: #fff;
+  }
+
+  /* PRICE */
+  .price-fields {
+    display: flex;
+    gap: 10px;
+  }
+
+  .price-fields input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+
+  /* CLEAR */
+  .clear-btn {
+    display: inline-block;
+    margin-top: 25px;
+    font-size: 13px;
+    text-decoration: underline;
+  }
+  @media (max-width: 1024px){
+    .akta-collection-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+  }
+  @media (max-width: 991px){
+    .filters-open .custom-filters {
+      width: 200px;
+    }
+    .akta-collection-grid-wrapper.filters-open {
+        grid-template-columns: 200px 1fr;
+    }
+  }
+  @media (max-width: 767px) {
+    .akta-collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .filter-open-btn {
+        display: none;
+    }
+    aside.custom-filters {
+        display: none;
+    }
+    .akta-collection-grid-wrapper {
+        grid-template-columns: 1fr !important;
+
+    }
+  }
+
+  .akta-collection-grid{
+  position: relative;
+    z-index: 1;
+  }
+</style>
+<aside class="custom-filters">
+  <form id="CollectionFiltersForm">
+    {% for filter in collection.filters %}
+      <div class="filter-accordion">
+        <!-- HEADER -->
+        <button
+          type="button"
+          class="filter-toggle"
+          aria-expanded="false"
+        >
+          <span>{{ filter.label }}</span>
+          <span class="icon">+</span>
+        </button>
+
+        <!-- BODY -->
+        <div class="filter-body">
+          {% case filter.type %}
+            {% when 'list' %}
+              <ul>
+                {% for value in filter.values %}
+                  <li>
+                    <label class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        name="{{ value.param_name }}"
+                        value="{{ value.value }}"
+                        {% if value.active %}
+                          checked
+                        {% endif %}
+                        {% if value.count == 0 and value.active == false %}
+                          disabled
+                        {% endif %}
+                      >
+
+                      <span class="checkmark"></span>
+
+                      <span class="label-text">
+                        {{ value.label }}
+                      </span>
+                    </label>
+                  </li>
+                {% endfor %}
+              </ul>
+
+            {% when 'price_range' %}
+              <div class="price-fields">
+                <input
+                  type="number"
+                  name="{{ filter.min_value.param_name }}"
+                  value="{{ filter.min_value.value }}"
+                  placeholder="Min"
+                >
+
+                <input
+                  type="number"
+                  name="{{ filter.max_value.param_name }}"
+                  value="{{ filter.max_value.value }}"
+                  placeholder="Max"
+                >
+              </div>
+          {% endcase %}
+        </div>
+      </div>
+    {% endfor %}
+
+    <a href="{{ collection.url }}" class="clear-btn"> Clear all </a>
+  </form>
+</aside>

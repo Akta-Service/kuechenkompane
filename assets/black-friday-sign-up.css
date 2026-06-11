@@ -1,0 +1,331 @@
+.akta-black-friday {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  padding: 75px;
+  justify-content: center;
+  align-items: center;
+  /* background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("https://cdn.shopify.com/s/files/1/2707/0176/files/background-new1.png?v=1700330276") !important; */
+  background-position: 50% 50%;
+  background-size: cover;
+  text-align: center;
+  color: white !important;
+  /* background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url(//icon-amsterdam.de/cdn/shop/files/DESKTOP_SIGN_UP_BFCM_1_2000x2000.jpg?v=1761524283) !important; */
+}
+
+.akta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  pointer-events: none;
+}
+.akta-wrapper {
+  position: relative;
+  z-index: 9;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.akta-title-main {
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* background-image: url("https://cdn.shopify.com/s/files/1/2707/0176/files/text-overlay-scratch.jpg?v=1667914008"); */
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 65px;
+  line-height: 1 !important;
+  text-shadow: none;
+  /* -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  margin-bottom: 10px;
+  font-family: "Montserrat";
+}
+
+.akta-title-sub {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  /* background-image: url("https://cdn.shopify.com/s/files/1/2707/0176/files/text-overlay-scratch.jpg?v=1667914008"); */
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 36px;
+  line-height: 1;
+  text-shadow: none;
+  /* -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+.akta-highlight {
+  margin-top: 0px;
+  margin-bottom: 25px;
+  color:#FA8526;
+  font-size: 36px;
+  line-height: 1;
+  text-shadow: 1px 1px 40px #FA8526;
+  font-weight: bold;
+  line-height: 1 !important;
+  max-width: 530px;
+  margin: 0 auto;
+  padding-top: 8px;
+  font-family: "Montserrat";
+}
+
+.akta-clock-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  line-height: 1.25;
+}
+.akta-clock-number {
+  margin-bottom: 0px;
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.akta-clock-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+}
+
+.akta-clock-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-weight: 700;
+}
+
+.akta-input {
+  min-height: 50px;
+  margin-bottom: 0px;
+  padding: 15px 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-weight: 400;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  color: #fff;
+  width: 100%;
+}
+
+.akta-input::placeholder {
+  color: #fff;
+}
+
+.akta-label {
+  display: none;
+}
+
+.akta-clock {
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.akta-subtitle,
+.go3176171171 {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0;
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.akta-submit,
+button.go300628013 {
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ff0300;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ff1128;
+  cursor: pointer;
+  margin: 0px !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.2;
+  background: #ff0300;
+  color: #ffffff;
+}
+
+.akta-info {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  opacity: 0.75;
+  font-size: 16px;
+}
+
+.akta-footer {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  opacity: 0.75;
+  font-size: 14px;
+}
+
+.akta-logo {
+  width: 100px;
+  margin: auto;
+}
+
+.akta-logo-link {
+  text-align: center;
+}
+.klaviyo-form-WRMhXx.klaviyo-form input {
+  color: #fff !important;
+}
+.klaviyo-form-WRMhXx.klaviyo-form input:hover {
+  border-color: #fff;
+}
+.go1112847706.go1112847706.go1112847706 {
+  color: #fff !important;
+}
+.go1112847706.go1112847706.go1112847706:hover {
+  border-color: #fff !important;
+}
+.go2335100529.go2335100529.go2335100529 {
+  color: #fff !important;
+}
+.go2335100529.go2335100529.go2335100529:hover {
+  border-color: #fff !important;
+}
+.go3176171171 {
+  color: #ffffff;
+  line-height: normal;
+}
+
+.akta-footer-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.akta-footer-menu-item {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.akta-footer-menu-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+  font-size: 11px;
+}
+
+.akta-footer-menu-link:hover {
+  color: #ff0300;
+}
+.akta-footer-menu {
+  margin: 30px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+  .akta-black-friday {
+    max-width: 100%;
+    padding: 40px 25px;
+  }
+  .akta-title-main {
+    margin-bottom: 10px;
+    font-size: 42px;
+  }
+  .akta-title-sub {
+    font-size: 22px;
+    margin: 0 auto;
+    padding-bottom: 2px;
+  }
+  .akta-highlight {
+    font-size: 22px;
+    padding-bottom: 18px;
+    max-width: 330px;
+  }
+  .akta-clock {
+    margin-bottom: 35px;
+    margin-top: 10px;
+  }
+  .akta-subtitle {
+    font-size: 16px;
+  }
+  .akta-submit {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .akta-info {
+    font-size: 14px;
+  }
+  .akta-input {
+    min-height: 45px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  .akta-footer {
+    font-size: 12px;
+  }
+  .akta-footer-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .akta-footer-menu-item {
+    margin-right: 5px;
+  }
+  /* .akta-footer-menu-link {
+    font-size: 14px;
+  } */
+}
+@media screen and (max-width: 525px) {
+  .akta-footer-menu-link {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .akta-footer-menu-link {
+    font-size: 9px;
+  }
+}
+/* // */

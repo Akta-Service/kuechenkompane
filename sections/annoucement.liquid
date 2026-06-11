@@ -1,5 +1,75 @@
 <script src="{{ 'announcement-bar.js' | asset_url }}" defer="defer"></script>
 
+<style>
+  .m-announcement-bar__wrapper.splide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .m-announcement-bar__inner.splide__track {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .splide__list {
+    display: flex;
+  }
+
+  .m-announcement-bar__item.splide__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .m-announcement-bar__nav {
+    display: contents;
+  }
+
+  .mrk-ann-prev {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    color: currentColor;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .mrk-ann-next {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    color: currentColor;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .mrk-ann-prev:hover,
+  .mrk-ann-next:hover {
+    opacity: 1;
+  }
+</style>
+
+
+
 {% liquid
   assign enable_slider = false
   if section.blocks.size > 1
@@ -17,11 +87,8 @@
   endif
 %}
 
-
-
-
 {% if section.settings.show_announcement %}
-  {% if section.settings.homepage_only == false or request.page_type == 'index' or page.template_suffix  == 'ntv' %}
+  {% if section.settings.homepage_only == false or request.page_type == 'index' or page.template_suffix == 'ntv' %}
     <section
       id="m-announcement--{{ section.id }}"
       data-section-id="{{ section.id }}"
@@ -39,25 +106,60 @@
         {% endif %}
       >
         <div class="m-announcement-bar__container {{ container }}">
-          <div class="m-announcement-bar__wrapper{% if enable_slider %} swiper-container{% endif %}">
-            <div class="m-announcement-bar__inner{% if enable_slider %} swiper-wrapper{% endif %}">
-              {% for block in section.blocks %}
-                <div class="m-announcement-bar__item{% if enable_slider %} swiper-slide{% endif %}">
-                  {% if block.settings.message_link != blank %}
-                    <a href="{{ block.settings.message_link }}" class="m-announcement-bar__link"></a>
-                  {% endif %}
-                  {% if block.settings.message != blank %}
-                    <div class="m-announcement-bar__content">{{ block.settings.message }}</div>
-                  {% endif %}
-                </div>
-              {% endfor %}
-            </div>
-          </div>
+
           {% if enable_slider %}
-            {% render 'slider-controls', show_nav: show_nav, absolute: true, container: container %}
+            <div class="m-announcement-bar__wrapper splide" id="mrk-announcement-splide--{{ section.id }}">
+              <div class="m-announcement-bar__inner splide__track">
+                <ul class="splide__list">
+                  {% for block in section.blocks %}
+                    <li class="m-announcement-bar__item splide__slide">
+                      {% if block.settings.message_link != blank %}
+                        <a href="{{ block.settings.message_link }}" class="m-announcement-bar__link"></a>
+                      {% endif %}
+                      {% if block.settings.message != blank %}
+                        <div class="m-announcement-bar__content">{{ block.settings.message }}</div>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+              {% if show_nav %}
+                <div class="m-announcement-bar__nav">
+                  <button class="mrk-ann-prev" aria-label="Previous">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button class="mrk-ann-next" aria-label="Next">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              {% endif %}
+            </div>
+
+          {% else %}
+            <div class="m-announcement-bar__wrapper">
+              <div class="m-announcement-bar__inner">
+                {% for block in section.blocks %}
+                  <div class="m-announcement-bar__item">
+                    {% if block.settings.message_link != blank %}
+                      <a href="{{ block.settings.message_link }}" class="m-announcement-bar__link"></a>
+                    {% endif %}
+                    {% if block.settings.message != blank %}
+                      <div class="m-announcement-bar__content">{{ block.settings.message }}</div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
           {% endif %}
+
         </div>
       </m-announcement-bar>
+
       {% if section.settings.show_close %}
         <div class="m-announcement-bar__close m:flex m:items-center">
           <svg

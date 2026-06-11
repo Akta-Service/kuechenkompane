@@ -1,0 +1,54 @@
+{% if block.settings.body != blank %}
+  <div class="founder-body rte" {{ block.shopify_attributes }}>
+    {{ block.settings.body }}
+  </div>
+{% endif %}
+
+<style>
+  .founder-body {
+    font-size: 16.48px;
+    line-height: 1.85;
+    color: {{ block.settings.text_color }};
+  }
+
+  .founder-body p {
+    margin: 0 0 16px;
+  }
+
+  .founder-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .founder-body {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Founder body",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>So begann auch die Reise von Küchenkompane. Im Jahr 2018 zeigten mir zwei Messer aus Japan zum ersten Mal, wie sich ehrliche Schmiedekunst und echte Qualität wirklich anfühlen sollten.</p><p>Meine Eltern brachten die beiden Messer von einer Geschäftsreise aus Japan mit. In meiner Familie wurde über viele Jahre ein Unternehmen in der Metallbearbeitung geführt. Themen wie Werkstoffe, Präzision und saubere Verarbeitung wurden mir deshalb schon früh beigebracht.</p><p>Es waren auf den ersten Blick keine außergewöhnlichen Messer. Aber beim Schneiden wurde mir erstmals klar, wie einfach und kontrolliert ein gutes Messer arbeiten kann.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#222222"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founder body",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

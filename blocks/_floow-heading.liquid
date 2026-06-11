@@ -1,0 +1,175 @@
+{% assign ss = section.settings %}
+{% assign bi = block.id %}
+{% assign bs = block.settings %}
+
+{% unless bs.heading == blank %}
+  <{{ bs.heading_type }} class="heading-{{ bi }} {% unless bs.heading_type == 'div' %}{{ ss.heading_type }}{% endunless %}" {{ block.shopify_attributes }}>
+      {{ bs.heading }}
+  </{{ bs.heading_type }}>
+{% endunless %}
+
+<style>
+  .heading-{{ bi }} {
+    width: {% if bs.max_width > 0 %}{{ bs.max_width }}px{% else %}100%{% endif %};
+    hyphens: auto;
+    color:{% if bs.color contains '#' %}{{ bs.color }}{% else %}inherit{% endif %};
+    text-align: {{ bs.alignment }};
+    font-size: {{ bs.font_size }}px;
+    margin-top: {{ bs.margin_top }}px;
+    margin-bottom: {{ bs.margin_bottom }}px;
+
+    @media(max-width: {{ ss.breakpoint }}px) {
+      text-align: {{ bs.alignment_mobile }};
+      font-size: {{ bs.font_size_mobile }}px;
+      margin-top: {{ bs.margin_top_mobile }}px;
+      margin-bottom: {{ bs.margin_bottom_mobile }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Floow Heading",
+  "presets": [
+    {
+      "name": "Floow Heading",
+      "category": "Floow"
+    }
+  ],
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_type",
+      "label": "Heading type",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "div",
+          "label": "div"
+        }
+      ],
+      "default": "h2",
+    },
+    {
+  "type": "range",
+  "id": "max_width",
+  "min": 0,
+  "max": 1200,
+  "step": 12,
+  "unit": "px",
+  "label": "Max width",
+  "default": 0,
+  "info": "Set to 0 for max width" 
+},
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Font size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Font size mobile",
+      "default": 18,
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Alignment",
+      "default": "left",
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment_mobile",
+      "label": "Alignment mobile",
+      "default": "left",
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Color"
+    },
+    {
+      "type": "header",
+      "content": "Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top",
+      "min": -40,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom",
+      "min": -40,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mobile",
+      "label": "Top mobile",
+      "min": -20,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "label": "Bottom mobile",
+      "min": -20,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    }
+  ]
+}
+{% endschema %}

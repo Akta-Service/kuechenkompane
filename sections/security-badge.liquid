@@ -1,0 +1,145 @@
+<style>
+  .trust-badges-section {
+    text-align: center;
+    padding: 30px 20px;
+    max-width: 1000px;
+    margin-inline: auto;
+  }
+
+  .trust-heading{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:20px;
+  }
+
+  .trust-sub-heading {
+    margin-top: -14px;
+    margin-bottom: 30px;
+  }
+  .trust-badges{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .trust-badge{
+    background:#f7f7f7;
+    padding:10px 18px;
+    border-radius:40px;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:500;
+    transition:all .2s ease;
+    text-align: left;
+  }
+
+  .trust-badge:hover{
+    background:#efefef;
+  }
+
+  .trust-icon {
+    font-size: 16px;
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media(max-width:768px){
+    .trust-heading{
+      font-size:18px;
+    }
+
+    .trust-badge{
+      font-size:13px;
+      padding:8px 14px;
+    }
+  }
+  @media(max-width:575px){
+    .trust-badges {
+      flex-direction: column;
+      justify-content: start;
+      width: fit-content;
+      margin-inline: auto;
+    }
+  }
+</style>
+
+<div class="trust-badges-section">
+  {% if section.settings.heading != blank %}
+    <h2 class="trust-heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+  {% if section.settings.sub_heading != blank %}
+    <p class="trust-sub-heading">{{ section.settings.sub_heading }}</p>
+  {% endif %}
+
+  <div class="trust-badges">
+    {% for block in section.blocks %}
+      <div class="trust-badge" {{ block.shopify_attributes }}>
+        {% if block.settings.icon != blank %}
+          <span class="trust-icon">
+            <img src="{{  block.settings.icon | image_url }}" alt="icon">
+          </span>
+        {% endif %}
+        <span class="trust-text">{{ block.settings.text }}</span>
+      </div>
+    {% endfor %}
+  </div>
+  {% if section.settings.info != blank %}
+    <p class="trust-sub-heading">{{ section.settings.info }}</p>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Trust Badges",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Kein Risiko für dich"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Section Sub Heading",
+      "default": "Kein Risiko für dich"
+    },
+    {
+      "type": "richtext",
+      "id": "info",
+      "label": "Section Description / info",
+      "default": "<p>Kein Risiko für dich</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Select Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Badge text",
+          "default": "100 Tage Geld-zurück Garantie"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Trust Badges",
+      "blocks": [{ "type": "badge" }, { "type": "badge" }, { "type": "badge" }]
+    }
+  ]
+}
+{% endschema %}

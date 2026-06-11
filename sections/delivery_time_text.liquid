@@ -1,0 +1,127 @@
+{% if section.settings.enable_banner %}
+  <style>
+    #delivery-{{ section.id }} {
+      margin-bottom: {{ section.settings.margin_bottom }}px;
+      font-weight: {{ section.settings.font_weight }};
+      font-size: {{ section.settings.font_size }}px;
+      text-align: {{ section.settings.text_align }};
+      padding: {{ section.settings.padding }}% 0;
+      background: linear-gradient(
+        {{ section.settings.gradient_direction }},
+        {{ section.settings.gradient_color_1 }},
+        {{ section.settings.gradient_color_2 }},
+        {{ section.settings.gradient_color_3 }}
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+
+  <div id="delivery-{{ section.id }}">
+    <p>{{ section.settings.text }}</p>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Delivery Notice Banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_banner",
+      "label": "Enable banner",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Banner text",
+      "default": "Order today and delivery is guaranteed before Christmas"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        { "value": "400", "label": "Regular" },
+        { "value": "600", "label": "Semi Bold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom margin (px)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Vertical padding (%)",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "default": 0.5
+    },
+    {
+      "type": "select",
+      "id": "gradient_direction",
+      "label": "Gradient direction",
+      "options": [
+        { "value": "90deg", "label": "Left to Right" },
+        { "value": "180deg", "label": "Top to Bottom" },
+        { "value": "45deg", "label": "Diagonal" }
+      ],
+      "default": "90deg"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient color 1",
+      "default": "#ebe4c7"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient color 2",
+      "default": "#d6b436"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_3",
+      "label": "Gradient color 3",
+      "default": "#1e1e1e"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Delivery Notice Banner",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

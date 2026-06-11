@@ -1,15 +1,18 @@
+
+
 <style>
-  /* logo-greyed-out-section */
   .logo-greyed-out-section {
-    background: {{ section.settings.bg_color  }};
-    padding-top: {{ section.settings.p_top }}px ;
-    padding-bottom: {{ section.settings.p_bottom }}px ;
+    background: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.p_top }}px;
+    padding-bottom: {{ section.settings.p_bottom }}px;
+    overflow: hidden;
   }
 
   .greyed_logo_item {
     text-align: center;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 48px;
     padding: 0 5px;
   }
@@ -20,6 +23,22 @@
     display: block;
     margin: 0 auto;
     opacity: 0.4;
+  }
+
+  /* Splide overrides */
+  .logo-greyed-out-section .splide__slide {
+    width: auto !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-greyed-out-section .splide__track {
+    overflow: visible !important;
+  }
+
+  .logo-greyed-out-section .splide__arrows,
+  .logo-greyed-out-section .splide__pagination {
+    display: none !important;
   }
 
   @media screen and (max-width: 767px) {
@@ -37,23 +56,75 @@
   }
 </style>
 
-<!-- logo-greyed-out-section start -->
 <div class="logo-greyed-out-section">
-  <div class="swiper logo-greyed-out-slider">
-    <div class="swiper-wrapper">
-      {% for block in section.blocks %}
-        {% if block.settings.logo_img != blank %}
-          <div class="swiper-slide">
-            <div class="greyed_logo_item">
-              <img src="{{ block.settings.logo_img |  img_url: 'large' }}" alt="">
-            </div>
-          </div>
-        {% endif %}
-      {% endfor %}
+  <div id="logo-splide-{{ section.id }}" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for block in section.blocks %}
+          {% if block.settings.logo_img != blank %}
+            <li class="splide__slide" {{ block.shopify_attributes }}>
+              <div class="greyed_logo_item">
+                <img
+                  src="{{ block.settings.logo_img | image_url: width: 300 }}"
+                  alt="{{ block.settings.logo_img.alt | default: 'logo' }}"
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                  width="150"
+                  height="44"
+                >
+              </div>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </div>
-<!-- logo-greyed-out-section end -->
+
+<script>
+(function () {
+  function initSplide() {
+    var el = document.querySelector('#logo-splide-{{ section.id }}');
+    if (!el || el.classList.contains('is-initialized')) return;
+    if (typeof Splide === 'undefined' || !window.splide) {
+      setTimeout(initSplide, 100);
+      return;
+    }
+
+    new Splide(el, {
+      type        : 'loop',
+      drag        : 'free',
+      autoWidth   : true,
+      gap         : 40,
+      arrows      : false,
+      pagination  : false,
+      snap        : false,
+      autoScroll  : {
+        speed       : 1,
+        pauseOnHover: true,
+        pauseOnFocus: false,
+        rewind      : false,
+      },
+      breakpoints: {
+        767: {
+          gap: 28,
+        }
+      }
+    }).mount(window.splide.Extensions);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSplide);
+  } else {
+    initSplide();
+  }
+
+  document.addEventListener('shopify:section:load', function(e) {
+    if (e.target.querySelector('#logo-splide-{{ section.id }}')) {
+      setTimeout(initSplide, 300);
+    }
+  });
+})();
+</script>
 
 {% schema %}
 {
@@ -104,6 +175,3 @@
   ]
 }
 {% endschema %}
-
-<!-- Initialize Swiper -->
-<script src="{{ 'logo-greyed-out-slider.js' | asset_url }}" defer></script>

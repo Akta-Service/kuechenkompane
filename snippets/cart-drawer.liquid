@@ -1,3 +1,5 @@
+{% assign si = 'floow' %}
+
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {% liquid
@@ -16,184 +18,144 @@
   endif
 %}
 <style>
-  .x-cart-info-rule{
-  display: none;
-  }
-  .c_bootom_list li span {
-  font-size: {{ settings.b_text_size |  append: 'px' }};
-  font-weight: {{ settings.t_font_weight }};
+   .x-cart-info-rule{
+   display: none;
+   }
+   .c_bootom_list li span {
+   font-size: {{ settings.b_text_size |  append: 'px' }};
+   font-weight: {{ settings.t_font_weight }};
   }
   .upsell--product {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 20px;
-  background: #e9e9e933;
-  padding-bottom: 0;
+     display: flex;
+     align-items: center;
+     gap: 16px;
+     padding: 20px;
+     background: #e9e9e933;
+     padding-bottom: 0;
   }
   .upsell--product__image {
-  width: 102px;
-  overflow: hidden;
-  min-width: 102px;
-  }
-  h4.upsell--product__title {
-  font-size: 16px;
-  }
-  .upsell--product__button {
-  width: 100%;
-  }
-  .price--wrapper {
-  display: flex;
-  gap: 10px;
-  }
-  p.upsell--product__price.compare--price {
-  text-decoration: line-through;
-  }
-  .upsell--product__content button {
-  padding: 6px 0px;
-  font-size: 14px;
-  background: #FF8E4F;
-  }
+     width: 102px;
+     overflow: hidden;
+     min-width: 102px;
+   }
+   h4.upsell--product__title {
+       font-size: 16px;
+   }
+   .upsell--product__button {
+       width: 100%;
+   }
+   .price--wrapper {
+       display: flex;
+       gap: 10px;
+   }
+   p.upsell--product__price.compare--price {
+       text-decoration: line-through;
+   }
+   .upsell--product__content button {
+       padding: 6px 0px;
+       font-size: 14px;
+       background: #FF8E4F;
+   }
 
 
-  .point--count {
-  font-size: 14px;
-  position: relative;
-  }
-  .cart-points-summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  font-weight: 700;
-  }
+   .point--count {
+       font-size: 14px;
+       position: relative;
+   }
+   .cart-points-summary {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       margin-bottom: 5px;
+       font-weight: 700;
+   }
 
-  .info-tooltip {
-  display: inline-block;
-  cursor: pointer;
-  margin-left: 5px;
-  }
+   .info-tooltip {
+     display: inline-block;
+     cursor: pointer;
+     margin-left: 5px;
+   }
 
-  .info-tooltip .tooltip-text {
-  visibility: hidden;
-  width: 260px;
-  background-color: #333;
-  color: #fff;
-  text-align: left;
-  padding: 10px;
-  border-radius: 5px;
-  position: absolute;
-  z-index: 100;
-  bottom: 125%; /* position above */
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 13px;
-  line-height: 1.4;
-  }
+   .info-tooltip .tooltip-text {
+     visibility: hidden;
+     width: 260px;
+     background-color: #333;
+     color: #fff;
+     text-align: left;
+     padding: 10px;
+     border-radius: 5px;
+     position: absolute;
+     z-index: 100;
+     bottom: 125%; /* position above */
+     left: 50%;
+     transform: translateX(-50%);
+     opacity: 0;
+     transition: opacity 0.3s;
+     font-size: 13px;
+     line-height: 1.4;
+   }
 
-  .info-tooltip:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
-  }
+   .info-tooltip:hover .tooltip-text {
+     visibility: visible;
+     opacity: 1;
+   }
 
-  .info-tooltip .tooltip-icon {
-  background-color: #a1a1a1;
-  color: rgb(0, 0, 0);
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  padding: 2px 6px;
-  font-size: 10px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  }
+   .info-tooltip .tooltip-icon {
+     background-color: #a1a1a1;
+     color: rgb(0, 0, 0);
+     border-radius: 50%;
+     width: 15px;
+     height: 15px;
+     padding: 2px 6px;
+     font-size: 10px;
+     font-weight: bold;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+
+    .offer-end-time {
+      margin: 0;
+      width: 100%;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #e63946;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: 6px;
+      display: inline-block;
+      text-align: center;
+      font-weight: 100;
+      font-style: italic;
+    }
 
   @media only screen and (max-width:768px){
-  .c_bootom_list li span {
-  font-size: {{ settings.b_text_size_m |  append: 'px' }};
-  }
-  .c_bootom_list li svg, .c_bootom_list li img {
-  width: 16px !important;
-  height: 16px !important;
-  }
-  .c_bootom_list li {
-  gap: 3px;
-  }
-
-  }
-
-  .item--drawer__wrapper-free {
-  border: 1px solid #ddd;
-  padding: 12px;
-  border-radius: 7px;
-  }
-  .item--drawer__wrapper-free .m-cart-item--drawer__wrapper {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  }
-  .item--drawer__wrapper-free .m-cart-item__image.m-cart-drawer-item__image {
-  {% comment %}
-  border-right: 1px solid rgb(var(--color-border)); {% endcomment %}
-  border: none;
-  }
-  .item--drawer__wrapper-free s.m-price-item.m-price-item--regular {
-  color: red;
-  color: #b1b1b1;
-  }
-  .m-cart-item--drawer__wrapper{
-  position: relative;
-  }
-  .free-item-badge {
-  position: absolute;
-  top: -8px;
-  left: 8px;
-  z-index: 99;
-  background: #000;
-  font-size: 12px;
-  padding: 3px 7px;
-  border-radius: 20px;
-  color: #fff;
-  }
-  .free-item  span.m-cart-item__price--regular {
-  font-weight: 700;
-  }
-
-  .free-item .m-cart-item__title {
-  font-weight: 700;
-  }
-  .m-cart-drawer__footer.cart--free-only {
-    display: none;
-  }
-  .com-price {
-    color: #b1b1b1;
-  }
-  p.free-product-info {
-    font-size: 14px;
-    color: #00000085;
-  }
-
-
-
-  {% comment %} @media (max-width: 475px){
-    .m-cart-free-item__title {
-      font-size: 14px;
+    .c_bootom_list li span {
+        font-size: {{ settings.b_text_size_m |  append: 'px' }};
+    }
+    .c_bootom_list li svg, .c_bootom_list li img {
+        width: 16px !important;
+        height: 16px !important;
+    }
+    .c_bootom_list li {
+        gap: 3px;
     }
 
   }
-  @media (max-width: 400px){
-    .m-cart-free-item__title {
-      font-size: 12px;
+    @media only screen and (max-width:374px){
+      .offer-end-time {
+        font-size: 13px;
+      }
+      .m-cart__subtotal--label, .m-cart__subtotal--price {
+        font-size: 16px;
+      }
+      .m-button {
+        padding: 10px 12px;
+      }
     }
-    p.free-product-info {
-      font-size: 11px;
-    }
-  } {% endcomment %}
 </style>
+
 <m-cart-drawer id="MinimogCartDrawer" class="m-cart-drawer{% if cart == empty %} m-cart--empty{% endif %} ">
   <div class="m-cart-drawer__inner m:h-full m-gradient m-color-{{ settings.color_scheme }}">
     <button class="m-cart-drawer__close" aria-label="Close">
@@ -207,7 +169,7 @@
         <path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"/>
       </svg>
     </button>
-    <div class="m:flex m:flex-col m:h-full">
+    <div class="m:flex m:flex-col m:h-full" style="height: 100vh;">
       <div class="m-cart-drawer__header">
         <h3 class="m-cart-drawer__title m:text-xl md:m:text-2xl m:font-medium">{{ 'cart.general.title' | t }}</h3>
         {% if template.name != 'cart' %}
@@ -234,40 +196,12 @@
           {%- if cart.items.size > 0 -%}
             <div class="m-cart-drawer__items">
               {% for item in cart.items %}
-                {% unless item.product.id == settings.cart_free_product_1.id
-                  or item.product.id == settings.cart_free_product_2.id
-                  or item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
-                  or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
+                {% render 'cart-drawer-item',
+                  item: item,
+                  gift_wrap_id: gift_wrap_id,
+                  gift_wraps_in_cart: gift_wraps_in_cart,
+                  items_in_cart: items_in_cart
                 %}
-                  {% render 'cart-drawer-item',
-                    item: item,
-                    items_in_cart: items_in_cart,
-                    gift_wrap_id: gift_wrap_id,
-                    gift_wraps_in_cart: gift_wraps_in_cart
-                  %}
-                {% endunless %}
-              {% endfor %}
-
-              {% for item in cart.items %}
-                {% if item.product.id == settings.cart_free_product_1.id
-                  or item.product.id == settings.cart_free_product_2.id
-                  or item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
-                  or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
-                %}
-                  {% if cart.total_price > 0 %}
-                    {% render 'cart-drawer-item-free',
-                      item: item,
-                      items_in_cart: items_in_cart,
-                      gift_wrap_id: gift_wrap_id,
-                      gift_wraps_in_cart: gift_wraps_in_cart,
-                      custom_class: 'free-item'
-                    %}
-                  {% else %}
-                    <div class="">
-                      {% render 'cart-drawer-empty' %}
-                    </div>
-                  {% endif %}
-                {% endif %}
               {% endfor %}
             </div>
           {%- else -%}
@@ -345,13 +279,187 @@
             {%- endif -%}
           {% endif %}
         {% endif %}
+
+        {% unless cart == empty %}
+          {% if settings.show_upsell_card == true %}
+            {% render 'drawer-card-upsell' %}
+          {% endif %}
+        {% endunless %}
+
+        {% if cart.item_count == 1 %}
+          <div class="empty-cart-collections-{{ si }}">
+            <div class="empty-cart-collections-heading-{{ si }} card-upsell-title">
+              {{ settings.empty_cart_collections_heading }}
+            </div>
+            <div class="empty-cart-collections-flex-{{ si }}">
+              {% if settings.collections != blank %}
+                {% for collection in settings.collections %}
+                  <a class="collection-{{ si }}" href="{{ collection.url }}">
+                    {{ collection.title }}
+                  </a>
+                {% endfor %}
+              {% else %}
+                {% for link in settings.navigation.links %}
+                  <a class="collection-{{ si }}" href="{{ link.url }}">
+                    {{ link.title }}
+                  </a>
+                {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+
+          {% if settings.products.size > 0 %}
+            <div class="empty-cart-products-{{ si }}">
+              <div class="empty-cart-products-heading-{{ si }} card-upsell-title">
+                {{ settings.empty_cart_products_heading }}
+              </div>
+              <div class="empty-cart-products-grid-{{ si }}">
+                {% for product in settings.products %}
+                  {% render 'product-card-1', product: product, show_cart_button: true %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+
+          <style>
+            [data-minimog-cart-items]:has(.empty-cart-collections-floow) .card-upsell {
+                    {% if request.design_mode %}
+                    display: none !important;
+                    {% endif %}
+                  }
+
+                  .m-cart-drawer__footer {
+                    margin-top: auto;
+                  }
+
+
+                            .empty-cart-collections-{{ si }} {
+                    {% unless request.design_mode %}display: none;{% endunless %}
+                    margin-bottom: 16px;
+                    margin-top: 8px;
+                  }
+
+                  .empty-cart-collections-heading-{{ si }} {
+                    margin-bottom: 8px;
+                  }
+
+                  .empty-cart-collections-flex-{{ si }} {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    font-size: small;
+                  }
+
+                  .collection-{{ si }} {
+                    padding: 8px 12px;
+                    border: 1px solid {{ settings.border_collections }};
+                    {% if settings.font_collections contains '#' %}
+                      color: {{ settings.font_collections }};
+                    {% else %}
+                      color: currentColor;
+                    {% endif %}
+                    border-radius: {{ settings.radius_collections }}px;
+                  }
+
+                  .empty-cart-products-{{ si }} {
+                    {% unless request.design_mode %}display: none;{% endunless %}
+                    flex-shrink: 1;
+                    overflow-y: auto;
+                  }
+
+                  .empty-cart-products-grid-{{ si }} {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 8px;
+                    overflow: auto;
+                  }
+          </style>
+        {% endif %}
       </m-cart-drawer-items>
 
-      <div
-        class="m-cart-drawer__footer "
+      {% liquid
+        for variant in bs.product.variants
+          for item in cart.items
+            if item.variant_id == variant.id
+              assign express_shipping_is_in_cart = true
+              break
+            endif
+          endfor
+        endfor
+      %}
 
-        id="MinimogCartDrawerFooter"
-      >
+      {% if settings.shipping_product != blank and cart.item_count > 0 and express_shipping_is_in_cart != true %}
+        <div class="floow-express-shipping">
+          <img
+            class="floow-shipping-image"
+            src="{{ settings.shipping_product.featured_image | image_url: width: 50 }}"
+          >
+          <div>
+            <div>{{ settings.shipping_product.title }}</div>
+            {% if settings.shipping_info != blank %}
+              <div class="floow-express-shipping-info">{{ settings.shipping_info }}</div>
+            {% endif %}
+          </div>
+          <div
+            class="m-button m-button--primary floow-shipping-button"
+            onclick="floowAddToCart({{ bs.product.first_available_variant.id }}, 1, event.target.closest('.cart-content-{{ si }}'))"
+          >
+            {{ settings.shipping_product.price | money | prepend: '+ ' }}
+          </div>
+        </div>
+      {% endif %}
+
+      <style>
+          {% if request.design_mode %}
+          .m-cart-drawer__inner:has(.floow-express-shipping) .m-cart-drawer__footer {
+            box-shadow: none !important;
+          }
+        {% endif %}
+            .floow-express-shipping {
+            margin-top: auto;
+            padding: 8px 28px;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+            font-size: small;
+            display: none;
+            background: #f9f9f9;
+            border-top: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
+            /* box-shadow: 0 4px 24px #0000001f; */
+
+            {% if request.design_mode %}
+              display: flex;
+            {% endif %}
+
+            @media(max-width: 500px) {
+              padding: 8px 16px;
+            }
+          }
+
+          .floow-express-shipping-info {
+            opacity: 0.75;
+            font-size: x-small;
+          }
+
+          .floow-shipping-image {
+            height: 32px;
+          }
+
+          .floow-shipping-button {
+            margin: 0px !important;
+            margin-left: auto !important;
+            line-height: 1rem !important;
+            padding: 8px 12px !important;
+            min-height: auto !important;
+            min-width: auto !important;
+            cursor: pointer;
+            max-height: 32px;
+            white-space: nowrap;
+          }
+      </style>
+
+      <div class="m-cart-drawer__footer" id="MinimogCartDrawerFooter">
         {% # render 'cart-addons', form_id: 'cart-drawer-form' %}
         <div class="m-cart-drawer__gift-wrapping" data-minimog-gift-wrapping>
           {%- if gift_wrapping != null -%}
@@ -409,6 +517,101 @@
           {%- endif -%}
         </div>
         <div class="m-cart__summary m-cart-drawer__summary">
+          <div
+            class="floow-cart-countdown-wrapper"
+            {% unless request.design_mode %}
+              style="display: none;"
+            {% endunless %}
+          >
+            <div id="cart-countdown" style="display:none;">
+              Dein Warenkorb läuft in <span id="countdown-timer">10:00</span> ab
+            </div>
+          </div>
+
+          <script>
+            (function () {
+              const COUNTDOWN_TIME = 10 * 60 * 1000; // 10 Minuten
+              const STORAGE_KEY = 'cartCountdownEnd';
+
+              let countdownInterval;
+
+              function formatTime(ms) {
+                const totalSeconds = Math.floor(ms / 1000);
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = totalSeconds % 60;
+
+                return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+              }
+
+              function updateCountdown() {
+                const endTime = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+                if (!endTime) return;
+
+                const remaining = endTime - Date.now();
+
+                if (remaining <= 0) {
+                  clearInterval(countdownInterval);
+                  document.getElementById('countdown-timer').textContent = '00:00';
+                  localStorage.removeItem(STORAGE_KEY);
+                  return;
+                }
+
+                document.getElementById('countdown-timer').textContent = formatTime(remaining);
+              }
+
+              function startCountdown() {
+                const endTime = Date.now() + COUNTDOWN_TIME;
+                localStorage.setItem(STORAGE_KEY, endTime);
+
+                document.getElementById('cart-countdown').style.display = 'block';
+
+                clearInterval(countdownInterval);
+                countdownInterval = setInterval(updateCountdown, 1000);
+                updateCountdown();
+              }
+
+              function resumeCountdown() {
+                document.getElementById('cart-countdown').style.display = 'block';
+
+                clearInterval(countdownInterval);
+                countdownInterval = setInterval(updateCountdown, 1000);
+                updateCountdown();
+              }
+
+              function stopCountdown() {
+                localStorage.removeItem(STORAGE_KEY);
+                clearInterval(countdownInterval);
+                document.getElementById('cart-countdown').style.display = 'none';
+              }
+
+              function checkCart() {
+                console.log('s');
+                fetch('/cart.js')
+                  .then((res) => res.json())
+                  .then((cart) => {
+                    const endTime = localStorage.getItem(STORAGE_KEY);
+
+                    if (cart.item_count > 0) {
+                      if (!endTime) {
+                        startCountdown(); // neu starten
+                      } else {
+                        resumeCountdown(); // weiterlaufen lassen
+                      }
+                    } else {
+                      stopCountdown(); // reset wenn leer
+                    }
+                  });
+              }
+
+              document.addEventListener('DOMContentLoaded', function () {
+                checkCart();
+
+                // Shopify AJAX Cart Events (abhängig vom Theme!)
+                document.addEventListener('cart:updated', checkCart);
+              });
+            })();
+          </script>
+
           <div data-foxkit-cart-summary></div>
           <div data-minimog-cart-discounts>
             {%- if cart.cart_level_discount_applications.size > 0 -%}
@@ -463,13 +666,26 @@
               {% assign total_compare_at_price = total_compare_at_price | plus: line_total %}
             {% endif %}
           {% endfor %}
-
-          <div
-            class="m-cart__subtotal m:flex m:justify-between"
-            data-cart-subtotal
-          >
+          <style>
+              .delivery-wrapper-two {
+                margin-bottom: 4px;
+                font-weight: bold;
+                font-size: 15px;
+            }
+          </style>
+          <div class="delivery-wrapper-two">
+            <p>
+              {{ settings.delivery_time_text }}
+            </p>
+          </div>
+          <div class="m-cart__subtotal m:flex m:justify-between" data-cart-subtotal>
             <span class="m-cart__subtotal--label m:font-medium">{{ 'cart.general.subtotal' | t }}</span>
             <div>
+              {% if cart.total_price < total_compare_at_price %}
+                <span class="total-compare m-cart__subtotal--price m:font-medium">
+                  {{- total_compare_at_price | money -}}
+                </span>
+              {% endif %}
               <span class="m-cart__subtotal--price m:font-medium" data-cart-subtotal-price>
                 {% if settings.currency_code_enabled %}
                   {{ cart.total_price | money_with_currency }}
@@ -477,15 +693,38 @@
                   {{ cart.total_price | money }}
                 {% endif %}
               </span>
-              {% if cart.total_price < total_compare_at_price %}
-                <span class="total-compare m-cart__subtotal--price m:font-medium">
-                  {{- total_compare_at_price | money -}}
-                </span>
-              {% endif %}
             </div>
           </div>
+
+          <div
+            class="floow-shipping-fee-wrapper"
+            {% unless request.design_mode %}
+              style="display: none;"
+            {% endunless %}
+          >
+            <div class="floow-shipping-fee">
+              <span>{{ 'floow.cart.shipping_fee' | t }}</span>
+              <span class="floow-shipping-free">{{ 'floow.cart.shipping_free' | t }}</span>
+            </div>
+          </div>
+
+          <style>
+            .floow-shipping-fee {
+              display: flex;
+              justify-content: space-between;
+              margin-top: 4px;
+            }
+
+            .floow-shipping-free {
+              color: #3A8735;
+            }
+          </style>
         </div>
         <div class="m:flex m:flex-col m:items-center">
+          {% if settings.offer_end_time %}
+            <p class="offer-end-time">{{ settings.offer_end_time_text }}</p>
+          {% endif %}
+
           {% assign show_terms = false %}
           {% if settings.agree_text != blank and settings.show_agree_on_cart %}
             <div class="m-terms-conditons">
@@ -569,12 +808,86 @@
           </ul>
         </div>
       </div>
-
       <div class="m-cart__overlay"></div>
     </div>
   </div>
 </m-cart-drawer>
 <link rel="stylesheet" href="{{ 'cart-drawer-custom.css' | asset_url }}" media="print" onload="this.media='all'">
+{% style %}
+   m-cart-drawer {
+      .m-cart__trust-badge {
+          margin-top: 8px;
+      }
+  }
+{% endstyle %}
 
 <!-- {{ '' | asset_url | stylesheet_tag }} -->
 <script src="{{ 'cart-drawer-custom.js' | asset_url }}" defer="defer"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('i am loadded upsell script');
+
+    document.addEventListener('click', async (event) => {
+      const button = event.target.closest('.upsell-card-to-cart');
+      if (!button || button.disabled) return;
+
+      const variantId = parseInt(button.dataset.variantId, 10);
+      if (!variantId || isNaN(variantId)) return;
+
+      try {
+        button.disabled = true;
+        button.classList.add('adding');
+
+        const addResponse = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            id: variantId,
+            quantity: 1,
+          }),
+        });
+
+        if (!addResponse.ok) {
+          const errorData = await addResponse.json();
+          throw new Error(errorData.description || 'Failed to add to cart');
+        }
+
+        // Refresh cart sections safely
+        const sectionResponse = await fetch(`${window.location.pathname}?sections=cart-drawer,cart-icon-bubble`);
+
+        if (!sectionResponse.ok) {
+          throw new Error('Failed to refresh cart');
+        }
+
+        const sections = await sectionResponse.json();
+
+        // Update cart drawer if exists
+        const cartDrawer = document.querySelector('m-cart-drawer');
+        if (cartDrawer && typeof cartDrawer.renderContents === 'function') {
+          cartDrawer.renderContents({
+            sections: {
+              'cart-drawer': sections['cart-drawer'],
+              'cart-icon-bubble': sections['cart-icon-bubble'],
+            },
+          });
+        } else {
+          // Fallback: just reload icon bubble
+          const bubble = document.querySelector('#cart-icon-bubble');
+          if (bubble && sections['cart-icon-bubble']) {
+            bubble.innerHTML = sections['cart-icon-bubble'];
+          }
+        }
+      } catch (error) {
+        console.error('Upsell Add Error:', error);
+        alert('Sorry, something went wrong. Please try again.');
+      } finally {
+        button.disabled = false;
+        button.classList.remove('adding');
+      }
+    });
+  });
+</script>

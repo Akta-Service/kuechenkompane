@@ -1,32 +1,33 @@
+
 <div class="m-testimonials__inner">
   <div class="m-testimonials__list m:w-full md:m:w-8/12">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          <div class="swiper-slide" {{ block.shopify_attributes }} data-index="{{ forloop.index0 }}">
-            <div
-              class="m-testimonial{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
-              {% if animated %}
-                data-cascade
-                style="--animation-order: {{ forloop.index }};"
-              {% endif %}
-            >
-              {% if section.settings.show_stars %}
-                <div class="m-stars">
-                  {%- for i in (1..5) -%}
-                    <span class="m-star">{%- render 'icon', name: 'star-solid', size: 'small' -%}</span>
-                  {%- endfor -%}
-                </div>
-              {% endif %}
-              <h3 class="m-testimonial__title m:text-color-subtext">
-                {{ block.settings.description }}
-              </h3>
-              {% if block.settings.footer != blank %}
-                <div class="m-testimonial__name">{{ block.settings.footer }}</div>
-              {% endif %}
+    <div class="splide" id="testimonials-5-{{ section.id }}">
+      <div class="splide__track">
+        <div class="splide__list">
+          {% for block in section.blocks %}
+            <div class="splide__slide" {{ block.shopify_attributes }} data-index="{{ forloop.index0 }}">
+              <div
+                class="m-testimonial{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
+                {% if animated %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {% if section.settings.show_stars %}
+                  <div class="m-stars">
+                    {%- for i in (1..5) -%}
+                      <span class="m-star">{%- render 'icon', name: 'star-solid', size: 'small' -%}</span>
+                    {%- endfor -%}
+                  </div>
+                {% endif %}
+                <h3 class="m-testimonial__title m:text-color-subtext">{{ block.settings.description }}</h3>
+                {% if block.settings.footer != blank %}
+                  <div class="m-testimonial__name">{{ block.settings.footer }}</div>
+                {% endif %}
+              </div>
             </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
     </div>
     {% render 'slider-controls',
@@ -52,11 +53,8 @@
           {% else %}
             {% render 'responsive-image', image: block.settings.image, wrapper_class: 'm:blocks-radius' %}
           {% endif %}
-
           {% if block.settings.image_text != blank %}
-            <div class="m-testimonial__image-text">
-              {{ block.settings.image_text }}
-            </div>
+            <div class="m-testimonial__image-text">{{ block.settings.image_text }}</div>
           {% endif %}
         </div>
         {% if block.settings.image_link != blank %}</a>{% endif %}

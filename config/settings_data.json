@@ -10,9 +10,9 @@
 {
   "current": {
     "allowed_handles": [
-      "vip-sale"
+      "oster-vip-sale"
     ],
-    "password": "SOMMERENDE",
+    "password": "Osterei",
     "header_title": "Beliebte Produkte",
     "collection_url_text": "Alle ansehen",
     "serch_recom_colection": "bestseller-facebook-12-best",
@@ -98,7 +98,7 @@
     "soldout_badge_color_scheme": "dark",
     "share_facebook": true,
     "share_pinterest": true,
-    "contact_phone_number": "+49 32221095882",
+    "contact_phone_number": "",
     "contact_email": "info@kuechenkompane.de",
     "social_twitter_link": "",
     "social_twitter_label": "",
@@ -120,8 +120,8 @@
     "points_rate": 17,
     "line_item_point": "🎟️ Lose für Malediven-Gewinnspiel:",
     "total_points": "🎟️ Gesamte Lose:",
-    "cart_free_shipping_label": "Glückwunsch! Dein Versand ist kostenlos",
-    "cart_free_shipping_rule": 0,
+    "cart_free_shipping_label": "Kostenloser Versand ab 30€ Einkaufswert",
+    "cart_free_shipping_rule": 30,
     "cart_free_product_1_label": "Kostenloser Kochkurs + 3x Kochbuch (Wert 99€)",
     "cart_free_product_1": "kochbuch-kochkurs-kostenlos",
     "cart_free_product_1_rule": 0,
@@ -143,11 +143,33 @@
     "cart_estimate_shipping": false,
     "show_delivery_days": false,
     "cart_drawer_trust_badge": "shopify://shop_images/Trust_Badges_-_DACH.png",
+    "offer_end_time": true,
+    "delivery_time_text": "",
+    "offer_end_time_text": "",
     "list_1": "100 Tage Garantie",
     "list_img_1": "shopify://shop_images/cash-bag_10424649_1.png",
     "list_2": "Schneller Versand",
     "list_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
     "b_text_size_m": 12,
+    "products_card_upsell": [
+      "messerschaerfer",
+      "magnetischer-messerblock"
+    ],
+    "card_up_title": "Vervollständige dein Set",
+    "navigation": "main-menu-kk",
+    "empty_cart_collections_heading": "Kategorien",
+    "border_collections": "#dddddd",
+    "radius_collections": 4,
+    "products": [
+      "premium",
+      "messerschaerfer",
+      "bundle-premium",
+      "magnetischer-messerblock",
+      "shiburu-premium-messerset",
+      "asiatisches-kombipaket-jishaku"
+    ],
+    "shipping_product": "priorisierter-versand",
+    "shipping_info": "Deine Bestellung wird zuerst verpackt",
     "popular_search_queries": "",
     "wishlist_page": "wishlist",
     "product_compare_page": "product-compare",
@@ -164,6 +186,7 @@
     "custom_css": ".m-topbar a[href*=\"pinterest\"],\n.m-topbar a[href*=\"twitter\"], .m-topbar a[href*=\"snapchat\"], .m-topbar a[href*=\"youtube\"],.m-topbar a[href*=\"tiktok\"]  {\n\tdisplay: none;\n}\nbody .m-product-card__tag-name {\n  font-size: 12px;\n  font-weight: 500;\n  text-transform: capitalize;\n  padding: 4px 10px;\n  border-radius: 40px;\n}\n.m-icon-box--small {\n  border-top: 1px solid rgb(var(--color-border));\n}\n.m-icon-box--small .m-icon-box__heading {\n  line-height: 26px;\n  font-size: 18px;\n  margin-bottom: 6px;\n}\nbody .m-footer--block .social-media-links {\n  gap: 12px;\n  margin: 0;\n  padding: 5px 0;\n}\n\nbody .m-footer--block .social-media-links a {\n  color: #222;\n  width: 48px;\n  height: 48px;\n  padding: 0;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  background-color: #E9E9E9;\n  transition: all .3s;\n}\n\nbody .m-footer--block .social-media-links a:hover {\n  background-color: #222;\n  color: #fff;\n  box-shadow: 0 0 0 0.2rem #222;\n}",
     "h1_font_size_mobile": 33,
     "h3_font_size_mobile": 36,
+    "empty_cart_heading": "Kategorien",
     "collection": "vip-sale",
     "p_small_margin_bottom_desktop": 20,
     "p_small_margin_bottom_laptop": 15,
@@ -183,16 +206,6 @@
     "theme_currencies": "USD | EUR | GBP | VND",
     "content_for_index": [],
     "blocks": {
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
-      "14868561720390754469": {
-        "type": "shopify://apps/loloyal/blocks/boom-cend/930ac91f-2bf2-4655-9ba0-574771f782d6",
-        "disabled": false,
-        "settings": {}
-      },
       "11532412952436166569": {
         "type": "shopify://apps/loox-reviews/blocks/loox-inject/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
         "disabled": false,
@@ -201,6 +214,26 @@
       "10312807297210203588": {
         "type": "shopify://apps/aftersell-by-rokt/blocks/utm-triggers/509ec35d-0632-4dfc-a105-fa799cd9d149",
         "disabled": false,
+        "settings": {}
+      },
+      "15351435345818755577": {
+        "type": "shopify://apps/pandectes-gdpr/blocks/banner/58c0baa2-6cc1-480c-9ea6-38d6d559556a",
+        "disabled": false,
+        "settings": {}
+      },
+      "3138269044488530766": {
+        "type": "shopify://apps/uppromote-affiliate/blocks/core-script/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
+        "disabled": false,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "12196260394306439754": {
+        "type": "shopify://apps/adcell-tracking-remarketing/blocks/theme_extension/578397e0-3e42-4c27-add7-dfc15023b09b",
+        "disabled": true,
         "settings": {}
       }
     },
@@ -218,7 +251,7 @@
           "outline_button_label": "#fa8526",
           "button_hover": "#4b4b4b",
           "button_text_hover": "#ffffff",
-          "price_sale": "#000000",
+          "price_sale": "#006628",
           "price_regular": "#000000",
           "form_field": "#ffffff",
           "form_field_label": "#000000",
@@ -571,6 +604,72 @@
           "button_hover": "#4b4b4b",
           "button_text_hover": "#ffffff",
           "price_sale": "#3a8735",
+          "price_regular": "#000000",
+          "form_field": "#ffffff",
+          "form_field_label": "#000000",
+          "tooltip": "#222222",
+          "tooltip_label": "#ffffff",
+          "border": "#eeeeee"
+        }
+      },
+      "scheme-9d69adfc-43c2-49f5-894e-b05309f7856b": {
+        "settings": {
+          "background": "#ede6dc",
+          "background_secondary": "#ede6dc",
+          "background_gradient": "",
+          "text": "#2b2b2b",
+          "subtext": "#2b2b2b",
+          "heading_text": "#2b2b2b",
+          "button": "#fa8526",
+          "button_label": "#ffffff",
+          "outline_button_label": "#fa8526",
+          "button_hover": "#4b4b4b",
+          "button_text_hover": "#ffffff",
+          "price_sale": "#006628",
+          "price_regular": "#000000",
+          "form_field": "#ffffff",
+          "form_field_label": "#000000",
+          "tooltip": "#222222",
+          "tooltip_label": "#ffffff",
+          "border": "#eeeeee"
+        }
+      },
+      "scheme-ed588b61-efa4-4f87-8a94-8598c6f35147": {
+        "settings": {
+          "background": "#f6f8fc",
+          "background_secondary": "#f8f8f8",
+          "background_gradient": "",
+          "text": "#222222",
+          "subtext": "#222222",
+          "heading_text": "#222222",
+          "button": "#fa8526",
+          "button_label": "#ffffff",
+          "outline_button_label": "#fa8526",
+          "button_hover": "#4b4b4b",
+          "button_text_hover": "#ffffff",
+          "price_sale": "#006628",
+          "price_regular": "#000000",
+          "form_field": "#ffffff",
+          "form_field_label": "#000000",
+          "tooltip": "#222222",
+          "tooltip_label": "#ffffff",
+          "border": "#eeeeee"
+        }
+      },
+      "scheme-26dda05d-50a8-4f27-87c5-d811bf16c099": {
+        "settings": {
+          "background": "#fdfcf3",
+          "background_secondary": "#c6d1c4",
+          "background_gradient": "",
+          "text": "#222222",
+          "subtext": "#222222",
+          "heading_text": "#222222",
+          "button": "#fa8526",
+          "button_label": "#ffffff",
+          "outline_button_label": "#fa8526",
+          "button_hover": "#4b4b4b",
+          "button_text_hover": "#ffffff",
+          "price_sale": "#006628",
           "price_regular": "#000000",
           "form_field": "#ffffff",
           "form_field_label": "#000000",

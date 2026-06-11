@@ -11,6 +11,7 @@
   "sections": {
     "collection-header": {
       "type": "collection-page-header",
+      "disabled": true,
       "custom_css": [
         "@media (max-width: 767px) {.m-section-py {padding-bottom: 24px; }}"
       ],
@@ -55,6 +56,7 @@
       "block_order": [
         "banner_promotion_KppNc9"
       ],
+      "disabled": true,
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-bottom: 0;}"
       ],
@@ -76,40 +78,408 @@
         "show_product_count": true,
         "collapsed_groups": "Brand, Vendor, Size, Product type",
         "color_swatches": "color,colour,couleur,farbe",
-        "color_swatches_design": "list"
+        "color_swatches_design": "list",
+        "overlay_opacity": 0.5,
+        "show_stock_status": false
       }
     },
-    "recent-viewed": {
-      "type": "recent-viewed-products",
+    "image_with_text_2_cdWzNa": {
+      "type": "image-with-text-2",
+      "name": "Image with text overlay",
       "settings": {
-        "container": "container-fluid",
         "color_scheme": "",
-        "heading": "Recently Viewed Products",
-        "heading_size": "h3",
-        "text_align": "left",
-        "limit": 10,
-        "columns": 5,
-        "column_gap": 30,
-        "pcard_layout": "",
-        "pcard_image_ratio": "",
-        "show_vendor": true,
-        "hide_title": false,
-        "enable_slider": true,
-        "show_pagination": false,
-        "show_navigation": true,
-        "mobile_disable_slider": true,
-        "use_scroll_mobile": true,
-        "item_gap_mobile": 16,
-        "padding_top": 0,
-        "padding_bottom": 100,
+        "container": "w-full",
+        "hero_size": "medium",
+        "show_overlay": true,
+        "image": "shopify://shop_images/KK_Mystery_Box_-_Arcads_image_asset_17_1.jpg",
+        "image_link": "",
+        "parallax": false,
+        "parallax_direction": "vertical",
+        "content_in_container": true,
+        "content_position": "center middle",
+        "text_alignment": "center",
+        "text_size": "large",
+        "text_color": "white",
+        "title": "Mehr wert als du zahlst.",
+        "subtitle": "",
+        "text": "<p>Sichere dir bis zu 5x Warenwert ab 99€</p>",
+        "button_label": "Jetzt Box sichern",
+        "button_link": "#shopify-section-template--26631596310909__mystery_box_grid_zEtWtc",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "text_alignment_mobile": "center",
+        "use_content_above": false,
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "customer_banner_MnxHbY": {
+      "type": "customer-banner",
+      "name": "Customer Banner",
+      "settings": {
+        "title": "Warum diese Box so viel mehr wert ist",
+        "subtitle": "Viele dieser Messer kosten einzeln zwischen 100€ und 400€. Statt sie einzeln zu verkaufen, bündeln wir ausgewählte Restbestände und kleine Serien in limitierten Mystery Boxen. So erhältst du deutlich mehr Wert – zum Bruchteil des Preises.",
+        "price": ""
+      }
+    },
+    "rich_text_B76nhi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PADM8V": {
+          "type": "heading",
+          "settings": {
+            "heading": "Wähle deine Mystery Box",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PADM8V"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 24,
+        "padding_bottom": 0,
         "custom_class": "",
         "animations": "inherit"
+      }
+    },
+    "mystery_box_grid_zEtWtc": {
+      "type": "mystery-box-grid",
+      "blocks": {
+        "mystery_box_HQm4kt": {
+          "type": "mystery_box",
+          "settings": {
+            "product": "neu-mystery-box-small-3-zufallige-premium-kuchenmesser-kopie-2",
+            "gift_image": "shopify://shop_images/Mystery3er.jpg",
+            "box_title": "Mystery Box S",
+            "show_badge": true,
+            "badge_text": "Starter",
+            "variant": "3 zufällige Messer",
+            "box_value": "Wert bis zu",
+            "show_save_text": false,
+            "save_text": "Du sparst bis zu",
+            "show_feature_text": false,
+            "feature_text": "",
+            "show_guarantee_text": false,
+            "guarantee_text": "100 Tage risikofrei testen",
+            "enable_ajax": false,
+            "button_text": "Jetzt bestellen",
+            "full_width": false,
+            "btn_bg": "#324b34",
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "mystery_box_zmxN9W": {
+          "type": "mystery_box",
+          "settings": {
+            "product": "neu-mystery-box-m-5-zufallige-premium-kuchenmesser-kopie-2",
+            "gift_image": "shopify://shop_images/ChatGPT_Image_9._Maerz_2026_23_19_13.jpg",
+            "box_title": "Mystery Box M",
+            "show_badge": true,
+            "badge_text": "Beliebteste Box",
+            "variant": "5 zufällige Messer",
+            "box_value": "Wert bis zu",
+            "show_save_text": false,
+            "save_text": "Du sparst bis zu",
+            "show_feature_text": false,
+            "feature_text": "",
+            "show_guarantee_text": false,
+            "guarantee_text": "100 Tage risikofrei testen",
+            "enable_ajax": false,
+            "button_text": "Jetzt bestellen",
+            "full_width": false,
+            "btn_bg": "#e4893e",
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "mystery_box_Pgzr7b": {
+          "type": "mystery_box",
+          "settings": {
+            "product": "mystery-box-l-7-zufallige-premium-kuchenmesser-kopie-2",
+            "gift_image": "shopify://shop_images/ChatGPT_Image_9._Maerz_2026_23_18_57.jpg",
+            "box_title": "Mystery Box L",
+            "show_badge": true,
+            "badge_text": "Bester Deal",
+            "variant": "7 zufällige Messer",
+            "box_value": "Wert bis zu",
+            "show_save_text": false,
+            "save_text": "Du sparst bis zu",
+            "show_feature_text": false,
+            "feature_text": "",
+            "show_guarantee_text": false,
+            "guarantee_text": "100 Tage risikofrei testen",
+            "enable_ajax": false,
+            "button_text": "Jetzt bestellen",
+            "full_width": false,
+            "btn_bg": "#324b34",
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "mystery_box_HQm4kt",
+        "mystery_box_zmxN9W",
+        "mystery_box_Pgzr7b"
+      ],
+      "name": "Mystery Box Grid",
+      "settings": {
+        "show_header": false,
+        "header_title": "Wähle deine Box:",
+        "header_subtitle": ""
+      }
+    },
+    "trust_bar_TygPAw": {
+      "type": "trust-bar",
+      "name": "Trust Bar",
+      "settings": {
+        "header_title": "Über 200.000 Kunden lieben Küchenkompane",
+        "title": "Exzellent",
+        "reviews": "3,951"
+      }
+    },
+    "apex_knife_showcase_KMDPXi": {
+      "type": "apex-knife-showcase",
+      "blocks": {
+        "knife_hGE3cG": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "knife_image": "shopify://shop_images/Damast-Gyuto-fleisch-schneiden_2.webp",
+            "value_label": "299€ Warenwert",
+            "knife_name": "",
+            "handle_text": "",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_J89Bcq": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "knife_image": "shopify://shop_images/IMG_8688_1_1.jpg",
+            "value_label": "249€ Warenwert",
+            "knife_name": "",
+            "handle_text": "",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_LfNqRG": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "knife_image": "shopify://shop_images/damast-chef-messer-946672_1.webp",
+            "value_label": "299€ Warenwert",
+            "knife_name": "",
+            "handle_text": "",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_QbLjYn": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "knife_image": "shopify://shop_images/IMG_8688_1_1.jpg",
+            "value_label": "499€ Warenwert",
+            "knife_name": "",
+            "handle_text": "",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        }
+      },
+      "block_order": [
+        "knife_hGE3cG",
+        "knife_J89Bcq",
+        "knife_LfNqRG",
+        "knife_QbLjYn"
+      ],
+      "name": "Apex Knife Showcase",
+      "settings": {
+        "custom_class": "",
+        "bg_color": "#f8f8f8",
+        "section_padding_top": 60,
+        "section_padding_bottom": 60,
+        "title": "Diese hochwertigen Damastmesser",
+        "title_color": "#000000",
+        "title_style": "könntest du erhalten",
+        "title_style_color": "#765339",
+        "title_font_size": 32,
+        "subtitle": "Jedes Messer aus unserem Sortiment hat einen einzigartigen Griff",
+        "card_bg_color": "#ffffff",
+        "card_border_radius": 10,
+        "card_shadow_opacity": 8,
+        "image_aspect_ratio": "4/3",
+        "image_fit": "contain",
+        "image_bg_color": "#fafafa",
+        "badge_bg_color": "#f0e8da",
+        "badge_text_color": "#2d2020",
+        "badge_position": "top_left",
+        "slider_type": "loop",
+        "slide_gap": 20,
+        "slides_desktop": 3,
+        "slides_tablet": 2,
+        "slides_mobile": 1,
+        "peek_desktop": 80,
+        "peek_tablet": 60,
+        "peek_mobile": 50,
+        "show_arrows": true,
+        "show_pagination": true,
+        "autoplay": false,
+        "autoplay_speed": 4000
+      }
+    },
+    "trustpilot_testimonials_kpeXiK": {
+      "type": "trustpilot-testimonials",
+      "blocks": {
+        "block_d3NYxh": {
+          "type": "block",
+          "settings": {
+            "tes_title": "Besser als jedes Messer, das ich je hatte",
+            "tes_text": "Ich habe über die Jahre einige gute Messer benutzt, aber diese sind nochmal auf einem ganz anderen Level. Rasiermesserscharf direkt aus der Box und unglaublich präzise.",
+            "user_name": "Oliver M. — München",
+            "date": "vor 2 Stunden"
+          }
+        },
+        "block_8JKFdr": {
+          "type": "block",
+          "settings": {
+            "tes_title": "ich dachte das wird nix, aber...",
+            "tes_text": "Ich dachte ehrlich, das ist zu gut, um wahr zu sein… aber ich lag falsch. Die Messer kamen extrem scharf an und fühlen sich einfach hochwertig an.",
+            "user_name": "James R. — Hamburg",
+            "date": "vor 5 Stunden"
+          }
+        },
+        "block_RPAHAM": {
+          "type": "block",
+          "settings": {
+            "tes_title": "War zuerst skeptisch bei der Mystery Box…",
+            "tes_text": "Am Anfang war ich unsicher, ob sich das lohnt. Am Ende hatte ich 5 Messer in der Box – und jedes einzelne ist top.",
+            "user_name": "Daniel K. — Berlin",
+            "date": "vor 10 Stunden"
+          }
+        },
+        "block_JKfUah": {
+          "type": "block",
+          "settings": {
+            "tes_title": "Selbst zum doppelten Preis wäre es das wert",
+            "tes_text": "Auch wenn ich doppelt so viel bezahlt hätte, hätte ich immer noch das Gefühl, ein gutes Geschäft gemacht zu haben. Der Inhalt hat mich wirklich überrascht.",
+            "user_name": "Harry T. — Köln",
+            "date": "vor 18 Stunden"
+          }
+        },
+        "block_YCt8gM": {
+          "type": "block",
+          "settings": {
+            "tes_title": "Hätte nicht erwartet, dass die Qualität so hoch ist",
+            "tes_text": "Man merkt sofort, dass das kein typisches Online-Produkt ist. Lieferung schnell, Verpackung top und die Messer fühlen sich einfach hochwertig an.",
+            "user_name": "Ben S. — Stuttgart",
+            "date": "vor 36 Stunden"
+          }
+        }
+      },
+      "block_order": [
+        "block_d3NYxh",
+        "block_8JKFdr",
+        "block_RPAHAM",
+        "block_JKfUah",
+        "block_YCt8gM"
+      ],
+      "name": "APEX Trustp- Testimonial",
+      "settings": {
+        "color_scheme": "",
+        "content_color_scheme": "",
+        "mt": 0,
+        "mb": 0,
+        "mt_mobile": 0,
+        "mb_mobile": 0,
+        "title": "VERTRAUT VON",
+        "title_highlight": "+200.000 KUNDEN",
+        "heading_type": "mrk-h1",
+        "h_text_color": "#ff6723",
+        "arrow_icon_color": "#000000"
+      }
+    },
+    "usp_list_BxrPrY": {
+      "type": "usp-list",
+      "blocks": {
+        "item_XmMHrf": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
+            "usp_title": "100 Tage-geld-zurück Garantie",
+            "title_size": 18,
+            "usp_info": "Wir sind von der Qualität unserer Produkte überzeugt und möchten sicherstellen, dass Du zu 100% zufrieden bist.",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_Gk8KBf": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
+            "usp_title": "200,000+ zufriedene Kunden",
+            "title_size": 18,
+            "usp_info": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_LKhhab": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png",
+            "usp_title": "Geprüfte Qualität",
+            "title_size": 18,
+            "usp_info": "Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit.",
+            "info_size": 14,
+            "divider": false
+          }
+        }
+      },
+      "block_order": [
+        "item_XmMHrf",
+        "item_Gk8KBf",
+        "item_LKhhab"
+      ],
+      "name": "APEX USPs",
+      "settings": {
+        "color_scheme": "",
+        "verticle_padding": 50,
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30
       }
     }
   },
   "order": [
     "collection-header",
     "main",
-    "recent-viewed"
+    "image_with_text_2_cdWzNa",
+    "customer_banner_MnxHbY",
+    "rich_text_B76nhi",
+    "mystery_box_grid_zEtWtc",
+    "trust_bar_TygPAw",
+    "apex_knife_showcase_KMDPXi",
+    "trustpilot_testimonials_kpeXiK",
+    "usp_list_BxrPrY"
   ]
 }

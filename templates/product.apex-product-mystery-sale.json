@@ -9,22 +9,6 @@
  */
 {
   "sections": {
-    "apex_timer_kk8rAh": {
-      "type": "Apex-timer",
-      "name": "Apex Product Timer",
-      "settings": {
-        "bg_color": "#dce5dc",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#fa8526",
-        "timer_clock_text_font_size": 14,
-        "clock_font_weight": "500",
-        "timer_text": "Nur noch für kurze Zeit verfügbar.",
-        "timer_font_size": 15,
-        "timer_color": "#000000",
-        "timer_font_weight": "500"
-      }
-    },
     "main": {
       "type": "main-product",
       "disabled": true,
@@ -98,16 +82,19 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "Show_lowest_price": false,
+            "lowest_price_text": "Der niedrigste Preis in den letzten 30 Tagen",
             "taxes_included": true,
             "taxes_included_text": "",
             "show_saving": false,
             "sale_badge_type": "percentage",
+            "badge_text": "",
             "p_pt": 5,
             "p_pb": 18,
             "p_pt_m": 5,
             "p_pb_m": 18,
             "price_color": "#000000",
-            "c_price_color": "#b1b1b1",
+            "c_price_color": "#a7a7a7",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 22,
@@ -140,18 +127,7 @@
             "viewer_margin_bottom": 11,
             "margin_size_mobile_top": 1,
             "margin_size_mobile_bottom": 1,
-            "product_margin_top": 5,
-            "product_margin_bottom": 5,
-            "p_margin_size_mobile_top": 1,
-            "p_margin_size_mobile_bottom": 25,
-            "product_count_font_size": 16,
-            "product_main_text_1": "Nur noch",
-            "product_main_text_2": "auf Lager",
-            "product_stock_out": "Derzeit ausverkauft",
-            "soldout_color": "#ff0000",
-            "viewer_count_time": 30000,
-            "stock_count_time": 50000,
-            "stock_count_show": true
+            "viewer_count_time": 30
           }
         },
         "featurelist_header_tfxtpf": {
@@ -214,7 +190,8 @@
             "show_quantity_selector": true,
             "show_atc_button": true,
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
+            "show_gift_card_recipient": false,
+            "btn_mt": 8
           }
         },
         "payment_icon_tePtpf": {
@@ -258,6 +235,7 @@
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "selected_gift_product": "",
         "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
@@ -397,73 +375,64 @@
         "animations": "inherit"
       }
     },
-    "scrolling_promotion_UKXeX3": {
-      "type": "scrolling-promotion",
+    "mrk_marque_slider_cjxgGb": {
+      "type": "mrk-marque-slider",
       "blocks": {
-        "image_bpiG7J": {
-          "type": "image",
+        "logo_J47f8F": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V7_1.png",
-            "image_height": 120,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V7_1_medium_aa02404e-1612-4b01-a59c-85636c5dbf4b.png",
+            "alt_text": ""
           }
         },
-        "image_NptXmD": {
-          "type": "image",
+        "logo_YyqDLW": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "image_height": 100,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V6_1_medium_11345ce6-3b7b-4b95-b42f-bcac0e4ecad7.png",
+            "alt_text": ""
           }
         },
-        "image_JPQVbf": {
-          "type": "image",
+        "logo_U38MKq": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V2_1.png",
-            "image_height": 100,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V2_1_medium_c4c8d48c-822e-4f62-bb39-53bcc4c65ef3.png",
+            "alt_text": ""
           }
         },
-        "image_T7Lehj": {
-          "type": "image",
+        "logo_4fQQxX": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V4_1.png",
-            "image_height": 100,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V4_1_medium_9d4aac1a-cea6-44f5-8832-e2b89a732b22.png",
+            "alt_text": ""
           }
         },
-        "image_4NEDGT": {
-          "type": "image",
+        "logo_8TteyK": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V3_1.png",
-            "image_height": 100,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V3_1_medium_6d31660e-7b5d-464c-9d1d-3e993b5d8021.png",
+            "alt_text": ""
           }
         }
       },
       "block_order": [
-        "image_bpiG7J",
-        "image_NptXmD",
-        "image_JPQVbf",
-        "image_T7Lehj",
-        "image_4NEDGT"
+        "logo_J47f8F",
+        "logo_YyqDLW",
+        "logo_U38MKq",
+        "logo_4fQQxX",
+        "logo_8TteyK"
       ],
-      "custom_css": [
-        ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
-      ],
+      "name": "Akta marquee",
       "settings": {
-        "Gesehen_title": "Gesehen In",
+        "title": "Gesehen In",
+        "alignment": "text-center",
         "heading_type": "mrk-h3",
-        "text_alignment": "center",
-        "container": "w-full",
-        "direction": "left",
-        "speed": 30,
-        "item_gap": 50,
-        "item_gap_mobile": 30,
-        "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
-        "padding_top": 40,
-        "padding_bottom": 30,
-        "custom_class": ""
+        "logo_height": 84,
+        "gap": 44,
+        "gap_mobile": 28,
+        "speed": 12,
+        "background_color": "#ffffff",
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "logo_greyed_out_FMbnW7": {
@@ -833,95 +802,12 @@
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "Das Messerset erobert Deutschland",
+        "title_size": 20,
         "heading_type": "mrk-h3",
         "show_button": false,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
         "btn_text": "",
         "autoplay": false
-      }
-    },
-    "icon_box_9UtNky": {
-      "type": "icon-box",
-      "blocks": {
-        "iconbox_pJbJGA": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
-            "image_by_url": "",
-            "title": "30 Tage Rückgaberecht",
-            "description": "<p>Teste unsere hochwertigen Küchenmesser risikofrei – mit 30 Tagen Rückgaberecht.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_RW46nE": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "image_by_url": "",
-            "title": "Schärfe Garantiert",
-            "description": "<p>Unsere Messer stehen für Qualität und Langlebigkeit – garantiert ein Leben lang</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_EiwgTg": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "image_by_url": "",
-            "title": "Kostenloser Versand",
-            "description": "<p>Genieße kostenlosen Versand innerhalb der gesamten EU ab 100€ Bestellwert.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "iconbox_pJbJGA",
-        "iconbox_RW46nE",
-        "iconbox_EiwgTg"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".m-icon-box__heading {font-weight: 400;}"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "item_per_row": 3,
-        "item_gap": 30,
-        "item_gap_mobile": 10,
-        "card_style": "vertical",
-        "image_max_width": "70px",
-        "content_alignment": "center",
-        "hover_effect": "scaling-up",
-        "enable_slider": false,
-        "show_pagination": false,
-        "show_navigation": false,
-        "use_scroll_mobile": true,
-        "use_grid_column_mb": false,
-        "padding_top": 100,
-        "padding_bottom": 38,
-        "custom_class": "",
-        "animations": "inherit"
       }
     },
     "expert_testimonial_adCtdF": {
@@ -1222,6 +1108,8 @@
         "loox_reviews_loox_dynamic_section_FnN8Yz": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
             "limit": 15,
@@ -1311,12 +1199,11 @@
     }
   },
   "order": [
-    "apex_timer_kk8rAh",
     "main",
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
     "product-details-tabs",
-    "scrolling_promotion_UKXeX3",
+    "mrk_marque_slider_cjxgGb",
     "logo_greyed_out_FMbnW7",
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
@@ -1324,7 +1211,6 @@
     "benefit_text_right_AFHFhC",
     "us_vs_them_8Tbqki",
     "ugc_video_testimonial_D4kJ9X",
-    "icon_box_9UtNky",
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
     "apex_faqs_jx7hp6",

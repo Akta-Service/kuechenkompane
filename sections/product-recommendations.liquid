@@ -1,4 +1,8 @@
+
+
 {{ 'component-product-inventory.css' | asset_url | stylesheet_tag }}
+{{ 'splide.min.css' | asset_url | stylesheet_tag }}
+
 {%- liquid
   assign product_id = product.id
   assign animation_effect = settings.animations
@@ -17,19 +21,13 @@
     assign container = 'container-full'
   endif
 
-  assign classes = 'm-section m:block m-product-recommendations m-swiper-overflow m-gradient m-color-' | append: section.settings.color_scheme
+  assign classes = 'm-section m:block m-product-recommendations m-gradient m-color-' | append: section.settings.color_scheme
   if section.settings.custom_class != blank
     assign classes = classes | append: ' ' | append: section.settings.custom_class
   endif
 
-  assign pagination_type = 'bullets'
   assign show_pagination = section.settings.show_pagination
   assign show_navigation = section.settings.show_navigation
-
-  assign show_controls = false
-  if show_pagination or show_navigation
-    assign show_controls = true
-  endif
 -%}
 
 {%- capture gridClass -%}
@@ -41,122 +39,265 @@
     --column-gap: {{ section.settings.column_gap }}px;
     --column-gap-mobile: 16px;
     --row-gap: {{ section.settings.column_gap | plus: 10 }}px;
-    --row-gap-mobile: 30px; --items: {{ section.settings.columns }};
+    --row-gap-mobile: 30px;
+    --items: {{ section.settings.columns }};
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
-  .m-product-recommendations__wrapper .m-slider-controls__button{
-    width: 24px !important
+
+  /* ─── Splide Arrow Overrides ─────────────────────────────── */
+  #m-section--{{ section.id }} .splide__arrow {
+    background: {{ section.settings.nav_bg_color }} !important;
+    border: 1px solid {{ section.settings.nav_border_color }} !important;
+    box-shadow: {{ section.settings.nav_shadow }} !important;
+    opacity: 1 !important;
+    width: {{ section.settings.nav_size }}px !important;
+    height: {{ section.settings.nav_size }}px !important;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
   }
-  .m-product-recommendations__wrapper .swiper-button-next{
-    transform: rotate(180deg) !important
+
+  #m-section--{{ section.id }} .splide__arrow:hover {
+    background: {{ section.settings.nav_hover_bg_color }} !important;
+    box-shadow: none !important;
   }
+
+  #m-section--{{ section.id }} .splide__arrow svg {
+    fill: {{ section.settings.nav_icon_color }} !important;
+    width: {{ section.settings.nav_size | divided_by: 2 }}px;
+    height: {{ section.settings.nav_size | divided_by: 2 }}px;
+  }
+
+  #m-section--{{ section.id }} .splide__arrow--prev {
+    left: -{{ section.settings.nav_size | divided_by: 2 }}px;
+  }
+
+  #m-section--{{ section.id }} .splide__arrow--next {
+    right: -{{ section.settings.nav_size | divided_by: 2 }}px;
+  }
+
+  /* ─── Splide Pagination ──────────────────────────────────── */
+  #m-section--{{ section.id }} .splide__pagination__page {
+    background: {{ section.settings.pagination_color }} !important;
+    width: 8px !important;
+    height: 8px !important;
+    transition: background 0.25s ease, transform 0.25s ease !important;
+  }
+
+  #m-section--{{ section.id }} .splide__pagination__page.is-active {
+    background: {{ section.settings.pagination_active_color }} !important;
+    transform: scale(1.4) !important;
+  }
+
+  #m-section--{{ section.id }} .splide__pagination {
+    bottom: -32px;
+  }
+
+  {% if show_pagination %}
+  #m-section--{{ section.id }} .m-product-recommendations__wrapper {
+    padding-bottom: 48px;
+  }
+  {% endif %}
+
+  /* ─── Track overflow fix ─────────────────────────────────── */
+  #m-section--{{ section.id }} .splide__track {
+    overflow: visible;
+    clip-path: inset(-20px 0px);
+  }
+
+  #m-section--{{ section.id }} .splide {
+  visibility: visible !important;
+}
+
+  /* Mobile: allow peek slides to show outside the wrapper */
+  @media screen and (max-width: 767px) {
+    #m-section--{{ section.id }} .m-product-recommendations__wrapper {
+      overflow: visible;
+    }
+    #m-section--{{ section.id }} .splide__track {
+      overflow: visible;
+      clip-path: inset(-20px -100vw);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    #m-section--{{ section.id }} .splide__arrow {
+      display: none !important;
+    }
+  }
+
+
+
+#m-section--{{ section.id }} .splide__slide .m-image {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+
+@media screen and (max-width: 767px) {
+  #m-section--{{ section.id }} .splide__track {
+    overflow: visible !important;
+  }
+  
+}
 {%- endstyle -%}
-<section
+
+ <section
   id="m-section--{{ section.id }}"
   class="{{ classes }}"
->
+> 
   <product-recommendations
     data-items-per-page="{{ section.settings.columns }}"
     data-enable-slider="{{ section.settings.enable_slider }}"
-    data-pagination-type="{{ pagination_type }}"
-    data-use-scroll-mobile="{{ section.settings.use_scroll_mobile }}"
+    {% comment %} data-use-scroll-mobile="{{ section.settings.use_scroll_mobile }}" {% endcomment %}
     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product_id }}&limit={{ section.settings.limit | default: 4 }}"
+    data-slider-type="{{ section.settings.slider_type }}"
+    data-slider-speed="{{ section.settings.slider_speed }}"
+    data-gap="{{ section.settings.column_gap }}"
+    data-gap-mobile="{{ section.settings.mobile_gap }}"
+    data-columns-tablet="{{ section.settings.columns_tablet }}"
+    data-columns-mobile="{{ section.settings.columns_mobile }}"
+    data-peek-tablet="{{ section.settings.peek_tablet }}"
+    data-peek-mobile="{{ section.settings.peek_mobile }}"
+    data-peek-mobile-sm="{{ section.settings.peek_mobile_sm }}"
+    data-show-pagination="{{ section.settings.show_pagination }}"
+    data-show-navigation="{{ section.settings.show_navigation }}"
+    data-autoplay="{{ section.settings.autoplay }}"
+    data-autoplay-speed="{{ section.settings.autoplay_speed }}"
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <div class="{{ container }} m-section-my m-section-py">
-        {% assign default_heading = 'products.product.product_recommendation_heading' | t %}
+
         <div class="m-section__header m:text-{{ section.settings.text_align | default: 'left' }}">
           <h2 class="m-section__heading {{ section.settings.heading_size }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
-            {{ section.settings.heading | default: default_heading }}
+            {{ section.settings.heading | default: 'You Might Also Like' }}
           </h2>
         </div>
-        <div class="m-product-recommendations__wrapper m-slider-control-hover-inside m-mixed-layout{% if section.settings.use_scroll_mobile %} m-mixed-layout--mobile-scroll{% endif %}">
-          <div class="m-product-list {% if section.settings.enable_slider %} swiper-container{% endif %}">
-            <div class="m:grid {{ gridClass | strip_newlines }} m-mixed-layout__inner{% if section.settings.enable_slider %} swiper-wrapper{% endif %}">
-              {% for product in recommendations.products %}
-                <div class="m:column swiper-slide">
-                  {% liquid
-                    case settings.pcard_layout
-                      when '1'
-                        render 'product-card-1', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
-                      when '2'
-                        render 'product-card-2', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
-                      when '3'
-                        render 'product-card-3', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
-                      when '4'
-                        render 'product-card-4', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
-                      when '5'
-                        render 'product-card-5', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
-                    endcase
-                  %}
-                </div>
-              {% endfor %}
+
+        <div class="m-product-recommendations__wrapper m-mixed-layout{% if section.settings.use_scroll_mobile %} m-mixed-layout--mobile-scroll{% endif %}">
+
+          {% if section.settings.enable_slider %}
+            <div
+              class="splide"
+              id="prod-rec-splide-{{ section.id }}"
+              aria-label="{{ section.settings.heading }}"
+            >
+              <div class="splide__track">
+                <ul class="splide__list">
+                  {% for product in recommendations.products %}
+                    <li class="splide__slide">
+                      {% liquid
+                        case settings.pcard_layout
+                          when '1'
+                            render 'product-card-1', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                          when '2'
+                            render 'product-card-2', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                          when '3'
+                            render 'product-card-3', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                          when '4'
+                            render 'product-card-4', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                          when '5'
+                            render 'product-card-5', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                        endcase
+                      %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
             </div>
-          </div>
-          {% if section.settings.enable_slider and show_controls %}
-            {% render 'slider-controls',
-              absolute: true,
-              show_nav: show_navigation,
-              show_pagination: show_pagination,
-              pagination_type: pagination_type,
-              container: section.settings.container,
-              nav_class: 'm:hidden'
-            %}
+
+          {% else %}
+            <div class="m-product-list">
+              <div class="m:grid {{ gridClass | strip_newlines }} m-mixed-layout__inner">
+                {% for product in recommendations.products %}
+                  <div class="m:column">
+                    {% liquid
+                      case settings.pcard_layout
+                        when '1'
+                          render 'product-card-1', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                        when '2'
+                          render 'product-card-2', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                        when '3'
+                          render 'product-card-3', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                        when '4'
+                          render 'product-card-4', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                        when '5'
+                          render 'product-card-5', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                      endcase
+                    %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
           {% endif %}
+
         </div>
       </div>
     {% endif %}
   </product-recommendations>
-</section>
+ </section> 
+
 
 {% schema %}
 {
-  "name": "Product recommendations",
+  "name": "Product Recommendations",
   "enabled_on": {
     "templates": ["product"]
   },
   "settings": [
-    {
-      "type": "header",
-      "content": "General"
-    },
+
+    { "type": "header", "content": "─── General ───" },
     {
       "type": "select",
       "id": "container",
-      "label": "Container type",
+      "label": "Container Type",
       "default": "container",
       "options": [
-        {
-          "value": "container-fluid",
-          "label": "Default"
-        },
-        {
-          "value": "w-full",
-          "label": "Full width"
-        },
-        {
-          "value": "container",
-          "label": "Use container box"
-        }
+        { "value": "container-fluid", "label": "Default" },
+        { "value": "w-full",          "label": "Full width" },
+        { "value": "container",       "label": "Use container box" }
       ]
     },
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme"
+      "label": "Color Scheme"
     },
     {
       "type": "checkbox",
       "id": "remove_params",
-      "label": "Remove URL params",
+      "label": "Remove URL Params",
       "default": false,
       "info": "Remove param tracking in product URL"
     },
     {
-      "type": "header",
-      "content": "Header settings"
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Classes"
     },
+
+    { "type": "header", "content": "─── Section Padding ───" },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (px)",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+
+    { "type": "header", "content": "─── Section Heading ───" },
     {
       "type": "text",
       "id": "heading",
@@ -167,43 +308,29 @@
     {
       "type": "select",
       "id": "heading_size",
-      "label": "Heading size",
+      "label": "Heading Size",
       "options": [
-        {
-          "value": "h3",
-          "label": "Medium"
-        },
-        {
-          "value": "h2",
-          "label": "Large"
-        }
+        { "value": "h3", "label": "Medium" },
+        { "value": "h2", "label": "Large" }
       ],
       "default": "h3"
     },
     {
       "type": "select",
       "id": "text_align",
-      "label": "Text alignment",
+      "label": "Text Alignment",
       "default": "left",
       "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        }
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" }
       ]
     },
-    {
-      "type": "header",
-      "content": "Grid settings"
-    },
+
+    { "type": "header", "content": "─── Grid / Products ───" },
     {
       "type": "range",
       "id": "limit",
-      "label": "Products to show",
+      "label": "Products to Show",
       "default": 8,
       "min": 3,
       "max": 20
@@ -211,122 +338,209 @@
     {
       "type": "range",
       "id": "columns",
-      "label": "Products per row",
+      "label": "Products per Row — Desktop",
       "default": 4,
-      "min": 3,
+      "min": 2,
       "max": 8
     },
     {
       "type": "range",
+      "id": "columns_tablet",
+      "label": "Products per Row — Tablet",
+      "default": 3,
+      "min": 1,
+      "max": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Products per Row — Mobile",
+      "default": 1,
+      "min": 1,
+      "max": 3
+    },
+
+    { "type": "header", "content": "─── Mobile Peek & Gap ───" },
+    {
+      "type": "range",
+      "id": "peek_tablet",
+      "label": "Peek — Tablet (px)",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "peek_mobile",
+      "label": "Peek — Mobile (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "peek_mobile_sm",
+      "label": "Peek — Mobile Small ≤480px (px)",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Gap — Mobile (px)",
+      "min": 4,
+      "max": 30,
+      "step": 2,
+      "default": 12
+    },
+    {
+      "type": "range",
       "id": "column_gap",
-      "label": "Column gap",
+      "label": "Gap Between Cards (px)",
       "default": 30,
       "min": 0,
       "max": 50,
       "step": 2
     },
-    {
-      "type": "header",
-      "content": "Slider settings"
-    },
+
+    { "type": "header", "content": "─── Slider Behaviour ───" },
     {
       "type": "checkbox",
       "id": "enable_slider",
-      "label": "Enable slider",
+      "label": "Enable Slider",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "slider_type",
+      "label": "Slider Type",
+      "options": [
+        { "value": "loop",  "label": "Loop (infinite)" },
+        { "value": "slide", "label": "Slide (with rewind)" }
+      ],
+      "default": "loop"
+    },
+    {
+      "type": "range",
+      "id": "slider_speed",
+      "label": "Transition Speed (ms)",
+      "min": 200,
+      "max": 1200,
+      "step": 50,
+      "default": 550
+    },
+
+    { "type": "header", "content": "─── Navigation Controls ───" },
+    {
+      "type": "checkbox",
+      "id": "show_navigation",
+      "label": "Show Arrow Buttons",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_pagination",
-      "label": "Show pagination",
+      "label": "Show Pagination Dots",
       "default": false
     },
     {
       "type": "checkbox",
-      "id": "show_navigation",
-      "label": "Show navigation",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Mobile settings"
-    },
-    {
-      "type": "checkbox",
-      "id": "use_scroll_mobile",
-      "label": "Use horizontal scrollbar",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Section Padding"
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": false
     },
     {
       "type": "range",
-      "id": "padding_top",
-      "label": "Padding Top",
-      "default": 50,
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px"
+      "id": "autoplay_speed",
+      "label": "Autoplay Interval (ms)",
+      "min": 1500,
+      "max": 9000,
+      "step": 500,
+      "default": 4000
+    },
+
+    { "type": "header", "content": "─── Arrow Button Style ───" },
+    {
+      "type": "color",
+      "id": "nav_bg_color",
+      "label": "Arrow Background Color",
+      "default": "#ffffff"
     },
     {
-      "type": "range",
-      "id": "padding_bottom",
-      "label": "Padding Bottom",
-      "default": 50,
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px"
+      "type": "color",
+      "id": "nav_hover_bg_color",
+      "label": "Arrow Hover Background",
+      "default": "#f7f3ee"
     },
     {
-      "type": "header",
-      "content": "Custom Attributes"
+      "type": "color",
+      "id": "nav_icon_color",
+      "label": "Arrow Icon Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "nav_border_color",
+      "label": "Arrow Border Color",
+      "default": "#e0e0e0"
     },
     {
       "type": "text",
-      "id": "custom_class",
-      "label": "Custom classes"
+      "id": "nav_shadow",
+      "label": "Arrow Box Shadow",
+      "default": "0 3px 14px rgba(0,0,0,0.14)",
+      "info": "CSS box-shadow value. e.g. 0 3px 14px rgba(0,0,0,0.14)"
+    },
+    
+    {
+      "type": "range",
+      "id": "nav_size",
+      "label": "Arrow Button Size (px)",
+      "min": 28,
+      "max": 72,
+      "step": 2,
+      "default": 46
+    },
+
+    { "type": "header", "content": "─── Pagination Dot Style ───" },
+    {
+      "type": "color",
+      "id": "pagination_color",
+      "label": "Dot Color",
+      "default": "#cccccc"
     },
     {
-      "type": "header",
-      "content": "Animations"
+      "type": "color",
+      "id": "pagination_active_color",
+      "label": "Active Dot Color",
+      "default": "#000000"
     },
+
+    { "type": "header", "content": "─── Animations ───" },
     {
       "type": "select",
       "id": "animations",
-      "label": "Visible in the view animation",
+      "label": "Visible in the View Animation",
       "default": "inherit",
       "options": [
-        {
-          "value": "inherit",
-          "label": "Inherit global setting"
-        },
-        {
-          "value": "fade-in",
-          "label": "Fade in"
-        },
-        {
-          "value": "fade-in-up",
-          "label": "Fade in up"
-        },
-        {
-          "value": "fade-in-left",
-          "label": "Fade in left"
-        },
-        {
-          "value": "fade-in-right",
-          "label": "Fade in right"
-        }
+        { "value": "inherit",      "label": "Inherit global setting" },
+        { "value": "fade-in",      "label": "Fade in" },
+        { "value": "fade-in-up",   "label": "Fade in up" },
+        { "value": "fade-in-left", "label": "Fade in left" },
+        { "value": "fade-in-right","label": "Fade in right" }
       ]
     }
+
   ],
   "presets": [
     {
-      "name": "Product recommendations"
+      "name": "Product Recommendations"
     }
   ]
 }
-{% endschema %}
+{% endschema %} 
+ 

@@ -1,0 +1,143 @@
+
+<style>
+  .hero-cta{position:relative;overflow:hidden;padding:80px 0;min-height:510px;height:100%;width:100%;color:#fff;text-align:center;background-color:#000;z-index:1;display:flex;align-items:center;justify-content:center}
+  .hero-cta__bg-wrapper{position:absolute;inset:0;z-index:-1}
+  .hero-cta__bg{display:block;width:100%;height:100%}
+  .hero-cta__bg img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-cta__inner{max-width:600px;width:100%;margin:0 auto;padding:0 24px}
+  .hero-cta__heading{margin:0 0 15px;font-size:24px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:#fff}
+  .hero-cta__subheading{margin:0 0 50px;font-size:16px;line-height:1.6;color:#fff}
+  .hero-cta__button{display:inline-flex;align-items:center;justify-content:center;padding:13px 32px;border-radius:999px;background-color:#eeeff8;color:#000;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background-color .3s ease,color .3s ease}
+  .hero-cta__button:hover{background-color:#f98727;color:#fff}
+  @media(max-width:1279px){.hero-cta{padding:60px 0;min-height:340px}}
+  @media(max-width:1199px){.hero-cta{min-height:266px}}
+  @media(max-width:767px){.hero-cta{padding:100px 0}}
+  @media(max-width:575px){.hero-cta__heading{font-size:22px;letter-spacing:.2em}}
+  @media(max-width:399px){.hero-cta__heading{font-size:20px}.hero-cta__button{padding:13px 10px}}
+</style>
+
+{%- liquid
+  assign bg_desktop = section.settings.background_desktop
+  assign bg_mobile  = section.settings.background_mobile
+
+  assign desktop_src_lg = bg_desktop | image_url: width: 1920
+  assign desktop_src_md = bg_desktop | image_url: width: 1200
+  assign desktop_src_sm = bg_desktop | image_url: width: 800
+  assign mobile_src     = bg_mobile  | image_url: width: 800
+  assign mobile_src_sm  = bg_mobile  | image_url: width: 480
+-%}
+
+<section id="hero-cta-{{ section.id }}" class="hero-cta">
+
+  {%- if bg_desktop != blank or bg_mobile != blank -%}
+    <div class="hero-cta__bg-wrapper" aria-hidden="true">
+      <picture class="hero-cta__bg">
+
+        {%- comment %} Mobile source — use mobile image if set, else fall back to desktop {%- endcomment %}
+        {%- if bg_mobile != blank -%}
+          <source
+            media="(max-width:767px)"
+            srcset="{{ mobile_src_sm }} 480w, {{ mobile_src }} 800w"
+            sizes="100vw"
+          >
+        {%- elsif bg_desktop != blank -%}
+          <source
+            media="(max-width:767px)"
+            srcset="{{ desktop_src_sm }} 800w"
+            sizes="100vw"
+          >
+        {%- endif -%}
+
+        {%- comment %} Desktop source {%- endcomment %}
+        {%- if bg_desktop != blank -%}
+          <source
+            media="(min-width:768px)"
+            srcset="{{ desktop_src_sm }} 800w, {{ desktop_src_md }} 1200w, {{ desktop_src_lg }} 1920w"
+            sizes="100vw"
+          >
+        {%- endif -%}
+
+        {%- comment %}
+          <img> is always required as fallback for <picture>.
+          This section is below-the-fold so loading="lazy" is correct.
+          decoding="async" prevents main-thread block on decode.
+        {%- endcomment %}
+        <img
+          src="{{ desktop_src_sm | default: mobile_src_sm }}"
+          alt="{{ bg_desktop.alt | escape | default: '' }}"
+          loading="lazy"
+          decoding="async"
+          width="{{ bg_desktop.width | default: bg_mobile.width }}"
+          height="{{ bg_desktop.height | default: bg_mobile.height }}"
+        >
+
+      </picture>
+    </div>
+  {%- endif -%}
+
+  <div class="hero-cta__inner">
+    <div class="hero-cta__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="hero-cta__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="hero-cta__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+        <a href="{{ section.settings.button_link }}" class="hero-cta__button">
+          {{- section.settings.button_label -}}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Centered welcome CTA",
+  "tag": "section",
+  "class": "section-centered-welcome-cta",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_desktop",
+      "label": "Background image (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_mobile",
+      "label": "Background image (mobile, optional)",
+      "info": "Leave empty to reuse the desktop image on mobile"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "10 € WILLKOMMENSBONUS*"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Sichern Sie sich exklusive Vorteile im MY WMF Club."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "JETZT ENTDECKEN"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Centered welcome CTA"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,89 @@
+.m-main-product {
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+@media screen and (min-width: 1024px) {
+    .m-main-product {
+        padding-bottom: 48px;
+        margin-bottom: 0;
+        padding-top: 16px;
+        margin-top: 0;
+    }
+}
+.mystery-product {
+    .rs-product-title {
+        font-size: clamp(26px,3.5vw,38px);    
+    }
+    .mystery-label {
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    .fp-short_des {
+        margin-bottom: 16px;
+    }
+    .m-product-option--node__label.mystery-variant {       
+        background-color: #fdfcf3;
+        border: 2px solid #d9d9d9;
+        height: 100%;
+    }
+    .m-product-option--button .m-product-option--node input:checked+label, .m-product-option--button .m-product-option--node__label[data-selected=true] {
+        border-color: #fa8526;
+        background-color: #f9f1e9;
+        color: rgb(28 28 28);
+    }
+    button.m-add-to-cart.rs-add-btn {       
+        padding: 16px 20px;
+        font-size: 20px;
+    }
+    @media (max-width: 1200px) {
+        .rs-product-title {
+            font-size: 32px;
+        }
+    }
+    
+    @media (max-width: 991px) and (min-width: 768px) {
+         .rs-product-title {
+            font-size: 24px;
+         }
+         .fp-review-count {
+            font-size: 16px;        
+        }
+
+    }
+    @media (max-width: 475px) {
+        .rs-product-title {
+            font-size: 22px;
+        }
+        .fp-review-count {
+            font-size: 16px;        
+        }
+        button.m-add-to-cart.rs-add-btn {
+            padding: 14px 16px;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .apex-theme-info {
+            padding-left: 6px;
+        }
+        .option-label--title {
+            font-size: 16px;
+        }
+        .main-product__block-mystery_price {
+            margin-top: 4px;
+        }
+        .fp-countdown {   
+            font-size: 14px;   
+            margin-bottom: 16px;
+        }
+        .fp-trust-item {   
+            gap: 8px;
+            font-size: 14px;    
+        }
+        .main-product__block.apex-product-blocks.main-product__block-trust_text_group {
+            margin-top: -8px;
+        }
+        
+    }
+    
+}

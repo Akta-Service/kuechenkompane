@@ -1,0 +1,983 @@
+{% style %}
+  .mystery-box-grid {
+    padding: 60px 0;
+  }
+
+  .mystery-box-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .custom-container.mystery-box-container {
+    max-width: 1200px;
+  }
+
+  .mystery-box-card {
+    background: #fff;
+    padding: 30px 20px 30px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .mystery-box-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Gift Box Image */
+  .box-gift-image {
+    margin: 0 auto 5px;
+  }
+
+  .box-gift-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    width: 80%;
+      margin: auto;
+      border-radius: 4px;
+  }
+
+  .box-main-title {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 5px 0;
+    color: #000;
+  }
+
+
+
+
+  .varaint-badge {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: #da6c0d;
+    border-radius: 12px;
+    padding: 8px 5px;
+    line-height: 1;
+    color: #fff;
+    margin-top: 8px;
+  }
+
+  .varaint-badge svg {
+    position: relative;
+    top: -2px;
+  }
+
+  .box-value {
+    font-size: 18px;
+    margin: 5px 0 12px;
+    color: #666;
+    font-weight: 500;
+  }
+  .box-value strong {
+    color: #412925;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  .real-price {
+    font-size: 42px;
+    font-weight: 900;
+    color: #000;
+    line-height: 1.3;
+  }
+  .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px 0;
+  }
+
+  .compare-price {
+    font-size: 16px;
+    color: #595959;
+    font-weight: 500;
+  }
+
+  .fake-price {
+    font-size: 18px;
+    color: #82292c;
+    text-decoration: line-through;
+    font-weight: 600;
+  }
+
+  .order-button {
+    background: #e4893e;
+    color: #fff;
+    border: none;
+    padding: 8px 24px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+  .order-button:hover {
+    background: #333;
+  }
+  .mystery-box-grid product-form.m-product-form.m-product-form--main {
+    position: relative;
+    z-index: 5;
+  }
+  .mystery-box-grid .m-product-form .m-add-to-cart {
+    padding: 12px 24px;
+    font-size: 20px;
+    border-color: transparent;
+  }
+  .saving-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #324b341c;
+    border-radius: 12px;
+    padding: 4px 8px;
+    color: #324b34;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .guarantee {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+  }
+
+  .guarantee .icon {
+    display: flex;
+  }
+  .feature-list li {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+    font-size: 16px;
+    margin-bottom: 4px;
+    text-align: left;
+  }
+  .feature-list li svg {
+    position: relative;
+    top: 4px;
+  }
+
+  .feature-list {
+    margin: 0 0 8px;
+    padding: 0;
+  }
+  .box-cta {
+    margin-bottom: 8px;
+  }
+  .mystery-box-card.box-best-seller .real-price {
+    color: #b34401;
+  }
+  .price-row {
+    margin-bottom: 4px;
+  }
+  .mystery-box-card.box-best-seller {
+    border: 1px solid #e57a13;
+  }
+  .box-variant {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .mystery-box-header-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    color: #000000;
+    line-height: 1.25;
+    margin: 0 0 14px 0;
+  }
+  .mystery-box-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .mystery-box-header-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+  }
+
+
+
+  @media only screen and (max-width: 1100px) {
+    .feature-list li {
+      font-size: 14px;
+    }
+    .mystery-box-card {
+      padding: 20px 16px 20px;
+    }
+    .order-button {
+      font-size: 16px;
+    }
+    .mystery-box-grid .m-product-form .m-add-to-cart {
+      padding: 8.5px 16px;
+      font-size: 16px;
+    }
+
+  }
+  @media only screen and (max-width: 991px) {
+    .saving-badge {
+      font-size: 14px;
+      flex-wrap: wrap;
+      row-gap: 0;
+    }
+
+  }
+
+  @media (max-width: 768px) {
+    .box-gift-image {
+      margin: 0;
+    }
+    .mystery-box-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+    }
+    .mystery-box-grid {
+      padding: 40px 0;
+    }
+    .mystery-box-grid span.m-add-to-cart--text {
+      font-size: 20px;
+      line-height: 1;
+    }
+    .mystery-box-card.box-best-seller {
+      padding-top: 30px;
+    }
+
+    .mystery-box-card:has(.varaint-badge) {
+      margin-top: 10px;
+    }
+
+    .mystery-box-header-title {
+      font-size: 22px;
+    }
+
+    .mystery-box-header-subtitle {
+      font-size: 16px;
+    }
+    .mystery-box-header {
+      margin-bottom: 28px;
+    }
+
+    /* All cards when featured exists */
+    /* compress  */
+    .box-value {
+      margin: 0;
+      font-size: 14px;
+      display: none;
+    }
+    .real-price {
+      font-size: 22px;
+      margin: 0;
+    }
+    .price-row {
+      margin: 0;
+    }
+    .varaint-badge {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+    .order-button {
+      margin: 0;
+      font-size: 14px;
+      padding: 6px 20px;
+      max-width: fit-content;
+    }
+    .order-button.is-full {
+      width: 100% !important;
+      max-width: 220px !important;
+    }
+
+    .guarantee {
+      font-size: 14px;
+    }
+    .mystery-box-grid .m-product-form .m-add-to-cart {
+      padding: 9.5px 10px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+    .mystery-box-grid span.m-add-to-cart--text {
+      font-size: 14px;
+      line-height: 1;
+    }
+    .box-main-title {
+      font-size: 20px;
+      margin: 0;
+    }
+    .box-variant {
+      font-size: 16px;
+      font-weight: 700;
+      font-weight: 500;
+      background: #eceaed;
+      padding: 4px 12px;
+      border-radius: 12px;
+      margin: 5px 0;
+    }
+    .box-variant {
+      font-size: 14px;
+      max-width: fit-content;
+
+    }
+    .compare-price {
+      font-size: 14px;
+    }
+
+    .fake-price {
+      font-size: 14px;
+    }
+
+
+    .mystery-box-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      padding: 10px 12px;
+      gap: 10px;
+    }
+    .mystery-box-card > * {
+      flex: 1;
+    }
+    .price-row {
+      justify-content: start;
+    }
+     .saving-badge {
+      width: fit-content;
+    }
+    .feature-list li {
+      font-size: 14px;
+    }
+    .price-section {
+        margin-bottom: 8px;
+    }
+
+
+
+
+  }
+  @media (max-width: 575px) {
+    .box-variant {
+      font-size: 12px;
+      padding: 3px 8px;
+    }
+    .compare-price {
+      font-size: 10px;
+    }
+    .saving-badge {
+      font-size: 10px;
+    }
+    .feature-list li {
+      font-size: 10px;
+    }
+    .box-gift-image img {
+      width: 90%;
+    }
+    .box-main-title {
+      font-size: 16px;
+    }
+    .order-button {
+      font-size: 12px;
+      padding: 6px 8px;
+    }
+    .guarantee {
+      font-size: 10px;
+    }
+    .real-price {
+      font-size: 16px;
+    }
+    .varaint-badge {
+      font-size: 10px;
+      padding: 4px 6px;
+    }
+    .box-cta {
+      margin-bottom: 4px;
+    }
+    .mystery-box-grid span.m-add-to-cart--text {
+      font-size: 12px;
+    }
+    .mystery-box-card.box-best-seller {
+      padding-top: 16px;
+    }
+
+  }
+
+
+  @media (max-width: 374px) {
+    .order-button {
+      text-align: center;
+      font-size: 10px;
+    }
+
+  }
+{% endstyle %}
+
+<div class="mystery-box-grid">
+  <div class="custom-container mystery-box-container">
+    {% if section.settings.show_header %}
+      {% if section.settings.header_title != blank or section.settings.header_subtitle != blank %}
+        <div class="mystery-box-header">
+          {% if section.settings.header_title != blank %}
+            <h2 class="mystery-box-header-title">{{ section.settings.header_title }}</h2>
+          {% endif %}
+          {% if section.settings.header_subtitle != blank %}
+            <p class="mystery-box-header-subtitle">{{ section.settings.header_subtitle }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <div class="mystery-box-wrapper">
+      {% for block in section.blocks %}
+        {% assign product = block.settings.product %}
+        <div
+          class="mystery-box-card {% if block.settings.show_badge %}box-best-seller{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {% if block.settings.gift_image != blank %}
+            <div class="box-gift-image">
+              <a class="" href="{{ product.url }}">
+                <img
+                  src="{{ block.settings.gift_image | image_url }}"
+                  alt="Gift box"
+                  loading="lazy"
+                  width="{{ block.settings.gift_image.width }}"
+                  height="{{ block.settings.gift_image.height }}"
+                >
+              </a>
+            </div>
+          {% else %}
+            {% if product != blank %}
+              <div class="box-gift-image">
+                <a class="" href="{{ product.url }}">
+                  <img
+                    src="{{ product.featured_image | image_url }}"
+                    alt="Gift box"
+                    loading="lazy"
+                    width="{{ product.featured_image.width }}"
+                    height="{{ product.featured_image.height }}"
+                  >
+                </a>
+              </div>
+            {% endif %}
+          {% endif %}
+          <div class="box-gift-content">
+            <h2 class="box-main-title">
+              {% if product != blank %}
+                <a class="" href="{{ product.url }}">
+                  {{ block.settings.box_title }}
+                </a>
+              {% endif %}
+            </h2>
+
+            <div class="box-variant">
+              {% if product != blank %}
+                <a class="" href="{{ product.url }}">
+                  {{ block.settings.variant }}
+                </a>
+              {% endif %}
+            </div>
+
+            {% if block.settings.show_badge %}
+              <div class="varaint-badge">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 576 512"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
+                </svg>
+                <span>{{ block.settings.badge_text }}</span>
+              </div>
+            {% else %}
+
+            {% endif %}
+
+            {% assign variant = product.selected_or_first_available_variant %}
+            {% if variant.compare_at_price > variant.price %}
+              <div class="box-value">
+                {{ block.settings.box_value }}
+                {{ variant.compare_at_price | money }}
+              </div>
+            {% endif %}
+            <div class="price-section">
+              <!-- Current price -->
+              <div class="real-price">
+                {{ variant.price | money }}
+              </div>
+
+              <div class="price-row">
+                <!-- Compare at price (if exists) -->
+                {% if variant.compare_at_price > variant.price %}
+                  <span class="compare-price">
+                    UVP: <del>{{ variant.compare_at_price | money }}</del>
+                  </span>
+                {% endif %}
+              </div>
+
+              <!-- Saving badge -->
+              {% if block.settings.show_save_text %}
+                {% if variant.compare_at_price > variant.price %}
+                  {% assign save_amount = variant.compare_at_price | minus: variant.price %}
+                  <div class="saving-badge">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
+                    </svg>
+                    {{ block.settings.save_text }}
+                    <strong>{{ save_amount | money }}</strong>
+                  </div>
+                {% endif %}
+              {% endif %}
+            </div>
+            {% if block.settings.show_feature_text %}
+              {% assign features = block.settings.feature_text | split: ',' %}
+              <ul class="feature-list">
+                {% for item in features %}
+                  <li>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
+                    </svg>
+                    {{ item | strip }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            <div class="box-cta">
+              <a
+                href="{{ product.url }}"
+
+                class="card-link"
+              >
+              </a>
+              {% if block.settings.enable_ajax %}
+                {% liquid
+                  assign product_form_id = 'product-form-' | append: block.id
+
+                  assign variant_id = product.selected_or_first_available_variant.id
+                  assign selected_variant_id = ''
+                  unless section.settings.show_featured_media
+                    assign selected_variant_id = product.selected_variant.id
+                  endunless
+
+                  assign gift_card_recipient_feature_active = false
+                  if block.settings.show_gift_card_recipient and product.gift_card?
+                    assign gift_card_recipient_feature_active = true
+                  endif
+
+                  assign show_dynamic_checkout = block.settings.show_dynamic_checkout
+                  if image_field.size > 0 or gift_card_recipient_feature_active == true
+                    assign show_dynamic_checkout = false
+                  endif
+                %}
+                <product-form class="m-product-form m-product-form--main" data-product-id="{{ product.id }}">
+                  {%- form 'product',
+                    product,
+                    id: product_form_id,
+                    data-product-id: product.id,
+                    class: product_form_class,
+                    novalidate: 'novalidate',
+                    data-type: 'add-to-cart-form',
+                    data-product-id: product.id,
+                    data-product-handle: product.handle,
+                    data-dynamic-checkout: show_dynamic_checkout,
+                    data-enable-image-zoom: section.settings.show_zoom_button,
+                    data-enable-history-state: section.settings.enable_history_state,
+                    data-enable-video-autoplay: section.settings.enable_video_autoplay
+                  -%}
+                    <input
+                      type="hidden"
+                      name="id"
+                      value="{{ variant_id }}"
+                      data-selected-variant="{{ selected_variant_id }}"
+                      disabled
+                    >
+                    {%- if gift_card_recipient_feature_active -%}
+                      {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+                    {%- endif -%}
+
+                    <div class="m-product-form--wrapper m:display-flex m:flex-wrap m:items-end">
+                      {% if block.settings.show_quantity_selector %}
+                        <div class="m-product-form--input">
+                          <label class="m-product-option--label">
+                            {{ 'products.product.quantity' | t }}
+                          </label>
+                          {% render 'product-qty-input', product_form_id: product_form_id, product: product %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.show_atc_button %}
+                        {% liquid
+                          assign btn_class = 'm-button--primary'
+                          if show_dynamic_checkout
+                            assign btn_class = 'm-button--secondary'
+                          endif
+                        %}
+                        <button
+                          type="submit"
+                          name="add"
+                          class="order-button {% if block.settings.full_width %}is-full{% endif %} fp-cta m-add-to-cart m-spinner-button m-button {{ btn_class }} {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}"
+                          data-atc-text="{{ 'products.product.add_to_cart' | t }}"
+                          style="background: {{ block.settings.btn_bg }}; !important"
+                        >
+                          <span class="m-spinner-icon">
+                            <svg
+                              class="animate-spin m-svg-icon"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                              <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                          </span>
+
+                          <span class="m-add-to-cart--text">
+                            {% if product.selected_or_first_available_variant.available %}
+                              {{ block.settings.button_text }}
+                            {% else %}
+                              {{ 'products.product.sold_out' | t }}
+                            {% endif %}
+                          </span>
+                        </button>
+                        {% if section.settings.show_atwl and section.settings.layout == 'layout-7' %}
+                          <div class="m-product-wishlist m:hidden md:m:block">
+                            {% render 'tooltip', type: 'wishlist', class_name: 'm-tooltip--top' %}
+                          </div>
+                        {% endif %}
+                      {% endif %}
+                      {% liquid
+                        assign show_terms = false
+                        if settings.agree_text != blank and settings.show_agree_on_product
+                          render 'agree-terms-checkbox'
+                          assign show_terms = true
+                        endif
+                      %}
+                      {% if show_dynamic_checkout %}
+                        <div
+                          class="m-product-dynamic-checkout buy-one-click{% if block.settings.show_atc_button %} show-add-to-cart{% else %} m:flex-1{% endif %}"
+                          {% if show_terms %}
+                            data-terms-action disabled
+                          {% endif %}
+                        >
+                          {{ form | payment_button }}
+                        </div>
+                      {% endif %}
+                    </div>
+                    <div class="m-product-form-message"></div>
+                  {%- endform -%}
+                </product-form>
+                <link
+                  rel="stylesheet"
+                  href="{{ 'pickup-availability.css' | asset_url }}"
+                  media="print"
+                  onload="this.media='all';"
+                >
+                {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+                  | where: 'pick_up_enabled', true
+                -%}
+                {% capture available %}{% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %} available{% endif %}{% endcapture %}
+                <pickup-availability
+                  {{ available }}
+                  class="product__pickup-availabilities"
+                  data-base-url="{{ routes.root_url }}"
+                  data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                  data-has-only-default-variant="{{ product.has_only_default_variant }}"
+                >
+                  <template>
+                    <pickup-availability-preview class="m-pickup-availability__preview m:display-flex">
+                      <svg
+                        class="m-svg-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        aria-hidden="true"
+                        viewBox="0 0 20 20"
+                      >
+                        <path fill="#DE3618" stroke="#fff" d="M13.94 3.94 10 7.878l-3.94-3.94A1.499 1.499 0 1 0 3.94 6.06L7.88 10l-3.94 3.94a1.499 1.499 0 1 0 2.12 2.12L10 12.12l3.94 3.94a1.497 1.497 0 0 0 2.12 0 1.499 1.499 0 0 0 0-2.12L12.122 10l3.94-3.94a1.499 1.499 0 1 0-2.121-2.12z"/>
+                      </svg>
+                      <div class="m-pickup-availability__info">
+                        <p class="m:text-color-subtext">
+                          {%- render 'new-locale', key: 'products.product.pickup_availability.unavailable' -%}
+                        </p>
+                        <button class="m-pickup-availability__button m-button m-button--link">
+                          {%- render 'new-locale', key: 'products.product.pickup_availability.refresh' -%}
+                        </button>
+                      </div>
+                    </pickup-availability-preview>
+                  </template>
+                </pickup-availability>
+                <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+              {% else %}
+                <a
+                  href="{{ product.url }}"
+                  style="background: {{ block.settings.btn_bg }};"
+                  class="order-button {% if block.settings.full_width %}is-full{% endif %}"
+                >
+                  {{ block.settings.button_text }}
+                </a>
+              {% endif %}
+            </div>
+            {% if block.settings.show_guarantee_text %}
+              {% if block.settings.guarantee_text != blank %}
+                <div class="guarantee">
+                  <span class="icon">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
+                    </svg>
+                  </span>
+                  {{ block.settings.guarantee_text }}
+                </div>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Mystery Box Grid",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show Header",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header Title",
+      "default": "Wähle deine Box:"
+    },
+    {
+      "type": "text",
+      "id": "header_subtitle",
+      "label": "Header Subtitle"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mystery_box",
+      "name": "Mystery Box",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        },
+        {
+          "type": "header",
+          "content": "Gift Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "gift_image",
+          "label": "Gift box image"
+        },
+        {
+          "type": "header",
+          "content": "Box Content"
+        },
+        {
+          "type": "text",
+          "id": "box_title",
+          "label": "Box Ttile",
+          "default": "Mystery Box S"
+        },
+        {
+          "type": "header",
+          "content": "badge settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_badge",
+          "label": "Show ★ Beliebteste Box",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "badge text",
+          "default": "Beliebteste Box",
+          "visible_if": "{{  block.settings.show_badge }}"
+        },
+        {
+          "type": "header",
+          "content": "variant settings"
+        },
+        {
+          "type": "text",
+          "id": "variant",
+          "label": "Box Variant",
+          "default": "3 Messer"
+        },
+        {
+          "type": "header",
+          "content": "Pricing"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "box_value",
+          "label": "Value amount",
+          "default": "Wert bis zu"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_save_text",
+          "label": "Show Save Text",
+          "default": false
+        },
+        {
+          "type": "inline_richtext",
+          "id": "save_text",
+          "label": "Save Text",
+          "default": "Du sparst bis zu",
+          "visible_if": "{{  block.settings.show_save_text }}"
+        },
+        {
+          "type": "header",
+          "content": "Feature Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_feature_text",
+          "label": "Show Feature Text",
+          "default": false
+        },
+        {
+          "type": "textarea",
+          "id": "feature_text",
+          "label": "Features Item (comma separated)",
+          "visible_if": "{{  block.settings.show_feature_text }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_guarantee_text",
+          "label": "Show Guarantee Text",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "guarantee_text",
+          "label": "Guarantee text( btn bottom)",
+          "default": "100 Tage risikofrei testen",
+          "visible_if": "{{  block.settings.show_guarantee_text }}"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_ajax",
+          "label": "Enable Ajax",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Jetzt bestellen"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Enable Button full width (Mobile)",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "btn_bg",
+          "label": "Button Bg Color",
+          "default": "#e4893e"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_quantity_selector",
+          "default": false,
+          "label": "Show quantity selector"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_atc_button",
+          "default": true,
+          "label": "Show Add-to-cart button"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_checkout",
+          "default": false,
+          "label": "Show dynamic checkout buttons",
+          "info": "Using the payment methods available on your store, customers see their preferred option, like PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_gift_card_recipient",
+          "default": false,
+          "label": "Show recipient form for gift card products",
+          "info": "When enabled, gift card products can optionally be sent to a recipient with a personal message."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mystery Box Grid"
+    }
+  ]
+}
+{% endschema %}

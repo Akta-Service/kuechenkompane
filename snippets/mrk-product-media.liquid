@@ -1,0 +1,430 @@
+
+{% assign first_media = product.media.first %}
+
+{% comment %} Preload main image {% endcomment %}
+{% if first_media %}
+  <link
+    rel="preload"
+    as="image"
+    fetchpriority="high"
+    href="{{ first_media | image_url: width: 1200 }}"
+    imagesrcset="{{ first_media | image_url: width: 700 }} 700w, {{ first_media | image_url: width: 1200 }} 1200w, {{ first_media | image_url: width: 1600 }} 1600w"
+    imagesizes="(max-width:899px) 100vw, 48vw"
+  >
+{% endif %}
+
+{% comment %} Preload first 4 thumbnails {% endcomment %}
+{% for media in product.media limit: 4 %}
+  {% if media.media_type == 'image' %}
+    <link
+      rel="preload"
+      as="image"
+      href="{{ media | image_url: width: 200 }}"
+      imagesrcset="{{ media | image_url: width: 100 }} 1x, {{ media | image_url: width: 200 }} 2x"
+      fetchpriority="{% if forloop.first %}high{% else %}auto{% endif %}"
+    >
+  {% endif %}
+{% endfor %}
+
+<style>
+  /* Thumb slider — always visible, no flash */
+  .product-thumb-slider {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .product-thumb-slider img {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Layout */
+  .mrk-product-slider {
+    position: relative;
+    width: 100%;
+  }
+  .product-gallery-grid {
+    display: grid;
+    grid-template-columns: 102px 1fr;
+    gap: 15px;
+    align-items: start;
+  }
+  .gallery--sticky {
+    position: sticky;
+    top: 0;
+  }
+
+  /* Main image area */
+  .product-gallery-main {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+  .product-preview-image,
+  .product-main-slider {
+    width: 100%;
+    height: 100%;
+  }
+  .product-preview-image {
+    position: absolute;
+    z-index: 5;
+    background: #fff;
+  }
+  .product-preview-image img,
+  .product-main-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .product-main-slider {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+  }
+  .product-main-slider .splide__track {
+    overflow: hidden;
+    height: 100%;
+  }
+  .product-main-slider .splide__list,
+  .product-main-slider .splide__slide {
+    height: 100%;
+  }
+
+  /* Thumb slider */
+  .product-thumb-slider {
+    width: 100%;
+    max-height: 565px;
+  }
+  .product-thumb-slider .splide__slide {
+    width: 100px !important;
+    height: 100px !important;
+    cursor: pointer;
+    padding: 3px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    opacity: 1;
+  }
+  .splide__track--nav > .splide__list > .splide__slide.is-active,
+  .product-thumb-slider .splide__slide.is-active {
+    border: 1px solid #222 !important;
+  }
+  .product-thumb-slider .splide__slide img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Arrows & pagination */
+  .product-thumb-slider .splide__arrows,
+  .product-main-slider .splide__pagination {
+    display: none;
+  }
+  .product-main-slider .splide__arrows {
+    position: static;
+    display: none;
+  }
+  .product-main-slider.is-ready .splide__arrows {
+    display: block;
+  }
+  .product-main-slider .splide__arrow {
+    position: absolute;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    z-index: 6;
+  }
+  .product-main-slider .splide__arrow--prev {
+    left: 15px !important;
+    right: auto !important;
+  }
+  .product-main-slider .splide__arrow--next {
+    right: 15px !important;
+    left: auto !important;
+  }
+  .product-gallery-btn {
+    width: 45px !important;
+    height: 45px !important;
+    background: #4b4b4b !important;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: auto;
+  }
+  .product-main-slider:hover .product-gallery-btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  .product-main-slider .splide__arrow--prev svg {
+    transform: scaleX(1) !important;
+  }
+  .product-main-slider .splide__arrow svg {
+    fill: transparent !important;
+  }
+  .product-gallery-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+  .product-gallery-btn:disabled {
+    opacity: 0.7 !important;
+    visibility: visible !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 1300px) {
+    .product-thumb-slider { max-height: 500px; }
+  }
+  @media (max-width: 1200px) {
+    .product-thumb-slider { max-height: 442px; }
+  }
+  @media (max-width: 1024px) {
+    .product-gallery-grid {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 12px;
+    }
+    .product-thumb-slider {
+      width: 100%;
+      margin-top: 10px;
+      height: auto !important;
+      max-height: none !important;
+    }
+    .product-thumb-slider .splide__slide {
+      width: 100px !important;
+      height: 100px !important;
+      margin-bottom: 0 !important;
+    }
+    .product-gallery-main {
+      aspect-ratio: 1 / 1;
+    }
+  }
+  @media (max-width: 768px) {
+    .product-gallery-btn {
+      width: 35px !important;
+      height: 35px !important;
+    }
+    .product-gallery-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+</style>
+
+<div class="mrk-product-slider {% if section.settings.enable_sticky_info %}gallery--sticky{% endif %}">
+  <div class="product-gallery-grid">
+
+    <!-- THUMB SLIDER -->
+    <div id="thumb-slider" class="splide product-thumb-slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for media in product.media %}
+            {% if media.media_type == 'image' %}
+              <li class="splide__slide" data-media-id="{{ media.id }}">
+                <img
+                  src="{{ media | image_url: width: 200 }}"
+                  srcset="{{ media | image_url: width: 100 }} 1x, {{ media | image_url: width: 200 }} 2x"
+                  alt="{{ media.alt | escape }}"
+                  loading="{% if forloop.index <= 4 %}eager{% else %}lazy{% endif %}"
+                  fetchpriority="{% if forloop.first %}high{% else %}auto{% endif %}"
+                  decoding="async"
+                  width="100"
+                  height="100"
+                >
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <!-- MAIN AREA -->
+    <div class="product-gallery-main">
+
+      <!-- Preview image (removed by JS after slider mounts) -->
+      <div class="product-preview-image" id="product-preview-image">
+        <picture>
+          <source
+            media="(max-width:899px)"
+            srcset="{{ first_media | image_url: width: 700 }} 700w, {{ first_media | image_url: width: 1100 }} 1100w"
+          >
+          <img
+            src="{{ first_media | image_url: width: 1200 }}"
+            srcset="{{ first_media | image_url: width: 700 }} 700w, {{ first_media | image_url: width: 1200 }} 1200w, {{ first_media | image_url: width: 1600 }} 1600w"
+            sizes="(max-width:899px) 100vw, 48vw"
+            alt="{{ first_media.alt | escape }}"
+            width="800"
+            height="800"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </picture>
+      </div>
+
+      <!-- Main slider -->
+      <div id="main-slider" class="splide product-main-slider">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for media in product.media %}
+              {% if media.media_type == 'image' %}
+                <li class="splide__slide" data-media-id="{{ media.id }}">
+                  <picture>
+                    <source
+                      media="(max-width:899px)"
+                      srcset="{{ media | image_url: width: 700 }} 700w, {{ media | image_url: width: 1100 }} 1100w"
+                    >
+                    <img
+                      src="{{ media | image_url: width: 1200 }}"
+                      srcset="{{ media | image_url: width: 700 }} 700w, {{ media | image_url: width: 1200 }} 1200w, {{ media | image_url: width: 1600 }} 1600w"
+                      sizes="(max-width:899px) 100vw, 48vw"
+                      alt="{{ media.alt | escape }}"
+                      width="800"
+                      height="800"
+                      {% if forloop.first %}
+                        loading="eager"
+                        fetchpriority="high"
+                      {% else %}
+                        loading="lazy"
+                      {% endif %}
+                      decoding="async"
+                    >
+                  </picture>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Arrows -->
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev product-gallery-btn" aria-label="Previous">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="splide__arrow splide__arrow--next product-gallery-btn" aria-label="Next">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        {% if section.settings.show_sold_out_badge_on_image != false %}
+          {% if product.available == false %}
+            <span class="m-product-tag m-product-tag--soldout-overlay product-page-badge m-gradient m-color-{{ settings.soldout_badge_color_scheme }}">
+              {{- 'products.product.sold_out' | t -}}
+            </span>
+          {% endif %}
+        {% endif %}
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const isDesktop = window.innerWidth >= 1025;
+
+  const thumbSlider = new Splide('#thumb-slider', {
+    fixedWidth   : 100,
+    fixedHeight  : 100,
+    gap          : 10,
+    rewind       : true,
+    pagination   : false,
+    isNavigation : true,
+    arrows       : false,
+    direction    : isDesktop ? 'ttb' : 'ltr',
+    height       : isDesktop ? '565px' : 'auto',
+    breakpoints  : {
+      1024: {
+        direction  : 'ltr',
+        height     : 'auto',
+        fixedWidth : 100,
+        fixedHeight: 100,
+      },
+    },
+  });
+
+  const mainSlider = new Splide('#main-slider', {
+    type             : 'loop',
+    pagination       : false,
+    arrows           : true,
+    speed            : 400,
+    easing           : 'cubic-bezier(0.25, 1, 0.5, 1)',
+    waitForTransition: false,
+    updateOnMove     : true,
+    drag             : true,
+    touchAngle       : 50,
+    touchPower       : 800,
+    flickPower       : 800,
+    flickMaxPages    : 1,
+    gap              : 0,
+  });
+
+  mainSlider.sync(thumbSlider);
+
+  const previewImg = document.querySelector('#product-preview-image img');
+
+  function mount() {
+    mainSlider.mount();
+    thumbSlider.mount();
+    const preview = document.getElementById('product-preview-image');
+    requestAnimationFrame(function () {
+      document.getElementById('main-slider').classList.add('is-ready');
+      if (preview) {
+        preview.style.opacity = '0';
+        setTimeout(function () { preview.remove(); }, 80);
+      }
+    });
+  }
+
+  if (previewImg && previewImg.complete) {
+    mount();
+  } else if (previewImg) {
+    previewImg.onload = mount;
+  } else {
+    mount();
+  }
+
+  // Variant change — jump to correct slide
+  document.addEventListener('variant:changed', function (e) {
+    const variant = e.detail.variant;
+    if (!variant || !variant.featured_media) return;
+    const mediaId = variant.featured_media.id;
+    document.querySelectorAll('#main-slider .splide__slide:not(.splide__slide--clone)').forEach(function (slide, index) {
+      if (slide.dataset.mediaId == mediaId) mainSlider.go(index);
+    });
+  });
+
+  // Lightbox zoom
+  if (window.mrkLightbox) {
+    document.querySelectorAll('#main-slider .splide__slide img').forEach(function (img) {
+      img.style.cursor = 'zoom-in';
+    });
+    mainSlider.on('click', function () {
+      const images = Array.from(
+        document.querySelectorAll('#main-slider .splide__slide:not(.splide__slide--clone) img')
+      ).map(function (img) {
+        return {
+          src: img.src
+            .replace(/(_\d+x[\d]*)\.(jpg|jpeg|png|webp)/i, '_2000x.$2')
+            .replace(/[?&]width=\d+/, ''),
+          alt: img.alt || '',
+        };
+      });
+      window.mrkLightbox.open(images, mainSlider.index);
+    });
+  }
+});
+</script>

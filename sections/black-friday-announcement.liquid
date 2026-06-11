@@ -1,0 +1,81 @@
+<style>.black-friday-announcement-{{ section.id }}{padding-top:{{ section.settings.black_friday_padding_top }}px!important;padding-bottom:{{ section.settings.black_friday_padding_bottom }}px!important;background:linear-gradient(90deg,{{ section.settings.color_1 | default: '#06000c' }},{{ section.settings.color_2 | default: '#f98727' }});padding-left:60px;padding-right:60px;color:#fff;overflow:hidden}.announcement-items-wrapper{flex:1}.announcement-items{display:flex;justify-content:space-between;align-items:center;gap:40px;white-space:nowrap}.announcement-item{display:flex;align-items:center;gap:12px;font-weight:700}.announcement-item.odd .announcement-link,.announcement-item.odd .announcement-text,.announcement-item.even .announcement-link,.announcement-item.even .announcement-text{text-transform:uppercase;color:#fff;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:normal}.announcement-link:hover{text-decoration:underline}.divider{font-weight:900}.mobile-announcement{display:none!important}@media (max-width:1023px){.black-friday-announcement-{{ section.id }}{padding-left:30px;padding-right:30px}}@media (max-width:767px){.desktop-announcement{display:none}.mobile-announcement{display:block!important;padding-left:0;padding-right:0}.mobile-announcement .splide__track{padding-left:22px}.mobile-announcement .splide__list{display:flex;align-items:center}.mobile-announcement .splide__slide{flex-shrink:0;width:fit-content!important;padding-right:30px}}</style>
+
+{% if section.settings.show_container %}<div class="custom-container">{% else %}<div>{% endif %}
+
+<section id="black-friday-announcement-{{ section.id }}" class="black-friday-announcement-{{ section.id }} desktop-announcement" role="region" aria-live="polite">
+  <div class="announcement-items-wrapper">
+    <div class="announcement-items">
+      {% for block in section.blocks %}
+        {% assign remainder = forloop.index0 | modulo: 2 %}
+        <div class="announcement-item {% if remainder == 0 %}odd{% else %}even{% endif %}" {{ block.shopify_attributes }}>
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="announcement-link">{{ block.settings.text }}</a>
+          {% else %}
+            <span class="announcement-text">{{ block.settings.text }}</span>
+          {% endif %}
+        </div>
+        {% if section.settings.show_divider %}{% unless forloop.last %}
+          <span class="divider"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.625 11.5C10.625 11.8978 10.783 12.2794 11.0643 12.5607C11.3456 12.842 11.7272 13 12.125 13C12.5228 13 12.9044 12.842 13.1857 12.5607C13.467 12.2794 13.625 11.8978 13.625 11.5C13.625 11.1022 13.467 10.7206 13.1857 10.4393C12.9044 10.158 12.5228 10 12.125 10C11.7272 10 11.3456 10.158 11.0643 10.4393C10.783 10.7206 10.625 11.1022 10.625 11.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3.625 4.5C3.625 4.89782 3.78304 5.27936 4.06434 5.56066C4.34564 5.84196 4.72718 6 5.125 6C5.52282 6 5.90436 5.84196 6.18566 5.56066C6.46696 5.27936 6.625 4.89782 6.625 4.5C6.625 4.10218 6.46696 3.72064 6.18566 3.43934C5.90436 3.15804 5.52282 3 5.125 3C4.72718 3 4.34564 3.15804 4.06434 3.43934C3.78304 3.72064 3.625 4.10218 3.625 4.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3.625 13L13.625 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        {% endunless %}{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="black-friday-announcement-{{ section.id }} mobile-announcement splide" id="bf-splide-{{ section.id }}" role="region" aria-live="polite">
+  <div class="splide__track">
+    <ul class="splide__list announcement-items">
+      {% for block in section.blocks %}
+        {% assign remainder = forloop.index0 | modulo: 2 %}
+        <li class="announcement-item splide__slide {% if remainder == 0 %}odd{% else %}even{% endif %}">
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="announcement-link">{{ block.settings.text }}</a>
+          {% else %}
+            <span class="announcement-text">{{ block.settings.text }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth <= 767) {
+    var el = document.getElementById('bf-splide-{{ section.id }}');
+    if (!el) return;
+
+    function initBFSlider() {
+      if (!window.Splide) return;
+      var extensions = {};
+      if (window.AutoScroll) {
+        extensions = { AutoScroll: window.AutoScroll };
+      }
+      new Splide(el, {
+        type        : 'loop',
+        drag        : 'free',
+        autoWidth   : true,
+        gap         : 30,
+        arrows      : false,
+        pagination  : false,
+        autoScroll  : {
+          speed       : 1,
+          pauseOnHover: false,
+        },
+      }).mount(extensions);
+    }
+
+    if (window.Splide) {
+      initBFSlider();
+    } else {
+      window.addEventListener('load', initBFSlider);
+    }
+  }
+});
+</script>
+
+
+{% schema %}{"name":"Black Friday Announcement","settings":[{"type":"checkbox","id":"show_container","label":"Show Container","default":false},{"type":"range","id":"black_friday_padding_top","label":"Padding Top","min":0,"max":100,"step":2,"default":20,"unit":"px"},{"type":"range","id":"black_friday_padding_bottom","label":"Padding Bottom","min":0,"max":100,"step":2,"default":20,"unit":"px"},{"type":"checkbox","id":"show_divider","label":"Show Divider","default":true},{"type":"header","content":"Color Settings"},{"type":"color","id":"color_1","label":"Color 1","default":"#06000c"},{"type":"color","id":"color_2","label":"Color 2","default":"#f98727"}],"blocks":[{"type":"item","name":"Announcement item","settings":[{"type":"text","id":"text","label":"Announcement Text","default":"BLACK FRIDAY SALE"},{"type":"url","id":"link","label":"Announcement URL"}]}],"max_blocks":10,"presets":[{"name":"Black Friday Announcement","category":"Announcement","blocks":[{"type":"item","settings":{"text":"BLACK FRIDAY SALE"}},{"type":"item","settings":{"text":"BLACK FRIDAY SALE"}},{"type":"item","settings":{"text":"BLACK FRIDAY SALE"}}]}]}{% endschema %}

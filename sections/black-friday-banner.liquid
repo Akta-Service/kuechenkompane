@@ -1,0 +1,12 @@
+<style>.black-friday-banner{width:100%;margin:0 auto;}.black-friday-banner .mrk-page-width{max-width:1560px;margin-right:auto;margin-left:auto;padding-right:60px;padding-left:60px;}.black-friday-banner__img{width:100%;height:auto;display:block;object-fit:cover;}@media (max-width:768px){.black-friday-banner .mrk-page-width{max-width:100%;padding:0;}}</style>
+{%- liquid
+assign img_desktop = section.settings.desktop_img
+assign img_mobile  = section.settings.mobile_img
+
+assign desktop_1560 = img_desktop | image_url: width: 1560
+assign desktop_1200 = img_desktop | image_url: width: 1200
+assign desktop_800  = img_desktop | image_url: width: 800
+assign mobile_800   = img_mobile  | image_url: width: 800
+assign mobile_480   = img_mobile  | image_url: width: 480
+-%}<section class="black-friday-banner"><div class="mrk-page-width"><a href="{{ section.settings.url }}"><picture>{%- if img_mobile != blank -%}<source media="(max-width: 768px)" srcset="{{ mobile_480 }} 480w, {{ mobile_800 }} 800w" sizes="100vw">{%- elsif img_desktop != blank -%}<source media="(max-width: 768px)" srcset="{{ desktop_800 }} 800w" sizes="100vw">{%- endif -%}{%- if img_desktop != blank -%}<source media="(min-width: 769px)" srcset="{{ desktop_800 }} 800w, {{ desktop_1200 }} 1200w, {{ desktop_1560 }} 1560w" sizes="(max-width: 1680px) calc(100vw - 120px), 1560px"><img src="{{ desktop_1200 }}" alt="{{ img_desktop.alt | escape | default: 'Banner' }}" class="black-friday-banner__img" loading="lazy" decoding="async" width="{{ img_desktop.width }}" height="{{ img_desktop.height }}">{%- elsif img_mobile != blank -%}<img src="{{ mobile_800 }}" alt="{{ img_mobile.alt | escape | default: 'Banner' }}" class="black-friday-banner__img" loading="lazy" decoding="async" width="{{ img_mobile.width }}" height="{{ img_mobile.height }}">{%- endif -%}</picture></a></div></section>
+{% schema %}{"name":"Black Friday Banner","settings":[{"type":"image_picker","id":"desktop_img","label":"Desktop Banner Image"},{"type":"image_picker","id":"mobile_img","label":"Mobile Banner Image"},{"type":"url","id":"url","label":"Please Connect the collection"}],"presets":[{"name":"Black Friday Banner"}]}{% endschema %}

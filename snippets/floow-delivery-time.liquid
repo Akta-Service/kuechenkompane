@@ -1,0 +1,138 @@
+{% comment %}
+  renders the delivery time text
+  Usage example:
+
+  {% if ss.show_delivery_time %}
+    {% render 'floow-delivery-time', si: section.id, ss: section.settings %}
+  {% endif %}
+{% endcomment %}
+
+{% if ss.least_days and ss.most_days %}
+  <div class="floow-delivery-date-{{ si }}">
+    <p class="text-{{ si }}"></p>
+  </div>
+{% endif %}
+
+<style>
+  .text-{{ si }} {
+    font-size: {{ ss.font_size }}px;
+    text-align: {{ ss.text_alignment }};
+    margin: 0;
+  }
+  .url-{{ si }} {
+    color: {{ ss.url_color }};
+    text-decoration: underline;
+    cursor: pointer !important;
+  }
+</style>
+
+<script>
+    (function() {
+      const originalText = '{{ ss.text }}';
+      const hours = {{ ss.time_hours }};
+      const mins = {{ ss.time_min }};
+      const color = '{{ ss.remaining_time_color }}';
+      const allowSaturdayDelivery = {{ ss.allow_saturday_delivery }};
+      const HOLIDAYS = [
+        '01-01', // Neujahr
+        '05-01', // Tag der Arbeit
+        '10-03', // Tag der Deutschen Einheit
+        '12-25', // 1. Weihnachtstag
+        '12-26'  // 2. Weihnachtstag
+      ];
+      
+      document.addEventListener('DOMContentLoaded', initializeText);
+      document.addEventListener('shopify:section:load', initializeText);
+      document.addEventListener('floow:cart:updated', initializeText);
+    
+      function formatDate(date) {
+        return date.toLocaleDateString(undefined, {
+          day: 'numeric',
+          month: 'long'
+        });
+      }
+    
+      function isHoliday(date) {
+        const monthDay = ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2);
+        const fullDate = date.toISOString().split('T')[0];
+        return HOLIDAYS.includes(monthDay) || HOLIDAYS.includes(fullDate);
+      }
+    
+      //Bestellungen sollen von Montag-Freitag möglich sein und nicht an Feiertagen
+      function isOrderBlockedDay(date) {
+        const day = date.getDay();
+        return day === 0 || day === 6 || isHoliday(date);
+      }
+    
+      //Lieferungen sollen von Montag-Freitag/Samstag möglich sein und nicht an Feiertagen
+      function isValidDeliveryDay(date) {
+        const day = date.getDay(); // 0 = Sonntag, 6 = Samstag
+        if (isHoliday(date)) return false;
+        if (day === 0) return false; // niemals Sonntag
+        if (day === 6) return allowSaturdayDelivery; // Samstag nur wenn erlaubt
+        return true; // Montag–Freitag
+      }
+    
+      function addDeliveryDays(startDate, daysToAdd) {
+        let currentDate = new Date(startDate);
+        let addedDays = 0;
+      
+        while (addedDays < daysToAdd) {
+          currentDate.setDate(currentDate.getDate() + 1);
+          if (isValidDeliveryDay(currentDate)) {
+            addedDays++;
+          }
+        }
+      
+        return currentDate;
+      }
+    
+      function initializeText() {
+        const textEl = document.querySelector('.text-{{ si }}');
+      
+        function updateCountdown() {
+          const now = new Date();
+          const cutoff = new Date();
+          cutoff.setHours(hours, mins, 0, 0);
+      
+          let effectiveOrderDate = new Date(now);
+    
+          if (now > cutoff) {
+            effectiveOrderDate.setDate(effectiveOrderDate.getDate() + 1);
+          }
+          
+          // Bestellung nur Mo–Fr möglich
+          while (isOrderBlockedDay(effectiveOrderDate)) {
+            effectiveOrderDate.setDate(effectiveOrderDate.getDate() + 1);
+            effectiveOrderDate.setHours(0, 0, 0, 0);
+          }
+      
+          let deliveryDaysEarliest = {{ ss.least_days }};
+          let deliveryDaysLatest = {{ ss.most_days }};
+      
+          const deliveryStartDate = addDeliveryDays(effectiveOrderDate, deliveryDaysEarliest);
+          const deliveryEndDate = addDeliveryDays(effectiveOrderDate, deliveryDaysLatest);
+      
+          let deliveryText = formatDate(deliveryStartDate);
+          if (deliveryDaysEarliest !== deliveryDaysLatest) {
+            deliveryText += ' - ' + formatDate(deliveryEndDate);
+          }
+      
+          const timeDiff = effectiveOrderDate.setHours(hours, mins, 0, 0) - now;
+          const remainingHours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+          const remainingMinutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+          const remainingTimeHTML = `<span style="color: ${color}">${remainingHours} Stdn. ${remainingMinutes} Min.</span>`;
+      
+          let text = originalText
+            .replace(/delivery_date/gi, deliveryText)
+            .replace(/remaining_time/gi, remainingTimeHTML);
+      
+          text += ` <a {% if ss.use_modal == false %}href="{{ ss.url }}"{% else %}onclick="event.preventDefault(); event.stopPropagation(); floowOpenModal(document.querySelector('.floow-modal-{{ si }}'))"{% endif %} class="url-{{ si }} floow-delivery-time-url">{{ ss.url_text }}</a>`;
+          textEl.innerHTML = text;
+        }
+      
+        updateCountdown();
+        setInterval(updateCountdown, 1000 * 10);
+      }
+    })();
+</script>

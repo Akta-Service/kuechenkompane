@@ -1,0 +1,854 @@
+{% comment %} sections/knife-showcase.liquid {% endcomment %}
+
+{% style %}
+  /* ─── Custom Container ──────────────────────────────────── */
+  .knife-custom-container {
+    max-width: 1560px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  @media screen and (max-width: 1279px) {
+    .knife-custom-container { padding-right: 40px; padding-left: 40px; }
+  }
+  @media screen and (max-width: 767px) {
+    .knife-custom-container { padding-right: 30px; padding-left: 30px; }
+  }
+  @media screen and (max-width: 639px) {
+    .knife-custom-container { padding-right: 20px; padding-left: 20px; }
+  }
+  @media screen and (max-width: 425px) {
+    .knife-custom-container { padding-right: 15px; padding-left: 15px; }
+  }
+
+  /* ─── Section Wrapper ───────────────────────────────────── */
+  .knife-showcase-section {
+    background-color: {{ section.settings.bg_color }};
+    padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px;
+    overflow: hidden;
+  }
+
+  /* ─── Section Header ────────────────────────────────────── */
+  .knife-showcase-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .knife-showcase-title {
+    font-size: {{ section.settings.title_font_size }}px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: {{ section.settings.title_color }};
+    line-height: 1.25;
+  }
+
+  .knife-showcase-title.is-styled {
+    color: {{ section.settings.title_style_color }};
+    margin: 0 0 14px 0;
+  }
+
+  .knife-showcase-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .knife-showcase-header { margin-bottom: 28px; }
+    .knife-showcase-title  { font-size: {{ section.settings.title_font_size | minus: 10 }}px; }
+    .knife-showcase-subtitle { font-size: 15px; }
+  }
+
+  @media screen and (max-width: 480px) {
+    .knife-showcase-title  { font-size: {{ section.settings.title_font_size | minus: 14 }}px; }
+  }
+
+  /* ─── Splide Track Overflow fix ─────────────────────────── */
+  /*
+     We clip only vertically; horizontal overflow must stay
+     visible so the peek slides show at the edges.
+  */
+  #knife-splide-{{ section.id }} .splide__track {
+    overflow: visible;
+    /* re-clip vertically to avoid card shadows bleeding oddly */
+    clip-path: inset(-20px 0px);
+  }
+
+  /* ─── Knife Slide Card ──────────────────────────────────── */
+  .knife-slide-card {
+    position: relative;
+    border-radius: {{ section.settings.card_border_radius }}px;
+    overflow: hidden;
+    background: {{ section.settings.card_bg_color }};
+    box-shadow: 0 4px 24px rgba(0,0,0,{{ section.settings.card_shadow_opacity | divided_by: 100.0 }});
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    height:100%;
+  }
+
+  .knife-slide-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(0,0,0,{{ section.settings.card_shadow_opacity | times: 2 | divided_by: 100.0 }});
+  }
+
+  /* Prevent hover lift on dragging */
+  .is-dragging .knife-slide-card {
+    transform: none !important;
+  }
+
+  /* Full-card clickable link */
+  .knife-slide-card .card-cover-link {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* ─── Image Wrapper ─────────────────────────────────────── */
+  .knife-slide-image-wrapper {
+    width: 100%;
+     /*  aspect-ratio: {{ section.settings.image_aspect_ratio }}; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: {{ section.settings.image_bg_color }};
+    overflow: hidden;
+    object-fit:contain;
+  }
+
+  .knife-slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: {{ section.settings.image_fit }};
+    display: block;
+    pointer-events: none;
+    transition: transform 0.5s ease;
+  }
+
+  .knife-slide-card:hover .knife-slide-image {
+    transform: scale(1.04);
+  }
+
+  .knife-slide-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    color: #ccc;
+  }
+
+  /* ─── Value Badge ───────────────────────────────────────── */
+  .knife-value-badge {
+    position: absolute;
+    top: 14px;
+    {% if section.settings.badge_position == 'top_left' %}
+      left: 14px;
+    {% else %}
+      right: 14px;
+    {% endif %}
+    background: {{ section.settings.badge_bg_color }};
+    color: {{ section.settings.badge_text_color }};
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 13px;
+    border-radius: 30px;
+    z-index: 3;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.14);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  /* ─── Card Info ─────────────────────────────────────────── */
+  .knife-card-info {
+    padding: 16px 18px 18px;
+  }
+
+  .knife-card-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: #222;
+  }
+
+  .knife-card-desc {
+    font-size: 13px;
+    color: #888;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .knife-card-price {
+    margin-top: 5px;
+  }
+
+  /* ─── Splide Arrow Overrides ────────────────────────────── */
+  #knife-splide-{{ section.id }} .splide__arrow {
+    background: #ffffff !important;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.14) !important;
+    opacity: 1 !important;
+    width: 46px !important;
+    height: 46px !important;
+    border: 1px solid rgba(0,0,0,0.08);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #knife-splide-{{ section.id }} .splide__arrow:hover {
+    background: #f7f3ee !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18) !important;
+  }
+
+  #knife-splide-{{ section.id }} .splide__arrow svg {
+    fill: #333 !important;
+    width: 18px;
+    height: 18px;
+  }
+
+  #knife-splide-{{ section.id }} .splide__arrow--prev {
+    left: -8px;
+  }
+
+  #knife-splide-{{ section.id }} .splide__arrow--next {
+    right: -8px;
+  }
+
+  @media screen and (max-width: 600px) {
+    #knife-splide-{{ section.id }} .splide__arrow { display: none !important; }
+  }
+
+  /* ─── Splide Pagination Dots ────────────────────────────── */
+  #knife-splide-{{ section.id }} .splide__pagination {
+    bottom: -32px;
+  }
+
+  #knife-splide-{{ section.id }} .splide__pagination__page {
+    background: #ccc !important;
+    width: 8px !important;
+    height: 8px !important;
+    transition: background 0.25s ease, transform 0.25s ease !important;
+  }
+
+  #knife-splide-{{ section.id }} .splide__pagination__page.is-active {
+    background: {{ section.settings.title_style_color }} !important;
+    transform: scale(1.4) !important;
+  }
+
+  /* Extra bottom padding to accommodate dots */
+  {% if section.settings.show_pagination %}
+  .knife-splide-wrap {
+    padding-bottom: 48px;
+  }
+  {% endif %}
+
+  /* ─── Section Padding responsiveness ───────────────────── */
+  @media screen and (max-width: 768px) {
+    .knife-showcase-section {
+      padding-top: {{ section.settings.section_padding_top | minus: 20 }}px;
+      padding-bottom: {{ section.settings.section_padding_bottom | minus: 20 }}px;
+    }
+  }
+{% endstyle %}
+
+{%- assign custom_classes = section.settings.custom_class | split: ',' | join: ' ' -%}
+
+<div
+  class="knife-showcase-section {{ custom_classes }}"
+  id="knife-showcase-{{ section.id }}"
+>
+  <div class="knife-custom-container">
+    <!-- ── Section Header ── -->
+    <div class="knife-showcase-header">
+      {% if section.settings.title != blank %}
+        <h2 class="knife-showcase-title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.title_style != blank %}
+        <h2 class="knife-showcase-title is-styled">{{ section.settings.title_style }}</h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <div class="knife-showcase-subtitle">{{ section.settings.subtitle }}</div>
+      {% endif %}
+    </div>
+
+    <!-- ── Splide Slider ── -->
+    <div class="knife-splide-wrap">
+      <div
+        class="splide"
+        id="knife-splide-{{ section.id }}"
+        aria-label="{{ section.settings.title }}"
+      >
+        <div class="splide__track">
+          <ul class="splide__list">
+            {%- for block in section.blocks -%}
+              {%- assign loading_priority = 'lazy' -%}
+              {%- if forloop.index <= 2 -%}
+                {%- assign loading_priority = 'eager' -%}
+              {%- endif -%}
+
+              {%- comment -%} ── Priority: manual input > product data ── {%- endcomment -%}
+
+              {%- assign _product = block.settings.product -%}
+
+              {%- comment -%} Image {%- endcomment -%}
+              {%- assign display_image = block.settings.knife_image -%}
+              {%- if display_image == blank and _product != blank and _product.featured_image != blank -%}
+                {%- assign display_image = _product.featured_image -%}
+              {%- endif -%}
+
+              {%- comment -%} Link {%- endcomment -%}
+              {%- assign display_link = block.settings.knife_link -%}
+              {%- if display_link == blank and _product != blank -%}
+                {%- assign display_link = _product.url -%}
+              {%- endif -%}
+
+              {%- comment -%} Value Badge {%- endcomment -%}
+              {%- assign display_value = block.settings.value_label -%}
+              {%- if display_value == blank and _product != blank -%}
+                {%- assign display_value = _product.price | money -%}
+              {%- endif -%}
+
+              {%- comment -%} Knife Name {%- endcomment -%}
+              {%- assign display_name = block.settings.knife_name -%}
+              {%- if display_name == blank and _product != blank -%}
+                {%- assign display_name = _product.title -%}
+              {%- endif -%}
+
+              {%- comment -%} Description {%- endcomment -%}
+              {%- assign display_desc = block.settings.handle_text -%}
+              {%- if display_desc == blank and _product != blank -%}
+                {%- assign display_desc = _product.description | strip_html | truncate: 150 -%}
+              {%- endif -%}
+
+              <li class="splide__slide" {{ block.shopify_attributes }}>
+                <div class="knife-slide-card">
+                  {%- if display_link != blank -%}
+                    <a
+                      class="card-cover-link"
+                      href="{{ display_link }}"
+                      aria-label="{% if display_name != blank %}{{ display_name }}{% else %}View knife{% endif %}"
+                    ></a>
+                  {%- endif -%}
+
+                  <!-- Image -->
+                  <div class="knife-slide-image-wrapper">
+                    {%- if display_image != blank -%}
+                      <img
+                        src="{{ display_image | image_url: width: 900 }}"
+                        srcset="
+                          {{ display_image | image_url: width: 480 }} 480w,
+                          {{ display_image | image_url: width: 700 }} 700w,
+                          {{ display_image | image_url: width: 900 }} 900w
+                        "
+                        sizes="(max-width: 600px) calc(100vw - 60px), (max-width: 991px) 48vw, 30vw"
+                        alt="{% if display_name != blank %}{{ display_name }}{% else %}Knife image{% endif %}"
+                        class="knife-slide-image"
+                        loading="{{ loading_priority }}"
+                        {%- if loading_priority == 'eager' -%}
+                          fetchpriority="high"
+                        {%- endif -%}
+                        width="{{ display_image.width }}"
+                        height="{{ display_image.height }}"
+                        draggable="false"
+                      >
+                    {%- else -%}
+                      <div class="knife-slide-placeholder" aria-hidden="true">🔪</div>
+                    {%- endif -%}
+                  </div>
+
+                  <!-- Value Badge -->
+                  {%- if display_value != blank -%}
+                    <span class="knife-value-badge" aria-label="Value: {{ display_value }}">
+                      {{ display_value }}
+                    </span>
+                  {%- endif -%}
+
+                  {%- comment -%} Price {%- endcomment -%}
+                  {%- assign display_price = block.settings.knife_price -%}
+                  {%- assign display_compare_price = block.settings.knife_compare_price -%}
+
+                  {%- if display_price == blank and _product != blank -%}
+                    {%- assign variant = _product.selected_or_first_available_variant -%}
+                    {%- assign display_price = variant.price -%}
+                    {%- assign display_compare_price = variant.compare_at_price -%}
+                  {%- endif -%}
+
+                  <!-- Card Text (optional) -->
+                  {%- if display_name != blank or display_desc != blank -%}
+                    <div class="knife-card-info">
+                      {%- if display_name != blank -%}
+                        <h3 class="knife-card-name">{{ display_name }}</h3>
+                      {%- endif -%}
+                      {%- if display_desc != blank -%}
+                        <p class="knife-card-desc">{{ display_desc }}</p>
+                      {%- endif -%}
+
+                      {%- if display_price != blank -%}
+                        <p class="knife-card-price">
+                          {%- if display_compare_price != blank and display_compare_price > display_price -%}
+                            <span class="knife-card-price__compare">{{ display_compare_price | money }}</span>
+                            <span class="knife-card-price__sale">{{ display_price | money }}</span>
+                          {%- else -%}
+                            <span class="knife-card-price__regular">{{ display_price | money }}</span>
+                          {%- endif -%}
+                        </p>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /.knife-splide-wrap -->
+  </div>
+</div>
+
+
+<script>
+(function () {
+  var SECTION_ID = 'knife-splide-{{ section.id }}';
+
+  var OPTIONS = {
+    type             : '{{ section.settings.slider_type }}',
+    perPage          : {{ section.settings.slides_desktop }},
+    perMove          : 1,
+    gap              : '{{ section.settings.slide_gap }}px',
+    padding          : { right: '{{ section.settings.peek_desktop }}px' },
+    pagination       : {{ section.settings.show_pagination }},
+    arrows           : {{ section.settings.show_arrows }},
+    autoplay         : {{ section.settings.autoplay }},
+    interval         : {{ section.settings.autoplay_speed }},
+    pauseOnHover     : true,
+    pauseOnFocus     : true,
+    speed            : 550,
+    easing           : 'cubic-bezier(0.25, 1, 0.5, 1)',
+    drag             : 'free',
+    snap             : true,
+    waitForTransition: false,
+    updateOnMove     : true,
+    touchAngle       : 30,
+    touchPower       : 600,
+    flickPower       : 400,
+    flickMaxPages    : 1,
+    rewind           : {% if section.settings.slider_type == 'slide' %}true{% else %}false{% endif %},
+    breakpoints: {
+      991: {
+        perPage      : {{ section.settings.slides_tablet }},
+        padding      : { right: '{{ section.settings.peek_tablet }}px' },
+        gap          : '{{ section.settings.slide_gap }}px',
+        flickPower   : 400,
+        flickMaxPages: 1,
+      },
+      600: {
+        perPage      : {{ section.settings.slides_mobile }},
+        padding      : { right: '{{ section.settings.peek_mobile }}px' },
+        gap          : '12px',
+        drag         : 'free',
+        snap         : true,
+        flickPower   : 400,
+        flickMaxPages: 1,
+      },
+    },
+  };
+
+  function mountSplide() {
+    var el = document.getElementById(SECTION_ID);
+    if (!el || el._splideInstance) return;
+
+    if (typeof Splide === 'undefined') {
+      setTimeout(mountSplide, 150);
+      return;
+    }
+
+    var splide = new Splide(el, OPTIONS);
+
+    splide.on('drag', function () {
+      el.classList.add('is-dragging');
+    });
+    splide.on('dragged', function () {
+      setTimeout(function () { el.classList.remove('is-dragging'); }, 50);
+    });
+
+    splide.mount();
+    el._splideInstance = splide;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mountSplide);
+  } else {
+    mountSplide();
+  }
+
+  if (window.Shopify && Shopify.designMode) {
+    document.addEventListener('shopify:section:load', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ section.id }}') {
+        var old = document.getElementById(SECTION_ID);
+        if (old && old._splideInstance) {
+          old._splideInstance.destroy();
+          old._splideInstance = null;
+        }
+        mountSplide();
+      }
+    });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Apex Knife Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Classes",
+      "info": "Separate multiple classes with commas (e.g. mystery-bundle, promo-section)"
+    },
+
+    { "type": "header", "content": "─── Section Background ───" },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 60
+    },
+
+    { "type": "header", "content": "─── Section Heading ───" },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title (Line 1)",
+      "default": "Diese hochwertigen Damastmesser"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Main Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "title_style",
+      "label": "Styled Title (Line 2)",
+      "default": "könntest du erhalten"
+    },
+    {
+      "type": "color",
+      "id": "title_style_color",
+      "label": "Styled Title Color",
+      "default": "#765339"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size (px)",
+      "min": 20,
+      "max": 56,
+      "step": 2,
+      "default": 32
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Jedes Messer aus unserem Sortiment hat einen einzigartigen Griff"
+    },
+
+    { "type": "header", "content": "─── Slide Card ───" },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card Border Radius (px)",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_opacity",
+      "label": "Card Shadow Opacity (%)",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 8
+    },
+
+    { "type": "header", "content": "─── Image Settings ───" },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image Aspect Ratio",
+      "options": [
+        { "value": "1/1", "label": "Square (1:1)" },
+        { "value": "4/3", "label": "Landscape (4:3)" },
+        { "value": "3/4", "label": "Portrait (3:4)" },
+        { "value": "16/9", "label": "Wide (16:9)" }
+      ],
+      "default": "4/3"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image Fit",
+      "options": [
+        { "value": "contain", "label": "Contain (show whole image)" },
+        { "value": "cover", "label": "Cover (fill, may crop)" }
+      ],
+      "default": "contain"
+    },
+    {
+      "type": "color",
+      "id": "image_bg_color",
+      "label": "Image Area Background",
+      "default": "#fafafa"
+    },
+
+    { "type": "header", "content": "─── Value Badge ───" },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge Background",
+      "default": "#f0e8da"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge Text Color",
+      "default": "#2d2020"
+    },
+    {
+      "type": "select",
+      "id": "badge_position",
+      "label": "Badge Position",
+      "options": [
+        { "value": "top_left", "label": "Top Left" },
+        { "value": "top_right", "label": "Top Right" }
+      ],
+      "default": "top_left"
+    },
+
+    { "type": "header", "content": "─── Slider Behaviour ───" },
+    {
+      "type": "select",
+      "id": "slider_type",
+      "label": "Slider Type",
+      "options": [
+        { "value": "loop", "label": "Loop (infinite)" },
+        { "value": "slide", "label": "Slide (with rewind)" }
+      ],
+      "default": "loop"
+    },
+    {
+      "type": "range",
+      "id": "slide_gap",
+      "label": "Gap Between Slides (px)",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "default": 20
+    },
+
+    { "type": "header", "content": "─── Slides Per View ───" },
+    {
+      "type": "range",
+      "id": "slides_desktop",
+      "label": "Desktop (≥992px)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "slides_tablet",
+      "label": "Tablet (601–991px)",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "slides_mobile",
+      "label": "Mobile (≤600px)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 1
+    },
+
+    { "type": "header", "content": "─── Peek (Partial Next Slide) ───" },
+    {
+      "type": "range",
+      "id": "peek_desktop",
+      "label": "Peek — Desktop (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "peek_tablet",
+      "label": "Peek — Tablet (px)",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "peek_mobile",
+      "label": "Peek — Mobile (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 50
+    },
+
+    { "type": "header", "content": "─── Navigation Controls ───" },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show Arrow Buttons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "label": "Show Pagination Dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay Interval (ms)",
+      "min": 1500,
+      "max": 9000,
+      "step": 500,
+      "default": 4000
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "knife",
+      "name": "Knife Slide",
+      "settings": [
+        { "type": "header", "content": "Product (Auto-fill)" },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product",
+          "info": "Optional. Name, price, description & image will auto-fill from product if manual fields are left blank."
+        },
+        { "type": "header", "content": "Link" },
+        {
+          "type": "url",
+          "id": "knife_link",
+          "label": "Slide Link (optional)"
+        },
+
+        { "type": "header", "content": "Image" },
+        {
+          "type": "image_picker",
+          "id": "knife_image",
+          "label": "Knife Image",
+          "info": "High-resolution recommended. Consistent aspect ratio across all slides for best results."
+        },
+
+        { "type": "header", "content": "Value Badge" },
+        {
+          "type": "text",
+          "id": "value_label",
+          "label": "Value Label",
+          "placeholder": "e.g. £299 value",
+          "info": "Leave blank to hide the badge."
+        },
+
+        { "type": "header", "content": "Card Text (optional)" },
+        {
+          "type": "text",
+          "id": "knife_name",
+          "label": "Knife Name",
+          "info": "Shown below the image. Leave blank to hide."
+        },
+        {
+          "type": "textarea",
+          "id": "handle_text",
+          "label": "Description",
+          "info": "Short description or handle material. Leave blank to hide."
+        },
+        { "type": "header", "content": "Card Price (Custom optional)" },
+
+        {
+          "type": "text",
+          "id": "knife_price",
+          "label": "Price (in cents)",
+          "info": "e.g. 1999 for $19.99"
+        },
+        {
+          "type": "text",
+          "id": "knife_compare_price",
+          "label": "Compare At Price (in cents)",
+          "info": "e.g. 2999 for $29.99"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Apex Knife Showcase",
+      "category": "Custom",
+      "blocks": [
+        { "type": "knife", "settings": { "value_label": "£299 value" } },
+        { "type": "knife", "settings": { "value_label": "£399 value" } },
+        { "type": "knife", "settings": { "value_label": "£499 value" } },
+        { "type": "knife", "settings": { "value_label": "£349 value" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

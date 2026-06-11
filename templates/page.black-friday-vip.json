@@ -1,0 +1,100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "black_friday_sign_up_DWtkik": {
+      "type": "black-friday-sign-up",
+      "blocks": {
+        "title_main_8MFACW": {
+          "type": "title_main",
+          "settings": {
+            "text": "WEIHNACHTS VIP SALE"
+          }
+        },
+        "title_sub_yjgJmK": {
+          "type": "title_sub",
+          "settings": {
+            "text": "JETZT ANMELDEN UND 85% SPAREN"
+          }
+        },
+        "highlight_text_PAURxD": {
+          "type": "highlight_text",
+          "settings": {
+            "text": "GRÖßTER SALE JEMALS"
+          }
+        },
+        "timer_AFr9zc": {
+          "type": "timer",
+          "settings": {
+            "target_date": "2025-12-14T10:00:00"
+          }
+        },
+        "form_FT63EL": {
+          "type": "form",
+          "settings": {
+            "form_action": "https://manage.kmail-lists.com/subscriptions/subscribe?a=TmvcKZ&g=Y3xKR7",
+            "hidden_input_value": "XsQwPg",
+            "form_subtitle": "100% CASHBACK FOR THE FIRST 100 ORDERS!"
+          }
+        },
+        "info_text_J88yHw": {
+          "type": "info_text",
+          "settings": {
+            "text": "Freitag, 14.12.2025. Punkt 10:00 Uhr! Wir starten unseren größten Sale des Jahres:\nBis zu 85% Rabatt.\n\nUnd jetzt das Beste:\nDie ersten 25 Bestellungen bekommen ein AOKI DAMAST SET im Wert von 1700€ gratis dazu.\n\nTrag dir das Datum also jetzt in deinen Kalender ein."
+          }
+        },
+        "footer_aV83p8": {
+          "type": "footer",
+          "settings": {
+            "footer_bold": "© Küchenkompane 2025",
+            "footer_text": "Alle Rechte vorbehalten"
+          }
+        },
+        "logo_NeVPhV": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/KK_weiss.png",
+            "logo_link": ""
+          }
+        },
+        "menu_83DnQC": {
+          "type": "menu",
+          "settings": {
+            "menu": "footer-rechtliches"
+          }
+        }
+      },
+      "block_order": [
+        "title_main_8MFACW",
+        "title_sub_yjgJmK",
+        "highlight_text_PAURxD",
+        "timer_AFr9zc",
+        "form_FT63EL",
+        "info_text_J88yHw",
+        "footer_aV83p8",
+        "logo_NeVPhV",
+        "menu_83DnQC"
+      ],
+      "name": "Black Friday Signup",
+      "settings": {
+        "bg_img": "shopify://shop_images/3_3_415075b0-b4ab-4a72-9fd0-e5042766d4ba.jpg"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "black_friday_sign_up_DWtkik"
+  ]
+}

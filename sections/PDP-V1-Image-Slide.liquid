@@ -1,25 +1,72 @@
+
 {{ 'hf-style.css' | asset_url | stylesheet_tag }}
 
 <div class="image-slide-section">
   <div class="image-slide-container">
     <h2 class="image-slide__title">{{ section.settings.title }}</h2>
-    <div class="swiper image-slide__active">
-      <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          <div class="swiper-slide">
-            <div class="image-item">
-              {% if block.settings.slide_img != blank %}
-                <img src="{{ block.settings.slide_img | img_url: 'master' }}" alt="Image">
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
+    <div class="splide image-slide__active">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide">
+              <div class="image-item">
+                {% if block.settings.slide_img != blank %}
+                  <img
+                    src="{{ block.settings.slide_img | image_url: width: 600 }}"
+                    alt="Image"
+                    loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                  >
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>
 </div>
 
-<script src="{{ 'pdp-v1-slide.js' | asset_url }}" defer></script>
+<script>
+(function () {
+  function initSlide() {
+    var el = document.querySelector('.image-slide__active');
+    if (!el || el.classList.contains('is-initialized')) return;
+    if (typeof Splide === 'undefined' || !window.splide) {
+      setTimeout(initSlide, 100);
+      return;
+    }
+
+    new Splide(el, {
+      type        : 'loop',
+      autoWidth   : true,
+      gap         : '20px',
+      drag        : 'free',
+      snap        : false,
+      arrows      : false,
+      pagination  : false,
+      autoScroll  : {
+        speed           : 1,
+        pauseOnHover    : true,
+        pauseOnFocus    : false,
+        rewind          : false,
+        reverseDirection: false,
+      },
+    }).mount(window.splide.Extensions);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSlide);
+  } else {
+    initSlide();
+  }
+
+  document.addEventListener('shopify:section:load', function(e) {
+    if (e.target.querySelector('.image-slide__active')) {
+      setTimeout(initSlide, 300);
+    }
+  });
+})();
+</script>
 
 {% schema %}
 {
@@ -45,7 +92,6 @@
       ]
     }
   ],
-
   "presets": [
     {
       "name": "PDP V1 - Image Slide"

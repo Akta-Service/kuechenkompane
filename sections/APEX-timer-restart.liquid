@@ -1,90 +1,100 @@
 <style>
-    .rs_timerwrapper {
-      text-align: center;
-      padding: 15px;     
-      color: white;
-      text-transform: uppercase;
-      font-weight: 700;
-      line-height: 1;
-      position: relative;
-    }
+  .rs_timerwrapper {
+    text-align: center;
+    padding: 15px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    position: relative;
+  }
 
-    .rs_timerwrapper .rslink {
-      position: absolute;
-      z-index: 999;
-      width: 100%;
-      left: 0;
-      top: 0;
-      right: 0;
-      height: 100%;
-      bottom: 0;
-      background: none;
-    }
+  .rs_timerwrapper .rslink {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    bottom: 0;
+    background: none;
+  }
 
-    .timer_text_wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
+  .timer_text_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
 
-    .timer_clock {
-      display: inline-block;
-      line-height: 1;
-      margin-right: 5px;
-     
-      width: fit-content;
-      letter-spacing: 0.5px;
-      
-      
-      font-family: "Roboto", sans-serif;
-    }
+  .timer_clock {
+    display: inline-block;
+    line-height: 1;
+    margin-right: 5px;
 
-    .timer_text {    
-      font-family: "Roboto", sans-serif;
-      font-size: 12px;
-      line-height: 1;
-      margin: 0;
-      padding: 0;
-      display: inline-block;
-      color: #dcad27;
-      font-weight: 700;
-    }
+    width: fit-content;
+    letter-spacing: 0.5px;
 
+
+    font-family: "Roboto", sans-serif;
+  }
+
+  .timer_text {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    color: #dcad27;
+    font-weight: 700;
+  }
+  .hide_timer_clock{
+    display: none !important;
+  }
 </style>
 <div
   class="rs_timerwrapper global-timer{{ section.id }}"
+  id="countdown-global-{{ section.id }}"
   style="padding-top: {{ section.settings.section_pt }}px; padding-bottom: {{ section.settings.section_pb }}px;  background: {{ section.settings.bg_color }};  "
 >
   <!-- <a class="rslink" href="#"></a> -->
   <div class="timer_text_wrapper">
-    <span class="timer_clock" style="color: {{ section.settings.timer_clock }}; font-size: {{ section.settings.timer_clock_text_font_size }}px; font-weight: {{ section.settings.clock_font_weight }};" id="countdown-global">00:00:00</span>
-    <p
-      class="timer_text"
-      style="font-size: {{ section.settings.timer_font_size }}px; color: {{ section.settings.timer_color }};  font-weight: {{ section.settings.timer_font_weight }};"
+    <span
+      class="timer_clock {% if section.settings.timer_hide %}hide_timer_clock{% endif %}"
+      style="color: {{ section.settings.timer_clock }}; font-size: {{ section.settings.timer_clock_text_font_size }}px; font-weight: {{ section.settings.clock_font_weight }};"
+      id="countdown-global-{{ section.id }}"
+      >00:00:00</span
     >
-      {{ section.settings.timer_text }}
-    </p>
+    {% if section.settings.start_countdown %}
+      <p
+        class="timer_text"
+        style="font-size: {{ section.settings.timer_font_size }}px; color: {{ section.settings.timer_color }};  font-weight: {{ section.settings.timer_font_weight }};"
+      >
+        {{ section.settings.timer_text }}
+      </p>
+    {% endif %}
   </div>
 </div>
 <script>
   window.apexTimerSettings = {
-    targetDate: "{{ section.settings.target_date }}",
-    targetTime: "{{ section.settings.target_time }}"
+    targetDate: '{{ section.settings.target_date }}',
+    targetTime: '{{ section.settings.target_time }}',
   };
 </script>
 
 {% schema %}
 {
-  "name": "Apex Timer Restart",  
+  "name": "Apex Timer Restart",
 
   "settings": [
     {
       "type": "color",
       "id": "bg_color",
       "label": "Background Color",
-      "default": "#1c1d1d"
+      "default": "#324a34"
     },
     {
       "type": "range",
@@ -118,7 +128,7 @@
       "type": "range",
       "id": "timer_clock_text_font_size",
       "label": "Font Size",
-      "default": 12,
+      "default": 15,
       "min": 10,
       "max": 50,
       "step": 1
@@ -175,29 +185,29 @@
       "type": "text",
       "id": "timer_text",
       "label": "Timer Text",
-      "default": "Time’s running out on our biggest sale!"
+      "default": "Der Ausverkauf endet bald!"
     },
     {
       "type": "range",
       "id": "timer_font_size",
       "label": "Font Size",
-      "default": 12,
+      "default": 15,
       "min": 10,
       "max": 50,
       "step": 1
     },
-    
+
     {
       "type": "color",
       "id": "timer_color",
       "label": "Font Color",
-      "default":"#dcad27"
+      "default": "#dcad27"
     },
     {
       "type": "select",
       "id": "timer_font_weight",
       "label": "Font Weight",
-      "default": "400",
+      "default": "600",
       "options": [
         {
           "value": "100",
@@ -243,75 +253,133 @@
     },
     {
       "type": "checkbox",
+      "id": "timer_hide",
+      "label": "Timer Hide",
+      "default": false
+    },
+    {
+      "type": "checkbox",
       "id": "start_countdown",
       "label": "Start Countdown",
-      "default": false
-    },    
-    {
-      "type": "range",
-      "id": "restart_interval",
-      "label": "Restart After (Hours)",
-      "min": 1,
-      "max": 24,
-      "step": 1,      
-      "default": 8
+      "default": true
     },
+
+    {
+      "type": "text",
+      "id": "start_datetime",
+      "label": "Countdown Start (YYYY-MM-DD HH:MM)",
+      "default": "2025-12-25 00:00",
+      "info": "Germany time (CET)"
+    },
+
     {
       "type": "text",
       "id": "not_started_text",
       "label": "Countdown Inactive Message",
-      "default": "Countdown not started"
+      "default": "Countdown nicht gestartet"
+    },
+    {
+      "type": "range",
+      "id": "set_hour",
+      "label": "Countdown Duration (Hours)",
+      "default": 48,
+      "min": 1,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "restart_on",
+      "label": "Restart Countdown After Finish",
+      "default": true
     }
-
-
   ],
   "presets": [
     {
-      "name": "Apex Timer Restart",
+      "name": "Apex Timer Restart"
     }
   ]
 }
 {% endschema %}
+
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const countdownElement = document.getElementById('countdown-global');
+document.addEventListener('DOMContentLoaded', function () {
+  const wrapper = document.getElementById('countdown-global-{{ section.id }}');
+  if (!wrapper) return;
 
-    const settings = {
-      enabled: {{ section.settings.start_countdown | json }},
-      intervalHours: {{ section.settings.restart_interval | json }},
-      notStartedText: {{ section.settings.not_started_text | json }}
-    };
+  const el = wrapper.querySelector('.timer_clock');
+  if (!el) return;
 
-    if (!settings.enabled) {
-      countdownElement.textContent = settings.notStartedText;
+  const settings = {
+    enabled: {{ section.settings.start_countdown | json }},
+    notStartedText: {{ section.settings.not_started_text | json }},
+    hours: Number({{ section.settings.set_hour | json }}),
+    restart: {{ section.settings.restart_on | json }},
+    startDatetime: {{ section.settings.start_datetime | json }}
+  };
+
+  if (!settings.enabled) {
+    el.textContent = settings.notStartedText;
+    return;
+  }
+
+  /* ===============================
+     TIME CONSTANTS (GERMANY – CET)
+  =============================== */
+
+  const HOUR = 60 * 60 * 1000;
+  const DURATION = settings.hours * HOUR;
+
+  // Germany CET (no DST handling — stable)
+  const UTC_OFFSET = 1 * HOUR;
+
+  function parseGermanDate(str) {
+    // "YYYY-MM-DD HH:MM"
+    const [date, time] = str.split(' ');
+    const [y, m, d] = date.split('-').map(Number);
+    const [h, min] = time.split(':').map(Number);
+    return Date.UTC(y, m - 1, d, h, min, 0) + UTC_OFFSET;
+  }
+
+  const START_TIME = parseGermanDate(settings.startDatetime);
+
+  function getGermanNow() {
+    return Date.now() + UTC_OFFSET;
+  }
+
+  function update() {
+    const now = getGermanNow();
+
+    // Not started yet
+    if (now < START_TIME) {
+      el.textContent = settings.notStartedText;
       return;
     }
 
-    // Get the time when countdown started (when page loaded with checkbox = true)
-    const startTimestamp = new Date().getTime();
+    let diff;
 
-    function updateTimer() {
-      const now = new Date().getTime();
-      const intervalMillis = settings.intervalHours * 60 * 60 * 1000;
-
-      const timeSinceStart = (now - startTimestamp) % intervalMillis;
-      const timeRemaining = intervalMillis - timeSinceStart;
-
-      const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
-      const seconds = Math.floor((timeRemaining / 1000) % 60);
-
-      countdownElement.textContent =
-        `${String(hours).padStart(2, '0')}:` +
-        `${String(minutes).padStart(2, '0')}:` +
-        `${String(seconds).padStart(2, '0')}`;
+    if (settings.restart) {
+      const elapsed = now - START_TIME;
+      const remainder = elapsed % DURATION;
+      diff = DURATION - remainder;
+    } else {
+      diff = START_TIME + DURATION - now;
+      if (diff < 0) diff = 0;
     }
 
-    updateTimer();
-    setInterval(updateTimer, 1000);
-  });
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    el.textContent =
+      `${String(d).padStart(2, '0')}:` +
+      `${String(h).padStart(2, '0')}:` +
+      `${String(m).padStart(2, '0')}:` +
+      `${String(s).padStart(2, '0')}`;
+  }
+
+  update();
+  setInterval(update, 1000);
+});
 </script>
-
-
-
-

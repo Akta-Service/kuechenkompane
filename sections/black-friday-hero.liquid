@@ -1,0 +1,333 @@
+<style>
+  /* ==============================
+     BLACK FRIDAY HERO - STATIC CSS
+     ============================== */
+
+  .black-friday-hero {
+    position: relative;
+    width: 100%;
+    height: 756px;
+    overflow: hidden;
+    background: #151515;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    padding-top: 82px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .black-friday-hero .bf-hero-inner {
+    width: 100%;
+  }
+
+  /* Background images (img tags) */
+  .black-friday-hero .bf-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    margin: auto;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .black-friday-hero .bf-bg-desktop {
+    width: 100%;
+  }
+
+  .black-friday-hero .bf-bg-mobile {
+    display: none;
+    width: 100%;
+  }
+
+  /* Centered content overlay */
+  .black-friday-hero .bf-content {
+    text-align: center;
+    box-sizing: border-box;
+    pointer-events: none; /* allow clicks to pass through image, CTA will override */
+  }
+
+  .black-friday-hero .bf-eyebrow {
+    font-size: 14px;
+    font-weight: 600;
+    pointer-events: auto;
+    text-transform: uppercase;
+  }
+
+  .black-friday-hero .bf-title {
+    font-size: 150px;
+    line-height: 0.83;
+    margin: 0;
+    font-weight: 400;
+    color: #ffffff;
+    pointer-events: auto;
+    letter-spacing: -0.01em;
+    font-family: "Bebas Neue", sans-serif;
+    margin-top: 14px;
+  }
+
+  .black-friday-hero .bf-subtitle {
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0 0 10px;
+    color: #ffffff;
+    letter-spacing: normal;
+    font-family: "Bebas Neue", sans-serif;
+  }
+
+  .black-friday-hero .bf-cta {
+    display: inline-block;
+    letter-spacing: normal;
+    padding: 11px 40px;
+    font-size: 20px;
+    background: #f98727;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s;
+    pointer-events: auto;
+  }
+
+  .black-friday-hero .bf-caption {
+    font-size: 14px;
+    pointer-events: auto;
+    text-transform: capitalize;
+    letter-spacing: normal;
+    color: #ffffff;
+    position: absolute;
+    max-width: 1040px;
+    width: 100%;
+    left: 50%;
+    bottom: 47px;
+    transform: translateX(-50%);
+    text-align: left;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1023px) {
+    .black-friday-hero .bf-title {
+      font-size: 120px;
+    }
+    .black-friday-hero .bf-subtitle {
+      font-size: 60px;
+    }
+    .black-friday-hero .bf-caption {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    .black-friday-hero .bf-bg-desktop {
+      display: none;
+    }
+    .black-friday-hero .bf-bg-mobile {
+      display: block;
+    }
+    .black-friday-hero {
+      height: 600px;
+      padding-top: 50px;
+    }
+    .black-friday-hero .bf-title {
+      font-size: 110px;
+    }
+    .black-friday-hero .bf-subtitle {
+      font-size: 70px;
+    }
+  }
+  @media (max-width: 575px) {
+    .black-friday-hero .bf-title {
+      font-size: 90px;
+      margin-bottom: 10px;
+    }
+    .black-friday-hero .bf-subtitle {
+      font-size: 52px;
+    }
+  }
+  @media (max-width: 399px) {
+    .black-friday-hero {
+      height: 540px;
+    }
+    .black-friday-hero .bf-title {
+      font-size: 76px;
+    }
+    .black-friday-hero .bf-subtitle {
+      font-size: 50px;
+    }
+  }
+</style>
+
+<section id="black-friday-hero-{{ section.id }}" class="black-friday-hero" role="region" aria-label="Black Friday hero">
+  <div class="bf-hero-inner">
+    <!-- Desktop background image -->
+    <img
+      src="{{ section.settings.desktop_image | img_url: 'master' }}"
+      alt="{{ section.settings.desktop_alt | default: 'Black Friday banner' }}"
+      class="bf-bg bf-bg-desktop"
+      loading="lazy"
+    >
+
+    <!-- Mobile background image -->
+    <img
+      src="{{ section.settings.mobile_image | img_url: 'master' }}"
+      alt="{{ section.settings.mobile_alt | default: 'Black Friday banner mobile' }}"
+      class="bf-bg bf-bg-mobile"
+      loading="lazy"
+    >
+
+    <!-- Centered content -->
+    <div class="bf-content">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'sub_title' %}
+            {% if block.settings.eyebrow_text != blank %}
+              <div class="bf-eyebrow" {{ block.shopify_attributes }}>{{ block.settings.eyebrow_text }}</div>
+            {% endif %}
+
+          {% when 'main_heading' %}
+            {% if block.settings.main_heading != blank %}
+              <h1 class="bf-title" {{ block.shopify_attributes }}>{{ block.settings.main_heading }}</h1>
+            {% endif %}
+          {% when 'main_sub_heading' %}
+            {% if block.settings.subheading != blank %}
+              <div class="bf-subtitle" {{ block.shopify_attributes }}>{{ block.settings.subheading }}</div>
+            {% endif %}
+
+          {% when 'button' %}
+            {% if block.settings.button_label != blank %}
+              <a
+                href="{{ block.settings.button_link }}"
+                class="bf-cta"
+                {% if block.settings.open_in_new_tab %}
+                  target="_blank" rel="noopener noreferrer"
+                {% endif %}
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.button_label }}
+              </a>
+            {% endif %}
+
+          {% when 'caption' %}
+            {% if block.settings.caption_text != blank %}
+              <div class="bf-caption" {{ block.shopify_attributes }}>{{ block.settings.caption_text }}</div>
+            {% endif %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Black Friday Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop background image"
+    },
+    {
+      "type": "text",
+      "id": "desktop_alt",
+      "label": "Desktop image alt text",
+      "default": "Black Friday banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile background image"
+    },
+    {
+      "type": "text",
+      "id": "mobile_alt",
+      "label": "Mobile image alt text",
+      "default": "Black Friday mobile banner"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sub_title",
+      "name": "Sub Title Top",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow_text",
+          "label": "Eyebrow text (small top text)",
+          "default": "BLACK FRIDAY SALE"
+        }
+      ]
+    },
+    {
+      "type": "main_heading",
+      "name": "Main Title(Off Text)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "main_heading",
+          "label": "Main heading",
+          "default": "50% OFF"
+        }
+      ]
+    },
+    {
+      "type": "main_sub_heading",
+      "name": "Main Sub heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "EVERYTHING"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "SHOP NOW"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link",
+          "default": "/collections/all"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_in_new_tab",
+          "label": "Open button in new tab",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "caption",
+      "name": "Caption Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "caption_text",
+          "label": "Caption text (small, below CTA)",
+          "default": "Including bestsellers and new collections"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Friday Hero",
+      "category": "Hero Sections"
+    }
+  ]
+}
+{% endschema %}

@@ -47,12 +47,12 @@
    .apex-product-page select.m-product-option--dropdown-select {
     display: none;
   }
-  .apex-product-page .m-product-form .m-add-to-cart {    
+  .apex-product-page .m-product-form .m-add-to-cart {
     min-width: 350px;
     text-align: center;
   }
   @media only screen and (max-width:768px){
-    .apex-product-page .m-product-form .m-add-to-cart {    
+    .apex-product-page .m-product-form .m-add-to-cart {
     min-width: 0px;
     width: 100%;
   }
@@ -70,7 +70,7 @@
       data-product-id="{{ product.id }}"
       data-disable-selected-variant-default="{{ section.settings.disable_selected_variant_default }}"
     >
-      <div class="m-sticky-addtocart--leftblock m:hidden md:m:flex">
+      <div class="m-sticky-addtocart--leftblock  md:m:flex">
         <div class="m-sticky-addtocart--image">
           {%- if image -%}
             {% render 'responsive-image',
@@ -87,7 +87,6 @@
           <h3 class="m:text-base">
             {{ product.title }}
           </h3>
-         
         </div>
       </div>
       <div class="m-sticky-addtocart--rightblock">
@@ -95,25 +94,26 @@
         {%- assign product_form_class = 'sticky-atc-form m:flex product-form-' | append: section.id -%}
 
         {% assign selected_variant = product.selected_or_first_available_variant %}
-        
-          <div class="sticky_price">
-            <div class="sticky_price-wrapper">
-              <span class="stk-current-price">{{ selected_variant.price | money }}</span>
-              
-              {% if selected_variant.compare_at_price and selected_variant.compare_at_price > selected_variant.price %}
-                <span class="stk-compare-price">{{ selected_variant.compare_at_price | money }}</span>
-              {% endif %}
-            </div>
-        
-            <div class="sticky_saving">
-              {% if selected_variant.compare_at_price and selected_variant.compare_at_price > selected_variant.price %}
-                <span class="savings">
-                  {{ section.settings.saving_text }} {{ selected_variant.compare_at_price | minus: selected_variant.price | money }}
-                </span>
-              {% endif %}
-            </div>         
-          </div>       
-        
+
+        <div class="sticky_price">
+          <div class="sticky_price-wrapper">
+            <span class="stk-current-price">{{ selected_variant.price | money }}</span>
+
+            {% if selected_variant.compare_at_price and selected_variant.compare_at_price > selected_variant.price %}
+              <span class="stk-compare-price">{{ selected_variant.compare_at_price | money }}</span>
+            {% endif %}
+          </div>
+
+          <div class="sticky_saving">
+            {% if selected_variant.compare_at_price and selected_variant.compare_at_price > selected_variant.price %}
+              <span class="savings">
+                {{ section.settings.saving_text }}
+                {{ selected_variant.compare_at_price | minus: selected_variant.price | money }}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+
         <product-form class="m-product-form m:w-full">
           {%- form 'product',
             product,
@@ -146,11 +146,13 @@
                 </option>
               {% endfor %}
             </select>
-            {% comment %} {% render 'product-qty-input',
-              class: 'm-sticky-addtocart--quantity',
-              product_form_id: product_form_id,
-              product: product
-            %} {% endcomment %}
+            {% comment %}
+              {% render 'product-qty-input',
+                class: 'm-sticky-addtocart--quantity',
+                product_form_id: product_form_id,
+                product: product
+              %}
+            {% endcomment %}
 
             {%- liquid
               assign btn_class = 'm-button--primary m:flex-1'
@@ -182,10 +184,9 @@
                   {{ 'products.product.sold_out' | t }}
                 {% endif %}
                 {% if section.settings.show_stk_icon != true %}
-                <span class="stikcy-add-icon">➜</span>
+                  <span class="stikcy-add-icon">➜</span>
                 {% endif %}
               </span>
-             
             </button>
             {% if enable_dynamic_checkout and image_field.size <= 0 %}
               <div class="m-product-dynamic-checkout buy-one-click m:flex-1">

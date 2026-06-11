@@ -1,0 +1,474 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "kk_sale_hero_banner_tKhJJr": {
+      "type": "kk-sale-hero-banner",
+      "blocks": {
+        "avatar_ymY7HT": {
+          "type": "avatar",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_13_11.png",
+            "hide_on_mobile": false
+          }
+        },
+        "avatar_pYbWPK": {
+          "type": "avatar",
+          "settings": {
+            "image": "shopify://shop_images/Kopie_von_Bild6_2_1_c1d0b395-08d9-4a2f-b1bb-42ad62ea4b36.jpg",
+            "hide_on_mobile": false
+          }
+        },
+        "avatar_UgE4kQ": {
+          "type": "avatar",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-03-17_at_08.24.39_1_32c87861-c8fa-40f1-ab03-a867d5dfcc94.jpg",
+            "hide_on_mobile": true
+          }
+        },
+        "avatar_KHjtq7": {
+          "type": "avatar",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-03-17_at_08.21.14_1_1b8fef65-2d36-4ef5-8e01-c71ee9d4e97e.jpg",
+            "hide_on_mobile": true
+          }
+        },
+        "feature_r63iJC": {
+          "type": "feature",
+          "disabled": true,
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 64 64\" fill=\"none\">\n  <path d=\"M32 6L54 18V46L32 58L10 46V18L32 6Z\" stroke=\"black\" stroke-width=\"4\"></path>\n  <path d=\"M10 18L32 30L54 18\" stroke=\"black\" stroke-width=\"4\"></path>\n  <path d=\"M32 30V58\" stroke=\"black\" stroke-width=\"4\"></path>\n</svg>",
+            "title": "EXTREM SCHARF",
+            "text": "Präzise Schnitte ohne Kraftaufwand"
+          }
+        },
+        "feature_6zYapb": {
+          "type": "feature",
+          "disabled": true,
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 64 64\" fill=\"none\">\n  <path d=\"M32 6L54 18V46L32 58L10 46V18L32 6Z\" stroke=\"black\" stroke-width=\"4\"></path>\n  <path d=\"M10 18L32 30L54 18\" stroke=\"black\" stroke-width=\"4\"></path>\n  <path d=\"M32 30V58\" stroke=\"black\" stroke-width=\"4\"></path>\n</svg>",
+            "title": "PREMIUM MATERIALIEN",
+            "text": "Langlebig & rostbeständig"
+          }
+        },
+        "feature_Jriike": {
+          "type": "feature",
+          "disabled": true,
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 64 64\" fill=\"none\">\n  <path d=\"M32 6L54 18V46L32 58L10 46V18L32 6Z\" stroke=\"black\" stroke-width=\"4\"></path>\n  <path d=\"M10 18L32 30L54 18\" stroke=\"black\" stroke-width=\"4\"></path>\n  <path d=\"M32 30V58\" stroke=\"black\" stroke-width=\"4\"></path>\n</svg>",
+            "title": "PERFEKT BALANCIERT",
+            "text": "Ergonomischer Griff für sicheres Arbeiten"
+          }
+        },
+        "feature_3tFBek": {
+          "type": "feature",
+          "disabled": true,
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 64 64\" fill=\"none\">\n  <path d=\"M32 6L54 18V46L32 58L10 46V18L32 6Z\" stroke=\"black\" stroke-width=\"4\"></path>\n  <path d=\"M10 18L32 30L54 18\" stroke=\"black\" stroke-width=\"4\"></path>\n  <path d=\"M32 30V58\" stroke=\"black\" stroke-width=\"4\"></path>\n</svg>",
+            "title": "ÜBER 25.000+ ZUFRIEDENE KUNDEN",
+            "text": "★★★★★"
+          }
+        }
+      },
+      "block_order": [
+        "avatar_ymY7HT",
+        "avatar_pYbWPK",
+        "avatar_UgE4kQ",
+        "avatar_KHjtq7",
+        "feature_r63iJC",
+        "feature_6zYapb",
+        "feature_Jriike",
+        "feature_3tFBek"
+      ],
+      "name": "KK Sale Hero Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Main_Image_1.jpg",
+        "badge_strip_image": "shopify://shop_images/bg-shape_e6f8923a-9e49-4f46-9408-6e2b9810e970.png",
+        "badge_text": "BIS ZU -75% RABATT",
+        "title_line_1": "PREMIUM QUALITÄT.",
+        "title_line_2": "UNGLAUBLICHER PREIS.",
+        "description": "Japanisch inspirierte Küchenmesser – extrem scharf, langlebig und für deinen perfekten Schnitt.",
+        "button_text": "JETZT ANGEBOTE SICHERN",
+        "button_link": "",
+        "customer_text": "Bereits über 25.000+ Kunden sind begeistert!",
+        "circle_text_small": "",
+        "circle_text_big": "-75%",
+        "circle_text_bottom": "",
+        "show_circle_mobile": true,
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "button_bg": "#fa8526",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#222222",
+        "button_hover_text": "#ffffff",
+        "bg_color": "#f5f5f5",
+        "badge_bg": "#d50000",
+        "badge_color": "#ffffff",
+        "title_color": "#000000",
+        "highlight_color": "#d50000",
+        "desc_color": "#000000",
+        "feature_icon_color": "#111111",
+        "feature_title_color": "#111111",
+        "feature_text_color": "#111111",
+        "customer_text_color": "#111111",
+        "circle_bg": "#d50000",
+        "circle_color": "#ffffff",
+        "gradient_opacity_start": 98,
+        "gradient_opacity_mid": 96,
+        "mobile_gradient_opacity_start": 80,
+        "mobile_gradient_opacity_mid": 60,
+        "container_width": 1440,
+        "content_width": 700,
+        "desktop_height": 620,
+        "mobile_height": 780,
+        "content_padding_top": 60,
+        "content_padding_top_mobile": 60,
+        "content_padding_bottom": 60,
+        "content_padding_bottom_mobile": 40,
+        "badge_size": 24,
+        "mobile_badge_size": 13,
+        "title_size": 66,
+        "mobile_title_size": 24,
+        "desc_size": 24,
+        "mobile_desc_size": 14,
+        "feature_icon_size": 32,
+        "feature_title_size": 13,
+        "mobile_feature_title_size": 12,
+        "feature_text_size": 13,
+        "mobile_feature_text_size": 12,
+        "customer_text_size": 16,
+        "mobile_customer_text_size": 14,
+        "avatar_size": 38,
+        "circle_size": 200,
+        "circle_top": 50,
+        "circle_right": 5,
+        "circle_top_mobile": 0,
+        "circle_right_mobile": 5,
+        "circle_small_size": 20,
+        "circle_big_size": 62,
+        "mobile_image_position": "center"
+      }
+    },
+    "kk_benifit_bar_ayKwVj": {
+      "type": "kk-benifit-bar",
+      "blocks": {
+        "item_cmJWWw": {
+          "type": "item",
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 64 64\" fill=\"none\"><path d=\"M7 18H39V45H7V18Z\" stroke=\"currentColor\" stroke-width=\"4\"></path><path d=\"M39 28H50L57 36V45H39V28Z\" stroke=\"currentColor\" stroke-width=\"4\"></path><circle cx=\"19\" cy=\"48\" r=\"5\" stroke=\"currentColor\" stroke-width=\"4\"></circle><circle cx=\"47\" cy=\"48\" r=\"5\" stroke=\"currentColor\" stroke-width=\"4\"></circle></svg>",
+            "title": "KOSTENLOSER VERSAND",
+            "subtitle": "innerhalb DE"
+          }
+        },
+        "item_WiDADy": {
+          "type": "item",
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 64 64\" fill=\"none\"><circle cx=\"32\" cy=\"34\" r=\"22\" stroke=\"currentColor\" stroke-width=\"4\"></circle><path d=\"M32 20V34L42 40\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\"></path><path d=\"M24 6H40\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\"></path><path d=\"M32 6V12\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\"></path></svg>",
+            "title": "30 TAGE GELD-ZURÜCK",
+            "subtitle": "Ohne Risiko bestellen"
+          }
+        },
+        "item_Dm7K6B": {
+          "type": "item",
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 64 64\" fill=\"none\"><rect x=\"14\" y=\"24\" width=\"36\" height=\"28\" stroke=\"currentColor\" stroke-width=\"4\"></rect><path d=\"M22 24V17C22 11 26 7 32 7C38 7 42 11 42 17V24\" stroke=\"currentColor\" stroke-width=\"4\"></path><path d=\"M32 35V42\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\"></path></svg>",
+            "title": "SICHERE ZAHLUNG",
+            "subtitle": "SSL-verschlüsselt"
+          }
+        },
+        "item_P7CiWP": {
+          "type": "item",
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 64 64\" fill=\"none\"><path d=\"M14 36V30C14 20 22 12 32 12C42 12 50 20 50 30V36\" stroke=\"currentColor\" stroke-width=\"4\"></path><rect x=\"8\" y=\"33\" width=\"10\" height=\"15\" rx=\"3\" stroke=\"currentColor\" stroke-width=\"4\"></rect><rect x=\"46\" y=\"33\" width=\"10\" height=\"15\" rx=\"3\" stroke=\"currentColor\" stroke-width=\"4\"></rect><path d=\"M50 48C47 55 40 57 33 57\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\"></path></svg>",
+            "title": "DEUTSCHER SUPPORT",
+            "subtitle": "Wir sind für dich da"
+          }
+        }
+      },
+      "block_order": [
+        "item_cmJWWw",
+        "item_WiDADy",
+        "item_Dm7K6B",
+        "item_P7CiWP"
+      ],
+      "name": "KK Benefit Bar",
+      "settings": {
+        "container_width": 1440,
+        "section_bg": "#eeeff8",
+        "border_color": "#bdbbbb",
+        "border_width": 1,
+        "icon_color": "#111",
+        "title_color": "#111",
+        "subtitle_color": "#111",
+        "icon_size": 34,
+        "title_size": 15,
+        "subtitle_size": 14,
+        "mobile_title_size": 12,
+        "mobile_subtitle_size": 12,
+        "item_gap": 36,
+        "icon_gap": 14,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0,
+        "mobile_layout": "grid",
+        "mobile_grid_item_padding": 8,
+        "mobile_grid_item_bg": "rgba(0,0,0,0)",
+        "mobile_grid_divider_color": "#e0e0e0",
+        "mobile_grid_divider_width": 1
+      }
+    },
+    "kk_topsets_3_cards_nCP8xW": {
+      "type": "kk-topsets-3-cards",
+      "blocks": {
+        "card_FXEhdP": {
+          "type": "card",
+          "settings": {
+            "product": "premium",
+            "image": "shopify://shop_images/Kuechenkompane_Schweden_-_Arcads_image_asset_7_1.jpg",
+            "discount_text": "",
+            "label": "AM HÄUFIGSTEN GEKAUFT",
+            "title": "",
+            "description": "Perfekt ausbalanciert, extrem scharf und für jede Aufgabe in der Küche gemacht. Für präzise Schnitte wie ein Profi.",
+            "price": "€119,99",
+            "compare_price": "€479,99",
+            "save_text": "€360,00",
+            "button_link": ""
+          }
+        },
+        "card_Hizmri": {
+          "type": "card",
+          "settings": {
+            "product": "bundle-premium",
+            "image": "shopify://shop_images/Kuechenkompane_Schweden_-_Arcads_image_asset_8_1.jpg",
+            "discount_text": "",
+            "label": "BESTES PREIS-LEISTUNGS-VERHÄLTNIS",
+            "title": "",
+            "description": "8 hochwertige Damastmesser inklusive massivem Messerblock. Maximale Ausstattung zum unschlagbaren Vorteilspreis.",
+            "price": "€119,99",
+            "compare_price": "€479,99",
+            "save_text": "€360,00",
+            "button_link": ""
+          }
+        },
+        "card_eVdWqz": {
+          "type": "card",
+          "settings": {
+            "product": "gyuto-set-3pcs",
+            "image": "shopify://shop_images/Kuechenkompane_Schweden_Arcads_image_asset_5_1_V1_1.jpg",
+            "discount_text": "",
+            "label": "FÜR ANSPRUCHSVOLLE KÖCHE",
+            "title": "",
+            "description": "Exklusive Sammleredition mit handveredelten Griffen und einzigartigem Damaststahl. Für alle, die nur das Beste wollen.",
+            "price": "€119,99",
+            "compare_price": "€479,99",
+            "save_text": "€360,00",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_FXEhdP",
+        "card_Hizmri",
+        "card_eVdWqz"
+      ],
+      "name": "kk Top Sets",
+      "settings": {
+        "eyebrow": "UNSERE BESTSELLER — JETZT ZUM BESTEN PREIS",
+        "heading_before": "SPARE",
+        "heading_highlight": "-75%",
+        "heading_after": "AUF UNSERE TOP-SETS",
+        "shape_image": "shopify://shop_images/line.png",
+        "button_text": "ZUM ANGEBOT",
+        "save_label": "DU SPARST",
+        "bottom_link_text": "ALLE ANGEBOTE ANSEHEN",
+        "bottom_link_url": "shopify://collections/sortimentswechsel",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "bg_color": "#f6f6f6",
+        "eyebrow_color": "#111111",
+        "title_color": "#111111",
+        "highlight_color": "#d81920",
+        "card_bg": "#ffffff",
+        "badge_bg": "#000000",
+        "badge_text": "#ffffff",
+        "label_bg": "#d81920",
+        "label_color": "#ffffff",
+        "card_title_color": "#111111",
+        "desc_color": "#555555",
+        "price_color": "#d81920",
+        "compare_color": "#888888",
+        "save_color": "#d81920",
+        "bottom_link_color": "#111111",
+        "eyebrow_size": 16,
+        "eyebrow_size_mobile": 12,
+        "title_size": 42,
+        "title_size_mobile": 24,
+        "card_title_size": 18,
+        "card_title_size_mobile": 16,
+        "desc_size": 14,
+        "desc_size_mobile": 13,
+        "price_size": 24,
+        "price_size_mobile": 18,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "card_gap": 24,
+        "card_radius": 8,
+        "mobile_layout": "1",
+        "mobile_peek": 25
+      }
+    },
+    "promo_banner_UhA7qf": {
+      "type": "promo-banner",
+      "blocks": {
+        "promo_item_97nm7i": {
+          "type": "promo_item",
+          "settings": {
+            "icon_type": "svg",
+            "icon_svg": "<svg stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" viewbox=\"0 0 256 256\" height=\"1em\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M96,104a8,8,0,1,1,8-8A8,8,0,0,1,96,104Zm64,48a8,8,0,1,0,8,8A8,8,0,0,0,160,152Zm80-24c0,10.44-7.51,18.27-14.14,25.18-3.77,3.94-7.67,8-9.14,11.57-1.36,3.27-1.44,8.69-1.52,13.94-.15,9.76-.31,20.82-8,28.51s-18.75,7.85-28.51,8c-5.25.08-10.67.16-13.94,1.52-3.57,1.47-7.63,5.37-11.57,9.14C146.27,232.49,138.44,240,128,240s-18.27-7.51-25.18-14.14c-3.94-3.77-8-7.67-11.57-9.14-3.27-1.36-8.69-1.44-13.94-1.52-9.76-.15-20.82-.31-28.51-8s-7.85-18.75-8-28.51c-.08-5.25-.16-10.67-1.52-13.94-1.47-3.57-5.37-7.63-9.14-11.57C23.51,146.27,16,138.44,16,128s7.51-18.27,14.14-25.18c3.77-3.94,7.67-8,9.14-11.57,1.36-3.27,1.44-8.69,1.52-13.94.15-9.76.31-20.82,8-28.51s18.75-7.85,28.51-8c5.25-.08,10.67-.16,13.94-1.52,3.57-1.47,7.63-5.37,11.57-9.14C109.73,23.51,117.56,16,128,16s18.27,7.51,25.18,14.14c3.94,3.77,8,7.67,11.57,9.14,3.27,1.36,8.69,1.44,13.94,1.52,9.76.15,20.82.31,28.51,8s7.85,18.75,8,28.51c.08,5.25.16,10.67,1.52,13.94,1.47,3.57,5.37,7.63,9.14,11.57C232.49,109.73,240,117.56,240,128ZM96,120A24,24,0,1,0,72,96,24,24,0,0,0,96,120Zm77.66-26.34a8,8,0,0,0-11.32-11.32l-80,80a8,8,0,0,0,11.32,11.32ZM184,160a24,24,0,1,0-24,24A24,24,0,0,0,184,160Z\"></path></svg>",
+            "text_line1": "BIS ZU -75%",
+            "text_line2": "RABATT"
+          }
+        },
+        "promo_item_F89izw": {
+          "type": "promo_item",
+          "settings": {
+            "icon_type": "svg",
+            "icon_svg": "<svg stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" viewbox=\"0 0 16 16\" height=\"1em\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z\"></path></svg>",
+            "text_line1": "KEINE",
+            "text_line2": "NACHPRODUKTION"
+          }
+        },
+        "promo_item_hckURe": {
+          "type": "promo_item",
+          "settings": {
+            "icon_type": "svg",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" stroke-width=\"2\"><path d=\"M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z\"></path></svg>",
+            "text_line1": "NUR SOLANGE DER",
+            "text_line2": "VORRAT REICHT!"
+          }
+        }
+      },
+      "block_order": [
+        "promo_item_97nm7i",
+        "promo_item_F89izw",
+        "promo_item_hckURe"
+      ],
+      "name": "Promo Banner",
+      "settings": {
+        "vertical_padding": 20,
+        "gap": 8,
+        "gap_mobile": 8,
+        "background_color": "rgba(0,0,0,0)",
+        "text_color": "#ffffff",
+        "divider_color": "#ffffff",
+        "font_size_line1": 18,
+        "font_size_line1_mobile": 14,
+        "font_size_line2": 18,
+        "font_size_line2_mobile": 14,
+        "icon_size": 36,
+        "icon_size_mobile": 28,
+        "bg_shape_type": "image",
+        "bg_shape_svg": "",
+        "bg_shape_image": "shopify://shop_images/bg-shape_e6f8923a-9e49-4f46-9408-6e2b9810e970.png"
+      }
+    },
+    "reviews_slider_i9kddd": {
+      "type": "reviews-slider",
+      "blocks": {
+        "review_3FLQAL": {
+          "type": "review",
+          "settings": {
+            "rating": "5",
+            "quote": "\"Die Messer sind unglaublich scharf und liegen perfekt in der Hand. Kochen macht jetzt viel mehr Spass!\"",
+            "author": "Markus T.",
+            "image": "shopify://shop_images/002_Manuel_Weidt_Photographer_DSC00653_V2.webp"
+          }
+        },
+        "review_cxyLbi": {
+          "type": "review",
+          "settings": {
+            "rating": "5",
+            "quote": "\"Hochwertige Verarbeitung und ein mega Preis! Das Set sieht in meiner Kueche einfach fantastisch aus.\"",
+            "author": "Julia M.",
+            "image": "shopify://shop_images/002_Manuel_Weidt_Photographer_DSC00653_V2.webp"
+          }
+        },
+        "review_DXnRfr": {
+          "type": "review",
+          "settings": {
+            "rating": "5",
+            "quote": "\"Schnelle Lieferung, top Qualitaet und super scharf. Klare Kaufempfehlung!\"",
+            "author": "Sarah K.",
+            "image": "shopify://shop_images/002_Manuel_Weidt_Photographer_DSC00653_V2.webp"
+          }
+        }
+      },
+      "block_order": [
+        "review_3FLQAL",
+        "review_cxyLbi",
+        "review_DXnRfr"
+      ],
+      "name": "Reviews Slider",
+      "settings": {
+        "heading": "ECHTE KUNDEN. ECHTE MEINUNGEN.",
+        "heading_size": 32,
+        "heading_size_mobile": 18,
+        "show_overall_rating": true,
+        "overall_rating": "4.9",
+        "overall_label": "basierend auf über",
+        "overall_count": "25.000 Bewertungen",
+        "overall_size": 16,
+        "overall_size_mobile": 14,
+        "slides_desktop": 3,
+        "slides_tablet": 2,
+        "slides_mobile": 1,
+        "slides_gap": 20,
+        "loop": true,
+        "autoplay": false,
+        "autoplay_delay": 4000,
+        "show_paginations": false,
+        "show_nav_buttons": false,
+        "section_bg": "#f5f5f5",
+        "heading_color": "#1a1a1a",
+        "subtext_color": "#444444",
+        "star_color": "#e53e3e",
+        "star_empty_color": "#e0e0e0",
+        "card_bg": "#ffffff",
+        "card_border_color": "#e5e5e5",
+        "quote_color": "#333333",
+        "author_color": "#111111",
+        "nav_color": "#333333",
+        "quote_size": 14,
+        "quote_size_mobile": 13,
+        "author_size": 14,
+        "author_size_mobile": 13,
+        "card_radius": 8,
+        "section_padding_top": 60,
+        "section_padding_top_mobile": 40,
+        "section_padding_bottom": 60,
+        "section_padding_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "kk_sale_hero_banner_tKhJJr",
+    "kk_benifit_bar_ayKwVj",
+    "kk_topsets_3_cards_nCP8xW",
+    "promo_banner_UhA7qf",
+    "reviews_slider_i9kddd"
+  ]
+}

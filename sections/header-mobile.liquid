@@ -1,0 +1,31 @@
+{%- render 'mobile-menu', section: section -%}
+
+{% schema %}
+{
+  "name": "Mobile Header",
+  "tag": "section",
+  "class": "mobile-header-section",
+  "settings": [
+     {
+      "type": "header",
+      "content": "Mobile Submenu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_submenu",
+      "label": "Show Sub Menu",
+      "default": false
+    },
+    {
+      "type": "link_list",
+      "id": "mobile_sub_menu",
+      "label": "Mobile Sub menu",
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mobile Header"
+    }
+  ]
+}
+{% endschema %}

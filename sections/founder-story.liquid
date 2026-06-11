@@ -1,0 +1,70 @@
+<section id="founder-slider-{{ section.id }}" class="founder-slider-section">
+  
+    {% content_for 'blocks' %}
+
+  <style>
+    #founder-slider-{{ section.id }} .founder-slider-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media screen and (max-width: 749px) {
+      #founder-slider-{{ section.id }} .founder-slider-wrapper {
+        padding: 0 16px;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Founder slider",
+  "blocks": [
+    {
+      "type": "_founder-row"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founder slider",
+      "category": "Slider",
+      "blocks": [
+        {
+          "type": "_founder-row",
+          "blocks": [
+            {
+              "type": "_founder-slider-group",
+              "blocks": [
+                {
+                  "type": "_founder-slide-image"
+                },
+                {
+                  "type": "_founder-slide-image"
+                },
+                {
+                  "type": "_founder-slide-image"
+                }
+              ]
+            },
+            {
+              "type": "_founder-content",
+              "blocks": [
+                {
+                  "type": "_founder-text"
+                },
+                {
+                  "type": "_founder-heading"
+                },
+                {
+                  "type": "_founder-body"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

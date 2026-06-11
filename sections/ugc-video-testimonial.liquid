@@ -1,179 +1,176 @@
 
-<script src="{{ 'ugc-video-testimonial.js' | asset_url }}" defer="defer"></script>
-
 <style>
-  .video_area {
-      padding: 70px 0;
-      padding-top: {{- section.settings.pt -}}px;
-      padding-bottom: {{- section.settings.pb -}}px;
+  .ugc-{{ section.id }}.video_area {
+    padding: 70px 0;
+    padding-top: {{- section.settings.pt -}}px;
+    padding-bottom: {{- section.settings.pb -}}px;
   }
 
-  .custom_container {
-      max-width: 1400px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 0px 40px;
+  .ugc-{{ section.id }} .custom_container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 40px;
   }
 
-  .video_title {
-      padding-bottom: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-  }
-
-  .video_title h3 {
-      font-size: {{- section.settings.title_size -}}px;
-      font-weight: 400;
-      text-transform: uppercase;    
-      margin: 0;
-  }
-
-  .video_title a {
-      font-size: 14px;
-      font-weight: 400;
-      text-transform: uppercase;      
-      display: inline-block;
-      text-decoration: none;
-      padding-bottom: 5px;
-      border-bottom: 1px solid #1E1E1E;
-      transition: 0.2s all ease;
-  }
-
-  .video_title a:hover {
-      color: #635247;
-  }
-  .play_btn.hide {
-    display: none;
-  }
-
-  /* swiper slider */
-  .swiper {
-      width: 100%;
-      height: 100%;
-  }
-
-  .video_area .swiper-slide {
-      background: transparent;
-      border-radius: 24px;
-  }
-
-  .video_area .swiper-slide video {
-      width: 100%;
-      max-width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover;
-      border-radius: 24px;
-  }
-
-  .video_item {
-      position: relative;
-      cursor: pointer;
-  }
-
-  .play_btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
-
-  .play_btn img {
-      width: 24px;
-      opacity: 0.7;
-      transition: 0.3s all ease;
-  }
-
-  .video_item:hover img {
-      transform: scale(1.15);
-  }
-
-  .video_slider .video-prev,
-  .video_slider .video-next {
-      display: none;
-  }
-
-  .video_slider .video-prev, 
-  .video_slider .video-next {
-    color: #898989;
-    background-color: #f1f1f1;
-    border-radius: 50%;
-    height: 36px;
-    width: 36px;
-    position: absolute;
-    z-index: 999999;
-    top: 50%;
+  .ugc-{{ section.id }} .video_title {
+    padding-bottom: 32px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transform: translateY(-50%);
+    justify-content: space-between;
   }
 
-  .video_slider .video-prev svg,
-  .video_slider .video-next svg {
-    width:8px;
-    height: 8px;
+  .ugc-{{ section.id }} .video_title h3 {
+    font-size: {{- section.settings.title_size -}}px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
   }
-  .video_slider .video-next svg {
-    transform: rotate(0);
+
+  .ugc-{{ section.id }} .video_title a {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #1E1E1E;
+    transition: 0.2s all ease;
   }
-  .video-prev {
-    left: 15px;
+
+  .ugc-{{ section.id }} .video_title a:hover { color: #635247; }
+
+  .ugc-{{ section.id }} .play_btn.hide { display: none; }
+
+  /* ── Splide specific: slide container ── */
+  .ugc-{{ section.id }} .splide__slide {
+    background: transparent;
+    border-radius: 24px;
+    overflow: hidden;
   }
-  .video-next {
-    right: 15px;
+
+  /* matches original .swiper-slide video_item */
+  .ugc-{{ section.id }} .video_item {
+    position: relative;
+    cursor: pointer;
+    border-radius: 24px;
+    height: 100%;
   }
-  .video_area video {
-    max-height: 100%;
+
+  /* matches original .video_area .swiper-slide video */
+  .ugc-{{ section.id }} video {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
+    border-radius: 24px;
+    display: block;
+    max-height: 100%;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
   }
 
+  .ugc-{{ section.id }} .play_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  .ugc-{{ section.id }} .play_btn img {
+    width: 24px;
+    opacity: 0.7;
+    transition: 0.3s all ease;
+  }
+
+  .ugc-{{ section.id }} .video_item:hover img { transform: scale(1.15); }
+
+  /* ── Splide arrows — matches original .video-prev / .video-next ── */
+  .ugc-{{ section.id }} .splide__arrow {
+    color: #898989;
+    background-color: #f1f1f1 !important;
+    border-radius: 50% !important;
+    height: 36px !important;
+    width: 36px !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+    z-index: 999999;
+    cursor: pointer;
+    padding: 0;
+    opacity: 1;
+  }
+
+  .ugc-{{ section.id }} .splide__arrow svg {
+    width: 8px !important;
+    height: 8px !important;
+    fill: #1E1E1E !important;
+  }
+
+  /* original এ next arrow rotate(0) ছিল, prev flip ছিল না */
+  .ugc-{{ section.id }} .splide__arrow--prev svg { transform: scaleX(1) !important; }
+  .ugc-{{ section.id }} .splide__arrow--next svg { transform: rotate(0deg) !important; }
+
+  .ugc-{{ section.id }} .splide__arrow--prev { left: 15px !important; }
+  .ugc-{{ section.id }} .splide__arrow--next { right: 15px !important; }
+
+  .ugc-{{ section.id }} .splide__arrow:disabled {
+    opacity: 0.2 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* original: desktop এ arrows display:none ছিল, শুধু mobile এ flex */
+  .ugc-{{ section.id }} .splide__arrow { display: none !important; }
+
+  .ugc-{{ section.id }} .splide__pagination { display: none; }
+
+  /* ── Mobile ── */
   @media screen and (max-width: 699px) {
-    .video_area {
+    .ugc-{{ section.id }}.video_area {
       padding-top: {{- section.settings.pt_mobile -}}px;
       padding-bottom: {{- section.settings.pb_mobile -}}px;
     }
-  }
-  @media screen and (max-width: 699px) {
-    .video_slider .video-prev,
-    .video_slider .video-next {
-          display: flex;
-      }
 
-      .video_title {
-          display: block;
-          text-align: center;
-          padding: 0px 20px 30px;
-      }
+    .ugc-{{ section.id }} .splide__arrow { display: flex !important; }
 
-      .video_title h3 {
-          font-size: 16px;
-          margin-bottom: 12px;
-      }
+    .ugc-{{ section.id }} .video_title {
+      display: block;
+      text-align: center;
+      padding: 0px 20px 30px;
+    }
 
-      .popup_item {
-          max-width: 320px;
-          width: 100%;
-      }
+    .ugc-{{ section.id }} .video_title h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
 
-      .popup_item video, {
-          max-width: 320px;
-          max-height: 500px;
-      }
+    .ugc-{{ section.id }} .custom_container {
+       padding: 0 10px;
+        }
 
-      .custom_container {
-          padding: 0;
-      }
+    /* original popup_item mobile styles */
+    .ugc-{{ section.id }} .popup_item {
+      max-width: 320px;
+      width: 100%;
+    }
 
+    .ugc-{{ section.id }} .popup_item video {
+      max-width: 320px;
+      max-height: 500px;
+    }
   }
 </style>
 
-{% comment %} video section start  {% endcomment %}
+{% comment %} video section start {% endcomment %}
 
-<div class="video_area m-color-{{ section.settings.color_scheme }}">
+<div class="video_area ugc-{{ section.id }} m-color-{{ section.settings.color_scheme }}">
   <div class="custom_container">
     <div class="video_title">
       <h3 class="{{ section.settings.heading_type }}">{{ section.settings.title }}</h3>
@@ -181,67 +178,120 @@
         <a href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
       {% endif %}
     </div>
+
     <div class="video_slider">
-      <div class="swiper video_slider video_slider_active">
-        <div class="swiper-wrapper">
-          {% for block in section.blocks %}
-            {% if block.settings.video.sources[1].url != blank %}
-              <div class="swiper-slide">
-                <div class="video_item">
-                  <video
-                    playsinline
-                    {% if section.settings.autoplay %}
-                    autoplay
-                    {% endif %}
-                    muted
-                    controls
-                    loading="lazy"
-                    {% if block.settings.video_poster %}
-                      poster="{{ block.settings.video_poster | img_url : 'master'  }}"
-                    {% endif %}
-                  >
-                    <source
-                      src="{{ block.settings.video.sources[1].url }}"
-                      type="video/mp4"
+      <div id="splide-ugc-{{ section.id }}" class="splide">
+        <div class="splide__track">
+          <div class="splide__list">
+            {% for block in section.blocks %}
+              {% if block.settings.video.sources[1].url != blank %}
+                <div class="splide__slide">
+                  <div class="video_item">
+                    <video
+                      playsinline
+                      {% if section.settings.autoplay %}autoplay{% endif %}
+                      muted
+                      controls
+                      loading="lazy"
+                      {% if block.settings.video_poster %}
+                        poster="{{ block.settings.video_poster | img_url: 'master' }}"
+                      {% endif %}
                     >
-                    <track src="//kuechenkompane.de/videos/kochvideo-de.vtt" kind="captions" srclang="de" label="Deutsch">
-                    <track src="//kuechenkompane.de/videos/kochvideo-en.vtt" kind="captions" srclang="en" label="English">
-                  </video>
-                  <div class="play_btn ">
-                    <span>
-                      <svg
-                        class=""
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path d="M4 3.532c0-1.554 1.696-2.514 3.029-1.715l14.113 8.468c1.294.777 1.294 2.653 0 3.43L7.029 22.183c-1.333.8-3.029-.16-3.029-1.715V3.532Z" fill="#fff"></path>
-                      </svg>
-                    </span>
+                      <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
+                      <track src="//kuechenkompane.de/videos/kochvideo-de.vtt" kind="captions" srclang="de" label="Deutsch">
+                      <track src="//kuechenkompane.de/videos/kochvideo-en.vtt" kind="captions" srclang="en" label="English">
+                    </video>
+                    <div class="play_btn">
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M4 3.532c0-1.554 1.696-2.514 3.029-1.715l14.113 8.468c1.294.777 1.294 2.653 0 3.43L7.029 22.183c-1.333.8-3.029-.16-3.029-1.715V3.532Z" fill="#fff"></path>
+                        </svg>
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            {% endif %}
-          {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
-        <div class="video-next">
-          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
-            <path d="M3.93333 8L8 4C6.97986 2.99931 4.95342 1.00071 3.93333 -1.7776e-07L3.42014 0.496533C4.33751 1.39653 5.55134 2.5952 6.62228 3.64658L5.22927e-05 3.64658L5.22618e-05 4.35283L6.62228 4.35283L3.42014 7.4979L3.93333 8Z" fill="#1E1E1E"/>
-          </svg>
-        </div>
-        <div class="video-prev">
-          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
-            <path d="M4.06673 -9.0518e-07L6.10829e-05 4C1.0202 5.00069 3.04664 6.99929 4.06673 8L4.57992 7.50347C3.66255 6.60347 2.44872 5.4048 1.37779 4.35342L8.00001 4.35342L8.00001 3.64716L1.37779 3.64716L4.57992 0.502097L4.06673 -9.0518e-07Z" fill="#1E1E1E"/>
-          </svg>
+
+        <!-- Splide Arrows — same SVG as original video-prev/video-next -->
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+              <path d="M4.06673 -9.0518e-07L6.10829e-05 4C1.0202 5.00069 3.04664 6.99929 4.06673 8L4.57992 7.50347C3.66255 6.60347 2.44872 5.4048 1.37779 4.35342L8.00001 4.35342L8.00001 3.64716L1.37779 3.64716L4.57992 0.502097L4.06673 -9.0518e-07Z" fill="#1E1E1E"/>
+            </svg>
+          </button>
+          <button class="splide__arrow splide__arrow--next" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+              <path d="M3.93333 8L8 4C6.97986 2.99931 4.95342 1.00071 3.93333 -1.7776e-07L3.42014 0.496533C4.33751 1.39653 5.55134 2.5952 6.62228 3.64658L5.22927e-05 3.64658L5.22618e-05 4.35283L6.62228 4.35283L3.42014 7.4979L3.93333 8Z" fill="#1E1E1E"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-{% comment %} video section end  {% endcomment %}
+{% comment %} video section end {% endcomment %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 1. Initialize Splide — same perPage/gap/breakpoints as original Swiper config
+    new Splide('#splide-ugc-{{ section.id }}', {
+      type      : 'slide',
+      perPage   : 6,
+      gap       : '8px',
+      rewind    : false,
+      pagination: false,
+      arrows    : true,
+      breakpoints: {
+        1024: {
+           perPage: 6,
+           drag         : 'free',
+           snap         : true,
+           flickPower   : 400,
+           flickMaxPages: 1,
+         },
+        700 : {
+           perPage: 3,  
+           drag         : 'free',
+           snap         : true,
+           flickPower   : 400,
+           flickMaxPages: 1,
+         },
+        520 : { 
+          perPage: 2,
+          drag         : 'free',
+          snap         : true,
+          padding     : { right: '15%' },
+          flickPower   : 400,
+          flickMaxPages: 1,
+         }
+      }
+    }).mount();
+
+    // 2. Video Play Logic — same as original
+    const videoItems = document.querySelectorAll('.ugc-{{ section.id }} .video_item');
+    videoItems.forEach((videoItem) => {
+      const video      = videoItem.querySelector('video');
+      const playButton = videoItem.querySelector('.play_btn');
+
+      videoItem.addEventListener('click', function () {
+        if (video.paused) { video.play(); } else { video.pause(); }
+      });
+
+      // Prevent play button click from triggering container click
+      playButton.addEventListener('click', function (e) {
+        e.stopPropagation();
+        video.play();
+      });
+
+      video.addEventListener('play',  function () { playButton.style.display = 'none'; });
+      video.addEventListener('pause', function () { playButton.style.display = 'flex'; });
+    });
+  });
+</script>
 
 {% schema %}
 {
@@ -295,34 +345,25 @@
       "default": "See our products in action"
     },
     {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title Font Size",
+      "default": 20,
+      "min": 12,
+      "max": 60,
+      "step": 1
+    },
+    {
       "type": "select",
       "id": "heading_type",
       "label": "Choose Heading Size",
       "options": [
-        {
-          "value": "mrk-h1",
-          "label": "H1"
-        },
-        {
-          "value": "mrk-h2",
-          "label": "H2"
-        },
-        {
-          "value": "mrk-h3",
-          "label": "H3"
-        },
-        {
-          "value": "mrk-h4",
-          "label": "H4"
-        },
-        {
-          "value": "mrk-h5",
-          "label": "H5"
-        },
-        {
-          "value": "mrk-h6",
-          "label": "H6"
-        }
+        { "value": "mrk-h1", "label": "H1" },
+        { "value": "mrk-h2", "label": "H2" },
+        { "value": "mrk-h3", "label": "H3" },
+        { "value": "mrk-h4", "label": "H4" },
+        { "value": "mrk-h5", "label": "H5" },
+        { "value": "mrk-h6", "label": "H6" }
       ],
       "default": "mrk-h1"
     },
@@ -344,7 +385,6 @@
       "label": "Button Text",
       "default": "@merodacosmetics",
       "visible_if": "{{ section.settings.show_button == true }}"
-
     },
     {
       "type": "checkbox",
@@ -383,36 +423,4 @@
   ]
 }
 {% endschema %}
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const videoItems = document.querySelectorAll('.video_item');
 
-    videoItems.forEach((videoItem) => {
-      const video = videoItem.querySelector('video');
-      const playButton = videoItem.querySelector('.play_btn');
-
-      // Play video on clicking anywhere inside the video_item
-      videoItem.addEventListener('click', function () {
-        if (video.paused) {
-          video.play();
-        }
-      });
-
-      // Hide play button when video starts playing
-      video.addEventListener('play', function () {
-        playButton.style.display = 'none';
-      });
-
-      // Show play button when video is paused
-      video.addEventListener('pause', function () {
-        playButton.style.display = 'flex';
-      });
-
-      // Prevent play button click from triggering the container click event
-      playButton.addEventListener('click', function (e) {
-        e.stopPropagation(); // Prevents event bubbling
-        video.play();
-      });
-    });
-  });
-</script>

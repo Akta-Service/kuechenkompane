@@ -9,6 +9,18 @@
 -%}
   <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
+
+{% assign hide_page_header = false %}
+{% assign hide_pages = section.settings.hide_header_pages | strip | split: ',' %}
+{% for hide_page_handle in hide_pages %}
+  {% assign hide_page_handle_trimmed = hide_page_handle | strip %}
+  {% if page and page.handle == hide_page_handle_trimmed %}
+    {% assign hide_page_header = true %}
+  {% endif %}
+{% endfor %}
+
+
+{% unless hide_page_header %}
 <m-footer class="m-footer m:block" data-section-type="footer" data-section-id="{{ section.id }}">
   {% render 'footer-blocks',
     blocks: section.blocks,
@@ -17,6 +29,8 @@
   %}
   {% render 'footer-design', container: section.settings.container %}
 </m-footer>
+{% endunless %}
+
 <script type="text/javascript" src="https://t.adcell.com/js/trad.js"></script>
 <script>Adcell.Tracking.track();</script>
 
@@ -25,6 +39,12 @@
 {
   "name": "Footer",
   "settings": [
+    {
+      "type": "textarea",
+      "id": "hide_header_pages",
+      "label": "Hide Footer on pages",
+      "info": "Enter page handle"
+    },
     {
       "type": "paragraph",
       "content": "[Watch tutorial](https://foxecom.link/abZ4Ot)"

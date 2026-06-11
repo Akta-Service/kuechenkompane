@@ -1,16 +1,14 @@
-
 <style>
   .apex-home-logo-list {   
-    padding-top: {{ section.settings.pt}}px;
-    padding-bottom: {{ section.settings.pb}}px;
+    padding-top: {{ section.settings.pt }}px;
+    padding-bottom: {{ section.settings.pb }}px;
   }
-  .homeLogo .swiper-slide {
+  .homeLogo .splide__slide {
     width: fit-content;
     margin: 0 15px;
   }
-  .homeLogo .swiper-wrapper {
+  .homeLogo .splide__list {
     align-items: center;
-    transition-timing-function: linear !important;
   }
   .home-logo-img {
     max-width: 170px;
@@ -20,12 +18,11 @@
   .home-logo-img img {
     width: 100%;
     height: 100%;
-   
   }
-  .home-logo-img .invert_img  {
+  .home-logo-img .invert_img {
     filter: invert(1);
   }
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 768px) {
     .apex-home-logo-list {   
       padding-top: {{ section.settings.ptm }}px;
       padding-bottom: {{ section.settings.pbm }}px;
@@ -34,30 +31,66 @@
 </style>
 
 <div class="apex-home-logo-list m-color-{{ section.settings.color_scheme }}">
-  <div class="swiper homeLogo">
-    <div class="swiper-wrapper">
-      {% for block in section.blocks %}
-        {% if  block.settings.home_logo != blank %}
-        <div class="swiper-slide">
-          <div class="home-logo-img">
-            <img class="{% if section.settings.invert_color %}invert_img{% endif %}" src="{{ block.settings.home_logo |  img_url: 'large' }}" loading="lazy" alt="logo image">
-          </div>
-        </div>  
-        {% endif %}
-      {% endfor %}    
+  <div id="mrk-home-logo--{{ section.id }}" class="splide homeLogo">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for block in section.blocks %}
+          {% if block.settings.home_logo != blank %}
+            <li class="splide__slide">
+              <div class="home-logo-img">
+                <img
+                  class="{% if section.settings.invert_color %}invert_img{% endif %}"
+                  src="{{ block.settings.home_logo | img_url: 'large' }}"
+                  loading="lazy"
+                  alt="logo image"
+                >
+              </div>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.getElementById('mrk-home-logo--{{ section.id }}');
+  if (!el) return;
+
+  new Splide(el, {
+    type        : {{ section.settings.loop }} ? 'loop' : 'slide',
+    perPage     : 'auto',
+    autoWidth   : true,
+    gap         : 20,
+    arrows      : false,
+    pagination  : false,
+    drag        : true,
+    {% if section.settings.loop %}
+    speed       : 3000,
+    {% endif %}
+    {% if section.settings.autoplay %}
+    autoplay    : true,
+    interval    : 0,
+    pauseOnHover: false,
+    {% endif %}
+  }).mount(
+    {% if section.settings.autoplay %}
+    window.SplideAutoScroll ? { AutoScroll: window.SplideAutoScroll } : {}
+    {% endif %}
+  );
+});
+</script>
+
 {% schema %}
 {
-  "name": "Apex Home logo list",    
-  "settings": [    
+  "name": "Apex Home logo list",
+  "settings": [
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme"
-    },  
+    },
     {
       "type": "range",
       "id": "pt",
@@ -102,7 +135,7 @@
       "type": "checkbox",
       "id": "invert_color",
       "label": "Invert Image Color",
-      "info": "If Use Black Background Then Active Invert Color"      
+      "info": "If Use Black Background Then Active Invert Color"
     },
     {
       "type": "checkbox",
@@ -122,40 +155,18 @@
       "name": "Add Home Logo",
       "type": "slide",
       "settings": [
-         {
-           "type": "image_picker",
-           "id": "home_logo",
-           "label": "Logo Image"
-         }
+        {
+          "type": "image_picker",
+          "id": "home_logo",
+          "label": "Logo Image"
+        }
       ]
     }
   ],
   "presets": [
     {
-      "name":"Apex Home logo list"
+      "name": "Apex Home logo list"
     }
   ]
 }
 {% endschema %}
-
-<script>
-
-  document.addEventListener("DOMContentLoaded", function(event) {
-    const homeLogo = new Swiper(".homeLogo", {     
-      slidesPerView: "auto",
-      spaceBetween: 20, 
-      {% if section.settings.loop %}
-      loop: true,
-      speed: 3000,
-      {% endif %}
-      {% if section.settings.autoplay %}
-        autoplay: {
-          delay: 0,
-          disableOnInteraction: false,
-        },
-      {% endif %}
-    });
-    });
-
-
-</script>

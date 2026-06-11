@@ -1,0 +1,208 @@
+{% assign bi = block.id %}
+{% assign bs = block.settings %}
+
+<div class="text-wrapper-{{ bi }}" {{ block.shopify_attributes }}>
+  {% if bs.icon %}
+    {% assign icon_class = 'icon-' | append: bi %}
+    {{ bs.icon | image_url: width: 80, height: 80 | image_tag: class: icon_class, loading: 'lazy' }}
+  {% endif %}
+  {% unless bs.text == blank %}
+    <div class="text-{{ bi }}">
+      {{ bs.text }}
+    </div>
+  {% endunless %}
+</div>
+
+{% style %}
+  .text-wrapper-{{ bi }} {
+    margin-top: {{ bs.margin_top }}px;
+    margin-bottom: {{ bs.margin_bottom }}px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .text-{{ bi }} {
+    width: 100%;
+    color: {{ bs.font_color }};
+    text-align: {{ bs.alignment }};
+    background-color: {{ bs.background_color }};
+    padding-left: {{ bs.padding_left }}px;
+    padding-right: {{ bs.padding_right }}px;
+    padding-top: {{ bs.padding_top }}px;
+    padding-bottom: {{ bs.padding_bottom }}px;
+  }
+  .text-{{ bi }} * {
+    font-size: {{ bs.font_size }}px !important;
+    margin: 0 !important;
+  }
+  .icon-{{ bi }} {
+    height: 16px;
+    width: auto;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Floow Text",
+  "presets": [
+    {
+      "name": "Floow Text",
+      "category": "Floow"
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon",
+      "info": "Optional"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font Size",
+      "min": 6,
+      "max": 30,
+      "default": 18,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "text_type",
+      "label": "Text type",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "div",
+          "label": "div"
+        }
+      ],
+      "default": "h2",
+      "visible_if": "{{ block.settings.text != blank }}"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Alignment",
+      "default": "left",
+      "visible_if": "{{ block.settings.text != blank }}"
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Font"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "label": "Right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "label": "Left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ]
+}
+{% endschema %}

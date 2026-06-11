@@ -1,0 +1,18 @@
+.m-product-recommendations__wrapper .m-slider-controls__button {
+  color: #898989;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px !important;
+  position: absolute;
+  z-index: 999999;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+.m-product-recommendations__wrapper .m-slider-controls__button svg {
+  width: 8px;
+  height: 8px;
+}

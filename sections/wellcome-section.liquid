@@ -1,0 +1,377 @@
+<style>
+    .wellcome-popup{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      height: 100%;
+      display: flex;
+      /* display: none; */
+      align-items: center;
+      z-index: 999;
+      flex-direction: column;
+      display: none;
+    }
+    .wellcome-popup-overlay{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      height: 100%;
+      z-index: 999;
+      background:rgba(0, 0, 0, 0.83);
+      background:rgb(0 0 0 / 57%);
+    }
+    .wellcome-popup-content {
+      position: relative;
+      z-index: 9999;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 500px;
+      max-width: 100%;
+      max-height: 100vh;
+      margin: auto;
+      {% comment %} margin-top: 50px; {% endcomment %}
+      {% comment %} min-height: 300px; {% endcomment %}
+    }
+    #confetti {
+      position: relative;
+      z-index: 999;
+
+    }
+    .wellcome-close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #000;
+      border: none;
+      font-size: 18px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s ease;
+      z-index: 99999;
+      border: 1px solid #3f3f3f;
+      transition: 0.3s;
+    }
+    .wellcome-close-btn:hover{
+      background: #3f3f3f;
+      color: #fff;
+    }
+    .wellcome-popup-title{
+      margin: 0 0 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+    .wellcome-popup-description {
+      margin: 20px 0 10px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .popup-timer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .popup-timer-label {
+      text-align: center;
+      font-size: 23px;
+      font-weight: 500;
+    }
+    #popup-timer-box {
+      font-size: 30px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .timer-wrapper {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .time-box {
+    padding: 12px 5px;
+    border-radius: 10px;
+    border: 1px solid #283041;
+    text-align: center;
+    width: 80px;
+  }
+
+  .time-box span {
+    font-size: 18px;
+    color: #000000;
+    display: block;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .time-box label {
+    font-size: 18px;
+    display: block;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .timer-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .wellcome-popup-btn {
+    text-align: center;
+  }
+
+  .wellcome-popup-content {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+<style>
+  .wellcome-popup-content{
+    {% if section.settings.bg != blank %}
+    background-image: url({{ section.settings.bg | image_url }});
+    {% else %}
+      background-color: #000;
+    {% endif %}
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+  }
+  .time-box span {
+    color: #fff;
+  }
+  .time-box {
+    border: 1px solid #ffffff;
+  }
+  .wellcome-close-btn {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    .wellcome-popup-content{
+    {% if section.settings.bg_mobile != blank %}
+      background-image: url({{ section.settings.bg_mobile | image_url }});
+    {% endif %}
+    }
+  }
+</style>
+
+<div class="wellcome-popup" id="wellcome-popup">
+  <div class="wellcome-popup-overlay"></div>
+  <div class="wellcome-popup-content">
+    <button id="wellcome-close-btn" class="wellcome-close-btn">✕</button>
+    {% if section.settings.title != blank %}
+      <h4 class="wellcome-popup-title">{{ section.settings.title }}</h4>
+    {% endif %}
+    <div class="timer-wrapper">
+      <div class="time-box"><span id="days">00</span><label>Tage</label></div>
+      <div class="time-box"><span id="hours">00</span><label>Std</label></div>
+      <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
+      <div class="time-box"><span id="seconds">00</span><label>Sek</label></div>
+    </div>
+    {% if section.settings.description != blank %}
+      <p class="wellcome-popup-description">{{ section.settings.description }}</p>
+    {% endif %}
+    <div class="wellcome-popup-btn">
+      <a class="m-button mrk-btn m-button--primary  " href="{{ section.settings.btn_url }}">
+        {{- section.settings.btn_text -}}
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+{% schema %}
+{
+  "name": "Wellcome Popup",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Willkommen beim VIP SALE. Nutze die Zeit und sichere dir die besten Deals!"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button label",
+      "default": "ZU DEN ANGEBOTEN"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button Url"
+    },
+    {
+      "type": "header",
+      "content": "Background Image Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg",
+      "label": "Background Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_mobile",
+      "label": "Background Image (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Timer Settings"
+    },
+    {
+      "type": "text",
+      "id": "countdown_time",
+      "label": "Target Date & Time (German time)",
+      "default": "2025-12-24T23:59:59"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wellcome Popup"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const wellcomePopup = document.getElementById('wellcome-popup');
+    const closeBtn = document.getElementById('wellcome-close-btn');
+
+    let stopConfetti = false;
+    let autoCloseTimeout = null;
+
+    const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#845EC2'];
+
+    // Universal mobile check (max-width: 768px)
+    const isMobile = () => window.innerWidth <= 768;
+
+    function closePopup() {
+      if (!wellcomePopup) return;
+      wellcomePopup.style.display = 'none';
+      stopConfetti = true;
+      if (autoCloseTimeout) clearTimeout(autoCloseTimeout);
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+
+    // Set origin based on side and screen width
+    function getOrigin(side) {
+      return {
+        x: side === 'left' ? 0 : 1,
+        y: isMobile() ? 0.1 : 0.5, // top for mobile, center for desktop
+      };
+    }
+
+    document.addEventListener('passwordCorrect', function () {
+              console.log('pass match');
+
+      if (!wellcomePopup) return;
+
+      //stopConfetti = false;
+      stopConfetti = true;
+      wellcomePopup.style.display = 'flex';
+
+      // Auto-close after 6 seconds
+      //autoCloseTimeout = setTimeout(closePopup, 6000);
+      autoCloseTimeout = setTimeout(() => {
+        closePopup();
+        document.dispatchEvent(new Event('greetingStop'));
+      }, 6000);
+
+      (function frame() {
+        if (stopConfetti) return;
+
+        // LEFT SIDE
+        confetti({
+          particleCount: 3,
+          angle: 100,
+          spread: 70,
+          startVelocity: 45,
+          ticks: 200,
+          scalar: 1.2,
+          origin: getOrigin('left'),
+          colors,
+        });
+
+        // RIGHT SIDE
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 85,
+          startVelocity: 45,
+          ticks: 200,
+          scalar: 1.2,
+          origin: getOrigin('right'),
+          colors,
+        });
+
+        requestAnimationFrame(frame);
+      })();
+    });
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function startCountdown(targetTimeString) {
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+
+      if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+      // Parse target time as German time (Europe/Berlin)
+      const targetTime = new Date(new Date(targetTimeString).toLocaleString('en-US', { timeZone: 'Europe/Berlin' }));
+
+      function updateTimer() {
+        const now = new Date();
+        const germanNow = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Berlin' }));
+
+        let diffMs = targetTime - germanNow;
+        if (diffMs <= 0) diffMs = 0; // Stop at 0
+
+        const totalSeconds = Math.floor(diffMs / 1000);
+        const days = Math.floor(totalSeconds / (24 * 3600));
+        const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+
+        if (diffMs > 0) {
+          setTimeout(updateTimer, 1000);
+        }
+      }
+
+      updateTimer();
+    }
+
+    // Example: get target time from section settings (Liquid)
+    const countdownTarget = '{{ section.settings.countdown_time }}';
+    // Format example: 2025-12-24T23:59:59
+
+    startCountdown(countdownTarget);
+  });
+</script>

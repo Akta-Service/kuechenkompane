@@ -1,0 +1,755 @@
+{% assign ss = section.settings %}
+{% assign si = section.id %}
+
+<div
+  class="floow-search-wrapper-{{ si }} {% if ss.show_only_in_editor %}floow-search-editor-only{% endif %}"
+  id="floow-search-{{ si }}"
+>
+  <div class="floow-search-bar-{{ si }}" id="floow-search-bar">
+    <div class="container">
+      <div class="floow-search-content-{{ si }}">
+        <div class="floow-search-input-wrapper-{{ si }}">
+          <svg
+            class="floow-search-icon-{{ si }}"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18.5 18.5l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <input
+            type="text"
+            id="floow-search-input-{{ si }}"
+            class="floow-search-input-{{ si }}"
+            placeholder="{{ ss.placeholder }}"
+            autocomplete="off"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="floow-search-results-{{ si }}" id="floow-results-{{ si }}" style="display: none;">
+    <div class="container">
+      <div class="floow-search-results-header-{{ si }}">
+        <div class="floow-search-results-count-{{ si }}" id="floow-results-count-{{ si }}"></div>
+        <a
+          href="#"
+          class="floow-search-results-link-{{ si }}"
+          id="floow-results-link-{{ si }}"
+          style="display: none;"
+        >
+          {{ ss.view_all_text }}
+        </a>
+      </div>
+      <div class="floow-search-results-grid-{{ si }}" id="floow-results-grid-{{ si }}"></div>
+      {% unless ss.popular_products == blank %}
+        <div class="floow-search-popular-products-{{ si }}">
+          <div class="floow-search-popular-products-heading-{{ si }} heading h2">{{ ss.popular_products_heading }}</div>
+          <div class="floow-search-popular-products-grid-{{ si }}">
+            {% for product in ss.popular_products %}
+              {% if product.available %}
+              {% render 'product-card-1', product: product %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endunless %}
+    </div>
+  </div>
+</div>
+
+<style>
+
+  {% if request.design_mode %}
+  #shopify-section-sections--28117505278300__header .header__wrapper {
+    box-shadow: none !important;
+  }
+  {% endif %}
+
+  html:has(.floow-search-results-{{ si }}[style="display: block;"]) {
+    overflow: hidden !important;
+  }
+
+  .floow-search-results-{{ si }}:has(.floow-search-results-grid-{{ si }} .floow-search-result-item-{{ si }}) .floow-search-popular-products-{{ si }} {
+    display: none;
+  }
+
+  .floow-search-results-{{ si }}:has(.floow-search-no-results-{{ si }}:not(:empty)) .floow-search-popular-products-heading-{{ si }} {
+    margin-top: 16px;
+    border-top: 1px solid {{ ss.border_color_results_container }};
+  }
+
+  .floow-search-popular-products-grid-{{ si }} {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+    padding: 16px;
+
+    @media(max-width: 1000px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media(max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .floow-search-popular-products-product-{{ si }} {
+    display: block;
+  }
+
+  .floow-search-popular-products-heading-{{ si }} {
+    padding: 16px;
+    font-size: large;
+  }
+
+  {% if ss.show_only_in_editor %}
+    {% unless request.design_mode %}
+      .floow-search-editor-only {
+        display: none;
+      }
+    {% endunless %}
+  {% endif %}
+
+  #floow-search-{{ si }} {
+    position: sticky;
+    top: 0;
+    {% comment %} z-index: 9; {% endcomment %}
+    width: 100%;
+  }
+
+  .floow-search-bar-{{ si }} {
+    width: 100%;
+    height: {{ ss.search_bar_height }}px;
+    background: {{ ss.background_search_bar }};
+    {% if ss.border_color_search_bar_top != blank %}
+      border-top: 1px solid {{ ss.border_color_search_bar_top }};
+    {% endif %}
+    {% if ss.border_color_search_bar_bottom != blank %}
+      border-bottom: 1px solid {{ ss.border_color_search_bar_bottom }};
+    {% endif %}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .floow-search-bar-{{ si }} .container {
+    width: 100%;
+    max-width: {{ ss.container_max_width }};
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: {{ ss.container_side_padding }}px;
+    padding-right: {{ ss.container_side_padding }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .floow-search-content-{{ si }} {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .floow-search-input-wrapper-{{ si }} {
+    flex: 1;
+    position: relative;
+    height: {{ ss.input_field_height }}px;
+  }
+
+  .floow-search-icon-{{ si }} {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: {{ ss.icon_color }};
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .floow-search-input-{{ si }} {
+    width: 100%;
+    height: 100%;
+    border: 1px solid {{ ss.border_color_input_field }};
+    background: {{ ss.background_input_field }} !important;
+    border-radius: 0px;
+    color: {{ ss.font_color_input_field }};
+    padding: 0 16px 0 48px !important;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .floow-search-input-{{ si }}:focus {
+    border-color: {{ ss.border_color_input_field_focus }};
+  }
+
+  .floow-search-input-{{ si }}::placeholder {
+    color: {{ ss.font_color_placeholder }};
+  }
+
+  .floow-search-results-{{ si }} {
+    position: absolute;
+    top: {{ ss.search_bar_height }}px;
+    left: 0;
+    width: 100%;
+    background: {{ ss.background_results_container }};
+    border: 1px solid {{ ss.border_color_results_container }};
+    border-top: none;
+    border-radius: 0 0 {{ ss.radius_results_container }}px {{ ss.radius_results_container }}px;
+    max-height: 70vh;
+    overflow-y: auto;
+    animation: floowFadeIn 0.3s ease-in-out;
+  }
+
+  .floow-search-results-{{ si }} .container {
+    width: 100%;
+    max-width: {{ ss.container_max_width }};
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: {{ ss.container_side_padding }}px;
+    padding-right: {{ ss.container_side_padding }}px;
+    padding-top: 24px;
+    padding-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    .floow-search-results-{{ si }} .container {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  @keyframes floowFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .floow-search-results-header-{{ si }} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .floow-search-results-count-{{ si }} {
+    color: {{ ss.results_count_color }};
+    font-size: 14px;
+    text-align: left;
+    flex: 1;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .floow-search-results-link-{{ si }} {
+    font-size: 14px;
+    color: {{ ss.results_count_color }};
+    text-decoration: underline;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .floow-search-results-link-{{ si }}:hover {
+    opacity: 0.8;
+  }
+
+  .floow-search-results-grid-{{ si }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 600px) {
+    .floow-search-results-grid-{{ si }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .floow-search-result-item-{{ si }} {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: {{ ss.background_results }};
+    border: 1px solid {{ ss.border_color_result }};
+    border-radius: {{ ss.radius_results }}px;
+    text-decoration: none;
+    color: {{ ss.font_color_results_container }};
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .floow-search-result-item-{{ si }}:hover {
+    transform: translateY(-2px);
+  }
+
+  .floow-search-result-image-{{ si }} {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border: 1px solid {{ ss.border_color_image }};
+    border-radius: {{ ss.radius_image }}px;
+    flex-shrink: 0;
+  }
+
+  .floow-search-result-info-{{ si }} {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .floow-search-result-title-{{ si }} {
+    font-size: 14px;
+    font-weight: 500;
+    color: {{ ss.font_color_results_container }};
+  }
+
+  .floow-search-result-price-{{ si }} {
+    font-size: 13px;
+    color: {{ ss.font_color_results_container }};
+    opacity: 0.8;
+  }
+
+  .floow-search-no-results-{{ si }} {
+    padding: 8px;
+    color: {{ ss.font_color_results_container }};
+    opacity: 0.6;
+  }
+</style>
+
+<script>
+(function() {
+  const searchInput = document.getElementById('floow-search-input-{{ si }}');
+  const resultsContainer = document.getElementById('floow-results-{{ si }}');
+  const resultsCount = document.getElementById('floow-results-count-{{ si }}');
+  const resultsGrid = document.getElementById('floow-results-grid-{{ si }}');
+  const searchWrapper = document.getElementById('floow-search-{{ si }}');
+  const resultsLink = document.getElementById('floow-results-link-{{ si }}');
+
+  let debounceTimer;
+  let currentSearchTerm = '';
+
+  function positionSearchBar() {
+    {% if ss.header_selector != blank %}
+    const header = document.querySelector('{{ ss.header_selector }}');
+    if (header) {
+      const headerRect = header.getBoundingClientRect();
+      searchWrapper.style.top = headerRect.bottom + 'px';
+    }
+    {% endif %}
+  }
+
+  function formatPrice(price) {
+    if (!price) return '';
+    const priceStr = price.replace('.', ',');
+    return priceStr + ' €';
+  }
+
+  function performSearch(term) {
+    if (!term || term.trim() === '') {
+      currentSearchTerm = '';
+      resultsCount.textContent = '';
+      resultsGrid.innerHTML = '';
+      resultsLink.style.display = 'none';
+      resultsLink.href = '#';
+      resultsContainer.style.display = 'block';
+      return;
+    }
+
+    currentSearchTerm = term;
+
+    fetch(`${window.Shopify.routes.root}search/suggest.json?q=${encodeURIComponent(term)}&resources[type]=product&resources[options][unavailable_products]=hide&resources[options][fields]=title,product_type,variants.title`)
+      .then(response => response.json())
+      .then(data => {
+        const products = data.resources.results.products || [];
+        displayResults(products, term);
+      })
+      .catch(error => {
+        console.error('Search error:', error);
+        resultsContainer.style.display = 'none';
+      });
+  }
+
+  function displayResults(products, searchTerm) {
+    let countText;
+    if (products.length === 0) {
+      countText = '';
+    } else if (products.length === 1) {
+      countText = '1 {{ ss.single_result }}';
+    } else if (products.length < 10) {
+      countText = products.length + ' {{ ss.multiple_results }}';
+    } else {
+      countText = products.length + '+ {{ ss.multiple_results }}';
+    }
+
+    resultsCount.textContent = countText;
+
+    const fullSearchUrl = `${window.Shopify.routes.root}search?q=${encodeURIComponent(searchTerm)}&type=product`;
+    resultsLink.href = fullSearchUrl;
+    resultsLink.style.display = searchTerm && products.length > 0 ? 'inline-flex' : 'none';
+
+    resultsGrid.innerHTML = '';
+
+    if (products.length === 0) {
+      resultsLink.style.display = 'none';
+      resultsGrid.innerHTML = `
+        <div class="floow-search-no-results-{{ si }}">
+          {{ ss.no_results }}
+        </div>
+      `;
+      resultsContainer.style.display = 'block';
+      return;
+    }
+
+    products.forEach(product => {
+      const item = document.createElement('a');
+      item.href = product.url;
+      item.className = 'floow-search-result-item-{{ si }}';
+
+      const imageUrl = product.image ? product.image + '&width=120' : '';
+      const price = product.price ? formatPrice(product.price) : '';
+
+      item.innerHTML = `
+        <img
+          src="${imageUrl}"
+          alt="${product.title}"
+          class="floow-search-result-image-{{ si }}"
+          loading="lazy"
+        >
+        <div class="floow-search-result-info-{{ si }}">
+          <div class="floow-search-result-title-{{ si }}">${product.title}</div>
+          ${price ? `<div class="floow-search-result-price-{{ si }}">${price}</div>` : ''}
+        </div>
+      `;
+
+      resultsGrid.appendChild(item);
+    });
+
+    resultsContainer.style.display = 'block';
+  }
+
+  searchInput.addEventListener('click', function() {
+    resultsContainer.style.display = 'block';
+  });
+
+  searchInput.addEventListener('input', function(e) {
+    clearTimeout(debounceTimer);
+    const value = e.target.value;
+
+    if (value.trim() === '') {
+      currentSearchTerm = '';
+      resultsCount.textContent = '';
+      resultsGrid.innerHTML = '';
+      resultsLink.style.display = 'none';
+      resultsLink.href = '#';
+      resultsContainer.style.display = 'block';
+      return;
+    }
+
+    debounceTimer = setTimeout(() => {
+      performSearch(value);
+    }, 300);
+  });
+
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && currentSearchTerm) {
+      window.location.href = `${window.Shopify.routes.root}search?q=${encodeURIComponent(currentSearchTerm)}&type=product`;
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!searchWrapper.contains(e.target)) {
+      resultsContainer.style.display = 'none';
+    }
+  });
+
+  positionSearchBar();
+  /*
+  window.addEventListener('resize', positionSearchBar);
+  window.addEventListener('scroll', positionSearchBar);
+  */
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Floow Search",
+  "class": "floow-suchleiste",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_only_in_editor",
+      "label": "Show Only In Editor",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Position"
+    },
+    {
+      "type": "text",
+      "id": "header_selector",
+      "label": "Header selector",
+      "info": "CSS selector for header element (e.g., .header, #header)"
+    },
+    {
+      "type": "header",
+      "content": "Container"
+    },
+    {
+      "type": "text",
+      "id": "container_max_width",
+      "label": "Container max-width",
+      "default": "1200px",
+      "info": "Gleicher Wert wie 'Container width' bzw. 'Container max-width' im Theme (z.B. 1200px oder 1420px)"
+    },
+    {
+      "type": "range",
+      "id": "container_side_padding",
+      "min": 0,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding links & rechts",
+      "default": 20,
+      "info": "Bei Fluid container: gleicher Wert wie 'Margin left & right' im Theme (z.B. 65px)"
+    },
+    {
+      "type": "header",
+      "content": "Texts"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Placeholder",
+      "default": "Wonach suchst du?"
+    },
+    {
+      "type": "text",
+      "id": "single_result",
+      "label": "Single result text",
+      "default": "Ergebnis"
+    },
+    {
+      "type": "text",
+      "id": "multiple_results",
+      "label": "Multiple results text",
+      "default": "Ergebnisse"
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View all text",
+      "default": "Alle Ergebnisse anzeigen"
+    },
+    {
+      "type": "text",
+      "id": "no_results",
+      "label": "No results text",
+      "default": "Deine Suche ergab leider keine Treffer"
+    },
+    {
+      "type": "text",
+      "id": "popular_products_heading",
+      "label": "Popular products heading",
+      "default": "Beliebte Produkte"
+    },
+    {
+      "type": "product_list",
+      "id": "popular_products",
+      "label": "Popular products",
+      "limit": 8
+    },
+    {
+      "type": "header",
+      "content": "Sizing"
+    },
+    {
+      "type": "range",
+      "id": "search_bar_height",
+      "min": 40,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Search bar height",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "input_field_height",
+      "min": 32,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Input field height",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Colors - Text"
+    },
+    {
+      "type": "color",
+      "id": "font_color_input_field",
+      "label": "Input field text",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "font_color_placeholder",
+      "label": "Placeholder text",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "font_color_results_container",
+      "label": "Results text",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "results_count_color",
+      "label": "Results count text",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Colors - Icons"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Search icon",
+      "default": "#999999"
+    },
+    {
+      "type": "header",
+      "content": "Colors - Backgrounds"
+    },
+    {
+      "type": "color",
+      "id": "background_search_bar",
+      "label": "Search bar background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "background_input_field",
+      "label": "Input field background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "background_results_container",
+      "label": "Results container background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "background_results",
+      "label": "Result item background",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "header",
+      "content": "Colors - Borders"
+    },
+    {
+      "type": "color",
+      "id": "border_color_search_bar_top",
+      "label": "Search bar top border"
+    },
+    {
+      "type": "color",
+      "id": "border_color_search_bar_bottom",
+      "label": "Search bar bottom border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "border_color_input_field",
+      "label": "Input field border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "border_color_input_field_focus",
+      "label": "Input field border (focus)",
+      "default": "#0066cc"
+    },
+    {
+      "type": "color",
+      "id": "border_color_results_container",
+      "label": "Results container border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "border_color_result",
+      "label": "Result item border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "border_color_image",
+      "label": "Product image border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "header",
+      "content": "Border Radius"
+    },
+    {
+      "type": "range",
+      "id": "radius_results_container",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Results container",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "radius_results",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Result items",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "radius_image",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Product images",
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Floow Search"
+    }
+  ]
+}
+{% endschema %}

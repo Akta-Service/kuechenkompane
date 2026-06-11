@@ -1,0 +1,597 @@
+<style>
+  .kk-sale-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: {{ section.settings.desktop_height }}px;
+    display: flex;
+    align-items: center;
+    background: {{ section.settings.bg_color }};
+  }
+
+  .kk-sale-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255,{{ section.settings.gradient_opacity_start | divided_by: 100.0 }}) 0%,
+      rgba(255,255,255,{{ section.settings.gradient_opacity_mid | divided_by: 100.0 }}) 28%,
+      rgba(255,255,255,0.78) 42%,
+      rgba(255,255,255,0.28) 56%,
+      rgba(255,255,255,0) 70%
+    );
+  }
+
+  .kk-sale-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .kk-sale-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .kk-sale-hero__content {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    max-width: {{ section.settings.container_width }}px;
+    margin: 0 auto;
+    padding: {{ section.settings.content_padding_top }}px 15px {{ section.settings.content_padding_bottom }}px;
+  }
+
+  .kk-sale-hero__box {
+    max-width: {{ section.settings.content_width }}px;
+  }
+
+  /* Badge Strip */
+  .kk-sale-hero__badge-wrap {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 22px;
+  }
+
+  .kk-sale-hero__badge-strip {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    pointer-events: none;
+  }
+
+  .kk-sale-hero__badge {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    color: {{ section.settings.badge_color }};
+    padding: 14px 42px;
+    font-size: {{ section.settings.badge_size }}px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    background-color: {% if section.settings.badge_strip_image != blank %}transparent{% else %}{{ section.settings.badge_bg }}{% endif %};
+  }
+
+  .kk-sale-hero__title {
+    margin: 0 0 22px;
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_size }}px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .kk-sale-hero__title span {
+    color: {{ section.settings.highlight_color }};
+  }
+
+  .kk-sale-hero__desc {
+    margin: 0 0 34px;
+    color: {{ section.settings.desc_color }};
+    font-size: {{ section.settings.desc_size }}px;
+    line-height: 1.55;
+    font-weight: 500;
+    max-width: 580px;
+  }
+
+.kk-sale-hero__features {
+  display: grid;
+  grid-template-columns: repeat(4, 212px);
+  gap: 16px;
+  align-items: stretch;
+  margin-bottom: 36px;
+}
+
+@media screen and (max-width: 1200px) {
+  .kk-sale-hero__features {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.kk-sale-hero__feature {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 16px 8px;
+  background: #ffffff4d;
+  border-radius: 10px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+  .kk-sale-hero__feature-icon {
+    width: {{ section.settings.feature_icon_size }}px;
+    height: {{ section.settings.feature_icon_size }}px;
+    flex: 0 0 {{ section.settings.feature_icon_size }}px;
+    color: {{ section.settings.feature_icon_color }};
+  }
+
+  .kk-sale-hero__feature-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .kk-sale-hero__feature-title {
+    margin: 0 0 4px;
+    color: {{ section.settings.feature_title_color }};
+    font-size: {{ section.settings.feature_title_size }}px;
+    line-height: 1.15;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .kk-sale-hero__feature-text {
+    margin: 0;
+    color: {{ section.settings.feature_text_color }};
+    font-size: {{ section.settings.feature_text_size }}px;
+    line-height: 1.3;
+  }
+
+  .kk-sale-hero__button {
+    min-width: 350px;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+    .kk-sale-hero__button {
+    background-color: {{ section.settings.button_bg }} !important;
+    color: {{ section.settings.button_text_color }} !important;
+    border-color: {{ section.settings.button_bg }} !important;
+    transition: background-color 0.3s, color 0.3s;
+    }
+
+    .kk-sale-hero__button:hover {
+    background-color: {{ section.settings.button_hover_bg }} !important;
+    color: {{ section.settings.button_hover_text }} !important;
+    border-color: {{ section.settings.button_hover_bg }} !important;
+    }
+
+  .kk-sale-hero__customers {
+    margin-top: 26px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .kk-sale-hero__avatars {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .kk-sale-hero__avatars img {
+    width: {{ section.settings.avatar_size }}px;
+    height: {{ section.settings.avatar_size }}px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    margin-left: -8px;
+  }
+
+  .kk-sale-hero__avatars img:first-child {
+    margin-left: 0;
+  }
+
+  .kk-sale-hero__customer-text {
+    color: {{ section.settings.customer_text_color }};
+    font-size: {{ section.settings.customer_text_size }}px;
+    font-weight: 700;
+  }
+  
+  @media (max-width: 575px) {
+    .kk-sale-hero__customer-text {
+      color: {{ section.settings.customer_text_color_mobile }};
+    }
+  }
+
+  .kk-sale-hero__circle {
+    position: absolute;
+    z-index: 4;
+    right: {{ section.settings.circle_right }}%;
+    top: {{ section.settings.circle_top }}%;
+    transform: translateY(-50%);
+    width: {{ section.settings.circle_size }}px;
+    height: {{ section.settings.circle_size }}px;
+    border-radius: 50%;
+    background: {{ section.settings.circle_bg }};
+    color: {{ section.settings.circle_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.05;
+  }
+
+  .kk-sale-hero__circle-small {
+    font-size: {{ section.settings.circle_small_size }}px;
+    display: block;
+  }
+
+  .kk-sale-hero__circle-big {
+    font-size: {{ section.settings.circle_big_size }}px;
+    display: block;
+  }
+
+  @media screen and (max-width: 991px) {
+    .kk-sale-hero {
+      min-height: {{ section.settings.mobile_height }}px;
+      align-items: flex-start;
+    }
+
+    .kk-sale-hero::before {
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,{{ section.settings.mobile_gradient_opacity_start | divided_by: 100.0 }}) 0%,
+        rgba(255,255,255,{{ section.settings.mobile_gradient_opacity_mid | divided_by: 100.0 }}) 48%,
+        rgba(255,255,255,0.45) 72%,
+        rgba(255,255,255,0) 100%
+      );
+    }
+
+    .kk-sale-hero__bg img {
+      object-position: {{ section.settings.mobile_image_position }};
+    }
+
+    .kk-sale-hero__content {
+      padding: 42px 20px;
+    }
+
+    .kk-sale-hero__box {
+      max-width: 100%;
+    }
+
+    .kk-sale-hero__badge {
+      font-size: {{ section.settings.mobile_badge_size }}px;
+      padding: 12px 28px;
+    }
+
+    .kk-sale-hero__title {
+      font-size: {{ section.settings.mobile_title_size }}px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .kk-sale-hero__desc {
+      font-size: {{ section.settings.mobile_desc_size }}px;
+      margin-bottom: 26px;
+    }
+
+    .kk-sale-hero__features {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .kk-sale-hero__feature-title {
+      font-size: {{ section.settings.mobile_feature_title_size }}px;
+    }
+
+    .kk-sale-hero__feature-text {
+      font-size: {{ section.settings.mobile_feature_text_size }}px;
+    }
+
+    .kk-sale-hero__button {
+      min-width: 100%;
+    }
+
+    .kk-sale-hero__circle {
+      display: {% if section.settings.show_circle_mobile %}flex{% else %}none{% endif %};
+      width: 100px;
+      height: 100px;
+      right: {{ section.settings.circle_right_mobile }}%;
+      top: {{ section.settings.circle_top_mobile }}%;
+      bottom: 20px;
+      transform: none;
+      padding: 14px;
+      font-size: 11px;
+    }
+
+    .kk-sale-hero__circle-big {
+      font-size: 28px;
+    }
+
+    .kk-sale-hero__circle-small {
+      font-size: 11px;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .kk-sale-hero {
+      min-height: 200px;
+    }
+    .kk-sale-hero__features {
+      grid-template-columns: 1fr;
+    }
+
+    {% comment %} .kk-sale-hero__customers {
+      align-items: flex-start;
+    } {% endcomment %}
+
+    .kk-sale-hero__customer-text {
+      font-size: {{ section.settings.mobile_customer_text_size }}px;
+    }
+    
+    .kk-sale-hero__features {
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .kk-hide-mobile {
+      display: none !important;
+    }
+
+    .kk-sale-hero__content {
+      padding: {{ section.settings.content_padding_top_mobile }}px 15px {{ section.settings.content_padding_bottom_mobile }}px !important;
+    }
+  }
+</style>
+
+<section class="kk-sale-hero">
+  <div class="kk-sale-hero__bg">
+    <picture>
+      {%- if section.settings.mobile_image != blank -%}
+        <source
+          media="(max-width: 767px)"
+          srcset="{{ section.settings.mobile_image | image_url: width: 480 }} 480w, {{ section.settings.mobile_image | image_url: width: 900 }} 900w"
+          sizes="100vw">
+      {%- endif -%}
+      {%- if section.settings.desktop_image != blank -%}
+        <img
+          src="{{ section.settings.desktop_image | image_url: width: 1560 }}"
+          srcset="{{ section.settings.desktop_image | image_url: width: 800 }} 800w, {{ section.settings.desktop_image | image_url: width: 1200 }} 1200w, {{ section.settings.desktop_image | image_url: width: 1560 }} 1560w"
+          sizes="100vw"
+          alt="{{ section.settings.desktop_image.alt | escape }}"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="{{ section.settings.desktop_image.width }}"
+          height="{{ section.settings.desktop_image.height }}"
+        >
+      {%- endif -%}
+    </picture>
+  </div>
+
+  {%- if section.settings.circle_text_small != blank -%}
+    <div class="kk-sale-hero__circle">
+      <div>
+        <span class="kk-sale-hero__circle-small">{{ section.settings.circle_text_small }}</span>
+        <span class="kk-sale-hero__circle-big">{{ section.settings.circle_text_big }}</span>
+        <span class="kk-sale-hero__circle-small">{{ section.settings.circle_text_bottom }}</span>
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="kk-sale-hero__content">
+    <div class="kk-sale-hero__box">
+
+      {%- if section.settings.badge_text != blank -%}
+        <div class="kk-sale-hero__badge-wrap">
+          {%- if section.settings.badge_strip_image != blank -%}
+            <img
+              class="kk-sale-hero__badge-strip"
+              src="{{ section.settings.badge_strip_image | image_url: width: 600 }}"
+              srcset="{{ section.settings.badge_strip_image | image_url: width: 300 }} 300w, {{ section.settings.badge_strip_image | image_url: width: 600 }} 600w"
+              sizes="(max-width: 767px) 200px, 400px"
+              alt=""
+              loading="eager"
+              decoding="async"
+              width="{{ section.settings.badge_strip_image.width }}"
+              height="{{ section.settings.badge_strip_image.height }}"
+            >
+          {%- endif -%}
+          <div class="kk-sale-hero__badge">{{ section.settings.badge_text }}</div>
+        </div>
+      {%- endif -%}
+
+      <h1 class="kk-sale-hero__title">
+        {{ section.settings.title_line_1 }}<br>
+        <span>{{ section.settings.title_line_2 }}</span>
+      </h1>
+
+      {%- if section.settings.description != blank -%}
+        <div class="kk-sale-hero__desc">{{ section.settings.description }}</div>
+      {%- endif -%}
+
+      <div class="kk-sale-hero__features">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'feature' -%}
+            <div class="kk-sale-hero__feature" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon_svg != blank -%}
+                <div class="kk-sale-hero__feature-icon">{{ block.settings.icon_svg }}</div>
+              {%- endif -%}
+              <div>
+                <h3 class="kk-sale-hero__feature-title">{{ block.settings.title }}</h3>
+                <p class="kk-sale-hero__feature-text">{{ block.settings.text }}</p>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.button_text != blank -%}
+        <a href="{{ section.settings.button_link }}" class="kk-sale-hero__button mrk-btn m-button {{ section.settings.button_style }} {{ section.settings.button_size }}">
+          {{ section.settings.button_text }} →
+        </a>
+      {%- endif -%}
+
+      {%- if section.settings.customer_text != blank -%}
+        <div class="kk-sale-hero__customers">
+          <div class="kk-sale-hero__avatars">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'avatar' and block.settings.image != blank -%}
+                <img
+                  src="{{ block.settings.image | image_url: width: 80 }}"
+                  alt=""
+                  loading="lazy"
+                  width="80"
+                  height="80"
+                  {% if block.settings.hide_on_mobile %}class="kk-hide-mobile"{% endif %}
+                >
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          <div class="kk-sale-hero__customer-text">{{ section.settings.customer_text }}</div>
+        </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "KK Sale Hero Banner",
+  "settings": [
+    { "type": "header", "content": "Images" },
+    { "type": "image_picker", "id": "desktop_image", "label": "Desktop Banner Image" },
+    { "type": "image_picker", "id": "mobile_image", "label": "Mobile Banner Image" },
+    { "type": "image_picker", "id": "badge_strip_image", "label": "Badge Strip Image (brush stroke etc.)" },
+
+    { "type": "header", "content": "Text Content" },
+    { "type": "text", "id": "badge_text", "label": "Badge Text", "default": "BIS ZU -75% RABATT" },
+    { "type": "text", "id": "title_line_1", "label": "Title Line 1", "default": "PREMIUM QUALITÄT." },
+    { "type": "text", "id": "title_line_2", "label": "Title Line 2", "default": "UNGLAUBLICHER PREIS." },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Japanisch inspirierte Küchenmesser – extrem scharf, langlebig und für deinen perfekten Schnitt." },
+    { "type": "text", "id": "button_text", "label": "Button Text", "default": "JETZT ANGEBOTE SICHERN" },
+    { "type": "url", "id": "button_link", "label": "Button Link" },
+    { "type": "text", "id": "customer_text", "label": "Customer Text", "default": "Bereits über 25.000+ Kunden sind begeistert!" },
+
+    { "type": "header", "content": "Circle Badge" },
+    { "type": "text", "id": "circle_text_small", "label": "Circle Top Text", "default": "BIS ZU" },
+    { "type": "text", "id": "circle_text_big", "label": "Circle Big Text", "default": "-75%" },
+    { "type": "text", "id": "circle_text_bottom", "label": "Circle Bottom Text", "default": "NUR SOLANGE DER VORRAT REICHT!" },
+    { "type": "checkbox", "id": "show_circle_mobile", "label": "Show Circle On Mobile", "default": true },
+
+    { "type": "header", "content": "Button" },
+    { "type": "select", "id": "button_style", "label": "Button Style", "options": [{ "value": "m-button--primary", "label": "Primary" }, { "value": "m-button--secondary", "label": "Secondary" }, { "value": "m-button--white", "label": "White" }], "default": "m-button--primary" },
+    { "type": "select", "id": "button_size", "label": "Button Size", "options": [{ "value": "m-button--small", "label": "Small" }, { "value": "", "label": "Medium" }, { "value": "m-button--large", "label": "Large" }], "default": "" },
+    { "type": "color", "id": "button_bg", "label": "Button Background", "default": "#fa8526" },
+    { "type": "color", "id": "button_text_color", "label": "Button Text Color", "default": "#ffffff" },
+    { "type": "color", "id": "button_hover_bg", "label": "Button Hover Background", "default": "#222222" },
+    { "type": "color", "id": "button_hover_text", "label": "Button Hover Text Color", "default": "#ffffff" },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_color", "label": "Fallback Background", "default": "#f5f5f5" },
+    { "type": "color", "id": "badge_bg", "label": "Badge Background (if no strip image)", "default": "#d50000" },
+    { "type": "color", "id": "badge_color", "label": "Badge Text Color", "default": "#ffffff" },
+    { "type": "color", "id": "title_color", "label": "Title Color", "default": "#000000" },
+    { "type": "color", "id": "highlight_color", "label": "Highlight Color", "default": "#d50000" },
+    { "type": "color", "id": "desc_color", "label": "Description Color", "default": "#000000" },
+    { "type": "color", "id": "feature_icon_color", "label": "Feature Icon Color", "default": "#111111" },
+    { "type": "color", "id": "feature_title_color", "label": "Feature Title Color", "default": "#111111" },
+    { "type": "color", "id": "feature_text_color", "label": "Feature Text Color", "default": "#111111" },
+    { "type": "color", "id": "customer_text_color", "label": "Customer Text Color", "default": "#111111" },
+    { "type": "color", "id": "customer_text_color_mobile", "label": "Customer Text Color (Mobile)", "default": "#ffffff" },
+    { "type": "color", "id": "circle_bg", "label": "Circle Background", "default": "#d50000" },
+    { "type": "color", "id": "circle_color", "label": "Circle Text Color", "default": "#ffffff" },
+
+    { "type": "header", "content": "Gradient (White Overlay)" },
+    { "type": "range", "id": "gradient_opacity_start", "label": "Desktop Gradient Start %", "min": 50, "max": 100, "step": 1, "default": 98 },
+    { "type": "range", "id": "gradient_opacity_mid", "label": "Desktop Gradient Mid %", "min": 50, "max": 100, "step": 1, "default": 96 },
+    { "type": "range", "id": "mobile_gradient_opacity_start", "label": "Mobile Gradient Start %", "min": 20, "max": 100, "step": 1, "default": 98 },
+    { "type": "range", "id": "mobile_gradient_opacity_mid", "label": "Mobile Gradient Mid %", "min": 20, "max": 100, "step": 1, "default": 95 },
+
+    { "type": "header", "content": "Layout & Sizing" },
+    { "type": "range", "id": "container_width", "label": "Container Width", "min": 1000, "max": 1600, "step": 20, "default": 1440 },
+    { "type": "range", "id": "content_width", "label": "Content Width", "min": 400, "max": 900, "step": 20, "default": 700 },
+    { "type": "range", "id": "desktop_height", "label": "Desktop Height", "min": 400, "max": 900, "step": 10, "default": 620 },
+    { "type": "range", "id": "mobile_height", "label": "Mobile Height", "min": 500, "max": 1000, "step": 10, "default": 780 },
+    { "type": "range", "id": "content_padding_top", "label": "Content Padding Top", "min": 0, "max": 120, "step": 4, "default": 60 },
+    { "type": "range", "id": "content_padding_top_mobile", "label": "Content Padding Top (Mobile)", "min": 0, "max": 120, "step": 4, "default": 60 },
+    { "type": "range", "id": "content_padding_bottom", "label": "Content Padding Bottom", "min": 0, "max": 120, "step": 4, "default": 60 },
+    { "type": "range", "id": "content_padding_bottom_mobile", "label": "Content Padding Bottom (Mobile)", "min": 0, "max": 120, "step": 4, "default": 60 },
+
+    { "type": "header", "content": "Typography" },
+    { "type": "range", "id": "badge_size", "label": "Badge Size", "min": 12, "max": 32, "step": 1, "default": 24 },
+    { "type": "range", "id": "mobile_badge_size", "label": "Mobile Badge Size", "min": 12, "max": 28, "step": 1, "default": 18 },
+    { "type": "range", "id": "title_size", "label": "Desktop Title Size", "min": 36, "max": 96, "step": 1, "default": 66 },
+    { "type": "range", "id": "mobile_title_size", "label": "Mobile Title Size", "min": 10, "max": 60, "step": 1, "default": 42 },
+    { "type": "range", "id": "desc_size", "label": "Description Size", "min": 14, "max": 30, "step": 1, "default": 24 },
+    { "type": "range", "id": "mobile_desc_size", "label": "Mobile Description Size", "min": 14, "max": 26, "step": 1, "default": 18 },
+    { "type": "range", "id": "feature_icon_size", "label": "Feature Icon Size", "min": 20, "max": 50, "step": 1, "default": 32 },
+    { "type": "range", "id": "feature_title_size", "label": "Feature Title Size", "min": 10, "max": 20, "step": 1, "default": 13 },
+    { "type": "range", "id": "mobile_feature_title_size", "label": "Mobile Feature Title Size", "min": 10, "max": 18, "step": 1, "default": 12 },
+    { "type": "range", "id": "feature_text_size", "label": "Feature Text Size", "min": 10, "max": 18, "step": 1, "default": 13 },
+    { "type": "range", "id": "mobile_feature_text_size", "label": "Mobile Feature Text Size", "min": 10, "max": 16, "step": 1, "default": 12 },
+    { "type": "range", "id": "customer_text_size", "label": "Customer Text Size", "min": 12, "max": 22, "step": 1, "default": 16 },
+    { "type": "range", "id": "mobile_customer_text_size", "label": "Mobile Customer Text Size", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "range", "id": "avatar_size", "label": "Avatar Size", "min": 24, "max": 60, "step": 1, "default": 38 },
+
+    { "type": "header", "content": "Circle Badge Sizing" },
+    { "type": "range", "id": "circle_size", "label": "Circle Size", "min": 120, "max": 280, "step": 4, "default": 200 },
+    { "type": "range", "id": "circle_top", "label": "Circle Top Position %", "min": 0, "max": 100, "step": 1, "default": 50 },
+    { "type": "range", "id": "circle_right", "label": "Circle Right Position %", "min": 2, "max": 30, "step": 1, "default": 5 },
+    { "type": "range", "id": "circle_top_mobile", "label": "Circle Top Position % (Mobile)", "min": 0, "max": 100, "step": 1, "default": 20 },
+    { "type": "range", "id": "circle_right_mobile", "label": "Circle Right Position % (Mobile)", "min": 2, "max": 30, "step": 1, "default": 5 },
+    { "type": "range", "id": "circle_small_size", "label": "Circle Small Text Size", "min": 12, "max": 28, "step": 1, "default": 20 },
+    { "type": "range", "id": "circle_big_size", "label": "Circle Big Text Size", "min": 34, "max": 80, "step": 1, "default": 62 },
+
+    { "type": "header", "content": "Mobile Image" },
+    { "type": "select", "id": "mobile_image_position", "label": "Mobile Image Position", "options": [{ "value": "center", "label": "Center" }, { "value": "left center", "label": "Left" }, { "value": "right center", "label": "Right" }], "default": "center" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 4,
+      "settings": [
+        { "type": "textarea", "id": "icon_svg", "label": "SVG Icon" },
+        { "type": "text", "id": "title", "label": "Title", "default": "EXTREM SCHARF" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Präzise Schnitte ohne Kraftaufwand" }
+      ]
+    },
+    {
+      "type": "avatar",
+      "name": "Customer Avatar",
+      "limit": 5,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Avatar Image" },
+        { "type": "checkbox", "id": "hide_on_mobile", "label": "Hide on mobile?", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Sale Hero Banner",
+      "blocks": [
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" }
+      ]
+    }
+  ]
+}
+{% endschema %}

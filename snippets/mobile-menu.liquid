@@ -4,6 +4,17 @@
       font-family: "Roboto"
       , sans-serif;
     }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .mobile--menu-container{
+
+     display:none;
+    }
+
+
+  }
     .menu-btn {
       font-size: 24px;
       cursor: pointer;
@@ -245,330 +256,612 @@
     }
 
     .mobile--menu-navigation-sub-item.open .mobile--menu-sub-dropdown {
-    ;
-    /* display: block; */
-  }
 
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-5px);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-  }
 
 
-  /* secondery menu */
+    /* secondery menu */
 
-  ul.mobile--menu-navigation-sec {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-  }
-
-  ul.mobile--menu-navigation-sec a {
-    font-size: 12px;
-    line-height: 13px;
-    margin: 8px 0;
-    padding: 8px;
-    color: #454545;
-    text-decoration: none;
-  }
-
-  /* fo0ter social  */
-
-
-  .mobile--menu-footer-social {
-    align-items: center;
-    background-color: #f9f9f9;
-    display: flex;
-    padding: 16px 0;
-    position: relative;
-    width: 100%;
-  }
-  .mobile--menu-footer-social img {
-    width: 25px;
-    height: 25px;
-  }
-
-  .mobile--menu-footer-social ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin-inline: auto;
-  }
-  .mobile--menu-footer-social a {
-    width: 55px;
-    display: block;
-    text-align: center;
-  }
-
-
-  /* lang switcher  */
-
-  .language--switcher img {
-    border-radius: 4px;
-    height: 20px;
-    margin-right: 8px;
-    word-spacing: -2px;
-  }
-
-  .language--switcher {
-    grid-gap: 10px;
-    align-items: center;
-    border-bottom: 1px solid #d9d9d9;
-    border-top: 1px solid #d9d9d9;
-    display: flex;
-    gap: 10px;
-    /* justify-content: space-between; */
-    padding: 15px;
-  }
-
-  .language--switcher svg {
-    margin-left: auto;
-  }
-
-
-  /* lang popup  */
-
-  .language--popup img {
-    border-radius: 4px;
-    height: 20px;
-    margin-right: 8px;
-    word-spacing: -2px;
-  }
-  .language--popup {
-    align-items: start;
-    -webkit-animation: fadeIn 0.3s ease-out;
-    animation: fadeIn 0.3s ease-out;
-    background: #0000004d;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    overflow-y: auto;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    z-index: 101;
-  }
-  .language--popup-innner {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    top: 0;
-    width: 90%;
-    background-color: #fff;
-    box-shadow: 0 3px 15px 6px #00000026;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 20px 59px;
-    position: relative;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 3px 15px 6px #00000026;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    text-align: center;
-  }
-  .language--popup-close svg.Icon.Icon--close {
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
-  h3.language--popup-ttle {
-    font-weight: 700;
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-
-  p.language--popup-text {
-    color: #767676;
-    font-size: 13px;
-    font-weight: 400;
-    max-width: 80%;
-    text-align: center;
-    margin: auto;
-  }
-  ul.language--popup-slector {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    padding: 0;
-    margin: 26px 0 0;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-  ul.language--popup-slector img {
-    width: 48px;
-    height: 48px;
-    display: block;
-    margin: auto auto 10px;
-  }
-  ul.language--popup-slector li {
-    font-size: 14px;
-  }
-  .mobile--menu-logo img {
-    width: 100px;
-  }
-
-
-  /* menu search  */
-
-  .menu-search {
-      position: relative;
-      border-radius: 5px;
-      height: 30px;
-      margin: 0 15px 13px;
-      padding: 0;
-      border: 1px solid #ededed;
-      display: flex;
-      align-items: center;
-      justify-content: start;
-  }
-  input.mobile-menu-search {
-      width: 100%;
-      border: 0;
-      outline: 0;
-      color: #1c1c1c;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      letter-spacing: 0;
-      line-height: normal;
-      padding: 0;
-      background: transparent;
-  }
-  .mobile--menu-search-icon {
+    ul.mobile--menu-navigation-sec {
       margin: 0;
-      padding: 0 8px;
-  }
-
-  .m-search-popup{
-    overflow: auto;
-  }
-
-  .search--recomend-product-area{
-    padding: 0 20px;
-  }
-
-
-
-
-  .search--recomend-product {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin-top: 20px;
-      margin-bottom: 50px;
-  }
-  @media (min-width: 768px){
-    .search--recomend-product {
-      grid-template-columns: repeat(4, 1fr);
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
     }
-  }
-  .product--recom-header {
+
+    ul.mobile--menu-navigation-sec a {
+      font-size: 12px;
+      line-height: 13px;
+      margin: 8px 0;
+      padding: 8px;
+      color: #454545;
+      text-decoration: none;
+    }
+
+    /* fo0ter social  */
+
+
+    .mobile--menu-footer-social {
+      align-items: center;
+      background-color: #f9f9f9;
+      display: flex;
+      padding: 16px 0;
+      position: relative;
+      width: 100%;
+    }
+    .mobile--menu-footer-social img {
+      width: 25px;
+      height: 25px;
+    }
+
+    .mobile--menu-footer-social ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin-inline: auto;
+    }
+    .mobile--menu-footer-social a {
+      width: 55px;
+      display: block;
+      text-align: center;
+    }
+
+
+    /* lang switcher  */
+
+    .language--switcher img {
+      border-radius: 4px;
+      height: 20px;
+      margin-right: 8px;
+      word-spacing: -2px;
+    }
+
+    .language--switcher {
+      grid-gap: 10px;
+      align-items: center;
+      border-bottom: 1px solid #d9d9d9;
+      border-top: 1px solid #d9d9d9;
+      display: flex;
+      gap: 10px;
+      /* justify-content: space-between; */
+      padding: 15px;
+    }
+
+    .language--switcher svg {
+      margin-left: auto;
+    }
+
+
+    /* lang popup  */
+
+    .language--popup img {
+      border-radius: 4px;
+      height: 20px;
+      margin-right: 8px;
+      word-spacing: -2px;
+    }
+    .language--popup {
+      align-items: start;
+      -webkit-animation: fadeIn 0.3s ease-out;
+      animation: fadeIn 0.3s ease-out;
+      background: #0000004d;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 101;
+    }
+    .language--popup-innner {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      top: 0;
+      width: 90%;
+      background-color: #fff;
+      box-shadow: 0 3px 15px 6px #00000026;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 20px 59px;
+      position: relative;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px 6px #00000026;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      text-align: center;
+    }
+    .language--popup-close svg.Icon.Icon--close {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+    h3.language--popup-ttle {
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    p.language--popup-text {
+      color: #767676;
+      font-size: 13px;
+      font-weight: 400;
+      max-width: 80%;
+      text-align: center;
+      margin: auto;
+    }
+    ul.language--popup-slector {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      padding: 0;
+      margin: 26px 0 0;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    ul.language--popup-slector img {
+      width: 48px;
+      height: 48px;
+      display: block;
+      margin: auto auto 10px;
+    }
+    ul.language--popup-slector li {
+      font-size: 14px;
+    }
+    .mobile--menu-logo img {
+      width: 100px;
+    }
+
+
+    /* menu search  */
+
+    .menu-search {
+        position: relative;
+        border-radius: 5px;
+        height: 30px;
+        margin: 0 15px 13px;
+        padding: 0;
+        border: 1px solid #ededed;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    input.mobile-menu-search {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        color: #1c1c1c;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: normal;
+        padding: 0;
+        background: transparent;
+    }
+    .mobile--menu-search-icon {
+        margin: 0;
+        padding: 0 8px;
+    }
+
+    .m-search-popup{
+      overflow: auto;
+    }
+
+    .search--recomend-product-area{
+      padding: 0 20px;
+    }
+
+
+
+
+    .search--recomend-product {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    @media (min-width: 768px){
+      .search--recomend-product {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .product--recom-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        border-bottom: 1px solid #dddddd;
+        padding-bottom: 10px;
+    }
+    .product--recom-header h3 {
+        color: #000;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 19px;
+        text-transform: uppercase;
+    }
+    .product--recom-header a {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        text-decoration: underline;
+    }
+    .tag--column-tags a {
+        background-color: #eee;
+        border-radius: 5px;
+        color: #171717;
+        font-size: 13px;
+        line-height: 19px;
+        margin-bottom: 0;
+        margin-right: 10px;
+        max-width: -webkit-min-content;
+        max-width: -moz-min-content;
+        max-width: min-content;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+    h3.tag--column-title {
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 19px;
+        margin: 0 0 15px 0;
+        text-transform: uppercase;
+    }
+    .tag--column-wrapper {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .tag--column-tags {
+        display: flex;
+        overflow-x: auto;
+    }
+    .tag--columns-area {
+        padding: 0 20px;
+    }
+    .mobile--menu-item-badge {
+      position: absolute;
+      top: 10px;
+      left: 76px;
+      background: #ff0000;
+      color: #fff;
+      border-radius: 30px;
+      padding: 2px 10px;
+      font-size: 8px;
+    }
+
+
+      {% comment %} submenu  {% endcomment %}
+      /* ========== MAIN NAV LIST ========== */
+    .akta-mobile-nav {
+      width: 100%;
+      padding: 0;
+    }
+
+    .akta-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .akta-nav-item {
+      {% comment %} border-bottom: 1px solid #e5e5e5; {% endcomment %}
+      padding: 5px 0;
+    }
+
+    /* Main link */
+    .akta-nav-link {
+      display: block;
+      font-size: 12px;
+      color: #8d8d8d;
+      text-decoration: none;
+      padding: 6px 0;
+    }
+
+    /* Hover */
+    .akta-nav-link:hover {
+      opacity: 0.6;
+    }
+
+    /* ========== SUBMENU ========== */
+    .akta-submenu {
+      margin-top: 6px;
+    }
+
+    .akta-submenu-title {
+      cursor: pointer;
+      font-size: 15px;
+      color: #333;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 20px;
-      border-bottom: 1px solid #dddddd;
-      padding-bottom: 10px;
-  }
-  .product--recom-header h3 {
-      color: #000;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 19px;
-      text-transform: uppercase;
-  }
-  .product--recom-header a {
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      text-decoration: underline;
-  }
-  .tag--column-tags a {
-      background-color: #eee;
-      border-radius: 5px;
-      color: #171717;
-      font-size: 13px;
-      line-height: 19px;
-      margin-bottom: 0;
-      margin-right: 10px;
-      max-width: -webkit-min-content;
-      max-width: -moz-min-content;
-      max-width: min-content;
-      padding: 5px 10px;
-      white-space: nowrap;
-  }
-  h3.tag--column-title {
-      font-size: 13px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 19px;
-      margin: 0 0 15px 0;
-      text-transform: uppercase;
-  }
-  .tag--column-wrapper {
-      margin-bottom: 20px;
-      margin-top: 20px;
-  }
-  .tag--column-tags {
-      display: flex;
-      overflow-x: auto;
-  }
-  .tag--columns-area {
-      padding: 0 20px;
-  }
-
-
-  @media (min-width: 768px){
-    .search--wrapper-area {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: center;
+      padding: 6px 0;
     }
-    .tag--column-tags {
-      flex-direction: column;
-      row-gap: 15px;
+
+    /* Remove default triangle */
+    .akta-submenu-title::-webkit-details-marker {
+      display: none;
     }
-    .tag--column-tags a {
-      background-color: transparent;
-      color: inherit;
-      text-decoration: none;
-      padding: 0;
-      font-size: 16px;
+
+    /* Submenu list */
+    .akta-submenu-list {
+      list-style: none;
       margin: 0;
-      /* white-space: inherit; */
+      padding: 8px 0 0 16px; /* indent inside submenu */
     }
-    .tag--columns-area {
-      flex-basis: 290px;
-      max-width: 290px;
-      border-right: 1px solid rgba(0, 0, 0, .1);
+
+    .akta-submenu-item {
+      padding: 6px 0;
     }
-    h3.tag--column-title {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 20px;
-     }
-     .tag--column-tags a {
-      max-width: fit-content;
-      white-space: inherit;
-      color: #767676;
-      line-height: 1.5;
+
+    .akta-submenu-link {
+      font-size: 14px;
+      color: #444;
+      text-decoration: none;
+      display: block;
     }
-  }
+
+    .akta-submenu-link:hover {
+      opacity: 0.7;
+    }
+
+    /* ========== OPTIONAL: ARROW ROTATION ========== */
+    .akta-submenu[open] .akta-submenu-title {
+      font-weight: 600;
+    }
+
+    .akta-submenu[open] .akta-submenu-title::after {
+      content: "▴"; /* arrow up */
+    }
+
+    .akta-submenu:not([open]) .akta-submenu-title::after {
+      content: "▾"; /* arrow down */
+    }
+
+
+
+
+    @media (min-width: 768px){
+      .search--wrapper-area {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+      }
+      .tag--column-tags {
+        flex-direction: column;
+        row-gap: 15px;
+      }
+      .tag--column-tags a {
+        background-color: transparent;
+        color: inherit;
+        text-decoration: none;
+        padding: 0;
+        font-size: 16px;
+        margin: 0;
+        /* white-space: inherit; */
+      }
+      .tag--columns-area {
+        flex-basis: 290px;
+        max-width: 290px;
+        border-right: 1px solid rgba(0, 0, 0, .1);
+      }
+      h3.tag--column-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .tag--column-tags a {
+        max-width: fit-content;
+        white-space: inherit;
+        color: #767676;
+        line-height: 1.5;
+      }
+    }
 </style>
+<script id="mobile-menu-data" type="application/json">
+  [
+    {
+      "title": "SALE",
+      "url": "/collections/sortimentswechsel"
+    },
+    {
+      "title": "Bestseller",
+      "url": "/collections/bestseller-menu"
+    },
+    {
+      "title": "Messersets",
+      "children": [
+        {
+          "title": "Meistgekauft",
+          "url": "/collections/messersets-im-sale",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Kuechenkompane_Messer_kueche_V252_2_V74_1_V6_1.jpg?v=1772100109"
+        },
+        {
+          "title": "Premium Sets",
+          "url": "/collections/asiatisches-messerset-1",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/8-teilige_Messersets.jpg?v=1765133359"
+        },
+        {
+          "title": "Luxus Damast Sets",
+          "url": "/collections/damastmesser-set",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/4-teilige_Mesersets.jpg?v=1765133447"
+        },
+        {
+          "title": "Alle Messersets",
+          "url": "/collections/messerset",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Kuechenkompane_Messer_kueche_V252_2_V74_1_V1_1.jpg?v=1772100109"
+        }
+      ]
+    },
+    {
+      "title": "Komplett-Sets",
+      "children": [
+        {
+          "title": "Meistgekauft",
+          "url": "/collections/kombipakete-im-sale",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Kuechenkompane_Messer_kueche_V252_2_V74_1_V6_1.jpg?v=1772100109"
+        },
+        {
+          "title": "Messer + Holzblöcke",
+          "url": "/collections/messer-holzblock",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Kuechenkompane_Messer_kueche_V252_2_V74_1_V3_1.jpg?v=1772100109"
+        },
+        {
+          "title": "Messer + Magnetleisten",
+          "url": "/collections/messerset-mit-magnetleiste",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/3_7e9096fe-3d9d-4dab-a595-32c905340c75.jpg?v=1772101020"
+        },
+        {
+          "title": "Messer + Edelstahlblöcke",
+          "url": "/collections/metall-bundles",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/4_41f08e7c-3561-4a9a-8df1-c2e42996c25c.jpg?v=1772101020"
+        },
+        {
+          "title": "Exklusive Komplett-Sets",
+          "url": "/collections/exklusive-komplett-sets",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/5_640143ba-6608-499a-a3ed-fd74c515c7fd.jpg?v=1772101023"
+        }
+      ]
+    },
+    {
+      "title": "Einzelmesser",
+      "children": [
+        {
+          "title": "Chefmesser & Gyutomesser",
+          "url": "/collections/chefmesser-gyutomesser",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/6_7a3b7d10-ae39-4eb1-9151-1b0b9ef4892a.jpg?v=1772100943"
+        },
+        {
+          "title": "Santoku",
+          "url": "/collections/santokumesser",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Santokumesser.jpg?v=1765134576"
+        },
+        {
+          "title": "Brotmesser",
+          "url": "/collections/brotmesser",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Kuechenkompane_Messer_kueche_V252_2_V74_1_V5_1.jpg?v=1772100109"
+        },
+        {
+          "title": "Filetiermesser",
+          "url": "/collections/filetiermesser",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Filetiermesser_3ecd83d2-ce1f-4a55-8cbd-6906d0a3b739.jpg?v=1765134625"
+        },
+        {
+          "title": "Petty Messer",
+          "url": "/collections/office-messer",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/WhatsApp_Image_2026-03-12_at_8.07.17_PM.jpg?v=1773324864"
+        },
+        {
+          "title": "Nakiri Messer",
+          "url": "/collections/nakiri-messer",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/WhatsApp_Image_2026-03-12_at_8.07.27_PM.jpg?v=1773324950"
+        },
+        {
+          "title": "Taschenmesser",
+          "url": "/collections/taschenmesser",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/7_49d10c27-f8a2-4a4b-880c-bc7f03782872.jpg?v=1772100942"
+        },
+        {
+          "title": "Damastmesser",
+          "url": "/collections/damastmesser-1",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/8_8d0fb5df-9451-4120-bc0d-60cca7eeb36b.jpg?v=1772100942"
+        },
+        {
+          "title": "Outdoor Messer",
+          "url": "/collections/bbq-outdoor",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Kein_Titel_100_x_100_px_300_x_300_px_1_1.jpg?v=1772101805"
+        },
+        {
+          "title": "Alle Einzelmesser",
+          "url": "/collections/kuechenmesser",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Kuechenkompane_Messer_kueche_V252_2_V74_1_V7_1.jpg?v=1772101422"
+        }
+      ]
+    },
+    {
+      "title": "Messer-Zubehör",
+      "children": [
+        {
+          "title": "Messerblöcke & Aufbewahrung",
+          "url": "/collections/messerblock",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Messerblocke.jpg?v=1765135075"
+        },
+        {
+          "title": "Messerschärfer",
+          "url": "/collections/messerschaerfer",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Kuechenkompane_Messer_kueche_V252_2_V74_1_V4_1.jpg?v=1772100109"
+        },
+        {
+          "title": "Schneidebretter",
+          "url": "/collections/schneidebretter",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Kuechenkompane_Messer_kueche_V252_2_V74_1_V2_1.jpg?v=1772100109"
+        },
+        {
+          "title": "Pflege & Schutz",
+          "url": "/collections/pflege-schutz",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/WhatsApp_Image_2026-03-12_at_8.08.35_PM.jpg?v=1773324760"
+        }
+      ]
+    },
+    {
+      "title": "Für die Küche",
+      "children": [
+        {
+          "title": "Töpfe & Pfannen",
+          "url": "/collections/edelstahlpfanne",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Topfe_PFannen.jpg?v=1765135267"
+        },
+        {
+          "title": "Olivenholz Produkte",
+          "url": "/collections/olivenholz-produkte",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/10_d0a5afec-9daa-44f6-b724-b95b9bdc7fae.jpg?v=1772100942"
+        },
+        {
+          "title": "Schäler",
+          "url": "/collections/schaler",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Schaler.webp?v=1765135282"
+        },
+        {
+          "title": "Schneidebretter",
+          "url": "/collections/schneidebretter",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Kuechenkompane_Messer_kueche_V252_2_V74_1_V2_1.jpg?v=1772100109"
+        },
+        {
+          "title": "Käse & Outdoorsets",
+          "url": "/collections/servieren-aufbewahren",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/11_dd2389f9-37d4-4f30-bbc8-13ba69af757c.jpg?v=1772100942"
+        },
+        {
+          "title": "Gewürzmühlen & Servierschalen",
+          "url": "/collections/gewurzmuhlen-servierschalen",
+          "image": "https://cdn.shopify.com/s/files/1/0018/5329/2643/files/WhatsApp_Image_2026-03-12_at_8.07.44_PM.jpg?v=1773325105"
+        }
+      ]
+    }
+  ]
+</script>
+
 <div class="mobile--menu-container">
   <div class="mobile--menu-header">
     <a class="mobile--menu-logo" href="/">
@@ -602,657 +895,35 @@
   </m-search-popup>
 
   <div class="mobile--menu-content">
-    <ul class="mobile--menu-navigation">
-      {% comment %} main item {% endcomment %}
-      <li class="mobile--menu-navigation-item">
-        <span class="mobile--menu-item-title">Messerwelt</span>
-        {%- render 'arrow--icon-next' -%}
-        <!-- sub item -->
-        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container">
-          {%- render 'sub-item-header', title: 'Messerwelt' -%}
+    <ul class="mobile--menu-navigation"></ul>
 
-          <div class="mobile--menu-sub-content">
-            <ul class="mobile--menu-sub-navigation">
-              {% comment %} sub item  {% endcomment %}
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                  <img
-                    loading="lazy"
-                    class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Asia-Premium-1.webp?v=1759638241"
-                    loading="lazy"
-                    alt=""
-                  >
-                  <span class="mobile--menu-item-sub-title">Messerset</span>
+    {% comment %} submenu  {% endcomment %}
+    {% if section.settings.show_submenu %}
+      <nav class="akta-mobile-nav">
+        <ul class="akta-nav-list">
+          {% for link in linklists[section.settings.mobile_sub_menu].links %}
+            <li class="akta-nav-item">
+              <a class="akta-nav-link" href="{{ link.url }}">{{ link.title }}</a>
 
-                  {%- render 'arrow--icon-down' -%}
-                </div>
-                <!-- menu item dropdown -->
-
-                <!-- Hidden child list -->
-                <ul class="mobile--menu-sub-dropdown">
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/asiatisches-messerset-1',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Asia-Premium-1.webp?v=1759638241',
-                    link_title: '8-teilige Sets (Bestseller)'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/damastmesser-set',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V40_f28981d4-d67a-438e-aa53-e9de20f5cc15.jpg?v=1750764708',
-                    link_title: '4-teilige Sets (Handgeschmiedet)'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/limitierte-messersets',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54.webp?v=1757616759',
-                    link_title: 'Limitierte Messersets'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/servieren-aufbewahren',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_1.webp?v=1757616870',
-                    link_title: 'Outdoor & Käseset 2in1'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/messerset',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Asia-Premium-1.webp?v=1759638241',
-                    link_title: 'Alle Messersets'
-                  -%}
-                </ul>
-              </li>
-
-              {% comment %} sub item  {% endcomment %}
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                  <img
-                    loading="lazy"
-                    class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V155_1_44d090f4-3bf5-4d8e-8c43-8322ce373eb5.jpg?v=1750764403"
-                    loading="lazy"
-                    alt=""
-                  >
-                  <span class="mobile--menu-item-sub-title">Kombipakete</span>
-
-                  {%- render 'arrow--icon-down' -%}
-                </div>
-                <!-- menu item dropdown -->
-
-                <!-- Hidden child list -->
-                <ul class="mobile--menu-sub-dropdown">
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/messerblock-mit-messer',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V155_1_44d090f4-3bf5-4d8e-8c43-8322ce373eb5.jpg?v=1750764403',
-                    link_title: 'Kombipaket Burokku'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/asiatisches-messerset',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_3.webp?v=1757617083',
-                    link_title: 'Kombipaket Jishaku'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/kombipaket-tsuisuto',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Asiatisches_1_c49c2629-9328-43d5-9541-52bc95d7fe49.webp?v=1757619631',
-                    link_title: 'Kombipaket Tsuisuto'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/messerset-mit-magnetleiste',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_5.webp?v=1757617275',
-                    link_title: 'Kombipaket Kōyōju'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/metall-bundles',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_6.webp?v=1757617339',
-                    link_title: 'Kombipaket Nōburu'
-                  -%}
-
-                </ul>
-              </li>
-
-              {% comment %} sub item  {% endcomment %}
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                  <img
-                    loading="lazy"
-                    class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_8.webp?v=1757617446"
-                    loading="lazy"
-                    alt="image"
-                  >
-                  <span class="mobile--menu-item-sub-title">Einzelne Küchenmesser</span>
-
-                  {%- render 'arrow--icon-down' -%}
-                </div>
-                <!-- menu item dropdown -->
-
-                <!-- Hidden child list -->
-                <ul class="mobile--menu-sub-dropdown">
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/kuechenmesser',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_8.webp?v=1757617446',
-                    link_title: 'Alle Küchenmesser'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/messer-mokuzai',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_9.webp?v=1757617604',
-                    link_title: 'Mokuzai Messer'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/messer-burakku',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_10.webp?v=1757617666',
-                    link_title: 'Burakku Messer'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/messer-sheru',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_11.webp?v=1757617721',
-                    link_title: 'Sheru Messer'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/messer-kiiro',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_12.webp?v=1757617774',
-                    link_title: 'Kiiro Messer'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/messer-shikku',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_13.webp?v=1757617889',
-                    link_title: 'Shikku Messer'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/grillmesser',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V30_9620cc27-f6bf-4769.webp?v=1757617983',
-                    link_title: 'Grillmesser'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/japanische-messer',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/copper_knife_komprimiert_0b5e0cce-a653-4c60-89b5-e6bad1e963d2.jpg?v=1750764917',
-                    link_title: 'Japanische Messer'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/kuechenmesser',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V8_48fe845b-4d4c-49f8-aff8-24fc88af78d3.webp?v=1757618050',
-                    link_title: 'Damastmesser'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/santokumesser',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_14.webp?v=1757618142',
-                    link_title: 'Santokumesser'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/nakiri-messer',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V29_d30f221b-1cb0-4b6d.webp?v=1757618200',
-                    link_title: 'Nakiri Messer'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/filetiermesser',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_15.webp?v=1757618344',
-                    link_title: 'Filetiermesser'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/brotmesser',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V29_d30f221b-1cb0-4b6d-_2.webp?v=1757618412',
-                    link_title: 'Brotmesser'
-                  -%}
-                </ul>
-              </li>
-
-              {% comment %} sub item  {% endcomment %}
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                  <img
-                    loading="lazy"
-                    class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Burokku-Messerblock-1080x1080_1.webp?v=1759639297"
-                    loading="lazy"
-                    alt=""
-                  >
-                  <span class="mobile--menu-item-sub-title">Messer Zubehör</span>
-
-                  {%- render 'arrow--icon-down' -%}
-                </div>
-                <!-- menu item dropdown -->
-
-                <!-- Hidden child list -->
-                <ul class="mobile--menu-sub-dropdown">
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/messerblock',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Burokku-Messerblock-1080x1080_1.webp?v=1759639297',
-                    link_title: 'Messerblock & Messerhalter'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/messerschaerfer',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_16.webp?v=1757618491',
-                    link_title: 'Messerschärfer'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/schneidebretter',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Schneidebrett-1.webp?v=1759638148',
-                    link_title: 'Schneidebretter'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/pflegeprodukte',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_18.webp?v=1757618626',
-                    link_title: 'Pfelgeprodukte'
-                  -%}
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-
-      {% comment %} main item {% endcomment %}
-      <li class="mobile--menu-navigation-item">
-        <span class="mobile--menu-item-title">Kochwelt</span>
-        {%- render 'arrow--icon-next' -%}
-
-        <!-- sub item -->
-        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container">
-          {%- render 'sub-item-header', title: 'Kochwelt' -%}
-
-          <div class="mobile--menu-sub-content">
-            <ul class="mobile--menu-sub-navigation">
-              {% comment %} sub item  {% endcomment %}
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                  <img
-                    loading="lazy"
-                    class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_19.webp?v=1757618704"
-                    loading="lazy"
-                    alt=""
-                  >
-
-                  <span class="mobile--menu-item-sub-title">Töpfe, Pfannen & Woks</span>
-
-                  {%- render 'arrow--icon-down' -%}
-                </div>
-                <!-- menu item dropdown -->
-
-                <!-- Hidden child list -->
-                <ul class="mobile--menu-sub-dropdown">
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/products/antihaft-pfanne-edelstahl',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_20.webp?v=1757618780',
-                    link_title: 'Küchenkompane Pfanne'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/products/wok-pfanne',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_21.webp?v=1757618826',
-                    link_title: 'Küchenkompane Wok'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/products/antihaft-top-24-cm',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_19.webp?v=1757618704',
-                    link_title: 'Küchenkompane Topf'
-                  -%}
-                </ul>
-              </li>
-              {% comment %} sub item  {% endcomment %}
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                  <img
-                    loading="lazy"
-                    class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Schneidebrett-1.webp?v=1759638148"
-                    loading="lazy"
-                    alt=""
-                  >
-                  <span class="mobile--menu-item-sub-title">Schneide- und Servierbretter</span>
-
-                  {%- render 'arrow--icon-down' -%}
-                </div>
-                <!-- menu item dropdown -->
-
-                <!-- Hidden child list -->
-                <ul class="mobile--menu-sub-dropdown">
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/schneidebretter',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Mobile-Menu-Schneidebrett-1.webp?v=1759638148',
-                    link_title: 'Schneidebretter'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/products/rustikales-schneidebrett',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/mobile_menu_servierbrett.webp?v=1759638672',
-                    link_title: 'Servierbretter'
-                  -%}
-                </ul>
-              </li>
-              {% comment %} sub item  {% endcomment %}
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                  <img
-                    loading="lazy"
-                    class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Outdoor-Set-150x150.webp?v=1759638863"
-                    loading="lazy"
-                    alt=""
-                  >
-                  <span class="mobile--menu-item-sub-title">Outdoor</span>
-                  {%- render 'arrow--icon-down' -%}
-                </div>
-
-                <!-- menu item dropdown -->
-                <!-- Hidden child list -->
-                <ul class="mobile--menu-sub-dropdown">
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/bbq-outdoor',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_24.webp?v=1757619050',
-                    link_title: 'BBQ Messer'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/products/grillbuerste',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_25.webp?v=1757619117',
-                    link_title: 'Reinigungsbürste'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/products/grillmatte',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_26.webp?v=1757619165',
-                    link_title: 'Grillmatte'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/products/outdoor-messerset',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Outdoor-Set-150x150.webp?v=1759638863',
-                    link_title: 'Outdoor Messerset | 2in1'
-                  -%}
-                </ul>
-              </li>
-            </ul>
-          </div>
-
-          <div class="mobile--menu-content-inner">
-            {% comment %}
-              <ul class="mobile--menu-navigation-sec">
-                <a href="#">Account</a>
-                <a href="#">Karriere</a>
-              </ul>
-            {% endcomment %}
-          </div>
-        </div>
-      </li>
-
-      {% comment %} main item {% endcomment %}
-      <li class="mobile--menu-navigation-item">
-        <span class="mobile--menu-item-title">Mehr</span>
-        {%- render 'arrow--icon-next' -%}
-
-        <!-- sub item -->
-        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container">
-          {%- render 'sub-item-header', title: 'Mehr' -%}
-
-          <div class="mobile--menu-sub-content">
-            <ul class="mobile--menu-sub-navigation">
-              {% comment %} sub item  {% endcomment %}
-              <li class="mobile--menu-navigation-sub-item">
-                <div class="mobile--menu-navigation-sub-item-wrapper">
-                  <img
-                    loading="lazy"
-                    class="mobile--menu-navigation-item-image"
-                    data-src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_28.webp?v=1757619274"
-                    loading="lazy"
-                    alt=""
-                  >
-                  <span class="mobile--menu-item-sub-title">Mehr</span>
-
-                  {%- render 'arrow--icon-down' -%}
-                </div>
-                <!-- menu item dropdown -->
-
-                <!-- Hidden child list -->
-                <ul class="mobile--menu-sub-dropdown">
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/collections/geschenkkarte',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/Unbenannt_1_0007_2_1_3_jpg_V43_f64d8f5a-3db4-4b54-_28.webp?v=1757619274',
-                    link_title: 'Geschenkkarten'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/blogs/herzlich-wilkommen',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/nachhaltigkeit-in-der-kueche_0da00caf-fdac-4866-a0.webp?v=1757619398',
-                    link_title: 'Blog'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/blogs/rezepte',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/komprimiert_68b4253d-b8df-4439-be1c-b33890a3d08e.webp?v=1757619499',
-                    link_title: 'Rezepte'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/pages/pflegehinweise-fur-unsere-kuchenmesser',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/IMG_0704_1_451e51fa-37dd-42f8-8c35-78f3b771d77d.jpg?v=1750766567',
-                    link_title: 'Pflegehinweise'
-                  -%}
-
-                  {% comment %} dropdown item  {% endcomment %}
-                  {%- render 'dropdown-item',
-                    link: 'https://kuechenkompane.de/pages/haufige-fragen',
-                    image_src: 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/ChatGPT_Image_24._Juni_2025_14_07_25.jpg?v=1750766908',
-                    link_title: 'Häufige Fragen'
-                  -%}
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-
-      {% comment %} main item {% endcomment %}
-      <li>
-        <a class="mobile--menu-navigation-item" href="/collections/black-friday-angebote">
-          <span class="mobile--menu-item-title">Sale</span>
-        </a>
-      </li>
-
-      {% comment %} main item {% endcomment %}
-      <li>
-        <a class="mobile--menu-navigation-item" href="/pages/bonuspunkte">
-          <span class="mobile--menu-item-title">Bonuspunkte</span>
-        </a>
-      </li>
-    </ul>
+              {% if link.links.size > 0 %}
+                <details class="akta-submenu">
+                  <summary class="akta-submenu-title">{{ link.title }} ▾</summary>
+                  <ul class="akta-submenu-list">
+                    {% for sublink in link.links %}
+                      <li class="akta-submenu-item">
+                        <a class="akta-submenu-link" href="{{ sublink.url }}">{{ sublink.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </details>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
   </div>
 </div>
-
-{% comment %}
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const menuBtn = document.querySelector(".m-menu-button");
-    const menuContainer = document.querySelector(".mobile--menu-container");
-    const menuCloseBtns = document.querySelectorAll(".mobile--menu-close");
-    const subItems = document.querySelectorAll(".mobile--menu-navigation-item");
-
-    // Open main menu
-    menuBtn.addEventListener("click", () => {
-      menuContainer.classList.add("menu--open");
-    });
-
-    // Close main menu
-    menuCloseBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        menuContainer.classList.remove("menu--open");
-        document
-          .querySelectorAll(".mobile--menu-navigation-item-content.active")
-          .forEach((activeContent) => activeContent.classList.remove("active"));
-      });
-    });
-
-    // Handle each main menu item's submenu open
-    subItems.forEach((subItem) => {
-      const subContent = subItem.querySelector(".mobile--menu-navigation-item-content");
-      const backBtn = subItem.querySelector(".mobile--menu-back");
-
-      subItem.addEventListener("click", () => {
-        // Close all others first
-        document.querySelectorAll(".mobile--menu-navigation-item-content.active")
-          .forEach((el) => el.classList.remove("active"));
-
-        // Open only this item's submenu
-        if (subContent) subContent.classList.add("active");
-      });
-
-      // Back button only closes its own submenu
-      if (backBtn && subContent) {
-        backBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          subContent.classList.remove("active");
-        });
-      }
-    });
-
-    // Toggle nested dropdown under submenu
-    document.querySelectorAll(".mobile--menu-navigation-sub-item > .mobile--menu-navigation-sub-item-wrapper")
-      .forEach((toggle) => {
-        toggle.addEventListener("click", function (e) {
-          const parentItem = this.closest(".mobile--menu-navigation-sub-item");
-          const submenu = parentItem.querySelector(".mobile--menu-sub-dropdown");
-
-          if (!submenu) return;
-
-          if (submenu.classList.contains("open")) {
-            submenu.style.maxHeight = submenu.scrollHeight + "px";
-            submenu.offsetHeight;
-            submenu.style.maxHeight = "0px";
-            submenu.classList.remove("open");
-            parentItem.classList.remove("open");
-          } else {
-            submenu.classList.add("open");
-            submenu.style.maxHeight = submenu.scrollHeight + "px";
-            parentItem.classList.add("open");
-          }
-        });
-      });
-
-
-
-
-    document.querySelectorAll('.language--switcher').forEach(switcher => {
-      const popup = switcher.nextElementSibling;
-
-      // Toggle popup
-      switcher.addEventListener('click', (e) => {
-        e.stopPropagation();
-
-        // Close others
-        document.querySelectorAll('.language--popup').forEach(p => {
-          if (p !== popup) p.style.display = 'none';
-        });
-
-        // Toggle current popup
-        popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
-      });
-
-      // Close button inside popup
-      const closeBtn = popup.querySelector('.language--popup-close');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          popup.style.display = 'none';
-        });
-      }
-
-      // Language selection
-      popup.querySelectorAll('li').forEach(item => {
-        item.addEventListener('click', () => {
-          const img = item.querySelector('img')?.src;
-          const name = item.getAttribute('data-name');
-          const switcherImg = switcher.querySelector('img');
-          const switcherText = switcher.querySelector('span');
-
-          if (img && switcherImg) switcherImg.src = img;
-          if (name && switcherText) switcherText.textContent = name;
-
-          popup.style.display = 'none';
-        });
-      });
-
-      // Prevent closing when clicking inside popup-inner
-      const inner = popup.querySelector('.language--popup-innner');
-      if (inner) {
-        inner.addEventListener('click', (e) => e.stopPropagation());
-      }
-    });
-
-    // Global click — close if clicked outside
-    document.addEventListener('click', (e) => {
-      document.querySelectorAll('.language--popup').forEach(p => {
-        p.style.display = 'none';
-      });
-    });
-
-
-
-
-
-
-    });
-  </script>
-{% endcomment %}
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -1389,4 +1060,155 @@
       });
     });
   });
+</script>
+<script>
+  const menuContainer = document.querySelector('.mobile--menu-navigation');
+  const menuData = JSON.parse(document.getElementById('mobile-menu-data').textContent);
+
+  // Helper to render grandchild
+  const renderGrandChild = (grand) => `
+  <li>
+    <a href="${grand.url}" class="mobile--menu-navigation-sub-item-wrapper">
+      <img src="${grand.image}" alt="${grand.title}" class="mobile--menu-navigation-item-image">
+      <span class="mobile--menu-item-sub-title">${grand.title}</span>
+    </a>
+  </li>
+  `;
+
+  // Helper to render child
+  const renderChild = (child) => {
+    if (child.children && child.children.length) {
+      const grandChildrenHTML = child.children.map(renderGrandChild).join('');
+      return `
+      <li class="mobile--menu-navigation-sub-item">
+        <div class="mobile--menu-navigation-sub-item-wrapper js-sub-toggle">
+          ${child.url ? `<a href="${child.url}">` : ''}
+          <img src="${child.image}" alt="${child.title}" class="mobile--menu-navigation-item-image">
+          <span class="mobile--menu-item-sub-title">${child.title}</span>
+          ${child.url ? `</a>` : ''}
+          
+          <svg class="Icon Icon--next-down" width="9" height="16" viewBox="0 0 9 16" fill="none">
+            <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+              fill="#454545"></path> 
+          </svg>
+        
+        </div>
+        <ul class="mobile--menu-sub-dropdown">
+          ${grandChildrenHTML}
+        </ul>
+      </li>
+    `;
+    } else {
+      return `
+      <li class="mobile--menu-navigation-sub-item">
+        <a href="${child.url}" class="mobile--menu-navigation-sub-item-wrapper">
+          <img src="${child.image}" alt="${child.title}" class="mobile--menu-navigation-item-image">
+          <span class="mobile--menu-item-sub-title">${child.title}</span>
+        </a>
+      </li>
+    `;
+    }
+  };
+
+  // Helper to render top-level item
+  const renderMenuItem = (item) => {
+    if (item.children && item.children.length) {
+      const childrenHTML = item.children.map(renderChild).join('');
+      return `
+      <li class="mobile--menu-navigation-item">
+        <span class="mobile--menu-item-title">${item.title}</span>
+       
+        <svg class="Icon Icon--next" width="9" height="16" viewBox="0 0 9 16" fill="none">
+            <path d="M7.4 5.87904L2.811 1.29304C2.62059 1.12088 2.37127 1.02853 2.11466 1.03512C1.85805 1.04171 1.61379 1.14673 1.43247 1.32844C1.25115 1.51014 1.14665 1.75462 1.14061 2.01124C1.13456 2.26787 1.22744 2.517 1.4 2.70704L5.986 7.29304C6.17347 7.48057 6.27879 7.73487 6.27879 8.00004C6.27879 8.2652 6.17347 8.51951 5.986 8.70704L1.4 13.293C1.21249 13.4807 1.10721 13.7351 1.1073 14.0004C1.10739 14.2657 1.21286 14.52 1.4005 14.7075C1.58814 14.895 1.84259 15.0003 2.10786 15.0002C2.37313 15.0001 2.62749 14.8947 2.815 14.707L7.4 10.121C7.96241 9.55845 8.27836 8.79553 8.27836 8.00004C8.27836 7.20454 7.96241 6.44162 7.4 5.87904V5.87904Z"
+        fill="#454545"></path></svg>
+        
+        <div class="mobile--menu-navigation-item-content mobile--menu-sub-container">
+          <div class="mobile--menu-header">
+            <button class="mobile--menu-back">
+            <svg
+              class="Icon Icon--back"
+              width="9"
+              height="16"
+              viewBox="0 0 9 16"
+              fill="none">
+              <g>
+                <path d="M7.44802 16C7.27123 16 7.10169 15.9297 6.97669 15.8047L1.52869 10.3567C0.903786 9.7316 0.552734 8.88391 0.552734 8.00003C0.552734 7.11615 0.903786 6.26845 1.52869 5.64336L6.97669 0.19536C7.10242 0.0739218 7.27083 0.0067255 7.44562 0.00824444C7.62042 0.00976339 7.78763 0.079876 7.91124 0.203481C8.03484 0.327087 8.10495 0.494295 8.10647 0.669093C8.10799 0.843891 8.04079 1.01229 7.91936 1.13803L2.47136 6.58603C2.09641 6.96108 1.88578 7.4697 1.88578 8.00003C1.88578 8.53035 2.09641 9.03897 2.47136 9.41403L7.91936 14.862C8.01256 14.9553 8.07603 15.074 8.10175 15.2033C8.12746 15.3326 8.11426 15.4667 8.06381 15.5885C8.01336 15.7103 7.92794 15.8144 7.81833 15.8876C7.70872 15.9609 7.57986 16 7.44802 16Z" fill="black"></path>
+              </g>
+            </svg>
+            Zurück
+            </button>
+            <div class="mobile--menu-item-title">${item.title}</div>
+            <button class="mobile--menu-close" aria-label="Close menu">
+              <svg
+                class="menu--Icon menu--Icon--close"
+                role="presentation"
+                viewBox="0 0 16 14"
+              >
+                <path
+                  d="M15 0L1 14m14 0L1 0"
+                  stroke="currentColor"
+                  fill="none"
+                  fill-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="mobile--menu-sub-content">
+            <ul class="mobile--menu-sub-navigation">
+              ${childrenHTML}
+            </ul>
+          </div>
+        </div>
+      </li>
+    `;
+    } else {
+      return `
+      <li>
+        <a class="mobile--menu-navigation-item" href="${item.url}">
+          <span class="mobile--menu-item-title">${item.title}</span>
+        </a>
+      </li>
+    `;
+    }
+  };
+
+  // Render all menu items
+  menuData.forEach((item) => {
+    menuContainer.insertAdjacentHTML('beforeend', renderMenuItem(item));
+  });
+</script>
+
+
+<script>
+  const menuItems = [
+  {% for link in linklists[section.settings.main_menu].links %}
+  {
+    title: {{ link.title | json }},
+    url: {{ link.url | json }}
+
+    {% if link.links.size > 0 %},
+    children: [
+      {% for child_link in link.links %}
+      {
+        title: {{ child_link.title | json }},
+        url: {{ child_link.url | json }},
+        image: ""
+        {% if child_link.links.size > 0 %},
+        children: [
+          {% for grandchild_link in child_link.links %}
+          {
+            title: {{ grandchild_link.title | json }},
+            url: {{ grandchild_link.url | json }},
+            image: ""
+          }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+        {% endif %}
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+    {% endif %}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ];
+    console.log(menuItems);
 </script>

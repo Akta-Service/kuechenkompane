@@ -1,0 +1,439 @@
+{% style %}
+  /* Custom Container */
+
+  .custom-container {
+    max-width: 1560px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+
+  @media screen and (max-width: 1279px) {
+
+    .custom-container {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+
+    .custom-container {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+
+  @media screen and (max-width: 639px) {
+
+    .custom-container {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+    /* new */
+    .knife-showcase-section {
+      background: #f8f8f8;
+      background-color: {{ section.settings.bg_color }};
+      padding: 60px 0;
+    }
+
+    .knife-container {
+      margin: 0 auto;
+    }
+
+    .showcase-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+      color: #000;
+    }
+    .showcase-title.title-style {
+      color: #765339;
+      margin: 0 0 16px 0;
+
+    }
+
+
+    .mystery-bundle {
+      .showcase-title.title-style {
+        color: #f38226;
+      }
+      .showcase-title {
+        font-size: 38px;
+      }
+      @media (max-width: 768px){
+        .showcase-title {
+          font-size: 28px;
+        }
+      }
+      @media (max-width: 575px){
+        .showcase-title.title-style {
+          margin: 0 0 10px 0;
+        }
+        .showcase-title {
+          font-size: 24px;
+        }
+      }
+    }
+
+
+    .showcase-subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: #666;
+      margin: 0 0 24px 0;
+    }
+
+    /* Grid Layout */
+    .knife-grid {
+      display: grid;
+      /* grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); */
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      justify-content: center;
+    }
+
+    /* Knife Card */
+    .knife-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .card-link {
+      display: block !important;
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+   }
+
+    .knife-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Image Styling */
+    .knife-image-wrapper {
+      width: 100%;
+      aspect-ratio: 1/1;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+
+    .knife-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .knife-placeholder {
+      width: 100%;
+      height: 100%;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: #ccc;
+    }
+
+    /* Knife Name */
+    .knife-name {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    /* Price Label */
+    .price-label {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .label-text {
+      font-size: 14px;
+      color: #666;
+      margin-right: 5px;
+    }
+
+    .price-value {
+      font-size: 16px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Handle Text */
+    .handle-text {
+      font-size: 14px;
+      color: #888;
+      margin: 10px 0 0;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 991px) {
+      .knife-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .knife-showcase-section {
+          padding: 40px 0;
+      }
+      .showcase-title {
+        font-size: 18px;
+      }
+      .knife-card {
+          padding: 14px 10px;
+      }
+      .showcase-subtitle {
+        font-size: 16px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .knife-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .knife-showcase-section.mystery-bundle {
+        padding: 30px 0;
+      }
+    }
+    @media screen and (max-width: 425px) {
+        .custom-container {
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+
+    }
+    @media screen and (max-width: 374px) {
+      .knife-grid {
+          gap: 8px;
+      }
+      .knife-card {
+          padding: 12px 8px;
+      }
+      .price-label {
+        flex-wrap: wrap;
+      }
+      .custom-container {
+          padding-right: 10px;
+          padding-left: 10px;
+      }
+    }
+{% endstyle %}
+{% assign custom_classes = section.settings.custom_class | split: ',' | join: ' ' %}
+
+<div class="knife-showcase-section {{ custom_classes }}">
+  <div class="knife-container custom-container">
+    <!-- Section Title -->
+    <h2 class="showcase-title">{{ section.settings.title }}</h2>
+    <h2 class="showcase-title title-style">{{ section.settings.title_style }}</h2>
+
+    <!-- Subtitle -->
+    {% if section.settings.subtitle != blank %}
+      <p class="showcase-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+
+    <!-- Knife Grid -->
+    <div class="knife-grid">
+      {% for block in section.blocks %}
+        {% assign loading_priority = 'lazy' %}
+        {% if forloop.index <= 4 %}
+          {% assign loading_priority = 'eager' %}
+        {% endif %}
+        <div class="knife-card" {{ block.shopify_attributes }}>
+          {% if block.settings.kinfe_link != blank %}
+            <a class="card-link" href="{{ block.settings.kinfe_link }}"></a>
+          {% endif %}
+
+          <div class="knife-image-wrapper">
+            {% if block.settings.knife_image != blank %}
+              <img
+                src="{{ block.settings.knife_image | image_url : width: 800 }}"
+                alt="Product image"
+                class="knife-image"
+                loading="lazy"
+                width="400"
+                height="400"
+              >
+            {% else %}
+              <div class="knife-placeholder">
+                <i class="fas fa-utensils"></i>
+              </div>
+            {% endif %}
+          </div>
+
+          {% if block.settings.knife_name != blank %}
+            <h3 class="knife-name">{{ block.settings.knife_name }}</h3>
+          {% endif %}
+
+          <div class="price-label">
+            <span class="label-text">{{ block.settings.price_label }}</span>
+            <span class="price-value">{{ block.settings.price_value }}</span>
+          </div>
+
+          {% if block.settings.handle_text != blank %}
+            <p class="handle-text">{{ block.settings.handle_text }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Knife Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Classes",
+      "info": "Separate multiple classes with commas (e.g. class1, class2, class3)"
+    },
+    { "type": "header", "content": "Background Color" },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Bg Color",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "header",
+      "content": "Section Headers"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "Diese hochwertigen Damastmesser"
+    },
+    {
+      "type": "text",
+      "id": "title_style",
+      "label": "Title Style",
+      "default": "könntest du erhalten"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Jedes Messer aus unserem Sortiment hat einen einzigartigen Griff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "knife",
+      "name": "Knife Item",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Knife Link"
+        },
+        {
+          "type": "url",
+          "id": "kinfe_link",
+          "label": "Knife Link"
+        },
+        {
+          "type": "header",
+          "content": "Knife Information"
+        },
+        {
+          "type": "image_picker",
+          "id": "knife_image",
+          "label": "Knife Image",
+          "info": "Upload an image of the knife. Recommended size: 300x300px"
+        },
+        {
+          "type": "text",
+          "id": "knife_name",
+          "label": "Knife Name (optional)",
+          "info": "e.g., 'Chef's Knife' or leave blank"
+        },
+        {
+          "type": "header",
+          "content": "Price Settings"
+        },
+        {
+          "type": "text",
+          "id": "price_label",
+          "label": "Price Label",
+          "default": "Normalpreis:",
+          "info": "Text before the price"
+        },
+        {
+          "type": "text",
+          "id": "price_value",
+          "label": "Price Value",
+          "default": "149€",
+          "info": "The price with currency symbol"
+        },
+        {
+          "type": "header",
+          "content": "Additional Text"
+        },
+        {
+          "type": "textarea",
+          "id": "handle_text",
+          "label": "Description",
+          "info": "Optional text about the Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Knife Showcase",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "knife",
+          "settings": {
+            "price_label": "Normalpreis:",
+            "price_value": "149€"
+          }
+        },
+        {
+          "type": "knife",
+          "settings": {
+            "price_label": "Normalpreis:",
+            "price_value": "149€"
+          }
+        },
+        {
+          "type": "knife",
+          "settings": {
+            "price_label": "Normalpreis:",
+            "price_value": "149₮"
+          }
+        },
+        {
+          "type": "knife",
+          "settings": {
+            "price_label": "Normalpreis:",
+            "price_value": "149₮"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -543,5 +543,11 @@
         "shipping_method_notice": "Wähle deine Versandmethode"
       }
     }
+  },
+  "floow": {
+    "cart": {
+      "shipping_fee": "Versandkosten",
+      "shipping_free": "Kostenlos"
+    }
   }
 }

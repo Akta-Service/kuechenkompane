@@ -1,0 +1,328 @@
+<style>
+  .kk-benefit-bar {
+    background: {{ section.settings.section_bg }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    border-top: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+    border-bottom: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+  }
+
+  .kk-benefit-bar .kk-benefit-container {
+    max-width: {{ section.settings.container_width }}px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  @media (max-width: 575px){
+    {% if section.settings.mobile_layout == 'grid' %}
+      .kk-benefit-bar .kk-benefit-container {
+        padding: 0;
+      }
+    {% endif %}
+  }
+
+  .kk-benefit-bar .kk-benefit-splide {
+    overflow: visible;
+  }
+
+  .kk-benefit-bar .kk-benefit-splide .splide__track {
+    overflow: hidden;
+  }
+
+  .kk-benefit-bar .kk-benefit-grid {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .kk-benefit-bar .kk-benefit-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: {{ section.settings.icon_gap }}px;
+  }
+
+  .kk-benefit-bar .kk-benefit-icon {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    flex: 0 0 {{ section.settings.icon_size }}px;
+    color: {{ section.settings.icon_color }};
+    display: flex;
+  }
+
+  .kk-benefit-bar .kk-benefit-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .kk-benefit-bar .kk-benefit-title {
+    margin: 0;
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_size }}px;
+    font-weight: 800;
+    line-height: 1.15;
+    text-transform: uppercase;
+  }
+
+  .kk-benefit-bar .kk-benefit-subtitle {
+    margin: 3px 0 0;
+    color: {{ section.settings.subtitle_color }};
+    font-size: {{ section.settings.subtitle_size }}px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  /* ── Mobile: SLIDER mode ── */
+  {% if section.settings.mobile_layout == 'slider' %}
+  @media screen and (max-width: 575px) {
+    .kk-benefit-bar .kk-benefit-item {
+      justify-content: flex-start;
+    }
+
+    .kk-benefit-bar .kk-benefit-title {
+      font-size: {{ section.settings.mobile_title_size }}px;
+    }
+
+    .kk-benefit-bar .kk-benefit-subtitle {
+      font-size: {{ section.settings.mobile_subtitle_size }}px;
+    }
+
+    .kk-benefit-bar .splide__slide {
+      display: flex;
+      justify-content: center;
+    }
+
+    .kk-benefit-bar .kk-benefit-item {
+      justify-content: center;
+      text-align: left;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+  {% endif %}
+
+  /* ── Mobile: GRID mode ── */
+  {% if section.settings.mobile_layout == 'grid' %}
+  @media screen and (max-width: 575px) {
+    .kk-benefit-bar {
+      padding: {{ section.settings.mobile_padding_top }}px 0 {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    /* Splide-er wrapper gulo reset kore debo */
+    .kk-benefit-bar .kk-benefit-splide,
+    .kk-benefit-bar .kk-benefit-splide .splide__track,
+    .kk-benefit-bar .kk-benefit-splide .splide__list {
+      overflow: visible !important;
+      transform: none !important;
+    }
+
+    .kk-benefit-bar .kk-benefit-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-left: {{ section.settings.mobile_grid_divider_width }}px solid {{ section.settings.mobile_grid_divider_color }};
+      border-top: {{ section.settings.mobile_grid_divider_width }}px solid {{ section.settings.mobile_grid_divider_color }};
+    }
+
+    .kk-benefit-bar .kk-benefit-item {
+      justify-content: flex-start;
+      width: 100% !important;
+      padding: {{ section.settings.mobile_grid_item_padding }}px;
+      background: {{ section.settings.mobile_grid_item_bg }};
+      border-radius: 0;
+      box-sizing: border-box;
+      border-right: {{ section.settings.mobile_grid_divider_width }}px solid {{ section.settings.mobile_grid_divider_color }};
+      border-bottom: {{ section.settings.mobile_grid_divider_width }}px solid {{ section.settings.mobile_grid_divider_color }};
+    }
+
+    .kk-benefit-bar .kk-benefit-title {
+      font-size: {{ section.settings.mobile_title_size }}px;
+    }
+
+    .kk-benefit-bar .kk-benefit-subtitle {
+      font-size: {{ section.settings.mobile_subtitle_size }}px;
+    }
+  }
+  {% endif %}
+
+  /* ── Mobile: SLIDER mode padding ── */
+  {% if section.settings.mobile_layout == 'slider' %}
+  @media screen and (max-width: 575px) {
+    .kk-benefit-bar {
+      padding: {{ section.settings.mobile_padding_top }}px 0 {{ section.settings.mobile_padding_bottom }}px;
+    }
+  }
+  {% endif %}
+</style>
+
+<section class="kk-benefit-bar">
+  <div class="kk-benefit-container">
+    <div id="kk-benefit-splide-{{ section.id }}" class="splide kk-benefit-splide">
+      <div class="splide__track">
+        <ul class="kk-benefit-grid splide__list">
+          {%- for block in section.blocks -%}
+            <li class="kk-benefit-item splide__slide" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon_svg != blank -%}
+                <div class="kk-benefit-icon">{{ block.settings.icon_svg }}</div>
+              {%- endif -%}
+              <div class="kk-benefit-content">
+                {%- if block.settings.title != blank -%}
+                  <h3 class="kk-benefit-title">{{ block.settings.title }}</h3>
+                {%- endif -%}
+                {%- if block.settings.subtitle != blank -%}
+                  <p class="kk-benefit-subtitle">{{ block.settings.subtitle }}</p>
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var splideInstance;
+  var mobileLayout = '{{ section.settings.mobile_layout }}';
+
+  function initSplide() {
+    var el = document.querySelector('#kk-benefit-splide-{{ section.id }}');
+    if (!el) return;
+
+    if (typeof Splide === 'undefined') {
+      setTimeout(initSplide, 100);
+      return;
+    }
+
+    /* Grid mode-e mobile breakpoint-e Splide disable */
+    var mobile575 = mobileLayout === 'grid'
+      ? { destroy: true }
+      : {
+          perPage: 1,
+          padding: { right: '30%' },
+          gap: '12px',
+          drag: 'free',
+          snap: true,
+          flickPower: 400,
+          flickMaxPages: 1
+        };
+
+    if (!splideInstance) {
+      splideInstance = new Splide(el, {
+        type: 'slide',
+        perPage: 4,
+        perMove: 1,
+        gap: '{{ section.settings.item_gap }}px',
+        arrows: false,
+        pagination: false,
+        drag: false,
+        waitForTransition: false,
+        updateOnMove: true,
+        breakpoints: {
+          1024: {
+            perPage: 3,
+            gap: '16px',
+            drag: 'free',
+            snap: true,
+            flickPower: 400,
+            flickMaxPages: 1
+          },
+          575: mobile575
+        }
+      }).mount();
+
+      el.classList.add('is-initialized');
+    } else {
+      splideInstance.refresh();
+    }
+  }
+
+  function refreshSplide() {
+    setTimeout(function () {
+      initSplide();
+      if (splideInstance) splideInstance.refresh();
+    }, 200);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', refreshSplide);
+  } else {
+    refreshSplide();
+  }
+
+  window.addEventListener('load', refreshSplide);
+  window.addEventListener('resize', refreshSplide);
+
+  document.addEventListener('shopify:section:load', function(e) {
+    if (e.target.querySelector('#kk-benefit-splide-{{ section.id }}')) {
+      refreshSplide();
+    }
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "KK Benefit Bar",
+  "settings": [
+    { "type": "range", "id": "container_width", "label": "Container Width", "min": 900, "max": 1600, "step": 20, "default": 1440 },
+    { "type": "color", "id": "section_bg", "label": "Section Background", "default": "#eeeff8" },
+    { "type": "color", "id": "border_color", "label": "Border Color", "default": "#bdbbbb" },
+    { "type": "range", "id": "border_width", "label": "Border Width", "min": 0, "max": 5, "step": 1, "default": 1 },
+    { "type": "color", "id": "icon_color", "label": "Icon Color", "default": "#111" },
+    { "type": "color", "id": "title_color", "label": "Title Color", "default": "#111" },
+    { "type": "color", "id": "subtitle_color", "label": "Subtitle Color", "default": "#111" },
+    { "type": "range", "id": "icon_size", "label": "Icon Size", "min": 20, "max": 70, "step": 1, "default": 34 },
+    { "type": "range", "id": "title_size", "label": "Title Size", "min": 10, "max": 28, "step": 1, "default": 15 },
+    { "type": "range", "id": "subtitle_size", "label": "Subtitle Size", "min": 10, "max": 24, "step": 1, "default": 14 },
+    { "type": "range", "id": "mobile_title_size", "label": "Mobile Title Size", "min": 10, "max": 26, "step": 1, "default": 14 },
+    { "type": "range", "id": "mobile_subtitle_size", "label": "Mobile Subtitle Size", "min": 10, "max": 24, "step": 1, "default": 14 },
+    { "type": "range", "id": "item_gap", "label": "Item Gap", "min": 10, "max": 80, "step": 2, "default": 36 },
+    { "type": "range", "id": "icon_gap", "label": "Icon Text Gap", "min": 6, "max": 30, "step": 1, "default": 14 },
+    { "type": "range", "id": "padding_top", "label": "Padding Top", "min": 0, "max": 80, "step": 2, "default": 24 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 0, "max": 80, "step": 2, "default": 24 },
+    { "type": "range", "id": "mobile_padding_top", "label": "Padding Top (Mobile)", "min": 0, "max": 80, "step": 2, "default": 24 },
+    { "type": "range", "id": "mobile_padding_bottom", "label": "Padding Bottom (Mobile)", "min": 0, "max": 80, "step": 2, "default": 24 },
+    { "type": "header", "content": "Mobile Layout" },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile Layout",
+      "options": [
+        { "value": "slider", "label": "Slider (swipeable)" },
+        { "value": "grid", "label": "Grid (2×2)" }
+      ],
+      "default": "slider"
+    },
+    { "type": "range", "id": "mobile_grid_item_padding", "label": "Grid Item Padding (Mobile)", "min": 0, "max": 32, "step": 2, "default": 12 },
+    { "type": "color", "id": "mobile_grid_item_bg", "label": "Grid Item Background (Mobile)", "default": "#ffffff" },
+    { "type": "color", "id": "mobile_grid_divider_color", "label": "Grid Divider Color (Mobile)", "default": "#e0e0e0" },
+    { "type": "range", "id": "mobile_grid_divider_width", "label": "Grid Divider Width (Mobile)", "min": 0, "max": 4, "step": 1, "default": 1 }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Benefit Item",
+      "limit": 4,
+      "settings": [
+        { "type": "textarea", "id": "icon_svg", "label": "SVG Icon" },
+        { "type": "text", "id": "title", "label": "Title", "default": "KOSTENLOSER VERSAND" },
+        { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "innerhalb DE" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Benefit Bar",
+      "blocks": [
+        { "type": "item", "settings": { "title": "KOSTENLOSER VERSAND", "subtitle": "innerhalb DE", "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'><path d='M7 18H39V45H7V18Z' stroke='currentColor' stroke-width='4'/><path d='M39 28H50L57 36V45H39V28Z' stroke='currentColor' stroke-width='4'/><circle cx='19' cy='48' r='5' stroke='currentColor' stroke-width='4'/><circle cx='47' cy='48' r='5' stroke='currentColor' stroke-width='4'/></svg>" } },
+        { "type": "item", "settings": { "title": "30 TAGE GELD-ZURÜCK", "subtitle": "Ohne Risiko bestellen", "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'><circle cx='32' cy='34' r='22' stroke='currentColor' stroke-width='4'/><path d='M32 20V34L42 40' stroke='currentColor' stroke-width='4' stroke-linecap='round'/><path d='M24 6H40' stroke='currentColor' stroke-width='4' stroke-linecap='round'/><path d='M32 6V12' stroke='currentColor' stroke-width='4' stroke-linecap='round'/></svg>" } },
+        { "type": "item", "settings": { "title": "SICHERE ZAHLUNG", "subtitle": "SSL-verschlüsselt", "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'><rect x='14' y='24' width='36' height='28' stroke='currentColor' stroke-width='4'/><path d='M22 24V17C22 11 26 7 32 7C38 7 42 11 42 17V24' stroke='currentColor' stroke-width='4'/><path d='M32 35V42' stroke='currentColor' stroke-width='4' stroke-linecap='round'/></svg>" } },
+        { "type": "item", "settings": { "title": "DEUTSCHER SUPPORT", "subtitle": "Wir sind für dich da", "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'><path d='M14 36V30C14 20 22 12 32 12C42 12 50 20 50 30V36' stroke='currentColor' stroke-width='4'/><rect x='8' y='33' width='10' height='15' rx='3' stroke='currentColor' stroke-width='4'/><rect x='46' y='33' width='10' height='15' rx='3' stroke='currentColor' stroke-width='4'/><path d='M50 48C47 55 40 57 33 57' stroke='currentColor' stroke-width='4' stroke-linecap='round'/></svg>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

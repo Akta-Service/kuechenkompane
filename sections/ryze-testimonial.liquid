@@ -1,0 +1,1026 @@
+
+ {{ 'splide.min.css' | asset_url | stylesheet_tag }}
+
+<style>
+
+  .ryze-testimonial {
+    padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ryze-testimonial .ryzeSwiper-wrapper {
+    overflow: visible;
+  }
+
+  /* ─── Header ─────────────────────────────────────────────── */
+  .ryze-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    padding-bottom: {{ section.settings.header_spacing_bottom }}px;
+  }
+
+  .ryze-subtitle {
+    color: {{ section.settings.subtitle_color }};
+    margin: 0;
+    padding: 0;
+    font-size: {{ section.settings.subtitle_font_size }}px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+  }
+
+  .ryze-heading {
+    color: {{ section.settings.heading_color }};
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: {{ section.settings.heading_font_size }}px;
+    font-style: normal;
+    line-height: 1.15;
+    text-transform: capitalize;
+    padding-bottom: 24px;
+    font-weight: 600;
+  }
+
+  .ryze-heading span {
+    color: {{ section.settings.heading_highlight_color }};
+  }
+
+  .ryze-description {
+    color: {{ section.settings.heading_color }};
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 150%;
+    padding-bottom: 24px;
+  }
+
+  .ryze-ratting-text {
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .ryze-top-ratting {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    color: {{ section.settings.star_color }};
+  }
+
+  /* ─── Swiper wrapper fade edges ─────────────────────────── */
+  .ryzeSwiper-wrapper {
+    position: relative;
+  }
+
+  .ryzeSwiper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background: linear-gradient(to right, {{ section.settings.bg_color }} 0%, rgba(255,255,255,0) 100%);
+    z-index: 2;
+  }
+
+  .ryzeSwiper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 100%;
+    background: linear-gradient(to left, {{ section.settings.bg_color }} 0%, rgba(255,255,255,0) 100%);
+    z-index: 2;
+  }
+
+  .ryzeSwiper {
+    position: relative;
+  }
+
+  /* ─── Card ───────────────────────────────────────────────── */
+  .ryze-card {
+    display: flex;
+    border-radius: {{ section.settings.card_border_radius }}px;
+    border: {{ section.settings.card_border_width }}px solid {{ section.settings.card_border_color }};
+    background: {{ section.settings.card_bg_color }};
+    align-items: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,{{ section.settings.card_shadow_opacity | divided_by: 100.0 }});
+  }
+
+  .ryze-image {
+    width: {{ section.settings.card_image_width }}px;
+    max-width: {{ section.settings.card_image_width }}px;
+    border-top-right-radius: 0;
+    border-top-left-radius: {{ section.settings.card_border_radius | minus: 2 }}px;
+    border-bottom-left-radius: {{ section.settings.card_border_radius | minus: 2 }}px;
+    margin-bottom: -9px;
+    padding: 0;
+  }
+
+  .ryze-image img {
+    width: 100%;
+    border-top-right-radius: 0;
+    border-top-left-radius: {{ section.settings.card_border_radius | minus: 2 }}px;
+    border-bottom-left-radius: {{ section.settings.card_border_radius | minus: 2 }}px;
+  }
+
+  .ryze-content {
+    flex: 1;
+    padding: {{ section.settings.card_content_padding }}px;
+  }
+
+  /* ─── Stars ──────────────────────────────────────────────── */
+  .ryze-stars {
+    max-width: 116px;
+    color: {{ section.settings.star_color }};
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .ryze-stars svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ─── Review Text ────────────────────────────────────────── */
+  .ryze-review-title {
+    margin: 0;
+    padding: 0;
+    color: {{ section.settings.review_title_color }};
+    font-size: {{ section.settings.review_title_font_size }}px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+    padding: 10px 0 15px 0;
+  }
+
+  .ryze-review-text {
+    margin: 0;
+    padding: 0;
+    font-size: {{ section.settings.review_text_font_size }}px;
+    font-weight: 400;
+    line-height: 150%;
+    color: {{ section.settings.review_text_color }};
+  }
+
+  /* ─── Author ─────────────────────────────────────────────── */
+  .ryze-author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+  }
+
+  .ryze-author-name {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: {{ section.settings.author_color }};
+  }
+
+  .ryze-verified {
+    gap: 8px;
+    padding: 1px 8px 4px;
+    background: {{ section.settings.verified_bg_color }};
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  .ryze-verified span {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: {{ section.settings.author_color }};
+    margin-top: 5px;
+  }
+
+  .verified-icon svg {
+    width: 36px;
+    height: 36px;
+    color: {{ section.settings.star_color }};
+  }
+
+  /* ─── Button ─────────────────────────────────────────────── */
+  .ryze-button-wrap {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .ryze-testimonial-container .ryze-button-wrap {
+    padding: 0 20px;
+  }
+
+  .ryze-button {
+    position: relative;
+    color: {{ section.settings.btn_text_color }};
+    background: {{ section.settings.btn_bg_color }};
+    border-radius: {{ section.settings.btn_border_radius }}px;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    border: none;
+    gap: 8px;
+    text-decoration: none;
+    padding: 16px 24px;
+    transition: 0.3s all ease;
+  }
+
+  .ryze-button:hover {
+    background: {{ section.settings.btn_hover_color }};
+  }
+
+  .ryze-button-wrap.testimonial-btn {
+    max-width: 400px;
+  }
+
+  /* ─── Guarantee ──────────────────────────────────────────── */
+  .guarantee-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .guarantee-wrap svg {
+    width: 24px;
+    height: 24px;
+    color: {{ section.settings.star_color }};
+  }
+
+  .guarantee-text {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 0px;
+    color: {{ section.settings.author_color }};
+    margin-top: 1px;
+  }
+
+  img.guarantee_icon {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  /* ─── Splide custom nav buttons ──────────────────────────── */
+  .ryze_testi-slider-nav .ryze-splide-prev,
+  .ryze_testi-slider-nav .ryze-splide-next {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .ryze_testi-slider-nav .ryze-splide-prev img,
+  .ryze_testi-slider-nav .ryze-splide-next img {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* ─── Splide pagination ──────────────────────────────────── */
+  .ryze-splide .splide__pagination {
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .ryze-splide .splide__pagination__page {
+    transition: 0.4s all ease-in-out;
+    background: rgba(76, 43, 29, 0.4);
+  }
+
+  .ryze-splide .splide__pagination__page.is-active {
+    background: {{ section.settings.star_color }};
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: none;
+  }
+
+  .ryze-splide .splide__arrow {
+    display: none;
+  }
+
+  .ryze_testi-slider-nav .ryze-splide-prev {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99999;
+  }
+
+  .ryze_testi-slider-nav .ryze-splide-next {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99999;
+  }
+
+  .ryze-splide .splide__track {
+    overflow: visible;
+    padding-bottom: 30px;
+  }
+
+  .ryze-img2 { display: none; }
+
+
+.ryze-splide .splide__list { 
+  align-items: stretch; 
+}
+
+.ryze-splide .splide__slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* center → stretch */
+  height: auto !important;
+}
+
+.ryze-card {
+  height: 100%;
+  width: 100%;
+}
+
+  /* ─── Responsive ─────────────────────────────────────────── */
+  @media screen and (max-width: 768px) {
+    .ryze-testimonial {
+      padding-top: {{ section.settings.section_padding_top | minus: 18 }}px;
+      padding-bottom: {{ section.settings.section_padding_bottom | minus: 18 }}px;
+    }
+    .ryze-heading { font-size: {{ section.settings.heading_font_size | minus: 16 }}px; }
+    .ryze-button-wrap.testimonial-btn { max-width: 100%; }
+
+ 
+  }
+
+  @media (max-width: 767px) {
+    .ryze-card { flex-direction: column; text-align: center; }
+    .ryze_testi-slider-nav .ryze-splide-prev,
+    .ryze_testi-slider-nav .ryze-splide-next { display: none; }
+    .ryze-image { width: 100%; max-width: 100%; }
+    .ryze-img2 { display: block; }
+    .ryze-img1 { display: none; }
+    .ryze-review-title { text-align: left; }
+    .ryze-review-text { text-align: left; }
+    .ryzeSwiper::before,
+    .ryzeSwiper::after { display: none; }
+    .ryze-image img {
+      width: 100%;
+      border-top-right-radius: {{ section.settings.card_border_radius | minus: 2 }}px;
+      border-top-left-radius: {{ section.settings.card_border_radius | minus: 2 }}px;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .ryze-review-title { font-size: {{ section.settings.review_title_font_size | minus: 2 }}px; }
+    .ryze-review-text { font-size: {{ section.settings.review_text_font_size | minus: 2 }}px; }
+    .ryze-heading { font-size: {{ section.settings.heading_font_size | minus: 20 }}px; padding-bottom: 16px; }
+    .ryze-subtitle { font-size: {{ section.settings.subtitle_font_size | minus: 2 }}px; }
+    .ryze-description { font-size: 16px; padding-bottom: 10px; }
+    .ryze-ratting-text { font-size: 18px; }
+    .ryze-header { padding-bottom: 20px; }
+    .ryze-content { padding: 10px; }
+    .ryze-author-name { font-size: 16px; }
+    .ryze-verified span { font-size: 16px; }
+    .ryze-button-wrap { max-width: 100%; margin: 0 12px; }
+    .ryze-button { padding: 16px; }
+  }
+
+  @media (max-width: 400px) {
+    .guarantee-text { font-size: 16px; }
+    .ryze-heading { font-size: {{ section.settings.heading_font_size | minus: 24 }}px; }
+    .ryze-subtitle { font-size: 16px; }
+    .ryze-review-title { font-size: 16px; }
+    .ryze-button { font-size: 18px; }
+    .verified-icon svg { width: 30px; height: 30px; }
+  }
+
+  @media (max-width: 374px) {
+    .verified-icon svg { width: 24px; height: 24px; }
+    .ryze-author-name { font-size: 14px; }
+    .ryze-verified span { font-size: 13px; }
+  }
+</style>
+
+<section class="ryze-testimonial">
+  <div class="ryze-testimonial-container">
+    <div class="ryze-header">
+      <p class="ryze-subtitle">{{ section.settings.subtitle }}</p>
+      <h2 class="ryze-heading">
+        {{ section.settings.heading }}
+        <span>{{ section.settings['heading-highlight'] }}</span>
+      </h2>
+      <p class="ryze-description">{{ section.settings.description }}</p>
+      <div class="ryze-ratting-text">
+        <span class="ryze-top-ratting">
+          {% for i in (1..5) %}
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="0.9em" width="0.9em" xmlns="http://www.w3.org/2000/svg">
+              <path d="m12.672.668 3.059 6.197 6.838.993a.75.75 0 0 1 .416 1.28l-4.948 4.823 1.168 6.812a.75.75 0 0 1-1.088.79L12 18.347l-6.116 3.216a.75.75 0 0 1-1.088-.791l1.168-6.811-4.948-4.823a.749.749 0 0 1 .416-1.279l6.838-.994L11.327.668a.75.75 0 0 1 1.345 0Z"></path>
+            </svg>
+          {% endfor %}
+        </span>
+        {{ section.settings['ratting-text'] }}
+      </div>
+    </div>
+
+    <div class="ryzeSwiper-wrapper ryze_testi-slider-nav">
+      <div id="ryze-splide-{{ section.id }}" class="splide ryzeSwiper ryze-splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for block in section.blocks %}
+              <li class="splide__slide" {{ block.shopify_attributes }}>
+                <div class="ryze-card">
+                  <div class="ryze-image">
+                    {% if block.settings.image != blank %}
+                      <img class="ryze-img1" src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.author }}" loading="lazy">
+                    {% endif %}
+                    {% if block.settings['mobile-image'] != blank %}
+                      <img class="ryze-img2" src="{{ block.settings['mobile-image'] | img_url: 'master' }}" alt="{{ block.settings.author }}" loading="lazy">
+                    {% endif %}
+                  </div>
+                  <div class="ryze-content">
+                    <div class="ryze-stars">
+                      {% for i in (1..5) %}
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg">
+                          <path d="m12.672.668 3.059 6.197 6.838.993a.75.75 0 0 1 .416 1.28l-4.948 4.823 1.168 6.812a.75.75 0 0 1-1.088.79L12 18.347l-6.116 3.216a.75.75 0 0 1-1.088-.791l1.168-6.811-4.948-4.823a.749.749 0 0 1 .416-1.279l6.838-.994L11.327.668a.75.75 0 0 1 1.345 0Z"></path>
+                        </svg>
+                      {% endfor %}
+                    </div>
+                    <h3 class="ryze-review-title">{{ block.settings.title }}</h3>
+                    <div class="ryze-review-text">{{ block.settings.review }}</div>
+                    <div class="ryze-author">
+                      <div class="ryze-author-name">{{ block.settings.author }}</div>
+                      <div class="ryze-verified">
+                        <span class="verified-icon">
+                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+                          </svg>
+                        </span>
+                        <span>{{ block.settings['verified-text'] }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% if section.settings.enable_ryze_testi_pagination == 'true' %}
+          <ul class="splide__pagination"></ul>
+        {% endif %}
+      </div>
+
+      {% if section.settings.enable_ryze_testi_navigation == 'true' %}
+        <button class="ryze-splide-prev" id="ryze-prev-{{ section.id }}" aria-label="Previous">
+          {% if section.settings.left_angle != blank %}
+            <img src="{{ section.settings.left_angle | img_url: 'master' }}" alt="Prev">
+          {% endif %}
+        </button>
+        <button class="ryze-splide-next" id="ryze-next-{{ section.id }}" aria-label="Next">
+          {% if section.settings.right_angle != blank %}
+            <img src="{{ section.settings.right_angle | img_url: 'master' }}" alt="Next">
+          {% endif %}
+        </button>
+      {% endif %}
+    </div>
+
+    {% if section.settings.button_text != blank %}
+      <div class="ryze-button-wrap testimonial-btn">
+        <a href="{{ section.settings.button_link }}" class="ryze-button">
+          {{ section.settings.button_text }}
+          {% if section.settings['btn-icon'] != blank %}
+            <img src="{{ section.settings['btn-icon'] | img_url: 'master' }}" alt="Icon">
+          {% endif %}
+        </a>
+      </div>
+    {% endif %}
+
+    {% if section.settings['guarantee-text'] != blank %}
+      <div class="guarantee-wrap">
+        {% if section.settings.guarantee_icon != blank %}
+          <img class="guarantee_icon" src="{{ section.settings.guarantee_icon | image_url }}" alt="icon">
+        {% else %}
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+          </svg>
+        {% endif %}
+        <span class="guarantee-text">{{ section.settings['guarantee-text'] }}</span>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.querySelector('#ryze-splide-{{ section.id }}');
+    if (!el || typeof Splide === 'undefined') return;
+
+    {% assign show_pagination = false %}
+    {% if section.settings.enable_ryze_testi_pagination == 'true' %}
+      {% assign show_pagination = true %}
+    {% endif %}
+
+    var splide = new Splide(el, {
+      type      : '{{ section.settings.slider_type }}',
+      perPage   : 1,
+      perMove   : 1,
+      focus     : 'center',
+      speed     : {{ section.settings.slider_speed }},
+      easing    : 'cubic-bezier(0.25, 1, 0.5, 1)',
+      gap       : '{{ section.settings.slide_gap }}px',
+      padding   : { left: '{{ section.settings.peek_desktop }}%', right: '{{ section.settings.peek_desktop }}%' },
+      arrows    : false,
+      pagination: {{ show_pagination }},
+      autoplay  : {{ section.settings.autoplay }},
+      interval  : {{ section.settings.autoplay_speed }},
+      pauseOnHover: true,
+      pauseOnFocus: true,
+      breakpoints: {
+        767: {
+          gap    : '12px',
+          padding: { left: '{{ section.settings.peek_mobile }}%', right: '{{ section.settings.peek_mobile }}%' }
+        }
+      }
+    }).mount();
+
+    {% if section.settings.enable_ryze_testi_navigation == 'true' %}
+      var prevBtn = document.querySelector('#ryze-prev-{{ section.id }}');
+      var nextBtn = document.querySelector('#ryze-next-{{ section.id }}');
+      if (prevBtn) prevBtn.addEventListener('click', function () { splide.go('<'); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { splide.go('>'); });
+    {% endif %}
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Ryze Testimonial Slider",
+  "settings": [
+
+    { "type": "header", "content": "─── Custom Class ───" },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Classes",
+      "info": "Separate multiple classes with commas (e.g. promo-section, dark-theme)"
+    },
+
+    { "type": "header", "content": "─── Section Background ───" },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f5f0e8"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 48
+    },
+
+    { "type": "header", "content": "─── Section Heading ───" },
+    {
+      "type": "range",
+      "id": "header_spacing_bottom",
+      "label": "Header Bottom Spacing (px)",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "default": 48
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "200K+ FIVE STAR REVIEWS"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#fa8526"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "label": "Subtitle Font Size (px)",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading (Part 1)",
+      "default": "Join The "
+    },
+    {
+      "type": "text",
+      "id": "heading-highlight",
+      "label": "Heading (Part 2 — Highlighted)",
+      "default": "RYZE Revolution"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading & Body Text Color",
+      "default": "#533a2d"
+    },
+    {
+      "type": "color",
+      "id": "heading_highlight_color",
+      "label": "Heading Highlight Color",
+      "default": "#fa8526"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size (px)",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "default": 48
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "ratting-text",
+      "label": "Rating Text",
+      "default": "295,141 Reviews"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star & Accent Color",
+      "default": "#fa8526"
+    },
+
+    { "type": "header", "content": "─── Review Card ───" },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#f9f1e9"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card Border Color",
+      "default": "#fa8526"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "Card Border Width (px)",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card Border Radius (px)",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_opacity",
+      "label": "Card Shadow Opacity (%)",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "card_image_width",
+      "label": "Card Image Width (px, desktop)",
+      "min": 160,
+      "max": 440,
+      "step": 10,
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "card_content_padding",
+      "label": "Card Content Padding (px)",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "default": 24
+    },
+
+    { "type": "header", "content": "─── Review Text ───" },
+    {
+      "type": "color",
+      "id": "review_title_color",
+      "label": "Review Title Color",
+      "default": "#fa8526"
+    },
+    {
+      "type": "range",
+      "id": "review_title_font_size",
+      "label": "Review Title Font Size (px)",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "review_text_color",
+      "label": "Review Body Text Color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "review_text_font_size",
+      "label": "Review Body Font Size (px)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "author_color",
+      "label": "Author & Verified Text Color",
+      "default": "#533a2d"
+    },
+    {
+      "type": "color",
+      "id": "verified_bg_color",
+      "label": "Verified Badge Background",
+      "default": "#fcfbf3"
+    },
+
+    { "type": "header", "content": "─── CTA Button ───" },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "TRY RYZE TODAY"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Button Background Color",
+      "default": "#fa8526"
+    },
+    {
+      "type": "color",
+      "id": "btn_hover_color",
+      "label": "Button Hover Color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "btn_border_radius",
+      "label": "Button Border Radius (px)",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 8
+    },
+    {
+      "type": "image_picker",
+      "id": "btn-icon",
+      "label": "Button Icon (optional)"
+    },
+    {
+      "type": "text",
+      "id": "guarantee-text",
+      "label": "Guarantee Text",
+      "default": "30-Day Money Back Guarantee"
+    },
+    {
+      "type": "image_picker",
+      "id": "guarantee_icon",
+      "label": "Guarantee Icon",
+      "info": "Leave blank to use the default SVG checkmark."
+    },
+
+    { "type": "header", "content": "─── Slider Behaviour ───" },
+    {
+      "type": "select",
+      "id": "slider_type",
+      "label": "Slider Type",
+      "options": [
+        { "value": "loop", "label": "Loop (infinite)" },
+        { "value": "slide", "label": "Slide (with rewind)" }
+      ],
+      "default": "loop"
+    },
+    {
+      "type": "range",
+      "id": "slider_speed",
+      "label": "Transition Speed (ms)",
+      "min": 200,
+      "max": 1200,
+      "step": 50,
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "slide_gap",
+      "label": "Gap Between Slides (px)",
+      "min": 8,
+      "max": 60,
+      "step": 2,
+      "default": 30
+    },
+
+    { "type": "header", "content": "─── Peek (Partial Adjacent Slide) ───" },
+    {
+      "type": "range",
+      "id": "peek_desktop",
+      "label": "Peek — Desktop (%)",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "peek_mobile",
+      "label": "Peek — Mobile (%)",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    },
+
+    { "type": "header", "content": "─── Navigation Controls ───" },
+    {
+      "type": "select",
+      "id": "enable_ryze_testi_pagination",
+      "label": "Show Pagination Dots",
+      "default": "false",
+      "options": [
+        { "label": "Enable", "value": "true" },
+        { "label": "Disable", "value": "false" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "enable_ryze_testi_navigation",
+      "label": "Show Navigation Arrows",
+      "default": "true",
+      "options": [
+        { "label": "Enable", "value": "true" },
+        { "label": "Disable", "value": "false" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "left_angle",
+      "label": "Prev Arrow Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_angle",
+      "label": "Next Arrow Icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay Interval (ms)",
+      "min": 1500,
+      "max": 9000,
+      "step": 500,
+      "default": 4000
+    }
+
+  ],
+
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "header", "content": "Images" },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile-image",
+          "label": "Mobile Image",
+          "info": "Shown only on screens below 768px."
+        },
+        { "type": "header", "content": "Review Content" },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Review Title"
+        },
+        {
+          "type": "textarea",
+          "id": "review",
+          "label": "Review Text"
+        },
+        { "type": "header", "content": "Author" },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name"
+        },
+        {
+          "type": "text",
+          "id": "verified-text",
+          "label": "Verified Badge Text",
+          "default": "Verified Buyer"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Ryze Testimonial Slider"
+    }
+  ]
+}
+{% endschema %}
+

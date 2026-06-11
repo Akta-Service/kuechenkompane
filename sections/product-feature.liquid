@@ -19,7 +19,7 @@
       font-size: 16px;
       color: #444444;
   }
-  .product-feature-section .swiper-pagination {
+  .product-feature-section .splide__pagination {
       position: absolute;
       bottom: 20px !important;
       width: 100%;
@@ -29,7 +29,7 @@
       gap: 2px;
       align-items: center;
   }
-  .product-feature-section .swiper-pagination-bullet {
+  .product-feature-section .splide__pagination__page {
       width: 20px;
       height: 20px;
       background: transparent;
@@ -37,91 +37,91 @@
       border-radius: 50%;
       cursor: pointer;
       transition: background 0.3s ease;
+      border: none;
+      padding: 0;
+      position: relative;
   }
-  .product-feature-section .swiper-pagination-bullet:before {
+  .product-feature-section .splide__pagination__page:before {
+      content: '';
+      display: block;
       width: 6px;
       height: 6px;
       background: #dedede;
+      border-radius: 50%;
+      margin: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
   }
-  .product-feature-section .swiper-pagination-bullet:hover:before {
-      width: 6px;
-      height: 6px;
+  .product-feature-section .splide__pagination__page:hover:before {
       background: #3f3f3f;
   }
-  .product-feature-section .swiper-pagination-bullet-active:before {
+  .product-feature-section .splide__pagination__page.is-active:before {
       background: #3f3f3f;
       opacity: 1;
-  }
-  .product-feature-section .swiper-pagination-bullet-active:after {
-      display: none;
   }
   @media only screen and (max-width: 1023px) {
       .product-feature-section {
         padding: 20px 0 49px;
     }
-    .product-feature-section .swiper-pagination {
+    .product-feature-section .splide__pagination {
         display: flex;
     }
   }
 </style>
-
 <div class="product-feature-section">
   <div class="container">
-    <div class="swiper product-feature">
-      <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          <div class="swiper-slide">
-            <div class="product-feature-card">
-              <div class="product-feature-card-img">
-                {% if block.settings.image != blank %}
-                  {{
-                    block.settings.image
-                    | image_url: width: block.settings.image.width, height: block.settings.image.height
-                    | image_tag: alt: block.settings.image.alt, loading: 'lazy'
-                  }}
-                {% endif %}
+    <div id="product-feature-splide" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide">
+              <div class="product-feature-card">
+                <div class="product-feature-card-img">
+                  {% if block.settings.image != blank %}
+                    {{
+                      block.settings.image
+                      | image_url: width: block.settings.image.width, height: block.settings.image.height
+                      | image_tag: alt: block.settings.image.alt, loading: 'lazy'
+                    }}
+                  {% endif %}
+                </div>
+                <div class="product-feature-card-content">
+                  <h4>{{ block.settings.title | escape }}</h4>
+                </div>
               </div>
-              <div class="product-feature-card-content">
-                <h4>{{ block.settings.title | escape }}</h4>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
+            </li>
+          {% endfor %}
+        </ul>
       </div>
+      <ul class="splide__pagination"></ul>
     </div>
-    <!-- Pagination bullets -->
-    <div class="swiper-pagination"></div>
   </div>
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    if (typeof Swiper !== 'undefined') {
-      new Swiper('.product-feature', {
-        loop: true,
-        slidesPerView: {{ section.settings.slides_per_view | default: 4 }},
-        spaceBetween: {{ section.settings.space_between | default: 20 }},
-        grabCursor: true,
-        autoplay: {
-          delay: {{ section.settings.autoplay_delay | default: 3000 }},
-          disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        speed: {{ section.settings.speed | default: 1000 }},
+    if (typeof Splide !== 'undefined') {
+      new Splide('#product-feature-splide', {
+        type       : 'loop',
+        perPage    : {{ section.settings.slides_per_view_large | default: 4 }},
+        gap        : {{ section.settings.space_between | default: 20 }},
+        drag       : true,
+        autoplay   : true,
+        interval   : {{ section.settings.autoplay_delay | default: 3000 }},
+        resetProgress: false,
+        pagination : true,
+        arrows     : false,
+        speed      : {{ section.settings.speed | default: 1000 }},
         breakpoints: {
-          320: {  slidesPerView: {{ section.settings.slides_per_view_small | default: 1 }} },
-          640: { slidesPerView: {{ section.settings.slides_per_view_medium | default: 2 }} },
-          1024: { slidesPerView: {{ section.settings.slides_per_view_large | default: 4 }} }
+          1023: { perPage: {{ section.settings.slides_per_view_medium | default: 2 }} },
+          639 : { perPage: {{ section.settings.slides_per_view_small | default: 1 }} }
         }
-      });
+      }).mount();
     }
   });
 </script>
-
-
 
 {% schema %}
 {

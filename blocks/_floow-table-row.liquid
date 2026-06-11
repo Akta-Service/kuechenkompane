@@ -1,0 +1,43 @@
+<tr class="table-row-{{ block.id }}">
+  {% content_for 'blocks' %}
+</tr>
+
+{% style %}
+  .table-row-{{ block.id }} {
+    border-bottom: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+  }
+  .table-row-{{ block.id }} td {
+    padding: 0;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Floow Table Row",
+  "presets": [{ "name": "Floow Table Row", "category": "Floow" }],
+  "tag": null,
+  "settings": [
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border Width",
+      "unit": "px",
+      "min": 0,
+      "max": 4,
+      "step": 0.1,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "_floow-table-cell"
+    }
+  ]
+}
+{% endschema %}

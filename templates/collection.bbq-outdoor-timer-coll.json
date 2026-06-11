@@ -14,6 +14,7 @@
       "disabled": true,
       "name": "APEX Announcement Bar 1",
       "settings": {
+        "sticky_top": false,
         "color_scheme": "",
         "pt": 15,
         "pb": 15,
@@ -40,8 +41,7 @@
         "timer_font_size": 14,
         "timer_color": "#000000",
         "timer_font_weight": "400",
-        "target_date": "2025-05-09",
-        "target_time": "00:00:00"
+        "start_time": "00:00:00"
       }
     },
     "collection-header": {
@@ -101,6 +101,7 @@
     },
     "main": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
         ".m-collection-filters-form {margin-bottom: 0;}"
@@ -123,7 +124,27 @@
         "show_product_count": true,
         "collapsed_groups": "Product type, Brand, Vendor, Size",
         "color_swatches": "color,colour,couleur,farbe",
-        "color_swatches_design": "list"
+        "color_swatches_design": "list",
+        "overlay_opacity": 0.5,
+        "show_stock_status": false
+      }
+    },
+    "mrk_collection_grid_section_niipkU": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
+      "settings": {
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": false,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false
       }
     },
     "usp_list_nd6t8y": {
@@ -172,8 +193,7 @@
         "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
+        "verticle_padding_mobile": 30
       }
     },
     "collection_description_KrcbiD": {
@@ -193,6 +213,7 @@
     "collection-header",
     "rich_text_bJXchB",
     "main",
+    "mrk_collection_grid_section_niipkU",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"
   ]

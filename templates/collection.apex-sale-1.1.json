@@ -9,48 +9,25 @@
  */
 {
   "sections": {
-    "announcement_bar_sticky_scroll_gnrpHz": {
-      "type": "announcement-bar-sticky-scroll",
-      "disabled": true,
-      "name": "APEX Announcement Sticky",
-      "settings": {
-        "target_collections": [],
-        "target_products": [],
-        "target_pages": "",
-        "enable_scroll_to_show": true,
-        "px_to_show": 200,
-        "top_px": 0,
-        "sticky_top": true,
-        "color_scheme": "dark",
-        "pt": 15,
-        "pb": 15,
-        "ann_title": "",
-        "ann_title_size": 16,
-        "ann_title_size_m": 16,
-        "text": "<p>Jetzt oder nie: 48h bis -75 % auf Auslaufmodelle</p>",
-        "text_size": 16,
-        "text_size_m": 16
-      }
-    },
     "apex_top_slider_cLWmNy": {
       "type": "apex-top-slider",
       "blocks": {
         "text_yyFMTt": {
           "type": "text",
           "settings": {
-            "top_item": "140.000+ zufriedene Kunden"
+            "top_item": "100 % Massives Olivenholz"
           }
         },
         "text_KykYUz": {
           "type": "text",
           "settings": {
-            "top_item": "30 Tage Testen"
+            "top_item": "Handgefertigt in Deutschland"
           }
         },
         "text_KDtkJQ": {
           "type": "text",
           "settings": {
-            "top_item": "Kostenloser Versand"
+            "top_item": "Lebensmittelecht & antibakteriell"
           }
         }
       },
@@ -62,9 +39,9 @@
       "settings": {
         "color_scheme": "default",
         "pt": 15,
-        "pb": 15,
+        "pb": 0,
         "mt_mobile": 15,
-        "mb_mobile": 15
+        "mb_mobile": 0
       }
     },
     "collection-header": {
@@ -85,98 +62,6 @@
         "padding_top": 22,
         "padding_bottom": 18,
         "enable_bg_zoom_effect": true
-      }
-    },
-    "apex_timer_9PnBtn": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#000000",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "600",
-        "timer_text": "Unser Angebot endet in kürze!",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "500",
-        "start_time": "00:00:00"
-      }
-    },
-    "category_selection_iMrTd6": {
-      "type": "category-filter-by-image",
-      "blocks": {
-        "item_LNGV6x": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/3_1_46ec59f6_4656_4c94_98bc_3ebbb2c7153c_2_V4_2fd2100d-1e5a-4cbe-9245-292e1e82d00c.jpg",
-            "collection_name": "Bestseller",
-            "custom_url": "Bestseller"
-          }
-        },
-        "item_nwxAVH": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_0742_a5508e47-6988-413a-8ef4-f002e4bd4902.jpg",
-            "collection_name": "Messerset",
-            "custom_url": "Küchenmesser-set"
-          }
-        },
-        "item_rktrNh": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db_1.jpg",
-            "collection_name": "Damast",
-            "custom_url": "Küchenmesser"
-          }
-        },
-        "item_Bd4xRW": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d_1.jpg",
-            "collection_name": "Zubehör",
-            "custom_url": "zubehör"
-          }
-        }
-      },
-      "block_order": [
-        "item_LNGV6x",
-        "item_nwxAVH",
-        "item_rktrNh",
-        "item_Bd4xRW"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "pt": 30,
-        "pb": 30,
-        "mobile_pt": 30,
-        "mobile_pb": 30,
-        "heading_type": "mrk-h1",
-        "title": "Wähle deine Kategorie",
-        "c_n_text": "p-medium"
-      }
-    },
-    "breadcrumb_h1_PfKh94": {
-      "type": "breadcrumb-h1",
-      "name": "Breadcrumb h1",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
-    "breadcrumb_bLpHxJ": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
       }
     },
     "main": {
@@ -225,65 +110,115 @@
         "show_stock_status": false
       }
     },
-    "mrk_collection_grid_section_M4CYmz": {
+    "hide_sold_out_toggle_am3Hhj": {
+      "type": "hide-sold-out-toggle",
+      "name": "Floow Hide Sold Out",
+      "settings": {
+        "show_only_in_editor": true,
+        "section_id": "#shopify-section-template--26793915416957__mrk_collection_grid_section_PKCq6B",
+        "text": "Nur verfügbare Artikel anzeigen",
+        "box_layout": false,
+        "section_width": 1340,
+        "section_margin": 15,
+        "margin_top_bottom_desktop": 16,
+        "margin_top_bottom_mobile": 16
+      }
+    },
+    "mrk_collection_grid_section_JTDgJK": {
       "type": "mrk-collection-grid-section",
       "name": "Akta Collection Grid",
       "settings": {
-        "padding_top": 50,
-        "padding_bottom": 50,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "show_section_header": false,
         "section_title": "Featured Collection",
         "section_description": "Explore our best-selling products.",
         "collection": "",
         "products_limit": 20,
-        "use_metafield_image": true,
+        "use_metafield_image": false,
         "hover_second_image": false,
         "pagination_style": "circle",
         "show_product_ratings": false,
-        "show_stock_status": false
+        "show_stock_status": false,
+        "show_gift_info": false,
+        "info_text": "",
+        "add_border_line": false,
+        "show_max_price": false,
+        "show_save_price": false
       }
     },
-    "breadcrumb_fjiNLC": {
-      "type": "breadcrumb",
-      "name": "Breadcrumb",
-      "settings": {
-        "container": "container",
-        "text_alignment": "center",
-        "hide_current": false,
-        "hide_on_mb": false,
-        "animations": "inherit"
-      }
-    },
-    "promotion_banner_dgKacc": {
-      "type": "promotion-banner",
+    "branded_image_version_JADrxL": {
+      "type": "branded-image-version-",
       "blocks": {
-        "promotion_NBbJbf": {
-          "type": "promotion",
+        "title_amPxJH": {
+          "type": "title",
           "settings": {
-            "subheading": "JETZT ODER NIE",
-            "heading": "-75%",
-            "text_alignment": "center"
+            "title": "300 Jahre gewachsen. Für Generationen geschaffen."
+          }
+        },
+        "sub_title_7VHmrM": {
+          "type": "sub_title",
+          "settings": {
+            "text": "Unser Olivenholz stammt aus jahrhundertealten Hainen in Griechenland.\nJeder Baum wird erst verarbeitet, wenn er keine Oliven mehr trägt – nachhaltig und im Einklang mit der Natur.\n\nDie einzigartige Maserung macht jedes Stück zu einem Unikat.\nKein Produkt gleicht dem anderen – so individuell wie deine Küche."
           }
         }
       },
       "block_order": [
-        "promotion_NBbJbf"
+        "title_amPxJH",
+        "sub_title_7VHmrM"
       ],
+      "name": "APEX Branded Image Ver 1",
       "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "heading": "Entdecke unsere Auslaufmodelle",
-        "heading_size": "h2",
-        "text": "<p>Noch nicht das richtige gefunden? Entdecke jetzt unsere Auslaufmodelle bevor sie alle weg sind. Für die nächsten 48h bis zu -75% Rabatt.</p>",
-        "content_alignment": "left",
-        "banner_url": "shopify://collections/ausverkauf",
-        "button_label": "Ausverkauf entdecken",
+        "use_container": true,
+        "reverse_content": false,
+        "color_scheme": "scheme-9d69adfc-43c2-49f5-894e-b05309f7856b",
+        "shape_color": "#deceba",
+        "margin_top": 20,
+        "margin_bottom": 0,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 0,
+        "bg_img": "shopify://shop_images/freepik__erstelle-mir-ein-bild-von-einer-olivenbaum-plantag__20214_1.jpg",
+        "heading_type": "mrk-h1",
+        "des_size": "p-medium",
         "button_style": "m-button--primary",
-        "button_size": "",
-        "padding_top": 70,
-        "padding_bottom": 70,
-        "custom_class": "",
-        "animations": "inherit"
+        "button_size": ""
+      }
+    },
+    "branded_image_version_VGCyCQ": {
+      "type": "branded-image-version-",
+      "blocks": {
+        "title_CcJkqm": {
+          "type": "title",
+          "settings": {
+            "title": "Handgefertigt in Deutschland"
+          }
+        },
+        "sub_title_YQAAEm": {
+          "type": "sub_title",
+          "settings": {
+            "text": "Jedes Produkt wird in Deutschland von erfahrenen Handwerkern gefertigt.\nMit höchster Präzision, Liebe zum Detail und Respekt vor dem Material.\n\nSo entsteht Küchenzubehör, das nicht nur funktioniert –\nsondern begeistert."
+          }
+        }
+      },
+      "block_order": [
+        "title_CcJkqm",
+        "sub_title_YQAAEm"
+      ],
+      "name": "APEX Branded Image Ver 1",
+      "settings": {
+        "use_container": true,
+        "reverse_content": true,
+        "color_scheme": "scheme-9d69adfc-43c2-49f5-894e-b05309f7856b",
+        "shape_color": "#deceba",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "mobile_margin_top": 0,
+        "mobile_margin_bottom": 0,
+        "bg_img": "shopify://shop_images/freepik__mann-bearbeiten-rohes-olivenholz-in-holz-maufaktur__20211_1.jpg",
+        "heading_type": "mrk-h1",
+        "des_size": "p-medium",
+        "button_style": "m-button--primary",
+        "button_size": ""
       }
     },
     "usp_list_nd6t8y": {
@@ -332,8 +267,7 @@
         "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
+        "verticle_padding_mobile": 30
       }
     },
     "collection_description_KrcbiD": {
@@ -348,17 +282,13 @@
     }
   },
   "order": [
-    "announcement_bar_sticky_scroll_gnrpHz",
     "apex_top_slider_cLWmNy",
     "collection-header",
-    "apex_timer_9PnBtn",
-    "category_selection_iMrTd6",
-    "breadcrumb_h1_PfKh94",
-    "breadcrumb_bLpHxJ",
     "main",
-    "mrk_collection_grid_section_M4CYmz",
-    "breadcrumb_fjiNLC",
-    "promotion_banner_dgKacc",
+    "hide_sold_out_toggle_am3Hhj",
+    "mrk_collection_grid_section_JTDgJK",
+    "branded_image_version_JADrxL",
+    "branded_image_version_VGCyCQ",
     "usp_list_nd6t8y",
     "collection_description_KrcbiD"
   ]

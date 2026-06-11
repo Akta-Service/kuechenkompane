@@ -1,0 +1,234 @@
+{% assign ss = section.settings %}
+{% assign si = section.id %}
+
+<div class="content-wrapper-{{ si }}">
+  <div class="content-{{ si }}">
+    <div class="flex-{{ si }} floow-toggle" onclick="floowToggleSoldOut();">
+      <div class="toggle-{{ si }}">
+        <div class="toggle-switch-{{ si }}"></div>
+      </div>
+      <div class="text-{{ si }}">{{ ss.text }}</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  async function floowToggleSoldOut() {
+    const toggle = document.querySelector('.toggle-{{ si }}');
+    toggle.classList.toggle('active-{{ si }}');
+
+    const isActive = toggle.classList.contains('active-{{ si }}');
+
+    const path = isActive
+      ? '/collections/{{ collection.handle }}?section_id={{ ss.section_id | remove: "#shopify-section-" }}&filter.v.availability=1'
+      : '/collections/{{ collection.handle }}?section_id={{ ss.section_id | remove: "#shopify-section-" }}';
+
+    const html = await floowRequestSection(path);
+    const sectionHTML = html.querySelector('{{ ss.section_id }}').innerHTML;
+
+    const container = document.querySelector('#shopify-section-{{ ss.section_id | remove: "#shopify-section-" }}');
+
+    if (container) {
+      container.innerHTML = sectionHTML;
+    }
+  }
+
+  async function floowRequestSection(path) {
+    const response = await fetch(path);
+    return await response.text();
+  }
+
+  {% comment %}
+  function floowActivateToggle() {
+    const section = document.querySelector('.floow-hide-sold-out-products');
+    section.classList.add('activate-{{ si }}');
+  }
+
+  {% if ss.show_only_in_editor == false or request.design_mode %}
+    document.addEventListener('DOMContentLoaded', floowActivateToggle)
+  {% endif %}
+   {% endcomment %}
+</script>
+<style>
+      .flex-{{ si }} {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin: auto;
+          width: fit-content;
+          cursor: pointer;
+
+      }
+
+      .toggle-{{ si }} {
+          width: 40px;
+          height: 24px;
+          background: #e9e9e9;
+          box-shadow: inset 0px 0px black;
+          border-radius: 999px;
+          transition: background 0.5s, outline 0.5s;
+      }
+
+      .toggle-switch-{{ si }} {
+          border-radius: 999px;
+          background: white;
+          display: block !important;
+          box-shadow: 0px 0px 4px 0px #c4c4c4;
+          height: 18px;
+          width: 18px;
+          margin-top: 3px;
+          margin-left: 3px;
+          transition: margin-left 0.5s, box-shadow 0.5s, background 0.5s;
+      }
+
+      .active-{{ si }} {
+          background: #FA8527;
+      }
+
+      .active-{{ si }} .toggle-switch-{{ si }} {
+        margin-left: 19px;
+    }
+
+
+        {% if ss.show_only_in_editor %}
+          #shopify-section-{{ si }} {
+            display: none;
+          }
+          {% if request.design_mode %}
+            #shopify-section-{{ si }} {
+              display: block;
+            }
+          {% endif %}
+        {% endif %}
+        #shopify-section-{{ si }} {
+          {% if ss.background_section != blank %}
+            background: {{ ss.background_section }};
+          {% endif %}
+          padding: {{ ss.margin_top_bottom_desktop }}px {{ ss.section_margin }}px;
+          @media (max-width: 800px) {
+            padding: {{ ss.margin_top_bottom_mobile }}px {{ ss.section_margin }}px;
+          }
+          overflow: hidden;
+        }
+
+        {% comment %}
+        .activate-{{ si }} {
+      display: block !important;
+      transition: opacity 0.3s;
+      opacity: 1 !important;
+  }
+  {% endcomment %}
+
+        .content-wrapper-{{ si }} {
+          {% unless ss.section_width == 1700 %}
+              max-width: {{ ss.section_width }}px;
+          {% endunless %}
+          margin: auto;
+          position: relative;
+          {% if ss.shadow_content contains '#' %}
+              box-shadow: 0px 0px 15px 0px {{ss.shadow_content | color_modify: 'alpha', ss.alpha_content }};
+          {% endif %}
+        }
+
+        .content-{{ si }} {
+          position: relative;
+          {% if ss.box_layout %}
+              padding: 48px;
+              @media(max-width: 800px) {
+                padding: 24px;
+              }
+              {% if ss.shadow_content contains '#' %}
+                box-shadow: 0px 0px 15px 0px {{ ss.shadow_content }};
+              {% endif %}
+              {% if ss.background_content contains '#' %}
+                  background: {{ ss.background_content | color_modify: 'alpha', ss.alpha_content_opacity }};
+                  backdrop-filter: blur(6px);
+              {% endif %}
+              border-radius: {{ ss.radius_content }}px;
+          {% endif %}
+          z-index: 1;
+        }
+</style>
+
+{% schema %}
+{
+  "name": "Floow Hide Sold Out",
+  "class": "floow-hide-sold-out-products",
+  "presets": [
+    {
+      "name": "Floow Hide Sold Out"
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_only_in_editor",
+      "label": "Show Section only in Editor",
+      "info": "If checked, the section is only visible in the editor"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section id of collection",
+      "default": "#shopify-section-xy"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Nur verfügbare Artikel anzeigen"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "box_layout",
+      "label": "Box Layout",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "section_width",
+      "min": 700,
+      "max": 1700,
+      "step": 10,
+      "unit": "px",
+      "label": "Maximum content width",
+      "default": 1000,
+      "info": "Set to 1700 for full width"
+    },
+    {
+      "type": "range",
+      "id": "section_margin",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Left/Right content margin",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "margin_top_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top/Bottom Margin Desktop",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "margin_top_bottom_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Top/Bottom Margin Mobile",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,47 @@
+<div class="founder-row-content" {{ block.shopify_attributes }}>
+  {% content_for 'blocks' %}
+</div>
+
+<style>
+  .founder-row-content {
+    min-width: 0;
+  }
+  .founder-row-content * p {
+    color: #444444;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Founder content",
+  "blocks": [
+    {
+      "type": "_founder-text"
+    },
+    {
+      "type": "_founder-heading"
+    },
+    {
+      "type": "_founder-body"
+    }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Founder content",
+      "category": "Content",
+      "blocks": [
+        {
+          "type": "_founder-text"
+        },
+        {
+          "type": "_founder-heading"
+        },
+        {
+          "type": "_founder-body"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

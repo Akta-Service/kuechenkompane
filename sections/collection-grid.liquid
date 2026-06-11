@@ -1,0 +1,45 @@
+<style>#collection-grid-{{section.id}}{padding:20px 0;box-sizing:border-box;}#collection-grid-{{section.id}} .cg-grid{display:grid;gap:12px;}#collection-grid-{{section.id}} .cg-grid.cols-2{grid-template-columns:repeat(2,1fr);}#collection-grid-{{section.id}} .cg-grid.cols-3{grid-template-columns:repeat(3,1fr);}#collection-grid-{{section.id}} .cg-grid.cols-4{grid-template-columns:repeat(4,1fr);}#collection-grid-{{section.id}} .cg-grid.cols-5{grid-template-columns:repeat(5,1fr);}#collection-grid-{{section.id}} .cg-card{display:flex;flex-direction:column;gap:23px;text-decoration:none;color:inherit;outline:none;transition:transform .18s ease;}#collection-grid-{{section.id}} .cg-media{width:100%;overflow:hidden;aspect-ratio:8/11;background:#f5f5f5;}#collection-grid-{{section.id}} .cg-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .6s cubic-bezier(.2,.9,.2,1);will-change:transform;}#collection-grid-{{section.id}} .cg-placeholder{width:100%;height:100%;background:linear-gradient(180deg,#eee,#ddd);}#collection-grid-{{section.id}} .cg-meta{display:flex;align-items:center;gap:7px;}#collection-grid-{{section.id}} .cg-title{letter-spacing:normal;font-weight:500;font-size:18px;transition:color .3s ease;}#collection-grid-{{section.id}} .cg-card:hover .cg-title,#collection-grid-{{section.id}} .cg-card:focus .cg-title{color:#fe5b00;}#collection-grid-{{section.id}} .cg-arrow{font-weight:700;opacity:.8;transition:transform .22s ease;}#collection-grid-{{section.id}} .cg-card:hover .cg-arrow,#collection-grid-{{section.id}} .cg-card:focus .cg-arrow{transform:translateX(6px);}#collection-grid-{{section.id}} .cg-card:hover .cg-arrow path,#collection-grid-{{section.id}} .cg-card:focus .cg-arrow path{stroke:#fe5b00;}@media (max-width:767px){#collection-grid-{{section.id}} .cg-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px;row-gap:22px;}#collection-grid-{{section.id}} .cg-card{gap:11px;}#collection-grid-{{section.id}} .cg-media{aspect-ratio:9/14;}#collection-grid-{{section.id}} .cg-title{font-size:15px;}}</style>
+<section id="collection-grid-{{ section.id }}" class="collection-grid-section" role="region" aria-label="Collections"><div class="custom-container"><div class="cg-grid {{ section.settings.columns_class }}">{%- for block in section.blocks -%}{%- liquid
+assign coll_handle = block.settings.collection
+assign card_title  = block.settings.title
+assign card_link   = block.settings.link
+assign card_image  = block.settings.image
+assign card_alt    = block.settings.alt
+
+if coll_handle and collections[coll_handle]
+assign the_collection = collections[coll_handle]
+if the_collection.title != blank
+assign card_title = the_collection.title
+endif
+if the_collection.url != blank
+assign card_link = the_collection.url
+endif
+if the_collection.featured_image != blank
+assign card_image = the_collection.featured_image
+elsif the_collection.products_count > 0
+assign first_product = the_collection.products.first
+if first_product.featured_image
+assign card_image = first_product.featured_image
+endif
+endif
+if card_alt == blank and the_collection.title != blank
+assign card_alt = the_collection.title
+endif
+endif
+
+comment
+displayed size ≈ 405px tall at 8/11 ratio → ~295px wide per card (4-col desktop)
+mobile: 2-col → ~180px wide
+We serve: 400w (mobile), 600w (desktop) — no need for master!
+endcomment
+assign img_300 = card_image | image_url: width: 300
+assign img_400 = card_image | image_url: width: 400
+assign img_600 = card_image | image_url: width: 600
+assign img_800 = card_image | image_url: width: 800
+
+assign is_first = false 
+if forloop.index <= 2
+assign is_first = true
+endif
+-%}<a class="cg-card" href="{{ card_link | default: '#' }}"{% if block.settings.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}aria-label="{{ card_title | escape }}"{{ block.shopify_attributes }}><div class="cg-media">{%- if card_image -%}<img src="{{ img_300 }}" srcset="{{ img_400 }} 400w, {{ img_600 }} 600w, {{ img_800 }} 800w" sizes="(max-width: 767px) calc(50vw - 10px), calc((100vw - 48px) / {{ section.settings.columns_class | remove: 'cols-' }})" alt="{{ card_alt | escape }}" width="{{ card_image.width }}" height="{{ card_image.height }}"{% if is_first %}loading="eager" fetchpriority="high"{% else %}loading="lazy" fetchpriority="auto"{% endif %}decoding="async">{%- else -%}<div class="cg-placeholder" role="img" aria-label="{{ card_title | escape }}"></div>{%- endif -%}</div><div class="cg-meta"><span class="cg-title">{{ card_title | escape }}</span><span class="cg-arrow" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none"><path d="M14 8.5H2" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 12.5L14 8.5L10 4.5" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></div></a>{%- endfor -%}</div></div></section>
+{% schema %}{"name":"Collection Grid","settings":[{"type":"select","id":"columns_class","label":"Columns layout","options":[{"value":"cols-2","label":"2 columns"},{"value":"cols-3","label":"3 columns"},{"value":"cols-4","label":"4 columns"},{"value":"cols-5","label":"5 columns"}],"default":"cols-4"}],"blocks":[{"type":"collection_card","name":"Collection Card","settings":[{"type":"collection","id":"collection","label":"Select collection (optional)"},{"type":"image_picker","id":"image","label":"Fallback / override image"},{"type":"text","id":"alt","label":"Image alt text (fallback)"},{"type":"text","id":"title","label":"Fallback / override title"},{"type":"url","id":"link","label":"Fallback / override link"},{"type":"checkbox","id":"open_in_new_tab","label":"Open link in new tab","default":false}]}],"max_blocks":12,"presets":[{"name":"Collection Grid","category":"Collections","blocks":[{"type":"collection_card"},{"type":"collection_card"},{"type":"collection_card"},{"type":"collection_card"}]}]}{% endschema %}

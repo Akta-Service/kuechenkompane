@@ -55,6 +55,7 @@
       "block_order": [
         "banner_promotion_KppNc9"
       ],
+      "disabled": true,
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-bottom: 0;}"
       ],
@@ -77,7 +78,26 @@
         "collapsed_groups": "Brand, Vendor, Size, Product type",
         "color_swatches": "color,colour,couleur,farbe",
         "color_swatches_design": "list",
-        "overlay_opacity": 0.5
+        "overlay_opacity": 0.5,
+        "show_stock_status": false
+      }
+    },
+    "mrk_collection_grid_section_jxqCei": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
+      "settings": {
+        "padding_top": 39,
+        "padding_bottom": 40,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": false,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false
       }
     },
     "recent-viewed": {
@@ -111,6 +131,7 @@
   "order": [
     "collection-header",
     "main",
+    "mrk_collection_grid_section_jxqCei",
     "recent-viewed"
   ]
 }

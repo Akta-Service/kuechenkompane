@@ -1,0 +1,371 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-page-header",
+      "disabled": true,
+      "custom_css": [
+        "@media (max-width: 767px) {.m-section-py {padding-bottom: 24px; }}"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container": "container-fluid",
+        "layout": "inside",
+        "image_position": "background",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "text_alignment": "center",
+        "text_color": "inherit",
+        "upper_title": false,
+        "show_desc": true,
+        "collection_all_desc": "",
+        "padding_top": 0,
+        "padding_bottom": 4,
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "main": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "banner_promotion_KppNc9": {
+          "type": "banner_promotion",
+          "settings": {
+            "color_scheme": "dark",
+            "text_size": "medium",
+            "text_color": "white",
+            "link": "",
+            "content_position": "bottom_center",
+            "content_alignment": "center",
+            "title": "SALE UP TO 25% OFF",
+            "subtitle": "Online Exclusive",
+            "button_label": "Shop The Sale",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "button_fixed": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_promotion_KppNc9"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".m-banner-promotion {order: 3 !important; margin-bottom: 0;}"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "grid_layout": "grid",
+        "grid_columns": "5",
+        "show_columns_switcher": true,
+        "pagination_limit": 15,
+        "paginate_type": "paginate",
+        "show_sorting": true,
+        "show_filter": true,
+        "filters_type": "storefront_filters",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": true,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Brand, Vendor, Size, Product type",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "list",
+        "overlay_opacity": 0.5,
+        "show_stock_status": false
+      }
+    },
+    "customer_banner_WFiRPm": {
+      "type": "customer-banner",
+      "name": "Customer Banner",
+      "settings": {
+        "title": "Das ist deine Chance",
+        "subtitle": "auf Premium Küchenprodukte im Wert von bis zu",
+        "price": "2.490€",
+        "price_shape": "shopify://shop_images/erasebg-transformed_1.png"
+      }
+    },
+    "mystery_box_grid_WypDEk": {
+      "type": "mystery-box-grid",
+      "blocks": {
+        "mystery_box_mczX79": {
+          "type": "mystery_box",
+          "settings": {
+            "product": "mystery-box",
+            "box_title": "Normal",
+            "show_badge": false,
+            "badge_text": "Beliebteste Box",
+            "variant": "5 zufällige Produkte",
+            "box_value": "Wert bis zu bis zu",
+            "show_save_text": false,
+            "save_text": "Du sparst bis zu",
+            "show_feature_text": false,
+            "feature_text": "",
+            "show_guarantee_text": false,
+            "guarantee_text": "100 Tage risikofrei testen",
+            "enable_ajax": false,
+            "button_text": "Jetzt bestellen",
+            "full_width": true,
+            "btn_bg": "#324b34",
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "mystery_box_BRfbHm": {
+          "type": "mystery_box",
+          "settings": {
+            "product": "mystery-box-premium",
+            "box_title": "Premium",
+            "show_badge": true,
+            "badge_text": "Beliebteste Box",
+            "variant": "10 zufällige Produkte",
+            "box_value": "Wert bis zu",
+            "show_save_text": false,
+            "save_text": "Du sparst bis zu",
+            "show_feature_text": false,
+            "feature_text": "",
+            "show_guarantee_text": false,
+            "guarantee_text": "100 Tage risikofrei testen",
+            "enable_ajax": false,
+            "button_text": "Jetzt bestellen",
+            "full_width": true,
+            "btn_bg": "#e4893e",
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "mystery_box_rx8jYq": {
+          "type": "mystery_box",
+          "settings": {
+            "product": "mystery-box-deluxe",
+            "box_title": "Deluxe",
+            "show_badge": false,
+            "badge_text": "Beliebteste Box",
+            "variant": "14 zufällige Produkte",
+            "box_value": "Wert bis zu",
+            "show_save_text": false,
+            "save_text": "Du sparst bis zu",
+            "show_feature_text": false,
+            "feature_text": "",
+            "show_guarantee_text": false,
+            "guarantee_text": "100 Tage risikofrei testen",
+            "enable_ajax": false,
+            "button_text": "Jetzt bestellen",
+            "full_width": false,
+            "btn_bg": "#324b34",
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "mystery_box_mczX79",
+        "mystery_box_BRfbHm",
+        "mystery_box_rx8jYq"
+      ],
+      "name": "Mystery Box Grid",
+      "settings": {
+        "show_header": false,
+        "header_title": "Wähle deine Box:",
+        "header_subtitle": ""
+      }
+    },
+    "apex_knife_showcase_FadjgH": {
+      "type": "apex-knife-showcase",
+      "blocks": {
+        "knife_A7XGqt": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "knife_image": "shopify://shop_images/Asiatisches_1_8bf15000-96c7-4d78-8491-c661998ce8e2.jpg",
+            "value_label": "512€ Warenwert",
+            "knife_name": "Asiatisches Kombipaket",
+            "handle_text": "Set-Inhalt: Chefmesser, Santokumesser 7\", Nakirimesser, Filetiermesser, Brotmesser, Yanagiba Messer, Santoku Messer 5\", Petty Messer, Burokku Messerblock (magnetisch)",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_UdrPBL": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "knife_image": "shopify://shop_images/Unbenannt-1_0006_3_2_1.jpg",
+            "value_label": "475€ Warenwert",
+            "knife_name": "Messerset Premium",
+            "handle_text": "Härtegrad: Ein ausgewogenes Verhältnis von Härte und Flexibilität mit 60±2 HRC.\nKlingenmaterial: Aus dem feinsten 7CR17 Edelstahl gefertigt.",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_jFChnM": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "knife_image": "shopify://shop_images/63_1.jpg",
+            "value_label": "299€ Warenwert",
+            "knife_name": "Damast Gyuto",
+            "handle_text": "Klinge: Handgeschliffene Damastklinge (67 Lagen, mit VG-10 Kernstahl)\nKlingenlänge: 20 cm\nGrifflänge: 14,6 cm\nGesamtlänge: 34,7 cm\nKlingenstärke: 1,6 mm",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_yKMFWj": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "knife_image": "shopify://shop_images/Gross_die_produktfotografen_kuechenkompane006_1.jpg",
+            "value_label": "199€ Warenwert",
+            "knife_name": "Schneidebrett Mori",
+            "handle_text": "Teakholz von höchster Qualität: Das Mori Schneidebrett wurde aus erstklassigem Teakholz gefertigt, das für seine bemerkenswerte Haltbarkeit und...",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_LiMrdC": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "knife_image": "shopify://shop_images/64_1.jpg",
+            "value_label": "299€ Warenwert",
+            "knife_name": "Okami Chefmesser",
+            "handle_text": "Allround-Kochmesser: Perfekt zum Schneiden von Fleisch, Fisch und Gemüse – erledigt ca. 80 % aller Schneidaufgaben wie ein Profi.\nDamaststahlklinge: 69 Lagen japanischer VG10 Damaststahl...",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        },
+        "knife_6XgBag": {
+          "type": "knife",
+          "settings": {
+            "product": "",
+            "knife_link": "",
+            "knife_image": "shopify://shop_images/Gross_die_produktfotografen_kuechenkompane009_1.jpg",
+            "value_label": "199€ Warenwert",
+            "knife_name": "Schneidebrett Saikoro",
+            "handle_text": "Harmonische Materialkombination: Das Saikoro Schneidebrett besteht aus Gummibaum- und Schwarzem Walnussholz, zwei Holzarten von herausragender Qualität. Diese harmonische Vereinigung...",
+            "knife_price": "",
+            "knife_compare_price": ""
+          }
+        }
+      },
+      "block_order": [
+        "knife_A7XGqt",
+        "knife_UdrPBL",
+        "knife_jFChnM",
+        "knife_yKMFWj",
+        "knife_LiMrdC",
+        "knife_6XgBag"
+      ],
+      "name": "Apex Knife Showcase",
+      "settings": {
+        "custom_class": "",
+        "bg_color": "#f8f8f8",
+        "section_padding_top": 60,
+        "section_padding_bottom": 60,
+        "title": "Diese hochwertigen Produkte",
+        "title_color": "#000000",
+        "title_style": "könntest du erhalten",
+        "title_style_color": "#765339",
+        "title_font_size": 32,
+        "subtitle": "Jedes Messer aus unserem Sortiment hat einen einzigartigen Griff",
+        "card_bg_color": "#ffffff",
+        "card_border_radius": 10,
+        "card_shadow_opacity": 8,
+        "image_aspect_ratio": "4/3",
+        "image_fit": "contain",
+        "image_bg_color": "#fafafa",
+        "badge_bg_color": "#f0e8da",
+        "badge_text_color": "#2d2020",
+        "badge_position": "top_left",
+        "slider_type": "loop",
+        "slide_gap": 20,
+        "slides_desktop": 3,
+        "slides_tablet": 2,
+        "slides_mobile": 1,
+        "peek_desktop": 80,
+        "peek_tablet": 60,
+        "peek_mobile": 50,
+        "show_arrows": true,
+        "show_pagination": true,
+        "autoplay": false,
+        "autoplay_speed": 4000
+      }
+    },
+    "usp_list_WrUFeL": {
+      "type": "usp-list",
+      "blocks": {
+        "item_czrtME": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/cash-bag_10424649_1_79aeb0c4-e404-44f1-8f3d-4ac7d82ea745.png",
+            "usp_title": "100 Tage-geld-zurück Garantie",
+            "title_size": 18,
+            "usp_info": "Wir sind von der Qualität unserer Produkte überzeugt und möchten sicherstellen, dass Du zu 100% zufrieden bist.",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_Y6WPxz": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/diamond_11883313_1_e3cffe8b-0079-4e4c-89d0-205bf4509eb0.png",
+            "usp_title": "200,000+ zufriedene Kunden",
+            "title_size": 18,
+            "usp_info": "Unsere Messer erobern ganz deutschland im Sturm. Wann wirst du dir ein upgrade zulegen?",
+            "info_size": 14,
+            "divider": false
+          }
+        },
+        "item_m6VWDB": {
+          "type": "item",
+          "settings": {
+            "usp_icon": "shopify://shop_images/thumb-up_16346369_1_bbb9da88-a768-4853-a27c-06a2092e4acf.png",
+            "usp_title": "Geprüfte Qualität",
+            "title_size": 18,
+            "usp_info": "Möchtest du Küchen-Produkte entdecken, die halten, was sie versprechen? Unsere Produkte sind getestet, empfohlen und garantieren Sicherheit.",
+            "info_size": 14,
+            "divider": false
+          }
+        }
+      },
+      "block_order": [
+        "item_czrtME",
+        "item_Y6WPxz",
+        "item_m6VWDB"
+      ],
+      "name": "APEX USPs",
+      "settings": {
+        "color_scheme": "",
+        "verticle_padding": 50,
+        "horizontal_padding": 50,
+        "verticle_padding_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "collection-header",
+    "main",
+    "customer_banner_WFiRPm",
+    "mystery_box_grid_WypDEk",
+    "apex_knife_showcase_FadjgH",
+    "usp_list_WrUFeL"
+  ]
+}

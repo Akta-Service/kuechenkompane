@@ -1,0 +1,164 @@
+<style>
+  .customer-banner {
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    box-sizing: border-box;
+    background: #f8f8f8
+  }
+
+  .customer-banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .customer-banner-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
+  .customer-banner-title strong {
+    color: #f0b90b;
+  }
+
+  .customer-title-before,
+  .customer-title-after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background-color: #f0b90b; /* Gold color */
+  }
+
+  .customer-banner-subtitle {
+    font-size: 1.5rem;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .customer-banner-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+  }
+
+  .price-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f0b90b, transparent);
+    max-width: 100px;
+  }
+
+  .price-text {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #f0b90b;
+    line-height: 1.2;
+  }
+  .customer-banner-price img {
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .customer-banner-title {
+      font-size: 22px;
+
+    }
+  }
+  @media (max-width: 640px) {
+    .customer-title-before, .customer-title-after {
+      display: none;
+    }
+
+    .customer-banner-subtitle {
+      font-size: 18px;
+    }
+
+
+    .price-text {
+      font-size: 2.5rem;
+    }
+
+    .price-line {
+      max-width: 50px;
+    }
+  }
+</style>
+
+<section class="customer-banner">
+  <div class="customer-banner-content">
+    <h1 class="customer-banner-title">
+      <span class="customer-title-before"></span>
+      {{ section.settings.title }}
+      <span class="customer-title-after"></span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="customer-banner-subtitle">
+      {{ section.settings.subtitle }}
+    </p>
+
+    <!-- Price with line shape -->
+    <div class="customer-banner-price">
+      <span class="price-text">{{ section.settings.price }}</span>
+
+      {% if section.settings.price_shape != blank %}
+        <img src="{{  section.settings.price_shape | image_url }}" loading="lazy" alt="icon" width="" height="">
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Banner",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "200.000+ Zufriedene Kunden",
+      "info": "Main headline"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Erhalte Premium Damastmesser im Wert von bis zu",
+      "info": "Text below the title"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "default": "2.090€",
+      "info": "Price value with currency"
+    },
+    {
+      "type": "image_picker",
+      "id": "price_shape",
+      "label": "Price Bottom Shape"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

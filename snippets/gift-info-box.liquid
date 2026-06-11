@@ -1,0 +1,149 @@
+<div class="free-gift-box" {{ block.shopify_attributes }}>
+  <div class="gift-text-wrapper">
+    <div class="gift-info-text">
+      {% if block.settings.gift_info_icon != blank %}
+        <img class="gift-icon" src="{{ block.settings.gift_info_icon | image_url }}" width="" height="" alt="icon">
+      {% endif %}
+      {{ block.settings.heading }}
+    </div>
+
+    <div class="gift-name">
+      {{ block.settings.gift_title }}
+    </div>
+
+    <span class="gift-note">
+      {{ block.settings.note }}
+    </span>
+  </div>
+
+  <div class="gift-img">
+    {% if block.settings.gift_image != blank %}
+      <img
+        src="{{ block.settings.gift_image | image_url: width: 120 }}"
+        alt="Free gift"
+        loading="lazy"
+        width=""
+        height=""
+      >
+      {% if block.settings.show_view_more %}
+        <!-- Button that appears on hover -->
+        <button class="gift-view-btn">{{ block.settings.view_more_btn_text }}</button>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+
+{% assign f_product = section.settings.selected_gift_product %}
+
+<!-- Popup modal -->
+<div class="gift-view-popup">
+  <div class="gift-popup-content">
+    <span class="gift-popup-close">&times;</span>
+    <img src="{{ f_product.featured_image | image_url }}" width="" height="" alt="Free gift">
+    <h2 class="gift-popup-title">{{ f_product.title }}</h2>
+    <div class="gift-popup-description">{{ block.settings.gift_description }}</div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const btns = document.querySelectorAll('.gift-view-btn');
+    const popup = document.querySelector('.gift-view-popup');
+    const close = document.querySelector('.gift-popup-close');
+
+    if (!popup) return;
+
+    // Move the existing popup to body
+    document.body.appendChild(popup);
+
+    btns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        popup.style.display = 'flex';
+        document.body.classList.add('gift-popup-open');
+      });
+    });
+
+    close.addEventListener('click', () => {
+      popup.style.display = 'none';
+      document.body.classList.remove('gift-popup-open');
+    });
+
+    // Close popup when clicking outside content
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+        document.body.classList.remove('gift-popup-open');
+      }
+    });
+  });
+</script>
+
+
+{% comment %}
+  Add free gift automatically after main product is added
+{% endcomment %}
+<script>
+  (function () {
+    // Make sure the free gift is enabled
+    if (!window.MINIMOG_FREE_GIFT?.enabled) {
+      console.log('Free gift disabled or not configured on this page.');
+      return;
+    }
+
+    let addingGift = false;
+
+    async function addFreeGift() {
+      if (addingGift) return;
+
+      const giftId = window.MINIMOG_FREE_GIFT.giftVariantId;
+      if (!giftId) {
+        console.log('Gift variant ID missing.');
+        return;
+      }
+
+      console.log('Checking if gift is already in the cart...');
+
+      // Fetch current cart
+      const cart = await fetch('/cart.js').then((r) => r.json());
+
+      // Check if gift is already added
+      const hasGift = cart.items.some((item) => item.properties?._free_gift);
+      if (hasGift) {
+        console.log('Gift already in cart, no action taken.');
+        return;
+      }
+
+      addingGift = true;
+      console.log('Adding free gift to cart:', giftId);
+
+      // Add gift to cart
+      try {
+        const response = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            id: giftId,
+            quantity: 1,
+            properties: { _free_gift: 'true' },
+          }),
+        });
+        const result = await response.json();
+        console.log('Free gift added successfully:', result);
+
+        // Notify Minimog to update cart drawer / UI
+        window.MinimogEvents.emit(window.MinimogTheme.pubSubEvents.cartUpdate);
+        console.log('Cart updated event emitted.');
+      } catch (err) {
+        console.error('Error adding free gift:', err);
+      } finally {
+        addingGift = false;
+      }
+    }
+
+    // Listen for main product added via Minimog
+    document.addEventListener('product-ajax:added', function (e) {
+      console.log('Main product added, triggering free gift check...');
+      addFreeGift();
+    });
+  })();
+</script>

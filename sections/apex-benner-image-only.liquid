@@ -1,99 +1,139 @@
 <style>
-  .apex-img-banner.{{section.id}}{
+  .apex-img-banner-{{ section.id }} {
     margin-top: {{ section.settings.mt }}px;
     margin-bottom: {{ section.settings.mb }}px;
-  }
-  img.banner-image {
+    display: block;
     width: 100%;
+  }
+  .apex-img-banner-{{ section.id }} img {
+    width: 100%;
+    height: auto;
     display: block;
   }
-  img.banner-image.mobile {
-    display: none;
-  }
-  @media (max-width:768px){
-     .apex-img-banner.{{section.id}}{
+  @media (max-width: 768px) {
+    .apex-img-banner-{{ section.id }} {
       margin-top: {{ section.settings.mtm }}px;
       margin-bottom: {{ section.settings.mbm }}px;
     }
-    img.banner-image.desktop {
-      display: none;
-    }
-    img.banner-image.mobile {
-      display: block;
-    }
   }
-
 </style>
-<div class="apex-img-banner {{section.id}}">
-  {% if section.settings.image != blank %}
-    <img class="banner-image desktop" src="{{ section.settings.image |  img_url: 'master' }}" width=""  height="" alt="image Banner">
-  {% endif %}
-  {% if section.settings.image_mobile != blank %}
-    <img class="banner-image mobile" src="{{ section.settings.image_mobile |  img_url: 'master' }}" width=""  height="" alt="image Banner">
-  {% endif %}
-</div>
-{% schema %}
-  {
-    "name": "Apex Banner Image Only",   
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Image"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_mobile",
-        "label": "Image Mobile"
-      },
-      {
-        "type": "header",
-        "content": "Section Spacing"
-      },
-      {
-        "type": "range",
-        "id": "mt",
-        "label": "Margin Top (Desktop)",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "mb",
-        "label": "Margin Bottom (Desktop)",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "mtm",
-        "label": "Margin Top (Mobile)",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "mbm",
-        "label": "Margin Bottom (Mobile)",
-        "default": 0,
-        "min": 0,
-        "max": 100,
-        "step": 1
-      }
 
-    ],
-    "presets": [
-      {
-        "name": "Apex Banner Image Only",
-        "settings": {
-        }
-      }
-    ]
-  }
+{%- liquid
+  assign img_desktop = section.settings.image
+  assign img_mobile  = section.settings.image_mobile
+
+  assign desktop_2000 = img_desktop | image_url: width: 2000
+  assign desktop_1200 = img_desktop | image_url: width: 1200
+  assign desktop_800  = img_desktop | image_url: width: 800
+
+  assign mobile_800  = img_mobile | image_url: width: 800
+  assign mobile_480  = img_mobile | image_url: width: 480
+-%}
+
+<div class="apex-img-banner-{{ section.id }}">
+  {%- if img_desktop != blank or img_mobile != blank -%}
+
+
+    <picture>
+
+      {%- if img_mobile != blank -%}
+        <source
+          media="(max-width: 768px)"
+          srcset="{{ mobile_480 }} 480w, {{ mobile_800 }} 800w"
+          sizes="100vw"
+        >
+      {%- elsif img_desktop != blank -%}
+
+        <source
+          media="(max-width: 768px)"
+          srcset="{{ desktop_800 }} 800w"
+          sizes="100vw"
+        >
+      {%- endif -%}
+
+      {%- if img_desktop != blank -%}
+        <source
+          media="(min-width: 769px)"
+          srcset="{{ desktop_800 }} 800w, {{ desktop_1200 }} 1200w, {{ desktop_2000 }} 2000w"
+          sizes="100vw"
+        >
+      {%- endif -%}
+
+      {%- assign primary = img_desktop | default: img_mobile -%}
+      {%- assign primary_src = primary | image_url: width: 1200 -%}
+      <img
+        src="{{ primary_src }}"
+        alt="{{ primary.alt | escape | default: '' }}"
+        width="{{ primary.width }}"
+        height="{{ primary.height }}"
+        loading="lazy"
+        decoding="async"
+      >
+
+    </picture>
+
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Apex Banner Image Only",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Margin Top (Desktop)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Margin Bottom (Desktop)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mtm",
+      "label": "Margin Top (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mbm",
+      "label": "Margin Bottom (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Apex Banner Image Only"
+    }
+  ]
+}
 {% endschema %}

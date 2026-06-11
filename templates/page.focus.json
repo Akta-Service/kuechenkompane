@@ -14,158 +14,71 @@
       "disabled": true,
       "settings": {}
     },
-    "new_featured_product_MPEkyp": {
-      "type": "new-featured-product",
-      "blocks": {
-        "title_kBhK8H": {
-          "type": "title",
-          "settings": {}
-        },
-        "price_gqpafy": {
-          "type": "price",
-          "settings": {
-            "show_saving": true,
-            "sale_badge_type": "percentage"
-          }
-        },
-        "variant_picker_bMC6Px": {
-          "type": "variant_picker",
-          "settings": {}
-        },
-        "buy_buttons_RDbcaW": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "show_atc_button": true,
-            "show_dynamic_checkout": true
-          }
-        }
-      },
-      "block_order": [
-        "title_kBhK8H",
-        "price_gqpafy",
-        "variant_picker_bMC6Px",
-        "buy_buttons_RDbcaW"
-      ],
+    "rich_text_JUTTrC": {
+      "type": "rich-text",
+      "name": "Rich text",
       "settings": {
         "container": "container",
         "color_scheme": "",
-        "featured_product": "gentei-limitiertes-messerset-30-rabatt-gratis-messerblock",
-        "enable_variant_group_images": false,
-        "column_gap": 100,
-        "column_gap_mobile": 30,
-        "image_placement": "left",
-        "padding_top": 50,
-        "padding_bottom": 50,
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52,
         "custom_class": "",
-        "animations": "inherit",
-        "badge_text": "#000000",
-        "badge_bg": "#ffffff"
+        "animations": "inherit"
       }
     },
-    "new_featured_product_YiVLmz": {
-      "type": "new-featured-product",
-      "blocks": {
-        "title_mHjr4q": {
-          "type": "title",
-          "settings": {}
-        },
-        "price_RinUpK": {
-          "type": "price",
-          "settings": {
-            "show_saving": true,
-            "sale_badge_type": "percentage"
-          }
-        },
-        "variant_picker_xntpHM": {
-          "type": "variant_picker",
-          "settings": {}
-        },
-        "buy_buttons_GqErCp": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "show_atc_button": true,
-            "show_dynamic_checkout": true
-          }
-        }
-      },
-      "block_order": [
-        "title_mHjr4q",
-        "price_RinUpK",
-        "variant_picker_xntpHM",
-        "buy_buttons_GqErCp"
-      ],
+    "category_filter_by_image_qJGqNB": {
+      "type": "category-filter-by-image",
+      "name": "APEX Collection Filter",
       "settings": {
-        "container": "container",
         "color_scheme": "",
-        "featured_product": "katachi-limitiertes-messerset-einmaliger-focus-rabatt",
-        "enable_variant_group_images": false,
-        "column_gap": 100,
-        "column_gap_mobile": 30,
-        "image_placement": "left",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "custom_class": "",
-        "animations": "inherit",
-        "badge_text": "#000000",
-        "badge_bg": ""
+        "pt": 0,
+        "pb": 0,
+        "mobile_pt": 15,
+        "mobile_pb": 0,
+        "heading_type": "mrk-h1",
+        "title": "DAS SAGEN UNSER KUNDEN",
+        "c_n_text": "p-medium"
       }
     },
-    "new_featured_product_xpQAdY": {
-      "type": "new-featured-product",
+    "176821464679a26dfa": {
+      "type": "apps",
       "blocks": {
-        "title_r9XcaF": {
-          "type": "title",
-          "settings": {}
-        },
-        "price_YefPfY": {
-          "type": "price",
+        "loox_reviews_loox_agg_section_3XJcrB": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
-            "show_saving": true,
-            "sale_badge_type": "percentage"
-          }
-        },
-        "variant_picker_xgLxbm": {
-          "type": "variant_picker",
-          "settings": {}
-        },
-        "buy_buttons_NYKc4M": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "show_atc_button": true,
-            "show_dynamic_checkout": true
+            "only_photos": true,
+            "hide_thumbnails": false,
+            "product_handle": "",
+            "aggregated": true,
+            "data-limit": 24,
+            "maxwidth": 1080,
+            "is_sample": true
           }
         }
       },
       "block_order": [
-        "title_r9XcaF",
-        "price_YefPfY",
-        "variant_picker_xgLxbm",
-        "buy_buttons_NYKc4M"
+        "loox_reviews_loox_agg_section_3XJcrB"
       ],
       "settings": {
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "header_alignment": "center",
         "container": "container",
-        "color_scheme": "",
-        "featured_product": "subarashi-limitiertes-messerset-einmaliges-focus-angebot",
-        "enable_variant_group_images": false,
-        "column_gap": 100,
-        "column_gap_mobile": 30,
-        "image_placement": "left",
+        "background_color": "",
         "padding_top": 50,
         "padding_bottom": 50,
-        "custom_class": "",
-        "animations": "inherit",
-        "badge_text": "#000000",
-        "badge_bg": ""
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "custom_class": ""
       }
     }
   },
   "order": [
     "main",
-    "new_featured_product_MPEkyp",
-    "new_featured_product_YiVLmz",
-    "new_featured_product_xpQAdY"
+    "rich_text_JUTTrC",
+    "category_filter_by_image_qJGqNB",
+    "176821464679a26dfa"
   ]
 }

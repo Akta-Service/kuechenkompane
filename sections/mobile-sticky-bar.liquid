@@ -1,5 +1,4 @@
 <!-- {{ '' | asset_url | stylesheet_tag }} -->
-                      <link rel="stylesheet" href="{{ 'mobile-sticky-bar.css' | asset_url }}" media="print" onload="this.media='all'">
 
 {% liquid
   assign should_show = section.settings.show_mobile_sticky
@@ -8,6 +7,9 @@
     assign should_show = false
   endif
 %}
+{% if template.name != 'product' and should_show %}
+  <link rel="stylesheet" href="{{ 'mobile-sticky-bar.css' | asset_url }}" media="print" onload="this.media='all'">
+{% endif %}
 
 {% if template.name != 'product' and should_show %}
   <div class="m-mobile-sticky-bar md:m:hidden m:flex m:justify-between">

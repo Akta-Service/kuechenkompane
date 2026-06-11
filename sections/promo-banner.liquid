@@ -1,0 +1,464 @@
+{%- liquid
+  assign text_color = section.settings.text_color
+  assign bg_color   = section.settings.background_color
+  assign icon_size  = section.settings.icon_size | append: 'px'
+-%}
+
+{%- style -%}
+.promo-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.promo-banner__bg-shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.promo-banner__bg-shape svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  preserveAspectRatio: none;
+}
+
+.promo-banner__bg-shape img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
+}
+
+.promo-banner__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: {{ section.settings.gap }}px;
+  padding: {{ section.settings.vertical_padding }}px 20px;
+}
+
+.promo-banner__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 220px;
+  justify-content: center;
+}
+
+.promo-banner__divider {
+  width: 1px;
+  align-self: stretch;
+  background-color: {{ section.settings.divider_color }};
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.promo-banner__icon {
+  flex-shrink: 0;
+  width: {{ section.settings.icon_size }}px;
+  height: {{ section.settings.icon_size }}px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-banner__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: {{ text_color }};
+}
+
+.promo-banner__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.promo-banner__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.promo-banner__line1 {
+  display: block;
+  font-size: {{ section.settings.font_size_line1 }}px;
+  font-weight: 800;
+  color: {{ text_color }};
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  font-family: "Roboto", sans-serif;
+}
+
+.promo-banner__line2 {
+  display: block;
+  font-size: {{ section.settings.font_size_line2 }}px;
+  font-weight: 700;
+  color: {{ text_color }};
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+@media (max-width: 1199px) {
+  .promo-banner .custom-container {
+    padding: 0 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .promo-banner__inner {
+    gap: {{ section.settings.gap_mobile }}px;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 10px;
+    min-width: 899px;
+  }
+
+  .promo-banner__icon {
+    width: {{ section.settings.icon_size_mobile }}px;
+    height: {{ section.settings.icon_size_mobile }}px;
+  }
+
+  .promo-banner__line1 {
+    font-size: {{ section.settings.font_size_line1_mobile }}px;
+  }
+
+  .promo-banner__line2 {
+    font-size: {{ section.settings.font_size_line2_mobile }}px;
+  }
+}
+
+{%- endstyle -%}
+
+<div class="promo-banner" style="background-color: {{ bg_color }};" {{ section.shopify_attributes }}>
+
+  {%- comment -%}── Background Shape ──{%- endcomment -%}
+
+
+  {%- comment -%}── Items ──{%- endcomment -%}
+  <div class="custom-container">
+    <div class="promo-banner__inner">
+      <div class="promo-banner__bg-shape" aria-hidden="true">
+        {%- if section.settings.bg_shape_type == 'svg' -%}
+          {%- if section.settings.bg_shape_svg != blank -%}
+            {{ section.settings.bg_shape_svg }}
+          {%- else -%}
+            {%- comment -%}Default brush-stroke SVG{%- endcomment -%}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+              <path d="M0,5 C60,0 120,10 200,7 C300,3 380,12 480,8 C580,4 640,14 720,9 C800,4 880,13 960,7 C1040,2 1120,11 1200,6 C1280,2 1360,10 1440,5 L1440,85 C1380,90 1300,80 1220,85 C1140,90 1060,80 980,86 C900,91 820,81 740,87 C660,92 580,82 500,88 C420,93 340,83 260,88 C180,93 100,84 0,88 Z" fill="{{ bg_color }}" />
+            </svg>
+          {%- endif -%}
+        {%- elsif section.settings.bg_shape_type == 'image' -%}
+          {%- if section.settings.bg_shape_image != blank -%}
+            <img
+              src="{{ section.settings.bg_shape_image | image_url: width: 1440 }}"
+              alt=""
+              loading="lazy"
+              width="1440"
+              height="90"
+            >
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+      {%- for block in section.blocks -%}
+
+        {%- unless forloop.first -%}
+          <div class="promo-banner__divider" aria-hidden="true"></div>
+        {%- endunless -%}
+
+        <div class="promo-banner__item" {{ block.shopify_attributes }}>
+
+          {%- comment -%}── Icon ──{%- endcomment -%}
+          {%- if block.settings.icon_type == 'image' -%}
+            {%- if block.settings.icon_image != blank -%}
+              <div class="promo-banner__icon">
+                <img
+                  src="{{ block.settings.icon_image | image_url: width: 120 }}"
+                  alt="{{ block.settings.text_line1 }}"
+                  loading="lazy"
+                  width="{{ section.settings.icon_size }}"
+                  height="{{ section.settings.icon_size }}"
+                >
+              </div>
+            {%- endif -%}
+          {%- else -%}
+            <div class="promo-banner__icon">
+              {%- if block.settings.icon_svg != blank -%}
+                {{ block.settings.icon_svg }}
+              {%- else -%}
+                {%- comment -%}Fallback icon{%- endcomment -%}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{{ text_color }}">
+                  <circle cx="12" cy="12" r="10" stroke="{{ text_color }}" stroke-width="2" fill="none"/>
+                  <text x="12" y="16" text-anchor="middle" font-size="10" fill="{{ text_color }}" font-weight="bold">%</text>
+                </svg>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          {%- comment -%}── Text ──{%- endcomment -%}
+          <div class="promo-banner__text">
+            {%- if block.settings.text_line1 != blank -%}
+              <span class="promo-banner__line1">{{ block.settings.text_line1 }}</span>
+            {%- endif -%}
+            {%- if block.settings.text_line2 != blank -%}
+              <span class="promo-banner__line2">{{ block.settings.text_line2 }}</span>
+            {%- endif -%}
+          </div>
+
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Promo Banner",
+  "tag": "section",
+  "class": "section-promo-banner",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "vertical_padding",
+      "label": "Vertical Padding (px)",
+      "min": 8,
+      "max": 80,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Item Gap (px)",
+      "min": 8,
+      "max": 80,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Item Gap — Mobile (px)",
+      "min": 8,
+      "max": 80,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#c0392b"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text & Icon Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size_line1",
+      "label": "Line 1 Font Size (px)",
+      "min": 10,
+      "max": 36,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "font_size_line1_mobile",
+      "label": "Line 1 Font Size — Mobile (px)",
+      "min": 10,
+      "max": 36,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "font_size_line2",
+      "label": "Line 2 Font Size (px)",
+      "min": 10,
+      "max": 36,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "font_size_line2_mobile",
+      "label": "Line 2 Font Size — Mobile (px)",
+      "min": 10,
+      "max": 36,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Icon Size"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon Size (px)",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Icon Size — Mobile (px)",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Background Shape"
+    },
+    {
+      "type": "select",
+      "id": "bg_shape_type",
+      "label": "Background Shape Type",
+      "options": [
+        { "value": "none", "label": "None (solid color)" },
+        { "value": "svg",  "label": "SVG Code" },
+        { "value": "image","label": "Image" }
+      ],
+      "default": "svg"
+    },
+    {
+      "type": "textarea",
+      "id": "bg_shape_svg",
+      "label": "Background Shape SVG",
+      "info": "Paste a full <svg> element. Leave blank to use default brush stroke. The SVG will fill the section.",
+      "visible_if": "{{ section.settings.bg_shape_type == 'svg' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_shape_image",
+      "label": "Background Shape Image",
+      "info": "Use a wide transparent PNG/SVG exported as image.",
+      "visible_if": "{{ section.settings.bg_shape_type == 'image' }}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promo_item",
+      "name": "Promo Item",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Icon"
+        },
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            { "value": "svg",   "label": "SVG Code" },
+            { "value": "image", "label": "Image" }
+          ],
+          "default": "svg"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_svg",
+          "label": "Icon SVG Code",
+          "info": "Paste a full <svg> element. It inherits the text color via CSS fill.",
+          "visible_if": "{{ block.settings.icon_type == 'svg' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon Image",
+          "info": "Use a transparent PNG or SVG. Recommended size: 96×96px.",
+          "visible_if": "{{ block.settings.icon_type == 'image' }}"
+        },
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "text",
+          "id": "text_line1",
+          "label": "Text Line 1 (large / bold)",
+          "default": "BIS ZU -75%"
+        },
+        {
+          "type": "text",
+          "id": "text_line2",
+          "label": "Text Line 2 (smaller)",
+          "default": "RABATT"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo Banner",
+      "blocks": [
+        {
+          "type": "promo_item",
+          "settings": {
+            "icon_type": "svg",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.3 5.7A1 1 0 0 0 19.6 5H4.4a1 1 0 0 0-.7.3l-.3.7v2l9 9 9-9V6.4a1 1 0 0 0-.1-.7zM12 14.6 4.5 7H19.5L12 14.6zM12 17a1 1 0 0 0-.7.3l-3 3a1 1 0 0 0 1.4 1.4L12 19.4l2.3 2.3a1 1 0 0 0 1.4-1.4l-3-3A1 1 0 0 0 12 17z\"/></svg>",
+            "text_line1": "BIS ZU -75%",
+            "text_line2": "RABATT"
+          }
+        },
+        {
+          "type": "promo_item",
+          "settings": {
+            "icon_type": "svg",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM4 9h16v2H4V9zm0 10v-6h16v6H4zM9 3h6v2H9z\"/></svg>",
+            "text_line1": "KEINE",
+            "text_line2": "NACHPRODUKTION"
+          }
+        },
+        {
+          "type": "promo_item",
+          "settings": {
+            "icon_type": "svg",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z\"/></svg>",
+            "text_line1": "NUR SOLANGE DER",
+            "text_line2": "VORRAT REICHT!"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

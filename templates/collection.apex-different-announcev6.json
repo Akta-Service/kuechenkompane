@@ -9,56 +9,6 @@
  */
 {
   "sections": {
-    "apex_timer_8KXfky": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "name": "Apex Product Timer",
-      "settings": {
-        "bg_color": "#c6d1c4",
-        "section_pt": 15,
-        "section_pb": 15,
-        "timer_clock": "#c89d00",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "700",
-        "timer_text": "Aktion endet in Kürze",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "400",
-        "start_time": "00:00:00"
-      }
-    },
-    "rich_text_MPfPJc": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_HLFfDJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "Endlich wieder verfügbar! 🎉",
-            "heading_size": "h2"
-          }
-        },
-        "text_nAHzLU": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Unsere handgeschmiedeten Damastmesser sind zurück im Lager.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_HLFfDJ",
-        "text_nAHzLU"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -79,221 +29,59 @@
         "enable_bg_zoom_effect": true
       }
     },
-    "apex_top_slider_GBwqAg": {
-      "type": "apex-top-slider",
+    "rich_text_JT3zXC": {
+      "type": "rich-text",
       "blocks": {
-        "text_zLPY9B": {
-          "type": "text",
+        "heading_8CzWJG": {
+          "type": "heading",
           "settings": {
-            "top_item": "140.000+ zufriedene Kunden"
+            "heading": "Das größte Gewinnspiel des Jahres",
+            "heading_size": "h2"
           }
         },
-        "text_i4KwPb": {
+        "text_mADfM3": {
           "type": "text",
           "settings": {
-            "top_item": "100 Tage Testen"
-          }
-        },
-        "text_KKpaJj": {
-          "type": "text",
-          "settings": {
-            "top_item": "Kostenloser Versand"
+            "text": "<p>Du kannst doppelt gewinnen: Bis zu 75% sparen – und jede Bestellung ist automatisch dein Los. Das kannst du gewinnen:  </p><p><strong>1× Weber Grill (5.999 €)  <br/>3× 500 €-Gutschein  <br/>5× Aoki Damastmesser-Set </strong></p><p>Auslosung ist am 01.06. Bestellungen gelten bis Sonntag 23:59.</p>"
           }
         }
       },
       "block_order": [
-        "text_zLPY9B",
-        "text_i4KwPb",
-        "text_KKpaJj"
+        "heading_8CzWJG",
+        "text_mADfM3"
       ],
-      "disabled": true,
+      "name": "Rich text",
       "settings": {
-        "color_scheme": "default",
-        "pt": 15,
-        "pb": 15,
-        "mt_mobile": 15,
-        "mb_mobile": 15
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "custom_class": "",
+        "animations": "inherit"
       }
     },
-    "category_selection_iMrTd6": {
-      "type": "category-selection",
-      "blocks": {
-        "item_nwxAVH": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_0704_1_69a178e9-8e16-4c99-8882-4e75651e79db.jpg",
-            "collection": "kuechenmesser-set",
-            "collection_name": "",
-            "custom_url": ""
-          }
-        },
-        "item_Bd4xRW": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/Ku_echenkompane_2411290279_5d68c755-0e2c-4114-b8e6-c6d037f59f4d.webp",
-            "collection": "rustikales-servierbrett",
-            "collection_name": "",
-            "custom_url": ""
-          }
-        },
-        "item_LNGV6x": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
-            "collection": "damastmesser-set",
-            "collection_name": "",
-            "custom_url": ""
-          }
-        },
-        "item_KtcacC": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_9602_V7_766bf07d-e962-44cd-88f4-f20ad783e139.jpg",
-            "collection": "bbq-zubehor",
-            "collection_name": "",
-            "custom_url": ""
-          }
-        },
-        "item_rktrNh": {
-          "type": "item",
-          "settings": {
-            "collection_img": "shopify://shop_images/IMG_7091_V9_1_1c609ed1-4460-4fa0-9a4e-62f976a60718.jpg",
-            "collection": "asiatisches-messerset-1",
-            "collection_name": "",
-            "custom_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_nwxAVH",
-        "item_Bd4xRW",
-        "item_LNGV6x",
-        "item_KtcacC",
-        "item_rktrNh"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "default",
-        "pt": 30,
-        "pb": 30,
-        "mobile_pt": 30,
-        "mobile_pb": 30,
-        "heading_type": "mrk-h1",
-        "title": "Nach Kategorien suchen",
-        "c_n_text": "p-medium"
-      }
-    },
-    "mrk_collection_grid_section_iwDMQ8": {
+    "mrk_collection_grid_section_Bj38Vy": {
       "type": "mrk-collection-grid-section",
       "name": "Akta Collection Grid",
       "settings": {
-        "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_top": 19,
+        "padding_bottom": 22,
         "show_section_header": false,
         "section_title": "Featured Collection",
         "section_description": "Explore our best-selling products.",
         "collection": "",
-        "products_limit": 50,
-        "use_metafield_image": true,
+        "products_limit": 20,
+        "use_metafield_image": false,
         "hover_second_image": false,
         "pagination_style": "circle",
         "show_product_ratings": false,
-        "show_stock_status": false
-      }
-    },
-    "usp_list_xQHfgQ": {
-      "type": "usp-list",
-      "blocks": {
-        "item_JVyQJ8": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/GEZ100.png",
-            "usp_title": "Geld-zurück-Garantie",
-            "title_size": 18,
-            "usp_info": "100 Tage Rückgaberecht - ohne Risiko.",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_BRBV37": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "usp_title": "Kostenloser Versand",
-            "title_size": 18,
-            "usp_info": "Ab 100€ versandkostenfrei – schnell & zuverlässig.",
-            "info_size": 14,
-            "divider": true
-          }
-        },
-        "item_RKRMEB": {
-          "type": "item",
-          "settings": {
-            "usp_icon": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "usp_title": "Schärfe Garantie",
-            "title_size": 18,
-            "usp_info": "Maximale Schärfe für müheloses Schneiden.",
-            "info_size": 14,
-            "divider": false
-          }
-        }
-      },
-      "block_order": [
-        "item_JVyQJ8",
-        "item_BRBV37",
-        "item_RKRMEB"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "verticle_padding": 50,
-        "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
-      }
-    },
-    "branded_image_version_ffF3PX": {
-      "type": "branded-image-version-",
-      "blocks": {
-        "title_AgFUHf": {
-          "type": "title",
-          "settings": {
-            "title": "Kochen wie ein Profi"
-          }
-        },
-        "sub_title_GcWkqp": {
-          "type": "sub_title",
-          "settings": {
-            "text": "Von messerscharfer Präzision bis hin zu perfektem Kochgeschirr.\n<br>Unsere Produkte sind für höchste Ansprüche gemacht."
-          }
-        }
-      },
-      "block_order": [
-        "title_AgFUHf",
-        "sub_title_GcWkqp"
-      ],
-      "settings": {
-        "color_scheme": "scheme-6f79726a-2c99-40c4-b488-fdd582f63520",
-        "shape_color": "#deceba",
-        "margin_top": 20,
-        "margin_bottom": 0,
-        "mobile_margin_top": 10,
-        "mobile_margin_bottom": 0,
-        "bg_img": "shopify://shop_images/IMG_9602_V6.jpg",
-        "heading_type": "mrk-h1",
-        "des_size": "p-medium",
-        "button_style": "m-button--primary",
-        "button_size": ""
-      }
-    },
-    "collection_description_tUMerW": {
-      "type": "collection-description",
-      "disabled": true,
-      "settings": {
-        "collection_bg": "#c6d1c4",
-        "collection_pt": 30,
-        "collection_pb": 30,
-        "collection_pt_m": 30,
-        "collection_pb_m": 30
+        "show_stock_status": false,
+        "show_gift_info": false,
+        "info_text": "",
+        "add_border_line": false,
+        "show_max_price": false,
+        "show_save_price": false
       }
     },
     "rich_text_ijBTPA": {
@@ -322,15 +110,9 @@
     }
   },
   "order": [
-    "apex_timer_8KXfky",
-    "rich_text_MPfPJc",
     "collection-header",
-    "apex_top_slider_GBwqAg",
-    "category_selection_iMrTd6",
-    "mrk_collection_grid_section_iwDMQ8",
-    "usp_list_xQHfgQ",
-    "branded_image_version_ffF3PX",
-    "collection_description_tUMerW",
+    "rich_text_JT3zXC",
+    "mrk_collection_grid_section_Bj38Vy",
     "rich_text_ijBTPA"
   ]
 }

@@ -22,7 +22,8 @@
         "timer_text": "Das Angebot endet in bald!",
         "timer_font_size": 12,
         "timer_color": "#000000",
-        "timer_font_weight": "400"
+        "timer_font_weight": "400",
+        "start_time": "00:00:00"
       }
     },
     "main": {
@@ -61,7 +62,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Jetzt exklusiv nur beim SPIEGEL-ONLINE",
+            "subtitle": "Jetzt exklusiv nur bei Spiegel",
             "subtitle_font_size": 16,
             "subtitle_weight": "400"
           }
@@ -90,13 +91,40 @@
             "star_color": "#000000"
           }
         },
+        "floow_social_proof_JiTrmk": {
+          "type": "floow-social-proof",
+          "settings": {
+            "show_only_in_editor": false,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "avatar_1": "shopify://shop_images/Testi3.webp",
+            "avatar_2": "shopify://shop_images/Testi1_06655792-039c-4c4c-a68d-210b3c8a4ab8.webp",
+            "avatar_3": "shopify://shop_images/Testi2.jpg",
+            "avatar_size": 40,
+            "avatar_overlap": 10,
+            "avatar_border_color": "#ffffff",
+            "badge_text": "200.000+ Personen",
+            "badge_bg_color": "#d4edda",
+            "badge_text_color": "#1a6b2f",
+            "badge_font_size": 12,
+            "badge_offset": -10,
+            "label": "lieben unsere Küchenmesser!",
+            "label_color": "#2c2c2c",
+            "label_font_weight": "400",
+            "label_font_size": 12,
+            "gap": 4,
+            "text_gap": 8,
+            "scroll_target": ""
+          }
+        },
         "ratings_fD4VNJ": {
           "type": "ratings",
+          "disabled": true,
           "settings": {
             "likeImg1": "shopify://shop_images/Testi3.webp",
             "likeImg2": "shopify://shop_images/Testi1_06655792-039c-4c4c-a68d-210b3c8a4ab8.webp",
             "likeImg3": "shopify://shop_images/Testi2.jpg",
-            "likecount": "90,532+ Personen",
+            "likecount": "200.000+ Personen",
             "like_bg": "#ddede0",
             "likeinfo": "lieben unsere Küchenmesser!",
             "demandBadge": "Hohe Nachfrage",
@@ -106,16 +134,19 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "Show_lowest_price": false,
+            "lowest_price_text": "Der niedrigste Preis in den letzten 30 Tagen",
             "taxes_included": true,
             "taxes_included_text": "",
             "show_saving": true,
             "sale_badge_type": "percentage",
+            "badge_text": "",
             "p_pt": 5,
             "p_pb": 5,
             "p_pt_m": 5,
             "p_pb_m": 5,
             "price_color": "#000000",
-            "c_price_color": "#b1b1b1",
+            "c_price_color": "#bbbbbb",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 21,
@@ -166,7 +197,7 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Nur für Spiegel-Online Leser erhältlich – nicht im Einzelhandel verfügbar</p>",
+            "featurelist_item": "<p>Nur für Spiegel Leser erhältlich – nicht im Einzelhandel verfügbar</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -178,13 +209,28 @@
             "size_title": "Size"
           }
         },
+        "floow_delivery_time_aYfxNM": {
+          "type": "floow-delivery-time",
+          "settings": {
+            "margin_top": 20,
+            "margin_bottom": 10
+          }
+        },
         "buy_buttons_3hQqVi": {
           "type": "buy_buttons",
           "settings": {
             "show_quantity_selector": true,
             "show_atc_button": true,
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": true,
+            "btn_mt": 8
+          }
+        },
+        "floow_alt_product_GWgnpk": {
+          "type": "floow-alt-product",
+          "settings": {
+            "margin_top": 0,
+            "margin_bottom": 0
           }
         },
         "payment_icon_tePtpf": {
@@ -214,17 +260,21 @@
         "subtitle_xQXVba",
         "loox_reviews_loox_rating_cLt3Jq",
         "review_Tgbbak",
+        "floow_social_proof_JiTrmk",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
         "viewer_stock_count_MFNhKz",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
         "variant_picker_KkEnbw",
+        "floow_delivery_time_aYfxNM",
         "buy_buttons_3hQqVi",
+        "floow_alt_product_GWgnpk",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "selected_gift_product": "",
         "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
@@ -293,7 +343,7 @@
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": false,
+        "add_showore_btn": true,
         "readmore": "Mehr lesen",
         "readless": "Weniger Lesen",
         "br_color": "#000000",
@@ -424,6 +474,7 @@
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "Unsere Produkte in Aktion",
+        "title_size": 20,
         "heading_type": "mrk-h1",
         "show_button": true,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
@@ -618,7 +669,7 @@
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "{{ product.metafields.custom.product_grid_image_1.value }}",
+        "image": "shopify://shop_images/Asiatisches-Messerset-Premium_LifestyleBilder_komprimiert_1_11zon_1_7a1ac618-764f-4727-9a92-4dc755a1b649.webp",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -1060,7 +1111,7 @@
         "mt_mobile": 20,
         "mb_mobile": 20,
         "title": "Vertraut von",
-        "title_highlight": "+140K Kunden",
+        "title_highlight": "+200K Kunden",
         "heading_type": "mrk-h2",
         "h_text_color": "#fa8526",
         "arrow_icon_color": "#000000"
@@ -1108,7 +1159,7 @@
         "heading_type": "mrk-h2",
         "des": "Diese Frage haben uns schon viele gestellt. Die Antwort ist einfach: Wir sind zu 100 % überzeugt von unseren Produkten! Und das aus gutem Grund, denn unsere Produkte wurden:",
         "des_size": "p-medium",
-        "img": "shopify://shop_images/chef-working-together-professional-kitchen.jpg",
+        "img": "shopify://shop_images/mats_1_1.jpg",
         "verticle_padding": 70,
         "horizontal_padding": 0,
         "border_t": false,
@@ -1162,6 +1213,8 @@
         "loox_reviews_loox_dynamic_section_9tFX78": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
             "limit": 20,

@@ -1,0 +1,200 @@
+{% style %}
+    .card-upsell {
+        margin-top: 12px;
+    }
+    .card-upsell-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    .card-upsell-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 8px;
+        padding: 4px;
+        border-radius: 4px;
+    }
+
+    .card-upsell-item-img {
+        width: 50px;
+        flex: 0 0 auto;
+    }
+
+    .card-upsell-item-add {
+        margin-left: auto;
+    }
+
+    .card-upsell-item-add button {background: transparent;border: 1px solid #ddd;padding: 6px;border-radius: 4px;}
+
+    .card-upsell-item-content strong {
+        font-size: 14px;
+        display: block;
+    }
+
+    .card-upsell-item-content span {
+        font-size: 14px;
+    }
+    .card-upsell-item-add .upsell-sold-out {
+        background: red !important;
+        opacity: 0.8;
+        color: #fff;
+    }
+    /* test css  */
+
+
+    .upsell-card-to-cart {
+    position: relative;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Press effect */
+    .upsell-card-to-cart:active {
+    transform: scale(0.95);
+    }
+
+    /* Hide icon when loading */
+    .upsell-card-to-cart.adding svg {
+    opacity: 0;
+    }
+
+    /* Spinner */
+    .upsell-card-to-cart::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    }
+
+    /* Show spinner */
+    .upsell-card-to-cart.adding::after {
+    opacity: 1;
+    animation: upsellSpin 0.8s linear infinite;
+    }
+
+    /* Proper rotation */
+    @keyframes upsellSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    }
+
+    /* Prevent double click */
+    .upsell-card-to-cart.adding {
+    pointer-events: none;
+    }
+
+    @media (max-width: 400px){
+        .card-upsell-item-content strong {
+            font-size: 12px;        
+        }
+        .card-upsell-item-content span {
+            font-size: 12px;
+        }
+        .card-upsell-item-img {
+            width: 40px;            
+        }
+        .card-upsell-item-add button { 
+            padding: 4px;            
+        }
+    }
+
+
+
+
+{% endstyle %}
+
+
+{% assign show_product = false %}
+{% assign products = settings.products_card_upsell %}
+
+{% for product in products %}
+  {% assign variant = product.selected_or_first_available_variant %}
+  {% assign product_in_cart = false %}
+
+  {% for item in cart.items %}
+    {% if item.variant_id == variant.id %}
+      {% assign product_in_cart = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% unless product_in_cart %}
+    {% assign show_product = true %}
+    {% break %} 
+  {% endunless %}
+{% endfor %}
+
+{% if show_product %}
+  <div class="card-upsell">
+    <h2 class="card-upsell-title">{{ settings.card_up_title | escape }}</h2>
+    <div class="card-upsell-item-wrapper">
+      {% for product in products %}
+        {% assign variant = product.selected_or_first_available_variant %}
+        {% assign product_in_cart = false %}
+
+        {% for item in cart.items %}
+          {% if item.variant_id == variant.id %}
+            {% assign product_in_cart = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% unless product_in_cart %}
+          <div class="card-upsell-item">
+            <div class="card-upsell-item-img">
+              {% if product.featured_image %}
+                <img 
+                  src="{{ product.featured_image | image_url: width: 600 }}"
+                  width="200"
+                  height="200"
+                  alt="{{ product.title | escape }}"
+                  loading="lazy">
+              {% endif %}
+            </div>
+
+            <div class="card-upsell-item-content">
+              {% if product.metafields.custom.product_upsell_title != blank %}
+                <strong>{{ product.metafields.custom.product_upsell_title }}</strong>
+              {% else %}
+                <strong>{{ product.title | escape }}</strong>
+              {% endif %}
+
+              {% if product.metafields.custom.product_upsell_description != blank %}
+                <span>{{ product.metafields.custom.product_upsell_description }}</span>
+              {% else %}
+                <span>{{ product.description | strip_html | truncatewords: 5 }}</span>
+              {% endif %}
+            </div>
+
+            <div class="card-upsell-item-add">
+              {% if product.available and variant.available %}
+                <button 
+                  type="button"
+                  class="upsell-card-to-cart"
+                  data-variant-id="{{ variant.id }}">
+                  {% render 'icons', type: 'plus' %}
+                </button>
+              {% else %}
+                <button class="upsell-sold-out" type="button" disabled>
+                  {% render 'icons', type: 'times' %}
+                </button>
+              {% endif %}
+            </div>
+          </div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

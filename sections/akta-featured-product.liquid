@@ -1,0 +1,529 @@
+
+{{ 'fp-section.css' | asset_url | stylesheet_tag }}
+{{ 'splide.min.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .sec-{{ section.id }} {
+    --ryze-cream: #f5f0e8;
+    --ryze-brown: #3d1f0f;
+    --ryze-rust: #fa8526;
+    --ryze-rust-dark: #8f3515;
+    --ryze-rust-light: #d4622a;
+    --ryze-gold: #c8892a;
+    --ryze-green: #2e6b3e;
+    --ryze-text: #2c1a0e;
+    --ryze-muted: #7a5c46;
+  }
+
+  .sec-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+    padding: 60px 20px 80px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .sec-{{ section.id }} {
+      padding: 40px 15px 40px;
+    }
+  }
+
+  @media (max-width: 475px) {
+    .sec-{{ section.id }} {
+      padding: 30px 15px 30px;
+    }
+  }
+/* Splide image fix */
+#fp-splide-{{ section.id }} .splide__track {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ece5d8;
+  aspect-ratio: 1 / 1;
+}
+
+#fp-splide-{{ section.id }} .splide__list {
+  height: 100%;
+}
+
+#fp-splide-{{ section.id }} .splide__slide {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#fp-splide-{{ section.id }} .splide__slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Arrow styles */
+#fp-splide-{{ section.id }} .splide__arrow {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+#fp-splide-{{ section.id }} .splide__arrow:hover {
+  background: #fff;
+}
+
+#fp-splide-{{ section.id }} .splide__arrow svg {
+  width: 10px;
+  height: 16px;
+  fill: none;
+}
+
+ #fp-splide-{{ section.id }} .splide__arrow--prev svg {
+    transform: scaleX(1);
+}
+
+#fp-splide-{{ section.id }} .splide__arrow--prev {
+  left: 10px;
+}
+
+#fp-splide-{{ section.id }} .splide__arrow--next {
+  right: 10px;
+}
+
+/* Pagination dots */
+#fp-splide-{{ section.id }} .splide__pagination {
+  bottom: -28px;
+}
+
+#fp-splide-{{ section.id }} .splide__pagination__page {
+  background: #c9b89e;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#fp-splide-{{ section.id }} .splide__pagination__page.is-active {
+  background: var(--ryze-rust);
+  transform: scale(1.25);
+}
+</style>
+
+{% assign product = section.settings.f_product %}
+
+<section class="fp-section sec-{{ section.id }}" id="featured-product-{{ section.id }}">
+  <div class="fp-header">
+    {% if section.settings.eyebrow != blank %}
+      <p class="fp-eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+    <h2 class="fp-headline">
+      {{ section.settings.headline_before }}
+      <span>{{ section.settings.headline_accent }}</span>
+    </h2>
+    <p class="fp-subtext">{{ section.settings.subtext }}</p>
+  </div>
+
+  {% if section.settings.show_badges != blank %}
+    <div class="fp-badges">
+      <div class="fp-badge">
+        {% if section.settings.badge_icon_1 != blank %}
+          <img src="{{ section.settings.badge_icon_1 | image_url }}" alt="icon" width="" height="">
+        {% endif %}
+        {{ section.settings.badge_1_text }}
+      </div>
+      <div class="fp-badge">
+        {% if section.settings.badge_icon_2 != blank %}
+          <img src="{{ section.settings.badge_icon_2 | image_url }}" alt="icon" width="" height="">
+        {% endif %}
+        {{ section.settings.badge_2_text }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="fp-product-grid">
+
+    <!-- Gallery — Splide -->
+    <div class="fp-gallery">
+      <div id="fp-splide-{{ section.id }}" class="splide fp-splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% if product %}
+              {% for media in product.media %}
+                <li class="splide__slide">
+                  {{ media | image_url: width: 2000 | image_tag: loading: 'lazy', alt: media.alt }}
+                </li>
+              {% endfor %}
+            {% else %}
+              <li class="splide__slide">
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev" aria-label="Previous">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+              <path d="M8.5 1.5L1.5 8l7 6.5" stroke="#3d1f0f" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button class="splide__arrow splide__arrow--next" aria-label="Next">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+              <path d="M1.5 1.5L8.5 8l-7 6.5" stroke="#3d1f0f" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <ul class="splide__pagination"></ul>
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="fp-info">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'ratings' %}
+            <div class="fp-stars" {{ block.shopify_attributes }}>
+              {% assign rating_star = block.settings.rating_star %}
+              <div class="fp-stars-icons">
+                {% for i in (1..rating_star) %}
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                {% endfor %}
+              </div>
+              <span class="fp-review-count">{{ block.settings.review_text }}</span>
+            </div>
+
+          {% when 'title' %}
+            {% if product %}
+              <h3 class="fp-product-title" {{ block.shopify_attributes }}>{{ product.title }}</h3>
+            {% else %}
+              <h3 class="fp-product-title" {{ block.shopify_attributes }}>Product Title</h3>
+            {% endif %}
+
+          {% when 'feature_list_item_group' %}
+            <div class="fp-feature-group" {{ block.shopify_attributes }}>
+              {% if block.settings.title != blank %}
+                <h3 class="fp-feature-header">{{ block.settings.title }}</h3>
+              {% endif %}
+              <ul class="fp-product-features">
+                {% assign start_index = forloop.index %}
+                {% for item in section.blocks offset: start_index %}
+                  {% if item.type == 'feature_list_item_group' %}{% break %}{% endif %}
+                  {% if item.type == 'feature_list_item' %}
+                    <li class="fp-feature-item" {{ item.shopify_attributes }}>
+                      {% if item.settings.icon != blank %}
+                        <img src="{{ item.settings.icon | image_url }}" alt="{{ item.settings.text | escape }}" width="24" height="24">
+                      {% endif %}
+                      <span>{{ item.settings.text }}</span>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+
+          {% when 'sale_label' %}
+            <div class="fp-sale-label" {{ block.shopify_attributes }}>{{ block.settings.sale_label }}</div>
+
+          {% when 'price' %}
+            <div class="fp-price-row" {{ block.shopify_attributes }}>
+              <span class="fp-price-current">{{ product.price | money }}</span>
+              {% if product.compare_at_price > product.price %}
+                <span class="fp-price-original">{{ product.compare_at_price | money }}</span>
+                {% if block.settings.show_badge %}
+                  <span class="fp-discount-badge">
+                    {{ block.settings.badge_text }}
+                    {{ product.compare_at_price | money -}}
+                  </span>
+                {% endif %}
+              {% endif %}
+            </div>
+
+          {% when 'countdown_timer' %}
+            <div class="fp-countdown" {{ block.shopify_attributes }}>
+              <svg class="r-icon flash-solid" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M13.9921 2.12409C14.0472 1.68359 13.8053 1.25952 13.3981 1.08275C12.9908 0.905986 12.5158 1.01884 12.2316 1.35987L3.30218 12.0752C3.14786 12.2603 2.99156 12.4478 2.87776 12.6126C2.77013 12.7684 2.57363 13.0748 2.56755 13.4774C2.5606 13.9384 2.76601 14.377 3.12459 14.6667C3.4378 14.9198 3.79897 14.965 3.98758 14.9821C4.187 15.0002 4.43109 15.0001 4.67208 15.0001L10.8671 15.0001L10.0076 21.876C9.95252 22.3165 10.1945 22.7406 10.6017 22.9174C11.0089 23.0941 11.4839 22.9813 11.7681 22.6402L20.6975 11.9249C20.8519 11.7398 21.0082 11.5523 21.122 11.3875C21.2296 11.2317 21.4261 10.9253 21.4322 10.5227C21.4391 10.0617 21.2337 9.62314 20.8751 9.33338C20.5619 9.08027 20.2008 9.03509 20.0121 9.01802C19.8127 8.99996 19.5686 9.00001 19.3276 9.00005L13.1326 9.00006L13.9921 2.12409Z" fill="#FCFBF3"></path>
+              </svg>
+              {{ block.settings.text }}
+              {% if block.settings.show_timer %}
+                <span class="fp-timer" id="fp-timer-{{ section.id }}" data-target="{{ block.settings.countdown_target }}">00:00:00</span>
+              {% endif %}
+            </div>
+
+          {% when 'trust_text_group' %}
+            <div class="fp-trust" {{ block.shopify_attributes }}>
+              {% assign start_index = forloop.index %}
+              {% for item in section.blocks offset: start_index %}
+                {% if item.type == 'trust_text_group' %}{% break %}{% endif %}
+                {% if item.type == 'trust_item' %}
+                  <div class="fp-trust-item" {{ item.shopify_attributes }}>
+                    {% if item.settings.icon != blank %}
+                      <img src="{{ item.settings.icon | image_url }}" alt="icon" width="20" height="20">
+                    {% endif %}
+                    <span>{{ item.settings.text }}</span>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+
+          {%- when 'buy_buttons' -%}
+            {% liquid
+              assign product_form_id = 'product-form-' | append: section.id
+              assign variant_id = product.selected_or_first_available_variant.id
+              assign selected_variant_id = ''
+              unless section.settings.show_featured_media
+                assign selected_variant_id = product.selected_variant.id
+              endunless
+              assign gift_card_recipient_feature_active = false
+              if block.settings.show_gift_card_recipient and product.gift_card?
+                assign gift_card_recipient_feature_active = true
+              endif
+              assign show_dynamic_checkout = block.settings.show_dynamic_checkout
+              if image_field.size > 0 or gift_card_recipient_feature_active == true
+                assign show_dynamic_checkout = false
+              endif
+            %}
+            <product-form class="m-product-form m-product-form--main" data-product-id="{{ product.id }}" {{ block.shopify_attributes }}>
+              {%- form 'product', product, id: product_form_id, data-product-id: product.id, class: product_form_class, novalidate: 'novalidate', data-type: 'add-to-cart-form', data-product-handle: product.handle, data-dynamic-checkout: show_dynamic_checkout, data-enable-image-zoom: section.settings.show_zoom_button, data-enable-history-state: section.settings.enable_history_state, data-enable-video-autoplay: section.settings.enable_video_autoplay -%}
+                <input type="hidden" name="id" value="{{ variant_id }}" data-selected-variant="{{ selected_variant_id }}" disabled>
+                {%- if gift_card_recipient_feature_active -%}
+                  {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+                {%- endif -%}
+                <div class="m-product-form--wrapper m:display-flex m:flex-wrap m:items-end">
+                  {% if block.settings.show_quantity_selector %}
+                    <div class="m-product-form--input">
+                      <label class="m-product-option--label">{{ 'products.product.quantity' | t }}</label>
+                      {% render 'product-qty-input', product_form_id: product_form_id, product: product %}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.show_atc_button %}
+                    {% liquid
+                      assign btn_class = 'm-button--primary'
+                      if show_dynamic_checkout
+                        assign btn_class = 'm-button--secondary'
+                      endif
+                    %}
+                    <button
+                      type="submit"
+                      name="add"
+                      class="mystery-add-btn fp-cta m-add-to-cart m-spinner-button m-button {{ btn_class }} {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}"
+                      data-atc-text="{{ 'products.product.add_to_cart' | t }}"
+                    >
+                      <span class="m-spinner-icon">
+                        <svg class="animate-spin m-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                          <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                      </span>
+                      <span class="m-add-to-cart--text">
+                        {% if product.selected_or_first_available_variant.available %}
+                          {{ block.settings.btn_text }}
+                        {% else %}
+                          {{ 'products.product.sold_out' | t }}
+                        {% endif %}
+                      </span>
+                      <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                      </svg>
+                    </button>
+                  {% endif %}
+                  {% liquid
+                    assign show_terms = false
+                    if settings.agree_text != blank and settings.show_agree_on_product
+                      render 'agree-terms-checkbox'
+                      assign show_terms = true
+                    endif
+                  %}
+                  {% if show_dynamic_checkout %}
+                    <div class="m-product-dynamic-checkout buy-one-click{% if block.settings.show_atc_button %} show-add-to-cart{% else %} m:flex-1{% endif %}" {% if show_terms %}data-terms-action disabled{% endif %}>
+                      {{ form | payment_button }}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="m-product-form-message"></div>
+              {%- endform -%}
+            </product-form>
+            <link rel="stylesheet" href="{{ 'pickup-availability.css' | asset_url }}" media="print" onload="this.media='all';">
+            {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true -%}
+            {% capture available %}{% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %} available{% endif %}{% endcapture %}
+            <pickup-availability {{ available }} class="product__pickup-availabilities" data-base-url="{{ routes.root_url }}" data-variant-id="{{ product.selected_or_first_available_variant.id }}" data-has-only-default-variant="{{ product.has_only_default_variant }}">
+              <template>
+                <pickup-availability-preview class="m-pickup-availability__preview m:display-flex">
+                  <svg class="m-svg-icon" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 20 20">
+                    <path fill="#DE3618" stroke="#fff" d="M13.94 3.94 10 7.878l-3.94-3.94A1.499 1.499 0 1 0 3.94 6.06L7.88 10l-3.94 3.94a1.499 1.499 0 1 0 2.12 2.12L10 12.12l3.94 3.94a1.497 1.497 0 0 0 2.12 0 1.499 1.499 0 0 0 0-2.12L12.122 10l3.94-3.94a1.499 1.499 0 1 0-2.121-2.12z"/>
+                  </svg>
+                  <div class="m-pickup-availability__info">
+                    <p class="m:text-color-subtext">{%- render 'new-locale', key: 'products.product.pickup_availability.unavailable' -%}</p>
+                    <button class="m-pickup-availability__button m-button m-button--link">{%- render 'new-locale', key: 'products.product.pickup_availability.refresh' -%}</button>
+                  </div>
+                </pickup-availability-preview>
+              </template>
+            </pickup-availability>
+            <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Splide Init -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.querySelector('#fp-splide-{{ section.id }}');
+    if (!el || typeof Splide === 'undefined') return;
+
+    new Splide(el, {
+      type      : 'loop',
+      perPage   : 1,
+      perMove   : 1,
+      speed     : 500,
+      easing    : 'cubic-bezier(0.25, 1, 0.5, 1)',
+      arrows    : true,
+      pagination: true,
+    }).mount();
+  });
+</script>
+
+<!-- Countdown Timer -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    try {
+      document.querySelectorAll('[id^="fp-timer-"]').forEach(function (el) {
+        try {
+          var targetStr = el.getAttribute('data-target');
+          if (!targetStr || targetStr.trim() === '') {
+            var countdown = el.closest('.fp-countdown');
+            if (countdown) countdown.style.display = 'none';
+            return;
+          }
+
+          function getBerlinTargetMs(localStr) {
+            try {
+              var tempDate = new Date(localStr);
+              if (isNaN(tempDate.getTime())) return null;
+              var berlinStr = tempDate.toLocaleString('en-US', { timeZone: 'Europe/Berlin' });
+              var berlinDate = new Date(berlinStr);
+              if (isNaN(berlinDate.getTime())) return null;
+              return tempDate.getTime() + (tempDate - berlinDate);
+            } catch (e) { return null; }
+          }
+
+          var end = getBerlinTargetMs(targetStr);
+          if (!end) return;
+
+          var timer = null;
+
+          function tick() {
+            try {
+              var diff = end - Date.now();
+              if (diff <= 0) { el.textContent = '00:00:00'; return; }
+              var d = Math.floor(diff / 86400000);
+              var h = Math.floor((diff % 86400000) / 3600000);
+              var m = Math.floor((diff % 3600000) / 60000);
+              var s = Math.floor((diff % 60000) / 1000);
+              var parts = [];
+              if (d > 0) parts.push(d + ':');
+              parts.push([h, m, s].map(function (v) { return String(v).padStart(2, '0'); }).join(':'));
+              el.textContent = parts.join(' ');
+              timer = setTimeout(tick, 1000);
+            } catch (e) { if (timer) clearTimeout(timer); }
+          }
+          tick();
+        } catch (e) {}
+      });
+    } catch (e) {}
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Akta Featured Product",
+  "settings": [
+    { "type": "header", "content": "Background Color" },
+    { "type": "color", "id": "bg_color", "label": "Bg Color", "default": "#f5f0e8" },
+    { "type": "header", "content": "Select Product" },
+    { "type": "product", "id": "f_product", "label": "Select Product" },
+    { "type": "header", "content": "eyebrow Text" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow Text", "default": "Supercharge Your Health" },
+    { "type": "header", "content": "Headline Settings" },
+    { "type": "text", "id": "headline_before", "label": "Headline (before accent)", "default": "With Two Cups" },
+    { "type": "text", "id": "headline_accent", "label": "Headline Accent (colored)", "default": "Per Day" },
+    { "type": "header", "content": "Subtext Settings" },
+    { "type": "text", "id": "subtext", "label": "Subtext", "default": "Sip on two creamy cups per day for faster results." },
+    { "type": "header", "content": "Header Badge Settings" },
+    { "type": "checkbox", "id": "show_badges", "label": "Show Badge", "default": true },
+    { "type": "image_picker", "id": "badge_icon_1", "label": "Badge 1 Icon" },
+    { "type": "text", "id": "badge_1_text", "label": "Icon text 1", "default": "Best Value" },
+    { "type": "image_picker", "id": "badge_icon_2", "label": "Badge 2 Icon" },
+    { "type": "text", "id": "badge_2_text", "label": "Icon text 2", "default": "Free Gifts" }
+  ],
+  "blocks": [
+    {
+      "type": "ratings", "name": "Ratings",
+      "settings": [
+        { "type": "range", "id": "rating_star", "label": "Rating Star", "min": 0, "max": 5, "step": 1, "default": 5 },
+        { "type": "text", "id": "review_text", "label": "Review Text", "default": " 198,197 Reviews" }
+      ]
+    },
+    { "type": "title", "name": "Product Title", "settings": [] },
+    {
+      "type": "feature_list_item_group", "name": "Feature List Group",
+      "settings": [{ "type": "text", "id": "title", "label": "Header title", "default": "Free Gifts" }]
+    },
+    {
+      "type": "feature_list_item", "name": "Feature Item",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "text", "label": "Feature text", "default": "2x Medium Roast Coffee (60 Servings)" }
+      ]
+    },
+    {
+      "type": "sale_label", "name": "Sale Label",
+      "settings": [{ "type": "text", "id": "sale_label", "label": "Sale Label", "default": "Saint Patrick's Day Sale" }]
+    },
+    {
+      "type": "countdown_timer", "name": "Countdown Timer",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Timer Label", "default": "Sale Ends in" },
+        { "type": "checkbox", "id": "show_timer", "label": "Show Timer", "default": false },
+        { "type": "text", "id": "countdown_target", "label": "Countdown Target Time", "default": "2026-03-30T20:00:00", "info": "Format: YYYY-MM-DDTHH:MM:SS e.g. 2025-12-31T23:59:59" }
+      ]
+    },
+    {
+      "type": "price", "name": "Product Price",
+      "settings": [
+        { "type": "checkbox", "id": "show_badge", "label": "Show discount badge", "default": true },
+        { "type": "text", "id": "badge_text", "label": "Badge text", "default": "OFF TODAY" }
+      ]
+    },
+    {
+      "type": "buy_buttons", "name": "Buy buttons", "limit": 1,
+      "settings": [
+        { "type": "text", "id": "btn_text", "default": "Add To Cart", "label": "Add To cart Button Text" },
+        { "type": "checkbox", "id": "show_quantity_selector", "default": true, "label": "Show quantity selector" },
+        { "type": "checkbox", "id": "show_atc_button", "default": true, "label": "Show Add-to-cart button" },
+        { "type": "checkbox", "id": "show_dynamic_checkout", "default": true, "label": "Show dynamic checkout buttons", "info": "Using the payment methods available on your store, customers see their preferred option, like PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)" },
+        { "type": "checkbox", "id": "show_gift_card_recipient", "default": true, "label": "Show recipient form for gift card products", "info": "When enabled, gift card products can optionally be sent to a recipient with a personal message." }
+      ]
+    },
+    {
+      "type": "trust_text_group", "name": "Trust Text Group",
+      "settings": [{ "type": "text", "id": "title", "label": "Group Title", "default": "Our Trust Items" }]
+    },
+    {
+      "type": "trust_item", "name": "Trust Item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Your trust text here" },
+        { "type": "image_picker", "id": "icon", "label": "Icon" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Akta Featured Product" }]
+}
+{% endschema %}

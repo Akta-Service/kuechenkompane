@@ -1,0 +1,476 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "statement_heading_quote_xFgE6F": {
+      "type": "statement-heading-quote",
+      "name": "Statement heading quote",
+      "settings": {
+        "heading_prefix": "Messer, die halten, was sie",
+        "highlight_text": "versprechen.",
+        "heading_suffix": "",
+        "quote": "„Stell dir vor, etwas ist so gut, dass du dich fragst, warum du es nicht früher hattest.“",
+        "section_bg": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "highlight_color": "#3d5a3d",
+        "quote_color": "#444444",
+        "padding_top": 70,
+        "padding_bottom": 60,
+        "mobile_padding_top": 60,
+        "mobile_padding_bottom": 30
+      }
+    },
+    "founder_story_EgbT38": {
+      "type": "founder-story",
+      "blocks": {
+        "founder_row_jTWRgt": {
+          "type": "_founder-row",
+          "settings": {
+            "reverse_columns": false,
+            "show_top_border": true,
+            "show_bottom_border": true,
+            "bg_color": "#ffffff",
+            "border_color": "#eeeeee",
+            "padding_top": 80,
+            "padding_bottom": 80,
+            "mobile_padding_top": 30,
+            "mobile_padding_bottom": 30
+          },
+          "blocks": {
+            "founder_slider_group_YCq7CA": {
+              "type": "_founder-slider-group",
+              "name": "Founder slider group",
+              "settings": {
+                "enable_loop": false,
+                "image_radius": 12
+              },
+              "blocks": {
+                "founder_slide_image_Hd9UVR": {
+                  "type": "_founder-slide-image",
+                  "name": "Founder slide image",
+                  "settings": {
+                    "image": "shopify://shop_images/download.jpg",
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                },
+                "founder_slide_image_t8FF4E": {
+                  "type": "_founder-slide-image",
+                  "settings": {
+                    "image": "shopify://shop_images/download_1.jpg",
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                },
+                "founder_slide_image_ifFYYr": {
+                  "type": "_founder-slide-image",
+                  "settings": {
+                    "image": "shopify://shop_images/download_2.jpg",
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                },
+                "founder_slide_image_6BtkbY": {
+                  "type": "_founder-slide-image",
+                  "settings": {
+                    "image": "shopify://shop_images/download_3.jpg",
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_slide_image_Hd9UVR",
+                "founder_slide_image_t8FF4E",
+                "founder_slide_image_ifFYYr",
+                "founder_slide_image_6BtkbY"
+              ]
+            },
+            "founder_content_zdgrnj": {
+              "type": "_founder-content",
+              "settings": {},
+              "blocks": {
+                "founder_text_zfqNdQ": {
+                  "type": "_founder-text",
+                  "settings": {
+                    "text": "<p><strong>Ich bin Mats, der Gründer von Küchenkompane.</strong></p><p>Und diese Geschichte beginnt mit einem Moment, der meinen Blick auf Küchenmesser komplett verändert hat.</p>",
+                    "text_color": "#1a1a1a"
+                  },
+                  "blocks": {}
+                },
+                "founder_heading_HfCNK4": {
+                  "type": "_founder-heading",
+                  "settings": {
+                    "heading": "Genau dieses Gefühl wollen wir dir mit unseren Produkten geben.",
+                    "heading_color": "#1a1a1a"
+                  },
+                  "blocks": {}
+                },
+                "founder_body_qbJEKW": {
+                  "type": "_founder-body",
+                  "settings": {
+                    "body": "<p>So begann auch die Reise von Küchenkompane. Im Jahr 2018 zeigten mir zwei Messer aus Japan zum ersten Mal, wie sich ehrliche Schmiedekunst und echte Qualität wirklich anfühlen sollten.</p><p>Meine Eltern brachten die beiden Messer von einer Geschäftsreise aus Japan mit. In meiner Familie wurde über viele Jahre ein Unternehmen in der Metallbearbeitung geführt. Themen wie Werkstoffe, Präzision und saubere Verarbeitung wurden mir deshalb schon früh beigebracht.</p><p>Es waren auf den ersten Blick keine außergewöhnlichen Messer. Aber beim Schneiden wurde mir erstmals klar, wie einfach und kontrolliert ein gutes Messer arbeiten kann.</p>",
+                    "text_color": "#444444"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_text_zfqNdQ",
+                "founder_heading_HfCNK4",
+                "founder_body_qbJEKW"
+              ]
+            }
+          },
+          "block_order": [
+            "founder_slider_group_YCq7CA",
+            "founder_content_zdgrnj"
+          ]
+        },
+        "founder_row_Qg6gW9": {
+          "type": "_founder-row",
+          "settings": {
+            "reverse_columns": true,
+            "show_top_border": false,
+            "show_bottom_border": false,
+            "bg_color": "#ffffff",
+            "border_color": "#eeeeee",
+            "padding_top": 80,
+            "padding_bottom": 80,
+            "mobile_padding_top": 30,
+            "mobile_padding_bottom": 30
+          },
+          "blocks": {
+            "founder_slider_group_f8A8hT": {
+              "type": "_founder-slider-group",
+              "name": "Founder slider group",
+              "settings": {
+                "enable_loop": false,
+                "image_radius": 12
+              },
+              "blocks": {
+                "founder_slide_image_QqPgcE": {
+                  "type": "_founder-slide-image",
+                  "settings": {
+                    "image": "shopify://shop_images/download_5.jpg",
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                },
+                "founder_slide_image_3UycpB": {
+                  "type": "_founder-slide-image",
+                  "settings": {
+                    "image": "shopify://shop_images/download_4.jpg",
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_slide_image_QqPgcE",
+                "founder_slide_image_3UycpB"
+              ]
+            },
+            "founder_content_qyqYWj": {
+              "type": "_founder-content",
+              "settings": {},
+              "blocks": {
+                "founder_body_pHGmbd": {
+                  "type": "_founder-body",
+                  "settings": {
+                    "body": "<p>Diese Erfahrung hat mich nicht mehr losgelassen. Ich begann, mich intensiver mit Messern zu beschäftigen. Mit Materialien, Schliffen, Verarbeitung und Herkunft. Vor allem aber mit den Unterschieden im Markt. Dabei stellte sich immer wieder dieselbe Frage: Warum kauft man in Japan Messer mit deutschen Namen darauf – und bekommt hier oft etwas, das diesem Anspruch nicht gerecht wird?</p><p>Aus dieser Frage entstand der Wunsch, es besser zu machen. Küchenkompane sollte für Produkte stehen, die halten, was sie versprechen. Für Messer, die man gerne benutzt und denen man vertraut. Für ehrliches Werkzeug für den Küchenalltag.</p><p>Beim Anfang von Küchenkompane gab es kein Büro und kein großes Team. Alles begann im Keller. Mit den ersten Messern, einem Laptop und der Idee, es besser zu machen. Direkt nach dem Abitur startete ich mit den ersten Testverkäufen über Online-Marktplätze. Die Nachfrage kam schneller als erwartet. Und aus einer Vision wurde Schritt für Schritt ein eigenes Unternehmen.</p>",
+                    "text_color": "#444444"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_body_pHGmbd"
+              ]
+            }
+          },
+          "block_order": [
+            "founder_slider_group_f8A8hT",
+            "founder_content_qyqYWj"
+          ]
+        },
+        "founder_row_pTPDVR": {
+          "type": "_founder-row",
+          "settings": {
+            "reverse_columns": false,
+            "show_top_border": false,
+            "show_bottom_border": false,
+            "bg_color": "#eeeff8",
+            "border_color": "#eeeeee",
+            "padding_top": 80,
+            "padding_bottom": 80,
+            "mobile_padding_top": 30,
+            "mobile_padding_bottom": 30
+          },
+          "blocks": {
+            "founder_slider_group_z4Kjqq": {
+              "type": "_founder-slider-group",
+              "name": "Founder slider group",
+              "settings": {
+                "enable_loop": false,
+                "image_radius": 12
+              },
+              "blocks": {
+                "founder_slide_image_9eW3C7": {
+                  "type": "_founder-slide-image",
+                  "name": "Founder slide image",
+                  "settings": {
+                    "image": "shopify://shop_images/download_6.jpg",
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_slide_image_9eW3C7"
+              ]
+            },
+            "founder_content_wt3bnw": {
+              "type": "_founder-content",
+              "settings": {},
+              "blocks": {
+                "founder_body_V369LR": {
+                  "type": "_founder-body",
+                  "settings": {
+                    "body": "<p>2020 kam ein tiefer Einschnitt. Mein Vater starb unerwartet mit 59 Jahren. Eine Zeit, die vieles verändert hat. Die Arbeit wurde für mich Fokus und Verarbeitung zugleich. Aus einer Idee wurde eine langfristige Aufgabe. Der Anspruch wuchs. Ich wollte etwas aufbauen, das Bestand hat. Etwas, das Verantwortung trägt und ihn stolz gemacht hätte.</p><p>In den Jahren danach ist Küchenkompane stetig gewachsen. Aus einem kleinen Projekt wurde ein Unternehmen mit einem starken, eingespielten Team. Gemeinsam haben wir Strukturen aufgebaut, Prozesse verbessert und unsere Produkte konsequent weiterentwickelt. Immer mit dem Ziel, bessere Lösungen zu schaffen und keine Kompromisse bei der Qualität einzugehen.</p>",
+                    "text_color": "#222222"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_body_V369LR"
+              ]
+            }
+          },
+          "block_order": [
+            "founder_slider_group_z4Kjqq",
+            "founder_content_wt3bnw"
+          ]
+        },
+        "founder_row_h6JQc7": {
+          "type": "_founder-row",
+          "settings": {
+            "reverse_columns": true,
+            "show_top_border": false,
+            "show_bottom_border": false,
+            "bg_color": "#ffffff",
+            "border_color": "#eeeeee",
+            "padding_top": 80,
+            "padding_bottom": 80,
+            "mobile_padding_top": 30,
+            "mobile_padding_bottom": 30
+          },
+          "blocks": {
+            "founder_slider_group_zWEaGL": {
+              "type": "_founder-slider-group",
+              "name": "Founder slider group",
+              "settings": {
+                "enable_loop": false,
+                "image_radius": 12
+              },
+              "blocks": {
+                "founder_slide_image_M34CEA": {
+                  "type": "_founder-slide-image",
+                  "settings": {
+                    "alt_text": "Founder image"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_slide_image_M34CEA"
+              ]
+            },
+            "founder_content_t6KtDF": {
+              "type": "_founder-content",
+              "settings": {},
+              "blocks": {
+                "founder_body_am6brF": {
+                  "type": "_founder-body",
+                  "settings": {
+                    "body": "<p>Heute stehen wir für hochwertige Küchenprodukte mit klarer Haltung. Unser Anspruch ist es, stetig noch bessere Produkte zu entwickeln und unser Sortiment im Küchenbereich sinnvoll zu erweitern.</p><p>Insgesamt ist Küchenkompane aus dem Wunsch entstanden, etwas Eigenes aufzubauen. Aus echter Nähe zu Material, Handwerk und Qualität. Aus einer Begegnung mit japanischer Messerkultur, die Fragen aufgeworfen hat. Und aus dem inneren Antrieb, Dinge richtig zu machen. Mit Verantwortung, Verstand und Blick in die Zukunft.</p>",
+                    "text_color": "#222222"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "founder_body_am6brF"
+              ]
+            }
+          },
+          "block_order": [
+            "founder_slider_group_zWEaGL",
+            "founder_content_t6KtDF"
+          ]
+        }
+      },
+      "block_order": [
+        "founder_row_jTWRgt",
+        "founder_row_Qg6gW9",
+        "founder_row_pTPDVR",
+        "founder_row_h6JQc7"
+      ],
+      "name": "Founder slider",
+      "settings": {}
+    },
+    "value_cards_G4dJnz": {
+      "type": "value-cards",
+      "blocks": {
+        "card_8kt3mj": {
+          "type": "card",
+          "settings": {
+            "svg_code": "<svg viewBox=\"0 0 24 24\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"></path></svg>",
+            "icon_text": "",
+            "title": "Verlässliche Qualität",
+            "text": "<p>Deine Auswahl an Produkten bei uns entsteht aus klaren Anforderungen an Material, Verarbeitung und Funktion. Alle Produkte werden nach diesen Maßstäben entwickelt und hergestellt.</p>"
+          }
+        },
+        "card_jerqdd": {
+          "type": "card",
+          "settings": {
+            "svg_code": "<svg viewBox=\"0 0 24 24\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"></path></svg>",
+            "icon_text": "",
+            "title": "Für Generationen gedacht",
+            "text": "<p>Wir bauen Produkte, die nicht nach kurzer Zeit ersetzt werden müssen. Unsere Produkte überzeugen langfristig und halten, was sie versprechen.</p>"
+          }
+        },
+        "card_rkNBb4": {
+          "type": "card",
+          "settings": {
+            "svg_code": "<svg viewBox=\"0 0 24 24\"><path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"></path></svg>",
+            "icon_text": "",
+            "title": "Persönliche Kundenbetreuung",
+            "text": "<p>Du hast Fragen? Dafür nehmen wir uns gerne Zeit. Wir sind schnell erreichbar, wenn du uns brauchst. Deine Zufriedenheit steht an erster Stelle.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_8kt3mj",
+        "card_jerqdd",
+        "card_rkNBb4"
+      ],
+      "name": "Value cards",
+      "settings": {
+        "heading": "Dafür stehen wir:",
+        "section_bg": "#eeeff8",
+        "heading_color": "#1a1a1a",
+        "card_bg": "#ffffff",
+        "card_title_color": "#1a1a1a",
+        "card_text_color": "#444444",
+        "icon_circle_bg": "#eeeff8",
+        "icon_color": "#486a48",
+        "card_radius": 12,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "team_members_grid_CiMmpy": {
+      "type": "team-members-grid",
+      "blocks": {
+        "member_qkkJR9": {
+          "type": "member",
+          "settings": {
+            "name": "Mats Radzuweit",
+            "role": "Gründer & Geschäftsführer"
+          }
+        },
+        "member_wEjUGD": {
+          "type": "member",
+          "settings": {
+            "name": "Mats Radzuweit",
+            "role": "Gründer & Geschäftsführer"
+          }
+        },
+        "member_BLBXxQ": {
+          "type": "member",
+          "settings": {
+            "name": "Mats Radzuweit",
+            "role": "Gründer & Geschäftsführer"
+          }
+        },
+        "member_6Pc4Xy": {
+          "type": "member",
+          "settings": {
+            "name": "Mats Radzuweit",
+            "role": "Gründer & Geschäftsführer"
+          }
+        }
+      },
+      "block_order": [
+        "member_qkkJR9",
+        "member_wEjUGD",
+        "member_BLBXxQ",
+        "member_6Pc4Xy"
+      ],
+      "name": "Team members grid",
+      "settings": {
+        "heading": "Die Menschen hinter Küchenkompane",
+        "description": "<p>Wir sind ein kleines Team mit hohem Anspruch. Jeder von uns trägt dazu bei, dass Produkte und Service das halten, was wir versprechen.</p>",
+        "section_bg": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "text_color": "#444444",
+        "card_bg": "#fafafa",
+        "card_border_color": "#eeeeee",
+        "avatar_icon_color": "#7a9a76",
+        "name_color": "#1a1a1a",
+        "role_color": "#444444",
+        "card_radius": 12,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "image_content_cta_QaWXKH": {
+      "type": "image-content-cta",
+      "name": "Image content CTA",
+      "settings": {
+        "reverse_columns": false,
+        "heading": "Das richtige Messer finden",
+        "text": "<p>Nutze unsere Kaufberatung oder stöbere durch unser kuratiertes Sortiment. Bei Fragen sind wir persönlich für dich da. Ohne Verkaufsdruck, ohne Floskeln.</p>",
+        "button_label": "Zum Shop →",
+        "button_link": "#",
+        "section_bg": "#eeeff8",
+        "heading_color": "#1a1a1a",
+        "text_color": "#444444",
+        "button_bg": "#f58327",
+        "button_text_color": "#ffffff",
+        "image_radius": 12,
+        "button_radius": 8,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "statement_heading_quote_xFgE6F",
+    "founder_story_EgbT38",
+    "value_cards_G4dJnz",
+    "team_members_grid_CiMmpy",
+    "image_content_cta_QaWXKH"
+  ]
+}

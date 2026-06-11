@@ -1,0 +1,545 @@
+{% comment %} <style>
+  @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+</style> {% endcomment %}
+<style>
+  .trust-bar-section {
+    --cream:      #f8f8f8;
+    --cream-dark: #ede7df;
+    --border:     #d9cfc4;
+    --text-dark:  #2b2420;
+    --text-mid:   #5c4f45;
+    --text-light: #8a7d74;
+    --gold:       #c9902a;
+    --gold-light: #e8b84b;
+    --gold-pale:  #f0d18a;
+  }
+
+  .trust-bar-section {
+    padding: 40px 20px;
+    background: var(--cream);
+  }
+
+  /* ── OUTER CARD WRAPPER ── */
+  .trust-bar-card {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .trust-bar-header {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .trust-bar-title {
+
+    {% comment %} font-family: "PT Serif", serif; {% endcomment %}
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:20px;
+  }
+
+  /* ── TRUST BAR WRAPPER ── */
+  .trust-bar {
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* pillars-wrapper: unstyled on desktop */
+  .pillars-wrapper {
+    /* no styles on desktop — trust-bar handles it */
+  }
+
+  /* ── PILLARS ── */
+  .pillars {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .pillar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    position: relative;
+    justify-content: center;
+  }
+
+  .pillar:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 18%;
+    height: 64%;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .pillar-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    color: var(--gold);
+  }
+
+  .pillar-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .pillar-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .pillar-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--text-dark);
+  }
+
+  .pillar-sub {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-light);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── RATING STRIP ── */
+  .rating-strip {
+    border-top: 1px solid var(--border);
+    background: var(--cream);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .trustpilot-rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .tp-label {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-dark);
+    white-space: nowrap;
+  }
+
+  /* Green box stars */
+  .tp-stars {
+    display: flex;
+    gap: 3px;
+  }
+
+  .tp-star-box {
+    width: 28px;
+    height: 28px;
+    background: #00b67a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+  }
+
+  .tp-star-box.half {
+    background: linear-gradient(90deg, #00b67a 70%, #dcdce6 70%);
+  }
+
+  .tp-star-box svg {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+  }
+
+  .tp-reviews {
+    font-size: 15px;
+    color: var(--text-dark);
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+
+  /* Trustpilot brand logo */
+  .tp-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .tp-brand-star {
+    width: 28px;
+    height: 28px;
+    background: #00b67a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+  }
+
+  .tp-brand-star svg {
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+  }
+
+  .tp-brand-name {
+    font-size: 22px;
+    font-weight: 400;
+    color: #191919;
+    letter-spacing: -0.3px;
+  }
+
+  /* ── TABLET ── */
+  @media (max-width: 800px) and (min-width: 641px) {
+    .pillar {
+      gap: 8px;
+      padding: 16px 12px;
+    }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 640px) {
+
+    .trust-bar-title {
+      font-size: 20px;
+    }
+
+    /* Outer card becomes the big white rounded shadow card */
+    .trust-bar-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.10);
+      overflow: hidden;
+      padding: 20px 0 0;
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.06), 0 8px 24px 0 rgba(0,0,0,0.10);
+    }
+
+    .trust-bar-header {
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+
+    /* trust-bar becomes transparent spacer — inner box handles styling */
+    .trust-bar {
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+      padding: 0 16px 24px;
+
+    }
+
+    /* pillars-wrapper becomes the inner bordered box,
+       wrapping BOTH the 2x2 grid AND the rating strip */
+    .pillars-wrapper {
+      /* border: 1px solid var(--border);*/
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
+    }
+
+    /* 2x2 grid */
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    /* horizontal divider between row 1 and row 2 */
+    .pillars::after {
+      content: '';
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 50%;
+      height: 1px;
+      background: var(--border);
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .pillar {
+      width: 100%;
+      padding: 14px 8px;
+      position: relative;
+    }
+
+    /* Remove desktop dividers */
+    .pillar::after {
+      content: none !important;
+    }
+
+    /* Vertical divider on right of col-1 items */
+    .pillar:nth-child(odd)::after {
+      content: '' !important;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: 10px;
+      width: 1px;
+      background: var(
+        --border);
+    }
+
+    /* Rating strip sits inside the bordered wrapper */
+    .rating-strip {
+      border-top: 1px solid var(--border);
+      background: #fff;
+      padding: 14px 16px;
+       border-top: none;
+      position: relative;
+    }
+    .rating-strip::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 12px;
+      right: 12px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .trustpilot-rating {
+      gap: 8px;
+    }
+
+    .tp-label {
+      font-size: 14px;
+    }
+
+    .tp-star-box {
+      width: 22px;
+      height: 22px;
+    }
+
+    .tp-star-box svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .tp-reviews {
+      font-size: 13px;
+    }
+
+    .tp-brand-star {
+      width: 22px;
+      height: 22px;
+    }
+
+    .tp-brand-star svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .tp-brand-name {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .pillar {
+      gap: 8px;
+    }
+
+    .pillar-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .pillar-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .pillar-title {
+      {% comment %} font-size: 14px; {% endcomment %}
+      line-height: 1.2;
+    }
+  }
+
+  @media (max-width: 424px) {
+    .pillar-title {
+      {% comment %} font-size: 12px; {% endcomment %}
+    }
+
+    .pillar-sub {
+      font-size: 14px;
+    }
+
+    .trust-bar-section {
+      padding: 40px 12px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .pillar-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .pillar-title {
+      font-size: 12px;
+    }
+    .pillar-sub {
+      font-size: 12px;
+    }
+  }
+</style>
+
+<div class="trust-bar-section">
+  <div class="trust-bar-card">
+    <div class="trust-bar-header">
+      <h2 class="trust-bar-title">{{ section.settings.header_title }}</h2>
+    </div>
+
+    <div class="trust-bar">
+      <!-- pillars-wrapper: contains BOTH the grid and rating strip -->
+      <div class="pillars-wrapper">
+        <div class="pillars">
+          {% for block in section.blocks %}
+            <div class="pillar" {{ block.shopify_attributes }}>
+              <div class="pillar-icon">
+                {% if block.settings.image != blank %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 100 }}"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    loading="lazy"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}"
+                  >
+                {% else %}
+                  {% render 'icons', type: block.settings.icon %}
+                {% endif %}
+              </div>
+              <div class="pillar-text">
+                <span class="pillar-title">{{ block.settings.title }}</span>
+                <span class="pillar-sub">{{ block.settings.subtitle }}</span>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Rating strip INSIDE pillars-wrapper so it shares the border/radius -->
+        <div class="rating-strip">
+          <div class="trustpilot-rating">
+            <span class="tp-label">{{ section.settings.title }}</span>
+
+            <div class="tp-stars">
+              {% for i in (1..4) %}
+                <div class="tp-star-box">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 2l2.9 6.1L22 9.3l-5 5 1.2 7-6.2-3.4L5.8 21.3l1.2-7-5-5 7.1-1.2z"/>
+                  </svg>
+                </div>
+              {% endfor %}
+              <div class="tp-star-box half">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2l2.9 6.1L22 9.3l-5 5 1.2 7-6.2-3.4L5.8 21.3l1.2-7-5-5 7.1-1.2z"/>
+                </svg>
+              </div>
+            </div>
+
+            <span class="tp-reviews"> {{ section.settings.reviews }} Bewertungen </span>
+
+            <div class="tp-brand">
+              <div class="tp-brand-star">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2l2.9 6.1L22 9.3l-5 5 1.2 7-6.2-3.4L5.8 21.3l1.2-7-5-5 7.1-1.2z"/>
+                </svg>
+              </div>
+              <span class="tp-brand-name">Trustpilot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trust Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header Title",
+      "default": "Warum über 200.000 Kunden bei Küchenkompane bestellen"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Trustpilot Rating Text",
+      "default": "Exzellent"
+    },
+    {
+      "type": "text",
+      "id": "reviews",
+      "label": "Number of Reviews",
+      "default": "3,735"
+    },
+    
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Upload Image"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Select Icon",
+          "default": "shield",
+          "options": [
+            { "value": "shield", "label": "Shield" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "lock", "label": "Lock" },
+            { "value": "star", "label": "Star" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "100 Tage Testen"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Sub Title",
+          "default": "Risikofrei"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Bar"
+    }
+  ]
+}
+{% endschema %}

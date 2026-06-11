@@ -1,11 +1,25 @@
+{% assign is_free_item = false %}
+{% if item.product.id == settings.cart_free_product_1.id
+    or item.product.id == settings.cart_free_product_2.id
+    or item.variant_id == settings.eadn_free_product_1.selected_or_first_available_variant.id
+    or item.variant_id == settings.eadn_free_product_2.selected_or_first_available_variant.id
+%}
+  {% assign is_free_item = true %}
+{% endif %}
+{% style %}
+.is-free-item {
+display: none !important;
+}
+{% endstyle %}
+
 <div
   id="MinimogCartDrawer-Item-{{ item.index | plus: 1 }}"
-  class="m-cart-item m-cart-drawer-item"
+  class="m-cart-item m-cart-drawer-item {% if is_free_item %}is-free-item{% endif %}"
   data-cart-item
   data-product-id="{{- item.product_id -}}"
   data-index="{{- forloop.index -}}"
 >
-  <div class="m-cart-item--drawer__wrapper m:flex m:items-start {{ custom_class }}">
+  <div class="m-cart-item--drawer__wrapper m:flex m:items-start">
     <div class="m-cart-drawer-item__image m-cart-item__image m:blocks-radius-md">
       {% if item.product.id == settings.cart_free_product_1.id
         or item.product.id == settings.cart_free_product_2.id
@@ -164,7 +178,7 @@
             {% assign product_upsell = all_products[handle] %}
 
             {% assign compare_price = product_upsell.compare_at_price %}
-            <s class="m-price-item m-price-item--regular com-price">
+            <s class="m-price-item m-price-item--regular">
               {% if settings.currency_code_enabled %}
                 {{- compare_price | money_with_currency -}}
               {% else %}

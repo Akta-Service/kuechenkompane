@@ -33,7 +33,7 @@
     }
   }
   .x-cec-all-prods {
-    font-size: 25px;
+    font-size: 18px;
     margin-top: 15px;
     display: block;
   }
@@ -54,14 +54,14 @@
           {% unless settings.empty_cart_collection.featured_image == blank %}
             <img
               class="x-cart-empty-image"
-              data-src="{{ settings.empty_cart_collection.featured_image | image_url: width: 400 }}"
+              src="{{ settings.empty_cart_collection.featured_image | image_url: width: 300 }}"
               width=""
               height=""
               alt="{{ settings.empty_cart_collection.title }}"
             >
           {% endunless %}
         </a>
-        <a class="x-cec-all-prods" href="{{ settings.empty_cart_collection.url }}">
+        <a class="x-cec-all-prods m-button m-button--primary" href="{{ settings.empty_cart_collection.url }}">
           {{- settings.empty_cart_collection_text -}}
         </a>
       </div>

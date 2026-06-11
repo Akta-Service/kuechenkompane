@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Custom Container */
+
+.custom-container {
+  max-width: 1560px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+
+@media screen and (max-width: 1279px) {
+  
+  .custom-container {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  
+  .custom-container {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  
+  .custom-container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}

@@ -57,15 +57,6 @@
             "show_gift_card_recipient": true
           }
         },
-        "trust_badge_NyBMd4": {
-          "type": "trust_badge",
-          "settings": {
-            "trust_badges_text": "",
-            "trust_badges_image": "shopify://shop_images/Screenshot_39_V1_1.png",
-            "trust_badges_image_width": "50%",
-            "position": "below"
-          }
-        },
         "custom_text_46dg4L": {
           "type": "custom_text",
           "settings": {
@@ -133,7 +124,6 @@
         "price",
         "variant_picker",
         "buy_buttons",
-        "trust_badge_NyBMd4",
         "custom_text_46dg4L",
         "custom_text_aA9Qjg",
         "custom_text_NihC4C",
@@ -169,7 +159,7 @@
           "type": "tab",
           "settings": {
             "header": "Beschreibung",
-            "content": "<p></p>",
+            "content": "",
             "content_page": ""
           }
         },
@@ -204,6 +194,7 @@
         "tab_yXpqFL",
         "tab_LBwXaE"
       ],
+      "disabled": true,
       "custom_css": [
         ".m-tabs__header {justify-content: flex-start;}"
       ],
@@ -217,70 +208,64 @@
         "animations": "inherit"
       }
     },
-    "scrolling_promotion_tQjfnh": {
-      "type": "scrolling-promotion",
+    "mrk_marque_slider_eqDNVK": {
+      "type": "mrk-marque-slider",
       "blocks": {
-        "image_aFgxwp": {
-          "type": "image",
+        "logo_kpLBjX": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V7_1.png",
-            "image_height": 72,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V7_1_medium_aa02404e-1612-4b01-a59c-85636c5dbf4b.png",
+            "alt_text": ""
           }
         },
-        "image_ita6V3": {
-          "type": "image",
+        "logo_j6Lkjw": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "image_height": 72,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V6_1_medium_11345ce6-3b7b-4b95-b42f-bcac0e4ecad7.png",
+            "alt_text": ""
           }
         },
-        "image_CKpTa4": {
-          "type": "image",
+        "logo_gmpHGz": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V2_1.png",
-            "image_height": 72,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V2_1_medium_c4c8d48c-822e-4f62-bb39-53bcc4c65ef3.png",
+            "alt_text": ""
           }
         },
-        "image_nyMnWE": {
-          "type": "image",
+        "logo_w3xRhA": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V4_1.png",
-            "image_height": 72,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V4_1_medium_9d4aac1a-cea6-44f5-8832-e2b89a732b22.png",
+            "alt_text": ""
           }
         },
-        "image_nnJw8D": {
-          "type": "image",
+        "logo_dDjkgQ": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V3_1.png",
-            "image_height": 72,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V3_1_medium_6d31660e-7b5d-464c-9d1d-3e993b5d8021.png",
+            "alt_text": ""
           }
         }
       },
       "block_order": [
-        "image_aFgxwp",
-        "image_ita6V3",
-        "image_CKpTa4",
-        "image_nyMnWE",
-        "image_nnJw8D"
+        "logo_kpLBjX",
+        "logo_j6Lkjw",
+        "logo_gmpHGz",
+        "logo_w3xRhA",
+        "logo_dDjkgQ"
       ],
+      "name": "Akta marquee",
       "settings": {
-        "Gesehen_title": "Gesehen In",
+        "title": "Gesehen In",
+        "alignment": "text-center",
         "heading_type": "mrk-h2",
-        "text_alignment": "center",
-        "container": "w-full",
-        "direction": "left",
-        "speed": 30,
-        "item_gap": 50,
-        "item_gap_mobile": 30,
-        "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "custom_class": ""
+        "logo_height": 84,
+        "gap": 44,
+        "gap_mobile": 28,
+        "speed": 12,
+        "background_color": "#ffffff",
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "product_explanation_video_xUiFtt": {
@@ -393,8 +378,7 @@
         "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
+        "verticle_padding_mobile": 30
       }
     },
     "image_with_text_PaVP9D": {
@@ -638,6 +622,8 @@
         "loox_reviews_loox_dynamic_section_ftrpcn": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
             "limit": 20,
@@ -697,19 +683,36 @@
         "container": "container-fluid",
         "color_scheme": "",
         "remove_params": false,
+        "custom_class": "",
+        "padding_top": 100,
+        "padding_bottom": 100,
         "heading": "Diese Produkte werden dir auch gut gefallen",
         "heading_size": "h3",
         "text_align": "center",
         "limit": 8,
         "columns": 5,
+        "columns_tablet": 3,
+        "columns_mobile": 1,
+        "peek_tablet": 60,
+        "peek_mobile": 50,
+        "peek_mobile_sm": 40,
+        "mobile_gap": 12,
         "column_gap": 30,
         "enable_slider": true,
+        "slider_type": "loop",
+        "slider_speed": 550,
+        "show_navigation": false,
         "show_pagination": false,
-        "show_navigation": true,
-        "use_scroll_mobile": true,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "custom_class": "",
+        "autoplay": false,
+        "autoplay_speed": 4000,
+        "nav_bg_color": "#ffffff",
+        "nav_hover_bg_color": "#f7f3ee",
+        "nav_icon_color": "#000000",
+        "nav_border_color": "#e0e0e0",
+        "nav_shadow": "0 3px 14px rgba(0,0,0,0.14)",
+        "nav_size": 46,
+        "pagination_color": "#cccccc",
+        "pagination_active_color": "#000000",
         "animations": "inherit"
       }
     },
@@ -725,7 +728,7 @@
   "order": [
     "main",
     "product-details-tabs",
-    "scrolling_promotion_tQjfnh",
+    "mrk_marque_slider_eqDNVK",
     "product_explanation_video_xUiFtt",
     "usp_list_jDiFMg",
     "image_with_text_PaVP9D",

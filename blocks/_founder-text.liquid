@@ -1,0 +1,60 @@
+{% if block.settings.text != blank %}
+  <div class="founder-text rte" {{ block.shopify_attributes }}>
+    {{ block.settings.text }}
+  </div>
+{% endif %}
+
+<style>
+  .founder-text {
+    font-size: 16.48px;
+    line-height: 1.85;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 16px;
+  }
+
+  .founder-text p {
+    margin: 0 0 16px;
+  }
+
+  .founder-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .founder-text strong {
+    font-weight: 700;
+    color: {{ block.settings.text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .founder-text {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Founder text",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p><strong>Ich bin Mats, der Gründer von Küchenkompane.</strong></p><p>Und diese Geschichte beginnt mit einem Moment, der meinen Blick auf Küchenmesser komplett verändert hat.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#222222"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founder text",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

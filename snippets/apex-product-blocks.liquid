@@ -47,6 +47,8 @@
           font-size: {{ block.settings.p_t_s_m | append: 'px' }};
         }
       }
+
+
     {% when 'price' %}
       .rs-price{
         padding-top: {{ block.settings.p_pt }}px;
@@ -66,7 +68,7 @@
         /* font-size: {{ block.settings.f_s |  append: 'px' }}; */
         font-size: 18px;
       }
-      span.discount-percentage {
+      .discount-percentage {
         display: inline-block;
         background: {{ block.settings.per_badge_bg }};
         color: {{ block.settings.per_badge_color }};
@@ -75,10 +77,25 @@
         padding: 5px 10px;
         line-height: 1;
         font-size: 14px;
+        text-transform: unset;
       }
-      span.comprae-text{
-        color: #b1b1b1;
+      .comprae-text{
+        color: {{ block.settings.c_price_color }};
       }
+      .lowest-price-text-wrapper {
+        /* border-bottom: 1px solid #00000050; */
+        font-size: 14px;
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+        color: #a7a7a7;
+
+      }
+      @media only screen and (max-width:475px){
+        .lowest-price-text-wrapper {
+            font-size: 14px;
+        }
+      }
+
 
 
 
@@ -125,6 +142,14 @@
         {% endif %} */
       }
 
+
+
+      {% when 'buy_buttons' %}
+
+          button.m-add-to-cart.rs-add-btn {
+            margin-top: {{ block.settings.btn_mt }}px !important;
+            margin-bottom: 10px !important;
+          }
 
 
 
@@ -178,6 +203,34 @@
     {%- case block.type -%}
       {%- when '@app' -%}
         {% render block %}
+      {% when 'floow-alt-product' %}
+        <div
+          id="floow-alt-product"
+          style="margin-top: {{ block.settings.margin_top }}px; margin-bottom: {{ block.settings.margin_bottom }}px;"
+          {{ block.shopify_attributes }}
+        ></div>
+      {% when 'floow-delivery-time' %}
+        <div
+          id="floow-delivery-time"
+          style="margin-top: {{ block.settings.margin_top }}px; margin-bottom: {{ block.settings.margin_bottom }}px;"
+          {{ block.shopify_attributes }}
+        ></div>
+      {% when 'floow-price-countdown' %}
+        <div
+          id="floow-price-countdown"
+          style="margin-top: {{ block.settings.margin_top }}px; margin-bottom: {{ block.settings.margin_bottom }}px;"
+          {{ block.shopify_attributes }}
+        ></div>
+
+      {% when 'floow-currently-watching' %}
+        <div
+          id="floow-currently-watching"
+          style="margin-top: {{ block.settings.margin_top }}px; margin-bottom: {{ block.settings.margin_bottom }}px;"
+          {{ block.shopify_attributes }}
+        ></div>
+      {% when 'floow-social-proof' %}
+        {% render 'floow-social-proof', block: block %}
+
       {%- when 'badge' -%}
         {%- liquid
           assign has_tags = false
@@ -192,6 +245,16 @@
             {% render 'product-tags', product: product %}
           </div>
         {% endif %}
+
+        {% comment %} new code for gift {% endcomment %}
+      {% when 'gift_info' %}
+        {% render 'gift-info', block: block, product: product %}
+      {% when 'gift_info_box' %}
+        {% render 'gift-info-box', block: block, product: product %}
+
+        {% comment %} new code for gift {% endcomment %}
+      {% when 'delivery_info' %}
+        {% render 'delivery-info', block: block, product: product %}
       {%- when 'title' -%}
         <div class="product-block-group product-block-group--title">
           {% if is_featured == true %}
@@ -334,9 +397,12 @@
               {% endif %}
             {% endcomment %}
 
+            <span style="display:none;"> TEXT: {{ block.settings.badge_text | default: 'EMPTY' }} </span>
+
             {% render 'rs-product-prices-new',
               use_variant: true,
               product: product,
+              block: block,
               show_sale_badge: block.settings.show_saving,
               price_text_size: 'm:text-xl md:m:text-2xl',
               sale_badge_type: block.settings.sale_badge_type
@@ -349,6 +415,21 @@
                   {{ 'products.product.include_taxes' | t }}
                 {%- endif -%}
               </div>
+            {%- endif -%}
+
+            {%- if block.settings.Show_lowest_price -%}
+              {% if product.compare_at_price > product.price %}
+                {%- if block.settings.lowest_price_text != false -%}
+                  <div class="lowest-price-text-wrapper">
+                    <span class="lowest-price-text">{{ block.settings.lowest_price_text }}</span>
+                    {% if product.metafields.custom.lowest_price_info.value %}
+                      <span class="lowest_price"> {{ product.metafields.custom.lowest_price_info.value | money }}</span>
+                    {% else %}
+                      <span class="lowest_price"> {{ product.price | money }} </span>
+                    {% endif %}
+                  </div>
+                {%- endif -%}
+              {% endif %}
             {%- endif -%}
           </div>
         </div>
@@ -416,6 +497,13 @@
           {% endif %}
           {{ block.settings.featureHeader }}
         </p>
+      {% when 'mrk_short_des' %}
+        {% if product.metafields.custom.product_short_description != blank %}
+          <p class="mrk-short-des">
+            {{ product.metafields.custom.product_short_description }}
+          </p>
+        {% endif %}
+
       {% when 'featurelist_item' %}
         <div
           class="product-feature-item"
@@ -443,19 +531,37 @@
         <div class="rs-product-info {% if block.settings.invert_img_color != false %}invert-image{% endif %}">
           <div class="info-card">
             {% if block.settings.info_text_1 != blank %}
-              <img src="{{ block.settings.info_img_1 |  img_url: 'medium' }}" alt="" class="info-icon">
+              <img
+                src="{{ block.settings.info_img_1 |  image_url: width: 200 }}"
+                width="24"
+                height="24"
+                alt=""
+                class="info-icon"
+              >
             {% endif %}
             <p class="product-info-text">{{ block.settings.info_text_1 }}</p>
           </div>
           <div class="info-card">
             {% if block.settings.info_text_2 != blank %}
-              <img src="{{ block.settings.info_img_2 |  img_url: 'medium' }}" alt="" class="info-icon">
+              <img
+                src="{{ block.settings.info_img_2 |  image_url: width: 200 }}"
+                width="24"
+                height="24"
+                alt=""
+                class="info-icon"
+              >
             {% endif %}
             <p class="product-info-text">{{ block.settings.info_text_2 }}</p>
           </div>
           <div class="info-card">
             {% if block.settings.info_text_3 != blank %}
-              <img src="{{ block.settings.info_img_3 |  img_url: 'medium' }}" alt="" class="info-icon">
+              <img
+                src="{{ block.settings.info_img_3 |  image_url: width: 200 }}"
+                width="24"
+                height="24"
+                alt=""
+                class="info-icon"
+              >
             {% endif %}
             <p class="product-info-text">{{ block.settings.info_text_3 }}</p>
           </div>
@@ -670,6 +776,209 @@
           update_browser_history: update_browser_history
         %}
 
+      {% when 'mystery_ratings' %}
+        <div class="fp-stars" id="go-to-top-btn" {{ block.shopify_attributes }}>
+          {% assign rating_star = block.settings.rating_star %}
+          <div class="fp-stars-icons">
+            {% for i in (1..rating_star) %}
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            {% endfor %}
+          </div>
+          <span class="fp-review-count">{{ block.settings.review_text }}</span>
+        </div>
+      {% when 'mystery_short_des' %}
+        <div class="fp-short_des" {{ block.shopify_attributes }}>
+          {{ block.settings.short_des }}
+        </div>
+
+      {% when 'sale_label' %}
+        <div class="fp-sale-label" {{ block.shopify_attributes }}>{{ block.settings.sale_label }}</div>
+
+      {% when 'mystery_price' %}
+        {% assign selected_variant = product.selected_or_first_available_variant %}
+        <div class="fp-price-row mystery-box-price-block" {{ block.shopify_attributes }}>
+          <span class="fp-price-current" data-variant-price>
+            {{ selected_variant.price | money }}
+          </span>
+
+          {% if selected_variant.compare_at_price > selected_variant.price %}
+            <span class="fp-price-original" data-variant-compare-price>
+              {{ selected_variant.compare_at_price | money }}
+            </span>
+
+            {% if block.settings.show_badge %}
+              <span class="fp-discount-badge" data-variant-badge>
+                {{ block.settings.badge_text }}
+                {{ selected_variant.compare_at_price | money -}}
+              </span>
+            {% endif %}
+          {% endif %}
+        </div>
+
+        <!-- Store all variant prices as data attribute -->
+        <script type="application/json" data-variant-prices>
+          {
+            {% for variant in product.variants %}
+              "{{ variant.id }}": {
+                "price": "{{ variant.price | money }}",
+                "compare_at_price": "{{ variant.compare_at_price | money }}",
+                "available": {{ variant.available | json }}
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          }
+        </script>
+
+        {% comment %}
+          <script>
+            // Load variant prices from Liquid
+            const variantPricesData = JSON.parse(document.querySelector('[data-variant-prices]').textContent);
+
+            // Format price helper - symbol before, no space
+            const formatPrice = (priceString) => {
+              // Remove currency symbol and spaces, keep the number
+              const cleaned = priceString.replace(/\s/g, '');
+              // Move symbol to front if it's at the end
+              const match = cleaned.match(/([^\d,.-]+)([\d,.-]+)/);
+              if (match) {
+                return match[1] + match[2];
+              }
+              return cleaned;
+            };
+
+            document.addEventListener('variant:changed', function (event) {
+              const variant = event.detail.variant;
+
+              if (variant && variantPricesData[variant.id]) {
+                const prices = variantPricesData[variant.id];
+
+                // Update current price
+                const priceElement = document.querySelector('[data-variant-price]');
+                if (priceElement) {
+                  priceElement.textContent = formatPrice(prices.price);
+                }
+
+                // Update compare price
+                const comparePriceElement = document.querySelector('[data-variant-compare-price]');
+                const comparePriceNum = parseInt(prices.compare_at_price.replace(/\D/g, ''));
+                const priceNum = parseInt(prices.price.replace(/\D/g, ''));
+
+                if (comparePriceElement && comparePriceNum > priceNum) {
+                  comparePriceElement.textContent = formatPrice(prices.compare_at_price);
+                  comparePriceElement.style.display = 'inline';
+                } else if (comparePriceElement) {
+                  comparePriceElement.style.display = 'none';
+                }
+
+                // Update badge
+                const badgeElement = document.querySelector('[data-variant-badge]');
+                if (badgeElement && comparePriceNum > priceNum) {
+                  badgeElement.textContent = '{{ block.settings.badge_text }} ' + formatPrice(prices.compare_at_price);
+                  badgeElement.style.display = 'inline';
+                } else if (badgeElement) {
+                  badgeElement.style.display = 'none';
+                }
+              }
+            });
+          </script>
+        {% endcomment %}
+        <script>
+          const variantPricesData = JSON.parse(document.querySelector('[data-variant-prices]').textContent);
+
+          const formatPrice = (cents) => {
+            return (cents / 100).toLocaleString('en-US', {
+              style: 'currency',
+              currency: 'EUR',
+            });
+          };
+
+          document.addEventListener('variant:changed', function (event) {
+            const variant = event.detail.variant;
+
+            if (!variant || !variantPricesData[variant.id]) return;
+
+            const prices = variantPricesData[variant.id];
+
+            const price = typeof prices.price === 'number' ? prices.price : parseInt(prices.price.replace(/\D/g, ''));
+
+            const compare = prices.compare_at_price
+              ? typeof prices.compare_at_price === 'number'
+                ? prices.compare_at_price
+                : parseInt(prices.compare_at_price.replace(/\D/g, ''))
+              : 0;
+
+            // ✅ Update ALL price elements (main + sticky)
+            document.querySelectorAll('[data-variant-price]').forEach((el) => {
+              el.textContent = formatPrice(price);
+            });
+
+            // ✅ Update compare price
+            document.querySelectorAll('[data-variant-compare-price]').forEach((el) => {
+              if (compare > price) {
+                el.textContent = formatPrice(compare);
+                el.style.display = 'inline';
+              } else {
+                el.style.display = 'none';
+              }
+            });
+
+            // ✅ Update badge
+            document.querySelectorAll('[data-variant-badge]').forEach((el) => {
+              if (compare > price) {
+                const saving = compare - price;
+                el.textContent = `Save ${formatPrice(saving)}`;
+                el.style.display = 'inline';
+              } else {
+                el.style.display = 'none';
+              }
+            });
+          });
+        </script>
+
+      {% when 'trust_text_group' %}
+        <div class="fp-trust" {{ block.shopify_attributes }}>
+          {% assign start_index = forloop.index %}
+
+          {% for item in section.blocks offset: start_index %}
+            {% if item.type == 'trust_text_group' %}
+              {% break %}
+            {% endif %}
+
+            {% if item.type == 'trust_item' %}
+              <div class="fp-trust-item" {{ item.shopify_attributes }}>
+                {% if item.settings.icon != blank %}
+                  <img src="{{ item.settings.icon | image_url }}" alt="icon" width="20" height="20">
+                {% endif %}
+                <span>{{ item.settings.text }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      {% when 'mystery_countdown_timer' %}
+        <div class="fp-countdown">
+          <svg
+            class="r-icon flash-solid "
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path d="M13.9921 2.12409C14.0472 1.68359 13.8053 1.25952 13.3981 1.08275C12.9908 0.905986 12.5158 1.01884 12.2316 1.35987L3.30218 12.0752C3.14786 12.2603 2.99156 12.4478 2.87776 12.6126C2.77013 12.7684 2.57363 13.0748 2.56755 13.4774C2.5606 13.9384 2.76601 14.377 3.12459 14.6667C3.4378 14.9198 3.79897 14.965 3.98758 14.9821C4.187 15.0002 4.43109 15.0001 4.67208 15.0001L10.8671 15.0001L10.0076 21.876C9.95252 22.3165 10.1945 22.7406 10.6017 22.9174C11.0089 23.0941 11.4839 22.9813 11.7681 22.6402L20.6975 11.9249C20.8519 11.7398 21.0082 11.5523 21.122 11.3875C21.2296 11.2317 21.4261 10.9253 21.4322 10.5227C21.4391 10.0617 21.2337 9.62314 20.8751 9.33338C20.5619 9.08027 20.2008 9.03509 20.0121 9.01802C19.8127 8.99996 19.5686 9.00001 19.3276 9.00005L13.1326 9.00006L13.9921 2.12409Z" fill="#FCFBF3"></path>
+          </svg>
+          {{ block.settings.text }}
+          {% if block.settings.show_timer %}
+            <span
+              class="fp-timer"
+              id="fp-timer-{{ section.id }}"
+              data-target="{{ block.settings.countdown_target }}"
+              >00:00:00</span
+            >
+          {% endif %}
+        </div>
+
       {%- when 'variant_picker_custom' -%}
         {% render 'product-option-custom',
           product: product,
@@ -679,6 +988,32 @@
           product_form_id: product_form_id,
           update_browser_history: update_browser_history
         %}
+      {%- when 'variant_picker_mystery' -%}
+        {% render 'product-option-mystery',
+          product: product,
+          section: section,
+          block: block,
+          size_title: size_title,
+          product_form_id: product_form_id,
+          update_browser_history: update_browser_history
+        %}
+      {%- when 'Guarantee_text' -%}
+        <style>
+          .guarantee-{{ block.id }} {
+            font-size: {{ block.settings.font_size_desktop }}px;
+          }
+          @media (max-width: 768px) {
+            .guarantee-{{ block.id }} {
+              font-size: {{ block.settings.font_size_mobile }}px;
+            }
+          }
+        </style>
+        <div
+          class="guarantee-text-block guarantee-{{ block.id }} text-{{ block.settings.text_alignment }}"
+          {{ block.shopify_attributes }}
+        >
+          {{ block.settings.guarantee_text }}
+        </div>
 
       {%- when 'buy_buttons' -%}
         {% liquid
@@ -777,6 +1112,194 @@
                     {% endif %}
                   </span>
                 </button>
+                {% if section.settings.show_atwl and section.settings.layout == 'layout-7' %}
+                  <div class="m-product-wishlist m:hidden md:m:block">
+                    {% render 'tooltip', type: 'wishlist', class_name: 'm-tooltip--top' %}
+                  </div>
+                {% endif %}
+              {% endif %}
+              {% liquid
+                assign show_terms = false
+                if settings.agree_text != blank and settings.show_agree_on_product
+                  render 'agree-terms-checkbox'
+                  assign show_terms = true
+                endif
+              %}
+              {% if show_dynamic_checkout %}
+                <div
+                  class="m-product-dynamic-checkout buy-one-click{% if block.settings.show_atc_button %} show-add-to-cart{% else %} m:flex-1{% endif %}"
+                  {% if show_terms %}
+                    data-terms-action disabled
+                  {% endif %}
+                >
+                  {{ form | payment_button }}
+                </div>
+              {% endif %}
+            </div>
+            <div class="m-product-form-message"></div>
+          {%- endform -%}
+        </product-form>
+
+        <link
+          rel="stylesheet"
+          href="{{ 'pickup-availability.css' | asset_url }}"
+          media="print"
+          onload="this.media='all';"
+        >
+        {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+          | where: 'pick_up_enabled', true
+        -%}
+        {% capture available %}{% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %} available{% endif %}{% endcapture %}
+        <pickup-availability
+          {{ available }}
+          class="product__pickup-availabilities"
+          data-base-url="{{ routes.root_url }}"
+          data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+          data-has-only-default-variant="{{ product.has_only_default_variant }}"
+        >
+          <template>
+            <pickup-availability-preview class="m-pickup-availability__preview m:display-flex">
+              <svg
+                class="m-svg-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+              >
+                <path fill="#DE3618" stroke="#fff" d="M13.94 3.94 10 7.878l-3.94-3.94A1.499 1.499 0 1 0 3.94 6.06L7.88 10l-3.94 3.94a1.499 1.499 0 1 0 2.12 2.12L10 12.12l3.94 3.94a1.497 1.497 0 0 0 2.12 0 1.499 1.499 0 0 0 0-2.12L12.122 10l3.94-3.94a1.499 1.499 0 1 0-2.121-2.12z"/>
+              </svg>
+              <div class="m-pickup-availability__info">
+                <p class="m:text-color-subtext">
+                  {%- render 'new-locale', key: 'products.product.pickup_availability.unavailable' -%}
+                </p>
+                <button class="m-pickup-availability__button m-button m-button--link">
+                  {%- render 'new-locale', key: 'products.product.pickup_availability.refresh' -%}
+                </button>
+              </div>
+            </pickup-availability-preview>
+          </template>
+        </pickup-availability>
+        <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+
+      {%- when 'mystery_buttons' -%}
+        {% liquid
+          assign gift_card_recipient_feature_active = false
+          if block.settings.show_gift_card_recipient and product.gift_card?
+            assign gift_card_recipient_feature_active = true
+          endif
+
+          assign show_dynamic_checkout = block.settings.show_dynamic_checkout
+          if image_field.size > 0 or gift_card_recipient_feature_active == true
+            assign show_dynamic_checkout = false
+          endif
+        %}
+
+        {% assign eligible_collections = 'aktion-3-for-2' | split: ',' %}
+        {% assign matched_collection = '' %}
+        {% for collection in product.collections %}
+          {% if eligible_collections contains collection.handle %}
+            {% assign matched_collection = collection.handle %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        <product-form class="m-product-form m-product-form--main" data-product-id="{{ product.id }}">
+          {%- form 'product',
+            product,
+            id: product_form_id,
+            data-product-id: product.id,
+            class: product_form_class,
+            novalidate: 'novalidate',
+            data-type: 'add-to-cart-form',
+            data-product-id: product.id,
+            data-product-handle: product.handle,
+            data-dynamic-checkout: show_dynamic_checkout,
+            data-enable-image-zoom: section.settings.show_zoom_button,
+            data-enable-history-state: section.settings.enable_history_state,
+            data-enable-video-autoplay: section.settings.enable_video_autoplay,
+            data-collection: matched_collection
+          -%}
+            <input
+              type="hidden"
+              name="id"
+              value="{{ variant_id }}"
+              data-selected-variant="{{ selected_variant_id }}"
+              disabled
+            >
+
+            {% if from_collection %}
+              <input type="hidden" name="properties[From_Collection]" value="{{ from_collection }}">
+            {% endif %}
+
+            {%- if gift_card_recipient_feature_active -%}
+              {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+            {%- endif -%}
+
+            <div class="m-product-form--wrapper m:display-flex m:flex-wrap m:items-center">
+              {% if block.settings.show_quantity_selector %}
+                <div class="m-product-form--input">
+                  {% comment %}
+                    <label class="m-product-option--label">
+                      {{ 'products.product.quantity' | t }}
+                    </label>
+                  {% endcomment %}
+                  {% render 'product-qty-input', product_form_id: product_form_id, product: product %}
+                </div>
+              {% endif %}
+              {% if block.settings.show_atc_button %}
+                {% liquid
+                  assign btn_class = 'm-button--primary'
+                  if show_dynamic_checkout
+                    assign btn_class = 'm-button--secondary'
+                  endif
+                %}
+                <button
+                  type="submit"
+                  name="add"
+                  class="mystery-add-btn m-add-to-cart rs-add-btn mrk-btn m-spinner-button m-button {{ btn_class }} {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}"
+                  data-atc-text="{{ block.settings.btn_text }}"
+                >
+                  <span class="m-spinner-icon">
+                    <svg
+                      class="animate-spin m-svg-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  </span>
+                  <span class="m-add-to-cart--text">
+                    {% if product.selected_or_first_available_variant.available %}
+                      {{ block.settings.btn_text }}
+                    {% else %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% endif %}
+                  </span>
+                </button>
+
+                <script>
+                  (function () {
+                    const customText = '{{ block.settings.btn_text | escape }}';
+                    const soldOutText = "{{ 'products.product.sold_out' | t | escape }}";
+                    const btn = document.currentScript.previousElementSibling;
+                    const textSpan = btn.querySelector('.m-add-to-cart--text');
+
+                    const observer = new MutationObserver(() => {
+                      // Only restore custom text if button is NOT disabled
+                      if (!btn.disabled && !btn.classList.contains('disabled')) {
+                        if (textSpan.textContent.trim() !== customText) {
+                          textSpan.textContent = customText;
+                        }
+                      }
+                      // If button IS disabled, leave the "sold out" text alone
+                    });
+
+                    observer.observe(textSpan, { childList: true, characterData: true, subtree: true });
+                  })();
+                </script>
+
                 {% if section.settings.show_atwl and section.settings.layout == 'layout-7' %}
                   <div class="m-product-wishlist m:hidden md:m:block">
                     {% render 'tooltip', type: 'wishlist', class_name: 'm-tooltip--top' %}

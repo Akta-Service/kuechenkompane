@@ -98,7 +98,7 @@
             "p_pt_m": 5,
             "p_pb_m": 18,
             "price_color": "#000000",
-            "c_price_color": "#b1b1b1",
+            "c_price_color": "#a7a7a7",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 22,
@@ -131,18 +131,7 @@
             "viewer_margin_bottom": 11,
             "margin_size_mobile_top": 1,
             "margin_size_mobile_bottom": 1,
-            "product_margin_top": 5,
-            "product_margin_bottom": 5,
-            "p_margin_size_mobile_top": 1,
-            "p_margin_size_mobile_bottom": 25,
-            "product_count_font_size": 16,
-            "product_main_text_1": "Nur noch",
-            "product_main_text_2": "auf Lager",
-            "product_stock_out": "Derzeit ausverkauft",
-            "soldout_color": "#ff0000",
-            "viewer_count_time": 30000,
-            "stock_count_time": 50000,
-            "stock_count_show": true
+            "viewer_count_time": 30
           }
         },
         "featurelist_header_tfxtpf": {
@@ -820,90 +809,6 @@
         "autoplay": false
       }
     },
-    "icon_box_9UtNky": {
-      "type": "icon-box",
-      "blocks": {
-        "iconbox_pJbJGA": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
-            "image_by_url": "",
-            "title": "30 Tage Rückgaberecht",
-            "description": "<p>Teste unsere hochwertigen Küchenmesser risikofrei – mit 30 Tagen Rückgaberecht.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_RW46nE": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "image_by_url": "",
-            "title": "Schärfe Garantiert",
-            "description": "<p>Unsere Messer stehen für Qualität und Langlebigkeit – garantiert ein Leben lang</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_EiwgTg": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "image_by_url": "",
-            "title": "Kostenloser Versand",
-            "description": "<p>Genieße kostenlosen Versand innerhalb der gesamten EU ab 100€ Bestellwert.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "iconbox_pJbJGA",
-        "iconbox_RW46nE",
-        "iconbox_EiwgTg"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".m-icon-box__heading {font-weight: 400;}"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "item_per_row": 3,
-        "item_gap": 30,
-        "item_gap_mobile": 10,
-        "card_style": "vertical",
-        "image_max_width": "70px",
-        "content_alignment": "center",
-        "hover_effect": "scaling-up",
-        "enable_slider": false,
-        "show_pagination": false,
-        "show_navigation": false,
-        "use_scroll_mobile": true,
-        "use_grid_column_mb": false,
-        "padding_top": 100,
-        "padding_bottom": 38,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "expert_testimonial_adCtdF": {
       "type": "expert-testimonial",
       "blocks": {
@@ -1304,7 +1209,6 @@
     "benefit_text_right_AFHFhC",
     "us_vs_them_8Tbqki",
     "ugc_video_testimonial_D4kJ9X",
-    "icon_box_9UtNky",
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
     "apex_faqs_jx7hp6",

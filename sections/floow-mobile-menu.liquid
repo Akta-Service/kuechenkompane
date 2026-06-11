@@ -1,0 +1,960 @@
+<style>
+    :root {
+      --mm-bg: {{ section.settings.menu_bg_color }};
+      --mm-text: {{ section.settings.menu_text_color }};
+      --mm-border: {{ section.settings.divider_color }};
+      --mm-panel-bg: {{ section.settings.menu_bg_color }};
+      --mm-card-border: #e5e5e5;
+      --mm-gap: 15px;
+      --mm-gap-half: calc(var(--mm-gap) / 2);
+    }
+
+    /* === FLOOW CAROUSEL (Swiper-free) === */
+  #floow-mobile-menu-drawer .floow-carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 42%;
+    gap: 10px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 15px;
+
+    padding: 0 15px 5px;
+  }
+
+  @media (min-width: 400px) {
+    #floow-mobile-menu-drawer .floow-carousel {
+      grid-auto-columns: 30%;
+    }
+  }
+
+  #floow-mobile-menu-drawer .floow-carousel > * {
+    scroll-snap-align: start;
+  }
+
+  /* Optional: Scrollbar optisch reduzieren */
+  #floow-mobile-menu-drawer .floow-carousel::-webkit-scrollbar {
+    height: 6px;
+  }
+  #floow-mobile-menu-drawer .floow-carousel::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+  }
+
+  /* Pfeile disabled */
+  #floow-mobile-menu-drawer .mm-nav-btn.is-disabled,
+  #floow-mobile-menu-drawer .mm-submenu-nav-btn.is-disabled {
+    opacity: 0.4;
+    cursor: default;
+    filter: grayscale(1);
+  }
+
+
+    .mm-product-card {
+        box-sizing: border-box;
+        margin-right: 10px;
+        border: 1px solid var(--mm-card-border);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--mm-bg);
+    }
+    .mm-menu-mini-card {
+        box-sizing: border-box;
+        margin-right: 10px;
+        height: auto;
+        border: 1px solid var(--mm-card-border);
+        border-radius: 6px;
+        background: var(--mm-bg);
+        overflow: hidden;
+    }
+
+    /* OVERLAY */
+    .mm-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; height: 100dvh; background: rgba(0,0,0,0.5); z-index: 99999998; opacity: 0; visibility: hidden; transition: all 0.3s ease; cursor: pointer; display: none; }
+    .mm-overlay.is-active { opacity: 1; visibility: visible; display: block !important; }
+
+    /* DRAWER */
+    .mm-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: min(90%, 600px);
+      height: 100%;
+      height: 100dvh;
+      background: var(--mm-bg);
+      z-index: 99999999;
+      transform: translateX(-100%);
+      visibility: hidden;
+      will-change: transform;
+      transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0s linear 0.25s;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .mm-drawer.is-open {
+      transform: translateX(0);
+      visibility: visible;
+      transition-delay: 0s;
+    }
+
+    /* HEADER */
+    .mm-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid var(--mm-border); flex-shrink: 0; background: {{ section.settings.header_bg_color }}; position: relative; z-index: 5; }
+    .mm-logo img { display: block; height: auto; }
+    .mm-logo .mm-shop-name { font-weight: bold; font-size: 1.2rem; }
+    #mobile-menu-close-btn { width: 40px; height: 40px; background-color: var(--mm-bg); color: var(--mm-text); border: none; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+
+    .mm-scroll-content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* BANNERS */
+    .mm-banners { padding: var(--mm-gap); display: flex; flex-direction: column; gap: var(--mm-gap); flex-shrink: 0; }
+    .mm-banner-link { display: block; width: 100%; text-decoration: none; }
+    .mm-banner-img { width: 100%; height: auto; display: block; object-fit: cover; }
+
+    /* BESTSELLER */
+    .mm-bestseller-section { flex-shrink: 0; padding: 20px 0; }
+    .mm-bestseller-header { display: flex; justify-content: space-between; align-items: center; padding: 0 var(--mm-gap); margin-bottom: 15px; }
+    .mm-bestseller-title { font-size: 18px !important; font-weight: bold; margin: 0 !important; color: var(--mm-text); }
+    .mm-bestseller-nav { display: flex; gap: 8px; }
+    .mm-nav-btn { width: 32px; height: 32px; background-color: {{ section.settings.navigation_symbols_bg_color }}; color: {{ section.settings.navigation_sybols_color }}; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s; }
+    .mm-nav-btn.swiper-button-disabled { opacity: 0.5; cursor: default; }
+    .mm-bestseller-swiper { width: 100%; padding-bottom: 5px; }
+    .mm-product-card { border: 1px solid var(--mm-card-border); border-radius: 8px; overflow: hidden; background: var(--mm-bg); }
+    .mm-product-link { display: flex; flex-direction: column; text-decoration: none; color: inherit; height: 100%; }
+    .mm-product-img-wrapper { width: 100%; position: relative; padding-bottom: 100%; background: #f9f9f9; }
+    .mm-product-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .mm-product-info { padding: 10px; display: flex; flex-direction: column; gap: 4px; }
+
+    .mm-product-title {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--mm-text);
+      overflow: hidden;
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+    .mm-main-heading { margin: 0 !important; padding: 20px 15px !important; font-size: 18px !important; font-weight: bold; color: var(--mm-text); flex-shrink: 0; }
+    .mm-submenu-products-wrapper { padding-bottom: 15px; background: #fafafa; border-bottom: 1px solid var(--mm-border); overflow: hidden; }
+    .mm-submenu-nav-container { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; }
+    .mm-submenu-title { margin: 0; font-size: 14px; font-weight: bold; color: var(--mm-text); }
+    .mm-arrows-wrapper { display: flex; gap: 8px; }
+
+    .mm-submenu-nav-btn { width: 28px; height: 28px; background-color: {{ section.settings.navigation_symbols_bg_color }}; color: {{ section.settings.navigation_sybols_color }}; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; }
+    .mm-submenu-nav-btn.swiper-button-disabled { opacity: 0.4; cursor: default; filter: grayscale(1); }
+
+    .mm-submenu-swiper { width: 100%; }
+    .mm-menu-mini-card { height: auto; border: 1px solid var(--mm-card-border); border-radius: 6px; background: var(--mm-bg); overflow: hidden;}
+    .mm-mini-link-inner { display: flex; flex-direction: column; text-decoration: none; color: inherit; height: 100%; width: 100%; }
+    .mm-mini-img-wrapper { width: 100%; padding-bottom: 100%; position: relative; background: white; padding: 8px; }
+    .mm-mini-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+    .mm-mini-title {
+      padding: 8px;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: var(--mm-text);
+      overflow: hidden;
+      white-space: normal;
+    }
+
+    /* NAV */
+    .mm-nav-container { flex-shrink: 0; }
+    .mm-list-root, .mm-list-child, .mm-list-grandchild { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+
+    .mm-list-root { border-top: 1px solid var(--mm-border); }
+    .mm-list-item, .mm-list-item-child, .mm-list-item-grandchild { width: 100%; border-bottom: 1px solid var(--mm-border); }
+    .mm-list-item-grandchild { border-bottom: none; border-top: 1px solid var(--mm-border); }
+    .mm-list-item-grandchild:first-child { border-top: none; }
+
+    .mm-link-row, .mm-link-direct, .mm-link-child, .mm-link-grandchild { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; cursor: pointer; width: 100%; text-decoration: none !important; color: var(--mm-text); font-size: 16px; background: var(--mm-bg); transition: background 0.2s; box-sizing: border-box; gap: 5px; }
+    .mm-link-row:active, .mm-link-direct:active { background: #fafafa; }
+    .mm-link-content { display: flex; align-items: center; gap: 12px; width: 100%; }
+
+.mm-item-icon { 
+  width: 40px; 
+  height: 40px; 
+  object-fit: cover; 
+  border-radius: 10px; 
+  display: block; 
+  flex-shrink: 0; 
+  margin: -5px 0;
+  mix-blend-mode: darken;
+}
+    .mm-text-col { display: flex; flex-direction: column; justify-content: center; line-height: 1.2; }
+    .mm-link-text { font-size: 14px; color: var(--mm-text); text-decoration: none !important; font-weight: 600; }
+    .mm-subtext { font-size: 12px; color: #666; font-weight: normal; margin-top: 2px; }
+    .mm-chevron { color: #999; display: flex; align-items: center; flex-shrink: 0; }
+
+    /* FIX: Visibility für Sub-Panels */
+    .mm-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      background: var(--mm-panel-bg);
+      z-index: 10;
+      transform: translateX(100%);
+      visibility: hidden;
+      will-change: transform;
+      transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0s linear 0.25s;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 20px;
+    }
+    .mm-panel.is-open {
+      transform: translateX(0);
+      visibility: visible;
+      transition-delay: 0s;
+    }
+    .mm-panel.has-open-child{
+      overflow: hidden;
+    }
+    .mm-panel-header { display: flex; align-items: center; gap: 10px; justify-content: space-between; padding: 15px 20px; background: #f9f9f9; border-bottom: 1px solid var(--mm-border); cursor: pointer; font-weight: 600; position: sticky; top: 0; z-index: 5; flex-shrink: 0; }
+    .mm-panel-back { display: flex; align-items: center; gap: 3px;}
+    .mm-back-text { font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: #555; }
+    .mm-current-title { font-size: 14px; color: #999; font-weight: normal; }
+    .mm-link-grandchild { color: #555; padding-left: 30px; background: var(--mm-bg); }
+    .mm-list-item:has(.mm-item-icon) { padding: 8px; }
+    .mm-link-row:has(.mm-item-icon) { background: #f7f7f7; border-radius: 8px;}
+    .mm-link-direct:has(.mm-item-icon) { background: #f7f7f7; border-radius: 8px; }
+
+    .mm-list-item:has(img) {
+      border-bottom: none !important;
+      padding: 4px 8px !important;
+    }
+
+    .mm-submenu-products-wrapper {
+      overflow: visible !important;
+    }
+</style>
+
+{% assign menu_handle = section.settings.menu | default: 'main-menu' %}
+{% assign banners = section.blocks | where: 'type', 'banner' %}
+{% assign bestsellers = section.blocks | where: 'type', 'bestseller' %}
+{% assign menu_item_blocks = section.blocks | where: 'type', 'menu_item' %}
+{% assign prod_limit = section.settings.submenu_product_count %}
+
+<div class="mm-overlay" id="mobile-menu-overlay" onclick="closeMobileMenu()"></div>
+
+<div class="mm-drawer" id="floow-mobile-menu-drawer">
+  <div class="mm-header">
+    <div class="mm-logo">
+      {% if section.settings.logo != blank %}
+        {{
+          section.settings.logo
+          | image_url: width: 400
+          | image_tag: loading: 'lazy', width: section.settings.logo_width
+        }}
+      {% else %}
+        <span class="mm-shop-name">{{ shop.name }}</span>
+      {% endif %}
+    </div>
+    <button id="mobile-menu-close-btn" onclick="closeMobileMenu()">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div class="mm-scroll-content">
+    {% if banners.size > 0 %}
+      <div class="mm-banners">
+        {% for block in banners %}
+          {% if block.settings.banner_image != blank %}
+            <a
+              href="{{ block.settings.url }}"
+              class="mm-banner-link"
+              style="border-radius: {{ block.settings.border_radius }}px; overflow: hidden;"
+            >
+              {{
+                block.settings.banner_image
+                | image_url: width: 800
+                | image_tag: class: 'mm-banner-img', loading: 'lazy'
+              }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if bestsellers.size > 0 %}
+      {% for block in bestsellers %}
+        {% assign collection = collections[block.settings.bestseller_collection] %}
+        {% if collection != blank and collection.products_count > 0 %}
+          <div class="mm-bestseller-section">
+            <div class="mm-bestseller-header">
+              {% if block.settings.heading != blank %}
+                <h3 class="mm-bestseller-title">{{ block.settings.heading }}</h3>
+              {% endif %}
+              <div class="mm-bestseller-nav">
+                <div class="mm-nav-btn mm-prev-{{ block.id }}">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </div>
+                <div class="mm-nav-btn mm-next-{{ block.id }}">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="floow-carousel mm-bestseller-carousel" id="carousel-bestseller-{{ block.id }}">
+              {% for product in collection.products limit: 10 %}
+                {% if product.featured_image != blank %}
+                  <div class="mm-product-card">
+                    <a href="{{ product.url }}" class="mm-product-link">
+                      <div class="mm-product-img-wrapper">
+                        {{
+                          product.featured_image
+                          | image_url: width: 400
+                          | image_tag: class: 'mm-product-img', loading: 'lazy'
+                        }}
+                      </div>
+                      <div class="mm-product-info">
+                        <span class="mm-product-title">{{ product.title }}</span>
+                      </div>
+                    </a>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if section.settings.main_menu_heading != blank %}
+      <h3 class="mm-main-heading">{{ section.settings.main_menu_heading }}</h3>
+    {% endif %}
+
+    <nav class="mm-nav-container">
+      <ul class="mm-list-root">
+        {% for link in linklists[menu_handle].links %}
+          {% assign current_icon = blank %}
+          {% assign current_subtext = blank %}
+          {% for block in menu_item_blocks %}
+            {% if block.settings.menu_item_name == link.title %}
+              {% if block.settings.collection_bestseller != blank %}
+                {% assign bestseller_products = block.settings.collection_bestseller %}
+              {% else %}
+                {% assign bestseller_products = link.object.products %}
+              {% endif %}
+              {% assign current_icon = block.settings.custom_icon %}
+              {% assign current_subtext = block.settings.subtext %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+
+          <li class="mm-list-item">
+            {% if link.links != blank %}
+              <div class="mm-link-row" onclick="openSubmenu('sub-{{ link.handle }}-{{ forloop.index }}')">
+                <div class="mm-link-content">
+                  {% if current_icon != blank %}
+                    {{ current_icon | image_url: width: 200 | image_tag: class: 'mm-item-icon', loading: 'lazy' }}
+                  {% endif %}
+                  <div class="mm-text-col">
+                    <span class="mm-link-text">{{ link.title }}</span>
+                    {% if current_subtext != blank %}
+                      <span class="mm-subtext">{{ current_subtext }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+                <span class="mm-chevron">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                </span>
+              </div>
+
+              <div class="mm-panel" id="sub-{{ link.handle }}-{{ forloop.index }}">
+                <div class="mm-panel-header" onclick="closeSubmenu('sub-{{ link.handle }}-{{ forloop.index }}')">
+                  <div class="mm-panel-back">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                    <span class="mm-back-text">{{ section.settings.back_text }}</span>
+                  </div>
+                  <span class="mm-current-title">{{ link.title }}</span>
+                </div>
+
+                {% if bestseller_products.size > 0 %}
+                  {% assign unique_id = 'sub-prod-' | append: link.handle | append: '-' | append: forloop.index %}
+                  <div class="mm-submenu-products-wrapper">
+                    <div class="mm-submenu-nav-container">
+                      <span class="mm-submenu-title">{{ section.settings.submenu_heading }}</span>
+                      <div class="mm-arrows-wrapper">
+                        <div class="mm-submenu-nav-btn mm-sub-prev-{{ unique_id }}">
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                          </svg>
+                        </div>
+                        <div class="mm-submenu-nav-btn mm-sub-next-{{ unique_id }}">
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="floow-carousel mm-submenu-carousel" id="carousel-{{ unique_id }}">
+                      {% for product in bestseller_products limit: prod_limit %}
+                        <div class="mm-menu-mini-card">
+                          <a href="{{ product.url }}" class="mm-mini-link-inner">
+                            <div class="mm-mini-img-wrapper">
+                              {{ product.featured_image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+                            </div>
+                            <span class="mm-mini-title">{{ product.title }}</span>
+                          </a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+
+                <ul class="mm-list-child">
+                  {% for childlink in link.links %}
+                    {% assign child_icon = blank %}
+                    {% assign child_subtext = blank %}
+                    {% for block in menu_item_blocks %}
+                      {% if block.settings.menu_item_name == childlink.title %}
+                        {% assign child_icon = block.settings.custom_icon %}
+                        {% assign child_subtext = block.settings.subtext %}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+
+                    <li class="mm-list-item-child">
+                      {% if childlink.links != blank %}
+                        <div
+                          class="mm-link-row"
+                          onclick="openSubmenu('grand-{{ childlink.handle }}-{{ forloop.index }}')"
+                        >
+                          <div class="mm-link-content">
+                            {% if child_icon != blank %}
+                              {{
+                                child_icon
+                                | image_url: width: 100
+                                | image_tag: class: 'mm-item-icon', loading: 'lazy'
+                              }}
+                            {% endif %}
+                            <div class="mm-text-col">
+                              <span class="mm-link-text">{{ childlink.title }}</span>
+                              {% if child_subtext != blank %}
+                                <span class="mm-subtext">{{ child_subtext }}</span>
+                              {% endif %}
+                            </div>
+                          </div>
+                          <span class="mm-chevron">
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                          </span>
+                        </div>
+
+                        <div class="mm-panel" id="grand-{{ childlink.handle }}-{{ forloop.index }}">
+                          <div
+                            class="mm-panel-header"
+                            onclick="closeSubmenu('grand-{{ childlink.handle }}-{{ forloop.index }}')"
+                          >
+                            <div class="mm-panel-back">
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              >
+                                <path d="M15 18l-6-6 6-6"/>
+                              </svg>
+                              <span class="mm-back-text">{{ section.settings.back_text }}</span>
+                            </div>
+                            <span class="mm-current-title">{{ childlink.title }}</span>
+                          </div>
+
+                          {% if childlink.type == 'collection_link' and childlink.object.products_count > 0 %}
+                            {% assign unique_id_l2 = 'grand-prod-'
+                              | append: childlink.handle
+                              | append: '-'
+                              | append: forloop.index
+                            %}
+                            <div class="mm-submenu-products-wrapper">
+                              <div class="mm-submenu-nav-container">
+                                <span class="mm-submenu-title">{{ section.settings.submenu_heading }}</span>
+                                <div class="mm-arrows-wrapper">
+                                  <div class="mm-submenu-nav-btn mm-sub-prev-{{ unique_id_l2 }}">
+                                    <svg
+                                      width="14"
+                                      height="14"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="3"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    >
+                                      <polyline points="15 18 9 12 15 6"></polyline>
+                                    </svg>
+                                  </div>
+                                  <div class="mm-submenu-nav-btn mm-sub-next-{{ unique_id_l2 }}">
+                                    <svg
+                                      width="14"
+                                      height="14"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="3"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    >
+                                      <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="floow-carousel mm-submenu-carousel" id="carousel-{{ unique_id }}">
+                                {% for product in bestseller_products limit: prod_limit %}
+                                  <div class="mm-menu-mini-card">
+                                    <a href="{{ product.url }}" class="mm-mini-link-inner">
+                                      <div class="mm-mini-img-wrapper">
+                                        {{
+                                          product.featured_image
+                                          | image_url: width: 400
+                                          | image_tag: loading: 'lazy'
+                                        }}
+                                      </div>
+                                      <span class="mm-mini-title">{{ product.title }}</span>
+                                    </a>
+                                  </div>
+                                {% endfor %}
+                              </div>
+                            </div>
+                          {% endif %}
+
+                          <ul class="mm-list-grandchild">
+                            {% for grandchildlink in childlink.links %}
+                              {% assign grandchild_icon = blank %}
+                              {% assign grandchild_subtext = blank %}
+                              {% for block in menu_item_blocks %}
+                                {% if block.settings.menu_item_name == grandchildlink.title %}
+                                  {% assign grandchild_icon = block.settings.custom_icon %}
+                                  {% assign grandchild_subtext = block.settings.subtext %}
+                                  {% break %}
+                                {% endif %}
+                              {% endfor %}
+                              <li class="mm-list-item-grandchild">
+                                <a href="{{ grandchildlink.url }}" class="mm-link-grandchild">
+                                  <div class="mm-link-content">
+                                    {% if grandchild_icon != blank %}
+                                      {{
+                                        grandchild_icon
+                                        | image_url: width: 100
+                                        | image_tag: class: 'mm-item-icon', loading: 'lazy'
+                                      }}
+                                    {% endif %}
+                                    <div class="mm-text-col">
+                                      <span class="mm-link-text">{{ grandchildlink.title }}</span>
+                                      {% if grandchild_subtext != blank %}
+                                        <span class="mm-subtext">{{ grandchild_subtext }}</span>
+                                      {% endif %}
+                                    </div>
+                                  </div>
+                                </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      {% else %}
+                        <a href="{{ childlink.url }}" class="mm-link-child">
+                          <div class="mm-link-content">
+                            {% if child_icon != blank %}
+                              {{
+                                child_icon
+                                | image_url: width: 100
+                                | image_tag: class: 'mm-item-icon', loading: 'lazy'
+                              }}
+                            {% endif %}
+                            <div class="mm-text-col">
+                              <span class="mm-link-text">{{ childlink.title }}</span>
+                              {% if child_subtext != blank %}
+                                <span class="mm-subtext">{{ child_subtext }}</span>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </a>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% else %}
+              <a href="{{ link.url }}" class="mm-link-direct">
+                <div class="mm-link-content">
+                  {% if current_icon != blank %}
+                    {{ current_icon | image_url: width: 200 | image_tag: class: 'mm-item-icon', loading: 'lazy' }}
+                  {% endif %}
+                  <div class="mm-text-col">
+                    <span class="mm-link-text">{{ link.title }}</span>
+                    {% if current_subtext != blank %}
+                      <span class="mm-subtext">{{ current_subtext }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+              </a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<script>
+  (function () {
+    function getStep(container) {
+      const first = container && container.children && container.children[0];
+      if (!first) return 280;
+      const gap = 10;
+      return first.getBoundingClientRect().width + gap;
+    }
+
+    function updateNavState(container, prevBtn, nextBtn) {
+      if (!container) return;
+      if (container.offsetWidth === 0) return;
+
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      const atStart = container.scrollLeft <= 2;
+      const atEnd = container.scrollLeft >= (maxScrollLeft - 2);
+
+      if (prevBtn) prevBtn.classList.toggle('is-disabled', atStart);
+      if (nextBtn) nextBtn.classList.toggle('is-disabled', atEnd);
+    }
+
+    function bindCarousel(prevBtn, nextBtn, container) {
+      if (!container || (!prevBtn && !nextBtn)) return;
+
+      if (container.dataset.floowBound === "1") return;
+      container.dataset.floowBound = "1";
+
+      function scrollByDir(dir) {
+        const step = getStep(container);
+        container.scrollBy({ left: dir * step, behavior: 'smooth' });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+          if (prevBtn.classList.contains('is-disabled')) return;
+          e.preventDefault();
+          scrollByDir(-1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+          if (nextBtn.classList.contains('is-disabled')) return;
+          e.preventDefault();
+          scrollByDir(1);
+        });
+      }
+
+      const onUpdate = function () {
+        requestAnimationFrame(() => updateNavState(container, prevBtn, nextBtn));
+      };
+
+      container.addEventListener('scroll', onUpdate, { passive: true });
+      window.addEventListener('resize', onUpdate);
+
+      setTimeout(onUpdate, 200);
+    }
+
+    function initAllCarouselsInDrawer() {
+      const drawer = document.getElementById('floow-mobile-menu-drawer');
+      if (!drawer) return;
+
+      drawer.querySelectorAll('.mm-bestseller-section').forEach(section => {
+        const carousel = section.querySelector('.mm-bestseller-carousel');
+        if (!carousel) return;
+
+        const prevBtn = section.querySelector('.mm-prev-' + (carousel.id || '').replace('carousel-bestseller-', ''));
+        const nextBtn = section.querySelector('.mm-next-' + (carousel.id || '').replace('carousel-bestseller-', ''));
+
+        bindCarousel(prevBtn, nextBtn, carousel);
+      });
+
+      drawer.querySelectorAll('.mm-submenu-products-wrapper').forEach(w => {
+        const carousel = w.querySelector('.mm-submenu-carousel');
+        if (!carousel) return;
+
+        const prevBtn = w.querySelector('.mm-submenu-nav-btn[class*="mm-sub-prev-"]');
+        const nextBtn = w.querySelector('.mm-submenu-nav-btn[class*="mm-sub-next-"]');
+        bindCarousel(prevBtn, nextBtn, carousel);
+      });
+    }
+
+    window.openMobileMenu = function () {
+      const drawer = document.getElementById('floow-mobile-menu-drawer');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      if (!drawer || !overlay) return;
+
+      drawer.classList.add('is-open');
+      overlay.classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+
+      initAllCarouselsInDrawer();
+    };
+
+    window.closeMobileMenu = function () {
+      const drawer = document.getElementById('floow-mobile-menu-drawer');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      if (drawer) drawer.classList.remove('is-open');
+      if (overlay) overlay.classList.remove('is-active');
+
+      document.body.style.overflow = '';
+      document.querySelectorAll('.mm-panel.is-open').forEach(el => el.classList.remove('is-open'));
+    };
+
+    window.openSubmenu = function (id) {
+      const panel = document.getElementById(id);
+      if (!panel) return;
+      panel.classList.add('is-open');
+      if(panel.parentElement.closest(".mm-panel")){
+        panel.parentElement.closest(".mm-panel").scrollTo(0,0);
+        panel.parentElement.closest(".mm-panel").classList.add("has-open-child");
+      }
+
+      const wrap = panel.querySelector('.mm-submenu-products-wrapper');
+      if (wrap) {
+        const carousel = wrap.querySelector('.mm-submenu-carousel');
+        const prevBtn = wrap.querySelector('.mm-submenu-nav-btn[class*="mm-sub-prev-"]');
+        const nextBtn = wrap.querySelector('.mm-submenu-nav-btn[class*="mm-sub-next-"]');
+        bindCarousel(prevBtn, nextBtn, carousel);
+      }
+    };
+
+    window.closeSubmenu = function (id) {
+      const panel = document.getElementById(id);
+      if (panel) panel.classList.remove('is-open');
+      if(panel.parentElement.closest(".mm-panel")){
+        panel.parentElement.closest(".mm-panel").classList.remove("has-open-child");
+      }
+    };
+
+    window.initMobileMenuIcon = function () {
+      const selector = '{{ section.settings.menu_icon_class }}';
+      if (!selector) return;
+
+      const menuIcons = document.querySelectorAll(selector);
+      menuIcons.forEach(btn => {
+        if (btn.dataset.floowMenuBound === "1") return;
+        btn.dataset.floowMenuBound = "1";
+
+        btn.addEventListener('click', function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          window.openMobileMenu();
+        }, true);
+      });
+    };
+
+    function floowInitializeMenu() {
+      {% if section.settings.show_only_in_editor %}
+        {% if request.design_mode %}
+          window.initMobileMenuIcon();
+        {% endif %}
+      {% else %}
+        window.initMobileMenuIcon();
+      {% endif %}
+    }
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', floowInitializeMenu);
+    } else {
+      floowInitializeMenu();
+    }
+    document.addEventListener('shopify:section:load', floowInitializeMenu);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Floow Mobile Menu",
+  "presets": [{ "name": "Floow Mobile Menu" }],
+  "settings": [
+    { "type": "checkbox", "id": "show_only_in_editor", "label": "Show Only In Editor" },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "image_picker", "id": "logo", "label": "Logo Image" },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Logo Width",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "submenu_product_count",
+      "min": 3,
+      "max": 20,
+      "step": 1,
+      "label": "Anzahl Produkte im Untermenü",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    { "type": "text", "id": "back_text", "label": "Back Text", "default": "Zurück" },
+    { "type": "text", "id": "main_menu_heading", "label": "Heading above Menu", "default": "Übersicht" },
+    {
+      "type": "text",
+      "id": "submenu_heading",
+      "label": "Heading for Submenu Products",
+      "default": "Kollektionsprodukte"
+    },
+    { "type": "header", "content": "CSS selectors" },
+    { "type": "text", "id": "menu_icon_class", "label": "Menu icon class", "default": ".header__icon--menu" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "header_bg_color", "label": "Header Background Color" },
+    { "type": "color", "id": "menu_bg_color", "label": "Menu Background Color", "default": "#ffffff" },
+    { "type": "color", "id": "menu_text_color", "label": "Menu Text Color", "default": "#000000" },
+    { "type": "color", "id": "divider_color", "label": "Divider Color", "default": "#f0f0f0" },
+    {
+      "type": "color",
+      "id": "navigation_symbols_bg_color",
+      "label": "Navigation Symbols Background Color",
+      "default": "#f0f0f0"
+    },
+    { "type": "color", "id": "navigation_sybols_color", "label": "Navigation Symbols Color", "default": "#333" }
+  ],
+  "blocks": [
+    {
+      "type": "bestseller",
+      "name": "Bestseller",
+      "settings": [
+        { "type": "collection", "id": "bestseller_collection", "label": "Bestseller Collection" },
+        { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Bestseller" }
+      ]
+    },
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        { "type": "image_picker", "id": "banner_image", "label": "Banner Image" },
+        { "type": "url", "id": "url", "label": "Url" },
+        {
+          "type": "range",
+          "id": "border_radius",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Border Radius",
+          "default": 8
+        }
+      ]
+    },
+    {
+      "type": "menu_item",
+      "name": "Menu Item",
+      "settings": [
+        { "type": "text", "id": "menu_item_name", "label": "Exact Menu Item Name" },
+        { "type": "image_picker", "id": "custom_icon", "label": "Image/Icon" },
+        { "type": "text", "id": "subtext", "label": "Subtext" },
+        { "type": "product_list", "id": "collection_bestseller", "label": "Collection Bestseller" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -6,8 +6,7 @@
   if (menuDrawer) {
 
 
-    
-
+  
 
 class Megamenu {
   constructor(container) {

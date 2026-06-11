@@ -1,0 +1,590 @@
+<style>
+  .ryze-button {
+    position: relative;
+    color: #ffffff;
+    background: #fa8526;
+    border-radius: 8px;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    border: none;
+    gap: 8px;
+    text-decoration: none;
+    padding: 16px 24px;
+    transition: 0.3s all ease;
+  }
+
+   .ryze-button:hover {
+    background: #333333
+  }
+
+  .guarantee-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+
+  .img-with-text-section.value-hero {
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 48px 0;
+  }
+
+  .img-with-text-container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .img-with-text-container.id-{{section.id }} {
+    max-width: {{ section.settings.container_width }}px;
+  }
+
+  .img-with-text-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .img-with-text-thumb {
+    max-width: 500px;
+  }
+
+  .img-with-text-thumb img {
+    width: 100%;
+  }
+
+  .img-with-text-subtitle {
+    color: #fa8526;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia Pro', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+  }
+  .value-hero .img-with-text-subtitle {
+    color: {{ section.settings.subtitle_color }};
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+
+  }
+
+  .img-with-text-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia Pro', sans-serif;
+    color: #533A2D;
+    font-weight: 600;
+    font-size: 48px;
+    font-style: normal;
+    line-height: 1.15;
+    text-transform: capitalize;
+    padding-bottom: 24px;
+  }
+  .value-hero .img-with-text-title {
+    color: {{ section.settings.title_color }};
+    font-family: Montserrat, sans-serif;
+    font-size: 32px;
+  }
+
+  .img-with-text-highlight-title {
+    display: inline-block;
+    color: #fa8526;
+    margin-left: 8px;
+  }
+
+  .img-with-text-description p {
+    color: #533A2D;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia Pro', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 150%;
+    max-width: 650px;
+    padding-bottom: 48px;
+  }
+  .value-hero .img-with-text-description p {
+    color: {{ section.settings.text_color }};
+    font-family: inherit;
+
+  }
+
+
+  .img-with-text-bottom .img-with-text-button {
+    margin-left: 0;
+  }
+
+  .img-with-text-bottom-mobile {
+    display: none;
+  }
+
+  span.value_icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+  }
+  ul.value_feature_items li {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+    color: {{ section.settings.text_color }};
+
+  }
+  ul.value_feature_items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  .value-hero .img-with-text-description p {
+    padding-bottom: 30px;
+  }
+  .value-hero span.guarantee-text{
+    color: {{ section.settings.text_color }};
+
+  }
+
+  @media (max-width: 992px) {
+    .img-with-text-wrapper {
+      flex-wrap: wrap;
+       gap: 20px;
+    }
+    .img-with-text-bottom-mobile {
+      margin-top: 20px;
+    }
+
+    .first-column {
+      flex-direction: column-reverse;
+    }
+
+    .img-with-text-thumb {
+      max-width: 100%;
+    }
+
+    .img-with-text-wrapper {
+      justify-content: center;
+    }
+
+    .img-with-text-content {
+      text-align: center;
+    }
+
+    .value-hero .img-with-text-description p {
+      padding-bottom: 16px;
+    }
+
+    .img-with-text-bottom {
+      display: none;
+    }
+
+    .img-with-text-bottom-mobile {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .value-hero .img-with-text-title {
+      font-size: 24px;
+      line-height: 40px;
+      padding-bottom: 8px;
+    }
+
+
+    .img-with-text-description {
+      font-size: 16px;
+      line-height: 160%;
+    }
+    .img-with-text-subtitle {
+      font-size: 20px;
+    }
+    .img-with-text-section {
+      padding: 40px 0;
+    }
+  }
+
+  @media (max-width: 475px) {
+    .img-with-text-section {
+      padding: 24px 0;
+    }
+    .img-with-text-subtitle {
+      font-size: 16px;
+    }
+
+    .img-with-text-container {
+      padding: 0 14px;
+    }
+     .img-with-text-title {
+      font-size: 24px;
+      line-height: 32px;
+      padding-bottom: 8px;
+    }
+    .img-with-text-wrapper {
+      gap: 10px;
+    }
+
+  }
+</style>
+<section
+  class="img-with-text-section value-hero"
+  id="img-with-text_{{ section.id }}"
+>
+  <div class="img-with-text-container id-{{section.id }}">
+    <div class="img-with-text-wrapper {% if section.settings.reverse_layout %} flex-reverse {% endif %}">
+      {% comment %} Capture the image block {% endcomment %}
+      {% capture image_option %}
+        <div class="img-with-text-thumb">
+          {% if section.settings.image %}
+            <img src="{{ section.settings.image | img_url: 'master' }}" width="100%" height="100%" alt="product">
+          {% else %}
+            {{ 'image' | placeholder_svg_tag }}
+          {% endif %}
+        </div>
+        <div class="img-with-text-bottom-mobile">
+           {% if section.settings.button_text != blank %}
+      <div class="ryze-button-wrap">
+        <a href="{{ section.settings.button_link }}" class="ryze-button">
+          {{ section.settings.button_text }}
+          {% if section.settings.btn-icon != blank %}
+            <img
+              src="{{ section.settings.btn-icon | img_url: 'master' }}"
+              alt="Icon"
+            >
+          {% endif %}
+        </a>
+      </div>
+    {% endif %}
+    {% if section.settings['guarantee-text'] != blank %}
+      <div class="guarantee-wrap">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path></svg>
+        <span class="guarantee-text">{{ section.settings['guarantee-text'] }}</span>
+      </div>
+    {% endif %}
+        </div>
+        
+      {% endcapture %}
+
+      {% comment %} Render content first if image is on right {% endcomment %}
+      {% if section.settings.position == 'right' or section.settings.position == blank %}
+        <div class="img-with-text-content">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'subtitle' %}
+                <h5 class="img-with-text-subtitle" {{ block.shopify_attributes }}>{{ block.settings.subtitle }}</h5>
+              {% when 'title' %}
+                <h3 class="img-with-text-title" {{ block.shopify_attributes }}>
+                  {{ block.settings.title -}}
+                  <span class="img-with-text-highlight-title">{{ block.settings['highlight-title'] }}</span>
+                </h3>
+              {% when 'description' %}
+                <div class="img-with-text-description" {{ block.shopify_attributes }}>
+                  {{ block.settings.description }}
+                </div>
+              {% when 'value_feature_item' %}
+                {% assign items = block.settings.value_features | split: ',' %}
+                <ul class="value_feature_items" {{ block.shopify_attributes }}>
+                  {% for item in items %}
+                    <li>
+                      {% if block.settings.icon != blank %}
+                        <span class="value_icon"
+                          ><img
+                            src="{{ block.settings.icon | image_url: width: 200 }}"
+                            width="18"
+                            height="18"
+                            alt="icon"
+                        ></span>
+                      {% endif %}
+                      {{ item | strip }}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% when 'button' %}
+                <div class="img-with-text-bottom" {{ block.shopify_attributes }}>
+                  {% if block.settings.button_text != blank %}
+                    <div class="ryze-button-wrap img-with-text-button">
+                      <a href="{{ block.settings.button_link }}" class="ryze-button">
+                        {{ block.settings.button_text }}
+                        {% if block.settings['btn-icon'] != blank %}
+                          <img
+                            src="{{ block.settings.btn-icon | img_url: 'master' }}"
+                            alt="Icon"
+                          >
+                        {% endif %}
+                      </a>
+                    </div>
+                  {% endif %}
+                  {% if block.settings['guarantee-text'] != blank %}
+                    <div class="guarantee-wrap img-with-text-guarantee">
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="guarantee-text">{{ block.settings['guarantee-text'] }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+        {{ image_option }}
+      {% else %}
+        {{ image_option }}
+        <div class="img-with-text-content">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'subtitle' %}
+                <h5 class="img-with-text-subtitle" {{ block.shopify_attributes }}>{{ block.settings.subtitle }}</h5>
+              {% when 'title' %}
+                <h3 class="img-with-text-title" {{ block.shopify_attributes }}>
+                  {{ block.settings.title -}}
+                  <span class="img-with-text-highlight-title">{{ block.settings['highlight-title'] }}</span>
+                </h3>
+              {% when 'description' %}
+                <div class="img-with-text-description" {{ block.shopify_attributes }}>
+                  {{ block.settings.description }}
+                </div>
+              {% when 'value_feature_item' %}
+                {% assign items = block.settings.value_features | split: ',' %}
+                <ul class="value_feature_items" {{ block.shopify_attributes }}>
+                  {% for item in items %}
+                    <li>
+                      {% if block.settings.icon != blank %}
+                        <span class="value_icon"
+                          ><img src="{{ block.settings.icon | image_url }}" width="" height="" alt="icon"
+                        ></span>
+                      {% endif %}
+                      {{ item | strip }}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% when 'button' %}
+                <div class="img-with-text-bottom" {{ block.shopify_attributes }}>
+                  {% if block.settings.button_text != blank %}
+                    <div class="ryze-button-wrap img-with-text-button">
+                      <a href="{{ block.settings.button_link }}" class="ryze-button">
+                        {{ block.settings.button_text }}
+                        {% if block.settings['btn-icon'] != blank %}
+                          <img
+                            src="{{ block.settings.btn-icon | img_url: 'master' }}"
+                            alt="Icon"
+                          >
+                        {% endif %}
+                      </a>
+                    </div>
+                  {% endif %}
+                  {% if block.settings['guarantee-text'] != blank %}
+                    <div class="guarantee-wrap img-with-text-guarantee">
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="guarantee-text">{{ block.settings['guarantee-text'] }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Value Image Text",
+  "settings": [
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Container width",
+      "min": 200,
+      "max": 1300,
+      "step": 20,
+      "unit": "px",
+      "default": 980
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Maim Image"
+    },
+    {
+      "type": "header",
+      "content": "settings"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_layout",
+      "label": "Reverse Layout",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Typography Colors"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000"
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "subtitle",
+      "name": "Sub Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Sub Title",
+          "default": "Try it for 30 days."
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Main Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "You Will Love It."
+        },
+        {
+          "type": "text",
+          "id": "highlight-title",
+          "label": "Highlight Title",
+          "default": " Guaranteed."
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Main Description",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "value_feature_item",
+      "name": "Feature Items",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "value_features",
+          "label": "Feature Item",
+          "info": "comma Separate for new item"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Feature Item Icon"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "TRY RYZE TODAY"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "image_picker",
+          "id": "btn-icon",
+          "label": "Button Icon"
+        },
+        {
+          "type": "text",
+          "id": "guarantee-text",
+          "label": "Guarantee Text",
+          "default": "30-Day Money Back Guarantee"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Value Image Text"
+    }
+  ]
+}
+{% endschema %}

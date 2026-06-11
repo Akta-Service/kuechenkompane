@@ -16,10 +16,7 @@
     },
     "akta_page_header_7kzFVF": {
       "type": "akta-page-header",
-<<<<<<< HEAD
-=======
       "disabled": true,
->>>>>>> 727904ae2a03b5daa0b63a32aad8464d0c19913d
       "name": "APex Page Header",
       "settings": {
         "show_title": true,
@@ -29,14 +26,6 @@
         "text_align": "center"
       }
     },
-<<<<<<< HEAD
-    "apex_vip_sale_banner_zQ6Tp6": {
-      "type": "apex-vip-sale-banner",
-      "name": "APEX VIP Sale Banner",
-      "settings": {
-        "desktop_image": "shopify://shop_images/250719-peachyogurt-vip-presale-2400px-signuppage.jpg",
-        "mobile_image": "shopify://shop_images/250719-peachyogurt-vip-presale-750px-signuppage.jpg"
-=======
     "collection_img_banner_Na3ffU": {
       "type": "collection-img-banner",
       "disabled": true,
@@ -117,7 +106,6 @@
         "padding_bottom": 0,
         "custom_class": "",
         "animations": "inherit"
->>>>>>> 727904ae2a03b5daa0b63a32aad8464d0c19913d
       }
     },
     "custom_liquid_gm6A4k": {
@@ -132,14 +120,10 @@
   "order": [
     "main",
     "akta_page_header_7kzFVF",
-<<<<<<< HEAD
-    "apex_vip_sale_banner_zQ6Tp6",
-=======
     "collection_img_banner_Na3ffU",
     "production_7QRFJa",
     "apex_vip_sale_banner_zQ6Tp6",
     "rich_text_tL4UGJ",
->>>>>>> 727904ae2a03b5daa0b63a32aad8464d0c19913d
     "custom_liquid_gm6A4k"
   ]
 }

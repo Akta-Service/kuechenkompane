@@ -22,7 +22,8 @@
         "timer_text": "Das Angebot endet in bald!",
         "timer_font_size": 12,
         "timer_color": "#000000",
-        "timer_font_weight": "400"
+        "timer_font_weight": "400",
+        "start_time": "00:00:00"
       }
     },
     "main": {
@@ -61,7 +62,7 @@
         "subtitle_xQXVba": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Jetzt exklusiv nur bei FOCUS-ONLINE",
+            "subtitle": "Jedes Stück ein echtes Natur-Unikat mit einzigartiger Maserung.",
             "subtitle_font_size": 16,
             "subtitle_weight": "400"
           }
@@ -80,9 +81,9 @@
             "likeImg1": "shopify://shop_images/Testi3.webp",
             "likeImg2": "shopify://shop_images/Testi1_06655792-039c-4c4c-a68d-210b3c8a4ab8.webp",
             "likeImg3": "shopify://shop_images/Testi2.jpg",
-            "likecount": "90,532+ Personen",
+            "likecount": "200,532+ Personen",
             "like_bg": "#ddede0",
-            "likeinfo": "lieben unsere Küchenmesser!",
+            "likeinfo": "lieben unsere Produkte!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
           }
@@ -90,16 +91,19 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "Show_lowest_price": true,
+            "lowest_price_text": "Der niedrigste Preis in den letzten 30 Tagen",
             "taxes_included": true,
             "taxes_included_text": "",
             "show_saving": true,
             "sale_badge_type": "percentage",
+            "badge_text": "",
             "p_pt": 5,
             "p_pb": 5,
             "p_pt_m": 5,
             "p_pb_m": 5,
             "price_color": "#000000",
-            "c_price_color": "#b1b1b1",
+            "c_price_color": "#bbbbbb",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 21,
@@ -114,34 +118,18 @@
             "border_radius": 2
           }
         },
-        "viewer_stock_count_MFNhKz": {
-          "type": "viewerStockCount",
+        "product_stock_status_dN9Lmm": {
+          "type": "product_stock_status",
           "settings": {
-            "viewer_count_font_size": 16,
-            "view_main_text_1": "Personen",
-            "view_main_text_2": "sehen sich dieses Produkt gerade an!",
-            "viewer_margin_top": 10,
-            "viewer_margin_bottom": 10,
-            "margin_size_mobile_top": 1,
-            "margin_size_mobile_bottom": 1,
-            "product_margin_top": 1,
-            "product_margin_bottom": 10,
-            "p_margin_size_mobile_top": 1,
-            "p_margin_size_mobile_bottom": 1,
-            "product_count_font_size": 16,
-            "product_main_text_1": "Nur noch",
-            "product_main_text_2": "auf Lager",
-            "product_stock_out": "Derzeit ausverkauft",
-            "soldout_color": "#ff0000",
-            "viewer_count_time": 2500,
-            "stock_count_time": 50000,
-            "stock_count_show": false
+            "text_limited": "Nur noch wenige verfügbar",
+            "text_instock": "Auf Lager - Sofort lieferbar",
+            "unavailable_text": "Derzeit ausverkauft"
           }
         },
         "featurelist_item_tL79ih": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Preis nur für kurze Zeit – danach wieder 559,00€</p>",
+            "featurelist_item": "<p>Naturprodukt – begrenzte Stückzahl je Charge</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -150,7 +138,16 @@
         "featurelist_item_jQJcPz": {
           "type": "featurelist_item",
           "settings": {
-            "featurelist_item": "<p>Nur für FOCUS-Leser erhältlich – nicht im Einzelhandel verfügbar</p>",
+            "featurelist_item": "<p>Jedes Stück ein echtes Unikat - made in germany</p>",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14,
+            "invert_img": false
+          }
+        },
+        "featurelist_item_fr8wAx": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "<p>Natürlich hygienisch & messerschonend – perfekt für den täglichen Einsatz</p>",
             "featurelist_item_color": "#000000",
             "featurelist_item_size": 14,
             "invert_img": false
@@ -162,13 +159,31 @@
             "size_title": "Size"
           }
         },
+        "delivery_info_qfzDrb": {
+          "type": "delivery_info",
+          "settings": {
+            "delivery_info": "Jetzt bestellen - Lieferung vor dem:",
+            "weekday_days": 3,
+            "weekend_days": 4,
+            "delivery_alignment": "center",
+            "pt": 0
+          }
+        },
         "buy_buttons_3hQqVi": {
           "type": "buy_buttons",
           "settings": {
-            "show_quantity_selector": true,
+            "show_quantity_selector": false,
             "show_atc_button": true,
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": true,
+            "btn_mt": 8
+          }
+        },
+        "floow_alt_product_QcW99B": {
+          "type": "floow-alt-product",
+          "settings": {
+            "margin_top": 0,
+            "margin_bottom": 0
           }
         },
         "payment_icon_tePtpf": {
@@ -199,15 +214,19 @@
         "review_Tgbbak",
         "ratings_fD4VNJ",
         "price_J4wXWJ",
-        "viewer_stock_count_MFNhKz",
+        "product_stock_status_dN9Lmm",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
+        "featurelist_item_fr8wAx",
         "variant_picker_KkEnbw",
+        "delivery_info_qfzDrb",
         "buy_buttons_3hQqVi",
+        "floow_alt_product_QcW99B",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "selected_gift_product": "",
         "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
@@ -245,22 +264,22 @@
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
-            "question": "365 Tage Schleifservice (Gratis)",
-            "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand. </p>"
+            "question": "365 Tage Qualitätsversprechen",
+            "answer": "<p>Olivenholz ist ein Naturmaterial – jedes Stück ist einzigartig.<br/><br/>Genau deshalb stehen wir mit unserem Namen dafür ein.</p><p>Sollte dein Produkt innerhalb von 365 Tagen Materialfehler aufweisen oder nicht deinen Erwartungen entsprechen, finden wir gemeinsam eine Lösung.</p>"
           }
         },
         "faq_kQAWhE": {
           "type": "faq",
           "settings": {
             "question": "Versand & Zahlungsoptionen",
-            "answer": "<p><strong>Kostenloser Versand  EU-weit (1-3 Tage)</strong></p><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine geringe Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p><strong>Versand in andere Länder z.B. Schweiz</strong></p><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p><strong>Zahlungsoptionen</strong></p><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
+            "answer": "<p>Olivenholz ist wertvoll. Deshalb versenden wir jedes Produkt:</p><ul><li>sorgfältig geprüft<br/></li><li>bruchsicher verpackt<br/></li><li>klimafreundlich versendet<br/></li></ul><p><strong>Kostenloser Versand  EU-weit (1-3 Tage)</strong></p><p>Mit dem kostenlosen 1- bis 3-tägigen Versand wird dein Paket schnell geliefert. Du hast die Möglichkeit für eine geringe Gebühr von 9,90 € auf Expressversand (Lieferung in einem Werktag) upzugraden.</p><p><strong>Versand in andere Länder z.B. Schweiz</strong></p><p>Wenn du dich außerhalb der EU befindest, kannst du dein Paket innerhalb von 2-3 Tagen für nur 16,90 € in alle anderen Länder liefern lassen und mit der Expressoption für 39,90 € sogar noch schneller!</p><p><strong>Zahlungsoptionen</strong></p><ul><li>Paypal</li><li>Visa, Mastercard, Maestro, American Express</li><li>Apple Pay, Google Pay</li><li>Klarna Rechnung</li></ul>"
           }
         },
         "faq_pDwHXa": {
           "type": "faq",
           "settings": {
-            "question": "Produktinfos & Lieferumfang",
-            "answer": "<h2>Produktbeschreibung</h2><ul><li><strong>Set-Inhalt:</strong> Chefmesser, Santokumesser 7\", Nakirimesser, Filetiermesser, Brotmesser, Yanagiba Messer, Santoku Messer 5\", Petty Messer</li><li><strong>Klingen:</strong> Handgeschliffene Klingen aus robustem 7CR17 Edelstahl</li><li><strong>Härtegrad:</strong> 60 ± 2 HRC</li><li><strong>Schliff:</strong> 15° beidseitig</li><li><strong>Griff:</strong> Robuster Epoxidharzgriff</li><li><strong>Balance:</strong> Ausgewogen für ermüdungsarmes Schneiden</li><li><strong>Verpackung:</strong> Edle Geschenkbox inklusive 365 Tage Schleifservice</li></ul><p></p><h3><strong>Lieferumfang:</strong></h3><p>1x Brotmesser</p><p>1x Chefmesser</p><p>1x Yanagibamesser</p><p>1x Santokumesser</p><p>1x Nakirimesser</p><p>1x Filetiermesser</p><p>1x Santokumesser 5\"</p><p>1x Schälmesser</p><p>1x Gratis Aufbewahrungsbox<br/></p>"
+            "question": "Produktinfos & Pflegehinweise",
+            "answer": "<h3>Material & Herkunft</h3><ul><li>100 % massives Olivenholz<br/></li><li>Natürlich gewachsene, individuelle Maserung<br/></li><li>Lebensmittelecht geölt<br/></li><li>Frei von chemischen Zusätzen<br/></li></ul><p>Olivenholz gehört zu den härtesten und dichtesten Hölzern Europas – dadurch besonders robust und langlebig.</p><h3>Hygienische Eigenschaften</h3><p>Durch seine dichte Struktur besitzt Olivenholz von Natur aus antibakterielle Eigenschaften und ist ideal für den Einsatz in der Küche geeignet.</p><h3>Pflegehinweis</h3><ul><li>Nicht spülmaschinengeeignet<br/></li><li>Mit warmem Wasser reinigen<br/></li><li>Regelmäßig mit etwas Speiseöl pflegen<br/></li></ul><p>So bleibt die natürliche Schönheit über viele Jahre erhalten.</p>"
           }
         }
       },
@@ -271,16 +290,671 @@
       ],
       "settings": {
         "color_scheme": "badge-hot",
-        "title": "IM SET ENTHALTEN:",
+        "title": "Produktbeschreibung:",
         "heading_type": "mrk-h3",
         "description": "{{ product.description }}",
         "mt": 30,
         "mb": 40,
-        "add_showore_btn": false,
+        "add_showore_btn": true,
         "readmore": "Mehr lesen",
         "readless": "Weniger Lesen",
         "br_color": "#000000",
         "icon_color": "#000000"
+      }
+    },
+    "floow_comparison_table_with_image_tLKVyk": {
+      "type": "floow-comparison-table-with-image",
+      "blocks": {
+        "floow_table_group_FmpXqe": {
+          "type": "_floow-table-group",
+          "settings": {
+            "show_only_in_editor": false,
+            "bg_color": "",
+            "border_radius": 0,
+            "width": 500,
+            "gap": 10,
+            "flex-wrap": "nowrap",
+            "flex-direction": "column",
+            "justify-content": "center",
+            "align-items": "center",
+            "width_mobile": 300,
+            "gap-mobile": 10,
+            "flex-wrap-mobile": "nowrap",
+            "flex-direction-mobile": "column",
+            "justify-content-mobile": "center",
+            "align-items-mobile": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0,
+            "margin_top": 0,
+            "margin_bottom": 0
+          },
+          "blocks": {
+            "floow_image_GJ3Tib": {
+              "type": "_floow-image",
+              "settings": {
+                "image": "shopify://shop_images/kuechenkompane_vs_andere_final.png",
+                "width": 600,
+                "width_mobile": 600,
+                "radius": 26,
+                "radius_mobile": 20,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "margin_top_mobile": -80,
+                "margin_bottom_mobile": 0
+              },
+              "blocks": {}
+            },
+            "floow_heading_4TEP9U": {
+              "type": "_floow-heading",
+              "settings": {
+                "heading": "Küchenkompane vs. Andere Anbieter",
+                "heading_type": "h2",
+                "max_width": 0,
+                "font_size": 24,
+                "font_size_mobile": 18,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "color": "#000000",
+                "margin_top": 12,
+                "margin_bottom": 0,
+                "margin_top_mobile": 0,
+                "margin_bottom_mobile": 0
+              },
+              "blocks": {}
+            },
+            "floow_text_KDehax": {
+              "type": "_floow-text",
+              "settings": {
+                "text": "<p>Was uns von anderen abhebt:</p>",
+                "font_size": 18,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "text_type": "h2",
+                "alignment": "center",
+                "font_color": "#000000",
+                "background_color": "",
+                "padding_top": 0,
+                "padding_bottom": 0,
+                "padding_right": 0,
+                "padding_left": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "floow_image_GJ3Tib",
+            "floow_heading_4TEP9U",
+            "floow_text_KDehax"
+          ]
+        },
+        "floow_table_group_YnLYHW": {
+          "type": "_floow-table-group",
+          "settings": {
+            "show_only_in_editor": false,
+            "bg_color": "",
+            "border_radius": 0,
+            "width": 500,
+            "gap": 10,
+            "flex-wrap": "nowrap",
+            "flex-direction": "column",
+            "justify-content": "center",
+            "align-items": "center",
+            "width_mobile": 600,
+            "gap-mobile": 10,
+            "flex-wrap-mobile": "nowrap",
+            "flex-direction-mobile": "column",
+            "justify-content-mobile": "center",
+            "align-items-mobile": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0,
+            "margin_top": 20,
+            "margin_bottom": 20
+          },
+          "blocks": {
+            "floow_table_8eXk3g": {
+              "type": "_floow-table",
+              "settings": {
+                "bg_color": "#ffffff",
+                "border_radius": 15,
+                "padding": 10,
+                "padding_mobile": 10,
+                "enable_show_more": true,
+                "visible_rows": 7,
+                "show_more_text": "Mehr anzeigen",
+                "show_less_text": "Weniger anzeigen",
+                "button_bg_color": "#324a34",
+                "button_text_color": "#ffffff",
+                "button_border_radius": 8,
+                "button_font_size": 14,
+                "button_margin_top": 12
+              },
+              "blocks": {
+                "floow_table_row_niAAUe": {
+                  "type": "_floow-table-row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_neLJaW": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/kuechenkompane_logo_vs.png",
+                        "icon_height": 80,
+                        "icon_height_mobile": 50,
+                        "text": "",
+                        "font_size": 14,
+                        "flex_direction": "row",
+                        "gap": 0,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 5,
+                        "border_radius_top_right": 5,
+                        "border_radius_bottom_right": 5,
+                        "border_radius_bottom_left": 5
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_yPAtQ8": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/andere-anbieter_e3f530b3-3aca-4bb0-8832-6212d37ee989.png",
+                        "icon_height": 80,
+                        "icon_height_mobile": 50,
+                        "text": "",
+                        "font_size": 14,
+                        "flex_direction": "row",
+                        "gap": 0,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_neLJaW",
+                    "floow_table_cell_yPAtQ8"
+                  ]
+                },
+                "floow_table_row_3dF6cX": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_g8nwh7": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Hoher Härtegrad  <br/>60+ HRC</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_febpp8": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Geringer Härtegrad <br/>&lt; 52 HRC</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 5,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_g8nwh7",
+                    "floow_table_cell_febpp8"
+                  ]
+                },
+                "floow_table_row_GwbieV": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_giwwKP": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Hochwertiger <br/>Premiumstahl</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_AUqXmm": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Billiger<br/>Stahl</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_giwwKP",
+                    "floow_table_cell_AUqXmm"
+                  ]
+                },
+                "floow_table_row_WHWJze": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_dXNBTq": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Ergonomische<br/>Griffe</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_gQLYb4": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Glatte haftende <br/>Fläche</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 10,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_dXNBTq",
+                    "floow_table_cell_gQLYb4"
+                  ]
+                },
+                "floow_table_row_EmKGK7": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_xDnTjr": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>100% <br/>Rostfrei</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_a6wwKz": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Kaum<br/>rostbeständig</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_xDnTjr",
+                    "floow_table_cell_a6wwKz"
+                  ]
+                },
+                "floow_table_row_QthVdL": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_pgL99g": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Von Hand<br/>gefertigt</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_UDBgQm": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Maschinell<br/>produziert</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_pgL99g",
+                    "floow_table_cell_UDBgQm"
+                  ]
+                },
+                "floow_table_row_tmC6xQ": {
+                  "type": "_floow-table-row",
+                  "name": "Floow Table Row",
+                  "settings": {
+                    "border_color": "#000000",
+                    "border_width": 0
+                  },
+                  "blocks": {
+                    "floow_table_cell_EYVJME": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/checked_11c824a8-258d-47b5-8d73-7c29463a3f60.png",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Eigene<br/>Herstellung</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "#eeeff8",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    },
+                    "floow_table_cell_pN6QQk": {
+                      "type": "_floow-table-cell",
+                      "name": "Floow Table Cell",
+                      "settings": {
+                        "icon": "shopify://shop_images/close.svg",
+                        "icon_height": 36,
+                        "icon_height_mobile": 24,
+                        "text": "<p>Meistens nur<br/>eingekauft</p>",
+                        "font_size": 16,
+                        "flex_direction": "row",
+                        "gap": 10,
+                        "flex_direction_mobile": "column",
+                        "align_items_mobile": "center",
+                        "text_align_mobile": "center",
+                        "gap_mobile": 4,
+                        "bg_color": "",
+                        "padding_top": 15,
+                        "padding_bottom": 15,
+                        "padding_right": 15,
+                        "padding_left": 15,
+                        "border_radius_top_left": 0,
+                        "border_radius_top_right": 0,
+                        "border_radius_bottom_right": 0,
+                        "border_radius_bottom_left": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "floow_table_cell_EYVJME",
+                    "floow_table_cell_pN6QQk"
+                  ]
+                }
+              },
+              "block_order": [
+                "floow_table_row_niAAUe",
+                "floow_table_row_3dF6cX",
+                "floow_table_row_GwbieV",
+                "floow_table_row_WHWJze",
+                "floow_table_row_EmKGK7",
+                "floow_table_row_QthVdL",
+                "floow_table_row_tmC6xQ"
+              ]
+            }
+          },
+          "block_order": [
+            "floow_table_8eXk3g"
+          ]
+        }
+      },
+      "block_order": [
+        "floow_table_group_FmpXqe",
+        "floow_table_group_YnLYHW"
+      ],
+      "disabled": true,
+      "name": "Floow Comp Table & Image",
+      "settings": {
+        "show_only_in_editor": true,
+        "bg_color": "#c6d1c4",
+        "border_radius": 0,
+        "gap": 40,
+        "flex-wrap": "nowrap",
+        "flex-direction": "row",
+        "justify-content": "center",
+        "align-items": "center",
+        "gap-mobile": 10,
+        "flex-wrap-mobile": "nowrap",
+        "flex-direction-mobile": "column",
+        "justify-content-mobile": "center",
+        "align-items-mobile": "center",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_right": 25,
+        "padding_left": 25,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "padding_right_mobile": 10,
+        "padding_left_mobile": 10,
+        "margin_top": 60,
+        "margin_bottom": 40
       }
     },
     "product-details-tabs": {
@@ -407,6 +1081,7 @@
         "pt_mobile": 30,
         "pb_mobile": 30,
         "title": "Unsere Produkte in Aktion",
+        "title_size": 20,
         "heading_type": "mrk-h1",
         "show_button": false,
         "btn_url": "https://www.instagram.com/kuechenkompane/",
@@ -577,19 +1252,19 @@
         "subtitle_jER8HM": {
           "type": "subtitle",
           "settings": {
-            "subtitle": "Nur für kurze Zeit erhältlich"
+            "subtitle": "Gewachsen unter mediterraner Sonne"
           }
         },
         "title_hXWbxr": {
           "type": "title",
           "settings": {
-            "title": "Spare jetzt über 430 € auf unser exklusives Messer-Set!"
+            "title": "Aus jahrzehntealten Olivenbäumen"
           }
         },
         "description_abE8wX": {
           "type": "description",
           "settings": {
-            "description": "Dieses Set vereint alles, was du für deine Küche brauchst. Nur solange der Vorrat reicht – viele Produkte gehen nicht mehr in Nachproduktion!"
+            "description": "Seit Jahrhunderten steht der Olivenbaum für Beständigkeit, Kraft und Natürlichkeit.\nUnser Olivenholz stammt aus traditionellen Anbaugebieten, in denen die Bäume langsam wachsen – und dadurch eine besonders dichte, widerstandsfähige Struktur entwickeln.\n\nDas Ergebnis:\nEine außergewöhnliche Maserung.\nEine enorme Härte.\nUnd ein Holz, das Generationen überdauert."
           }
         }
       },
@@ -601,8 +1276,8 @@
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "shopify://shop_images/25_5_1_6e0900bd-0eb0-4f9d-8f65-2985d35b9e4b_1.jpg",
-        "padding_top": 50,
+        "image": "shopify://shop_images/freepik__erstelle-mir-ein-bild-von-einer-olivenbaum-plantag__20214_1.jpg",
+        "padding_top": 0,
         "padding_bottom": 50,
         "reverse": false,
         "padding_top_mobile": 50,
@@ -688,71 +1363,6 @@
         "title": "Im Set enthalten:"
       }
     },
-    "product_explanation_video_xNFp3M": {
-      "type": "product-explanation-video",
-      "blocks": {
-        "sub_heading_aBnF8i": {
-          "type": "sub_heading",
-          "settings": {
-            "sub_heading": "Küchenkompane - Erklärt in 2 Minuten"
-          }
-        },
-        "heading_jQDwbJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "Qualität, die begeistert.",
-            "h1_text_align": "center",
-            "title": "Your Title Here",
-            "padding_top": 1,
-            "padding_bottom": 1,
-            "padding_top_tablet": 1,
-            "padding_bottom_tablet": 1,
-            "padding_top_mobile": 1,
-            "padding_bottom_mobile": 1
-          }
-        },
-        "details_erg8QM": {
-          "type": "details",
-          "settings": {
-            "details": "Unsere Produkte sind für alle gemacht – vom Hobbykoch bis zum Profi. Dank präziser Verarbeitung, hochwertigen Materialien und ergonomischem Design sorgen wir für das beste Kocherlebnis.",
-            "p_text_align": "left",
-            "p_padding_top": 10,
-            "p_padding_bottom": 10,
-            "p_padding_top_tablet": 8,
-            "p_padding_bottom_tablet": 8,
-            "p_padding_top_mobile": 5,
-            "p_padding_bottom_mobile": 5
-          }
-        },
-        "video_XLLb9A": {
-          "type": "video",
-          "settings": {
-            "video_mt": 0,
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/055a54f6adb64fdb890618f1e7edb2fd.mp4",
-            "autoplay": false,
-            "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg",
-            "loop": true,
-            "muted": true,
-            "playsinline": true,
-            "controls": true
-          }
-        }
-      },
-      "block_order": [
-        "sub_heading_aBnF8i",
-        "heading_jQDwbJ",
-        "details_erg8QM",
-        "video_XLLb9A"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "vertical_padding": 50,
-        "vertical_padding_mobile": 30,
-        "heading_type": "mrk-h3",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
-      }
-    },
     "us_vs_them_8Tbqki": {
       "type": "us-vs-them",
       "blocks": {
@@ -785,154 +1395,12 @@
         "des_size": "p-medium"
       }
     },
-    "apex_faqs_jx7hp6": {
-      "type": "apex-faqs",
-      "blocks": {
-        "item_Y76Jjj": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Wie scharf sind die Messer von Küchenkompane?",
-            "faq_body": "<p>Unsere Messer sind auf <strong>Rasiermesserschärfe</strong> geschliffen. Dank des hochwertigen Stahls und der präzisen Verarbeitung gleiten sie mühelos durch jedes Schnittgut – für maximale Präzision und Freude beim Kochen.</p>"
-          }
-        },
-        "item_J7jdRT": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Welches Material wird für die Klingen verwendet?",
-            "faq_body": "<p>Wir setzen auf <strong>hochwertigen gehärteten Edelstahl (7CR17)</strong>, bekannt für seine außergewöhnliche Schärfe, Langlebigkeit und Widerstandsfähigkeit gegen Rost und Abnutzung. Die Klingen werden von uns durch eine speziell entwickelte Methode gehärtet, um eine Härte von <strong>60+ HRC</strong> zu erreichen.</p>"
-          }
-        },
-        "item_V7NfBy": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Bleiben die Messer lange scharf oder müssen sie oft nachgeschärft werden?",
-            "faq_body": "<p>Dank der <strong>professionellen und besonderen Härtung</strong> behalten unsere Messer ihre Schärfe <strong>wesentlich länger</strong> als herkömmliche Küchenmesser. Regelmäßiges Nachschärfen ist erst nach langer Nutzung nötig.</p>"
-          }
-        },
-        "item_Q9DGdb": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Sind die Messer rostfrei und spülmaschinengeeignet?",
-            "faq_body": "<p>Unsere Messer sind <strong>hochgradig rostbeständig</strong>, da wir ausschließlich korrosionsbeständige Premium-Stähle verwenden. Für maximale Langlebigkeit empfehlen wir jedoch die <strong>Handwäsche</strong>, da Spülmaschinen aggressive Reinigungsmittel nutzen, die die Schärfe der Klinge beeinträchtigen können.</p>"
-          }
-        },
-        "item_xpq4qN": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Warum sind Küchenkompane Messer besser als herkömmliche Messer?",
-            "faq_body": "<p><strong>Präzise Handwerkskunst</strong>: Jedes Messer wird mit höchster Sorgfalt gefertigt<br/><strong>Extrem scharf</strong>: Rasiermesserschärfe für müheloses Schneiden<br/><strong>Langlebig & robust</strong>: Gehärteter Premium-Stahl für jahrelange Nutzung<strong>Ergonomischer Griff</strong>: Perfekte Balance für eine komfortable Handhabung<br/><strong>Exklusives Design</strong>: Ein Blickfang in jeder Küche</p>"
-          }
-        },
-        "item_XFGU6y": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Welche Messer sind im Set enthalten?",
-            "faq_body": "<p>Das 8-teilige Messerset wurde speziell zusammengestellt, um jede Schneideaufgabe in der Küche perfekt zu meistern. Jedes Messer hat seinen eigenen Einsatzzweck:</p><ul><li><strong>Chefmesser</strong> – Der Allrounder für alle Lebensmittel</li><li><strong>Santoku 7 Inch Messer</strong> – Ideal für Fisch, Fleisch & Gemüse</li><li><strong>Nakiri Messer</strong> – Perfekt für große Mengen an Gemüse</li><li><strong>Filetiermesser</strong> – Präzise Schnitte für Fisch & Geflügel</li><li><strong>Brotmesser</strong> – Schneidet mühelos durch jede Kruste</li><li><strong>Yanagiba Messer</strong> – Speziell für Sushi, Schinken & Carpaccio</li><li><strong>Santoku 5 Inch Messer</strong> – Die kompakte Variante für feine Schnitte</li><li><strong>Petty Messer</strong> – Perfekt für Obst, Gemüse und filigrane Arbeiten</li></ul><p>Jedes Messer wurde mit höchster Präzision gefertigt und sorgt für mühelose, saubere Schnitte in jeder Situation.</p>"
-          }
-        },
-        "item_cDC8UT": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Gibt es eine Geld-zurück-Garantie oder ein Rückgaberecht?",
-            "faq_body": "<p>Ja! Wir bieten eine <strong>100-Tage-Geld-zurück-Garantie</strong>. Teste die Messer völlig risikofrei. Solltest du nicht zufrieden sein, kannst du sie unkompliziert zurücksenden – ohne Wenn und Aber!</p>"
-          }
-        },
-        "item_PNKhQY": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Wie lange dauert der Versand und gibt es eine Expressoption?",
-            "faq_body": "<p><strong>Standardversand</strong>: 1-3 Werktage<br/><strong>Expressversand</strong>: 20-36 Stunden für eine schnelle Lieferung</p><p>Alle Bestellungen werden mit Sendungsverfolgung versendet, damit du dein Paket jederzeit nachverfolgen kannst.</p>"
-          }
-        },
-        "item_889zGP": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Welche Zahlungsmethoden werden akzeptiert?",
-            "faq_body": "<p>Wir bieten <strong>sichere und flexible Zahlungsmöglichkeiten</strong>, darunter:<br/>Kreditkarte (Visa, Mastercard, AMEX)<br/>PayPal, Klarna (Rechnung & Sofort)<br/>Apple Pay & Google Pay</p>"
-          }
-        },
-        "item_9JjGkE": {
-          "type": "item",
-          "settings": {
-            "faq_title": "Gibt es eine Garantie auf die Messer?",
-            "faq_body": "<p>Ja! Unsere Messer kommen mit <strong>2</strong> <strong>Jahren Garantie auf Material- und Herstellungsfehler</strong>. Sollte es ein Problem geben, sorgen wir für einen schnellen Ersatz oder eine Lösung.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "item_Y76Jjj",
-        "item_J7jdRT",
-        "item_V7NfBy",
-        "item_Q9DGdb",
-        "item_xpq4qN",
-        "item_XFGU6y",
-        "item_cDC8UT",
-        "item_PNKhQY",
-        "item_889zGP",
-        "item_9JjGkE"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "icon_color": "#000000",
-        "pt": 50,
-        "pb": 50,
-        "pt_mobile": 30,
-        "pb_mobile": 30,
-        "title": "FAQ - Häufige Fragen",
-        "heading_type": "mrk-h2",
-        "sub_title": "",
-        "sub_title_font_size": 20,
-        "faq_title_font_size": 18,
-        "faq_text_font_size": 16,
-        "alignment": "text-left"
-      }
-    },
-    "benefit_text_MCeGiV": {
-      "type": "benefit-text",
-      "blocks": {
-        "subtitle_8kbCAt": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Der Küchen-Trend 2025"
-          }
-        },
-        "title_KU4fTr": {
-          "type": "title",
-          "settings": {
-            "title": "Perfekte Schnitte in Sekunden"
-          }
-        },
-        "description_PBBAnQ": {
-          "type": "description",
-          "settings": {
-            "description": "Erlebe die nächste Stufe der Messerschärfe mit unserem Premium-Messerset. Jede Klinge ist auf Rasiermesserschärfe geprüft und sorgt für mühelose Präzision bei jedem Schnitt – egal ob Fleisch, Gemüse oder Brot."
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_8kbCAt",
-        "title_KU4fTr",
-        "description_PBBAnQ"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "media_type": "image",
-        "image": "shopify://shop_images/DSC04954_1_1_1.jpg",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": false,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h2",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
-      }
-    },
     "benefit_text_right_AFHFhC": {
       "type": "benefit-text-right",
       "blocks": {
         "subtitle_XPX87U": {
           "type": "subtitle",
+          "disabled": true,
           "settings": {
             "subtitle": "Robust & langlebig"
           }
@@ -940,13 +1408,13 @@
         "title_YwDaTz": {
           "type": "title",
           "settings": {
-            "title": "Hält jeder Herausforderung stand"
+            "title": "Veredelt & verarbeitet in Deutschland"
           }
         },
         "description_j4ByyM": {
           "type": "description",
           "settings": {
-            "description": "Unsere Messer sind aus hochwertigem Stahl gefertigt und bleiben extrem scharf – ohne Absplittern oder Abnutzen. Die widerstandsfähige Klinge sorgt für jahrelange Höchstleistung in der Küche."
+            "description": "Unsere Olivenholzprodukte werden in Deutschland sorgfältig geschliffen, geölt und geprüft. Durch höchste Qualitätsstandards, kurze Lieferketten und den Verzicht auf Massenproduktion entsteht ein langlebiges Naturprodukt – mediterranes Olivenholz trifft auf deutsche Handwerkspräzision."
           }
         }
       },
@@ -958,11 +1426,53 @@
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
-        "image": "shopify://shop_images/db3759d136d351495e659830d75d6596_1_1_1_V1_1.jpg",
+        "image": "shopify://shop_images/freepik__mann-bearbeiten-rohes-olivenholz-in-holz-maufaktur__20211_1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": true,
         "padding_top_mobile": 30,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h2",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
+    "benefit_text_MCeGiV": {
+      "type": "benefit-text",
+      "blocks": {
+        "subtitle_8kbCAt": {
+          "type": "subtitle",
+          "disabled": true,
+          "settings": {
+            "subtitle": "Der Küchen-Trend 2025"
+          }
+        },
+        "title_KU4fTr": {
+          "type": "title",
+          "settings": {
+            "title": "Extrem widerstandsfähig & langlebig"
+          }
+        },
+        "description_PBBAnQ": {
+          "type": "description",
+          "settings": {
+            "description": "Olivenholz gehört zu den härtesten Holzarten Europas. Es ist besonders dicht, robust und weniger anfällig für Feuchtigkeit als viele andere Hölzer. Bei richtiger Pflege bleibt es formstabil, widerstandsfähig gegen Schnittspuren und begleitet dich über viele Jahre zuverlässig in deiner Küche."
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_8kbCAt",
+        "title_KU4fTr",
+        "description_PBBAnQ"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "media_type": "image",
+        "image": "shopify://shop_images/freepik__mann-bearbeitet-olivenholz-schssel-in-manufaktur-u__20213_1.jpg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 50,
         "padding_bottom_mobile": 50,
         "heading_type": "mrk-h2",
         "sub_heading": "p-medium",
@@ -975,45 +1485,45 @@
         "block_n66cBX": {
           "type": "block",
           "settings": {
-            "tes_title": "Sehr gute Qualität",
-            "tes_text": "Die Produkte sind auf der Website sehr gut fotografiert und beschrieben, ohne dabei zu viel zu versprechen. Die Ware kam zum vereinbarten Datum. Was bei mir ankam hat mich in zwei Punkten positiv überrascht:erstens die perfekte Qualität der Ware und zweitens die absolut maßgeschneiderte und robuste Verpackung.",
-            "user_name": "Fam. Lemke",
+            "tes_title": "Sehr hochwertige Verarbeitung",
+            "tes_text": "Die Maserung ist wunderschön und jedes Brett sieht anders aus. Man merkt sofort, dass es echtes Olivenholz ist – massiv, schwer und extrem stabil.",
+            "user_name": "Katharina M.",
             "date": "Vor 2 Stunden"
           }
         },
         "block_Cjk3qr": {
           "type": "block",
           "settings": {
-            "tes_title": "Sehr Zufrieden",
-            "tes_text": "Das Messer weist eine optisch ansprechende und stabile Verarbeitung auf. Die Klinge ist außerordentlich scharf und durchtrennte den Spülschwamm mühelos beim Reinigen ohne großen Druck. Der Handgriff ist zudem gut dimensioniert. Insgesamt handelt es sich um ein äußerst ansprechendes Produkt.",
-            "user_name": "Lisa",
+            "tes_title": "100% Naturgefühl",
+            "tes_text": "Ich liebe, dass es keine künstliche Beschichtung hat. Reines Holz, natürlich geölt und perfekt verarbeitet. Fühlt sich unglaublich hochwertig an.",
+            "user_name": "Tobias R.",
             "date": "Vor 8 Stunden"
           }
         },
         "block_ncTrUJ": {
           "type": "block",
           "settings": {
-            "tes_title": "Insgesamt sehr gute Messer",
-            "tes_text": "Insgesamt sehr gute Messer,\nmit einer Ausnahme, bei einem gab es ein kleines Qualitätsproblem. Aber da wurde sehr schnell und kundenorientiert reagiert!",
-            "user_name": "Jean",
+            "tes_title": "Ideal für den täglichen Einsatz",
+            "tes_text": "Wir nutzen die Bretter täglich – zum Schneiden von Gemüse und zum Servieren von Käse. Kaum Schnittspuren und sehr pflegeleicht.",
+            "user_name": "Martina S.",
             "date": "Vor 19 Stunden"
           }
         },
         "block_tk6TF7": {
           "type": "block",
           "settings": {
-            "tes_title": "8 teile Scharfmesser",
-            "tes_text": "8 teile Scharfmesser , Holzbrett und Steakmesser sind sehr zufrieden . Ordentliche Packung und schnelle Lieferung .",
-            "user_name": "Nicole Kunath",
+            "tes_title": "Ein echtes Unikat",
+            "tes_text": "Die Maserung ist einzigartig. Kein Brett gleicht dem anderen – genau das macht es so besonders. In unserer Küche ein echter Hingucker.",
+            "user_name": "Daniel K.",
             "date": "Vor 25 Stunden"
           }
         },
         "block_qCCEJY": {
           "type": "block",
           "settings": {
-            "tes_title": "Ich war skeptisch,ob die Qualität der…",
-            "tes_text": "Ich war skeptisch,ob die Qualität der Messer, im Vergleich zum Preis passen würde. Aber meine Frau war begeistert von der Qualität der Messer es waren alle Messer hervorragend geschärft und hochwertige Verpackt geliefert worden innerhalb von 5 Werktagen inkl.Einem Feiertag. Mittlerweile sind die Messer einen Monat in Gebrauch und immer noch sehr scharf .Wir würden das Messerset immer wieder kaufen. Ein hervorragendes Preis Leistungsverhältnis.",
-            "user_name": "Benrdt B.",
+            "tes_title": "Qualität, die überzeugt",
+            "tes_text": "Ich war erst skeptisch, aber die Qualität hat mich wirklich überrascht. Sehr robust, keine Risse und nach dem Einölen sieht es wieder aus wie neu.",
+            "user_name": "Stefan W.",
             "date": "Vor 47 Stunden"
           }
         },
@@ -1021,8 +1531,8 @@
           "type": "block",
           "settings": {
             "tes_title": "Gut, Schnell, Zuverlässig",
-            "tes_text": "Sehr gut, gesamte Bestellung hat die Erwartungen mehr als erfüllt. Probleme seitens DHL wurden sehr schnell von Küchen kompane gelöst.",
-            "user_name": "B.M.H.",
+            "tes_text": "Sehr gut, gesamte Bestellung hat die Erwartungen mehr als erfüllt. Probleme seitens DHL wurden sehr schnell von Küchenkompane gelöst.",
+            "user_name": "Peter L.",
             "date": "Vor 52 Stunden"
           }
         }
@@ -1043,10 +1553,96 @@
         "mt_mobile": 20,
         "mb_mobile": 20,
         "title": "Vertraut von",
-        "title_highlight": "+140K Kunden",
+        "title_highlight": "+200K Kunden",
         "heading_type": "mrk-h2",
         "h_text_color": "#fa8526",
         "arrow_icon_color": "#000000"
+      }
+    },
+    "apex_faqs_jx7hp6": {
+      "type": "apex-faqs",
+      "blocks": {
+        "item_Y76Jjj": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Woher stammt das Olivenholz?",
+            "faq_body": "<p>Unser Olivenholz stammt aus Griechenland. Verwendet wird ausschließlich Holz von Bäumen, die keine Früchte mehr tragen. Die Veredelung, das Schleifen und Ölen erfolgen sorgfältig in Deutschland.</p>"
+          }
+        },
+        "item_J7jdRT": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Was bedeutet „Made in Germany“ bei diesem Produkt?",
+            "faq_body": "<p>Das Rohmaterial kommt aus Griechenland. Die Weiterverarbeitung, Qualitätskontrolle, Veredelung und Endbehandlung erfolgen in Deutschland – nach höchsten handwerklichen Standards.</p>"
+          }
+        },
+        "item_V7NfBy": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Ist jedes Schneidebrett wirklich ein Unikat?",
+            "faq_body": "<p>Ja. Die charakteristische Maserung entsteht natürlich im Baum. Kein Stück gleicht dem anderen – jedes Brett ist ein echtes Einzelstück.</p>"
+          }
+        },
+        "item_Q9DGdb": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Ist Olivenholz hygienisch?",
+            "faq_body": "<p>Olivenholz besitzt eine sehr dichte Struktur und natürliche antibakterielle Eigenschaften. Es nimmt weniger Feuchtigkeit auf als viele andere Holzarten und ist daher besonders hygienisch im täglichen Einsatz.</p>"
+          }
+        },
+        "item_xpq4qN": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Wie pflege ich mein Olivenholz-Brett richtig?",
+            "faq_body": "<p>Einfach mit lauwarmem Wasser reinigen, gut trocknen lassen und regelmäßig mit etwas Speiseöl (z. B. Olivenöl) nachölen. Nicht spülmaschinengeeignet.</p>"
+          }
+        },
+        "item_XFGU6y": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Ist das Brett spülmaschinengeeignet?",
+            "faq_body": "<p>Nein. Wie jedes hochwertige Naturholz sollte es nicht in die Spülmaschine gegeben werden, da Hitze und Feuchtigkeit das Material beschädigen können.</p>"
+          }
+        },
+        "item_cDC8UT": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Kann das Holz reißen?",
+            "faq_body": "<p>Bei richtiger Pflege ist Olivenholz extrem widerstandsfähig. Wichtig ist, das Brett nicht dauerhaft Nässe oder starker Hitze auszusetzen und es gelegentlich nachzuölen.</p>"
+          }
+        },
+        "item_PNKhQY": {
+          "type": "item",
+          "settings": {
+            "faq_title": "Ist das Holz nachhaltig?",
+            "faq_body": "<p>Ja. Das Holz stammt von alten, nicht mehr ertragreichen Olivenbäumen. Es wird kein Baum ausschließlich für unsere Produkte gefällt.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_Y76Jjj",
+        "item_J7jdRT",
+        "item_V7NfBy",
+        "item_Q9DGdb",
+        "item_xpq4qN",
+        "item_XFGU6y",
+        "item_cDC8UT",
+        "item_PNKhQY"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "icon_color": "#000000",
+        "pt": 50,
+        "pb": 50,
+        "pt_mobile": 30,
+        "pb_mobile": 30,
+        "title": "FAQ - Häufige Fragen",
+        "heading_type": "mrk-h2",
+        "sub_title": "",
+        "sub_title_font_size": 20,
+        "faq_title_font_size": 18,
+        "faq_text_font_size": 16,
+        "alignment": "text-left"
       }
     },
     "cta_final_9B8iN9": {
@@ -1055,21 +1651,21 @@
         "item_9JUQhz": {
           "type": "Item",
           "settings": {
-            "feature_item": "Umfassend getestet und auf höchste Qualität geprüft",
+            "feature_item": "Holz aus Griechenland – sorgfältig ausgewählt",
             "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/thumb-up_16346369_1.png?v=1739744170\" alt=\"icon\">"
           }
         },
         "item_NYUrjj": {
           "type": "Item",
           "settings": {
-            "feature_item": "Mit hochwertigen Materialien für maximale Langlebigkeit gefertigt",
+            "feature_item": "In Deutschland handwerklich veredelt & geprüft",
             "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/diamond_11883313_1.png?v=1739744170\" alt=\"icon\">"
           }
         },
         "item_Prmf4W": {
           "type": "Item",
           "settings": {
-            "feature_item": "Mit Experten zusammen perfektioniert",
+            "feature_item": "Jedes Stück ein echtes, kontrolliertes Unikat",
             "svg_icon": "<img src=\"https://cdn.shopify.com/s/files/1/0018/5329/2643/files/setting_9552070_1.png?v=1739744170\" alt=\"icon\">"
           }
         }
@@ -1085,13 +1681,13 @@
       ],
       "settings": {
         "color_scheme": "footer",
-        "subtitle": "Vielen Menschen haben uns als Gründer gefragt:",
+        "subtitle": "Vielen Menschen haben mich als Gründer gefragt:",
         "sub_heading": "p-medium",
-        "title": "“Warum gibt Küchenkompane eine Zufriedenheitsgarantie?”",
+        "title": "“Warum geben wir auf unsere Olivenholz-Produkte eine Zufriedenheitsgarantie?”",
         "heading_type": "mrk-h2",
-        "des": "Diese Frage haben uns schon viele gestellt. Die Antwort ist einfach: Wir sind zu 100 % überzeugt von unseren Produkten! Und das aus gutem Grund, denn unsere Produkte wurden:",
+        "des": "Unsere Olivenholz-Produkte stammen aus Griechenland und werden in Deutschland sorgfältig veredelt, geschliffen und geölt.\nJedes Stück wird einzeln geprüft – weil Naturmaterial Respekt verdient.\n\nWir kennen jede Faser, jede Maserung und jeden Verarbeitungsschritt.\nDeshalb können wir mit voller Überzeugung sagen: Qualität, die bleibt.",
         "des_size": "p-medium",
-        "img": "shopify://shop_images/chef-working-together-professional-kitchen.jpg",
+        "img": "shopify://shop_images/ChatGPT_Image_17._Feb._2026_00_25_30_1.jpg",
         "verticle_padding": 70,
         "horizontal_padding": 0,
         "border_t": false,
@@ -1145,6 +1741,8 @@
         "loox_reviews_loox_dynamic_section_9tFX78": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
             "limit": 20,
@@ -1239,18 +1837,18 @@
     "main",
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
+    "floow_comparison_table_with_image_tLKVyk",
     "product-details-tabs",
     "ugc_video_testimonial_D4kJ9X",
     "logo_greyed_out_FMbnW7",
     "scrolling_promotion_UKXeX3",
     "benefit_text_P4XApk",
     "feature_highlight_ktLbnH",
-    "product_explanation_video_xNFp3M",
     "us_vs_them_8Tbqki",
-    "apex_faqs_jx7hp6",
-    "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
+    "benefit_text_MCeGiV",
     "trustpilot_testimonials_YbXp3E",
+    "apex_faqs_jx7hp6",
     "cta_final_9B8iN9",
     "benefit_list_gif_iJWmYF",
     "1741277473f9b1112d",

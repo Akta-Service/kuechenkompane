@@ -5,7 +5,11 @@
     assign animated = true
   endif
 -%}
-{% render 'page-title', title: page.title, container: 'container' %}
+
+{% unless request.path == '/pages/oster-vip-sale' %}
+  {% render 'page-title', title: page.title, container: 'container' %}
+{% endunless %}
+
 {%- if page.content != blank -%}
   <div class="container">
     <div class="m-page-content rte{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">

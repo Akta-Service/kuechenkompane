@@ -53,7 +53,7 @@
       "type": "apps",
       "blocks": {
         "loloyal_app_banner_XkYUDN": {
-          "type": "shopify://apps/loloyal/blocks/app-banner/930ac91f-2bf2-4655-9ba0-574771f782d6",
+          "type": "shopify://apps/trustwill-loyalty/blocks/app-banner/930ac91f-2bf2-4655-9ba0-574771f782d6",
           "settings": {
             "add_image": "shopify://shop_images/banner_desktop.jpg",
             "add_mobile_image": "shopify://shop_images/gruenn.png",
@@ -113,7 +113,7 @@
       "type": "apps",
       "blocks": {
         "loloyal_app_ways_to_earn_rEE4k7": {
-          "type": "shopify://apps/loloyal/blocks/app-ways-to-earn/930ac91f-2bf2-4655-9ba0-574771f782d6",
+          "type": "shopify://apps/trustwill-loyalty/blocks/app-ways-to-earn/930ac91f-2bf2-4655-9ba0-574771f782d6",
           "settings": {
             "title_font_size": 30,
             "subtitle_font_size": 13,
@@ -163,7 +163,7 @@
       "type": "apps",
       "blocks": {
         "loloyal_app_ways_to_redeem_B8fQ86": {
-          "type": "shopify://apps/loloyal/blocks/app-ways-to-redeem/930ac91f-2bf2-4655-9ba0-574771f782d6",
+          "type": "shopify://apps/trustwill-loyalty/blocks/app-ways-to-redeem/930ac91f-2bf2-4655-9ba0-574771f782d6",
           "settings": {
             "title_font_size": 30,
             "subtitle_font_size": 13,

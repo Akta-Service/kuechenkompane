@@ -1,0 +1,802 @@
+{{ 'akta-collection-grid.css' | asset_url | stylesheet_tag }}
+{{ 'filter-collection.css' | asset_url | stylesheet_tag }}
+{{ 'dropdown-filter.css' | asset_url | stylesheet_tag }}
+<style>
+  .akta-collection-pagination.akta-pagination-circle a,
+  .akta-collection-pagination.akta-pagination-circle .active {
+    border-radius: 50%;
+  }
+  .section-{{ section.id }}{
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  .tab-item .collection-tab-btn {
+    border-radius: 4px;
+    border: 1px solid #d2d2d2;
+    padding: 8px 8px;
+  }
+  a.tab-btn-link {
+    border: 1px solid #d2d2d2;
+    font-size: 14px;
+    color: #000;
+    padding: 4.5px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  select.filter-select {
+    border-radius: 4px;
+    border: 1px solid #d2d2d2;
+    padding:3px 25px 3px 8px;
+    transition: 0.3s;
+  }
+  .filter-select:focus {
+    outline: 0;
+    box-shadow: none;    
+  }
+
+
+  select.filter-select.is-active {
+    border-color: #000;
+  }
+
+
+  @media (max-width: 768px) {
+    .section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | times: 0.5 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.5 }}px;
+    }
+  }
+  {% comment %} .akta-collection-grid-item:hover img{
+    transform: scale(1.2);
+  } {% endcomment %}
+
+  {%- if section.settings.hover_second_image -%}
+
+    /* Hover Effect = Zoom + Swap */
+    .akta-collection-grid-item:hover .akta-image-default {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+
+    .akta-collection-grid-item:hover .akta-image-hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  {%- endif -%}
+</style>
+<div
+  id="filter-collection-{{ section.id }}"
+  class="filter-collection  section-{{ section.id }}"
+>
+  {% if section.settings.Show_banner %}
+    <div class="filter-banner">
+      <div class="filter-banner__inner">
+        <!-- Left Content -->
+        <div class="filter-banner__content">
+          {% if section.settings.breadcrumbs %}
+            <nav class="filter-banner__breadcrumbs">
+              <a href="/">Home</a>
+              <span>/</span>
+              <a href="/collection/all">Shop All</a>
+              <span>/</span>
+              <span>{{ collection.title }}</span>
+            </nav>
+          {% endif %}
+          <div class="filter-banner__content-main">
+            <h1 class="filter-banner__title">{{ collection.title }}</h1>
+            {% if section.settings.show_des %}
+              <p class="filter-banner__desc">{{ collection.description | truncatewords: 20 | strip_html }}</p>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Right Image -->
+        <div class="filter-banner__image">
+          <img
+            src="{{ collection.featured_image | image_url }}"
+            alt="Cookware Accessories"
+            loading="lazy"
+            width=""
+            height=""
+          >
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if section.settings.show_filter %}
+    <div class="filter-container">
+      <button class="filter-open-btn">
+        Filter
+        {% render 'icons', type: 'filter' %}
+      </button>     
+      <div class="dropdown-filter-wrapper">
+        {% for block in section.blocks %}
+          {% assign collections = block.settings.collections %}
+      
+          <div class="tab-item">
+            {% if collections.size > 1 %}
+              <!-- Multi-collection: render as <select> dropdown -->
+              {% if collections != blank %}
+                <select
+                  class="filter-select"
+                  name="collection_filter"
+                  data-filter="{{ block.id }}"
+                >
+                  <option value="" disabled selected>{{ block.settings.filter_label }}</option>
+                  {% for collection in collections %}
+                    <option
+                      value="{{ collection.handle }}"
+                      data-handle="{{ collection.handle }}"
+                    >
+                      {{ collection.title }}
+                    </option>
+                  {% endfor %}
+                </select>
+              {% endif %}
+      
+            {% else %}
+              <!-- Single collection: render as a button -->
+              {% for collection in collections limit: 1 %}
+                <button
+                  type="button"
+                  class="collection-tab-btn"
+                  data-handle="{{ collection.handle }}"
+                >
+                  {{ block.settings.filter_label }}
+                </button>
+              {% endfor %}
+            {% endif %}
+          </div>
+      
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="akta-collection-grid-wrapper">
+    {% render 'collection-filters', collection: collection %}
+    <div class="akta-grid-pagi-wrapper" >
+      {% paginate collection.products by section.settings.products_limit %}
+        <div class="akta-collection-grid ">
+          {% for product in collection.products %}
+            <div class="akta-collection-grid-item">
+              <div class="akta-collection-grid-image-wrapper">
+                {% if product.available %}
+                {% else %}
+                  <span class="akta-sold-out-badge">Ausverkauft</span>
+                {% endif %}
+
+                <a href="{{ product.url }}">
+                  <!-- Show normal featured image -->
+                  {%- if product.featured_image -%}
+                    <img
+                      src="{{ product.featured_image | image_url }}"
+                      alt="{{ product.title }}"
+                      class="akta-collection-grid-image akta-image-default"
+                      width="100%"
+                      height=""
+                      {% if forloop.index <= 4 %}
+                        loading="eager" fetchpriority="high"
+                      {% else %}
+                        loading="lazy"
+                      {% endif %}
+                    >
+                  {%- endif -%}
+
+                  <!-- Hover image always comes from product.images[1] -->
+                  {%- if section.settings.hover_second_image and product.images.size > 1 -%}
+                    <img
+                      src="{{ product.images[1] | image_url }}"
+                      alt="{{ product.title }}"
+                      class="akta-collection-grid-image akta-image-hover"
+                      width="100%"
+                      height=""
+                      {% if forloop.index <= 4 %}
+                        loading="eager" fetchpriority="high"
+                      {% else %}
+                        loading="lazy"
+                      {% endif %}
+                    >
+                  {%- endif -%}
+                </a>
+              </div>
+
+              <div class="akta-collection-grid-content">
+                {% if section.settings.show_product_ratings %}
+                  <div
+                    class="loox-rating"
+                    data-id="{{ product.id }}"
+                    data-rating="{{ product.metafields.loox.avg_rating }}"
+                    data-raters="{{ product.metafields.loox.num_reviews }}"
+                  ></div>
+                {% endif %}
+
+                <a href="{{ product.url }}">
+                  <h3 class="akta-collection-grid-title">{{ product.title }}</h3>
+                </a>
+
+                {% comment %}
+                  <div class="akta-collection-grid-prices">
+                    {% if product.compare_at_price > product.price %}
+                      <span class="akta-collection-grid-price">{{ product.price | money }}</span>
+                      <span class="akta-collection-grid-compare">{{ product.compare_at_price | money }}</span>
+                    {% else %}
+                      <span class="akta-collection-grid-price">{{ product.price | money }}</span>
+                    {% endif %}
+                  </div>
+                {% endcomment %}
+
+                {% if section.settings.show_max_price %}
+                  {% assign main_price = product.price_max %}
+                  {% assign compare_price = product.compare_at_price_max %}
+                {% else %}
+                  {% assign main_price = product.price %}
+                  {% assign compare_price = product.compare_at_price %}
+                {% endif %}
+
+                <div class="akta-collection-grid-prices">
+                  {% if compare_price > main_price %}
+                    <span class="akta-collection-grid-price">
+                      {{ main_price | money }}
+                    </span>
+
+                    <span class="akta-collection-grid-compare">
+                      {{ compare_price | money }}
+                    </span>
+
+                  {% else %}
+                    <span class="akta-collection-grid-price">
+                      {{ main_price | money }}
+                    </span>
+                  {% endif %}
+                </div>
+                {% if section.settings.show_save_price %}
+                  <style>
+                    .akta-collection-grid-prices {
+                        margin-bottom: -4px;
+                    }
+                  </style>
+                  {% assign savings = compare_price | minus: main_price %}
+                  <span class="akta-collection-grid-save">
+                    Du sparst <strong>{{ savings | money }}</strong>
+                  </span>
+                {% endif %}
+
+                {% if section.settings.show_stock_status %}
+                  {% render 'stock-count-status', product: product, custom_class: 'ml-15 collection-stock' %}
+                {% endif %}
+
+                {% if section.settings.show_gift_info %}
+                  {% render 'gift-info-text-with-icon' %}
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <nav class="akta-collection-pagination akta-pagination-{{ section.settings.pagination_style }}">
+            <ul>
+              {% if paginate.previous %}
+                <li><a href="{{ paginate.previous.url }}" class="prev">«</a></li>
+              {% endif %}
+
+              {% for part in paginate.parts %}
+                {% if part.is_link %}
+                  <li>
+                    <a href="{{ part.url }}">{{ part.title }}</a>
+                  </li>
+                {% else %}
+                  <li class="active">{{ part.title }}</li>
+                {% endif %}
+              {% endfor %}
+
+              {% if paginate.next %}
+                <li><a href="{{ paginate.next.url }}" class="next">»</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        {% endif %}
+      {% endpaginate %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Filter Dropdown",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Banner Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "Show_banner",
+      "label": "Show Banner",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "breadcrumbs",
+      "label": "Show Breadcrumbs",
+      "default": false,
+      "visible_if": "{{  section.settings.Show_banner }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_des",
+      "label": "Show Banner Description",
+      "default": false,
+      "visible_if": "{{  section.settings.Show_banner }}"
+    },
+    {
+      "type": "header",
+      "content": "Filter Settings Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_filter",
+      "label": "Show Filter",
+      "default": true
+    },
+
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Number of Products",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "show_max_price",
+      "label": "Show max variant price",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_save_price",
+      "label": "Show Save price",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hover_second_image",
+      "label": "Enable Hover 2nd Image",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "pagination_style",
+      "label": "Select Style",
+      "default": "circle",
+      "options": [
+        {
+          "value": "circle",
+          "label": "Circle"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "filter_collection",
+      "name": "Collection Filter",
+      "settings": [
+        {
+          "type": "collection_list",
+          "id": "collections",
+          "label": "Choose collections"
+        },
+        {
+          "type": "text",
+          "id": "filter_label",
+          "label": "filter Label",
+          "default": "category"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Filter Dropdown"
+    }
+  ]
+}
+{% endschema %}
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.filter-open-btn');
+    const layout = document.querySelector('.akta-collection-grid-wrapper');
+
+    if (!btn || !layout) return;
+
+    btn.addEventListener('click', () => {
+      layout.classList.toggle('filters-open');
+      btn.classList.toggle('active');
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    function initDropdowns() {
+      const buttons = document.querySelectorAll('.filter-tab-btn');
+      const dropdowns = document.querySelectorAll('.dropdown');
+
+      // Close all dropdowns
+      function closeAll() {
+        buttons.forEach((btn) => btn.classList.remove('is-active'));
+        dropdowns.forEach((dd) => dd.classList.remove('active'));
+      }
+
+      // Button click
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+
+          const id = btn.dataset.filter;
+          const dropdown = document.querySelector(`.dropdown[data-dropdown="${id}"]`);
+
+          const isOpen = dropdown.classList.contains('active');
+
+          closeAll(); // close others first
+
+          if (!isOpen) {
+            btn.classList.add('is-active');
+            dropdown.classList.add('active');
+          }
+        });
+      });
+
+      // Click outside closes all
+      document.addEventListener('click', () => {
+        closeAll();
+      });
+
+      // Prevent inside dropdown click from closing
+      dropdowns.forEach((dd) => {
+        dd.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      });
+    }
+    initDropdowns();
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sectionWrapper = document.querySelector(".filter-collection");
+
+    /** -----------------------------
+    * Collection Tabs
+    * ----------------------------- */
+    function loadCollection(handle, pushUrl = false) {
+      sectionWrapper.classList.add("is-loading");
+
+      fetch(`/collections/${handle}?sections=filter-collection-with-dropdown`)
+        .then((res) => {
+          // HTTP error check
+          if (!res.ok) {
+            console.error(
+              "Fetch failed:",
+              res.status,
+              res.statusText,
+              `/collections/${handle}`,
+            );
+            throw new Error("Network response was not ok");
+          }
+
+          return res.json();
+        })
+        .then((data) => {
+          // Section existence check
+          if (!data["filter-collection-with-dropdown"]) {
+            console.error("Section not found in response:", data);
+            throw new Error("Missing section HTML");
+          }
+
+          const html = data["filter-collection-with-dropdown"];
+
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+
+          // Replace Grid
+          const newGrid = doc.querySelector(".akta-grid-pagi-wrapper");
+          const grid = document.querySelector(".akta-grid-pagi-wrapper");
+
+          if (!newGrid) console.error("New grid not found");
+          if (!grid) console.error("Current grid not found");
+
+          if (newGrid && grid) grid.innerHTML = newGrid.innerHTML;
+
+          // Replace Banner
+          const newBanner = doc.querySelector(".filter-banner");
+          const banner = document.querySelector(".filter-banner");
+
+          if (!newBanner) console.error("New banner not found");
+          if (!banner) console.error("Current banner not found");
+
+          if (newBanner && banner) banner.innerHTML = newBanner.innerHTML;
+
+          // Replace Filters
+          const newFilter = doc.querySelector(".custom-filters");
+          const filter = document.querySelector(".custom-filters");
+
+          if (!newFilter) console.error("New filters not found");
+          if (!filter) console.error("Current filters not found");
+
+          if (newFilter && filter) filter.innerHTML = newFilter.innerHTML;
+
+          // Update URL
+          if (pushUrl) {
+            {% comment %} history.pushState({ handle }, "", `/collections/${handle}`); {% endcomment %}
+          }
+
+          // Re-init scripts
+          initTabs();
+          initFilters();
+          initAccordion();
+          initPagination();
+
+          sectionWrapper.classList.remove("is-loading");
+        })
+        .catch((error) => {
+          console.error("loadCollection ERROR:", error);
+          sectionWrapper.classList.remove("is-loading");
+        });
+    }
+
+    function loadPagination(url) {
+      const sectionWrapper = document.querySelector(".filter-collection");
+      if (!sectionWrapper) return;
+
+      sectionWrapper.classList.add("is-loading");
+
+      // keep query params + inject section rendering
+      const fetchUrl =
+        url +
+        (url.includes("?") ? "&" : "?") +
+        "sections=filter-collection-with-dropdown";
+
+      fetch(fetchUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          const html = data["filter-collection-with-dropdown"];
+          if (!html) throw new Error("Section HTML missing");
+
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+
+          // replace GRID + PAGINATION together
+          const newWrapper = doc.querySelector(".akta-grid-pagi-wrapper");
+          const currentWrapper = document.querySelector(
+            ".akta-grid-pagi-wrapper",
+          );
+
+          if (newWrapper && currentWrapper) {
+            currentWrapper.innerHTML = newWrapper.innerHTML;
+          }
+
+          // re-init dynamic scripts
+          initTabs();
+          initFilters();
+          initAccordion();
+          initPagination();
+
+          sectionWrapper.classList.remove("is-loading");
+        })
+        .catch((err) => {
+          console.error("Pagination error:", err);
+          sectionWrapper.classList.remove("is-loading");
+        });
+    }
+
+    function initPagination() {
+      const links = document.querySelectorAll(".akta-collection-pagination a");
+      if (!links.length) return;
+
+      links.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const url = this.getAttribute("href");
+          if (!url) return;
+
+          loadPagination(url);
+        });
+      });
+    }
+    function initTabs() {
+      const tabs = document.querySelectorAll(".collection-tab-btn");
+      const selects = document.querySelectorAll(".filter-select");
+
+      if (!tabs.length) return;
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          if (tab.classList.contains("is-active")) return;
+
+          // activate tab
+          tabs.forEach((t) => t.classList.remove("is-active"));
+          tab.classList.add("is-active");
+
+          // remove active from ALL selects
+          selects.forEach((select) => {
+            select.classList.remove("is-active");
+          });
+
+          loadCollection(tab.dataset.handle);
+        });
+      });
+    }
+
+    // MULTIPLE SELECT SUPPORT
+    document.querySelectorAll(".filter-select").forEach((select) => {
+      select.addEventListener("change", function () {
+        const handle = this.value;
+
+        loadCollection(handle);
+        console.log("Selected handle:", handle);
+
+        // remove active from ALL selects
+        document
+          .querySelectorAll(".filter-select")
+          .forEach((s) => s.classList.remove("is-active"));
+
+        // add active only to current select
+        this.classList.add("is-active");
+
+        // remove active from tabs
+        document
+          .querySelectorAll(".collection-tab-btn")
+          .forEach((tab) => tab.classList.remove("is-active"));
+      });
+    });
+
+    /** -----------------------------
+    * Accordion
+    * ----------------------------- */
+    function initAccordion() {
+      document.querySelectorAll(".filter-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.classList.toggle("active");
+
+          const body = btn.nextElementSibling;
+          body.classList.toggle("open");
+
+          btn.setAttribute("aria-expanded", btn.classList.contains("active"));
+        });
+      });
+    }
+
+    /** -----------------------------
+    * Filter Form AJAX
+    * ----------------------------- */
+    function initFilters() {
+      const form = document.getElementById("CollectionFiltersForm");
+      if (!form) return;
+
+      const sectionWrapper = document.querySelector(".filter-collection");
+
+      function updateCollectionFromForm() {
+        sectionWrapper.classList.add("is-loading");
+
+        // Build URL only from non-empty form values
+        const formData = new FormData(form);
+        const params = new URLSearchParams();
+
+        for (const [key, value] of formData.entries()) {
+          if (value !== "" && value != null) {
+            params.append(key, value);
+          }
+        }
+
+        const url = `${window.location.pathname}${params.toString() ? "?" + params.toString() : ""}`;
+
+        fetch(url)
+          .then((res) => res.text())
+          .then((html) => {
+            const doc = new DOMParser().parseFromString(html, "text/html");
+
+            const newGrid = doc.querySelector(".akta-collection-grid");
+            const currentGrid = document.querySelector(".akta-collection-grid");
+            if (newGrid && currentGrid) currentGrid.innerHTML = newGrid.innerHTML;
+
+            history.pushState({}, "", url);
+            sectionWrapper.classList.remove("is-loading");
+
+            initAccordion(); // Re-init dynamic elements
+          });
+      }
+
+      // Handle changes on inputs
+      form.addEventListener("change", updateCollectionFromForm);
+
+      // Handle Clear button
+      const clearBtn = form.querySelector(".clear-btn");
+      if (clearBtn) {
+        clearBtn.addEventListener("click", (e) => {
+          e.preventDefault(); // Prevent default form reset / reload
+          form.reset(); // Reset all inputs in the form
+          updateCollectionFromForm(); // Update collection via AJAX
+        });
+      }
+    }
+
+    /** -----------------------------
+    * Initial Setup
+    * ----------------------------- */
+    initTabs();
+    initFilters();
+    initAccordion();
+    initPagination();
+  });  
+</script>
+
+
+
+
+<script>
+  function autoWidthSelect(select) {
+    // create temp element to measure text width
+    const temp = document.createElement('select');
+    const tempOption = document.createElement('option');
+    
+    tempOption.textContent = select.options[select.selectedIndex].text;
+    temp.appendChild(tempOption);
+    
+    temp.style.cssText = `
+      position: absolute;
+      visibility: hidden;
+      font-size: ${getComputedStyle(select).fontSize};
+      font-family: ${getComputedStyle(select).fontFamily};
+      font-weight: ${getComputedStyle(select).fontWeight};
+      padding: ${getComputedStyle(select).padding};
+      border: ${getComputedStyle(select).border};
+    `;
+    
+    document.body.appendChild(temp);
+    select.style.width = temp.offsetWidth + 'px';
+    document.body.removeChild(temp);
+  }
+
+  // init
+  document.querySelectorAll('.filter-select').forEach(select => {
+    autoWidthSelect(select); // on load
+
+    select.addEventListener('change', function () {
+      autoWidthSelect(this); // on change
+    });
+  });
+</script>

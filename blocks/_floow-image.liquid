@@ -1,0 +1,146 @@
+<div class="image-wrapper-{{ block.id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.image != blank %}
+    {% assign image_class = 'image-' | append: block.id %}
+    {{
+      block.settings.image
+      | image_url: width: block.settings.image.width, height: block.settings.image.height
+      | image_tag: class: image_class, loading: 'lazy'
+    }}
+  {% else %}
+    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+  {% endif %}
+</div>
+
+<style>
+  .image-wrapper-{{ block.id }} {
+    display: flex;
+    margin-top: {{ block.settings.margin_top }}px;
+    margin-bottom: {{ block.settings.margin_bottom }}px;
+    overflow: hidden;
+  }
+
+  .image-{{ block.id }}, .image-wrapper-{{ block.id }} svg {
+    width: {{ block.settings.width }}px;
+    height: auto;
+    max-width: 100%;
+    border-radius: {{ block.settings.radius }}px;
+  }
+
+  @media(max-width: 768px) {
+    .image-wrapper-{{ block.id }} {
+      margin-top: {{ block.settings.margin_top_mobile }}px;
+      margin-bottom: {{ block.settings.margin_bottom_mobile }}px;
+    }
+
+    .image-{{ block.id }}, .image-wrapper-{{ block.id }} svg {
+      width: {{ block.settings.width_mobile }}px;
+      border-radius: {{ block.settings.radius_mobile }}px;
+    }
+  }
+
+  /* Placeholder Styling (Fix 450x450) */
+  .image-wrapper-{{ block.id }} svg {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    display: block;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Floow Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "width",
+      "min": 10,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Width",
+      "default": 450
+    },
+    {
+      "type": "range",
+      "id": "width_mobile",
+      "min": 10,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Width Mobile",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "label": "Border Radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "radius_mobile",
+      "label": "Border Radius Mobile",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top",
+      "min": -100,
+      "max": 100,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom",
+      "min": -100,
+      "max": 100,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mobile",
+      "label": "Top Mobile",
+      "min": -100,
+      "max": 100,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "label": "Bottom Mobile",
+      "min": -100,
+      "max": 100,
+      "step": 4,
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Floow Image",
+      "category": "Floow"
+    }
+  ]
+}
+{% endschema %}

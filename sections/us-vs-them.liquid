@@ -20,14 +20,13 @@
           {% case block.type %}
             {% when 'title' %}
               <h2
-                class="us-them-title {{ section.settings.heading_type }}"               
+                class="us-them-title {{ section.settings.heading_type }}"
               >
                 {{ block.settings.title }}
               </h2>
             {% when 'description' %}
               <div
                 class="us-them-description {{ section.settings.des_size}}"
-              
               >
                 {{ block.settings.description }}
               </div>
@@ -37,7 +36,7 @@
     </div>
     {% if section.settings.img != blank %}
       <div class="us-them-img">
-        <img src="{{ section.settings.img | img_url: 'master' }}" alt="">
+        <img src="{{ section.settings.img | img_url: 'master' }}" width="1000" height="500" alt="image">
       </div>
     {% endif %}
   </div>
@@ -142,7 +141,7 @@
         { "value": "p-large", "label": "Large" },
         { "value": "p-medium", "label": "Medium" },
         { "value": "p-small", "label": "Small" },
-        { "value": "p-x-small", "label": "Extra Small" }        
+        { "value": "p-x-small", "label": "Extra Small" }
       ]
     }
   ],
@@ -156,8 +155,7 @@
           "id": "title",
           "label": "Title",
           "default": "Kraftstein® vs. Others"
-        }        
-        
+        }
       ]
     },
     {
@@ -169,8 +167,7 @@
           "id": "description",
           "label": "Quotation Text",
           "default": "<p>Our comparison graphic shows why Kraftstein knives are the best choice. With extremely sharp blades, high-quality steel and ergonomic handles, they offer the highest quality and comfort.</p>"
-        }    
-        
+        }
       ]
     }
   ],

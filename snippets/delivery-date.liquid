@@ -1,0 +1,89 @@
+{%- comment -%}
+  ----------------------------------------------------------------------------------------------------------------------
+  DELIVERY DATE SNIPPET
+  ----------------------------------------------------------------------------------------------------------------------
+
+  Zeigt einen Lieferzeitraum an, z. B. "Lieferung 20. - 21. März".
+  "Lieferung" ist normal, der Datumsbereich fett.
+
+  ********************************************
+  Einbindung
+  ********************************************
+
+  Standard (1–3 Werktage):
+    {% render 'delivery-date' %}
+
+  Eigene Lieferzeit:
+    {% render 'delivery-date', days_min: 2, days_max: 4 %}
+
+  ********************************************
+  Unterstützte Variablen
+  ********************************************
+
+  * days_min  – früheste Lieferung in Werktagen ab heute (Standard: 1)
+  * days_max  – späteste  Lieferung in Werktagen ab heute (Standard: 3)
+{%- endcomment -%}
+
+{%- liquid
+  assign days_min = days_min | default: 1
+  assign days_max = days_max | default: 3
+
+  assign month_names = 'Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember' | split: ','
+
+  assign now_ts = 'now' | date: '%s' | plus: 0
+
+  assign seconds_per_day = 86400
+
+  assign min_day = now_ts
+  assign min_added = 0
+  assign max_day = now_ts
+  assign max_added = 0
+
+  for i in (1..14)
+    if min_added < days_min
+      assign min_day = min_day | plus: seconds_per_day
+      assign dow_min = min_day | date: '%u' | plus: 0
+      if dow_min < 6
+        assign min_added = min_added | plus: 1
+      endif
+    endif
+  endfor
+
+  for i in (1..21)
+    if max_added < days_max
+      assign max_day = max_day | plus: seconds_per_day
+      assign dow_max = max_day | date: '%u' | plus: 0
+      if dow_max < 6
+        assign max_added = max_added | plus: 1
+      endif
+    endif
+  endfor
+
+  assign min_day_num = min_day | date: '%-d'
+  assign min_month_idx = min_day | date: '%-m' | minus: 1
+  assign min_month = month_names[min_month_idx]
+
+  assign max_day_num = max_day | date: '%-d'
+  assign max_month_idx = max_day | date: '%-m' | minus: 1
+  assign max_month = month_names[max_month_idx]
+-%}
+
+<p class="delivery-date">
+  Lieferung
+  <strong>
+    {{ min_day_num }}.
+    {%- if min_month_idx != max_month_idx %} {{ min_month }} {% endif -%}
+    &ndash;
+    {{ max_day_num }}. {{ max_month }}
+  </strong>
+</p>
+
+<style>
+  .delivery-date {
+    font-size: 13px;
+      display: none;
+      {% if request.design_mode %}
+          display: block;
+      {% endif %}
+  }
+</style>

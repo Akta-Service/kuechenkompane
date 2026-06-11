@@ -24,8 +24,7 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "400",
-        "target_date": "2025-07-07",
-        "target_time": "00:00:00"
+        "start_time": "00:00:00"
       }
     },
     "breadcrumb_yifnda": {
@@ -111,12 +110,12 @@
         "timer_font_size": 12,
         "timer_color": "#000000",
         "timer_font_weight": "500",
-        "target_date": "2025-04-28",
-        "target_time": "00:00:00"
+        "start_time": "00:00:00"
       }
     },
     "main": {
       "type": "main-collection-product-grid-point",
+      "disabled": true,
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
         ".m-collection-filters-form {margin-bottom: 0;}"
@@ -147,6 +146,24 @@
         "button_style": "m-button--primary",
         "button_size": "",
         "overlay_opacity": 0
+      }
+    },
+    "mrk_collection_grid_section_XAWQBY": {
+      "type": "mrk-collection-grid-section",
+      "name": "Akta Collection Grid",
+      "settings": {
+        "padding_top": 66,
+        "padding_bottom": 40,
+        "show_section_header": false,
+        "section_title": "Featured Collection",
+        "section_description": "Explore our best-selling products.",
+        "collection": "",
+        "products_limit": 20,
+        "use_metafield_image": false,
+        "hover_second_image": false,
+        "pagination_style": "circle",
+        "show_product_ratings": false,
+        "show_stock_status": false
       }
     },
     "usp_list_nd6t8y": {
@@ -195,8 +212,7 @@
         "color_scheme": "",
         "verticle_padding": 50,
         "horizontal_padding": 50,
-        "verticle_padding_mobile": 30,
-        "horizontal_padding_mobile": 15
+        "verticle_padding_mobile": 30
       }
     },
     "promotion_banner_dgKacc": {
@@ -250,6 +266,7 @@
     "collection-header",
     "apex_timer_9PnBtn",
     "main",
+    "mrk_collection_grid_section_XAWQBY",
     "usp_list_nd6t8y",
     "promotion_banner_dgKacc",
     "collection_description_KrcbiD"

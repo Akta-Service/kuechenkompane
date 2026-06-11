@@ -7,11 +7,8 @@
   margin-bottom: 50px;
 }
 .akta-collection-title {
+  font-size: 32px;
   margin: 0 0 10px;
-  font-size: 40px;
-  font-family: "DM Sans", sans-serif;
-  color: #000;
-  margin-bottom: 15px;
 }
 .akta-collection-description {
   font-size: 16px;
@@ -22,9 +19,9 @@
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 25px;
-  max-width: 1440px;
+  max-width: 1390px;
   margin: auto;
-  padding: 0 65px 60px 65px;
+  padding: 0 15px;
   row-gap: 40px;
 }
 
@@ -86,9 +83,7 @@
 
   /* ------- CONTENT ------- */
 
-  .loox-rating {
-    margin-bottom: 5px;
-  }
+
   .akta-collection-grid-title {
     font-size: 16px;
     margin: 0 0 5px;
@@ -111,10 +106,32 @@
   }
   span.akta-collection-grid-compare {
     color: #bc1e1e;
-    color: #b1b1b1;
     font-size: 14px;
     text-decoration: line-through;
   }
+
+  span.akta-sold-out-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #ebf2e8;
+    font-size: 12px;
+    width: auto;
+    border-radius: 50px;
+    color: #fff;
+    line-height: 1;
+    z-index: 9;
+    background: #324a34;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    height: 32px;
+    text-transform: uppercase;
+  }
+
+
 
   /* ==============================
    Akta Collection Pagination
@@ -163,34 +180,28 @@
     width: 44px;
     height: 44px;
 }
-
-
-/* sold out badge  */
-span.akta-sold-out-badge {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  border: 1px solid #ebf2e8;
-  font-size: 13px;
-  width: auto;
-  border-radius: 14px;
-  height: 35px;
-  color: #fff;
-  line-height: 1;
-  z-index: 9;
-  background: #324a34;
-  padding: 8px 12px;
-  text-transform: uppercase;
+.akta-collection-grid-save {
+  display: block;  
+  font-size: 14px;
+  font-weight: 400;  
+  margin-bottom: 5px;
 }
+span.akta-collection-grid-save strong {  
+  font-weight: 700;
+
+}
+
 /* ------- RESPONSIVE ------- */
 @media (max-width: 1279px) {
   .akta-collection-grid {    
     padding: 0 15px;
   }
+  nav.akta-collection-pagination{
+    margin-top: 40px;
+  }
 }
 /* ------- RESPONSIVE ------- */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .akta-collection-grid {
     grid-template-columns: repeat(2, 1fr); 
     gap: 40px 20px;
@@ -199,15 +210,150 @@ span.akta-sold-out-badge {
   .akta-collection-pagination {    
     margin-top: 30px;
   }
-  .akta-collection-title {   
-    font-size: 32px;   
-    margin-bottom: 10px;
+    span.akta-sold-out-badge {
+    padding: 2px 12px;
+    height: 32px;
   }
 }
 
-@media (max-width: 575px) {
-   .akta-collection-title {   
-    font-size: 28px; 
-  }
+@media (max-width: 480px) {
   
 }
+
+
+
+/* new css  */
+.added-border{
+  position: relative;
+
+}
+.added-border .akta-collection-grid-item {    
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 20px;
+}
+
+.added-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(to right,
+      transparent 24.9%,
+      #e5e5e5 25%,
+      #e5e5e5 25.1%,
+      transparent 25.1%,
+
+      transparent 49.9%,
+      #e5e5e5 50%,
+      #e5e5e5 50.1%,
+      transparent 50.1%,
+
+      transparent 74.9%,
+      #e5e5e5 75%,
+      #e5e5e5 75.1%,
+      transparent 75.1%
+    );
+}
+
+.collection-product-gift-info {
+  color: #000;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 5px;
+  background: #f8efea;
+  padding: 5px 10px;  
+}
+  .collection-product-gift-info strong{
+    color: #613e1e;
+  }
+
+  .collection-product-gift-info .gift-icon {
+    width: 18px;
+  }
+  @media(min-width: 769px) and (max-width: 1200px) {
+    .collection-product-gift-info .gift-icon {
+      width: 14px;
+    }
+    .collection-product-gift-info {    
+      font-size: 12px;   
+    }
+  }
+  @media (max-width: 768px) {
+    .added-border::before {
+      background:
+        linear-gradient(to right,
+          transparent 49.9%,
+          #e5e5e5 50%,
+          #e5e5e5 50.1%,
+          transparent 50.1%
+        );
+    }
+  }
+  @media (max-width: 575px) {
+    .collection-product-gift-info .gift-icon {
+      width: 14px;
+    }
+    .collection-product-gift-info {    
+      font-size: 12px;   
+    }
+    .akta-collection-grid-title{
+      font-size: 14px;
+    }  
+    svg.loox-icon {
+      width: 10px;
+      height: 10px;        
+    }  
+    span.loox-rating-label {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 475px) {
+    .collection-product-gift-info .gift-icon {
+      width: 12px;
+    }
+    .collection-product-gift-info {    
+      font-size: 10px;   
+      gap: 3px;    
+      padding: 5px 5px;
+    }
+
+    .added-border:before {
+      background: linear-gradient(to right,transparent 49.9%,#e5e5e5 50.1%,#e5e5e5 50.3%,transparent 50.4%);
+    }
+
+    .stock_status_text_inner {
+      font-size: 14px;
+    }
+    
+    
+  }
+
+
+
+
+
+  @media (max-width: 375px) {
+    .collection-product-gift-info .gift-icon {
+      width: 10px;
+    }
+    .collection-product-gift-info {    
+      font-size: 8px;   
+      gap: 3px;    
+      padding: 3px 3px;
+    }
+    .stock_status_text_inner {
+      
+      font-size: 13px;
+  }
+    
+    
+    
+  }

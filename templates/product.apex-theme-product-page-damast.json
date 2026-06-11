@@ -22,7 +22,8 @@
         "timer_text": "DAMAST SALE! 80% Rabatt mit dem Code \"DAMAST80\"",
         "timer_font_size": 12,
         "timer_color": "#000000",
-        "timer_font_weight": "400"
+        "timer_font_weight": "400",
+        "start_time": "00:00:00"
       }
     },
     "main": {
@@ -90,12 +91,13 @@
         },
         "ratings_fD4VNJ": {
           "type": "ratings",
+          "disabled": true,
           "settings": {
             "likeImg1": "shopify://shop_images/Screenshot_2025-03-17_at_08.24.39_1.jpg",
             "likeImg2": "shopify://shop_images/Kopie_von_Bild6_2_1.jpg",
             "likeImg3": "shopify://shop_images/Screenshot_2025-03-17_at_08.21.14_1.jpg",
-            "likecount": "140.000+ Personen",
-            "like_bg": "#f8f8f8",
+            "likecount": "200.000+ Personen",
+            "like_bg": "#ddede0",
             "likeinfo": "lieben unsere Messer!",
             "demandBadge": "Hohe Nachfrage",
             "demandText": "überdurchschnittlich oft besucht!"
@@ -104,16 +106,19 @@
         "price_J4wXWJ": {
           "type": "price",
           "settings": {
+            "Show_lowest_price": true,
+            "lowest_price_text": "Der niedrigste Preis in den letzten 30 Tagen",
             "taxes_included": true,
             "taxes_included_text": "",
             "show_saving": true,
             "sale_badge_type": "percentage",
+            "badge_text": "",
             "p_pt": 5,
             "p_pb": 18,
             "p_pt_m": 5,
             "p_pb_m": 18,
             "price_color": "#000000",
-            "c_price_color": "#b1b1b1",
+            "c_price_color": "#a7a7a7",
             "per_badge_bg": "#000000",
             "per_badge_color": "#ffffff",
             "f_s": 21,
@@ -138,6 +143,7 @@
         },
         "viewer_stock_count_MFNhKz": {
           "type": "viewerStockCount",
+          "disabled": true,
           "settings": {
             "viewer_count_font_size": 16,
             "view_main_text_1": "Personen",
@@ -145,19 +151,15 @@
             "viewer_margin_top": 10,
             "viewer_margin_bottom": 11,
             "margin_size_mobile_top": 1,
-            "margin_size_mobile_bottom": 1,
-            "product_margin_top": 5,
-            "product_margin_bottom": 5,
-            "p_margin_size_mobile_top": 1,
-            "p_margin_size_mobile_bottom": 25,
-            "product_count_font_size": 16,
-            "product_main_text_1": "Nur noch",
-            "product_main_text_2": "auf Lager",
-            "product_stock_out": "Derzeit ausverkauft",
-            "soldout_color": "#ff0000",
-            "viewer_count_time": 30000,
-            "stock_count_time": 50000,
-            "stock_count_show": true
+            "margin_size_mobile_bottom": 1
+          }
+        },
+        "product_stock_status_bck8gr": {
+          "type": "product_stock_status",
+          "settings": {
+            "text_limited": "Nur noch wenige verfügbar",
+            "text_instock": "Auf Lager - Sofort lieferbar",
+            "unavailable_text": "Derzeit ausverkauft"
           }
         },
         "featurelist_header_tfxtpf": {
@@ -199,8 +201,19 @@
             "invert_img": false
           }
         },
+        "delivery_info_pXHjg9": {
+          "type": "delivery_info",
+          "settings": {
+            "delivery_info": "Jetzt bestellen - Lieferung vor dem:",
+            "weekday_days": 3,
+            "weekend_days": 3,
+            "delivery_alignment": "center",
+            "pt": 0
+          }
+        },
         "variant_picker_yCMzL4": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "size_title": "Size"
           }
@@ -208,10 +221,11 @@
         "buy_buttons_3hQqVi": {
           "type": "buy_buttons",
           "settings": {
-            "show_quantity_selector": true,
+            "show_quantity_selector": false,
             "show_atc_button": true,
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
+            "show_gift_card_recipient": false,
+            "btn_mt": 8
           }
         },
         "payment_icon_tePtpf": {
@@ -228,7 +242,7 @@
             "info_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
             "info_text_2": "Kostenloser Versand",
             "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
-            "info_text_3": "365 Tage Schleifservice",
+            "info_text_3": "365 Tage Schärfegarantie",
             "info_bg_color": "#ffffff",
             "info_border_color": "#000000",
             "info_text_color": "#000000",
@@ -245,16 +259,19 @@
         "price_J4wXWJ",
         "subtitle_xQXVba",
         "viewer_stock_count_MFNhKz",
+        "product_stock_status_bck8gr",
         "featurelist_header_tfxtpf",
         "featurelist_item_iiW6aD",
         "featurelist_item_tL79ih",
         "featurelist_item_jQJcPz",
+        "delivery_info_pXHjg9",
         "variant_picker_yCMzL4",
         "buy_buttons_3hQqVi",
         "payment_icon_tePtpf",
         "product_info_9Yqdn9"
       ],
       "settings": {
+        "selected_gift_product": "",
         "show_sold_out_badge_on_image": true,
         "color_scheme": "default",
         "container": "container",
@@ -292,8 +309,8 @@
         "faq_jkYPLV": {
           "type": "faq",
           "settings": {
-            "question": "365 Tage Schleifservice (Gratis)",
-            "answer": "<p><strong>Lass dein Messer einfach kostenlos nachschleifen!</strong> Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand. </p>"
+            "question": "365 Tage Schärfegarantie (Gratis)",
+            "answer": "<p><strong>Deine Messer bleiben scharf – dafür garantieren wir.</strong> Sollte die Klinge im ersten Jahr an Schärfe verlieren, sorgen wir kostenlos dafür, dass sie wieder schneidet wie am ersten Tag. Versprochen.</p>"
           }
         },
         "faq_kQAWhE": {
@@ -394,73 +411,64 @@
         "animations": "inherit"
       }
     },
-    "scrolling_promotion_UKXeX3": {
-      "type": "scrolling-promotion",
+    "mrk_marque_slider_qLajUx": {
+      "type": "mrk-marque-slider",
       "blocks": {
-        "image_bpiG7J": {
-          "type": "image",
+        "logo_m89V77": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V7_1.png",
-            "image_height": 120,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V7_1_medium_aa02404e-1612-4b01-a59c-85636c5dbf4b.png",
+            "alt_text": ""
           }
         },
-        "image_NptXmD": {
-          "type": "image",
+        "logo_cz6UyK": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V6_1.png",
-            "image_height": 100,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V6_1_medium_11345ce6-3b7b-4b95-b42f-bcac0e4ecad7.png",
+            "alt_text": ""
           }
         },
-        "image_JPQVbf": {
-          "type": "image",
+        "logo_JKQYUn": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V2_1.png",
-            "image_height": 100,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V2_1_medium_c4c8d48c-822e-4f62-bb39-53bcc4c65ef3.png",
+            "alt_text": ""
           }
         },
-        "image_T7Lehj": {
-          "type": "image",
+        "logo_Py7dVA": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V4_1.png",
-            "image_height": 100,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V4_1_medium_9d4aac1a-cea6-44f5-8832-e2b89a732b22.png",
+            "alt_text": ""
           }
         },
-        "image_4NEDGT": {
-          "type": "image",
+        "logo_RqA9z8": {
+          "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/n_tv_logo_V3_1.png",
-            "image_height": 100,
-            "image_link": ""
+            "logo": "shopify://shop_images/n_tv_logo_V3_1_medium_6d31660e-7b5d-464c-9d1d-3e993b5d8021.png",
+            "alt_text": ""
           }
         }
       },
       "block_order": [
-        "image_bpiG7J",
-        "image_NptXmD",
-        "image_JPQVbf",
-        "image_T7Lehj",
-        "image_4NEDGT"
+        "logo_m89V77",
+        "logo_cz6UyK",
+        "logo_JKQYUn",
+        "logo_Py7dVA",
+        "logo_RqA9z8"
       ],
-      "custom_css": [
-        ".gesehen-in {text-align: center; font-size: 24px; /* Adjust as needed */ font-weight: normal; text-transform: normal; margin-bottom: -15px; display: block; width: 100%; position: relative; top: 15px; /* Adjust this value if needed */}"
-      ],
+      "name": "Akta marquee",
       "settings": {
-        "Gesehen_title": "Gesehen In",
+        "title": "Gesehen In",
+        "alignment": "text-center",
         "heading_type": "mrk-h3",
-        "text_alignment": "center",
-        "container": "w-full",
-        "direction": "left",
+        "logo_height": 84,
+        "gap": 44,
+        "gap_mobile": 28,
         "speed": 30,
-        "item_gap": 50,
-        "item_gap_mobile": 30,
-        "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
-        "padding_top": 40,
-        "padding_bottom": 30,
-        "custom_class": ""
+        "background_color": "#ffffff",
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "logo_greyed_out_FMbnW7": {
@@ -703,7 +711,7 @@
         "title_YwDaTz": {
           "type": "title",
           "settings": {
-            "title": "365 Tage Schleifservice (gratis)"
+            "title": "365 Tage Schleifgarantie (gratis)"
           }
         },
         "description_j4ByyM": {
@@ -761,164 +769,6 @@
         "padding_bottom_mobile": 50,
         "heading_type": "mrk-h3",
         "des_size": "p-medium"
-      }
-    },
-    "ugc_video_testimonial_D4kJ9X": {
-      "type": "ugc-video-testimonial",
-      "blocks": {
-        "item_7xpaVV": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_1_fd6e8e0e-b98b-4b2d-be30-f3a0d7888a8e.jpg",
-            "video": "shopify://files/videos/Küchenkompane (3).mp4",
-            "product": "premium"
-          }
-        },
-        "item_tYitmU": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_5_89195910-0d90-440f-990e-ccde72fb3897.jpg",
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V2.mov",
-            "product": "premium"
-          }
-        },
-        "item_iJxMti": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_2_c43ac8ad-5ad8-4e2a-812e-7a9d24440cdf.jpg",
-            "video": "shopify://files/videos/Review-2.mp4",
-            "product": "premium"
-          }
-        },
-        "item_UYW7B3": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_3_3afbc759-565a-46fd-b360-7da9ae57dfbd.jpg",
-            "video": "shopify://files/videos/Reeview-1.mp4",
-            "product": "premium"
-          }
-        },
-        "item_ft7YRa": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_4_2bfcf4a3-7294-43e4-b92e-db75219f6273.jpg",
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V3.mp4",
-            "product": "premium"
-          }
-        },
-        "item_cHcggm": {
-          "type": "item",
-          "settings": {
-            "video_poster": "shopify://shop_images/Screenshot_6_303b9316-5d7c-4433-ad93-6a9da4680614.jpg",
-            "video": "shopify://files/videos/PXL_20250128_155346978_mp4_1_V1.mp4",
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_7xpaVV",
-        "item_tYitmU",
-        "item_iJxMti",
-        "item_UYW7B3",
-        "item_ft7YRa",
-        "item_cHcggm"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "pt": 70,
-        "pb": 50,
-        "pt_mobile": 30,
-        "pb_mobile": 30,
-        "title": "Das Messerset erobert Deutschland",
-        "heading_type": "mrk-h3",
-        "show_button": false,
-        "btn_url": "https://www.instagram.com/kuechenkompane/",
-        "btn_text": "",
-        "autoplay": false
-      }
-    },
-    "icon_box_9UtNky": {
-      "type": "icon-box",
-      "blocks": {
-        "iconbox_pJbJGA": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-01.png",
-            "image_by_url": "",
-            "title": "30 Tage Rückgaberecht",
-            "description": "<p>Teste unsere hochwertigen Küchenmesser risikofrei – mit 30 Tagen Rückgaberecht.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_RW46nE": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-03.png",
-            "image_by_url": "",
-            "title": "Schärfe Garantiert",
-            "description": "<p>Unsere Messer stehen für Qualität und Langlebigkeit – garantiert ein Leben lang</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_EiwgTg": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "",
-            "image": "shopify://shop_images/Icons_for_Ku_echenkompane_D1-02.png",
-            "image_by_url": "",
-            "title": "Kostenloser Versand",
-            "description": "<p>Genieße kostenlosen Versand innerhalb der gesamten EU ab 100€ Bestellwert.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "iconbox_pJbJGA",
-        "iconbox_RW46nE",
-        "iconbox_EiwgTg"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".m-icon-box__heading {font-weight: 400;}"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "item_per_row": 3,
-        "item_gap": 30,
-        "item_gap_mobile": 10,
-        "card_style": "vertical",
-        "image_max_width": "70px",
-        "content_alignment": "center",
-        "hover_effect": "scaling-up",
-        "enable_slider": false,
-        "show_pagination": false,
-        "show_navigation": false,
-        "use_scroll_mobile": true,
-        "use_grid_column_mb": false,
-        "padding_top": 100,
-        "padding_bottom": 38,
-        "custom_class": "",
-        "animations": "inherit"
       }
     },
     "expert_testimonial_adCtdF": {
@@ -1035,7 +885,7 @@
         "mt_mobile": 20,
         "mb_mobile": 20,
         "title": "Vertraut von",
-        "title_highlight": "+140K Kunden",
+        "title_highlight": "+200K Kunden",
         "heading_type": "mrk-h3",
         "h_text_color": "#000000",
         "arrow_icon_color": "#000000"
@@ -1096,8 +946,8 @@
         "item_9JjGkE": {
           "type": "item",
           "settings": {
-            "faq_title": "Wie funktioniert euer 365 Tage Schleifservice?",
-            "faq_body": "<p>Lass dein Messer einfach kostenlos nachschleifen! Beim Kauf erhältst du einen gratis 365 Tage Schleifservice. Schick es ein, wenn es stumpf wird – wir schärfen es auf die ursprüngliche Schärfe nach. Du übernimmst nur den Versand.</p>"
+            "faq_title": "Wie funktioniert euer 365 Tage Schleifgarantie?",
+            "faq_body": "<p><strong>Deine Messer bleiben scharf – dafür garantieren wir.</strong> Sollte die Klinge im ersten Jahr an Schärfe verlieren, sorgen wir kostenlos dafür, dass sie wieder schneidet wie am ersten Tag. Versprochen.</p>"
           }
         }
       },
@@ -1165,7 +1015,7 @@
         "heading_type": "mrk-h3",
         "des": "Die Antwort ist einfach: Wir sind zu 100% überzeugt von unseren Produkten! Und das aus gutem Grund, denn unsere Produkte wurden:",
         "des_size": "p-medium",
-        "img": "shopify://shop_images/Grunder_DE_1.png",
+        "img": "shopify://shop_images/mats_1_1.jpg",
         "verticle_padding": 70,
         "horizontal_padding": 0,
         "border_t": false,
@@ -1219,6 +1069,8 @@
         "loox_reviews_loox_dynamic_section_FnN8Yz": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
             "limit": 15,
@@ -1247,21 +1099,92 @@
     },
     "product_recommendations_UBnt9L": {
       "type": "product-recommendations",
+      "disabled": true,
       "name": "Product recommendations",
       "settings": {
         "container": "container",
         "color_scheme": "",
         "remove_params": false,
+        "custom_class": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
         "heading": "Das könnte dir auch gefallen",
         "heading_size": "h3",
         "text_align": "left",
         "limit": 8,
         "columns": 4,
+        "columns_tablet": 3,
+        "columns_mobile": 1,
+        "peek_tablet": 60,
+        "peek_mobile": 50,
+        "peek_mobile_sm": 40,
+        "mobile_gap": 12,
         "column_gap": 30,
         "enable_slider": true,
-        "show_pagination": false,
+        "slider_type": "loop",
+        "slider_speed": 550,
         "show_navigation": true,
-        "use_scroll_mobile": true,
+        "show_pagination": false,
+        "autoplay": false,
+        "autoplay_speed": 4000,
+        "nav_bg_color": "#ffffff",
+        "nav_hover_bg_color": "#f7f3ee",
+        "nav_icon_color": "#000000",
+        "nav_border_color": "#e0e0e0",
+        "nav_shadow": "0 3px 14px rgba(0,0,0,0.14)",
+        "nav_size": 46,
+        "pagination_color": "#cccccc",
+        "pagination_active_color": "#000000",
+        "animations": "inherit"
+      }
+    },
+    "akta_recommendations_ytLqF6": {
+      "type": "akta-recommendations",
+      "blocks": {
+        "product_tiPVAC": {
+          "type": "product",
+          "settings": {
+            "product": "premium"
+          }
+        },
+        "product_97BagJ": {
+          "type": "product",
+          "settings": {
+            "product": "damast-gyuto"
+          }
+        },
+        "product_nRnapX": {
+          "type": "product",
+          "settings": {
+            "product": "messer-damast"
+          }
+        },
+        "product_wUQfmp": {
+          "type": "product",
+          "settings": {
+            "product": "aoki-damastmesser-set-kopie"
+          }
+        }
+      },
+      "block_order": [
+        "product_tiPVAC",
+        "product_97BagJ",
+        "product_nRnapX",
+        "product_wUQfmp"
+      ],
+      "name": "Appex recommendations",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "remove_params": false,
+        "heading": "Das könnte dir gefallen",
+        "heading_size": "h3",
+        "text_align": "left",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "show_pagination": false,
+        "show_navigation": false,
         "padding_top": 50,
         "padding_bottom": 50,
         "custom_class": "",
@@ -1336,15 +1259,13 @@
     "apex_theme_product_page_copy_bfPEWH",
     "product_descrption_accordion_btdDtQ",
     "product-details-tabs",
-    "scrolling_promotion_UKXeX3",
+    "mrk_marque_slider_qLajUx",
     "logo_greyed_out_FMbnW7",
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
     "us_vs_them_8Tbqki",
-    "ugc_video_testimonial_D4kJ9X",
-    "icon_box_9UtNky",
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
     "apex_faqs_jx7hp6",
@@ -1352,6 +1273,7 @@
     "benefit_list_gif_iJWmYF",
     "1741277518a98c9482",
     "product_recommendations_UBnt9L",
+    "akta_recommendations_ytLqF6",
     "store_benefits_bottom_NPnyUL"
   ]
 }

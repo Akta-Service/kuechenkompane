@@ -1,9 +1,6 @@
 {{ 'product.css' | asset_url | stylesheet_tag }}
 {{ 'apex-theme-product-page.css' | asset_url | stylesheet_tag }}
-{% if section.settings.show_zoom_button %}
-  {{ 'photoswipe.css' | asset_url | stylesheet_tag }}
-  {{ 'component-photoswipe.css' | asset_url | stylesheet_tag }}
-{% endif %}
+
 {%- liquid
   assign container = section.settings.container
   assign layout = section.settings.layout
@@ -34,7 +31,7 @@
    .apex-product-page .rs-container {
      padding: 0 30px;
    }
-   .apex-product-page .nav-swiper-container {
+   .apex-product-page .nav-splide-container {
      max-height: 450px;
      width: 100px;
    }
@@ -42,7 +39,7 @@
      width: calc(100% - 120px);
      margin-bottom: 0;
    }
-   .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
+   .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .splide__slide {
      height: inherit !important;
    }
 
@@ -50,7 +47,7 @@
      padding: 3px !important;
    }
    @media (max-width: 1024px) {
-     .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .swiper-slide {
+     .apex-product-page .m-product-media--layout-6 .m-product-media--slider__thumbnails .splide__slide {
        height: inherit !important;
        width: 100% !important;
      }
@@ -91,7 +88,6 @@
      bottom: -3px;
      left: 0px;
      width: 16px;
-     /* border-radius: 1px; */
      height: 5px;
      clip-path: polygon(0 0%, 0 100%, 100% 0);
    }
@@ -155,74 +151,8 @@
       <product-recently-viewed data-product-id="{{ product.id }}" class="m:hidden"></product-recently-viewed>
       <div class="m-main-product--media m:column {{ media_class }}">
         <div class="m-product-media--desktop m-product-media--wrapper m-product-media--{{ section.settings.layout }} m:justify-end ">
-          {% render 'product-media-custom', section: section, template_product: true %}
-
-          {% if section.settings.show_sold_out_badge_on_image != false %}
-            {% if product.available == false %}
-              <span
-                class="m-product-tag m-product-tag--soldout-overlay product-page-badge m-gradient m-color-{{ settings.soldout_badge_color_scheme }}"
-              >
-                {{- 'products.product.sold_out' | t -}}
-              </span>
-            {% endif %}
-          {% endif %}
-        </div>
-        <div class="m-product-media--mobile m-product-media--{{ section.settings.layout }} md:m:hidden">
-          {%- render 'product-media-mobile',
-            show_nav: false,
-            show_thumbnails: section.settings.show_nav_media_mobile,
-            show_pagination: section.settings.show_pagination_mobile,
-            section: section
-          -%}
-          {% if section.settings.show_atwl %}
-            {%- liquid
-              assign wishlist_app = settings.wishlist_app
-            -%}
-            {% if wishlist_app == 'growave' %}
-              {% comment %}theme-check-disable MissingTemplate{% endcomment %}
-              {% capture the_snippet_fave_icon %}{% render 'ssw-widget-faveicon' with product.id %}{% endcapture %}
-              {% comment %}theme-check-enable MissingTemplate{% endcomment %}
-              <div class="m-product-media--mobile__atwl-button">
-                {% unless the_snippet_fave_icon contains 'Liquid error' %}
-                  {{ the_snippet_fave_icon }}
-                {% else %}
-                  {% render 'mm-ssw-widget-faveicon' with product.id %}
-                {% endunless %}
-              </div>
-            {% else %}
-              {% render 'tooltip',
-                type: 'wishlist',
-                product: product,
-                class_name: 'm-tooltip--top m-product-media--mobile__atwl-button'
-              %}
-            {% endif %}
-          {% endif %}
-          {%- if first_3d_model -%}
-            <div class="m-product-media__xr-button md:m:hidden">
-              <button
-                class="m-xr-button m:w-full m:flex m:items-center m:justify-center"
-                type="button"
-                aria-label="{%- render 'new-locale', key: 'products.product.xr_button_label' -%}"
-                data-shopify-xr
-                data-shopify-model3d-id="{{ first_3d_model.id }}"
-                data-shopify-title="title"
-                data-shopify-xr-hidden
-              >
-                <svg
-                  class="m-svg-icon"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="presentation"
-                  viewBox="0 0 18 21"
-                >
-                  <path d="M7.67998 20.629L1.28002 16.723C0.886205 16.4784 0.561675 16.1368 0.337572 15.731C0.113468 15.3251 -0.00274623 14.8686 -1.39464e-05 14.405V6.59497C-0.00238367 6.13167 0.113819 5.6755 0.33751 5.26978C0.561202 4.86405 0.884959 4.52227 1.278 4.27698L7.67796 0.377014C8.07524 0.131403 8.53292 0.000877102 8.99999 9.73346e-08C9.46678 -0.000129605 9.92446 0.129369 10.322 0.374024V0.374024L16.722 4.27399C17.1163 4.51985 17.4409 4.86287 17.6647 5.27014C17.8885 5.67742 18.0039 6.13529 18 6.59998V14.409C18.0026 14.8725 17.8864 15.3289 17.6625 15.7347C17.4386 16.1405 17.1145 16.4821 16.721 16.727L10.321 20.633C9.92264 20.8742 9.46565 21.0012 8.99999 21C8.53428 20.9998 8.07761 20.8714 7.67998 20.629V20.629ZM8.72398 2.078L2.32396 5.97803C2.22303 6.04453 2.14066 6.13551 2.08452 6.24255C2.02838 6.34959 2.00031 6.46919 2.00298 6.59003V14.4C2.00026 14.5205 2.02818 14.6396 2.08415 14.7463C2.14013 14.853 2.22233 14.9438 2.32298 15.01L7.99999 18.48V10.919C8.00113 10.5997 8.08851 10.2867 8.25292 10.0129C8.41732 9.73922 8.65267 9.51501 8.93401 9.36401L15.446 5.841L9.28001 2.08002C9.19614 2.02738 9.09901 1.99962 8.99999 2C8.90251 1.99972 8.8069 2.02674 8.72398 2.078V2.078Z" fill="currentColor"></path>
-                </svg>
-                <span class="m-xr-button--label">{%- render 'new-locale', key: 'products.product.xr_button' -%}</span>
-              </button>
-            </div>
-          {%- endif -%}
+          {% comment %} {% render 'product-media-custom', section: section, template_product: true %} {% endcomment %}
+          {% render 'mrk-product-media', section: section, template_product: true %}
         </div>
       </div>
       <div class="m-main-product--info apex-theme-info m:column {{ info_class }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
@@ -243,14 +173,6 @@
 
 {% render 'add-emoji-popup', section: section, product: product %}
 
-{%- if section.settings.show_zoom_button -%}
-  <script src="{{ 'photoswipe.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
-<script src="{{ 'product.js' | asset_url }}" defer="defer"></script>
-{% if product.media.size > 0 %}
-  <script src="{{ 'product-media.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'product-media-mobile.js' | asset_url }}" defer="defer"></script>
-{% endif %}
 {%- if first_3d_model -%}
   <script type="application/json" id="ModelJSON-{{ product.id }}">
     {{ product.media | where: 'media_type', 'model' | json }}
@@ -527,6 +449,295 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "floow-currently-watching",
+      "name": "Floow Currently Watching",
+      "settings": [
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin bottom",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "floow-delivery-time",
+      "name": "Floow Delivery Time",
+      "settings": [
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin bottom",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "floow-price-countdown",
+      "name": "Floow Price Countdown",
+      "settings": [
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin bottom",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "floow-social-proof",
+      "name": "Floow Social Proof",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Sichtbarkeit"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_only_in_editor",
+          "label": "Show only in Editor",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Abstände"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": -20,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "Abstand oben",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": -20,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "Abstand unten",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Avatare"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar_1",
+          "label": "Avatar 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar_2",
+          "label": "Avatar 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar_3",
+          "label": "Avatar 3"
+        },
+        {
+          "type": "range",
+          "id": "avatar_size",
+          "label": "Avatar-Größe",
+          "min": 24,
+          "max": 60,
+          "step": 2,
+          "default": 40,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "avatar_overlap",
+          "label": "Überlappung",
+          "min": 0,
+          "max": 20,
+          "step": 2,
+          "default": 10,
+          "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "avatar_border_color",
+          "label": "Avatar Rahmenfarbe",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Badge"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text",
+          "default": "200.000+ Personen"
+        },
+        {
+          "type": "color",
+          "id": "badge_bg_color",
+          "label": "Badge Hintergrund",
+          "default": "#d4edda"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge Textfarbe",
+          "default": "#1a6b2f"
+        },
+        {
+          "type": "range",
+          "id": "badge_font_size",
+          "label": "Badge Schriftgröße",
+          "min": 10,
+          "max": 18,
+          "step": 1,
+          "default": 13,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "badge_offset",
+          "label": "Badge Versatz (negativ = links)",
+          "min": -40,
+          "max": 0,
+          "step": 2,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Label"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label Text",
+          "default": "lieben unser Set!"
+        },
+        {
+          "type": "color",
+          "id": "label_color",
+          "label": "Label Farbe",
+          "default": "#2c2c2c"
+        },
+        {
+          "type": "select",
+          "id": "label_font_weight",
+          "label": "Label Schriftgewicht",
+          "options": [
+            { "value": "400", "label": "Normal" },
+            { "value": "500", "label": "Medium" },
+            { "value": "600", "label": "Semibold" },
+            { "value": "700", "label": "Bold" }
+          ],
+          "default": "400"
+        },
+        {
+          "type": "range",
+          "id": "label_font_size",
+          "label": "Label Schriftgröße",
+          "min": 10,
+          "max": 20,
+          "step": 1,
+          "default": 14,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Layout"
+        },
+        {
+          "type": "range",
+          "id": "gap",
+          "label": "Abstand Avatare / Text",
+          "min": 4,
+          "max": 32,
+          "step": 2,
+          "default": 12,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "text_gap",
+          "label": "Abstand Badge / Label",
+          "min": 4,
+          "max": 20,
+          "step": 2,
+          "default": 8,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Modal"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_modal",
+          "label": "Dialog öffnen bei Klick",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "modal_title",
+          "label": "Dialog Titel",
+          "default": "Das sagen unsere Kunden"
+        },
+        {
+          "type": "text",
+          "id": "modal_loox_url",
+          "label": "Loox Widget URL",
+          "info": "z.B. https://loox.io/widget/Ny-QPYB_FU/reviews/4548427087971"
+        }
+      ]
     },
     {
       "type": "follower_recom_text",
@@ -962,6 +1173,12 @@
               "value": "fixed_amount"
             }
           ]
+        },
+        {
+          "type": "text",
+          "id": "badge_text_after",
+          "label": "After Badge Text",
+          "default": "Rabatt"
         },
         {
           "type": "range",
@@ -2344,7 +2561,7 @@
   {% endif %}
 {% endcomment %}
 
-<script src="{{ 'bundle-quantity-slector.js' | asset_url }}"></script>
+<script src="{{ 'bundle-quantity-slector.js' | asset_url }}" defer></script>
 
 <script>
   window.productData = {{ product | json }};

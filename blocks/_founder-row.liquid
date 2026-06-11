@@ -1,0 +1,182 @@
+<div
+  class="founder-row{% if block.settings.reverse_columns %} is-reversed{% endif %}"
+  {{ block.shopify_attributes }}
+  style="
+      background: {{ block.settings.bg_color }};
+    {% if block.settings.show_top_border %}border-top: 1px solid {{ block.settings.border_color }};{% endif %}
+    {% if block.settings.show_bottom_border %}border-bottom: 1px solid {{ block.settings.border_color }};{% endif %}
+  "
+>
+    <div class="custom-container">
+        <div class="founder-row-grid">
+            {% content_for 'blocks' %}
+        </div>
+    </div>
+
+  <style>
+    .founder-row {
+      width: 100%;
+      padding-top: {{ block.settings.padding_top }}px;
+      padding-bottom: {{ block.settings.padding_bottom }}px;
+    }
+
+    .founder-row-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .founder-row-grid > * {
+      min-width: 0;
+    }
+
+    .founder-row.is-reversed .founder-row-grid {
+      direction: rtl;
+    }
+
+    .founder-row.is-reversed .founder-row-grid > * {
+      direction: ltr;
+    }
+
+    @media screen and (max-width: 1149px) {
+      .founder-row {
+        padding-top: {{ block.settings.mobile_padding_top }}px;
+        padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+      }
+      .founder-row-grid {
+        gap: 40px;
+        grid-template-columns: 1fr;
+      }
+
+      .founder-row.is-reversed .founder-row-grid {
+        direction: ltr;
+      }
+    }
+
+    @media screen and (max-width: 639px) {
+      .founder-row-grid {
+        gap: 32px;
+      }
+    }
+  </style>
+</div>
+
+{% schema %}
+{
+  "name": "Founder row",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_founder-slider-group"
+    },
+    {
+      "type": "_founder-content"
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "reverse_columns",
+      "label": "Reverse columns",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_border",
+      "label": "Show top border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bottom_border",
+      "label": "Show bottom border",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#dddddd"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founder row",
+      "category": "Layout",
+      "blocks": [
+        {
+          "type": "_founder-slider-group",
+          "blocks": [
+            {
+              "type": "_founder-slide-image"
+            },
+            {
+              "type": "_founder-slide-image"
+            },
+            {
+              "type": "_founder-slide-image"
+            }
+          ]
+        },
+        {
+          "type": "_founder-content",
+          "blocks": [
+            {
+              "type": "_founder-text"
+            },
+            {
+              "type": "_founder-heading"
+            },
+            {
+              "type": "_founder-body"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,421 @@
+{% comment %} {% comment %}
+  <style>
+    .easter-confetti {
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .btn-start {
+      padding: 14px 40px;
+      background: #a78bfa;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    .btn-start:hover { background: #8b5cf6; }
+    .btn-stop {
+      padding: 14px 40px;
+      background: transparent;
+      color: #a78bfa;
+      border: 1.5px solid #a78bfa;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .btn-stop:hover { background: #a78bfa; color: #fff; }
+  </style>
+{% endcomment %}
+
+{% comment %}
+  <button class="btn-start" onclick="document.dispatchEvent(new Event('greetingStart'))">Start</button>
+  <button class="btn-stop" onclick="document.dispatchEvent(new Event('greetingStop'))">Stop</button>
+{% endcomment %}
+
+<div id="easter-confetti-layer" style="position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:9999;"></div>
+
+<script>
+     (function () {
+       var COLORS = ['#ff4070','#ffe94a','#2bbfcf','#a78bfa','#f87ab0','#7ecf40','#ff8c42','#00e5ff','#e040fb','#ffb347'];
+
+       var IMAGES = [
+         {% for block in section.blocks %}
+           {% if block.type == 'egg_image' and block.settings.image %}
+             '{{ block.settings.image | image_url: width: 160 }}'{% unless forloop.last %},{% endunless %}
+           {% endif %}
+         {% endfor %}
+       ];
+
+       var SVG_EGGS = [
+         '<svg width="38" height="48" viewBox="0 0 52 64"><ellipse cx="26" cy="35" rx="23" ry="29" fill="#d0103a"/><rect x="3" y="28" width="46" height="7" fill="#2bbfcf" opacity="0.85"/><path d="M6 33 Q16 24 26 33 Q36 42 46 33" fill="none" stroke="#f87ab0" stroke-width="2.5" stroke-linecap="round"/><circle cx="14" cy="22" r="4" fill="#ffe94a"/><circle cx="26" cy="20" r="4" fill="#2bbfcf"/><circle cx="38" cy="22" r="4" fill="#ffe94a"/><circle cx="12" cy="44" r="3.5" fill="#f87ab0"/><circle cx="26" cy="47" r="3.5" fill="#ffe94a"/><circle cx="40" cy="44" r="3.5" fill="#f87ab0"/></svg>',
+         '<svg width="38" height="48" viewBox="0 0 52 64"><ellipse cx="26" cy="35" rx="23" ry="29" fill="#7ecfb8"/><ellipse cx="26" cy="35" rx="23" ry="29" fill="#b8e04a" opacity="0.38"/><rect x="3" y="32" width="46" height="11" fill="#3eb89a" opacity="0.65"/><circle cx="13" cy="37" r="4" fill="white" opacity="0.8" stroke="#3eb89a" stroke-width="1.5"/><circle cx="26" cy="37" r="4" fill="white" opacity="0.8" stroke="#3eb89a" stroke-width="1.5"/><circle cx="39" cy="37" r="4" fill="white" opacity="0.8" stroke="#3eb89a" stroke-width="1.5"/><path d="M3 47 L10 40 L17 47 L24 40 L31 47 L38 40 L49 47" fill="none" stroke="#4ab8e0" stroke-width="2.2" stroke-linecap="round"/></svg>',
+         '<svg width="38" height="48" viewBox="0 0 52 64"><ellipse cx="26" cy="35" rx="23" ry="29" fill="#90aee8"/><path d="M14 18C14 14 18 12 20 16C22 12 26 14 26 18C26 23 20 28 20 28S14 23 14 18Z" fill="white" opacity="0.82"/><path d="M28 15C28 11 32 9 34 13C36 9 40 11 40 15C40 20 34 25 34 25S28 20 28 15Z" fill="white" opacity="0.82"/><path d="M10 32C10 28 14 26 16 30C18 26 22 28 22 32C22 37 16 42 16 42S10 37 10 32Z" fill="white" opacity="0.82"/><path d="M30 30C30 26 34 24 36 28C38 24 42 26 42 30C42 35 36 40 36 40S30 35 30 30Z" fill="white" opacity="0.82"/></svg>',
+         '<svg width="38" height="48" viewBox="0 0 52 64"><ellipse cx="26" cy="35" rx="23" ry="29" fill="#f59e0b"/><rect x="3" y="22" width="46" height="6" fill="#f97316" opacity="0.8"/><rect x="3" y="44" width="46" height="6" fill="#f97316" opacity="0.8"/><circle cx="16" cy="35" r="5" fill="#fff" opacity="0.7"/><circle cx="26" cy="35" r="5" fill="#fff" opacity="0.7"/><circle cx="36" cy="35" r="5" fill="#fff" opacity="0.7"/></svg>',
+         '<svg width="38" height="48" viewBox="0 0 52 64"><ellipse cx="26" cy="35" rx="23" ry="29" fill="#ec4899"/><circle cx="16" cy="22" r="5" fill="#fce7f3" opacity="0.75"/><circle cx="26" cy="19" r="5" fill="#fce7f3" opacity="0.75"/><circle cx="36" cy="22" r="5" fill="#fce7f3" opacity="0.75"/><circle cx="11" cy="35" r="5" fill="#fce7f3" opacity="0.75"/><circle cx="21" cy="33" r="5" fill="#fce7f3" opacity="0.75"/><circle cx="31" cy="35" r="5" fill="#fce7f3" opacity="0.75"/><circle cx="41" cy="33" r="5" fill="#fce7f3" opacity="0.75"/></svg>'
+       ];
+
+       var useImages = IMAGES.length > 0;
+       var layer = document.getElementById('easter-confetti-layer');
+       var spawnTimer = null;
+       var rafId = null;
+       var isRunning = false;
+       var particles = [];
+
+       function makeParticleData() {
+        var isMobile = window.innerWidth <= 575;
+        var sizeScale = isMobile ? 0.4 : 1;  // 40% size on mobile
+
+        var W = window.innerWidth, H = window.innerHeight;
+        var isEgg = Math.random() > 0.48;
+        return {
+          isEgg   : isEgg,
+          imgIndex: Math.floor(Math.random() * (useImages ? IMAGES.length : SVG_EGGS.length)),
+          x0      : Math.random() * (W - 60),
+          sway    : (45 + Math.random() * 75) * sizeScale,
+          dur     : 2400 + Math.random() * 2000,
+          r0      : (Math.random() - 0.5) * 60,
+          r1      : 0,
+          sz      : (28 + Math.random() * 28) * sizeScale,   // egg size
+          csz     : (6 + Math.random() * 9) * sizeScale,     // confetti size
+          isRect  : Math.random() > 0.4,
+          color   : COLORS[Math.floor(Math.random() * COLORS.length)],
+          startMs : Date.now(),
+          el      : null
+        };
+      }
+
+       function buildEl(p) {
+         var el = document.createElement('div');
+         el.style.position = 'absolute';
+         el.style.pointerEvents = 'none';
+         if (p.isEgg) {
+           if (useImages) {
+             var img = document.createElement('img');
+             img.src = IMAGES[p.imgIndex];
+             img.style.cssText = 'width:' + p.sz + 'px;height:' + (p.sz * 1.27) + 'px;object-fit:contain;display:block;';
+             el.appendChild(img);
+           } else {
+             el.innerHTML = SVG_EGGS[p.imgIndex % SVG_EGGS.length];
+             el.firstChild.setAttribute('width', p.sz);
+             el.firstChild.setAttribute('height', p.sz * 1.27);
+           }
+         } else {
+           el.style.width = (p.isRect ? p.csz * 1.9 : p.csz) + 'px';
+           el.style.height = p.csz + 'px';
+           el.style.background = p.color;
+           el.style.borderRadius = p.isRect ? '2px' : '50%';
+         }
+         p.r1 = p.r0 + (Math.random() - 0.5) * 420;
+         return el;
+       }
+
+       function spawnOne() {
+         var p = makeParticleData();
+         p.el = buildEl(p);
+         layer.appendChild(p.el);
+         particles.push(p);
+       }
+
+       /* Single shared rAF loop — uses Date.now() so tab-hidden time is counted */
+       function loop() {
+         if (!isRunning) return;
+         var now = Date.now();
+         var W = window.innerWidth, H = window.innerHeight;
+         var alive = [];
+
+         for (var i = 0; i < particles.length; i++) {
+           var p = particles[i];
+           var elapsed = now - p.startMs;
+           var progress = elapsed / p.dur;
+
+           if (progress >= 1) {
+             if (p.el && p.el.parentNode) p.el.parentNode.removeChild(p.el);
+             continue;
+           }
+
+           var y   = -65 + (H + 130) * progress;
+           var dx  = Math.sin(progress * Math.PI * 2.8) * p.sway;
+           var rot = p.r0 + (p.r1 - p.r0) * progress;
+           var op  = progress > 0.85 ? (1 - progress) / 0.15 : 0.93;
+
+           p.el.style.transform = 'translate(' + (p.x0 + dx) + 'px,' + y + 'px) rotate(' + rot + 'deg)';
+           p.el.style.opacity = op;
+           alive.push(p);
+         }
+
+         particles = alive;
+         rafId = requestAnimationFrame(loop);
+       }
+
+       function start() {
+         if (isRunning) return;
+         isRunning = true;
+
+         /* Spawn initial burst */
+         for (var i = 0; i < 6; i++) {
+           (function(i) { setTimeout(spawnOne, i * 70); })(i);
+         }
+
+         /* Continuous spawn — uses real setInterval.
+            On tab return, missed ticks fire in rapid burst which we cap */
+         var lastSpawn = Date.now();
+         spawnTimer = setInterval(function () {
+           var now = Date.now();
+           /* how many 270ms ticks were missed while tab was hidden */
+           var missed = Math.min(Math.floor((now - lastSpawn) / 270), 8);
+           lastSpawn = now;
+           for (var j = 0; j < Math.max(missed, 3); j++) spawnOne();
+         }, 270);
+
+         rafId = requestAnimationFrame(loop);
+       }
+
+       function stop() {
+         isRunning = false;
+         if (spawnTimer) { clearInterval(spawnTimer); spawnTimer = null; }
+         if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+         particles.forEach(function(p) { if (p.el && p.el.parentNode) p.el.parentNode.removeChild(p.el); });
+         particles = [];
+       }
+
+       /* On tab return: rAF resumes automatically.
+          Particles that finished while hidden are removed in next loop tick.
+          New particles were queued by setInterval catch-up above.
+          No freeze, no jump — seamless. */
+
+       //document.addEventListener('greetingStart', start);
+       document.addEventListener('passwordCorrect', start);
+
+        document.addEventListener('greetingStop',  stop);
+
+
+
+
+       window.easterConfetti = { start: start, stop: stop };
+
+     })();
+</script>
+
+{% schema %}
+{
+  "name": "Easter confetti",
+  "tag": "section",
+  "class": "easter-confetti",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "egg_image",
+      "name": "Animation Shape image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Shape image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Easter confetti"
+    }
+  ]
+}
+{% endschema %} {% endcomment %}
+
+
+{% comment %}
+  <style>
+    .easter-confetti {
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .btn-start {
+      padding: 14px 40px;
+      background: #a78bfa;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    .btn-start:hover { background: #8b5cf6; }
+    .btn-stop {
+      padding: 14px 40px;
+      background: transparent;
+      color: #a78bfa;
+      border: 1.5px solid #a78bfa;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .btn-stop:hover { background: #a78bfa; color: #fff; }
+  </style>
+{% endcomment %}
+
+{% comment %}
+  <button class="btn-start" onclick="document.dispatchEvent(new Event('greetingStart'))">Start</button>
+  <button class="btn-stop" onclick="document.dispatchEvent(new Event('greetingStop'))">Stop</button>
+{% endcomment %}
+
+<div id="easter-confetti-layer" style="position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:9999;"></div>
+
+<script>
+  (function () {
+    var IMAGES = [
+      {% for block in section.blocks %}
+        {% if block.type == 'egg_image' and block.settings.image %}
+          '{{ block.settings.image | image_url: width: 160 }}'{% unless forloop.last %},{% endunless %}
+        {% endif %}
+      {% endfor %}
+    ];
+
+    var layer = document.getElementById('easter-confetti-layer');
+    var spawnTimer = null;
+    var rafId = null;
+    var isRunning = false;
+    var particles = [];
+
+    function makeParticleData() {
+      if (IMAGES.length === 0) return null;
+      var isMobile = window.innerWidth <= 575;
+      var sizeScale = isMobile ? 0.4 : 1;
+      var W = window.innerWidth;
+      return {
+        imgIndex: Math.floor(Math.random() * IMAGES.length),
+        x0      : Math.random() * (W - 60),
+        sway    : (45 + Math.random() * 75) * sizeScale,
+        dur     : 2400 + Math.random() * 2000,
+        r0      : (Math.random() - 0.5) * 60,
+        r1      : 0,
+        sz      : (28 + Math.random() * 28) * sizeScale,
+        startMs : Date.now(),
+        el      : null
+      };
+    }
+
+    function buildEl(p) {
+      var el = document.createElement('div');
+      el.style.position = 'absolute';
+      el.style.pointerEvents = 'none';
+      var img = document.createElement('img');
+      img.src = IMAGES[p.imgIndex];
+      img.style.cssText = 'width:' + p.sz + 'px;height:' + (p.sz * 1.27) + 'px;object-fit:contain;display:block;';
+      el.appendChild(img);
+      p.r1 = p.r0 + (Math.random() - 0.5) * 420;
+      return el;
+    }
+
+    function spawnOne() {
+      var p = makeParticleData();
+      if (!p) return;
+      p.el = buildEl(p);
+      layer.appendChild(p.el);
+      particles.push(p);
+    }
+
+    function loop() {
+      if (!isRunning) return;
+      var now = Date.now();
+      var H = window.innerHeight;
+      var alive = [];
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        var elapsed = now - p.startMs;
+        var progress = elapsed / p.dur;
+
+        if (progress >= 1) {
+          if (p.el && p.el.parentNode) p.el.parentNode.removeChild(p.el);
+          continue;
+        }
+
+        var y   = -65 + (H + 130) * progress;
+        var dx  = Math.sin(progress * Math.PI * 2.8) * p.sway;
+        var rot = p.r0 + (p.r1 - p.r0) * progress;
+        var op  = progress > 0.85 ? (1 - progress) / 0.15 : 0.93;
+
+        p.el.style.transform = 'translate(' + (p.x0 + dx) + 'px,' + y + 'px) rotate(' + rot + 'deg)';
+        p.el.style.opacity = op;
+        alive.push(p);
+      }
+
+      particles = alive;
+      rafId = requestAnimationFrame(loop);
+    }
+
+    function start() {
+      if (isRunning) return;
+      isRunning = true;
+
+      for (var i = 0; i < 6; i++) {
+        (function(i) { setTimeout(spawnOne, i * 70); })(i);
+      }
+
+      var lastSpawn = Date.now();
+      spawnTimer = setInterval(function () {
+        var now = Date.now();
+        var missed = Math.min(Math.floor((now - lastSpawn) / 270), 8);
+        lastSpawn = now;
+        for (var j = 0; j < Math.max(missed, 3); j++) spawnOne();
+      }, 270);
+
+      rafId = requestAnimationFrame(loop);
+    }
+
+    function stop() {
+      isRunning = false;
+      if (spawnTimer) { clearInterval(spawnTimer); spawnTimer = null; }
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+      particles.forEach(function(p) { if (p.el && p.el.parentNode) p.el.parentNode.removeChild(p.el); });
+      particles = [];
+    }
+
+    document.addEventListener('passwordCorrect', start);
+    document.addEventListener('greetingStop', stop);
+
+    window.easterConfetti = { start: start, stop: stop };
+
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Easter confetti",
+  "tag": "section",
+  "class": "easter-confetti",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "egg_image",
+      "name": "Animation Shape image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Shape image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Easter confetti"
+    }
+  ]
+}
+{% endschema %}

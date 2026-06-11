@@ -1,0 +1,121 @@
+<style>
+  .rs-product-delivery{
+    padding-top: {{ block.settings.pt }}px !important;
+  }
+  .rs-product-delivery {
+     margin-left: 6px;
+     font-size: 14px;
+     font-weight: 400;
+   }
+   .m-sticky-addtocart--rightblock .rs-product-delivery {
+     font-size: 14px;
+   }
+   .rs-product-delivery-icon {
+      display: inline-block;
+      position: relative;
+      height: 6px;
+      width: 6px;
+      top: -1px;
+      margin-right: 3px;
+    }
+    .rs-product-delivery-icon::after {
+      width: 100%;
+      height: 100%;
+      background: #75E953;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+    }
+
+    .rs-product-delivery strong {
+      font-weight: 500;
+      color: #000;
+   }
+
+   @media screen and (max-width: 767px) {
+
+      .main-product__block.apex-product-blocks.main-product__block-buy_buttons {
+        margin-top: 4px !important;
+      }
+      .main-product__block.apex-product-blocks.main-product__block-variant_picker {
+        margin-top: 5px;
+      }
+  }
+   @media screen and (max-width: 350px) {
+
+      .rs-product-delivery {
+        font-size: 12px;
+      }
+  }
+</style>
+{% if product.available %}
+  {%- assign today_ts = 'now' | date: '%s' -%}
+  {%- assign one_day = 86400 -%}
+
+  {%- assign today_weekday = 'now' | date: '%w' | plus: 0 -%}
+  {%- comment %}
+    Shopify weekday numbers:
+    0 = Sunday
+    1 = Monday
+    2 = Tuesday
+    3 = Wednesday
+    4 = Thursday
+    5 = Friday
+    6 = Saturday
+  {%- endcomment %}
+
+  {%- if today_weekday >= 0 and today_weekday <= 4 -%}
+    {%- assign delivery_days = block.settings.weekday_days | plus: 0 -%}
+  {%- else -%}
+    {%- assign delivery_days = block.settings.weekend_days | plus: 0 -%}
+  {%- endif -%}
+
+  {%- assign total_add = delivery_days | times: one_day -%}
+  {%- assign target_ts = today_ts | plus: total_add -%}
+
+  {%- assign month_num = target_ts | date: '%-m' -%}
+
+  {%- case month_num -%}
+    {%- when '1' -%}
+      {% assign month_de = 'Januar' %}
+    {%- when '2' -%}
+      {% assign month_de = 'Februar' %}
+    {%- when '3' -%}
+      {% assign month_de = 'März' %}
+    {%- when '4' -%}
+      {% assign month_de = 'April' %}
+    {%- when '5' -%}
+      {% assign month_de = 'Mai' %}
+    {%- when '6' -%}
+      {% assign month_de = 'Juni' %}
+    {%- when '7' -%}
+      {% assign month_de = 'Juli' %}
+    {%- when '8' -%}
+      {% assign month_de = 'August' %}
+    {%- when '9' -%}
+      {% assign month_de = 'September' %}
+    {%- when '10' -%}
+      {% assign month_de = 'Oktober' %}
+    {%- when '11' -%}
+      {% assign month_de = 'November' %}
+    {%- when '12' -%}
+      {% assign month_de = 'Dezember' %}
+  {%- endcase -%}
+
+  {%- assign day_num = target_ts | date: '%-d' -%}
+
+  <div
+    class="rs-product-delivery"
+    {{ block.shopify_attributes }}
+    style="text-align: {{ block.settings.delivery_alignment }};"
+  >
+    <span class="rs-product-delivery-icon"></span>
+    {{ block.settings.delivery_info }}
+    <strong>
+      {{- day_num }}
+      {{ month_de -}}
+    </strong>
+  </div>
+{% endif %}
