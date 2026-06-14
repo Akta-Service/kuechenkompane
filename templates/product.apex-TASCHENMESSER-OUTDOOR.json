@@ -1426,6 +1426,47 @@
         "des_size": "p-medium"
       }
     },
+    "benefit_text_yXQGCx": {
+      "type": "benefit-text",
+      "blocks": {
+        "subtitle_NQEf3a": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": ""
+          }
+        },
+        "title_WBB96Q": {
+          "type": "title",
+          "settings": {
+            "title": "Ein Werkzeug für jeden Platz draußen."
+          }
+        },
+        "description_QyTyNM": {
+          "type": "description",
+          "settings": {
+            "description": "Am Grill, im Camp, beim Angeln, im Garten. Dieselben Klingen, die das Grillgut teilen, schneiden auch Brot, Obst und Kräuter. Ab in die Tasche, und sie sind dabei, wo immer du draußen kochst."
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_NQEf3a",
+        "title_WBB96Q",
+        "description_QyTyNM"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "media_type": "image",
+        "image": "shopify://shop_images/1920_IMG_1.png",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
     "us_vs_them_8Tbqki": {
       "type": "us-vs-them",
       "blocks": {
@@ -1446,6 +1487,7 @@
         "title_F4F6qE",
         "description_9Mxcd4"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "badge-hot",
         "img": "shopify://shop_images/steel_kitchen_knives_V11_1_1.jpg",
@@ -1951,6 +1993,7 @@
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
+    "benefit_text_yXQGCx",
     "us_vs_them_8Tbqki",
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
