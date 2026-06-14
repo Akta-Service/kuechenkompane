@@ -1426,6 +1426,47 @@
         "des_size": "p-medium"
       }
     },
+    "benefit_text_H8mayR": {
+      "type": "benefit-text",
+      "blocks": {
+        "subtitle_WDQPwU": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": ""
+          }
+        },
+        "title_cVqjN8": {
+          "type": "title",
+          "settings": {
+            "title": "Zusammen günstiger als einzeln."
+          }
+        },
+        "description_q89cJd": {
+          "type": "description",
+          "settings": {
+            "description": "Ein komplettes Messerset und der passende Block. Einzeln zusammengekauft summiert sich das schnell. Im Komplett-Set bekommst du alles auf einmal, aufeinander abgestimmt und deutlich günstiger als Stück für Stück."
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_WDQPwU",
+        "title_cVqjN8",
+        "description_q89cJd"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "media_type": "image",
+        "image": "shopify://shop_images/1920_IMG_1.png",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
     "us_vs_them_8Tbqki": {
       "type": "us-vs-them",
       "blocks": {
@@ -1446,6 +1487,7 @@
         "title_F4F6qE",
         "description_9Mxcd4"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "badge-hot",
         "img": "shopify://shop_images/steel_kitchen_knives_V11_1_1.jpg",
@@ -1951,6 +1993,7 @@
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
+    "benefit_text_H8mayR",
     "us_vs_them_8Tbqki",
     "expert_testimonial_adCtdF",
     "trustpilot_testimonials_YbXp3E",
