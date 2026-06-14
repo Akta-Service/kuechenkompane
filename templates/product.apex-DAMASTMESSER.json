@@ -1362,7 +1362,7 @@
         "description_PBBAnQ": {
           "type": "description",
           "settings": {
-            "description": "Unser exklusives Messerset bietet außergewöhnliche Schärfe und handgefertigte Qualität. Die clevere Wahl für deine Küche, ohne ständiges Nachkaufen!"
+            "description": "Andere Messer werden stumpf und werden ausgetauscht. Deins nicht. Ein harter VG-10 Kern hält die Schärfe, wenn andere längst aufgeben. Jeden Tag dieselbe Klinge, scharf wie am ersten."
           }
         }
       },
@@ -1502,10 +1502,19 @@
         "block_n66cBX": {
           "type": "block",
           "settings": {
-            "tes_title": "Sehr gute Qualität",
-            "tes_text": "Die Produkte sind auf der Website sehr gut fotografiert und beschrieben, ohne dabei zu viel zu versprechen. Die Ware kam zum vereinbarten Datum. Was bei mir ankam hat mich in zwei Punkten positiv überrascht:erstens die perfekte Qualität der Ware und zweitens die absolut maßgeschneiderte und robuste Verpackung.",
-            "user_name": "Fam. Lemke",
+            "tes_title": "Hätte ich nicht gedacht",
+            "tes_text": "Ehrlich gesagt war ich skeptisch. So ein Messer aus dem Internet, das kann ja nichts sein, dachte ich. Dann kam das Gyuto. Erste Tomate, einfach durch, ohne Druck. Meine alten Messer haben die nur zerquetscht. Ich bin echt baff.",
+            "user_name": "Markus T.",
             "date": "Vor 2 Stunden"
+          }
+        },
+        "block_xJfrKY": {
+          "type": "block",
+          "settings": {
+            "tes_title": "A felicidade que estes oculos triuxeram.A minha filha queria muoyo uns oculos...",
+            "tes_text": "A minha filha queria muoyo uns oculos de sol Meller. Fiou muito satisfeita. De facto...",
+            "user_name": "ArjunMp,",
+            "date": "22 hours ago"
           }
         },
         "block_Cjk3qr": {
@@ -1557,6 +1566,7 @@
       },
       "block_order": [
         "block_n66cBX",
+        "block_xJfrKY",
         "block_Cjk3qr",
         "block_ncTrUJ",
         "block_tk6TF7",
