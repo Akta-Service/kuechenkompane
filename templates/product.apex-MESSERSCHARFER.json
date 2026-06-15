@@ -1362,7 +1362,7 @@
         "description_PBBAnQ": {
           "type": "description",
           "settings": {
-            "description": "Unser exklusives Messerset bietet außergewöhnliche Schärfe und handgefertigte Qualität. Die clevere Wahl für deine Küche, ohne ständiges Nachkaufen!"
+            "description": "Jedes Messer wird mit der Zeit stumpf, auch das beste. Die Frage ist nur, ob du es wieder scharf machst oder dich damit abfindest.\nEin paar Züge, erst grob, dann fein, und die Klinge schneidet wieder wie am Anfang."
           }
         }
       },
@@ -1390,6 +1390,7 @@
       "blocks": {
         "subtitle_XPX87U": {
           "type": "subtitle",
+          "disabled": true,
           "settings": {
             "subtitle": "Nie wieder stumpfe Messer"
           }
@@ -1397,13 +1398,13 @@
         "title_YwDaTz": {
           "type": "title",
           "settings": {
-            "title": "365 Tage Schleifgarantie (gratis)"
+            "title": "Es liegt nicht an dir"
           }
         },
         "description_j4ByyM": {
           "type": "description",
           "settings": {
-            "description": "Deine Messer bleiben scharf – dafür garantieren wir. Sollte die Klinge im ersten Jahr an Schärfe verlieren, sorgen wir kostenlos dafür, dass sie wieder schneidet wie am ersten Tag. Versprochen."
+            "description": "Wenn die Tomate platt geht statt geschnitten zu werden, ist nicht deine Technik schuld, sondern die stumpfe Klinge. Ein paar Züge durch den Schärfer und sie gleitet wieder durch."
           }
         }
       },
@@ -1446,6 +1447,7 @@
         "title_F4F6qE",
         "description_9Mxcd4"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "badge-hot",
         "img": "shopify://shop_images/steel_kitchen_knives_V11_1_1.jpg",
