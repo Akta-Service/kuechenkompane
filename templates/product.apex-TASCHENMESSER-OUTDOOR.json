@@ -1541,24 +1541,6 @@
     "trustpilot_testimonials_YbXp3E": {
       "type": "trustpilot-testimonials",
       "blocks": {
-        "block_n66cBX": {
-          "type": "block",
-          "settings": {
-            "tes_title": "Top Messer",
-            "tes_text": "Die Klinge ist extrem scharf und sieht klasse aus. Man sollte sie nach dem Einsatz draußen kurz abwischen und trocknen. Wer das macht, hat lange Freude dran.",
-            "user_name": "Peter H.",
-            "date": "Vor 4 Stunden"
-          }
-        },
-        "block_Cjk3qr": {
-          "type": "block",
-          "settings": {
-            "tes_title": "Super zum Grillen",
-            "tes_text": "Habe es am Grill ausgepackt und benutzt. Schneidet Fleisch sauber durch, liegt gut in der Hand, sieht einfach edel aus.",
-            "user_name": "Thorsten S.",
-            "date": "Vor 9 Stunden"
-          }
-        },
         "block_ncTrUJ": {
           "type": "block",
           "settings": {
@@ -1575,6 +1557,24 @@
             "tes_text": "Dachte für den Preis kann das nichts sein. Hab mich getäuscht. Das Kochmesser ist richtig scharf, Kräuter und Gemüse gehen sauber durch.",
             "user_name": "Holger B.",
             "date": "Vor 22 Stunden"
+          }
+        },
+        "block_n66cBX": {
+          "type": "block",
+          "settings": {
+            "tes_title": "Top Messer",
+            "tes_text": "Die Klinge ist extrem scharf und sieht klasse aus. Man sollte sie nach dem Einsatz draußen kurz abwischen und trocknen. Wer das macht, hat lange Freude dran.",
+            "user_name": "Peter H.",
+            "date": "Vor 4 Stunden"
+          }
+        },
+        "block_Cjk3qr": {
+          "type": "block",
+          "settings": {
+            "tes_title": "Super zum Grillen",
+            "tes_text": "Habe es am Grill ausgepackt und benutzt. Schneidet Fleisch sauber durch, liegt gut in der Hand, sieht einfach edel aus.",
+            "user_name": "Thorsten S.",
+            "date": "Vor 9 Stunden"
           }
         },
         "block_qCCEJY": {
@@ -1598,10 +1598,10 @@
         }
       },
       "block_order": [
-        "block_n66cBX",
-        "block_Cjk3qr",
         "block_ncTrUJ",
         "block_tk6TF7",
+        "block_n66cBX",
+        "block_Cjk3qr",
         "block_qCCEJY",
         "block_AVgLTe"
       ],
