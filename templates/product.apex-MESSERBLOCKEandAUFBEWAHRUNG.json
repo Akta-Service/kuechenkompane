@@ -1246,13 +1246,13 @@
         "sub_heading_aBnF8i": {
           "type": "sub_heading",
           "settings": {
-            "sub_heading": "Das #1 Messerset 2025"
+            "sub_heading": "Für deine besten Klingen"
           }
         },
         "heading_jQDwbJ": {
           "type": "heading",
           "settings": {
-            "heading": "Qualität zum besten Preis",
+            "heading": "Damit deine Messer wirklich scharf bleiben",
             "h1_text_align": "center",
             "title": "Your Title Here",
             "padding_top": 1,
@@ -1266,7 +1266,7 @@
         "details_erg8QM": {
           "type": "details",
           "settings": {
-            "details": "Kein Handweh mehr – der ergonomische Griff sorgt für Komfort, selbst bei langem Schneiden.\nDas Beste? Für jede Aufgabe gibt’s das passende Messer im Set.",
+            "details": "In der Schublade schlagen die Klingen aneinander und werden stumpf. Am Block hat jede ihren Platz, sichtbar und geschützt. In Olivenholz, Akazie oder Edelstahl.",
             "p_text_align": "left",
             "p_padding_top": 10,
             "p_padding_bottom": 10,
@@ -1344,6 +1344,47 @@
         "padding_bottom_mobile": 0
       }
     },
+    "benefit_text_ezhcF4": {
+      "type": "benefit-text",
+      "blocks": {
+        "subtitle_YEdDWi": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": ""
+          }
+        },
+        "title_yEW8rn": {
+          "type": "title",
+          "settings": {
+            "title": "Gute Messer versteckt man nicht"
+          }
+        },
+        "description_Tb34hG": {
+          "type": "description",
+          "settings": {
+            "description": "Raus aus dem Versteck, rauf an den Block. Jedes Messer offen, griffbereit, für jeden sichtbar. In Olivenholz, Akazie oder Edelstahl."
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_YEdDWi",
+        "title_yEW8rn",
+        "description_Tb34hG"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "media_type": "image",
+        "image": "shopify://shop_images/1920_IMG_1.png",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
     "benefit_text_MCeGiV": {
       "type": "benefit-text",
       "blocks": {
@@ -1356,13 +1397,13 @@
         "title_KU4fTr": {
           "type": "title",
           "settings": {
-            "title": "Einmalige & lebenslange Investition"
+            "title": "Passend zu dem, was du schon hast"
           }
         },
         "description_PBBAnQ": {
           "type": "description",
           "settings": {
-            "description": "Unser exklusives Messerset bietet außergewöhnliche Schärfe und handgefertigte Qualität. Die clevere Wahl für deine Küche, ohne ständiges Nachkaufen!"
+            "description": "Warmes Olivenholz, helle Akazie oder klarer Edelstahl. Du nimmst, was zu deiner Küche passt, nicht was übrig bleibt. Der Block fügt sich deiner Küche ein."
           }
         }
       },
@@ -1412,6 +1453,7 @@
         "title_YwDaTz",
         "description_j4ByyM"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -1446,6 +1488,7 @@
         "title_F4F6qE",
         "description_9Mxcd4"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "badge-hot",
         "img": "shopify://shop_images/steel_kitchen_knives_V11_1_1.jpg",
@@ -1949,6 +1992,7 @@
     "logo_greyed_out_FMbnW7",
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
+    "benefit_text_ezhcF4",
     "benefit_text_MCeGiV",
     "benefit_text_right_AFHFhC",
     "us_vs_them_8Tbqki",
