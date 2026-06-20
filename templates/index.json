@@ -17,7 +17,7 @@
         "padding_bottom": 0,
         "desktop_image": "shopify://shop_images/Artboard_1_1_2a30be74-bc19-4e48-8239-457a13fc611a.jpg",
         "mobile_image": "shopify://shop_images/MOBILE_4_5_1ca501c7-afae-4a88-928e-14526aae1431.jpg",
-        "url": "shopify://collections/sortimentswechsel",
+        "url": "shopify://collections/lagerumzug",
         "add_container": false,
         "show_title": false,
         "title": "VIP Sale",
@@ -115,7 +115,7 @@
         "product_QNwh7N": {
           "type": "product",
           "settings": {
-            "product": "okami-5er-messerset"
+            "product": "gyuto-set-3pcs"
           }
         }
       },
@@ -131,11 +131,11 @@
         "section_padding_top": 28,
         "section_padding_bottom": 28,
         "section_margin_bottom": 20,
-        "heading": "Angebote der Woche",
+        "heading": "Jetzt im Sonderangebot - Lagerumzug",
         "title_color": "#000000",
         "title_font_size": 20,
         "header_margin_bottom": 20,
-        "badge_text": "BIS ZU 75% RABATT",
+        "badge_text": "BIS ZU 80% RABATT",
         "button_text": "Alle Angebote",
         "button_link": "shopify://collections/sortimentswechsel",
         "btn_bg_color": "#000000",
