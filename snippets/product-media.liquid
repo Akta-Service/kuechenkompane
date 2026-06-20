@@ -1,6 +1,3 @@
-
-
-
 {% assign first_media = product.media.first %}
 
 {% comment %} Preload main image {% endcomment %}
@@ -223,7 +220,6 @@
 
 <div class="mrk-product-slider {% if section.settings.enable_sticky_info %}gallery--sticky{% endif %}">
   <div class="product-gallery-grid">
-
     <!-- THUMB SLIDER -->
     <div id="thumb-slider" class="splide product-thumb-slider">
       <div class="splide__track">
@@ -250,7 +246,6 @@
 
     <!-- MAIN AREA -->
     <div class="product-gallery-main">
-
       <!-- Preview image (removed by JS after slider mounts) -->
       <div class="product-preview-image" id="product-preview-image">
         <picture>
@@ -327,106 +322,106 @@
             </span>
           {% endif %}
         {% endif %}
-
       </div>
     </div>
-
   </div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const isDesktop = window.innerWidth >= 1025;
+  document.addEventListener('DOMContentLoaded', function () {
+    const isDesktop = window.innerWidth >= 1025;
 
-  const thumbSlider = new Splide('#thumb-slider', {
-    fixedWidth   : 100,
-    fixedHeight  : 100,
-    gap          : 10,
-    rewind       : true,
-    pagination   : false,
-    isNavigation : true,
-    arrows       : false,
-    direction    : isDesktop ? 'ttb' : 'ltr',
-    height       : isDesktop ? '565px' : 'auto',
-    breakpoints  : {
-      1024: {
-        direction  : 'ltr',
-        height     : 'auto',
-        fixedWidth : 100,
-        fixedHeight: 100,
+    const thumbSlider = new Splide('#thumb-slider', {
+      fixedWidth: 100,
+      fixedHeight: 100,
+      gap: 10,
+      rewind: true,
+      pagination: false,
+      isNavigation: true,
+      arrows: false,
+      direction: isDesktop ? 'ttb' : 'ltr',
+      height: isDesktop ? '565px' : 'auto',
+      breakpoints: {
+        1024: {
+          direction: 'ltr',
+          height: 'auto',
+          fixedWidth: 100,
+          fixedHeight: 100,
+        },
       },
-    },
-  });
-
-  const mainSlider = new Splide('#main-slider', {
-    type             : 'loop',
-    pagination       : false,
-    arrows           : true,
-    speed            : 400,
-    easing           : 'cubic-bezier(0.25, 1, 0.5, 1)',
-    waitForTransition: false,
-    updateOnMove     : true,
-    drag             : true,
-    touchAngle       : 50,
-    touchPower       : 800,
-    flickPower       : 800,
-    flickMaxPages    : 1,
-    gap              : 0,
-  });
-
-  mainSlider.sync(thumbSlider);
-
-  const previewImg = document.querySelector('#product-preview-image img');
-
-  function mount() {
-    mainSlider.mount();
-    thumbSlider.mount();
-    const preview = document.getElementById('product-preview-image');
-    requestAnimationFrame(function () {
-      document.getElementById('main-slider').classList.add('is-ready');
-      if (preview) {
-        preview.style.opacity = '0';
-        setTimeout(function () { preview.remove(); }, 80);
-      }
     });
-  }
 
-  if (previewImg && previewImg.complete) {
-    mount();
-  } else if (previewImg) {
-    previewImg.onload = mount;
-  } else {
-    mount();
-  }
-
-  // Variant change — jump to correct slide
-  document.addEventListener('variant:changed', function (e) {
-    const variant = e.detail.variant;
-    if (!variant || !variant.featured_media) return;
-    const mediaId = variant.featured_media.id;
-    document.querySelectorAll('#main-slider .splide__slide:not(.splide__slide--clone)').forEach(function (slide, index) {
-      if (slide.dataset.mediaId == mediaId) mainSlider.go(index);
+    const mainSlider = new Splide('#main-slider', {
+      type: 'loop',
+      pagination: false,
+      arrows: true,
+      speed: 400,
+      easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+      waitForTransition: false,
+      updateOnMove: true,
+      drag: true,
+      touchAngle: 50,
+      touchPower: 800,
+      flickPower: 800,
+      flickMaxPages: 1,
+      gap: 10,
     });
-  });
 
-  // Lightbox zoom
-  if (window.mrkLightbox) {
-    document.querySelectorAll('#main-slider .splide__slide img').forEach(function (img) {
-      img.style.cursor = 'zoom-in';
-    });
-    mainSlider.on('click', function () {
-      const images = Array.from(
-        document.querySelectorAll('#main-slider .splide__slide:not(.splide__slide--clone) img')
-      ).map(function (img) {
-        return {
-          src: img.src
-            .replace(/(_\d+x[\d]*)\.(jpg|jpeg|png|webp)/i, '_2000x.$2')
-            .replace(/[?&]width=\d+/, ''),
-          alt: img.alt || '',
-        };
+    mainSlider.sync(thumbSlider);
+
+    const previewImg = document.querySelector('#product-preview-image img');
+
+    function mount() {
+      mainSlider.mount();
+      thumbSlider.mount();
+      const preview = document.getElementById('product-preview-image');
+      requestAnimationFrame(function () {
+        document.getElementById('main-slider').classList.add('is-ready');
+        if (preview) {
+          preview.style.opacity = '0';
+          setTimeout(function () {
+            preview.remove();
+          }, 80);
+        }
       });
-      window.mrkLightbox.open(images, mainSlider.index);
+    }
+
+    if (previewImg && previewImg.complete) {
+      mount();
+    } else if (previewImg) {
+      previewImg.onload = mount;
+    } else {
+      mount();
+    }
+
+    // Variant change — jump to correct slide
+    document.addEventListener('variant:changed', function (e) {
+      const variant = e.detail.variant;
+      if (!variant || !variant.featured_media) return;
+      const mediaId = variant.featured_media.id;
+      document
+        .querySelectorAll('#main-slider .splide__slide:not(.splide__slide--clone)')
+        .forEach(function (slide, index) {
+          if (slide.dataset.mediaId == mediaId) mainSlider.go(index);
+        });
     });
-  }
-});
+
+    // Lightbox zoom
+    if (window.mrkLightbox) {
+      document.querySelectorAll('#main-slider .splide__slide img').forEach(function (img) {
+        img.style.cursor = 'zoom-in';
+      });
+      mainSlider.on('click', function () {
+        const images = Array.from(
+          document.querySelectorAll('#main-slider .splide__slide:not(.splide__slide--clone) img')
+        ).map(function (img) {
+          return {
+            src: img.src.replace(/(_\d+x[\d]*)\.(jpg|jpeg|png|webp)/i, '_2000x.$2').replace(/[?&]width=\d+/, ''),
+            alt: img.alt || '',
+          };
+        });
+        window.mrkLightbox.open(images, mainSlider.index);
+      });
+    }
+  });
 </script>
