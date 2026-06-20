@@ -218,34 +218,10 @@
         }
 
         {% comment %} border like issue  {% endcomment %}
-         /* 1. GPU layer + crisp rendering - rounding consistent rakhe */
-      .product-main-slider .splide__track,
-      .product-main-slider .splide__list {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-      }
-
-      /* 2. Per-slide clip + image ektu oversize kore gap mask kore dey */
-      .product-main-slider .splide__slide {
-        overflow: hidden;
-      }
-      .product-main-slider .splide__slide img {
-        transform: scale(1.015);
-        transform-origin: center;
-      }
-
-      .product-main-slider .splide__slide {
-      overflow: hidden;
-    }
-    .product-main-slider .splide__slide picture,
-    .product-main-slider .splide__slide img {
-      transform: scale(1.02);
-      transform-origin: center;
-    }
-
-    .product-main-slider .splide__track {
-    background: #ffffff;
-    overflow: hidden; /* already default but force kore confirm */
+       
+      
+  .splide__list{
+    gap: 10px;
   }
 </style>
 
