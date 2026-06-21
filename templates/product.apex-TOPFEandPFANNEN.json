@@ -1246,7 +1246,7 @@
         "sub_heading_aBnF8i": {
           "type": "sub_heading",
           "settings": {
-            "sub_heading": "Das #1 Töpfe & Pfannen 2026"
+            "sub_heading": "Die #1 Töpfe & Pfannen 2026"
           }
         },
         "heading_jQDwbJ": {
@@ -1336,6 +1336,7 @@
         "ratings_qmMcyY",
         "quotation_g7QTma"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "badge-hot",
         "padding_top": 13,
@@ -1356,13 +1357,13 @@
         "title_KU4fTr": {
           "type": "title",
           "settings": {
-            "title": "Einmalige & lebenslange Investition"
+            "title": "Robust & langlebig"
           }
         },
         "description_PBBAnQ": {
           "type": "description",
           "settings": {
-            "description": "Unser exklusives Messerset bietet außergewöhnliche Schärfe und handgefertigte Qualität. Die clevere Wahl für deine Küche, ohne ständiges Nachkaufen!"
+            "description": "Die meisten Pfannen sind nach einem Jahr durch. Beschichtung ab, Boden verzogen. Diese nicht. Robuster Edelstahl, mehrlagiger Boden, kratzfeste Beschichtung. Du kochst damit, lange nachdem du andere längst ersetzt hättest."
           }
         }
       },
@@ -1370,6 +1371,47 @@
         "subtitle_8kbCAt",
         "title_KU4fTr",
         "description_PBBAnQ"
+      ],
+      "settings": {
+        "color_scheme": "badge-hot",
+        "media_type": "image",
+        "image": "shopify://shop_images/1920_IMG_1.png",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "reverse": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 50,
+        "heading_type": "mrk-h3",
+        "sub_heading": "p-medium",
+        "des_size": "p-medium"
+      }
+    },
+    "benefit_text_TBFkJU": {
+      "type": "benefit-text",
+      "blocks": {
+        "subtitle_J4pCGh": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": ""
+          }
+        },
+        "title_FBBKfB": {
+          "type": "title",
+          "settings": {
+            "title": "Eine Serie für alles"
+          }
+        },
+        "description_eHmnaQ": {
+          "type": "description",
+          "settings": {
+            "description": "Pfanne, Wok und Topf, alle aus demselben Edelstahl mit derselben Beschichtung. Vom scharfen Anbraten über das Wok-Gemüse bis zur Suppe deckst du fast jede Zubereitung ab. Einzeln oder als Set."
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_J4pCGh",
+        "title_FBBKfB",
+        "description_eHmnaQ"
       ],
       "settings": {
         "color_scheme": "badge-hot",
@@ -1412,6 +1454,7 @@
         "title_YwDaTz",
         "description_j4ByyM"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
@@ -1950,6 +1993,7 @@
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
+    "benefit_text_TBFkJU",
     "benefit_text_right_AFHFhC",
     "us_vs_them_8Tbqki",
     "expert_testimonial_adCtdF",
