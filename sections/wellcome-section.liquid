@@ -259,46 +259,40 @@
 
     const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#845EC2'];
 
-    // Universal mobile check (max-width: 768px)
     const isMobile = () => window.innerWidth <= 768;
 
     function closePopup() {
       if (!wellcomePopup) return;
       wellcomePopup.style.display = 'none';
-      stopConfetti = true;
+      stopConfetti = true; // <-- Close button dile confetti off korbe
       if (autoCloseTimeout) clearTimeout(autoCloseTimeout);
     }
 
     if (closeBtn) closeBtn.addEventListener('click', closePopup);
 
-    // Set origin based on side and screen width
     function getOrigin(side) {
       return {
         x: side === 'left' ? 0 : 1,
-        y: isMobile() ? 0.1 : 0.5, // top for mobile, center for desktop
+        y: isMobile() ? 0.1 : 0.5,
       };
     }
 
     document.addEventListener('passwordCorrect', function () {
-              console.log('pass match');
-
+      console.log('pass match');
       if (!wellcomePopup) return;
 
-      //stopConfetti = false;
-      stopConfetti = true;
+      stopConfetti = false; // <-- Confetti chalu korbe. Er por ar true kora jabe na
       wellcomePopup.style.display = 'flex';
 
-      // Auto-close after 6 seconds
-      //autoCloseTimeout = setTimeout(closePopup, 6000);
+      // 6 second por auto close hobe
       autoCloseTimeout = setTimeout(() => {
         closePopup();
         document.dispatchEvent(new Event('greetingStop'));
       }, 6000);
 
       (function frame() {
-        if (stopConfetti) return;
+        if (stopConfetti) return; // stopConfetti true hole loop thambe
 
-        // LEFT SIDE
         confetti({
           particleCount: 3,
           angle: 100,
@@ -310,7 +304,6 @@
           colors,
         });
 
-        // RIGHT SIDE
         confetti({
           particleCount: 5,
           angle: 120,
@@ -327,7 +320,6 @@
     });
   });
 </script>
-
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
