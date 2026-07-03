@@ -330,15 +330,6 @@
         requestAnimationFrame(frame);
       })();
     });
-
-    // ---- Theme editor (design mode) preview ----
-    const designModeEnabled = {{ section.settings.design_mode | json }};
-
-    if (window.Shopify && Shopify.designMode && designModeEnabled && wellcomePopup) {
-      stopConfetti = false;
-      wellcomePopup.style.display = 'flex';
-      startConfetti(); // confetti preview-o dekhabe; na chaile ei line remove korun
-    }
   });
 </script>
 
