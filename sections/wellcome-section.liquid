@@ -261,6 +261,79 @@
 }
 {% endschema %}
 
+{% comment %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const wellcomePopup = document.getElementById('wellcome-popup');
+      const closeBtn = document.getElementById('wellcome-close-btn');
+
+      let stopConfetti = false;
+      let autoCloseTimeout = null;
+
+      const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#845EC2'];
+
+      const isMobile = () => window.innerWidth <= 768;
+
+      function closePopup() {
+        if (!wellcomePopup) return;
+        wellcomePopup.style.display = 'none';
+        stopConfetti = true; // <-- Close button dile confetti off korbe
+        if (autoCloseTimeout) clearTimeout(autoCloseTimeout);
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closePopup);
+
+      function getOrigin(side) {
+        return {
+          x: side === 'left' ? 0 : 1,
+          y: isMobile() ? 0.1 : 0.5,
+        };
+      }
+
+      document.addEventListener('passwordCorrect', function () {
+        console.log('pass match');
+        if (!wellcomePopup) return;
+
+        stopConfetti = false; // <-- Confetti chalu korbe. Er por ar true kora jabe na
+        wellcomePopup.style.display = 'flex';
+
+        // 6 second por auto close hobe
+        autoCloseTimeout = setTimeout(() => {
+          closePopup();
+          document.dispatchEvent(new Event('greetingStop'));
+        }, 6000);
+
+        (function frame() {
+          if (stopConfetti) return; // stopConfetti true hole loop thambe
+
+          confetti({
+            particleCount: 3,
+            angle: 100,
+            spread: 70,
+            startVelocity: 45,
+            ticks: 200,
+            scalar: 1.2,
+            origin: getOrigin('left'),
+            colors,
+          });
+
+          confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 85,
+            startVelocity: 45,
+            ticks: 200,
+            scalar: 1.2,
+            origin: getOrigin('right'),
+            colors,
+          });
+
+          requestAnimationFrame(frame);
+        })();
+      });
+    });
+  </script>
+{% endcomment %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const wellcomePopup = document.getElementById('wellcome-popup');
@@ -289,19 +362,7 @@
       };
     }
 
-    document.addEventListener('passwordCorrect', function () {
-      console.log('pass match');
-      if (!wellcomePopup) return;
-
-      stopConfetti = false; // <-- Confetti chalu korbe. Er por ar true kora jabe na
-      wellcomePopup.style.display = 'flex';
-
-      // 6 second por auto close hobe
-      autoCloseTimeout = setTimeout(() => {
-        closePopup();
-        document.dispatchEvent(new Event('greetingStop'));
-      }, 6000);
-
+    function startConfetti() {
       (function frame() {
         if (stopConfetti) return; // stopConfetti true hole loop thambe
 
@@ -329,10 +390,34 @@
 
         requestAnimationFrame(frame);
       })();
+    }
+
+    document.addEventListener('passwordCorrect', function () {
+      console.log('pass match');
+      if (!wellcomePopup) return;
+
+      stopConfetti = false; // <-- Confetti chalu korbe
+      wellcomePopup.style.display = 'flex';
+
+      // 6 second por auto close hobe
+      autoCloseTimeout = setTimeout(() => {
+        closePopup();
+        document.dispatchEvent(new Event('greetingStop'));
+      }, 6000);
+
+      startConfetti();
     });
+
+    // ---- Theme editor (design mode) preview ----
+    const designModeEnabled = {{ section.settings.design_mode | json }};
+
+    if (window.Shopify && Shopify.designMode && designModeEnabled && wellcomePopup) {
+      stopConfetti = false;
+      wellcomePopup.style.display = 'flex';
+      startConfetti(); // confetti preview-o dekhabe; na chaile ei line remove korun
+    }
   });
 </script>
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     function startCountdown(targetTimeString) {
