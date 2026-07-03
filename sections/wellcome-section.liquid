@@ -353,7 +353,7 @@
       autoCloseTimeout = setTimeout(() => {
         closePopup();
         document.dispatchEvent(new Event('greetingStop'));
-      }, 60000);
+      }, 6000);
 
       (function frame() {
         if (stopConfetti) return; // stopConfetti true hole loop thambe
