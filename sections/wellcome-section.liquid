@@ -142,17 +142,30 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff;
+    color: {{ section.settings.text_color }};
+  }
+  .wellcome-popup-title {
+    color: {{ section.settings.title_color }};
+  }
+  .wellcome-popup-description {
+    color: {{ section.settings.desc_color }};
   }
   .time-box span {
-    color: #fff;
+    color: {{ section.settings.timer_number_color }};
+  }
+  .time-box label {
+    color: {{ section.settings.timer_label_color }};
   }
   .time-box {
-    border: 1px solid #ffffff;
+    border: 1px solid {{ section.settings.timer_border_color }};
   }
   .wellcome-close-btn {
-    color: #ffffff;
-    border: 1px solid #ffffff;
+    color: {{ section.settings.close_btn_color }};
+    border: 1px solid {{ section.settings.close_btn_color }};
+  }
+  .wellcome-close-btn:hover {
+    background: {{ section.settings.close_btn_color }};
+    color: {{ section.settings.close_btn_hover_text | default: '#000000' }};
   }
 
   @media (max-width: 768px) {
@@ -239,6 +252,52 @@
       "id": "countdown_time",
       "label": "Target Date & Time (German time)",
       "default": "2025-12-24T23:59:59"
+    },
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color (general)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Description color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "timer_number_color",
+      "label": "Timer number color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "timer_label_color",
+      "label": "Timer label color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "timer_border_color",
+      "label": "Timer box border color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "close_btn_color",
+      "label": "Close button color",
+      "default": "#ffffff"
     }
   ],
   "presets": [
