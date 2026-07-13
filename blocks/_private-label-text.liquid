@@ -1,0 +1,42 @@
+{% if block.settings.text != blank %}
+  <div class="private-label-text" data-b2b-reveal style="animation-delay: .1s" {{ block.shopify_attributes }}>
+    {{ block.settings.text }}
+  </div>
+{% endif %}
+
+<style>
+  .private-label-text {
+    font-size: clamp(16px, 1.5vw, 19px);
+    max-width: 56ch;
+    line-height: 1.55;
+    color: #b2a88f;
+  }
+
+  .private-label-text p {
+    margin: 0 0 12px;
+  }
+
+  .private-label-text p:last-child {
+    margin-bottom: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Private Label text",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Sie entscheiden, wessen Name auf der Klinge steht. Probieren Sie es aus — blenden Sie das Logo ein oder aus.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Private Label text",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
