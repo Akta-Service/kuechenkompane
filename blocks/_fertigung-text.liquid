@@ -1,0 +1,42 @@
+{% if block.settings.text != blank %}
+  <div class="fertigung-text" data-b2b-reveal style="animation-delay: .1s" {{ block.shopify_attributes }}>
+    {{ block.settings.text }}
+  </div>
+{% endif %}
+
+<style>
+  .fertigung-text {
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: #544e43;
+    max-width: 56ch;
+    line-height: 1.55;
+  }
+
+  .fertigung-text p {
+    margin: 0 0 12px;
+  }
+
+  .fertigung-text p:last-child {
+    margin-bottom: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Fertigung text",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Wir gehen auf Kundenbedürfnisse ein — von der Stahlauswahl bis zur fertig verpackten Serie. Sie sagen, was Sie brauchen; wir liefern.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fertigung text",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
