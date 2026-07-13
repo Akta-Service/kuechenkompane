@@ -1,0 +1,378 @@
+{%- liquid
+  assign sid = section.id
+-%}
+
+<style>
+  /* ---- Keyframes for scroll animations ---- */
+  @keyframes kk-rise-{{ sid }} {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes kk-fade-{{ sid }} {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+   #shopify-section-{{ sid }}{
+    .b2b-brand-chain {
+      padding: clamp(64px, 9vw, 128px) 0;
+      background: #f5f3ee;
+      color: #142116;
+    }
+
+    .b2b-brand-chain__wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .b2b-brand-chain__head {
+      margin-bottom: 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+    }
+
+    .b2b-brand-chain__eyebrow {
+      display: inline-flex;
+      margin-bottom: 20px;
+      font-weight: 700;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: #2E2921;
+    }
+    .b2b-brand-chain__eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: #A89A80;
+      display: inline-block;
+    }
+    .b2b-brand-chain__eyebrow span {
+      color: #B5432F;
+    }
+
+    .b2b-brand-chain__title {
+      margin: 0;
+      font-size: clamp(30px, 4.4vw, 54px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -.01em;
+    }
+
+    .b2b-brand-chain__subtitle {
+      margin: 0;
+      line-height: 1.7;
+      font-size: clamp(16px, 1.5vw, 19px);
+      color: #544E43;
+    }
+
+    .b2b-brand-chain__chain {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 6px;
+      align-items: stretch;
+    }
+
+    .b2b-brand-chain__node {
+      border: 1px solid #E3DCCC;
+      background: #fff;
+      border-radius: 6px;
+      padding: 26px 24px;
+    }
+
+    .b2b-brand-chain__node--accent {
+      background: #2E2921;
+      color: #F0ECE1;
+      border-color: #2E2921;
+    }
+
+    .b2b-brand-chain__role {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #877B64;
+      margin-bottom: 12px;
+    }
+    .b2b-brand-chain__node.b2b-brand-chain__node--accent .b2b-brand-chain__role {
+      color: #D0C6B0;
+    }
+
+    .b2b-brand-chain__chain h3 {
+      line-height: 1.2;
+      font-size: 21px;
+      letter-spacing: -.01em;
+      margin-bottom: 8px;
+    }
+    .b2b-brand-chain__node.b2b-brand-chain__node--accent h3 {
+     color: #F0ECE1;
+    }
+    .b2b-brand-chain__node.b2b-brand-chain__node--accent p {
+     color: #B2A88F;
+    }
+
+    .b2b-brand-chain__chain p {
+      margin: 0;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .b2b-brand-chain__arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #5d745f;
+      font-weight: 600;
+    }
+
+    /* Scroll Animation Setup */
+    [data-kk-anim] {
+      opacity: 0;
+    }
+    [data-kk-anim].kk-in {
+      animation: kk-rise-{{ sid }} .85s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    [data-kk-anim="fade"].kk-in {
+      animation: kk-fade-{{ sid }} .9s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+
+    @media screen and (max-width: 989px) {
+      .b2b-brand-chain__head {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .b2b-brand-chain__chain {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .b2b-brand-chain__arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-kk-anim] {
+        opacity: 1 !important;
+        animation: none !important;
+        transform: none !important;
+      }
+    }
+  }
+</style>
+
+<section class="b2b-brand-chain" id="marke-{{ sid }}">
+  <div class="b2b-brand-chain__wrap">
+    <div class="b2b-brand-chain__head">
+      <div data-kk-anim style="animation-delay: 0s">
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="b2b-brand-chain__eyebrow">
+            <span>{{ section.settings.eyebrow }}</span>
+            {{ section.settings.eyebrow_2 }}
+          </div>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="b2b-brand-chain__title">{{ section.settings.title | newline_to_br }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="b2b-brand-chain__subtitle" data-kk-anim style="animation-delay: 0.1s">
+          {{ section.settings.subtitle }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div class="b2b-brand-chain__chain">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.role != blank or block.settings.title != blank or block.settings.text != blank -%}
+          <div
+            class="b2b-brand-chain__node{% if block.settings.accent %} b2b-brand-chain__node--accent{% endif %}"
+            data-kk-anim
+            style="animation-delay: {{ forloop.index | times: 0.1 | plus: 0.2 }}s"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.role != blank -%}
+              <div class="b2b-brand-chain__role">{{ block.settings.role }}</div>
+            {%- endif -%}
+            {%- if block.settings.title != blank -%}
+              <h3>{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p>{{ block.settings.text }}</p>
+            {%- endif -%}
+          </div>
+
+          {%- unless forloop.last -%}
+            <div
+              class="b2b-brand-chain__arrow"
+              aria-hidden="true"
+              data-kk-anim="fade"
+              style="animation-delay: {{ forloop.index | times: 0.1 | plus: 0.25 }}s"
+            >
+              →
+            </div>
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('shopify-section-{{ sid }}');
+    if (!root) return;
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function initScrollAnim() {
+      var nodes = root.querySelectorAll('[data-kk-anim]');
+      if (!nodes.length) return;
+
+      if (reduce || !('IntersectionObserver' in window)) {
+        nodes.forEach(function (el) {
+          el.classList.add('kk-in');
+        });
+        return;
+      }
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('kk-in');
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+      );
+
+      nodes.forEach(function (el) {
+        io.observe(el);
+      });
+    }
+
+    initScrollAnim();
+
+    document.addEventListener('shopify:section:load', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ sid }}') initScrollAnim();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "B2B Brand Chain",
+  "tag": "section",
+  "class": "b2b-brand-chain",
+  "settings": [
+    {
+      "type": "header",
+      "content": "- Subtitle Settings -"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "銘"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_2",
+      "label": "Eyebrow 2",
+      "default": "Marke & Hersteller"
+    },
+    {
+      "type": "header",
+      "content": "- Title Settings -"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Eine Marke.\nEin Hersteller. Ihr Label."
+    },
+    {
+      "type": "header",
+      "content": "- Description Settings -"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Description",
+      "default": "Radzuweit Industries GmbH ist der Hersteller. Küchenkompane ist unsere eigene Messermarke — und zugleich die Vorlage für das, was wir für Sie fertigen können: mit Ihrem Branding, ganz neutral oder als eigenständige Marke."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Chain item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": "Hersteller"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Radzuweit Industries GmbH"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Entwickelt, härtet und fertigt die Messer. Die Kompetenz hinter jeder Klinge."
+        },
+        {
+          "type": "checkbox",
+          "id": "accent",
+          "label": "Accent style",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2B Brand Chain",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "role": "Hersteller",
+            "title": "Radzuweit Industries GmbH",
+            "text": "Entwickelt, härtet und fertigt die Messer. Die Kompetenz hinter jeder Klinge.",
+            "accent": true
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "role": "Eigene Messermarke",
+            "title": "Küchenkompane",
+            "text": "Unser Messerprogramm in sechs Qualitätsstufen — der Maßstab für Serienqualität."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "role": "Ihre Option",
+            "title": "Ihr Private Label",
+            "text": "Dieselbe Fertigung — mit Ihrem Logo, ohne Logo oder als eigene Marke."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
