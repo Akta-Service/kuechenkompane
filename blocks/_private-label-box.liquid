@@ -1,0 +1,78 @@
+<div class="private-label-box" data-b2b-reveal {{ block.shopify_attributes }}>
+  {%- if block.settings.tag != blank -%}
+    <span class="private-label-box__tag">{{ block.settings.tag }}</span>
+  {%- endif -%}
+
+  {%- if block.settings.title != blank -%}
+    <p class="private-label-box__title">{{ block.settings.title }}</p>
+  {%- endif -%}
+
+  {%- if block.settings.description != blank -%}
+    <p class="private-label-box__description">{{ block.settings.description }}</p>
+  {%- endif -%}
+</div>
+
+<style>
+  .private-label-box {
+    border: 1px solid #ffffff2e;
+    border-radius: 10px;
+    padding: 22px 20px;
+    background: #ffffff08;
+  }
+
+  .private-label-box__tag {
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #b5432f;
+    font-weight: 700;
+  }
+
+  .private-label-box__title {
+     display: block;
+    font-size: 19px;
+    color: #fff;
+    margin: 10px 0 7px;
+    letter-spacing: -.01em;
+  }
+
+  .private-label-box__description {
+    color: #b2a88f;
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Private Label box",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Tag label",
+      "default": "Ab 1 Stück"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Sofort lieferbar"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Wir liefern ab dem ersten Messer – auch Einzelstücke und Muster."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Private Label box",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}
