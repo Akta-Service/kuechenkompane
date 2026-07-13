@@ -1,0 +1,162 @@
+{%- liquid
+  assign sid = section.id
+-%}
+
+<style>
+  @keyframes b2b-marquee-{{ sid }} {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  #shopify-section-{{ sid }} .b2b-marquee-section {
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    background: {{ section.settings.bg_color | default: '#101E13' }};
+    color: {{ section.settings.text_color | default: '#C3D3BE' }};
+  }
+
+  #shopify-section-{{ sid }} .b2b-marquee-section__track {
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    animation: b2b-marquee-{{ sid }} {{ section.settings.marquee_speed | default: 24 }}s linear infinite;
+    gap: 12px;
+  }
+
+  #shopify-section-{{ sid }} .b2b-marquee-section__track span {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    font-size: {{ section.settings.font_size_desktop | default: 12 }}px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ sid }} .b2b-marquee-section__track .dot {
+    color: {{ section.settings.dot_color | default: '#87A68B' }};
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  @media screen and (max-width: 989px) {
+    #shopify-section-{{ sid }} .b2b-marquee-section__track span {
+      font-size: {{ section.settings.font_size_tablet | default: 11 }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ sid }} .b2b-marquee-section__track span {
+      font-size: {{ section.settings.font_size_mobile | default: 10 }}px;
+    }
+  }
+</style>
+
+<section class="b2b-marquee-section" aria-label="Marquee">
+  <div class="b2b-marquee-section__track" aria-hidden="true">
+    {%- for i in (1..2) -%}
+      {%- for block in section.blocks -%}
+        {%- if block.settings.text != blank -%}
+          <span {{ block.shopify_attributes }}>
+            {{- block.settings.text -}}
+            <i class="dot">◆</i>
+          </span>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "B2B Marquee",
+  "tag": "section",
+  "class": "b2b-marquee",
+  "settings": [
+    {
+      "type": "range",
+      "id": "marquee_speed",
+      "label": "Marquee speed",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "s",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#2E2921"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#D0C6B0"
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "Dot color",
+      "default": "#A89A80"
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "label": "Font size — desktop",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "font_size_tablet",
+      "label": "Font size — tablet",
+      "min": 9,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Font size — mobile",
+      "min": 8,
+      "max": 14,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Marquee item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Designed & developed in Germany"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2B Marquee",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Designed & developed in Germany" } },
+        { "type": "item", "settings": { "text": "OEM & Private Label" } },
+        { "type": "item", "settings": { "text": "6 Qualitätsstufen" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
