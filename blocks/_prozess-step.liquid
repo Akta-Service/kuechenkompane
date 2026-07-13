@@ -1,0 +1,80 @@
+<div class="prozess-step" data-b2b-reveal {{ block.shopify_attributes }}>
+  {%- if block.settings.step_label != blank -%}
+    <span class="prozess-step__label">{{ block.settings.step_label }}</span>
+  {%- endif -%}
+  {%- if block.settings.title != blank -%}
+    <h3 class="prozess-step__title">{{ block.settings.title }}</h3>
+  {%- endif -%}
+  {%- if block.settings.description != blank -%}
+    <p class="prozess-step__description">{{ block.settings.description }}</p>
+  {%- endif -%}
+</div>
+
+<style>
+  .prozess-step {
+    padding: 28px 26px 28px;
+    position: relative;
+  }
+
+  .prozess-step__label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: .14em;
+    color: #877b64;
+  }
+
+  .prozess-step__title {
+    font-size: 17px;
+    margin: 12px 0 7px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    color: #1e1b15;
+  }
+
+  .prozess-step__description {
+    font-size: 13.5px;
+    color: #544e43;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 760px) {
+    .prozess-step {
+      padding: 28px 20px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Prozess step",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "step_label",
+      "label": "Step label",
+      "default": "01 — Anfrage"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Sie konfigurieren"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Stufe, Art, Branding und Menge übermitteln — oder Ihre eigene Spezifikation."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Prozess step",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}
