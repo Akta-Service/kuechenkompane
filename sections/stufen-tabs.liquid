@@ -1,0 +1,886 @@
+<section class="stufen-section" id="stufen-{{ section.id }}">
+  {% render 'b2b-reveal' %}
+  <div class="stufen-wrapper" id="stufen">
+    <div class="stufen-intro" data-b2b-reveal>
+      <div class="stufen-intro__head">
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="stufen-eyebrow">
+            <span class="stufen-eyebrow__line"></span>
+            {%- if section.settings.kanji != blank -%}
+              <span class="stufen-eyebrow__kanji">{{ section.settings.kanji }}</span>
+            {%- endif -%}
+            <span class="stufen-eyebrow__text">{{ section.settings.eyebrow }}</span>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="stufen-heading">{{ section.settings.heading | newline_to_br }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.lead != blank -%}
+          <p class="stufen-lead">{{ section.settings.lead }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.note != blank -%}
+          <div class="stufen-note">
+            <span class="stufen-note__icon">{{ section.settings.note__icon }}</span>
+            <span>{{ section.settings.note }}</span>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.lineup_image != blank -%}
+        <figure class="stufen-lineup">
+          <div class="stufen-lineup__frame__wrapper">
+            <div class="stufen-lineup__frame">
+              <img
+                src="{{ section.settings.lineup_image | image_url: width: 1000 }}"
+                alt="{{ section.settings.lineup_caption | escape }}"
+                loading="lazy"
+                width="{{ section.settings.lineup_image.width }}"
+                height="{{ section.settings.lineup_image.height }}"
+              >
+              {%- for block in section.blocks -%}
+                <button
+                  type="button"
+                  class="stufen-lineup__marker"
+                  data-stufe-marker="{{ forloop.index0 }}"
+                  style="left: {{ block.settings.marker_x }}%; top: {{ block.settings.marker_y }}%;"
+                  aria-label="{{ block.settings.tab_label | escape }}"
+                >
+                  {{- forloop.index | prepend: '0' | slice: -2, 2 -}}
+                </button>
+              {%- endfor -%}
+            </div>
+          </div>
+          {%- if section.settings.lineup_caption != blank -%}
+            <figcaption class="stufen-lineup__caption">{{ section.settings.lineup_caption }}</figcaption>
+          {%- endif -%}
+        </figure>
+      {%- endif -%}
+    </div>
+
+    <div class="stufen-tabs" role="tablist">
+      {%- for block in section.blocks -%}
+        <button
+          type="button"
+          class="stufen-tab{% if forloop.first %} is-active{% endif %}"
+          data-stufe-tab="{{ forloop.index0 }}"
+          role="tab"
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          data-b2b-reveal
+          style="animation-delay: {{ forloop.index | times: 0.1 | plus: 0.2 }}s"
+          {{ block.shopify_attributes }}
+        >
+          <span class="stufen-tab__label">{{ block.settings.tab_label }}</span>
+          <span class="stufen-tab__title">{{ block.settings.title }}</span>
+
+          {% comment %} Gradient bar with dynamic colors {% endcomment %}
+          <span
+            class="stufen-tab__bar"
+            style="
+              background: linear-gradient(
+                {{ section.settings.gradient_angle | default: '90deg' }},
+                {{ block.settings.bar_color_start | default: '#3a3126' }},
+                {{ block.settings.bar_color_end | default: '#6b5b4a' }}
+              );
+            "
+          ></span>
+        </button>
+      {%- endfor -%}
+    </div>
+
+    <div class="stufen-panels" data-b2b-reveal style="animation-delay: .15s">
+      {%- for block in section.blocks -%}
+        <div
+          class="stufen-panel{% if forloop.first %} is-active{% endif %}"
+          data-stufe-panel="{{ forloop.index0 }}"
+          role="tabpanel"
+        >
+          <div class="stufen-panel__media">
+            {%- if block.settings.badge != blank -%}
+              <span class="stufen-panel__badge">{{ block.settings.badge }}</span>
+            {%- endif -%}
+            {%- if block.settings.image != blank -%}
+              <img
+                src="{{ block.settings.image | image_url: width: 1200 }}"
+                alt="{{ block.settings.title | escape }}"
+                loading="lazy"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+              >
+            {%- endif -%}
+          </div>
+
+          <div class="stufen-panel__content">
+            <span class="stufen-panel__counter"
+              >Stufe {{ forloop.index | prepend: '0' | slice: -2, 2 }} /
+              {{ section.blocks.size | prepend: '0' | slice: -2, 2 -}}
+            </span>
+
+            {%- if block.settings.title != blank -%}
+              <h3 class="stufen-panel__title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+
+            {%- if block.settings.spec != blank -%}
+              <span class="stufen-panel__spec">{{ block.settings.spec }}</span>
+            {%- endif -%}
+
+            {%- if block.settings.description != blank -%}
+              <p class="stufen-panel__description">{{ block.settings.description }}</p>
+            {%- endif -%}
+
+            <div class="stufen-panel__grid">
+              <div class="stufen-panel__cell">
+                <span class="stufen-panel__cell-label">{{ block.settings.spec1_label }}</span>
+                <span class="stufen-panel__cell-value">{{ block.settings.spec1_value }}</span>
+              </div>
+              <div class="stufen-panel__cell">
+                <span class="stufen-panel__cell-label">{{ block.settings.spec2_label }}</span>
+                <span class="stufen-panel__cell-value">{{ block.settings.spec2_value }}</span>
+              </div>
+              <div class="stufen-panel__cell">
+                <span class="stufen-panel__cell-label">{{ block.settings.spec3_label }}</span>
+                <span class="stufen-panel__cell-value">{{ block.settings.spec3_value }}</span>
+              </div>
+              <div class="stufen-panel__cell">
+                <span class="stufen-panel__cell-label">{{ block.settings.spec4_label }}</span>
+                <span class="stufen-panel__cell-value">{{ block.settings.spec4_value }}</span>
+              </div>
+            </div>
+
+            {%- if block.settings.chips != blank -%}
+              <div class="stufen-panel__chips">
+                {%- assign chips = block.settings.chips | split: ',' -%}
+                {%- for chip in chips -%}
+                  <span class="stufen-panel__chip">{{ chip | strip }}</span>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <style>
+    .stufen-section {
+      background: #211c14;
+      color: #f0ece1;
+      padding: clamp(64px,9vw,128px) 0;
+    }
+
+    .stufen-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Intro */
+    .stufen-intro {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .stufen-intro > * {
+      min-width: 0;
+    }
+
+    .stufen-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .stufen-eyebrow__line {
+      width: 26px;
+      height: 1px;
+      background: #a89a80;
+      flex: 0 0 auto;
+    }
+
+    .stufen-eyebrow__kanji {
+      color: #b5432f;
+      font-size: 1.05em;
+      line-height: 1;
+      margin-right: 6px;
+      font-weight: 600;
+      vertical-align: -1px;
+      opacity: .9;
+      flex: 0 0 auto;
+    }
+
+    .stufen-eyebrow__text {
+      font-size: 12px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: #d0c6b0;
+    }
+
+    .stufen-heading {
+      font-size: clamp(30px, 4.4vw, 54px);
+      margin: 22px 0 20px;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -.01em;
+      color: #f0ece1;
+      max-width: 60ch;
+    }
+
+    .stufen-lead {
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.55;
+      color: #b2a88f;
+      max-width: 56ch;
+    }
+
+    .stufen-note {
+      font-size: 11.5px;
+      color: #b2a88f;
+      letter-spacing: .04em;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 60ch;
+    }
+
+    .stufen-note__icon {
+      color: #d0c6b0;
+      flex: 0 0 auto;
+    }
+
+    .stufen-lineup__frame__wrapper {
+      padding-top: 46px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #ffffff1a;
+      background: #EBECF0;
+    }
+
+    .stufen-lineup__frame {
+      position: relative;
+    }
+
+    .stufen-lineup__marker {
+      position: absolute;
+      transform: translate(-50%, calc(-100% - 6px));
+      background: #2e2921;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      padding: 5px 10px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .28);
+      border: 1px solid rgba(255, 255, 255, .25);
+      transition: background-color 0.2s ease;
+      z-index: 1;
+    }
+
+    .stufen-lineup__marker:hover,
+    .stufen-lineup__marker.is-active {
+      background: #c05a3a;
+    }
+
+    .stufen-lineup__frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .stufen-lineup {
+      margin: 0;
+    }
+
+    .stufen-lineup__caption {
+      margin-top: 12px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: #a89a80;
+    }
+
+    /* Tabs */
+    .stufen-tabs {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 46px;
+    }
+
+    .stufen-tab {
+      text-align: left;
+      background: #2a2418;
+      border: 1px solid #ffffff1a;
+      border-radius: 6px;
+      padding: 16px 16px 18px;
+      cursor: pointer;
+      color: #b2a88f;
+      transition: border-color .25s, background .25s, transform .25s;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .stufen-tab:hover,
+    .stufen-tab.is-active {
+      background: #2e2921;
+      border-color: #a89a80;
+      color: #fff;
+    }
+
+    .stufen-tab__label {
+      display: block;
+      font-size: 11px;
+      line-height: 1.55;
+      letter-spacing: .12em;
+      color: #d0c6b0;
+    }
+
+    .stufen-tab__title {
+      font-weight: 700;
+      font-size: 15px;
+      margin-top: 10px;
+      line-height: 1.15;
+      color: #fff;
+      min-height: 2.3em;
+      display: flex;
+      align-items: flex-start;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .stufen-tab__bar {
+      height: 5px;
+      border-radius: 3px;
+      margin-top: auto;
+      background: #3a3126;
+      transition: background-color 0.2s ease;
+    }
+
+    .stufen-tab.is-active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: #a89a80;
+    }
+
+    /* Panels */
+    .stufen-panel {
+      display: none;
+      grid-template-columns: 1fr 1.1fr;
+      margin-top: 26px;
+      border: 1px solid #ffffff1a;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #1a1610;
+    }
+
+    .stufen-panel.is-active {
+      display: grid;
+    }
+
+    .stufen-panel__media {
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 34px;
+      background: radial-gradient(120% 120% at 30% 20%, #2A2418, #16120B);
+      overflow: hidden;
+    }
+
+    .stufen-panel__media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .stufen-panel__badge {
+      z-index: 2;
+      position: absolute;
+      top: 20px;
+      left: 22px;
+      font-size: 10.5px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(0, 0, 0, .30);
+      border: 1px solid #ffffff2e;
+      padding: 6px 12px;
+      border-radius: 3px;
+    }
+
+    .stufen-panel__content {
+      padding: clamp(26px, 3.4vw, 44px);
+      border-left: 1px solid #ffffff1a;
+    }
+
+    .stufen-panel__counter {
+      display: block;
+      line-height: 1.55;
+      font-size: 12px;
+      letter-spacing: .18em;
+      color: #d0c6b0;
+    }
+
+    .stufen-panel__title {
+      font-size: clamp(24px, 3vw, 34px);
+      color: #fff;
+      margin: 12px 0 6px;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -.01em;
+    }
+
+    .stufen-panel__spec {
+      display: block;
+      font-size: 13px;
+      color: #b2a88f;
+      letter-spacing: .04em;
+    }
+
+    .stufen-panel__description {
+      font-size: 15px;
+      margin: 18px 0 24px;
+      max-width: 46ch;
+      line-height: 1.55;
+    }
+
+    .stufen-panel__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #ffffff1a;
+      border: 1px solid #ffffff1a;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .stufen-panel__cell {
+      background: #1a1610;
+      padding: 14px 16px;
+    }
+
+    .stufen-panel__cell:nth-child(2n) {
+      border-left: 1px solid #3a3126;
+    }
+
+    .stufen-panel__cell:nth-child(n+3) {
+      border-top: 1px solid #3a3126;
+    }
+
+    .stufen-panel__cell-label {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #b2a88f;
+    }
+
+    .stufen-panel__cell-value {
+      font-size: 15px;
+      color: #fff;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    .stufen-panel__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .stufen-panel__chip {
+      font-size: 11px;
+      letter-spacing: .06em;
+      padding: 6px 11px;
+      border: 1px solid #ffffff2e;
+      border-radius: 3px;
+      color: rgb(178 168 143);
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 1000px) {
+
+      .stufen-tabs {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 860px) {
+      .stufen-intro {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .stufen-panel {
+        grid-template-columns: 1fr;
+      }
+      .stufen-panel__content {
+        border-left: none;
+        border-top: 1px solid #ffffff1a;
+      }
+    }
+
+    @media screen and (max-width: 760px) {
+
+      .stufen-tabs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media screen and (max-width: 560px) {
+
+      .stufen-lineup__frame__wrapper  {
+        padding-top: 32px;
+      }
+      .stufen-lineup__marker {
+        font-size: 10px;
+        padding: 3px 7px;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      function initStufen() {
+        var root = document.getElementById('stufen-{{ section.id }}');
+        if (!root || root.dataset.stufenInit === 'true') return;
+        root.dataset.stufenInit = 'true';
+
+        var tabs = root.querySelectorAll('[data-stufe-tab]');
+        var panels = root.querySelectorAll('[data-stufe-panel]');
+        var markers = root.querySelectorAll('[data-stufe-marker]');
+
+        function activate(index) {
+          tabs.forEach(function (t) {
+            var active = t.getAttribute('data-stufe-tab') === index;
+            t.classList.toggle('is-active', active);
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+
+          panels.forEach(function (p) {
+            p.classList.toggle('is-active', p.getAttribute('data-stufe-panel') === index);
+          });
+
+          markers.forEach(function (m) {
+            m.classList.toggle('is-active', m.getAttribute('data-stufe-marker') === index);
+          });
+        }
+
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            activate(tab.getAttribute('data-stufe-tab'));
+          });
+        });
+
+        markers.forEach(function (marker) {
+          marker.addEventListener('click', function () {
+            activate(marker.getAttribute('data-stufe-marker'));
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initStufen);
+      } else {
+        initStufen();
+      }
+
+      document.addEventListener('shopify:section:load', function (e) {
+        if (e.detail.sectionId === '{{ section.id }}') initStufen();
+      });
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Qualitätsstufen Tabs",
+  "tag": "section",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "kanji",
+      "label": "Kanji / symbol",
+      "default": "鋼"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Stahl & Eigenschaften"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Sechs\nQualitätsstufen"
+    },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "Lead text",
+      "default": "Vom robusten, rostfreien Edelstahl für den Alltag bis zum handwerklichen Kupfer-Damast. Jede Stufe steht für einen definierten Stahl, eine Härte und ein Einsatzprofil."
+    },
+    {
+      "type": "html",
+      "id": "note__icon",
+      "label": "Note Icon",
+      "default": "※"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "Alle Stahl- und Härtewerte sind Beispielwerte — bitte an eure realen Spezifikationen anpassen."
+    },
+    {
+      "type": "image_picker",
+      "id": "lineup_image",
+      "label": "Lineup image"
+    },
+    {
+      "type": "text",
+      "id": "lineup_caption",
+      "label": "Lineup caption",
+      "default": "Von links Stufe 01 bis rechts Stufe 06"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stufe",
+      "name": "Stufe",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab label",
+          "default": "Stufe 01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Edelstahl"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Image badge",
+          "default": "Rostfrei · Alltag"
+        },
+        {
+          "type": "text",
+          "id": "spec",
+          "label": "Steel spec",
+          "default": "X50CrMoV15 · rostfrei"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Der robuste Einstieg: rostfreier Edelstahl für den täglichen Einsatz — pflegeleicht und zuverlässig."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "spec1_label",
+          "label": "Spec 1 label",
+          "default": "Härte"
+        },
+        {
+          "type": "text",
+          "id": "spec1_value",
+          "label": "Spec 1 value",
+          "default": "54–56 HRC"
+        },
+        {
+          "type": "text",
+          "id": "spec2_label",
+          "label": "Spec 2 label",
+          "default": "Schnitthaltigkeit"
+        },
+        {
+          "type": "text",
+          "id": "spec2_value",
+          "label": "Spec 2 value",
+          "default": "Gut"
+        },
+        {
+          "type": "text",
+          "id": "spec3_label",
+          "label": "Spec 3 label",
+          "default": "Korrosionsschutz"
+        },
+        {
+          "type": "text",
+          "id": "spec3_value",
+          "label": "Spec 3 value",
+          "default": "Sehr hoch"
+        },
+        {
+          "type": "text",
+          "id": "spec4_label",
+          "label": "Spec 4 label",
+          "default": "Klingenmuster"
+        },
+        {
+          "type": "text",
+          "id": "spec4_value",
+          "label": "Spec 4 value",
+          "default": "Glatt gebürstet"
+        },
+        {
+          "type": "text",
+          "id": "chips",
+          "label": "Chips (comma separated)",
+          "default": "Rostfrei, Spülmaschinenfest, Einstieg"
+        },
+        {
+          "type": "text",
+          "id": "marker_x",
+          "label": "Lineup marker X (%)",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "marker_y",
+          "label": "Lineup marker Y (%)",
+          "default": "15"
+        },
+        {
+          "type": "header",
+          "content": "Tab Bar Gradient Colors"
+        },
+        {
+          "type": "color",
+          "id": "bar_color_start",
+          "label": "Gradient Start Color",
+          "default": "#3a3126"
+        },
+        {
+          "type": "color",
+          "id": "bar_color_end",
+          "label": "Gradient End Color",
+          "default": "#6b5b4a"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Qualitätsstufen Tabs",
+      "blocks": [
+        {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 01",
+            "title": "Edelstahl",
+            "badge": "Rostfrei · Alltag",
+            "spec": "X50CrMoV15 · rostfrei",
+            "description": "Der robuste Einstieg: rostfreier Edelstahl für den täglichen Einsatz — pflegeleicht und zuverlässig.",
+            "spec1_value": "54–56 HRC",
+            "spec2_value": "Gut",
+            "spec3_value": "Sehr hoch",
+            "spec4_value": "Glatt gebürstet",
+            "chips": "Rostfrei, Spülmaschinenfest, Einstieg"
+          }
+        },
+        {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 02",
+            "title": "Premium-Edelstahl",
+            "badge": "Rostfrei · Schärfer",
+            "spec": "Premium-Edelstahl · rostfrei",
+            "description": "Feinere Stahlgüte mit höherer Härte für mehr Schnitthaltigkeit — bleibt länger scharf.",
+            "spec1_value": "56–58 HRC",
+            "spec2_value": "Sehr gut",
+            "spec3_value": "Sehr hoch",
+            "spec4_value": "Glatt poliert",
+            "chips": "Rostfrei, Langlebig, Allround"
+          }
+        },
+        {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 03",
+            "title": "Pulverstahl",
+            "badge": "Pulverstahl · Präzision",
+            "spec": "Pulvermetallurgischer Stahl",
+            "description": "Pulvermetallurgisch hergestellter Stahl mit extrem feinem Gefüge — für höchste Schärfe und Standzeit.",
+            "spec1_value": "60–62 HRC",
+            "spec2_value": "Exzellent",
+            "spec3_value": "Hoch",
+            "spec4_value": "Fein gebürstet",
+            "chips": "Feinstgefüge, Sehr scharf, Profi"
+          }
+        },
+        {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 04",
+            "title": "Damast",
+            "badge": "Damast · Handwerk",
+            "spec": "Damaststahl · VG-10 Kern",
+            "description": "Klassischer Damast mit geschmiedeten Lagen und hartem Kern — Handwerk trifft Alltagstauglichkeit.",
+            "spec1_value": "60–62 HRC",
+            "spec2_value": "Exzellent",
+            "spec3_value": "Hoch",
+            "spec4_value": "Damast-Lagen",
+            "chips": "Damast, Geschmiedet, Charakter"
+          }
+        },
+        {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 05",
+            "title": "Premium-Damast",
+            "badge": "Damast · Premium",
+            "spec": "Premium-Damast · gehämmert",
+            "description": "Aufwendige Damastlagen mit gehämmerter Oberfläche — jede Klinge ein Unikat.",
+            "spec1_value": "61–63 HRC",
+            "spec2_value": "Exzellent",
+            "spec3_value": "Hoch",
+            "spec4_value": "Gehämmert · Lagen",
+            "chips": "Unikat, Gehämmert, Premium"
+          }
+        },
+        {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 06",
+            "title": "Kupfer-Damast",
+            "badge": "Kupfer · Top-Stufe",
+            "spec": "Kupfer-Damast · antibakteriell",
+            "description": "Die Top-Stufe: eingearbeitetes Kupfer für antibakterielle Eigenschaften und ein einzigartiges Muster.",
+            "spec1_value": "61–63 HRC",
+            "spec2_value": "Exzellent",
+            "spec3_value": "Hoch",
+            "spec4_value": "Kupfer-Muster",
+            "chips": "Kupfer, Antibakteriell, Top-Stufe"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
