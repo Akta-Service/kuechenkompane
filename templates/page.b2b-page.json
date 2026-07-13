@@ -11,10 +11,1381 @@
   "sections": {
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {}
+    },
+    "b2b_announcement_QzDjE6": {
+      "type": "b2b-announcement",
+      "name": "B2B Announcement",
+      "settings": {
+        "left_text": "EINE MARKE DER <strong>RADZUWEIT INDUSTRIES GMBH</strong>",
+        "right_text": "B2B · PRIVATE LABEL · DESIGNED & DEVELOPED IN GERMANY"
+      }
+    },
+    "b2b_header_8zbB8p": {
+      "type": "b2b-header",
+      "blocks": {
+        "menu_item_g3pTtj": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Handwerk",
+            "link": "#schmiede"
+          }
+        },
+        "menu_item_UDVrTx": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Qualitätsstufen",
+            "link": "#stufen"
+          }
+        },
+        "menu_item_pqrMLr": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Fertigung",
+            "link": "#fertigung"
+          }
+        },
+        "menu_item_kCRqCf": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Private Label",
+            "link": "#label"
+          }
+        },
+        "button_pEnfzM": {
+          "type": "button",
+          "settings": {
+            "title": "Muster anfragen",
+            "link": "#kontakt"
+          }
+        }
+      },
+      "block_order": [
+        "menu_item_g3pTtj",
+        "menu_item_UDVrTx",
+        "menu_item_pqrMLr",
+        "menu_item_kCRqCf",
+        "button_pEnfzM"
+      ],
+      "name": "B2b Header",
+      "settings": {
+        "logo_kk": "shopify://shop_images/logo1.svg",
+        "logo_text_1": "Küchenkompane",
+        "logo_rz": "shopify://shop_images/logo2.webp",
+        "logo_text_2": "RADZUWEIT"
+      }
+    },
+    "b2b_hero_QaqW6F": {
+      "type": "b2b-hero",
+      "blocks": {
+        "intro_4mVWeF": {
+          "type": "intro",
+          "settings": {
+            "eyebrow_1": "包丁",
+            "eyebrow_2": "Messermanufaktur · Designed & developed in Germany · OEM / Private Label",
+            "line_color": "#8a7a60",
+            "text_1_color": "#b5432f",
+            "text_2_color": "#525252"
+          }
+        },
+        "title_hNnENB": {
+          "type": "title",
+          "settings": {
+            "title": "<p>Ihr Messer.</p><p>Ihr Logo.</p>",
+            "color": "#1a1a1a",
+            "margin_bottom_0": true
+          }
+        },
+        "title_gVXe4a": {
+          "type": "title",
+          "settings": {
+            "title": "<p><strong>Unsere Fertigung.</strong></p>",
+            "color": "#2e2921",
+            "margin_bottom_0": false
+          }
+        },
+        "description_iHN9dU": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Küchenkompane ist die Messermarke der Radzuweit Industries GmbH. Wir fertigen Küchenmesser in sechs Qualitätsstufen — vom rostfreien Edelstahl bis zum Damast mit eingearbeitetem Kupfer, antibakteriell. Mit Ihrem Logo, ohne Logo oder als eigene Marke.</p>",
+            "text_color": "#544e43"
+          }
+        },
+        "line_L6DhwV": {
+          "type": "line",
+          "settings": {
+            "separator_color": "linear-gradient(90deg,transparent,#A89A80,#D0C6B0,transparent);"
+          }
+        },
+        "spec_w3fnYa": {
+          "type": "spec",
+          "settings": {
+            "value": "HRC 62–63",
+            "label": "Härte"
+          }
+        },
+        "spec_74QCrg": {
+          "type": "spec",
+          "settings": {
+            "value": "67 Lagen",
+            "label": "Damast"
+          }
+        },
+        "spec_cpwEhT": {
+          "type": "spec",
+          "settings": {
+            "value": "Kupfer-Damast",
+            "label": "antibakteriell"
+          }
+        },
+        "button_tWwF8R": {
+          "type": "button",
+          "settings": {
+            "label": "Muster anfragen",
+            "link": "",
+            "show_arrow": true,
+            "primary_bg_color": "#000000",
+            "primary_text_color": "#d0c6b0",
+            "primary_border_color": "#ffffff",
+            "primary_hover_bg_color": "#e7efe4",
+            "primary_hover_text_color": "#211c14",
+            "secondary_label": "Qualitätsstufen ansehen",
+            "secondary_link": "",
+            "secondary_show_arrow": false,
+            "secondary_bg_color": "rgba(0,0,0,0)",
+            "secondary_text_color": "#000000",
+            "secondary_border_color": "#464646",
+            "secondary_hover_bg_color": "#070707",
+            "secondary_hover_text_color": "#ffffff",
+            "secondary_hover_border_color": "#ffffff"
+          }
+        },
+        "trust_yYcypK": {
+          "type": "trust",
+          "settings": {
+            "items": "Designed & developed in Germany, OEM & Private Label, Edelstahl bis Kupfer-Damast",
+            "text_color": "#464646",
+            "icon_color": "#464646"
+          }
+        },
+        "proof_e3dhJU": {
+          "type": "proof",
+          "settings": {
+            "number": "6",
+            "static_text": "",
+            "unit": "",
+            "label": "Qualitätsstufen"
+          }
+        },
+        "proof_rWCFir": {
+          "type": "proof",
+          "settings": {
+            "number": "63",
+            "static_text": "",
+            "unit": "HRC",
+            "label": "max. Härte"
+          }
+        },
+        "proof_P9qMYJ": {
+          "type": "proof",
+          "settings": {
+            "number": "67",
+            "static_text": "",
+            "unit": "",
+            "label": "Damast-Lagen"
+          }
+        },
+        "proof_CtDqhF": {
+          "type": "proof",
+          "settings": {
+            "number": "",
+            "static_text": "Cu",
+            "unit": "",
+            "label": "Kupfer · antibakteriell"
+          }
+        }
+      },
+      "block_order": [
+        "intro_4mVWeF",
+        "title_hNnENB",
+        "title_gVXe4a",
+        "description_iHN9dU",
+        "line_L6DhwV",
+        "spec_w3fnYa",
+        "spec_74QCrg",
+        "spec_cpwEhT",
+        "button_tWwF8R",
+        "trust_yYcypK",
+        "proof_e3dhJU",
+        "proof_rWCFir",
+        "proof_P9qMYJ",
+        "proof_CtDqhF"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "name": "KK B2B Hero",
+      "settings": {
+        "product_image": "shopify://shop_images/download_ece090ba-bf51-43dc-8df4-d4c5b64d7c5f.webp",
+        "watermark_image": "shopify://shop_images/download.png",
+        "gradient_color": "#eae5da",
+        "proof_number_color": "#070707",
+        "proof_unit_color": "#544e43",
+        "proof_label_color": "#a89a80",
+        "proof_border_color": "#464646",
+        "spec_bg_color": "#000000",
+        "spec_border_color": "#ffffff2e",
+        "spec_value_color": "#ffffff",
+        "spec_label_color": "#a89a80",
+        "max_width": 1200
+      }
+    },
+    "b2b_hero_yYGFa4": {
+      "type": "b2b-hero",
+      "blocks": {
+        "intro_JBE7qf": {
+          "type": "intro",
+          "settings": {
+            "eyebrow_1": "包丁",
+            "eyebrow_2": "Messermanufaktur · Designed & developed in Germany · OEM / Private Label",
+            "line_color": "#a89a80",
+            "text_1_color": "#b5432f",
+            "text_2_color": "#fffdfa"
+          }
+        },
+        "title_7eAMpD": {
+          "type": "title",
+          "settings": {
+            "title": "<p>Ihr Messer.</p><p>Ihr Logo.</p>",
+            "color": "#f0ece1",
+            "margin_bottom_0": true
+          }
+        },
+        "title_mgGwH8": {
+          "type": "title",
+          "settings": {
+            "title": "<p><strong>Unsere Fertigung.</strong></p>",
+            "color": "#d0c6b0",
+            "margin_bottom_0": false
+          }
+        },
+        "description_QDkRdk": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Küchenkompane ist die Messermarke der Radzuweit Industries GmbH. Wir fertigen Küchenmesser in sechs Qualitätsstufen — vom rostfreien Edelstahl bis zum Damast mit eingearbeitetem Kupfer, antibakteriell. Mit Ihrem Logo, ohne Logo oder als eigene Marke.</p>",
+            "text_color": "#b2a88f"
+          }
+        },
+        "line_zCpgGj": {
+          "type": "line",
+          "settings": {
+            "separator_color": "linear-gradient(90deg,transparent,#A89A80,#D0C6B0,transparent);"
+          }
+        },
+        "spec_KURt8e": {
+          "type": "spec",
+          "settings": {
+            "value": "HRC 62–63",
+            "label": "Härte"
+          }
+        },
+        "spec_nY3BcR": {
+          "type": "spec",
+          "settings": {
+            "value": "67 Lagen",
+            "label": "Damast"
+          }
+        },
+        "spec_g6DgtX": {
+          "type": "spec",
+          "settings": {
+            "value": "Kupfer-Damast",
+            "label": "antibakteriell"
+          }
+        },
+        "button_XVpqAB": {
+          "type": "button",
+          "settings": {
+            "label": "Muster anfragen",
+            "link": "",
+            "show_arrow": true,
+            "primary_bg_color": "#ffffff",
+            "primary_text_color": "#211c14",
+            "primary_border_color": "#ffffff",
+            "primary_hover_bg_color": "#e7efe4",
+            "primary_hover_text_color": "#211c14",
+            "secondary_label": "Qualitätsstufen ansehen",
+            "secondary_link": "",
+            "secondary_show_arrow": false,
+            "secondary_bg_color": "rgba(0,0,0,0)",
+            "secondary_text_color": "#ffffff",
+            "secondary_border_color": "#ffffff2e",
+            "secondary_hover_bg_color": "#ffffff1a",
+            "secondary_hover_text_color": "#ffffff",
+            "secondary_hover_border_color": "#ffffff"
+          }
+        },
+        "trust_VYig3E": {
+          "type": "trust",
+          "settings": {
+            "items": "Designed & developed in Germany, OEM & Private Label, Edelstahl bis Kupfer-Damast",
+            "text_color": "#c3d3be",
+            "icon_color": "#a89a80"
+          }
+        },
+        "proof_AxqPaY": {
+          "type": "proof",
+          "settings": {
+            "number": "6",
+            "static_text": "",
+            "unit": "",
+            "label": "Qualitätsstufen"
+          }
+        },
+        "proof_DEEBW7": {
+          "type": "proof",
+          "settings": {
+            "number": "63",
+            "static_text": "",
+            "unit": "HRC",
+            "label": "max. Härte"
+          }
+        },
+        "proof_JNpfMK": {
+          "type": "proof",
+          "settings": {
+            "number": "67",
+            "static_text": "",
+            "unit": "",
+            "label": "Damast-Lagen"
+          }
+        },
+        "proof_J7yb96": {
+          "type": "proof",
+          "settings": {
+            "number": "",
+            "static_text": "Cu",
+            "unit": "",
+            "label": "Kupfer · antibakteriell"
+          }
+        }
+      },
+      "block_order": [
+        "intro_JBE7qf",
+        "title_7eAMpD",
+        "title_mgGwH8",
+        "description_QDkRdk",
+        "line_zCpgGj",
+        "spec_KURt8e",
+        "spec_nY3BcR",
+        "spec_g6DgtX",
+        "button_XVpqAB",
+        "trust_VYig3E",
+        "proof_AxqPaY",
+        "proof_DEEBW7",
+        "proof_JNpfMK",
+        "proof_J7yb96"
+      ],
+      "name": "KK B2B Hero",
+      "settings": {
+        "product_image": "shopify://shop_images/download_ece090ba-bf51-43dc-8df4-d4c5b64d7c5f.webp",
+        "watermark_image": "shopify://shop_images/download.png",
+        "gradient_color": "radial-gradient(130% 110% at 88% -10%, #2E2921 0%, #1B1710 44%, #100D07 100%)",
+        "proof_number_color": "#ffffff",
+        "proof_unit_color": "#a89a80",
+        "proof_label_color": "#a89a80",
+        "proof_border_color": "#ffffff1a",
+        "spec_bg_color": "#101e138c",
+        "spec_border_color": "#ffffff2e",
+        "spec_value_color": "#ffffff",
+        "spec_label_color": "#a89a80",
+        "max_width": 1200
+      }
+    },
+    "b2b_marque_td8TRJ": {
+      "type": "b2b-marque",
+      "blocks": {
+        "item_crDmGh": {
+          "type": "item",
+          "settings": {
+            "text": "Von japanischen Meisterschmieden geschmiedet"
+          }
+        },
+        "item_HqJRzC": {
+          "type": "item",
+          "settings": {
+            "text": "Designed & developed in Germany"
+          }
+        },
+        "item_XbqKqK": {
+          "type": "item",
+          "settings": {
+            "text": "OEM & Private Label"
+          }
+        },
+        "item_3YrVfT": {
+          "type": "item",
+          "settings": {
+            "text": "6 Qualitätsstufen"
+          }
+        },
+        "item_XgXkUB": {
+          "type": "item",
+          "settings": {
+            "text": "Edelstahl bis Kupfer-Damast"
+          }
+        },
+        "item_YPfDcm": {
+          "type": "item",
+          "settings": {
+            "text": "Antibakteriell"
+          }
+        },
+        "item_tE3XXm": {
+          "type": "item",
+          "settings": {
+            "text": "Mit oder ohne Logo"
+          }
+        },
+        "item_MggzaN": {
+          "type": "item",
+          "settings": {
+            "text": "Laser-Gravur & Ätzung"
+          }
+        },
+        "item_NyKpxC": {
+          "type": "item",
+          "settings": {
+            "text": "Serienfertigung"
+          }
+        },
+        "item_kWFrr3": {
+          "type": "item",
+          "settings": {
+            "text": "Ab 1 Stück lieferbar"
+          }
+        }
+      },
+      "block_order": [
+        "item_crDmGh",
+        "item_HqJRzC",
+        "item_XbqKqK",
+        "item_3YrVfT",
+        "item_XgXkUB",
+        "item_YPfDcm",
+        "item_tE3XXm",
+        "item_MggzaN",
+        "item_NyKpxC",
+        "item_kWFrr3"
+      ],
+      "name": "B2B Marquee",
+      "settings": {
+        "marquee_speed": 40,
+        "bg_color": "#2e2921",
+        "text_color": "#d0c6b0",
+        "dot_color": "#a89a80",
+        "font_size_desktop": 12,
+        "font_size_tablet": 12,
+        "font_size_mobile": 12
+      }
+    },
+    "b2b_craftsmanship_split_6b3tqV": {
+      "type": "b2b-craftsmanship-split",
+      "blocks": {
+        "kicker_F8GQCq": {
+          "type": "kicker",
+          "settings": {
+            "text1": "鍛冶",
+            "text2": "JAPANISCHE SCHMIEDEKUNST",
+            "line_color": "#a89a80",
+            "text_1_color": "#b5432f",
+            "text_2_color": "#a89a80"
+          }
+        },
+        "heading_Ypn4Lm": {
+          "type": "heading",
+          "settings": {
+            "text": "Geschmiedet von japanischen Meisterschmieden."
+          }
+        },
+        "text_JqYV3a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Jede Klinge entsteht in Handarbeit bei erfahrenen japanischen Schmiedemeistern — Lage für Lage gefaltet, von Hand geschliffen und gehärtet. So entstehen Schärfe, Charakter und ein Damastmuster, das kein Messer dem anderen gleichen lässt.</p>"
+          }
+        },
+        "feature_jepJwP": {
+          "type": "feature",
+          "settings": {
+            "kanji": "手",
+            "title": "Handgeschmiedet",
+            "description": "Jede Klinge einzeln von Meisterhand geschmiedet."
+          }
+        },
+        "feature_mUXQak": {
+          "type": "feature",
+          "settings": {
+            "kanji": "層",
+            "title": "Gefaltete Lagen",
+            "description": "Damast in vielen Lagen gefaltet — für Struktur und Schnitt."
+          }
+        },
+        "feature_DHJkyU": {
+          "type": "feature",
+          "settings": {
+            "kanji": "匠",
+            "title": "Meistertradition",
+            "description": "Können, das über Generationen weitergegeben wird."
+          }
+        }
+      },
+      "block_order": [
+        "kicker_F8GQCq",
+        "heading_Ypn4Lm",
+        "text_JqYV3a",
+        "feature_jepJwP",
+        "feature_mUXQak",
+        "feature_DHJkyU"
+      ],
+      "name": "B2b Craftsmanship",
+      "settings": {
+        "image_position": "right",
+        "image_position_mobile": "bottom",
+        "right_image": "shopify://shop_images/download_1.webp",
+        "show_seal": true,
+        "seal_text": "匠",
+        "show_water_mark": true,
+        "water_mark": "鍰",
+        "water_mark_position": "top-right",
+        "water_mark_color": "#ffffff0a",
+        "background_color": "#14110b",
+        "title_text_color": "#eef3ec",
+        "text_color": "#b2a88f",
+        "accent_color": "#d4573e",
+        "feature_top_border_color": "#ffffff1a"
+      }
+    },
+    "b2b_craftsmanship_split_XDLqrH": {
+      "type": "b2b-craftsmanship-split",
+      "blocks": {
+        "kicker_y47wEe": {
+          "type": "kicker",
+          "settings": {
+            "text1": "研ぎ",
+            "text2": "Japanese grinding art",
+            "line_color": "#a89a80",
+            "text_1_color": "#b5432f",
+            "text_2_color": "#a89a80"
+          }
+        },
+        "heading_CFTXCA": {
+          "type": "heading",
+          "settings": {
+            "text": "The sharpness is determined by the grinding master."
+          }
+        },
+        "text_Pd8TLp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A blade only becomes a tool through the final polish. Our Japanese master grinder gives each blade its final geometry by hand — on the whetstone, in a tradition passed down through generations.</p><p>This level of precision determines the cut edge — and is our most important difference from mass-produced goods. Not machine-made, but master craftsmanship.</p>"
+          }
+        },
+        "feature_pAiTat": {
+          "type": "feature",
+          "settings": {
+            "kanji": "研ぎ",
+            "title": "Hand-sanded",
+            "description": "Final geometry and sharpness achieved by the grinding master."
+          }
+        },
+        "feature_YQydcL": {
+          "type": "feature",
+          "settings": {
+            "kanji": "砧",
+            "title": "On the waterstone",
+            "description": "Traditional Japanese grinding technique, step by step."
+          }
+        },
+        "feature_4xVbBQ": {
+          "type": "feature",
+          "settings": {
+            "kanji": "刃",
+            "title": "razor-sharp",
+            "description": "A cut edge you can feel — from the very first cut."
+          }
+        }
+      },
+      "block_order": [
+        "kicker_y47wEe",
+        "heading_CFTXCA",
+        "text_Pd8TLp",
+        "feature_pAiTat",
+        "feature_YQydcL",
+        "feature_4xVbBQ"
+      ],
+      "name": "B2b Craftsmanship",
+      "settings": {
+        "image_position": "left",
+        "image_position_mobile": "top",
+        "right_image": "shopify://shop_images/download_2.webp",
+        "show_seal": true,
+        "seal_text": "研",
+        "show_water_mark": true,
+        "water_mark": "研",
+        "water_mark_position": "top-left",
+        "water_mark_color": "#1e1b15",
+        "background_color": "#eae5da",
+        "title_text_color": "#1e1b15",
+        "text_color": "#544e43",
+        "accent_color": "#d4573e",
+        "feature_top_border_color": "#d7cebb"
+      }
+    },
+    "b2b_brand_chain_HFxJE6": {
+      "type": "b2b-brand-chain",
+      "blocks": {
+        "item_FhBe7j": {
+          "type": "item",
+          "settings": {
+            "role": "Hersteller",
+            "title": "Radzuweit Industries GmbH",
+            "text": "Entwickelt, härtet und fertigt die Messer. Die Kompetenz hinter jeder Klinge.",
+            "accent": true
+          }
+        },
+        "item_RpTQWp": {
+          "type": "item",
+          "settings": {
+            "role": "Eigene Messermarke",
+            "title": "Küchenkompane",
+            "text": "Unser Messerprogramm in sechs Qualitätsstufen — der Maßstab für Serienqualität.",
+            "accent": false
+          }
+        },
+        "item_zwCRCk": {
+          "type": "item",
+          "settings": {
+            "role": "Ihre Option",
+            "title": "Ihr Private Label",
+            "text": "Dieselbe Fertigung — mit Ihrem Logo, ohne Logo oder als eigene Marke.",
+            "accent": false
+          }
+        }
+      },
+      "block_order": [
+        "item_FhBe7j",
+        "item_RpTQWp",
+        "item_zwCRCk"
+      ],
+      "name": "B2B Brand Chain",
+      "settings": {
+        "eyebrow": "銘",
+        "eyebrow_2": "Marke & Hersteller",
+        "title": "Eine Marke.\nEin Hersteller. Ihr Label.",
+        "subtitle": "Radzuweit Industries GmbH ist der Hersteller. Küchenkompane ist unsere eigene Messermarke — und zugleich die Vorlage für das, was wir für Sie fertigen können: mit Ihrem Branding, ganz neutral oder als eigenständige Marke."
+      }
+    },
+    "proof_stat": {
+      "type": "proof-stat",
+      "settings": {
+        "kanji": "実績",
+        "stat": "30 Mio. €",
+        "stat_label": "Jahresumsatz mit\nunserer eigenen Marke\nKüchenkompane",
+        "heading": "Küchenkompane ist kein Konzept\n— sondern bewiesen.",
+        "text": "<p>Unsere eigene Messermarke wurde von Mats mit Mitte 20 aufgebaut und macht heute rund 30 Mio. € Umsatz. Der beste Beweis, dass Fertigung, Qualität und Produkt am Markt funktionieren.</p><p>Genau diese Fertigung öffnen wir für Sie — mit Ihrem Logo, neutral oder als eigene Marke.</p>",
+        "chips": "Eigene Marke als Referenz, Bewährte Serienqualität, Skalierbare Fertigung"
+      }
+    },
+    "stufen_tabs": {
+      "type": "stufen-tabs",
+      "blocks": {
+        "stufe_1": {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 01",
+            "title": "Edelstahl",
+            "badge": "Rostfrei · Alltag",
+            "spec": "X50CrMoV15 · rostfrei",
+            "description": "Der robuste Einstieg: rostfreier Edelstahl für den täglichen Einsatz — pflegeleicht und zuverlässig.",
+            "image": "shopify://shop_images/download_2_910b9c95-901c-42dd-ad63-02c64acbe351.webp",
+            "spec1_label": "Härte",
+            "spec1_value": "54–56 HRC",
+            "spec2_label": "Schnitthaltigkeit",
+            "spec2_value": "Gut",
+            "spec3_label": "Korrosionsschutz",
+            "spec3_value": "Sehr hoch",
+            "spec4_label": "Klingenmuster",
+            "spec4_value": "Glatt gebürstet",
+            "chips": "Rostfrei, Spülmaschinenfest, Einstieg",
+            "marker_x": "18.8",
+            "marker_y": "14.2",
+            "bar_color_start": "#c9cdd1",
+            "bar_color_end": "#b0b4b8"
+          }
+        },
+        "stufe_2": {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 02",
+            "title": "Premium-Edelstahl",
+            "badge": "Rostfrei · Schärfer",
+            "spec": "Premium-Edelstahl · rostfrei",
+            "description": "Feinere Stahlgüte mit höherer Härte für mehr Schnitthaltigkeit — bleibt länger scharf.",
+            "image": "shopify://shop_images/download_3.webp",
+            "spec1_label": "Härte",
+            "spec1_value": "56–58 HRC",
+            "spec2_label": "Schnitthaltigkeit",
+            "spec2_value": "Sehr gut",
+            "spec3_label": "Korrosionsschutz",
+            "spec3_value": "Sehr hoch",
+            "spec4_label": "Klingenmuster",
+            "spec4_value": "Glatt poliert",
+            "chips": "Rostfrei, Langlebig, Allround",
+            "marker_x": "30.4",
+            "marker_y": "4.4",
+            "bar_color_start": "#b0b4b8",
+            "bar_color_end": "#9ba0a4"
+          }
+        },
+        "stufe_3": {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 03",
+            "title": "Pulverstahl",
+            "badge": "Pulverstahl · Präzision",
+            "spec": "Pulvermetallurgischer Stahl",
+            "description": "Pulvermetallurgisch hergestellter Stahl mit extrem feinem Gefüge — für höchste Schärfe und Standzeit.",
+            "image": "shopify://shop_images/download_4.webp",
+            "spec1_label": "Härte",
+            "spec1_value": "60–62 HRC",
+            "spec2_label": "Schnitthaltigkeit",
+            "spec2_value": "Exzellent",
+            "spec3_label": "Korrosionsschutz",
+            "spec3_value": "Hoch",
+            "spec4_label": "Klingenmuster",
+            "spec4_value": "Fein gebürstet",
+            "chips": "Feinstgefüge, Sehr scharf, Profi",
+            "marker_x": "42.5",
+            "marker_y": "8.7",
+            "bar_color_start": "#aba69c",
+            "bar_color_end": "#bb9c7c"
+          }
+        },
+        "stufe_4": {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 04",
+            "title": "Damast",
+            "badge": "Damast · Handwerk",
+            "spec": "Damaststahl · VG-10 Kern",
+            "description": "Klassischer Damast mit geschmiedeten Lagen und hartem Kern — Handwerk trifft Alltagstauglichkeit.",
+            "image": "shopify://shop_images/download_5.webp",
+            "spec1_label": "Härte",
+            "spec1_value": "60–62 HRC",
+            "spec2_label": "Schnitthaltigkeit",
+            "spec2_value": "Exzellent",
+            "spec3_label": "Korrosionsschutz",
+            "spec3_value": "Hoch",
+            "spec4_label": "Klingenmuster",
+            "spec4_value": "Damast-Lagen",
+            "chips": "Damast, Geschmiedet, Charakter",
+            "marker_x": "54.5",
+            "marker_y": "10.5",
+            "bar_color_start": "#c39468",
+            "bar_color_end": "#ce874e"
+          }
+        },
+        "stufe_5": {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 05",
+            "title": "Premium-Damast",
+            "badge": "Damast · Premium",
+            "spec": "Premium-Damast · gehämmert",
+            "description": "Aufwendige Damastlagen mit gehämmerter Oberfläche — jede Klinge ein Unikat.",
+            "image": "shopify://shop_images/download_6.webp",
+            "spec1_label": "Härte",
+            "spec1_value": "61–63 HRC",
+            "spec2_label": "Schnitthaltigkeit",
+            "spec2_value": "Exzellent",
+            "spec3_label": "Korrosionsschutz",
+            "spec3_value": "Hoch",
+            "spec4_label": "Klingenmuster",
+            "spec4_value": "Gehämmert · Lagen",
+            "chips": "Unikat, Gehämmert, Premium",
+            "marker_x": "67.5",
+            "marker_y": "3.5",
+            "bar_color_start": "#d6863f",
+            "bar_color_end": "#de7a2f"
+          }
+        },
+        "stufe_6": {
+          "type": "stufe",
+          "settings": {
+            "tab_label": "Stufe 06",
+            "title": "Kupfer-Damast",
+            "badge": "Kupfer · Top-Stufe",
+            "spec": "Kupfer-Damast · antibakteriell",
+            "description": "Die Top-Stufe: eingearbeitetes Kupfer für antibakterielle Eigenschaften und ein einzigartiges Muster.",
+            "image": "shopify://shop_images/download_7.webp",
+            "spec1_label": "Härte",
+            "spec1_value": "61–63 HRC",
+            "spec2_label": "Schnitthaltigkeit",
+            "spec2_value": "Exzellent",
+            "spec3_label": "Korrosionsschutz",
+            "spec3_value": "Hoch",
+            "spec4_label": "Klingenmuster",
+            "spec4_value": "Kupfer-Muster",
+            "chips": "Kupfer, Antibakteriell, Top-Stufe",
+            "marker_x": "80.1",
+            "marker_y": "8.4",
+            "bar_color_start": "#ea7e2e",
+            "bar_color_end": "#ee5a16"
+          }
+        }
+      },
+      "block_order": [
+        "stufe_1",
+        "stufe_2",
+        "stufe_3",
+        "stufe_4",
+        "stufe_5",
+        "stufe_6"
+      ],
+      "settings": {
+        "kanji": "鋼",
+        "eyebrow": "Stahl & Eigenschaften",
+        "heading": "Sechs\nQualitätsstufen",
+        "lead": "Vom robusten, rostfreien Edelstahl für den Alltag bis zum handwerklichen Kupfer-Damast. Jede Stufe steht für einen definierten Stahl, eine Härte und ein Einsatzprofil.",
+        "note__icon": "※",
+        "note": "Alle Stahl- und Härtewerte sind Beispielwerte — bitte an eure realen Spezifikationen anpassen.",
+        "lineup_image": "shopify://shop_images/download_1_6397a10f-a091-4d17-8f4b-76d4f48e3003.webp",
+        "lineup_caption": "Von links Stufe 01 bis rechts Stufe 06"
+      }
+    },
+    "fertigung_grid": {
+      "type": "fertigung-grid",
+      "blocks": {
+        "fg_eyebrow": {
+          "type": "_fertigung-eyebrow",
+          "settings": {
+            "kanji": "製造",
+            "text": "Was wir liefern können"
+          },
+          "blocks": {}
+        },
+        "fg_heading": {
+          "type": "_fertigung-heading",
+          "settings": {
+            "heading": "Fertigung aus\neiner Hand"
+          },
+          "blocks": {}
+        },
+        "fg_text": {
+          "type": "_fertigung-text",
+          "settings": {
+            "text": "<p>Wir gehen auf Kundenbedürfnisse ein — von der Stahlauswahl bis zur fertig verpackten Serie. Sie sagen, was Sie brauchen; wir liefern.</p>"
+          },
+          "blocks": {}
+        },
+        "fg_grid": {
+          "type": "_fertigung-grid",
+          "settings": {},
+          "blocks": {
+            "fg_item_1": {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "01",
+                "title": "Stahl & Härtung",
+                "description": "Sechs Stahlgüten von rostfreiem Edelstahl bis Damast, kontrollierte Härtung für definierte HRC-Werte."
+              },
+              "blocks": {}
+            },
+            "fg_item_2": {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "02",
+                "title": "Klingengeometrie",
+                "description": "Klingenform, Anschliff und Länge nach Vorgabe — vom Allzweck- bis zum Spezialmesser."
+              },
+              "blocks": {}
+            },
+            "fg_item_3": {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "03",
+                "title": "Griff & Material",
+                "description": "Griffmaterialien, Farben und Formen abgestimmt auf Marke und Einsatz."
+              },
+              "blocks": {}
+            },
+            "fg_item_4": {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "04",
+                "title": "Kupfer & antibakteriell",
+                "description": "Eingearbeitetes Kupfer in der Top-Stufe für antibakterielle Eigenschaften und ein einzigartiges Muster."
+              },
+              "blocks": {}
+            },
+            "fg_item_5": {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "05",
+                "title": "Branding",
+                "description": "Laser-Gravur, Klingen-Ätzung und Griff-Prägung — mit Ihrem Logo oder komplett neutral."
+              },
+              "blocks": {}
+            },
+            "fg_item_6": {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "06",
+                "title": "Verpackung & Serie",
+                "description": "Neutrale oder gebrandete Verpackung, reproduzierbare Serienqualität, planbare Mengen."
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "fg_item_1",
+            "fg_item_2",
+            "fg_item_3",
+            "fg_item_4",
+            "fg_item_5",
+            "fg_item_6"
+          ]
+        }
+      },
+      "block_order": [
+        "fg_eyebrow",
+        "fg_heading",
+        "fg_text",
+        "fg_grid"
+      ],
+      "settings": {}
+    },
+    "private_label": {
+      "type": "private-label",
+      "blocks": {
+        "pl_row": {
+          "type": "_private-label-row",
+          "settings": {},
+          "blocks": {
+            "pl_eyebrow": {
+              "type": "_private-label-eyebrow",
+              "settings": {
+                "eyebrow_kanji": "刻印",
+                "text": "Private Label"
+              },
+              "blocks": {}
+            },
+            "pl_heading": {
+              "type": "_private-label-heading",
+              "settings": {
+                "heading": "Mit Logo. Ohne Logo.\nOder Ihre eigene Marke."
+              },
+              "blocks": {}
+            },
+            "pl_text": {
+              "type": "_private-label-text",
+              "settings": {
+                "text": "<p>Sie entscheiden, wessen Name auf der Klinge steht. Probieren Sie es aus — blenden Sie das Logo ein oder aus.</p>"
+              },
+              "blocks": {}
+            },
+            "pl_grid": {
+              "type": "_private-label-grid",
+              "settings": {},
+              "blocks": {
+                "pl_content": {
+                  "type": "_private-label-content",
+                  "settings": {},
+                  "blocks": {
+                    "pl_image_toggle": {
+                      "type": "_private-label-image-toggle",
+                      "settings": {
+                        "image_with_logo": "shopify://shop_images/download_6d0850c0-c3ae-4ef0-a95c-4b7feb74975f.webp",
+                        "image_without_logo": "shopify://shop_images/download_23f992f2-0f4f-4497-a990-4162f517e766.webp",
+                        "alt_text": "Individuell graviertes Küchenmesser",
+                        "with_logo_label": "Mit Logo",
+                        "without_logo_label": "Ohne Logo"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "pl_image_toggle"
+                  ]
+                },
+                "pl_features": {
+                  "type": "_private-label-features",
+                  "settings": {},
+                  "blocks": {
+                    "pl_feature_1": {
+                      "type": "_private-label-feature-item",
+                      "settings": {
+                        "title": "Laser-Gravur",
+                        "description": "Präzise, dauerhaft, ideal für Logos und Seriennummern auf Klinge oder Griff."
+                      },
+                      "blocks": {}
+                    },
+                    "pl_feature_2": {
+                      "type": "_private-label-feature-item",
+                      "settings": {
+                        "title": "Klingen-Ätzung",
+                        "description": "Großflächige Marken-Optik direkt im Stahl – hochwertig und abriebfest."
+                      },
+                      "blocks": {}
+                    },
+                    "pl_feature_3": {
+                      "type": "_private-label-feature-item",
+                      "settings": {
+                        "title": "Griff-Prägung",
+                        "description": "Erhabene oder vertiefte Branding im Griffmaterial."
+                      },
+                      "blocks": {}
+                    },
+                    "pl_feature_4": {
+                      "type": "_private-label-feature-item",
+                      "settings": {
+                        "title": "Neutral / No-Name",
+                        "description": "Komplett ohne Kennzeichnung – für Ihr eigenes Handelslabel."
+                      },
+                      "blocks": {}
+                    },
+                    "pl_feature_5": {
+                      "type": "_private-label-feature-item",
+                      "settings": {
+                        "title": "Verpackung & Set",
+                        "description": "Gebrandete oder neutrale Verpackung, Einzelmesser oder komplettes Set."
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "pl_feature_1",
+                    "pl_feature_2",
+                    "pl_feature_3",
+                    "pl_feature_4",
+                    "pl_feature_5"
+                  ]
+                },
+                "private_label_box_group_8Bh6H6": {
+                  "type": "_private-label-box-group",
+                  "settings": {},
+                  "blocks": {
+                    "pl_box_1": {
+                      "type": "_private-label-box",
+                      "settings": {
+                        "tag": "Ab 1 Stück",
+                        "title": "Sofort lieferbar",
+                        "description": "Wir liefern ab dem ersten Messer – auch Einzelstücke und Muster."
+                      },
+                      "blocks": {}
+                    },
+                    "pl_box_2": {
+                      "type": "_private-label-box",
+                      "settings": {
+                        "tag": "Ab 50 Stück",
+                        "title": "Logo-Gravur",
+                        "description": "Individuelle Logo-Gravur auf Klinge oder Griff."
+                      },
+                      "blocks": {}
+                    },
+                    "pl_box_3": {
+                      "type": "_private-label-box",
+                      "settings": {
+                        "tag": "Ab 100 Stück",
+                        "title": "Individueller Griff",
+                        "description": "Griffform und -material nach Ihren Vorgaben."
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "pl_box_1",
+                    "pl_box_2",
+                    "pl_box_3"
+                  ]
+                }
+              },
+              "block_order": [
+                "pl_content",
+                "pl_features",
+                "private_label_box_group_8Bh6H6"
+              ]
+            }
+          },
+          "block_order": [
+            "pl_eyebrow",
+            "pl_heading",
+            "pl_text",
+            "pl_grid"
+          ]
+        }
+      },
+      "block_order": [
+        "pl_row"
+      ],
+      "settings": {}
+    },
+    "b2b_product_configurator_y7FxGd": {
+      "type": "b2b-product-configurator",
+      "blocks": {
+        "option_group_dGKYTg": {
+          "type": "option_group",
+          "settings": {
+            "id": "quality",
+            "label": "Qualitätsstufe",
+            "options": "Edelstahl, Premium-Edelstahl, Pulverstahl, Damast, Premium-Damast, Kupfer-Damast",
+            "default_first": true
+          }
+        },
+        "option_group_aKiVDA": {
+          "type": "option_group",
+          "settings": {
+            "id": "type",
+            "label": "Messerart",
+            "options": "Kochmesser, Santoku, Brotmesser, Universalmesser, Messer-Set",
+            "default_first": true
+          }
+        },
+        "option_group_rdBipn": {
+          "type": "option_group",
+          "settings": {
+            "id": "branding",
+            "label": "Branding",
+            "options": "Mit Ihrem Logo, Ohne Logo (neutral), Als eigene Marke",
+            "default_first": true
+          }
+        },
+        "option_group_YwhfPw": {
+          "type": "option_group",
+          "settings": {
+            "id": "packaging",
+            "label": "Verpackung",
+            "options": "Neutral, Geschenkbox, Ihre Verpackung",
+            "default_first": true
+          }
+        },
+        "option_group_i3AjAL": {
+          "type": "option_group",
+          "settings": {
+            "id": "quantity",
+            "label": "Menge",
+            "options": "100, 500, 1.000, 5.000+",
+            "default_first": false
+          }
+        }
+      },
+      "block_order": [
+        "option_group_dGKYTg",
+        "option_group_aKiVDA",
+        "option_group_rdBipn",
+        "option_group_YwhfPw",
+        "option_group_i3AjAL"
+      ],
+      "name": "B2B Configurator",
+      "settings": {
+        "eyebrow_1": "躤",
+        "eyebrow_2": "KONFIGURATOR",
+        "heading": "Stellen Sie Ihr\nMesser zusammen",
+        "lead": "<p>Stufe, Messerart, Branding, Verpackung, Menge — in unter einer Minute. Ihre Auswahl landet direkt in der Anfrage; wir antworten mit Muster und Angebot.</p>",
+        "bg_color": "#eae5da",
+        "text_color": "#2e2921",
+        "muted_color": "#544e43",
+        "accent_color": "#b5432f",
+        "card_bg": "#ffffff",
+        "dark_bg": "#1a1610",
+        "border_color": "#00000014"
+      }
+    },
+    "prozess_steps": {
+      "type": "prozess-steps",
+      "blocks": {
+        "ps_step_1": {
+          "type": "_prozess-step",
+          "settings": {
+            "step_label": "01 — Anfrage",
+            "title": "Sie konfigurieren",
+            "description": "Stufe, Art, Branding und Menge übermitteln — oder Ihre eigene Spezifikation."
+          },
+          "blocks": {}
+        },
+        "ps_step_2": {
+          "type": "_prozess-step",
+          "settings": {
+            "step_label": "02 — Muster",
+            "title": "Muster & Angebot",
+            "description": "Wir fertigen ein Muster mit Ihrem Branding und legen ein verbindliches Angebot vor."
+          },
+          "blocks": {}
+        },
+        "ps_step_3": {
+          "type": "_prozess-step",
+          "settings": {
+            "step_label": "03 — Freigabe",
+            "title": "Sie geben frei",
+            "description": "Nach Ihrer Freigabe von Muster, Gravur und Verpackung starten wir die Serie."
+          },
+          "blocks": {}
+        },
+        "ps_step_4": {
+          "type": "_prozess-step",
+          "settings": {
+            "step_label": "04 — Serie",
+            "title": "Fertigung & Lieferung",
+            "description": "Reproduzierbare Serienqualität, termingerecht geliefert — neutral oder gebrandet."
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ps_step_1",
+        "ps_step_2",
+        "ps_step_3",
+        "ps_step_4"
+      ],
+      "settings": {}
+    },
+    "b2b_contact_L9pFmN": {
+      "type": "b2b-contact",
+      "blocks": {
+        "info_item_MN8Ngi": {
+          "type": "info_item",
+          "settings": {
+            "label": "HERSTELLER",
+            "value": "Radzuweit Industries GmbH",
+            "link": ""
+          }
+        },
+        "info_item_HTGcUc": {
+          "type": "info_item",
+          "settings": {
+            "label": "MARKE",
+            "value": "Küchenkompane",
+            "link": ""
+          }
+        },
+        "info_item_EBEhzW": {
+          "type": "info_item",
+          "settings": {
+            "label": "WEB",
+            "value": "kuechenkompane.de",
+            "link": "https://kuechenkompane.de"
+          }
+        },
+        "info_item_V67pww": {
+          "type": "info_item",
+          "settings": {
+            "label": "E-MAIL",
+            "value": "b2b@kuechenkompane.de",
+            "link": "mailto:b2b@kuechenkompane.de"
+          }
+        }
+      },
+      "block_order": [
+        "info_item_MN8Ngi",
+        "info_item_HTGcUc",
+        "info_item_EBEhzW",
+        "info_item_V67pww"
+      ],
+      "name": "B2B Contact Form",
+      "settings": {
+        "eyebrow_1": "問",
+        "eyebrow_2": "KONTAKT",
+        "heading": "Sprechen wir über\nIhr Messer.",
+        "lead": "<p>Sagen Sie uns Stufe, Menge und Branding — wir melden uns mit einem Muster- und Angebotsvorschlag.</p>",
+        "bg_color": "#141109",
+        "text_color": "#eef3ec",
+        "muted_color": "#b2a88f",
+        "accent_color": "#b5432f",
+        "border_color": "#ffffff26",
+        "input_bg": "#1a1610"
+      }
+    },
+    "b2b_footer_8Gb7bD": {
+      "type": "b2b-footer",
+      "blocks": {
+        "footer_link_8XBYnr": {
+          "type": "footer_link",
+          "settings": {
+            "title": "Qualitätsstufen",
+            "link": ""
+          }
+        },
+        "footer_link_Ucnr6a": {
+          "type": "footer_link",
+          "settings": {
+            "title": "Fertigung",
+            "link": ""
+          }
+        },
+        "footer_link_C6ctpA": {
+          "type": "footer_link",
+          "settings": {
+            "title": "Private Label",
+            "link": ""
+          }
+        },
+        "footer_link_xFAtXV": {
+          "type": "footer_link",
+          "settings": {
+            "title": "Kontakt",
+            "link": ""
+          }
+        },
+        "footer_link_Tpe6bB": {
+          "type": "footer_link",
+          "settings": {
+            "title": "Impressum",
+            "link": ""
+          }
+        },
+        "footer_link_iPB7zt": {
+          "type": "footer_link",
+          "settings": {
+            "title": "Datenschutz",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "footer_link_8XBYnr",
+        "footer_link_Ucnr6a",
+        "footer_link_C6ctpA",
+        "footer_link_xFAtXV",
+        "footer_link_Tpe6bB",
+        "footer_link_iPB7zt"
+      ],
+      "name": "B2b Footer",
+      "settings": {
+        "logo": "shopify://shop_images/logo-white.svg",
+        "brand_name": "Küchenkompane",
+        "subtitle": "MESSERMANUFAKTUR",
+        "copyright_text": "© 2026 Radzuweit Industries GmbH",
+        "website_text": "kuechenkompane.de"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "b2b_announcement_QzDjE6",
+    "b2b_header_8zbB8p",
+    "b2b_hero_QaqW6F",
+    "b2b_hero_yYGFa4",
+    "b2b_marque_td8TRJ",
+    "b2b_craftsmanship_split_6b3tqV",
+    "b2b_craftsmanship_split_XDLqrH",
+    "b2b_brand_chain_HFxJE6",
+    "proof_stat",
+    "stufen_tabs",
+    "fertigung_grid",
+    "private_label",
+    "b2b_product_configurator_y7FxGd",
+    "prozess_steps",
+    "b2b_contact_L9pFmN",
+    "b2b_footer_8Gb7bD"
   ]
 }
