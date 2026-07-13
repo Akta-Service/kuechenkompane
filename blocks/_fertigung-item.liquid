@@ -1,0 +1,75 @@
+<div class="fertigung-item" data-b2b-reveal {{ block.shopify_attributes }}>
+  {%- if block.settings.number != blank -%}
+    <span class="fertigung-item__number">{{ block.settings.number }}</span>
+  {%- endif -%}
+
+  {%- if block.settings.title != blank -%}
+    <h3 class="fertigung-item__title">{{ block.settings.title }}</h3>
+  {%- endif -%}
+
+  {%- if block.settings.description != blank -%}
+    <p class="fertigung-item__description">{{ block.settings.description }}</p>
+  {%- endif -%}
+</div>
+
+<style>
+  .fertigung-item {
+    padding: 30px 30px 34px;
+    border-top: 1px solid #e3dccc;
+  }
+
+  .fertigung-item__number {
+    display: block;
+    font-size: 11px;
+    letter-spacing: .16em;
+    color: #877b64;
+  }
+
+  .fertigung-item__title {
+    font-size: 19px;
+    margin: 14px 0 8px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+  }
+
+  .fertigung-item__description {
+    font-size: 14px;
+    color: #544e43;
+    line-height: 1.55;
+    margin: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Fertigung item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "number",
+      "label": "Number",
+      "default": "01"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Stahl & Härtung"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Sechs Stahlgüten von rostfreiem Edelstahl bis Damast, kontrollierte Härtung für definierte HRC-Werte."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fertigung item",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}
