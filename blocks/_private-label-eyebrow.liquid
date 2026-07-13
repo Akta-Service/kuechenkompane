@@ -1,0 +1,66 @@
+{% if block.settings.text != blank %}
+  <div class="private-label-eyebrow" data-b2b-reveal {{ block.shopify_attributes }}>
+    <span class="private-label-eyebrow__line"></span>
+    <span class="private-label-eyebrow__kanji">{{ block.settings.eyebrow_kanji }}</span>
+    <span class="private-label-eyebrow__text">{{ block.settings.text }}</span>
+  </div>
+{% endif %}
+
+<style>
+  .private-label-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .private-label-eyebrow__line {
+    width: 26px;
+    height: 1px;
+    background: #a89a80;
+    flex: 0 0 auto;
+  }
+
+  .private-label-eyebrow__kanji {
+    color: #b5432f;
+    font-size: 1.05em;
+    line-height: 1;
+    margin-right: 6px;
+    font-weight: 600;
+    vertical-align: -1px;
+    opacity: .9;
+    flex: 0 0 auto;
+  }
+
+  .private-label-eyebrow__text {
+    font-size: 12px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: #d0c6b0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Private Label eyebrow",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow_kanji",
+      "label": "kanji text",
+      "default": "刻印"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Label text",
+      "default": "Private Label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Private Label eyebrow",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
