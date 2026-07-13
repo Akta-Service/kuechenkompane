@@ -1,0 +1,37 @@
+{% if block.settings.heading != blank %}
+  <h2 class="private-label-heading" data-b2b-reveal style="animation-delay: .05s" {{ block.shopify_attributes }}>
+    {{ block.settings.heading | newline_to_br }}
+  </h2>
+{% endif %}
+
+<style>
+  .private-label-heading {
+    max-width: 60ch;
+    font-size: clamp(30px, 4.4vw, 54px);
+    margin: 22px 0 20px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    color: #f0ece1;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Private Label heading",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Mit Logo. Ohne Logo.\nOder Ihre eigene Marke."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Private Label heading",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
