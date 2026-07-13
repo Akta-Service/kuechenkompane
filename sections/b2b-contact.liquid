@@ -1,0 +1,534 @@
+{%- liquid
+  assign st = section.settings
+  assign container = section.settings.container
+  if container == 'w-full'
+    assign container = 'container-full'
+  endif
+-%}
+
+<style>
+    #shopify-section-{{ section.id }} {
+      --kk-bg: {{ st.bg_color | default: '#14110B' }};
+      --kk-text: {{ st.text_color | default: '#EEF3EC' }};
+      --kk-muted: {{ st.muted_color | default: '#B2A88F' }};
+      --kk-accent: {{ st.accent_color | default: '#B5432F' }};
+      --kk-border: {{ st.border_color | default: 'rgba(255,255,255,.15)' }};
+      --kk-input-bg: {{ st.input_bg | default: '#1A1610' }};
+      background: var(--kk-bg);
+      color: var(--kk-text);
+      padding: clamp(64px, 9vw, 128px) 0;
+    }
+  #shopify-section-{{ section.id }}{
+
+    .kk-contact__wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      gap: 64px;
+      align-items: start;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+    }
+
+    .kk-contact__eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--kk-muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .kk-contact__eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      display: inline-block;
+      background: #A89A80;
+    }
+
+    .kk-contact__eyebrow span {
+      color: var(--kk-accent);
+    }
+
+    .kk-contact__heading {
+      font-size: clamp(32px, 4.2vw, 50px);
+      line-height: 1.08;
+      font-weight: 400;
+      color: var(--kk-text);
+      margin-bottom: 18px;
+    }
+
+    .kk-contact__lead {
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.7;
+      color: var(--kk-muted);
+      max-width: 520px;
+      margin-bottom: 32px;
+    }
+
+    .kk-contact__info {
+      border-top: 1px solid var(--kk-border);
+      padding-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    .kk-contact__info-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--kk-muted);
+      margin-bottom: 8px;
+    }
+
+    .kk-contact__info-value {
+      font-size: 15px;
+      color: var(--kk-text);
+    }
+
+    .kk-contact__info-value a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .kk-contact__form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .kk-contact__field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .kk-contact__field--full {
+      grid-column: 1 / -1;
+    }
+
+    .kk-contact__label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--kk-muted);
+    }
+
+    .form-field--input {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--kk-input-bg);
+      border: 1px solid var(--kk-border);
+      border-radius: 4px;
+      color: var(--kk-text);
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .form-field--input::placeholder {
+      color: var(--kk-muted);
+      opacity: 0.6;
+    }
+
+    .form-field--input:focus {
+      outline: none;
+      border-color: var(--kk-accent);
+    }
+
+    .kk-contact__submit {
+      grid-column: 1 / -1;
+      padding: 16px 32px;
+      background: #fff;
+      color: #14110B;
+      border: none;
+      border-radius: 3px;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: transform.25s cubic-bezier(.2,.8,.2,1), background.25s;
+      margin-top: 8px;
+    }
+
+    .kk-contact__submit:hover {
+      transform: translateY(-2px);
+      background: #E7EFE4;
+    }
+
+    .form-message {
+      grid-column: 1 / -1;
+      padding: 16px;
+      border-radius: 3px;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .form-message--success {
+      background: rgba(135,166,139,.15);
+      border: 1px solid var(--kk-accent);
+      color: var(--kk-text);
+    }
+
+    .form-message--error {
+      background: rgba(181,67,47,.15);
+      border: 1px solid #B5432F;
+      color: #fff;
+    }
+
+    .form-message ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .kk-contact__wrap {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .kk-contact__form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Custom Scroll Animation */
+     [data-kk-anim] {
+      opacity: 0;
+    }
+     [data-kk-anim].kk-in {
+      animation: kk-rise-{{ section.id }}.85s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+       [data-kk-anim] {
+        opacity: 1!important;
+        animation: none!important;
+        transform: none!important;
+      }
+    }
+  }
+
+  @keyframes kk-rise-{{ section.id }} {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: none; }
+
+  }
+</style>
+
+<section class="kk-contact" id="kontakt">
+  <div class="kk-contact__wrap">
+    <div class="kk-contact__content" data-kk-anim>
+      {%- if st.eyebrow_1 != blank or st.eyebrow_2 != blank -%}
+        <p class="kk-contact__eyebrow">
+          {%- if st.eyebrow_1 != blank -%}
+            <span>{{ st.eyebrow_1 }}</span>
+          {%- endif -%}
+          {{ st.eyebrow_2 }}
+        </p>
+      {%- endif -%}
+
+      {%- if st.heading != blank -%}
+        <h2 class="kk-contact__heading">{{ st.heading | newline_to_br }}</h2>
+      {%- endif -%}
+
+      {%- if st.lead != blank -%}
+        <div class="kk-contact__lead">{{ st.lead }}</div>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'info_item' -%}
+            <div class="kk-contact__info" {{ block.shopify_attributes }}>
+              <div class="kk-contact__info-label">{{ block.settings.label }}</div>
+              <div class="kk-contact__info-value">
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}">{{ block.settings.value }}</a>
+                {%- else -%}
+                  {{ block.settings.value }}
+                {%- endif -%}
+              </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="kk-contact__form-wrap" data-kk-anim style="animation-delay: 0.1s">
+      {%- form 'contact', id: 'ContactForm-{{ section.id }}', class: 'kk-contact__form' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="form-message form-message--success" tabindex="-1" autofocus>
+            {{ 'contact.form.post_success' | t }}
+          </div>
+        {%- endif -%}
+
+        {%- if form.errors -%}
+          <div class="form-message form-message--error">
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        <div class="kk-contact__field">
+          <label class="kk-contact__label" for="ContactForm-company-{{ section.id }}">FIRMA</label>
+          <input
+            class="form-field--input"
+            type="text"
+            id="ContactForm-company-{{ section.id }}"
+            name="contact[note][Firma]"
+            placeholder="Musterfirma GmbH"
+            value="{% if form.company %}{{ form.company }}{% endif %}"
+          >
+        </div>
+
+        <div class="kk-contact__field">
+          <label class="kk-contact__label" for="ContactForm-name-{{ section.id }}">ANSPRECHPARTNER</label>
+          <input
+            class="form-field--input"
+            type="text"
+            id="ContactForm-name-{{ section.id }}"
+            name="contact[name]"
+            placeholder="Vor- und Nachname"
+            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            required
+          >
+        </div>
+
+        <div class="kk-contact__field">
+          <label class="kk-contact__label" for="ContactForm-email-{{ section.id }}">E-MAIL</label>
+          <input
+            class="form-field--input"
+            type="email"
+            id="ContactForm-email-{{ section.id }}"
+            name="contact[email]"
+            placeholder="name@firma.de"
+            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            required
+          >
+        </div>
+
+        <div class="kk-contact__field">
+          <label class="kk-contact__label" for="ContactForm-quantity-{{ section.id }}">WUNSCHMENGE</label>
+          <input
+            class="form-field--input"
+            type="text"
+            id="ContactForm-quantity-{{ section.id }}"
+            name="contact[note][Wunschmenge]"
+            placeholder="z. B. 500 Stück"
+          >
+        </div>
+
+        <div class="kk-contact__field kk-contact__field--full">
+          <label class="kk-contact__label" for="ContactForm-quality-{{ section.id }}">QUALITÄTSSTUFE</label>
+          <input
+            class="form-field--input"
+            type="text"
+            id="ContactForm-quality-{{ section.id }}"
+            name="contact[note][Qualitätsstufe]"
+            placeholder="Stufe 01-05 / noch offen"
+          >
+        </div>
+
+        <div class="kk-contact__field kk-contact__field--full">
+          <label class="kk-contact__label" for="ContactForm-message-{{ section.id }}">NACHRICHT</label>
+          <textarea
+            class="form-field--input"
+            id="ContactForm-message-{{ section.id }}"
+            name="contact[body]"
+            rows="6"
+            placeholder="Mit Logo / ohne Logo, Klingenform, Zeitrahmen..."
+            required
+          >{%- if form.body -%}{{ form.body }}{%- endif -%}</textarea>
+        </div>
+
+        <button type="submit" class="kk-contact__submit">Anfrage senden →</button>
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('shopify-section-{{ section.id }}');
+    if (!root) return;
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function initScrollAnim() {
+      var nodes = root.querySelectorAll('[data-kk-anim]');
+      if (!nodes.length) return;
+
+      if (reduce || !('IntersectionObserver' in window)) {
+        nodes.forEach(function (el) {
+          el.classList.add('kk-in');
+        });
+        return;
+      }
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('kk-in');
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+      );
+
+      nodes.forEach(function (el) {
+        io.observe(el);
+      });
+    }
+
+    initScrollAnim();
+
+    document.addEventListener('shopify:section:load', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ section.id }}') initScrollAnim();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "B2B Contact Form",
+  "tag": "section",
+  "class": "section-b2b-kontakt",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_1",
+      "label": "Eyebrow 1",
+      "default": "問"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_2",
+      "label": "Eyebrow 2",
+      "default": "KONTAKT"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Sprechen wir über\nIhr Messer."
+    },
+    {
+      "type": "richtext",
+      "id": "lead",
+      "label": "Lead Text",
+      "default": "<p>Sagen Sie uns Stufe, Menge und Branding — wir melden uns mit einem Muster- und Angebotsvorschlag.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#14110B"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#EEF3EC"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted Text",
+      "default": "#B2A88F"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#B5432F"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "rgba(255,255,255,0.15)"
+    },
+    {
+      "type": "color",
+      "id": "input_bg",
+      "label": "Input Background",
+      "default": "#1A1610"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "info_item",
+      "name": "Info Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "HERSTELLER"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "Radzuweit Industries GmbH"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2B Contact Form",
+      "blocks": [
+        {
+          "type": "info_item",
+          "settings": {
+            "label": "HERSTELLER",
+            "value": "Radzuweit Industries GmbH"
+          }
+        },
+        {
+          "type": "info_item",
+          "settings": {
+            "label": "MARKE",
+            "value": "Küchenkompane"
+          }
+        },
+        {
+          "type": "info_item",
+          "settings": {
+            "label": "WEB",
+            "value": "kuechenkompane.de",
+            "link": "https://kuechenkompane.de"
+          }
+        },
+        {
+          "type": "info_item",
+          "settings": {
+            "label": "E-MAIL",
+            "value": "b2b@kuechenkompane.de",
+            "link": "mailto:b2b@kuechenkompane.de"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
