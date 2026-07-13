@@ -1,0 +1,597 @@
+{%- liquid
+  assign sid = section.id
+  assign st = section.settings
+-%}
+
+<style>
+     #shopify-section-{{ sid }}{
+      --kk-bg: {{ st.bg_color | default: '#F5F3EE' }};
+      --kk-text: {{ st.text_color | default: '#2E2921' }};
+      --kk-muted: {{ st.muted_color | default: '#544E43' }};
+      --kk-accent: {{ st.accent_color | default: '#B5432F' }};
+      --kk-card: {{ st.card_bg | default: '#FFFFFF' }};
+      --kk-dark: {{ st.dark_bg | default: '#1A1610' }};
+      --kk-border: {{ st.border_color | default: 'rgba(0,0,0,.08)' }};
+
+      background: var(--kk-bg);
+      color: var(--kk-text);
+      padding-top: clamp(64px, 9vw, 128px);
+      padding-bottom: 56px;
+    }
+  #shopify-section-{{ sid }}{
+    .kk-config__wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .kk-config__eyebrow {
+      margin: 0 0 16px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--kk-accent);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .kk-config__eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      display: inline-block;
+      background: var(--kk-accent);
+    }
+
+    .kk-config__heading {
+      margin: 0 0 22px;
+      font-size: clamp(32px, 4.2vw, 50px);
+      line-height: 1.08;
+      font-weight: 400;
+      color: var(--kk-text);
+    }
+
+    .kk-config__lead {
+      margin: 0 0 48px;
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.7;
+      color: var(--kk-muted);
+      max-width: 640px;
+    }
+
+    .kk-config__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .kk-config__card {
+      background: var(--kk-card);
+      border-radius: 8px;
+      padding: 32px 28px;
+      border: 1px solid var(--kk-border);
+    }
+
+    .kk-config__step {
+      border-bottom: 1px solid var(--kk-border);
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
+
+    .kk-config__step:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .kk-config__step-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--kk-muted);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .kk-config__options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .kk-config__option {
+      padding: 10px 18px;
+      border: 1px solid var(--kk-border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--kk-text);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all.2s;      
+      letter-spacing: .02em;
+    }
+
+    .kk-config__option:hover {
+      border-color: var(--kk-accent);
+    }
+
+    .kk-config__option.is-active {
+      background: var(--kk-text);
+      color: var(--kk-bg);
+      border-color: var(--kk-text);
+    }
+
+    .kk-config__summary {
+      background: var(--kk-dark);
+      border-radius: 8px;
+      padding: 28px 24px;
+      color: #F0ECE1;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .kk-config__summary-title {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #D0C6B0;
+      margin-bottom: 20px;
+    }
+
+    .kk-config__summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      font-size: 14px;
+    }
+
+    .kk-config__summary-row span:first-child {
+      color: #B2A88F;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .kk-config__summary-row span:last-child {
+      font-weight: 600;
+    }
+
+    .kk-config__delivery {
+      margin-top: 20px;
+      padding: 16px;
+      background: #141109;
+      border: 1px solid rgb(255 255 255 / 10%);
+      border-radius: 8px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .kk-config__delivery strong {
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #A89A80;
+      margin: 0;
+    }
+
+    .kk-config__submit {
+      width: 100%;
+      padding: 16px 32px;
+      background: #fff;
+      color: #14110B;
+      border: none;
+      border-radius: 3px;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: transform.25s cubic-bezier(.2,.8,.2,1);
+      margin-top: 18px;
+    }
+
+    .kk-config__submit:hover {
+      transform: translateY(-2px);
+    }
+
+    .kk-config__disclaimer {
+      font-size: 12px;
+      color: #B2A88F;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    @media (min-width: 990px) {
+      .kk-config__grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: start;
+      }
+    }
+
+    /* Scroll Animation */
+     [data-kk-anim] {
+      opacity: 0;
+    }
+     [data-kk-anim].kk-in {
+      animation: kk-rise-{{ sid }}.85s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+       [data-kk-anim] {
+        opacity: 1!important;
+        animation: none!important;
+        transform: none!important;
+      }
+    }
+
+
+  }
+
+  @keyframes kk-rise-{{ sid }} {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: none; }
+
+  }
+</style>
+
+<section class="kk-config" id="konfigurator-{{ sid }}">
+  <div class="kk-config__wrap">
+    <div data-kk-anim>
+      {%- if st.eyebrow_1 != blank or st.eyebrow_2 != blank -%}
+        <p class="kk-config__eyebrow">
+          <span>{{ st.eyebrow_1 }}</span>
+          {{ st.eyebrow_2 }}
+        </p>
+      {%- endif -%}
+
+      {%- if st.heading != blank -%}
+        <h2 class="kk-config__heading">{{ st.heading | newline_to_br }}</h2>
+      {%- endif -%}
+
+      {%- if st.lead != blank -%}
+        <div class="kk-config__lead">{{ st.lead }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="kk-config__grid">
+      <div class="kk-config__card" data-kk-anim>
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'option_group' -%}
+              <div class="kk-config__step" data-step="{{ block.settings.id }}" {{ block.shopify_attributes }}>
+                <span class="kk-config__step-label">{{ block.settings.label }}</span>
+                <div class="kk-config__options">
+                  {%- assign options = block.settings.options | split: ',' -%}
+                  {%- for option in options -%}
+                    {%- assign opt = option | strip -%}
+                    <button
+                      type="button"
+                      class="kk-config__option{% if forloop.first and block.settings.default_first %} is-active{% endif %}"
+                      data-group="{{ block.settings.id }}"
+                      data-value="{{ opt | escape }}"
+                    >
+                      {{ opt }}
+                    </button>
+                  {%- endfor -%}
+                </div>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+
+      <div class="kk-config__summary" data-kk-anim style="animation-delay: 0.1s">
+        <div class="kk-config__summary-title">IHRE KONFIGURATION</div>
+
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'option_group' -%}
+            <div class="kk-config__summary-row">
+              <span>{{ block.settings.label | upcase }}</span>
+              <span data-summary="{{ block.settings.id }}">—</span>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
+        <div class="kk-config__delivery">  
+          ⏱ 
+          <p>       
+          <strong>INDIKATIVE LIEFERZEIT</strong><br>
+          Auf Anfrage — je nach Stufe & Menge
+          <p>
+        </div>
+
+        {%- form 'contact', id: 'ConfigForm-{{ sid }}' -%}
+          {%- if form.posted_successfully? -%}
+            <div class="form-message form-message--success" tabindex="-1" autofocus>
+              {{ 'contact.form.post_success' | t }}
+            </div>
+          {%- endif -%}
+
+          {%- if form.errors -%}
+            <div class="form-message form-message--error">
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} Hidden fields - JS will populate these {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'option_group' -%}
+              <input
+                type="hidden"
+                name="contact[note][{{ block.settings.label }}]"
+                id="hidden-{{ block.settings.id }}-{{ sid }}"
+              >
+            {%- endif -%}
+          {%- endfor -%}
+
+          <input type="hidden" name="contact[body]" id="hidden-summary-{{ sid }}">
+
+          <button type="submit" class="kk-config__submit">Konfiguration anfragen →</button>
+        {%- endform -%}
+
+        <p class="kk-config__disclaimer">Unverbindlich · Muster & Angebot folgen</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('shopify-section-{{ section.id }}');
+    if (!root) return;
+
+    // Scroll animation
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function initScrollAnim() {
+      var nodes = root.querySelectorAll('[data-kk-anim]');
+      if (!nodes.length) return;
+      if (reduce || !('IntersectionObserver' in window)) {
+        nodes.forEach(function (el) {
+          el.classList.add('kk-in');
+        });
+        return;
+      }
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('kk-in');
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      nodes.forEach(function (el) {
+        io.observe(el);
+      });
+    }
+    initScrollAnim();
+
+    // Configurator Logic
+    var config = {};
+    var options = root.querySelectorAll('.kk-config__option');
+    var summary = document.getElementById('hidden-summary-{{ section.id }}');
+
+    function updateConfig(group, value) {
+      config[group] = value;
+
+      // Update summary display
+      var summaryEl = root.querySelector('[data-summary="' + group + '"]');
+      if (summaryEl) summaryEl.textContent = value;
+
+      // Update hidden input
+      var hiddenInput = document.getElementById('hidden-' + group + '-{{ section.id }}');
+      if (hiddenInput) hiddenInput.value = value;
+
+      // Update full summary for email body
+      updateEmailBody();
+    }
+
+    function updateEmailBody() {
+      var lines = [];
+      for (var key in config) {
+        lines.push(key + ': ' + config[key]);
+      }
+      if (summary) summary.value = lines.join('\n');
+    }
+
+    // Init defaults
+    options.forEach(function (btn) {
+      if (btn.classList.contains('is-active')) {
+        var group = btn.dataset.group;
+        var value = btn.dataset.value;
+        updateConfig(group, value);
+      }
+
+      btn.addEventListener('click', function () {
+        var group = this.dataset.group;
+        var value = this.dataset.value;
+
+        // Toggle active state
+        root.querySelectorAll('[data-group="' + group + '"]').forEach(function (b) {
+          b.classList.remove('is-active');
+        });
+        this.classList.add('is-active');
+
+        updateConfig(group, value);
+      });
+    });
+
+    document.addEventListener('shopify:section:load', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ section.id }}') initScrollAnim();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "B2B Configurator",
+  "tag": "section",
+  "class": "section-b2b-konfigurator",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_1",
+      "label": "Eyebrow 1",
+      "default": "躤"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_2",
+      "label": "Eyebrow 2",
+      "default": "KONFIGURATOR"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Stellen Sie Ihr\nMesser zusammen"
+    },
+    {
+      "type": "richtext",
+      "id": "lead",
+      "label": "Lead Text",
+      "default": "<p>Stufe, Messerart, Branding, Verpackung, Menge — in unter einer Minute. Ihre Auswahl landet direkt in der Anfrage; wir antworten mit Muster und Angebot.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#F5F3EE"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#2E2921"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted Text",
+      "default": "#544E43"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#B5432F"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "dark_bg",
+      "label": "Summary Background",
+      "default": "#1A1610"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "rgba(0,0,0,0.08)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "option_group",
+      "name": "Option Group",
+      "settings": [
+        {
+          "type": "text",
+          "id": "id",
+          "label": "ID (no spaces)",
+          "default": "quality",
+          "info": "Used for form field name"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Qualitätsstufe"
+        },
+        {
+          "type": "textarea",
+          "id": "options",
+          "label": "Options (comma separated)",
+          "default": "Edelstahl, Premium-Edelstahl, Pulverstahl, Damast, Premium-Damast, Kupfer-Damast",
+          "info": "Separate options with commas"
+        },
+        {
+          "type": "checkbox",
+          "id": "default_first",
+          "label": "Select first option by default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2B Configurator",
+      "blocks": [
+        {
+          "type": "option_group",
+          "settings": {
+            "id": "quality",
+            "label": "Qualitätsstufe",
+            "options": "Edelstahl, Premium-Edelstahl, Pulverstahl, Damast, Premium-Damast, Kupfer-Damast",
+            "default_first": true
+          }
+        },
+        {
+          "type": "option_group",
+          "settings": {
+            "id": "type",
+            "label": "Messerart",
+            "options": "Kochmesser, Santoku, Brotmesser, Universalmesser, Messer-Set",
+            "default_first": true
+          }
+        },
+        {
+          "type": "option_group",
+          "settings": {
+            "id": "branding",
+            "label": "Branding",
+            "options": "Mit Ihrem Logo, Ohne Logo (neutral), Als eigene Marke",
+            "default_first": true
+          }
+        },
+        {
+          "type": "option_group",
+          "settings": {
+            "id": "packaging",
+            "label": "Verpackung",
+            "options": "Neutral, Geschenkbox, Ihre Verpackung",
+            "default_first": true
+          }
+        },
+        {
+          "type": "option_group",
+          "settings": {
+            "id": "quantity",
+            "label": "Menge",
+            "options": "100, 500, 1.000, 5.000+",
+            "default_first": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
