@@ -1,0 +1,36 @@
+<div class="private-label-features" {{ block.shopify_attributes }}>
+  {% content_for 'blocks' %}
+</div>
+
+<style>
+  .private-label-features {
+    min-width: 0;
+    margin-top: 26px;
+  }
+
+  .private-label-features > .private-label-feature:nth-child(1) { animation-delay: .2s; }
+  .private-label-features > .private-label-feature:nth-child(2) { animation-delay: .3s; }
+  .private-label-features > .private-label-feature:nth-child(3) { animation-delay: .4s; }
+  .private-label-features > .private-label-feature:nth-child(4) { animation-delay: .5s; }
+  .private-label-features > .private-label-feature:nth-child(5) { animation-delay: .6s; }
+  .private-label-features > .private-label-feature:nth-child(6) { animation-delay: .7s; }
+</style>
+
+{% schema %}
+{
+  "name": "Private Label features",
+  "blocks": [{ "type": "_private-label-feature-item" }],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Private Label features",
+      "category": "Content",
+      "blocks": [
+        { "type": "_private-label-feature-item" },
+        { "type": "_private-label-feature-item" },
+        { "type": "_private-label-feature-item" }
+      ]
+    }
+  ]
+}
+{% endschema %}
