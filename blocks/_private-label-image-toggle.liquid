@@ -1,0 +1,192 @@
+<div
+  class="private-label-image-toggle"
+  id="pl-image-toggle-{{ block.id }}"
+  data-b2b-reveal
+  style="animation-delay: .15s"
+  {{ block.shopify_attributes }}
+>
+  <div class="private-label-image-toggle__frame">
+    {%- if block.settings.image_with_logo != blank -%}
+      {{
+        block.settings.image_with_logo
+        | image_url: width: 1200
+        | image_tag:
+          loading: 'lazy',
+          alt: block.settings.alt_text,
+          class: 'private-label-image-toggle__img is-with-logo is-active'
+      }}
+    {%- endif -%}
+    {%- if block.settings.image_without_logo != blank -%}
+      {{
+        block.settings.image_without_logo
+        | image_url: width: 1200
+        | image_tag:
+          loading: 'lazy',
+          alt: block.settings.alt_text,
+          class: 'private-label-image-toggle__img is-without-logo'
+      }}
+    {%- endif -%}
+    {%- if block.settings.image_with_logo == blank and block.settings.image_without_logo == blank -%}
+      <div class="private-label-image-toggle__placeholder">Add images</div>
+    {%- endif -%}
+  </div>
+
+  <div class="private-label-image-toggle__buttons">
+    <button
+      type="button"
+      class="private-label-image-toggle__btn is-active"
+      data-toggle-state="with-logo"
+    >
+      {{ block.settings.with_logo_label }}
+    </button>
+    <button
+      type="button"
+      class="private-label-image-toggle__btn"
+      data-toggle-state="without-logo"
+    >
+      {{ block.settings.without_logo_label }}
+    </button>
+  </div>
+</div>
+
+<style>
+  .private-label-image-toggle {
+    background: linear-gradient(160deg, #211c14, #141109);
+    border: 1px solid #ffffff1a;
+    border-radius: 8px;
+    padding: 42px 34px 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .private-label-image-toggle__frame {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .private-label-image-toggle__img {
+    display: none;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .private-label-image-toggle__img.is-active {
+    display: block;
+  }
+
+  .private-label-image-toggle__placeholder {
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a89f92;
+    opacity: 0.6;
+  }
+
+  .private-label-image-toggle__buttons {
+    display: inline-flex;
+    background: #1a1610;
+    border: 1px solid #ffffff2e;
+    border-radius: 4px;
+    padding: 4px;
+    margin-top: 26px;
+    font-size: 12px;
+  }
+
+  .private-label-image-toggle__btn {
+    background: transparent;
+    border: none;
+    color: #b2a88f;
+    padding: 9px 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    letter-spacing: .05em;
+    transition: .2s;
+  }
+
+  .private-label-image-toggle__btn.is-active {
+    background: #a89a80;
+    color: #141109;
+  }
+</style>
+
+<script>
+  (function () {
+    function initToggle() {
+      var wrapper = document.getElementById('pl-image-toggle-{{ block.id }}');
+      if (!wrapper || wrapper.dataset.toggleInit === 'true') return;
+      wrapper.dataset.toggleInit = 'true';
+
+      var buttons = wrapper.querySelectorAll('.private-label-image-toggle__btn');
+      var withLogoImg = wrapper.querySelector('.is-with-logo');
+      var withoutLogoImg = wrapper.querySelector('.is-without-logo');
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          buttons.forEach(function (b) {
+            b.classList.remove('is-active');
+          });
+          btn.classList.add('is-active');
+
+          var showWithLogo = btn.getAttribute('data-toggle-state') === 'with-logo';
+          if (withLogoImg) withLogoImg.classList.toggle('is-active', showWithLogo);
+          if (withoutLogoImg) withoutLogoImg.classList.toggle('is-active', !showWithLogo);
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initToggle);
+    } else {
+      initToggle();
+    }
+
+    document.addEventListener('shopify:section:load', initToggle);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "PL image toggle",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_with_logo",
+      "label": "Image (with logo)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_without_logo",
+      "label": "Image (without logo)"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Alt text",
+      "default": "Custom branded knife"
+    },
+    {
+      "type": "text",
+      "id": "with_logo_label",
+      "label": "\"With logo\" button label",
+      "default": "Mit Logo"
+    },
+    {
+      "type": "text",
+      "id": "without_logo_label",
+      "label": "\"Without logo\" button label",
+      "default": "Ohne Logo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PL image toggle",
+      "category": "Media"
+    }
+  ]
+}
+{% endschema %}
