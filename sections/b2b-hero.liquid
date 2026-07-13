@@ -1,0 +1,810 @@
+{%- comment -%}
+  ============================================================
+  Küchenkompane — B2B Hero (OS 2.0 Section)
+  Blocks: intro / title / headline_line / spec / trust / button / proof
+  - Nested CSS scoped inside #shopify-section-{{ section.id }}
+  - @keyframes kept at TOP LEVEL (nesting e keyframes invalid)
+  - Count-up runs on page load (no scroll needed)
+  ============================================================
+{%- endcomment -%}
+
+{%- liquid
+  assign sid = section.id
+  assign st = section.settings
+
+  assign proof_block_count = 0
+  for block in section.blocks
+    if block.type == 'proof'
+      assign proof_block_count = proof_block_count | plus: 1
+    endif
+  endfor
+
+  assign bg_gradient = section.settings.gradient_color
+  if bg_gradient == blank
+    assign bg_gradient = 'radial-gradient(130% 110% at 88% -10%, #2E2921 0%, #1B1710 44%, #100D07 100%)'
+  endif
+-%}
+
+<style>
+  /* ---- Keyframes MUST live at top level.
+     CSS nesting spec allows nested @media, but @keyframes nested
+     inside a style rule is invalid and gets dropped by the browser —
+     that's why every animated element was stuck at opacity: 0. ---- */
+  @keyframes kk-rise-{{ sid }} {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes kk-hone-{{ sid }} {
+    to { transform: scaleX(1); }
+  }
+  @keyframes kk-knife-{{ sid }} {
+    from { opacity: 0; transform: translateX(46px) rotate(-3deg) scale(.97); }
+    to { opacity: 1; transform: none; }
+  }
+
+  #shopify-section-{{ sid }} {
+    --kk-sage: #A89A80;
+    --kk-sage-light: {{ st.color_accent_light | default: '#C3D3BE' }};
+    --kk-paper: #EEF3EC;
+    --kk-dim: #B2A88F;
+    --kk-line-dark: rgba(255,255,255,.10);
+    --kk-line-dark-2: rgba(255,255,255,.18);
+  }
+
+  #shopify-section-{{ sid }} {
+
+    .kk-hero {
+      position: relative;
+      background: {{ bg_gradient }};
+      color: var(--kk-paper);
+      overflow: hidden;
+      isolation: isolate;
+      font-family: var(--kk-font-body);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    .kk-hero__glow {
+      position: absolute; top: -15%; right: -5%;
+      width: 70%; height: 130%;
+      background: radial-gradient(closest-side, rgba(208, 198, 176, .20), rgba(208, 198, 176, 0) 70%);
+      z-index: 0; pointer-events: none;
+    }
+    .kk-hero__watermark {
+      position: absolute; top: -34px; left: -32px;
+      width: min(32vw, 360px); height: auto;
+      opacity: .07; z-index: 0; pointer-events: none;
+    }
+    .kk-wrap {
+      position: relative; z-index: 1;
+      max-width: {{ st.max_width | default: 1200 }}px;
+      margin: 0 auto;
+      padding: clamp(58px, 8vw, 96px) 20px 0;
+    }
+    .kk-hero__grid {
+      display: grid;
+      grid-template-columns: 1.08fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding-bottom: clamp(40px, 5vw, 64px);
+    }
+
+    .kk-eyebrow {
+      font-size: 12px; letter-spacing: .28em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .kk-eyebrow::before {
+      content: ""; width: 26px; height: 1px; background: var(--kk-sage); display: inline-block;
+    }
+
+    .kk-hero h1 {
+      font-size: clamp(var(--kk-h1-min), 7vw, var(--kk-h1-max));
+      font-weight: 800; letter-spacing: -.035em;
+      margin: 24px 0 22px; line-height: .98;
+      color: #fff;
+    }
+    .kk-hero__title {
+      color: #fff;
+      font-size: clamp(38px, 6.6vw, 82px);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin:  0 ;
+      line-height: 1.04;
+      margin-bottom: 22px;
+    }
+    .kk-hero__title p {
+      margin: 0;
+    }
+    .kk-hero h1 .kk-line {
+      display: block;
+      opacity: 0;
+      animation: kk-rise-{{ sid }} .85s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    .kk-hero h1 .kk-line--accent { color: var(--kk-sage); }
+
+    .kk-hero__lead {
+      font-size: clamp(16px, 1.55vw, 20px);
+      color: var(--kk-dim);
+      max-width: 50ch;
+      margin: 0;
+    }
+    .kk-hero__lead p {
+      margin: 0;
+    }
+
+
+
+    .kk-hero__actions { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+
+
+    .kk-btn {
+      font-size: 13px; letter-spacing: .06em;
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 26px; border-radius: 3px;
+      cursor: pointer; text-decoration: none; white-space: nowrap;
+      transition: transform .25s cubic-bezier(.2,.8,.2,1), background .25s, border-color .25s, color .25s;
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      border: 1px solid var(--btn-border);
+    }
+    .kk-btn:hover {
+      transform: translateY(-2px);
+      background-color: var(--btn-hover-bg);
+      color: var(--btn-hover-text);
+      border-color: var(--btn-hover-border, var(--btn-border));
+    }
+    .kk-btn .kk-arw { transition: transform .25s; }
+    .kk-btn:hover .kk-arw { transform: translateX(4px); }
+
+    .kk-hero__trust {
+      display: flex; gap: 22px; flex-wrap: wrap; margin-top: 26px;
+      font-size: 11.5px; letter-spacing: .06em;
+      /* color: var(--kk-sage-light); <-- eta remove, inline e dibo */
+    }
+    .kk-hero__trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kk-hero__trust span::before {
+      content: "✓";
+      color: var(--icon-color);
+      font-weight: 700;
+    }
+
+    /* Product / specs */
+    .kk-hero__product { position: relative; display: flex; align-items: center; gap: 22px; }
+    .kk-hero__specs { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: none; width: 158px; margin: 0; padding: 0; }
+    .kk-spec-box {
+      background: rgba(16,30,19,.55);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--kk-line-dark-2);
+      border-radius: 9px; padding: 13px 15px;
+      opacity: 0;
+      animation: kk-rise-{{ sid }} .7s forwards;
+    }
+    .kk-spec-box:nth-child(1) { animation-delay: .9s; }
+    .kk-spec-box:nth-child(2) { animation-delay: 1.05s; }
+    .kk-spec-box:nth-child(3) { animation-delay: 1.2s; }
+    .kk-spec-box:nth-child(n+4) { animation-delay: 1.35s; }
+    .kk-spec-box b { display: block;  color: #fff; font-size: 14px; letter-spacing: -.01em; }
+    .kk-spec-box span {  font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--kk-sage); margin-top: 4px; display: block; }
+
+    .kk-hero__photo {
+      width: 100%; height: auto;
+      filter: drop-shadow(0 26px 44px rgba(0,0,0,.6));
+      opacity: 0;
+      animation: kk-knife-{{ sid }} 1.05s .3s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+
+    /* Proof band */
+    .kk-proof { border-top: 1px solid {{ section.settings.proof_border_color }}; }
+    .kk-proof__grid { display: grid; grid-template-columns: repeat({{ proof_block_count | at_least: 1 | at_most: 4 }}, 1fr); }
+    .kk-proof__item { padding: 26px 8px 30px; border-right: 1px solid {{ section.settings.proof_border_color }}; }
+    .kk-proof__item:last-child { border-right: none; }
+    .kk-proof__num {
+
+      font-weight: 700;
+      font-size: clamp(30px, 3.6vw, 46px);
+      color: #fff; letter-spacing: -.02em; line-height: 1;
+    }
+    .kk-proof__num .kk-u { color: var(--kk-sage); font-size: .44em; margin-left: 5px; letter-spacing: .04em; }
+    .kk-proof__lab {
+
+      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--kk-sage); margin-top: 12px;
+    }
+
+    .kk-anim {
+      opacity: 0;
+      animation: kk-rise-{{ sid }} .85s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    .edge-line {
+      display: block;
+      height: 1px;
+      background: linear-gradient(90deg,transparent,#A89A80,#D0C6B0,transparent);
+      margin: 30px 0 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: kk-hone-{{ sid }} 1.4s .5s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+
+    @media (max-width: 940px) {
+      .kk-hero__grid { grid-template-columns: 1fr; gap: 28px; }
+      .kk-hero__product { flex-direction: column; gap: 16px; }
+      .kk-hero__specs { flex-direction: row; flex-wrap: wrap; justify-content: center; width: auto; }
+    }
+    @media (max-width: 620px) {
+      .kk-proof__grid { grid-template-columns: 1fr 1fr; }
+      .kk-proof__item { border-bottom: 1px solid var(--kk-line-dark); }
+      .kk-proof__item:nth-child(2n) { border-right: none; }
+    }
+
+  }
+</style>
+
+<section class="kk-hero" id="kk-hero-{{ sid }}">
+  <div class="kk-hero__glow"></div>
+
+  {%- if st.watermark_image != blank -%}
+    <img
+      class="kk-hero__watermark"
+      src="{{ st.watermark_image | image_url: width: 400 }}"
+      width="{{ st.watermark_image.width }}"
+      height="{{ st.watermark_image.height }}"
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+    >
+  {%- endif -%}
+
+  <div class="kk-wrap">
+    <div class="kk-hero__grid">
+      <div class="kk-hero__copy">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'intro' -%}
+              <style>
+                #shopify-section-{{ section.id }}{
+                  .kk-eyebrow{
+                      color: {{ block.settings.text_2_color }};
+                  }
+                  .kk-eyebrow span{
+                      color: {{ block.settings.text_1_color }};
+                  }
+                  .kk-eyebrow::before{
+                      background: {{ block.settings.line_color }};
+                  }
+                }
+              </style>
+
+              {%- if block.settings.eyebrow_1 != blank or block.settings.eyebrow_2 != blank -%}
+                <div
+                  class="kk-eyebrow kk-anim"
+                  {{ block.shopify_attributes }}
+                  style="animation-delay:{{ forloop.index0 | times: 0.06 | plus: 0.04 }}s"
+                >
+                  <span>{{- block.settings.eyebrow_1 -}}</span>
+                  {{- block.settings.eyebrow_2 -}}
+                </div>
+              {%- endif -%}
+
+            {%- when 'title' -%}
+              {%- if block.settings.title != blank -%}
+                <style>
+                  #shopify-section-{{ sid }} {
+                    .title-{{ block.id }}{
+                      color: {{ block.settings.color }};
+                    }
+                    .title-{{ block.id }}.mb-0{
+                      margin-bottom: 0px;
+                    }
+
+                  }
+                </style>
+
+                <div
+                  class="kk-hero__title title-{{ block.id }} {% if block.settings.margin_bottom_0 %}mb-0 {% endif %} kk-anim"
+                  style="animation-delay:{{ forloop.index0 | times: 0.06 | plus: 0.12 }}s"
+                  {{ block.shopify_attributes }}
+                >
+                  {{- block.settings.title -}}
+                </div>
+              {%- endif -%}
+
+            {%- when 'line' -%}
+              <div
+                class="edge-line"
+                style="background: {{ block.settings.separator_color }}"
+                {{ block.shopify_attributes }}
+              ></div>
+            {%- when 'description' -%}
+              {%- if block.settings.description != blank -%}
+                <div
+                  {{ block.shopify_attributes }}
+                  class="kk-hero__lead kk-anim"
+                  style="animation-delay:{{ forloop.index0 | times: 0.06 | plus: 0.46 }}s; color: {{ block.settings.text_color }};"
+                >
+                  {{ block.settings.description }}
+                </div>
+              {%- endif -%}
+            {%- when 'button' -%}
+              {%- if block.settings.label != blank or block.settings.secondary_label != blank -%}
+                <div
+                  class="kk-hero__actions kk-anim"
+                  {{ block.shopify_attributes }}
+                  style="animation-delay:{{ forloop.index0 | times: 0.04 | plus: 0.58 }}s"
+                >
+                  {%- if block.settings.label != blank -%}
+                    <a
+                      href="{{ block.settings.link | default: '#' }}"
+                      class="kk-btn kk-btn--primary"
+                      style="
+                        --btn-bg: {{ block.settings.primary_bg_color | default: '#ffffff' }};
+                        --btn-text: {{ block.settings.primary_text_color | default: '#211C14' }};
+                        --btn-border: {{ block.settings.primary_border_color | default: block.settings.primary_bg_color | default: '#ffffff' }};
+                        --btn-hover-bg: {{ block.settings.primary_hover_bg_color | default: '#E7EFE4' }};
+                        --btn-hover-text: {{ block.settings.primary_hover_text_color | default: '#211C14' }};
+                      "
+                    >
+                      {{- block.settings.label -}}
+                      {%- if block.settings.show_arrow %}
+                        <span class="kk-arw">→</span>
+                      {%- endif -%}
+                    </a>
+                  {%- endif -%}
+
+                  {%- if block.settings.secondary_label != blank -%}
+                    <a
+                      href="{{ block.settings.secondary_link | default: '#' }}"
+                      class="kk-btn kk-btn--secondary"
+                      style="
+                        --btn-bg: {{ block.settings.secondary_bg_color | default: 'transparent' }};
+                        --btn-text: {{ block.settings.secondary_text_color | default: '#ffffff' }};
+                        --btn-border: {{ block.settings.secondary_border_color | default: 'rgba(255,255,255,0.18)' }};
+                        --btn-hover-bg: {{ block.settings.secondary_hover_bg_color | default: 'rgba(255,255,255,0.1)' }};
+                        --btn-hover-text: {{ block.settings.secondary_hover_text_color | default: '#ffffff' }};
+                        --btn-hover-border: {{ block.settings.secondary_hover_border_color | default: '#ffffff' }};
+                      "
+                    >
+                      {{- block.settings.secondary_label -}}
+                      {%- if block.settings.secondary_show_arrow %}
+                        <span class="kk-arw">→</span>
+                      {%- endif -%}
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+            {%- when 'trust' -%}
+              {%- assign trust_text = block.settings.items | default: block.settings.text | default: '' -%}
+              {%- assign trust_items = trust_text | split: ',' -%}
+              {%- assign has_trust_items = false -%}
+              {%- for trust_item in trust_items -%}
+                {%- assign trust_label = trust_item | strip -%}
+                {%- if trust_label != blank -%}
+                  {%- assign has_trust_items = true -%}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- if has_trust_items -%}
+                <div
+                  class="kk-hero__trust kk-anim"
+                  style="animation-delay:{{ forloop.index0 | times: 0.04 | plus: 0.68 }}s; color: {{ block.settings.text_color | default: '#C3D3BE' }};"
+                  {{ block.shopify_attributes }}
+                >
+                  {%- for trust_item in trust_items -%}
+                    {%- assign trust_label = trust_item | strip -%}
+                    {%- if trust_label != blank -%}
+                      <span style="--icon-color: {{ block.settings.icon_color | default: '#A89A80' }};">
+                        {{- trust_label -}}
+                      </span>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+
+      <div class="kk-hero__product">
+        {%- assign has_specs = false -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'spec' -%}
+            {%- assign has_specs = true -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- if has_specs -%}
+          <ul class="kk-hero__specs">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'spec' -%}
+                <li
+                  class="kk-spec-box"
+                  style="
+                    background-color: {{ section.settings.spec_bg_color }};
+                    border-color: {{ section.settings.spec_border_color }};
+                  "
+                  {{ block.shopify_attributes }}
+                >
+                  <b style="color: {{ section.settings.spec_value_color }};">{{ block.settings.value }}</b>
+                  <span style="color: {{ section.settings.spec_label_color }};">{{ block.settings.label }}</span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+        {%- if st.product_image != blank -%}
+          <img
+            class="kk-hero__photo"
+            src="{{ st.product_image | image_url: width: 900 }}"
+            srcset="{{ st.product_image | image_url: width: 500 }} 500w, {{ st.product_image | image_url: width: 900 }} 900w, {{ st.product_image | image_url: width: 1400 }} 1400w"
+            sizes="(max-width: 940px) 90vw, 45vw"
+            width="{{ st.product_image.width }}"
+            height="{{ st.product_image.height }}"
+            alt="{{ st.product_image.alt | default: 'Product image' | escape }}"
+            loading="eager"
+            fetchpriority="high"
+          >
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if proof_block_count > 0 -%}
+      <div class="kk-proof" data-kk-proof>
+        <div class="kk-proof__grid">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'proof' -%}
+              <div class="kk-proof__item" {{ block.shopify_attributes }}>
+                <div class="kk-proof__num" style="color: {{ section.settings.proof_number_color }};">
+                  {%- if block.settings.number != blank -%}
+                    <span data-kk-to="{{ block.settings.number }}">0</span>
+                  {%- else -%}
+                    {{ block.settings.static_text }}
+                  {%- endif -%}
+                  {%- if block.settings.unit != blank -%}
+                    <span class="kk-u" style="color: {{ section.settings.proof_unit_color }};">
+                      {{- block.settings.unit -}}
+                    </span>
+                  {%- endif -%}
+                </div>
+                <div class="kk-proof__lab" style="color: {{ section.settings.proof_label_color }};">
+                  {{ block.settings.label }}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('shopify-section-{{ sid }}');
+    if (!root) return;
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function countUp(el) {
+      var to = parseFloat(el.getAttribute('data-kk-to'));
+      if (isNaN(to)) return;
+      var dur = 1200;
+      var delay = 900; /* headline/specs er animation er sathe sync */
+      var t0 = performance.now() + delay;
+      (function step(t) {
+        if (t < t0) {
+          requestAnimationFrame(step);
+          return;
+        }
+        var p = Math.min((t - t0) / dur, 1);
+        el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * to);
+        if (p < 1) requestAnimationFrame(step);
+      })(performance.now());
+    }
+
+    /* Hero always above the fold — run on load, no scroll trigger needed */
+    function reveal() {
+      var nodes = root.querySelectorAll('[data-kk-to]');
+      for (var i = 0; i < nodes.length; i++) {
+        if (reduce || !('requestAnimationFrame' in window)) {
+          nodes[i].textContent = nodes[i].getAttribute('data-kk-to');
+        } else {
+          countUp(nodes[i]);
+        }
+      }
+    }
+
+    reveal();
+
+    /* Theme Editor: section reload holে abar run hobe */
+    document.addEventListener('shopify:section:load', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ sid }}') reveal();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "KK B2B Hero",
+  "tag": "section",
+  "class": "kk-b2b-hero-section",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "header", "content": "Images" },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image (knife)",
+      "info": "Transparent PNG/WebP works best"
+    },
+    {
+      "type": "image_picker",
+      "id": "watermark_image",
+      "label": "Background watermark logo",
+      "info": "Shown top-left at 7% opacity"
+    },
+    { "type": "header", "content": "Colors" },
+    {
+      "type": "text",
+      "id": "gradient_color",
+      "label": "Background Color",
+      "default": "radial-gradient(130% 110% at 88% -10%, #2E2921 0%, #1B1710 44%, #100D07 100%)",
+      "info": "Give color Text"
+    },
+    { "type": "header", "content": "Proof Numbers Colors" },
+    {
+      "type": "color",
+      "id": "proof_number_color",
+      "label": "Number Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "proof_unit_color",
+      "label": "Unit Color (HRC, etc)",
+      "default": "#A89A80"
+    },
+    {
+      "type": "color",
+      "id": "proof_label_color",
+      "label": "Label Color",
+      "default": "#A89A80"
+    },
+    {
+      "type": "color",
+      "id": "proof_border_color",
+      "label": "Divider Line Color",
+      "default": "rgba(255,255,255,0.1)"
+    },
+    { "type": "header", "content": "Spec Box Colors" },
+    {
+      "type": "color",
+      "id": "spec_bg_color",
+      "label": "Spec Box Background",
+      "default": "rgba(16,30,19,0.55)"
+    },
+    {
+      "type": "color",
+      "id": "spec_border_color",
+      "label": "Spec Box Border",
+      "default": "rgba(255,255,255,0.18)"
+    },
+    {
+      "type": "color",
+      "id": "spec_value_color",
+      "label": "Spec Title Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "spec_label_color",
+      "label": "Spec Label Text Color",
+      "default": "#A89A80"
+    },
+
+    { "type": "header", "content": "Typography & layout" },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Content max width",
+      "min": 1000,
+      "max": 1600,
+      "step": 40,
+      "unit": "px",
+      "default": 1200
+    }
+  ],
+  "blocks": [
+    {
+      "type": "intro",
+      "name": "Intro block",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow_1",
+          "label": "Eyebrow text",
+          "default": "包丁"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow_2",
+          "label": "Eyebrow text 2",
+          "default": "Messermanufaktur · Designed & developed in Germany · OEM / Private Label"
+        },
+        {
+          "type": "color",
+          "id": "line_color",
+          "label": "Line Color",
+          "default": "#A89A80"
+        },
+        {
+          "type": "color",
+          "id": "text_1_color",
+          "label": "Text 1 Color",
+          "default": "#B5432F"
+        },
+        {
+          "type": "color",
+          "id": "text_2_color",
+          "label": "Text 2 Color",
+          "default": "#e6e0d8"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Title (rich text)",
+      "settings": [
+        { "type": "richtext", "id": "title", "label": "Title", "default": "<p>Ihr Messer.</p><p>Ihr Logo.</p>" },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Title Color",
+          "default": "#f0ece1"
+        },
+        {
+          "type": "checkbox",
+          "id": "margin_bottom_0",
+          "label": "Margin bottom 0",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "description",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Küchenkompane ist die Messermarke der Radzuweit Industries GmbH. Wir fertigen Küchenmesser in sechs Qualitätsstufen — vom rostfreien Edelstahl bis zum Damast mit eingearbeitetem Kupfer, antibakteriell. Mit Ihrem Logo, ohne Logo oder als eigene Marke.</p>"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#B2A88F"
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "name": "Separator Line",
+      "settings": [
+        {
+          "type": "text",
+          "id": "separator_color",
+          "label": "Separator Color",
+          "default": "linear-gradient(90deg,transparent,#A89A80,#D0C6B0,transparent);"
+        }
+      ]
+    },
+    {
+      "type": "spec",
+      "name": "Spec box",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "value", "label": "Value", "default": "HRC 62–63" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Härte" }
+      ]
+    },
+    {
+      "type": "trust",
+      "name": "Trust items",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "items",
+          "label": "Trust items (comma separated)",
+          "default": "Designed & developed in Germany, OEM & Private Label, Edelstahl bis Kupfer-Damast"
+        },
+        { "type": "header", "content": "Colors" },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#C3D3BE"
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
+          "label": "Check Icon Color",
+          "default": "#A89A80"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 2,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Primary button label", "default": "Muster anfragen" },
+        { "type": "url", "id": "link", "label": "Primary button link" },
+        { "type": "checkbox", "id": "show_arrow", "label": "Show primary arrow →", "default": false },
+
+        { "type": "header", "content": "Primary Button Colors" },
+        { "type": "color", "id": "primary_bg_color", "label": "Background Color", "default": "#ffffff" },
+        { "type": "color", "id": "primary_text_color", "label": "Text Color", "default": "#211C14" },
+        { "type": "color", "id": "primary_border_color", "label": "Border Color", "default": "#ffffff" },
+        { "type": "color", "id": "primary_hover_bg_color", "label": "Hover Background", "default": "#E7EFE4" },
+        { "type": "color", "id": "primary_hover_text_color", "label": "Hover Text Color", "default": "#211C14" },
+
+        {
+          "type": "text",
+          "id": "secondary_label",
+          "label": "Secondary button label",
+          "default": "Qualitätsstufen ansehen"
+        },
+        { "type": "url", "id": "secondary_link", "label": "Secondary button link" },
+        { "type": "checkbox", "id": "secondary_show_arrow", "label": "Show secondary arrow →", "default": false },
+
+        { "type": "header", "content": "Secondary Button Colors" },
+        { "type": "color", "id": "secondary_bg_color", "label": "Background Color", "default": "rgba(0,0,0,0)" },
+        { "type": "color", "id": "secondary_text_color", "label": "Text Color", "default": "#ffffff" },
+        {
+          "type": "color",
+          "id": "secondary_border_color",
+          "label": "Border Color",
+          "default": "rgba(255,255,255,0.18)"
+        },
+        {
+          "type": "color",
+          "id": "secondary_hover_bg_color",
+          "label": "Hover Background",
+          "default": "rgba(255,255,255,0.1)"
+        },
+        { "type": "color", "id": "secondary_hover_text_color", "label": "Hover Text Color", "default": "#ffffff" },
+        { "type": "color", "id": "secondary_hover_border_color", "label": "Hover Border Color", "default": "#ffffff" }
+      ]
+    },
+    {
+      "type": "proof",
+      "name": "Proof number",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number (counts up)",
+          "info": "Leave empty to use static text instead",
+          "default": "6"
+        },
+        { "type": "text", "id": "static_text", "label": "Static text (e.g. Cu)" },
+        { "type": "text", "id": "unit", "label": "Unit suffix (e.g. HRC)" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Qualitätsstufen" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK B2B Hero"
+    }
+  ]
+}
+{% endschema %}
