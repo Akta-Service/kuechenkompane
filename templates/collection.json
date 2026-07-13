@@ -37,14 +37,6 @@
         "h1-color": ""
       }
     },
-    "custom_liquid_KKKwbQ": {
-      "type": "custom-liquid",
-      "name": "Custom liquid",
-      "settings": {
-        "custom_liquid": "",
-        "custom_class": ""
-      }
-    },
     "collection-header": {
       "type": "collection-page-header",
       "disabled": true,
@@ -180,7 +172,6 @@
   },
   "order": [
     "testing_ahDQMJ",
-    "custom_liquid_KKKwbQ",
     "collection-header",
     "mrk_collection_grid_section_PKCq6B",
     "main",
