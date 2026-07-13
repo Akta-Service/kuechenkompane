@@ -1,0 +1,248 @@
+{% comment %}
+  Küchenkompane B2B Footer
+  Dark footer with blocks for menu items
+{% endcomment %}
+
+<footer class="kk-footer">
+  <div class="kk-footer-container">
+    <!-- Main Footer Content -->
+    <div class="kk-footer__main">
+      <!-- Left: Logo + Subtitle -->
+      <div class="kk-footer__brand">
+        {% if section.settings.logo != blank %}
+          <img
+            src="{{ section.settings.logo | image_url: width: 300 }}"
+            alt="Küchenkompane"
+            class="kk-footer__logo"
+            loading="lazy"
+          >
+        {% else %}
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" class="kk-footer__icon">
+            <path d="M12.5 2C9.46 2 7 4.19 7 7.11V9H6C4.9 9 4 9.9 4 11V18C4 19.1 4.9 20 6 20H18C19.1 20 20 19.1 20 18V11C20 9.9 19.1 9 18 9H17V7.11C17 4.19 14.54 2 12.5 2ZM9 7.11C9 5.24 10.57 4 12.5 4C14.43 4 16 5.24 16 7.11V9H9V7.11ZM6 11H18V18H6V11Z"/>
+          </svg>
+          <div class="kk-footer__brand-text">
+            <div class="kk-footer__brand-name">{{ section.settings.brand_name | default: 'Küchenkompane' }}</div>
+          </div>
+        {% endif %}
+        <div class="kk-footer__subtitle">{{ section.settings.subtitle | default: 'MESSERMANUFAKTUR' }}</div>
+      </div>
+
+      <!-- Right: Menu Items from Blocks -->
+      <nav class="kk-footer__nav">
+        {% for block in section.blocks %}
+          {% if block.type == 'footer_link' %}
+            <a href="{{ block.settings.link }}" class="kk-footer__link" {{ block.shopify_attributes }}>
+              {{ block.settings.title }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </div>
+    <!-- Bottom: Copyright -->
+    <div class="kk-footer__bottom">
+      <div class="kk-footer__copyright">{{ section.settings.copyright_text }}</div>
+      <div class="kk-footer__website">{{ section.settings.website_text }}</div>
+    </div>
+  </div>
+</footer>
+
+<style>
+    .footer-fixed {
+        display: none !important;
+    }
+  .kk-footer {
+    background: #14110B;
+    color: #B2A88F;
+    padding: 56px 0 34px;
+    font-size: 13.5px;
+  }
+  .kk-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .kk-footer__main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgb(255 255 255 / 10%);
+    gap: 30px;
+    padding-bottom: 30px;
+
+  }
+  .kk-footer__brand {
+    flex-shrink: 0;
+  }
+  .kk-footer__icon {
+    color: #d4d4d4;
+    margin-bottom: 12px;
+  }
+  .kk-footer__logo {
+    height: 64px;
+    width: auto;
+    margin-bottom: 12px;
+  }
+  .kk-footer__brand-name {
+    font-size: 20px;
+    font-weight: 400;
+    color: #d4d4d4;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .kk-footer__subtitle {
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #A89A80;
+    margin-top: 6px;
+  }
+  .kk-footer__nav {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    letter-spacing: .06em;
+  }
+  .kk-footer__link {
+    text-decoration: none;
+    transition: 0.2s;
+    white-space: nowrap;
+  }
+  .kk-footer__link:hover {
+    color: #ffffff;
+  }
+
+  .kk-footer__bottom {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: #877B64;
+  }
+
+
+
+  @media (max-width: 640px) {
+
+  }
+</style>
+
+{% schema %}
+{
+  "name": "B2b Footer",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image",
+      "info": "Leave blank to use icon + text"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand Name",
+      "default": "Küchenkompane"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "MESSERMANUFAKTUR"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Bar"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "© 2026 Radzuweit Industries GmbH"
+    },
+    {
+      "type": "text",
+      "id": "website_text",
+      "label": "Website Text",
+      "default": "kuechenkompane.de"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "footer_link",
+      "name": "Footer Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Link Title",
+          "default": "Qualitätsstufen"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2b Footer",
+      "blocks": [
+        {
+          "type": "footer_link",
+          "settings": {
+            "title": "Qualitätsstufen",
+            "link": ""
+          }
+        },
+        {
+          "type": "footer_link",
+          "settings": {
+            "title": "Fertigung",
+            "link": ""
+          }
+        },
+        {
+          "type": "footer_link",
+          "settings": {
+            "title": "Private Label",
+            "link": ""
+          }
+        },
+        {
+          "type": "footer_link",
+          "settings": {
+            "title": "Kontakt",
+            "link": ""
+          }
+        },
+        {
+          "type": "footer_link",
+          "settings": {
+            "title": "Impressum",
+            "link": ""
+          }
+        },
+        {
+          "type": "footer_link",
+          "settings": {
+            "title": "Datenschutz",
+            "link": ""
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
