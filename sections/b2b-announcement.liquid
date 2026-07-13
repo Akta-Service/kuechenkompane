@@ -1,0 +1,97 @@
+{% comment %}
+  B2B Announcement Bar Only
+{% endcomment %}
+
+<div class="b2b-announcement-bar">
+  <div class="b2b-announcement-container">
+    <div class="b2b-announcement__content">
+      <span class="b2b-announcement__left">{{ section.settings.left_text }}</span>
+      <span class="b2b-announcement__right">{{ section.settings.right_text }}</span>
+    </div>
+    <div class="b2b-announcement__mobile">
+      <div>{{ section.settings.left_text }}</div>
+      <div>{{ section.settings.right_text }}</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .b2b-announcement-bar {
+    background-color: #141109;
+    line-height: 1.3;
+    padding: 12px 0;
+    color: #B2A88F;
+    font-size: 11.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+
+  }
+  .b2b-announcement-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .b2b-announcement__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #B2A88F;
+    font-size: 11.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    gap: 20px;
+  }
+  .b2b-announcement__content strong {
+    color: #fff;
+    font-weight: 500;
+   }
+  .b2b-announcement__mobile {
+    display: none;
+    text-align: center;
+    color: #B2A88F;
+    font-size: 11.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .b2b-announcement__mobile div:first-child {
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 640px) {
+    .b2b-announcement-bar {
+      font-size: 8px;
+      padding: 8px 0;
+    }
+    .b2b-announcement__content {
+      display: none;
+    }
+    .b2b-announcement__mobile {
+      display: block;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "B2B Announcement",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "left_text",
+      "label": "Left Text",
+      "default": "EINE MARKE DER RADZUWEIT INDUSTRIES GMBH"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "right_text",
+      "label": "Right Text",
+      "default": "B2B · PRIVATE LABEL · DESIGNED & DEVELOPED IN GERMANY"
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2B Announcement"
+    }
+  ]
+}
+{% endschema %}
