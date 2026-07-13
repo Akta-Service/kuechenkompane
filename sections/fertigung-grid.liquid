@@ -1,0 +1,96 @@
+<section id="fertigung" class="fertigung-grid-section">
+  {% render 'b2b-reveal' %}
+
+  <div class="fertigung-wrapper">
+    {% content_for 'blocks' %}
+  </div>
+
+  <style>
+    .fertigung-grid-section {
+      background: #f4f1e9;
+      padding: clamp(64px,9vw,128px) 0;
+    }
+
+    .fertigung-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Fertigung Grid",
+  "blocks": [
+    { "type": "_fertigung-eyebrow" },
+    { "type": "_fertigung-heading" },
+    { "type": "_fertigung-text" },
+    { "type": "_fertigung-grid" }
+  ],
+  "presets": [
+    {
+      "name": "Fertigung Grid",
+      "category": "Content",
+      "blocks": [
+        { "type": "_fertigung-eyebrow" },
+        { "type": "_fertigung-heading" },
+        { "type": "_fertigung-text" },
+        {
+          "type": "_fertigung-grid",
+          "blocks": [
+            {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "01",
+                "title": "Stahl & Härtung",
+                "description": "Sechs Stahlgüten von rostfreiem Edelstahl bis Damast, kontrollierte Härtung für definierte HRC-Werte."
+              }
+            },
+            {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "02",
+                "title": "Klingengeometrie",
+                "description": "Klingenform, Anschliff und Länge nach Vorgabe — vom Allzweck- bis zum Spezialmesser."
+              }
+            },
+            {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "03",
+                "title": "Griff & Material",
+                "description": "Griffmaterialien, Farben und Formen abgestimmt auf Marke und Einsatz."
+              }
+            },
+            {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "04",
+                "title": "Kupfer & antibakteriell",
+                "description": "Eingearbeitetes Kupfer in der Top-Stufe für antibakterielle Eigenschaften und ein einzigartiges Muster."
+              }
+            },
+            {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "05",
+                "title": "Branding",
+                "description": "Laser-Gravur, Klingen-Ätzung und Griff-Prägung — mit Ihrem Logo oder komplett neutral."
+              }
+            },
+            {
+              "type": "_fertigung-item",
+              "settings": {
+                "number": "06",
+                "title": "Verpackung & Serie",
+                "description": "Neutrale oder gebrandete Verpackung, reproduzierbare Serienqualität, planbare Mengen."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
