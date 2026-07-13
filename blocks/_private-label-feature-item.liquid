@@ -1,0 +1,73 @@
+<div class="private-label-feature" data-b2b-reveal {{ block.shopify_attributes }}>
+  <span class="private-label-feature__icon"> ◆ </span>
+
+  <div class="private-label-feature__content">
+    {%- if block.settings.title != blank -%}
+      <p class="private-label-feature__title">{{ block.settings.title }}</p>
+    {%- endif -%}
+    {%- if block.settings.description != blank -%}
+      <p class="private-label-feature__description">{{ block.settings.description }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .private-label-feature {
+    display: flex;
+    gap: 14px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ffffff1a;
+    align-items: flex-start;
+  }
+
+  .private-label-feature:first-child {
+    padding-top: 0;
+  }
+
+  .private-label-feature__icon {
+    color: #d0c6b0;
+    font-size: 8px;
+    flex: none;
+    margin-top: 2px;
+    flex: 0 0 auto;
+  }
+
+  .private-label-feature__title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .private-label-feature__description {
+    color: #b2a88f;
+    font-size: 13.5px;
+    margin: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PL feature item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Laser-Gravur"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Präzise, dauerhaft, ideal für Logos und Seriennummern auf Klinge oder Griff."
+    }
+  ],
+  "presets": [
+    {
+      "name": "PL feature item",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}
