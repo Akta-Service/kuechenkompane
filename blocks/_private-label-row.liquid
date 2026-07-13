@@ -1,0 +1,59 @@
+<div class="private-label-row" {{ block.shopify_attributes }}>
+  <div class="private-label-wrapper">
+    {% content_for 'blocks' %}
+  </div>
+
+  <style>
+    .private-label-row {
+      width: 100%;
+      background: #211c14;
+      padding: clamp(64px,9vw,128px) 0;
+    }
+
+    .private-label-row .private-label-eyebrow {
+      margin-bottom: 22px;
+    }
+  </style>
+</div>
+
+{% schema %}
+{
+  "name": "Private Label row",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_private-label-eyebrow"
+    },
+    {
+      "type": "_private-label-heading"
+    },
+    {
+      "type": "_private-label-text"
+    },
+    {
+      "type": "_private-label-grid"
+    }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Private Label row",
+      "category": "Layout",
+      "blocks": [
+        {
+          "type": "_private-label-eyebrow"
+        },
+        {
+          "type": "_private-label-heading"
+        },
+        {
+          "type": "_private-label-text"
+        },
+        {
+          "type": "_private-label-grid"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
