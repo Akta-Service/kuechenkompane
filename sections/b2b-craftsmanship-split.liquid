@@ -1,0 +1,816 @@
+{%- liquid
+  assign bg_color = section.settings.background_color | default: '#141210'
+  assign title_text_color = section.settings.title_text_color | default: '#EEF3EC'
+  assign text_color = section.settings.text_color | default: '#B2A88F'
+  assign accent_color = section.settings.accent_color | default: '#d4573e'
+-%}
+
+<style>
+  /* ---- Keyframes for scroll animations ---- */
+  @keyframes kk-rise-{{ section.id }} {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes kk-fade-in-{{ section.id }} {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes kk-scale-in-{{ section.id }} {
+    from { opacity: 0; transform: scale(.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+    #shopify-section-{{ section.id }} {
+     --cs-bg: {{ bg_color }};
+     --cs-title-text: {{ title_text_color }};
+     --cs-text: {{ text_color }};
+     --cs-accent: {{ accent_color }};
+
+     background-color: var(--cs-bg);
+     color: var(--cs-text);
+     overflow: hidden;
+   }
+
+   .cs-section {
+     position: relative;
+     padding: clamp(64px, 9vw, 128px) 0;
+   }
+
+   .cs-container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 20px;
+     display: grid;
+     grid-template-columns: 1.05fr .95fr;
+     gap: 56px;
+     align-items: center;
+   }
+
+   .cs-container--image-left {
+    grid-template-columns: .95fr 1.05fr;
+    }
+
+    .cs-container--image-left .cs-content {
+    order: 2;
+    }
+
+    .cs-container--image-left .cs-visual {
+    order: 1;
+    }
+
+    @media (max-width: 768px) {
+        .cs-container {
+            grid-template-columns: 1fr;
+            gap: 36px;
+        }
+
+        .cs-container--image-left .cs-content,
+        .cs-container--image-left .cs-visual {
+            order: initial;
+        }
+        .cs-container--mobile-top .cs-visual {
+            order: -1;
+        }
+
+        .cs-container--mobile-bottom .cs-visual {
+            order: 2;
+        }
+    }
+
+   /* Left Column: Content */
+   .cs-content {
+     position: relative;
+     z-index: 2;
+   }
+
+   .cs-kicker {
+     margin: 0 0 16px;
+     font-size: 12px;
+     letter-spacing: 0.18em;
+     text-transform: uppercase;
+     color: var(--cs-kicker-text);
+     font-weight: 600;
+     display: flex;
+     align-items: center;
+     gap: 12px;
+   }
+
+   .cs-kicker::before {
+     content: "";
+     width: 26px;
+     height: 1px;
+     display: inline-block;
+     background: #A89A80;
+   }
+
+   .cs-heading {
+     margin: 0 0 22px;
+     font-size: clamp(32px, 4.2vw, 50px);
+     line-height: 1.08;
+     font-weight: 400;
+     color: var(--cs-title-text);
+   }
+
+   .cs-text {
+     margin: 0 0 8px;
+     line-height: 1.7;
+     color: var(--cs-text);
+     max-width: 520px;
+     font-size: clamp(16px, 1.5vw, 19px);
+   }
+
+   /* Feature Grid logic:
+      Consecutive feature blocks get wrapped in this grid by Liquid below */
+   .cs-feature-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 24px;
+     margin-top: 32px;
+   }
+
+   @media (max-width: 768px) {
+     .cs-feature-grid {
+       grid-template-columns: 1fr;
+       gap: 20px;
+     }
+   }
+
+   .cs-feature {
+     position: relative;
+     border-top: 1px solid rgb(255 255 255 / 10%);
+     padding-top: 15px;
+   }
+
+   .cs-feature__kanji {
+     display: block;
+     font-size: 30px;
+     line-height: 1;
+     margin-bottom: 10px;
+     color: var(--cs-text);
+     opacity: 0.75;
+   }
+
+   .cs-feature__title {
+     margin: 0 0 8px;
+     font-size: 14px;
+     font-weight: 700;
+     color: var(--cs-title-text);
+   }
+
+   .cs-feature__desc {
+     margin: 0;
+     font-size: 13px;
+     line-height: 1.5;
+     color: var(--cs-text);
+   }
+
+   /* Right Column: Visuals */
+   .cs-visual {
+     position: relative;
+     min-height: 520px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+
+   @media (max-width: 768px) {
+     .cs-visual {
+       min-height: auto;
+     }
+   }
+
+   .cs-media {
+     position: relative;
+     z-index: 1;
+     border-radius: 12px;
+     overflow: hidden;
+     background: #0e0c0a;
+     width: 100%;
+   }
+
+  .cs-media img {
+     height: auto;
+     width: 100%;
+     border-radius: 12px;
+     border: 1px solid rgb(255 255 255 / 10%);
+     display: block;
+     aspect-ratio: 4 / 5;
+     object-fit: cover;
+   }
+   @media (max-width: 768px) {
+     .cs-media {
+        width: 100%;
+     }
+   }
+
+   .cs-seal {
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    z-index: 3;
+    position: absolute;
+    left: -20px;
+    bottom: 26px;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: #B5432F;
+    border: 2px solid rgba(255, 255, 255, .28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, .45);
+   }
+   .cs-seal span {
+    font-size: 44px;
+    color: #fff;
+    line-height: 1;
+   }
+
+   .forge__kanji {
+     position: absolute;
+     top: -8%;
+     right: -1%;
+     font-size: min(48vw,660px);
+     line-height: .8;
+     font-weight: 700;
+     color: rgb(255 255 255 / 4%);
+     z-index: 0;
+     pointer-events: none;
+     user-select: none;
+   }
+
+   .forge__kanji {
+        position: absolute;
+        font-size: min(48vw, 660px);
+        line-height: .8;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .035);
+        z-index: 0;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    /* Position variants */
+    .forge__kanji--top-left {
+        top: -8%;
+        left: -1%;
+        right: auto;
+        bottom: auto;
+    }
+
+    .forge__kanji--top-right {
+        top: -8%;
+        right: -1%;
+        left: auto;
+        bottom: auto;
+    }
+
+    .forge__kanji--bottom-left {
+        bottom: -8%;
+        left: -1%;
+        right: auto;
+        top: auto;
+    }
+
+    .forge__kanji--bottom-right {
+        bottom: -8%;
+        right: -1%;
+        left: auto;
+        top: auto;
+    }
+
+    .forge__kanji--center {
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+    }
+
+   .forge__ember {
+     position: absolute;
+     left: 50%;
+     bottom: -34%;
+     transform: translateX(-50%);
+     width: 130%;
+     height: 85%;
+     background: radial-gradient(closest-side, rgba(214,124,58,.20), rgba(214,124,58,0) 70%);
+     pointer-events: none;
+     z-index: 0;
+   }
+   .cs-container--image-left .cs-seal {
+    right: -18px;
+    left: auto;
+   }
+
+   @media (max-width: 768px) {
+     .cs-seal {
+        bottom: 12px;
+        width: 70px;
+        height: 70px;
+        left: 12px;
+     }
+     .cs-seal span {
+        font-size: 34px;
+     }
+   }
+
+   /* Scroll Animation Setup */
+   [data-kk-anim] {
+     opacity: 0;
+   }
+   [data-kk-anim].kk-in {
+     animation: kk-rise-{{ section.id }} .85s cubic-bezier(.2,.8,.2,1) forwards;
+   }
+   [data-kk-anim="fade"].kk-in {
+     animation: kk-fade-in-{{ section.id }} .9s cubic-bezier(.2,.8,.2,1) forwards;
+   }
+   [data-kk-anim="scale"].kk-in {
+     animation: kk-scale-in-{{ section.id }} .9s cubic-bezier(.2,.8,.2,1) forwards;
+   }
+
+   @media (prefers-reduced-motion: reduce) {
+     [data-kk-anim] {
+       opacity: 1 !important;
+       animation: none !important;
+       transform: none !important;
+     }
+   }
+
+   #shopify-section-{{ section.id }}{
+        .cs-feature {
+            border-top: 1px solid {{ section.settings.feature_top_border_color }};
+        }
+        .forge__kanji {
+             color: {{ section.settings.water_mark_color | color_to_rgb | replace: 'rgb', 'rgba' | replace: ')', ', 0.05)' }};
+        }
+    }
+</style>
+
+<div class="cs-section" id="schmiede">
+  <div class="cs-container cs-container--image-{{ section.settings.image_position }} cs-container--mobile-{{ section.settings.image_position_mobile }}">
+    {% comment %} ===== Left: Reorderable blocks ===== {% endcomment %}
+    <div class="cs-content">
+      {%- liquid
+        assign previous_block_type = ''
+        assign feature_grid_open = false
+        assign anim_index = 0
+      -%}
+
+      {%- for block in section.blocks -%}
+        {%- assign current_block_type = block.type -%}
+
+        {%- comment -%}
+          Wrap consecutive "feature" blocks in a shared grid container.
+          Opens grid when entering a run, closes when leaving it.
+        {%- endcomment -%}
+        {%- if current_block_type == 'feature' and previous_block_type != 'feature' -%}
+          <div class="cs-feature-grid">
+            {%- assign feature_grid_open = true -%}
+        {%- elsif current_block_type != 'feature' and previous_block_type == 'feature' -%}
+          </div>
+          {%- assign feature_grid_open = false -%}
+        {%- endif -%}
+
+        {%- case block.type -%}
+          {%- when 'kicker' -%}
+            <style>
+              #shopify-section-{{ section.id }}{
+                .cs-kicker{
+                    color: {{ block.settings.text_2_color }};
+                }
+                .cs-kicker span{
+                    color: {{ block.settings.text_1_color }};
+                }
+                .cs-kicker::before{
+                    background: {{ block.settings.line_color }};
+                }
+              }
+            </style>
+            <p
+              class="cs-kicker"
+              data-kk-anim
+              style="animation-delay: {{ anim_index | times: 0.06 }}s"
+              {{ block.shopify_attributes }}
+            >
+              <span>{{- block.settings.text1 -}}</span>
+              {{- block.settings.text2 -}}
+            </p>
+            {%- assign anim_index = anim_index | plus: 1 -%}
+
+          {%- when 'heading' -%}
+            <h2
+              class="cs-heading"
+              data-kk-anim
+              style="animation-delay: {{ anim_index | times: 0.06 }}s"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.text -}}
+            </h2>
+            {%- assign anim_index = anim_index | plus: 1 -%}
+
+          {%- when 'text' -%}
+            <div
+              class="cs-text"
+              data-kk-anim
+              style="animation-delay: {{ anim_index | times: 0.06 }}s"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.text -}}
+            </div>
+            {%- assign anim_index = anim_index | plus: 1 -%}
+
+          {%- when 'feature' -%}
+            <div
+              class="cs-feature"
+              data-kk-anim
+              style="animation-delay: {{ anim_index | times: 0.06 }}s"
+              {{ block.shopify_attributes }}
+            >
+              {%- if block.settings.kanji != blank -%}
+                <span class="cs-feature__kanji">{{ block.settings.kanji }}</span>
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}
+                <h3 class="cs-feature__title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                <p class="cs-feature__desc">{{ block.settings.description }}</p>
+              {%- endif -%}
+            </div>
+            {%- assign anim_index = anim_index | plus: 1 -%}
+        {%- endcase -%}
+
+        {%- assign previous_block_type = current_block_type -%}
+      {%- endfor -%}
+
+      {%- if feature_grid_open == true -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {% comment %} ===== Right: Section-level media ===== {% endcomment %}
+    <div class="cs-visual" data-kk-anim="scale" style="animation-delay: 0.2s">
+      {%- if section.settings.right_image != blank -%}
+        <div class="cs-media">
+          {%- assign img = section.settings.right_image -%}
+          {%- assign heading_block = section.blocks | where: 'type', 'heading' | first -%}
+          <img
+            src="{{ img | image_url: width: 800 }}"
+            srcset="
+              {{ img | image_url: width: 400 }} 400w,
+              {{ img | image_url: width: 800 }} 800w,
+              {{ img | image_url: width: 1200 }} 1200w,
+              {{ img | image_url: width: 1600 }} 1600w
+            "
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="{{ img.alt | default: heading_block.settings.text | escape }}"
+            width="{{ img.width }}"
+            height="{{ img.height }}"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_seal -%}
+        <div class="cs-seal" aria-hidden="true" data-kk-anim="scale" style="animation-delay: 0.4s">
+          <span>{{ section.settings.seal_text }}</span>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="forge__ember" data-kk-anim="fade" style="animation-delay: 0.6s"></div>
+  {%- if section.settings.show_water_mark and section.settings.water_mark != blank -%}
+    <div
+      class="forge__kanji forge__kanji--{{ section.settings.water_mark_position }}"
+      data-kk-anim="fade"
+      style="animation-delay: 0.3s"
+    >
+      {{ section.settings.water_mark }}
+    </div>
+  {%- endif -%}
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('shopify-section-{{ section.id }}');
+    if (!root) return;
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function initScrollAnim() {
+      var nodes = root.querySelectorAll('[data-kk-anim]');
+      if (!nodes.length) return;
+
+      if (reduce || !('IntersectionObserver' in window)) {
+        nodes.forEach(function (el) {
+          el.classList.add('kk-in');
+        });
+        return;
+      }
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('kk-in');
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+      );
+
+      nodes.forEach(function (el) {
+        io.observe(el);
+      });
+    }
+
+    initScrollAnim();
+
+    document.addEventListener('shopify:section:load', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ section.id }}') initScrollAnim();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "B2b Craftsmanship",
+  "tag": "section",
+  "class": "section-craftsmanship-split",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Right Visual"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position",
+      "default": "right",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_position_mobile",
+      "label": "Image Position on Mobile",
+      "default": "bottom",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Main Right Image",
+      "info": "Primary product or craft image (e.g. damascus blade detail)"
+    },
+    {
+      "type": "header",
+      "content": "- Seal Stamp -"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_seal",
+      "label": "Show Red Seal Stamp",
+      "default": true,
+      "info": "Displays the red '匠' circle overlapping the image"
+    },
+    {
+      "type": "text",
+      "id": "seal_text",
+      "label": "Seal Text",
+      "default": "匠"
+    },
+    {
+      "type": "header",
+      "content": "- Water mark -"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_water_mark",
+      "label": "Show Water Mark",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "water_mark",
+      "default": "鍰",
+      "label": "Water Mark Text"
+    },
+    {
+      "type": "select",
+      "id": "water_mark_position",
+      "label": "Water Mark Position",
+      "default": "top-right",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Top Left"
+        },
+        {
+          "value": "top-right",
+          "label": "Top Right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "water_mark_color",
+      "label": "Water Mark Color",
+      "default": "#ffffff09"
+    },
+
+    {
+      "type": "header",
+      "content": "== Colors =="
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#14110B"
+    },
+    {
+      "type": "color",
+      "id": "title_text_color",
+      "label": "Heading Color",
+      "default": "#EEF3EC"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#B2A88F"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Seal Color",
+      "default": "#B5432F"
+    },
+    {
+      "type": "color",
+      "id": "feature_top_border_color",
+      "label": "Feature Top Border Color",
+      "default": "rgb(255 255 255 / 10%)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "kicker",
+      "name": "Kicker",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text1",
+          "default": "鍛冶",
+          "label": "Kicker Text 1"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "default": "JAPANISCHE SCHMIEDEKUNST",
+          "label": "Kicker Text 2"
+        },
+        {
+          "type": "header",
+          "content": "- Color Settings -"
+        },
+        {
+          "type": "color",
+          "id": "line_color",
+          "label": "Line Color",
+          "default": "#A89A80"
+        },
+        {
+          "type": "color",
+          "id": "text_1_color",
+          "label": "Text 1 Color",
+          "default": "#B5432F"
+        },
+        {
+          "type": "color",
+          "id": "text_2_color",
+          "label": "Text 2 Color",
+          "default": "#e6e0d8"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "Geschmiedet von japanischen Meisterschmieden.",
+          "label": "Heading Text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Description",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Jede Klinge entsteht in Handarbeit bei erfahrenen japanischen Schmiedemeistern — Lage für Lage gefaltet, von Hand geschliffen und gehärtet. So entstehen Schärfe, Charakter und ein Damastmuster, das kein Messer dem anderen gleichen lässt.</p>",
+          "label": "Description Text"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "kanji",
+          "label": "Kanji / Icon Character",
+          "default": "手",
+          "info": "Displayed above the title (e.g. 手, 層, 匠)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title",
+          "default": "Handgeschmiedet"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Feature Description",
+          "default": "Jede Klinge einzeln von Meisterhand geschmiedet."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2b Craftsmanship",
+      "blocks": [
+        { "type": "kicker" },
+        { "type": "heading" },
+        { "type": "text" },
+        {
+          "type": "feature",
+          "settings": {
+            "kanji": "手",
+            "title": "Handgeschmiedet",
+            "description": "Jede Klinge einzeln von Meisterhand geschmiedet."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "kanji": "層",
+            "title": "Gefaltete Lagen",
+            "description": "Damast in vielen Lagen gefaltet — für Struktur und Schnitt."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "kanji": "匠",
+            "title": "Meistertradition",
+            "description": "Können, das über Generationen weitergegeben wird."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
