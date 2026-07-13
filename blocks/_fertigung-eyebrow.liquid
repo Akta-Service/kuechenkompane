@@ -1,0 +1,67 @@
+{% if block.settings.text != blank %}
+  <div class="fertigung-eyebrow" data-b2b-reveal {{ block.shopify_attributes }}>
+    <span class="fertigung-eyebrow__line"></span>
+    {%- if block.settings.kanji != blank -%}
+      <span class="fertigung-eyebrow__kanji">{{ block.settings.kanji }}</span>
+    {%- endif -%}
+    <span class="fertigung-eyebrow__text">{{ block.settings.text }}</span>
+  </div>
+{% endif %}
+
+<style>
+  .fertigung-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .fertigung-eyebrow__line {
+    width: 24px;
+    height: 1px;
+    background: #a89a80;
+    flex: 0 0 auto;
+  }
+
+  .fertigung-eyebrow__kanji {
+    color: #b5432f;
+    font-size: 1.05em;
+    line-height: 1;
+    margin-right: 6px;
+    font-weight: 600;
+    vertical-align: -1px;
+    opacity: .9;
+  }
+
+  .fertigung-eyebrow__text {
+    font-size: 12px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: #2e2921;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Fertigung eyebrow",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kanji",
+      "label": "Kanji / symbol",
+      "default": "製造"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Label text",
+      "default": "Was wir liefern können"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fertigung eyebrow",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
