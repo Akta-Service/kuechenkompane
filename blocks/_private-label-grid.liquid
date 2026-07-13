@@ -1,0 +1,59 @@
+<div class="private-label-grid" {{ block.shopify_attributes }}>
+  {% content_for 'blocks' %}
+</div>
+
+<style>
+  .private-label-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  @media screen and (max-width: 940px) {
+    .private-label-grid {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Private Label grid",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_private-label-content"
+    },
+    {
+      "type": "_private-label-features"
+    },
+    { "type": "_private-label-box-group" }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Private Label grid",
+      "category": "Layout",
+      "blocks": [
+        {
+          "type": "_private-label-content"
+        },
+        {
+          "type": "_private-label-features"
+        },
+        {
+          "type": "_private-label-box-group",
+          "blocks": [
+            { "type": "_private-label-box" },
+            { "type": "_private-label-box" },
+            { "type": "_private-label-box" }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
