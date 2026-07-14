@@ -1281,17 +1281,9 @@
         "info_item_HTGcUc": {
           "type": "info_item",
           "settings": {
-            "label": "MARKE",
-            "value": "Küchenkompane",
+            "label": "Telefonnummer",
+            "value": "+49 17681001024",
             "link": ""
-          }
-        },
-        "info_item_EBEhzW": {
-          "type": "info_item",
-          "settings": {
-            "label": "WEB",
-            "value": "kuechenkompane.de",
-            "link": "https://kuechenkompane.de"
           }
         },
         "info_item_V67pww": {
@@ -1301,13 +1293,21 @@
             "value": "jana@kuechenkompane.de",
             "link": "mailto:b2b@kuechenkompane.de"
           }
+        },
+        "info_item_EBEhzW": {
+          "type": "info_item",
+          "settings": {
+            "label": "WEB",
+            "value": "kuechenkompane.de",
+            "link": "https://kuechenkompane.de"
+          }
         }
       },
       "block_order": [
         "info_item_MN8Ngi",
         "info_item_HTGcUc",
-        "info_item_EBEhzW",
-        "info_item_V67pww"
+        "info_item_V67pww",
+        "info_item_EBEhzW"
       ],
       "name": "B2B Contact Form",
       "settings": {
