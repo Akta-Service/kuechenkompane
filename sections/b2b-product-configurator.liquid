@@ -4,28 +4,27 @@
 -%}
 
 <style>
-     #shopify-section-{{ sid }}{
-      --kk-bg: {{ st.bg_color | default: '#F5F3EE' }};
-      --kk-text: {{ st.text_color | default: '#2E2921' }};
-      --kk-muted: {{ st.muted_color | default: '#544E43' }};
-      --kk-accent: {{ st.accent_color | default: '#B5432F' }};
-      --kk-card: {{ st.card_bg | default: '#FFFFFF' }};
-      --kk-dark: {{ st.dark_bg | default: '#1A1610' }};
-      --kk-border: {{ st.border_color | default: 'rgba(0,0,0,.08)' }};
-
-      background: var(--kk-bg);
-      color: var(--kk-text);
-      padding-top: clamp(64px, 9vw, 128px);
-      padding-bottom: 56px;
-    }
   #shopify-section-{{ sid }}{
-    .kk-config__wrap {
-      max-width: 1200px;
+    --kk-bg: {{ st.bg_color | default: '#F5F3EE' }};
+    --kk-text: {{ st.text_color | default: '#2E2921' }};
+    --kk-muted: {{ st.muted_color | default: '#544E43' }};
+    --kk-accent: {{ st.accent_color | default: '#B5432F' }};
+    --kk-card: {{ st.card_bg | default: '#FFFFFF' }};
+    --kk-dark: {{ st.dark_bg | default: '#1A1610' }};
+    --kk-border: {{ st.border_color | default: 'rgba(0,0,0,.08)' }};
+
+    background: var(--kk-bg);
+    color: var(--kk-text);
+    padding: clamp(64px, 9vw, 128px) 0;
+  }
+  #shopify-section-{{ sid }}{
+   .kk-config__wrap {
+      max-width: {{ st.max_width | default: 1200 }}px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    .kk-config__eyebrow {
+   .kk-config__eyebrow {
       margin: 0 0 16px;
       font-size: 12px;
       letter-spacing: 0.18em;
@@ -37,7 +36,7 @@
       gap: 12px;
     }
 
-    .kk-config__eyebrow::before {
+   .kk-config__eyebrow::before {
       content: "";
       width: 26px;
       height: 1px;
@@ -45,7 +44,7 @@
       background: var(--kk-accent);
     }
 
-    .kk-config__heading {
+   .kk-config__heading {
       margin: 0 0 22px;
       font-size: clamp(32px, 4.2vw, 50px);
       line-height: 1.08;
@@ -53,7 +52,7 @@
       color: var(--kk-text);
     }
 
-    .kk-config__lead {
+   .kk-config__lead {
       margin: 0 0 48px;
       font-size: clamp(16px, 1.5vw, 19px);
       line-height: 1.7;
@@ -61,32 +60,32 @@
       max-width: 640px;
     }
 
-    .kk-config__grid {
+   .kk-config__grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 32px;
     }
 
-    .kk-config__card {
+   .kk-config__card {
       background: var(--kk-card);
-      border-radius: 8px;
+      border-radius: {{ st.card_radius | default: 8 }}px;
       padding: 32px 28px;
       border: 1px solid var(--kk-border);
     }
 
-    .kk-config__step {
+   .kk-config__step {
       border-bottom: 1px solid var(--kk-border);
       padding-bottom: 24px;
       margin-bottom: 24px;
     }
 
-    .kk-config__step:last-child {
+   .kk-config__step:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
 
-    .kk-config__step-label {
+   .kk-config__step-label {
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -95,13 +94,13 @@
       display: block;
     }
 
-    .kk-config__options {
+   .kk-config__options {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .kk-config__option {
+   .kk-config__option {
       padding: 10px 18px;
       border: 1px solid var(--kk-border);
       border-radius: 6px;
@@ -109,31 +108,31 @@
       color: var(--kk-text);
       font-size: 13px;
       cursor: pointer;
-      transition: all.2s;      
-      letter-spacing: .02em;
+      transition: all.2s;
+      letter-spacing:.02em;
     }
 
-    .kk-config__option:hover {
+   .kk-config__option:hover {
       border-color: var(--kk-accent);
     }
 
-    .kk-config__option.is-active {
+   .kk-config__option.is-active {
       background: var(--kk-text);
       color: var(--kk-bg);
       border-color: var(--kk-text);
     }
 
-    .kk-config__summary {
+   .kk-config__summary {
       background: var(--kk-dark);
-      border-radius: 8px;
+      border-radius: {{ st.card_radius | default: 8 }}px;
       padding: 28px 24px;
       color: #F0ECE1;
       position: sticky;
-      top: 0;
+      top: {{ st.sticky_top | default: 0 }}px;
       z-index: 1;
     }
 
-    .kk-config__summary-title {
+   .kk-config__summary-title {
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -141,7 +140,7 @@
       margin-bottom: 20px;
     }
 
-    .kk-config__summary-row {
+   .kk-config__summary-row {
       display: flex;
       justify-content: space-between;
       padding: 12px 0;
@@ -149,18 +148,18 @@
       font-size: 14px;
     }
 
-    .kk-config__summary-row span:first-child {
+   .kk-config__summary-row span:first-child {
       color: #B2A88F;
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
-    .kk-config__summary-row span:last-child {
+   .kk-config__summary-row span:last-child {
       font-weight: 600;
     }
 
-    .kk-config__delivery {
+   .kk-config__delivery {
       margin-top: 20px;
       padding: 16px;
       background: #141109;
@@ -171,19 +170,19 @@
       align-items: center;
       gap: 10px;
     }
-    .kk-config__delivery strong {
+   .kk-config__delivery strong {
       font-size: 10px;
-      letter-spacing: .12em;
+      letter-spacing:.12em;
       text-transform: uppercase;
       color: #A89A80;
       margin: 0;
     }
 
-    .kk-config__submit {
+   .kk-config__submit {
       width: 100%;
       padding: 16px 32px;
-      background: #fff;
-      color: #14110B;
+      background: {{ st.button_bg | default: '#ffffff' }};
+      color: {{ st.button_text | default: '#14110B' }};
       border: none;
       border-radius: 3px;
       font-size: 13px;
@@ -193,11 +192,11 @@
       margin-top: 18px;
     }
 
-    .kk-config__submit:hover {
+   .kk-config__submit:hover {
       transform: translateY(-2px);
     }
 
-    .kk-config__disclaimer {
+   .kk-config__disclaimer {
       font-size: 12px;
       color: #B2A88F;
       text-align: center;
@@ -205,8 +204,8 @@
     }
 
     @media (min-width: 990px) {
-      .kk-config__grid {
-        grid-template-columns: 1.2fr 0.8fr;
+     .kk-config__grid {
+        grid-template-columns: {{ st.grid_ratio | default: '1.2fr 0.8fr' }};
         align-items: start;
       }
     }
@@ -226,14 +225,11 @@
         transform: none!important;
       }
     }
-
-
   }
 
   @keyframes kk-rise-{{ sid }} {
       from { opacity: 0; transform: translateY(22px); }
       to { opacity: 1; transform: none; }
-
   }
 </style>
 
@@ -272,6 +268,7 @@
                       class="kk-config__option{% if forloop.first and block.settings.default_first %} is-active{% endif %}"
                       data-group="{{ block.settings.id }}"
                       data-value="{{ opt | escape }}"
+                      data-label="{{ block.settings.label | escape }}"
                     >
                       {{ opt }}
                     </button>
@@ -283,55 +280,34 @@
       </div>
 
       <div class="kk-config__summary" data-kk-anim style="animation-delay: 0.1s">
-        <div class="kk-config__summary-title">IHRE KONFIGURATION</div>
+        <div class="kk-config__summary-title">{{ st.summary_title | default: 'IHRE KONFIGURATION' }}</div>
 
         {%- for block in section.blocks -%}
           {%- if block.type == 'option_group' -%}
             <div class="kk-config__summary-row">
               <span>{{ block.settings.label | upcase }}</span>
-              <span data-summary="{{ block.settings.id }}">—</span>
+              <span data-summary="{{ block.settings.id }}">{{ st.empty_value | default: '—' }}</span>
             </div>
           {%- endif -%}
         {%- endfor -%}
 
-        <div class="kk-config__delivery">  
-          ⏱ 
-          <p>       
-          <strong>INDIKATIVE LIEFERZEIT</strong><br>
-          Auf Anfrage — je nach Stufe & Menge
-          <p>
-        </div>
+        {%- if st.show_delivery -%}
+          <div class="kk-config__delivery">
+            {{ st.delivery_icon | default: '⏱' }}
+            <p>
+              <strong>{{ st.delivery_title | default: 'INDIKATIVE LIEFERZEIT' }}</strong><br>
+              {{ st.delivery_text | default: 'Auf Anfrage — je nach Stufe & Menge' }}
+            </p>
+          </div>
+        {%- endif -%}
 
-        {%- form 'contact', id: 'ConfigForm-{{ sid }}' -%}
-          {%- if form.posted_successfully? -%}
-            <div class="form-message form-message--success" tabindex="-1" autofocus>
-              {{ 'contact.form.post_success' | t }}
-            </div>
-          {%- endif -%}
+        <button type="button" class="kk-config__submit" id="ConfigToContact-{{ sid }}">
+          {{ st.button_text_submit | default: 'Konfiguration anfragen →' }}
+        </button>
 
-          {%- if form.errors -%}
-            <div class="form-message form-message--error">
-              {{ form.errors | default_errors }}
-            </div>
-          {%- endif -%}
-
-          {%- comment -%} Hidden fields - JS will populate these {%- endcomment -%}
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'option_group' -%}
-              <input
-                type="hidden"
-                name="contact[note][{{ block.settings.label }}]"
-                id="hidden-{{ block.settings.id }}-{{ sid }}"
-              >
-            {%- endif -%}
-          {%- endfor -%}
-
-          <input type="hidden" name="contact[body]" id="hidden-summary-{{ sid }}">
-
-          <button type="submit" class="kk-config__submit">Konfiguration anfragen →</button>
-        {%- endform -%}
-
-        <p class="kk-config__disclaimer">Unverbindlich · Muster & Angebot folgen</p>
+        {%- if st.disclaimer != blank -%}
+          <p class="kk-config__disclaimer">{{ st.disclaimer }}</p>
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -339,86 +315,137 @@
 
 <script>
   (function () {
-    var root = document.getElementById('shopify-section-{{ section.id }}');
+    const root = document.getElementById('shopify-section-{{ section.id }}');
     if (!root) return;
 
     // Scroll animation
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function initScrollAnim() {
-      var nodes = root.querySelectorAll('[data-kk-anim]');
+      const nodes = root.querySelectorAll('[data-kk-anim]');
       if (!nodes.length) return;
-      if (reduce || !('IntersectionObserver' in window)) {
-        nodes.forEach(function (el) {
-          el.classList.add('kk-in');
-        });
+      if (reduce ||!('IntersectionObserver' in window)) {
+        nodes.forEach(el => el.classList.add('kk-in'));
         return;
       }
-      var io = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('kk-in');
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      nodes.forEach(function (el) {
-        io.observe(el);
-      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('kk-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      nodes.forEach(el => io.observe(el));
     }
     initScrollAnim();
 
     // Configurator Logic
-    var config = {};
-    var options = root.querySelectorAll('.kk-config__option');
-    var summary = document.getElementById('hidden-summary-{{ section.id }}');
+    const config = {};
+    const options = root.querySelectorAll('.kk-config__option');
+    const settings = {
+      emptyValue: '{{ st.empty_value | default: "—" | escape }}',
+      closingLine: '{{ st.closing_line | default: "Bitte um Muster- und Angebotsvorschlag." | escape }}',
+      quantitySuffix: '{{ st.quantity_suffix | default: " Stück" | escape }}',
+      minSelection: {{ st.min_selection | default: 0 }},
+      alertText: '{{ st.alert_text | default: "Bitte wählen Sie mindestens eine Option aus." | escape }}'
+    };
 
-    function updateConfig(group, value) {
-      config[group] = value;
-
-      // Update summary display
-      var summaryEl = root.querySelector('[data-summary="' + group + '"]');
-      if (summaryEl) summaryEl.textContent = value;
-
-      // Update hidden input
-      var hiddenInput = document.getElementById('hidden-' + group + '-{{ section.id }}');
-      if (hiddenInput) hiddenInput.value = value;
-
-      // Update full summary for email body
-      updateEmailBody();
-    }
-
-    function updateEmailBody() {
-      var lines = [];
-      for (var key in config) {
-        lines.push(key + ': ' + config[key]);
+    function updateConfig(group, value, label) {
+      try {
+        config[group] = { value: value, label: label };
+        const summaryEl = root.querySelector(`[data-summary="${group}"]`);
+        if (summaryEl) summaryEl.textContent = value;
+      } catch (err) {
+        console.warn('Config update error:', err);
       }
-      if (summary) summary.value = lines.join('\n');
     }
 
-    // Init defaults
-    options.forEach(function (btn) {
+    // Init defaults + click handlers
+    options.forEach(btn => {
+      const group = btn.dataset.group;
+      const value = btn.dataset.value;
+      const label = btn.dataset.label;
+      
+      if (!group ||!value ||!label) return;
+
       if (btn.classList.contains('is-active')) {
-        var group = btn.dataset.group;
-        var value = btn.dataset.value;
-        updateConfig(group, value);
+        updateConfig(group, value, label);
       }
 
       btn.addEventListener('click', function () {
-        var group = this.dataset.group;
-        var value = this.dataset.value;
-
-        // Toggle active state
-        root.querySelectorAll('[data-group="' + group + '"]').forEach(function (b) {
-          b.classList.remove('is-active');
-        });
-        this.classList.add('is-active');
-
-        updateConfig(group, value);
+        try {
+          root.querySelectorAll(`[data-group="${group}"]`).forEach(b => {
+            b.classList.remove('is-active');
+          });
+          this.classList.add('is-active');
+          updateConfig(group, value, label);
+        } catch (err) {
+          console.warn('Button click error:', err);
+        }
       });
     });
+
+    // Pass data to Contact Form
+    const configButton = document.getElementById('ConfigToContact-{{ section.id }}');
+    
+    if (configButton) {
+      configButton.addEventListener('click', function (e) {
+        try {
+          e.preventDefault();
+
+          // Validation
+          if (Object.keys(config).length < settings.minSelection) {
+            alert(settings.alertText);
+            return;
+          }
+
+          const contactSection = document.querySelector('#kontakt') || 
+                                 document.querySelector('.kk-contact') ||
+                                 document.querySelector('[id*="contact"]');
+          
+          if (!contactSection) {
+            console.warn('Contact section not found');
+            return;
+          }
+
+          contactSection.scrollIntoView({ 
+            behavior: reduce? 'auto' : 'smooth', 
+            block: 'start' 
+          });
+
+          setTimeout(() => {
+            // Fill individual fields
+            Object.keys(config).forEach(key => {
+              const field = contactSection.querySelector(`[id^="ContactForm-${key}"]`);
+              if (field) {
+                let val = config[key].value;
+                if (key === 'quantity') val += settings.quantitySuffix;
+                field.value = val;
+              }
+            });
+
+            // Build summary for textarea
+            const messageField = contactSection.querySelector('[id^="ContactForm-message"]');
+            if (messageField && Object.keys(config).length > 0) {
+              const summaryLines = ['Konfigurator-Anfrage:'];
+              Object.keys(config).forEach(key => {
+                const item = config[key];
+                summaryLines.push(`• ${item.label}: ${item.value}`);
+              });
+              summaryLines.push('');
+              summaryLines.push(settings.closingLine);
+              messageField.value = summaryLines.join('\n');
+              
+              const companyField = contactSection.querySelector('[id^="ContactForm-company"]');
+              if (companyField &&!companyField.value) companyField.focus();
+            }
+          }, 300);
+
+        } catch (err) {
+          console.error('Config to contact error:', err);
+        }
+      });
+    }
 
     document.addEventListener('shopify:section:load', function (e) {
       if (e.detail && e.detail.sectionId === '{{ section.id }}') initScrollAnim();
@@ -439,13 +466,13 @@
     {
       "type": "text",
       "id": "eyebrow_1",
-      "label": "Eyebrow 1",
+      "label": "Eyebrow Icon/Text 1",
       "default": "躤"
     },
     {
       "type": "text",
       "id": "eyebrow_2",
-      "label": "Eyebrow 2",
+      "label": "Eyebrow Text 2",
       "default": "KONFIGURATOR"
     },
     {
@@ -459,6 +486,131 @@
       "id": "lead",
       "label": "Lead Text",
       "default": "<p>Stufe, Messerart, Branding, Verpackung, Menge — in unter einer Minute. Ihre Auswahl landet direkt in der Anfrage; wir antworten mit Muster und Angebot.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Summary Panel"
+    },
+    {
+      "type": "text",
+      "id": "summary_title",
+      "label": "Summary Title",
+      "default": "IHRE KONFIGURATION"
+    },
+    {
+      "type": "text",
+      "id": "empty_value",
+      "label": "Empty Value Placeholder",
+      "default": "—",
+      "info": "Displayed when no option selected"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_delivery",
+      "label": "Show Delivery Info",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "delivery_icon",
+      "label": "Delivery Icon",
+      "default": "⏱"
+    },
+    {
+      "type": "text",
+      "id": "delivery_title",
+      "label": "Delivery Title",
+      "default": "INDIKATIVE LIEFERZEIT"
+    },
+    {
+      "type": "text",
+      "id": "delivery_text",
+      "label": "Delivery Text",
+      "default": "Auf Anfrage — je nach Stufe & Menge"
+    },
+    {
+      "type": "text",
+      "id": "button_text_submit",
+      "label": "Button Text",
+      "default": "Konfiguration anfragen →"
+    },
+    {
+      "type": "text",
+      "id": "disclaimer",
+      "label": "Disclaimer Text",
+      "default": "Unverbindlich · Muster & Angebot folgen"
+    },
+    {
+      "type": "header",
+      "content": "Form Behavior"
+    },
+    {
+      "type": "textarea",
+      "id": "closing_line",
+      "label": "Textarea Closing Line",
+      "default": "Bitte um Muster- und Angebotsvorschlag.",
+      "info": "Added at end of textarea summary"
+    },
+    {
+      "type": "text",
+      "id": "quantity_suffix",
+      "label": "Quantity Suffix",
+      "default": " Stück",
+      "info": "Added to quantity field"
+    },
+    {
+      "type": "range",
+      "id": "min_selection",
+      "label": "Minimum Selections Required",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 0,
+      "info": "0 = no validation"
+    },
+    {
+      "type": "text",
+      "id": "alert_text",
+      "label": "Validation Alert Text",
+      "default": "Bitte wählen Sie mindestens eine Option aus."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max Width (px)",
+      "min": 800,
+      "max": 1600,
+      "step": 50,
+      "default": 1200
+    },
+    {
+      "type": "text",
+      "id": "grid_ratio",
+      "label": "Grid Ratio (Desktop)",
+      "default": "1.2fr 0.8fr",
+      "info": "CSS grid-template-columns value"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card Border Radius (px)",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "sticky_top",
+      "label": "Sticky Summary Top Offset (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 0
     },
     {
       "type": "header",
@@ -505,6 +657,18 @@
       "id": "border_color",
       "label": "Border Color",
       "default": "rgba(0,0,0,0.08)"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Button Text Color",
+      "default": "#14110B"
     }
   ],
   "blocks": [
@@ -513,11 +677,15 @@
       "name": "Option Group",
       "settings": [
         {
+          "type": "header",
+          "content": "Block Settings"
+        },
+        {
           "type": "text",
           "id": "id",
           "label": "ID (no spaces)",
           "default": "quality",
-          "info": "Used for form field name"
+          "info": "Used for JS mapping. Must match contact form field ID: ContactForm-[id]"
         },
         {
           "type": "text",
