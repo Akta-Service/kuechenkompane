@@ -1192,13 +1192,31 @@
         "eyebrow_2": "KONFIGURATOR",
         "heading": "Stellen Sie Ihr\nMesser zusammen",
         "lead": "<p>Stufe, Messerart, Branding, Verpackung, Menge — in unter einer Minute. Ihre Auswahl landet direkt in der Anfrage; wir antworten mit Muster und Angebot.</p>",
+        "summary_title": "IHRE KONFIGURATION",
+        "empty_value": "—",
+        "show_delivery": true,
+        "delivery_icon": "⏱",
+        "delivery_title": "INDIKATIVE LIEFERZEIT",
+        "delivery_text": "Auf Anfrage — je nach Stufe & Menge",
+        "button_text_submit": "Konfiguration anfragen →",
+        "disclaimer": "Unverbindlich · Muster & Angebot folgen",
+        "closing_line": "Bitte um Muster- und Angebotsvorschlag.",
+        "quantity_suffix": "Stück",
+        "min_selection": 0,
+        "alert_text": "Bitte wählen Sie mindestens eine Option aus.",
+        "max_width": 1200,
+        "grid_ratio": "1.2fr 0.8fr",
+        "card_radius": 8,
+        "sticky_top": 0,
         "bg_color": "#eae5da",
         "text_color": "#2e2921",
         "muted_color": "#544e43",
         "accent_color": "#b5432f",
         "card_bg": "#ffffff",
         "dark_bg": "#1a1610",
-        "border_color": "#00000014"
+        "border_color": "#00000014",
+        "button_bg": "#ffffff",
+        "button_text": "#14110b"
       }
     },
     "prozess_steps": {
@@ -1280,7 +1298,7 @@
           "type": "info_item",
           "settings": {
             "label": "E-MAIL",
-            "value": "b2b@kuechenkompane.de",
+            "value": "jana@kuechenkompane.de",
             "link": "mailto:b2b@kuechenkompane.de"
           }
         }
