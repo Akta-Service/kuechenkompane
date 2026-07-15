@@ -1,0 +1,81 @@
+{%- style -%}
+   #shopify-section-{{ section.id }}{
+    --kk-green-black: #161C12;
+    --kk-gold-2: #E3C878;
+    --kk-paper: #A9AF9D;
+    --kk-wide: 72rem;
+
+  }
+   #shopify-section-{{ section.id }}{
+
+    .kk-foot{background:var(--kk-green-black);color:var(--kk-paper);padding:2rem 0 2.8rem;font-size:.82rem;line-height:1.6;}
+    .kk-foot *{box-sizing:border-box}
+    .kk-foot__in{max-width:var(--kk-wide);margin:0 auto;padding:0 1.1rem}
+    .kk-foot__in strong{color:#EDEEE8}
+    .kk-foot__disc{border-top:1px solid rgba(255,255,255,.1);margin-top:1.1rem;padding-top:1rem;font-size:.75rem}
+    .kk-foot__copy{margin-top:.9rem;font-size:.78rem}
+    @media (max-width:640px){
+        .kk-foot{padding-bottom:8.5rem}
+    }
+   }
+
+   .footer-fixed {
+        display: none;
+    }
+{%- endstyle -%}
+
+<footer class="kk-foot">
+  <div class="kk-foot__in">
+    {%- if section.settings.brand_name != blank -%}
+      <strong>{{ section.settings.brand_name }}</strong>
+    {%- endif -%}
+    {%- if section.settings.tagline != blank -%}
+      {{ section.settings.tagline }}
+    {%- endif -%}
+    {%- if section.settings.disclaimer != blank -%}
+      <div class="kk-foot__disc">{{ section.settings.disclaimer }}</div>
+    {%- endif -%}
+    {%- if section.settings.copyright != blank -%}
+      <div class="kk-foot__copy">{{ section.settings.copyright }}</div>
+    {%- endif -%}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "KK Final Footer",
+  "tag": "section",
+  "class": "kk-final-footer-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Markenname",
+      "default": "Küchenkompane"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Zeile neben dem Markennamen",
+      "default": " · Offizieller Lagerverkauf wegen Umzug"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Rechtlicher Hinweis",
+      "default": "Angebote, Preise, Rabatte und Verfügbarkeiten gelten vorbehaltlich des jeweiligen Lagerbestands. Es gelten die Rechtstexte des Küchenkompane-Shops (Impressum, Datenschutz, AGB, Widerruf — siehe Shop-Footer)."
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright-Zeile",
+      "default": "© 2026 Küchenkompane · Alle Rechte vorbehalten"
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Final Footer"
+    }
+  ]
+}
+{% endschema %}
