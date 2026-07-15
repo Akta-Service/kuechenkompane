@@ -1,0 +1,220 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    .faqs {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 3rem 1.1rem;
+    }
+
+    .faqs h2 {
+      font-weight: 600;
+      font-size: clamp(1.7rem, 4vw, 2.2rem);
+      text-align: center;
+      margin: 0 0 1rem;
+      color: #1D211A;
+    }
+
+    .faq__item { border-bottom: 1px solid #E7E6DF; }
+    .faq__item:first-child { border-top: 1px solid #E7E6DF; }
+
+    .faq__q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.2rem 0;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #1D211A;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      line-height: 1;
+    }
+
+    .faq__q:hover { color: #8A6A1F; }
+
+    .faq__q::after {
+      content: '+';
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #C9A64B;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq__q[aria-expanded="true"]::after {
+      content: '−';
+      transform: rotate(180deg);
+    }
+
+    .faq__a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq__a p {
+      margin: 0;
+      padding: 0 0 1.2rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #6E7266;
+    }
+
+    /* Reveal animation from your original */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .faq__a, .faq__q::after, .reveal { transition: none }
+    }
+  }
+</style>
+
+<div class="faqs reveal">
+  {% if section.settings.heading != blank %}
+    <h2>{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'faq_item' %}
+        <div class="faq__item" {{ block.shopify_attributes }}>
+          <button class="faq__q" aria-expanded="false" type="button">
+            {{ block.settings.question }}
+          </button>
+          <div class="faq__a">
+            <p>{{ block.settings.answer }}</p>
+          </div>
+        </div>
+    {% endcase %}
+  {% endfor %}
+</div>
+
+<script>
+  (function () {
+    // Global init once - same pattern as your original
+    if (window.kkLagerumzugInit) return;
+    window.kkLagerumzugInit = true;
+
+    function initSection() {
+      // Reveal - exact same as your original
+      const reveals = document.querySelectorAll('#shopify-section-{{ section.id }} .reveal');
+      if (reveals.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add('in');
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+        reveals.forEach((el) => io.observe(el));
+      }
+
+      // FAQ - exact same as your original but scoped
+      document.querySelectorAll('#shopify-section-{{ section.id }} .faq__q').forEach((btn) => {
+        if (btn.dataset.init) return;
+        btn.dataset.init = 'true';
+
+        btn.addEventListener('click', () => {
+          const open = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!open));
+          const a = btn.nextElementSibling;
+          if (a) a.style.maxHeight = open ? '0px' : a.scrollHeight + 'px';
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSection);
+    } else {
+      initSection();
+    }
+
+    document.addEventListener('shopify:section:load', initSection);
+    document.addEventListener('shopify:block:select', initSection);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "KK Lagerumzug FAQ",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Lagerumzug FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why are the knives so heavily discounted?",
+            "answer": "Küchenkompane's warehouse is moving. Every knife sold beforehand won't need to be packed, loaded, and transported."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this B-stock or a bankruptcy sale?",
+            "answer": "No. These are regular new items from existing stock."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I return my order?",
+            "answer": "Yes. Küchenkompane's 100-day money-back guarantee applies."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long are the offers valid for?",
+            "answer": "Promotional prices are only valid while stock lasts."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
