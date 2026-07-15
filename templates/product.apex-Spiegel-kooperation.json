@@ -30,6 +30,9 @@
       "type": "main-product",
       "disabled": true,
       "settings": {
+        "selected_gift_product": "",
+        "show_sold_out_badge_on_image": true,
+        "color_scheme": "",
         "container": "container-fluid",
         "layout": "layout-4",
         "show_atwl": true,
@@ -45,7 +48,18 @@
         "use_sticky_atc_on_mobile": true,
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
-        "sticky_atc_compare": false
+        "sticky_atc_compare": false,
+        "saving_text": "You're saving",
+        "price_color": "#000000",
+        "stk_com_p": "#dc2626",
+        "show_stk_icon": false,
+        "glitter_effec": false,
+        "bubble_before_color": "#ffffff",
+        "bubble_after_color": "#ffffff",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "apex_theme_product_page_copy_bfPEWH": {
@@ -114,6 +128,7 @@
             "show_saving": true,
             "sale_badge_type": "percentage",
             "badge_text": "",
+            "badge_text_after": "Rabatt",
             "p_pt": 5,
             "p_pb": 5,
             "p_pt_m": 5,
@@ -1270,7 +1285,7 @@
         "title_hXWbxr": {
           "type": "title",
           "settings": {
-            "title": "Spare jetzt über 125€ auf unser exklusives Messer-Set!"
+            "title": "Spare jetzt über 590€ auf unser exklusives Messer-Set!"
           }
         },
         "description_abE8wX": {
@@ -1288,7 +1303,7 @@
       "settings": {
         "color_scheme": "",
         "media_type": "image",
-        "image": "shopify://shop_images/Artboard8_1_1.webp",
+        "image": "shopify://shop_images/Kumai-kombi-holzleiste-1.jpg",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
@@ -1604,7 +1619,7 @@
       "settings": {
         "color_scheme": "badge-hot",
         "media_type": "image",
-        "image": "shopify://shop_images/DSC04954_1_1_1.jpg",
+        "image": "shopify://shop_images/KumaiMessersetPremiumohneText_2_0892571d-f70d-4fcc-b8fd-112070cf2599.png",
         "padding_top": 50,
         "padding_bottom": 50,
         "reverse": false,
