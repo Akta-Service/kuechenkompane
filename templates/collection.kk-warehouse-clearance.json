@@ -139,6 +139,32 @@
     "kk_sale_grid": {
       "type": "kk-sale-grid",
       "blocks": {
+        "kk_sale_card_33RhXe": {
+          "type": "_kk-sale-card",
+          "name": "KK Sale card",
+          "settings": {
+            "product": "premium",
+            "overwrite": false,
+            "title": "",
+            "description": "",
+            "save_text": "Sie sparen",
+            "button_label": "Angebot sichern"
+          },
+          "blocks": {}
+        },
+        "kk_sale_card_XwHwnb": {
+          "type": "_kk-sale-card",
+          "name": "KK Sale card",
+          "settings": {
+            "product": "daily-cooking-set",
+            "overwrite": false,
+            "title": "",
+            "description": "",
+            "save_text": "Sie sparen",
+            "button_label": "Angebot sichern"
+          },
+          "blocks": {}
+        },
         "kk_sale_card_wpjjtU": {
           "type": "_kk-sale-card",
           "name": "KK Sale card",
@@ -219,6 +245,8 @@
         }
       },
       "block_order": [
+        "kk_sale_card_33RhXe",
+        "kk_sale_card_XwHwnb",
         "kk_sale_card_wpjjtU",
         "kk_sale_card_xRWpPR",
         "kk_sale_card_jYJnUr",
