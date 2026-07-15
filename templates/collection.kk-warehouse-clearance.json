@@ -94,6 +94,49 @@
         "bg_color": "#FCFBF8"
       }
     },
+    "kk_final_faq_nhxdC6": {
+      "type": "kk-final-faq",
+      "blocks": {
+        "faq_item_FXRi6G": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why are the knives so heavily discounted?",
+            "answer": "Küchenkompane's warehouse is moving. Every knife sold beforehand won't need to be packed, loaded, and transported."
+          }
+        },
+        "faq_item_TPTfqe": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this B-stock or a bankruptcy sale?",
+            "answer": "No. These are regular new items from existing stock."
+          }
+        },
+        "faq_item_c7DRhk": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I return my order?",
+            "answer": "Yes. Küchenkompane's 100-day money-back guarantee applies."
+          }
+        },
+        "faq_item_YPXtWb": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long are the offers valid for?",
+            "answer": "Promotional prices are only valid while stock lasts."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_FXRi6G",
+        "faq_item_TPTfqe",
+        "faq_item_c7DRhk",
+        "faq_item_YPXtWb"
+      ],
+      "name": "KK Lagerumzug FAQ",
+      "settings": {
+        "heading": "Frequently Asked Questions"
+      }
+    },
     "kk_final_banner_LEBAC7": {
       "type": "kk-final-banner",
       "blocks": {
@@ -141,6 +184,7 @@
     "mrk_collection_grid_section_PKCq6B",
     "main",
     "kk_final_header_FKHbfC",
+    "kk_final_faq_nhxdC6",
     "kk_final_banner_LEBAC7",
     "kk_final_footer_V9nrdh"
   ]
