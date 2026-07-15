@@ -1,0 +1,212 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --kk-green: #47563E;
+    --kk-green-deep: #33402B;
+    --kk-gold: #C9A64B;
+    --kk-gold-dark: #9C7B2E;
+    --kk-paper: {{ section.settings.bg_color | default: '#FCFBF8' }};
+    --kk-ink: #1D211A;
+    --kk-stone: #6E7266;
+    --kk-line: #E7E6DF;
+    --kk-wide: 72rem;
+  }
+  .kk-revs{padding:2.8rem 0;background:var(--kk-paper);color:var(--kk-ink)}
+  .kk-revs *{box-sizing:border-box}
+  .kk-revs__head{text-align:center;margin:0 auto 1.5rem;padding:0 1.1rem}
+
+  .kk-revs__head .kk-eyebrow {
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #6E7266;
+    font-size: .9rem;
+    margin: 0;
+  }
+
+  .kk-revs__head h2{font-weight:600;font-size:clamp(1.45rem,4vw,1.95rem);margin:0 0 .3rem}
+  .kk-revs__head p{color:var(--kk-stone);font-size:.9rem;margin:0}
+  .kk-rgrid{max-width:var(--kk-wide);margin:0 auto;padding:0 1.1rem;display:grid;grid-template-columns:1fr;gap:1rem}
+  .kk-rcard{background:#fff;border:1px solid var(--kk-line);border-radius:12px;padding:1.2rem 1.2rem 1.3rem;box-shadow:0 10px 30px -22px rgba(22,28,18,.35)}
+  .kk-rstars{color:var(--kk-gold-dark);letter-spacing: -.1em;margin-bottom:.5rem; line-height: 1 }
+  .kk-rtitle{font-weight:700;font-size:.92rem;margin:0 0 .3rem}
+  .kk-rtext{font-style:italic;font-weight:500;font-size:.95rem;color:var(--kk-stone);line-height:1.5;margin:0 0 .8rem}
+  .kk-rmeta{font-size:.75rem;color:var(--kk-stone)}
+  .kk-reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .kk-reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .kk-reveal{opacity:1;transform:none;transition:none}
+  }
+  @media (min-width:760px){
+    .kk-rgrid{grid-template-columns:repeat(3,1fr)}
+  }
+{%- endstyle -%}
+
+<section class="kk-revs">
+  <div class="kk-revs__head kk-reveal">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="kk-eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2>{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p>{{ section.settings.subheading }}</p>
+    {%- endif -%}
+  </div>
+  <div class="kk-rgrid">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'review' -%}
+        <div class="kk-rcard kk-reveal" {{ block.shopify_attributes }}>
+          {%- if block.settings.rating != blank -%}
+            <div class="kk-rstars" aria-hidden="true">
+              {%- for i in (1..5) -%}
+                {% if i <= block.settings.rating %}★{% else %}☆{% endif %}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <p class="kk-rtitle">{{ block.settings.title }}</p>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="kk-rtext">{{ block.settings.text }}</p>
+          {%- endif -%}
+          {%- if block.settings.author != blank -%}
+            <div class="kk-rmeta">{{ block.settings.author }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.currentScript.closest('.shopify-section') || document;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = root.querySelectorAll('.kk-reveal');
+    if (reduce) {
+      items.forEach(function (e) {
+        e.classList.add('in');
+      });
+      return;
+    }
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    items.forEach(function (e) {
+      io.observe(e);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "KK Bewertungen",
+  "tag": "section",
+  "class": "kk-final-review-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Trustpilot"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Das sagen Kundinnen und Kunden"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Unterzeile",
+      "default": "Bewertet mit „Exzellent\" — 3.735 Bewertungen"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Hintergrundfarbe",
+      "default": "#FCFBF8"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Bewertung",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Sterne",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titel",
+          "default": "Sehr gute Qualität"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Bewertungstext",
+          "default": "„Die Produkte sind auf der Website sehr gut fotografiert und beschrieben, ohne dabei zu viel zu versprechen. Die Ware kam zum …\""
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Autor / Quelle",
+          "default": "Fam. Lemke · Verifiziert · Trustpilot"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "KK Bewertungen",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Sehr gute Qualität",
+            "text": "„Die Produkte sind auf der Website sehr gut fotografiert und beschrieben, ohne dabei zu viel zu versprechen. Die Ware kam zum …\"",
+            "author": "Fam. Lemke · Verifiziert · Trustpilot"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Sehr zufrieden",
+            "text": "„Das Messer weist eine optisch ansprechende und stabile Verarbeitung auf. Die Klinge ist außerordentlich scharf und …\"",
+            "author": "Lisa · Verifiziert · Trustpilot"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Ich war skeptisch, ob die Qualität passt",
+            "text": "„Ich war skeptisch, ob die Qualität der Messer im Vergleich zum Preis passen würde. Aber meine Frau war begeistert von …\"",
+            "author": "Benrdt B. · Verifiziert · Trustpilot"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
