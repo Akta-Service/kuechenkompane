@@ -2,7 +2,7 @@
   .akta-header {
       display: none;
   }
-    #shopify-section-{{ section.id }} {
+    #shopify-section-{{ section.id }}{
       --kk-green: #47563E;
       --kk-green-night: #232C1D;
       --kk-paper: {{ section.settings.bg_color | default: '#FCFBF8' }};
@@ -10,16 +10,23 @@
       --kk-line: #E7E6DF;
       --kk-wide: 75rem;
     }
-    #shopify-section-{{ section.id }} .kk-top{background:var(--kk-green-night);color:#EDEEE8;text-align:center;padding:.6rem 1rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;position:sticky;top:0;z-index:70;box-shadow:0 6px 18px -10px rgba(0,0,0,.4);}
+    #shopify-section-{{ section.id }}{
 
-    #shopify-section-{{ section.id }} .kk-bar{background:var(--kk-paper);border-bottom:1px solid var(--kk-line);}
-    #shopify-section-{{ section.id }} .kk-bar *{box-sizing:border-box}
-    #shopify-section-{{ section.id }} .bar__in{max-width:var(--kk-wide);margin:0 auto;padding:.75rem 1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    #shopify-section-{{ section.id }} .kk-brand{display:flex;align-items:center;gap:.55rem;text-decoration:none}
-    #shopify-section-{{ section.id }} .kk-brand__logo{display:block;height:{{ section.settings.logo_height }}px;width:auto}
-    #shopify-section-{{ section.id }} .kk-brand__name{font-style:italic;font-weight:600;font-size:1.25rem;color:var(--kk-green);line-height:1}
-    #shopify-section-{{ section.id }} .kk-bartrust{font-size:.76rem;font-weight:600;color:var(--kk-stone)}
-    #shopify-section-{{ section.id }} .kk-bartrust b{color:var(--kk-green)}
+    .kk-top{background:var(--kk-green-night);color:#EDEEE8;text-align:center;padding:.6rem 1rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;position:sticky;top:0;z-index:70;box-shadow:0 6px 18px -10px rgba(0,0,0,.4);}
+
+    .kk-bar{background:var(--kk-paper);border-bottom:1px solid var(--kk-line);}
+    .kk-bar *{box-sizing:border-box}
+    .bar__in{max-width:var(--kk-wide);margin:0 auto;padding:.75rem 1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .kk-brand{display:flex;align-items:center;gap:.55rem;text-decoration:none}
+    .kk-brand__logo{display:block;height:{{ section.settings.logo_height }}px;width:auto}
+    .kk-brand__name{font-style:italic;font-weight:600;font-size:1.25rem;color:var(--kk-green);line-height:1}
+    .kk-bartrust{font-size:.76rem;font-weight:600;color:var(--kk-stone)}
+    .kk-bartrust b{color:var(--kk-green)}
+    span.kk-bartrust strong {
+      color: #000;
+    }
+
+  }
 {%- endstyle -%}
 
 <div class="kk-bar">
