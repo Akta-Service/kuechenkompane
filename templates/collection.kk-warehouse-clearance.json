@@ -82,11 +82,23 @@
         "overlay_opacity": 0,
         "show_stock_status": false
       }
+    },
+    "kk_final_header_FKHbfC": {
+      "type": "kk-final-header",
+      "name": "KK Final Header",
+      "settings": {
+        "logo": "shopify://shop_images/logo1.svg",
+        "logo_height": 56,
+        "brand_name": "",
+        "trust_text": "★ „Exzellent\" · 3.735 Bewertungen",
+        "bg_color": "#FCFBF8"
+      }
     }
   },
   "order": [
     "collection-header",
     "mrk_collection_grid_section_PKCq6B",
-    "main"
+    "main",
+    "kk_final_header_FKHbfC"
   ]
 }
