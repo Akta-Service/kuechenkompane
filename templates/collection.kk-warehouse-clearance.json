@@ -83,6 +83,17 @@
         "show_stock_status": false
       }
     },
+    "kk_final_header_FKHbfC": {
+      "type": "kk-final-header",
+      "name": "KK Final Header",
+      "settings": {
+        "logo": "shopify://shop_images/logo1.svg",
+        "logo_height": 56,
+        "brand_name": "",
+        "trust_text": "★ „Exzellent\" · 3.735 Bewertungen",
+        "bg_color": "#fcfbf8"
+      }
+    },
     "lagerverkauf_header": {
       "type": "lagerverkauf-header",
       "settings": {
@@ -116,12 +127,12 @@
       ],
       "settings": {
         "product": "8-teiliges-asiatisches-messerset-premium-2x-kasemesser-und-hobel",
-        "subtext": "Kostenloser Versand · Sichere Bestellung im Küchenkompane-Shop",
         "badge": "Grösste Ersparnis",
         "compare_label": "Normalpreis:",
         "save_label": "Sie sparen",
         "note": "Nur noch Restbestand — wird nicht zum Aktionspreis nachbestellt.",
-        "button_label": "Angebot sichern"
+        "button_label": "Angebot sichern",
+        "subtext": "Kostenloser Versand · Sichere Bestellung im Küchenkompane-Shop"
       }
     },
     "kk_sale_grid": {
@@ -293,17 +304,6 @@
         "footnote": "Keine Insolvenz, keine Geschäftsaufgabe, keine B-Ware: reduziert wird reguläre Lagerware vor dem Umzug."
       }
     },
-    "kk_final_header_FKHbfC": {
-      "type": "kk-final-header",
-      "name": "KK Final Header",
-      "settings": {
-        "logo": "shopify://shop_images/logo1.svg",
-        "logo_height": 56,
-        "brand_name": "",
-        "trust_text": "★ „Exzellent\" · 3.735 Bewertungen",
-        "bg_color": "#FCFBF8"
-      }
-    },
     "kk_final_review_dPd9kN": {
       "type": "kk-final-review",
       "blocks": {
@@ -345,7 +345,7 @@
         "eyebrow": "Trustpilot",
         "heading": "Das sagen Kundinnen und Kunden",
         "subheading": "Bewertet mit „Exzellent\" — 3.735 Bewertungen",
-        "bg_color": "#FCFBF8"
+        "bg_color": "#fcfbf8"
       }
     },
     "kk_final_faq_nhxdC6": {
@@ -440,7 +440,7 @@
         "subtext": "Umzug zu",
         "progress": 89,
         "scroll_target_id": "produkte",
-        "button_label": "Angebote ↑",
+        "button_label": "Angebote →",
         "button_link": "#kk-offer-product"
       }
     }
