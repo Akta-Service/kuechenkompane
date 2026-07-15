@@ -9,22 +9,26 @@
  */
 {
   "sections": {
-    "apex_timer_8KXfky": {
-      "type": "Apex-timer",
-      "disabled": true,
-      "name": "Apex Product Timer",
+    "apex_timer_restart_xJAKpM": {
+      "type": "APEX-timer-restart",
+      "name": "Apex Timer Restart",
       "settings": {
-        "bg_color": "#f2f2f2",
+        "bg_color": "#324a34",
         "section_pt": 15,
         "section_pb": 15,
-        "timer_clock": "#c89d00",
-        "timer_clock_text_font_size": 12,
-        "clock_font_weight": "700",
-        "timer_text": "ANGEBOT WECHSELT IN:",
-        "timer_font_size": 12,
-        "timer_color": "#000000",
-        "timer_font_weight": "700",
-        "start_time": "00:00:00"
+        "timer_clock": "#fff",
+        "timer_clock_text_font_size": 15,
+        "clock_font_weight": "400",
+        "timer_text": "Nur für kurze Zeit – danach Normalpreis.",
+        "timer_font_size": 15,
+        "timer_color": "#dcad27",
+        "timer_font_weight": "600",
+        "timer_hide": true,
+        "start_countdown": true,
+        "start_datetime": "2025-12-25 00:00",
+        "not_started_text": "Countdown nicht gestartet",
+        "set_hour": 48,
+        "restart_on": true
       }
     },
     "collection-header": {
@@ -292,7 +296,7 @@
     }
   },
   "order": [
-    "apex_timer_8KXfky",
+    "apex_timer_restart_xJAKpM",
     "collection-header",
     "apex_top_slider_GBwqAg",
     "category_selection_iMrTd6",
