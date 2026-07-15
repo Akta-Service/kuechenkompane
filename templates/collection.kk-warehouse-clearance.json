@@ -90,7 +90,7 @@
         "logo": "shopify://shop_images/logo1.svg",
         "logo_height": 56,
         "brand_name": "",
-        "trust_text": "★ „Exzellent\" · 3.735 Bewertungen",
+        "trust_text": "<strong>★ „Exzellent\"</strong> · 3.735 Bewertungen",
         "bg_color": "#fcfbf8"
       }
     },
@@ -126,6 +126,7 @@
         "trust_2"
       ],
       "settings": {
+        "dynamic_id": "kk-offer-product",
         "product": "8-teiliges-asiatisches-messerset-premium-2x-kasemesser-und-hobel",
         "badge": "Grösste Ersparnis",
         "compare_label": "Normalpreis:",
