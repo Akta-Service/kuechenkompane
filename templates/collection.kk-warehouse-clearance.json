@@ -143,11 +143,11 @@
           "type": "_kk-sale-card",
           "name": "KK Sale card",
           "settings": {
-            "product": "3x-grill-reinigungsstein",
+            "product": "kuro-messerset-premium",
             "overwrite": false,
             "title": "",
             "description": "",
-            "save_text": "Sie sparen",
+            "save_text": "Du sparst",
             "button_label": "Angebot sichern"
           },
           "blocks": {}
@@ -156,24 +156,24 @@
           "type": "_kk-sale-card",
           "name": "KK Sale card",
           "settings": {
-            "product": "8-teiliges-asiatisches-messerset-premium-2x-kasemesser-und-hobel",
+            "product": "gyuto-set-3pcs",
             "overwrite": true,
             "title": "",
             "description": "",
-            "save_text": "Sie sparen",
+            "save_text": "Du sparst",
             "button_label": "Angebot sichern"
           },
           "blocks": {}
         },
-        "kk_sale_card_DXAxfm": {
+        "kk_sale_card_jYJnUr": {
           "type": "_kk-sale-card",
           "name": "KK Sale card",
           "settings": {
-            "product": "3-teiliges-premium-taschenmesser-set-aus-damaststahl",
+            "product": "folding-knife-a",
             "overwrite": false,
             "title": "",
             "description": "",
-            "save_text": "Sie sparen",
+            "save_text": "Du sparst",
             "button_label": "Angebot sichern"
           },
           "blocks": {}
@@ -182,11 +182,37 @@
           "type": "_kk-sale-card",
           "name": "KK Sale card",
           "settings": {
-            "product": "bundle-premium-akarui",
+            "product": "aoki-damastmesser-set-kopie",
             "overwrite": false,
             "title": "",
             "description": "",
-            "save_text": "Sie sparen",
+            "save_text": "Du sparst",
+            "button_label": "Angebot sichern"
+          },
+          "blocks": {}
+        },
+        "kk_sale_card_hXkLFD": {
+          "type": "_kk-sale-card",
+          "name": "KK Sale card",
+          "settings": {
+            "product": "asiatisches-kombipaket-tsuisuto",
+            "overwrite": false,
+            "title": "",
+            "description": "",
+            "save_text": "Du sparst",
+            "button_label": "Angebot sichern"
+          },
+          "blocks": {}
+        },
+        "kk_sale_card_k7bYir": {
+          "type": "_kk-sale-card",
+          "name": "KK Sale card",
+          "settings": {
+            "product": "kumai-messerset-premium",
+            "overwrite": false,
+            "title": "",
+            "description": "",
+            "save_text": "Du sparst",
             "button_label": "Angebot sichern"
           },
           "blocks": {}
@@ -195,8 +221,10 @@
       "block_order": [
         "kk_sale_card_wpjjtU",
         "kk_sale_card_xRWpPR",
-        "kk_sale_card_DXAxfm",
-        "kk_sale_card_rH7WCX"
+        "kk_sale_card_jYJnUr",
+        "kk_sale_card_rH7WCX",
+        "kk_sale_card_hXkLFD",
+        "kk_sale_card_k7bYir"
       ],
       "settings": {
         "view_all_label": "Alle Lagerumzug-Angebote ansehen",
