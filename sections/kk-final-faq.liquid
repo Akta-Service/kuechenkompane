@@ -1,8 +1,9 @@
 <style>
-  #shopify-section-{{ section.id }} {
-    .faqs-bg {
+   #shopify-section-{{ section.id }}.faqs-bg {
       background: {{ section.settings.bg_color | default: '#FCFBF8' }};
-    }
+   }
+  #shopify-section-{{ section.id }} {
+
     .faqs {
       max-width: 44rem;
       margin: 0 auto;
