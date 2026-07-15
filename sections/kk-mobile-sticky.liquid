@@ -1,0 +1,114 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --kk-green-night: #324a34;
+    --kk-gold: #C9A64B;
+    --kk-gold-2: #E3C878;
+    --kk-gold-dark: #9C7B2E;
+    --kk-stone: #A9AF9D;
+    --kk-sans: "Assistant", system-ui, sans-serif;
+  }
+  #shopify-section-{{ section.id }} .kk-sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--kk-green-night);color:#EDEEE8;padding:.65rem 1rem calc(.65rem + env(safe-area-inset-bottom));transform:translateY(120%);transition:transform .3s ease;box-shadow:0 -8px 26px -14px rgba(0,0,0,.55);border-top:1px solid rgba(227,200,120,.3);font-family:var(--kk-sans)}
+  #shopify-section-{{ section.id }} .kk-sticky *{box-sizing:border-box}
+  #shopify-section-{{ section.id }} .kk-sticky.show{transform:translateY(0)}
+  #shopify-section-{{ section.id }} .kk-sticky__in{max-width:30rem;margin:0 auto;display:flex;align-items:center;gap:.8rem}
+  #shopify-section-{{ section.id }} .kk-sticky__txt{font-size:.72rem;color:var(--kk-stone);flex:1;line-height:1.25}
+  #shopify-section-{{ section.id }} .kk-sticky__txt b{color:var(--kk-gold-2);display:block;font-size:.88rem}
+  #shopify-section-{{ section.id }} .kk-sticky .kk-btn{font-weight:700;font-size:.9rem;letter-spacing:.02em;display:inline-flex;align-items:center;gap:.6rem;justify-content:center;min-height:48px;padding:.65rem 1.15rem;border-radius:9px;text-decoration:none;background:#fa8526;color:#ffffff;border:1px solid rgba(156,123,46,.55);box-shadow:0 12px 28px -12px rgba(156,123,46,.65),inset 0 1px 0 rgba(255,255,255,.45);transition:transform .12s ease,box-shadow .2s ease,filter .2s ease;flex-shrink:0;white-space:nowrap}
+  #shopify-section-{{ section.id }} .kk-sticky .kk-btn:hover{transform:translateY(-2px);filter:brightness(1.04)}
+  #shopify-section-{{ section.id }} .kk-sticky .kk-btn:focus-visible{outline:3px solid var(--kk-gold-2);outline-offset:3px}
+
+  @media (min-width: 769px){
+    .kk-sticky {
+      display: none;
+    }
+  }
+{%- endstyle -%}
+
+<div class="kk-sticky" id="kk-sticky-{{ section.id }}">
+  <div class="kk-sticky__in">
+    <div class="kk-sticky__txt">
+      {%- if section.settings.headline != blank -%}
+        <b>{{ section.settings.headline }}</b>
+      {%- endif -%}
+      {%- if section.settings.subtext != blank -%}
+        {{ section.settings.subtext }}
+        <span class="kk-sticky__pct" data-kk-sticky-pct>–</span> %
+      {%- endif -%}
+    </div>
+    {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+      <a class="kk-btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  (function(){
+    var root = document.getElementById({{ "kk-sticky-" | append: section.id | json }});
+    if(!root) return;
+    var pct = Math.max(0, Math.min(100, {{ section.settings.progress | default: 0 }}));
+    var pctEl = root.querySelector('[data-kk-sticky-pct]');
+    if(pctEl) pctEl.textContent = pct;
+
+    var targetId = {{ section.settings.scroll_target_id | json }};
+    var target = targetId ? document.getElementById(targetId) : null;
+
+    function onScroll(){
+      var y = window.scrollY || document.documentElement.scrollTop;
+      var past = target ? (y > target.offsetTop + target.offsetHeight) : (y > 900);
+      if(past){ root.classList.add('show'); } else { root.classList.remove('show'); }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "KK Mobile Sticky",
+  "tag": "section",
+  "class": "kk-mobile-sticky-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Fettgedruckte Überschrift",
+      "default": "Letzte Chance: bis zu –80 %"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Text vor Prozentanzeige",
+      "default": "Umzug zu"
+    },
+    {
+      "type": "number",
+      "id": "progress",
+      "label": "Fortschritt in %",
+      "default": 89
+    },
+    {
+      "type": "text",
+      "id": "scroll_target_id",
+      "label": "Element-ID, ab der die Leiste erscheint",
+      "info": "z. B. produkte. Leer lassen, um nach 900px Scroll zu erscheinen.",
+      "default": "produkte"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button-Text",
+      "default": "Angebote ↑"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button-Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Mobile Sticky"
+    }
+  ]
+}
+{% endschema %}

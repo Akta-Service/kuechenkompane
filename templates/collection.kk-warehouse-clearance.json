@@ -83,6 +83,216 @@
         "show_stock_status": false
       }
     },
+    "lagerverkauf_header": {
+      "type": "lagerverkauf-header",
+      "settings": {
+        "eyebrow": "Offizieller Lagerverkauf",
+        "heading": "Letzte Chance:",
+        "heading_accent": "bis zu −80 %",
+        "subtext": "Der Umzug endet — die Aktionspreise auch."
+      }
+    },
+    "kk_featured_offer": {
+      "type": "kk-featured-offer",
+      "blocks": {
+        "trust_1": {
+          "type": "trust",
+          "settings": {
+            "icon": "check",
+            "text": "100 Tage Geld-zurück"
+          }
+        },
+        "trust_2": {
+          "type": "trust",
+          "settings": {
+            "icon": "star",
+            "text": "365 Tage Schärfegarantie"
+          }
+        }
+      },
+      "block_order": [
+        "trust_1",
+        "trust_2"
+      ],
+      "settings": {
+        "product": "8-teiliges-asiatisches-messerset-premium-2x-kasemesser-und-hobel",
+        "subtext": "Kostenloser Versand · Sichere Bestellung im Küchenkompane-Shop",
+        "badge": "Grösste Ersparnis",
+        "compare_label": "Normalpreis:",
+        "save_label": "Sie sparen",
+        "note": "Nur noch Restbestand — wird nicht zum Aktionspreis nachbestellt.",
+        "button_label": "Angebot sichern"
+      }
+    },
+    "kk_sale_grid": {
+      "type": "kk-sale-grid",
+      "blocks": {
+        "kk_sale_card_wpjjtU": {
+          "type": "_kk-sale-card",
+          "name": "KK Sale card",
+          "settings": {
+            "product": "3x-grill-reinigungsstein",
+            "overwrite": false,
+            "title": "",
+            "description": "",
+            "save_text": "Sie sparen",
+            "button_label": "Angebot sichern"
+          },
+          "blocks": {}
+        },
+        "kk_sale_card_xRWpPR": {
+          "type": "_kk-sale-card",
+          "name": "KK Sale card",
+          "settings": {
+            "product": "8-teiliges-asiatisches-messerset-premium-2x-kasemesser-und-hobel",
+            "overwrite": true,
+            "title": "",
+            "description": "",
+            "save_text": "Sie sparen",
+            "button_label": "Angebot sichern"
+          },
+          "blocks": {}
+        },
+        "kk_sale_card_DXAxfm": {
+          "type": "_kk-sale-card",
+          "name": "KK Sale card",
+          "settings": {
+            "product": "3-teiliges-premium-taschenmesser-set-aus-damaststahl",
+            "overwrite": false,
+            "title": "",
+            "description": "",
+            "save_text": "Sie sparen",
+            "button_label": "Angebot sichern"
+          },
+          "blocks": {}
+        },
+        "kk_sale_card_rH7WCX": {
+          "type": "_kk-sale-card",
+          "name": "KK Sale card",
+          "settings": {
+            "product": "bundle-premium-akarui",
+            "overwrite": false,
+            "title": "",
+            "description": "",
+            "save_text": "Sie sparen",
+            "button_label": "Angebot sichern"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "kk_sale_card_wpjjtU",
+        "kk_sale_card_xRWpPR",
+        "kk_sale_card_DXAxfm",
+        "kk_sale_card_rH7WCX"
+      ],
+      "settings": {
+        "view_all_label": "Alle Lagerumzug-Angebote ansehen",
+        "view_all_link": "",
+        "footnote": "Weitere Sets & Einzelmesser im Restbestand · Nur bis zum Abschluss des Umzugs"
+      }
+    },
+    "kk_promise": {
+      "type": "kk-promise",
+      "blocks": {
+        "promise_media": {
+          "type": "_kk-promise-media",
+          "settings": {
+            "image": "shopify://shop_images/download_5_c9e52d45-47a1-477d-bbee-068b50027c3e.jpg",
+            "caption": "Die letzten Paletten werden verladen — verkauft wird, was nicht mit umzieht. (Symbolbild)"
+          },
+          "blocks": {}
+        },
+        "promise_content": {
+          "type": "_kk-promise-content",
+          "settings": {
+            "eyebrow": "Das Küchenkompane-Versprechen",
+            "heading": "Kaufen ohne Risiko — auch im Lagerverkauf"
+          },
+          "blocks": {
+            "promise_item_1": {
+              "type": "_kk-promise-item",
+              "settings": {
+                "icon": "check",
+                "title": "100 Tage Geld-zurück-Garantie",
+                "description": "Nicht überzeugt? Volle Rückerstattung — 100 Tage lang."
+              },
+              "blocks": {}
+            },
+            "promise_item_2": {
+              "type": "_kk-promise-item",
+              "settings": {
+                "icon": "star",
+                "title": "365 Tage Schärfegarantie",
+                "description": "Ein ganzes Jahr garantierte Schärfe — auch bei den Aktionsmodellen."
+              },
+              "blocks": {}
+            },
+            "promise_item_3": {
+              "type": "_kk-promise-item",
+              "settings": {
+                "icon": "truck",
+                "title": "Kostenloser Versand",
+                "description": "Keine Versandkosten — direkt aus dem Lager, bevor es umzieht."
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "promise_item_1",
+            "promise_item_2",
+            "promise_item_3"
+          ]
+        }
+      },
+      "block_order": [
+        "promise_media",
+        "promise_content"
+      ],
+      "settings": {}
+    },
+    "kk_rechnung": {
+      "type": "kk-rechnung",
+      "blocks": {
+        "rechnung_card_1": {
+          "type": "_kk-rechnung-card",
+          "settings": {
+            "number": "1",
+            "lead": "Das Lager zieht um.",
+            "text": "Jede Palette, jeder Karton und jedes Kilogramm verursacht Transportkosten."
+          },
+          "blocks": {}
+        },
+        "rechnung_card_2": {
+          "type": "_kk-rechnung-card",
+          "settings": {
+            "number": "2",
+            "lead": "Verkaufen statt transportieren.",
+            "text": "Was vorher verkauft wird, muss nicht mehr verpackt und verladen werden."
+          },
+          "blocks": {}
+        },
+        "rechnung_card_3": {
+          "type": "_kk-rechnung-card",
+          "settings": {
+            "number": "3",
+            "lead": "Endspurt.",
+            "text": "Die Aktion endet mit dem Umzug — danach gelten wieder Normalpreise. Was ausverkauft ist, kommt nicht zurück."
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "rechnung_card_1",
+        "rechnung_card_2",
+        "rechnung_card_3"
+      ],
+      "settings": {
+        "eyebrow": "Warum so günstig?",
+        "heading": "Die Rechnung hinter den Rabatten",
+        "footnote": "Keine Insolvenz, keine Geschäftsaufgabe, keine B-Ware: reduziert wird reguläre Lagerware vor dem Umzug."
+      }
+    },
     "kk_final_header_FKHbfC": {
       "type": "kk-final-header",
       "name": "KK Final Header",
@@ -221,6 +431,18 @@
         "disclaimer": "Angebote, Preise, Rabatte und Verfügbarkeiten gelten vorbehaltlich des jeweiligen Lagerbestands. Es gelten die Rechtstexte des Küchenkompane-Shops (Impressum, Datenschutz, AGB, Widerruf — siehe Shop-Footer).",
         "copyright": "© 2026 Küchenkompane · Alle Rechte vorbehalten"
       }
+    },
+    "kk_mobile_sticky_VeCqXc": {
+      "type": "kk-mobile-sticky",
+      "name": "KK Mobile Sticky",
+      "settings": {
+        "headline": "Letzte Chance: bis zu –80 %",
+        "subtext": "Umzug zu",
+        "progress": 89,
+        "scroll_target_id": "produkte",
+        "button_label": "Angebote ↑",
+        "button_link": "#kk-offer-product"
+      }
     }
   },
   "order": [
@@ -228,9 +450,15 @@
     "mrk_collection_grid_section_PKCq6B",
     "main",
     "kk_final_header_FKHbfC",
+    "lagerverkauf_header",
+    "kk_featured_offer",
+    "kk_sale_grid",
+    "kk_promise",
+    "kk_rechnung",
     "kk_final_review_dPd9kN",
     "kk_final_faq_nhxdC6",
     "kk_final_banner_LEBAC7",
-    "kk_final_footer_V9nrdh"
+    "kk_final_footer_V9nrdh",
+    "kk_mobile_sticky_VeCqXc"
   ]
 }
