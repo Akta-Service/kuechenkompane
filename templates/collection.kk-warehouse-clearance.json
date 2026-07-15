@@ -94,6 +94,37 @@
         "bg_color": "#FCFBF8"
       }
     },
+    "kk_final_banner_LEBAC7": {
+      "type": "kk-final-banner",
+      "blocks": {
+        "heading_3PftLc": {
+          "type": "heading",
+          "settings": {
+            "text": "Der Umzug ist fast abgeschlossen."
+          }
+        },
+        "paragraph_Kt3D76": {
+          "type": "paragraph",
+          "settings": {
+            "text": "Sobald die letzten Bestände geräumt sind, enden die Aktionspreise endgültig."
+          }
+        },
+        "button_JjUbAK": {
+          "type": "button",
+          "settings": {
+            "button_text": "Zu den Angeboten",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_3PftLc",
+        "paragraph_Kt3D76",
+        "button_JjUbAK"
+      ],
+      "name": "Final Banner",
+      "settings": {}
+    },
     "kk_final_footer_V9nrdh": {
       "type": "kk-final-footer",
       "name": "KK Final Footer",
@@ -110,6 +141,7 @@
     "mrk_collection_grid_section_PKCq6B",
     "main",
     "kk_final_header_FKHbfC",
+    "kk_final_banner_LEBAC7",
     "kk_final_footer_V9nrdh"
   ]
 }
