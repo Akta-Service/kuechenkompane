@@ -18,7 +18,11 @@
         },
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "p_t_s": 32,
+            "p_t_s_m": 20,
+            "font_weight_t": "400"
+          }
         },
         "loox_reviews_loox_rating_fWVqG4": {
           "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
@@ -38,8 +42,32 @@
         "price": {
           "type": "price",
           "settings": {
+            "Show_lowest_price": false,
+            "lowest_price_text": "Der niedrigste Preis in den letzten 30 Tagen",
+            "taxes_included": false,
+            "taxes_included_text": "",
             "show_saving": true,
-            "sale_badge_type": "percentage"
+            "sale_badge_type": "percentage",
+            "badge_text": "",
+            "badge_text_after": "Rabatt",
+            "p_pt": 5,
+            "p_pb": 5,
+            "p_pt_m": 5,
+            "p_pb_m": 5,
+            "price_color": "#008000",
+            "c_price_color": "#008000",
+            "per_badge_bg": "#008000",
+            "per_badge_color": "#FFFFFF",
+            "f_s": 16,
+            "f_s_m": 16,
+            "c_price_size": 16,
+            "c_price_size_m": 16,
+            "price_font_weight": "400",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
           }
         },
         "variant_picker": {
@@ -54,7 +82,8 @@
             "show_quantity_selector": true,
             "show_atc_button": true,
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": true,
+            "btn_mt": 8
           }
         },
         "custom_text_46dg4L": {
@@ -134,6 +163,9 @@
         "collapsible_tab_k4keJ6"
       ],
       "settings": {
+        "selected_gift_product": "",
+        "show_sold_out_badge_on_image": true,
+        "color_scheme": "",
         "container": "container-fluid",
         "layout": "layout-6",
         "show_atwl": true,
@@ -149,7 +181,18 @@
         "use_sticky_atc_on_mobile": true,
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
-        "sticky_atc_compare": false
+        "sticky_atc_compare": false,
+        "saving_text": "You're saving",
+        "price_color": "#000000",
+        "stk_com_p": "#dc2626",
+        "show_stk_icon": false,
+        "glitter_effec": false,
+        "bubble_before_color": "#ffffff",
+        "bubble_after_color": "#ffffff",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "product-details-tabs": {
