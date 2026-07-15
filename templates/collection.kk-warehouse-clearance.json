@@ -341,7 +341,7 @@
         "review_HPn4ct",
         "review_aizQxg"
       ],
-      "name": "KK Bewertungen",
+      "name": "KK Final Review",
       "settings": {
         "eyebrow": "Trustpilot",
         "heading": "Das sagen Kundinnen und Kunden",
@@ -389,7 +389,8 @@
       ],
       "name": "KK Lagerumzug FAQ",
       "settings": {
-        "heading": "Frequently Asked Questions"
+        "heading": "Frequently Asked Questions",
+        "bg_color": "#fcfbf8"
       }
     },
     "kk_final_banner_LEBAC7": {
@@ -441,7 +442,7 @@
         "subtext": "Umzug zu",
         "progress": 89,
         "scroll_target_id": "produkte",
-        "button_label": "Angebote →",
+        "button_label": "Angebote ↑",
         "button_link": "#kk-offer-product"
       }
     }
