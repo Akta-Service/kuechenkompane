@@ -94,6 +94,50 @@
         "bg_color": "#FCFBF8"
       }
     },
+    "kk_final_review_dPd9kN": {
+      "type": "kk-final-review",
+      "blocks": {
+        "review_c7a7cR": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Sehr gute Qualität",
+            "text": "„Die Produkte sind auf der Website sehr gut fotografiert und beschrieben, ohne dabei zu viel zu versprechen. Die Ware kam zum …\"",
+            "author": "Fam. Lemke · Verifiziert · Trustpilot"
+          }
+        },
+        "review_HPn4ct": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Sehr zufrieden",
+            "text": "„Das Messer weist eine optisch ansprechende und stabile Verarbeitung auf. Die Klinge ist außerordentlich scharf und …\"",
+            "author": "Lisa · Verifiziert · Trustpilot"
+          }
+        },
+        "review_aizQxg": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Ich war skeptisch, ob die Qualität passt",
+            "text": "„Ich war skeptisch, ob die Qualität der Messer im Vergleich zum Preis passen würde. Aber meine Frau war begeistert von …\"",
+            "author": "Benrdt B. · Verifiziert · Trustpilot"
+          }
+        }
+      },
+      "block_order": [
+        "review_c7a7cR",
+        "review_HPn4ct",
+        "review_aizQxg"
+      ],
+      "name": "KK Bewertungen",
+      "settings": {
+        "eyebrow": "Trustpilot",
+        "heading": "Das sagen Kundinnen und Kunden",
+        "subheading": "Bewertet mit „Exzellent\" — 3.735 Bewertungen",
+        "bg_color": "#FCFBF8"
+      }
+    },
     "kk_final_faq_nhxdC6": {
       "type": "kk-final-faq",
       "blocks": {
@@ -184,6 +228,7 @@
     "mrk_collection_grid_section_PKCq6B",
     "main",
     "kk_final_header_FKHbfC",
+    "kk_final_review_dPd9kN",
     "kk_final_faq_nhxdC6",
     "kk_final_banner_LEBAC7",
     "kk_final_footer_V9nrdh"
