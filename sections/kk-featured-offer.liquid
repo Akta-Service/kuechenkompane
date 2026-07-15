@@ -19,7 +19,6 @@
 
   <div class="kk-offer-wrapper">
     <div class="kk-offer-card">
-
       <div class="kk-offer-media" data-b2b-reveal>
         {%- if section.settings.badge != blank -%}
           <span class="kk-offer-media__badge">{{ section.settings.badge }}</span>
@@ -82,11 +81,23 @@
             {%- for block in section.blocks -%}
               <span class="kk-offer-trust" {{ block.shopify_attributes }}>
                 {%- if block.settings.icon == 'check' -%}
-                  <svg class="kk-offer-trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg>
+                  <svg class="kk-offer-trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle>
+                  </svg>
                 {%- elsif block.settings.icon == 'star' -%}
-                  <svg class="kk-offer-trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l2.2 4.6 5 .7-3.6 3.5.9 5L12 14.9 7.5 16.8l.9-5L4.8 8.3l5-.7z"></path></svg>
+                  <svg class="kk-offer-trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 3l2.2 4.6 5 .7-3.6 3.5.9 5L12 14.9 7.5 16.8l.9-5L4.8 8.3l5-.7z"></path>
+                  </svg>
                 {%- elsif block.settings.icon == 'shield' -%}
-                  <svg class="kk-offer-trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg
+                    class="kk-offer-trust__icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                   </svg>
                 {%- endif -%}
@@ -96,14 +107,13 @@
           </div>
         {%- endif -%}
       </div>
-
     </div>
   </div>
 
   <style>
     .kk-offer-section {
       background: #ffffff;
-      padding: clamp(40px,5vw,72px) 0;
+      padding: 1.8rem 0 3.6rem;
     }
 
     .kk-offer-wrapper {
