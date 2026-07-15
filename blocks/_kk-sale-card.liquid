@@ -87,7 +87,7 @@
     {%- endif -%}
 
     {%- if block.settings.button_label != blank -%}
-      <a class="kk-sale-card__btn" href="{{ card_link | default: '#' }}">
+      <a class="kk-sale-card__btn" href="{{ card_link }}">
         {{ block.settings.button_label }}
         <span aria-hidden="true">→</span>
       </a>
