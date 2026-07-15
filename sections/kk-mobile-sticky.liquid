@@ -36,7 +36,7 @@
       {%- endif -%}
     </div>
     {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
-      <a class="kk-btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+      <a class="kk-btn" href="#" data-target="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
     {%- endif -%}
   </div>
 </div>
@@ -59,6 +59,26 @@
     }
     window.addEventListener('scroll', onScroll, {passive:true});
     onScroll();
+
+    var btn = root.querySelector('.kk-btn');
+    if(btn){
+      btn.addEventListener('click', function(e){
+        e.preventDefault(); // পেজ রিলোড বন্ধ
+        var targetLink = btn.getAttribute('data-target') || '#';
+        
+        if(targetLink.startsWith('#')){
+          var sectionId = targetLink.substring(1); 
+          var sectionElement = document.getElementById(sectionId);
+          if(sectionElement){
+            sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        } else {
+          window.open(targetLink, '_blank');
+        }
+      });
+    }
   })();
 </script>
 
