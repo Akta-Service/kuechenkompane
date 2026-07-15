@@ -93,12 +93,23 @@
         "trust_text": "★ „Exzellent\" · 3.735 Bewertungen",
         "bg_color": "#FCFBF8"
       }
+    },
+    "kk_final_footer_V9nrdh": {
+      "type": "kk-final-footer",
+      "name": "KK Final Footer",
+      "settings": {
+        "brand_name": "Küchenkompane",
+        "tagline": "· Offizieller Lagerverkauf wegen Umzug",
+        "disclaimer": "Angebote, Preise, Rabatte und Verfügbarkeiten gelten vorbehaltlich des jeweiligen Lagerbestands. Es gelten die Rechtstexte des Küchenkompane-Shops (Impressum, Datenschutz, AGB, Widerruf — siehe Shop-Footer).",
+        "copyright": "© 2026 Küchenkompane · Alle Rechte vorbehalten"
+      }
     }
   },
   "order": [
     "collection-header",
     "mrk_collection_grid_section_PKCq6B",
     "main",
-    "kk_final_header_FKHbfC"
+    "kk_final_header_FKHbfC",
+    "kk_final_footer_V9nrdh"
   ]
 }
