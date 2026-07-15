@@ -50,13 +50,15 @@
 <div class="kk-sale-card" data-b2b-reveal {{ block.shopify_attributes }}>
   <div class="kk-sale-card__media">
     {%- if card_image != blank -%}
-      <img
-        src="{{ card_image | image_url: width: 800 }}"
-        alt="{{ card_title | escape }}"
-        loading="lazy"
-        width="{{ card_image.width }}"
-        height="{{ card_image.height }}"
-      >
+      <a href="{{  card_link }}">
+        <img
+          src="{{ card_image | image_url: width: 800 }}"
+          alt="{{ card_title | escape }}"
+          loading="lazy"
+          width="{{ card_image.width }}"
+          height="{{ card_image.height }}"
+        >
+      </a>
     {%- else -%}
       <div class="kk-sale-card__placeholder">Select a product</div>
     {%- endif -%}
