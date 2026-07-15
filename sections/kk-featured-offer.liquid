@@ -14,7 +14,7 @@
   endif
 -%}
 
-<section class="kk-offer-section" id="kk-offer-{{ section.id }}">
+<section class="kk-offer-section" id="kk-offer-{{ section.id }} {{ section.settings.dynamic_id }}">
   {% render 'b2b-reveal' %}
 
   <div class="kk-offer-wrapper">
@@ -351,6 +351,12 @@
   "tag": "section",
   "max_blocks": 4,
   "settings": [
+    {
+      "type": "text",
+      "id": "dynamic_id",
+      "label": "Add Section ID name",
+      "default": "kk-offer-product"
+    },
     {
       "type": "product",
       "id": "product",
