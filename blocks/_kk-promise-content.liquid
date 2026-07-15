@@ -1,0 +1,77 @@
+<div class="kk-promise-content" data-b2b-reveal style="animation-delay: .1s" {{ block.shopify_attributes }}>
+  {%- if block.settings.eyebrow != blank -%}
+    <p class="kk-promise-content__eyebrow">{{ block.settings.eyebrow }}</p>
+  {%- endif -%}
+
+  {%- if block.settings.heading != blank -%}
+    <h2 class="kk-promise-content__heading">{{ block.settings.heading | newline_to_br }}</h2>
+  {%- endif -%}
+
+  <div class="kk-promise-content__items">
+    {% content_for 'blocks' %}
+  </div>
+</div>
+
+<style>
+  .kk-promise-content__eyebrow {
+    font-size: .72rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 0 .5rem;
+    color: #fa8526;
+  }
+
+  .kk-promise-content__heading {
+    font-weight: 600;
+    font-size: clamp(1.45rem, 4vw, 1.95rem);
+    margin: 0 0 1.1rem;
+    line-height: 1.6;
+    color: #222222;
+  }
+
+  .kk-promise-content__items {
+    display: grid;
+    gap: .85rem;
+  }
+
+  .kk-promise-content__items > .kk-promise-item:nth-child(1) { animation-delay: .2s; }
+  .kk-promise-content__items > .kk-promise-item:nth-child(2) { animation-delay: .3s; }
+  .kk-promise-content__items > .kk-promise-item:nth-child(3) { animation-delay: .4s; }
+  .kk-promise-content__items > .kk-promise-item:nth-child(4) { animation-delay: .5s; }
+</style>
+
+{% schema %}
+{
+  "name": "KK Promise content",
+  "tag": null,
+  "blocks": [
+    { "type": "_kk-promise-item" }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Das Küchenkompane-Versprechen"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Kaufen ohne Risiko — auch im Lagerverkauf"
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Promise content",
+      "category": "Content",
+      "blocks": [
+        { "type": "_kk-promise-item" },
+        { "type": "_kk-promise-item" },
+        { "type": "_kk-promise-item" }
+      ]
+    }
+  ]
+}
+{% endschema %}

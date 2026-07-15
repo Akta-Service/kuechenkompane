@@ -1,0 +1,88 @@
+<section class="kk-promise-section" id="kk-promise-{{ section.id }}">
+  {% render 'b2b-reveal' %}
+
+  <div class="kk-promise-wrapper">
+    <div class="kk-promise-grid">
+      {% content_for 'blocks' %}
+    </div>
+  </div>
+
+  <style>
+    .kk-promise-section {
+      background: #ebf2e8;
+      padding: 3rem 0;
+    }
+
+    .kk-promise-wrapper {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.1rem;
+    }
+
+    .kk-promise-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 2.6rem;
+      align-items: center;
+    }
+
+    .kk-promise-grid > * {
+      min-width: 0;
+    }
+
+    @media screen and (max-width: 769px) {
+      .kk-promise-grid {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "KK Promise",
+  "blocks": [
+    { "type": "_kk-promise-media" },
+    { "type": "_kk-promise-content" }
+  ],
+  "presets": [
+    {
+      "name": "KK Promise",
+      "category": "Content",
+      "blocks": [
+        { "type": "_kk-promise-media" },
+        {
+          "type": "_kk-promise-content",
+          "blocks": [
+            {
+              "type": "_kk-promise-item",
+              "settings": {
+                "icon": "check",
+                "title": "100 Tage Geld-zurück-Garantie",
+                "description": "Nicht überzeugt? Volle Rückerstattung — 100 Tage lang."
+              }
+            },
+            {
+              "type": "_kk-promise-item",
+              "settings": {
+                "icon": "star",
+                "title": "365 Tage Schärfegarantie",
+                "description": "Ein ganzes Jahr garantierte Schärfe — auch bei den Aktionsmodellen."
+              }
+            },
+            {
+              "type": "_kk-promise-item",
+              "settings": {
+                "icon": "truck",
+                "title": "Kostenloser Versand",
+                "description": "Keine Versandkosten — direkt aus dem Lager, bevor es umzieht."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

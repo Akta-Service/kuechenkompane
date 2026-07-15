@@ -1,0 +1,444 @@
+{%- liquid
+  assign prod = section.settings.product
+
+  assign card_price = ''
+  assign card_old_price = ''
+  assign card_save = ''
+  if prod != blank
+    assign card_price = prod.price | money
+    if prod.compare_at_price > prod.price
+      assign card_old_price = prod.compare_at_price | money
+      assign save_label = section.settings.save_label | default: 'Sie sparen'
+      assign card_save = prod.compare_at_price | minus: prod.price | money | prepend: ' ' | prepend: save_label
+    endif
+  endif
+-%}
+
+<section class="kk-offer-section" id="kk-offer-{{ section.id }}">
+  {% render 'b2b-reveal' %}
+
+  <div class="kk-offer-wrapper">
+    <div class="kk-offer-card">
+
+      <div class="kk-offer-media" data-b2b-reveal>
+        {%- if section.settings.badge != blank -%}
+          <span class="kk-offer-media__badge">{{ section.settings.badge }}</span>
+        {%- endif -%}
+
+        {%- if prod.featured_image != blank -%}
+          <img
+            class="kk-offer-media__img"
+            src="{{ prod.featured_image | image_url: width: 1200 }}"
+            alt="{{ prod.title | escape }}"
+            loading="lazy"
+            width="{{ prod.featured_image.width }}"
+            height="{{ prod.featured_image.height }}"
+          >
+        {%- else -%}
+          <div class="kk-offer-media__placeholder">Select a product</div>
+        {%- endif -%}
+      </div>
+
+      <div class="kk-offer-content" data-b2b-reveal style="animation-delay: .1s">
+        {%- if prod != blank -%}
+          <h3 class="kk-offer-title">{{ prod.title }}</h3>
+
+          <div class="kk-offer-text">{{ prod.description | strip_html | truncate: 160 }}</div>
+
+          <div class="kk-offer-price">
+            {%- if card_old_price != blank -%}
+              <p class="kk-offer-price__compare">
+                {{ section.settings.compare_label }}
+                <s>{{ card_old_price }}</s>
+              </p>
+            {%- endif -%}
+
+            <div class="kk-offer-price__row">
+              <span class="kk-offer-price__value">{{ card_price }}</span>
+              {%- if card_save != blank -%}
+                <span class="kk-offer-price__save">{{ card_save }}</span>
+              {%- endif -%}
+            </div>
+
+            {%- if section.settings.note != blank -%}
+              <p class="kk-offer-price__note">{{ section.settings.note }}</p>
+            {%- endif -%}
+          </div>
+
+          <div class="kk-offer-button">
+            <a class="kk-offer-button__cta" href="{{ prod.url }}">
+              {{ section.settings.button_label }}
+              <span class="kk-offer-button__arrow" aria-hidden="true">→</span>
+            </a>
+
+            {%- if section.settings.subtext != blank -%}
+              <p class="kk-offer-button__subtext">{{ section.settings.subtext }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <div class="kk-offer-trust-group">
+            {%- for block in section.blocks -%}
+              <span class="kk-offer-trust" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon == 'check' -%}
+                  <svg class="kk-offer-trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg>
+                {%- elsif block.settings.icon == 'star' -%}
+                  <svg class="kk-offer-trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l2.2 4.6 5 .7-3.6 3.5.9 5L12 14.9 7.5 16.8l.9-5L4.8 8.3l5-.7z"></path></svg>
+                {%- elsif block.settings.icon == 'shield' -%}
+                  <svg class="kk-offer-trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                {%- endif -%}
+                {{ block.settings.text }}
+              </span>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    .kk-offer-section {
+      background: #ffffff;
+      padding: clamp(40px,5vw,72px) 0;
+    }
+
+    .kk-offer-wrapper {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.1rem;
+    }
+
+    .kk-offer-card {
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 1.3rem;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      align-items: stretch;
+      box-shadow: 0 30px 70px -30px rgba(50, 74, 52, 0.51);
+    }
+
+    .kk-offer-card > * {
+      min-width: 0;
+    }
+
+    .kk-offer-media {
+      position: relative;
+      background: #ffffff;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .kk-offer-media__badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #fa8526ce, #fa8526);
+      color: #ffffff;
+      padding: .4rem .7rem;
+      border-radius: 5px;
+      box-shadow: 0 6px 16px -6px rgba(250, 133, 38, 0.5);
+      z-index: 1;
+    }
+
+    .kk-offer-media__img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .kk-offer-media__placeholder {
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #444444;
+      width: 100%;
+    }
+
+    .kk-offer-content {
+      background: #324a34;
+      color: #ffffff;
+      padding: 2.2rem 2.4rem;
+      border-left: 2px solid #fa8526;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .kk-offer-title {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin: 0 0 .35rem;
+      line-height: 1.6;
+      color: #ffffff;
+    }
+
+    .kk-offer-text {
+      font-size: .92rem;
+      line-height: 1.6;
+      margin: 0 0 1rem;
+      color: rgba(255,255,255,.78);
+    }
+
+    .kk-offer-price {
+      margin-bottom: 24px;
+    }
+
+    .kk-offer-price__compare {
+      font-size: .92rem;
+      line-height: 1.55;
+      margin: 0 0 1rem;
+      color: rgba(255,255,255,.78);
+    }
+
+    .kk-offer-price__compare s {
+      color: #e84e4e;
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+
+    .kk-offer-price__row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin: 0 0 .3rem;
+    }
+
+    .kk-offer-price__value {
+      font-size: 2.4rem;
+      line-height: 1;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .kk-offer-price__save {
+      color: #ffffff;
+      background: linear-gradient(135deg, #fa8526c2, #fa8526);
+      font-weight: 800;
+      font-size: .82rem;
+      border-radius: 100px;
+      padding: .4rem .8rem;
+      white-space: nowrap;
+    }
+
+    .kk-offer-price__note {
+      font-size: .92rem;
+      line-height: 1.55;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .kk-offer-button__cta {
+      min-height: 60px;
+      font-size: 1.08rem;
+      letter-spacing: .03em;
+      width: 100%;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      justify-content: center;
+      padding: .9rem 2.2rem;
+      border-radius: 9px;
+      text-decoration: none;
+      background: linear-gradient(160deg, #fa8526bb 0%, #fa8526 55%, #af550cff 130%);
+      color: #ffffff;
+      border: 1px solid rgba(250, 133, 38, 0.6);
+      box-shadow: 0 12px 28px -12px #fa8526a6, inset 0 1px 0 rgba(255, 255, 255, .45);
+      transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kk-offer-button__cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+      box-shadow: 0 16px 34px -12px #fa8526bf, inset 0 1px 0 rgba(255, 255, 255, .45);
+    }
+
+    .kk-offer-button__cta:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -60%;
+      width: 36%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .42), transparent);
+      transform: skewX(-20deg);
+      animation: kk-offer-shine 3.6s infinite;
+    }
+
+    @keyframes kk-offer-shine {
+      0% { left: -60%; }
+      55% { left: 135%; }
+      100% { left: 135%; }
+    }
+
+    .kk-offer-button__arrow {
+      font-size: 15px;
+    }
+
+    .kk-offer-button__subtext {
+      font-size: .92rem;
+      line-height: 1.55;
+      margin: .8rem 0 0;
+      color: rgba(255,255,255,.65);
+    }
+
+    .kk-offer-trust-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem .95rem;
+      font-size: .76rem;
+      margin-top: 1rem;
+    }
+
+    .kk-offer-trust {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: 13px;
+      color: rgba(255,255,255,.78);
+    }
+
+    .kk-offer-trust__icon {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+      color: #fa8526;
+    }
+
+    @media screen and (max-width: 759px) {
+      .kk-offer-card {
+        grid-template-columns: 1fr;
+      }
+
+      .kk-offer-media {
+        padding: 1.2rem;
+      }
+
+      .kk-offer-content {
+        padding: 1.5rem 1.3rem 1.7rem;
+        border-left: none;
+        border-top: 2px solid #fa8526;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .kk-offer-button__cta {
+        min-height: 52px;
+        padding: .7rem 1.2rem;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "KK Featured Offer",
+  "tag": "section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge text",
+      "default": "Grösste Ersparnis"
+    },
+    {
+      "type": "text",
+      "id": "compare_label",
+      "label": "Compare price label",
+      "default": "Normalpreis:"
+    },
+    {
+      "type": "text",
+      "id": "save_label",
+      "label": "Save badge label",
+      "info": "Label text only — the amount is calculated automatically from the product prices.",
+      "default": "Sie sparen"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "Nur noch Restbestand — wird nicht zum Aktionspreis nachbestellt."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Angebot sichern"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Button subtext",
+      "default": "Kostenloser Versand · Sichere Bestellung im Küchenkompane-Shop"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust",
+      "name": "Trust item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "check", "label": "Check" },
+            { "value": "star", "label": "Star" },
+            { "value": "shield", "label": "Shield" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "100 Tage Geld-zurück"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Featured Offer",
+      "blocks": [
+        {
+          "type": "trust",
+          "settings": {
+            "icon": "check",
+            "text": "100 Tage Geld-zurück"
+          }
+        },
+        {
+          "type": "trust",
+          "settings": {
+            "icon": "star",
+            "text": "365 Tage Schärfegarantie"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

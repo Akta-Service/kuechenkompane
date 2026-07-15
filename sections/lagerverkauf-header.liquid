@@ -1,0 +1,110 @@
+<section class="lagerverkauf-header" id="lagerverkauf-{{ section.id }}">
+  {% render 'b2b-reveal' %}
+
+  <div class="lagerverkauf-header__wrap" data-b2b-reveal>
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="lagerverkauf-header__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank or section.settings.heading_accent != blank -%}
+      <h2 class="lagerverkauf-header__heading">
+        {{- section.settings.heading -}}
+        {%- if section.settings.heading_accent != blank -%}
+          <em class="lagerverkauf-header__accent">&nbsp;{{ section.settings.heading_accent }}</em>
+        {%- endif -%}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.settings.subtext != blank -%}
+      <p class="lagerverkauf-header__subtext">{{ section.settings.subtext }}</p>
+    {%- endif -%}
+  </div>
+
+  <style>
+    .lagerverkauf-header {
+      background: #ffffff;
+      padding: 2.4rem 1.1rem .6rem;
+    }
+
+    .lagerverkauf-header__wrap {
+      max-width: 1070px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .lagerverkauf-header__eyebrow {
+      font-size: .72rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 0 .8rem;
+      color: #fa8526;
+    }
+
+    .lagerverkauf-header__heading {
+      font-weight: 600;
+      font-size: clamp(2rem, 6vw, 3.1rem);
+      line-height: 1.06;
+      letter-spacing: -.01em;
+      margin: 0 auto .55rem;
+      max-width: 20ch;
+      color: #222222;
+    }
+
+    .lagerverkauf-header__accent {
+      font-style: italic;
+      color: #fa8526;
+    }
+
+    .lagerverkauf-header__subtext {
+      font-size: 1rem;
+      max-width: 30rem;
+      margin: 0 auto;
+      color: #444444;
+    }
+
+    @media screen and (max-width: 759px) {
+      .lagerverkauf-header {
+        padding: 1.8rem 1.1rem .4rem;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Lagerverkauf Header",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Offizieller Lagerverkauf"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Letzte Chance:"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent (italic)",
+      "default": "bis zu −80 %"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Der Umzug endet — die Aktionspreise auch."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lagerverkauf Header"
+    }
+  ]
+}
+{% endschema %}

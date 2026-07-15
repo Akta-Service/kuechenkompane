@@ -1,0 +1,116 @@
+<div class="kk-promise-item" data-b2b-reveal {{ block.shopify_attributes }}>
+  <span class="kk-promise-item__icon">
+    {%- if block.settings.icon == 'check' -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="8 12.5 11 15.5 16 9.5"/>
+      </svg>
+    {%- elsif block.settings.icon == 'star' -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </svg>
+    {%- elsif block.settings.icon == 'truck' -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1" y="5" width="14" height="12" rx="1"/>
+        <path d="M15 9h4l3 3v5h-7"/>
+        <circle cx="6" cy="18.5" r="1.8"/>
+        <circle cx="18" cy="18.5" r="1.8"/>
+      </svg>
+    {%- elsif block.settings.icon == 'shield' -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    {%- endif -%}
+  </span>
+
+  <div class="kk-promise-item__body">
+    {%- if block.settings.title != blank -%}
+      <p class="kk-promise-item__title">{{ block.settings.title }}</p>
+    {%- endif -%}
+    {%- if block.settings.description != blank -%}
+      <p class="kk-promise-item__description">{{ block.settings.description }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .kk-promise-item {
+    display: flex;
+    gap: .95rem;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.15rem;
+    border: 1px solid #eeeeee;
+  }
+
+  .kk-promise-item__icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fa85261e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #fa8526;
+    color: #222222;
+  }
+
+  .kk-promise-item__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .kk-promise-item__title {
+    font-size: .92rem;
+    line-height: 1.5;
+    color: #222222;
+  }
+
+  .kk-promise-item__description {
+    font-size: .92rem;
+    line-height: 1.5;
+    color: #444444;
+    margin: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "KK Promise item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "Icon",
+      "options": [
+        { "value": "check", "label": "Check" },
+        { "value": "star", "label": "Star" },
+        { "value": "truck", "label": "Truck" },
+        { "value": "shield", "label": "Shield" }
+      ],
+      "default": "check"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "100 Tage Geld-zurück-Garantie"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Nicht überzeugt? Volle Rückerstattung — 100 Tage lang."
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Promise item",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

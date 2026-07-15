@@ -1,0 +1,144 @@
+<section class="kk-rechnung-section" id="kk-rechnung-{{ section.id }}">
+  {% render 'b2b-reveal' %}
+
+  <div class="kk-rechnung-wrapper">
+    <div class="kk-rechnung-head" data-b2b-reveal>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="kk-rechnung-head__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="kk-rechnung-head__heading">{{ section.settings.heading | newline_to_br }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="kk-rechnung-cards">
+      {% content_for 'blocks' %}
+    </div>
+
+    {%- if section.settings.footnote != blank -%}
+      <p class="kk-rechnung-footnote" data-b2b-reveal style="animation-delay: .5s">{{ section.settings.footnote }}</p>
+    {%- endif -%}
+  </div>
+
+  <style>
+    .kk-rechnung-section {
+      background: #324a34;
+      padding: 2.8rem 0;;
+    }
+
+    .kk-rechnung-wrapper {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.1rem;
+    }
+
+    .kk-rechnung-head {
+      text-align: center;
+    }
+
+    .kk-rechnung-head__eyebrow {
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 0 .5rem;
+      color: #fa8526;
+    }
+
+    .kk-rechnung-head__heading {
+      font-weight: 600;
+      font-size: clamp(1.45rem, 4vw, 1.95rem);
+      text-align: center;
+      margin: 0 0 1.6rem;
+      color: #fff;
+    }
+
+    .kk-rechnung-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .9rem;
+      max-width: 44rem;
+      margin: 0 auto;
+    }
+
+    .kk-rechnung-cards > .kk-rechnung-card:nth-child(1) { animation-delay: .15s; }
+    .kk-rechnung-cards > .kk-rechnung-card:nth-child(2) { animation-delay: .25s; }
+    .kk-rechnung-cards > .kk-rechnung-card:nth-child(3) { animation-delay: .35s; }
+    .kk-rechnung-cards > .kk-rechnung-card:nth-child(4) { animation-delay: .45s; }
+
+    .kk-rechnung-footnote {
+      text-align: center;
+      font-size: .78rem;
+      margin: 1.3rem auto 0;
+      max-width: 40rem;
+      color: rgba(255,255,255,.65);
+    }
+
+    @media screen and (max-width: 759px) {
+      .kk-rechnung-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "KK Rechnung",
+  "blocks": [
+    { "type": "_kk-rechnung-card" }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Warum so günstig?"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Die Rechnung hinter den Rabatten"
+    },
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Footnote",
+      "default": "Keine Insolvenz, keine Geschäftsaufgabe, keine B-Ware: reduziert wird reguläre Lagerware vor dem Umzug."
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Rechnung",
+      "category": "Content",
+      "blocks": [
+        {
+          "type": "_kk-rechnung-card",
+          "settings": {
+            "number": "1",
+            "lead": "Das Lager zieht um.",
+            "text": "Jede Palette, jeder Karton und jedes Kilogramm verursacht Transportkosten."
+          }
+        },
+        {
+          "type": "_kk-rechnung-card",
+          "settings": {
+            "number": "2",
+            "lead": "Verkaufen statt transportieren.",
+            "text": "Was vorher verkauft wird, muss nicht mehr verpackt und verladen werden."
+          }
+        },
+        {
+          "type": "_kk-rechnung-card",
+          "settings": {
+            "number": "3",
+            "lead": "Endspurt.",
+            "text": "Die Aktion endet mit dem Umzug — danach gelten wieder Normalpreise. Was ausverkauft ist, kommt nicht zurück."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

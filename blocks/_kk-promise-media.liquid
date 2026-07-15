@@ -1,0 +1,74 @@
+<figure class="kk-promise-media" data-b2b-reveal {{ block.shopify_attributes }}>
+  {%- if block.settings.image != blank -%}
+    <img
+      src="{{ block.settings.image | image_url: width: 1000 }}"
+      alt="{{ block.settings.caption | escape }}"
+      loading="lazy"
+      width="{{ block.settings.image.width }}"
+      height="{{ block.settings.image.height }}"
+    >
+  {%- else -%}
+    <div class="kk-promise-media__placeholder">Add image</div>
+  {%- endif -%}
+
+  {%- if block.settings.caption != blank -%}
+    <figcaption class="kk-promise-media__caption">{{ block.settings.caption }}</figcaption>
+  {%- endif -%}
+</figure>
+
+<style>
+  .kk-promise-media {
+    margin: 0;
+  }
+
+  .kk-promise-media img {
+    width: 100%;
+    height: 900px;
+    display: block;
+    border-radius: 14px;
+    box-shadow: 0 26px 60px -28px #324a3466;
+  }
+
+  .kk-promise-media__placeholder {
+    aspect-ratio: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 10px;
+    color: #444444;
+  }
+
+  .kk-promise-media__caption {
+    font-size: .74rem;
+    margin-top: .6rem;
+    line-height: 1.45;
+    color: #444444;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "KK Promise media",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption",
+      "default": "Die letzten Paletten werden verladen — verkauft wird, was nicht mit umzieht. (Symbolbild)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Promise media",
+      "category": "Media"
+    }
+  ]
+}
+{% endschema %}

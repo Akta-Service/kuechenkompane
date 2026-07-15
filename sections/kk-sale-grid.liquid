@@ -1,0 +1,132 @@
+<section class="kk-sale-section" id="kk-sale-{{ section.id }}">
+  {% render 'b2b-reveal' %}
+
+  <div class="kk-sale-wrapper">
+    <div class="kk-sale-grid">
+      {% content_for 'blocks' %}
+    </div>
+
+    {%- if section.settings.view_all_label != blank -%}
+      <div class="kk-sale-footer" data-b2b-reveal style="animation-delay: .5s">
+        <a class="kk-sale-footer__btn" href="{{ section.settings.view_all_link | default: '#' }}">
+          {{ section.settings.view_all_label }}
+          <span aria-hidden="true">→</span>
+        </a>
+        {%- if section.settings.footnote != blank -%}
+          <p class="kk-sale-footer__note">{{ section.settings.footnote }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <style>
+    .kk-sale-section {
+      background: transparent;
+      padding-bottom: 3.6rem;
+    }
+
+    .kk-sale-wrapper {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.1rem;
+    }
+
+    .kk-sale-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .75rem;
+    }
+
+    .kk-sale-grid > .kk-sale-card:nth-child(1) { animation-delay: .1s; }
+    .kk-sale-grid > .kk-sale-card:nth-child(2) { animation-delay: .2s; }
+    .kk-sale-grid > .kk-sale-card:nth-child(3) { animation-delay: .3s; }
+    .kk-sale-grid > .kk-sale-card:nth-child(4) { animation-delay: .4s; }
+    .kk-sale-grid > .kk-sale-card:nth-child(5) { animation-delay: .5s; }
+    .kk-sale-grid > .kk-sale-card:nth-child(6) { animation-delay: .6s; }
+    .kk-sale-grid > .kk-sale-card:nth-child(7) { animation-delay: .7s; }
+    .kk-sale-grid > .kk-sale-card:nth-child(8) { animation-delay: .8s; }
+
+    .kk-sale-footer {
+      margin: 1.6rem auto 0;
+      text-align: center;
+    }
+
+    .kk-sale-footer__btn {
+      background: transparent;
+      color: #324a34;
+      border: 1.5px solid #324a34;
+      box-shadow: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      justify-content: center;
+      padding: .9rem 2.2rem;
+      border-radius: 9px;
+      text-decoration: none;
+      transition: transform .12s ease, box-shadow .2s ease, background .2s ease, filter .2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kk-sale-footer__btn:hover {
+      background: #ebf2e8;
+      transform: translateY(-2px);
+    }
+
+    .kk-sale-footer__note {
+      font-size: .74rem;
+      font-weight: 600;
+      margin: .8rem 0 0;
+      text-align: center;
+      color: #444444;
+    }
+
+    @media screen and (max-width: 1079px) {
+      .kk-sale-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media screen and (max-width: 759px) {
+      .kk-sale-section {
+        padding-bottom: 3rem;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "KK Sale Grid",
+  "blocks": [
+    {
+      "type": "_kk-sale-card"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "View-all button label",
+      "default": "Alle Lagerumzug-Angebote ansehen"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View-all link"
+    },
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Footnote",
+      "default": "Weitere Sets & Einzelmesser im Restbestand · Nur bis zum Abschluss des Umzugs"
+    }
+  ],
+  "presets": [
+    {
+      "name": "KK Sale Grid",
+    }
+  ]
+}
+{% endschema %}
