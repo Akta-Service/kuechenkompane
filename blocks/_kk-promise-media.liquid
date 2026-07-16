@@ -1,12 +1,23 @@
 <figure class="kk-promise-media" data-b2b-reveal {{ block.shopify_attributes }}>
-  {%- if block.settings.image != blank -%}
-    <img
-      src="{{ block.settings.image | image_url: width: 1000 }}"
-      alt="{{ block.settings.caption | escape }}"
-      loading="lazy"
-      width="{{ block.settings.image.width }}"
-      height="{{ block.settings.image.height }}"
-    >
+  {%- if block.settings.image != blank or block.settings.image_mobile != blank -%}
+    {%- assign main_image = block.settings.image | default: block.settings.image_mobile -%}
+    {%- assign mobile_image = block.settings.image_mobile | default: block.settings.image -%}
+
+    <picture>
+      {%- if block.settings.image_mobile != blank -%}
+        <source
+          media="(max-width: 749px)"
+          srcset="{{ block.settings.image_mobile | image_url: width: 800 }}"
+        >
+      {%- endif -%}
+      <img
+        src="{{ main_image | image_url: width: 1000 }}"
+        alt="{{ block.settings.caption | escape }}"
+        loading="lazy"
+        width="{{ main_image.width }}"
+        height="{{ main_image.height }}"
+      >
+    </picture>
   {%- else -%}
     <div class="kk-promise-media__placeholder">Add image</div>
   {%- endif -%}
@@ -20,7 +31,6 @@
   .kk-promise-media {
     margin: 0;
   }
-
   .kk-promise-media img {
     width: 100%;
     height:100%;
@@ -28,7 +38,6 @@
     border-radius: 14px;
     box-shadow: 0 26px 60px -28px #324a3466;
   }
-
   .kk-promise-media__placeholder {
     aspect-ratio: 3 / 4;
     display: flex;
@@ -38,7 +47,6 @@
     border-radius: 10px;
     color: #444444;
   }
-
   .kk-promise-media__caption {
     font-size: .74rem;
     margin-top: .6rem;
@@ -55,12 +63,14 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Image",
+      "info": "Default / Desktop image"
     },
     {
       "type": "image_picker",
       "id": "image_mobile",
-      "label": "Mobile Image"
+      "label": "Mobile Image",
+      "info": "Optional. If empty, desktop image will be used on mobile."
     },
     {
       "type": "text",
