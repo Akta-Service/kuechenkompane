@@ -1386,88 +1386,6 @@
         "des_size": "p-medium"
       }
     },
-    "benefit_text_xKxLE4": {
-      "type": "benefit-text",
-      "blocks": {
-        "subtitle_jjqg9V": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": ""
-          }
-        },
-        "title_xDr4hL": {
-          "type": "title",
-          "settings": {
-            "title": "Gönn deinem Essen einen schönen Auftritt"
-          }
-        },
-        "description_i7zNEa": {
-          "type": "description",
-          "settings": {
-            "description": "Du gibst dir Mühe beim Kochen. Dann lass es auch so aussehen. Auf gutem Holz wirkt schon ein einfacher Aufschnitt nach was. Schneidebrett und Servierbrett in einem."
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_jjqg9V",
-        "title_xDr4hL",
-        "description_i7zNEa"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "media_type": "image",
-        "image": "shopify://shop_images/1920_IMG_1.png",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": false,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h3",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
-      }
-    },
-    "benefit_text_8UBA4L": {
-      "type": "benefit-text",
-      "blocks": {
-        "subtitle_NHfDpp": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": ""
-          }
-        },
-        "title_i43E36": {
-          "type": "title",
-          "settings": {
-            "title": "Gönn deinem Essen einen schönen Auftritt"
-          }
-        },
-        "description_EfzBbx": {
-          "type": "description",
-          "settings": {
-            "description": "Ein gutes Brett hat Gewicht. Es bleibt liegen, wenn du draufdrückst, statt über die Platte zu rutschen. Schneiden wird sicherer, und das merkst du beim ersten Mal."
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_NHfDpp",
-        "title_i43E36",
-        "description_EfzBbx"
-      ],
-      "settings": {
-        "color_scheme": "badge-hot",
-        "media_type": "image",
-        "image": "shopify://shop_images/1920_IMG_1.png",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "reverse": false,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 50,
-        "heading_type": "mrk-h3",
-        "sub_heading": "p-medium",
-        "des_size": "p-medium"
-      }
-    },
     "benefit_text_right_AFHFhC": {
       "type": "benefit-text-right",
       "blocks": {
@@ -2034,8 +1952,6 @@
     "product_explanation_video_xNFp3M",
     "magazine_quote_UQpqkk",
     "benefit_text_MCeGiV",
-    "benefit_text_xKxLE4",
-    "benefit_text_8UBA4L",
     "benefit_text_right_AFHFhC",
     "us_vs_them_8Tbqki",
     "expert_testimonial_adCtdF",
