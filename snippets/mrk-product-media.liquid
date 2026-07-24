@@ -216,13 +216,6 @@
       height: 18px;
     }
   }
-
-  {% comment %} border like issue  {% endcomment %}
-
-
-  .splide__list{
-    gap: 10px;
-  }
 </style>
 
 <div class="mrk-product-slider {% if section.settings.enable_sticky_info %}gallery--sticky{% endif %}">
@@ -335,7 +328,7 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  function initMrkProductGallery() {
     const isDesktop = window.innerWidth >= 1025;
 
     const thumbSlider = new Splide('#thumb-slider', {
@@ -371,7 +364,7 @@
       touchPower: 800,
       flickPower: 800,
       flickMaxPages: 1,
-      gap: 10,
+      gap: 0,
     });
 
     mainSlider.sync(thumbSlider);
@@ -430,5 +423,11 @@
         window.mrkLightbox.open(images, mainSlider.index);
       });
     }
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMrkProductGallery);
+  } else {
+    initMrkProductGallery();
+  }
 </script>
