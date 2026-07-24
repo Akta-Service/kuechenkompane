@@ -737,20 +737,6 @@
           </p>
         {% endif %}
 
-      {% when 'featurelist_item' %}
-        <div
-          class="product-feature-item"
-          style="            font-size: {{ block.settings.featurelist_item_size |  default: 14}}px;"
-        >
-          {% if block.settings.featurelist_item != blank %}
-            <img
-              src="https://cdn.shopify.com/s/files/1/0018/5329/2643/files/ok-icon.png?v=1739338478"
-              alt="Feature Icon"
-            >
-          {% endif %}
-          {{ block.settings.featurelist_item }}
-        </div>
-
       {% when 'paymentIcon' %}
         <div class="rs-payment-icons">
           {% if block.settings.payment_img != blank %}
