@@ -203,6 +203,239 @@
     {%- case block.type -%}
       {%- when '@app' -%}
         {% render block %}
+
+        <!-- new Design Pdp Blocks -->
+      {% when 'mrk_short_des' %}
+        {% if block.settings.mrk_source == 'richtext' %}
+          {% assign mrk_short_des = block.settings.mrk_richtext %}
+        {% else %}
+          {% assign mrk_short_des = product.metafields.custom.product_short_description %}
+        {% endif %}
+
+        {% if mrk_short_des != blank %}
+          <div class="mrk-short-des" {{ block.shopify_attributes }}>
+            {% if block.settings.mrk_source == 'richtext' %}
+              {{ mrk_short_des }}
+            {% else %}
+              {{ mrk_short_des | metafield_tag }}
+            {% endif %}
+          </div>
+        {% endif %}
+      {% when 'new_pdp_upsale' %}
+        {%- assign up_product = block.settings.upsell_product -%}
+        {%- if up_product != blank and up_product.available -%}
+          {%- assign up_variant = up_product.selected_or_first_available_variant -%}
+          {%- assign up_features = up_product.metafields.custom.upsell_features.value -%}
+          {%- assign up_image = up_variant.featured_image | default: up_product.featured_image -%}
+
+          <div class="pdp-upsell" {{ block.shopify_attributes }} data-upsell-wrapper>
+            <label class="pdp-upsell__inner" for="upsell-{{ block.id }}">
+              {%- comment -%} Left: product image {%- endcomment -%}
+              {%- if up_image != blank -%}
+                <div class="pdp-upsell__media">
+                  <img
+                    src="{{ up_image | image_url: width: 160 }}"
+                    alt="{{ up_image.alt | escape | default: up_product.title }}"
+                    width="100"
+                    height="100"
+                    loading="lazy"
+                  >
+                </div>
+              {%- endif -%}
+
+              {%- comment -%} Middle: title + features {%- endcomment -%}
+              <div class="pdp-upsell__body">
+                <h4 class="pdp-upsell__title">{{ block.settings.title | default: up_product.title }}</h4>
+
+                {%- if up_features != blank -%}
+                  <ul class="pdp-upsell__features">
+                    {%- for feat in up_features -%}
+                      <li class="pdp-upsell__feature">
+                        <svg
+                          class="pdp-upsell__check"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          aria-hidden="true"
+                        >
+                          <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>{{ feat }}</span>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </div>
+
+              {%- comment -%} Right: prices + checkbox {%- endcomment -%}
+              <div class="pdp-upsell__aside">
+                <input
+                  type="checkbox"
+                  id="upsell-{{ block.id }}"
+                  class="pdp-upsell__checkbox"
+                  data-upsell-toggle
+                  data-variant-id="{{ up_variant.id }}"
+                >
+                <span class="pdp-upsell__box" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+
+                <div class="pdp-upsell__prices">
+                  {%- if up_variant.compare_at_price > up_variant.price -%}
+                    <s class="pdp-upsell__compare">{{ up_variant.compare_at_price | money }}</s>
+                  {%- endif -%}
+                  <span class="pdp-upsell__price">+ {{ up_variant.price | money }}</span>
+                </div>
+              </div>
+            </label>
+          </div>
+        {%- endif -%}
+
+      {% when 'featurelist_item' %}
+        {% if block.settings.featurelist_icon != blank %}
+          {% assign feature_icon = block.settings.featurelist_icon | image_url: width: 60 %}
+        {% else %}
+          {% assign feature_icon = 'https://cdn.shopify.com/s/files/1/0018/5329/2643/files/ok-icon.png?v=1739338478' %}
+        {% endif %}
+        <div
+          class="product-feature-item"
+          style="font-size: {{ block.settings.featurelist_item_size | default: 14 }}px; color: {{ block.settings.featurelist_item_color }};"
+        >
+          {% if block.settings.featurelist_item != blank %}
+            <img
+              class="product-feature-icon{% if block.settings.invert_img %} is-inverted{% endif %}"
+              src="{{ feature_icon }}"
+              alt="Feature Icon"
+              width="20"
+              height="20"
+              loading="lazy"
+            >
+          {% endif %}
+          {{ block.settings.featurelist_item }}
+        </div>
+
+      {% when 'accordion_item' %}
+        {%- unless accordion_rendered -%}
+          {%- assign accordion_rendered = true -%}
+          <div class="pdp-accordion">
+            {%- for b in section.blocks -%}
+              {%- if b.type == 'accordion_item' -%}
+                <details
+                  class="pdp-accordion__item"
+                  {{ b.shopify_attributes -}}
+                  {% if b.settings.open_default %}
+                    open
+                  {% endif %}
+                >
+                  <summary class="pdp-accordion__summary">
+                    <span class="pdp-accordion__title">{{ b.settings.title }}</span>
+                    <svg
+                      class="pdp-accordion__icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </summary>
+                  <div class="pdp-accordion__content">
+                    {{ b.settings.content }}
+                  </div>
+                </details>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endunless -%}
+
+      {% when 'trust_feature' %}
+        {%- unless trust_rendered -%}
+          {%- assign trust_rendered = true -%}
+          <div class="trust-feature-card">
+            {%- for b in section.blocks -%}
+              {%- if b.type == 'trust_feature' -%}
+                <div class="trust-feature-row" {{ b.shopify_attributes }}>
+                  <span class="trust-feature-icon">
+                    {%- if b.settings.icon != blank -%}
+                      <img
+                        src="{{ b.settings.icon | image_url: width: 60 }}"
+                        alt="{{ b.settings.label | strip_html | escape }}"
+                        width="24"
+                        height="24"
+                        loading="lazy"
+                      >
+                    {%- elsif b.settings.emoji != blank -%}
+                      {{ b.settings.emoji }}
+                    {%- endif -%}
+                  </span>
+                  <span class="trust-feature-label">{{ b.settings.label }}</span>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endunless -%}
+
+      {% when 'product_option' %}
+        {%- unless product_option_rendered -%}
+          {%- assign product_option_rendered = true -%}
+          <div class="pdp-product-options" data-section-id="{{ section.id }}">
+            {%- for b in section.blocks -%}
+              {%- if b.type == 'product_option' -%}
+                {%- assign opt_product = b.settings.product -%}
+                {%- if opt_product != blank -%}
+                  {%- assign is_active = false -%}
+                  {%- if opt_product.handle == product.handle -%}
+                    {%- assign is_active = true -%}
+                  {%- endif -%}
+                  {%- assign opt_variant = opt_product.selected_or_first_available_variant -%}
+                  <a
+                    href="{{ opt_product.url }}"
+                    class="pdp-product-option{% if is_active %} is-active{% endif %}"
+                    data-product-handle="{{ opt_product.handle }}"
+                    {{ b.shopify_attributes }}
+                  >
+                    {%- if b.settings.badge_text != blank -%}
+                      <span
+                        class="pdp-product-option__badge"
+                        {% if b.settings.badge_color != blank %}
+                          style="background-color: {{ b.settings.badge_color }};"
+                        {% endif %}
+                      >
+                        {{- b.settings.badge_text -}}
+                      </span>
+                    {%- endif -%}
+                    {%- assign opt_image = opt_variant.featured_image | default: opt_product.featured_image -%}
+                    {%- if opt_image != blank -%}
+                      <div class="pdp-product-option__img">
+                        <img
+                          src="{{ opt_image | image_url: width: 200 }}"
+                          alt="{{ opt_product.title | escape }}"
+                          width="100"
+                          height="100"
+                          loading="lazy"
+                        >
+                      </div>
+                    {%- endif -%}
+                    <p class="pdp-product-option__title">{{ opt_product.title }}</p>
+                    <div class="pdp-product-option__prices">
+                      {%- if opt_variant.compare_at_price > opt_variant.price -%}
+                        <s class="pdp-product-option__compare">{{ opt_variant.compare_at_price | money }}</s>
+                      {%- endif -%}
+                      <span class="pdp-product-option__price">{{ opt_variant.price | money }}</span>
+                    </div>
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endunless -%}
+
+        <!-- new Design Pdp Blocks end -->
+
       {% when 'floow-alt-product' %}
         <div
           id="floow-alt-product"
