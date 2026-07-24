@@ -1,0 +1,550 @@
+<style>
+  .new-product-page{
+    .loox-rating.loox-widget {
+        margin-bottom: 16px;
+        border-bottom: 1px solid #AAAAAA;
+        padding-bottom: 12px;
+    }
+    .mrk-short-des {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22.4px;
+      letter-spacing: 0%;
+      color: #333333;
+      vertical-align: middle;
+      margin-bottom: 12px;
+   }
+   .trust-feature-card {
+        border: 1px solid #ececec;
+        border-radius: 12px;
+        padding: 12px 12px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .trust-feature-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .trust-feature-icon {
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        line-height: 1;
+    }
+    .trust-feature-icon img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+    .trust-feature-label {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1f1f1f;
+        line-height: 1.3;
+    }
+    .pdp-accordion {
+      border-top: 1px solid #e5e5e5;
+    }
+    .pdp-accordion__item {
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .pdp-accordion__summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 4px;
+      cursor: pointer;
+      list-style: none;
+      font-size: 17px;
+      font-weight: 500;
+      color: #1a1a1a;
+    }
+      /* default disclosure triangle hide */
+    .pdp-accordion__summary::-webkit-details-marker { display: none; }
+    .pdp-accordion__icon {
+      flex: 0 0 auto;
+      color: #1a1a1a;
+      transition: transform 0.25s ease;
+    }
+    .pdp-accordion__item[open] .pdp-accordion__icon {
+      transform: rotate(180deg);
+    }
+    .pdp-accordion__content {
+      padding: 0 4px 22px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+    }
+    .pdp-accordion__content p { margin: 0 0 10px; }
+    .pdp-accordion__content :last-child { margin-bottom: 0; }
+
+    .main-product__block.main-product__block-subtitle {
+        margin-top: 4px;
+        margin-bottom: 12px;
+    }
+    button.m-add-to-cart.rs-add-btn {
+        border-radius: 30px !important;
+    }
+    .rs-product-delivery{
+        color: #4caf50;
+        font-size: 16px;
+    }
+    .rs-product-delivery strong {
+        color: #4caf50;
+    }
+    button.m-add-to-cart.rs-add-btn {
+        margin-bottom: 0 !important;
+    }
+    .m-quantity {
+        border-radius: 30px;
+                overflow: hidden;
+    }
+    span.like-count:empty {
+        display: none;
+    }
+    .liked-img img {
+        border: 2px solid #5c5c5c;
+    }
+    .new-price-design__row {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .new-price-design .rs-current-price {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .new-price-design .discount-percentage {
+        text-transform: unset;
+    }
+    .product-feature-item img{
+        height: auto;
+    }
+    .mrk-short-des p:not(last-child) {
+        margin-bottom: 8px;
+    }
+    .pdp-upsell {
+      margin: 16px 0;
+    }
+    .pdp-upsell__inner {
+      display: flex;
+      align-items: center;        /* image-title-price উল্লম্বভাবে মাঝে */
+      gap: 14px;
+      border: 1px solid #ececec;
+      border-radius: 14px;
+      padding: 12px;
+      background: #fafafa;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+    .pdp-upsell:has(.pdp-upsell__checkbox:checked) .pdp-upsell__inner {
+      border-color: #ececec;
+    }
+
+    /* Left: image */
+    .pdp-upsell__media {
+      flex: 0 0 auto;
+    }
+    .pdp-upsell__media img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    /* Middle: title + features (takes remaining space) */
+    .pdp-upsell__body {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .pdp-upsell__title {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: #1a1a1a;
+    }
+    .pdp-upsell__features {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .pdp-upsell__feature {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      font-size: 14px;
+      color: #444;
+      font-weight: 600;
+    }
+    .pdp-upsell__check { color: #16a34a; flex: 0 0 auto; }
+
+    /* Right: prices + checkbox */
+    .pdp-upsell__aside {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      position: relative;
+    }
+    .pdp-upsell__checkbox {
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      width: 26px;
+      height: 26px;
+      margin: 0;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .pdp-upsell__box {
+      width: 26px;
+      height: 26px;
+      border: 2px solid #fa8526;
+      border-radius: 7px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      align-self: flex-end;
+      transition: background .15s;
+    }
+    .pdp-upsell__box svg { opacity: 0; transition: opacity .15s; }
+    .pdp-upsell__checkbox:checked + .pdp-upsell__box {
+      background: #fa8526;
+    }
+    .pdp-upsell__checkbox:checked + .pdp-upsell__box svg { opacity: 1; }
+    .pdp-upsell__prices {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      line-height: 1.25;
+    }
+    .pdp-upsell__compare {
+      font-size: 14px;
+      color: #9ca3af;
+      text-decoration: line-through;
+    }
+    .pdp-upsell__price {
+      font-size: 18px;
+      font-weight: 700;
+      color: #000000;
+    }
+    .m-product-form--input {
+      margin-right: 0;
+    }
+    .m-product-form--wrapper {
+      gap: 12px;
+      flex-wrap: nowrap;
+    }
+    .m-quantity__button {
+      width: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0000000a;
+    }
+
+
+
+
+
+
+
+
+    {% comment %} responsive  {% endcomment %}
+     @media (max-width: 475px){
+      .pdp-upsell__media img {
+        width: 70px;
+        height: 70px;
+      }
+      .pdp-upsell__price {
+        font-size: 14px;
+      }
+      .pdp-upsell__box {
+        width: 24px;
+        height: 24px;
+      }
+      .pdp-upsell__inner {
+        gap: 8px;
+      }
+      .pdp-upsell__title {
+        font-size: 14px;
+      }
+      .trust-feature-label {
+        font-size: 14px;
+      }
+      .pdp-accordion__summary {
+        font-size: 16px;
+        padding: 12px 4px;
+      }
+      .m-product-form--input {
+        min-width: 0;
+        max-width: 110px;
+      }
+      .product-feature-item img {
+        width: 20px;
+      }
+     }
+
+    /* Product Option Cards */
+    .pdp-product-options {
+      display: flex;
+      gap: 12px;
+      margin: 18px 0 8px;
+    }
+    .pdp-product-option {
+      flex: 1;
+      border: 2px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 10px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      background: #fff;
+    }
+    .pdp-product-option:hover {
+      border-color: #aaa;
+    }
+    .pdp-product-option.is-active {
+      border-color: #7c3aed;
+      background: #faf5ff;
+    }
+    .pdp-product-option__badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #7c3aed;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 20px;
+      padding: 3px 10px;
+      white-space: nowrap;
+      line-height: 1.5;
+      z-index: 1;
+    }
+    .pdp-product-option__img {
+      width: 100%;
+    }
+    .pdp-product-option__img img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+    .pdp-product-option__title {
+      font-size: 13px;
+      font-weight: 400;
+      margin: 0;
+      text-align: center;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+    .pdp-product-option__prices {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+    }
+    .pdp-product-option__compare {
+      font-size: 12px;
+      color: #9ca3af;
+      text-decoration: line-through;
+    }
+    .pdp-product-option__price {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    .pdp-product-option.is-loading {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    @media (max-width: 475px) {
+      .pdp-product-options {
+        gap: 8px;
+      }
+      .pdp-product-option {
+        padding: 8px 6px;
+      }
+      .pdp-product-option__title {
+        font-size: 11px;
+      }
+      .pdp-product-option__price {
+        font-size: 12px;
+      }
+    }
+
+    /* this brecket for nested class */
+  }
+</style>
+
+<script>
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var sectionEl = document.querySelector('[data-section-type="product-page"][data-section-id]');
+      if (!sectionEl) return;
+
+      var sectionId = sectionEl.getAttribute('data-section-id');
+      var prefetchCache = {};
+      var isBusy = false;
+
+      function getOptions() {
+        return Array.from(sectionEl.querySelectorAll('.pdp-product-option[data-product-handle]'));
+      }
+
+      function prefetchAll() {
+        getOptions().forEach(function (el) {
+          var handle = el.getAttribute('data-product-handle');
+          if (!handle || prefetchCache[handle] || el.classList.contains('is-active')) return;
+          prefetchCache[handle] = 'pending';
+          fetch('/products/' + encodeURIComponent(handle) + '?sections=' + encodeURIComponent(sectionId))
+            .then(function (r) {
+              return r.ok ? r.json() : null;
+            })
+            .then(function (data) {
+              prefetchCache[handle] = data && data[sectionId] ? data[sectionId] : null;
+            })
+            .catch(function () {
+              prefetchCache[handle] = null;
+            });
+        });
+      }
+
+      function runScripts(container) {
+        container.querySelectorAll('script:not([src])').forEach(function (oldS) {
+          var newS = document.createElement('script');
+          newS.textContent = oldS.textContent;
+          oldS.parentNode.replaceChild(newS, oldS);
+        });
+      }
+
+      function swapSection(html, handle, href) {
+        var parser = new DOMParser();
+        var parsed = parser.parseFromString(html, 'text/html');
+        var newInner = parsed.querySelector('[data-section-id="' + sectionId + '"]');
+        if (!newInner) return false;
+
+        sectionEl.innerHTML = newInner.innerHTML;
+        runScripts(sectionEl);
+
+        if (href) window.history.pushState({}, '', href);
+
+        var newTitle = parsed.querySelector('title');
+        if (newTitle) document.title = newTitle.textContent;
+
+        document.dispatchEvent(new CustomEvent('section:load', { detail: { sectionId: sectionId } }));
+
+        try {
+          if (window.MinimogTheme && typeof window.Product === 'function') {
+            window.MinimogTheme.Product = new window.Product();
+          }
+        } catch (e) {}
+
+        setTimeout(prefetchAll, 300);
+        return true;
+      }
+
+      setTimeout(prefetchAll, 500);
+
+      sectionEl.addEventListener('click', function (e) {
+        var el = e.target.closest('.pdp-product-option[data-product-handle]');
+        if (!el || el.classList.contains('is-active') || isBusy) return;
+        e.preventDefault();
+
+        var handle = el.getAttribute('data-product-handle');
+        var href = el.getAttribute('href');
+        var cached = prefetchCache[handle];
+
+        if (cached && cached !== 'pending') {
+          swapSection(cached, handle, href);
+          return;
+        }
+
+        isBusy = true;
+        el.classList.add('is-loading');
+
+        fetch('/products/' + encodeURIComponent(handle) + '?sections=' + encodeURIComponent(sectionId))
+          .then(function (r) {
+            return r.ok ? r.json() : Promise.reject();
+          })
+          .then(function (data) {
+            if (data && data[sectionId]) {
+              prefetchCache[handle] = data[sectionId];
+              swapSection(data[sectionId], handle, href);
+            } else {
+              window.location.href = href;
+            }
+          })
+          .catch(function () {
+            window.location.href = href;
+          })
+          .then(function () {
+            isBusy = false;
+          });
+      });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    function initUpsell() {
+      var toggle = document.querySelector('[data-upsell-toggle]');
+      if (!toggle) return;
+
+      var form = document.querySelector('product-form .product-form, product-form form, form[action*="/cart/add"]');
+      if (!form) return;
+
+      // hidden input তৈরি — checkbox চেক হলে এটা items[] হিসেবে যোগ হবে
+      var hidden = document.createElement('input');
+      hidden.type = 'hidden';
+      hidden.disabled = true; // unchecked থাকলে submit হবে না
+      form.appendChild(hidden);
+
+      function sync() {
+        if (toggle.checked) {
+          hidden.name = 'items[][id]';
+          hidden.value = toggle.getAttribute('data-variant-id');
+          hidden.disabled = false;
+        } else {
+          hidden.disabled = true;
+          hidden.value = '';
+        }
+      }
+
+      toggle.addEventListener('change', sync);
+      sync();
+    }
+
+    if (document.readyState !== 'loading') {
+      initUpsell();
+    } else {
+      document.addEventListener('DOMContentLoaded', initUpsell);
+    }
+
+    document.addEventListener('section:load', initUpsell);
+  })();
+</script>
