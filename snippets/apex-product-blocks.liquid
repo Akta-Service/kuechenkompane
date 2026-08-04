@@ -730,12 +730,6 @@
           {% endif %}
           {{ block.settings.featureHeader }}
         </p>
-      {% when 'mrk_short_des' %}
-        {% if product.metafields.custom.product_short_description != blank %}
-          <p class="mrk-short-des">
-            {{ product.metafields.custom.product_short_description }}
-          </p>
-        {% endif %}
 
       {% when 'paymentIcon' %}
         <div class="rs-payment-icons">
