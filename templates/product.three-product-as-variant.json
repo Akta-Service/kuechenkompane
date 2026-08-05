@@ -337,6 +337,295 @@
         "cancel_btn": "Cancel"
       }
     },
+    "apex_theme_product_page_copy_bfPEWK": {
+      "type": "apex-theme-product-page-copy",
+      "blocks": {
+        "title_Bac9Mk": {
+          "type": "title",
+          "settings": {
+            "p_t_s": 29,
+            "p_t_s_m": 20,
+            "font_weight_t": "600"
+          }
+        },
+        "loox_reviews_loox_rating_V7WwEm": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "[rating]/5 ([count]) Bewertungen",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
+        "review_Tgbbak": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "p": "5296",
+            "star_range": 5,
+            "star_color": "#000000"
+          }
+        },
+        "ratings_fD4VNJ": {
+          "type": "ratings",
+          "settings": {
+            "likeImg1": "shopify://shop_images/Screenshot_2025-03-17_at_08.24.39_1.jpg",
+            "likeImg2": "shopify://shop_images/Kopie_von_Bild6_2_1.jpg",
+            "likeImg3": "shopify://shop_images/Screenshot_2025-03-17_at_08.21.14_1.jpg",
+            "likecount": "200.000+ Personen",
+            "like_bg": "#ddede0",
+            "likeinfo": "lieben unser Set!",
+            "demandBadge": "Hohe Nachfrage",
+            "demandText": "überdurchschnittlich oft besucht!"
+          }
+        },
+        "loox_reviews_loox_rating_DQFemx": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "contentSize": 16,
+            "pattern": "([count]) Bewertungen",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
+        "price_J4wXWJ": {
+          "type": "price",
+          "settings": {
+            "Show_lowest_price": true,
+            "lowest_price_text": "Niedrigster Preis der letzten 30 Tage:",
+            "taxes_included": true,
+            "taxes_included_text": "",
+            "show_saving": true,
+            "sale_badge_type": "percentage",
+            "badge_text": "",
+            "badge_text_after": "Rabatt",
+            "p_pt": 5,
+            "p_pb": 5,
+            "p_pt_m": 5,
+            "p_pb_m": 15,
+            "price_color": "#000000",
+            "c_price_color": "#a7a7a7",
+            "per_badge_bg": "#000000",
+            "per_badge_color": "#ffffff",
+            "f_s": 19,
+            "f_s_m": 23,
+            "c_price_size": 16,
+            "c_price_size_m": 20,
+            "price_font_weight": "600",
+            "price_tag_bg": "#ddede0",
+            "price_tag_text_color": "#000000",
+            "price_tag_font_size": 8,
+            "price_tag_arrow_bg": "#ddede0",
+            "border_radius": 2
+          }
+        },
+        "subtitle_xQXVba": {
+          "type": "subtitle",
+          "disabled": true,
+          "settings": {
+            "subtitle": "👉 Update: Geburtstags-Sale endet morgen",
+            "subtitle_font_size": 15,
+            "subtitle_weight": "500"
+          }
+        },
+        "subtitle_mGfN7N": {
+          "type": "subtitle",
+          "disabled": true,
+          "settings": {
+            "subtitle": "Limitiert auf 100 Sets",
+            "subtitle_font_size": 16,
+            "subtitle_weight": "500"
+          }
+        },
+        "viewer_stock_count_MFNhKz": {
+          "type": "viewerStockCount",
+          "disabled": true,
+          "settings": {
+            "viewer_count_font_size": 16,
+            "view_main_text_1": "Personen",
+            "view_main_text_2": "sehen sich das gerade an",
+            "viewer_margin_top": 10,
+            "viewer_margin_bottom": 11,
+            "margin_size_mobile_top": 1,
+            "margin_size_mobile_bottom": 1,
+            "product_margin_top": 10,
+            "product_margin_bottom": 10,
+            "p_margin_size_mobile_top": 1,
+            "p_margin_size_mobile_bottom": 1,
+            "product_count_font_size": 16,
+            "product_main_text_1": "Only",
+            "product_main_text_2": "left in stock",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
+            "viewer_count_time": 2500,
+            "stock_count_time": 5000,
+            "stock_count_show": true
+          }
+        },
+        "product_stock_status_PLnEpM": {
+          "type": "product_stock_status",
+          "settings": {
+            "text": "Stück auf Lager",
+            "unavailable_text": "Derzeit ausverkauft"
+          }
+        },
+        "featurelist_header_tfxtpf": {
+          "type": "featurelist_header",
+          "disabled": true,
+          "settings": {
+            "featureHeader": "30 Tage Zufriedenheitsgarantie",
+            "featurelist_header_size": 14,
+            "f_h_pt": 5,
+            "f_h_pb": 5,
+            "f_h_pt_m": 5,
+            "f_h_pb_m": 5
+          }
+        },
+        "featurelist_item_iiW6aD": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "{{ product.metafields.custom.list_1st_item_info | metafield_tag }}",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14,
+            "invert_img": false
+          }
+        },
+        "featurelist_item_tL79ih": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "{{ product.metafields.custom.list_2nd_item_info | metafield_tag }}",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14,
+            "invert_img": false
+          }
+        },
+        "featurelist_item_jQJcPz": {
+          "type": "featurelist_item",
+          "settings": {
+            "featurelist_item": "{{ product.metafields.custom.list_3rd_item_info | metafield_tag }}",
+            "featurelist_item_color": "#000000",
+            "featurelist_item_size": 14,
+            "invert_img": false
+          }
+        },
+        "variant_picker_i4dPYA": {
+          "type": "variant_picker",
+          "settings": {
+            "size_title": "Size"
+          }
+        },
+        "delivery_info_66q4XP": {
+          "type": "delivery_info",
+          "settings": {
+            "delivery_info": "Jetzt bestellen – Lieferung vor dem:",
+            "weekday_days": 3,
+            "weekend_days": 3,
+            "delivery_alignment": "center",
+            "pt": 0
+          }
+        },
+        "buy_buttons_3hQqVi": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "btn_mt": 0
+          }
+        },
+        "payment_icon_tePtpf": {
+          "type": "paymentIcon",
+          "settings": {
+            "payment_img": "shopify://shop_images/Trust_Badges_-_DACH.png"
+          }
+        },
+        "product_info_9Yqdn9": {
+          "type": "productInfo",
+          "settings": {
+            "info_img_1": "shopify://shop_images/Garntie_d60e2759-1e67-4bce-b8fb-cfaf27d7576c.png",
+            "info_text_1": "100 Tage Geld-zurück-Garantie",
+            "info_img_2": "shopify://shop_images/Delivery_acbeffd9-1fa0-4574-bba0-b6c8907df283.png",
+            "info_text_2": "Kostenloser Versand",
+            "info_img_3": "shopify://shop_images/anvil_10102933_1.png",
+            "info_text_3": "365 Tage Schärfegarantie",
+            "info_bg_color": "#ffffff",
+            "info_border_color": "#000000",
+            "info_text_color": "#000000",
+            "invert_img_color": false
+          }
+        }
+      },
+      "block_order": [
+        "title_Bac9Mk",
+        "loox_reviews_loox_rating_V7WwEm",
+        "review_Tgbbak",
+        "ratings_fD4VNJ",
+        "loox_reviews_loox_rating_DQFemx",
+        "price_J4wXWJ",
+        "subtitle_xQXVba",
+        "subtitle_mGfN7N",
+        "viewer_stock_count_MFNhKz",
+        "product_stock_status_PLnEpM",
+        "featurelist_header_tfxtpf",
+        "featurelist_item_iiW6aD",
+        "featurelist_item_tL79ih",
+        "featurelist_item_jQJcPz",
+        "variant_picker_i4dPYA",
+        "delivery_info_66q4XP",
+        "buy_buttons_3hQqVi",
+        "payment_icon_tePtpf",
+        "product_info_9Yqdn9"
+      ],
+      "custom_css": [
+        ".rs-product-rating {margin-top: 1.5%;}"
+      ],
+      "settings": {
+        "selected_gift_product": "",
+        "show_sold_out_badge_on_image": true,
+        "color_scheme": "default",
+        "container": "container",
+        "layout": "layout-6",
+        "show_atwl": false,
+        "enable_history_state": true,
+        "enable_variant_group_images": true,
+        "disable_selected_variant_default": false,
+        "show_featured_media": true,
+        "show_zoom_button": false,
+        "enable_video_autoplay": false,
+        "show_nav_media_mobile": false,
+        "show_pagination_mobile": true,
+        "use_sticky_atc": true,
+        "use_sticky_atc_on_mobile": true,
+        "enable_dynamic_checkout": false,
+        "sticky_atc_wishtlist": false,
+        "sticky_atc_compare": false,
+        "saving_text": "Du sparst",
+        "price_color": "#000000",
+        "stk_com_p": "#a7a7a7",
+        "show_stk_icon": true,
+        "glitter_effec": true,
+        "bubble_before_color": "#000000",
+        "bubble_after_color": "#1e1e1e",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
+      }
+    },
     "product_descrption_accordion_btdDtQ": {
       "type": "product-descrption-accordion",
       "blocks": {
@@ -1941,6 +2230,7 @@
   "order": [
     "main",
     "apex_theme_product_page_copy_bfPEWH",
+    "apex_theme_product_page_copy_bfPEWK",
     "product_descrption_accordion_btdDtQ",
     "floow_comparison_table_with_image_JgkEPN",
     "product-details-tabs",
