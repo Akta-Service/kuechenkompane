@@ -1,12 +1,15 @@
-{%- comment -%}
-  EU-Widerrufsfunktion gemäss Richtlinie (EU) 2023/2673 (Art. 11a Verbraucherrechte-RL),
-  anwendbar seit 19. Juni 2026: dauerhaft verfügbare Widerrufsfunktion mit
-  Bestätigungsschaltfläche "Jetzt widerrufen" und Eingangsbestätigung.
-{%- endcomment -%}
-
 <div class="container widerruf-page">
   <div class="widerruf-page__inner">
-    <h1>{{ page.title }}</h1>
+    <header class="widerruf-page__header">
+      <span class="widerruf-page__eyebrow">Einfach, sicher und nachvollziehbar</span>
+      <h1>{{ section.settings.heading }}</h1>
+      <p class="widerruf-page__intro">{{ section.settings.intro_text }}</p>
+      <div class="widerruf-page__steps" aria-label="Ablauf">
+        <span><b>1</b> Angaben eintragen</span>
+        <span><b>2</b> Widerruf absenden</span>
+        <span><b>3</b> Eingang bestätigen lassen</span>
+      </div>
+    </header>
 
     {%- if page.content != blank -%}
       <div class="rte">{{ page.content }}</div>
@@ -14,13 +17,15 @@
 
     {%- form 'contact', id: 'widerruf-form', class: 'widerruf-form' -%}
       {%- if form.posted_successfully? -%}
-        <div class="widerruf-form__success" role="status">
+        <div class="widerruf-form__success" role="status" aria-live="polite">
+          <span class="widerruf-form__success-icon" aria-hidden="true">✓</span>
           <strong>{{ section.settings.success_heading }}</strong>
           <p>{{ section.settings.success_text }}</p>
           <p class="widerruf-form__timestamp">
             Eingang registriert: {{ 'now' | date: '%d.%m.%Y, %H:%M Uhr' }} (Zeitzone Shop). Bitte bewahre diese Seite
             oder einen Screenshot als Nachweis auf – du erhältst zusätzlich eine Bestätigung per E-Mail.
           </p>
+          <p class="widerruf-form__delivery-status" data-klaviyo-status hidden></p>
         </div>
       {%- else -%}
         {%- if form.errors -%}
@@ -32,7 +37,8 @@
         <input type="hidden" name="contact[Betreff]" value="WIDERRUF – Ausübung des Widerrufsrechts">
 
         <div class="widerruf-form__statement">
-          {{ section.settings.statement_text }}
+          <span>Deine Widerrufserklärung</span>
+          <strong>{{ section.settings.statement_text }}</strong>
         </div>
 
         {%- if customer -%}
@@ -147,7 +153,10 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn--large widerruf-form__submit">Jetzt widerrufen</button>
+        <button type="submit" class="btn btn--large widerruf-form__submit">
+          <span>Jetzt widerrufen</span>
+          <span aria-hidden="true">→</span>
+        </button>
 
         <p class="widerruf-form__note">{{ section.settings.confirmation_note }}</p>
       {%- endif -%}
@@ -156,7 +165,6 @@
 </div>
 
 <script>
-  /* Widerruf: Bestell-Picker fuer eingeloggte Kunden */
   (function () {
     var select = document.getElementById('widerruf-order-select');
     var dataEl = document.getElementById('widerruf-orders-data');
@@ -221,6 +229,11 @@
     var METRIC = 'Widerruf eingereicht';
     var STORE_KEY = 'widerruf-pending';
 
+    function eventId() {
+      if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+      return Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
+    }
+
     var form = document.getElementById('widerruf-form');
     if (form && form.querySelector('input[name="contact[email]"]')) {
       form.addEventListener('submit', function () {
@@ -231,7 +244,8 @@
             bestellnummer: (form.querySelector('input[name="contact[Bestellnummer]"]') || {}).value || '',
             bestelldatum: (form.querySelector('input[name="contact[Bestelldatum]"]') || {}).value || '',
             artikel: (form.querySelector('textarea[name="contact[Artikel]"]') || {}).value || '',
-            eingangszeitpunkt: new Date().toISOString()
+            eingangszeitpunkt: new Date().toISOString(),
+            unique_id: eventId()
           };
           sessionStorage.setItem(STORE_KEY, JSON.stringify(data));
         } catch (e) {}
@@ -244,14 +258,19 @@
     var raw = null;
     try { raw = sessionStorage.getItem(STORE_KEY); } catch (e) {}
     if (!raw) return;
-    try { sessionStorage.removeItem(STORE_KEY); } catch (e) {}
     var d;
     try { d = JSON.parse(raw); } catch (e) { return; }
     if (!d.email) return;
 
-    fetch('https://a.klaviyo.com/client/events/?company_id=' + KLAVIYO_COMPANY_ID, {
+    var deliveryStatus = document.querySelector('[data-klaviyo-status]');
+    fetch('https://a.klaviyo.com/client/events/?company_id=' + encodeURIComponent(KLAVIYO_COMPANY_ID), {
       method: 'POST',
-      headers: { 'Content-Type': 'application/vnd.api+json', 'revision': '2025-04-15' },
+      keepalive: true,
+      headers: {
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
+        'revision': '2026-04-15'
+      },
       body: JSON.stringify({
         data: {
           type: 'event',
@@ -265,31 +284,112 @@
               Quelle: 'widerruf-formular'
             },
             metric: { data: { type: 'metric', attributes: { name: METRIC } } },
-            profile: { data: { type: 'profile', attributes: { email: d.email } } }
+            profile: { data: { type: 'profile', attributes: { email: d.email } } },
+            time: d.eingangszeitpunkt,
+            unique_id: d.unique_id
           }
         }
       })
-    }).catch(function () {});
+    }).then(function (response) {
+      if (!response.ok) throw new Error('Klaviyo event rejected');
+      try { sessionStorage.removeItem(STORE_KEY); } catch (e) {}
+      if (deliveryStatus) {
+        deliveryStatus.textContent = 'Die zusätzliche Eingangsbestätigung wurde angefordert.';
+        deliveryStatus.hidden = false;
+      }
+    }).catch(function () {
+      if (deliveryStatus) {
+        deliveryStatus.textContent = 'Dein Widerruf ist eingegangen. Die zusätzliche E-Mail-Bestätigung konnte gerade nicht automatisch angefordert werden.';
+        deliveryStatus.hidden = false;
+      }
+    });
   })();
 </script>
 
 {% stylesheet %}
   .widerruf-page__inner {
-    max-width: 720px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: 30px 0 60px;
+    padding: clamp(36px, 6vw, 80px) 0 clamp(56px, 8vw, 104px);
   }
-  .widerruf-page__inner h1 {
-    margin-bottom: 16px;
+  .widerruf-page__header {
+    max-width: 720px;
+    margin: 0 auto 34px;
+    text-align: center;
+  }
+  .widerruf-page__eyebrow {
+    display: inline-flex;
+    margin-bottom: 14px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: #eef3ec;
+    color: #36523a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .widerruf-page__header h1 {
+    margin: 0;
+    font-size: clamp(2.1rem, 5vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+  .widerruf-page__intro {
+    max-width: 620px;
+    margin: 18px auto 0;
+    color: #5f665f;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.65;
+  }
+  .widerruf-page__steps {
+    display: flex;
+    justify-content: center;
+    gap: 12px 22px;
+    margin-top: 26px;
+    color: #455047;
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+  .widerruf-page__steps span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .widerruf-page__steps b {
+    display: grid;
+    width: 26px;
+    height: 26px;
+    place-items: center;
+    border: 1px solid #cbd7c8;
+    border-radius: 50%;
+    background: #fff;
+    color: #36523a;
+    font-size: 0.75rem;
+  }
+  .widerruf-form {
+    padding: clamp(24px, 5vw, 48px);
+    border: 1px solid #dfe3dc;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 22px 60px rgb(32 47 34 / 0.09);
   }
   .widerruf-form__statement {
-    margin: 24px 0 20px;
-    padding: 14px 18px;
-    background: rgb(var(--text-color) / 0.04);
-    border: 1px solid rgb(var(--text-color) / 0.1);
-    border-radius: 10px;
-    font-weight: 600;
-    line-height: 1.5;
+    display: grid;
+    gap: 6px;
+    margin: 0 0 26px;
+    padding: 18px 20px;
+    border: 1px solid #d9e2d6;
+    border-radius: 14px;
+    background: #f5f8f3;
+    line-height: 1.55;
+  }
+  .widerruf-form__statement span {
+    color: #59705c;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
   .widerruf-form__grid {
     display: grid;
@@ -298,21 +398,51 @@
   }
   @media (max-width: 599.98px) {
     .widerruf-form__grid { grid-template-columns: 1fr; }
+    .widerruf-page__steps { align-items: flex-start; flex-direction: column; }
+    .widerruf-page__header { text-align: left; }
+    .widerruf-page__intro { margin-left: 0; }
+    .widerruf-form { border-radius: 16px; }
   }
   .widerruf-form__field--full { grid-column: 1 / -1; }
-  .widerruf-form__field .label { display: block; margin-bottom: 6px; }
+  .widerruf-form__field .label { display: block; margin-bottom: 7px; font-size: 0.875rem; font-weight: 650; }
   .widerruf-form__field input,
-  .widerruf-form__field textarea {
+  .widerruf-form__field textarea,
+  .widerruf-form__orderpicker select {
     width: 100%;
-    padding: 11px 14px;
-    border: 1px solid rgb(var(--text-color) / 0.25);
-    border-radius: 8px;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #cfd5cd;
+    border-radius: 10px;
+    background: #fff;
     font-family: inherit;
-    font-size: 0.9375rem;
+    font-size: 1rem;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+  .widerruf-form__field input:focus,
+  .widerruf-form__field textarea:focus,
+  .widerruf-form__orderpicker select:focus {
+    border-color: #36523a;
+    box-shadow: 0 0 0 3px rgb(54 82 58 / 0.13);
+    outline: 0;
   }
   .widerruf-form__submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 54px;
     margin-top: 22px;
+    padding-inline: 22px;
     width: 100%;
+    border: 1px solid #36523a;
+    border-radius: 12px;
+    background: #36523a;
+    color: #fff;
+    font-weight: 750;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+  .widerruf-form__submit:hover {
+    box-shadow: 0 10px 24px rgb(32 47 34 / 0.18);
+    transform: translateY(-1px);
   }
   .widerruf-form__note {
     margin-top: 14px;
@@ -321,13 +451,25 @@
     line-height: 1.55;
   }
   .widerruf-form__success {
-    margin-top: 24px;
-    padding: 18px 20px;
-    background: rgb(13 122 56 / 0.08);
-    border: 1px solid rgb(13 122 56 / 0.3);
-    border-radius: 10px;
+    padding: 28px;
+    background: #f1f8ef;
+    border: 1px solid #bdd9b8;
+    border-radius: 16px;
     line-height: 1.55;
   }
+  .widerruf-form__success-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background: #36523a;
+    color: #fff;
+    font-size: 1.25rem;
+  }
+  .widerruf-form__success strong { display: block; font-size: 1.25rem; }
+  .widerruf-form__delivery-status { margin-bottom: 0; font-weight: 650; }
   .widerruf-form__errors {
     margin: 16px 0;
     padding: 12px 16px;
@@ -337,15 +479,6 @@
   }
   .widerruf-form__orderpicker {
     margin-bottom: 18px;
-  }
-  .widerruf-form__orderpicker select {
-    width: 100%;
-    padding: 11px 14px;
-    border: 1px solid rgb(var(--text-color) / 0.25);
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 0.9375rem;
-    background: rgb(var(--bg-color));
   }
   .widerruf-form__items {
     margin-top: 12px;
@@ -387,15 +520,19 @@
     gap: 8px;
     margin: 0 0 22px;
     padding: 16px 18px;
-    background: rgb(var(--btn-bg-color) / 0.06);
-    border: 1px solid rgb(var(--btn-bg-color) / 0.25);
-    border-radius: 10px;
+    background: #fbf6ed;
+    border: 1px solid #eadbc4;
+    border-radius: 14px;
     font-size: 0.9375rem;
     line-height: 1.5;
   }
   .widerruf-form__login-btn {
     align-self: flex-start;
     margin-top: 4px;
+    border: 1px solid #36523a;
+    border-radius: 10px;
+    background: #36523a;
+    color: #fff;
   }
   .widerruf-form__login-alt {
     margin-top: 6px;
@@ -408,6 +545,18 @@
 {
   "name": "Widerrufsfunktion",
   "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Vertrag widerrufen"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text",
+      "label": "Einleitung",
+      "default": "Reiche deinen Widerruf direkt online ein. Nach erfolgreicher Übermittlung erhältst du sofort einen Nachweis und zusätzlich eine Bestätigung per E-Mail."
+    },
     {
       "type": "textarea",
       "id": "statement_text",

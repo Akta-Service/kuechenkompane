@@ -11,7 +11,11 @@
   "sections": {
     "main": {
       "type": "main-widerruf",
-      "settings": {}
+      "settings": {
+        "heading": "Vertrag widerrufen",
+        "intro_text": "Reiche deinen Widerruf direkt online ein. Nach erfolgreicher Übermittlung erhältst du sofort einen Nachweis und zusätzlich eine Bestätigung per E-Mail.",
+        "klaviyo_company_id": "TzvBp6"
+      }
     }
   },
   "order": [
