@@ -1,4 +1,5 @@
 {{ 'akta-header.css' | asset_url | stylesheet_tag: preload: true }}
+
 <style>
   .header-log-img {
     max-width: {{- section.settings.logo_max_width -}}px;
@@ -9,6 +10,7 @@
     }
   }
 </style>
+
 <div class="akta-header  m-gradient m-color-{{ section.settings.color_scheme }}">
   <div class="header-container container-fluid">
     <div class="header-inner">
