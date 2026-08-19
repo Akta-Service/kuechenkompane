@@ -13,6 +13,9 @@
       "type": "main-product",
       "disabled": true,
       "settings": {
+        "selected_gift_product": "",
+        "show_sold_out_badge_on_image": true,
+        "color_scheme": "",
         "container": "container-fluid",
         "layout": "layout-4",
         "show_atwl": true,
@@ -28,7 +31,18 @@
         "use_sticky_atc_on_mobile": true,
         "enable_dynamic_checkout": false,
         "sticky_atc_wishtlist": false,
-        "sticky_atc_compare": false
+        "sticky_atc_compare": false,
+        "saving_text": "You're saving",
+        "price_color": "#000000",
+        "stk_com_p": "#dc2626",
+        "show_stk_icon": false,
+        "glitter_effec": false,
+        "bubble_before_color": "#ffffff",
+        "bubble_after_color": "#ffffff",
+        "per_title": "Personalisierung",
+        "per_sub_title": "Gib Namen, Initialen oder Zahlen ein. Du kannst sie sogar kombinieren.",
+        "save_btn": "Save",
+        "cancel_btn": "Cancel"
       }
     },
     "apex_theme_product_page_copy_bfPEWH": {
@@ -102,7 +116,8 @@
             "label_font_weight": "400",
             "label_font_size": 12,
             "gap": 4,
-            "text_gap": 8
+            "text_gap": 8,
+            "scroll_target": ""
           }
         },
         "loox_reviews_loox_rating_DQFemx": {
@@ -131,6 +146,7 @@
             "show_saving": true,
             "sale_badge_type": "com_price_with_text",
             "badge_text": "Warenwert bis zu",
+            "badge_text_after": "Rabatt",
             "p_pt": 5,
             "p_pb": 11,
             "p_pt_m": 5,
@@ -155,7 +171,7 @@
           "type": "subtitle",
           "disabled": true,
           "settings": {
-            "subtitle": "{{ section.settings.selected_gift_product.metafields.custom.product_short_description.value }}",
+            "subtitle": "",
             "subtitle_font_size": 20,
             "subtitle_weight": "500"
           }
@@ -183,12 +199,24 @@
             "viewer_margin_bottom": 11,
             "margin_size_mobile_top": 1,
             "margin_size_mobile_bottom": 1,
-            "viewer_count_time": 30
+            "product_margin_top": 10,
+            "product_margin_bottom": 10,
+            "p_margin_size_mobile_top": 1,
+            "p_margin_size_mobile_bottom": 1,
+            "product_count_font_size": 16,
+            "product_main_text_1": "Only",
+            "product_main_text_2": "left in stock",
+            "product_stock_out": "Derzeit ausverkauft",
+            "soldout_color": "#ff0000",
+            "viewer_count_time": 30,
+            "stock_count_time": 5000,
+            "stock_count_show": true
           }
         },
         "product_stock_status_769aJr": {
           "type": "product_stock_status",
           "settings": {
+            "text": "Stück auf Lager",
             "unavailable_text": "Derzeit ausverkauft"
           }
         },
