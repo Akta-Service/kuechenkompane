@@ -57,7 +57,7 @@
             "price_color": "#008000",
             "c_price_color": "#008000",
             "per_badge_bg": "#008000",
-            "per_badge_color": "#FFFFFF",
+            "per_badge_color": "#ffffff",
             "f_s": 16,
             "f_s_m": 16,
             "c_price_size": 16,
@@ -351,12 +351,8 @@
           "type": "video",
           "settings": {
             "video_mt": 0,
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/4e0b38fe26e7454c8d484e92f7d891b1.mp4",
-            "autoplay": true,
-            "loop": true,
-            "muted": true,
-            "playsinline": true,
-            "controls": true
+            "image_ratio": "16/9",
+            "explanation_video_poster": "shopify://shop_images/Screenshot_2025-03-18_at_11.21.04_1.jpg"
           }
         }
       },
