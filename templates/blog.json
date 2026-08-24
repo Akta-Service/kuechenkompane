@@ -50,7 +50,7 @@
         "container": "container-fluid",
         "show_sidebar": true,
         "layout": "right_column",
-        "view": "grid",
+        "view": "list",
         "blog_list": 12,
         "show_item_per_row": 4
       }
