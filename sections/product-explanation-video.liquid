@@ -8,6 +8,10 @@
   .product-explanation-video-item{position:relative;width:100%;overflow:hidden}
   .product-explanation-video-item img,.product-explanation-video-placeholder{display:block;width:100%;height:100%;object-fit:cover}
   .product-explanation-video-placeholder{background:rgba(var(--color-foreground),.04)}
+  .product-explanation-video-item video{display:block;width:100%;height:100%;object-fit:cover}
+  .product-explanation-video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,0,0,.6);border-radius:50%;border:none;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .product-explanation-video-play:hover{background:rgba(0,0,0,.8)}
+  .product-explanation-video-play svg{width:24px;height:24px;fill:#fff;margin-left:3px}
   @media screen and (max-width:767px){.product-explanation-video-section{padding:{{section.settings.vertical_padding_mobile}}px 15px}.product-explanation-video-uppercnt h6{font-size:14px}}
   {% for c in section.blocks %}{% case c.type %}{% when 'heading' %}.akta-{{section.id}} .heading-font{{forloop.index}}{font-size:{{c.settings.h1_font_size}}px;font-weight:{{c.settings.h1_font_weight}};text-align:{{c.settings.h1_text_align}};padding-top:{{c.settings.padding_top}}px;padding-bottom:{{c.settings.padding_bottom}}px}@media (max-width:1024px){.akta-{{section.id}} .heading-font{{forloop.index}}{font-size:{{c.settings.h1_font_size_tablet}}px;padding-top:{{c.settings.padding_top_tablet | default: settings.padding_top}}px;padding-bottom:{{c.settings.padding_bottom_tablet | default: settings.padding_bottom}}px}}@media (max-width:768px){.akta-{{section.id}} .heading-font{{forloop.index}}{font-size:{{c.settings.h1_font_size_mobile}}px;padding-top:{{c.settings.padding_top_mobile | default: settings.padding_top}}px;padding-bottom:{{c.settings.padding_bottom_mobile | default: settings.padding_bottom}}px}}{% endcase %}{% endfor %}
 </style>
@@ -35,8 +39,43 @@
               <style>
                 .product-explanation-video-item.{{ block.id }}{margin-top:{{ block.settings.video_mt }}px;aspect-ratio:{{ block.settings.image_ratio | default: '16/9' }};{% if block.settings.image_ratio == '1/1' %}max-height:712px{% else %}max-height:400px{% endif %}}
               </style>
+
+              {% assign hosted_video = block.settings.hosted_video -%}
               {% assign explanation_image = block.settings.explanation_video_poster -%}
-              {%- if explanation_image != blank -%}
+
+              {%- if hosted_video != blank -%}
+                {%- if explanation_image != blank -%}
+                  <div class="product-explanation-video-poster" data-parent="{{ block.id }}">
+                    {{-
+                      explanation_image
+                      | image_url: width: 1600
+                      | image_tag:
+                        widths: '360,480,640,712,960,1200,1600',
+                        sizes: '(min-width: 742px) 712px, calc(100vw - 30px)',
+                        loading: 'lazy',
+                        class: 'product-explanation-video-image',
+                        alt: explanation_image.alt
+                    -}}
+                    <button class="product-explanation-video-play" aria-label="Play video" type="button">
+                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="5,3 19,12 5,21"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <video preload="none" playsinline style="display:none">
+                    {%- for source in hosted_video.sources -%}
+                      <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                    {%- endfor -%}
+                  </video>
+                {%- else -%}
+                  <video controls playsinline preload="metadata">
+                    {%- for source in hosted_video.sources -%}
+                      <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                    {%- endfor -%}
+                  </video>
+                {%- endif -%}
+
+              {%- elsif explanation_image != blank -%}
                 {{-
                   explanation_image
                   | image_url: width: 1600
@@ -56,4 +95,302 @@
     </div>
   </div>
 </div>
-{% schema %}{"name":"APEX Pr Explanation Photo","settings":[{"type":"color_scheme","id":"color_scheme","label":"Color scheme"},{"type":"range","id":"vertical_padding","label":"Vertical padding","default":50,"min":0,"max":100,"step":1},{"type":"range","id":"vertical_padding_mobile","label":"Vertical Padding Mobile","default":30,"min":0,"max":100,"step":1},{"type":"header","content":"Heading"},{"type":"select","id":"heading_type","label":"Choose Heading Size","options":[{"value":"mrk-h1","label":"H1"},{"value":"mrk-h2","label":"H2"},{"value":"mrk-h3","label":"H3"},{"value":"mrk-h4","label":"H4"},{"value":"mrk-h5","label":"H5"},{"value":"mrk-h6","label":"H6"}],"default":"mrk-h1"},{"type":"header","content":"Select Sub Heading size"},{"type":"select","id":"sub_heading","label":"Sub Heading Size","default":"p-medium","options":[{"value":"p-xl","label":"Extra Large"},{"value":"p-large","label":"Large"},{"value":"p-medium","label":"Medium"},{"value":"p-small","label":"Small"},{"value":"p-x-small","label":"Extra Small"}]},{"type":"header","content":"Select Decription size"},{"type":"select","id":"des_size","label":"Decription size","default":"p-medium","options":[{"value":"p-xl","label":"Extra Large"},{"value":"p-large","label":"Large"},{"value":"p-medium","label":"Medium"},{"value":"p-small","label":"Small"},{"value":"p-x-small","label":"Extra Small"}]}],"blocks":[{"type":"sub_heading","name":"Sub Heading","settings":[{"type":"text","id":"sub_heading","label":"Sub Heading","default":"Maniko - Explained in 2 Minutes"}]},{"type":"heading","name":"Heading","settings":[{"type":"text","id":"heading","label":"Heading","default":"What are Maniko Nails?"},{"type":"select","id":"h1_text_align","label":"Heading Text Alignment","options":[{"value":"left","label":"Left"},{"value":"center","label":"Center"},{"value":"right","label":"Right"}],"default":"left"},{"type":"text","id":"title","label":"Title Text","default":"Your Title Here"},{"type":"range","id":"padding_top","min":1,"max":100,"step":1,"unit":"px","label":"Padding Top (Desktop)","default":20},{"type":"range","id":"padding_bottom","min":1,"max":100,"step":1,"unit":"px","label":"Padding Bottom (Desktop)","default":20},{"type":"range","id":"padding_top_tablet","min":1,"max":100,"step":1,"unit":"px","label":"Padding Top (Tablet)","default":15},{"type":"range","id":"padding_bottom_tablet","min":1,"max":100,"step":1,"unit":"px","label":"Padding Bottom (Tablet)","default":15},{"type":"range","id":"padding_top_mobile","min":1,"max":100,"step":1,"unit":"px","label":"Padding Top (Mobile)","default":10},{"type":"range","id":"padding_bottom_mobile","min":1,"max":100,"step":1,"unit":"px","label":"Padding Bottom (Mobile)","default":10}]},{"type":"details","name":"Details","settings":[{"type":"textarea","id":"details","label":"Details","default":"Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:"},{"type":"select","id":"p_text_align","label":"Paragraph Text Alignment","options":[{"value":"left","label":"Left"},{"value":"center","label":"Center"},{"value":"right","label":"Right"}],"default":"left"},{"type":"range","id":"p_padding_top","min":1,"max":100,"step":1,"unit":"px","label":"Padding Top (Desktop)","default":10},{"type":"range","id":"p_padding_bottom","min":1,"max":100,"step":1,"unit":"px","label":"Padding Bottom (Desktop)","default":10},{"type":"range","id":"p_padding_top_tablet","min":1,"max":100,"step":1,"unit":"px","label":"Padding Top (Tablet)","default":8},{"type":"range","id":"p_padding_bottom_tablet","min":1,"max":100,"step":1,"unit":"px","label":"Padding Bottom (Tablet)","default":8},{"type":"range","id":"p_padding_top_mobile","min":1,"max":100,"step":1,"unit":"px","label":"Padding Top (Mobile)","default":5},{"type":"range","id":"p_padding_bottom_mobile","min":1,"max":100,"step":1,"unit":"px","label":"Padding Bottom (Mobile)","default":5}]},{"type":"video","name":"16:9 Photo","settings":[{"type":"range","id":"video_mt","min":0,"max":100,"step":1,"unit":"px","label":"Margin Top","default":0},{"type":"select","id":"image_ratio","label":"Image Ratio","default":"16/9","options":[{"value":"16/9","label":"16:9 (Default)"},{"value":"1/1","label":"1:1 Square"},{"value":"4/3","label":"4:3"},{"value":"3/4","label":"3:4 Portrait"},{"value":"4/5","label":"4:5 Portrait"}]},{"type":"image_picker","id":"explanation_video_poster","label":"Image","info":"Select ratio above, then upload image."}]}],"presets":[{"name":"APEX Pr Explanation Photo"}]}{% endschema %}
+
+<script>
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.product-explanation-video-play');
+    if (!btn) return;
+    var poster = btn.closest('.product-explanation-video-poster');
+    if (!poster) return;
+    var parent = poster.closest('.product-explanation-video-item');
+    var video = parent.querySelector('video');
+    if (!video) return;
+    poster.remove();
+    video.style.display = '';
+    video.controls = true;
+    video.play();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "APEX Pr Explanation Photo",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" },
+    {
+      "type": "range",
+      "id": "vertical_padding",
+      "label": "Vertical padding",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "vertical_padding_mobile",
+      "label": "Vertical Padding Mobile",
+      "default": 30,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    { "type": "header", "content": "Heading" },
+    {
+      "type": "select",
+      "id": "heading_type",
+      "label": "Choose Heading Size",
+      "options": [
+        { "value": "mrk-h1", "label": "H1" },
+        { "value": "mrk-h2", "label": "H2" },
+        { "value": "mrk-h3", "label": "H3" },
+        { "value": "mrk-h4", "label": "H4" },
+        { "value": "mrk-h5", "label": "H5" },
+        { "value": "mrk-h6", "label": "H6" }
+      ],
+      "default": "mrk-h1"
+    },
+    { "type": "header", "content": "Select Sub Heading size" },
+    {
+      "type": "select",
+      "id": "sub_heading",
+      "label": "Sub Heading Size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }
+      ]
+    },
+    { "type": "header", "content": "Select Decription size" },
+    {
+      "type": "select",
+      "id": "des_size",
+      "label": "Decription size",
+      "default": "p-medium",
+      "options": [
+        { "value": "p-xl", "label": "Extra Large" },
+        { "value": "p-large", "label": "Large" },
+        { "value": "p-medium", "label": "Medium" },
+        { "value": "p-small", "label": "Small" },
+        { "value": "p-x-small", "label": "Extra Small" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sub_heading",
+      "name": "Sub Heading",
+      "settings": [
+        { "type": "text", "id": "sub_heading", "label": "Sub Heading", "default": "Maniko - Explained in 2 Minutes" }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "What are Maniko Nails?" },
+        {
+          "type": "select",
+          "id": "h1_text_align",
+          "label": "Heading Text Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        { "type": "text", "id": "title", "label": "Title Text", "default": "Your Title Here" },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Desktop)",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Desktop)",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "padding_top_tablet",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Tablet)",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_tablet",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Tablet)",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Mobile)",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Mobile)",
+          "default": 10
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "name": "Details",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "details",
+          "label": "Details",
+          "default": "Whether long, short, oval or square - we love them all and show you how to get the best out of your nails thanks to our UV Gel Strips:"
+        },
+        {
+          "type": "select",
+          "id": "p_text_align",
+          "label": "Paragraph Text Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "range",
+          "id": "p_padding_top",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Desktop)",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "p_padding_bottom",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Desktop)",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "p_padding_top_tablet",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Tablet)",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "p_padding_bottom_tablet",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Tablet)",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "p_padding_top_mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Top (Mobile)",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "p_padding_bottom_mobile",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding Bottom (Mobile)",
+          "default": 5
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video / Photo",
+      "settings": [
+        {
+          "type": "range",
+          "id": "video_mt",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 0
+        },
+        {
+          "type": "select",
+          "id": "image_ratio",
+          "label": "Video / Image Ratio",
+          "default": "16/9",
+          "options": [
+            { "value": "16/9", "label": "16:9 (Default)" },
+            { "value": "1/1", "label": "1:1 Square" },
+            { "value": "4/3", "label": "4:3" },
+            { "value": "3/4", "label": "3:4 Portrait" },
+            { "value": "4/5", "label": "4:5 Portrait" }
+          ]
+        },
+        {
+          "type": "video",
+          "id": "hosted_video",
+          "label": "Shopify Video",
+          "info": "Upload or select a video from Shopify Files."
+        },
+        {
+          "type": "image_picker",
+          "id": "explanation_video_poster",
+          "label": "Poster Image / Thumbnail",
+          "info": "Used as video thumbnail (click to play) or standalone image if no video."
+        }
+      ]
+    }
+  ],
+  "presets": [{ "name": "APEX Pr Explanation Photo" }]
+}
+{% endschema %}
