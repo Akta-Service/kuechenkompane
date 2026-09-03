@@ -10,7 +10,7 @@
 {
   "current": {
     "allowed_handles": [
-      "oster-vip-sale"
+      "end-of-summer"
     ],
     "password": "Sonne",
     "header_title": "Beliebte Produkte",
@@ -218,11 +218,6 @@
       },
       "15351435345818755577": {
         "type": "shopify://apps/pandectes-gdpr/blocks/banner/58c0baa2-6cc1-480c-9ea6-38d6d559556a",
-        "disabled": false,
-        "settings": {}
-      },
-      "3138269044488530766": {
-        "type": "shopify://apps/uppromote-affiliate/blocks/core-script/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
         "disabled": false,
         "settings": {}
       },
